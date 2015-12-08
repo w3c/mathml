@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  SYSTEM "mathml.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+      <title>Mathematical Markup Language (MathML) Version 3.0 3rd Edition -- XHTML + MathML Version</title><style type="text/css">
+
+.egmeta {
+color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
+}
+
+table.syntax {
+font-size: 75%;
+background-color: #DDDDDD;
+border: thin  solid;
+}
+table.syntax td {
+border: solid thin;
+}
+table.syntax th {
+text-align: left;
+}
+
+table.attributes td { padding-left:0.5em; padding-right:0.5em; border: solid thin; }
+table.attributes td.attname { white-space:nowrap; vertical-align:top;}
+table.attributes td.attdesc { background-color:#F0F0FF; padding-left:2em; padding-right:2em}
+
+th.uname {font-size: 50%; text-align:left;}
+code           { font-family: monospace; }
+
+div.constraint,
+div.issue,
+div.note,
+div.notice     { margin-left: 2em; }
+
+li p           { margin-top: 0.3em;
+                 margin-bottom: 0.3em; }
+
+div.exampleInner pre { margin-left: 1em;
+                       margin-top: 0em; margin-bottom: 0em}
+div.exampleOuter {border: 4px double gray;
+                  margin: 0em; padding: 0em}
+div.exampleInner { background-color: #d5dee3;
+                   border-top-width: 4px;
+                   border-top-style: double;
+                   border-top-color: #d3d3d3;
+                   border-bottom-width: 4px;
+                   border-bottom-style: double;
+                   border-bottom-color: #d3d3d3;
+                   padding: 4px; margin: 0em }
+div.exampleWrapper { margin: 4px }
+div.exampleHeader { font-weight: bold;
+                    margin: 4px}
+a.mainindex {font-weight: bold;}
+li.sitem {list-style-type: none;}
+
+  .error { color: red }
+
+  div.mathml-example {border:solid thin black;
+              padding: 0.5em;
+              margin: 0.5em 0 0.5em 0;
+             }
+  div.strict-mathml-example {border:solid thin black;
+              padding: 0.5em;
+              margin: 0.5em 0 0.5em 0;
+             }
+  div.strict-mathml-example h5 {
+  margin-top: -0.3em;
+  margin-bottom: -0.5em;}
+  var.meta {background-color:green}
+  var.transmeta {background-color:red}
+  pre.mathml {padding: 0.5em;
+              background-color: #FFFFDD;}
+  pre.mathml-fragment {padding: 0.5em;
+              background-color: #FFFFDD;}
+  pre.strict-mathml {padding: 0.5em;
+              background-color: #FFFFDD;}
+  span.uname {color:#999900;font-size:75%;font-family:sans-serif;}
+  .minitoc { border-style: solid;
+             border-color: #0050B2; 
+             border-width: 1px ;
+             padding: 0.3em;}
+  .attention { border-style: solid; 
+               border-width: 1px ; 
+               color: #5D0091;
+               background: #F9F5DE; 
+               border-color: red;
+               margin-left: 1em;
+               margin-right: 1em;
+               margin-top: 0.25em;
+               margin-bottom: 0.25em; }
+
+  .attribute-Name { background: #F9F5C0; }
+  .method-Name { background: #C0C0F9; }
+  .IDL-definition { border-style: solid; 
+               border-width: 1px ; 
+               color: #001000;
+               background: #E0FFE0; 
+               border-color: #206020;
+               margin-left: 1em;
+               margin-right: 1em;
+               margin-top: 0.25em;
+               margin-bottom: 0.25em; }
+  .baseline {vertical-align: baseline}
+
+  #eqnoc1 {width: 10%}
+  #eqnoc2 {width: 80%; text-align: center; }
+  #eqnoc3 {width: 10%; text-align: right; }
+
+div.div1 {margin-bottom: 1em;}
+          
+.h3style {
+  text-align: left;
+  font-family: sans-serif;
+  font-weight: normal;
+  color: #0050B2; 
+  font-size: 125%;
+}
+
+  h4 { text-align: left;
+       font-family: sans-serif;
+       font-weight: normal;
+       color: #0050B2; }
+  h5 { text-align: left;
+       font-family: sans-serif;
+       font-weight: bold;
+       color: #0050B2; } 
+
+  th {background:  #E0FFE0;}
+
+  p, blockquote, h4 { font-family: sans-serif; }
+  dt, dd, dl, ul, li { font-family: sans-serif; }
+  pre, code { font-family: monospace }
+
+  a.termref {
+  text-decoration: none;
+  color: black;
+  }
+
+
+.mathml-render {
+font-family: serif;
+font-size: 130%;
+border: solid 4px green;
+padding-left: 1em;
+padding-right: 1em;
+}
+</style><link rel="stylesheet" type="text/css"
+            href="http://www.w3.org/StyleSheets/TR/base.css" />
+   </head>
+   <body>
+      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br class="html-compat" /> Draft<br class="html-compat" /><span style="font-size:75%">$Date: $</span></b></div>
+      <div id="xhtml-version">
+         <p>The presentation of this document has been augmented to
+            use XHTML rather than HTML, and to include all MathML
+            examples as inlined MathML markup that should be rendered by
+            a MathML enabled browser. The MathML examples that have
+            been added, and which should be displayed in your browser,
+            are marked <span class="mathml-render">like this</span>.
+         </p>
+         <hr />
+      </div>
+      <div class="head">
+         
+         <h1><a id="title"></a>Mathematical Markup Language (MathML) Version 3.0 3rd Edition
+         </h1>
+         
+         <h2><a id="w3c-doctype"></a>W3C Working Draft 21 November 2014
+         </h2>
+         <dl>
+            <dt>This version:</dt>
+            <dd>
+               
+               <a href="http://www.w3.org/Math/draft-spec/">http://www.w3.org/Math/draft-spec/</a>
+               
+            </dd>
+            <dt>Latest MathML 3 version:</dt>
+            <dd><a href="http://www.w3.org/TR/MathML3/">http://www.w3.org/TR/MathML3/</a></dd>
+            <dt>Latest MathML Recommendation:</dt>
+            <dd><a href="http://www.w3.org/TR/MathML/">http://www.w3.org/TR/MathML/</a></dd>
+            <dt>Previous version:</dt>
+            <dd><a href="http://www.w3.org/TR/2014/REC-MathML3-20140410/">http://www.w3.org/TR/2014/REC-MathML3-20140410/</a></dd>
+            <dt>Editors' version:</dt>
+            <dd><a href="http://www.w3.org/Math/draft-spec/">http://www.w3.org/Math/draft-spec/</a></dd>
+            <dt>Editors:</dt>
+            <dd>David Carlisle, NAG</dd>
+            <dd>Patrick Ion, Mathematical Reviews, American Mathematical Society</dd>
+            <dd>Robert Miner (deceased), Design Science, Inc.</dd>
+            <dt id="authors">Principal Authors:</dt>
+            <dd>Ron Ausbrooks, Stephen Buswell, David Carlisle, Giorgi Chavchanidze, Stéphane Dalmas, Stan Devitt, Angel Diaz, Sam Dooley, Roger Hunter, Patrick Ion, Michael Kohlhase, Azzeddine Lazrek, Paul Libbrecht, Bruce Miller, Robert Miner (deceased), Chris Rowley, Murray Sargent, Bruce Smith, Neil Soiffer, Robert Sutor, Stephen Watt</dd>
+         </dl>
+         <p>Please refer to the <a href="http://www.w3.org/Math/Documents/mathml3-errata.html"><strong>errata</strong></a>
+            for this document, which may include some normative corrections.
+         </p>
+         <p>In addition to the <a href="Overview.html">HTML</a> version, this document is also available in these non-normative formats: <a href="Overview-d.html">diff marked HTML version</a>, <a href="Overview.xml">XHTML+MathML version</a>, <a href="mathml.html">single page HTML5+MathML version</a>, and <a href="mathml.pdf">PDF version</a>.
+         </p>
+         <p>See also <a href="http://www.w3.org/2005/11/Translations/Query?titleMatch=MathML3"><strong>translations</strong></a>.
+         </p>
+         <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 1998-2014 <a href="http://www.w3.org/"><acronym title="World Wide Web Consortium">W3C</acronym></a><sup>®</sup>
+            (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>,
+            <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>),
+            All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.
+         </p>
+      </div>
+      <hr class="html-compat" />
+      <div>
+         
+         <h2><a id="abstract"></a>Abstract
+         </h2>
+         <p>
+            This specification defines the Mathematical Markup Language, or
+            <a id="td-mathml"></a>MathML. MathML is a markup language
+            for describing mathematical notation and capturing
+            both its structure and content. The goal of MathML is to enable
+            mathematics to be served, received, and processed on the World Wide
+            Web, just as <a id="td-html"></a>HTML has
+            enabled this functionality for text.
+            
+         </p>
+         <p>
+            This specification of the markup language MathML is intended
+            primarily for a readership consisting of those who will be
+            developing or implementing renderers or editors using it, or
+            software that will communicate using MathML as a protocol for input
+            or output. It is <em>not</em> a User's Guide but rather a
+            reference document.
+            
+         </p>
+         <p>
+            MathML can be used to encode both mathematical notation and
+            mathematical content. About thirty-eight of the MathML tags describe
+            abstract notational structures, while another about one hundred and
+            seventy provide a way of unambiguously specifying the intended
+            meaning of an expression. Additional chapters discuss how the MathML
+            content and presentation elements interact, and how MathML renderers
+            might be implemented and should interact with browsers. Finally,
+            this document addresses the issue of special characters used for
+            mathematics, their handling in MathML, their presence in Unicode,
+            and their relation to fonts.
+            
+         </p>
+         <p>
+            While MathML is human-readable, authors typically will
+            use equation editors, conversion
+            programs, and other specialized software tools to generate
+            MathML. Several versions of such MathML tools exist,
+            both freely available software and commercial
+            products, and more are under development.
+            
+         </p>
+         <p>MathML was originally specified as an XML application and most of the
+            examples in this specification assume that syntax. Other syntaxes are possible most notably
+            <a href="appendixg.xml#HTML5">[HTML5]</a> specifies the syntax for MathML in HTML. Unless explictly noted,
+            the examples in this specification are also valid HTML syntax.
+         </p>
+      </div>
+      <div>
+         
+         <h2><a id="status"></a>Status of this Document
+         </h2>
+         <p><strong>This document is an editors' copy that has
+               no official standing.</strong></p>
+         <p><em> This section describes the status of this document at the time
+               of its publication. Other documents may supersede this document. A
+               list of current W3C publications and the latest revision of this
+               technical report can be found in the <a href="http://www.w3.org/TR/">W3C technical reports index</a> at
+               http://www.w3.org/TR/.</em>
+            
+         </p>
+         <p>
+            This document was produced by the <a href="http://www.w3.org/Math/">W3C Math Working Group</a> as
+            a <a href="http://www.w3.org/Consortium/Process/tr#RecsW3C">Recommendation</a>
+            and is part of the
+            W3C <a href="http://www.w3.org/Math/Activity">Math Activity</a>.
+            The goals of the W3C Math Working Group are discussed in the <a href="http://www.w3.org/Math/Documents/Charter2006.html"> W3C Math WG
+               Charter</a> (revised July 2006).  The authors of this document are 
+            the W3C Math Working Group members.  A list of <a href="appendixe.xml">participants in the W3C Math Working Group</a>
+            is available.
+            
+         </p>
+         <p>This document has been reviewed by W3C Members, by software
+            developers, and by other W3C groups and interested parties, and is
+            endorsed by the Director as a W3C Recommendation. It is a stable
+            document and may be used as reference material or cited from another
+            document. W3C's role in making the Recommendation is to draw attention
+            to the specification and to promote its widespread deployment. This
+            enhances the functionality and interoperability of the Web.
+         </p>
+         <p>
+            All reported errata to
+            the first edition have been addressed in this addition, and a full change log appears in
+            <a href="appendixf.xml">Appendix F Changes</a>. The diff-marked version linked in the frontmatter highlights all changes between the first and second editions. In addition
+            to incorporating errata, the main change in this addition is to recognise that MathML parsing is also specified in <a href="appendixg.xml#HTML5">[HTML5]</a> and where necessary to note where HTML and XML usage differ.
+            
+         </p>
+         <p>
+            The Working Group maintains a comprehensive 
+            <a href="http://www.w3.org/Math/testsuite/">Test Suite</a>.  This 
+            is publicly available and developers are encouraged to submit their results for display.  
+            The <a href="http://www.w3.org/Math/testsuite/results/tests.html">Test Results</a> 
+            are public.  They show at least two interoperable implementations for each 
+            essential test. Further details may be found in the 
+            <a href="http://www.w3.org/Math/Documents/mml3-implementation-report.html">Implementation Report</a>.
+         </p>
+         <p>
+            The MathML 2.0 (Second Edition) specification has been a W3C
+            Recommendation since 2001.  After its
+            recommendation, a W3C Math Interest Group collected 
+            reports of  experience
+            with the deployment of MathML and identified issues with MathML that
+            might be ameliorated.  The rechartering of a Math Working Group
+            did not signal any change in the overall design of MathML.
+            The major additions in MathML 3 are support for
+            bidirectional layout, better linebreaking and explicit positioning,
+            elementary math notations, and a new strict content MathML vocabulary
+            with well-defined semantics.  The MathML 3 Specification has also been
+            restructured. 
+            
+         </p>
+         <p> This document was produced by a group operating under 
+            the <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</a>. W3C maintains a 
+            <a href="http://www.w3.org/2004/01/pp-impl/35549/status" rel="disclosure">public list of any patent disclosures</a> made in connection with 
+            the deliverables of the group; that page also includes instructions 
+            for disclosing a patent. An individual who has actual knowledge of 
+            a patent which the individual believes contains 
+            <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a> 
+            must disclose the information in accordance with 
+            <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the W3C Patent Policy</a>.
+         </p>
+         <p>Public discussion of MathML and issues of support through the W3C
+            for mathematics on the Web takes place on <a href="mailto:www-math@w3.org"> the public mailing list of the Math Working
+               Group</a> (<a href="http://lists.w3.org/Archives/Public/www-math/">list archives</a>).
+            To subscribe send an email to <a href="mailto:www-math-request@w3.org">www-math-request@w3.org</a>
+            with the word <code>subscribe</code> in the subject line.
+            
+         </p>
+         <p>
+            The basic chapter structure of this document is based on the earlier
+            MathML 2.0 Recommendation <a href="appendixh.xml#MathML2">[MathML2]</a>.  That MathML 2.0
+            itself was a revision of the earlier W3C Recommendation MathML 1.01
+            <a href="appendixh.xml#MathML1">[MathML1]</a>; MathML 3.0 is a revision of the W3C
+            Recommendation MathML 2.0.  It differs from it in that all previous
+            chapters have been updated, some new
+            elements and attributes added and some
+            deprecated.  
+            Much has been moved to separate documents containing explanatory
+            material, material on characters and entities and on the MathML DOM.
+            The discussion of character entities has led to the document
+            <em>XML Entity Definitions for Characters</em> <a href="appendixg.xml#Entities">[Entities]</a>,
+            which is now a W3C Recommendation.  The concern with 
+            use of CSS with MathML has led to the document <em>A MathML for CSS Profile</em> 
+            <a href="appendixh.xml#MathMLforCSS">[MathMLforCSS]</a>, which was  a W3C Recommendation 
+            accompanying MathML 3.0.
+            
+            
+         </p>
+         <p>
+            The biggest differences from MathML 2.0 (Second Edition) are in Chapters 4 and 5, although there have been
+            smaller improvements throughout the specification.  A more detailed
+            description of changes from the previous Recommendation follows.
+            
+         </p>
+         <ul>
+            <li>
+               <p>
+                  Much of the non-normative explication
+                  that formerly was found in Chapters 1 and 2, and many examples from
+                  elsewhere in the previous MathML specifications, were removed
+                  from the MathML3 specification and planned to be incorporated into a MathML Primer
+                  to be prepared as a separate document.  It is expected this will help
+                  the use of this formal MathML3 specification as a reference document
+                  in implementations, and offer the new user better help in
+                  understanding MathML's deployment. The remaining content of Chapters 1
+                  and 2 has been edited to reflect the changes elsewhere in the
+                  document, and in the rapidly evolving Web environment. Some of the
+                  text in them went back to early days of the Web and XML, and its
+                  explanations are now commonplace.
+                  
+               </p>
+            </li>
+            <li>
+               <p>
+                  Chapter 3, on presentation-oriented markup, adds new material on linebreaking,
+                  and on markup for elementary math notations used in many
+                  countries (<code>mstack</code>, <code>mlongdiv</code> and other 
+                  associated elements). Other changes include revisions to 
+                  the <code>mglyph</code>, <code>mpadded</code> and <code>maction</code> 
+                  elements and significant unification and cleanup of attribute 
+                  values.
+                  Earlier work, as recorded in the W3C Note <a href="http://www.w3.org/TR/2006/NOTE-arabic-math-20060131/">Arabic
+                     mathematical notation</a>, has allowed clarification of the
+                  relationship with bidirectional text and examples
+                  with RTL text have been added.
+                  
+               </p>
+            </li>
+            <li>
+               <p>
+                  Chapter 4, on content-oriented markup, contains major changes and additions.
+                  The  meaning of the actual content remains as before in principle, 
+                  but a lot of work has been done on expressing it better. A few new elements have been added.
+                  
+               </p>
+            </li>
+            <li>
+               <p>
+                  Chapter 5 has been refined as its purpose has been further
+                  clarified to deal with the mixing of markup languages.  This chapter deals,
+                  in particular, with interrelations of parts of the
+                  MathML specification, especially with presentation and content
+                  markup.
+                  
+               </p>
+            </li>
+            <li>
+               <p>
+                  Chapter 6 is a new addition which deals with the issues of interaction
+                  of MathML with a host environment.  This chapter deals with interrelations 
+                  of  the MathML specification with XML and HTML, but in the context of deployment
+                  on the Web.  In particular there is a discussion of the interaction of CSS
+                  with MathML.
+                  
+               </p>
+            </li>
+            <li>
+               <p>
+                  Chapter 7 replaces the previous Chapter 6, and has been rewritten 
+                  and reorganized to reflect the new
+                  situation in regard to Unicode, and the changed
+                  W3C context with regard to named character entities.  The
+                  new W3C specification <em>XML Entity Definitions for 
+                     Characters</em>, which  incorporates those used for mathematics has
+                  become a  a W3C Recommendation, <a href="appendixg.xml#Entities">[Entities]</a>.
+               </p>
+            </li>
+            <li>
+               <p> 
+                  The Appendices, of which there are eight shown, have been 
+                  reworked.  
+                  Appendix A now contains the new RelaxNG schema
+                  for MathML3 as well as discussion of MathML3 DTD issues.
+                  Appendix B addresses media types associated with MathML and
+                  implicitly constitutes a request for the registration of three new ones,
+                  as is now standard for work from the W3C.
+                  Appendix C contains a new simplified and reconsidered Operator Dictionary.
+                  Appendices D, E, F, G and H contain similar non-normative material to
+                  that in the previous specification, now appropriately updated.
+                  
+               </p>
+            </li>
+            <li>
+               <p> 
+                  A fuller discussion of the document's evolution can be found in 
+                  <a href="appendixf.xml">Appendix F Changes</a>. 
+                  
+               </p>
+            </li>
+         </ul>
+      </div>
+      <div class="toc">
+         
+         <h2><a id="contents"></a>Table of Contents
+         </h2>
+         <p class="toc">1 <a href="chapter1.xml">Introduction</a><br class="html-compat" />
+                1.1 <a href="chapter1.xml#intro.notation">Mathematics and its Notation</a><br class="html-compat" />
+                1.2 <a href="chapter1.xml#intro.origin">Origins and Goals</a><br class="html-compat" />
+                    1.2.1 <a href="chapter1.xml#intro.goals">Design Goals of MathML</a><br class="html-compat" />
+                1.3 <a href="chapter1.xml#intro.overview">Overview</a><br class="html-compat" />
+                1.4 <a href="chapter1.xml#intro.example">A First Example</a><br class="html-compat" />
+            2 <a href="chapter2.xml">MathML Fundamentals</a><br class="html-compat" />
+                2.1 <a href="chapter2.xml#fund.syntax">MathML Syntax and Grammar</a><br class="html-compat" />
+                    2.1.1 <a href="chapter2.xml#fund.xmlgeneral">General Considerations</a><br class="html-compat" />
+                    2.1.2 <a href="chapter2.xml#interf.namespace">MathML and Namespaces</a><br class="html-compat" />
+                    2.1.3 <a href="chapter2.xml#fund.xmlsyntax">Children versus Arguments</a><br class="html-compat" />
+                    2.1.4 <a href="chapter2.xml#fund.renderingmodel">MathML and Rendering</a><br class="html-compat" />
+                    2.1.5 <a href="chapter2.xml#fund.attval">MathML Attribute Values</a><br class="html-compat" />
+                    2.1.6 <a href="chapter2.xml#fund.globatt">Attributes Shared by all MathML Elements</a><br class="html-compat" />
+                    2.1.7 <a href="chapter2.xml#fund.collapse">Collapsing Whitespace in Input</a><br class="html-compat" />
+                2.2 <a href="chapter2.xml#interf.toplevel">The Top-Level 
+               <code>&lt;math&gt;</code> Element</a><br class="html-compat" />
+                    2.2.1 <a href="chapter2.xml#interf.toplevel.atts">Attributes</a><br class="html-compat" />
+                    2.2.2 <a href="chapter2.xml#id.2.2.2">Deprecated Attributes</a><br class="html-compat" />
+                2.3 <a href="chapter2.xml#interf.genproc">Conformance</a><br class="html-compat" />
+                    2.3.1 <a href="chapter2.xml#fund.mathmlconf">MathML Conformance</a><br class="html-compat" />
+                    2.3.2 <a href="chapter2.xml#interf.error">Handling of Errors</a><br class="html-compat" />
+                    2.3.3 <a href="chapter2.xml#interf.unspecified">Attributes for unspecified data</a><br class="html-compat" />
+            3 <a href="chapter3.xml">Presentation Markup</a><br class="html-compat" />
+                3.1 <a href="chapter3.xml#presm.intro">Introduction</a><br class="html-compat" />
+                    3.1.1 <a href="chapter3.xml#id.3.1.1">What Presentation Elements Represent</a><br class="html-compat" />
+                    3.1.2 <a href="chapter3.xml#id.3.1.2">Terminology Used In This Chapter</a><br class="html-compat" />
+                    3.1.3 <a href="chapter3.xml#presm.reqarg">Required Arguments</a><br class="html-compat" />
+                    3.1.4 <a href="chapter3.xml#id.3.1.4">Elements with Special Behaviors</a><br class="html-compat" />
+                    3.1.5 <a href="chapter3.xml#presm.bidi">Directionality</a><br class="html-compat" />
+                    3.1.6 <a href="chapter3.xml#presm.scriptlevel">Displaystyle and Scriptlevel</a><br class="html-compat" />
+                    3.1.7 <a href="chapter3.xml#presm.linebreaking">Linebreaking of Expressions</a><br class="html-compat" />
+                    3.1.8 <a href="chapter3.xml#presm.warnfinetuning">Warning about fine-tuning of presentation</a><br class="html-compat" />
+                    3.1.9 <a href="chapter3.xml#presm.summary">Summary of Presentation Elements</a><br class="html-compat" />
+                    3.1.10 <a href="chapter3.xml#presm.presatt">Mathematics style attributes common to presentation elements</a><br class="html-compat" />
+                3.2 <a href="chapter3.xml#presm.tokel">Token Elements</a><br class="html-compat" />
+                    3.2.1 <a href="chapter3.xml#presm.tokenchars">
+               Token Element Content Characters, <code>&lt;mglyph/&gt;</code></a><br class="html-compat" />
+                    3.2.2 <a href="chapter3.xml#presm.commatt">Mathematics style attributes common to token elements</a><br class="html-compat" />
+                    3.2.3 <a href="chapter3.xml#presm.mi">Identifier <code>&lt;mi&gt;</code></a><br class="html-compat" />
+                    3.2.4 <a href="chapter3.xml#presm.mn">Number <code>&lt;mn&gt;</code></a><br class="html-compat" />
+                    3.2.5 <a href="chapter3.xml#presm.mo">Operator, Fence, Separator or Accent
+               <code>&lt;mo&gt;</code></a><br class="html-compat" />
+                    3.2.6 <a href="chapter3.xml#presm.mtext">Text <code>&lt;mtext&gt;</code></a><br class="html-compat" />
+                    3.2.7 <a href="chapter3.xml#presm.mspace">Space <code>&lt;mspace/&gt;</code></a><br class="html-compat" />
+                    3.2.8 <a href="chapter3.xml#presm.ms">String Literal <code>&lt;ms&gt;</code></a><br class="html-compat" />
+                3.3 <a href="chapter3.xml#presm.genlayout">General Layout Schemata</a><br class="html-compat" />
+                    3.3.1 <a href="chapter3.xml#presm.mrow">Horizontally Group Sub-Expressions
+               <code>&lt;mrow&gt;</code></a><br class="html-compat" />
+                    3.3.2 <a href="chapter3.xml#presm.mfrac">Fractions <code>&lt;mfrac&gt;</code></a><br class="html-compat" />
+                    3.3.3 <a href="chapter3.xml#presm.mroot">Radicals <code>&lt;msqrt&gt;</code>, <code>&lt;mroot&gt;</code></a><br class="html-compat" />
+                    3.3.4 <a href="chapter3.xml#presm.mstyle">Style Change <code>&lt;mstyle&gt;</code></a><br class="html-compat" />
+                    3.3.5 <a href="chapter3.xml#presm.merror">Error Message <code>&lt;merror&gt;</code></a><br class="html-compat" />
+                    3.3.6 <a href="chapter3.xml#presm.mpadded">Adjust Space Around Content
+               <code>&lt;mpadded&gt;</code></a><br class="html-compat" />
+                    3.3.7 <a href="chapter3.xml#presm.mphantom">Making Sub-Expressions Invisible <code>&lt;mphantom&gt;</code></a><br class="html-compat" />
+                    3.3.8 <a href="chapter3.xml#presm.mfenced">Expression Inside Pair of Fences
+               <code>&lt;mfenced&gt;</code></a><br class="html-compat" />
+                    3.3.9 <a href="chapter3.xml#presm.menclose">Enclose Expression Inside Notation
+               <code>&lt;menclose&gt;</code></a><br class="html-compat" />
+                3.4 <a href="chapter3.xml#presm.scrlim">Script and Limit Schemata</a><br class="html-compat" />
+                    3.4.1 <a href="chapter3.xml#presm.msub">Subscript <code>&lt;msub&gt;</code></a><br class="html-compat" />
+                    3.4.2 <a href="chapter3.xml#presm.msup">Superscript <code>&lt;msup&gt;</code></a><br class="html-compat" />
+                    3.4.3 <a href="chapter3.xml#presm.msubsup">Subscript-superscript Pair <code>&lt;msubsup&gt;</code></a><br class="html-compat" />
+                    3.4.4 <a href="chapter3.xml#presm.munder">Underscript <code>&lt;munder&gt;</code></a><br class="html-compat" />
+                    3.4.5 <a href="chapter3.xml#presm.mover">Overscript <code>&lt;mover&gt;</code></a><br class="html-compat" />
+                    3.4.6 <a href="chapter3.xml#presm.munderover">Underscript-overscript Pair
+               <code>&lt;munderover&gt;</code></a><br class="html-compat" />
+                    3.4.7 <a href="chapter3.xml#presm.mmultiscripts">Prescripts and Tensor Indices
+               <code>&lt;mmultiscripts&gt;</code>,
+               <code>&lt;mprescripts/&gt;</code>,
+               <code>&lt;none/&gt;</code></a><br class="html-compat" />
+                3.5 <a href="chapter3.xml#presm.tabmat">Tabular Math</a><br class="html-compat" />
+                    3.5.1 <a href="chapter3.xml#presm.mtable">Table or Matrix
+               <code>&lt;mtable&gt;</code></a><br class="html-compat" />
+                    3.5.2 <a href="chapter3.xml#presm.mtr">Row in Table or Matrix <code>&lt;mtr&gt;</code></a><br class="html-compat" />
+                    3.5.3 <a href="chapter3.xml#presm.mlabeledtr">Labeled Row in Table or Matrix
+               <code>&lt;mlabeledtr&gt;</code></a><br class="html-compat" />
+                    3.5.4 <a href="chapter3.xml#presm.mtd">Entry in Table or Matrix <code>&lt;mtd&gt;</code></a><br class="html-compat" />
+                    3.5.5 <a href="chapter3.xml#presm.malign">Alignment Markers
+               <code>&lt;maligngroup/&gt;</code>, <code>&lt;malignmark/&gt;</code></a><br class="html-compat" />
+                3.6 <a href="chapter3.xml#presm.elementary">Elementary Math</a><br class="html-compat" />
+                    3.6.1 <a href="chapter3.xml#presm.mstack">Stacks of Characters <code>&lt;mstack&gt;</code></a><br class="html-compat" />
+                    3.6.2 <a href="chapter3.xml#presm.mlongdiv">Long Division <code>&lt;mlongdiv&gt;</code></a><br class="html-compat" />
+                    3.6.3 <a href="chapter3.xml#presm.msgroup">Group Rows with Similiar Positions <code>&lt;msgroup&gt;</code></a><br class="html-compat" />
+                    3.6.4 <a href="chapter3.xml#presm.msrow">Rows in Elementary Math <code>&lt;msrow&gt;</code></a><br class="html-compat" />
+                    3.6.5 <a href="chapter3.xml#presm.mscarries">Carries, Borrows, and Crossouts <code>&lt;mscarries&gt;</code></a><br class="html-compat" />
+                    3.6.6 <a href="chapter3.xml#presm.mscarry">A Single Carry <code>&lt;mscarry&gt;</code></a><br class="html-compat" />
+                    3.6.7 <a href="chapter3.xml#presm.msline">Horizontal Line <code>&lt;msline/&gt;</code></a><br class="html-compat" />
+                    3.6.8 <a href="chapter3.xml#presm.elemmath.examples">Elementary Math Examples</a><br class="html-compat" />
+                3.7 <a href="chapter3.xml#presm.enliven">Enlivening Expressions</a><br class="html-compat" />
+                    3.7.1 <a href="chapter3.xml#presm.maction">Bind Action to Sub-Expression
+               <code>&lt;maction&gt;</code></a><br class="html-compat" />
+                3.8 <a href="chapter3.xml#presm.semantics">Semantics and Presentation</a><br class="html-compat" />
+            4 <a href="chapter4.xml">Content Markup</a><br class="html-compat" />
+                4.1 <a href="chapter4.xml#contm.intro">Introduction</a><br class="html-compat" />
+                    4.1.1 <a href="chapter4.xml#id.4.1.1">The Intent of Content Markup</a><br class="html-compat" />
+                    4.1.2 <a href="chapter4.xml#contm.rendering">The Structure and Scope of Content MathML Expressions</a><br class="html-compat" />
+                    4.1.3 <a href="chapter4.xml#contm.strict">Strict Content MathML</a><br class="html-compat" />
+                    4.1.4 <a href="chapter4.xml#contm.cds">Content Dictionaries</a><br class="html-compat" />
+                    4.1.5 <a href="chapter4.xml#contm.concepts">Content MathML Concepts</a><br class="html-compat" />
+                4.2 <a href="chapter4.xml#contm.core">Content MathML Elements Encoding Expression Structure</a><br class="html-compat" />
+                    4.2.1 <a href="chapter4.xml#contm.cn">Numbers <code>&lt;cn&gt;</code></a><br class="html-compat" />
+                    4.2.2 <a href="chapter4.xml#contm.ci">Content Identifiers <code>&lt;ci&gt;</code></a><br class="html-compat" />
+                    4.2.3 <a href="chapter4.xml#contm.csymbol">Content Symbols <code>&lt;csymbol&gt;</code></a><br class="html-compat" />
+                    4.2.4 <a href="chapter4.xml#contm.cs">String Literals <code>&lt;cs&gt;</code></a><br class="html-compat" />
+                    4.2.5 <a href="chapter4.xml#contm.apply">Function Application <code>&lt;apply&gt;</code></a><br class="html-compat" />
+                    4.2.6 <a href="chapter4.xml#contm.binding">Bindings and Bound Variables <code>&lt;bind&gt;</code>
+               and <code>&lt;bvar&gt;</code></a><br class="html-compat" />
+                    4.2.7 <a href="chapter4.xml#contm.sharing">Structure Sharing <code>&lt;share&gt;</code></a><br class="html-compat" />
+                    4.2.8 <a href="chapter4.xml#contm.semantics">Attribution via <code>semantics</code></a><br class="html-compat" />
+                    4.2.9 <a href="chapter4.xml#contm.cerror">Error Markup <code>&lt;cerror&gt;</code></a><br class="html-compat" />
+                    4.2.10 <a href="chapter4.xml#contm.cbytes">Encoded Bytes <code>&lt;cbytes&gt;</code></a><br class="html-compat" />
+                4.3 <a href="chapter4.xml#contm.structure.extended">Content MathML for Specific Structures</a><br class="html-compat" />
+                    4.3.1 <a href="chapter4.xml#contm.container">Container Markup</a><br class="html-compat" />
+                    4.3.2 <a href="chapter4.xml#contm.bind.apply">Bindings with <code>&lt;apply&gt;</code></a><br class="html-compat" />
+                    4.3.3 <a href="chapter4.xml#contm.qualifiers">Qualifiers</a><br class="html-compat" />
+                    4.3.4 <a href="chapter4.xml#contm.opclasses">Operator Classes</a><br class="html-compat" />
+                    4.3.5 <a href="chapter4.xml#id.4.3.5">Non-strict Attributes</a><br class="html-compat" />
+                4.4 <a href="chapter4.xml#contm.opel">Content MathML for Specific Operators and Constants</a><br class="html-compat" />
+                    4.4.1 <a href="chapter4.xml#contm.basicfun">Functions and Inverses</a><br class="html-compat" />
+                    4.4.2 <a href="chapter4.xml#id.4.4.2">Arithmetic, Algebra and Logic</a><br class="html-compat" />
+                    4.4.3 <a href="chapter4.xml#id.4.4.3">Relations</a><br class="html-compat" />
+                    4.4.4 <a href="chapter4.xml#id.4.4.4">Calculus and Vector Calculus</a><br class="html-compat" />
+                    4.4.5 <a href="chapter4.xml#contm.sets">Theory of Sets</a><br class="html-compat" />
+                    4.4.6 <a href="chapter4.xml#id.4.4.6">Sequences and Series</a><br class="html-compat" />
+                    4.4.7 <a href="chapter4.xml#contm.elemclass">Elementary classical functions</a><br class="html-compat" />
+                    4.4.8 <a href="chapter4.xml#id.4.4.8">Statistics</a><br class="html-compat" />
+                    4.4.9 <a href="chapter4.xml#id.4.4.9">Linear Algebra</a><br class="html-compat" />
+                    4.4.10 <a href="chapter4.xml#contm.constantsandsymbols">Constant and Symbol Elements</a><br class="html-compat" />
+                4.5 <a href="chapter4.xml#contm.deprecated">Deprecated Content Elements</a><br class="html-compat" />
+                    4.5.1 <a href="chapter4.xml#contm.declare">Declare <code>&lt;declare&gt;</code></a><br class="html-compat" />
+                    4.5.2 <a href="chapter4.xml#contm.reln">Relation <code>&lt;reln&gt;</code></a><br class="html-compat" />
+                    4.5.3 <a href="chapter4.xml#contm.fn">Relation <code>&lt;fn&gt;</code></a><br class="html-compat" />
+                4.6 <a href="chapter4.xml#contm.p2s">The Strict Content MathML Transformation</a><br class="html-compat" />
+            5 <a href="chapter5.xml">Mixing Markup Languages for Mathematical Expressions</a><br class="html-compat" />
+                5.1 <a href="chapter5.xml#mixing.semantic.annotations">Annotation Framework</a><br class="html-compat" />
+                    5.1.1 <a href="chapter5.xml#mixing.annotation.elements">Annotation elements</a><br class="html-compat" />
+                    5.1.2 <a href="chapter5.xml#mixing.annotation.keys">Annotation keys</a><br class="html-compat" />
+                    5.1.3 <a href="chapter5.xml#mixing.alternate.representations">Alternate representations</a><br class="html-compat" />
+                    5.1.4 <a href="chapter5.xml#mixing.content.equiv">Content equivalents</a><br class="html-compat" />
+                    5.1.5 <a href="chapter5.xml#mixing.annotation.references">Annotation references</a><br class="html-compat" />
+                5.2 <a href="chapter5.xml#mixing.semantic.elements">Elements for Semantic Annotations</a><br class="html-compat" />
+                    5.2.1 <a href="chapter5.xml#mixing.elements.semantics">The <code>&lt;semantics&gt;</code> element</a><br class="html-compat" />
+                    5.2.2 <a href="chapter5.xml#mixing.elements.annotation">The <code>&lt;annotation&gt;</code> element</a><br class="html-compat" />
+                    5.2.3 <a href="chapter5.xml#mixing.elements.annotation.xml">The <code>&lt;annotation-xml&gt;</code> element</a><br class="html-compat" />
+                5.3 <a href="chapter5.xml#mixing.markup">Combining Presentation and Content Markup</a><br class="html-compat" />
+                    5.3.1 <a href="chapter5.xml#mixing.pmincm">Presentation Markup in Content Markup</a><br class="html-compat" />
+                    5.3.2 <a href="chapter5.xml#mixing.cminpm">Content Markup in Presentation Markup</a><br class="html-compat" />
+                5.4 <a href="chapter5.xml#mixing.parallel">Parallel Markup</a><br class="html-compat" />
+                    5.4.1 <a href="chapter5.xml#mixing.top.level">Top-level Parallel Markup</a><br class="html-compat" />
+                    5.4.2 <a href="chapter5.xml#mixing.cr">Parallel Markup via Cross-References</a><br class="html-compat" />
+            6 <a href="chapter6.xml">Interactions with the Host Environment</a><br class="html-compat" />
+                6.1 <a href="chapter6.xml#world.introduction">Introduction</a><br class="html-compat" />
+                6.2 <a href="chapter6.xml#world.invoking.processors">Invoking MathML Processors</a><br class="html-compat" />
+                    6.2.1 <a href="chapter6.xml#world.recognizing.mathml">Recognizing MathML in XML</a><br class="html-compat" />
+                    6.2.2 <a href="chapter6.xml#world.recognizing.mathml.html">Recognizing MathML in HTML</a><br class="html-compat" />
+                    6.2.3 <a href="chapter6.xml#world.resource.types">Resource Types for MathML Documents</a><br class="html-compat" />
+                    6.2.4 <a href="chapter6.xml#encoding-names">Names of MathML Encodings</a><br class="html-compat" />
+                6.3 <a href="chapter6.xml#world-int-transfers">Transferring MathML</a><br class="html-compat" />
+                    6.3.1 <a href="chapter6.xml#world-int-transf-flavors">Basic Transfer Flavor Names and Contents</a><br class="html-compat" />
+                    6.3.2 <a href="chapter6.xml#world-int-transf-recommend">Recommended Behaviors when Transferring</a><br class="html-compat" />
+                    6.3.3 <a href="chapter6.xml#world-int-transf-discuss">Discussion</a><br class="html-compat" />
+                    6.3.4 <a href="chapter6.xml#world-int-transf-exa">Examples</a><br class="html-compat" />
+                6.4 <a href="chapter6.xml#world-int-combine-other">Combining MathML and Other Formats</a><br class="html-compat" />
+                    6.4.1 <a href="chapter6.xml#interf.xhtml">Mixing MathML and XHTML</a><br class="html-compat" />
+                    6.4.2 <a href="chapter6.xml#interf.nonxml">Mixing MathML and  non-XML contexts</a><br class="html-compat" />
+                    6.4.3 <a href="chapter6.xml#interf.html">Mixing MathML and HTML</a><br class="html-compat" />
+                    6.4.4 <a href="chapter6.xml#interf.link">Linking</a><br class="html-compat" />
+                    6.4.5 <a href="chapter6.xml#interf.graphics">MathML and Graphical Markup</a><br class="html-compat" />
+                6.5 <a href="chapter6.xml#world-int-style">Using CSS with MathML</a><br class="html-compat" />
+                    6.5.1 <a href="chapter6.xml#id.6.5.1">Order of processing attributes versus style sheets</a><br class="html-compat" />
+            7 <a href="chapter7.xml">Characters, Entities and Fonts</a><br class="html-compat" />
+                7.1 <a href="chapter7.xml#chars.intro">Introduction</a><br class="html-compat" />
+                7.2 <a href="chapter7.xml#chars.unicodechars">Unicode Character Data</a><br class="html-compat" />
+                7.3 <a href="chapter7.xml#chars.entities">Entity Declarations</a><br class="html-compat" />
+                7.4 <a href="chapter7.xml#chars.mglyph">Special Characters Not in Unicode</a><br class="html-compat" />
+                7.5 <a href="chapter7.xml#chars.BMP-SMP">Mathematical Alphanumeric Symbols</a><br class="html-compat" />
+                7.6 <a href="chapter7.xml#chars.nonmark">Non-Marking Characters</a><br class="html-compat" />
+                7.7 <a href="chapter7.xml#chars.anomalous">Anomalous Mathematical Characters</a><br class="html-compat" />
+                    7.7.1 <a href="chapter7.xml#chars.keyboard">Keyboard Characters</a><br class="html-compat" />
+                    7.7.2 <a href="chapter7.xml#chars.pseudo-scripts">Pseudo-scripts</a><br class="html-compat" />
+                    7.7.3 <a href="chapter7.xml#chars.comb-chars">Combining Characters</a><br class="html-compat" />
+            
+         </p>
+         
+         <h3><a id="appendices"></a>Appendices
+         </h3>
+         <p class="toc">A <a href="appendixa.xml">Parsing MathML</a><br class="html-compat" />
+                A.1 <a href="appendixa.xml#parsing.wellformed">Use of MathML as Well-Formed
+               XML</a><br class="html-compat" />
+                A.2 <a href="appendixa.xml#parsing.usingrnc">Using the RelaxNG Schema for MathML3</a><br class="html-compat" />
+                    A.2.1 <a href="appendixa.xml#parsing.rnc.full">Full MathML</a><br class="html-compat" />
+                    A.2.2 <a href="appendixa.xml#parsing.rnc.common">Elements Common to Presentation and Content MathML</a><br class="html-compat" />
+                    A.2.3 <a href="appendixa.xml#parsing.rnc.pres">The Grammar for Presentation MathML</a><br class="html-compat" />
+                    A.2.4 <a href="appendixa.xml#parsing.rnc.strict">The Grammar for Strict Content MathML3</a><br class="html-compat" />
+                    A.2.5 <a href="appendixa.xml#parsing.rnc.content">The Grammar for Content MathML</a><br class="html-compat" />
+                    A.2.6 <a href="appendixa.xml#parsing.rnc.module">MathML as a module in a RelaxNG Schema</a><br class="html-compat" />
+                A.3 <a href="appendixa.xml#parsing.usingdtd">Using the MathML DTD</a><br class="html-compat" />
+                    A.3.1 <a href="appendixa.xml#interf.validation">Document Validation Issues</a><br class="html-compat" />
+                    A.3.2 <a href="appendixa.xml#id.A.3.2">Attribute values in the MathML DTD</a><br class="html-compat" />
+                    A.3.3 <a href="appendixa.xml#parsing.doctype">DOCTYPE declaration for MathML</a><br class="html-compat" />
+                A.4 <a href="appendixa.xml#parsing.usingxsd">Using the MathML XML Schema</a><br class="html-compat" />
+                    A.4.1 <a href="appendixa.xml#parsing.schemalocation">Associating the MathML schema with MathML fragments</a><br class="html-compat" />
+                A.5 <a href="appendixa.xml#parsing.mml.xhtml">Parsing MathML in XHTML</a><br class="html-compat" />
+                A.6 <a href="appendixa.xml#parsing.mml.html">Parsing MathML in HTML</a><br class="html-compat" />
+            B <a href="appendixb.xml">Media Types Registrations</a><br class="html-compat" />
+                B.1 <a href="appendixb.xml#media-type-choosing">Selection of Media Types for
+               MathML Instances</a><br class="html-compat" />
+                B.2 <a href="appendixb.xml#media-types-mathml">Media type for Generic MathML</a><br class="html-compat" />
+                B.3 <a href="appendixb.xml#media-types-mathml-p">Media type for Presentation MathML</a><br class="html-compat" />
+                B.4 <a href="appendixb.xml#media-types-mathml-c">Media type for Content MathML</a><br class="html-compat" />
+            C <a href="appendixc.xml">Operator Dictionary (Non-Normative)</a><br class="html-compat" />
+                C.1 <a href="appendixc.xml#oper-dict.index">Indexing of the operator dictionary</a><br class="html-compat" />
+                C.2 <a href="appendixc.xml#oper-dict.format">Format of operator dictionary entries</a><br class="html-compat" />
+                C.3 <a href="appendixc.xml#oper-dict.space">Notes on lspace and 
+               rspace attributes</a><br class="html-compat" />
+                C.4 <a href="appendixc.xml#oper-dict.entries-table">Operator dictionary entries</a><br class="html-compat" />
+            D <a href="appendixd.xml">Glossary (Non-Normative)</a><br class="html-compat" />
+            E <a href="appendixe.xml">Working Group Membership and Acknowledgments (Non-Normative)</a><br class="html-compat" />
+                E.1 <a href="appendixe.xml#contrib">The Math Working Group Membership</a><br class="html-compat" />
+                E.2 <a href="appendixe.xml#contrib.ack">Acknowledgments</a><br class="html-compat" />
+            F <a href="appendixf.xml">Changes (Non-Normative)</a><br class="html-compat" />
+                F.1 <a href="appendixf.xml#changes.mathml3.03e-mathml3.02e">Changes between MathML 3.0 Second Edition and Third Edition</a><br class="html-compat" />
+                F.2 <a href="appendixf.xml#changes.mathml3.02e-3.0">Changes between MathML 3.0 First Edition and Second Edition</a><br class="html-compat" />
+                F.3 <a href="appendixf.xml#changes.mathml2.0e-3.0">Changes between MathML 2.0 Second Edition and MathML 3.0</a><br class="html-compat" />
+            G <a href="appendixg.xml">Normative References</a><br class="html-compat" />
+            H <a href="appendixh.xml">References (Non-Normative)</a><br class="html-compat" />
+            I <a href="appendixi.xml">Index (Non-Normative)</a><br class="html-compat" />
+                I.1 <a href="appendixi.xml#index.elem">MathML Elements</a><br class="html-compat" />
+                I.2 <a href="appendixi.xml#index.att">MathML Attributes</a><br class="html-compat" />
+            
+         </p>
+      </div>
+      <hr class="html-compat" />
+      <div class="body"></div>
+      <div class="back"></div>
+   </body>
+</html>
