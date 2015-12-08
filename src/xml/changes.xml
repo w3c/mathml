@@ -1,0 +1,336 @@
+<inform-div1 id="changes" role="appendixj"><head>Changes</head>
+<!-- $Id: changes.xml,v 1.110 2014-11-21 13:44:08 dcarlis Exp $ -->
+
+<div2 id="changes_mathml3.03e-mathml3.02e">
+<head>Changes between MathML 3.0 Second Edition and Third Edition</head>
+<ulist>
+<item>
+<p>Changes to <specref ref="presm"/></p>
+<ulist>
+ <item><p>Separate the the examples in <specref ref="presm_mi_examples"/> and <specref ref="presm_mn_examples"/> to improve their appearance when rendered.</p></item>
+ <item><p>Clarify that negative numbers should be marked up with an explicit <el>mo</el> operator in <specref ref="presm_not_single_mn"/>.</p></item>
+ <item><p>Correct the long division notation names in <specref ref="presm_mlongdiv_attrs"/>.</p></item>
+ <item><p>Clarify that the horizontal alignment of scripts in <specref ref="presm_mmultiscripts"/> is towards the base, and add a new example.</p></item>
+</ulist>
+</item>
+
+<item>
+<p>Changes to <specref ref="mixing"/></p>
+<ulist>
+ <item><p>Fix grammatical and spelling typos in <intref ref="html-xml1">note</intref> and <specref ref="mixing_annotation_keys"/>.</p></item>
+</ulist>
+</item>
+</ulist>
+</div2>
+
+<div2 id="changes_mathml3.02e-3.0">
+<head>Changes between MathML 3.0 First Edition and Second Edition</head>
+
+
+
+<ulist>
+
+<item>
+<p>Changes to the Frontmatter</p>
+<ulist>
+<item><p>Changes to <specref ref="authors"/> to acknowlege the death of Robert Miner.</p></item>
+<item><p>Changes to <specref ref="abstract"/> to highlight MathML may be used in HTML as well as XML.</p></item>
+<item><p>Update  the <specref ref="status"/>.</p></item>
+</ulist>
+</item>
+<item>
+<p>Changes to the <specref ref="intro"/></p>
+<ulist>
+<item><p>Changes to <specref ref="intro_overview"/> to highlight MathML may be used in HTML as well as XML.</p></item>
+</ulist>
+</item>
+<item>
+<p>Changes to the <specref ref="fund"/></p>
+<ulist>
+<item><p>Changes to <specref ref="fund_xmlgeneral"/> to highlight MathML may be used in HTML as well as XML.</p></item>
+<item><p>Add element markup to heading in <specref ref="interf_toplevel"/>.</p></item>
+<item><p>Changes to <specref ref="interf_namespace"/> the <att>xmlns</att> syntax for namespaces only applies to the XML serialisation.</p></item>
+<item><p>Changes to <specref ref="fund_units"/> to clarify that values specified with a <code>%</code> or no unit are multiples of a <emph>reference</emph> value, which may differ from the <emph>default</emph> value used when the value is not specified.</p></item>
+<item id="chg3e_attval"><p>Changes to <intref ref="type_namedspace"><emph>namedspace</emph></intref> in <specref ref="fund_units"/> some attribute values such as <attval>thinmathspace</attval> were marked up as attribute <emph>names</emph>. (This affected  formatting and also the index <specref ref="index_att"/>).</p></item>
+<item><p>Additional paragraph describing global document property defaults in <specref ref="fund_defaults"/></p></item>
+</ulist>
+</item>
+<item>
+<p>Changes to the <specref ref="presm"/></p>
+<ulist>
+<item><p>Refer to <quote>characters</quote> rather than <quote>MathML Characters</quote> in <specref ref="presm_intro"/>.</p></item>
+<item><p>Delete the note about bidi in HTML in <specref ref="presm_bidi_token"/> (As there are proposals to change the HTML behavior).</p></item>
+<item><p>Corrected mistaken refererence to <el>mtext</el>, replaced by reference to <el>mo</el> in <specref ref="presm_warnspacing"/></p></item>
+<item><p>Refer to HTML rather than XHTML in <specref ref="presm_presatt"/></p></item>
+<item><p>Modify heading of <specref ref="presm_tokenchars"/>.</p></item>
+<item><p>Note in <specref ref="presm_mglyph"/> that the requirement to use  <att>src</att> and <att>alt</att> is not enforced by the schema.</p></item>
+<item><p>New section <specref ref="presm_html_insertion"/> detailing the use of HTML elements on MathML token elements</p></item>
+<item><p>Use U+2026 rather than <code>. . .</code> in the example in <specref ref="presm_mi"/>.</p></item>
+<item><p>Use percentage lengths rather than unitless lengths in examples in <specref ref="presm_op_stretch"/> 
+         and <specref ref="presm_mfrac"/></p></item>
+<item><p>Reference the Arabic Mathematical Symbols block in describing <att>mathvariant</att> in <specref ref="presm_commatt"/>.</p></item>
+<item><p>Do not specify that Math defaults may be set by using attributes in the MathML Namespace on the containing document, leave the mechanism open. <specref ref="presm_mo"/></p></item>
+<item><p>Changes to <specref ref="presm_mo_attrs"/> to clarify defaults may be specified in any containing document.</p></item>
+<item><p>Changes to <specref ref="presm_mo_dict_attrs"/> to clarify the interpretation of <att>maxsize</att>, <att>minsize</att> and <att>symmetric</att> values.</p></item>
+<item><p>Changes to <specref ref="presm_lbindent_attrs"/> to clarify behaviour if <att>indenttarget</att> results in an unachievable alignment specification.</p></item>
+<item><p>Changes to the examples in <specref ref="presm_invisibleops"/> so that each example is rendered as a separate <el>math</el> expression.</p></item>
+<item><p>Suggest CSS Counters as a possible mechanism for equation numbering in <specref ref="presm_mlabeledtr"/></p></item>
+<item><p>Minor improvements to the markup in <specref ref="presm_mstyle"/>.</p></item>
+<item><p>Minor improvements to the markup in <specref ref="presm_menclose"/>.</p></item>
+<item><p>Changes to the attribute table <specref ref="presm_mpaddedatt"/> To clarify that unitless lengths are allowed on <el>mpadded</el>, meaning, as usual, a multiplier of the stated default. Note that this change also affects the <code>mpadded-length</code> grammar uin the extracted schema.</p></item>
+<item><p>Explictly list mprescripts and none in heading for <specref ref="presm_mmultiscripts"/>.</p></item>
+<item><p>Changes to <specref ref="presm_mtable_attrs"/> to clarify that <att>displaystyle</att> defaults to <attval>false</attval> and to clarify the wording describing percentage values for <att>width</att>.</p></item>
+<item><p>Minor improvements to the markup in <specref ref="presm_mstack"/>.</p></item>
+<item><p>Editorial improvements to <specref ref="presm_addsub"/>.</p></item>
+<item><p>Modify the markup in the examples in <specref ref="presm_repeatdec"/> so that MathML renderings are shown in some versions of this specification.</p></item>
+<item><p>Note that attributes in other namespaces are not available in HTML in <specref ref="presm_maction"/></p></item>
+</ulist>
+</item>
+<item>
+<p>Changes to the <specref ref="contm"/></p>
+<ulist>
+<item><p>Add element markup to heading in <specref ref="contm_rendering_numbers"/>.</p></item>
+<item><p>Add syntax table for qualifier elements in  <specref ref="contm_domainofapplication_qualifier"/> and <specref ref="contm_degree"/>.</p></item>
+<item><p>Modify the text in  <specref ref="contm_concepts"/> to clarify the role of the <kw>Qualifier</kw> row of syntax tables. (AM)</p></item>
+<item><p>Spurious <el>apply</el> removed from the <quote>0</quote> case in  <intref ref="contm_piecewise-example">the example</intref> in <specref ref="contm_piecewise"/>.</p></item>
+<item><p>Changes to <specref ref="contm_p2s.partialdiff"/> The expression <emph>expression-in-x1-xk</emph> was rewritten to <emph>A</emph>. (AM)</p></item>
+<item><p>Additional note added to the <intref ref="contm_ci_mathmltypes">mathmltypes</intref> description clarifying that <attval>complex</attval> should be taken as an alias for <attval>complex-cartesian</attval> when rewriting to Strict Content MathML. (AM)</p></item>
+<item><p>Changes to <intref ref="s_data1.mean.ex1">s_data1.mean</intref>, <intref ref="s_dist1.mean.ex1">s_dist1.mean</intref>, <intref ref="s_dist1.moment.ex1">s_dist1.moment</intref> and <intref ref="s_data1.moment.ex1">s_data1.moment</intref> examples to use new values for &amp;lang; and &amp;rang; so the result is in Unicode NFC form.</p></item>
+<item><p>Changes to markup of syntax tables in <specref ref="contm_apply"/> and <specref ref="contm_share"/> to avoid redundant colspans, which make the html5 version invalid.</p></item>
+<item><p>Clarify the behavior of qualifiers in <intref ref="contm_p2s_step_vector">Step 4b</intref> of the rewrite to Strict Content MathML. (AM)</p></item>
+<item><p>Clarify that the types of the <emph>arguments</emph> are used to distinguish between set and multiset use of the <el>set</el> constructor in <specref ref="contm_nary_rewrite"/> and <specref ref="contm_narysetlist_rewrite"/>. (AM)</p></item>
+<item><p>Fix spelling in <specref ref="contm_not"/>.</p></item>
+<item><p>Fix spelling in <specref ref="contm_eq"/>.</p></item>
+<item><p>Split <specref ref="contm_trig"/> into separate sections <specref ref="contm_trig"/>,
+<specref ref="contm_trig"/>,<specref ref="contm_invtrig"/>, <specref ref="contm_hyperbolic"/>, <specref ref="contm_invhyperbolic"/>, add new presentation images for
+<intref ref="transc1.arcsin.ex1">arcsin</intref>.</p></item>
+<item><p>Add element markup to heading in <specref ref="contm_log"/>.</p></item>
+<item><p>Minor rearrangement of heading in <specref ref="contm_moment"/></p></item>
+<item><p>Add syntax table for deprecated elements in  <specref ref="contm_declare"/>, <specref ref="contm_fn"/> and <specref ref="contm_reln"/>.</p></item>
+</ulist>
+</item>
+<item><p>Changes to <specref ref="mixing"/>.</p>
+<ulist>
+<item><p>Changes to <specref ref="mixing_annotation_elements"/> to highlight MathML may be used in HTML as well as XML.</p></item>
+<item><p>Add additional <intref ref="html-xml1">note</intref> warning namespace extensibility example not applicable to HTML.</p></item>
+<item><p>Add additional <intref ref="html-xml2">note</intref> warning namespace extensibility example not applicable to HTML.</p></item>
+<item><p>Add additional <intref ref="html-xml3">note</intref> warning namespace extensibility example not applicable to HTML.</p></item>
+<item><p>Additional section <specref ref="html_annotation_xml"/> detailing the use of <el>annotation-xml</el>in HTML documents</p></item>
+<item><p>Show tag markup around element names in section headings in <intref ref="mixing_elements_semantics">semantics</intref>, <intref ref="mixing_elements_annotation">annotation</intref> and  <intref ref="mixing_elements_annotation_xml">annotation-xml</intref>.</p></item>
+</ulist>
+</item>
+
+
+<item><p>Changes to <specref ref="world-interactions"/>.</p>
+<ulist>
+<item><p>Editorial wording changes in <specref ref="world-int-combine-other"/>.</p></item>
+<item><p>Editorial wording changes in <specref ref="world-int-style"/>.</p></item>
+<item><p>Changes to wording on namespace use in <specref ref="world_introduction"/>.</p></item>
+<item><p>Additional section <specref ref="world_recognizing_mathml_html"/>.</p></item>
+<item><p>Remove XML Declaration and <code>mml</code> namespace prefix from the examples in <specref ref="world-int-transf-exa"/>.</p></item>
+<item><p>Delete recommendation to use prefixed element names in XHTML in <specref ref="interf_xhtml"/>.</p></item>
+<item><p>Split HTML into a separate section from other non-XML use <specref ref="interf_html"/> and <specref ref="interf_nonxml"/></p></item>
+<item><p>Remove the reference to <bibref ref="MathMLforCSS"/> in <specref ref="world-interactions"/>.</p></item>
+</ulist>
+</item>
+
+<item><p>Changes to <specref ref="chars"/>.</p>
+<ulist>
+<item><p>Change the DTD description in <specref ref="chars_entities"/> to reference the Combined HTML MathML entity set rather than the legacy ISO entity sets. This does not change any existing definition, but adds the following 38 entity definitions:
+<kw role="entity">QUOT</kw> (U+0022), 
+<kw role="entity">AMP</kw> (U+0026), 
+<kw role="entity">LT</kw> (U+003C), 
+<kw role="entity">GT</kw> (U+003E), 
+<kw role="entity">COPY</kw> (U+00A9), 
+<kw role="entity">REG</kw> (U+00AE), 
+<kw role="entity">Alpha</kw> (U+0391), 
+<kw role="entity">Beta</kw> (U+0392), 
+<kw role="entity">Epsilon</kw> (U+0395), 
+<kw role="entity">Zeta</kw> (U+0396), 
+<kw role="entity">Eta</kw> (U+0397), 
+<kw role="entity">Iota</kw> (U+0399), 
+<kw role="entity">Kappa</kw> (U+039A), 
+<kw role="entity">Mu</kw> (U+039C), 
+<kw role="entity">Nu</kw> (U+039D), 
+<kw role="entity">Omicron</kw> (U+039F), 
+<kw role="entity">Rho</kw> (U+03A1), 
+<kw role="entity">Tau</kw> (U+03A4), 
+<kw role="entity">Chi</kw> (U+03A7), 
+<kw role="entity">epsilon</kw> (U+03B5), 
+<kw role="entity">omicron</kw> (U+03BF), 
+<kw role="entity">sigmaf</kw> (U+03C2), 
+<kw role="entity">thetasym</kw> (U+03D1), 
+<kw role="entity">upsih</kw> (U+03D2), 
+<kw role="entity">zwnj</kw> (U+200C), 
+<kw role="entity">zwj</kw> (U+200D), 
+<kw role="entity">lrm</kw> (U+200E), 
+<kw role="entity">rlm</kw> (U+200F), 
+<kw role="entity">sbquo</kw> (U+201A), 
+<kw role="entity">bdquo</kw> (U+201E), 
+<kw role="entity">lsaquo</kw> (U+2039), 
+<kw role="entity">rsaquo</kw> (U+203A), 
+<kw role="entity">oline</kw> (U+203E), 
+<kw role="entity">frasl</kw> (U+2044), 
+<kw role="entity">euro</kw> (U+20AC), 
+<kw role="entity">TRADE</kw> (U+2122), 
+<kw role="entity">alefsym</kw> (U+2135), 
+<kw role="entity">crarr</kw> (U+21B5).</p></item>
+</ulist>
+</item>
+
+<item><p>Changes to <specref ref="parsing"/>.</p>
+<ulist>
+<item><p>Modify the schema regular expression to allow the deprecated unitless length attributes.</p></item>
+<item><p>The schema now enforces a mandatory space and optional minus sign before <emph>rownumber</emph> in the <att>align</att> attribute of <el>mtable</el> and <el>mstack</el>.</p></item>
+<item><p>Modify the schema (including DTD and XSD versions) to include the attributes listed in <specref ref="presm_lbindent_attrs"/> on <el>mspace</el> to match the text description in <specref ref="presm_mspace"/>.</p></item>
+<item><p>Modify the schema  to include the Common Attributes such as <att>id</att> on <el>bvar</el> and <el>cn</el> to match the attribute tables in the text</p></item>
+<item><p>Modify the regular expressions used for <code>mpadded-length</code> and <code>length</code> so that there must be at most one <code>.</code> and at least one digit. (FW)</p></item>
+<item><p>New sections: <specref ref="parsing_mml_xhtml"/> and <specref ref="parsing_mml_html"/>.</p></item>
+</ulist>
+</item>
+
+
+<item><p>Changes to <specref ref="oper-dict"/>.</p>
+<ulist>
+<item><p>Add entries for the characters listed in <specref ref="chars_pseudo-scripts"/>.</p></item>
+</ulist>
+</item>
+
+<item><p>Changes to <specref ref="contributors"/>.</p>
+<ulist>
+<item><p>Changes to <specref ref="contrib"/> to note the death of Robert Miner.</p></item>
+</ulist>
+</item>
+
+
+
+<item><p>Changes to <specref ref="n_references"/>.</p>
+<ulist>
+<item><p>Make <bibref ref="HTML5"/> normative.</p></item>
+<item><p>Update the references to current versions, 
+<bibref ref="Bidi"/>, <bibref ref="Entities"/>, <bibref ref="ISO10646"/>,
+<bibref ref="Normal"/>, <bibref ref="RELAX-NG"/>,
+<bibref ref="Unicode"/>.</p></item>
+</ulist>
+</item>
+
+
+<item><p>Changes to <specref ref="references"/>.</p>
+<ulist>
+<item><p>Update the references to current versions, 
+<bibref ref="AAP-math"/>, <bibref ref="Abramowitz1977"/>,
+<bibref ref="CSS21"/>, <bibref ref="ISO-12083"/>,
+<bibref ref="XLink"/>.</p></item>
+</ulist>
+</item>
+
+<item><p>Changes to <specref ref="index"/>.</p>
+<ulist>
+<item><p>Changes to <specref ref="index_att"/>.</p></item>
+</ulist>
+</item>
+</ulist>
+</div2>
+
+<div2 id="changes_mathml2.0e-3.0">
+<head>Changes between MathML 2.0 Second Edition and MathML 3.0</head>
+
+
+<ulist>
+
+<item><p>Changes to <specref ref="fund"/>.</p>
+<ulist>
+<item><p>The attribute <att>href</att> added to the common MathML attributes, <specref ref="fund_globatt"/> to allow hypertext links.</p></item>
+<item><p>Additional attributes added to the <el>math</el> element, see
+<specref ref="interf_toplevel_atts"/>.</p></item>
+</ulist>
+</item>
+<item>
+<p>Changes to <specref ref="presm"/>.</p>
+
+<ulist>
+<item><p>Introduced mechanisms for controlling the Directionality of layout, as described in <specref ref="presm_bidi"/>.</p></item>
+<item><p>Introduced mechanisms for controlling linebreaking <specref ref="presm_linebreaking"/>.</p></item>
+<item><p>Extended <el>mglyph</el> to support general image inclusion, <specref ref="presm_mglyph"/>.</p></item>
+<item><p>The facilities for adjusting spacing with <el>mpadded</el> have been extended and rationalised, <specref ref="presm_mpadded"/>.</p></item>
+<item>
+<p>Introduced new presentation elements for elementary math layouts, <specref ref="presm_elementary"/>: <el>mstack</el>, <el>mlongdiv</el>, <el>msgroup</el>, <el>msrow</el>, <el>mscarries</el>, <el>mscarry</el>, and <el>msline</el>.</p>
+</item>
+</ulist>
+
+</item>
+
+<item>
+<p>Changes to <specref ref="contm"/>.</p> 
+
+<ulist>
+<item>
+<p>Introduced new content elements <el>bind</el>, <el>share</el>, <el>cerror</el>, <el>cs</el> and  <el>cbytes</el>.</p>
+</item>
+
+<item>
+<p>Removed deprecated content elements <el>reln</el> and <el>fn</el>.</p>
+</item>
+
+<item>
+<p>Removed content element <el>declare</el>.</p>
+</item>
+
+<item>
+<p>The concept of Strict Content MathML and the use of OpenMath Content Dictionaries has been introduced, and the whole chapter restructured.</p>
+</item>
+</ulist>
+</item>
+
+
+
+<item>
+<p>Changes to <specref ref="mixing"/>.</p> 
+</item>
+
+
+<item>
+<p>New Chapter: <specref ref="world-interactions"/>.</p> 
+</item>
+
+
+<item>
+<p>Changes to <specref ref="chars"/>.</p>
+<p>This chapter is much reduced from the corresponding chapter in previous releases of MathML. All the tables and much of the other content of this chapter is now maintained as a separate document <bibref ref="Entities"/></p>
+</item>
+
+<item>
+<p>Changes to <specref ref="parsing"/>.</p>
+
+<ulist>
+<item>
+<p>The Normative version of the grammar is now expressed in Relax NG, with DTD and XSD versions being derived.</p>
+</item>
+<item>
+<p>Three MathML 1 attrbutes on <el>math</el> that were deprecated and undocumented in MathML2 but retained in the MathML2 DTD have been removed. <att>name</att> (use <att>id</att> instead), <att>baseline</att> and <att>type</att> (These are not used by any known implementation, so can be removed.) See Chapter 7 of <bibref ref="MathML1"/>.</p>
+</item>
+</ulist>
+</item>
+
+
+<item>
+<p>New Appendix: <specref ref="media-types-reg"/>.</p> 
+</item>
+
+
+<item>
+<p>Changes to <specref ref="oper-dict"/>.</p>
+<p>The Operator Dictionary table has been updated and rationalised and presented in a new format.</p>
+</item>
+
+<item>
+<p>MathML DOM</p>
+<p>The chapter and appendices relating to the MathML DOM have been removed from this specification, with the intention of updating them and publishing them as a separate document at a later time.</p>
+</item>
+</ulist>
+
+</div2>
+</inform-div1>
+
+<!-- LocalWords:  href mglyph mpadded mstack mlongdiv msgroup msrow mscarries -->
+<!-- LocalWords:  mscarry msline cerror cbytes reln fn NG -->

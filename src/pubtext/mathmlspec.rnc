@@ -1,0 +1,175 @@
+# #2000-03-19: Nico Poppelier: Added intref to local.ref.class.
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+local.ref.class |= intref | symbolref | cdref
+latestrecloc = element latestrecloc { attlist.latestrecloc, loc }
+attlist.latestrecloc &= empty
+
+# since attribute:
+# Provides the version in which the element was introduced.
+idl-since.att = attribute since { text }?
+# version attribute:
+# Provides the version in which the element was modified.
+idl-version.att = attribute version { text }?
+
+attlist.attribute &=
+  common.att,
+  idl-name.att,
+  idl-type.att,
+  idl-since.att,
+  idl-version.att,
+  [ a:defaultValue = "no" ] attribute readonly { "yes" | "no" }?
+setraises = element setraises { attlist.setraises, exception* }
+attlist.setraises &= common.att
+getraises = element getraises { attlist.getraises, exception* }
+attlist.getraises &= common.att
+
+# #2000-03-19: Nico Poppelier: Added intref, which functions the
+# same way as specref, but *with* content.
+
+# intref: Reference to a div, olist item, prod, or issue
+# in the present document.
+intref = element intref { attlist.intref, p.pcd.mix* }
+# ref attribute:
+# The purpose of a specref element is to link to a div, item
+# in an olist, or production in the current spec.
+attlist.intref &= common.att, ref-req.att
+attlist.graphic &= cellvalign.att
+
+attlist.MMLattribute &= empty
+attname = element attname { attlist.attname, text }
+attlist.attname &= empty
+attvalue = element attvalue { attlist.attvalue, (text | phrase)* }
+attlist.attvalue &= empty
+attdefault = element attdefault { attlist.attdefault, text }
+attlist.attdefault &= empty
+attlist.el &= attribute namespace { text }?
+attlist.att &= attribute namespace { text }?
+
+symbolref = element symbolref {attribute role {text}?, attribute name {text}, attribute cd {text}}
+cdref = element cdref {attribute cd {text}}
+
+rendering =
+  element rendering {
+    attlist.rendering, (ulist | p | graphic | note | head | MMLexample)*
+  }
+attlist.rendering &= empty
+
+optype = element optype { attlist.optype, text }
+attlist.optype &= empty
+
+MMLattribute =
+  element MMLattribute {
+    attlist.MMLattribute, attname, attvalue, attdefault
+  }
+
+MMLexample =
+  element MMLexample {
+    attlist.MMLexample, (text | description | phrase)*
+  }
+attlist.MMLexample &= common.att
+
+
+# dpc added MMLdefinition
+MMLdefinition =
+  element MMLdefinition {
+    common.att, 
+    (attribute cdrole {"binder"  | "constant" | "error" | "attribution" | "semanitc-attribution"} 
+     | (attribute cdrole {"application"},attribute arity {xsd:string})
+    ),
+    attribute container {xsd:string}?,
+    title?,
+    name,
+    description?,
+    discussion*,
+    classification?,
+    MMLattribute*,
+    rendering?,
+    optype?,
+    (signature | property | MMLexample | p)*
+  }
+description = element description { attlist.description, p* }
+attlist.description &= common.att
+discussion =
+  element discussion { attlist.discussion, (p | issue | MMLexample )* }
+attlist.discussion &= common.att
+signature = element signature { attlist.signature, text }
+attlist.signature &= common.att
+classification = element classification { attlist.classification, text }
+attlist.classification &= common.att
+property =
+  element property { attlist.property, (text | description | phrase)* }
+attlist.property &= common.att
+
+mcd =
+  element mcd {
+    attlist.mcd, title, description?, discussion?, MMLdefinition*
+  }
+
+attlist.mcd &=
+  attribute id { xsd:ID },
+  attribute revision-date { text }?,
+  attribute review-date { text }?,
+  attribute version { text }?,
+  attribute status { "experimental" }?,
+  attribute cdbase { text }?
+attlist.issue &= attribute tracker { text }?
+
+#  Include xmlspec version 2.2 (xmlspec.dtd,v 1.5 2002/08/15 13:12:11 NormanWalsh Exp)
+include "xmlspec.rnc"
+{# errata link markup
+header.mdl =
+  title,
+  subtitle?,
+  version?,
+  w3c-designation,
+  w3c-doctype,
+  pubdate,
+  notice*,
+  publoc,
+  altlocs?,
+  ((prevlocs, (latestloc, latestloc?)?)
+   | (latestloc, latestloc?, prevlocs?))?,
+  edlocs?,
+  authlist,
+  errataloc?,
+  translationloc?,
+  copyright?,
+  ((status, abstract) | (abstract, status)),
+  pubstmt?,
+  sourcedesc?,
+  langusage,
+  revisiondesc
+div3 = element div3 { attlist.div3, head, div.mix*, (div4 | MMLdefinition)* }
+label = element label { attlist.label, (label.pcd.mix | ref.class)* }
+eg = element eg { attlist.eg, (eg.pcd.mix | ref.class | tech.class)* }
+attlist.eg &= attribute meta { text }?, common.att, xmlspace.att
+attlist.code &= attribute meta { text }?, common.att, xmlspace.att
+
+# #1999-10-10: Nico Poppelier: Added sup, sub as in HTML.
+
+# sup and sub as in HTML
+sup = element sup { attlist.sup, p.pcd.mix* }
+sub = element sub { attlist.sub, p.pcd.mix* }
+
+\attribute =
+  element attribute { attlist.attribute, descr, setraises?, getraises? }
+
+local.obj.mix |= \div
+
+start =
+  itemizedlist
+  | htable
+  | htbody
+  | spec
+  | pre
+  | orderedlist
+  | preverrataloc
+  | key-term
+  | statusp
+  | latestrecloc
+  | div1 | div2 | div3
+  | inform-div1
+  | mcd}
+

@@ -1,0 +1,238 @@
+
+
+  
+<!--
+#2000-03-19: Nico Poppelier: Added intref to local.ref.class.
+-->
+
+<!ENTITY % local.ref.class      "|intref|symbolref|cdref">
+<!ENTITY % local.div.mix      "|importexamples|div">
+
+<!ENTITY % attribute.element "IGNORE">
+<!ENTITY % attribute.attlist "IGNORE">
+
+<!ENTITY % label.element "IGNORE">
+<!ENTITY % eg.element "IGNORE">
+<!ENTITY % div3.element "IGNORE">
+
+<!ENTITY % sub.element "IGNORE">
+<!ENTITY % sup.element "IGNORE">
+
+<!ENTITY % back.element "IGNORE">
+
+<!-- errata link markup -->
+
+<!ENTITY % header.mdl
+        "title, subtitle?, version?, w3c-designation, w3c-doctype,
+        pubdate, notice*, publoc, altlocs?, ((prevlocs, (latestloc,latestloc?)?) |
+        (latestloc,latestloc?, prevlocs?))?, edlocs?, authlist, 
+        errataloc?,
+        translationloc?,
+        copyright?,
+        ((status, abstract) | (abstract, status)), pubstmt?,
+        sourcedesc?, langusage, revisiondesc">
+
+<!ELEMENT latestrecloc (loc)>
+
+
+<!-- Include xmlspec version 2.2 (xmlspec.dtd,v 1.5 2002/08/15 13:12:11 NormanWalsh Exp)-->
+
+<!ENTITY % arg.element "IGNORE">
+<!ENTITY % arg.attlist "IGNORE">
+<!ENTITY % union.element "IGNORE">
+
+<!ENTITY % local.obj.mix " | div">
+
+<!ENTITY % xmlspec SYSTEM "xmlspec.dtd">
+%xmlspec;
+
+<!ELEMENT div3 (head, (%div.mix;)*, (div4|MMLdefinition)*)>
+
+
+<!ELEMENT label (%label.pcd.mix;|%ref.class;)*>
+<!ELEMENT eg (%eg.pcd.mix;|%ref.class;|%tech.class;)*>
+<!ATTLIST eg meta CDATA #IMPLIED>
+<!ATTLIST code meta CDATA #IMPLIED>
+
+
+<!--
+#1999-10-10: Nico Poppelier: Added sup, sub as in HTML.
+-->
+
+<!--    sup and sub as in HTML -->
+<!ELEMENT sup (%p.pcd.mix;)*>
+<!ELEMENT sub (%p.pcd.mix;)*>
+
+
+<!--    since attribute:
+        Provides the version in which the element was introduced. -->
+<!ENTITY % idl-since.att
+        'since                  CDATA           #IMPLIED'>
+
+
+<!--    version attribute:
+        Provides the version in which the element was modified. -->
+<!ENTITY % idl-version.att
+        'version                CDATA           #IMPLIED'>
+
+
+<!ELEMENT attribute (descr, setraises?, getraises?)>
+<!ATTLIST attribute
+        %common.att;
+        %idl-name.att;
+        %idl-type.att;
+        %idl-since.att;
+        %idl-version.att;
+        readonly        (yes
+                        |no)            "no">
+<!ELEMENT setraises (exception*)>
+<!ATTLIST setraises  %common.att;>
+
+<!ELEMENT getraises (exception*)>
+<!ATTLIST getraises  %common.att;>
+
+
+
+<!--
+#2000-03-19: Nico Poppelier: Added intref, which functions the
+same way as specref, but *with* content.
+-->
+<!--    intref: Reference to a div, olist item, prod, or issue
+        in the present document. -->
+<!ELEMENT intref (%p.pcd.mix;)*>
+<!--    ref attribute:
+        The purpose of a specref element is to link to a div, item
+        in an olist, or production in the current spec. -->
+<!ATTLIST intref
+        %common.att;
+        %ref-req.att;>
+
+<!ELEMENT symbolref EMPTY>
+<!ATTLIST symbolref %common.att; cd CDATA #REQUIRED name CDATA #REQUIRED>
+
+<!ELEMENT cdref EMPTY>
+<!ATTLIST cdref %common.att; cd CDATA #REQUIRED>
+
+
+<!ATTLIST graphic %cellvalign.att;>
+<!-- dpc added MMLdefinition -->
+
+<!ELEMENT MMLdefinition (title?,name, description?, discussion*, classification?, item*,notation*,
+   MMLattribute*, rendering?, optype?, (signature | property | MMLexample | importexamples
+   |p|renderedMMLexample)*)>
+<!ATTLIST MMLdefinition %common.att;
+          arity CDATA #IMPLIED
+	  cdrole CDATA #IMPLIED
+	  container CDATA #IMPLIED>
+
+<!ELEMENT  description (#PCDATA|p)*>
+<!ATTLIST description %common.att; >
+
+<!ELEMENT  discussion (p|issue|MMLexample|importexamples)*>
+<!ATTLIST discussion %common.att; >
+
+<!ELEMENT  signature (#PCDATA)>
+<!ATTLIST signature %common.att; >
+
+<!ELEMENT  classification (#PCDATA)>
+<!ATTLIST classification %common.att; >
+
+<!ELEMENT  property (#PCDATA|description|phrase)*>
+<!ATTLIST property %common.att; >
+
+<!ELEMENT  MMLexample (#PCDATA|description|phrase)*>
+<!ATTLIST MMLexample %common.att; >
+
+<!ELEMENT importexamples EMPTY>
+<!ATTLIST importexamples %common.att; 
+	  ocd CDATA #REQUIRED
+	  symbol CDATA #REQUIRED>
+
+<!ELEMENT  MMLattribute (attname,attvalue,attdefault)>
+<!ELEMENT attname  (#PCDATA)>
+<!ELEMENT attvalue  (#PCDATA|phrase)*>
+<!ELEMENT attdefault  (#PCDATA)>
+
+<!ELEMENT  rendering ((ulist|p|graphic|note|head|MMLexample|importexamples)*)>
+
+<!ELEMENT  optype (#PCDATA)>
+
+<!-- simple entities -->
+<!ENTITY aring         "&#229;">
+<!ENTITY copy          "&#169;">
+<!ENTITY eacute        "&#233;">
+<!ENTITY middot        "&#183;">
+<!ENTITY ndash         "-"> <!-- should really be x2013 -->
+<!ENTITY reg           "&#174;">
+<!ENTITY times         "&#215;">
+<!ENTITY TeX           "T<sub>E</sub>X">
+<!ENTITY uuml          "&#252;">
+
+
+<!-- entities for linking                                   -->
+<!ENTITY css.url    "http://www.w3.org/Style/CSS"             >
+<!ENTITY css2.url   "http://www.w3.org/TR/REC-CSS2"           >
+<!ENTITY dom1.url   "http://www.w3.org/TR/REC-DOM-Level-1"    >
+<!ENTITY dom2.url   "http://www.w3.org/TR/DOM-Level-2"    >
+<!ENTITY xml.url    "http://www.w3.org/TR/REC-xml"            >
+
+
+
+<!ATTLIST el namespace CDATA #IMPLIED>
+<!ATTLIST att namespace CDATA #IMPLIED>
+
+<!ELEMENT mcd (title,description?,discussion?,MMLdefinition*)>
+<!ATTLIST mcd 
+  id ID #REQUIRED
+  revision-date CDATA #IMPLIED
+  review-date CDATA #IMPLIED
+  version CDATA #IMPLIED
+  status (experimental) #IMPLIED
+  cdbase CDATA #IMPLIED
+>
+
+<!ATTLIST issue tracker CDATA #IMPLIED>
+
+
+
+
+
+<!ELEMENT notation ((presentation|prototype)*)>
+<!ATTLIST notation 
+  xmlns CDATA #IMPLIED
+  target CDATA #IMPLIED
+>
+
+<!ELEMENT presentation ANY>
+<!ATTLIST presentation
+  precedence CDATA #IMPLIED
+  xml:lang   CDATA #IMPLIED
+>
+
+<!ENTITY % mathml-charent.module "IGNORE" >
+<!ENTITY %  mathmldtd SYSTEM "mathml2.dtd">
+<!ENTITY % MathMLstrict "INCLUDE">
+  <!ENTITY % semanticsContentExpression        "ANY">
+<!ENTITY % ptoken                   
+     "arg|mi | mn | mo
+      | mtext | ms" >
+
+
+%mathmldtd;
+
+<!ATTLIST arg
+precedence CDATA #IMPLIED
+ type CDATA #IMPLIED
+ name CDATA #IMPLIED>
+
+<!ELEMENT prototype ANY>
+<!ATTLIST csymbol
+  uri CDATA #IMPLIED>
+
+<!ELEMENT renderedMMLexample ANY>
+
+
+
+
+<!ELEMENT back ((div1|inform-div1)*)>
+

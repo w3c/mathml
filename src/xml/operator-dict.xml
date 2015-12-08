@@ -1,0 +1,178 @@
+<inform-div1 id="oper-dict" role="appendixf"><head>Operator Dictionary</head>
+<!-- $Id: operator-dict.xml,v 1.47 2012/05/17 10:19:10 dcarlis Exp $ -->
+
+
+<p>The following table gives the suggested dictionary of rendering
+properties for operators, fences, separators, and accents in MathML, all of
+which are represented by <el>mo</el> elements. For brevity,
+all such elements will be called simply <quote>operators</quote> in this
+Appendix.</p>
+
+<div2 id="oper-dict_index"><head>Indexing of the operator dictionary</head>
+
+<p>Note that the dictionary is indexed not just by the element
+content, but by the element content and <att>form</att> attribute
+value, together. Operators with more than one possible form have more
+than one entry. The MathML specification describes how the renderer
+chooses (<quote>infers</quote>) which form to use when no <att>form</att>
+attribute is given; see <specref ref="presm_formdefval"/>. </p>
+
+<p>Having made that choice, or with the <att>form</att> attribute
+explicitly specified in the <el role="starttag">mo</el> element's start
+tag, the MathML renderer uses the remaining attributes from the
+dictionary entry for the appropriate single form of that operator,
+ignoring the entries for the other possible forms.</p>
+
+
+<p>In the table below, all non-ASCII characters are represented by
+XML-style hexadecimal numeric character references.
+The choice of markup (character data, numeric character reference or named entity reference)
+for a given character in MathML has no effect on its rendering.</p>
+
+</div2>
+
+
+<div2 id="oper-dict_format"><head>Format of operator dictionary entries</head>
+
+<p>Each row of the table is indexed as described above by the both the character
+(given by code point and Unicode Name) and the value of the form attribute.
+The fourth column gives the <kw>priority</kw> which as described in <specref ref="presm_mrow"/>),
+is significant for the proper grouping of sub-expressions using <el role="starttag">mrow</el>.
+The rule described
+there is especially relevant to the automatic generation of MathML by
+conversion from other formats for displayed mathematics, such as T<sub>E</sub>X,
+which do not always specify how sub-expressions nest.</p>
+
+<p>The length valued attributes such as <att>lspace</att> are given explicitly in the following columns.
+Boolean valued attributes such as <att>stretchy</att> are specified together in the final <kw>Properties</kw>
+column by listing the attribute name if its value should be set to <kw>true</kw> by the dictionary.
+<phrase>Finally some rarely used non-boolean properties are shown in the Properties column together with a value,
+for example <att>linebreakstyle</att>=after.</phrase></p>
+
+<p>Any attribute not listed for some entry has its default value,
+which is given in parentheses in the table of attributes in <specref
+ref="presm_mo"/>.</p>
+
+<table>
+   <tbody>
+      <tr>
+         <th>(</th>
+         <th>(</th>
+         <th role="uname">left parenthesis</th>
+         <th>prefix</th>
+         <td>1</td>
+         <td>0</td>
+         <td>0</td>
+         <td/>
+         <td>fence<phrase>,</phrase> stretchy</td>
+      </tr>
+   </tbody>
+</table>
+
+<p>could be expressed as an <el>mo</el> element by:
+<eg role='mathml'><![CDATA[
+<mo form="prefix" fence="true" stretchy="true" lspace="0em" rspace="0em"> ( </mo>
+]]></eg>
+(note the whitespace added around the content for readability;
+Such whitespace will be ignored by a MathML system,
+as described in <specref ref="fund_collapse" />.</p>
+
+<p>This entry means that, for MathML renderers which use this
+suggested operator dictionary, giving the element
+<code>&lt;mo form="prefix"> ( &lt;/mo></code>
+alone, or simply
+<code>&lt;mo> ( &lt;/mo></code>
+in a position for which
+<code>form="prefix"</code>
+would be inferred (see below), is equivalent to giving the element
+with all attributes as shown above.</p>
+
+<p>In some versions of this specification,
+the rows of the table may be reordered by clicking on a heading in the top row,
+to cause the table to be ordered by that column.</p>
+</div2>
+
+
+<div2 id="oper-dict_space"><head>Notes on <att>lspace</att> and 
+<att>rspace</att> attributes</head>
+
+<p>The values for <att>lspace</att> and <att>rspace</att> given here range from 0 to 7,
+they are given numerically in order to save space in the table,
+the values should be taken as referring to the named mathematical spaces, as follows.</p>
+<table>
+<thead>
+<tr><td>Table Entry</td><td>Named Space</td><td>Default Length</td></tr>
+</thead>
+<tbody>
+<tr><td>0</td><td/><td>0 em</td></tr>
+<tr>
+<td>1</td>
+<td>veryverythinmathspace</td>
+<td>1/18 em</td>
+</tr>
+<tr>
+<td>2</td>
+<td>verythinmathspace</td>
+<td>2/18 em</td>
+</tr>
+<tr>
+<td>3</td>
+<td>thinmathspace</td>
+<td>3/18 em</td>
+</tr>
+<tr>
+<td>4</td>
+<td>mediummathspace</td>
+<td>4/18 em</td>
+</tr>
+<tr>
+<td>5</td>
+<td>thickmathspace</td>
+<td>5/18 em</td>
+</tr>
+<tr>
+<td>6</td>
+<td>verythickmathspace</td>
+<td>6/18 em</td>
+</tr>
+<tr>
+<td>7</td>
+<td>veryverythickmathspace</td>
+<td>7/18 em</td>
+</tr>
+</tbody>
+</table>
+<p>
+For the invisible operators whose content is <kw
+role="entity">InvisibleTimes</kw> or <kw role="entity">ApplyFunction</kw>,
+it is suggested that MathML renderers choose spacing in a context-sensitive
+way (which is an exception to the static values given in the following
+table). For <code><![CDATA[<mo>&ApplyFunction;</mo>]]></code>, the total
+spacing (<attval>lspace</attval>+<attval>rspace</attval>) in
+expressions such as <quote>sin <var>x</var></quote> (where the right operand
+doesn't start with a fence) should be greater than zero; for
+<code><![CDATA[<mo>&InvisibleTimes;</mo>]]></code>, the total spacing
+should be greater than zero when both operands (or the nearest tokens on
+either side, if on the baseline) are identifiers displayed in a non-slanted
+font (i.e.. under the suggested rules, when both operands are
+multi-character identifiers).</p>
+
+<p>Some renderers may wish to use no spacing for most operators
+appearing in scripts (i.e. when <att>scriptlevel</att> is greater
+than 0; see <specref ref="presm_mstyle"/>), as is the case in T<sub>E</sub>X.</p>
+</div2>
+
+<div2 id="oper-dict_entries-table"><head>Operator dictionary entries</head>
+
+<table><tbody><tr><td/></tr></tbody></table>
+
+</div2>
+
+
+</inform-div1>
+
+<!-- LocalWords:  mrow lspace rspace veryverythinmathspace verythinmathspace -->
+<!-- LocalWords:  thinmathspace mediummathspace thickmathspace InvisibleTimes -->
+<!-- LocalWords:  verythickmathspace veryverythickmathspace ApplyFunction -->
+<!-- LocalWords:  scriptlevel
+-->

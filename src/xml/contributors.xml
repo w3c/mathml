@@ -1,0 +1,607 @@
+<inform-div1 id="contributors" role="appendixi"><head>Working Group Membership and Acknowledgments</head>
+<!-- $Id: contributors.xml,v 1.39 2014-04-16 10:54:12 dcarlis Exp $ -->
+
+
+<div2 id="contrib"><head>The Math Working Group Membership</head>
+
+<p>
+<phrase>The present W3C Math Working Group (2012–2013) is co-chaired by
+David Carlisle of NAG and Patrick Ion of the AMS;  Patrick Ion and and Robert
+Miner of Design Science were co-chairs 2006-2011.</phrase>
+Contact the co-chairs about membership in
+the Working Group. For the current membership see the
+<loc href="http://www.w3.org/Math/">W3C Math home page</loc>.
+</p>
+<p>Robert Miner, whose leadership and contributions were essential
+to the development of the Math Working Group and MathML from their
+beginnings, died tragically young in December 2011.</p>
+
+<p>Participants in the Working Group responsible for MathML 3.0 have been:
+<orglist>
+
+<member>
+<name>Ron Ausbrooks</name>
+<affiliation>Mackichan Software, Las Cruces NM, USA</affiliation>
+</member>
+
+<member>
+<name>Laurent Bernardin</name>
+<affiliation>Waterloo Maple, Inc., Waterloo ON, CAN</affiliation>
+</member>
+
+<member>
+<name>Pierre-Yves Bertholet</name>
+<affiliation>MITRE Corporation, McLean VA, USA</affiliation>
+</member>
+
+<member>
+<name>Bert Bos</name>
+<affiliation>W3C, Sophia-Antipolis, FRA</affiliation>
+</member>
+
+<member>
+<name>Mike Brenner</name>
+<affiliation>MITRE Corporation, Bedford MA, USA</affiliation>
+</member>
+
+<member>
+<name>Olga Caprotti</name>
+<affiliation>University of Helsinki, Helsinki, FI</affiliation>
+</member>
+
+<member>
+<name>David Carlisle</name>
+<affiliation>NAG Ltd., Oxford, UK</affiliation>
+</member>
+
+<member>
+<name>Giorgi Chavchanidze</name>
+<affiliation>Opera Software, Oslo, NO</affiliation>
+</member>
+
+<member>
+<name>Ananth Coorg</name>
+<affiliation>The Boeing Company, Seattle WA, USA</affiliation>
+</member>
+
+<member>
+<name>St&#233;phane Dalmas</name>
+<affiliation>INRIA, Sophia Antipolis, FRA</affiliation>
+</member>
+
+<member>
+<name>Stan Devitt</name>
+<affiliation>Agfa-Gevaert N. V., Trier, GER</affiliation>
+</member>
+
+<member>
+<name>Sam Dooley</name>
+<affiliation>Integre Technical Publishing Co., Inc., Albuquerque NM, USA</affiliation>
+</member>
+
+<member>
+<name>Margaret Hinchcliffe</name>
+<affiliation>Waterloo Maple, Inc., Waterloo ON, CAN</affiliation>
+</member>
+
+<member>
+<name>Patrick Ion</name>
+<affiliation>W3C Invited Experts:Mathematical Reviews (American Mathematical
+Society), Ann Arbor MI, USA</affiliation>
+</member>
+
+<member>
+<name>Michael Kohlhase</name>
+<affiliation>German Research Center for Artificial Intelligence (DFKI) Gmbh, GER</affiliation>
+</member>
+
+<member>
+<name>Azzeddine Lazrek</name>
+<affiliation>W3C Invited Experts: University of Marrakesh, Morocco</affiliation>
+</member>
+
+<member>
+<name>Dennis Leas</name>
+<affiliation>DAISY Consortium</affiliation>
+</member>
+
+<member>
+<name>Paul Libbrecht</name>
+<affiliation>German Research Center for Artificial Intelligence (DFKI) Gmbh, GER</affiliation>
+</member>
+
+<member>
+<name>Manolis Mavrikis</name>
+<affiliation>University of Edinburgh, Edinburg, UK</affiliation>
+</member>
+
+<member>
+<name>Bruce Miller</name>
+<affiliation>National Institute of Standards and Technology (NIST), Gaithersburg MD, USA</affiliation>
+</member>
+
+<member>
+<name>Robert Miner</name>
+<affiliation>Design Science Inc., Long Beach CA, USA</affiliation>
+</member>
+
+<member>
+<name>Chris Rowley</name>
+<affiliation>The Open University, UK</affiliation>
+</member>
+
+<member>
+<name>Murray Sargent III</name>
+<affiliation>Microsoft, Redmond WA, USA</affiliation>
+</member>
+
+<member>
+<name>Kyle Siegrist</name>
+<affiliation>Mathematical Association of America, Washington DC, USA</affiliation>
+</member>
+
+<member>
+<name>Andrew Smith</name>
+<affiliation>Maplesoft Inc., Canada</affiliation>
+</member>
+
+<member>
+<name>Neil Soiffer</name>
+<affiliation>Design Science Inc., Long Beach CA, USA</affiliation>
+</member>
+
+<member>
+<name>Stephen Watt</name>
+<affiliation>University of Western Ontario, London ON, CAN</affiliation>
+</member>
+
+<member>
+  <name>Mohamed Zergaoui</name>
+<affiliation>Innovimax, Paris, FRA</affiliation>
+</member>
+
+</orglist>
+</p>
+
+<p>
+All the above persons have been members of the currently chartered Math Working Group, but some not for the whole life of the Working Group.  The 22 authors listed for MathML3 at the start of this specification are those who contributed 
+reworkings and reformulations used in the actual text of the specification. 
+Thus the list includes the principal authors of MathML2 much of whose text was repurposed here.  They were, of course, supported and encouraged by the activity and discussions of the whole Math Working Group, and by helpful commentary from outside it, both within the W3C and further afield.
+</p>
+
+<p>
+For 2003 to 2006 W3C Math Activity comprised a Math Interest Group,
+chaired by David Carlisle of NAG and Robert Miner of Design Science.
+</p>
+
+<p>
+The W3C Math Working Group (2001&#x2013;2003)
+ was co-chaired by Patrick Ion of the
+AMS, and Angel Diaz of IBM from June 2001 to May 2002; afterwards
+Patrick Ion continued as chair until the end of the WG's extended charter. 
+</p>
+
+<p>Participants in the Working Group responsible for MathML 2.0, second
+edition were:
+<orglist>
+<member>
+<name>Ron Ausbrooks</name>
+<affiliation>Mackichan Software, Las Cruces NM, USA</affiliation>
+</member>
+
+<member>
+<name>Laurent Bernardin</name>
+<affiliation>Waterloo Maple, Inc., Waterloo ON, CAN</affiliation>
+</member>
+
+<member>
+<name>Stephen Buswell</name>
+<affiliation>Stilo Technology Ltd., Bristol, UK</affiliation>
+</member>
+
+<member>
+<name>David Carlisle</name>
+<affiliation>NAG Ltd., Oxford, UK</affiliation>
+</member>
+
+<member>
+<name>St&#233;phane Dalmas</name>
+<affiliation>INRIA, Sophia Antipolis, FR</affiliation>
+</member>
+
+<member>
+<name>Stan Devitt</name>
+<affiliation>Stratum Technical Services Ltd., Waterloo ON, CAN (earlier with Waterloo Maple, Inc., Waterloo ON, CAN)</affiliation>
+</member>
+
+<member>
+<name>Max Froumentin</name>
+<affiliation>W3C, Sophia-Antipolis, FRA</affiliation>
+</member>
+
+<member>
+<name>Patrick Ion</name>
+<affiliation>Mathematical Reviews (American Mathematical
+Society), Ann Arbor MI, USA</affiliation>
+</member>
+
+<member>
+<name>Michael Kohlhase</name>
+<affiliation>DFKI, GER</affiliation>
+</member>
+
+<member>
+<name>Robert Miner</name>
+<affiliation>Design Science Inc., Long Beach CA, USA</affiliation>
+</member>
+
+<member>
+<name>Luca Padovani</name>
+<affiliation>University of Bologna, IT</affiliation>
+</member>
+
+<member>
+<name>Ivor Philips</name>
+<affiliation>Boeing, Seattle WA, USA</affiliation>
+</member>
+
+<member>
+<name>Murray Sargent III</name>
+<affiliation>Microsoft, Redmond WA, USA</affiliation>
+</member>
+
+<member>
+<name>Neil Soiffer</name>
+<affiliation>Wolfram Research Inc., Champaign IL, USA</affiliation>
+</member>
+
+<member>
+<name>Paul Topping</name>
+<affiliation>Design Science Inc., Long Beach CA, USA</affiliation>
+</member>
+
+<member>
+<name>Stephen Watt</name>
+<affiliation>University of Western Ontario, London ON, CAN</affiliation>
+</member>
+</orglist>
+</p>
+
+<p>Earlier active participants of the W3C Math Working Group (2001 &#x2013; 2003) have
+included:
+<orglist>
+
+<member>
+<name>Angel Diaz</name>
+<affiliation>IBM Research Division, Yorktown Heights NY, USA</affiliation>
+</member>
+
+<member>
+<name>Sam Dooley</name>
+<affiliation>IBM Research, Yorktown Heights NY, USA</affiliation>
+</member>
+
+<member>
+<name>Barry MacKichan</name>
+<affiliation>MacKichan Software, Las Cruces NM, USA</affiliation>
+</member>
+</orglist>
+</p>
+
+
+
+<p>The W3C Math Working Group was co-chaired by Patrick Ion
+of the AMS, and Angel Diaz of IBM from July 1998 to December 2000.</p>
+
+<p>Participants in the Working Group responsible for MathML 2.0 were:
+<orglist>
+<member>
+<name>Ron Ausbrooks</name>
+<affiliation>Mackichan Software, Las Cruces NM, USA</affiliation>
+</member>
+
+<member>
+<name>Laurent Bernardin</name>
+<affiliation>Maplesoft, Waterloo ON, CAN</affiliation>
+</member>
+
+<member>
+<name>Stephen Buswell</name>
+<affiliation>Stilo Technology Ltd., Cardiff, UK</affiliation>
+</member>
+
+<member>
+<name>David Carlisle</name>
+<affiliation>NAG Ltd., Oxford, UK</affiliation>
+</member>
+
+<member>
+<name>St&#233;phane Dalmas</name>
+<affiliation>INRIA, Sophia Antipolis, FR</affiliation>
+</member>
+
+<member>
+<name>Stan Devitt</name>
+<affiliation>Stratum Technical Services Ltd., Waterloo ON, CAN (earlier with Waterloo Maple, Inc., Waterloo ON, CAN)</affiliation>
+</member>
+
+<member>
+<name>Angel Diaz</name>
+<affiliation>IBM Research Division, Yorktown Heights NY, USA</affiliation>
+</member>
+
+<member>
+<name>Ben Hinkle</name>
+<affiliation>Waterloo Maple, Inc., Waterloo ON, CAN</affiliation>
+</member>
+
+<member>
+<name>Stephen Hunt</name>
+<affiliation>MATH.EDU Inc., Champaign IL, USA</affiliation>
+</member>
+
+<member>
+<name>Douglas Lovell</name>
+<affiliation>IBM Hawthorne Research, Yorktown Heights NY, USA</affiliation>
+</member>
+
+<member>
+<name>Patrick Ion</name>
+<affiliation>Mathematical Reviews (American Mathematical
+Society), Ann Arbor MI, USA</affiliation>
+</member>
+
+<member>
+<name>Robert Miner</name>
+<affiliation>Design Science Inc., Long Beach CA, USA (earlier with Geometry Technologies Inc., Minneapolis MN, USA)</affiliation>
+</member>
+
+<member>
+<name>Ivor Philips</name>
+<affiliation>Boeing, Seattle WA, USA</affiliation>
+</member>
+
+<member>
+<name>Nico Poppelier</name>
+<affiliation>Penta Scope, Amersfoort, NL (earlier with Salience and Elsevier Science, NL)</affiliation>
+</member>
+
+<member>
+<name>Dave Raggett</name>
+<affiliation>W3C (Openwave), Bristol, UK (earlier with Hewlett-Packard)</affiliation>
+</member>
+
+<member>
+<name>T.V. Raman</name>
+<affiliation>IBM Almaden, Palo Alto CA, USA (earlier with Adobe Inc., Mountain View CA, USA)</affiliation>
+</member>
+
+<member>
+<name>Murray Sargent III</name>
+<affiliation>Microsoft, Redmond WA, USA</affiliation>
+</member>
+
+<member>
+<name>Neil Soiffer</name>
+<affiliation>Wolfram Research Inc., Champaign IL, USA</affiliation>
+</member>
+
+<member>
+<name>Irene Schena</name>
+<affiliation>Universit&#225; di Bologna, Bologna, IT</affiliation>
+</member>
+
+<member>
+<name>Paul Topping</name>
+<affiliation>Design Science Inc., Long Beach CA, USA</affiliation>
+</member>
+
+<member>
+<name>Stephen Watt</name>
+<affiliation>University of Western Ontario, London ON, CAN</affiliation>
+</member>
+</orglist>
+</p>
+
+<p>Earlier active participants of this second W3C Math Working Group have
+included:
+<orglist>
+<member>
+<name>Sam Dooley</name>
+<affiliation>IBM Research, Yorktown Heights NY, USA</affiliation>
+</member>
+
+<member>
+<name>Robert Sutor</name>
+<affiliation>IBM Research, Yorktown Heights NY, USA</affiliation>
+</member>
+
+<member>
+<name>Barry MacKichan</name>
+<affiliation>MacKichan Software, Las Cruces NM, USA</affiliation>
+</member>
+</orglist>
+</p>
+
+<p>At the time of release of MathML 1.0 <bibref ref="MathML1"/> the
+Math Working Group was co-chaired by Patrick Ion and Robert Miner, then of the
+Geometry Center. Since that time several changes in membership have taken
+place. In the course of the update to MathML 1.01, in addition to people listed in
+the original membership below, corrections were offered by David Carlisle, Don
+Gignac, Kostya Serebriany, Ben Hinkle, Sebastian Rahtz, Sam Dooley and others.</p>
+
+<p>Participants in the Math Working Group responsible for the finished
+MathML 1.0 specification were:
+<orglist>
+<member>
+<name>Stephen Buswell</name>
+<affiliation>Stilo Technology Ltd., Cardiff, UK</affiliation>
+</member>
+
+<member>
+<name>St&#233;phane Dalmas</name>
+<affiliation>INRIA, Sophia Antipolis, FR</affiliation>
+</member>
+
+<member>
+<name>Stan Devitt</name>
+<affiliation>Maplesoft Inc., Waterloo ON, CAN</affiliation>
+</member>
+
+<member>
+<name>Angel Diaz</name>
+<affiliation>IBM Research Division, Yorktown Heights NY, USA</affiliation>
+</member>
+
+<member>
+<name>Brenda Hunt</name>
+<affiliation>Wolfram Research Inc., Champaign IL, USA</affiliation>
+</member>
+
+<member>
+<name>Stephen Hunt</name>
+<affiliation>Wolfram Research Inc., Champaign IL, USA</affiliation>
+</member>
+
+<member>
+<name>Patrick Ion</name>
+<affiliation>Mathematical Reviews (American Mathematical
+Society), Ann Arbor MI, USA</affiliation>
+</member>
+
+<member>
+<name>Robert Miner</name>
+<affiliation>Geometry Center, University of Minnesota, Minneapolis 
+MN, USA</affiliation>
+</member>
+
+<member>
+<name>Nico Poppelier</name>
+<affiliation>Elsevier Science, Amsterdam, NL</affiliation>
+</member>
+
+<member>
+<name>Dave Raggett</name>
+<affiliation>W3C (Hewlett Packard), Bristol, UK</affiliation>
+</member>
+
+<member>
+<name>T.V. Raman</name>
+<affiliation>Adobe Inc., Mountain View CA, USA</affiliation>
+</member>
+
+<member>
+<name>Bruce Smith</name>
+<affiliation>Wolfram Research Inc., Champaign IL, USA</affiliation>
+</member>
+
+<member>
+<name>Neil Soiffer</name>
+<affiliation>Wolfram Research Inc., Champaign IL, USA</affiliation>
+</member>
+
+<member>
+<name>Robert Sutor</name>
+<affiliation>IBM Research, Yorktown Heights NY, USA</affiliation>
+</member>
+
+<member>
+<name>Paul Topping</name>
+<affiliation>Design Science Inc., Long Beach CA, USA</affiliation>
+</member>
+
+<member>
+<name>Stephen Watt</name>
+<affiliation>University of Western Ontario, London ON, CAN</affiliation>
+</member>
+
+<member>
+<name>Ralph Youngen</name>
+<affiliation>American Mathematical Society, Providence RI, USA</affiliation>
+</member>
+
+</orglist>
+
+Others who had been members of the W3C Math WG for periods at
+earlier stages were:
+
+<orglist>
+
+<member>
+<name>Stephen Glim</name>
+<affiliation>Mathsoft Inc., Cambridge MA, USA</affiliation>
+</member>
+
+<member>
+<name>Arnaud Le Hors</name>
+<affiliation>W3C, Cambridge MA, USA</affiliation>
+</member>
+
+<member>
+<name>Ron Whitney</name>
+<affiliation>Texterity Inc., Boston MA, USA</affiliation>
+</member>
+
+<member>
+<name>Lauren Wood</name>
+<affiliation>SoftQuad, Surrey BC, CAN</affiliation>
+</member>
+
+<member>
+<name>Ka-Ping Yee</name>
+<affiliation>University of Waterloo, Waterloo ON, CAN</affiliation>
+</member>
+</orglist>
+</p>
+</div2>
+
+<div2 id="contrib_ack"><head>Acknowledgments</head> 
+
+<p>The Working Group benefited from the help of many other
+people in developing the specification for MathML 1.0. We
+would like to particularly name Barbara Beeton, Chris Hamlin,
+John Jenkins, Ira Polans, Arthur Smith, Robby Villegas and Joe
+Yurvati for help and information in assembling the character
+tables in <specref ref="chars"/>, as well as Peter Flynn,
+Russell S.S.&#160;O'Connor, Andreas Strotmann, and other
+contributors to the <loc 
+href="http://lists.w3.org/Archives/Public/www-math/">www-math</loc>
+mailing list for their careful
+proofreading and constructive criticisms.</p>
+
+<p>
+As the Math Working Group went on to MathML 2.0, it again was
+helped by many from the W3C family of Working Groups with whom
+we necessarily had a great deal of interaction.  Outside the
+W3C, a particularly active relevant front was the interface
+with the Unicode Technical Committee (UTC) and the NTSC WG2
+dealing with ISO 10646.  There the STIX project put together a
+proposal for the addition of characters for mathematical
+notation to Unicode, and this work was again <phrase>spearheaded</phrase>
+by
+Barbara Beeton of the AMS.  The whole problem ended split into
+three proposals, two of which were advanced by Murray Sargent
+of Microsoft, a Math WG member and member of the UTC.  But the
+mathematical community should be grateful for essential help
+and guidance over a couple of years of refinement of the
+proposals to help mathematics provided by Kenneth Whistler of
+Sybase, and a UTC and WG2 member, and by Asmus Freytag, also
+involved in the UTC and WG2 deliberations, and always a stalwart
+and knowledgeable supporter of the needs of scientific notation.
+</p>
+
+</div2>
+
+</inform-div1>
+
+<!-- LocalWords:  AMS Ausbrooks Mackichan Las Cruces Bernardin Bertholet Bos FI -->
+<!-- LocalWords:  Antipolis FRA Bedford Caprotti Carlisle Chavchanidze Ananth -->
+<!-- LocalWords:  Coorg phane Dalmas INRIA Devitt Agfa Gevaert Integre Gmbh EDU -->
+<!-- LocalWords:  Hinchcliffe Azzeddine Lazrek Libbrecht Manolis Mavrikis NIST -->
+<!-- LocalWords:  Edinburg Gaithersburg Rowley Siegrist Maplesoft Soiffer Diaz -->
+<!-- LocalWords:  Zergaoui Innovimax repurposed WG's Buswell Stilo Froumentin -->
+<!-- LocalWords:  Padovani Champaign MacKichan Hinkle Poppelier Penta NL Raman -->
+<!-- LocalWords:  Amersfoort Elsevier Raggett Openwave Almaden Palo Schena di -->
+<!-- LocalWords:  Universit Sutor Gignac Kostya Serebriany Rahtz Youngen WG Ka -->
+<!-- LocalWords:  Glim Mathsoft Arnaud Hors Texterity SoftQuad Yee Polans www -->
+<!-- LocalWords:  Villegas Yurvati Strotmann UTC NTSC STIX Sybase Asmus Freytag -->

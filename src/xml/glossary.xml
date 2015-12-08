@@ -1,0 +1,517 @@
+<inform-div1 id="glossary" role="appendixh" ><head>Glossary</head>
+<!-- $Id: glossary.xml,v 1.30 2009/11/08 15:58:28 dcarlis Exp $ -->
+
+<p>Several of the following definitions of terms have been borrowed or
+modified from similar definitions in documents originating from W3C or
+standards organizations. See the individual definitions for more
+information.</p>
+
+<glist>
+<gitem>
+<label id="dt-argument">Argument</label>
+<def><p>A child of a presentation layout schema. That is, <quote>A is an
+argument of B</quote> means <quote>A is a child of B and B is a
+presentation layout schema</quote>. Thus, token elements have no arguments,
+even if they have children (which can only be 
+<el>malignmark</el>).</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-attribute">Attribute</label>
+<def><p>A parameter used to specify some property of an SGML or XML element
+type. It is defined in terms of an attribute name, attribute type, and a
+default value.  A value may be specified for it on a start-tag for that
+element type.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-axis">Axis</label>
+<def><p>The axis is an imaginary alignment line upon which a fraction line
+is centered. Often, operators as well as characters that can stretch, such
+as parentheses, brackets, braces, summation signs etc., are centered on
+the axis, and are symmetric with respect to it.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-baseline">Baseline</label>
+<def><p>The baseline is an imaginary alignment line upon which a glyph
+without a descender rests.  The baseline is an intrinsic property of the
+glyph (namely a horizontal line). Often baselines are aligned (joined)
+during typesetting.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-blackbox">Black box</label>
+<def><p>The bounding box of the actual size taken up by the viewable
+portion (ink) of a glyph or expression.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-boundingbox">Bounding box</label>
+<def><p>The rectangular box of smallest size, taking into account the
+constraints on boxes allowed in a particular context, which contains some
+specific part of a rendered display.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-box">Box</label>
+<def><p>A rectangular plane area considered to contain a character or
+further sub-boxes, used in discussions of rendering for display. It is
+usually considered to have a baseline, height, depth and width.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-css">Cascading Style Sheets (CSS)</label>
+<def><p>A language that allows authors and readers to attach style
+(e.g. fonts, colors and spacing) to HTML and XML documents.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-character">Character</label>
+<def><p>A member of a set of identifiers used for the organization, control
+or representation of text. ISO/IEC Standard 10646-1:1993 uses the word
+<quote>data</quote> here instead of <quote>text</quote>.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-cdata">Character data (<kw>CDATA</kw>)</label>
+<def><p>A data type in SGML and XML for raw data that does not include
+markup or entity references. Attributes of type <kw>CDATA</kw> may contain
+entity references. These are expanded by an XML processor before the
+attribute value is processed as <kw>CDATA</kw>.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-char-depth">Character or expression depth</label>
+<def><p>Distance between the baseline and bottom edge of the character
+glyph or expression. Also known as the descent.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-char-height">Character or expression height</label>
+<def><p>Distance between the baseline and top edge of the character glyph
+or expression. Also known as the ascent.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-char-width">Character or expression width</label>
+<def><p>Horizontal distance taken by the character glyph as indicated in
+the font metrics, or the total width of an expression.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-condition">Condition</label>
+<def><p>A MathML content element used to place a mathematical condition on
+one or more variables.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-contained">Contained (element A is contained in element B)</label>
+<def><p>A is part of B's content.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-container">Container (Constructor)</label>
+<def><p>A non-empty Content MathML element that is used to construct a
+mathematical object such as a number, set, or list.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-content-elements">Content elements</label>
+<def><p>MathML elements that explicitly specify the mathematical meaning
+of a portion of a MathML expression (defined in <specref ref="contm"/>).</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-content-token-element">Content token element</label>
+<def><p>Content element having only <kw>PCDATA</kw>, <el>sep</el>
+and presentation expressions as content. Represents either an identifier
+(<el>ci</el>) or a number (<el>cn</el>).</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-context">Context (of a given MathML expression)</label>
+<def><p>Information provided during the rendering of some MathML data to
+the rendering process for the given MathML expression; especially
+information about the MathML markup surrounding the expression.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-declaration">Declaration</label>
+<def><p>An instance of the declare element.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-depth">Depth</label>
+<def><p>(of a box) The distance from the baseline of the box to the bottom
+edge of the box.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-direct-sub-expression">Direct sub-expression
+(of a MathML expression <quote>E</quote>)</label>
+<def><p>A sub-expression directly contained in E.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-directly-contained">Directly contained
+(element A in element B)</label>
+<def><p>A is a child of B (as defined in XML), in other words
+A is contained in B, but not in any element that is itself contained in
+B.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-dom">Document Object Model</label>
+<def><p>A model in which the document or Web page is treated as an object
+repository. This model is developed by the DOM Working Group (DOM) of the
+W3C.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-dsssl">Document Style Semantics and Specification Language (DSSSL)</label>
+<def><p>A method of specifying the formatting and transformation of
+SGML documents. ISO International Standard 10179:1996.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-dtd">Document Type Definition (DTD)</label>
+<def><p>In SGML or XML, a DTD is a formal definition of the elements and
+the relationship among the data elements (the structure) for a particular
+type of document.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-em">Em</label>
+<def><p>A font-relative measure encoded by the font. Before electronic
+typesetting, an <attval>em</attval> was the width of an
+<quote>M</quote> in the font. In modern usage, an <attval>em</attval>
+is either specified by the designer of the font or is taken to be the
+height (point size) of the font. Em's are typically used for font-relative
+horizontal sizes.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-ex">Ex</label>
+<def><p>A font-relative measure that is the height of an <quote>x</quote>
+in the font.  <attval>ex</attval>s are typically used for
+font-relative vertical sizes.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-height">Height</label>
+<def><p>(of a box) The distance from the baseline of the box to the top
+edge of the box.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-inferred-mrow">Inferred <el>mrow</el></label>
+<def><p>An <el>mrow</el> element that is
+<quote>inferred</quote> around the contents of certain layout schemata when
+they have other than exactly one argument. Defined precisely in <specref
+ref="presm_summary"/></p>
+</def>
+</gitem>
+
+<gitem>
+<label id="dt-embedded-object">Embedded object</label>
+<def><p>Embedded objects such as Java applets, Microsoft Component Object
+Model (COM) objects (e.g. ActiveX Controls and ActiveX Document
+embeddings), and plug-ins that reside in an HTML document.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-embellished-operator">Embellished operator</label>
+<def><p>An operator, including any <quote>embellishment</quote> it may
+have, such as superscripts or style information. The
+<quote>embellishment</quote> is represented by a layout schema that
+contains the operator itself.
+Defined precisely in <specref ref="presm_mo"/>.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-entity-reference">Entity reference</label>
+<def><p>A sequence of ASCII characters of the form <kw
+role="entity">name</kw> representing some other data, typically a
+non-ASCII character, a sequence of characters, or an external source of
+data, e.g. a file containing a set of standard entity definitions such as
+ISO Latin 1.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-xml">Extensible Markup Language (XML)</label>
+<def><p>A simple dialect of SGML intended to enable generic SGML to be
+served, received, and processed on the Web.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-fences">Fences</label>
+<def><p>In typesetting, bracketing tokens like parentheses, braces, and
+brackets, which usually appear in matched pairs.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-font">Font</label>
+<def><p>A particular collection of glyphs of a typeface of a given size,
+weight and style, for example <quote>Times Roman Bold 12 point</quote>.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-glyph">Glyph</label>
+<def><p>The actual shape (bit pattern, outline) of a character.
+ISO/IEC Standard 9541-1:1991 defines a glyph as a recognizable abstract 
+graphic symbol that is independent of any specific design.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-indirectly-contained">Indirectly contained</label>
+<def><p>A is contained in B, but not directly contained in B.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-mathml-instance">Instance of MathML</label>
+<def><p>A single instance of the top level element of MathML, and/or a
+single instance of embedded MathML in some other data format.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-inverse-function">Inverse function</label>
+<def><p>A mathematical function that, when composed with the original
+function acts like an identity function.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-lambda-exp">Lambda expression</label>
+<def><p>A mathematical expression used to define a function in terms of
+variables and an expression in those variables.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-layout-schema">Layout schema (plural: schemata)</label>
+<def><p>A presentation element defined in chapter 3, other than the token
+elements and empty elements defined there (i.e. not the elements defined in
+<specref ref="presm_tokel"/> and <specref ref="presm_malign"/>, or the
+empty elements <el>none</el> and
+<el>mprescripts</el> defined in <specref ref="presm_mmultiscripts"/>).
+The layout schemata are never empty elements (though their content may
+contain nothing in some cases), are always expressions, and all allow any
+MathML expressions as arguments (except for requirements on argument count,
+and the requirement for a certain empty element in <el>mmultiscripts</el>).</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-mathml">Mathematical Markup Language (MathML)</label>
+<def><p>The markup language specified in this document for describing
+the structure of mathematical expressions, together with a mathematical
+context.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-mathml-element">MathML element</label>
+<def><p>An XML element that forms part of the logical structure of a
+MathML document.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-mathml-exp">MathML expression (within some valid MathML
+data)</label>
+<def><p>A single instance of a presentation element, except for the empty
+elements <el>none</el> or
+<el>mprescripts</el>, or an instance of <el>malignmark</el> within a token element (defined below);
+or a single instance of certain of the content elements
+(see <specref ref="contm"/> for a precise definition of which ones).</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-mime">Multi-purpose Internet Mail Extensions (MIME)</label>
+<def><p>A set of specifications that offers a way to interchange text in
+languages with different character sets, and multimedia content among many
+different computer systems that use Internet mail standards.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-operator-content">Operator, content element</label>
+<def><p>A mathematical object that is applied to arguments using the 
+<el>apply</el> element.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-operator">Operator, an <el>mo</el>
+element</label>
+<def><p>Used to represent ordinary operators, fences, separators in MathML
+presentation. (The token element <el>mo</el> is defined in
+<specref ref="presm_mo"/>).</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-openmath">OpenMath</label>
+<def><p>A general representation language for communicating mathematical
+objects between application programs.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-pcdata">Parsed character data (<kw>PCDATA</kw>)</label>
+<def><p>An SGML/XML data type for raw data occurring in a context where
+text is parsed and markup (for instance entity references and element
+start/end tags) is recognized.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-pt">Point</label>
+<def><p>Point is often abbreviated <quote>pt</quote>. The value of 1 pt 
+is approximately 1/72 inch. Points are typically used to specify
+absolute sizes for font-related objects.</p></def>
+</gitem>
+
+<gitem>
+
+<label id="dt-pres-elements">Presentation elements</label>
+<def><p>MathML tags and entities intended to express the syntactic
+structure of mathematical notation (defined in <specref ref="presm"/>).</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-pres-layout-schema">Presentation layout schema</label>
+<def><p>A presentation element that can have other MathML elements as
+content.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-pres-token-element">Presentation token element</label>
+<def><p>A presentation element that can contain only parsed character data
+or the <el>malignmark</el> element.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-qualifier">Qualifier</label>
+<def><p>A MathML content element that is used to specify the value of a
+specific named parameter in the application of selected pre-defined
+functions.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-relation">Relation</label>
+<def><p>A MathML content element used to construct expressions such as
+<var>a</var> &lt; <var>b</var>.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-render">Render</label>
+<def><p>Faithfully translate into application-specific form allowing native
+application operations to be performed.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-schema">Schema</label>
+<def><p>Schema (plural: schemata or schemata). See <quote>presentation layout
+schema</quote>.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-declaration-scope">Scope of a declaration</label>
+<def><p>The portion of a MathML document in which a particular
+definition is active.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-selected-sub-exp">Selected sub-expression
+(of an <el>maction</el> element)</label>
+<def><p>The argument of an <el>maction</el> element (a
+layout schema defined in <specref ref="presm_enliven"/>) that is (at any
+given time) <quote>selected</quote> within the viewing state of a MathML
+renderer, or by the <att>selection</att> attribute when the
+element exists only in MathML data. Defined precisely in the aforementioned
+section.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-spacelike">Space-like (MathML expression)</label>
+<def><p>A MathML expression that is ignored by the suggested rendering
+rules for MathML presentation elements when they determine operator forms
+and effective operator rendering attributes based on operator positions in
+<el>mrow</el> elements. Defined precisely in <specref
+ref="presm_mspace"/>.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-sgml">Standard Generalized Markup Language (SGML)</label>
+<def><p>An ISO standard (ISO 8879:1986) that provides a formal
+mechanism for the definition of document structure via DTDs (Document
+Type Definitions), and a notation for the markup of document instances
+conforming to a DTD.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-sub-exp">Sub-expression (of a MathML expression
+<quote>E</quote>)</label>
+<def><p>A MathML expression contained (directly or indirectly) in the
+content of E.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-suggested-rendering-rules">Suggested rendering rules for
+MathML presentation elements</label>
+<def><p>Defined throughout <specref ref="presm"/>; the ones that use other
+terms defined here occur mainly in <specref ref="presm_mo"/> and in
+<specref ref="presm_enliven"/>.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-tex">T<sub>E</sub>X</label>
+
+<def><p>A software system developed by Professor Donald Knuth for
+typesetting documents.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-token-element">Token element</label>
+<def><p>Presentation token element or a Content token element.  (See
+above.)</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-toplevel-element">Top-level element (of MathML)</label>
+<def><p><el>math</el> (defined in <specref ref="interf_toplevel"/>).</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-typeface">Typeface</label>
+<def><p>A typeface is a specific design of a set of letters, numbers and
+symbols, such as <quote>Times Roman</quote> or <quote>Chicago</quote>.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-valid-mathml">Valid MathML data</label>
+<def><p>MathML data that (1) conforms to the MathML DTD, (2) obeys the
+additional rules defined in the MathML standard for the legal contents and
+attribute values of each MathML element, and (3) satisfies the EBNF grammar
+for content elements.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-width">Width (of a box)</label>
+<def><p>The distance from the left edge of the box to the right edge of the
+box.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-xsl">Extensible Style Language (XSL)</label>
+<def><p>A style language for XML developed by W3C. See XSL FO and XSLT.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-xslfo">XSL Formatting Objects (XSL FO)</label>
+<def><p>An XML vocabulary to express formatting, which is a part of XSL.</p></def>
+</gitem>
+
+<gitem>
+<label id="dt-xslt">XSL Transformation (XSLT)</label>
+<def><p>A language to express the transformation of XML documents
+into other XML documents.</p></def>
+</gitem>
+</glist>
+</inform-div1>
+
+<!-- LocalWords:  malignmark IEC sep ci cn DSSSL mrow ActiveX mprescripts Pre -->
+<!-- LocalWords:  mmultiscripts pre maction FO
+-->

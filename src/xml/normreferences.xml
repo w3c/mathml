@@ -1,0 +1,176 @@
+<div1 id="n_references" role="appendixk"><head>Normative References</head>
+<!-- $Id: normreferences.xml,v 1.17 2014-04-16 10:54:12 dcarlis Exp $ -->
+
+<blist>
+
+<bibl id="Bidi">
+Mark Davis;
+<emph><loc href="http://www.unicode.org/reports/tr9/">
+Unicode Bidirectional Algorithm</loc></emph>, 
+Unicode Standard Annex #9, <phrase>Unicode 6.3.0 2013-09-24</phrase>.
+(<loc href="http://www.unicode.org/reports/tr9/">http://www.unicode.org/reports/tr9/</loc>) 
+</bibl>
+
+
+<bibl id="Entities">
+David Carlisle and Patrick Ion (editors);
+<emph><loc href="http://www.w3.org/TR/xml-entity-names/">
+XML Entity Definitions for Characters (2nd Edition)</loc></emph>,
+<phrase>W3C Recommendation 10 April 2014.</phrase>
+(<loc href="http://www.w3.org/TR/xml-entity-names/">http://www.w3.org/TR/xml-entity-names/</loc>)
+</bibl>
+
+<bibl id="HTML4">
+Dave Raggett, Arnaud Le Hors, and Ian Jacobs (editors);
+<emph><loc href="http://www.w3.org/TR/html401/">
+HTML 4.01 Specification</loc></emph>,
+W3C Recommendation, 24 December 1999.
+(<loc href="http://www.w3.org/TR/html401/">http://www.w3.org/TR/html401/</loc>)
+</bibl>
+
+<bibl id="HTML5"> Robin Berjon, Steve Faulkner, Travis Leithead, Erika Doyle Navara, Edward O'Connor, Silvia Pfeiffer, Ian Hickson;
+<emph><loc href="http://www.w3.org/TR/html5/">HTML 5,
+A vocabulary and associated APIs for HTML and XHTML</loc></emph>
+<phrase>W3C Candidate Recommendation 04 February 2014</phrase>
+(<loc href="http://www.w3.org/TR/html5/">http://www.w3.org/TR/html5/</loc>)</bibl>
+
+<bibl id="ISO10646">
+Joint Technical Committee ISO/IEC JTC 1, Subcommittee SC 2.
+<emph><loc href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=56921">ISO/IEC 10646:2012, Information technology -- Universal Coded Character Set (UCS)</loc></emph>.
+International Standards Organization, Geneva, Switzerland, 2012.
+</bibl>
+
+<bibl id="Namespaces">
+Tim Bray, Dave Hollander, Andrew Layman, Richard Tobin, and Henry S. Thompson (editors);
+<emph><loc href="http://www.w3.org/TR/REC-xml-names/">
+Namespaces in XML</loc></emph>,
+W3C Recommendation, 8 December 2009.
+(<loc href="http://www.w3.org/TR/REC-xml-names/">http://www.w3.org/TR/REC-xml-names/</loc>)
+</bibl>
+
+<bibl id="Normal">
+Mark Davis, Ken Whistler, and Martin D&#xFC;rst;
+<emph><loc href="http://www.unicode.org/reports/tr15/">
+Unicode Normalization Forms</loc></emph>, 
+Unicode Standard Annex #15, Unicode 6.3.0 2013-09-20.
+(<loc href="http://www.unicode.org/reports/tr15/">http://www.unicode.org/reports/tr15/</loc>) 
+</bibl>
+
+<bibl id="OpenMath2004">
+S. Buswell, O. Caprotti, D. P. Carlisle, M. C. Dewar, M. Ga&#xEB;tano and M. Kohlhase (editors);
+<emph><loc href="http://www.openmath.org/standard/om20-2004-06-30/">
+The OpenMath Standard Version 2.0</loc></emph>,
+The OpenMath Society, 30 June 2004.
+(<loc href="http://www.openmath.org/standard/om20-2004-06-30/">http://www.openmath.org/standard/om20-2004-06-30/</loc>)
+</bibl>
+
+<bibl id="RELAX-NG">
+ISO/IEC JTC 1/SC 34;
+<emph><loc href="http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=52348">Document Schema Definition Language (DSDL) -- Part 2: Regular-grammar-based validation -- RELAX NG 2008</loc></emph>,
+International Organization for Standardization,  15 December 2008.
+(<loc href="http://relaxng.org/spec-20011203.html">http://relaxng.org/spec-20011203.html</loc>)
+</bibl>
+
+
+<bibl id="RFC2045">N. Freed and N. Borenstein;
+<emph><loc
+href="http://www.ietf.org/rfc/rfc2045.txt">Multipurpose Internet Mail Extensions (MIME) Part One: Format of 
+Internet Message Bodies</loc></emph>,
+RFC 2045, November 1996.
+(<loc
+href="http://www.ietf.org/rfc/rfc2045.txt">http://www.ietf.org/rfc/rfc2045.txt</loc>) 
+</bibl>
+
+<bibl id="RFC3986">T. Berners-Lee, R. Fielding and L. Masinter;
+<emph><loc
+href="http://tools.ietf.org/html/rfc3986">Uniform Resource Identifier (URI): Generic Syntax</loc></emph>,
+RFC 3986, January 2005.
+(<loc
+href="http://tools.ietf.org/html/rfc3986">http://tools.ietf.org/html/rfc3986</loc>) 
+</bibl>
+
+<bibl id="RFC2046">N. Freed and N. Borenstein;
+<emph><loc
+href="http://www.ietf.org/rfc/rfc2046.txt">Multipurpose Internet Mail
+Extensions (MIME) Part Two: Media Types</loc></emph>, 
+RFC 2045, November 1996.
+(<loc
+href="http://www.ietf.org/rfc/rfc2046.txt">http://www.ietf.org/rfc/rfc2046.txt</loc>) 
+</bibl>
+
+<bibl id="RFC4288">N. Freed and J. Klensin;
+<emph><loc
+href="http://www.ietf.org/rfc/rfc4288.txt">Media Type Specifications and Registration Procedures</loc></emph>, 
+RFC 4288, December 2005.
+(<loc
+href="http://www.ietf.org/rfc/rfc4288.txt">http://www.ietf.org/rfc/rfc4288.txt</loc>) 
+</bibl>
+
+<bibl id="IRI">M. Duerst and M. Suignard;
+<emph><loc
+href="http://www.ietf.org/rfc/rfc3987.txt">Internationalized Resource Identifiers (IRIs)</loc></emph>,
+January 2005
+(<loc href="http://www.ietf.org/rfc/rfc3987.txt">http://www.ietf.org/rfc/rfc3987.txt</loc>). See also the proposed update <loc href="http://tools.ietf.org/html/draft-duerst-iri-bis-07">http://tools.ietf.org/html/draft-duerst-iri-bis-07</loc>.</bibl>
+
+<bibl id="RFC3023">M. Murata, S. St.Laurent and D. Kohn;
+<emph><loc
+href="http://www.ietf.org/rfc/rfc3023.txt">XML Media Types</loc></emph>, 
+RFC 3023, January 2001.
+(<loc
+href="http://www.ietf.org/rfc/rfc3023.txt">http://www.ietf.org/rfc/rfc3023.txt</loc>)
+</bibl>
+
+<bibl id="Unicode">
+The Unicode Consortium.
+<emph><loc href="http://www.unicode.org/versions/Unicode6.3.0/">
+The Unicode Standard, Version 6.3.0</loc></emph>,
+The Unicode Consortium, 2012. ISBN 978-1-936213-07-8.
+(<loc href="http://www.unicode.org/versions/Unicode6.3.0/">http://www.unicode.org/versions/Unicode6.3.0/</loc>) 
+</bibl>
+
+<bibl id="XHTML">
+Steven Pemberton, et al.;
+<emph><loc href="http://www.w3.org/TR/xhtml1/">
+XHTML&#x2122; 1.0 The Extensible HyperText Markup Language (Second Edition):  A Reformulation of HTML 4 in XML 1.0</loc></emph>,
+W3C Recommendation, 26 January 2000, revised 1 August 2002.
+(<loc href="http://www.w3.org/TR/xhtml1/">http://www.w3.org/TR/xhtml1/</loc>)
+</bibl>
+
+<bibl id="XML">
+Tim Bray, Jean Paoli, C. M. Sperberg-McQueen, Eve Maler, and Fran&#xE7;ois Yergeau (editors);
+<emph><loc href="http://www.w3.org/TR/xml/">
+Extensible Markup Language (XML) 1.0 (Fifth Edition)</loc></emph>,
+W3C Recommendation, 26 November 2008.
+(<loc href="http://www.w3.org/TR/xml/">http://www.w3.org/TR/xml/</loc>) 
+</bibl>
+
+</blist>
+</div1>
+
+<!-- LocalWords:  Abramowitz Stegun NISO AAP MarkUp Buswell Healey UIUC Cajori
+-->
+<!-- LocalWords:  Salle LNAI Verlag Poppelier Bos Chavchanidze Macmillian WG NG
+-->
+<!-- LocalWords:  Chaundy Batey Makoto Murata Higham IEC JTC UCS Xbook Publ kon
+-->
+<!-- LocalWords:  Wium Lilley Tantek elik Hickson Caprotti Gaëtano Klyne Rowley
+-->
+<!-- LocalWords:  McGuinness Harmelen Herwijnen DTD's EPSIG Raggett Arnaud Hors
+-->
+<!-- LocalWords:  Gettys Frystyk Masinter Berners Rodionov der Vlist O'Reilly
+-->
+<!-- LocalWords:  Spivak AMS Devitt Froumentin Paoli Sperberg Maler DeRose et
+-->
+<!-- LocalWords:  Grosso Vidur Apparao Glazman garet Robie Byrne Pemberton al
+-->
+<!-- LocalWords:  Altheim tm HyperText Boumphrey McCarron Schnitzenbaumer Ashok
+-->
+<!-- LocalWords:  Wugofski Fallside Malhotra Datatypes Borenstein Klensin Kohn
+-->
+<!-- LocalWords:  Longman Thieme Satz und Bedeutung mathematischer Formeln Gmbh
+-->
+<!-- LocalWords:  Billmann Helmut Bodden Nacke GmbH Zwillinger th CRC LLC
+-->
+<!-- LocalWords:  Masayasu Ishikawa Ferraiolo Fujisawa
+-->
+

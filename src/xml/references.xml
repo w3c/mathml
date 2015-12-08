@@ -1,0 +1,386 @@
+<inform-div1 id="references" role="appendixk"><head>References</head>
+<!-- $Id: references.xml,v 1.117 2014-04-16 10:54:12 dcarlis Exp $ -->
+
+<blist>
+<bibl id="Abramowitz1977">Abramowitz, Milton, Irene A. Stegun (editors);
+<emph>Mathematical Functions: With Formulas, Graphs, and Mathematical Tables</emph>.
+Dover Publications Inc., December 1977, ISBN: 0-4866-1272-4.
+</bibl>
+
+<bibl id="AAP-math"><loc href="http://www.niso.org/apps/group_public/project/details.php?project_id=43">ANSI/NISO Z39.59-1998</loc>;
+<emph>AAP Math DTD</emph>,
+Standard for Electronic Manuscript Preparation and MarkUp.
+(Association of American Publishers, Inc., Washington, DC)
+Bethesda, MD, 1988.
+</bibl>
+
+<!--
+<bibl id="Buswell1996">Buswell, S., Healey, E.R. Pike, and
+M. Pike; <emph>SGML and the Semantic Representation of Mathematics</emph>.
+UIUC Digital Library Initiative SGML Mathematics Workshop, May 1996
+and SGML Europe 96 Conference, Munich 1996.
+</bibl>
+-->
+
+<bibl id="Cajori1928">Cajori, Florian; <emph>A History of Mathematical
+Notations</emph>, vol. I &amp; II. Open Court Publishing Co., La Salle
+Illinois, 1928 &amp; 1929 republished Dover Publications Inc., New
+York, 1993, xxviii+820 pp. ISBN 0-486-67766-4 (paperback).
+</bibl>
+
+<bibl id="CSS21">
+Bert Bos, Tantek &#xC7;elik, Ian Hickson, and H&#xE5;kon Wium Lie (editors);
+<emph><loc href="http://www.w3.org/TR/CSS21/">
+Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification</loc></emph>,
+W3C Recommendation 07 June 2011.
+(<loc href="http://www.w3.org/TR/CSS21/">http://www.w3.org/TR/CSS21/</loc>) 
+</bibl>
+
+ <bibl id="MathML1">Patrick Ion, Robert Miner,
+   <emph><loc href="http://www.w3.org/TR/REC-MathML/">Mathematical Markup Language (MathML) 1.01 Specification</loc></emph>
+   W3C Recommendation, revision of 7 July 1999
+   (<loc href="http://www.w3.org/TR/REC-MathML/">http://www.w3.org/TR/REC-MathML/</loc>) 
+ </bibl>
+
+ <bibl id="OMDoc1.2">Michael Kohlhase
+   <emph><loc href="http://omdoc.org/pubs/omdoc1.2.pdf">OMDoc - An open markup format for mathematical documents [Version 1.2]</loc></emph>
+   LNAI 4180, Springer Verlag, 2006
+   (<loc href="http://omdoc.org/pubs/omdoc1.2.pdf">http://omdoc.org/pubs/omdoc1.2.pdf</loc>) .
+ </bibl>
+
+ <bibl id="MathML2">David Carlisle, Patrick Ion, Robert Miner, Nico Poppelier,
+   <emph>
+   <loc href="http://www.w3.org/TR/MathML2/">Mathematical Markup Language (MathML) Version 2.0 (Second Edition)</loc></emph>
+   W3C Recommendation 21 October 2003
+   (<loc href="http://www.w3.org/TR/MathML2/">http://www.w3.org/TR/MathML2</loc>) 
+ </bibl>
+
+<bibl id="MathMLforCSS">Bert Bos, David Carlisle, George Chavchanidze, Patrick D. F. Ion, 
+Bruce R. Miller <emph><loc href="http://www.w3.org/TR/mathml-for-css/">A MathML for CSS profile</loc></emph>
+<phrase>W3C Recommendation 07 June 2011</phrase>
+(<loc href="http://www.w3.org/TR/mathml-for-css/">http://www.w3.org/TR/mathml-for-css</loc>)</bibl>
+
+<!--
+<bibl id="Carroll1871">Carroll, Lewis [Rev. C.L. Dodgson];
+<emph>Through the Looking Glass and What Alice Found There</emph>.
+Macmillian &amp; Co., 1871.
+</bibl>
+-->
+
+<!--
+<bibl id="mathml3cds">Carlisle, Davenport, Kohlhase, eds;
+<emph>The MathML3 Content Dictionaries</emph>.
+Joint Document by  OpenMath Society and W3C Math WG, under development.
+</bibl>
+-->
+
+<bibl id="Chaundy1954">Chaundy, T.W., P.R. Barrett, and C. Batey;
+<emph>The Printing of Mathematics. Aids for authors and editors and rules
+for compositors and readers at the University Press, Oxford</emph>.
+Oxford University Press, London, 1954, ix+105 pp.
+</bibl>
+
+<!--
+<bibl id="Higham1993">Higham, Nicholas J.;
+<emph>Handbook of writing for the mathematical sciences</emph>.
+Society for Industrial and Applied Mathematics
+(SIAM), Philadelphia, PA, 1993. xii+241 pp. ISBN: 0-89871-314-5.
+</bibl>
+-->
+
+<bibl id="ISO-12083">ISO 12083:1994;
+<emph>ISO 12083 DTD</emph>
+Information and Documentation - Electronic Manuscript Preparation and Markup.
+International Standards Organization, Geneva, Switzerland, 1994.
+</bibl>
+
+<bibl id="Knuth1986">Knuth, Donald E.;
+<emph>The T<sub>E</sub>Xbook</emph>.
+American Mathematical Society, Providence, RI and Addison-Wesley Publ. Co.,
+Reading, MA, 1986, ix+483 pp. ISBN: 0-201-13448-9.
+</bibl>
+
+<!--
+<bibl id="CSS1">Lie, H&#229;kon Wium and  Bert Bos;
+<emph><loc
+href="http://www.w3.org/TR/1999/REC-CSS1-19990111">Cascading Style Sheets, level 1</loc></emph>, W3C Recommendation, 17 December 
+1996.  (<loc
+href="http://www.w3.org/TR/1999/REC-CSS1-19990111">http://www.w3.org/TR/1999/REC-CSS1-19990111</loc>)
+</bibl>
+-->
+
+
+
+<!--
+<bibl id="CSS2">Bert Bos, H&#229;kon Wium Lie, Chris Lilley, and Ian
+Jacobs (editors);
+<emph><loc
+href="http://www.w3.org/TR/1998/REC-CSS2-19980512/">Cascading Style Sheets, level 2 CSS2 Specification</loc></emph>, W3C Recommendation, 12 May 1998.
+(<loc
+href="http://www.w3.org/TR/1998/REC-CSS2-19980512/">http://www.w3.org/TR/1998/REC-CSS2-19980512/</loc>) 
+</bibl>
+-->
+
+<!--
+<bibl id="OpenMath2000">O. Caprotti, D. P. Carlisle, A. M. Cohen (editors);
+<emph><loc href="http://www.openmath.org/standard/">The OpenMath Standard</loc></emph>, February 2000.
+(<loc href="http://www.openmath.org/standard/">http://www.openmath.org/standard</loc>)
+</bibl>
+-->
+
+  <bibl id="rdf">
+    Graham Klyne,  Jeremy J. Carroll, Brian McBride (editors);
+    <emph><loc href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/">
+Resource Description Framework (RDF): Concepts and Abstract Syntax</loc></emph>,February 2004. 
+<loc href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/">http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/</loc>
+  </bibl>
+
+<!--
+<bibl id="owl">
+    Deborah L. McGuinness and Frank van Harmelen (editors);
+    <emph><loc href="http://www.w3.org/TR/2004/REC-owl-features-20040210/">OWL Web Ontology Language Overview </loc></emph> February 2004.
+    <loc href="http://www.w3.org/TR/2004/REC-owl-features-20040210/">http://www.w3.org/TR/2004/REC-owl-features-20040210/</loc>
+  </bibl>
+-->
+
+<bibl id="Pierce1961">Pierce, John R.;
+<emph>An Introduction to Information Theory.
+Symbols, Signals and Noise.</emph>.
+Revised edition of
+<emph>Symbols, Signals and Noise: 
+the Nature and Process of Communication</emph>
+(1961). Dover Publications Inc., New York, 1980,  xii+305
+pp. ISBN 0-486-24061-4.
+</bibl>
+
+<bibl id="Poppelier1992">Poppelier, N.A.F.M., E. van Herwijnen,
+and C.A. Rowley; <emph>Standard DTD's and Scientific Publishing</emph>,
+EPSIG News 5 (1992) #3, September 1992,  10-19.
+</bibl>
+
+
+<bibl id="HTTP11">Fielding, R., J. Gettys, J. Mogul, H. Frystyk, L. Masinter, 
+P. Leach, and T. Berners-Lee; <emph><loc
+href="http://www.ietf.org/rfc/rfc2616.txt">Hypertext Transfer Protocol -- HTTP/1.1</loc></emph>, 
+June 1999.</bibl>
+
+<!--
+<bibl id="roadmap">Patrick Ion, Robert Minor, Math Working Group Roadmap 2007/8
+(<loc href="http://www.w3.org/Math/Roadmap/">http://www.w3.org/Math/Roadmap/</loc>)
+</bibl>
+-->
+
+<!--
+<bibl id="RodWatt2000">Igor Rodionov, Stephen Watt;
+<emph>Content-Faithful Stylesheets for MathML</emph>.
+Technical Report TR-00-23, Ontario Research Center for Computer Algebra, 
+December 2000.  (<loc href=
+"http://www.orcca.on.ca/TechReports/2000/TR-00-24.html"
+>http://www.orcca.on.ca/TechReports/2000/TR-00-24.html</loc>)
+</bibl>
+-->
+
+<bibl id="RelaxNGBook">
+  Eric van der Vlist; <emph>RELAXNG: A simple schema language for XML</emph> O'Reilly 2004
+</bibl>
+
+<!--
+<bibl id="Spivak1986">Spivak, M. D.;
+<emph>The Joy of T<sub>E</sub>X 
+A gourmet guide to typesetting with the AMS-T<sub>E</sub>X macro package</emph>.
+American Mathematical Society, Providence, RI, MA 1986, xviii+290 pp. ISBN:
+0-8218-2999-8.
+</bibl>
+-->
+
+<!--
+<bibl id="Swanson1979">Swanson, Ellen;
+<emph>Mathematics into type:
+Copy editing and proofreading of mathematics for editorial assistants and
+authors</emph>.
+Revised edition. American Mathematical Society, Providence,
+R.I., 1979. x+90 pp. ISBN: 0-8218-0053-1.
+</bibl>
+
+<bibl id="Swanson1999">Swanson, Ellen;
+<emph>Mathematics into type: Updated Edition</emph>. 
+American Mathematical Society, Providence, 
+R.I., 1999. 102 pp. ISBN: 0-8218-1961-5.
+</bibl>
+-->
+
+<bibl id="MathMLTypes">Stan Devitt, Michael Kohlhase, Max Froumentin (editors);
+<emph><loc href="http://www.w3.org/TR/mathml-types/">Structured Types in MathML 2.0</loc></emph>,
+(<loc href="http://www.w3.org/TR/mathml-types/"></loc>)
+W3C Working Group Note 10 November 2003.
+</bibl>
+
+<bibl id="XLink"> Steve DeRose, Eve Maler, David Orchard, Norman Walsh (editors);
+<emph><loc href="http://www.w3.org/TR/2010/REC-xlink11-20100506/">XML Linking Language (XLink) Version 1.1</loc></emph>,
+W3C Recommendation 06 May 2010.
+(<loc href="http://www.w3.org/TR/2010/REC-xlink11-20100506/">http://www.w3.org/TR/2010/REC-xlink11-20100506/</loc>)
+</bibl>
+
+<!--
+<bibl id="XPath"> James Clark, Steve DeRose(editors);
+<emph><loc href="http://www.w3.org/TR/1999/REC-xpath-19991116">XML Path Language Version 1.0</loc></emph>,
+World Wide Web Consortium Recommendation, 16. November 1999. 
+(<loc href="http://www.w3.org/TR/1999/REC-xpath-19991116">http://www.w3.org/TR/1999/REC-xpath-19991116</loc>)
+</bibl>
+-->
+
+<!--
+<bibl id="XPointer">Paul Grosso, Eve Maler, Jonathan Marsh,
+    Norman Walsh (editors);
+<emph><loc href="http://www.w3.org/TR/2003/REC-xptr-framework-20030325/">XML Pointer Framework</loc></emph>,
+World Wide Web Consortium Recommendation, 25 March 2003.
+(<loc href="http://www.w3.org/TR/2003/REC-xptr-framework-20030325/">http://www.w3.org/TR/2003/REC-xptr-framework-20030325/</loc>)
+</bibl>
+-->
+
+<bibl id="XSLT">James Clark (editor);
+<emph><loc href="http://www.w3.org/TR/1999/REC-xslt-19991116">XSL Transformations (XSLT) Version 1.0</loc></emph>,
+World Wide Web Consortium Recommendation, 16 November 1999.
+(<loc href="http://www.w3.org/TR/1999/REC-xslt-19991116">http://www.w3.org/TR/1999/REC-xslt-19991116</loc>)
+</bibl>
+
+<!--
+<bibl id="Behaviors">Vidur Apparao, Daniel Glazman, and Chris Wilson (editors);
+<emph><loc href="http://www.w3.org/TR/1999/WD-becss-19990804">Behavioral Extensions to CSS</loc></emph>
+World Wide Web Consortium Working Draft, 4 August 1999.
+(<loc href="http://www.w3.org/TR/1999/WD-becss-19990804">http://www.w3.org/TR/1999/WD-becss-19990804</loc>)
+</bibl>
+-->
+
+<!--
+<bibl id="DOM">
+Arnaud Le Hors, Philippe Le H&#233;garet, Lauren Wood, Gavin Nicol, Jonathan Robie, Mike Champion, and Steve Byrne (editors);
+<emph><loc
+href="http://www.w3.org/TR/2000/REC-DOM-Level-2-Core-20001113/">Document Object Model (DOM) Level 2 Core Specification</loc></emph>
+World Wide Web Consortium Recommendation, 13 November, 2000.
+(<loc
+href="http://www.w3.org/TR/2000/REC-DOM-Level-2-Core-20001113/">http://www.w3.org/TR/2000/REC-DOM-Level-2-Core-20001113/</loc>) 
+</bibl>
+-->
+
+<bibl id="Modularization">
+<phrase>Daniel Austin, Subramanian Peruvemba, Shane McCarron, Masayasu Ishikawa, Mark Birbeck</phrase> (editors);
+<emph><loc
+href="http://www.w3.org/TR/2010/REC-xhtml-modularization-20100729/">XHTML[tm] Modularization 1.1 - Second Edition</loc></emph>,
+World Wide Web Consortium Recommendation, <phrase>29 July 2010</phrase>.
+(<loc
+href="http://www.w3.org/TR/2010/REC-xhtml-modularization-20100729/">http://www.w3.org/TR/2010/REC-xhtml-modularization-20100729</loc>)
+</bibl>
+
+<bibl id="XMLSchemas">David C. Fallside, editor;
+<emph><loc
+href="http://www.w3.org/TR/2004/REC-xmlschema-0-20041028/">XML Schema Part 0: Primer Second Edition</loc></emph>,
+W3C Recommendation 28 October 2004.
+(<loc
+href="http://www.w3.org/TR/2004/REC-xmlschema-0-20041028/">http://www.w3.org/TR/2004/REC-xmlschema-0-20041028/</loc>) 
+</bibl>
+
+<bibl id="XMLSchemaDatatypes">Paul V. Biron, Ashok Malhotra, editors;
+<emph><loc
+href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/">XML Schema Part 2: Datatypes Second Edition</loc></emph>,
+World Wide Web Consortium Recommendation, 28 Oct 2004.
+(<loc
+href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/">http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/</loc>) 
+</bibl>
+
+<!--
+<bibl id="sgml-xml">J. Clark; <emph><loc
+href="http://www.w3.org/TR/NOTE-sgml-xml-971215.html">Comparison of SGML and
+XML</loc></emph>, W3C Note, December 1997.  (<loc
+href="http://www.w3.org/TR/NOTE-sgml-xml-971215.html">http://www.w3.org/TR/NOTE-sgml-xml-971215.html</loc>)</bibl>
+-->
+
+
+
+<!--
+<bibl id="Unicode3.2">The Unicode Consortium;
+<emph>The Unicode Standard, Version 3.2</emph>, 
+Addison-Wesley Longman, Inc., Reading MA, 2000, XXX + 1040.
+ISBN 0-201-61633-5.
+(<loc
+href="http://www.unicode.org/unicode/standard/standard.html">http://www.unicode.org/unicode/standard/standard.html</loc>) 
+</bibl>
+-->
+
+<!--
+<bibl id="Thieme1983">Thieme, Romeo;
+<emph>Satz und Bedeutung mathematischer Formeln [Typesetting
+and meaning of mathematical formulas]</emph>.
+Reprint of the 1934 original. Edited by Karl Billmann, Helmut
+Bodden
+and Horst Nacke. Werner-Verlag GmbH, Dusseldorf, 1983, viii +
+92 pp. ISBN 3-8041-3549-8.
+  </bibl>
+-->
+
+<!--
+<bibl id="Zwillinger1988">Daniel Zwillinger (editor);
+<emph>Standard Mathematical Tables and
+     Formulae (30th Edition)</emph>.
+CRC Press LLC, January 1996, ISBN: 0-8493-2479-3.
+</bibl>
+-->
+
+<bibl id="XHTML-MathML-SVG"> Masayasu Ishikawa,  ed.,
+   <emph><loc href="http://www.w3.org/TR/2002/WD-XHTMLplusMathMLplusSVG-20020809/">An HTML + MathML + SVG Profile</loc></emph>
+   W3C Working Draft, 9 August 2002. 
+   (<loc href="http://www.w3.org/TR/2002/WD-XHTMLplusMathMLplusSVG-20020809/">http://www.w3.org/TR/2002/WD-XHTMLplusMathMLplusSVG-20020809/</loc>)
+</bibl>
+
+<bibl id="SVG1.1">
+  Dean Jackson, Jon Ferraiolo, Jun Fujisawa, eds.
+  <emph><loc href="http://www.w3.org/TR/2011/REC-SVG11-20110816/">Scalable Vector Graphics (SVG) 1.1 Specification (Second Edition)</loc></emph>
+  W3C Recommendation,  16 August 2011
+  (<loc href="http://www.w3.org/TR/2011/REC-SVG11-20110816/">http://www.w3.org/TR/2011/REC-SVG11-20110816/</loc>)
+</bibl>
+
+<!--
+<bibl id="xml11">
+  World Wide Web Consortium
+  <emph><loc href="http://www.w3.org/TR/2004/REC-xml11-20040204/">Extensible Markup Language (XML) 1.1.</loc></emph>
+  W3C Recommendation, February 2004
+  (<loc href="http://www.w3.org/TR/2004/REC-xml11-20040204/">http://www.w3.org/TR/2004/REC-xml11-20040204/</loc>)
+</bibl>
+-->
+
+<bibl id="IEEE754">
+  IEEE
+  <emph><loc href="http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=4610935">IEEE Standard for Floating-Point Arithmetic</loc></emph>
+  (<loc href="http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=4610935">http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=4610935</loc>)
+</bibl>
+
+</blist>
+</inform-div1>
+
+<!-- LocalWords:  Abramowitz Stegun NISO AAP MarkUp Buswell Healey UIUC Cajori
+-->
+<!-- LocalWords:  Salle LNAI Verlag Poppelier Bos Chavchanidze Macmillian WG NG
+-->
+<!-- LocalWords:  Chaundy Batey Makoto Murata Higham IEC JTC UCS Xbook Publ kon
+-->
+<!-- LocalWords:  Wium Lilley Tantek elik Hickson Caprotti Gaëtano Klyne Rowley
+-->
+<!-- LocalWords:  McGuinness Harmelen Herwijnen DTD's EPSIG Raggett Arnaud Hors
+-->
+<!-- LocalWords:  Gettys Frystyk Masinter Berners Rodionov der Vlist O'Reilly
+-->
+<!-- LocalWords:  Spivak AMS Devitt Froumentin Paoli Sperberg Maler DeRose et
+-->
+<!-- LocalWords:  Grosso Vidur Apparao Glazman garet Robie Byrne Pemberton al
+-->
+<!-- LocalWords:  Altheim tm HyperText Boumphrey McCarron Schnitzenbaumer Ashok
+-->
+<!-- LocalWords:  Wugofski Fallside Malhotra Datatypes Borenstein Klensin Kohn
+-->
+<!-- LocalWords:  Longman Thieme Satz und Bedeutung mathematischer Formeln Gmbh
+-->
+<!-- LocalWords:  Billmann Helmut Bodden Nacke GmbH Zwillinger th CRC LLC
+-->
+<!-- LocalWords:  Masayasu Ishikawa Ferraiolo Fujisawa
+-->
+

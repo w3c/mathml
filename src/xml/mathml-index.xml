@@ -1,0 +1,16 @@
+<inform-div1 id="index" >
+<!-- $Id: mathml-index.xml,v 1.4 2014-04-16 10:54:12 dcarlis Exp $-->
+<!-- Exp $ -->
+<head>Index</head>
+<div2 id="index_elem">
+<head>MathML Elements</head>
+<p>References to sections in which an element is defined are marked in bold.</p>
+<?generate-elements-index?>
+</div2>
+<div2 id="index_att">
+<head>MathML Attributes</head>
+<p>In addition to the standard MathML attributes, some attributes from
+other namespaces such as Xlink or XML Schema are also listed here.</p>
+<?generate-attributes-index?>
+</div2>
+</inform-div1>
