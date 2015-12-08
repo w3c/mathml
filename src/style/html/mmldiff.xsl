@@ -192,7 +192,7 @@ padding-right: 1em;
       <body>
 <xsl:if test="/spec/@role='editors-copy'">
 <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;">
-<b>Editors'<br/> Draft<br/><span style="font-size:75%">&#36;Date: &#36;</span></b>
+<b>Editors'<br/> Draft<br/><span style="font-size:75%">Date: <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/></span></b>
 </div>
 </xsl:if>
         <xsl:copy-of select="$additional.format.note"/>

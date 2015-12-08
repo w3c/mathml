@@ -149,7 +149,7 @@ padding-right: 1em;
             href="https://www.w3.org/StyleSheets/TR/base.css" />
    </head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br class="html-compat" /> Draft<br class="html-compat" /><span style="font-size:75%">$Date: $</span></b></div>
+      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br class="html-compat" /> Draft<br class="html-compat" /><span style="font-size:75%">Date: 2015-12-08</span></b></div>
       <div id="xhtml-version">
          <p>The presentation of this document has been augmented to
             use XHTML rather than HTML, and to include all MathML
