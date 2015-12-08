@@ -163,7 +163,7 @@ All parameters can be overridden by the user.
     </xsl:otherwise>
   </xsl:choose>
 <xsl:text>\qquad}\hspace{-2cm}}\hspace{1cm}
-\href{http://www.w3.org}{\includegraphics{w3c_home.png}}\par
+\href{http://www.w3.org}{\includegraphics{image/w3c_home.png}}\par
 
 \bigskip
 }

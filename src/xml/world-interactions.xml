@@ -897,7 +897,7 @@ for the W3C graphics activity.)</p>
    representations for display,  perhaps producing a graphical format
    such as the image below.</p>
 
-  <graphic role="display" source="image/intersect.gif" alt="\includegraphics{intersect}"/>
+  <graphic role="display" source="image/intersect.gif" alt="\includegraphics{image/intersect}"/>
 
   <p>Note that the semantics representation of this example is given
   in  MathML-Content markup, as the first child of the
