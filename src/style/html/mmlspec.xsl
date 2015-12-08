@@ -51,7 +51,7 @@ copied -->
 
 <xsl:param name="title.before.navigation" select="0"/>
 
-<xsl:param name="css.base.uri" select="'http://www.w3.org/StyleSheets/TR/'"/>
+<xsl:param name="css.base.uri" select="'https://www.w3.org/StyleSheets/TR/'"/>
 -->
 <xsl:param name="body.filename.base" select="'chapter'"/>
 <xsl:param name="back.filename.base" select="'appendix'"/>
@@ -64,7 +64,7 @@ copied -->
 
 <xsl:param name="title.before.navigation" select="1"/>
 
-<xsl:param name="css.base.uri" select="'http://www.w3.org/StyleSheets/TR/'"/>
+<xsl:param name="css.base.uri" select="'https://www.w3.org/StyleSheets/TR/'"/>
 
 <xsl:variable name="relax-schema">
 <xsl:for-each select="('mathml3','mathml3-common','mathml3-presentation','mathml3-strict-content','mathml3-content')">
