@@ -1,0 +1,270 @@
+#!/bin/bash
+
+BUILD=$PWD
+DRAFT=../
+
+# relative to DRAFT
+SOURCE=src/xml
+HSTYLE=src/style/html
+PSTYLE=src/style/pdf
+#W3CMATH=../..
+
+RELAXNG=RelaxNG/mathml3
+
+
+# saxon9 is the script
+# java -jar /saxon9/saxon9.jar $*
+# modify to a local copy of saxon8.jar
+
+echo validate sources
+rxp -sxV $DRAFT/$SOURCE/mathml-spec.xml
+
+# echo "updating schema"
+# (cd $DRAFT; cd $RELAXNG ; pwd; cvs -q update )
+
+
+cd $DRAFT
+
+echo clear old versions
+rm -f chapter?.{x,ht}ml appendix?.{x,ht}ml Overview.{x,ht}ml
+rm -f chapter?-d.html appendix?-d.html Overview-d.html
+
+
+## github layout saxon9 -o $RELAXNG/mathml3-content.rnc $SOURCE/contm-new.xml $SOURCE/schema.xsl
+## github layout saxon9 -o $RELAXNG/mathml3-presentation.rnc $SOURCE/presentation-markup.xml $SOURCE/schema.xsl
+
+
+
+echo "making standard HTML version"
+
+saxon9   $SOURCE/mathml-spec.xml  $HSTYLE/mmldiff.xsl show.diff.markup=0
+
+cp Overview.html index.html
+
+
+echo "making  diff-marked HTML version" "(needs cvs diff currently)"
+# (cd $RELAXNG ;  for i in mathml3*rnc; do cvs diff -D 20140410 --ifdef=diff $i > $i-diff; done
+#  diff makes empty rile rather than original if there are no diffs so:
+# for i in `grep -L ifdef *diff` ; do cp ${i/-diff/} $i;done
+# )
+
+echo "getting rec version of unicode, for op dictionary diffs (cvs based)"
+(cd $SOURCE; 
+if [ ! -f unicode-pr.xml ]
+ then 
+echo    cvs update -p -r  mathml32e-REC unicode.xml > unicode-pr.xml
+fi
+)
+
+saxon9  $SOURCE/mathml-spec.xml  $HSTYLE/mmldiff.xsl show.diff.markup=1 2>diff.log
+cat diff.log
+
+echo "fixing mmlcss id"
+cp chapter6-d.html 6.h
+sed -i 's/<a name="mmlcss" id="mmlcss"><\/a> //' chapter6-d.html
+
+
+echo "making xhtml stylesheets"
+echo "  " mmldiff
+saxon9 -novw -o $HSTYLE/xmmldiff.xsl $HSTYLE/mmldiff.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+echo "  " mmlspec
+saxon9 -novw -o $HSTYLE/xmmlspec.xsl $HSTYLE/mmlspec.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+echo "  " slices
+saxon9 -novw -o $HSTYLE/xslices.xsl $HSTYLE/slices.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+echo "  " slices-common
+saxon9 -novw -o $HSTYLE/xslices-common.xsl $HSTYLE/slices-common.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+echo "  " xmlspec
+saxon9 -novw -o $HSTYLE/xxmlspec.xsl $HSTYLE/xmlspec.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+echo "  " mcd
+saxon9 -novw -o $HSTYLE/xmcd.xsl $HSTYLE/mcd.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+echo "  " xntn-presentation
+saxon9 -novw -o $HSTYLE/xntn-presentation.xsl $HSTYLE/ntn-presentation.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+
+
+
+
+echo make xhtml version
+saxon9 $SOURCE/mathml-spec.xml $HSTYLE/mathmlx.xsl show.diff.markup=0
+
+
+
+
+
+echo ""
+echo ""
+echo validate generated xhtml+mathml
+for i in Overview.xml chapter?.xml appendix?.xml
+do
+ echo -n $i ""
+ rxp -sxV $i 
+done
+
+
+echo ""
+echo "making single file HTML (+MathML) version"
+mv mathml.dtd  tmp.dtd
+echo "" > mathml.dtd
+cp  $HSTYLE/html5.xsl .
+saxon9  -o mathml.html   -it main html5.xsl
+sed -i -e "s@></input></mtext>@/></mtext>@" mathml.html
+rm html5.xsl
+mv tmp.dtd mathml.dtd
+
+# exit
+
+echo ""
+echo PDF
+echo generate TeX files
+
+cd $BUILD
+
+saxon9  $DRAFT/$SOURCE/mathml-spec.xml $DRAFT/$PSTYLE/mathmlspec.xsl
+
+
+if test ! -f w3c_home.png 
+then
+echo copy W3C logo
+cp $SOURCE/../image/w3c_home.png .
+fi
+
+if test ! -f braids.png 
+then
+echo copy braids
+cp $SOURCE/../image/braids.png .
+fi
+
+if test ! -f intersect.png 
+then
+echo copy intersect
+cp $SOURCE/../image/intersect.png .
+fi
+
+if test ! -f intersect.png 
+then
+echo copy intersect
+cp $SOURCE/../image/phasorangle.png .
+fi
+
+
+echo copy pngs from $DRAFT
+cp $DRAFT/image/*.png image
+
+# use nested if rather than while to limit looping
+echo generate mathml.pdf
+pdflatex \\batchmode \\input mathml.tex
+if (grep -i rerun mathml.log)
+  then
+  pdflatex \\batchmode \\input mathml.tex
+  if (grep -i rerun mathml.log)
+    then 
+    pdflatex \\batchmode \\input mathml.tex
+    if (grep -i rerun mathml.log)
+      then
+      pdflatex \\batchmode \\input mathml.tex
+    fi
+  fi
+fi
+
+# once more to see messages
+# pdflatex mathml.tex
+
+
+
+
+
+echo grep latex warnings
+grep "^\!" mathml.log
+grep -i warning mathml.log | grep -v bookmarks | grep -v "Font Warning"
+grep -i rerun mathml.log
+grep -i " error" mathml.log
+grep Overfull mathml.log | sed -e "s/(\([0-9]\\.\)/(0\\1/"| sort -n
+
+
+
+mv mathml.pdf $DRAFT
+
+# echo make public.zip
+# 
+# IMG=`grep -o "<img[^>]*>" Overview.html chapter?.html appendix?.html | sed -e "s/^.*src=.\([^\"']*\).*/\1/"|grep image`
+# rm public.zip
+
+# zip -q public.zip chapter?.{x,ht}ml appendix?.{x,ht}ml Overview.{x,ht}ml $IMG mathml.dtd mathml.pdf .htaccess sorttable.js
+
+
+
+exit
+
+echo ""
+echo validate html
+# for i in *.html
+# do
+# echo -n $i ""
+# nsgmls  -s -E4  $i
+# done
+
+
+echo "images"
+mv images.tex images.old
+saxon9  -o images.tex $SOURCE/mathml-spec.xml $HSTYLE/images.xsl
+if (cmp images.tex images.old)
+then
+echo images same
+else
+echo images differ
+latex images.tex
+echo ""
+echo ""
+echo running generated images script
+bash images.sh
+fi
+
+exit
+
+
+
+echo ""
+echo PDF
+echo generate TeX files
+saxon9  $SOURCE/mathml-spec.xml $PSTYLE/mathmlspec.xsl
+
+if test ! -f w3c_home.png 
+then
+echo copy W3C logo
+cp $SOURCE/../image/w3c_home.png .
+fi
+
+if test ! -f braids.png 
+then
+echo copy braids
+cp $SOURCE/../image/braids.png .
+fi
+
+if test ! -f intersect.png 
+then
+echo copy intersect
+cp $SOURCE/../image/intersect.png .
+fi
+
+
+echo copy pngs from $DRAFT
+cp $DRAFT/image/*.png image
+
+
+# use nested if rather than while to limit looping
+echo generate mathml.pdf
+pdflatex \\batchmode \\input mathml.tex
+if (grep -i rerun mathml.log)
+  then
+  pdflatex \\batchmode \\input mathml.tex
+  if (grep -i rerun mathml.log)
+    then 
+    pdflatex \\batchmode \\input mathml.tex
+    if (grep -i rerun mathml.log)
+      then
+      pdflatex \\batchmode \\input mathml.tex
+    fi
+  fi
+fi
+
+
+exit
