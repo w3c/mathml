@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BUILD=$PWD
-DRAFT=../
+DRAFT=$PWD/../
 
 # relative to DRAFT
 SOURCE=src/xml
@@ -60,7 +60,6 @@ saxon9  $SOURCE/mathml-spec.xml  $HSTYLE/mmldiff.xsl show.diff.markup=1 2>diff.l
 cat diff.log
 
 echo "fixing mmlcss id"
-cp chapter6-d.html 6.h
 sed -i 's/<a name="mmlcss" id="mmlcss"><\/a> //' chapter6-d.html
 
 
@@ -116,38 +115,39 @@ echo ""
 echo PDF
 echo generate TeX files
 
-cd $BUILD
+cd $DRAFT
 
-saxon9  $DRAFT/$SOURCE/mathml-spec.xml $DRAFT/$PSTYLE/mathmlspec.xsl
+saxon9  $SOURCE/mathml-spec.xml $PSTYLE/mathmlspec.xsl
 
 
-if test ! -f w3c_home.png 
+if test ! -f image/w3c_home.png 
 then
 echo copy W3C logo
-cp $SOURCE/../image/w3c_home.png .
+cp $SOURCE/../image/w3c_home.png image
 fi
 
-if test ! -f braids.png 
+
+if test ! -f image/braids.png 
 then
 echo copy braids
-cp $SOURCE/../image/braids.png .
+cp $SOURCE/../image/braids.png image
 fi
 
-if test ! -f intersect.png 
+if test ! -f image/intersect.png 
 then
 echo copy intersect
-cp $SOURCE/../image/intersect.png .
+cp $SOURCE/../image/intersect.png image
 fi
 
-if test ! -f intersect.png 
+if test ! -f image/intersect.png 
 then
 echo copy intersect
-cp $SOURCE/../image/phasorangle.png .
+cp $SOURCE/../image/phasorangle.png image
 fi
 
+# get local tex style
+cp $PSTYLE/pmml-new.sty .
 
-echo copy pngs from $DRAFT
-cp $DRAFT/image/*.png image
 
 # use nested if rather than while to limit looping
 echo generate mathml.pdf
@@ -180,28 +180,7 @@ grep -i " error" mathml.log
 grep Overfull mathml.log | sed -e "s/(\([0-9]\\.\)/(0\\1/"| sort -n
 
 
-
-mv mathml.pdf $DRAFT
-
-# echo make public.zip
-# 
-# IMG=`grep -o "<img[^>]*>" Overview.html chapter?.html appendix?.html | sed -e "s/^.*src=.\([^\"']*\).*/\1/"|grep image`
-# rm public.zip
-
-# zip -q public.zip chapter?.{x,ht}ml appendix?.{x,ht}ml Overview.{x,ht}ml $IMG mathml.dtd mathml.pdf .htaccess sorttable.js
-
-
-
 exit
-
-echo ""
-echo validate html
-# for i in *.html
-# do
-# echo -n $i ""
-# nsgmls  -s -E4  $i
-# done
-
 
 echo "images"
 mv images.tex images.old
@@ -220,51 +199,3 @@ fi
 
 exit
 
-
-
-echo ""
-echo PDF
-echo generate TeX files
-saxon9  $SOURCE/mathml-spec.xml $PSTYLE/mathmlspec.xsl
-
-if test ! -f w3c_home.png 
-then
-echo copy W3C logo
-cp $SOURCE/../image/w3c_home.png .
-fi
-
-if test ! -f braids.png 
-then
-echo copy braids
-cp $SOURCE/../image/braids.png .
-fi
-
-if test ! -f intersect.png 
-then
-echo copy intersect
-cp $SOURCE/../image/intersect.png .
-fi
-
-
-echo copy pngs from $DRAFT
-cp $DRAFT/image/*.png image
-
-
-# use nested if rather than while to limit looping
-echo generate mathml.pdf
-pdflatex \\batchmode \\input mathml.tex
-if (grep -i rerun mathml.log)
-  then
-  pdflatex \\batchmode \\input mathml.tex
-  if (grep -i rerun mathml.log)
-    then 
-    pdflatex \\batchmode \\input mathml.tex
-    if (grep -i rerun mathml.log)
-      then
-      pdflatex \\batchmode \\input mathml.tex
-    fi
-  fi
-fi
-
-
-exit
