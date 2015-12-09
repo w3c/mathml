@@ -63,6 +63,7 @@ All parameters can be overridden by the user.
 
 <!-- Main output document -->
 <xsl:template match="/">
+ <!--
   <xsl:result-document href="{substring-before(/spec/header/altlocs/loc
      [contains(@href,'s.pdf')]/@href,'pdf')}tex">
 <xsl:text>
@@ -175,7 +176,8 @@ All parameters can be overridden by the user.
 </xsl:text>
 
 
-  </xsl:result-document>
+</xsl:result-document>
+-->
   <xsl:result-document href="{substring-before(/spec/header/altlocs/loc
      [contains(@href,'l.pdf')]/@href,'pdf')}tex">
 <xsl:text>
