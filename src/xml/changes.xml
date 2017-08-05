@@ -5,12 +5,25 @@
 <head>Changes between MathML 3.0 Second Edition and Third Edition</head>
 <ulist>
 <item>
+<p>Changes to <specref ref="fund"/></p>
+<ulist>
+<item><p>Clarify the description of <code>%</code> in <specref ref="fund_units"/></p></item>
+</ulist>
+</item>
+<item>
 <p>Changes to <specref ref="presm"/></p>
 <ulist>
  <item><p>Separate the the examples in <specref ref="presm_mi_examples"/> and <specref ref="presm_mn_examples"/> to improve their appearance when rendered.</p></item>
  <item><p>Clarify that negative numbers should be marked up with an explicit <el>mo</el> operator in <specref ref="presm_not_single_mn"/>.</p></item>
  <item><p>Correct the long division notation names in <specref ref="presm_mlongdiv_attrs"/>.</p></item>
  <item><p>Clarify that the horizontal alignment of scripts in <specref ref="presm_mmultiscripts"/> is towards the base, and add a new example.</p></item>
+</ulist>
+</item>
+
+<item>
+<p>Changes to <specref ref="contm"/></p>
+<ulist>
+ <item><p>Correct examples in <specref ref="contm_share"/>, <specref ref="contm_acyclicity"/>, <specref ref="contm_share_binding"/>,  <specref ref="contm_rendering_share"/>  to use <att>src</att> (to match the normative schema) not <att>href</att>. The previous examples were also valid, as <att>href</att> is a common presentaional attribute allowed on all elements.</p></item>
 </ulist>
 </item>
 

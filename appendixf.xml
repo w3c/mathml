@@ -175,22 +175,30 @@ padding-right: 1em;
             </h2>
             <ul>
                <li>
-                  <p>Changes to <a href="chapter3.xml">Chapter 3 Presentation Markup</a></p>
+                  <p>Changes to <a href="chapter2.xml">Chapter 2 MathML Fundamentals</a></p>
                   <ul>
                      <li id="d8e33620">
+                        <p>Clarify the description of <code>%</code> in <a href="chapter2.xml#fund.units">Section 2.1.5.2 Length Valued Attributes</a></p>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <p>Changes to <a href="chapter3.xml">Chapter 3 Presentation Markup</a></p>
+                  <ul>
+                     <li id="d8e33632">
                         <p>Separate the the examples in <a href="chapter3.xml#presm.mi.examples">Section 3.2.3.3 Examples</a> and <a href="chapter3.xml#presm.mn.examples">Section 3.2.4.3 Examples</a> to improve their appearance when rendered.
                         </p>
                      </li>
-                     <li id="d8e33627">
+                     <li id="d8e33639">
                         <p>Clarify that negative numbers should be marked up with an explicit <code>mo</code> operator in <a href="chapter3.xml#presm.not.single.mn">Section 3.2.4.4 Numbers that should not be written 
                               using <code>&lt;mn&gt;</code> alone</a>.
                         </p>
                      </li>
-                     <li id="d8e33635">
+                     <li id="d8e33647">
                         <p>Correct the long division notation names in <a href="chapter3.xml#presm.mlongdiv.attrs">Section 3.6.2.2 Attributes</a>.
                         </p>
                      </li>
-                     <li id="d8e33640">
+                     <li id="d8e33652">
                         <p>Clarify that the horizontal alignment of scripts in <a href="chapter3.xml#presm.mmultiscripts">Section 3.4.7 Prescripts and Tensor Indices
                               <code>&lt;mmultiscripts&gt;</code>,
                               <code>&lt;mprescripts/&gt;</code>,
@@ -200,9 +208,18 @@ padding-right: 1em;
                   </ul>
                </li>
                <li>
+                  <p>Changes to <a href="chapter4.xml">Chapter 4 Content Markup</a></p>
+                  <ul>
+                     <li id="d8e33662">
+                        <p>Correct examples in <a href="chapter4.xml#contm.share">Section 4.2.7.1 The <code>share</code> element</a>, <a href="chapter4.xml#contm.acyclicity">Section 4.2.7.2 An Acyclicity Constraint</a>, <a href="chapter4.xml#contm.share.binding">Section 4.2.7.3 Structure Sharing and Binding</a>,  <a href="chapter4.xml#contm.rendering.share">Section 4.2.7.4 Rendering Expressions with Structure Sharing</a>  to use <code>src</code> (to match the normative schema) not <code>href</code>. The previous examples were also valid, as <code>href</code> is a common presentaional attribute allowed on all elements.
+                        </p>
+                     </li>
+                  </ul>
+               </li>
+               <li>
                   <p>Changes to <a href="chapter5.xml">Chapter 5 Mixing Markup Languages for Mathematical Expressions</a></p>
                   <ul>
-                     <li id="d8e33650">
+                     <li id="d8e33688">
                         <p>Fix grammatical and spelling typos in <a href="chapter5.xml#html-xml1">note</a> and <a href="chapter5.xml#mixing.annotation.keys">Section 5.1.2 Annotation keys</a>.
                         </p>
                      </li>

@@ -722,7 +722,7 @@ for current browsers and other MathML-aware tools.</p>
 <p>There may be non-XML vocabularies which require markup for mathematical expressions,
 where it makes sense to reference this specification. HTML is an important example discussed in the
 next section, however other examples exist. It is possible to use a TeX-like syntax such as
-<code>\frac{a}{b}</code> rather than explicitly using <el role="starttag">mfrac</el> and <el diff="chg"
+<code>\frac{a}{b}</code> rather than explicitly using <el role="starttag">mfrac</el> and <el
 role="starttag">mi</el>. If a system parses a specified syntax and produces a tree that may be
 validated against the <intref ref="parsing">MathML schema</intref> then it may be viewed as
 as a MathML application. Note however that documents using such a system are not valid MathML.

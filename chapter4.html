@@ -2228,12 +2228,12 @@ padding-right: 1em;
                      </tbody>
                   </table>
                   
-                  <p>The <code>share</code> element has an <code>href</code> attribute used to
+                  <p>The <code>share</code> element has an <code>src</code> attribute used to
                      to reference a MathML expression tree. The value of the
-                     <code>href</code> attribute is a URI specifying the <code>id</code>
+                     <code>src</code> attribute is a URI specifying the <code>id</code>
                      attribute of the root node of the expression tree.  When building a  
                      MathML expression tree, the <code>share</code> element is equivalent to a copy of the MathML
-                     expression tree referenced by the <code>href</code> attribute. Note that this copy is
+                     expression tree referenced by the <code>src</code> attribute. Note that this copy is
                      <em>structurally equal</em>, but not identical to the element referenced. The
                      values of the <code>share</code> will often be relative URI references, in which case they
                      are resolved using the base URI of the document containing the <code>share</code> element.
@@ -2281,12 +2281,12 @@ padding-right: 1em;
       &lt;ci&gt;a&lt;/ci&gt;
       &lt;ci&gt;a&lt;/ci&gt;
     &lt;/apply&gt;
-    &lt;share href="#t11"/&gt;
+    &lt;share src="#t11"/&gt;
 
 
 
   &lt;/apply&gt;
-  &lt;share href="#t1"/&gt;
+  &lt;share src="#t1"/&gt;
 
 
 
@@ -2310,9 +2310,9 @@ padding-right: 1em;
                   <p>Say that an element <em>dominates</em> all its children and all
                      elements they dominate. Say also that a
                      <code>share</code> element dominates its target, i.e. the element that carries the
-                     <code>id</code> attribute pointed to by the <code>href</code> attribute. For instance in the
+                     <code>id</code> attribute pointed to by the <code>src</code> attribute. For instance in the
                      representation on the right above, the <code>apply</code> element with <code>id="t1"</code> and also the
-                     second <code>share</code> (with <code>href="t11"</code>) both dominate the
+                     second <code>share</code> (with <code>src="t11"</code>) both dominate the
                      <code>apply</code> element with <code>id="t11"</code>.
                   </p>
                   <p>The occurrences of the <code>share</code> element must obey the following global
@@ -2325,7 +2325,7 @@ padding-right: 1em;
   &lt;cn&gt;1&lt;/cn&gt;
   &lt;apply&gt;&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;
     &lt;cn&gt;1&lt;/cn&gt;
-    &lt;share href="#badid1"/&gt;
+    &lt;share src="#badid1"/&gt;
   &lt;/apply&gt;
 &lt;/apply&gt;</pre><p>Here, the <code>apply</code> element with <code>id="badid1"</code> dominates its third child,
                      which dominates the <code>share</code> element, which dominates its target: the element with
@@ -2345,14 +2345,14 @@ padding-right: 1em;
 &lt;apply id="bar"&gt;                        &lt;apply id="baz"&gt;
   &lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;     &lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;
   &lt;cn&gt;1&lt;/cn&gt;                              &lt;cn&gt;1&lt;/cn&gt;
-  &lt;share href="#baz"/&gt;                    &lt;share href="#bar"/&gt;
+  &lt;share src="#baz"/&gt;                    &lt;share src="#bar"/&gt;
 &lt;/apply&gt;                                &lt;/apply&gt;</pre><p>
                      
                      Here, the <code>apply</code> with <code>id="bar"</code> dominates its third child, the
-                     <code>share</code> with <code>href="#baz"</code>.  That element dominates its target <code>apply</code>
+                     <code>share</code> with <code>src="#baz"</code>.  That element dominates its target <code>apply</code>
                      (with <code>id="baz"</code>), which in turn dominates its third child, the <code>share</code>
-                     with <code>href="#bar"</code>. Finally, the <code>share</code> with
-                     <code>href="#bar"</code> dominates its target, the original 
+                     with <code>src="#bar"</code>. Finally, the <code>share</code> with
+                     <code>src="#bar"</code> dominates its target, the original 
                      <code>apply</code> element with <code>id="bar"</code>. So this pair of representations
                      ultimately violates the acyclicity constraint.
                   </p>
@@ -2374,7 +2374,7 @@ padding-right: 1em;
   &lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;
     &lt;bind id="inner"&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
       &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
-      &lt;share id="copy" href="#orig"/&gt;
+      &lt;share id="copy" src="#orig"/&gt;
     &lt;/bind&gt;
     &lt;apply id="orig"&gt;&lt;ci&gt;g&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
   &lt;/apply&gt;
@@ -2413,7 +2413,7 @@ padding-right: 1em;
                   </h4>
                   <p>There are several acceptable renderings for the <code>share</code> element.  These include rendering the element
                      as a hypertext link to the referenced element and using the rendering of the element referenced by the
-                     <code>href</code> attribute.
+                     <code>src</code> attribute.
                   </p>
                </div>
             </div>

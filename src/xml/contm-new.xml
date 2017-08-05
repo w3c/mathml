@@ -1877,12 +1877,12 @@ then the sample rendering of a binding element is as follows:</p>
    </tbody>
  </table>
 
-    <p>The <el>share</el> element has an <att>href</att> attribute used to
+    <p>The <el>share</el> element has an <att diff="chg">src</att> attribute used to
     to reference a MathML expression tree. The value of the
-    <att>href</att> attribute is a URI specifying the <att>id</att>
+    <att diff="chg">src</att> attribute is a URI specifying the <att>id</att>
     attribute of the root node of the expression tree.  When building a  
     MathML expression tree, the <el>share</el> element is equivalent to a copy of the MathML
-    expression tree referenced by the <att>href</att> attribute. Note that this copy is
+    expression tree referenced by the <att diff="chg">src</att> attribute. Note that this copy is
     <emph>structurally equal</emph>, but not identical to the element referenced. The
     values of the <el>share</el> will often be relative URI references, in which case they
     are resolved using the base URI of the document containing the <el>share</el> element.
@@ -1927,19 +1927,19 @@ be encoded as either one of the following representations (and some intermediate
 </apply>]]></eg>
 </td>
 <td>
-<eg role="mathml"><![CDATA[
+<eg role="mathml" diff="chg"><![CDATA[
 <apply><ci>f</ci>
   <apply id="t1"><ci>f</ci>
     <apply id="t11"><ci>f</ci>
       <ci>a</ci>
       <ci>a</ci>
     </apply>
-    <share href="#t11"/>
+    <share src="#t11"/>
 
 
 
   </apply>
-  <share href="#t1"/>
+  <share src="#t1"/>
 
 
 
@@ -1962,21 +1962,21 @@ be encoded as either one of the following representations (and some intermediate
 <p>Say that an element <emph>dominates</emph> all its children and all
 elements they dominate. Say also that a
 <el>share</el> element dominates its target, i.e. the element that carries the
-<att>id</att> attribute pointed to by the <att>href</att> attribute. For instance in the
+<att>id</att> attribute pointed to by the <att diff="chg">src</att> attribute. For instance in the
 representation on the right above, the <el>apply</el> element with <code>id="t1"</code> and also the
-second <el>share</el> (with <code>href="t11"</code>) both dominate the
+second <el>share</el> (with <code diff="chg">src="t11"</code>) both dominate the
 <el>apply</el> element with <code>id="t11"</code>.</p> 
 
 <p>The occurrences of the <el>share</el> element must obey the following global
 <emph>acyclicity constraint</emph>: An element may not dominate itself. For example, the
 following representation violates this constraint:
 
-<eg role="error"><![CDATA[
+<eg role="error" diff="chg"><![CDATA[
 <apply id="badid1"><csymbol cd="arith1">divide</csymbol>
   <cn>1</cn>
   <apply><csymbol cd="arith1">plus</csymbol>
     <cn>1</cn>
-    <share href="#badid1"/>
+    <share src="#badid1"/>
   </apply>
 </apply>]]></eg>
 </p>
@@ -1994,18 +1994,18 @@ expression, and hence such expressions are not allowed by Content MathML.</p>
 <p>Note that the acyclicity constraints is not restricted to such simple cases, as the following
 example shows:
 
-<eg role="error"><![CDATA[
+<eg role="error" diff="chg"><![CDATA[
 <apply id="bar">                        <apply id="baz">
   <csymbol cd="arith1">plus</csymbol>     <csymbol cd="arith1">plus</csymbol>
   <cn>1</cn>                              <cn>1</cn>
-  <share href="#baz"/>                    <share href="#bar"/>
+  <share src="#baz"/>                    <share src="#bar"/>
 </apply>                                </apply>]]></eg>
 
 Here, the <el>apply</el> with <code>id="bar"</code> dominates its third child, the
-<el>share</el> with <code>href="#baz"</code>.  That element dominates its target <el>apply</el>
+<el>share</el> with <code diff="chg">src="#baz"</code>.  That element dominates its target <el>apply</el>
 (with <code>id="baz"</code>), which in turn dominates its third child, the <el>share</el>
-with <code>href="#bar"</code>. Finally, the <el>share</el> with
-<code>href="#bar"</code> dominates its target, the original 
+with <code diff="chg">src="#bar"</code>. Finally, the <el>share</el> with
+<code diff="chg">src="#bar"</code> dominates its target, the original 
 <el>apply</el> element with <code>id="bar"</code>. So this pair of representations
 ultimately violates the acyclicity constraint.</p>
 </div4>
@@ -2018,13 +2018,13 @@ referencing does not interact with binding in a semantically intuitive way, sinc
 allows a phenomenon called <emph>variable capture</emph> to
 occur. Consider an example:
 
-<eg role="mathml"><![CDATA[
+<eg role="mathml" diff="chg"><![CDATA[
 <bind id="outer"><csymbol cd="fns1">lambda</csymbol>
   <bvar><ci>x</ci></bvar>
   <apply><ci>f</ci>
     <bind id="inner"><csymbol cd="fns1">lambda</csymbol>
       <bvar><ci>x</ci></bvar>
-      <share id="copy" href="#orig"/>
+      <share id="copy" src="#orig"/>
     </bind>
     <apply id="orig"><ci>g</ci><ci>x</ci></apply>
   </apply>
@@ -2061,7 +2061,7 @@ in semantics.</p>
     <head>Rendering Expressions with Structure Sharing</head>
     <p>There are several acceptable renderings for the <el>share</el> element.  These include rendering the element
     as a hypertext link to the referenced element and using the rendering of the element referenced by the
-    <att>href</att> attribute.</p>
+    <att diff="chg">src</att> attribute.</p>
   </div4>
 </div3>
 
