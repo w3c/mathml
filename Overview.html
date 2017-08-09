@@ -1,9 +1,24 @@
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Mathematical Markup Language (MathML) Version 3.0 3rd Edition</title><style type="text/css">
+
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
 
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
@@ -145,31 +160,32 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/base.css">
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css">
    </head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br> Draft<br><span style="font-size:75%">Date: 2017-08-05</span></b></div>
+      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br> Draft<br><span style="font-size:75%">Date: 2017-08-09</span></b></div>
       <div class="head">
+         <p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C" height="48" width="72"></a></p>
          
-         <h1><a name="title" id="title"></a>Mathematical Markup Language (MathML) Version 3.0 3rd Edition
+         <h1><a id="title"></a>Mathematical Markup Language (MathML) Version 3.0 3rd Edition
          </h1>
          
-         <h2><a name="w3c-doctype" id="w3c-doctype"></a>W3C Working Draft 21 November 2014
+         <h2><a id="w3c-doctype"></a>W3C Working Draft 21 November 2014
          </h2>
          <dl>
+            
             <dt>This version:</dt>
-            <dd>
-               
-               <a href="http://www.w3.org/Math/draft-spec/">http://www.w3.org/Math/draft-spec/</a>
-               
-            </dd>
+            <dd><a href="http://www.w3.org/Math/draft-spec/">http://www.w3.org/Math/draft-spec/</a></dd>
             <dt>Latest MathML 3 version:</dt>
             <dd><a href="http://www.w3.org/TR/MathML3/">http://www.w3.org/TR/MathML3/</a></dd>
             <dt>Latest MathML Recommendation:</dt>
             <dd><a href="http://www.w3.org/TR/MathML/">http://www.w3.org/TR/MathML/</a></dd>
+            
             <dt>Previous version:</dt>
             <dd><a href="http://www.w3.org/TR/2014/REC-MathML3-20140410/">http://www.w3.org/TR/2014/REC-MathML3-20140410/</a></dd>
-            <dt>Editors' version:</dt>
+            <dt>
+               Editors' version:
+            </dt>
             <dd><a href="http://www.w3.org/Math/draft-spec/">http://www.w3.org/Math/draft-spec/</a></dd>
             <dt>Editors:</dt>
             <dd>David Carlisle, NAG</dd>
@@ -181,20 +197,20 @@ padding-right: 1em;
          <p>Please refer to the <a href="http://www.w3.org/Math/Documents/mathml3-errata.html"><strong>errata</strong></a>
             for this document, which may include some normative corrections.
          </p>
+         <p>Please refer to the <a href="http://www.w3.org/Math/Documents/mathml3-errata.html"><strong>errata</strong></a>
+            for this document, which may include some normative corrections.
+         </p>
          <p>In addition to the <a href="Overview.html">HTML</a> version, this document is also available in these non-normative formats: <a href="Overview-d.html">diff marked HTML version</a>, <a href="Overview.xml">XHTML+MathML version</a>, <a href="mathml.html">single page HTML5+MathML version</a>, and&nbsp;<a href="mathml.pdf">PDF version</a>.
          </p>
          <p>See also <a href="http://www.w3.org/2005/11/Translations/Query?titleMatch=MathML3"><strong>translations</strong></a>.
          </p>
-         <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 1998-2014 <a href="http://www.w3.org/"><acronym title="World Wide Web Consortium">W3C</acronym></a><sup>®</sup>
-            (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>,
-            <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>),
-            All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.
+         <p class="copyright"><a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 1998-2017 <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>). W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.
          </p>
+         <hr title="Separator for header">
       </div>
-      <hr>
       <div>
          
-         <h2><a name="abstract" id="abstract"></a>Abstract
+         <h2><a id="abstract"></a>Abstract
          </h2>
          <p>
             This specification defines the Mathematical Markup Language, or
@@ -238,17 +254,18 @@ padding-right: 1em;
             
          </p>
          <p>MathML was originally specified as an XML application and most of the
-            examples in this specification assume that syntax. Other syntaxes are possible most notably
+            examples in this specification assume that syntax. Other syntaxes are possible most
+            notably
             <a href="appendixg.html#HTML5">[HTML5]</a> specifies the syntax for MathML in HTML. Unless explictly noted,
             the examples in this specification are also valid HTML syntax.
          </p>
       </div>
       <div>
          
-         <h2><a name="status" id="status"></a>Status of this Document
+         <h2><a id="status"></a>Status of this Document
          </h2>
-         <p><strong>This document is an editors' copy that has
-               no official standing.</strong></p>
+         
+         <p><strong>This document is an editors' copy that has no official standing.</strong></p>
          <p><em> This section describes the status of this document at the time
                of its publication. Other documents may supersede this document. A
                list of current W3C publications and the latest revision of this
@@ -277,15 +294,18 @@ padding-right: 1em;
          </p>
          <p>
             All reported errata to
-            the first edition have been addressed in this addition, and a full change log appears in
-            <a href="appendixf.html">Appendix&nbsp;F Changes</a>. The diff-marked version linked in the frontmatter highlights all changes between the first and second editions. In addition
-            to incorporating errata, the main change in this addition is to recognise that MathML parsing is also specified in <a href="appendixg.html#HTML5">[HTML5]</a> and where necessary to note where HTML and XML usage differ.
+            the first edition have been addressed in this addition, and a full change log appears
+            in
+            <a href="appendixf.html">Appendix&nbsp;F Changes</a>. The diff-marked version linked in the frontmatter highlights all changes between
+            the first and second editions. In addition to incorporating errata, the main change
+            in this addition is to recognise that MathML parsing is also specified in <a href="appendixg.html#HTML5">[HTML5]</a> and where necessary to note where HTML and XML usage differ.
             
          </p>
          <p>
             The Working Group maintains a comprehensive 
             <a href="http://www.w3.org/Math/testsuite/">Test Suite</a>.  This 
-            is publicly available and developers are encouraged to submit their results for display.  
+            is publicly available and developers are encouraged to submit their results for display.
+            
             The <a href="http://www.w3.org/Math/testsuite/results/tests.html">Test Results</a> 
             are public.  They show at least two interoperable implementations for each 
             essential test. Further details may be found in the 
@@ -344,7 +364,8 @@ padding-right: 1em;
             
          </p>
          <p>
-            The biggest differences from MathML 2.0 (Second Edition) are in Chapters 4 and 5, although there have been
+            The biggest differences from MathML 2.0 (Second Edition) are in Chapters 4 and 5,
+            although there have been
             smaller improvements throughout the specification.  A more detailed
             description of changes from the previous Recommendation follows.
             
@@ -387,7 +408,8 @@ padding-right: 1em;
                <p>
                   Chapter 4, on content-oriented markup, contains major changes and additions.
                   The  meaning of the actual content remains as before in principle, 
-                  but a lot of work has been done on expressing it better. A few new elements have been added.
+                  but a lot of work has been done on expressing it better. A few new elements have been
+                  added.
                   
                </p>
             </li>
@@ -446,246 +468,951 @@ padding-right: 1em;
             </li>
          </ul>
       </div>
-      <div class="toc">
+      
+      <nav id="toc">
          
-         <h2><a name="contents" id="contents"></a>Table of Contents
-         </h2>
-         <p class="toc">1 <a href="chapter1.html">Introduction</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;1.1 <a href="chapter1.html#intro.notation">Mathematics and its Notation</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;1.2 <a href="chapter1.html#intro.origin">Origins and Goals</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.1 <a href="chapter1.html#intro.goals">Design Goals of MathML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;1.3 <a href="chapter1.html#intro.overview">Overview</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;1.4 <a href="chapter1.html#intro.example">A First Example</a><br>
-            2 <a href="chapter2.html">MathML Fundamentals</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;2.1 <a href="chapter2.html#fund.syntax">MathML Syntax and Grammar</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.1 <a href="chapter2.html#fund.xmlgeneral">General Considerations</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.2 <a href="chapter2.html#interf.namespace">MathML and Namespaces</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.3 <a href="chapter2.html#fund.xmlsyntax">Children versus Arguments</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.4 <a href="chapter2.html#fund.renderingmodel">MathML and Rendering</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.5 <a href="chapter2.html#fund.attval">MathML Attribute Values</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.6 <a href="chapter2.html#fund.globatt">Attributes Shared by all MathML Elements</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.7 <a href="chapter2.html#fund.collapse">Collapsing Whitespace in Input</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;2.2 <a href="chapter2.html#interf.toplevel">The Top-Level 
-               <code>&lt;math&gt;</code> Element</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.1 <a href="chapter2.html#interf.toplevel.atts">Attributes</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.2 <a href="chapter2.html#id.2.2.2">Deprecated Attributes</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;2.3 <a href="chapter2.html#interf.genproc">Conformance</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3.1 <a href="chapter2.html#fund.mathmlconf">MathML Conformance</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3.2 <a href="chapter2.html#interf.error">Handling of Errors</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3.3 <a href="chapter2.html#interf.unspecified">Attributes for unspecified data</a><br>
-            3 <a href="chapter3.html">Presentation Markup</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;3.1 <a href="chapter3.html#presm.intro">Introduction</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.1 <a href="chapter3.html#id.3.1.1">What Presentation Elements Represent</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.2 <a href="chapter3.html#id.3.1.2">Terminology Used In This Chapter</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.3 <a href="chapter3.html#presm.reqarg">Required Arguments</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.4 <a href="chapter3.html#id.3.1.4">Elements with Special Behaviors</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.5 <a href="chapter3.html#presm.bidi">Directionality</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.6 <a href="chapter3.html#presm.scriptlevel">Displaystyle and Scriptlevel</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.7 <a href="chapter3.html#presm.linebreaking">Linebreaking of Expressions</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.8 <a href="chapter3.html#presm.warnfinetuning">Warning about fine-tuning of presentation</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.9 <a href="chapter3.html#presm.summary">Summary of Presentation Elements</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.10 <a href="chapter3.html#presm.presatt">Mathematics style attributes common to presentation elements</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;3.2 <a href="chapter3.html#presm.tokel">Token Elements</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.1 <a href="chapter3.html#presm.tokenchars">
-               Token Element Content Characters, <code>&lt;mglyph/&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.2 <a href="chapter3.html#presm.commatt">Mathematics style attributes common to token elements</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.3 <a href="chapter3.html#presm.mi">Identifier <code>&lt;mi&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.4 <a href="chapter3.html#presm.mn">Number <code>&lt;mn&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.5 <a href="chapter3.html#presm.mo">Operator, Fence, Separator or Accent
-               <code>&lt;mo&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.6 <a href="chapter3.html#presm.mtext">Text <code>&lt;mtext&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.7 <a href="chapter3.html#presm.mspace">Space <code>&lt;mspace/&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.8 <a href="chapter3.html#presm.ms">String Literal <code>&lt;ms&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;3.3 <a href="chapter3.html#presm.genlayout">General Layout Schemata</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3.1 <a href="chapter3.html#presm.mrow">Horizontally Group Sub-Expressions
-               <code>&lt;mrow&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3.2 <a href="chapter3.html#presm.mfrac">Fractions <code>&lt;mfrac&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3.3 <a href="chapter3.html#presm.mroot">Radicals <code>&lt;msqrt&gt;</code>, <code>&lt;mroot&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3.4 <a href="chapter3.html#presm.mstyle">Style Change <code>&lt;mstyle&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3.5 <a href="chapter3.html#presm.merror">Error Message <code>&lt;merror&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3.6 <a href="chapter3.html#presm.mpadded">Adjust Space Around Content
-               <code>&lt;mpadded&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3.7 <a href="chapter3.html#presm.mphantom">Making Sub-Expressions Invisible <code>&lt;mphantom&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3.8 <a href="chapter3.html#presm.mfenced">Expression Inside Pair of Fences
-               <code>&lt;mfenced&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3.9 <a href="chapter3.html#presm.menclose">Enclose Expression Inside Notation
-               <code>&lt;menclose&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;3.4 <a href="chapter3.html#presm.scrlim">Script and Limit Schemata</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.4.1 <a href="chapter3.html#presm.msub">Subscript <code>&lt;msub&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.4.2 <a href="chapter3.html#presm.msup">Superscript <code>&lt;msup&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.4.3 <a href="chapter3.html#presm.msubsup">Subscript-superscript Pair <code>&lt;msubsup&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.4.4 <a href="chapter3.html#presm.munder">Underscript <code>&lt;munder&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.4.5 <a href="chapter3.html#presm.mover">Overscript <code>&lt;mover&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.4.6 <a href="chapter3.html#presm.munderover">Underscript-overscript Pair
-               <code>&lt;munderover&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.4.7 <a href="chapter3.html#presm.mmultiscripts">Prescripts and Tensor Indices
-               <code>&lt;mmultiscripts&gt;</code>,
-               <code>&lt;mprescripts/&gt;</code>,
-               <code>&lt;none/&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;3.5 <a href="chapter3.html#presm.tabmat">Tabular Math</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.1 <a href="chapter3.html#presm.mtable">Table or Matrix
-               <code>&lt;mtable&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.2 <a href="chapter3.html#presm.mtr">Row in Table or Matrix <code>&lt;mtr&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.3 <a href="chapter3.html#presm.mlabeledtr">Labeled Row in Table or Matrix
-               <code>&lt;mlabeledtr&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.4 <a href="chapter3.html#presm.mtd">Entry in Table or Matrix <code>&lt;mtd&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.5 <a href="chapter3.html#presm.malign">Alignment Markers
-               <code>&lt;maligngroup/&gt;</code>, <code>&lt;malignmark/&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;3.6 <a href="chapter3.html#presm.elementary">Elementary Math</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.6.1 <a href="chapter3.html#presm.mstack">Stacks of Characters <code>&lt;mstack&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.6.2 <a href="chapter3.html#presm.mlongdiv">Long Division <code>&lt;mlongdiv&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.6.3 <a href="chapter3.html#presm.msgroup">Group Rows with Similiar Positions <code>&lt;msgroup&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.6.4 <a href="chapter3.html#presm.msrow">Rows in Elementary Math <code>&lt;msrow&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.6.5 <a href="chapter3.html#presm.mscarries">Carries, Borrows, and Crossouts <code>&lt;mscarries&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.6.6 <a href="chapter3.html#presm.mscarry">A Single Carry <code>&lt;mscarry&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.6.7 <a href="chapter3.html#presm.msline">Horizontal Line <code>&lt;msline/&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.6.8 <a href="chapter3.html#presm.elemmath.examples">Elementary Math Examples</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;3.7 <a href="chapter3.html#presm.enliven">Enlivening Expressions</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.7.1 <a href="chapter3.html#presm.maction">Bind Action to Sub-Expression
-               <code>&lt;maction&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;3.8 <a href="chapter3.html#presm.semantics">Semantics and Presentation</a><br>
-            4 <a href="chapter4.html">Content Markup</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;4.1 <a href="chapter4.html#contm.intro">Introduction</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.1 <a href="chapter4.html#id.4.1.1">The Intent of Content Markup</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.2 <a href="chapter4.html#contm.rendering">The Structure and Scope of Content MathML Expressions</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.3 <a href="chapter4.html#contm.strict">Strict Content MathML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.4 <a href="chapter4.html#contm.cds">Content Dictionaries</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.5 <a href="chapter4.html#contm.concepts">Content MathML Concepts</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;4.2 <a href="chapter4.html#contm.core">Content MathML Elements Encoding Expression Structure</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.1 <a href="chapter4.html#contm.cn">Numbers <code>&lt;cn&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.2 <a href="chapter4.html#contm.ci">Content Identifiers <code>&lt;ci&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.3 <a href="chapter4.html#contm.csymbol">Content Symbols <code>&lt;csymbol&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.4 <a href="chapter4.html#contm.cs">String Literals <code>&lt;cs&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.5 <a href="chapter4.html#contm.apply">Function Application <code>&lt;apply&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.6 <a href="chapter4.html#contm.binding">Bindings and Bound Variables <code>&lt;bind&gt;</code>
-               and <code>&lt;bvar&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.7 <a href="chapter4.html#contm.sharing">Structure Sharing <code>&lt;share&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.8 <a href="chapter4.html#contm.semantics">Attribution via <code>semantics</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.9 <a href="chapter4.html#contm.cerror">Error Markup <code>&lt;cerror&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.10 <a href="chapter4.html#contm.cbytes">Encoded Bytes <code>&lt;cbytes&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;4.3 <a href="chapter4.html#contm.structure.extended">Content MathML for Specific Structures</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3.1 <a href="chapter4.html#contm.container">Container Markup</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3.2 <a href="chapter4.html#contm.bind.apply">Bindings with <code>&lt;apply&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3.3 <a href="chapter4.html#contm.qualifiers">Qualifiers</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3.4 <a href="chapter4.html#contm.opclasses">Operator Classes</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3.5 <a href="chapter4.html#id.4.3.5">Non-strict Attributes</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;4.4 <a href="chapter4.html#contm.opel">Content MathML for Specific Operators and Constants</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.1 <a href="chapter4.html#contm.basicfun">Functions and Inverses</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.2 <a href="chapter4.html#id.4.4.2">Arithmetic, Algebra and Logic</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.3 <a href="chapter4.html#id.4.4.3">Relations</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.4 <a href="chapter4.html#id.4.4.4">Calculus and Vector Calculus</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.5 <a href="chapter4.html#contm.sets">Theory of Sets</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.6 <a href="chapter4.html#id.4.4.6">Sequences and Series</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.7 <a href="chapter4.html#contm.elemclass">Elementary classical functions</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.8 <a href="chapter4.html#id.4.4.8">Statistics</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.9 <a href="chapter4.html#id.4.4.9">Linear Algebra</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.10 <a href="chapter4.html#contm.constantsandsymbols">Constant and Symbol Elements</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;4.5 <a href="chapter4.html#contm.deprecated">Deprecated Content Elements</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.5.1 <a href="chapter4.html#contm.declare">Declare <code>&lt;declare&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.5.2 <a href="chapter4.html#contm.reln">Relation <code>&lt;reln&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.5.3 <a href="chapter4.html#contm.fn">Relation <code>&lt;fn&gt;</code></a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;4.6 <a href="chapter4.html#contm.p2s">The Strict Content MathML Transformation</a><br>
-            5 <a href="chapter5.html">Mixing Markup Languages for Mathematical Expressions</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;5.1 <a href="chapter5.html#mixing.semantic.annotations">Annotation Framework</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.1 <a href="chapter5.html#mixing.annotation.elements">Annotation elements</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.2 <a href="chapter5.html#mixing.annotation.keys">Annotation keys</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.3 <a href="chapter5.html#mixing.alternate.representations">Alternate representations</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.4 <a href="chapter5.html#mixing.content.equiv">Content equivalents</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.5 <a href="chapter5.html#mixing.annotation.references">Annotation references</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;5.2 <a href="chapter5.html#mixing.semantic.elements">Elements for Semantic Annotations</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.1 <a href="chapter5.html#mixing.elements.semantics">The <code>&lt;semantics&gt;</code> element</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.2 <a href="chapter5.html#mixing.elements.annotation">The <code>&lt;annotation&gt;</code> element</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.3 <a href="chapter5.html#mixing.elements.annotation.xml">The <code>&lt;annotation-xml&gt;</code> element</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;5.3 <a href="chapter5.html#mixing.markup">Combining Presentation and Content Markup</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3.1 <a href="chapter5.html#mixing.pmincm">Presentation Markup in Content Markup</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3.2 <a href="chapter5.html#mixing.cminpm">Content Markup in Presentation Markup</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;5.4 <a href="chapter5.html#mixing.parallel">Parallel Markup</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.4.1 <a href="chapter5.html#mixing.top.level">Top-level Parallel Markup</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.4.2 <a href="chapter5.html#mixing.cr">Parallel Markup via Cross-References</a><br>
-            6 <a href="chapter6.html">Interactions with the Host Environment</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;6.1 <a href="chapter6.html#world.introduction">Introduction</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;6.2 <a href="chapter6.html#world.invoking.processors">Invoking MathML Processors</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2.1 <a href="chapter6.html#world.recognizing.mathml">Recognizing MathML in XML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2.2 <a href="chapter6.html#world.recognizing.mathml.html">Recognizing MathML in HTML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2.3 <a href="chapter6.html#world.resource.types">Resource Types for MathML Documents</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2.4 <a href="chapter6.html#encoding-names">Names of MathML Encodings</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;6.3 <a href="chapter6.html#world-int-transfers">Transferring MathML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3.1 <a href="chapter6.html#world-int-transf-flavors">Basic Transfer Flavor Names and Contents</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3.2 <a href="chapter6.html#world-int-transf-recommend">Recommended Behaviors when Transferring</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3.3 <a href="chapter6.html#world-int-transf-discuss">Discussion</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3.4 <a href="chapter6.html#world-int-transf-exa">Examples</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;6.4 <a href="chapter6.html#world-int-combine-other">Combining MathML and Other Formats</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.4.1 <a href="chapter6.html#interf.xhtml">Mixing MathML and XHTML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.4.2 <a href="chapter6.html#interf.nonxml">Mixing MathML and  non-XML contexts</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.4.3 <a href="chapter6.html#interf.html">Mixing MathML and HTML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.4.4 <a href="chapter6.html#interf.link">Linking</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.4.5 <a href="chapter6.html#interf.graphics">MathML and Graphical Markup</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;6.5 <a href="chapter6.html#world-int-style">Using CSS with MathML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.5.1 <a href="chapter6.html#id.6.5.1">Order of processing attributes versus style sheets</a><br>
-            7 <a href="chapter7.html">Characters, Entities and Fonts</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;7.1 <a href="chapter7.html#chars.intro">Introduction</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;7.2 <a href="chapter7.html#chars.unicodechars">Unicode Character Data</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;7.3 <a href="chapter7.html#chars.entities">Entity Declarations</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;7.4 <a href="chapter7.html#chars.mglyph">Special Characters Not in Unicode</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;7.5 <a href="chapter7.html#chars.BMP-SMP">Mathematical Alphanumeric Symbols</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;7.6 <a href="chapter7.html#chars.nonmark">Non-Marking Characters</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;7.7 <a href="chapter7.html#chars.anomalous">Anomalous Mathematical Characters</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.1 <a href="chapter7.html#chars.keyboard">Keyboard Characters</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.2 <a href="chapter7.html#chars.pseudo-scripts">Pseudo-scripts</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.3 <a href="chapter7.html#chars.comb-chars">Combining Characters</a><br>
-            
-         </p>
+         <h2 id="tochead">Table of Contents</h2>
          
-         <h3><a name="appendices" id="appendices"></a>Appendices
-         </h3>
-         <p class="toc">A <a href="appendixa.html">Parsing MathML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;A.1 <a href="appendixa.html#parsing.wellformed">Use of MathML as Well-Formed
-               XML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;A.2 <a href="appendixa.html#parsing.usingrnc">Using the RelaxNG Schema for MathML3</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.2.1 <a href="appendixa.html#parsing.rnc.full">Full MathML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.2.2 <a href="appendixa.html#parsing.rnc.common">Elements Common to Presentation and Content MathML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.2.3 <a href="appendixa.html#parsing.rnc.pres">The Grammar for Presentation MathML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.2.4 <a href="appendixa.html#parsing.rnc.strict">The Grammar for Strict Content MathML3</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.2.5 <a href="appendixa.html#parsing.rnc.content">The Grammar for Content MathML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.2.6 <a href="appendixa.html#parsing.rnc.module">MathML as a module in a RelaxNG Schema</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;A.3 <a href="appendixa.html#parsing.usingdtd">Using the MathML DTD</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.3.1 <a href="appendixa.html#interf.validation">Document Validation Issues</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.3.2 <a href="appendixa.html#id.A.3.2">Attribute values in the MathML DTD</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.3.3 <a href="appendixa.html#parsing.doctype">DOCTYPE declaration for MathML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;A.4 <a href="appendixa.html#parsing.usingxsd">Using the MathML XML Schema</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.4.1 <a href="appendixa.html#parsing.schemalocation">Associating the MathML schema with MathML fragments</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;A.5 <a href="appendixa.html#parsing.mml.xhtml">Parsing MathML in XHTML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;A.6 <a href="appendixa.html#parsing.mml.html">Parsing MathML in HTML</a><br>
-            B <a href="appendixb.html">Media Types Registrations</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;B.1 <a href="appendixb.html#media-type-choosing">Selection of Media Types for
-               MathML Instances</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;B.2 <a href="appendixb.html#media-types-mathml">Media type for Generic MathML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;B.3 <a href="appendixb.html#media-types-mathml-p">Media type for Presentation MathML</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;B.4 <a href="appendixb.html#media-types-mathml-c">Media type for Content MathML</a><br>
-            C <a href="appendixc.html">Operator Dictionary (Non-Normative)</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;C.1 <a href="appendixc.html#oper-dict.index">Indexing of the operator dictionary</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;C.2 <a href="appendixc.html#oper-dict.format">Format of operator dictionary entries</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;C.3 <a href="appendixc.html#oper-dict.space">Notes on lspace and 
-               rspace attributes</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;C.4 <a href="appendixc.html#oper-dict.entries-table">Operator dictionary entries</a><br>
-            D <a href="appendixd.html">Glossary (Non-Normative)</a><br>
-            E <a href="appendixe.html">Working Group Membership and Acknowledgments (Non-Normative)</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;E.1 <a href="appendixe.html#contrib">The Math Working Group Membership</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;E.2 <a href="appendixe.html#contrib.ack">Acknowledgments</a><br>
-            F <a href="appendixf.html">Changes (Non-Normative)</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;F.1 <a href="appendixf.html#changes.mathml3.03e-mathml3.02e">Changes between MathML 3.0 Second Edition and Third Edition</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;F.2 <a href="appendixf.html#changes.mathml3.02e-3.0">Changes between MathML 3.0 First Edition and Second Edition</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;F.3 <a href="appendixf.html#changes.mathml2.0e-3.0">Changes between MathML 2.0 Second Edition and MathML 3.0</a><br>
-            G <a href="appendixg.html">Normative References</a><br>
-            H <a href="appendixh.html">References (Non-Normative)</a><br>
-            I <a href="appendixi.html">Index (Non-Normative)</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;I.1 <a href="appendixi.html#index.elem">MathML Elements</a><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;I.2 <a href="appendixi.html#index.att">MathML Attributes</a><br>
+         <ol class="toc">
             
-         </p>
+            <li><a href="chapter1.html"><span class="secno">1 </span>&nbsp;Introduction</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="chapter1.html#intro.notation"><span class="secno">1.1 </span>&nbsp;Mathematics and its Notation</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter1.html#intro.origin"><span class="secno">1.2 </span>&nbsp;Origins and Goals</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter1.html#intro.goals"><span class="secno">1.2.1 </span>&nbsp;Design Goals of MathML</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter1.html#intro.overview"><span class="secno">1.3 </span>&nbsp;Overview</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter1.html#intro.example"><span class="secno">1.4 </span>&nbsp;A First Example</a>
+                     
+                  </li>
+               </ol>
+            </li>
+            
+            <li><a href="chapter2.html"><span class="secno">2 </span>&nbsp;MathML Fundamentals</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="chapter2.html#fund.syntax"><span class="secno">2.1 </span>&nbsp;MathML Syntax and Grammar</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter2.html#fund.xmlgeneral"><span class="secno">2.1.1 </span>&nbsp;General Considerations</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter2.html#interf.namespace"><span class="secno">2.1.2 </span>&nbsp;MathML and Namespaces</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter2.html#fund.xmlsyntax"><span class="secno">2.1.3 </span>&nbsp;Children versus Arguments</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter2.html#fund.renderingmodel"><span class="secno">2.1.4 </span>&nbsp;MathML and Rendering</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter2.html#fund.attval"><span class="secno">2.1.5 </span>&nbsp;MathML Attribute Values</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter2.html#fund.globatt"><span class="secno">2.1.6 </span>&nbsp;Attributes Shared by all MathML Elements</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter2.html#fund.collapse"><span class="secno">2.1.7 </span>&nbsp;Collapsing Whitespace in Input</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter2.html#interf.toplevel"><span class="secno">2.2 </span>&nbsp;The Top-Level 
+                        <code>&lt;math&gt;</code> Element</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter2.html#interf.toplevel.atts"><span class="secno">2.2.1 </span>&nbsp;Attributes</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter2.html#id.2.2.2"><span class="secno">2.2.2 </span>&nbsp;Deprecated Attributes</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter2.html#interf.genproc"><span class="secno">2.3 </span>&nbsp;Conformance</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter2.html#fund.mathmlconf"><span class="secno">2.3.1 </span>&nbsp;MathML Conformance</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter2.html#interf.error"><span class="secno">2.3.2 </span>&nbsp;Handling of Errors</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter2.html#interf.unspecified"><span class="secno">2.3.3 </span>&nbsp;Attributes for unspecified data</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            
+            <li><a href="chapter3.html"><span class="secno">3 </span>&nbsp;Presentation Markup</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="chapter3.html#presm.intro"><span class="secno">3.1 </span>&nbsp;Introduction</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter3.html#id.3.1.1"><span class="secno">3.1.1 </span>&nbsp;What Presentation Elements Represent</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#id.3.1.2"><span class="secno">3.1.2 </span>&nbsp;Terminology Used In This Chapter</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.reqarg"><span class="secno">3.1.3 </span>&nbsp;Required Arguments</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#id.3.1.4"><span class="secno">3.1.4 </span>&nbsp;Elements with Special Behaviors</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.bidi"><span class="secno">3.1.5 </span>&nbsp;Directionality</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.scriptlevel"><span class="secno">3.1.6 </span>&nbsp;Displaystyle and Scriptlevel</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.linebreaking"><span class="secno">3.1.7 </span>&nbsp;Linebreaking of Expressions</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.warnfinetuning"><span class="secno">3.1.8 </span>&nbsp;Warning about fine-tuning of presentation</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.summary"><span class="secno">3.1.9 </span>&nbsp;Summary of Presentation Elements</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.presatt"><span class="secno">3.1.10 </span>&nbsp;Mathematics style attributes common to presentation elements</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter3.html#presm.tokel"><span class="secno">3.2 </span>&nbsp;Token Elements</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter3.html#presm.tokenchars"><span class="secno">3.2.1 </span>&nbsp;
+                              Token Element Content Characters, <code>&lt;mglyph/&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.commatt"><span class="secno">3.2.2 </span>&nbsp;Mathematics style attributes common to token elements</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mi"><span class="secno">3.2.3 </span>&nbsp;Identifier <code>&lt;mi&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mn"><span class="secno">3.2.4 </span>&nbsp;Number <code>&lt;mn&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mo"><span class="secno">3.2.5 </span>&nbsp;Operator, Fence, Separator or Accent
+                              <code>&lt;mo&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mtext"><span class="secno">3.2.6 </span>&nbsp;Text <code>&lt;mtext&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mspace"><span class="secno">3.2.7 </span>&nbsp;Space <code>&lt;mspace/&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.ms"><span class="secno">3.2.8 </span>&nbsp;String Literal <code>&lt;ms&gt;</code></a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter3.html#presm.genlayout"><span class="secno">3.3 </span>&nbsp;General Layout Schemata</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter3.html#presm.mrow"><span class="secno">3.3.1 </span>&nbsp;Horizontally Group Sub-Expressions
+                              <code>&lt;mrow&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mfrac"><span class="secno">3.3.2 </span>&nbsp;Fractions <code>&lt;mfrac&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mroot"><span class="secno">3.3.3 </span>&nbsp;Radicals <code>&lt;msqrt&gt;</code>, <code>&lt;mroot&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mstyle"><span class="secno">3.3.4 </span>&nbsp;Style Change <code>&lt;mstyle&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.merror"><span class="secno">3.3.5 </span>&nbsp;Error Message <code>&lt;merror&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mpadded"><span class="secno">3.3.6 </span>&nbsp;Adjust Space Around Content
+                              <code>&lt;mpadded&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mphantom"><span class="secno">3.3.7 </span>&nbsp;Making Sub-Expressions Invisible <code>&lt;mphantom&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mfenced"><span class="secno">3.3.8 </span>&nbsp;Expression Inside Pair of Fences
+                              <code>&lt;mfenced&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.menclose"><span class="secno">3.3.9 </span>&nbsp;Enclose Expression Inside Notation
+                              <code>&lt;menclose&gt;</code></a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter3.html#presm.scrlim"><span class="secno">3.4 </span>&nbsp;Script and Limit Schemata</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter3.html#presm.msub"><span class="secno">3.4.1 </span>&nbsp;Subscript <code>&lt;msub&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.msup"><span class="secno">3.4.2 </span>&nbsp;Superscript <code>&lt;msup&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.msubsup"><span class="secno">3.4.3 </span>&nbsp;Subscript-superscript Pair <code>&lt;msubsup&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.munder"><span class="secno">3.4.4 </span>&nbsp;Underscript <code>&lt;munder&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mover"><span class="secno">3.4.5 </span>&nbsp;Overscript <code>&lt;mover&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.munderover"><span class="secno">3.4.6 </span>&nbsp;Underscript-overscript Pair
+                              <code>&lt;munderover&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mmultiscripts"><span class="secno">3.4.7 </span>&nbsp;Prescripts and Tensor Indices
+                              <code>&lt;mmultiscripts&gt;</code>,
+                              <code>&lt;mprescripts/&gt;</code>,
+                              <code>&lt;none/&gt;</code></a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter3.html#presm.tabmat"><span class="secno">3.5 </span>&nbsp;Tabular Math</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter3.html#presm.mtable"><span class="secno">3.5.1 </span>&nbsp;Table or Matrix
+                              <code>&lt;mtable&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mtr"><span class="secno">3.5.2 </span>&nbsp;Row in Table or Matrix <code>&lt;mtr&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mlabeledtr"><span class="secno">3.5.3 </span>&nbsp;Labeled Row in Table or Matrix
+                              <code>&lt;mlabeledtr&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mtd"><span class="secno">3.5.4 </span>&nbsp;Entry in Table or Matrix <code>&lt;mtd&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.malign"><span class="secno">3.5.5 </span>&nbsp;Alignment Markers
+                              <code>&lt;maligngroup/&gt;</code>, <code>&lt;malignmark/&gt;</code></a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter3.html#presm.elementary"><span class="secno">3.6 </span>&nbsp;Elementary Math</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter3.html#presm.mstack"><span class="secno">3.6.1 </span>&nbsp;Stacks of Characters <code>&lt;mstack&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mlongdiv"><span class="secno">3.6.2 </span>&nbsp;Long Division <code>&lt;mlongdiv&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.msgroup"><span class="secno">3.6.3 </span>&nbsp;Group Rows with Similiar Positions <code>&lt;msgroup&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.msrow"><span class="secno">3.6.4 </span>&nbsp;Rows in Elementary Math <code>&lt;msrow&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mscarries"><span class="secno">3.6.5 </span>&nbsp;Carries, Borrows, and Crossouts <code>&lt;mscarries&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.mscarry"><span class="secno">3.6.6 </span>&nbsp;A Single Carry <code>&lt;mscarry&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.msline"><span class="secno">3.6.7 </span>&nbsp;Horizontal Line <code>&lt;msline/&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.html#presm.elemmath.examples"><span class="secno">3.6.8 </span>&nbsp;Elementary Math Examples</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter3.html#presm.enliven"><span class="secno">3.7 </span>&nbsp;Enlivening Expressions</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter3.html#presm.maction"><span class="secno">3.7.1 </span>&nbsp;Bind Action to Sub-Expression
+                              <code>&lt;maction&gt;</code></a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter3.html#presm.semantics"><span class="secno">3.8 </span>&nbsp;Semantics and Presentation</a>
+                     
+                  </li>
+               </ol>
+            </li>
+            
+            <li><a href="chapter4.html"><span class="secno">4 </span>&nbsp;Content Markup</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="chapter4.html#contm.intro"><span class="secno">4.1 </span>&nbsp;Introduction</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter4.html#id.4.1.1"><span class="secno">4.1.1 </span>&nbsp;The Intent of Content Markup</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.rendering"><span class="secno">4.1.2 </span>&nbsp;The Structure and Scope of Content MathML Expressions</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.strict"><span class="secno">4.1.3 </span>&nbsp;Strict Content MathML</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.cds"><span class="secno">4.1.4 </span>&nbsp;Content Dictionaries</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.concepts"><span class="secno">4.1.5 </span>&nbsp;Content MathML Concepts</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter4.html#contm.core"><span class="secno">4.2 </span>&nbsp;Content MathML Elements Encoding Expression Structure</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter4.html#contm.cn"><span class="secno">4.2.1 </span>&nbsp;Numbers <code>&lt;cn&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.ci"><span class="secno">4.2.2 </span>&nbsp;Content Identifiers <code>&lt;ci&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.csymbol"><span class="secno">4.2.3 </span>&nbsp;Content Symbols <code>&lt;csymbol&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.cs"><span class="secno">4.2.4 </span>&nbsp;String Literals <code>&lt;cs&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.apply"><span class="secno">4.2.5 </span>&nbsp;Function Application <code>&lt;apply&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.binding"><span class="secno">4.2.6 </span>&nbsp;Bindings and Bound Variables <code>&lt;bind&gt;</code>
+                              and <code>&lt;bvar&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.sharing"><span class="secno">4.2.7 </span>&nbsp;Structure Sharing <code>&lt;share&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.semantics"><span class="secno">4.2.8 </span>&nbsp;Attribution via <code>semantics</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.cerror"><span class="secno">4.2.9 </span>&nbsp;Error Markup <code>&lt;cerror&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.cbytes"><span class="secno">4.2.10 </span>&nbsp;Encoded Bytes <code>&lt;cbytes&gt;</code></a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter4.html#contm.structure.extended"><span class="secno">4.3 </span>&nbsp;Content MathML for Specific Structures</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter4.html#contm.container"><span class="secno">4.3.1 </span>&nbsp;Container Markup</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.bind.apply"><span class="secno">4.3.2 </span>&nbsp;Bindings with <code>&lt;apply&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.qualifiers"><span class="secno">4.3.3 </span>&nbsp;Qualifiers</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.opclasses"><span class="secno">4.3.4 </span>&nbsp;Operator Classes</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#id.4.3.5"><span class="secno">4.3.5 </span>&nbsp;Non-strict Attributes</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter4.html#contm.opel"><span class="secno">4.4 </span>&nbsp;Content MathML for Specific Operators and Constants</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter4.html#contm.basicfun"><span class="secno">4.4.1 </span>&nbsp;Functions and Inverses</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#id.4.4.2"><span class="secno">4.4.2 </span>&nbsp;Arithmetic, Algebra and Logic</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#id.4.4.3"><span class="secno">4.4.3 </span>&nbsp;Relations</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#id.4.4.4"><span class="secno">4.4.4 </span>&nbsp;Calculus and Vector Calculus</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.sets"><span class="secno">4.4.5 </span>&nbsp;Theory of Sets</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#id.4.4.6"><span class="secno">4.4.6 </span>&nbsp;Sequences and Series</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.elemclass"><span class="secno">4.4.7 </span>&nbsp;Elementary classical functions</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#id.4.4.8"><span class="secno">4.4.8 </span>&nbsp;Statistics</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#id.4.4.9"><span class="secno">4.4.9 </span>&nbsp;Linear Algebra</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.constantsandsymbols"><span class="secno">4.4.10 </span>&nbsp;Constant and Symbol Elements</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter4.html#contm.deprecated"><span class="secno">4.5 </span>&nbsp;Deprecated Content Elements</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter4.html#contm.declare"><span class="secno">4.5.1 </span>&nbsp;Declare <code>&lt;declare&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.reln"><span class="secno">4.5.2 </span>&nbsp;Relation <code>&lt;reln&gt;</code></a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter4.html#contm.fn"><span class="secno">4.5.3 </span>&nbsp;Relation <code>&lt;fn&gt;</code></a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter4.html#contm.p2s"><span class="secno">4.6 </span>&nbsp;The Strict Content MathML Transformation</a>
+                     
+                  </li>
+               </ol>
+            </li>
+            
+            <li><a href="chapter5.html"><span class="secno">5 </span>&nbsp;Mixing Markup Languages for Mathematical Expressions</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="chapter5.html#mixing.semantic.annotations"><span class="secno">5.1 </span>&nbsp;Annotation Framework</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter5.html#mixing.annotation.elements"><span class="secno">5.1.1 </span>&nbsp;Annotation elements</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter5.html#mixing.annotation.keys"><span class="secno">5.1.2 </span>&nbsp;Annotation keys</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter5.html#mixing.alternate.representations"><span class="secno">5.1.3 </span>&nbsp;Alternate representations</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter5.html#mixing.content.equiv"><span class="secno">5.1.4 </span>&nbsp;Content equivalents</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter5.html#mixing.annotation.references"><span class="secno">5.1.5 </span>&nbsp;Annotation references</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter5.html#mixing.semantic.elements"><span class="secno">5.2 </span>&nbsp;Elements for Semantic Annotations</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter5.html#mixing.elements.semantics"><span class="secno">5.2.1 </span>&nbsp;The <code>&lt;semantics&gt;</code> element</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter5.html#mixing.elements.annotation"><span class="secno">5.2.2 </span>&nbsp;The <code>&lt;annotation&gt;</code> element</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter5.html#mixing.elements.annotation.xml"><span class="secno">5.2.3 </span>&nbsp;The <code>&lt;annotation-xml&gt;</code> element</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter5.html#mixing.markup"><span class="secno">5.3 </span>&nbsp;Combining Presentation and Content Markup</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter5.html#mixing.pmincm"><span class="secno">5.3.1 </span>&nbsp;Presentation Markup in Content Markup</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter5.html#mixing.cminpm"><span class="secno">5.3.2 </span>&nbsp;Content Markup in Presentation Markup</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter5.html#mixing.parallel"><span class="secno">5.4 </span>&nbsp;Parallel Markup</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter5.html#mixing.top.level"><span class="secno">5.4.1 </span>&nbsp;Top-level Parallel Markup</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter5.html#mixing.cr"><span class="secno">5.4.2 </span>&nbsp;Parallel Markup via Cross-References</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            
+            <li><a href="chapter6.html"><span class="secno">6 </span>&nbsp;Interactions with the Host Environment</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="chapter6.html#world.introduction"><span class="secno">6.1 </span>&nbsp;Introduction</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter6.html#world.invoking.processors"><span class="secno">6.2 </span>&nbsp;Invoking MathML Processors</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter6.html#world.recognizing.mathml"><span class="secno">6.2.1 </span>&nbsp;Recognizing MathML in XML</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.html#world.recognizing.mathml.html"><span class="secno">6.2.2 </span>&nbsp;Recognizing MathML in HTML</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.html#world.resource.types"><span class="secno">6.2.3 </span>&nbsp;Resource Types for MathML Documents</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.html#encoding-names"><span class="secno">6.2.4 </span>&nbsp;Names of MathML Encodings</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter6.html#world-int-transfers"><span class="secno">6.3 </span>&nbsp;Transferring MathML</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter6.html#world-int-transf-flavors"><span class="secno">6.3.1 </span>&nbsp;Basic Transfer Flavor Names and Contents</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.html#world-int-transf-recommend"><span class="secno">6.3.2 </span>&nbsp;Recommended Behaviors when Transferring</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.html#world-int-transf-discuss"><span class="secno">6.3.3 </span>&nbsp;Discussion</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.html#world-int-transf-exa"><span class="secno">6.3.4 </span>&nbsp;Examples</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter6.html#world-int-combine-other"><span class="secno">6.4 </span>&nbsp;Combining MathML and Other Formats</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter6.html#interf.xhtml"><span class="secno">6.4.1 </span>&nbsp;Mixing MathML and XHTML</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.html#interf.nonxml"><span class="secno">6.4.2 </span>&nbsp;Mixing MathML and  non-XML contexts</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.html#interf.html"><span class="secno">6.4.3 </span>&nbsp;Mixing MathML and HTML</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.html#interf.link"><span class="secno">6.4.4 </span>&nbsp;Linking</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.html#interf.graphics"><span class="secno">6.4.5 </span>&nbsp;MathML and Graphical Markup</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter6.html#world-int-style"><span class="secno">6.5 </span>&nbsp;Using CSS with MathML</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter6.html#id.6.5.1"><span class="secno">6.5.1 </span>&nbsp;Order of processing attributes versus style sheets</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            
+            <li><a href="chapter7.html"><span class="secno">7 </span>&nbsp;Characters, Entities and Fonts</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="chapter7.html#chars.intro"><span class="secno">7.1 </span>&nbsp;Introduction</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter7.html#chars.unicodechars"><span class="secno">7.2 </span>&nbsp;Unicode Character Data</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter7.html#chars.entities"><span class="secno">7.3 </span>&nbsp;Entity Declarations</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter7.html#chars.mglyph"><span class="secno">7.4 </span>&nbsp;Special Characters Not in Unicode</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter7.html#chars.BMP-SMP"><span class="secno">7.5 </span>&nbsp;Mathematical Alphanumeric Symbols</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter7.html#chars.nonmark"><span class="secno">7.6 </span>&nbsp;Non-Marking Characters</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter7.html#chars.anomalous"><span class="secno">7.7 </span>&nbsp;Anomalous Mathematical Characters</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter7.html#chars.keyboard"><span class="secno">7.7.1 </span>&nbsp;Keyboard Characters</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter7.html#chars.pseudo-scripts"><span class="secno">7.7.2 </span>&nbsp;Pseudo-scripts</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter7.html#chars.comb-chars"><span class="secno">7.7.3 </span>&nbsp;Combining Characters</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            
+            <li><a href="appendixa.html"><span class="secno">A </span>&nbsp;Parsing MathML</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="appendixa.html#parsing.wellformed"><span class="secno">A.1 </span>&nbsp;Use of MathML as Well-Formed
+                        XML</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixa.html#parsing.usingrnc"><span class="secno">A.2 </span>&nbsp;Using the RelaxNG Schema for MathML3</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="appendixa.html#parsing.rnc.full"><span class="secno">A.2.1 </span>&nbsp;Full MathML</a>
+                           
+                        </li>
+                        
+                        <li><a href="appendixa.html#parsing.rnc.common"><span class="secno">A.2.2 </span>&nbsp;Elements Common to Presentation and Content MathML</a>
+                           
+                        </li>
+                        
+                        <li><a href="appendixa.html#parsing.rnc.pres"><span class="secno">A.2.3 </span>&nbsp;The Grammar for Presentation MathML</a>
+                           
+                        </li>
+                        
+                        <li><a href="appendixa.html#parsing.rnc.strict"><span class="secno">A.2.4 </span>&nbsp;The Grammar for Strict Content MathML3</a>
+                           
+                        </li>
+                        
+                        <li><a href="appendixa.html#parsing.rnc.content"><span class="secno">A.2.5 </span>&nbsp;The Grammar for Content MathML</a>
+                           
+                        </li>
+                        
+                        <li><a href="appendixa.html#parsing.rnc.module"><span class="secno">A.2.6 </span>&nbsp;MathML as a module in a RelaxNG Schema</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="appendixa.html#parsing.usingdtd"><span class="secno">A.3 </span>&nbsp;Using the MathML DTD</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="appendixa.html#interf.validation"><span class="secno">A.3.1 </span>&nbsp;Document Validation Issues</a>
+                           
+                        </li>
+                        
+                        <li><a href="appendixa.html#id.A.3.2"><span class="secno">A.3.2 </span>&nbsp;Attribute values in the MathML DTD</a>
+                           
+                        </li>
+                        
+                        <li><a href="appendixa.html#parsing.doctype"><span class="secno">A.3.3 </span>&nbsp;DOCTYPE declaration for MathML</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="appendixa.html#parsing.usingxsd"><span class="secno">A.4 </span>&nbsp;Using the MathML XML Schema</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="appendixa.html#parsing.schemalocation"><span class="secno">A.4.1 </span>&nbsp;Associating the MathML schema with MathML fragments</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="appendixa.html#parsing.mml.xhtml"><span class="secno">A.5 </span>&nbsp;Parsing MathML in XHTML</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixa.html#parsing.mml.html"><span class="secno">A.6 </span>&nbsp;Parsing MathML in HTML</a>
+                     
+                  </li>
+               </ol>
+            </li>
+            
+            <li><a href="appendixb.html"><span class="secno">B </span>&nbsp;Media Types Registrations</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="appendixb.html#media-type-choosing"><span class="secno">B.1 </span>&nbsp;Selection of Media Types for
+                        MathML Instances</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixb.html#media-types-mathml"><span class="secno">B.2 </span>&nbsp;Media type for Generic MathML</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixb.html#media-types-mathml-p"><span class="secno">B.3 </span>&nbsp;Media type for Presentation MathML</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixb.html#media-types-mathml-c"><span class="secno">B.4 </span>&nbsp;Media type for Content MathML</a>
+                     
+                  </li>
+               </ol>
+            </li>
+            
+            <li><a href="appendixc.html"><span class="secno">C </span>&nbsp;Operator Dictionary (Non-Normative)</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="appendixc.html#oper-dict.index"><span class="secno">C.1 </span>&nbsp;Indexing of the operator dictionary</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixc.html#oper-dict.format"><span class="secno">C.2 </span>&nbsp;Format of operator dictionary entries</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixc.html#oper-dict.space"><span class="secno">C.3 </span>&nbsp;Notes on lspace and 
+                        rspace attributes</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixc.html#oper-dict.entries-table"><span class="secno">C.4 </span>&nbsp;Operator dictionary entries</a>
+                     
+                  </li>
+               </ol>
+            </li>
+            
+            <li><a href="appendixd.html"><span class="secno">D </span>&nbsp;Glossary (Non-Normative)</a>
+               
+            </li>
+            
+            <li><a href="appendixe.html"><span class="secno">E </span>&nbsp;Working Group Membership and Acknowledgments (Non-Normative)</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="appendixe.html#contrib"><span class="secno">E.1 </span>&nbsp;The Math Working Group Membership</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixe.html#contrib.ack"><span class="secno">E.2 </span>&nbsp;Acknowledgments</a>
+                     
+                  </li>
+               </ol>
+            </li>
+            
+            <li><a href="appendixf.html"><span class="secno">F </span>&nbsp;Changes (Non-Normative)</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="appendixf.html#changes.mathml3.03e-mathml3.02e"><span class="secno">F.1 </span>&nbsp;Changes between MathML 3.0 Second Edition and Third Edition</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixf.html#changes.mathml3.02e-3.0"><span class="secno">F.2 </span>&nbsp;Changes between MathML 3.0 First Edition and Second Edition</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixf.html#changes.mathml2.0e-3.0"><span class="secno">F.3 </span>&nbsp;Changes between MathML 2.0 Second Edition and MathML 3.0</a>
+                     
+                  </li>
+               </ol>
+            </li>
+            
+            <li><a href="appendixg.html"><span class="secno">G </span>&nbsp;Normative References</a>
+               
+            </li>
+            
+            <li><a href="appendixh.html"><span class="secno">H </span>&nbsp;References (Non-Normative)</a>
+               
+            </li>
+            
+            <li><a href="appendixi.html"><span class="secno">I </span>&nbsp;Index (Non-Normative)</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="appendixi.html#index.elem"><span class="secno">I.1 </span>&nbsp;MathML Elements</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixi.html#index.att"><span class="secno">I.2 </span>&nbsp;MathML Attributes</a>
+                     
+                  </li>
+               </ol>
+            </li>
+         </ol>
+         
+      </nav>
+      
+      
+      <div class="body">
+         
+         
       </div>
-      <hr>
-      <div class="body"></div>
+      
       <div class="back"></div>
    </body>
 </html>

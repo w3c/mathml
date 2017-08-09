@@ -1,9 +1,24 @@
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Media Types Registrations</title><style type="text/css">
+
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
 
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
@@ -145,29 +160,45 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/base.css">
-   </head>
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css"><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script></head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br> Draft</b></div>
       
-      <h1><a name="media-types-reg" id="media-types-reg"></a>B Media Types Registrations
+      <h1><a id="media-types-reg"></a>B Media Types Registrations
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview.html">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br>
-         Previous: A <a href="appendixa.html">Parsing MathML</a><br>
-         Next: C <a href="appendixc.html">Operator Dictionary</a><br><br>
-         B <a href="appendixb.html">Media Types Registrations</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;B.1 <a href="appendixb.html#media-type-choosing">Selection of Media Types for
-            MathML Instances</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;B.2 <a href="appendixb.html#media-types-mathml">Media type for Generic MathML</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;B.3 <a href="appendixb.html#media-types-mathml-p">Media type for Presentation MathML</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;B.4 <a href="appendixb.html#media-types-mathml-c">Media type for Content MathML</a><br>
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview.html"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="appendixa.html"><span class="secno">A </span> Parsing MathML</a></li>
+            <li><a href="appendixc.html"><span class="secno">C </span> Operator Dictionary</a></li>
+            
+            
+            <li><a href="appendixb.html"><span class="secno">B </span>&nbsp;Media Types Registrations</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="appendixb.html#media-type-choosing"><span class="secno">B.1 </span>&nbsp;Selection of Media Types for
+                        MathML Instances</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixb.html#media-types-mathml"><span class="secno">B.2 </span>&nbsp;Media type for Generic MathML</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixb.html#media-types-mathml-p"><span class="secno">B.3 </span>&nbsp;Media type for Presentation MathML</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixb.html#media-types-mathml-c"><span class="secno">B.4 </span>&nbsp;Media type for Content MathML</a>
+                     
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <p>This normative appendix registers three media types for MathML,
@@ -180,7 +211,7 @@ padding-right: 1em;
          </p>
          <div class="div2">
             
-            <h2><a name="media-type-choosing" id="media-type-choosing"></a>B.1 Selection of Media Types for
+            <h2><a id="media-type-choosing"></a>B.1 Selection of Media Types for
                MathML Instances
             </h2>
             <p>MathML contains two distinct vocabularies. Presentation markup is
@@ -245,7 +276,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="media-types-mathml" id="media-types-mathml"></a>B.2 Media type for Generic MathML
+            <h2><a id="media-types-mathml"></a>B.2 Media type for Generic MathML
             </h2>
             <p>This registration  has been submitted to community review and has been 
                approved by IESG for registration with IANA.
@@ -360,7 +391,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="media-types-mathml-p" id="media-types-mathml-p"></a>B.3 Media type for Presentation MathML
+            <h2><a id="media-types-mathml-p"></a>B.3 Media type for Presentation MathML
             </h2>
             <p>This registration  has been submitted to community review and has been 
                approved by IESG for registration with IANA.
@@ -424,7 +455,8 @@ padding-right: 1em;
                      unrecognized elements and attributes, both in the MathML namespace and  
                      in other namespaces.
                   </p>
-                  <p>Because MathML is extensible, conformant "application/mathml-presentation+xml" processors  
+                  <p>Because MathML is extensible, conformant "application/mathml-presentation+xml" processors
+                     
                      must expect that content received is well-formed XML, but it cannot be  
                      guaranteed that the content is valid to a particular DTD or Schema or  
                      that the processor will recognize all of the elements and attributes  
@@ -451,7 +483,9 @@ padding-right: 1em;
                      (MathML) Version 3.</a> specification.
                </dd>
                <dt class="label">Applications that use this media type</dt>
-               <dd>Web browsers, rendering engines, formula editors, typesetting software, search robots, computing systems.</dd>
+               <dd>Web browsers, rendering engines, formula editors, typesetting software, search robots,
+                  computing systems.
+               </dd>
                <dt class="label">Additional information</dt>
                <dd>Magic number(s): see <a href="appendixg.html#RFC3023">[RFC3023]</a></dd>
                <dt class="label">File extension(s):</dt>
@@ -480,7 +514,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="media-types-mathml-c" id="media-types-mathml-c"></a>B.4 Media type for Content MathML
+            <h2><a id="media-types-mathml-c"></a>B.4 Media type for Content MathML
             </h2>
             <p>This registration  has been submitted to community review and has been 
                approved by IESG for registration with IANA.
@@ -544,7 +578,8 @@ padding-right: 1em;
                      unrecognized elements and attributes, both in the MathML namespace and  
                      in other namespaces.
                   </p>
-                  <p>Because MathML is extensible, conformant "application/mathml-content+xml" processors  
+                  <p>Because MathML is extensible, conformant "application/mathml-content+xml" processors
+                     
                      must expect that content received is well-formed XML, but it cannot be  
                      guaranteed that the content is valid to a particular DTD or Schema or  
                      that the processor will recognize all of the elements and attributes  
