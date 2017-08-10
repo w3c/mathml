@@ -12,9 +12,9 @@ PSTYLE=src/style/pdf
 RELAXNG=RelaxNG/mathml3
 
 
-# saxon9 is the script
-# java -jar /saxon9/saxon9.jar $*
+# saxon9 
 # modify to a local copy of saxon8.jar
+export SAXON="java -jar /tmp/saxon9.jar "
 
 echo validate sources
 rxp -sxV $DRAFT/$SOURCE/mathml-spec.xml
@@ -30,8 +30,8 @@ rm -f chapter?.{x,ht}ml appendix?.{x,ht}ml Overview.{x,ht}ml
 rm -f chapter?-d.html appendix?-d.html Overview-d.html
 
 
-## github layout saxon9 -o $RELAXNG/mathml3-content.rnc $SOURCE/contm-new.xml $SOURCE/schema.xsl
-## github layout saxon9 -o $RELAXNG/mathml3-presentation.rnc $SOURCE/presentation-markup.xml $SOURCE/schema.xsl
+## github layout $SAXON -o $RELAXNG/mathml3-content.rnc $SOURCE/contm-new.xml $SOURCE/schema.xsl
+## github layout $SAXON -o $RELAXNG/mathml3-presentation.rnc $SOURCE/presentation-markup.xml $SOURCE/schema.xsl
 
 
 echo "generate schema"
@@ -42,16 +42,16 @@ do
     cp $i ${i/.rnc/.new}
 done
 
-saxon9 -o mathml3-content.new ../../src/xml/contm-new.xml ../../src/style/rnc/schema.xsl
+$SAXON -o mathml3-content.new ../../src/xml/contm-new.xml ../../src/style/rnc/schema.xsl
 
-saxon9 -o mathml3-presentation.new ../../src/xml/presentation-markup.xml ../../src/style/rnc/schema.xsl
+$SAXON -o mathml3-presentation.new ../../src/xml/presentation-markup.xml ../../src/style/rnc/schema.xsl
 
 cd $DRAFT
 
 
 echo "making standard HTML version"
 
-saxon9   $SOURCE/mathml-spec.xml  $HSTYLE/mmldiff.xsl show.diff.markup=0
+$SAXON   $SOURCE/mathml-spec.xml  $HSTYLE/mmldiff.xsl show.diff.markup=0
 
 cp Overview.html index.html
 
@@ -79,7 +79,7 @@ echo    cvs update -p -r  mathml32e-REC unicode.xml > unicode-pr.xml
 fi
 )
 
-saxon9  $SOURCE/mathml-spec.xml  $HSTYLE/mmldiff.xsl show.diff.markup=1 2>diff.log
+$SAXON  $SOURCE/mathml-spec.xml  $HSTYLE/mmldiff.xsl show.diff.markup=1 2>diff.log
 cat diff.log
 
 echo "fixing mmlcss id"
@@ -88,25 +88,25 @@ sed -i 's/<a name="mmlcss" id="mmlcss"><\/a> //' chapter6-d.html
 
 echo "making xhtml stylesheets"
 echo "  " mmldiff
-saxon9 -novw -o $HSTYLE/xmmldiff.xsl $HSTYLE/mmldiff.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+$SAXON -novw -o $HSTYLE/xmmldiff.xsl $HSTYLE/mmldiff.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
 echo "  " mmlspec
-saxon9 -novw -o $HSTYLE/xmmlspec.xsl $HSTYLE/mmlspec.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+$SAXON -novw -o $HSTYLE/xmmlspec.xsl $HSTYLE/mmlspec.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
 echo "  " slices
-saxon9 -novw -o $HSTYLE/xslices.xsl $HSTYLE/slices.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+$SAXON -novw -o $HSTYLE/xslices.xsl $HSTYLE/slices.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
 echo "  " slices-common
-saxon9 -novw -o $HSTYLE/xslices-common.xsl $HSTYLE/slices-common.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+$SAXON -novw -o $HSTYLE/xslices-common.xsl $HSTYLE/slices-common.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
 echo "  " xmlspec
-saxon9 -novw -o $HSTYLE/xxmlspec.xsl $HSTYLE/xmlspec.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+$SAXON -novw -o $HSTYLE/xxmlspec.xsl $HSTYLE/xmlspec.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
 echo "  " mcd
-saxon9 -novw -o $HSTYLE/xmcd.xsl $HSTYLE/mcd.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+$SAXON -novw -o $HSTYLE/xmcd.xsl $HSTYLE/mcd.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
 echo "  " xntn-presentation
-saxon9 -novw -o $HSTYLE/xntn-presentation.xsl $HSTYLE/ntn-presentation.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+$SAXON -novw -o $HSTYLE/xntn-presentation.xsl $HSTYLE/ntn-presentation.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
 
 
 
 
 echo make xhtml version
-saxon9 $SOURCE/mathml-spec.xml $HSTYLE/mathmlx.xsl show.diff.markup=0
+$SAXON $SOURCE/mathml-spec.xml $HSTYLE/mathmlx.xsl show.diff.markup=0
 
 
 
@@ -127,7 +127,7 @@ echo "making single file HTML (+MathML) version"
 mv mathml.dtd  tmp.dtd
 echo "" > mathml.dtd
 cp  $HSTYLE/html5.xsl .
-saxon9  -o mathml.html   -it main html5.xsl
+$SAXON  -o mathml.html   -it main html5.xsl
 sed -i -e "s@></input></mtext>@/></mtext>@" mathml.html
 rm html5.xsl
 mv tmp.dtd mathml.dtd
@@ -140,7 +140,7 @@ echo generate TeX files
 
 cd $DRAFT
 
-saxon9  $SOURCE/mathml-spec.xml $PSTYLE/mathmlspec.xsl
+$SAXON  $SOURCE/mathml-spec.xml $PSTYLE/mathmlspec.xsl
 
 
 if test ! -f image/w3c_home.png 
@@ -207,7 +207,7 @@ exit
 
 echo "images"
 mv images.tex images.old
-saxon9  -o images.tex $SOURCE/mathml-spec.xml $HSTYLE/images.xsl
+$SAXON  -o images.tex $SOURCE/mathml-spec.xml $HSTYLE/images.xsl
 if (cmp images.tex images.old)
 then
 echo images same
