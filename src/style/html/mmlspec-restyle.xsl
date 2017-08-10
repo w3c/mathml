@@ -513,7 +513,8 @@ summary="Navigation TOC"
         <title><xsl:value-of select="head"/></title>
 	
           <xsl:call-template name="css"/>
-        </head>
+	  <script src="//www.w3.org/scripts/TR/2016/fixup.js"><xsl:text> </xsl:text></script>
+       </head>
         <body>
           <xsl:apply-templates select="head[$title.before.navigation]"/>
           <xsl:call-template name="navigation.top">
@@ -591,6 +592,7 @@ summary="Navigation TOC"
         <head>
           <title><xsl:value-of select="head"/></title>
           <xsl:call-template name="css"/>
+	  <script src="//www.w3.org/scripts/TR/2016/fixup.js"><xsl:text> </xsl:text></script>
         </head>
         <body>
           <xsl:apply-templates select="head[$title.before.navigation]"/>
