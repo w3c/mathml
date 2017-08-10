@@ -2479,7 +2479,7 @@ for this document, which may include some normative corrections.</p>
       <xsl:apply-templates select="head" mode="text"/>
     </a>
     <xsl:text> (Non-Normative)</xsl:text>
-    <xsl:if test="$toc.level &gt; 2">
+    <xsl:if test="$toc.level &gt; 2 and div2">
      <xsl:text>&#10;</xsl:text>
      <ol class="toc">
       <xsl:apply-templates select="div2" mode="toc"/>
