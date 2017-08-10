@@ -74,7 +74,8 @@
 <!ELEMENT cerror ANY>
 <!ELEMENT cs (#PCDATA)>
 <!ELEMENT cbytes (#PCDATA)>
-<!ATTLIST share href CDATA #IMPLIED>
+<!ATTLIST share src CDATA #IMPLIED
+	  href CDATA #IMPLIED>
 <!ATTLIST mglyph src CDATA #IMPLIED>
 <!ATTLIST mspace spacing CDATA #IMPLIED>
 <!ATTLIST mline spacing CDATA #IMPLIED>

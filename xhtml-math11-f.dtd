@@ -1220,6 +1220,7 @@
 <!ENTITY % hr.qname      "%XHTML.pfx;hr" >
 
 <!-- module:  xhtml-blkstruct-1.mod -->
+<!ENTITY % nav.qname     "%XHTML.pfx;nav" >
 <!ENTITY % div.qname     "%XHTML.pfx;div" >
 <!ENTITY % p.qname       "%XHTML.pfx;p" >
 
@@ -1759,7 +1760,7 @@
 
 <!ENTITY % Fieldset.class  "| %fieldset.qname;" >
 
-<!ENTITY % BlkStruct.class "%p.qname; | %div.qname;" >
+<!ENTITY % BlkStruct.class "%p.qname; | %div.qname; | %nav.qname;" >
 
 <!ENTITY % BlkPhras.class
      "| %pre.qname; | %blockquote.qname; | %address.qname;" >
@@ -2627,6 +2628,21 @@
       %Common.attrib;
 >
 <!-- end of div.attlist -->]]>
+<!ENTITY % nav.element  "INCLUDE" >
+<![%nav.element;[
+<!ENTITY % nav.content
+     "( #PCDATA | %Flow.mix; )*"
+>
+<!ENTITY % nav.qname  "nav" >
+<!ELEMENT %nav.qname;  %nav.content; >
+<!-- end of nav.element -->]]>
+
+<!ENTITY % nav.attlist  "INCLUDE" >
+<![%nav.attlist;[
+<!ATTLIST %nav.qname;
+      %Common.attrib;
+>
+<!-- end of nav.attlist -->]]>
 
 <!ENTITY % p.element  "INCLUDE" >
 <![%p.element;[
@@ -3855,7 +3871,7 @@
 <!ATTLIST %script.qname;
       %XHTML.xmlns.attrib;
       charset      %Charset.datatype;       #IMPLIED
-      type         %ContentType.datatype;   #REQUIRED
+      type         %ContentType.datatype;   #IMPLIED
       src          %URI.datatype;           #IMPLIED
       defer        ( defer )                #IMPLIED
       xml:space    ( preserve )             #FIXED 'preserve'
