@@ -4,6 +4,17 @@
 <div2 id="changes_mathml3.03e-mathml3.02e">
 <head>Changes between MathML 3.0 Second Edition and Third Edition</head>
 <ulist>
+
+<item>
+<p>Changes to the Frontmatter</p>
+<ulist>
+ <item><p>Changes to the references to match new W3C specification rules,
+ and to use the new W3C CSS formatting style, most notably affecting the table of contents styling.</p></item>
+ <item><p>Update the <specref ref="status"/>, in particular referencing the GitHub Issues page as required for current
+ W3C publications </p></item>
+</ulist>
+</item>
+
 <item>
 <p>Changes to <specref ref="fund"/></p>
 <ulist>
@@ -23,7 +34,7 @@
 <item>
 <p>Changes to <specref ref="contm"/></p>
 <ulist>
- <item><p>Correct examples in <specref ref="contm_share"/>, <specref ref="contm_acyclicity"/>, <specref ref="contm_share_binding"/>,  <specref ref="contm_rendering_share"/>  to use <att>src</att> (to match the normative schema) not <att>href</att>. The previous examples were also valid, as <att>href</att> is a common presentaional attribute allowed on all elements.</p></item>
+ <item><p>Correct examples in <specref ref="contm_share"/>, <specref ref="contm_acyclicity"/>, <specref ref="contm_share_binding"/>,  <specref ref="contm_rendering_share"/>  to use <att>src</att> (to match the normative schema) not <att>href</att>. The previous examples were also valid, as <att>href</att> is a common presentational attribute allowed on all elements.</p></item>
 </ulist>
 </item>
 

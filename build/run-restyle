@@ -25,8 +25,8 @@ rxp -sxV $DRAFT/$SOURCE/mathml-spec.xml
 cd $DRAFT
 
 echo clear old versions
-rm -f chapter?.{x,ht}ml appendix?.{x,ht}ml Overview.{x,ht}ml
-rm -f chapter?-d.html appendix?-d.html Overview-d.html
+#rm -f chapter?.{x,ht}ml appendix?.{x,ht}ml Overview.{x,ht}ml
+#rm -f chapter?-d.html appendix?-d.html Overview-d.html
 
 
 ## github layout $SAXON -o:$RELAXNG/mathml3-content.rnc $SOURCE/contm-new.xml $SOURCE/schema.xsl

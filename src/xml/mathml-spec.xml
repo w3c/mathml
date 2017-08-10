@@ -4,10 +4,10 @@
 
 <!-- entities for front-matter -->
 <!ENTITY pub.mail      "www-math@w3.org"> 
-<!ENTITY date.day      "21">
-<!ENTITY date.month    "November"> 
-<!ENTITY date.monthnum "11"> 
-<!ENTITY date.year     "2014"> 
+<!ENTITY date.day      "10">
+<!ENTITY date.month    "August"> 
+<!ENTITY date.monthnum "08"> 
+<!ENTITY date.year     "2017"> 
 <!ENTITY doc.date      "&date.year;&date.monthnum;&date.day;"> 
 <!ENTITY doc.prefix    "WD-MathML3-">
 <!ENTITY doc.type      "Working Draft">
@@ -333,6 +333,8 @@ href="http://lists.w3.org/Archives/Public/www-math/">list archives</loc>).
 To subscribe send an email to <loc
 href="mailto:www-math-request@w3.org">www-math-request@w3.org</loc>
 with the word <code>subscribe</code> in the subject line.
+<phrase diff="add">Alternatively, report  an issue at this specification's
+<loc href="https://github.com/w3c/mathml">GitHub repository</loc>.</phrase>
 </p>
 
 
