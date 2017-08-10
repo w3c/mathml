@@ -31,7 +31,6 @@
 
 <xsl:template match="meta[@http-equiv='Content-Type']/@content">
  <xsl:attribute name="content" select="'text/html'"/>
- <xsl:attribute name="encoding" select="'UTF-8'"/>
 </xsl:template>
 
 <xsl:template match="@*|node()">
