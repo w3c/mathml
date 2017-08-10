@@ -50,7 +50,7 @@ cd $DRAFT
 
 echo "making standard HTML version"
 
-$SAXON   $SOURCE/mathml-spec.xml  $HSTYLE/mmldiff-restyle.xsl show.diff.markup=0
+$SAXON   $SOURCE/mathml-spec.xml  $HSTYLE/mmldiff-restyle.xsl show.diff.markup=0 editors-copy=yes
 
 cp Overview.html index.html
 
