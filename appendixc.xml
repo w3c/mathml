@@ -5,9 +5,27 @@
       <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
       <title>Operator Dictionary</title><style type="text/css">
 
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
+
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
 }
+
+div.graphic{margin-left:2em}
 
 table.syntax {
 font-size: 75%;
@@ -145,29 +163,45 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css"
-            href="https://www.w3.org/StyleSheets/TR/base.css" /><script type="text/javascript" src="sorttable.js"></script></head>
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" /><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script><script type="text/javascript" src="sorttable.js"></script></head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br class="html-compat" /> Draft</b></div>
       
       <h1><a id="oper-dict"></a>C Operator Dictionary (Non-Normative)
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br class="html-compat" />
-         Previous: B <a href="appendixb.xml">Media Types Registrations</a><br class="html-compat" />
-         Next: D <a href="appendixd.xml">Glossary</a><br class="html-compat" /><br class="html-compat" />
-         C <a href="appendixc.xml">Operator Dictionary (Non-Normative)</a><br class="html-compat" />
-             C.1 <a href="appendixc.xml#oper-dict.index">Indexing of the operator dictionary</a><br class="html-compat" />
-             C.2 <a href="appendixc.xml#oper-dict.format">Format of operator dictionary entries</a><br class="html-compat" />
-             C.3 <a href="appendixc.xml#oper-dict.space">Notes on lspace and 
-            rspace attributes</a><br class="html-compat" />
-             C.4 <a href="appendixc.xml#oper-dict.entries-table">Operator dictionary entries</a><br class="html-compat" />
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="appendixb.xml"><span class="secno">B </span> Media Types Registrations</a></li>
+            <li><a href="appendixd.xml"><span class="secno">D </span> Glossary</a></li>
+            
+            
+            <li><a href="appendixc.xml"><span class="secno">C </span> Operator Dictionary (Non-Normative)</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="appendixc.xml#oper-dict.index"><span class="secno">C.1 </span> Indexing of the operator dictionary</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixc.xml#oper-dict.format"><span class="secno">C.2 </span> Format of operator dictionary entries</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixc.xml#oper-dict.space"><span class="secno">C.3 </span> Notes on lspace and 
+                        rspace attributes</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixc.xml#oper-dict.entries-table"><span class="secno">C.4 </span> Operator dictionary entries</a>
+                     
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <p>The following table gives the suggested dictionary of rendering
@@ -195,7 +229,8 @@ padding-right: 1em;
             </p>
             <p>In the table below, all non-ASCII characters are represented by
                XML-style hexadecimal numeric character references.
-               The choice of markup (character data, numeric character reference or named entity reference)
+               The choice of markup (character data, numeric character reference or named entity
+               reference)
                for a given character in MathML has no effect on its rendering.
             </p>
          </div>
@@ -216,7 +251,8 @@ padding-right: 1em;
             <p>The length valued attributes such as <code>lspace</code> are given explicitly in the following columns.
                Boolean valued attributes such as <code>stretchy</code> are specified together in the final <b>Properties</b>
                column by listing the attribute name if its value should be set to <b>true</b> by the dictionary.
-               Finally some rarely used non-boolean properties are shown in the Properties column together with a value,
+               Finally some rarely used non-boolean properties are shown in the Properties column
+               together with a value,
                for example <code>linebreakstyle</code>=after.
             </p>
             <p>Any attribute not listed for some entry has its default value,

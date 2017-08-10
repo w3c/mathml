@@ -5,9 +5,27 @@
       <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
       <title>Normative References</title><style type="text/css">
 
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
+
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
 }
+
+div.graphic{margin-left:2em}
 
 table.syntax {
 font-size: 75%;
@@ -145,30 +163,30 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css"
-            href="https://www.w3.org/StyleSheets/TR/base.css" />
-   </head>
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" /><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script></head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br class="html-compat" /> Draft</b></div>
       
       <h1><a id="n.references"></a>G Normative References
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br class="html-compat" />
-         Previous: F <a href="appendixf.xml">Changes</a><br class="html-compat" />
-         Next: H <a href="appendixh.xml">References</a><br class="html-compat" /><br class="html-compat" />
-         G <a href="appendixg.xml">Normative References</a><br class="html-compat" />
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="appendixf.xml"><span class="secno">F </span> Changes</a></li>
+            <li><a href="appendixh.xml"><span class="secno">H </span> References</a></li>
+            
+            
+            <li><a href="appendixg.xml"><span class="secno">G </span> Normative References</a>
+               
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <dl>
-            <dt class="label"><a id="Bidi"></a>Bidi
-            </dt>
+            <dt class="label" id="Bidi">Bidi</dt>
             <dd>
                Mark Davis;
                <em><a href="http://www.unicode.org/reports/tr9/">
@@ -177,8 +195,7 @@ padding-right: 1em;
                (<a href="http://www.unicode.org/reports/tr9/">http://www.unicode.org/reports/tr9/</a>) 
                
             </dd>
-            <dt class="label"><a id="Entities"></a>Entities
-            </dt>
+            <dt class="label" id="Entities">Entities</dt>
             <dd>
                David Carlisle and Patrick Ion (editors);
                <em><a href="http://www.w3.org/TR/xml-entity-names/">
@@ -187,8 +204,7 @@ padding-right: 1em;
                (<a href="http://www.w3.org/TR/xml-entity-names/">http://www.w3.org/TR/xml-entity-names/</a>)
                
             </dd>
-            <dt class="label"><a id="HTML4"></a>HTML4
-            </dt>
+            <dt class="label" id="HTML4">HTML4</dt>
             <dd>
                Dave Raggett, Arnaud Le Hors, and Ian Jacobs (editors);
                <em><a href="http://www.w3.org/TR/html401/">
@@ -197,31 +213,28 @@ padding-right: 1em;
                (<a href="http://www.w3.org/TR/html401/">http://www.w3.org/TR/html401/</a>)
                
             </dd>
-            <dt class="label"><a id="HTML5"></a>HTML5
-            </dt>
-            <dd> Robin Berjon, Steve Faulkner, Travis Leithead, Erika Doyle Navara, Edward O'Connor, Silvia Pfeiffer, Ian Hickson;
+            <dt class="label" id="HTML5">HTML5</dt>
+            <dd> Robin Berjon, Steve Faulkner, Travis Leithead, Erika Doyle Navara, Edward O'Connor,
+               Silvia Pfeiffer, Ian Hickson;
                <em><a href="http://www.w3.org/TR/html5/">HTML 5,
                      A vocabulary and associated APIs for HTML and XHTML</a></em>
                W3C Candidate Recommendation 04 February 2014
                (<a href="http://www.w3.org/TR/html5/">http://www.w3.org/TR/html5/</a>)
             </dd>
-            <dt class="label"><a id="IRI"></a>IRI
-            </dt>
+            <dt class="label" id="IRI">IRI</dt>
             <dd>M. Duerst and M. Suignard;
                <em><a href="http://www.ietf.org/rfc/rfc3987.txt">Internationalized Resource Identifiers (IRIs)</a></em>,
                January 2005
                (<a href="http://www.ietf.org/rfc/rfc3987.txt">http://www.ietf.org/rfc/rfc3987.txt</a>). See also the proposed update <a href="http://tools.ietf.org/html/draft-duerst-iri-bis-07">http://tools.ietf.org/html/draft-duerst-iri-bis-07</a>.
             </dd>
-            <dt class="label"><a id="ISO10646"></a>ISO10646
-            </dt>
+            <dt class="label" id="ISO10646">ISO10646</dt>
             <dd>
                Joint Technical Committee ISO/IEC JTC 1, Subcommittee SC 2.
                <em><a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=56921">ISO/IEC 10646:2012, Information technology -- Universal Coded Character Set (UCS)</a></em>.
                International Standards Organization, Geneva, Switzerland, 2012.
                
             </dd>
-            <dt class="label"><a id="Namespaces"></a>Namespaces
-            </dt>
+            <dt class="label" id="Namespaces">Namespaces</dt>
             <dd>
                Tim Bray, Dave Hollander, Andrew Layman, Richard Tobin, and Henry S. Thompson (editors);
                <em><a href="http://www.w3.org/TR/REC-xml-names/">
@@ -230,8 +243,7 @@ padding-right: 1em;
                (<a href="http://www.w3.org/TR/REC-xml-names/">http://www.w3.org/TR/REC-xml-names/</a>)
                
             </dd>
-            <dt class="label"><a id="Normal"></a>Normal
-            </dt>
+            <dt class="label" id="Normal">Normal</dt>
             <dd>
                Mark Davis, Ken Whistler, and Martin Dürst;
                <em><a href="http://www.unicode.org/reports/tr15/">
@@ -240,8 +252,7 @@ padding-right: 1em;
                (<a href="http://www.unicode.org/reports/tr15/">http://www.unicode.org/reports/tr15/</a>) 
                
             </dd>
-            <dt class="label"><a id="OpenMath2004"></a>OpenMath2004
-            </dt>
+            <dt class="label" id="OpenMath2004">OpenMath2004</dt>
             <dd>
                S. Buswell, O. Caprotti, D. P. Carlisle, M. C. Dewar, M. Gaëtano and M. Kohlhase (editors);
                <em><a href="http://www.openmath.org/standard/om20-2004-06-30/">
@@ -250,17 +261,16 @@ padding-right: 1em;
                (<a href="http://www.openmath.org/standard/om20-2004-06-30/">http://www.openmath.org/standard/om20-2004-06-30/</a>)
                
             </dd>
-            <dt class="label"><a id="RELAX-NG"></a>RELAX-NG
-            </dt>
+            <dt class="label" id="RELAX-NG">RELAX-NG</dt>
             <dd>
                ISO/IEC JTC 1/SC 34;
-               <em><a href="http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=52348">Document Schema Definition Language (DSDL) -- Part 2: Regular-grammar-based validation -- RELAX NG 2008</a></em>,
+               <em><a href="http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=52348">Document Schema Definition Language (DSDL) -- Part 2: Regular-grammar-based validation
+                     -- RELAX NG 2008</a></em>,
                International Organization for Standardization,  15 December 2008.
                (<a href="http://relaxng.org/spec-20011203.html">http://relaxng.org/spec-20011203.html</a>)
                
             </dd>
-            <dt class="label"><a id="RFC2045"></a>RFC2045
-            </dt>
+            <dt class="label" id="RFC2045">RFC2045</dt>
             <dd>N. Freed and N. Borenstein;
                <em><a href="http://www.ietf.org/rfc/rfc2045.txt">Multipurpose Internet Mail Extensions (MIME) Part One: Format of 
                      Internet Message Bodies</a></em>,
@@ -268,8 +278,7 @@ padding-right: 1em;
                (<a href="http://www.ietf.org/rfc/rfc2045.txt">http://www.ietf.org/rfc/rfc2045.txt</a>) 
                
             </dd>
-            <dt class="label"><a id="RFC2046"></a>RFC2046
-            </dt>
+            <dt class="label" id="RFC2046">RFC2046</dt>
             <dd>N. Freed and N. Borenstein;
                <em><a href="http://www.ietf.org/rfc/rfc2046.txt">Multipurpose Internet Mail
                      Extensions (MIME) Part Two: Media Types</a></em>, 
@@ -277,32 +286,28 @@ padding-right: 1em;
                (<a href="http://www.ietf.org/rfc/rfc2046.txt">http://www.ietf.org/rfc/rfc2046.txt</a>) 
                
             </dd>
-            <dt class="label"><a id="RFC3023"></a>RFC3023
-            </dt>
+            <dt class="label" id="RFC3023">RFC3023</dt>
             <dd>M. Murata, S. St.Laurent and D. Kohn;
                <em><a href="http://www.ietf.org/rfc/rfc3023.txt">XML Media Types</a></em>, 
                RFC 3023, January 2001.
                (<a href="http://www.ietf.org/rfc/rfc3023.txt">http://www.ietf.org/rfc/rfc3023.txt</a>)
                
             </dd>
-            <dt class="label"><a id="RFC3986"></a>RFC3986
-            </dt>
+            <dt class="label" id="RFC3986">RFC3986</dt>
             <dd>T. Berners-Lee, R. Fielding and L. Masinter;
                <em><a href="http://tools.ietf.org/html/rfc3986">Uniform Resource Identifier (URI): Generic Syntax</a></em>,
                RFC 3986, January 2005.
                (<a href="http://tools.ietf.org/html/rfc3986">http://tools.ietf.org/html/rfc3986</a>) 
                
             </dd>
-            <dt class="label"><a id="RFC4288"></a>RFC4288
-            </dt>
+            <dt class="label" id="RFC4288">RFC4288</dt>
             <dd>N. Freed and J. Klensin;
                <em><a href="http://www.ietf.org/rfc/rfc4288.txt">Media Type Specifications and Registration Procedures</a></em>, 
                RFC 4288, December 2005.
                (<a href="http://www.ietf.org/rfc/rfc4288.txt">http://www.ietf.org/rfc/rfc4288.txt</a>) 
                
             </dd>
-            <dt class="label"><a id="Unicode"></a>Unicode
-            </dt>
+            <dt class="label" id="Unicode">Unicode</dt>
             <dd>
                The Unicode Consortium.
                <em><a href="http://www.unicode.org/versions/Unicode6.3.0/">
@@ -311,18 +316,17 @@ padding-right: 1em;
                (<a href="http://www.unicode.org/versions/Unicode6.3.0/">http://www.unicode.org/versions/Unicode6.3.0/</a>) 
                
             </dd>
-            <dt class="label"><a id="XHTML"></a>XHTML
-            </dt>
+            <dt class="label" id="XHTML">XHTML</dt>
             <dd>
                Steven Pemberton, et al.;
                <em><a href="http://www.w3.org/TR/xhtml1/">
-                     XHTML™ 1.0 The Extensible HyperText Markup Language (Second Edition):  A Reformulation of HTML 4 in XML 1.0</a></em>,
+                     XHTML™ 1.0 The Extensible HyperText Markup Language (Second Edition):  A Reformulation
+                     of HTML 4 in XML 1.0</a></em>,
                W3C Recommendation, 26 January 2000, revised 1 August 2002.
                (<a href="http://www.w3.org/TR/xhtml1/">http://www.w3.org/TR/xhtml1/</a>)
                
             </dd>
-            <dt class="label"><a id="XML"></a>XML
-            </dt>
+            <dt class="label" id="XML">XML</dt>
             <dd>
                Tim Bray, Jean Paoli, C. M. Sperberg-McQueen, Eve Maler, and François Yergeau (editors);
                <em><a href="http://www.w3.org/TR/xml/">

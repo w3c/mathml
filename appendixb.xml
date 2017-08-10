@@ -5,9 +5,27 @@
       <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
       <title>Media Types Registrations</title><style type="text/css">
 
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
+
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
 }
+
+div.graphic{margin-left:2em}
 
 table.syntax {
 font-size: 75%;
@@ -145,30 +163,45 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css"
-            href="https://www.w3.org/StyleSheets/TR/base.css" />
-   </head>
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" /><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script></head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br class="html-compat" /> Draft</b></div>
       
       <h1><a id="media-types-reg"></a>B Media Types Registrations
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br class="html-compat" />
-         Previous: A <a href="appendixa.xml">Parsing MathML</a><br class="html-compat" />
-         Next: C <a href="appendixc.xml">Operator Dictionary</a><br class="html-compat" /><br class="html-compat" />
-         B <a href="appendixb.xml">Media Types Registrations</a><br class="html-compat" />
-             B.1 <a href="appendixb.xml#media-type-choosing">Selection of Media Types for
-            MathML Instances</a><br class="html-compat" />
-             B.2 <a href="appendixb.xml#media-types-mathml">Media type for Generic MathML</a><br class="html-compat" />
-             B.3 <a href="appendixb.xml#media-types-mathml-p">Media type for Presentation MathML</a><br class="html-compat" />
-             B.4 <a href="appendixb.xml#media-types-mathml-c">Media type for Content MathML</a><br class="html-compat" />
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="appendixa.xml"><span class="secno">A </span> Parsing MathML</a></li>
+            <li><a href="appendixc.xml"><span class="secno">C </span> Operator Dictionary</a></li>
+            
+            
+            <li><a href="appendixb.xml"><span class="secno">B </span> Media Types Registrations</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="appendixb.xml#media-type-choosing"><span class="secno">B.1 </span> Selection of Media Types for
+                        MathML Instances</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixb.xml#media-types-mathml"><span class="secno">B.2 </span> Media type for Generic MathML</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixb.xml#media-types-mathml-p"><span class="secno">B.3 </span> Media type for Presentation MathML</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixb.xml#media-types-mathml-c"><span class="secno">B.4 </span> Media type for Content MathML</a>
+                     
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <p>This normative appendix registers three media types for MathML,
@@ -425,7 +458,8 @@ padding-right: 1em;
                      unrecognized elements and attributes, both in the MathML namespace and  
                      in other namespaces.
                   </p>
-                  <p>Because MathML is extensible, conformant "application/mathml-presentation+xml" processors  
+                  <p>Because MathML is extensible, conformant "application/mathml-presentation+xml" processors
+                     
                      must expect that content received is well-formed XML, but it cannot be  
                      guaranteed that the content is valid to a particular DTD or Schema or  
                      that the processor will recognize all of the elements and attributes  
@@ -452,7 +486,9 @@ padding-right: 1em;
                      (MathML) Version 3.</a> specification.
                </dd>
                <dt class="label">Applications that use this media type</dt>
-               <dd>Web browsers, rendering engines, formula editors, typesetting software, search robots, computing systems.</dd>
+               <dd>Web browsers, rendering engines, formula editors, typesetting software, search robots,
+                  computing systems.
+               </dd>
                <dt class="label">Additional information</dt>
                <dd>Magic number(s): see <a href="appendixg.xml#RFC3023">[RFC3023]</a></dd>
                <dt class="label">File extension(s):</dt>
@@ -545,7 +581,8 @@ padding-right: 1em;
                      unrecognized elements and attributes, both in the MathML namespace and  
                      in other namespaces.
                   </p>
-                  <p>Because MathML is extensible, conformant "application/mathml-content+xml" processors  
+                  <p>Because MathML is extensible, conformant "application/mathml-content+xml" processors
+                     
                      must expect that content received is well-formed XML, but it cannot be  
                      guaranteed that the content is valid to a particular DTD or Schema or  
                      that the processor will recognize all of the elements and attributes  

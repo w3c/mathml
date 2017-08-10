@@ -5,9 +5,27 @@
       <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
       <title>References</title><style type="text/css">
 
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
+
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
 }
+
+div.graphic{margin-left:2em}
 
 table.syntax {
 font-size: 75%;
@@ -145,30 +163,30 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css"
-            href="https://www.w3.org/StyleSheets/TR/base.css" />
-   </head>
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" /><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script></head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br class="html-compat" /> Draft</b></div>
       
       <h1><a id="references"></a>H References (Non-Normative)
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br class="html-compat" />
-         Previous: G <a href="appendixg.xml">Normative References</a><br class="html-compat" />
-         Next: I <a href="appendixi.xml">Index</a><br class="html-compat" /><br class="html-compat" />
-         H <a href="appendixh.xml">References (Non-Normative)</a><br class="html-compat" />
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="appendixg.xml"><span class="secno">G </span> Normative References</a></li>
+            <li><a href="appendixi.xml"><span class="secno">I </span> Index</a></li>
+            
+            
+            <li><a href="appendixh.xml"><span class="secno">H </span> References (Non-Normative)</a>
+               
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <dl>
-            <dt class="label"><a id="AAP-math"></a>AAP-math
-            </dt>
+            <dt class="label" id="AAP-math">AAP-math</dt>
             <dd><a href="http://www.niso.org/apps/group_public/project/details.php?project_id=43">ANSI/NISO Z39.59-1998</a>;
                <em>AAP Math DTD</em>,
                Standard for Electronic Manuscript Preparation and MarkUp.
@@ -176,15 +194,13 @@ padding-right: 1em;
                Bethesda, MD, 1988.
                
             </dd>
-            <dt class="label"><a id="Abramowitz1977"></a>Abramowitz1977
-            </dt>
+            <dt class="label" id="Abramowitz1977">Abramowitz1977</dt>
             <dd>Abramowitz, Milton, Irene A. Stegun (editors);
                <em>Mathematical Functions: With Formulas, Graphs, and Mathematical Tables</em>.
                Dover Publications Inc., December 1977, ISBN: 0-4866-1272-4.
                
             </dd>
-            <dt class="label"><a id="CSS21"></a>CSS21
-            </dt>
+            <dt class="label" id="CSS21">CSS21</dt>
             <dd>
                Bert Bos, Tantek Çelik, Ian Hickson, and Håkon Wium Lie (editors);
                <em><a href="http://www.w3.org/TR/CSS21/">
@@ -193,62 +209,54 @@ padding-right: 1em;
                (<a href="http://www.w3.org/TR/CSS21/">http://www.w3.org/TR/CSS21/</a>) 
                
             </dd>
-            <dt class="label"><a id="Cajori1928"></a>Cajori1928
-            </dt>
+            <dt class="label" id="Cajori1928">Cajori1928</dt>
             <dd>Cajori, Florian; <em>A History of Mathematical
                   Notations</em>, vol. I &amp; II. Open Court Publishing Co., La Salle
                Illinois, 1928 &amp; 1929 republished Dover Publications Inc., New
                York, 1993, xxviii+820 pp. ISBN 0-486-67766-4 (paperback).
                
             </dd>
-            <dt class="label"><a id="Chaundy1954"></a>Chaundy1954
-            </dt>
+            <dt class="label" id="Chaundy1954">Chaundy1954</dt>
             <dd>Chaundy, T.W., P.R. Barrett, and C. Batey;
                <em>The Printing of Mathematics. Aids for authors and editors and rules
                   for compositors and readers at the University Press, Oxford</em>.
                Oxford University Press, London, 1954, ix+105 pp.
                
             </dd>
-            <dt class="label"><a id="HTTP11"></a>HTTP11
-            </dt>
+            <dt class="label" id="HTTP11">HTTP11</dt>
             <dd>Fielding, R., J. Gettys, J. Mogul, H. Frystyk, L. Masinter, 
                P. Leach, and T. Berners-Lee; <em><a href="http://www.ietf.org/rfc/rfc2616.txt">Hypertext Transfer Protocol -- HTTP/1.1</a></em>, 
                June 1999.
             </dd>
-            <dt class="label"><a id="IEEE754"></a>IEEE754
-            </dt>
+            <dt class="label" id="IEEE754">IEEE754</dt>
             <dd>
                IEEE
                <em><a href="http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=4610935">IEEE Standard for Floating-Point Arithmetic</a></em>
                (<a href="http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=4610935">http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=4610935</a>)
                
             </dd>
-            <dt class="label"><a id="ISO-12083"></a>ISO-12083
-            </dt>
+            <dt class="label" id="ISO-12083">ISO-12083</dt>
             <dd>ISO 12083:1994;
                <em>ISO 12083 DTD</em>
                Information and Documentation - Electronic Manuscript Preparation and Markup.
                International Standards Organization, Geneva, Switzerland, 1994.
                
             </dd>
-            <dt class="label"><a id="Knuth1986"></a>Knuth1986
-            </dt>
+            <dt class="label" id="Knuth1986">Knuth1986</dt>
             <dd>Knuth, Donald E.;
                <em>The T<span style="vertical-align:-.4ex; margin-left:-.15ex; margin-right:-.15ex">E</span>Xbook</em>.
                American Mathematical Society, Providence, RI and Addison-Wesley Publ. Co.,
                Reading, MA, 1986, ix+483 pp. ISBN: 0-201-13448-9.
                
             </dd>
-            <dt class="label"><a id="MathML1"></a>MathML1
-            </dt>
+            <dt class="label" id="MathML1">MathML1</dt>
             <dd>Patrick Ion, Robert Miner,
                <em><a href="http://www.w3.org/TR/REC-MathML/">Mathematical Markup Language (MathML) 1.01 Specification</a></em>
                W3C Recommendation, revision of 7 July 1999
                (<a href="http://www.w3.org/TR/REC-MathML/">http://www.w3.org/TR/REC-MathML/</a>) 
                
             </dd>
-            <dt class="label"><a id="MathML2"></a>MathML2
-            </dt>
+            <dt class="label" id="MathML2">MathML2</dt>
             <dd>David Carlisle, Patrick Ion, Robert Miner, Nico Poppelier,
                <em>
                   <a href="http://www.w3.org/TR/MathML2/">Mathematical Markup Language (MathML) Version 2.0 (Second Edition)</a></em>
@@ -256,40 +264,36 @@ padding-right: 1em;
                (<a href="http://www.w3.org/TR/MathML2/">http://www.w3.org/TR/MathML2</a>) 
                
             </dd>
-            <dt class="label"><a id="MathMLTypes"></a>MathMLTypes
-            </dt>
+            <dt class="label" id="MathMLTypes">MathMLTypes</dt>
             <dd>Stan Devitt, Michael Kohlhase, Max Froumentin (editors);
                <em><a href="http://www.w3.org/TR/mathml-types/">Structured Types in MathML 2.0</a></em>,
                (<a href="http://www.w3.org/TR/mathml-types/"></a>)
                W3C Working Group Note 10 November 2003.
                
             </dd>
-            <dt class="label"><a id="MathMLforCSS"></a>MathMLforCSS
-            </dt>
+            <dt class="label" id="MathMLforCSS">MathMLforCSS</dt>
             <dd>Bert Bos, David Carlisle, George Chavchanidze, Patrick D. F. Ion, 
                Bruce R. Miller <em><a href="http://www.w3.org/TR/mathml-for-css/">A MathML for CSS profile</a></em>
                W3C Recommendation 07 June 2011
                (<a href="http://www.w3.org/TR/mathml-for-css/">http://www.w3.org/TR/mathml-for-css</a>)
             </dd>
-            <dt class="label"><a id="Modularization"></a>Modularization
-            </dt>
+            <dt class="label" id="Modularization">Modularization</dt>
             <dd>
-               Daniel Austin, Subramanian Peruvemba, Shane McCarron, Masayasu Ishikawa, Mark Birbeck (editors);
+               Daniel Austin, Subramanian Peruvemba, Shane McCarron, Masayasu Ishikawa, Mark Birbeck
+               (editors);
                <em><a href="http://www.w3.org/TR/2010/REC-xhtml-modularization-20100729/">XHTML[tm] Modularization 1.1 - Second Edition</a></em>,
                World Wide Web Consortium Recommendation, 29 July 2010.
                (<a href="http://www.w3.org/TR/2010/REC-xhtml-modularization-20100729/">http://www.w3.org/TR/2010/REC-xhtml-modularization-20100729</a>)
                
             </dd>
-            <dt class="label"><a id="OMDoc1.2"></a>OMDoc1.2
-            </dt>
+            <dt class="label" id="OMDoc1.2">OMDoc1.2</dt>
             <dd>Michael Kohlhase
                <em><a href="http://omdoc.org/pubs/omdoc1.2.pdf">OMDoc - An open markup format for mathematical documents [Version 1.2]</a></em>
                LNAI 4180, Springer Verlag, 2006
                (<a href="http://omdoc.org/pubs/omdoc1.2.pdf">http://omdoc.org/pubs/omdoc1.2.pdf</a>) .
                
             </dd>
-            <dt class="label"><a id="Pierce1961"></a>Pierce1961
-            </dt>
+            <dt class="label" id="Pierce1961">Pierce1961</dt>
             <dd>Pierce, John R.;
                <em>An Introduction to Information Theory.
                   Symbols, Signals and Noise.</em>.
@@ -300,21 +304,18 @@ padding-right: 1em;
                pp. ISBN 0-486-24061-4.
                
             </dd>
-            <dt class="label"><a id="Poppelier1992"></a>Poppelier1992
-            </dt>
+            <dt class="label" id="Poppelier1992">Poppelier1992</dt>
             <dd>Poppelier, N.A.F.M., E. van Herwijnen,
                and C.A. Rowley; <em>Standard DTD's and Scientific Publishing</em>,
                EPSIG News 5 (1992) #3, September 1992,  10-19.
                
             </dd>
-            <dt class="label"><a id="RelaxNGBook"></a>RelaxNGBook
-            </dt>
+            <dt class="label" id="RelaxNGBook">RelaxNGBook</dt>
             <dd>
                Eric van der Vlist; <em>RELAXNG: A simple schema language for XML</em> O'Reilly 2004
                
             </dd>
-            <dt class="label"><a id="SVG1.1"></a>SVG1.1
-            </dt>
+            <dt class="label" id="SVG1.1">SVG1.1</dt>
             <dd>
                Dean Jackson, Jon Ferraiolo, Jun Fujisawa, eds.
                <em><a href="http://www.w3.org/TR/2011/REC-SVG11-20110816/">Scalable Vector Graphics (SVG) 1.1 Specification (Second Edition)</a></em>
@@ -322,48 +323,42 @@ padding-right: 1em;
                (<a href="http://www.w3.org/TR/2011/REC-SVG11-20110816/">http://www.w3.org/TR/2011/REC-SVG11-20110816/</a>)
                
             </dd>
-            <dt class="label"><a id="XHTML-MathML-SVG"></a>XHTML-MathML-SVG
-            </dt>
+            <dt class="label" id="XHTML-MathML-SVG">XHTML-MathML-SVG</dt>
             <dd> Masayasu Ishikawa,  ed.,
                <em><a href="http://www.w3.org/TR/2002/WD-XHTMLplusMathMLplusSVG-20020809/">An HTML + MathML + SVG Profile</a></em>
                W3C Working Draft, 9 August 2002. 
                (<a href="http://www.w3.org/TR/2002/WD-XHTMLplusMathMLplusSVG-20020809/">http://www.w3.org/TR/2002/WD-XHTMLplusMathMLplusSVG-20020809/</a>)
                
             </dd>
-            <dt class="label"><a id="XLink"></a>XLink
-            </dt>
+            <dt class="label" id="XLink">XLink</dt>
             <dd> Steve DeRose, Eve Maler, David Orchard, Norman Walsh (editors);
                <em><a href="http://www.w3.org/TR/2010/REC-xlink11-20100506/">XML Linking Language (XLink) Version 1.1</a></em>,
                W3C Recommendation 06 May 2010.
                (<a href="http://www.w3.org/TR/2010/REC-xlink11-20100506/">http://www.w3.org/TR/2010/REC-xlink11-20100506/</a>)
                
             </dd>
-            <dt class="label"><a id="XMLSchemaDatatypes"></a>XMLSchemaDatatypes
-            </dt>
+            <dt class="label" id="XMLSchemaDatatypes">XMLSchemaDatatypes</dt>
             <dd>Paul V. Biron, Ashok Malhotra, editors;
                <em><a href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/">XML Schema Part 2: Datatypes Second Edition</a></em>,
                World Wide Web Consortium Recommendation, 28 Oct 2004.
                (<a href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/">http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/</a>) 
                
             </dd>
-            <dt class="label"><a id="XMLSchemas"></a>XMLSchemas
-            </dt>
+            <dt class="label" id="XMLSchemas">XMLSchemas</dt>
             <dd>David C. Fallside, editor;
                <em><a href="http://www.w3.org/TR/2004/REC-xmlschema-0-20041028/">XML Schema Part 0: Primer Second Edition</a></em>,
                W3C Recommendation 28 October 2004.
                (<a href="http://www.w3.org/TR/2004/REC-xmlschema-0-20041028/">http://www.w3.org/TR/2004/REC-xmlschema-0-20041028/</a>) 
                
             </dd>
-            <dt class="label"><a id="XSLT"></a>XSLT
-            </dt>
+            <dt class="label" id="XSLT">XSLT</dt>
             <dd>James Clark (editor);
                <em><a href="http://www.w3.org/TR/1999/REC-xslt-19991116">XSL Transformations (XSLT) Version 1.0</a></em>,
                World Wide Web Consortium Recommendation, 16 November 1999.
                (<a href="http://www.w3.org/TR/1999/REC-xslt-19991116">http://www.w3.org/TR/1999/REC-xslt-19991116</a>)
                
             </dd>
-            <dt class="label"><a id="rdf"></a>rdf
-            </dt>
+            <dt class="label" id="rdf">rdf</dt>
             <dd>
                Graham Klyne,  Jeremy J. Carroll, Brian McBride (editors);
                <em><a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/">

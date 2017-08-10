@@ -5,9 +5,27 @@
       <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
       <title>Presentation Markup</title><style type="text/css">
 
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
+
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
 }
+
+div.graphic{margin-left:2em}
 
 table.syntax {
 font-size: 75%;
@@ -145,231 +163,995 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css"
-            href="https://www.w3.org/StyleSheets/TR/base.css" />
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" />
    </head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br class="html-compat" /> Draft</b></div>
       
       <h1><a id="presm"></a>3 Presentation Markup
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br class="html-compat" />
-         Previous: 2 <a href="chapter2.xml">MathML Fundamentals</a><br class="html-compat" />
-         Next: 4 <a href="chapter4.xml">Content Markup</a><br class="html-compat" /><br class="html-compat" />
-         3 <a href="chapter3.xml">Presentation Markup</a><br class="html-compat" />
-             3.1 <a href="chapter3.xml#presm.intro">Introduction</a><br class="html-compat" />
-                 3.1.1 <a href="chapter3.xml#id.3.1.1">What Presentation Elements Represent</a><br class="html-compat" />
-                 3.1.2 <a href="chapter3.xml#id.3.1.2">Terminology Used In This Chapter</a><br class="html-compat" />
-                     3.1.2.1 <a href="chapter3.xml#id.3.1.2.1">Types of presentation elements</a><br class="html-compat" />
-                     3.1.2.2 <a href="chapter3.xml#id.3.1.2.2">Terminology for other classes of elements and their relationships</a><br class="html-compat" />
-                 3.1.3 <a href="chapter3.xml#presm.reqarg">Required Arguments</a><br class="html-compat" />
-                     3.1.3.1 <a href="chapter3.xml#presm.inferredmrow">Inferred <code>&lt;mrow&gt;</code>s</a><br class="html-compat" />
-                     3.1.3.2 <a href="chapter3.xml#id.3.1.3.2">Table of argument requirements</a><br class="html-compat" />
-                 3.1.4 <a href="chapter3.xml#id.3.1.4">Elements with Special Behaviors</a><br class="html-compat" />
-                 3.1.5 <a href="chapter3.xml#presm.bidi">Directionality</a><br class="html-compat" />
-                     3.1.5.1 <a href="chapter3.xml#presm.bidi.math">Overall Directionality of Mathematics Formulas</a><br class="html-compat" />
-                     3.1.5.2 <a href="chapter3.xml#presm.bidi.token">Bidirectional Layout in Token Elements</a><br class="html-compat" />
-                 3.1.6 <a href="chapter3.xml#presm.scriptlevel">Displaystyle and Scriptlevel</a><br class="html-compat" />
-                 3.1.7 <a href="chapter3.xml#presm.linebreaking">Linebreaking of Expressions</a><br class="html-compat" />
-                     3.1.7.1 <a href="chapter3.xml#id.3.1.7.1">Control of Linebreaks</a><br class="html-compat" />
-                     3.1.7.2 <a href="chapter3.xml#presm.lbalgorithm">Automatic Linebreaking Algorithm (Informative)</a><br class="html-compat" />
-                     3.1.7.3 <a href="chapter3.xml#presm.inline.lbalgorithm">Linebreaking Algorithm for Inline Expressions (Informative)</a><br class="html-compat" />
-                 3.1.8 <a href="chapter3.xml#presm.warnfinetuning">Warning about fine-tuning of presentation</a><br class="html-compat" />
-                     3.1.8.1 <a href="chapter3.xml#presm.warntweaking">Warning: non-portability of tweaking</a><br class="html-compat" />
-                     3.1.8.2 <a href="chapter3.xml#presm.warnspacing">Warning: spacing should not be used to convey meaning</a><br class="html-compat" />
-                 3.1.9 <a href="chapter3.xml#presm.summary">Summary of Presentation Elements</a><br class="html-compat" />
-                     3.1.9.1 <a href="chapter3.xml#id.3.1.9.1">Token Elements</a><br class="html-compat" />
-                     3.1.9.2 <a href="chapter3.xml#id.3.1.9.2">General Layout Schemata</a><br class="html-compat" />
-                     3.1.9.3 <a href="chapter3.xml#id.3.1.9.3">Script and Limit Schemata</a><br class="html-compat" />
-                     3.1.9.4 <a href="chapter3.xml#id.3.1.9.4">Tables and Matrices</a><br class="html-compat" />
-                     3.1.9.5 <a href="chapter3.xml#id.3.1.9.5">Elementary Math Layout</a><br class="html-compat" />
-                     3.1.9.6 <a href="chapter3.xml#id.3.1.9.6">Enlivening Expressions</a><br class="html-compat" />
-                 3.1.10 <a href="chapter3.xml#presm.presatt">Mathematics style attributes common to presentation elements</a><br class="html-compat" />
-             3.2 <a href="chapter3.xml#presm.tokel">Token Elements</a><br class="html-compat" />
-                 3.2.1 <a href="chapter3.xml#presm.tokenchars">
-            Token Element Content Characters, <code>&lt;mglyph/&gt;</code></a><br class="html-compat" />
-                     3.2.1.1 <a href="chapter3.xml#presm.symbolchars">Alphanumeric symbol characters</a><br class="html-compat" />
-                     3.2.1.2 <a href="chapter3.xml#presm.mglyph">Using images to represent
-            symbols <code>&lt;mglyph/&gt;</code></a><br class="html-compat" />
-                 3.2.2 <a href="chapter3.xml#presm.commatt">Mathematics style attributes common to token elements</a><br class="html-compat" />
-                     3.2.2.1 <a href="chapter3.xml#presm.deprecatt">Deprecated style attributes on token elements</a><br class="html-compat" />
-                     3.2.2.2 <a href="chapter3.xml#presm.html.insertion">Embedding HTML in MathML</a><br class="html-compat" />
-                 3.2.3 <a href="chapter3.xml#presm.mi">Identifier <code>&lt;mi&gt;</code></a><br class="html-compat" />
-                     3.2.3.1 <a href="chapter3.xml#id.3.2.3.1">Description</a><br class="html-compat" />
-                     3.2.3.2 <a href="chapter3.xml#id.3.2.3.2">Attributes</a><br class="html-compat" />
-                     3.2.3.3 <a href="chapter3.xml#presm.mi.examples">Examples</a><br class="html-compat" />
-                 3.2.4 <a href="chapter3.xml#presm.mn">Number <code>&lt;mn&gt;</code></a><br class="html-compat" />
-                     3.2.4.1 <a href="chapter3.xml#id.3.2.4.1">Description</a><br class="html-compat" />
-                     3.2.4.2 <a href="chapter3.xml#id.3.2.4.2">Attributes</a><br class="html-compat" />
-                     3.2.4.3 <a href="chapter3.xml#presm.mn.examples">Examples</a><br class="html-compat" />
-                     3.2.4.4 <a href="chapter3.xml#presm.not.single.mn">Numbers that should not be written 
-            using <code>&lt;mn&gt;</code> alone</a><br class="html-compat" />
-                 3.2.5 <a href="chapter3.xml#presm.mo">Operator, Fence, Separator or Accent
-            <code>&lt;mo&gt;</code></a><br class="html-compat" />
-                     3.2.5.1 <a href="chapter3.xml#id.3.2.5.1">Description</a><br class="html-compat" />
-                     3.2.5.2 <a href="chapter3.xml#presm.mo.attrs">Attributes</a><br class="html-compat" />
-                     3.2.5.3 <a href="chapter3.xml#id.3.2.5.3">Examples with ordinary operators</a><br class="html-compat" />
-                     3.2.5.4 <a href="chapter3.xml#id.3.2.5.4">Examples with fences and separators</a><br class="html-compat" />
-                     3.2.5.5 <a href="chapter3.xml#presm.invisibleops">Invisible operators</a><br class="html-compat" />
-                     3.2.5.6 <a href="chapter3.xml#id.3.2.5.6">Names for other special operators</a><br class="html-compat" />
-                     3.2.5.7 <a href="chapter3.xml#id.3.2.5.7">Detailed rendering rules for <code>&lt;mo&gt;</code> elements</a><br class="html-compat" />
-                     3.2.5.8 <a href="chapter3.xml#presm.op.stretch">Stretching of operators, fences and accents</a><br class="html-compat" />
-                     3.2.5.9 <a href="chapter3.xml#presm.mo.linebreaks">Examples of Linebreaking</a><br class="html-compat" />
-                 3.2.6 <a href="chapter3.xml#presm.mtext">Text <code>&lt;mtext&gt;</code></a><br class="html-compat" />
-                     3.2.6.1 <a href="chapter3.xml#id.3.2.6.1">Description</a><br class="html-compat" />
-                     3.2.6.2 <a href="chapter3.xml#id.3.2.6.2">Attributes</a><br class="html-compat" />
-                     3.2.6.3 <a href="chapter3.xml#id.3.2.6.3">Examples</a><br class="html-compat" />
-                     3.2.6.4 <a href="chapter3.xml#presm.mixtextmath">Mixing text and mathematics</a><br class="html-compat" />
-                 3.2.7 <a href="chapter3.xml#presm.mspace">Space <code>&lt;mspace/&gt;</code></a><br class="html-compat" />
-                     3.2.7.1 <a href="chapter3.xml#id.3.2.7.1">Description</a><br class="html-compat" />
-                     3.2.7.2 <a href="chapter3.xml#id.3.2.7.2">Attributes</a><br class="html-compat" />
-                     3.2.7.3 <a href="chapter3.xml#id.3.2.7.3">Examples</a><br class="html-compat" />
-                     3.2.7.4 <a href="chapter3.xml#id.3.2.7.4">Definition of space-like elements</a><br class="html-compat" />
-                     3.2.7.5 <a href="chapter3.xml#id.3.2.7.5">Legal grouping of space-like elements</a><br class="html-compat" />
-                 3.2.8 <a href="chapter3.xml#presm.ms">String Literal <code>&lt;ms&gt;</code></a><br class="html-compat" />
-                     3.2.8.1 <a href="chapter3.xml#id.3.2.8.1">Description</a><br class="html-compat" />
-                     3.2.8.2 <a href="chapter3.xml#id.3.2.8.2">Attributes</a><br class="html-compat" />
-             3.3 <a href="chapter3.xml#presm.genlayout">General Layout Schemata</a><br class="html-compat" />
-                 3.3.1 <a href="chapter3.xml#presm.mrow">Horizontally Group Sub-Expressions
-            <code>&lt;mrow&gt;</code></a><br class="html-compat" />
-                     3.3.1.1 <a href="chapter3.xml#id.3.3.1.1">Description</a><br class="html-compat" />
-                     3.3.1.2 <a href="chapter3.xml#id.3.3.1.2">Attributes</a><br class="html-compat" />
-                     3.3.1.3 <a href="chapter3.xml#id.3.3.1.3">Proper grouping of sub-expressions using <code>&lt;mrow&gt;</code></a><br class="html-compat" />
-                     3.3.1.4 <a href="chapter3.xml#id.3.3.1.4">Examples</a><br class="html-compat" />
-                 3.3.2 <a href="chapter3.xml#presm.mfrac">Fractions <code>&lt;mfrac&gt;</code></a><br class="html-compat" />
-                     3.3.2.1 <a href="chapter3.xml#id.3.3.2.1">Description</a><br class="html-compat" />
-                     3.3.2.2 <a href="chapter3.xml#id.3.3.2.2">Attributes</a><br class="html-compat" />
-                     3.3.2.3 <a href="chapter3.xml#id.3.3.2.3">Examples</a><br class="html-compat" />
-                 3.3.3 <a href="chapter3.xml#presm.mroot">Radicals <code>&lt;msqrt&gt;</code>, <code>&lt;mroot&gt;</code></a><br class="html-compat" />
-                     3.3.3.1 <a href="chapter3.xml#id.3.3.3.1">Description</a><br class="html-compat" />
-                     3.3.3.2 <a href="chapter3.xml#id.3.3.3.2">Attributes</a><br class="html-compat" />
-                 3.3.4 <a href="chapter3.xml#presm.mstyle">Style Change <code>&lt;mstyle&gt;</code></a><br class="html-compat" />
-                     3.3.4.1 <a href="chapter3.xml#id.3.3.4.1">Description</a><br class="html-compat" />
-                     3.3.4.2 <a href="chapter3.xml#presm.mstyle.attrs">Attributes</a><br class="html-compat" />
-                     3.3.4.3 <a href="chapter3.xml#id.3.3.4.3">Examples</a><br class="html-compat" />
-                 3.3.5 <a href="chapter3.xml#presm.merror">Error Message <code>&lt;merror&gt;</code></a><br class="html-compat" />
-                     3.3.5.1 <a href="chapter3.xml#id.3.3.5.1">Description</a><br class="html-compat" />
-                     3.3.5.2 <a href="chapter3.xml#id.3.3.5.2">Attributes</a><br class="html-compat" />
-                     3.3.5.3 <a href="chapter3.xml#id.3.3.5.3">Example</a><br class="html-compat" />
-                 3.3.6 <a href="chapter3.xml#presm.mpadded">Adjust Space Around Content
-            <code>&lt;mpadded&gt;</code></a><br class="html-compat" />
-                     3.3.6.1 <a href="chapter3.xml#id.3.3.6.1">Description</a><br class="html-compat" />
-                     3.3.6.2 <a href="chapter3.xml#presm.mpaddedatt">Attributes</a><br class="html-compat" />
-                     3.3.6.3 <a href="chapter3.xml#id.3.3.6.3">Meanings of size and position attributes</a><br class="html-compat" />
-                 3.3.7 <a href="chapter3.xml#presm.mphantom">Making Sub-Expressions Invisible <code>&lt;mphantom&gt;</code></a><br class="html-compat" />
-                     3.3.7.1 <a href="chapter3.xml#id.3.3.7.1">Description</a><br class="html-compat" />
-                     3.3.7.2 <a href="chapter3.xml#id.3.3.7.2">Attributes</a><br class="html-compat" />
-                     3.3.7.3 <a href="chapter3.xml#id.3.3.7.3">Examples</a><br class="html-compat" />
-                 3.3.8 <a href="chapter3.xml#presm.mfenced">Expression Inside Pair of Fences
-            <code>&lt;mfenced&gt;</code></a><br class="html-compat" />
-                     3.3.8.1 <a href="chapter3.xml#id.3.3.8.1">Description</a><br class="html-compat" />
-                     3.3.8.2 <a href="chapter3.xml#id.3.3.8.2">Attributes</a><br class="html-compat" />
-                     3.3.8.3 <a href="chapter3.xml#id.3.3.8.3">Examples</a><br class="html-compat" />
-                 3.3.9 <a href="chapter3.xml#presm.menclose">Enclose Expression Inside Notation
-            <code>&lt;menclose&gt;</code></a><br class="html-compat" />
-                     3.3.9.1 <a href="chapter3.xml#id.3.3.9.1">Description</a><br class="html-compat" />
-                     3.3.9.2 <a href="chapter3.xml#id.3.3.9.2">Attributes</a><br class="html-compat" />
-                     3.3.9.3 <a href="chapter3.xml#id.3.3.9.3">Examples</a><br class="html-compat" />
-             3.4 <a href="chapter3.xml#presm.scrlim">Script and Limit Schemata</a><br class="html-compat" />
-                 3.4.1 <a href="chapter3.xml#presm.msub">Subscript <code>&lt;msub&gt;</code></a><br class="html-compat" />
-                     3.4.1.1 <a href="chapter3.xml#id.3.4.1.1">Description</a><br class="html-compat" />
-                     3.4.1.2 <a href="chapter3.xml#id.3.4.1.2">Attributes</a><br class="html-compat" />
-                 3.4.2 <a href="chapter3.xml#presm.msup">Superscript <code>&lt;msup&gt;</code></a><br class="html-compat" />
-                     3.4.2.1 <a href="chapter3.xml#id.3.4.2.1">Description</a><br class="html-compat" />
-                     3.4.2.2 <a href="chapter3.xml#id.3.4.2.2">Attributes</a><br class="html-compat" />
-                 3.4.3 <a href="chapter3.xml#presm.msubsup">Subscript-superscript Pair <code>&lt;msubsup&gt;</code></a><br class="html-compat" />
-                     3.4.3.1 <a href="chapter3.xml#id.3.4.3.1">Description</a><br class="html-compat" />
-                     3.4.3.2 <a href="chapter3.xml#presm.subsupatt">Attributes</a><br class="html-compat" />
-                     3.4.3.3 <a href="chapter3.xml#id.3.4.3.3">Examples</a><br class="html-compat" />
-                 3.4.4 <a href="chapter3.xml#presm.munder">Underscript <code>&lt;munder&gt;</code></a><br class="html-compat" />
-                     3.4.4.1 <a href="chapter3.xml#id.3.4.4.1">Description</a><br class="html-compat" />
-                     3.4.4.2 <a href="chapter3.xml#id.3.4.4.2">Attributes</a><br class="html-compat" />
-                     3.4.4.3 <a href="chapter3.xml#id.3.4.4.3">Examples</a><br class="html-compat" />
-                 3.4.5 <a href="chapter3.xml#presm.mover">Overscript <code>&lt;mover&gt;</code></a><br class="html-compat" />
-                     3.4.5.1 <a href="chapter3.xml#id.3.4.5.1">Description</a><br class="html-compat" />
-                     3.4.5.2 <a href="chapter3.xml#id.3.4.5.2">Attributes</a><br class="html-compat" />
-                     3.4.5.3 <a href="chapter3.xml#id.3.4.5.3">Examples</a><br class="html-compat" />
-                 3.4.6 <a href="chapter3.xml#presm.munderover">Underscript-overscript Pair
-            <code>&lt;munderover&gt;</code></a><br class="html-compat" />
-                     3.4.6.1 <a href="chapter3.xml#id.3.4.6.1">Description</a><br class="html-compat" />
-                     3.4.6.2 <a href="chapter3.xml#id.3.4.6.2">Attributes</a><br class="html-compat" />
-                     3.4.6.3 <a href="chapter3.xml#id.3.4.6.3">Examples</a><br class="html-compat" />
-                 3.4.7 <a href="chapter3.xml#presm.mmultiscripts">Prescripts and Tensor Indices
-            <code>&lt;mmultiscripts&gt;</code>,
-            <code>&lt;mprescripts/&gt;</code>,
-            <code>&lt;none/&gt;</code></a><br class="html-compat" />
-                     3.4.7.1 <a href="chapter3.xml#id.3.4.7.1">Description</a><br class="html-compat" />
-                     3.4.7.2 <a href="chapter3.xml#id.3.4.7.2">Attributes</a><br class="html-compat" />
-                     3.4.7.3 <a href="chapter3.xml#id.3.4.7.3">Examples</a><br class="html-compat" />
-             3.5 <a href="chapter3.xml#presm.tabmat">Tabular Math</a><br class="html-compat" />
-                 3.5.1 <a href="chapter3.xml#presm.mtable">Table or Matrix
-            <code>&lt;mtable&gt;</code></a><br class="html-compat" />
-                     3.5.1.1 <a href="chapter3.xml#id.3.5.1.1">Description</a><br class="html-compat" />
-                     3.5.1.2 <a href="chapter3.xml#presm.mtable.attrs">Attributes</a><br class="html-compat" />
-                     3.5.1.3 <a href="chapter3.xml#id.3.5.1.3">Examples</a><br class="html-compat" />
-                 3.5.2 <a href="chapter3.xml#presm.mtr">Row in Table or Matrix <code>&lt;mtr&gt;</code></a><br class="html-compat" />
-                     3.5.2.1 <a href="chapter3.xml#id.3.5.2.1">Description</a><br class="html-compat" />
-                     3.5.2.2 <a href="chapter3.xml#id.3.5.2.2">Attributes</a><br class="html-compat" />
-                 3.5.3 <a href="chapter3.xml#presm.mlabeledtr">Labeled Row in Table or Matrix
-            <code>&lt;mlabeledtr&gt;</code></a><br class="html-compat" />
-                     3.5.3.1 <a href="chapter3.xml#id.3.5.3.1">Description</a><br class="html-compat" />
-                     3.5.3.2 <a href="chapter3.xml#id.3.5.3.2">Attributes</a><br class="html-compat" />
-                     3.5.3.3 <a href="chapter3.xml#id.3.5.3.3">Equation Numbering</a><br class="html-compat" />
-                     3.5.3.4 <a href="chapter3.xml#id.3.5.3.4">Example</a><br class="html-compat" />
-                 3.5.4 <a href="chapter3.xml#presm.mtd">Entry in Table or Matrix <code>&lt;mtd&gt;</code></a><br class="html-compat" />
-                     3.5.4.1 <a href="chapter3.xml#id.3.5.4.1">Description</a><br class="html-compat" />
-                     3.5.4.2 <a href="chapter3.xml#presm.mtdatts">Attributes</a><br class="html-compat" />
-                 3.5.5 <a href="chapter3.xml#presm.malign">Alignment Markers
-            <code>&lt;maligngroup/&gt;</code>, <code>&lt;malignmark/&gt;</code></a><br class="html-compat" />
-                     3.5.5.1 <a href="chapter3.xml#id.3.5.5.1">Description</a><br class="html-compat" />
-                     3.5.5.2 <a href="chapter3.xml#id.3.5.5.2">Specifying alignment groups</a><br class="html-compat" />
-                     3.5.5.3 <a href="chapter3.xml#id.3.5.5.3">Table cells that are not divided into alignment groups</a><br class="html-compat" />
-                     3.5.5.4 <a href="chapter3.xml#id.3.5.5.4">Specifying alignment points using <code>&lt;malignmark/&gt;</code></a><br class="html-compat" />
-                     3.5.5.5 <a href="chapter3.xml#id.3.5.5.5"><code>&lt;malignmark/&gt;</code> Attributes</a><br class="html-compat" />
-                     3.5.5.6 <a href="chapter3.xml#id.3.5.5.6"><code>&lt;maligngroup/&gt;</code> Attributes</a><br class="html-compat" />
-                     3.5.5.7 <a href="chapter3.xml#id.3.5.5.7">Inheritance of groupalign values</a><br class="html-compat" />
-                     3.5.5.8 <a href="chapter3.xml#id.3.5.5.8">MathML representation of an alignment example</a><br class="html-compat" />
-                     3.5.5.9 <a href="chapter3.xml#id.3.5.5.9">Further details of alignment elements</a><br class="html-compat" />
-                     3.5.5.10 <a href="chapter3.xml#id.3.5.5.10">A simple alignment algorithm</a><br class="html-compat" />
-             3.6 <a href="chapter3.xml#presm.elementary">Elementary Math</a><br class="html-compat" />
-                 3.6.1 <a href="chapter3.xml#presm.mstack">Stacks of Characters <code>&lt;mstack&gt;</code></a><br class="html-compat" />
-                     3.6.1.1 <a href="chapter3.xml#id.3.6.1.1">Description</a><br class="html-compat" />
-                     3.6.1.2 <a href="chapter3.xml#id.3.6.1.2">Attributes</a><br class="html-compat" />
-                 3.6.2 <a href="chapter3.xml#presm.mlongdiv">Long Division <code>&lt;mlongdiv&gt;</code></a><br class="html-compat" />
-                     3.6.2.1 <a href="chapter3.xml#id.3.6.2.1">Description</a><br class="html-compat" />
-                     3.6.2.2 <a href="chapter3.xml#presm.mlongdiv.attrs">Attributes</a><br class="html-compat" />
-                 3.6.3 <a href="chapter3.xml#presm.msgroup">Group Rows with Similiar Positions <code>&lt;msgroup&gt;</code></a><br class="html-compat" />
-                     3.6.3.1 <a href="chapter3.xml#id.3.6.3.1">Description</a><br class="html-compat" />
-                     3.6.3.2 <a href="chapter3.xml#id.3.6.3.2">Attributes</a><br class="html-compat" />
-                 3.6.4 <a href="chapter3.xml#presm.msrow">Rows in Elementary Math <code>&lt;msrow&gt;</code></a><br class="html-compat" />
-                     3.6.4.1 <a href="chapter3.xml#id.3.6.4.1">Description</a><br class="html-compat" />
-                     3.6.4.2 <a href="chapter3.xml#id.3.6.4.2">Attributes</a><br class="html-compat" />
-                 3.6.5 <a href="chapter3.xml#presm.mscarries">Carries, Borrows, and Crossouts <code>&lt;mscarries&gt;</code></a><br class="html-compat" />
-                     3.6.5.1 <a href="chapter3.xml#id.3.6.5.1">Description</a><br class="html-compat" />
-                     3.6.5.2 <a href="chapter3.xml#id.3.6.5.2">Attributes</a><br class="html-compat" />
-                 3.6.6 <a href="chapter3.xml#presm.mscarry">A Single Carry <code>&lt;mscarry&gt;</code></a><br class="html-compat" />
-                     3.6.6.1 <a href="chapter3.xml#id.3.6.6.1">Description</a><br class="html-compat" />
-                     3.6.6.2 <a href="chapter3.xml#id.3.6.6.2">Attributes</a><br class="html-compat" />
-                 3.6.7 <a href="chapter3.xml#presm.msline">Horizontal Line <code>&lt;msline/&gt;</code></a><br class="html-compat" />
-                     3.6.7.1 <a href="chapter3.xml#id.3.6.7.1">Description</a><br class="html-compat" />
-                     3.6.7.2 <a href="chapter3.xml#id.3.6.7.2">Attributes</a><br class="html-compat" />
-                 3.6.8 <a href="chapter3.xml#presm.elemmath.examples">Elementary Math Examples</a><br class="html-compat" />
-                     3.6.8.1 <a href="chapter3.xml#presm.addsub">Addition and Subtraction</a><br class="html-compat" />
-                     3.6.8.2 <a href="chapter3.xml#presm.mult">Multiplication</a><br class="html-compat" />
-                     3.6.8.3 <a href="chapter3.xml#presm.mlongdiv.ex">Long Division</a><br class="html-compat" />
-                     3.6.8.4 <a href="chapter3.xml#presm.repeatdec">Repeating decimal</a><br class="html-compat" />
-             3.7 <a href="chapter3.xml#presm.enliven">Enlivening Expressions</a><br class="html-compat" />
-                 3.7.1 <a href="chapter3.xml#presm.maction">Bind Action to Sub-Expression
-            <code>&lt;maction&gt;</code></a><br class="html-compat" />
-                     3.7.1.1 <a href="chapter3.xml#id.3.7.1.1">Attributes</a><br class="html-compat" />
-             3.8 <a href="chapter3.xml#presm.semantics">Semantics and Presentation</a><br class="html-compat" />
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="chapter2.xml"><span class="secno">2 </span> MathML Fundamentals</a></li>
+            <li><a href="chapter4.xml"><span class="secno">4 </span> Content Markup</a></li>
+            
+            
+            <li><a href="chapter3.xml"><span class="secno">3 </span> Presentation Markup</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="chapter3.xml#presm.intro"><span class="secno">3.1 </span> Introduction</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter3.xml#id.3.1.1"><span class="secno">3.1.1 </span> What Presentation Elements Represent</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.xml#id.3.1.2"><span class="secno">3.1.2 </span> Terminology Used In This Chapter</a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.1.2.1"><span class="secno">3.1.2.1 </span> Types of presentation elements</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.1.2.2"><span class="secno">3.1.2.2 </span> Terminology for other classes of elements and their relationships</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.reqarg"><span class="secno">3.1.3 </span> Required Arguments</a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#presm.inferredmrow"><span class="secno">3.1.3.1 </span> Inferred <code>&lt;mrow&gt;</code>s</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.1.3.2"><span class="secno">3.1.3.2 </span> Table of argument requirements</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#id.3.1.4"><span class="secno">3.1.4 </span> Elements with Special Behaviors</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.bidi"><span class="secno">3.1.5 </span> Directionality</a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#presm.bidi.math"><span class="secno">3.1.5.1 </span> Overall Directionality of Mathematics Formulas</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.bidi.token"><span class="secno">3.1.5.2 </span> Bidirectional Layout in Token Elements</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.scriptlevel"><span class="secno">3.1.6 </span> Displaystyle and Scriptlevel</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.linebreaking"><span class="secno">3.1.7 </span> Linebreaking of Expressions</a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.1.7.1"><span class="secno">3.1.7.1 </span> Control of Linebreaks</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.lbalgorithm"><span class="secno">3.1.7.2 </span> Automatic Linebreaking Algorithm (Informative)</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.inline.lbalgorithm"><span class="secno">3.1.7.3 </span> Linebreaking Algorithm for Inline Expressions (Informative)</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.warnfinetuning"><span class="secno">3.1.8 </span> Warning about fine-tuning of presentation</a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#presm.warntweaking"><span class="secno">3.1.8.1 </span> Warning: non-portability of tweaking</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.warnspacing"><span class="secno">3.1.8.2 </span> Warning: spacing should not be used to convey meaning</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.summary"><span class="secno">3.1.9 </span> Summary of Presentation Elements</a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.1.9.1"><span class="secno">3.1.9.1 </span> Token Elements</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.1.9.2"><span class="secno">3.1.9.2 </span> General Layout Schemata</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.1.9.3"><span class="secno">3.1.9.3 </span> Script and Limit Schemata</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.1.9.4"><span class="secno">3.1.9.4 </span> Tables and Matrices</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.1.9.5"><span class="secno">3.1.9.5 </span> Elementary Math Layout</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.1.9.6"><span class="secno">3.1.9.6 </span> Enlivening Expressions</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.presatt"><span class="secno">3.1.10 </span> Mathematics style attributes common to presentation elements</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter3.xml#presm.tokel"><span class="secno">3.2 </span> Token Elements</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter3.xml#presm.tokenchars"><span class="secno">3.2.1 </span> 
+                              Token Element Content Characters, <code>&lt;mglyph/&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#presm.symbolchars"><span class="secno">3.2.1.1 </span> Alphanumeric symbol characters</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.mglyph"><span class="secno">3.2.1.2 </span> Using images to represent
+                                    symbols <code>&lt;mglyph/&gt;</code></a>
+                                 
+                                 <ol class="toc">
+                                    
+                                    <li><a href="chapter3.xml#id.3.2.1.2.1"><span class="secno">3.2.1.2.1 </span> Description</a>
+                                       
+                                    </li>
+                                    
+                                    <li><a href="chapter3.xml#id.3.2.1.2.2"><span class="secno">3.2.1.2.2 </span> Attributes</a>
+                                       
+                                    </li>
+                                    
+                                    <li><a href="chapter3.xml#id.3.2.1.2.3"><span class="secno">3.2.1.2.3 </span> Example</a>
+                                       
+                                    </li>
+                                    
+                                    <li><a href="chapter3.xml#presm.mglyph.deprecated"><span class="secno">3.2.1.2.4 </span> Deprecated Attributes</a>
+                                       
+                                    </li>
+                                 </ol>
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.commatt"><span class="secno">3.2.2 </span> Mathematics style attributes common to token elements</a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#presm.deprecatt"><span class="secno">3.2.2.1 </span> Deprecated style attributes on token elements</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.html.insertion"><span class="secno">3.2.2.2 </span> Embedding HTML in MathML</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mi"><span class="secno">3.2.3 </span> Identifier <code>&lt;mi&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.2.3.1"><span class="secno">3.2.3.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.2.3.2"><span class="secno">3.2.3.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.mi.examples"><span class="secno">3.2.3.3 </span> Examples</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mn"><span class="secno">3.2.4 </span> Number <code>&lt;mn&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.2.4.1"><span class="secno">3.2.4.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.2.4.2"><span class="secno">3.2.4.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.mn.examples"><span class="secno">3.2.4.3 </span> Examples</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.not.single.mn"><span class="secno">3.2.4.4 </span> Numbers that should not be written 
+                                    using <code>&lt;mn&gt;</code> alone</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mo"><span class="secno">3.2.5 </span> Operator, Fence, Separator or Accent
+                              <code>&lt;mo&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.2.5.1"><span class="secno">3.2.5.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.mo.attrs"><span class="secno">3.2.5.2 </span> Attributes</a>
+                                 
+                                 <ol class="toc">
+                                    
+                                    <li><a href="chapter3.xml#presm.mo.dict.attrs"><span class="secno">3.2.5.2.1 </span> Dictionary-based attributes</a>
+                                       
+                                    </li>
+                                    
+                                    <li><a href="chapter3.xml#presm.lbattrs"><span class="secno">3.2.5.2.2 </span> Linebreaking attributes</a>
+                                       
+                                    </li>
+                                    
+                                    <li><a href="chapter3.xml#presm.lbindent.attrs"><span class="secno">3.2.5.2.3 </span> Indentation attributes</a>
+                                       
+                                    </li>
+                                 </ol>
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.2.5.3"><span class="secno">3.2.5.3 </span> Examples with ordinary operators</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.2.5.4"><span class="secno">3.2.5.4 </span> Examples with fences and separators</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.invisibleops"><span class="secno">3.2.5.5 </span> Invisible operators</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.2.5.6"><span class="secno">3.2.5.6 </span> Names for other special operators</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.2.5.7"><span class="secno">3.2.5.7 </span> Detailed rendering rules for <code>&lt;mo&gt;</code> elements</a>
+                                 
+                                 <ol class="toc">
+                                    
+                                    <li><a href="chapter3.xml#presm.opdict"><span class="secno">3.2.5.7.1 </span> The operator dictionary</a>
+                                       
+                                    </li>
+                                    
+                                    <li><a href="chapter3.xml#presm.formdefval"><span class="secno">3.2.5.7.2 </span> Default value of the form attribute</a>
+                                       
+                                    </li>
+                                    
+                                    <li><a href="chapter3.xml#id.3.2.5.7.3"><span class="secno">3.2.5.7.3 </span> Exception for embellished operators</a>
+                                       
+                                    </li>
+                                    
+                                    <li><a href="chapter3.xml#id.3.2.5.7.4"><span class="secno">3.2.5.7.4 </span> Rationale for definition of embellished operators</a>
+                                       
+                                    </li>
+                                    
+                                    <li><a href="chapter3.xml#presm.opspacing"><span class="secno">3.2.5.7.5 </span> Spacing around an operator</a>
+                                       
+                                    </li>
+                                 </ol>
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.op.stretch"><span class="secno">3.2.5.8 </span> Stretching of operators, fences and accents</a>
+                                 
+                                 <ol class="toc">
+                                    
+                                    <li><a href="chapter3.xml#id.3.2.5.8.1"><span class="secno">3.2.5.8.1 </span> Example of stretchy attributes</a>
+                                       
+                                    </li>
+                                    
+                                    <li><a href="chapter3.xml#id.3.2.5.8.2"><span class="secno">3.2.5.8.2 </span> Vertical Stretching Rules</a>
+                                       
+                                    </li>
+                                    
+                                    <li><a href="chapter3.xml#presm.horiz.stretch.rules"><span class="secno">3.2.5.8.3 </span> Horizontal Stretching Rules</a>
+                                       
+                                    </li>
+                                    
+                                    <li><a href="chapter3.xml#id.3.2.5.8.4"><span class="secno">3.2.5.8.4 </span> Rules Common to both Vertical and Horizontal Stretching</a>
+                                       
+                                    </li>
+                                 </ol>
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.mo.linebreaks"><span class="secno">3.2.5.9 </span> Examples of Linebreaking</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mtext"><span class="secno">3.2.6 </span> Text <code>&lt;mtext&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.2.6.1"><span class="secno">3.2.6.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.2.6.2"><span class="secno">3.2.6.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.2.6.3"><span class="secno">3.2.6.3 </span> Examples</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.mixtextmath"><span class="secno">3.2.6.4 </span> Mixing text and mathematics</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mspace"><span class="secno">3.2.7 </span> Space <code>&lt;mspace/&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.2.7.1"><span class="secno">3.2.7.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.2.7.2"><span class="secno">3.2.7.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.2.7.3"><span class="secno">3.2.7.3 </span> Examples</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.2.7.4"><span class="secno">3.2.7.4 </span> Definition of space-like elements</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.2.7.5"><span class="secno">3.2.7.5 </span> Legal grouping of space-like elements</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.ms"><span class="secno">3.2.8 </span> String Literal <code>&lt;ms&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.2.8.1"><span class="secno">3.2.8.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.2.8.2"><span class="secno">3.2.8.2 </span> Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter3.xml#presm.genlayout"><span class="secno">3.3 </span> General Layout Schemata</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter3.xml#presm.mrow"><span class="secno">3.3.1 </span> Horizontally Group Sub-Expressions
+                              <code>&lt;mrow&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.3.1.1"><span class="secno">3.3.1.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.1.2"><span class="secno">3.3.1.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.1.3"><span class="secno">3.3.1.3 </span> Proper grouping of sub-expressions using <code>&lt;mrow&gt;</code></a>
+                                 
+                                 <ol class="toc">
+                                    
+                                    <li><a href="chapter3.xml#id.3.3.1.3.1"><span class="secno">3.3.1.3.1 </span> <code>&lt;mrow&gt;</code> of one argument</a>
+                                       
+                                    </li>
+                                    
+                                    <li><a href="chapter3.xml#id.3.3.1.3.2"><span class="secno">3.3.1.3.2 </span> Precise rule for proper grouping</a>
+                                       
+                                    </li>
+                                 </ol>
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.1.4"><span class="secno">3.3.1.4 </span> Examples</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mfrac"><span class="secno">3.3.2 </span> Fractions <code>&lt;mfrac&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.3.2.1"><span class="secno">3.3.2.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.2.2"><span class="secno">3.3.2.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.2.3"><span class="secno">3.3.2.3 </span> Examples</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mroot"><span class="secno">3.3.3 </span> Radicals <code>&lt;msqrt&gt;</code>, <code>&lt;mroot&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.3.3.1"><span class="secno">3.3.3.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.3.2"><span class="secno">3.3.3.2 </span> Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mstyle"><span class="secno">3.3.4 </span> Style Change <code>&lt;mstyle&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.3.4.1"><span class="secno">3.3.4.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.mstyle.attrs"><span class="secno">3.3.4.2 </span> Attributes</a>
+                                 
+                                 <ol class="toc">
+                                    
+                                    <li><a href="chapter3.xml#id.3.3.4.2.1"><span class="secno">3.3.4.2.1 </span> Deprecated Attributes</a>
+                                       
+                                    </li>
+                                 </ol>
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.4.3"><span class="secno">3.3.4.3 </span> Examples</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.merror"><span class="secno">3.3.5 </span> Error Message <code>&lt;merror&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.3.5.1"><span class="secno">3.3.5.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.5.2"><span class="secno">3.3.5.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.5.3"><span class="secno">3.3.5.3 </span> Example</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mpadded"><span class="secno">3.3.6 </span> Adjust Space Around Content
+                              <code>&lt;mpadded&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.3.6.1"><span class="secno">3.3.6.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.mpaddedatt"><span class="secno">3.3.6.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.6.3"><span class="secno">3.3.6.3 </span> Meanings of size and position attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mphantom"><span class="secno">3.3.7 </span> Making Sub-Expressions Invisible <code>&lt;mphantom&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.3.7.1"><span class="secno">3.3.7.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.7.2"><span class="secno">3.3.7.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.7.3"><span class="secno">3.3.7.3 </span> Examples</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mfenced"><span class="secno">3.3.8 </span> Expression Inside Pair of Fences
+                              <code>&lt;mfenced&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.3.8.1"><span class="secno">3.3.8.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.8.2"><span class="secno">3.3.8.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.8.3"><span class="secno">3.3.8.3 </span> Examples</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.menclose"><span class="secno">3.3.9 </span> Enclose Expression Inside Notation
+                              <code>&lt;menclose&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.3.9.1"><span class="secno">3.3.9.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.9.2"><span class="secno">3.3.9.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.3.9.3"><span class="secno">3.3.9.3 </span> Examples</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter3.xml#presm.scrlim"><span class="secno">3.4 </span> Script and Limit Schemata</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter3.xml#presm.msub"><span class="secno">3.4.1 </span> Subscript <code>&lt;msub&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.4.1.1"><span class="secno">3.4.1.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.4.1.2"><span class="secno">3.4.1.2 </span> Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.msup"><span class="secno">3.4.2 </span> Superscript <code>&lt;msup&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.4.2.1"><span class="secno">3.4.2.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.4.2.2"><span class="secno">3.4.2.2 </span> Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.msubsup"><span class="secno">3.4.3 </span> Subscript-superscript Pair <code>&lt;msubsup&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.4.3.1"><span class="secno">3.4.3.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.subsupatt"><span class="secno">3.4.3.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.4.3.3"><span class="secno">3.4.3.3 </span> Examples</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.munder"><span class="secno">3.4.4 </span> Underscript <code>&lt;munder&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.4.4.1"><span class="secno">3.4.4.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.4.4.2"><span class="secno">3.4.4.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.4.4.3"><span class="secno">3.4.4.3 </span> Examples</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mover"><span class="secno">3.4.5 </span> Overscript <code>&lt;mover&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.4.5.1"><span class="secno">3.4.5.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.4.5.2"><span class="secno">3.4.5.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.4.5.3"><span class="secno">3.4.5.3 </span> Examples</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.munderover"><span class="secno">3.4.6 </span> Underscript-overscript Pair
+                              <code>&lt;munderover&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.4.6.1"><span class="secno">3.4.6.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.4.6.2"><span class="secno">3.4.6.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.4.6.3"><span class="secno">3.4.6.3 </span> Examples</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mmultiscripts"><span class="secno">3.4.7 </span> Prescripts and Tensor Indices
+                              <code>&lt;mmultiscripts&gt;</code>,
+                              <code>&lt;mprescripts/&gt;</code>,
+                              <code>&lt;none/&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.4.7.1"><span class="secno">3.4.7.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.4.7.2"><span class="secno">3.4.7.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.4.7.3"><span class="secno">3.4.7.3 </span> Examples</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter3.xml#presm.tabmat"><span class="secno">3.5 </span> Tabular Math</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter3.xml#presm.mtable"><span class="secno">3.5.1 </span> Table or Matrix
+                              <code>&lt;mtable&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.5.1.1"><span class="secno">3.5.1.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.mtable.attrs"><span class="secno">3.5.1.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.5.1.3"><span class="secno">3.5.1.3 </span> Examples</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mtr"><span class="secno">3.5.2 </span> Row in Table or Matrix <code>&lt;mtr&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.5.2.1"><span class="secno">3.5.2.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.5.2.2"><span class="secno">3.5.2.2 </span> Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mlabeledtr"><span class="secno">3.5.3 </span> Labeled Row in Table or Matrix
+                              <code>&lt;mlabeledtr&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.5.3.1"><span class="secno">3.5.3.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.5.3.2"><span class="secno">3.5.3.2 </span> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.5.3.3"><span class="secno">3.5.3.3 </span> Equation Numbering</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.5.3.4"><span class="secno">3.5.3.4 </span> Example</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mtd"><span class="secno">3.5.4 </span> Entry in Table or Matrix <code>&lt;mtd&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.5.4.1"><span class="secno">3.5.4.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.mtdatts"><span class="secno">3.5.4.2 </span> Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.malign"><span class="secno">3.5.5 </span> Alignment Markers
+                              <code>&lt;maligngroup/&gt;</code>, <code>&lt;malignmark/&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.5.5.1"><span class="secno">3.5.5.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.5.5.2"><span class="secno">3.5.5.2 </span> Specifying alignment groups</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.5.5.3"><span class="secno">3.5.5.3 </span> Table cells that are not divided into alignment groups</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.5.5.4"><span class="secno">3.5.5.4 </span> Specifying alignment points using <code>&lt;malignmark/&gt;</code></a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.5.5.5"><span class="secno">3.5.5.5 </span> <code>&lt;malignmark/&gt;</code> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.5.5.6"><span class="secno">3.5.5.6 </span> <code>&lt;maligngroup/&gt;</code> Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.5.5.7"><span class="secno">3.5.5.7 </span> Inheritance of groupalign values</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.5.5.8"><span class="secno">3.5.5.8 </span> MathML representation of an alignment example</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.5.5.9"><span class="secno">3.5.5.9 </span> Further details of alignment elements</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.5.5.10"><span class="secno">3.5.5.10 </span> A simple alignment algorithm</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter3.xml#presm.elementary"><span class="secno">3.6 </span> Elementary Math</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter3.xml#presm.mstack"><span class="secno">3.6.1 </span> Stacks of Characters <code>&lt;mstack&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.6.1.1"><span class="secno">3.6.1.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.6.1.2"><span class="secno">3.6.1.2 </span> Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mlongdiv"><span class="secno">3.6.2 </span> Long Division <code>&lt;mlongdiv&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.6.2.1"><span class="secno">3.6.2.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.mlongdiv.attrs"><span class="secno">3.6.2.2 </span> Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.msgroup"><span class="secno">3.6.3 </span> Group Rows with Similiar Positions <code>&lt;msgroup&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.6.3.1"><span class="secno">3.6.3.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.6.3.2"><span class="secno">3.6.3.2 </span> Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.msrow"><span class="secno">3.6.4 </span> Rows in Elementary Math <code>&lt;msrow&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.6.4.1"><span class="secno">3.6.4.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.6.4.2"><span class="secno">3.6.4.2 </span> Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mscarries"><span class="secno">3.6.5 </span> Carries, Borrows, and Crossouts <code>&lt;mscarries&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.6.5.1"><span class="secno">3.6.5.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.6.5.2"><span class="secno">3.6.5.2 </span> Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.mscarry"><span class="secno">3.6.6 </span> A Single Carry <code>&lt;mscarry&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.6.6.1"><span class="secno">3.6.6.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.6.6.2"><span class="secno">3.6.6.2 </span> Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.msline"><span class="secno">3.6.7 </span> Horizontal Line <code>&lt;msline/&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.6.7.1"><span class="secno">3.6.7.1 </span> Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#id.3.6.7.2"><span class="secno">3.6.7.2 </span> Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter3.xml#presm.elemmath.examples"><span class="secno">3.6.8 </span> Elementary Math Examples</a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#presm.addsub"><span class="secno">3.6.8.1 </span> Addition and Subtraction</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.mult"><span class="secno">3.6.8.2 </span> Multiplication</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.mlongdiv.ex"><span class="secno">3.6.8.3 </span> Long Division</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter3.xml#presm.repeatdec"><span class="secno">3.6.8.4 </span> Repeating decimal</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter3.xml#presm.enliven"><span class="secno">3.7 </span> Enlivening Expressions</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter3.xml#presm.maction"><span class="secno">3.7.1 </span> Bind Action to Sub-Expression
+                              <code>&lt;maction&gt;</code></a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter3.xml#id.3.7.1.1"><span class="secno">3.7.1.1 </span> Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter3.xml#presm.semantics"><span class="secno">3.8 </span> Semantics and Presentation</a>
+                     
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <div class="div2">
@@ -459,8 +1241,10 @@ padding-right: 1em;
                   <code>&amp;InvisibleTimes;</code>, 
                   <code>&amp;ApplyFunction;</code>, 
                   <code>&amp;InvisibleComma;</code> and the character U+2064 
-                  (INVISIBLE PLUS) usually render invisibly but represent significant information.  
-                  These entities have distinct spoken renderings, may influence visual linebreaking and spacing,
+                  (INVISIBLE PLUS) usually render invisibly but represent significant information. 
+                  
+                  These entities have distinct spoken renderings, may influence visual linebreaking
+                  and spacing,
                   and may effect the evaluation or meaning of particular expressions.
                   Accordingly, authors should use these entities wherever they are applicable.
                   For instance, the expression represented visually as
@@ -952,7 +1736,8 @@ padding-right: 1em;
                   <p>Other features of Unicode and scripts that should be respected
                      are ‘mirroring’ and ‘glyph shaping’.
                      Some Unicode characters are marked as being mirrored when presented in a RTL context;
-                     that is, the character is drawn as if it were mirrored or replaced by a corresponding character.
+                     that is, the character is drawn as if it were mirrored or replaced by a corresponding
+                     character.
                      Thus an opening parenthesis, ‘(’, in RTL will display as ‘)’.
                      Conversely, the solidus (/ U+002F) is <em>not</em> marked
                      as mirrored. Thus, an Arabic author that desires the slash to be reversed
@@ -1095,7 +1880,8 @@ padding-right: 1em;
                      has <code>overflow</code>="linebreak"
                      and the display engine determines that there is not enough space available to
                      display the entire formula.  The available width must therefore be known
-                     to the renderer. Like font properties, one is assumed to be inherited from the environment in
+                     to the renderer. Like font properties, one is assumed to be inherited from the environment
+                     in
                      which the MathML element lives. If no width can be determined, an
                      infinite width should be assumed. Inside of a <code>mtable</code>,
                      each column has some width. This width may be specified as an attribute
@@ -1148,7 +1934,8 @@ padding-right: 1em;
                      </li>
                   </ul>
                   <p>
-                     When a math element appears in an inline context, it may obey whatever paragraph flow rules
+                     When a math element appears in an inline context, it may obey whatever paragraph flow
+                     rules
                      are employed by the document's text rendering engine.
                      Such rules are necessarily outside of the scope of this specification.
                      Alternatively, it may use the value of the <code>math</code> element's overflow attribute.
@@ -1197,7 +1984,9 @@ padding-right: 1em;
                         </p>
                      </li>
                   </ol>
-                  <p>This algorithm takes time proportional to the number of token elements times the number of lines.</p>
+                  <p>This algorithm takes time proportional to the number of token elements times the number
+                     of lines.
+                  </p>
                </div>
                <div class="div4">
                   
@@ -1271,10 +2060,14 @@ padding-right: 1em;
                      ("tweak") the spacing generated by a specific renderer.
                   </p>
                   <p>Without explicit spacing rules, various MathML renders may use different spacing 
-                     algorithms.  Consequently, different MathML renderers may position symbols in different 
-                     locations relative to each other.  Say that renderer B, for example, provides improved 
-                     spacing for a particular expression over renderer A.  Authors are strongly warned that 
-                     "tweaking" the layout for renderer A may produce very poor results in renderer B, 
+                     algorithms.  Consequently, different MathML renderers may position symbols in different
+                     
+                     locations relative to each other.  Say that renderer B, for example, provides improved
+                     
+                     spacing for a particular expression over renderer A.  Authors are strongly warned
+                     that 
+                     "tweaking" the layout for renderer A may produce very poor results in renderer B,
+                     
                      very likely worse than without any explicit adjustment at all.
                   </p>
                   <p>Even when a specific choice of renderer can be assumed, its spacing
@@ -1344,7 +2137,8 @@ padding-right: 1em;
                      removed.
                   </p>
                   <p>Consider using the <a href="#presm.mglyph"><code>mglyph</code></a> element
-                     for cases such as this.  If such spacing constructs are used in spite of this warning, they should
+                     for cases such as this.  If such spacing constructs are used in spite of this warning,
+                     they should
                      be enclosed in a <code>semantics</code> element that also
                      provides an additional MathML expression that can be interpreted in a
                      standard way. See <a href="chapter5.xml#mixing.semantic.annotations">Section 5.1 Annotation Framework</a> for further discussion.
@@ -1649,7 +2443,8 @@ padding-right: 1em;
                   except that, when the content does not have
                   negative dimensions and its drawing region is not overlapped by other
                   drawing due to surrounding negative spacing, this region should lie
-                  behind all the drawing done to render the content, but should not lie behind any of the
+                  behind all the drawing done to render the content, but should not lie behind any of
+                  the
                   drawing done to render surrounding expressions. The effect of overlap
                   of drawing regions caused by negative spacing on the extent of the
                   region affected by the <code>mathbackground</code> attribute is not
@@ -1712,7 +2507,8 @@ padding-right: 1em;
                      <code>&lt;maligngroup/&gt;</code>, <code>&lt;malignmark/&gt;</code></a>).
                </p>
                <p>Characters
-                  can be either represented directly as Unicode character data, or indirectly via numeric or
+                  can be either represented directly as Unicode character data, or indirectly via numeric
+                  or
                   character entity references.  See <a href="chapter7.xml">Chapter 7 Characters, Entities and Fonts</a> for a
                   discussion of the advantages and disadvantages of numeric 
                   character references versus
@@ -1762,7 +2558,8 @@ padding-right: 1em;
                      character data and the <code>mathvariant</code> attribute and tokens
                      containing SMP Math Alphanumeric Symbol characters.  Processing
                      applications that accept SMP characters are required to treat the
-                     corresponding BMP and attribute combinations identically.  This is particularly important for applications that
+                     corresponding BMP and attribute combinations identically.  This is particularly important
+                     for applications that
                      support searching and/or equality testing.
                   </p>
                   <p>The <code>mathvariant</code> attribute is described in more detail in
@@ -1872,7 +2669,8 @@ padding-right: 1em;
                                  Specifies the baseline alignment point of the image with respect to the current baseline.
                                  A positive value shifts the bottom of the image above the current baseline
                                  while a negative value lowers it.
-                                 A value of 0 (the default) means that the baseline of the image is at the bottom of the image.
+                                 A value of 0 (the default) means that the baseline of the image is at the bottom of
+                                 the image.
                                  
                               </td>
                            </tr>
@@ -1883,7 +2681,8 @@ padding-right: 1em;
                            </tr>
                            <tr>
                               <td colspan="2" class="attdesc">
-                                 Provides an alternate name for the glyph.  If the specified image can't be found or displayed,
+                                 Provides an alternate name for the glyph.  If the specified image can't be found or
+                                 displayed,
                                  the renderer may use this name in a warning message or some unknown glyph notation.
                                  The name might also be used by an audio renderer or symbol processing
                                  system and should be chosen to be descriptive.
@@ -1893,7 +2692,8 @@ padding-right: 1em;
                         </tbody>
                      </table>
                      
-                     <p>Note that the <code>src</code> and <code>alt</code> attributes are <em>required</em> for correct usage in MathML 3, however this is not enforced by the schema due to the <a href="#presm.mglyph.deprecated">deprecated usage described below</a>.
+                     <p>Note that the <code>src</code> and <code>alt</code> attributes are <em>required</em> for correct usage in MathML 3, however this is not enforced by the schema due to
+                        the <a href="#presm.mglyph.deprecated">deprecated usage described below</a>.
                      </p>
                   </div>
                   <div class="div5">
@@ -1916,9 +2716,9 @@ padding-right: 1em;
                         This might render as:
                         
                      </p>
-                     <blockquote>
+                     <div class="graphic">
                         <p><img src="image/f3006.gif" alt="\includegraphics{image/braids}" /></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="div5">
                      
@@ -2073,7 +2873,8 @@ padding-right: 1em;
                   interaction of MathML and CSS.
                   Also, see <a href="appendixh.xml#MathMLforCSS">[MathMLforCSS]</a> for discussion of rendering MathML by CSS
                   and a sample CSS style sheet.
-                  When CSS is not available, it is up to the internal style mechanism of the rendering application
+                  When CSS is not available, it is up to the internal style mechanism of the rendering
+                  application
                   to visually distinguish the different logical classes.
                   Most MathML renderers will probably want to rely on some degree to additional,
                   internal style processing algorithms.
@@ -2756,7 +3557,8 @@ padding-right: 1em;
                      "absolute value" bars; separators 
                      such as comma and semicolon; and
                      mathematical accents such as a bar or tilde over a symbol.
-                     We will use the term "operator" in this chapter to refer to operators in this broad sense.
+                     We will use the term "operator" in this chapter to refer to operators in this broad
+                     sense.
                   </p>
                   <p>Typical graphical renderers show all <code>mo</code>
                      elements as the content (See <a href="#presm.tokenchars">Section 3.2.1 
@@ -2857,7 +3659,8 @@ padding-right: 1em;
                            <tr>
                               <td colspan="2" class="attdesc">
                                  Specifies the role of the operator in the enclosing expression.
-                                 This role and the operator content affect the lookup of the operator in the operator dictionary
+                                 This role and the operator content affect the lookup of the operator in the operator
+                                 dictionary
                                  which affects the spacing and other default properties;
                                  see <a href="#presm.formdefval">Section 3.2.5.7.2 Default value of the form attribute</a>.
                                  
@@ -3154,7 +3957,8 @@ padding-right: 1em;
                         available width and current font,
                         is not always available to the author of the MathML, 
                         a render may ignore the values of these attributes if they result in a line in which
-                        the remaining width is too small to usefully display the expression or if they result in a line in
+                        the remaining width is too small to usefully display the expression or if they result
+                        in a line in
                         which the remaining width exceeds the available linewrapping width. 
                      </p>
                      
@@ -3192,7 +3996,8 @@ padding-right: 1em;
                                  by <code>indentalign</code>.
                                  When the value is a percentage value or number without unit,
                                  the value is relative to the
-                                 horizontal space that a MathML renderer has available, this is the current target width as used for
+                                 horizontal space that a MathML renderer has available, this is the current target
+                                 width as used for
                                  linebreaking as specified in <a href="#presm.linebreaking">Section 3.1.7 Linebreaking of Expressions</a>
                                  
                               </td>
@@ -3300,7 +4105,9 @@ padding-right: 1em;
                         <tbody>
                            <tr>
                               <td> left         </td>
-                              <td> Align the left side of the next line to the left side of the line wrapping width </td>
+                              <td> Align the left side of the next line to the left side of the line wrapping width
+                                 
+                              </td>
                            </tr>
                            <tr>
                               <td> center       </td>
@@ -3308,7 +4115,9 @@ padding-right: 1em;
                            </tr>
                            <tr>
                               <td> right        </td>
-                              <td> Align the right side of the next line to the right side of the line wrapping width </td>
+                              <td> Align the right side of the next line to the right side of the line wrapping width
+                                 
+                              </td>
                            </tr>
                            <tr>
                               <td> auto         </td>
@@ -4142,8 +4951,7 @@ padding-right: 1em;
                      <p>The above should render as 
                         <img src="image/f3001.gif" alt="(\frac{a}{b})" style="vertical-align:middle" /> 
                         as opposed to the default rendering
-                        <img src="image/f3002.gif" alt="\left(\frac{a}{b}\right)"
-                             style="vertical-align:middle" />.
+                        <img src="image/f3002.gif" alt="\left(\frac{a}{b}\right)" style="vertical-align:middle" />.
                      </p>
                      <p>Note that each parenthesis is sized independently; if only one of
                         them had <code>maxsize</code>="100%", they would render with different
@@ -4219,7 +5027,8 @@ padding-right: 1em;
                            </p>
                         </li>
                      </ol>
-                     <p>By default, most vertical arrows, along with most opening and closing fences are defined in the operator
+                     <p>By default, most vertical arrows, along with most opening and closing fences are defined
+                        in the operator
                         dictionary to stretch by default.  
                      </p>
                      <p>In the case of a stretchy operator in a table cell (i.e. within an
@@ -4307,8 +5116,7 @@ padding-right: 1em;
                         </tr>
                      </table>
                      <p>This displays as 
-                        <img src="image/f3003.gif" alt="x \widearrow{\mathrm{maps~to}} y"
-                             style="vertical-align:middle" />.
+                        <img src="image/f3003.gif" alt="x \widearrow{\mathrm{maps~to}} y" style="vertical-align:middle" />.
                      </p>
                   </div>
                   <div class="div5">
@@ -4406,10 +5214,9 @@ padding-right: 1em;
                      </tr>
                   </table>
                   <p>This displays as </p>
-                  <blockquote>
-                     <p><img src="image/linebreak-example1.png"
-                             alt="example with equal and plus signs aligned" /></p>
-                  </blockquote>
+                  <div class="graphic">
+                     <p><img src="image/linebreak-example1.png" alt="example with equal and plus signs aligned" /></p>
+                  </div>
                   <p>Note that because <code>indentalignlast</code> defaults to "indentalign",
                      in the above example <code>indentalign</code> could have been used in place of
                      <code>indentalignlast</code>.  Also, the specifying <code>linebreakstyle='before'</code>
@@ -4492,8 +5299,7 @@ padding-right: 1em;
                      For example, the expression 'there exists
                      <img src="image/f3004.gif" alt="\delta&gt;0" style="vertical-align:middle" />
                      such that <var>f</var>(<var>x</var>) &lt;1' is equivalent to
-                     <img src="image/f3005.gif" alt="\exists \delta&gt;0 \backepsilon f(x)&lt;1"
-                          style="vertical-align:middle" /> 
+                     <img src="image/f3005.gif" alt="\exists \delta&gt;0 \backepsilon f(x)&lt;1" style="vertical-align:middle" /> 
                      and could be represented as:
                      
                   </p>
@@ -4686,13 +5492,15 @@ padding-right: 1em;
                      is to be preferred  starting with MathML 3.
                      MathML 3 adds new linebreaking attributes only to <code>mo</code>, not <code>mspace</code>.
                      However, because a linebreak can be specified on <code>mspace</code>,
-                     control over the indentation that follows that break can be specified using the attributes listed in
+                     control over the indentation that follows that break can be specified using the attributes
+                     listed in
                      <a href="#presm.lbindent.attrs">Section 3.2.5.2.3 Indentation attributes</a>.
                      
                   </p>
                   <p>
                      The value "indentingnewline" was defined in MathML2 for <code>mspace</code>;
-                     it is now deprecated.  Its meaning is the same as <code>newline</code>, which is compatible with its earlier use when no other linebreaking attributes are specified.
+                     it is now deprecated.  Its meaning is the same as <code>newline</code>, which is compatible with its earlier use when no other linebreaking attributes are
+                     specified.
                      Note that <code>linebreak</code> values on adjacent <code>mo</code> and <code>mspace</code> elements do
                      not interact; a "nobreak" on an <code>mspace</code> will
                      not, in itself, inhibit a break on an adjacent <code>mo</code> element.
@@ -4714,8 +5522,8 @@ padding-right: 1em;
   &lt;mi&gt;c&lt;/mi&gt;
 &lt;/mrow&gt;
 </pre><p>
-                     In the last example, <code>mspace</code> will cause the line to end after the "b" and the following line to be indented so that the "+" that follows will align with
-                     the "+" with <code>id</code>="firstop".
+                     In the last example, <code>mspace</code> will cause the line to end after the "b" and the following line to be indented so
+                     that the "+" that follows will align with the "+" with <code>id</code>="firstop".
                      
                   </p>
                </div>
@@ -5061,7 +5869,8 @@ padding-right: 1em;
                         nest. When a precise rule for grouping is desired, the following rule
                         should be used:
                      </p>
-                     <p>Two adjacent operators, possibly embellished, possibly separated by operands (i.e. anything
+                     <p>Two adjacent operators, possibly embellished, possibly separated by operands (i.e.
+                        anything
                         other than operators), should occur in the same
                         <code>mrow</code> only when the leading operator has an infix or
                         prefix form (perhaps inferred), the following operator has an infix or
@@ -5265,20 +6074,19 @@ padding-right: 1em;
                      These cases are shown below:
                      
                   </p>
-                  <blockquote>
-                     <p><img src="image/f3007.gif"
-                             alt="\binom{a}{b} \quad \genfrac{}{}{1pt}{}{\frac{a}{b}}{\frac{c}{d}}" /></p>
-                  </blockquote>
+                  <div class="graphic">
+                     <p><img src="image/f3007.gif" alt="\binom{a}{b} \quad \genfrac{}{}{1pt}{}{\frac{a}{b}}{\frac{c}{d}}" /></p>
+                  </div>
                   <p>An example illustrating the bevelled form is shown below:
                      
                   </p>
-                  <blockquote>
-                     <p><img src="image/f3008.gif"
-                             alt="\frac{1}{x^3 + \frac{x}{3}} = \raisebox{1ex}{$1$}\!        \left/ \!\raisebox{-1ex}{$x^3+\frac{x}{3}$} \right." /></p>
-                  </blockquote>
+                  <div class="graphic">
+                     <p><img src="image/f3008.gif" alt="\frac{1}{x^3 + \frac{x}{3}} = \raisebox{1ex}{$1$}\!        \left/ \!\raisebox{-1ex}{$x^3+\frac{x}{3}$} \right." /></p>
+                  </div>
                   <p>
                      In a RTL directionality context,  the numerator leads (on the right),
-                     the denominator follows (on the left) and the diagonal line slants upwards going from right to left (See <a href="#presm.bidi.math">Section 3.1.5.1 Overall Directionality of Mathematics Formulas</a> for clarification).
+                     the denominator follows (on the left) and the diagonal line slants upwards going from
+                     right to left (See <a href="#presm.bidi.math">Section 3.1.5.1 Overall Directionality of Mathematics Formulas</a> for clarification).
                      Although this format is an established convention, it is not universally
                      followed; for situations where a forward slash is desired in a RTL context,
                      alternative markup, such as an <code>mo</code> within an <code>mrow</code> should be used.
@@ -5557,7 +6365,8 @@ padding-right: 1em;
                      <code>mstyle</code> in any manner affect a descendant element
                      in the <code>mstyle</code>'s content only if that attribute is
                      not given a value by the descendant element. On any element for
-                     which the attribute is set explicitly, the value specified  overrides the inherited value. The only exception to this
+                     which the attribute is set explicitly, the value specified  overrides the inherited
+                     value. The only exception to this
                      rule is when the attribute value 
                      is documented as
                      specifying an incremental change to the value inherited from that
@@ -6107,7 +6916,8 @@ padding-right: 1em;
                      natural positioning of the <code>mpadded</code> element.  The typographical
                      layout parameters determined by these attributes are described in the next subsection.
                      Depending on the form of the attribute value, a dimension may be set to a new value,
-                     or specified relative to the child content's corresponding dimension.  Values may be given as
+                     or specified relative to the child content's corresponding dimension.  Values may
+                     be given as
                      multiples or percentages of any of the  
                      dimensions of the normal rendering of the child content using so-called pseudo-units,
                      or they can be set directly using standard units <a href="chapter2.xml#fund.units">Section 2.1.5.2 Length Valued Attributes</a>.
@@ -6290,10 +7100,9 @@ padding-right: 1em;
                      and <code>voffset</code> to shift the position of child content without
                      modifying the <code>mpadded</code> bounding box.
                   </p>
-                  <blockquote>
-                     <p><img src="image/mpadded-shift.png"
-                             alt="illustration of the use of mpadded to shift the position of child content without modifying the bounding box" /></p>
-                  </blockquote>
+                  <div class="graphic">
+                     <p><img src="image/mpadded-shift.png" alt="illustration of the use of mpadded to shift the position of child content without modifying the bounding box" /></p>
+                  </div>
                   <p>The corresponding MathML is:
                      
                   </p>
@@ -6326,10 +7135,9 @@ padding-right: 1em;
                      to modifying the <code>mpadded</code> bounding box without changing the relative position 
                      of the child content. 
                   </p>
-                  <blockquote>
-                     <p><img src="image/mpadded-resize.png"
-                             alt="illustration of the use of mpadded to modifying its bounding box without shifting the relative location of its child content" /></p>
-                  </blockquote>
+                  <div class="graphic">
+                     <p><img src="image/mpadded-resize.png" alt="illustration of the use of mpadded to modifying its bounding box without shifting the relative location of its child content" /></p>
+                  </div>
                   <p>The corresponding MathML is:
                      
                   </p>
@@ -6360,10 +7168,9 @@ padding-right: 1em;
                   <p>The final diagram illustrates the generic use of <code>mpadded</code> to modify both 
                      the bounding box and relative position of child content.
                   </p>
-                  <blockquote>
-                     <p><img src="image/mpadded-combined.png"
-                             alt="illustration of the use of mpadded to modify both the bounding box size and position of child content" /></p>
-                  </blockquote>
+                  <div class="graphic">
+                     <p><img src="image/mpadded-combined.png" alt="illustration of the use of mpadded to modify both the bounding box size and position of child content" /></p>
+                  </div>
                   <p>The corresponding MathML is:
                      
                   </p>
@@ -6511,16 +7318,16 @@ padding-right: 1em;
                   <p>This would render as something like
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/mphantom.gif" alt="\frac{x+y+x}{x\phantom{{}+y}+z}" /></p>
-                  </blockquote>
+                  </div>
                   <p>
                      rather than as
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/mphantom-bad.gif" alt="\frac{x+y+z}{x+z}" /></p>
-                  </blockquote>
+                  </div>
                   <p>The explicit attribute setting <code>form</code><code>="infix"</code> on the
                      <code>mo</code> element inside the <code>mphantom</code> sets the
                      <code>form</code> attribute to what it would have been in the absence of the
@@ -6713,7 +7520,8 @@ padding-right: 1em;
                         </tr>
                         <tr>
                            <td colspan="2" class="attdesc">
-                              Specifies a sequence of zero or more separator characters, optionally separated by whitespace.
+                              Specifies a sequence of zero or more separator characters, optionally separated by
+                              whitespace.
                               Each pair of arguments is displayed separated by the corresponding separator
                               (none appears after the last argument).
                               If there are too many separators, the excess are ignored;
@@ -6986,9 +7794,11 @@ padding-right: 1em;
                      <tbody>
                         <tr>
                            <td rowspan="2" class="attname">notation</td>
-                           <td>("longdiv" | "actuarial" | "phasorangle" | "radical" | "box" | "roundedbox" | "circle" |
+                           <td>("longdiv" | "actuarial" | "phasorangle" | "radical" | "box" | "roundedbox" | "circle"
+                              |
                               "left" | "right" | "top" | "bottom" |
-                              "updiagonalstrike" | "downdiagonalstrike" | "verticalstrike" | "horizontalstrike" | "northeastarrow"
+                              "updiagonalstrike" | "downdiagonalstrike" | "verticalstrike" | "horizontalstrike"
+                              | "northeastarrow"
                               | "madruwb" | text) + 
                               
                            </td>
@@ -7007,7 +7817,8 @@ padding-right: 1em;
                   <p>Any number of values can be given for
                      <code>notation</code> separated by whitespace; all of those given and
                      understood by a MathML renderer should be rendered.
-                     Each should be rendered as if the others were not present; they should not nest one inside of the other.  For example,
+                     Each should be rendered as if the others were not present; they should not nest one
+                     inside of the other.  For example,
                      <code>notation</code>="circle box" should
                      result in circle and a box around the contents of <code>menclose</code>; the circle and box may overlap.  This is shown in the first example below.
                      Of the predefined notations, only the following are
@@ -7058,8 +7869,9 @@ padding-right: 1em;
                   </p>
                   <p>
                      The value "northeastarrow" is a recommended value to implement because it can be
-                     used to implement TeX's \cancelto command. If a renderer implements other arrows for <code>menclose</code>, it is recommended that the arrow names are chosen from the following full set of names for consistancy and standardization
-                     among renderers:
+                     used to implement TeX's \cancelto command. If a renderer implements other arrows for
+                     <code>menclose</code>, it is recommended that the arrow names are chosen from the following full set of
+                     names for consistancy and standardization among renderers:
                      
                   </p>
                   <ul>
@@ -7135,9 +7947,9 @@ padding-right: 1em;
                      which renders with the box and circle overlapping roughly as
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/circlebox.png" alt="[Image of a circle and box around x plus y]" /></p>
-                  </blockquote>
+                  </div>
                   <p>.
                      
                   </p>
@@ -7179,10 +7991,9 @@ padding-right: 1em;
                      which renders roughly as
                      
                   </p>
-                  <blockquote>
-                     <p><img src="image/actuarial.png"
-                             alt="[image of actuarial notation for a angle n at i]" /></p>
-                  </blockquote>
+                  <div class="graphic">
+                     <p><img src="image/actuarial.png" alt="[image of actuarial notation for a angle n at i]" /></p>
+                  </div>
                   <p>An example of "phasorangle", which is used in circuit analysis, is:
                      
                   </p>
@@ -7224,10 +8035,9 @@ padding-right: 1em;
                      which renders roughly as
                      
                   </p>
-                  <blockquote>
-                     <p><img src="image/phasorangle.png"
-                             alt="[image of phasorangle notation for the angle negative pi over 2]" /></p>
-                  </blockquote>
+                  <div class="graphic">
+                     <p><img src="image/phasorangle.png" alt="[image of phasorangle notation for the angle negative pi over 2]" /></p>
+                  </div>
                   <p>An example of "madruwb" is:
                      
                   </p>
@@ -7251,9 +8061,9 @@ padding-right: 1em;
                      which renders roughly as
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/madruwb12.png" alt="[Image of 12 factorial in Arabic style]" /></p>
-                  </blockquote>
+                  </div>
                   <p>.
                      
                   </p>
@@ -7521,9 +8331,9 @@ padding-right: 1em;
                      when rendered in display style. The most common of these is the
                      integral. For example,
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/f3015.gif" alt="\int\nolimits_0^1 \eulere^x \,\diffd x" /></p>
-                  </blockquote>
+                  </div>
                   <p>
                      would be represented as
                      
@@ -7642,7 +8452,8 @@ padding-right: 1em;
                            <td colspan="2" class="attdesc">
                               Specifies whether the script is aligned left, center, or right under/over the base.
                               As specfied in <a href="#presm.horiz.stretch.rules">Section 3.2.5.8.3 Horizontal Stretching Rules</a>,
-                              the core of underscripts that are embellished operators should stretch to cover the base,
+                              the core of underscripts that are embellished operators should stretch to cover the
+                              base,
                               but the alignment is based on the entire underscript.
                               
                            </td>
@@ -7664,8 +8475,7 @@ padding-right: 1em;
                   </p>
                   <p>Here is an example (accent versus underscript):
                      <img src="image/f3016.gif" alt="\underbrace{x+y+z}" style="vertical-align:middle" /> versus
-                     <img src="image/f3017.gif" alt="\underbrace{\strut x+y+z}"
-                          style="vertical-align:middle" />.
+                     <img src="image/f3017.gif" alt="\underbrace{\strut x+y+z}" style="vertical-align:middle" />.
                      The MathML representation for this example is shown below.
                   </p>
                </div>
@@ -7798,7 +8608,8 @@ padding-right: 1em;
                            <td colspan="2" class="attdesc">
                               Specifies whether the script is aligned left, center, or right under/over the base.
                               As specfied in <a href="#presm.horiz.stretch.rules">Section 3.2.5.8.3 Horizontal Stretching Rules</a>,
-                              the core of overscripts that are embellished operators should stretch to cover the base,
+                              the core of overscripts that are embellished operators should stretch to cover the
+                              base,
                               but the alignment is based on the entire overscript.
                               
                            </td>
@@ -7812,8 +8623,7 @@ padding-right: 1em;
                      These differences also apply to "mathematical accents" such as
                      bars or braces over expressions:
                      <img src="image/f3020.gif" alt="\overbrace{x+y+z}" style="vertical-align:middle" /> versus
-                     <img src="image/f3021.gif" alt="\overbrace{\strut x+y+z}"
-                          style="vertical-align:middle" />.
+                     <img src="image/f3021.gif" alt="\overbrace{\strut x+y+z}" style="vertical-align:middle" />.
                      The MathML representation for each of these examples is shown below.
                   </p>
                   <p>The default value of <em>accent</em> is false, unless
@@ -8004,7 +8814,8 @@ padding-right: 1em;
                            <td colspan="2" class="attdesc">
                               Specifies whether the scripts are aligned left, center, or right under/over the base.
                               As specfied in <a href="#presm.horiz.stretch.rules">Section 3.2.5.8.3 Horizontal Stretching Rules</a>,
-                              the core of underscripts and overscripts that are embellished operators should stretch to cover the base,
+                              the core of underscripts and overscripts that are embellished operators should stretch
+                              to cover the base,
                               but the alignment is based on the entire underscript or overscript.
                               
                            </td>
@@ -8107,7 +8918,8 @@ padding-right: 1em;
      (<em>subscript superscript</em>)*
      [ &lt;mprescripts/&gt; (<em>presubscript presuperscript</em>)* ]
 &lt;/mmultiscripts&gt;
-</pre><p>This element allows the representation of any number of vertically-aligned pairs of subscripts
+</pre><p>This element allows the representation of any number of vertically-aligned pairs of
+                     subscripts
                      and superscripts, attached to one base expression. It supports both
                      postscripts  and
                      prescripts.
@@ -8226,8 +9038,7 @@ padding-right: 1em;
                         </td>
                      </tr>
                   </table>
-                  <p><img src="image/tensorindices.png" alt="R_i{}^j{}_k{}_l"
-                          style="vertical-align:middle" />
+                  <p><img src="image/tensorindices.png" alt="R_i{}^j{}_k{}_l" style="vertical-align:middle" />
                      (where <var>k</var> and <var>l</var> are different indices)
                      
                   </p>
@@ -8263,9 +9074,7 @@ padding-right: 1em;
                         </td>
                      </tr>
                   </table>
-                  <p><img src="image/prescriptsalign.png"
-                          alt="{}_{123}^{\phantom{00}1}X{}_{123}^{1\phantom{00}}"
-                          style="vertical-align:middle" />
+                  <p><img src="image/prescriptsalign.png" alt="{}_{123}^{\phantom{00}1}X{}_{123}^{1\phantom{00}}" style="vertical-align:middle" />
                      
                   </p>
                   <table>
@@ -8298,16 +9107,16 @@ padding-right: 1em;
                      coefficient
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/binom5-12.png" alt="[binomial(5,12) in english style]" /></p>
-                  </blockquote>
+                  </div>
                   <p>
                      can be displayed in Arabic style
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/arbinom5-12.png" alt="[binomial(5,12) in Arabic style]" /></p>
-                  </blockquote>
+                  </div>
                   <table>
                      <tr>
                         <td><pre class="mathml">
@@ -8392,7 +9201,8 @@ padding-right: 1em;
                      particular, it is the responsibility of a MathML renderer to resolve
                      conflicts between the <code>width</code> attribute and other
                      constraints on the width of a table, such as explicit values for <code>columnwidth</code> attributes,
-                     and minimum sizes for table cell contents.  For a discussion of table layout algorithms, see
+                     and minimum sizes for table cell contents.  For a discussion of table layout algorithms,
+                     see
                      <a href="http://www.w3.org/TR/CSS2/tables.html#width-layout">Cascading
                         Style Sheets, level 2</a>.
                   </p>
@@ -8434,12 +9244,13 @@ padding-right: 1em;
                               "top" or "bottom" aligns the top or bottom of the table on the environment's baseline.
                               
                               If the <code>align</code> attribute value ends with a <em>rownumber</em>,
-                              the specified row (counting from 1 for the top row), rather than the table as a whole, is aligned in the way described above
-                              with the exceptions noted below.
+                              the specified row (counting from 1 for the top row), rather than the table as a whole,
+                              is aligned in the way described above with the exceptions noted below.
                               If <em>rownumber</em> is negative, it counts rows from the bottom.
                               When the value of <em>rownumber</em> is out of range or not an integer, it is ignored.
                               If a row number is specified and the alignment value is "baseline" or "axis", 
-                              the row's baseline or axis is used for alignment. Note this is only well defined when the <code>rowalign</code> 
+                              the row's baseline or axis is used for alignment. Note this is only well defined when
+                              the <code>rowalign</code> 
                               value is "baseline" or "axis"; MathML does not specify how 
                               "baseline" or "axis" alignment should occur for other values of <code>rowalign</code>. 
                               
@@ -8452,7 +9263,8 @@ padding-right: 1em;
                         </tr>
                         <tr>
                            <td colspan="2" class="attdesc">
-                              specifies the vertical alignment of the cells with respect to other cells within the same row:
+                              specifies the vertical alignment of the cells with respect to other cells within the
+                              same row:
                               "top" aligns the tops of each entry across the row;
                               "bottom" aligns the bottoms of the cells,
                               "center" centers the cells;
@@ -8469,7 +9281,8 @@ padding-right: 1em;
                         </tr>
                         <tr>
                            <td colspan="2" class="attdesc">
-                              specifies the horizontal alignment of the cells with respect to other cells within the same column:
+                              specifies the horizontal alignment of the cells with respect to other cells within
+                              the same column:
                               "left" aligns the left side of the cells;
                               "center" centers each cells;
                               "right" aligns the right side of the cells.
@@ -8513,7 +9326,8 @@ padding-right: 1em;
                            <td colspan="2" class="attdesc">
                               specifies how wide a column should be:
                               "auto" means that the column should be as wide as needed;
-                              an explicit length means that the column is exactly that wide and the contents of that column are made to fit
+                              an explicit length means that the column is exactly that wide and the contents of
+                              that column are made to fit
                               by linewrapping or clipping at the discretion of the renderer;
                               "fit" means that the page width
                               remaining after subtracting the "auto" or fixed width columns
@@ -8708,11 +9522,13 @@ padding-right: 1em;
                      (respectively, columns, or the gaps between rows or columns),
                      the notation <code>(...)+</code> means that multiple values can be given for the attribute
                      as a space separated list (see <a href="chapter2.xml#fund.attval">Section 2.1.5 MathML Attribute Values</a>).
-                     In this context, a single value specifies the value to be used for all rows (resp., columns or gaps).
+                     In this context, a single value specifies the value to be used for all rows (resp.,
+                     columns or gaps).
                      A list of values are taken to apply to corresponding rows (resp., columns or gaps)
                      in order, that is starting from the top row for rows or first column (left or right,
                      depending on directionality) for columns.
-                     If there are more rows (resp., columns or gaps) than supplied values, the last value is repeated as needed.
+                     If there are more rows (resp., columns or gaps) than supplied values, the last value
+                     is repeated as needed.
                      If there are too many values supplied, the excess are ignored.
                   </p>
                   <p>Note that none of the areas occupied by lines
@@ -8789,10 +9605,9 @@ padding-right: 1em;
                   <p>This might be rendered as:
                      
                   </p>
-                  <blockquote>
-                     <p><img src="image/f3025.gif"
-                             alt="\left(\begin{array}{ccc}1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1\end{array}\right)" /></p>
-                  </blockquote>
+                  <div class="graphic">
+                     <p><img src="image/f3025.gif" alt="\left(\begin{array}{ccc}1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1\end{array}\right)" /></p>
+                  </div>
                   <p>
                      Note that the parentheses must be represented explicitly; they are not
                      part of the <code>mtable</code> element's rendering. This allows
@@ -9289,7 +10104,8 @@ mtd.eqnum:before {content: "(" counter(eqnum) ")"}
                      coincide with the nested expression structure of layout schemata,
                      there are nonetheless restrictions on where an <code>maligngroup</code>
                      element is allowed within a table cell. The <code>maligngroup</code>
-                     element may only be contained within elements (directly or indirectly) of the following types
+                     element may only be contained within elements (directly or indirectly) of the following
+                     types
                      (which are themselves contained in the table cell):
                      
                   </p>
@@ -9367,7 +10183,8 @@ mtd.eqnum:before {content: "(" counter(eqnum) ")"}
                   <p>Note that it is not required that the table cells in a column that
                      are divided into alignment groups each contain the same number of
                      groups. If they don't, zero-width alignment groups are effectively
-                     added on the right side (or left side, in a RTL context) of each table cell that has fewer groups than
+                     added on the right side (or left side, in a RTL context) of each table cell that has
+                     fewer groups than
                      other table cells in the same column.
                   </p>
                </div>
@@ -9442,7 +10259,8 @@ equations with aligned variables
                   <p>For the purposes of alignment, an element X is considered to be to the
                      immediate left of an element Y, and Y to the immediate right of X, whenever
                      X and Y are successive arguments of one (possibly inferred) <code>mrow</code> element,
-                     with X coming before Y (in a LTR context; with X coming after Y in a RTL context). In the case of
+                     with X coming before Y (in a LTR context; with X coming after Y in a RTL context).
+                     In the case of
                      <code>mfenced</code> elements, MathML applications should evaluate this
                      relation as if the <code>mfenced</code> element had been
                      replaced by the equivalent expanded form involving <code>mrow</code>. Similarly, an <code>maction</code>
@@ -10091,7 +10909,9 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                <dt class="label"><code>mscarry</code></dt>
                <dd>a borrow/carry and/or crossout for a single digit</dd>
                <dt class="label"><code>mlongdiv</code></dt>
-               <dd>specifies a divisor and a quotient for long division, along with a stack of the intermediate computations</dd>
+               <dd>specifies a divisor and a quotient for long division, along with a stack of the intermediate
+                  computations
+               </dd>
             </dl>
             <p>
                
@@ -10119,10 +10939,9 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                these elements can be used to represent several notations used for repeating decimals.
             </p>
             <p>A very simple example of two-dimensional addition is shown below:</p>
-            <blockquote>
-               <p><img src="image/em-plus.png"
-                       alt="\begin{array}{r}   424 \\   +33 \\   \hline \end{array}" /></p>
-            </blockquote>
+            <div class="graphic">
+               <p><img src="image/em-plus.png" alt="\begin{array}{r}   424 \\   +33 \\   \hline \end{array}" /></p>
+            </div>
             <p>The MathML for this is:</p>
             <table>
                <tr>
@@ -10154,7 +10973,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   <h4><a id="id.3.6.1.1"></a>3.6.1.1 Description
                   </h4>
                   <p><code>mstack</code> is used to lay out rows of numbers that are aligned on each digit.
-                     This is common in many elementary math notations such as 2D addition, subtraction, and multiplication.
+                     This is common in many elementary math notations such as 2D addition, subtraction,
+                     and multiplication.
                   </p>
                   <p>The children of an <code>mstack</code> represent rows, or groups of them,
                      to be stacked each below the previous row; there can be any number of rows.
@@ -10259,7 +11079,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                               specifies which column is used to horizontally align the rows.
                               For "left", rows are aligned flush on the left;
                               similarly for "right", rows are flush on the right;
-                              for "center", the middle column (or to the right of the middle, for an even number of columns)
+                              for "center", the middle column (or to the right of the middle, for an even number
+                              of columns)
                               is used for alignment.
                               Rows with non-zero <code>position</code>, or affected by a <code>shift</code>,
                               are treated as if the
@@ -10268,7 +11089,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                               For "decimalpoint", the column used is the left-most column in each
                               row that contains the decimalpoint character specified
                               using the <code>decimalpoint</code> attribute of <code>mstyle</code> (default ".").
-                              If there is no decimalpoint character in the row, an implied decimal is assumed on the right of the first number in the row;
+                              If there is no decimalpoint character in the row, an implied decimal is assumed on
+                              the right of the first number in the row;
                               See <a href="#presm.mstyle">"decimalpoint"</a> for a discussion
                               of "decimalpoint".
                               
@@ -10282,7 +11104,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                         <tr>
                            <td colspan="2" class="attdesc">
                               specifies the horizontal alignment of digits within a column.
-                              If the content is larger than the column width, then it overflows the opposite side from the alignment.
+                              If the content is larger than the column width, then it overflows the opposite side
+                              from the alignment.
                               For example, for "right", the content will overflow on the left side; for center,
                               it overflows on both sides.
                               This excess does not participate in the column width calculation, nor does it participate
@@ -10300,13 +11123,16 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                         <tr>
                            <td colspan="2" class="attdesc">
                               specifies the amount of space to put between each column.
-                              Larger spacing might be useful if carries are not placed above or are particularly wide.
+                              Larger spacing might be useful if carries are not placed above or are particularly
+                              wide.
                               The keywords
                               "loose", "medium", and "tight"
                               automatically adjust spacing to when carries or other entries in a column are wide.
-                              The three values allow authors to some flexibility in choosing what the layout looks like
+                              The three values allow authors to some flexibility in choosing what the layout looks
+                              like
                               without having to figure out what values works well.
-                              In all cases, the spacing between columns is a fixed amount and does not vary between different columns.
+                              In all cases, the spacing between columns is a fixed amount and does not vary between
+                              different columns.
                               
                            </td>
                         </tr>
@@ -10327,12 +11153,14 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      <code>mlongdiv</code> is similar to <code>mstack</code> and used to layout long division.
                      The first two children of <code>mlongdiv</code> are the divisor and the result of the division, in that order.
                      The remaining children are treated as if they were children of <code>mstack</code>.
-                     The placement of these and the lines and separators used to display long division are controlled
+                     The placement of these and the lines and separators used to display long division
+                     are controlled
                      by the <code>longdivstyle</code> attribute. 
                   </p>
                   <p>The result or divisor may be an elementary math element or may be <code>none</code>.
                      In particular, if <code>msgroup</code> is used,
-                     the elements in that group may or may not form their own mstack or be part of the dividend's <code>mstack</code>,
+                     the elements in that group may or may not form their own mstack or be part of the
+                     dividend's <code>mstack</code>,
                      depending upon the value of the <code>longdivstyle</code> attribute.
                      For example, in the US style for division,
                      the result is treated as part of the dividend's <code>mstack</code>, but divisor is not.
@@ -10353,8 +11181,10 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   </p>
                   <p>The values allowed for <code>longdivstyle</code> are open-ended.
                      Conforming renderers may ignore any value they do not handle,
-                     although renderers are encouraged to render as many of the values listed below as possible.
-                     Any rules drawn as part of division layout should be drawn using the color specified by
+                     although renderers are encouraged to render as many of the values listed below as
+                     possible.
+                     Any rules drawn as part of division layout should be drawn using the color specified
+                     by
                      <code>mathcolor</code>.
                   </p>
                   
@@ -10369,24 +11199,27 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      <tbody>
                         <tr>
                            <td rowspan="2" class="attname">longdivstyle</td>
-                           <td> "lefttop" | "stackedrightright" | "mediumstackedrightright" | "shortstackedrightright" |
-                              "righttop" | "left/\right" | "left)(right" | ":right=right" | "stackedleftleft" | 
+                           <td> "lefttop" | "stackedrightright" | "mediumstackedrightright" | "shortstackedrightright"
+                              |
+                              "righttop" | "left/\right" | "left)(right" | ":right=right" | "stackedleftleft" |
+                              
                               "stackedleftlinetop" 
                            </td>
                            <td>lefttop</td>
                         </tr>
                         <tr>
                            <td colspan="2" class="attdesc">
-                              		  Controls the style of the long division layout.  The names are meant as a rough mnemonic that describes the position of
-                              the divisor and result in relation to the dividend. 		  
+                              		  Controls the style of the long division layout.  The names are meant as a rough
+                              mnemonic that describes the position of the divisor and result in relation to the
+                              dividend. 		  
                               	   
                            </td>
                         </tr>
                      </tbody>
                   </table>
                   
-                  <p>See <a href="#presm.mlongdiv.ex">Section 3.6.8.3 Long Division</a> for examples of how these notations are drawn.  The values listed above are used for long division notations in different
-                     countries around the world:
+                  <p>See <a href="#presm.mlongdiv.ex">Section 3.6.8.3 Long Division</a> for examples of how these notations are drawn.  The values listed above are used
+                     for long division notations in different countries around the world:
                   </p>
                   <dl>
                      <dt class="label">"lefttop"</dt>
@@ -10459,7 +11292,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                               effectively padding with empty columns on the right;
                               negative values move towards the ones digit,
                               effectively padding on the left.
-                              The decimal point is counted as a column and should be taken into account for negative values.
+                              The decimal point is counted as a column and should be taken into account for negative
+                              values.
                               
                            </td>
                         </tr>
@@ -10472,7 +11306,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                            <td colspan="2" class="attdesc">
                               specifies an incremental shift of position for successive children (rows or groups)
                               within this group. The value is interpreted as with position, but specifies the
-                              position of each child (except the first) with respect to the previous child in the group.
+                              position of each child (except the first) with respect to the previous child in the
+                              group.
                               
                            </td>
                         </tr>
@@ -10548,7 +11383,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                               effectively padding with empty columns on the right;
                               negative values move towards the ones digit,
                               effectively padding on the left.
-                              The decimal point is counted as a column and should be taken into account for negative values.
+                              The decimal point is counted as a column and should be taken into account for negative
+                              values.
                               
                            </td>
                         </tr>
@@ -10564,7 +11400,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   
                   <h4><a id="id.3.6.5.1"></a>3.6.5.1 Description
                   </h4>
-                  <p>The <code>mscarries</code> element is used for various annotations such as carries, borrows, and crossouts that occur in elementary math.
+                  <p>The <code>mscarries</code> element is used for various annotations such as carries, borrows, and crossouts that
+                     occur in elementary math.
                      The children are associated with elements in the <em>following</em> row of the <code>mstack</code>.
                      It is an error for <code>mscarries</code> to be the last element of an <code>mstack</code> or <code>mlongdiv</code> element. Each child of the <code>mscarries</code> applies to the same column in the following row.
                      As these annotations are used to adorn what are treated as
@@ -10590,7 +11427,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   </p>
                   <p>
                      If two rows of carries are adjacent to each other,
-                     the first row of carries annotates the second (following) row as if the second row had
+                     the first row of carries annotates the second (following) row as if the second row
+                     had
                      <code>location</code>="n".
                      This means that the second row, even if it does not draw,
                      visually uses some (undefined by this specification) amount of space when displayed.
@@ -10639,14 +11477,18 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                         </tr>
                         <tr>
                            <td colspan="2" class="attdesc">
-                              specifies the location of the carry or borrow relative to the character below it in the associated column.
-                              Compass directions are used for the values; the default is to place the carry above the character.
+                              specifies the location of the carry or borrow relative to the character below it in
+                              the associated column.
+                              Compass directions are used for the values; the default is to place the carry above
+                              the character.
                               
                            </td>
                         </tr>
                         <tr>
                            <td rowspan="2" class="attname">crossout</td>
-                           <td>("none" | "updiagonalstrike" | "downdiagonalstrike" | "verticalstrike" | "horizontalstrike")*  </td>
+                           <td>("none" | "updiagonalstrike" | "downdiagonalstrike" | "verticalstrike" | "horizontalstrike")*
+                              
+                           </td>
                            <td>none</td>
                         </tr>
                         <tr>
@@ -10723,14 +11565,17 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                         </tr>
                         <tr>
                            <td colspan="2" class="attdesc">
-                              specifies the location of the carry or borrow relative to the character in the corresponding column in the row below it.
+                              specifies the location of the carry or borrow relative to the character in the corresponding
+                              column in the row below it.
                               Compass directions are used for the values.
                               
                            </td>
                         </tr>
                         <tr>
                            <td rowspan="2" class="attname">crossout</td>
-                           <td>("none" | "updiagonalstrike" | "downdiagonalstrike" | "verticalstrike" | "horizontalstrike")*  </td>
+                           <td>("none" | "updiagonalstrike" | "downdiagonalstrike" | "verticalstrike" | "horizontalstrike")*
+                              
+                           </td>
                            <td><em>inherited</em></td>
                         </tr>
                         <tr>
@@ -10756,7 +11601,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   </h4>
                   <p><code>msline</code> draws a horizontal line inside of a <code>mstack</code> element.
                      The position, length, and thickness of the line are specified as attributes.
-                     If the length is specified, the line is positioned and drawn as if it were a number with the given number of digits.
+                     If the length is specified, the line is positioned and drawn as if it were a number
+                     with the given number of digits.
                   </p>
                </div>
                <div class="div4">
@@ -10791,7 +11637,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                               The resulting position value is relative to the column specified by <code>stackalign</code> of the containing <code>mstack</code> or <code>mlongdiv</code>.
                               Positive values moves towards the tens digit (like multiplying by a power of 10);
                               negative values moves towards the ones digit.
-                              The decimal point is counted as a column and should be taken into account for negative values.
+                              The decimal point is counted as a column and should be taken into account for negative
+                              values.
                               Note that since the default line length spans the entire <code>mstack</code>,
                               the position has no effect unless the <code>length</code> is specified as non-zero.
                               
@@ -10817,7 +11664,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                         </tr>
                         <tr>
                            <td colspan="2" class="attdesc">
-                              Specifies an extra amount that the line should overhang on the left of the leftmost column spanned by the line.
+                              Specifies an extra amount that the line should overhang on the left of the leftmost
+                              column spanned by the line.
                               
                            </td>
                         </tr>
@@ -10828,7 +11676,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                         </tr>
                         <tr>
                            <td colspan="2" class="attdesc">
-                              Specifies an extra amount that the line should overhang on the right of the rightmost column spanned by the line.
+                              Specifies an extra amount that the line should overhang on the right of the rightmost
+                              column spanned by the line.
                               
                            </td>
                         </tr>
@@ -10867,10 +11716,9 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   </p>
                   <p>Notice that the <code>msline</code> spans all of the columns and that <code>none</code> is used to make the "+" appear to the left of all of the operands.
                   </p>
-                  <blockquote>
-                     <p><img src="image/em-plus-shift.png"
-                             alt="\begin{array}{@{}r@{}}    424 \\   +\phantom0 33 \\   \hline \end{array}" /></p>
-                  </blockquote>
+                  <div class="graphic">
+                     <p><img src="image/em-plus-shift.png" alt="\begin{array}{@{}r@{}}    424 \\   +\phantom0 33 \\   \hline \end{array}" /></p>
+                  </div>
                   <p>The MathML for this is:</p>
                   <table>
                      <tr>
@@ -10895,13 +11743,13 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   <p>Here is an example with the operator on the right. Placing the
                      operator on the right is standard in the Netherlands and some other countries.
                      Notice that although there are a total of four columns in the example,
-                     because the default alignment is on the implied decimal point to the right of the numbers,
+                     because the default alignment is on the implied decimal point to the right of the
+                     numbers,
                      it is not necessary to pad any row.
                   </p>
-                  <blockquote>
-                     <p><img src="image/em-plus-right.png"
-                             alt="\begin{array}{l}   123 \\   456+ \\   \hline   579 \end{array}" /></p>
-                  </blockquote>
+                  <div class="graphic">
+                     <p><img src="image/em-plus-right.png" alt="\begin{array}{l}   123 \\   456+ \\   \hline   579 \end{array}" /></p>
+                  </div>
                   <table>
                      <tr>
                         <td><pre class="mathml">
@@ -10936,14 +11784,14 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      <tbody>
                         <tr>
                            <td>
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-sub-borrow-above.png" alt="" /></p>
-                              </blockquote>
+                              </div>
                            </td>
                            <td>
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-sub-borrow-aboveleft.png" alt="" /></p>
-                              </blockquote>
+                              </div>
                            </td>
                         </tr>
                      </tbody>
@@ -11019,10 +11867,9 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      amount is underlined (the example is from a <a href="http://www.fritext.se/matte/grunder/posi2.html">Swedish
                         source</a>):
                   </p>
-                  <blockquote>
-                     <p><img src="image/em-sub-borrow-swedish.png"
-                             alt="\begin{array}{r} \underbar{\scriptsize 10}\!\\ 5\llap{$/$}2\\ {}-{}7\\ \hline 45 \end{array}" /></p>
-                  </blockquote>
+                  <div class="graphic">
+                     <p><img src="image/em-sub-borrow-swedish.png" alt="\begin{array}{r} \underbar{\scriptsize 10}\!\\ 5\llap{$/$}2\\ {}-{}7\\ \hline 45 \end{array}" /></p>
+                  </div>
                   <p>There are two things to notice.
                      The first is that <code>menclose</code> is used in the carry and that <code>none</code> is used for
                      the empty element so that <code>mscarry</code> can be used to create a crossout.
@@ -11068,9 +11915,9 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      They would set the <code>position</code> or <code>shift</code> attributes, or would add <code>none</code> elements.
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/em-mult-simple.png" alt="" /></p>
-                  </blockquote>
+                  </div>
                   <table>
                      <tr>
                         <td><pre class="mathml">
@@ -11112,10 +11959,9 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      these separators in the spacing attribute value, along non-ASCII
                      values. 
                   </p>
-                  <blockquote>
-                     <p><img src="image/em-mult-carries.png"
-                             alt="\begin{array}{r}  {}_1 {\hspace{0.05em}}_1\phantom{0} \\  {}_1 {\hspace{0.05em}}_1\phantom{0} \\   1,234 \\   \times 4,321 \\   \hline  {}_1 \phantom{,} {\hspace{0.05em \,}}_1 {\hspace{0.05em}}_1  {\hspace{0.05em}}_1 \phantom{,} {\hspace{0.05em \,}}_1 \phantom{00} \\   1,234 \\   24,68\phantom{0} \\   370,2\phantom{00} \\   4,936\phantom{,000} \\   \hline   5,332,114 \end{array}" /></p>
-                  </blockquote>
+                  <div class="graphic">
+                     <p><img src="image/em-mult-carries.png" alt="\begin{array}{r}  {}_1 {\hspace{0.05em}}_1\phantom{0} \\  {}_1 {\hspace{0.05em}}_1\phantom{0} \\   1,234 \\   \times 4,321 \\   \hline  {}_1 \phantom{,} {\hspace{0.05em \,}}_1 {\hspace{0.05em}}_1  {\hspace{0.05em}}_1 \phantom{,} {\hspace{0.05em \,}}_1 \phantom{00} \\   1,234 \\   24,68\phantom{0} \\   370,2\phantom{00} \\   4,936\phantom{,000} \\   \hline   5,332,114 \end{array}" /></p>
+                  </div>
                   <table>
                      <tr>
                         <td><pre class="mathml">
@@ -11187,10 +12033,11 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      The notation used for long division varies considerably among
                      countries.  Most notations share the common characteristics of
                      aligning intermediate results and drawing lines for the operands to be
-                     subtracted. Minus signs are sometimes shown for the intermediate calculations, and sometimes they are not. The line that is
-                     drawn varies in length depending upon the notation. 
-                     The most apparent difference among the notations is that the position of the divisor varies, as does the location of the quotient,
-                     remainder, and intermediate terms.
+                     subtracted. Minus signs are sometimes shown for the intermediate calculations, and
+                     sometimes they are not. The line that is drawn varies in length depending upon the
+                     notation. 
+                     The most apparent difference among the notations is that the position of the divisor
+                     varies, as does the location of the quotient, remainder, and intermediate terms.
                      
                   </p>
                   <p>
@@ -11212,37 +12059,37 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                         <tr>
                            <td>
                               		
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-us.png" alt="" /></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               		
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-french.png" alt="" /></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-medium-stacked-rightright.png" alt="" /></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-short-stacked-rightright.png" alt="" /></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-righttop.png" alt="" /></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                         </tr>
@@ -11264,37 +12111,37 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                         <tr>
                            <td>
                               		
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-leftright.png" alt="" /></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               		
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-indian.png" alt="" /></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-colonrightright.png" alt="" /></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-mirrored-french.png" alt="" /></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-arabic-lefttop.png" alt="" /></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                         </tr>
@@ -11302,7 +12149,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   </table>
                   
                   <p>
-                     The MathML for the first example is shown below.  It illustrates the use of nested <code>msgroup</code>s and how the <code>position</code> is calculated in those usages.
+                     The MathML for the first example is shown below.  It illustrates the use of nested
+                     <code>msgroup</code>s and how the <code>position</code> is calculated in those usages.
                      
                   </p>
                   <table>
@@ -11377,7 +12225,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      With the exception of the last example,
                      the encodings for the other examples are the same except that the values for
                      <code>longdivstyle</code> differ and that a "," is used instead of a "." for the decimal point.
-                     For the last example, the only difference from the other examples besides a different value for
+                     For the last example, the only difference from the other examples besides a different
+                     value for
                      <code>longdivstyle</code> is that Arabic numerals have been used in place of Latin numerals, 
                      as shown  below.
                   </p>
@@ -11457,24 +12306,27 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   <p>
                      Decimal numbers that have digits that repeat infinitely such as 1/3
                      (.3333...) are represented using several notations. One common notation
-                     is to put a horizontal line over the digits that repeat (in Portugal an underline is used).
-                     Another notation involves putting dots over the digits that repeat. These notations are shown below:
+                     is to put a horizontal line over the digits that repeat (in Portugal an underline
+                     is used).
+                     Another notation involves putting dots over the digits that repeat. These notations
+                     are shown below:
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/repeat1.png" alt="0.33333 \overline{3}" /></p>
-                  </blockquote>
-                  <blockquote>
+                  </div>
+                  <div class="graphic">
                      <p><img src="image/repeat2.png" alt="0.\overline{142857}" /></p>
-                  </blockquote>
-                  <blockquote>
+                  </div>
+                  <div class="graphic">
                      <p><img src="image/repeat3.png" alt="0.\underline{142857}" /></p>
-                  </blockquote>
-                  <blockquote>
+                  </div>
+                  <div class="graphic">
                      <p><img src="image/repeat4.png" alt="0.\dot{1}4285\dot{7}" /></p>
-                  </blockquote>
+                  </div>
                   <p>The MathML for these involves using <code>mstack</code>, <code>msrow</code>, and <code>msline</code>
-                     in a straightforward manner.  The MathML for the preceding examples above is given below.
+                     in a straightforward manner.  The MathML for the preceding examples above is given
+                     below.
                   </p>
                   <table>
                      <tr>
@@ -11568,7 +12420,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                </p>
                <p>Linking to other elements, either locally within the <code>math</code> element or to some URL,
                   is not handled by <code>maction</code>.
-                  Instead, it is handled by adding a link directly on a MathML element as specified in
+                  Instead, it is handled by adding a link directly on a MathML element as specified
+                  in
                   <a href="chapter6.xml#interf.link">Section 6.4.4 Linking</a>.
                </p>
                <div class="div4">
@@ -11602,7 +12455,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                         <tr>
                            <td colspan="2" class="attdesc">
                               Specifies what should happen for this element.
-                              The values allowed are open-ended. Conforming renderers may ignore any value they do not handle,
+                              The values allowed are open-ended. Conforming renderers may ignore any value they
+                              do not handle,
                               although renderers are encouraged to render the values listed below. 
                               
                            </td>
@@ -11614,8 +12468,10 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                         </tr>
                         <tr>
                            <td colspan="2" class="attdesc">
-                              Specifies which child should be used for viewing. Its value should be between 1 and the number of
-                              children of the element. The specified child is referred to as the "selected sub-expression" of the
+                              Specifies which child should be used for viewing. Its value should be between 1 and
+                              the number of
+                              children of the element. The specified child is referred to as the "selected sub-expression"
+                              of the
                               <code>maction</code> element. If the value specified is out of range, it is an error. When the
                               <code>selection</code> attribute is not specified (including for
                               action types for which it makes no sense), its default value is 1, so
@@ -11626,7 +12482,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      </tbody>
                   </table>
                   
-                  <p>If a MathML application responds to a user command to copy a MathML sub-expression to
+                  <p>If a MathML application responds to a user command to copy a MathML sub-expression
+                     to
                      the environment's "clipboard" (see <a href="chapter6.xml#world-int-transfers">Section 6.3 Transferring MathML</a>), any <code>maction</code> elements present in what is copied should
                      be given <code>selection</code> values that correspond to their selection
                      state in the MathML rendering at the time of the copy command.
@@ -11639,9 +12496,12 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      Note that not all renderers support all of the <code>actiontype</code> values, and  that the allowed values are open-ended.
                   </p>
                   <dl>
-                     <dt class="label">&lt;maction actiontype="toggle" selection="positive-integer" &gt; (first expression) (second expression)... &lt;/maction&gt;</dt>
+                     <dt class="label">&lt;maction actiontype="toggle" selection="positive-integer" &gt; (first expression) (second
+                        expression)... &lt;/maction&gt;
+                     </dt>
                      <dd>The renderer alternately display the
-                        selected subexpression, cycling through them when there is a click on the selected subexpression.
+                        selected subexpression, cycling through them when there is a click on the selected
+                        subexpression.
                         Each click increments the <code>selection</code> value,
                         wrapping back to 1 when it reaches the last child.
                         Typical uses would be for exercises in education, ellipses in long
@@ -11679,19 +12539,22 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      <dd>The renderer displays the expression.
                         For renderers that allow editing, when focus is passed to this element,
                         the <code>maction</code> is replaced by what is entered, pasted, etc.
-                        MathML does not restrict what is allowed as input, nor does it require an editor to allow arbitrary input.
+                        MathML does not restrict what is allowed as input, nor does it require an editor to
+                        allow arbitrary input.
                         Some renderers/editors may restrict the input to simple (linear) text.
                      </dd>
                   </dl>
-                  <p>The <code>actiontype</code> values are open-ended. If another value is given and it requires additional attributes, the attributes must be in a different
-                     namespace
+                  <p>The <code>actiontype</code> values are open-ended. If another value is given and it requires additional attributes,
+                     the attributes must be in a different namespace
                      in XML;
                      in HTML the attributes must begin with "data-".
                      An XML example is shown below:
                      
                   </p>
                   <dl>
-                     <dt class="label">&lt;maction actiontype="highlight" my:color="red" my:background="yellow"&gt; expression &lt;/maction&gt;</dt>
+                     <dt class="label">&lt;maction actiontype="highlight" my:color="red" my:background="yellow"&gt; expression
+                        &lt;/maction&gt;
+                     </dt>
                      <dd>In the example,
                         non-standard attributes from another namespace are being used to pass
                         additional information to renderers that support them,
@@ -11710,7 +12573,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
             <h2><a id="presm.semantics"></a>3.8 Semantics and Presentation
             </h2>
             <p>MathML uses the <code>semantics</code> element to allow specifying semantic annotations to
-               presentation MathML elements; these can be content MathML or other notations.  As such,
+               presentation MathML elements; these can be content MathML or other notations.  As
+               such,
                <code>semantics</code> should be considered part of both presentation MathML and content
                MathML. All MathML processors should process the <code>semantics</code> element, even if they
                only process one of those subsets.

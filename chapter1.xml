@@ -5,9 +5,27 @@
       <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
       <title>Introduction</title><style type="text/css">
 
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
+
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
 }
+
+div.graphic{margin-left:2em}
 
 table.syntax {
 font-size: 75%;
@@ -145,29 +163,50 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css"
-            href="https://www.w3.org/StyleSheets/TR/base.css" />
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" />
    </head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br class="html-compat" /> Draft</b></div>
       
       <h1><a id="intro"></a>1 Introduction
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br class="html-compat" />
-         Next: 2 <a href="chapter2.xml">MathML Fundamentals</a><br class="html-compat" /><br class="html-compat" />
-         1 <a href="chapter1.xml">Introduction</a><br class="html-compat" />
-             1.1 <a href="chapter1.xml#intro.notation">Mathematics and its Notation</a><br class="html-compat" />
-             1.2 <a href="chapter1.xml#intro.origin">Origins and Goals</a><br class="html-compat" />
-                 1.2.1 <a href="chapter1.xml#intro.goals">Design Goals of MathML</a><br class="html-compat" />
-             1.3 <a href="chapter1.xml#intro.overview">Overview</a><br class="html-compat" />
-             1.4 <a href="chapter1.xml#intro.example">A First Example</a><br class="html-compat" />
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="chapter2.xml"><span class="secno">2 </span> MathML Fundamentals</a></li>
+            
+            
+            <li><a href="chapter1.xml"><span class="secno">1 </span> Introduction</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="chapter1.xml#intro.notation"><span class="secno">1.1 </span> Mathematics and its Notation</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter1.xml#intro.origin"><span class="secno">1.2 </span> Origins and Goals</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter1.xml#intro.goals"><span class="secno">1.2.1 </span> Design Goals of MathML</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter1.xml#intro.overview"><span class="secno">1.3 </span> Overview</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter1.xml#intro.example"><span class="secno">1.4 </span> A First Example</a>
+                     
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <div class="div2">
@@ -393,8 +432,8 @@ padding-right: 1em;
                an XML
                format called Content Dictionaries
                This format has been developed by the
-               OpenMath Society, <a href="appendixg.xml#OpenMath2004">[OpenMath2004]</a> with the dictionaries being used by this specification involving joint development by the OpenMath Society and the W3C Math
-               Working Group.
+               OpenMath Society, <a href="appendixg.xml#OpenMath2004">[OpenMath2004]</a> with the dictionaries being used by this specification involving joint development
+               by the OpenMath Society and the W3C Math Working Group.
                
             </p>
             <p>Fundamentals common to both strains of markup
@@ -418,9 +457,9 @@ padding-right: 1em;
                simple but instructive illustration of MathML markup.
                
             </p>
-            <blockquote>
+            <div class="graphic">
                <p><img src="image/f1002.gif" alt="x = \frac{-b\pm\sqrt{b^2 - 4ac}}{2a}" /></p>
-            </blockquote>
+            </div>
             <p>MathML offers two flavors of markup of this formula.  The first is
                the style which emphasizes the actual presentation of a formula, the 
                two-dimensional layout in which the symbols are arranged. An example 

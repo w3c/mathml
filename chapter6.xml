@@ -5,9 +5,27 @@
       <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
       <title>Interactions with the Host Environment</title><style type="text/css">
 
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
+
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
 }
+
+div.graphic{margin-left:2em}
 
 table.syntax {
 font-size: 75%;
@@ -145,48 +163,131 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css"
-            href="https://www.w3.org/StyleSheets/TR/base.css" />
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" />
    </head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br class="html-compat" /> Draft</b></div>
       
       <h1><a id="world-interactions"></a>6 Interactions with the Host Environment
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br class="html-compat" />
-         Previous: 5 <a href="chapter5.xml">Mixing Markup Languages for Mathematical Expressions</a><br class="html-compat" />
-         Next: 7 <a href="chapter7.xml">Characters, Entities and Fonts</a><br class="html-compat" /><br class="html-compat" />
-         6 <a href="chapter6.xml">Interactions with the Host Environment</a><br class="html-compat" />
-             6.1 <a href="chapter6.xml#world.introduction">Introduction</a><br class="html-compat" />
-             6.2 <a href="chapter6.xml#world.invoking.processors">Invoking MathML Processors</a><br class="html-compat" />
-                 6.2.1 <a href="chapter6.xml#world.recognizing.mathml">Recognizing MathML in XML</a><br class="html-compat" />
-                 6.2.2 <a href="chapter6.xml#world.recognizing.mathml.html">Recognizing MathML in HTML</a><br class="html-compat" />
-                 6.2.3 <a href="chapter6.xml#world.resource.types">Resource Types for MathML Documents</a><br class="html-compat" />
-                 6.2.4 <a href="chapter6.xml#encoding-names">Names of MathML Encodings</a><br class="html-compat" />
-             6.3 <a href="chapter6.xml#world-int-transfers">Transferring MathML</a><br class="html-compat" />
-                 6.3.1 <a href="chapter6.xml#world-int-transf-flavors">Basic Transfer Flavor Names and Contents</a><br class="html-compat" />
-                 6.3.2 <a href="chapter6.xml#world-int-transf-recommend">Recommended Behaviors when Transferring</a><br class="html-compat" />
-                 6.3.3 <a href="chapter6.xml#world-int-transf-discuss">Discussion</a><br class="html-compat" />
-                 6.3.4 <a href="chapter6.xml#world-int-transf-exa">Examples</a><br class="html-compat" />
-                     6.3.4.1 <a href="chapter6.xml#id.6.3.4.1">Example 1</a><br class="html-compat" />
-                     6.3.4.2 <a href="chapter6.xml#id.6.3.4.2">Example 2</a><br class="html-compat" />
-                     6.3.4.3 <a href="chapter6.xml#id.6.3.4.3">Example 3</a><br class="html-compat" />
-                     6.3.4.4 <a href="chapter6.xml#id.6.3.4.4">Example 4</a><br class="html-compat" />
-             6.4 <a href="chapter6.xml#world-int-combine-other">Combining MathML and Other Formats</a><br class="html-compat" />
-                 6.4.1 <a href="chapter6.xml#interf.xhtml">Mixing MathML and XHTML</a><br class="html-compat" />
-                 6.4.2 <a href="chapter6.xml#interf.nonxml">Mixing MathML and  non-XML contexts</a><br class="html-compat" />
-                 6.4.3 <a href="chapter6.xml#interf.html">Mixing MathML and HTML</a><br class="html-compat" />
-                 6.4.4 <a href="chapter6.xml#interf.link">Linking</a><br class="html-compat" />
-                 6.4.5 <a href="chapter6.xml#interf.graphics">MathML and Graphical Markup</a><br class="html-compat" />
-             6.5 <a href="chapter6.xml#world-int-style">Using CSS with MathML</a><br class="html-compat" />
-                 6.5.1 <a href="chapter6.xml#id.6.5.1">Order of processing attributes versus style sheets</a><br class="html-compat" />
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="chapter5.xml"><span class="secno">5 </span> Mixing Markup Languages for Mathematical Expressions</a></li>
+            <li><a href="chapter7.xml"><span class="secno">7 </span> Characters, Entities and Fonts</a></li>
+            
+            
+            <li><a href="chapter6.xml"><span class="secno">6 </span> Interactions with the Host Environment</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="chapter6.xml#world.introduction"><span class="secno">6.1 </span> Introduction</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter6.xml#world.invoking.processors"><span class="secno">6.2 </span> Invoking MathML Processors</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter6.xml#world.recognizing.mathml"><span class="secno">6.2.1 </span> Recognizing MathML in XML</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.xml#world.recognizing.mathml.html"><span class="secno">6.2.2 </span> Recognizing MathML in HTML</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.xml#world.resource.types"><span class="secno">6.2.3 </span> Resource Types for MathML Documents</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.xml#encoding-names"><span class="secno">6.2.4 </span> Names of MathML Encodings</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter6.xml#world-int-transfers"><span class="secno">6.3 </span> Transferring MathML</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter6.xml#world-int-transf-flavors"><span class="secno">6.3.1 </span> Basic Transfer Flavor Names and Contents</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.xml#world-int-transf-recommend"><span class="secno">6.3.2 </span> Recommended Behaviors when Transferring</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.xml#world-int-transf-discuss"><span class="secno">6.3.3 </span> Discussion</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.xml#world-int-transf-exa"><span class="secno">6.3.4 </span> Examples</a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter6.xml#id.6.3.4.1"><span class="secno">6.3.4.1 </span> Example 1</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter6.xml#id.6.3.4.2"><span class="secno">6.3.4.2 </span> Example 2</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter6.xml#id.6.3.4.3"><span class="secno">6.3.4.3 </span> Example 3</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter6.xml#id.6.3.4.4"><span class="secno">6.3.4.4 </span> Example 4</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter6.xml#world-int-combine-other"><span class="secno">6.4 </span> Combining MathML and Other Formats</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter6.xml#interf.xhtml"><span class="secno">6.4.1 </span> Mixing MathML and XHTML</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.xml#interf.nonxml"><span class="secno">6.4.2 </span> Mixing MathML and  non-XML contexts</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.xml#interf.html"><span class="secno">6.4.3 </span> Mixing MathML and HTML</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.xml#interf.link"><span class="secno">6.4.4 </span> Linking</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter6.xml#interf.graphics"><span class="secno">6.4.5 </span> MathML and Graphical Markup</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter6.xml#world-int-style"><span class="secno">6.5 </span> Using CSS with MathML</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter6.xml#id.6.5.1"><span class="secno">6.5.1 </span> Order of processing attributes versus style sheets</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <div class="div2">
@@ -276,9 +377,11 @@ padding-right: 1em;
                
                <h3><a id="world.recognizing.mathml.html"></a>6.2.2 Recognizing MathML in HTML
                </h3>
-               <p>HTML does not allow arbitrary namespaces, but has built in knowledge of the MathML namespace.
+               <p>HTML does not allow arbitrary namespaces, but has built in knowledge of the MathML
+                  namespace.
                   The <code>math</code> element and its descendants will be placed in the  <code>http://www.w3.org/1998/Math/MathML</code>
-                  namespace by the HTML parser, and will appear to applications as if the input had been XHTML with the namespace declared
+                  namespace by the HTML parser, and will appear to applications as if the input had
+                  been XHTML with the namespace declared
                   as in the previous section. See <a href="#interf.html">Section 6.4.3 Mixing MathML and HTML</a> for detailed rules of the HTML parser's handling of MathML.
                </p>
             </div>
@@ -673,7 +776,8 @@ padding-right: 1em;
                   
                   <h4><a id="id.6.3.4.3"></a>6.3.4.3 Example 3
                   </h4>
-                  <p>A schema-based content management system on the Mac OS X platform contains multiple MathML 
+                  <p>A schema-based content management system on the Mac OS X platform contains multiple
+                     MathML 
                      representations of a collection of mathematical expressions, including mixed 
                      markup from authors, pure content markup for interfacing to symbolic computation 
                      engines, and pure presentation markup for print publication. Due to the system's 
@@ -765,7 +869,8 @@ padding-right: 1em;
     &lt;annotation encoding="image/tiff" src="formula3848.tiff"/&gt;
   &lt;/semantics&gt;
 &lt;/math&gt;
-</pre><p>A web-browser on the Windows platform that receives such a fragment and tries to export it as part of
+</pre><p>A web-browser on the Windows platform that receives such a fragment and tries to export
+                     it as part of
                      a drag-and-drop action, can offer the following flavors:
                   </p>
                   
@@ -899,9 +1004,10 @@ padding-right: 1em;
                that indicates the error.
                
             </p>
-            <p>When designing a compound document format in which MathML is included in a larger document type, the designer may extend the
-               content model of MathML to allow additional elements. For example, a common extension is to extend the MathML schema such
-               that elements from non-MathML namespaces are
+            <p>When designing a compound document format in which MathML is included in a larger
+               document type, the designer may extend the content model of MathML to allow additional
+               elements. For example, a common extension is to extend the MathML schema such that
+               elements from non-MathML namespaces are
                allowed in token elements, but not in other elements. MathML processors that
                encounter unknown markup should behave as follows:
                
@@ -923,7 +1029,9 @@ padding-right: 1em;
                   </p>
                </li>
             </ol>
-            <p>Extending the schema in this way is easily achieved using the Relax NG schema described in <a href="appendixa.xml">Appendix A Parsing MathML</a>, it may be as simple as including the MathML schema whilst overriding the content model of <code>mtext</code>:
+            <p>Extending the schema in this way is easily achieved using the Relax NG schema described
+               in <a href="appendixa.xml">Appendix A Parsing MathML</a>, it may be as simple as including the MathML schema whilst overriding the content
+               model of <code>mtext</code>:
                
             </p><pre>
 
@@ -933,8 +1041,9 @@ include "mathml3.rnc" {
 mtext = element mtext {mtext.attributes, (token.content|anyElement)*}
 }
 </pre><p>
-               The definition given here would allow any well formed XML that is not in the MathML namespace as a child of <code>mtext</code>. In practice this may be too lax. For example, an XHTML+MathML Schema may just want to allow inline XHTML elements as additional
-               children of <code>mtext</code>. This may be achieved by replacing <code>anyElement</code> by a suitable production from the schema for the host document type, see <a href="#interf.xhtml">Section 6.4.1 Mixing MathML and XHTML</a>.
+               The definition given here would allow any well formed XML that is not in the MathML
+               namespace as a child of <code>mtext</code>. In practice this may be too lax. For example, an XHTML+MathML Schema may just want
+               to allow inline XHTML elements as additional children of <code>mtext</code>. This may be achieved by replacing <code>anyElement</code> by a suitable production from the schema for the host document type, see <a href="#interf.xhtml">Section 6.4.1 Mixing MathML and XHTML</a>.
             </p>
             <p>Considerations about mixing markup vocabularies in compound
                documents arise when a compound document type is first designed.
@@ -985,13 +1094,15 @@ mtext = element mtext {mtext.attributes, (token.content|anyElement)*}
                
                <h3><a id="interf.xhtml"></a>6.4.1 Mixing MathML and XHTML
                </h3>
-               <p>To fully integrate MathML into XHTML, it should be possible not only to embed MathML in
+               <p>To fully integrate MathML into XHTML, it should be possible not only to embed MathML
+                  in
                   XHTML, but also to embed XHTML in MathML.
                   The schema used for the W3C HTML5 validator extends <code>mtext</code> to allow all
                   inline (phrasing) HTML elements (including <code>svg</code>) to be used within the
                   content of <code>mtext</code>. See the example in <a href="chapter3.xml#presm.html.insertion">Section 3.2.2.2 Embedding HTML in MathML</a>. As noted above,
                   MathML fragments using XHTML elements within <code>mtext</code> will not be valid MathML if extracted
-                  from the document and used in isolation. Editing tools may offer support for removing any HTML
+                  from the document and used in isolation. Editing tools may offer support for removing
+                  any HTML
                   markup from within <code>mtext</code> and replacing it by a text alternative.
                </p>
                <p>In most cases, XHTML elements (headings, paragraphs, lists, etc.)
@@ -1010,13 +1121,17 @@ mtext = element mtext {mtext.attributes, (token.content|anyElement)*}
                <h3><a id="interf.nonxml"></a>6.4.2 Mixing MathML and  non-XML contexts
                </h3>
                <p>There may be non-XML vocabularies which require markup for mathematical expressions,
-                  where it makes sense to reference this specification. HTML is an important example discussed in the
-                  next section, however other examples exist. It is possible to use a TeX-like syntax such as
+                  where it makes sense to reference this specification. HTML is an important example
+                  discussed in the
+                  next section, however other examples exist. It is possible to use a TeX-like syntax
+                  such as
                   <code>\frac{a}{b}</code> rather than explicitly using <code>&lt;mfrac&gt;</code> and <code>&lt;mi&gt;</code>. If a system parses a specified syntax and produces a tree that may be
                   validated against the <a href="appendixa.xml">MathML schema</a> then it may be viewed as
-                  as a MathML application. Note however that documents using such a system are not valid MathML.
+                  as a MathML application. Note however that documents using such a system are not valid
+                  MathML.
                   Implementations of such a syntax should, if possible, offer a facility to
-                  output any mathematical expressions as MathML in the XML syntax defined here. Such an application
+                  output any mathematical expressions as MathML in the XML syntax defined here. Such
+                  an application
                   would then be a MathML-output-conformant processor as described in <a href="chapter2.xml#fund.mathmlconf">Section 2.3.1 MathML Conformance</a>.
                </p>
             </div>
@@ -1025,18 +1140,24 @@ mtext = element mtext {mtext.attributes, (token.content|anyElement)*}
                <h3><a id="interf.html"></a>6.4.3 Mixing MathML and HTML
                </h3>
                <p>An important example of a non-XML based system is defined in <a href="appendixg.xml#HTML5">[HTML5]</a>. When
-                  considering MathML in HTML there are two separate issues to consider. Firstly the schema is extended
+                  considering MathML in HTML there are two separate issues to consider. Firstly the
+                  schema is extended
                   to allow HTML in <code>mtext</code> as described above in the context of XHTML. Secondly an HTML parser
-                  is used rather than an XML parser. The parsing of MathML by an HTML parser is normatively defined in
+                  is used rather than an XML parser. The parsing of MathML by an HTML parser is normatively
+                  defined in
                   <a href="appendixg.xml#HTML5">[HTML5]</a>. The description there is aimed at parser implementers and written in terms of
                   the state transitions of the parser as it parses each character of the input. The
                   <em>non-normative</em> description below aims to give a higher level description and
                   examples.
                </p>
-               <p>XML parsing is completely regular, any XML document may be parsed without reference to the
-                  particular vocabulary being used. HTML parsing differs in that it is a custom parser for the
-                  HTML vocabulary with specific rules for each element. Similarly to XML though, the HTML parser
-                  distinguishes parsing from validation; some input, even if it renders correctly, is classed as a
+               <p>XML parsing is completely regular, any XML document may be parsed without reference
+                  to the
+                  particular vocabulary being used. HTML parsing differs in that it is a custom parser
+                  for the
+                  HTML vocabulary with specific rules for each element. Similarly to XML though, the
+                  HTML parser
+                  distinguishes parsing from validation; some input, even if it renders correctly, is
+                  classed as a
                   <em>parse error</em>  which may be reported by validators (but typically is not reported by
                   rendering systems).
                </p>
@@ -1053,21 +1174,25 @@ mtext = element mtext {mtext.attributes, (token.content|anyElement)*}
                      <p>End tags may in many cases be omitted.</p>
                   </li>
                   <li>
-                     <p>HTML does not support namespaces other than the three built in ones for HTML, MathML and SVG, and
+                     <p>HTML does not support namespaces other than the three built in ones for HTML, MathML
+                        and SVG, and
                         does not support namespace prefixes. Thus you can not use a prefix form like <code>&lt;mml:math
                            xmlns:mml="http://www.w3.org/1998/Math/MathML"&gt;</code> and while you may use  <code>&lt;math
                            xmlns="http://www.w3.org/1998/Math/MathML"&gt;</code>, the namespace declaration is essentially ignored
                         and the input is treated as <code>&lt;math&gt;</code>. In either case the <code>math</code> element and its
                         descendants are placed in the MathML namespace. As noted in <a href="chapter5.xml">Chapter 5 Mixing Markup Languages for Mathematical Expressions</a> the lack of
-                        namespace support limits some of the possibilities for annotating MathML with markup from other
+                        namespace support limits some of the possibilities for annotating MathML with markup
+                        from other
                         vocabularies when used in HTML.
                      </p>
                   </li>
                   <li>
                      <p>Unlike the XML parser, the HTML parser is defined to accept <em>any</em> input string
-                        and produce a defined result (which may be classified as non-conforming. The extreme example
+                        and produce a defined result (which may be classified as non-conforming. The extreme
+                        example
                         <code>&lt;math&gt;&lt;/&lt;&gt;&lt;z =5&gt;</code>
-                        for example would be flagged as a parse error by validators but would return a tree corresponding to
+                        for example would be flagged as a parse error by validators but would return a tree
+                        corresponding to
                         a math element containing a comment <code>&lt;</code> and an element <code>z</code> with an attribute
                         that could not be expressed in XML with name <code>=5</code> and value <code>""</code>.
                      </p>
@@ -1077,16 +1202,20 @@ mtext = element mtext {mtext.attributes, (token.content|anyElement)*}
                         <code>&lt;ms&gt;</code>, or inside an <code>&lt;annotation-xml&gt;</code> with <code>encoding</code> attribute
                         "text/html" or "annotation/xhtml+xml", the presence of an HTML element
                         will <em>terminate</em> the math expression by closing all open MathML elements, so
-                        that the HTML element is interpreted as being in the outer HTML context. Any following MathML
+                        that the HTML element is interpreted as being in the outer HTML context. Any following
+                        MathML
                         elements are then not contained in <code>&lt;math&gt;</code> so will be parsed as invalid HTML elements and not
                         rendered as MathML. See for example the example given in <a href="chapter5.xml#html.annotation.xml">Section 5.2.3.3 Using <code>annotation-xml</code> in HTML documents</a>.
                      </p>
                   </li>
                </ul>
-               <p>In the interests of compatibility with existing MathML applications authors and editing systems
+               <p>In the interests of compatibility with existing MathML applications authors and editing
+                  systems
                   <em>should</em> use MathML fragments that are well formed XML, even when embedded in an HTML
-                  document. Also as noted above, although applications accepting MathML in HTML documents must accept
-                  MathML making use of these HTML parser features, they should offer a way to export MathML in a
+                  document. Also as noted above, although applications accepting MathML in HTML documents
+                  must accept
+                  MathML making use of these HTML parser features, they should offer a way to export
+                  MathML in a
                   portable XML syntax.
                </p>
             </div>
@@ -1198,15 +1327,16 @@ mtext = element mtext {mtext.attributes, (token.content|anyElement)*}
                   intersection of two sets.
                   The first one is in the "Scalable Vector
                   Graphics" format <a href="appendixh.xml#SVG1.1">[SVG1.1]</a>
-                  (see <a href="appendixh.xml#XHTML-MathML-SVG">[XHTML-MathML-SVG]</a> for the definition of an XHTML profile integrating MathML and SVG), the second one uses the
+                  (see <a href="appendixh.xml#XHTML-MathML-SVG">[XHTML-MathML-SVG]</a> for the definition of an XHTML profile integrating MathML and SVG), the second one
+                  uses the
                   XHTML <code>img</code> element embedded as an XHTML fragment.
                   In this situation, a MathML processor can use any of these
                   representations for display,  perhaps producing a graphical format
                   such as the image below.
                </p>
-               <blockquote>
+               <div class="graphic">
                   <p><img src="image/intersect.gif" alt="\includegraphics{image/intersect}" /></p>
-               </blockquote>
+               </div>
                <p>Note that the semantics representation of this example is given
                   in  MathML-Content markup, as the first child of the
                   <code>semantics</code> element.  In this regard, it is the
@@ -1222,12 +1352,15 @@ mtext = element mtext {mtext.attributes, (token.content|anyElement)*}
             </h2>
             <p>When MathML is rendered in an environment that supports CSS <a href="appendixh.xml#CSS21">[CSS21]</a>,
                controlling mathematics style properties with a CSS style sheet is desirable,
-               but not as simple as it might first appear, because the formatting of MathML layout schemata
-               is quite different from the CSS visual formatting model and many of the style parameters that affect
+               but not as simple as it might first appear, because the formatting of MathML layout
+               schemata
+               is quite different from the CSS visual formatting model and many of the style parameters
+               that affect
                mathematics layout have no direct textual analogs.
                Even in cases where there are analogous properties, the sensible values for
                these properties may not correspond. 
-               Because of this difference, applications that support MathML natively may choose to 
+               Because of this difference, applications that support MathML natively may choose to
+               
                restrict the CSS properties applicable to MathML layout schemata to those 
                properties that do not affect layout.
                
