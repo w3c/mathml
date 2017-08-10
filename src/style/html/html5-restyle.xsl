@@ -29,9 +29,8 @@
 'appendixh',
 'appendixi'"/>
 
-<xsl:template match="meta[@http-equiv='Content-Type']/@content">
- <xsl:attribute name="content" select="'text/html'"/>
-</xsl:template>
+<xsl:template match="meta[@http-equiv='Content-Type']"/>
+
 
 <xsl:template match="@*|node()">
 <xsl:copy copy-namespaces="no">
@@ -77,7 +76,7 @@
 <xsl:template name="main">
 <xsl:text>&#1002;!DOCTYPE html&#1003;</xsl:text>
 <xsl:text>&#10;</xsl:text>
-<html>
+<html lang="en">
 <xsl:text>&#10;</xsl:text>
 <head>
 <xsl:text>&#10;</xsl:text>
