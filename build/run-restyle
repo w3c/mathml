@@ -87,7 +87,6 @@ echo "fixing mmlcss id"
 sed -i 's/<a name="mmlcss" id="mmlcss"><\/a> //' chapter6-d.html
 
 
-# exit
 
 echo "making xhtml stylesheets"
 echo "  " mmldiff
@@ -124,14 +123,14 @@ do
  rxp -sxV $i 
 done
 
-exit
+
 
 echo ""
 echo "making single file HTML (+MathML) version"
 mv mathml.dtd  tmp.dtd
 echo "" > mathml.dtd
-cp  $HSTYLE/html5.xsl .
-$SAXON  -o:mathml.html   -it main html5.xsl
+cp  $HSTYLE/html5-restyle.xsl .
+$SAXON  -o:mathml.html   -it:main html5-restyle.xsl
 sed -i -e "s@></input></mtext>@/></mtext>@" mathml.html
 rm html5.xsl
 mv tmp.dtd mathml.dtd
