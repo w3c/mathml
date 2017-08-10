@@ -1646,7 +1646,7 @@ for this document, which may include some normative corrections.</p>
 
   <!-- spec: the specification itself -->
   <xsl:template match="spec">
-    <html>
+    <html lang="en">
       <xsl:if test="header/langusage/language">
         <xsl:attribute name="lang">
           <xsl:value-of select="header/langusage/language/@id"/>

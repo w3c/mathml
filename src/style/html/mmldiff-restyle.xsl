@@ -169,7 +169,7 @@ padding-right: 1em;
 
 
 <xsl:template name="do-spec">
-    <html>
+    <html lang="en">
       <xsl:if test="header/language/language/@id">
         <xsl:attribute name="lang">
           <xsl:value-of select="header/language/language/@id"/>
