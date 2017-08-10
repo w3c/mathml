@@ -768,7 +768,7 @@ summary="Navigation TOC"
           </xsl:attribute>
         </xsl:if>
         <xsl:if test="../@id">
-          <a name="{../@id}" id="{../@id}"/>
+          <a id="{../@id}"/>
         </xsl:if>
         <xsl:apply-templates select="ancestor::prod" mode="number"/>
 <!--
@@ -1856,7 +1856,7 @@ import org.w3c.</xsl:text><xsl:value-of select="$theSource"/>
 <!-- javaInterfaces Templates -->
 
 <xsl:template match="interface" mode="javaInterfaces">
-  <h3><a name="{generate-id()}" id="{generate-id()}"/>
+  <h3 id="{generate-id()}">
   <xsl:text>org/w3c/dom/mathml/</xsl:text><xsl:value-of select="@name"/><xsl:text>.java</xsl:text>
   </h3>
   <div class="IDL-definition"><pre>
@@ -2815,7 +2815,7 @@ for this document, which may include some normative corrections.</p>
 
 <!-- don't put [Definition ... ] around termdef elements-->
 <xsl:template match="termdef">
-  <a name="{@id}" id="{@id}"></a>
+  <a id="{@id}"></a>
   <xsl:apply-templates/>
 </xsl:template>
 
