@@ -56,7 +56,7 @@ It does the following things:
                 xmlns="http://www.w3.org/1999/xhtml"
 xmlns:lxslt="http://xml.apache.org/xslt"
                 xmlns:xalanredirect="org.apache.xalan.xslt.extensions.Redirect"
-                version="1.0"
+                version="2.0"
                 >
 
 <xsl:output method="xml" indent="no"/>
@@ -120,6 +120,7 @@ xmlns:lxslt="http://xml.apache.org/xslt"
       name(.)='doctype-system' or
       name(.)='indent'
       )  ]"/>
+  <xsl:attribute name="version" select="'1.0'"/>
   <xsl:apply-templates/>
 </xsl:copy>
 </xsl:template>
