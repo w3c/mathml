@@ -2507,7 +2507,7 @@ for this document, which may include some normative corrections.</p>
     <xsl:text>&#10;</xsl:text>
     <table>
         <!-- Wait: some of these aren't HTML attributes after all... -->
-        <xsl:copy-of select="@* except (@diff,@role,@rowspan[.=1],@colspan[.=1],@border[../@role='attributes'],@border)"/>
+        <xsl:copy-of select="@* except (@diff,@role,@rowspan[.=1],@colspan[.=1],@border[../@role='attributes'],@border,@width)"/>
         <xsl:if test="@id">
          <xsl:attribute name="id" select="translate(@id,'_','.')"/>
         </xsl:if>
@@ -2516,6 +2516,9 @@ for this document, which may include some normative corrections.</p>
         </xsl:if>
       <xsl:if test="not((@class,@role)) and @border=1">
        <xsl:attribute name="class" select="'data'"/>
+      </xsl:if>
+      <xsl:if test="not((@style)) and @width='100%'">
+       <xsl:attribute name="style" select="'width:100%'"/>
       </xsl:if>
       <xsl:apply-templates/>
 
