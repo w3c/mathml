@@ -1,9 +1,24 @@
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Introduction</title><style type="text/css">
+
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
 
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
@@ -153,33 +168,55 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/base.css">
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css">
    </head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br> Draft</b></div>
       
-      <h1><a name="intro" id="intro"></a>1 Introduction
+      <h1><a id="intro"></a>1 Introduction
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview-d.html">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br>
-         Next: 2 <a href="chapter2-d.html">MathML Fundamentals</a><br><br>
-         1 <a href="chapter1-d.html">Introduction</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;1.1 <a href="chapter1-d.html#intro.notation">Mathematics and its Notation</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;1.2 <a href="chapter1-d.html#intro.origin">Origins and Goals</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.1 <a href="chapter1-d.html#intro.goals">Design Goals of MathML</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;1.3 <a href="chapter1-d.html#intro.overview">Overview</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;1.4 <a href="chapter1-d.html#intro.example">A First Example</a><br>
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview-d.html"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="chapter2-d.html"><span class="secno">2 </span> MathML Fundamentals</a></li>
+            
+            
+            <li><a href="chapter1-d.html"><span class="secno">1 </span>&nbsp;Introduction</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="chapter1-d.html#intro.notation"><span class="secno">1.1 </span>&nbsp;Mathematics and its Notation</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter1-d.html#intro.origin"><span class="secno">1.2 </span>&nbsp;Origins and Goals</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter1-d.html#intro.goals"><span class="secno">1.2.1 </span>&nbsp;Design Goals of MathML</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter1-d.html#intro.overview"><span class="secno">1.3 </span>&nbsp;Overview</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter1-d.html#intro.example"><span class="secno">1.4 </span>&nbsp;A First Example</a>
+                     
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <div class="div2">
             
-            <h2><a name="intro.notation" id="intro.notation"></a>1.1 Mathematics and its Notation
+            <h2><a id="intro.notation"></a>1.1 Mathematics and its Notation
             </h2>
             <p>A distinguishing feature of mathematics is the use of a complex and
                highly evolved system of two-dimensional symbolic notation.  As
@@ -265,11 +302,11 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="intro.origin" id="intro.origin"></a>1.2 Origins and Goals
+            <h2><a id="intro.origin"></a>1.2 Origins and Goals
             </h2>
             <div class="div3">
                
-               <h3><a name="intro.goals" id="intro.goals"></a>1.2.1 Design Goals of MathML
+               <h3><a id="intro.goals"></a>1.2.1 Design Goals of MathML
                </h3>
                <p>MathML  has   been  designed  from the beginning with  the  following
                   ultimate goals in mind.
@@ -385,7 +422,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="intro.overview" id="intro.overview"></a>1.3 Overview
+            <h2><a id="intro.overview"></a>1.3 Overview
             </h2>
             <p>
                MathML is a markup language for describing mathematics.
@@ -400,8 +437,8 @@ padding-right: 1em;
                an XML
                format called Content Dictionaries
                This format has been developed by the
-               OpenMath Society, <a href="appendixg-d.html#OpenMath2004">[OpenMath2004]</a> with the dictionaries being used by this specification involving joint development by the OpenMath Society and the W3C Math
-               Working Group.
+               OpenMath Society, <a href="appendixg-d.html#OpenMath2004">[OpenMath2004]</a> with the dictionaries being used by this specification involving joint development
+               by the OpenMath Society and the W3C Math Working Group.
                
             </p>
             <p>Fundamentals common to both strains of markup
@@ -418,7 +455,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="intro.example" id="intro.example"></a>1.4 A First Example
+            <h2><a id="intro.example"></a>1.4 A First Example
             </h2>
             <p>
                The quadratic formula provides a 

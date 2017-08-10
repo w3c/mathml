@@ -1,9 +1,24 @@
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Operator Dictionary</title><style type="text/css">
+
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
 
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
@@ -153,28 +168,45 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/base.css"><script type="text/javascript" src="sorttable.js"></script></head>
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css"><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script><script type="text/javascript" src="sorttable.js"></script></head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br> Draft</b></div>
       
-      <h1><a name="oper-dict" id="oper-dict"></a>C Operator Dictionary (Non-Normative)
+      <h1><a id="oper-dict"></a>C Operator Dictionary (Non-Normative)
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview-d.html">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br>
-         Previous: B <a href="appendixb-d.html">Media Types Registrations</a><br>
-         Next: D <a href="appendixd-d.html">Glossary</a><br><br>
-         C <a href="appendixc-d.html">Operator Dictionary (Non-Normative)</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;C.1 <a href="appendixc-d.html#oper-dict.index">Indexing of the operator dictionary</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;C.2 <a href="appendixc-d.html#oper-dict.format">Format of operator dictionary entries</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;C.3 <a href="appendixc-d.html#oper-dict.space">Notes on lspace and 
-            rspace attributes</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;C.4 <a href="appendixc-d.html#oper-dict.entries-table">Operator dictionary entries</a><br>
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview-d.html"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="appendixb-d.html"><span class="secno">B </span> Media Types Registrations</a></li>
+            <li><a href="appendixd-d.html"><span class="secno">D </span> Glossary</a></li>
+            
+            
+            <li><a href="appendixc-d.html"><span class="secno">C </span>&nbsp;Operator Dictionary (Non-Normative)</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="appendixc-d.html#oper-dict.index"><span class="secno">C.1 </span>&nbsp;Indexing of the operator dictionary</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixc-d.html#oper-dict.format"><span class="secno">C.2 </span>&nbsp;Format of operator dictionary entries</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixc-d.html#oper-dict.space"><span class="secno">C.3 </span>&nbsp;Notes on lspace and 
+                        rspace attributes</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixc-d.html#oper-dict.entries-table"><span class="secno">C.4 </span>&nbsp;Operator dictionary entries</a>
+                     
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <p>The following table gives the suggested dictionary of rendering
@@ -185,7 +217,7 @@ padding-right: 1em;
          </p>
          <div class="div2">
             
-            <h2><a name="oper-dict.index" id="oper-dict.index"></a>C.1 Indexing of the operator dictionary
+            <h2><a id="oper-dict.index"></a>C.1 Indexing of the operator dictionary
             </h2>
             <p>Note that the dictionary is indexed not just by the element
                content, but by the element content and <code>form</code> attribute
@@ -202,13 +234,14 @@ padding-right: 1em;
             </p>
             <p>In the table below, all non-ASCII characters are represented by
                XML-style hexadecimal numeric character references.
-               The choice of markup (character data, numeric character reference or named entity reference)
+               The choice of markup (character data, numeric character reference or named entity
+               reference)
                for a given character in MathML has no effect on its rendering.
             </p>
          </div>
          <div class="div2">
             
-            <h2><a name="oper-dict.format" id="oper-dict.format"></a>C.2 Format of operator dictionary entries
+            <h2><a id="oper-dict.format"></a>C.2 Format of operator dictionary entries
             </h2>
             <p>Each row of the table is indexed as described above by the both the character
                (given by code point and Unicode Name) and the value of the form attribute.
@@ -223,7 +256,8 @@ padding-right: 1em;
             <p>The length valued attributes such as <code>lspace</code> are given explicitly in the following columns.
                Boolean valued attributes such as <code>stretchy</code> are specified together in the final <b>Properties</b>
                column by listing the attribute name if its value should be set to <b>true</b> by the dictionary.
-               Finally some rarely used non-boolean properties are shown in the Properties column together with a value,
+               Finally some rarely used non-boolean properties are shown in the Properties column
+               together with a value,
                for example <code>linebreakstyle</code>=after.
             </p>
             <p>Any attribute not listed for some entry has its default value,
@@ -273,7 +307,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="oper-dict.space" id="oper-dict.space"></a>C.3 Notes on <code>lspace</code> and 
+            <h2><a id="oper-dict.space"></a>C.3 Notes on <code>lspace</code> and 
                <code>rspace</code> attributes
             </h2>
             <p>The values for <code>lspace</code> and <code>rspace</code> given here range from 0 to 7,
@@ -354,7 +388,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="oper-dict.entries-table" id="oper-dict.entries-table"></a>C.4 Operator dictionary entries
+            <h2><a id="oper-dict.entries-table"></a>C.4 Operator dictionary entries
             </h2>
             
             <table class="sortable">

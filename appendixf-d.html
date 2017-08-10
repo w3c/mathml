@@ -1,9 +1,24 @@
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Changes</title><style type="text/css">
+
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
 
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
@@ -153,32 +168,45 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/base.css">
-   </head>
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css"><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script></head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br> Draft</b></div>
       
-      <h1><a name="changes" id="changes"></a>F Changes (Non-Normative)
+      <h1><a id="changes"></a>F Changes (Non-Normative)
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview-d.html">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br>
-         Previous: E <a href="appendixe-d.html">Working Group Membership and Acknowledgments</a><br>
-         Next: G <a href="appendixg-d.html">Normative References</a><br><br>
-         F <a href="appendixf-d.html">Changes (Non-Normative)</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;F.1 <a href="appendixf-d.html#changes.mathml3.03e-mathml3.02e">Changes between MathML 3.0 Second Edition and Third Edition</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;F.2 <a href="appendixf-d.html#changes.mathml3.02e-3.0">Changes between MathML 3.0 First Edition and Second Edition</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;F.3 <a href="appendixf-d.html#changes.mathml2.0e-3.0">Changes between MathML 2.0 Second Edition and MathML 3.0</a><br>
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview-d.html"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="appendixe-d.html"><span class="secno">E </span> Working Group Membership and Acknowledgments</a></li>
+            <li><a href="appendixg-d.html"><span class="secno">G </span> Normative References</a></li>
+            
+            
+            <li><a href="appendixf-d.html"><span class="secno">F </span>&nbsp;Changes (Non-Normative)</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="appendixf-d.html#changes.mathml3.03e-mathml3.02e"><span class="secno">F.1 </span>&nbsp;Changes between MathML 3.0 Second Edition and Third Edition</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixf-d.html#changes.mathml3.02e-3.0"><span class="secno">F.2 </span>&nbsp;Changes between MathML 3.0 First Edition and Second Edition</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixf-d.html#changes.mathml2.0e-3.0"><span class="secno">F.3 </span>&nbsp;Changes between MathML 2.0 Second Edition and MathML 3.0</a>
+                     
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <div class="div2">
             
-            <h2><a name="changes.mathml3.03e-mathml3.02e" id="changes.mathml3.03e-mathml3.02e"></a>F.1 Changes between MathML 3.0 Second Edition and Third Edition
+            <h2><a id="changes.mathml3.03e-mathml3.02e"></a>F.1 Changes between MathML 3.0 Second Edition and Third Edition
             </h2>
             <ul>
                <li>
@@ -236,7 +264,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="changes.mathml3.02e-3.0" id="changes.mathml3.02e-3.0"></a>F.2 Changes between MathML 3.0 First Edition and Second Edition
+            <h2><a id="changes.mathml3.02e-3.0"></a>F.2 Changes between MathML 3.0 First Edition and Second Edition
             </h2>
             <ul>
                <li>
@@ -338,8 +366,8 @@ padding-right: 1em;
                         </p>
                      </li>
                      <li>
-                        <p>Do not specify that Math defaults may be set by using attributes in the MathML Namespace on the containing document, leave
-                           the mechanism open. <a href="chapter3-d.html#presm.mo">Section&nbsp;3.2.5 Operator, Fence, Separator or Accent
+                        <p>Do not specify that Math defaults may be set by using attributes in the MathML Namespace
+                           on the containing document, leave the mechanism open. <a href="chapter3-d.html#presm.mo">Section&nbsp;3.2.5 Operator, Fence, Separator or Accent
                               <code>&lt;mo&gt;</code></a></p>
                      </li>
                      <li>
@@ -372,7 +400,8 @@ padding-right: 1em;
                         </p>
                      </li>
                      <li>
-                        <p>Changes to the attribute table <a href="chapter3-d.html#presm.mpaddedatt">Section&nbsp;3.3.6.2 Attributes</a> To clarify that unitless lengths are allowed on <code>mpadded</code>, meaning, as usual, a multiplier of the stated default. Note that this change also affects the <code>mpadded-length</code> grammar uin the extracted schema.
+                        <p>Changes to the attribute table <a href="chapter3-d.html#presm.mpaddedatt">Section&nbsp;3.3.6.2 Attributes</a> To clarify that unitless lengths are allowed on <code>mpadded</code>, meaning, as usual, a multiplier of the stated default. Note that this change also
+                           affects the <code>mpadded-length</code> grammar uin the extracted schema.
                         </p>
                      </li>
                      <li>
@@ -433,12 +462,13 @@ padding-right: 1em;
                         </p>
                      </li>
                      <li>
-                        <p>Additional note added to the <a href="chapter4-d.html#contm.ci.mathmltypes">mathmltypes</a> description clarifying that "complex" should be taken as an alias for "complex-cartesian" when rewriting to Strict Content
-                           MathML. (AM)
+                        <p>Additional note added to the <a href="chapter4-d.html#contm.ci.mathmltypes">mathmltypes</a> description clarifying that "complex" should be taken as an alias for "complex-cartesian"
+                           when rewriting to Strict Content MathML. (AM)
                         </p>
                      </li>
                      <li>
-                        <p>Changes to <a href="chapter4-d.html#s.data1.mean.ex1">s_data1.mean</a>, <a href="chapter4-d.html#s.dist1.mean.ex1">s_dist1.mean</a>, <a href="chapter4-d.html#s.dist1.moment.ex1">s_dist1.moment</a> and <a href="chapter4-d.html#s.data1.moment.ex1">s_data1.moment</a> examples to use new values for &amp;lang; and &amp;rang; so the result is in Unicode NFC form.
+                        <p>Changes to <a href="chapter4-d.html#s.data1.mean.ex1">s_data1.mean</a>, <a href="chapter4-d.html#s.dist1.mean.ex1">s_dist1.mean</a>, <a href="chapter4-d.html#s.dist1.moment.ex1">s_dist1.moment</a> and <a href="chapter4-d.html#s.data1.moment.ex1">s_data1.moment</a> examples to use new values for &amp;lang; and &amp;rang; so the result is in Unicode NFC
+                           form.
                         </p>
                      </li>
                      <li>
@@ -599,8 +629,9 @@ padding-right: 1em;
                   </p>
                   <ul>
                      <li>
-                        <p>Change the DTD description in <a href="chapter7-d.html#chars.entities">Section&nbsp;7.3 Entity Declarations</a> to reference the Combined HTML MathML entity set rather than the legacy ISO entity sets. This does not change any existing
-                           definition, but adds the following 38 entity definitions:
+                        <p>Change the DTD description in <a href="chapter7-d.html#chars.entities">Section&nbsp;7.3 Entity Declarations</a> to reference the Combined HTML MathML entity set rather than the legacy ISO entity
+                           sets. This does not change any existing definition, but adds the following 38 entity
+                           definitions:
                            <code>&amp;QUOT;</code> (U+0022), 
                            <code>&amp;AMP;</code> (U+0026), 
                            <code>&amp;LT;</code> (U+003C), 
@@ -655,7 +686,8 @@ padding-right: 1em;
                         </p>
                      </li>
                      <li>
-                        <p>Modify the schema (including DTD and XSD versions) to include the attributes listed in <a href="chapter3-d.html#presm.lbindent.attrs">Section&nbsp;3.2.5.2.3 Indentation attributes</a> on <code>mspace</code> to match the text description in <a href="chapter3-d.html#presm.mspace">Section&nbsp;3.2.7 Space <code>&lt;mspace/&gt;</code></a>.
+                        <p>Modify the schema (including DTD and XSD versions) to include the attributes listed
+                           in <a href="chapter3-d.html#presm.lbindent.attrs">Section&nbsp;3.2.5.2.3 Indentation attributes</a> on <code>mspace</code> to match the text description in <a href="chapter3-d.html#presm.mspace">Section&nbsp;3.2.7 Space <code>&lt;mspace/&gt;</code></a>.
                         </p>
                      </li>
                      <li>
@@ -736,7 +768,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="changes.mathml2.0e-3.0" id="changes.mathml2.0e-3.0"></a>F.3 Changes between MathML 2.0 Second Edition and MathML 3.0
+            <h2><a id="changes.mathml2.0e-3.0"></a>F.3 Changes between MathML 2.0 Second Edition and MathML 3.0
             </h2>
             <ul>
                <li>
@@ -759,7 +791,8 @@ padding-right: 1em;
                   </p>
                   <ul>
                      <li>
-                        <p>Introduced mechanisms for controlling the Directionality of layout, as described in <a href="chapter3-d.html#presm.bidi">Section&nbsp;3.1.5 Directionality</a>.
+                        <p>Introduced mechanisms for controlling the Directionality of layout, as described in
+                           <a href="chapter3-d.html#presm.bidi">Section&nbsp;3.1.5 Directionality</a>.
                         </p>
                      </li>
                      <li>
@@ -799,8 +832,8 @@ padding-right: 1em;
                         </p>
                      </li>
                      <li>
-                        <p>The concept of Strict Content MathML and the use of OpenMath Content Dictionaries has been introduced, and the whole chapter
-                           restructured.
+                        <p>The concept of Strict Content MathML and the use of OpenMath Content Dictionaries
+                           has been introduced, and the whole chapter restructured.
                         </p>
                      </li>
                   </ul>
@@ -816,18 +849,23 @@ padding-right: 1em;
                <li>
                   <p>Changes to <a href="chapter7-d.html">Chapter&nbsp;7 Characters, Entities and Fonts</a>.
                   </p>
-                  <p>This chapter is much reduced from the corresponding chapter in previous releases of MathML. All the tables and much of the
-                     other content of this chapter is now maintained as a separate document <a href="appendixg-d.html#Entities">[Entities]</a></p>
+                  <p>This chapter is much reduced from the corresponding chapter in previous releases of
+                     MathML. All the tables and much of the other content of this chapter is now maintained
+                     as a separate document <a href="appendixg-d.html#Entities">[Entities]</a></p>
                </li>
                <li>
                   <p>Changes to <a href="appendixa-d.html">Appendix&nbsp;A Parsing MathML</a>.
                   </p>
                   <ul>
                      <li>
-                        <p>The Normative version of the grammar is now expressed in Relax NG, with DTD and XSD versions being derived.</p>
+                        <p>The Normative version of the grammar is now expressed in Relax NG, with DTD and XSD
+                           versions being derived.
+                        </p>
                      </li>
                      <li>
-                        <p>Three MathML 1 attrbutes on <code>math</code> that were deprecated and undocumented in MathML2 but retained in the MathML2 DTD have been removed. <code>name</code> (use <code>id</code> instead), <code>baseline</code> and <code>type</code> (These are not used by any known implementation, so can be removed.) See Chapter 7 of <a href="appendixh-d.html#MathML1">[MathML1]</a>.
+                        <p>Three MathML 1 attrbutes on <code>math</code> that were deprecated and undocumented in MathML2 but retained in the MathML2 DTD
+                           have been removed. <code>name</code> (use <code>id</code> instead), <code>baseline</code> and <code>type</code> (These are not used by any known implementation, so can be removed.) See Chapter
+                           7 of <a href="appendixh-d.html#MathML1">[MathML1]</a>.
                         </p>
                      </li>
                   </ul>
@@ -839,12 +877,15 @@ padding-right: 1em;
                <li>
                   <p>Changes to <a href="appendixc-d.html">Appendix&nbsp;C Operator Dictionary</a>.
                   </p>
-                  <p>The Operator Dictionary table has been updated and rationalised and presented in a new format.</p>
+                  <p>The Operator Dictionary table has been updated and rationalised and presented in a
+                     new format.
+                  </p>
                </li>
                <li>
                   <p>MathML DOM</p>
-                  <p>The chapter and appendices relating to the MathML DOM have been removed from this specification, with the intention of updating
-                     them and publishing them as a separate document at a later time.
+                  <p>The chapter and appendices relating to the MathML DOM have been removed from this
+                     specification, with the intention of updating them and publishing them as a separate
+                     document at a later time.
                   </p>
                </li>
             </ul>

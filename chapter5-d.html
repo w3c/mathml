@@ -1,9 +1,24 @@
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Mixing Markup Languages for Mathematical Expressions</title><style type="text/css">
+
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
 
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
@@ -153,47 +168,135 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/base.css">
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css">
    </head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br> Draft</b></div>
       
-      <h1><a name="mixing" id="mixing"></a>5 Mixing Markup Languages for Mathematical Expressions
+      <h1><a id="mixing"></a>5 Mixing Markup Languages for Mathematical Expressions
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview-d.html">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br>
-         Previous: 4 <a href="chapter4-d.html">Content Markup</a><br>
-         Next: 6 <a href="chapter6-d.html">Interactions with the Host Environment</a><br><br>
-         5 <a href="chapter5-d.html">Mixing Markup Languages for Mathematical Expressions</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;5.1 <a href="chapter5-d.html#mixing.semantic.annotations">Annotation Framework</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.1 <a href="chapter5-d.html#mixing.annotation.elements">Annotation elements</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.2 <a href="chapter5-d.html#mixing.annotation.keys">Annotation keys</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.3 <a href="chapter5-d.html#mixing.alternate.representations">Alternate representations</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.4 <a href="chapter5-d.html#mixing.content.equiv">Content equivalents</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.5 <a href="chapter5-d.html#mixing.annotation.references">Annotation references</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;5.2 <a href="chapter5-d.html#mixing.semantic.elements">Elements for Semantic Annotations</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.1 <a href="chapter5-d.html#mixing.elements.semantics">The <code>&lt;semantics&gt;</code> element</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.1.1 <a href="chapter5-d.html#id.5.2.1.1">Description</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.1.2 <a href="chapter5-d.html#id.5.2.1.2">Attributes</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.2 <a href="chapter5-d.html#mixing.elements.annotation">The <code>&lt;annotation&gt;</code> element</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.2.1 <a href="chapter5-d.html#id.5.2.2.1">Description</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.2.2 <a href="chapter5-d.html#id.5.2.2.2">Attributes</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.3 <a href="chapter5-d.html#mixing.elements.annotation.xml">The <code>&lt;annotation-xml&gt;</code> element</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.3.1 <a href="chapter5-d.html#id.5.2.3.1">Description</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.3.2 <a href="chapter5-d.html#id.5.2.3.2">Attributes</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.3.3 <a href="chapter5-d.html#html.annotation.xml">Using <code>annotation-xml</code> in HTML documents</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;5.3 <a href="chapter5-d.html#mixing.markup">Combining Presentation and Content Markup</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3.1 <a href="chapter5-d.html#mixing.pmincm">Presentation Markup in Content Markup</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3.2 <a href="chapter5-d.html#mixing.cminpm">Content Markup in Presentation Markup</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;5.4 <a href="chapter5-d.html#mixing.parallel">Parallel Markup</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.4.1 <a href="chapter5-d.html#mixing.top.level">Top-level Parallel Markup</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.4.2 <a href="chapter5-d.html#mixing.cr">Parallel Markup via Cross-References</a><br>
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview-d.html"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="chapter4-d.html"><span class="secno">4 </span> Content Markup</a></li>
+            <li><a href="chapter6-d.html"><span class="secno">6 </span> Interactions with the Host Environment</a></li>
+            
+            
+            <li><a href="chapter5-d.html"><span class="secno">5 </span>&nbsp;Mixing Markup Languages for Mathematical Expressions</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="chapter5-d.html#mixing.semantic.annotations"><span class="secno">5.1 </span>&nbsp;Annotation Framework</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter5-d.html#mixing.annotation.elements"><span class="secno">5.1.1 </span>&nbsp;Annotation elements</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter5-d.html#mixing.annotation.keys"><span class="secno">5.1.2 </span>&nbsp;Annotation keys</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter5-d.html#mixing.alternate.representations"><span class="secno">5.1.3 </span>&nbsp;Alternate representations</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter5-d.html#mixing.content.equiv"><span class="secno">5.1.4 </span>&nbsp;Content equivalents</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter5-d.html#mixing.annotation.references"><span class="secno">5.1.5 </span>&nbsp;Annotation references</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter5-d.html#mixing.semantic.elements"><span class="secno">5.2 </span>&nbsp;Elements for Semantic Annotations</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter5-d.html#mixing.elements.semantics"><span class="secno">5.2.1 </span>&nbsp;The <code>&lt;semantics&gt;</code> element</a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter5-d.html#id.5.2.1.1"><span class="secno">5.2.1.1 </span>&nbsp;Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter5-d.html#id.5.2.1.2"><span class="secno">5.2.1.2 </span>&nbsp;Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter5-d.html#mixing.elements.annotation"><span class="secno">5.2.2 </span>&nbsp;The <code>&lt;annotation&gt;</code> element</a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter5-d.html#id.5.2.2.1"><span class="secno">5.2.2.1 </span>&nbsp;Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter5-d.html#id.5.2.2.2"><span class="secno">5.2.2.2 </span>&nbsp;Attributes</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter5-d.html#mixing.elements.annotation.xml"><span class="secno">5.2.3 </span>&nbsp;The <code>&lt;annotation-xml&gt;</code> element</a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter5-d.html#id.5.2.3.1"><span class="secno">5.2.3.1 </span>&nbsp;Description</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter5-d.html#id.5.2.3.2"><span class="secno">5.2.3.2 </span>&nbsp;Attributes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter5-d.html#html.annotation.xml"><span class="secno">5.2.3.3 </span>&nbsp;Using <code>annotation-xml</code> in HTML documents</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter5-d.html#mixing.markup"><span class="secno">5.3 </span>&nbsp;Combining Presentation and Content Markup</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter5-d.html#mixing.pmincm"><span class="secno">5.3.1 </span>&nbsp;Presentation Markup in Content Markup</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter5-d.html#mixing.cminpm"><span class="secno">5.3.2 </span>&nbsp;Content Markup in Presentation Markup</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="chapter5-d.html#mixing.parallel"><span class="secno">5.4 </span>&nbsp;Parallel Markup</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter5-d.html#mixing.top.level"><span class="secno">5.4.1 </span>&nbsp;Top-level Parallel Markup</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter5-d.html#mixing.cr"><span class="secno">5.4.2 </span>&nbsp;Parallel Markup via Cross-References</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <p>MathML markup can be combined with other markup languages, and
@@ -213,7 +316,7 @@ padding-right: 1em;
          </p>
          <div class="div2">
             
-            <h2><a name="mixing.semantic.annotations" id="mixing.semantic.annotations"></a>5.1 Annotation Framework
+            <h2><a id="mixing.semantic.annotations"></a>5.1 Annotation Framework
             </h2>
             <p>
                An important concern of MathML is to represent associations between
@@ -228,7 +331,7 @@ padding-right: 1em;
             </p>
             <div class="div3">
                
-               <h3><a name="mixing.annotation.elements" id="mixing.annotation.elements"></a>5.1.1 Annotation elements
+               <h3><a id="mixing.annotation.elements"></a>5.1.1 Annotation elements
                </h3>
                <p>
                   The <code>semantics</code>, <code>annotation</code>, and
@@ -263,7 +366,8 @@ padding-right: 1em;
     &lt;/OMA&gt;
   &lt;/annotation-xml&gt;
 &lt;/semantics&gt;</pre><p id="html-xml1">Note that this example makes use of the namespace extensibility
-                  that is only available in the XML syntax of MathML. If this example is included in an HTML document
+                  that is only available in the XML syntax of MathML. If this example is included in
+                  an HTML document
                   then it would be considered <em>invalid</em> and the OpenMath elements would be parsed as
                   elements <span class="diff-chg">in<a href="appendixf-d.html#d7e33688"><sub class="diff-link">F</sub></a></span> the MathML namespace. See <a href="#html.annotation.xml">Section&nbsp;5.2.3.3 Using <code>annotation-xml</code> in HTML documents</a> for details.
                </p>
@@ -276,7 +380,7 @@ padding-right: 1em;
             </div>
             <div class="div3">
                
-               <h3><a name="mixing.annotation.keys" id="mixing.annotation.keys"></a>5.1.2 Annotation keys
+               <h3><a id="mixing.annotation.keys"></a>5.1.2 Annotation keys
                </h3>
                <p>An <em>annotation key</em> specifies the relationship between an
                   expression and an annotation. Many kinds of relationships are possible.
@@ -355,7 +459,7 @@ padding-right: 1em;
             </div>
             <div class="div3">
                
-               <h3><a name="mixing.alternate.representations" id="mixing.alternate.representations"></a>5.1.3 Alternate representations
+               <h3><a id="mixing.alternate.representations"></a>5.1.3 Alternate representations
                </h3>
                <p>Alternate representation annotations are most often used to
                   provide renderings for an expression, or to provide an equivalent
@@ -422,14 +526,15 @@ padding-right: 1em;
     &lt;/OMA&gt;
   &lt;/annotation-xml&gt;
 &lt;/semantics&gt;</pre><p id="html-xml2">Note that this example makes use of the namespace extensibility
-                  that is only available in the XML syntax of MathML. If this example is included in an HTML document
+                  that is only available in the XML syntax of MathML. If this example is included in
+                  an HTML document
                   then it would be considered <em>invalid</em> and the OpenMath elements would be parsed as
                   elements un the MathML namespace. See <a href="#html.annotation.xml">Section&nbsp;5.2.3.3 Using <code>annotation-xml</code> in HTML documents</a> for details.
                </p>
             </div>
             <div class="div3">
                
-               <h3><a name="mixing.content.equiv" id="mixing.content.equiv"></a>5.1.4 Content equivalents
+               <h3><a id="mixing.content.equiv"></a>5.1.4 Content equivalents
                </h3>
                <p>Content equivalent annotations provide additional computational
                   information about an expression.  Annotations with the
@@ -474,7 +579,7 @@ padding-right: 1em;
 &lt;/semantics&gt;</pre></div>
             <div class="div3">
                
-               <h3><a name="mixing.annotation.references" id="mixing.annotation.references"></a>5.1.5 Annotation references
+               <h3><a id="mixing.annotation.references"></a>5.1.5 Annotation references
                </h3>
                <p>In the usual case, each annotation element includes either character data
                   content (in the case of <code>annotation</code>) or XML markup data (in the case
@@ -511,7 +616,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="mixing.semantic.elements" id="mixing.semantic.elements"></a>5.2 Elements for Semantic Annotations
+            <h2><a id="mixing.semantic.elements"></a>5.2 Elements for Semantic Annotations
             </h2>
             <p>This section explains the semantic mapping elements <code>semantics</code>,
                <code>annotation</code>, and <code>annotation-xml</code>.  These elements associate
@@ -521,11 +626,11 @@ padding-right: 1em;
             </p>
             <div class="div3">
                
-               <h3><a name="mixing.elements.semantics" id="mixing.elements.semantics"></a>5.2.1 The <code>&lt;semantics&gt;</code> element
+               <h3><a id="mixing.elements.semantics"></a>5.2.1 The <code>&lt;semantics&gt;</code> element
                </h3>
                <div class="div4">
                   
-                  <h4><a name="id.5.2.1.1" id="id.5.2.1.1"></a>5.2.1.1 Description
+                  <h4><a id="id.5.2.1.1"></a>5.2.1.1 Description
                   </h4>
                   <p>The <code>semantics</code> element is the container element that
                      associates annotations with a MathML expression.  The
@@ -570,7 +675,7 @@ padding-right: 1em;
 &lt;/semantics&gt;</pre></div>
                <div class="div4">
                   
-                  <h4><a name="id.5.2.1.2" id="id.5.2.1.2"></a>5.2.1.2 Attributes
+                  <h4><a id="id.5.2.1.2"></a>5.2.1.2 Attributes
                   </h4>
                   
                   <table class="attributes">
@@ -612,11 +717,11 @@ padding-right: 1em;
             </div>
             <div class="div3">
                
-               <h3><a name="mixing.elements.annotation" id="mixing.elements.annotation"></a>5.2.2 The <code>&lt;annotation&gt;</code> element
+               <h3><a id="mixing.elements.annotation"></a>5.2.2 The <code>&lt;annotation&gt;</code> element
                </h3>
                <div class="div4">
                   
-                  <h4><a name="id.5.2.2.1" id="id.5.2.2.1"></a>5.2.2.1 Description
+                  <h4><a id="id.5.2.2.1"></a>5.2.2.1 Description
                   </h4>
                   <p>The <code>annotation</code> element is the container element for a semantic
                      annotation whose representation is parsed character data in a non-XML
@@ -631,7 +736,7 @@ padding-right: 1em;
                </div>
                <div class="div4">
                   
-                  <h4><a name="id.5.2.2.2" id="id.5.2.2.2"></a>5.2.2.2 Attributes
+                  <h4><a id="id.5.2.2.2"></a>5.2.2.2 Attributes
                   </h4>
                   
                   <table class="attributes">
@@ -715,11 +820,11 @@ padding-right: 1em;
             </div>
             <div class="div3">
                
-               <h3><a name="mixing.elements.annotation.xml" id="mixing.elements.annotation.xml"></a>5.2.3 The <code>&lt;annotation-xml&gt;</code> element
+               <h3><a id="mixing.elements.annotation.xml"></a>5.2.3 The <code>&lt;annotation-xml&gt;</code> element
                </h3>
                <div class="div4">
                   
-                  <h4><a name="id.5.2.3.1" id="id.5.2.3.1"></a>5.2.3.1 Description
+                  <h4><a id="id.5.2.3.1"></a>5.2.3.1 Description
                   </h4>
                   <p>The <code>annotation-xml</code> element is the container element for a
                      semantic annotation whose representation is structured markup.  The <code>annotation-xml</code> element should contain the markup
@@ -728,7 +833,7 @@ padding-right: 1em;
                </div>
                <div class="div4">
                   
-                  <h4><a name="id.5.2.3.2" id="id.5.2.3.2"></a>5.2.3.2 Attributes
+                  <h4><a id="id.5.2.3.2"></a>5.2.3.2 Attributes
                   </h4>
                   
                   <table class="attributes">
@@ -838,35 +943,41 @@ padding-right: 1em;
                </div>
                <div class="div4">
                   
-                  <h4><a name="html.annotation.xml" id="html.annotation.xml"></a>5.2.3.3 Using <code>annotation-xml</code> in HTML documents
+                  <h4><a id="html.annotation.xml"></a>5.2.3.3 Using <code>annotation-xml</code> in HTML documents
                   </h4>
                   <p>Note that the Namespace extensibility used in the above examples
-                     may not be available if the MathML is not being treated as an XML document. In particular HTML parsers
-                     treat <code>xmlns</code> attributes as ordinary attributes, so the OpenMath example would be classified as invalid
-                     by an HTML validator. The OpenMath elements would still be parsed as children of the <code>annotation-xml</code> element, however they would be placed in the <em>MathML</em> namespace. The above examples are not rendered in the HTML version of this specification, to ensure that that document is
-                     a valid HTML5 document.
+                     may not be available if the MathML is not being treated as an XML document. In particular
+                     HTML parsers
+                     treat <code>xmlns</code> attributes as ordinary attributes, so the OpenMath example would be classified as
+                     invalid
+                     by an HTML validator. The OpenMath elements would still be parsed as children of the
+                     <code>annotation-xml</code> element, however they would be placed in the <em>MathML</em> namespace. The above examples are not rendered in the HTML version of this specification,
+                     to ensure that that document is a valid HTML5 document.
                   </p>
-                  <p>The details of the HTML parser handling of <code>annotation-xml</code> is specified in <a href="appendixg-d.html#HTML5">[HTML5]</a> and summarized in <a href="chapter6-d.html#interf.html">Section&nbsp;6.4.3 Mixing MathML and HTML</a>, however the main differences from the behavior of an XML parser that affect MathML annotations are that the HTML parser
-                     does not treat <code>xmlns</code> attributes, nor <code>:</code> in element names as special and has built-in rules determining whether the three "known" namespaces, HTML, SVG or MathML
-                     are used.
+                  <p>The details of the HTML parser handling of <code>annotation-xml</code> is specified in <a href="appendixg-d.html#HTML5">[HTML5]</a> and summarized in <a href="chapter6-d.html#interf.html">Section&nbsp;6.4.3 Mixing MathML and HTML</a>, however the main differences from the behavior of an XML parser that affect MathML
+                     annotations are that the HTML parser does not treat <code>xmlns</code> attributes, nor <code>:</code> in element names as special and has built-in rules determining whether the three
+                     "known" namespaces, HTML, SVG or MathML are used.
                      
                   </p>
                   <ul>
                      <li>
-                        <p>If the <code>annotation-xml</code> has an <code>encoding</code> attribute that is (ignoring case differences) "text/html" or "annotation/xhtml+xml" then the content  is parsed as HTML and
-                           placed (initially) in the HTML namespace.
+                        <p>If the <code>annotation-xml</code> has an <code>encoding</code> attribute that is (ignoring case differences) "text/html" or "annotation/xhtml+xml"
+                           then the content  is parsed as HTML and placed (initially) in the HTML namespace.
                         </p>
                      </li>
                      <li>
                         <p>Otherwise it is parsed as <em>foreign content</em> and parsed in a more XML-like manner (like MathML itself in HTML) in which <code>/&gt;</code> signifies an empty element. Content will be placed in the MathML namespace.
                         </p>
-                        <p>If any recognised HTML element appears in this foreign content annotation the HTML parser will effectively termnate the math
-                           expression, closing all open elements until the <code>math</code> element is closed, and then process the nested HTML as if it were not inside the math context. Any following MathML elements
-                           will then not render correctly as they are not in a math context, or in the MathML namespace.
+                        <p>If any recognised HTML element appears in this foreign content annotation the HTML
+                           parser will effectively termnate the math expression, closing all open elements until
+                           the <code>math</code> element is closed, and then process the nested HTML as if it were not inside the
+                           math context. Any following MathML elements will then not render correctly as they
+                           are not in a math context, or in the MathML namespace.
                         </p>
                      </li>
                   </ul>
-                  <p>These issues mean that the following example is valid whether parsed by an XML or HTML parser:
+                  <p>These issues mean that the following example is valid whether parsed by an XML or
+                     HTML parser:
                      
                   </p><pre class="mathml-fragment">
 &lt;math&gt;
@@ -896,7 +1007,9 @@ padding-right: 1em;
  &lt;mo&gt;+&lt;/mo&gt;
  &lt;mi&gt;b&lt;/mi&gt;
 &lt;/math&gt;
-</pre><p>If the above is parsed by an HTML parser it produces a result equivalent to the following invalid input, where the <code>span</code> element has caused all MathML elements to be prematurely closed. The remaining MathML elements following the <code>span</code> are no longer contained within <code>&lt;math&gt;</code> so will be parsed as unknown HTML elements and render incorrectly.
+</pre><p>If the above is parsed by an HTML parser it produces a result equivalent to the following
+                     invalid input, where the <code>span</code> element has caused all MathML elements to be prematurely closed. The remaining MathML
+                     elements following the <code>span</code> are no longer contained within <code>&lt;math&gt;</code> so will be parsed as unknown HTML elements and render incorrectly.
                      
                   </p><pre class="error">
 &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
@@ -937,19 +1050,20 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="mixing.markup" id="mixing.markup"></a>5.3 Combining Presentation and Content Markup
+            <h2><a id="mixing.markup"></a>5.3 Combining Presentation and Content Markup
             </h2>
             <p>
                Presentation markup encodes the <em>notational structure</em> of an expression.
                Content markup encodes the <em>functional structure</em> of an expression.  In certain
                cases, a particular application of MathML may require a combination of both presentation
-               and content markup.  This section describes specific constraints that govern the use of
+               and content markup.  This section describes specific constraints that govern the use
+               of
                presentation markup within content markup, and vice versa.
                
             </p>
             <div class="div3">
                
-               <h3><a name="mixing.pmincm" id="mixing.pmincm"></a>5.3.1 Presentation Markup in Content Markup
+               <h3><a id="mixing.pmincm"></a>5.3.1 Presentation Markup in Content Markup
                </h3>
                <p>
                   Presentation markup may be embedded within content markup so long as the
@@ -1011,7 +1125,7 @@ padding-right: 1em;
             </div>
             <div class="div3">
                
-               <h3><a name="mixing.cminpm" id="mixing.cminpm"></a>5.3.2 Content Markup in Presentation Markup
+               <h3><a id="mixing.cminpm"></a>5.3.2 Content Markup in Presentation Markup
                </h3>
                <p>
                   Content markup may be embedded within presentation markup so long as the
@@ -1045,7 +1159,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="mixing.parallel" id="mixing.parallel"></a>5.4 Parallel Markup
+            <h2><a id="mixing.parallel"></a>5.4 Parallel Markup
             </h2>
             <p>
                Some applications are able to use <em>both</em> presentation
@@ -1058,7 +1172,7 @@ padding-right: 1em;
             </p>
             <div class="div3">
                
-               <h3><a name="mixing.top.level" id="mixing.top.level"></a>5.4.1 Top-level Parallel Markup
+               <h3><a id="mixing.top.level"></a>5.4.1 Top-level Parallel Markup
                </h3>
                <p>
                   In many cases, the goal is to provide presentation markup and content
@@ -1095,7 +1209,7 @@ padding-right: 1em;
             </div>
             <div class="div3">
                
-               <h3><a name="mixing.cr" id="mixing.cr"></a>5.4.2 Parallel Markup via Cross-References
+               <h3><a id="mixing.cr"></a>5.4.2 Parallel Markup via Cross-References
                </h3>
                <p>
                   To accommodate applications that must process sub-expressions of large
@@ -1259,7 +1373,7 @@ padding-right: 1em;
                   standard for representing application, symbol, and variable, respectively. 
                   The references from the OpenMath annotation are given by the
                   <code>href</code> attributes.
-                  <a name="html-xml3" id="html-xml3"></a>As noted above, the use of namespaces other than MathML, SVG 
+                  <a id="html-xml3"></a>As noted above, the use of namespaces other than MathML, SVG 
                   or HTML within <code>annotation-xml</code> is not considered valid in the HTML syntax.
                   Use of colons and namespace-prefixed element names should be avoided
                   as the HTML parser will generate nodes with <em>local</em> name <code>om:OMA</code>

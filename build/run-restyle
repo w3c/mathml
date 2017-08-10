@@ -54,7 +54,7 @@ $SAXON   $SOURCE/mathml-spec.xml  $HSTYLE/mmldiff-restyle.xsl show.diff.markup=0
 
 cp Overview.html index.html
 
-exit
+
 
 
 echo "making  diff-marked HTML version"
@@ -80,12 +80,14 @@ echo    cvs update -p -r  mathml32e-REC unicode.xml > unicode-pr.xml
 fi
 )
 
-$SAXON  $SOURCE/mathml-spec.xml  $HSTYLE/mmldiff.xsl show.diff.markup=1 2>diff.log
+$SAXON  $SOURCE/mathml-spec.xml  $HSTYLE/mmldiff-restyle.xsl show.diff.markup=1 editors-draft=yes 2>diff.log
 cat diff.log
 
 echo "fixing mmlcss id"
 sed -i 's/<a name="mmlcss" id="mmlcss"><\/a> //' chapter6-d.html
 
+
+exit
 
 echo "making xhtml stylesheets"
 echo "  " mmldiff

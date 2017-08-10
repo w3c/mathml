@@ -1845,7 +1845,7 @@ for this document, which may include some normative corrections.</p>
       </h2>
       <xsl:if test="$editors-copy='yes' or /spec/@role='editors-copy'">
        <xsl:text>&#10;</xsl:text>
-       <p><strong>This document is an editors' copy that has no official standing.</strong></p>
+       <p><strong>This document is an editors' copy that has no official standing. (Date: <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>)</strong></p>
       </xsl:if>
       <xsl:apply-templates/>
     </div>

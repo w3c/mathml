@@ -1,9 +1,24 @@
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Parsing MathML</title><style type="text/css">
+
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
 
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
@@ -153,64 +168,127 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/base.css">
-   </head>
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css"><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script></head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br> Draft</b></div>
       
-      <h1><a name="parsing" id="parsing"></a>A Parsing MathML
+      <h1><a id="parsing"></a>A Parsing MathML
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview-d.html">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br>
-         Previous: 7 <a href="chapter7-d.html">Characters, Entities and Fonts</a><br>
-         Next: B <a href="appendixb-d.html">Media Types Registrations</a><br><br>
-         A <a href="appendixa-d.html">Parsing MathML</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;A.1 <a href="appendixa-d.html#parsing.wellformed">Use of MathML as Well-Formed
-            XML</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;A.2 <a href="appendixa-d.html#parsing.usingrnc">Using the RelaxNG Schema for MathML3</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.2.1 <a href="appendixa-d.html#parsing.rnc.full">Full MathML</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.2.2 <a href="appendixa-d.html#parsing.rnc.common">Elements Common to Presentation and Content MathML</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.2.3 <a href="appendixa-d.html#parsing.rnc.pres">The Grammar for Presentation MathML</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.2.4 <a href="appendixa-d.html#parsing.rnc.strict">The Grammar for Strict Content MathML3</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.2.5 <a href="appendixa-d.html#parsing.rnc.content">The Grammar for Content MathML</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.2.6 <a href="appendixa-d.html#parsing.rnc.module">MathML as a module in a RelaxNG Schema</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;A.3 <a href="appendixa-d.html#parsing.usingdtd">Using the MathML DTD</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.3.1 <a href="appendixa-d.html#interf.validation">Document Validation Issues</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.3.2 <a href="appendixa-d.html#id.A.3.2">Attribute values in the MathML DTD</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.3.3 <a href="appendixa-d.html#parsing.doctype">DOCTYPE declaration for MathML</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;A.4 <a href="appendixa-d.html#parsing.usingxsd">Using the MathML XML Schema</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.4.1 <a href="appendixa-d.html#parsing.schemalocation">Associating the MathML schema with MathML fragments</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;A.5 <a href="appendixa-d.html#parsing.mml.xhtml">Parsing MathML in XHTML</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;A.6 <a href="appendixa-d.html#parsing.mml.html">Parsing MathML in HTML</a><br>
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview-d.html"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="chapter7-d.html"><span class="secno">7 </span> Characters, Entities and Fonts</a></li>
+            <li><a href="appendixb-d.html"><span class="secno">B </span> Media Types Registrations</a></li>
+            
+            
+            <li><a href="appendixa-d.html"><span class="secno">A </span>&nbsp;Parsing MathML</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="appendixa-d.html#parsing.wellformed"><span class="secno">A.1 </span>&nbsp;Use of MathML as Well-Formed
+                        XML</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixa-d.html#parsing.usingrnc"><span class="secno">A.2 </span>&nbsp;Using the RelaxNG Schema for MathML3</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="appendixa-d.html#parsing.rnc.full"><span class="secno">A.2.1 </span>&nbsp;Full MathML</a>
+                           
+                        </li>
+                        
+                        <li><a href="appendixa-d.html#parsing.rnc.common"><span class="secno">A.2.2 </span>&nbsp;Elements Common to Presentation and Content MathML</a>
+                           
+                        </li>
+                        
+                        <li><a href="appendixa-d.html#parsing.rnc.pres"><span class="secno">A.2.3 </span>&nbsp;The Grammar for Presentation MathML</a>
+                           
+                        </li>
+                        
+                        <li><a href="appendixa-d.html#parsing.rnc.strict"><span class="secno">A.2.4 </span>&nbsp;The Grammar for Strict Content MathML3</a>
+                           
+                        </li>
+                        
+                        <li><a href="appendixa-d.html#parsing.rnc.content"><span class="secno">A.2.5 </span>&nbsp;The Grammar for Content MathML</a>
+                           
+                        </li>
+                        
+                        <li><a href="appendixa-d.html#parsing.rnc.module"><span class="secno">A.2.6 </span>&nbsp;MathML as a module in a RelaxNG Schema</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="appendixa-d.html#parsing.usingdtd"><span class="secno">A.3 </span>&nbsp;Using the MathML DTD</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="appendixa-d.html#interf.validation"><span class="secno">A.3.1 </span>&nbsp;Document Validation Issues</a>
+                           
+                        </li>
+                        
+                        <li><a href="appendixa-d.html#id.A.3.2"><span class="secno">A.3.2 </span>&nbsp;Attribute values in the MathML DTD</a>
+                           
+                        </li>
+                        
+                        <li><a href="appendixa-d.html#parsing.doctype"><span class="secno">A.3.3 </span>&nbsp;DOCTYPE declaration for MathML</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="appendixa-d.html#parsing.usingxsd"><span class="secno">A.4 </span>&nbsp;Using the MathML XML Schema</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="appendixa-d.html#parsing.schemalocation"><span class="secno">A.4.1 </span>&nbsp;Associating the MathML schema with MathML fragments</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+                  
+                  <li><a href="appendixa-d.html#parsing.mml.xhtml"><span class="secno">A.5 </span>&nbsp;Parsing MathML in XHTML</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixa-d.html#parsing.mml.html"><span class="secno">A.6 </span>&nbsp;Parsing MathML in HTML</a>
+                     
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <div class="div2">
             
-            <h2><a name="parsing.wellformed" id="parsing.wellformed"></a>A.1 Use of MathML as Well-Formed
+            <h2><a id="parsing.wellformed"></a>A.1 Use of MathML as Well-Formed
                XML
             </h2>
             <p>A MathML document must be a well-formed XML document using elements in the MathML
                namespace as defined by this specification, however it is not required that the document
-               refer to any specific Document Type Definition (DTD) or schema that specifies MathML. It
+               refer to any specific Document Type Definition (DTD) or schema that specifies MathML.
+               It
                is sometimes advantageous <em>not</em> to specify such a language definition as these
-               files are large, often much larger than the MathML expression and unless they have been
-               previously cached by the MathML application, the time taken to fetch the DTD or schema may
+               files are large, often much larger than the MathML expression and unless they have
+               been
+               previously cached by the MathML application, the time taken to fetch the DTD or schema
+               may
                have an appreciable effect on the processing of the MathML document.
             </p>
             <p>Note that if no DTD is specified with a DOCTYPE declaration, that entity
                references (for example to refer to MathML characters by name) may not be used. The
                document should be encoded in an encoding (for example UTF-8) in which all needed
-               characters may be encoded as character data, or characters may be referenced using numeric
+               characters may be encoded as character data, or characters may be referenced using
+               numeric
                character references, for example &amp;#x222B; rather than &amp;int;
             </p>
             <p>If a MathML fragment is parsed without a DTD, in other words as a well-formed XML
-               fragment, it is the responsibility of the processing application to treat the white space
+               fragment, it is the responsibility of the processing application to treat the white
+               space
                characters occurring outside of token elements as not significant.
             </p>
             <p>However, in many circumstances, especially while producing or editing MathML, it is
@@ -219,19 +297,24 @@ padding-right: 1em;
                discusses the RelaxNG Schema for MathML3 <a href="appendixg-d.html#RELAX-NG">[RELAX-NG]</a>, which forms a normative
                part of the specification. Following that, <a href="#parsing.usingxsd">Section&nbsp;A.4 Using the MathML XML Schema</a>, and <a href="#parsing.usingdtd">Section&nbsp;A.3 Using the MathML DTD</a> discuss alternative languages definition using the document type
                definitions (DTD) and the W3C XML schema language, <a href="appendixh-d.html#XMLSchemas">[XMLSchemas]</a>, both of
-               which are derived from the normative RelaxNG schema automatically.  One should note that
-               the schema definitions of the language is currently stricter than the DTD version. That
-               is, a schema validating processor will declare invalid documents that are declared valid
+               which are derived from the normative RelaxNG schema automatically.  One should note
+               that
+               the schema definitions of the language is currently stricter than the DTD version.
+               That
+               is, a schema validating processor will declare invalid documents that are declared
+               valid
                by a (DTD) validating XML parser. This is partly due to the fact that the XML schema
-               language may express additional constraints not expressable in the DTD, and partly due to
+               language may express additional constraints not expressable in the DTD, and partly
+               due to
                the fact that for reasons of compatibility with earlier releases, the DTD is intentionally
-               forgiving in some places and does not enforce constraints that are specified in the text
+               forgiving in some places and does not enforce constraints that are specified in the
+               text
                of this specification.
             </p>
          </div>
          <div class="div2">
             
-            <h2><a name="parsing.usingrnc" id="parsing.usingrnc"></a>A.2 Using the RelaxNG Schema for MathML3
+            <h2><a id="parsing.usingrnc"></a>A.2 Using the RelaxNG Schema for MathML3
             </h2>
             <p>MathML documents should be validated using the RelaxNG Schema for MathML, either in
                the XML encoding (<a href="http://www.w3.org/Math/RelaxNG/mathml3/mathml3.rng">http://www.w3.org/Math/RelaxNG/mathml3/mathml3.rng</a>)
@@ -263,7 +346,7 @@ padding-right: 1em;
             </ul>
             <div class="div3">
                
-               <h3><a name="parsing.rnc.full" id="parsing.rnc.full"></a>A.2.1 Full MathML
+               <h3><a id="parsing.rnc.full"></a>A.2.1 Full MathML
                </h3>
                <p>The RelaxNG schema for full MathML builds on the schema describing the various parts
                   of the language which are given in the following sections. It can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml3/mathml3.rnc">http://www.w3.org/Math/RelaxNG/mathml3/mathml3.rnc</a>.
@@ -287,7 +370,7 @@ padding-right: 1em;
 </pre></div>
             <div class="div3">
                
-               <h3><a name="parsing.rnc.common" id="parsing.rnc.common"></a>A.2.2 Elements Common to Presentation and Content MathML
+               <h3><a id="parsing.rnc.common"></a>A.2.2 Elements Common to Presentation and Content MathML
                </h3><pre># 
 #     Use and distribution of this code are permitted under the terms
 #     W3C Software Notice and License
@@ -374,7 +457,7 @@ padding-right: 1em;
 </pre></div>
             <div class="div3">
                
-               <h3><a name="parsing.rnc.pres" id="parsing.rnc.pres"></a>A.2.3 The Grammar for Presentation MathML
+               <h3><a id="parsing.rnc.pres"></a>A.2.3 The Grammar for Presentation MathML
                </h3><pre>#     Copyright 1998-2014 W3C (MIT, ERCIM, Keio, Beihang)
 # 
 #     Use and distribution of this code are permitted under the terms
@@ -935,7 +1018,7 @@ padding-right: 1em;
 </pre></div>
             <div class="div3">
                
-               <h3><a name="parsing.rnc.strict" id="parsing.rnc.strict"></a>A.2.4 The Grammar for Strict Content MathML3
+               <h3><a id="parsing.rnc.strict"></a>A.2.4 The Grammar for Strict Content MathML3
                </h3>
                <p>The grammar for Strict Content MathML3 can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml3/mathml3-strict-content.rnc">http://www.w3.org/Math/RelaxNG/mathml3/mathml3-strict-content.rnc</a>.
                </p><pre># 
@@ -998,9 +1081,10 @@ padding-right: 1em;
 </pre></div>
             <div class="div3">
                
-               <h3><a name="parsing.rnc.content" id="parsing.rnc.content"></a>A.2.5 The Grammar for Content MathML
+               <h3><a id="parsing.rnc.content"></a>A.2.5 The Grammar for Content MathML
                </h3>
-               <p>The grammar for Content MathML3 builds on the grammar for the Strict Content MathML subset, and can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml3/mathml3-content.rnc">http://www.w3.org/Math/RelaxNG/mathml3/mathml3-content.rnc</a>.
+               <p>The grammar for Content MathML3 builds on the grammar for the Strict Content MathML
+                  subset, and can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml3/mathml3-content.rnc">http://www.w3.org/Math/RelaxNG/mathml3/mathml3-content.rnc</a>.
                </p><pre>#     Copyright 1998-2014 W3C (MIT, ERCIM, Keio, Beihang)
 # 
 #     Use and distribution of this code are permitted under the terms
@@ -1372,13 +1456,14 @@ padding-right: 1em;
 </pre></div>
             <div class="div3">
                
-               <h3><a name="parsing.rnc.module" id="parsing.rnc.module"></a>A.2.6 MathML as a module in a RelaxNG Schema
+               <h3><a id="parsing.rnc.module"></a>A.2.6 MathML as a module in a RelaxNG Schema
                </h3>
                <p>Normally, a MathML expression does not constitute an entire XML document. MathML is
                   designed to be used as the mathematics fragment of larger markup languages. In
                   particular it is designed to be used as a <em>module</em> in documents marked up
                   with the XHTML family of markup languages. As RelaxNG directly supports modular
-                  development, this is usually very easy: an XHTML+MathML schema can be specified as simply as
+                  development, this is usually very easy: an XHTML+MathML schema can be specified as
+                  simply as
                   
                </p><pre># A RelaxNG Schema for  XHTML+MathML
 include "xhtml.rnc"
@@ -1397,7 +1482,8 @@ Block.class |= math</pre><p>
                </p><pre># A RelaxNG Schema for MathML with OpenMath3 annotations
 omobj = external "openmath3.rnc" 
 include "mathml3.rnc" {anotation-xml.model = omobj}</pre><p>
-                  The MathML3 schema is organized so that subsetting to one of the sublanguages specified here is easy.
+                  The MathML3 schema is organized so that subsetting to one of the sublanguages specified
+                  here is easy.
                   To include strict content MathML3 in a schema just include
                   
                </p><pre>include "mathml3-common.rnc"
@@ -1411,11 +1497,11 @@ include "mathml3-strict-content.rnc"</pre><p>
          </div>
          <div class="div2">
             
-            <h2><a name="parsing.usingdtd" id="parsing.usingdtd"></a>A.3 Using the MathML DTD
+            <h2><a id="parsing.usingdtd"></a>A.3 Using the MathML DTD
             </h2>
             <div class="div3">
                
-               <h3><a name="interf.validation" id="interf.validation"></a>A.3.1 Document Validation Issues
+               <h3><a id="interf.validation"></a>A.3.1 Document Validation Issues
                </h3>
                <p>The use of namespace prefixes creates an issue for DTD validation
                   of documents embedding MathML.  DTD validation requires knowing the
@@ -1435,12 +1521,12 @@ include "mathml3-strict-content.rnc"</pre><p>
             </div>
             <div class="div3">
                
-               <h3><a name="id.A.3.2" id="id.A.3.2"></a>A.3.2 Attribute values in the MathML DTD
+               <h3><a id="id.A.3.2"></a>A.3.2 Attribute values in the MathML DTD
                </h3>
-               <p>Note that the DTD is far more permissive than the Relax NG schema, many constraints on attribute values may not be enforced
-                  using DTD syntax.
-                  For example, many attributes expect numerical values or specific micro-syntax, but are declared as CDATA (arbitrary string)
-                  in the DTD.
+               <p>Note that the DTD is far more permissive than the Relax NG schema, many constraints
+                  on attribute values may not be enforced using DTD syntax.
+                  For example, many attributes expect numerical values or specific micro-syntax, but
+                  are declared as CDATA (arbitrary string) in the DTD.
                   However, lack of enforcement of a requirement in the DTD
                   does <em>not</em> imply that the requirement is not part of the MathML
                   language itself, or that it will not be enforced by a particular MathML
@@ -1457,7 +1543,7 @@ include "mathml3-strict-content.rnc"</pre><p>
             </div>
             <div class="div3">
                
-               <h3><a name="parsing.doctype" id="parsing.doctype"></a>A.3.3 DOCTYPE declaration for MathML
+               <h3><a id="parsing.doctype"></a>A.3.3 DOCTYPE declaration for MathML
                </h3>
                <p>MathML documents should be validated using the XML DTD for
                   MathML,
@@ -1477,19 +1563,19 @@ include "mathml3-strict-content.rnc"</pre><p>
          </div>
          <div class="div2">
             
-            <h2><a name="parsing.usingxsd" id="parsing.usingxsd"></a>A.4 Using the MathML XML Schema
+            <h2><a id="parsing.usingxsd"></a>A.4 Using the MathML XML Schema
             </h2>
             <p>MathML fragments can be validated using the XML Schema for MathML,
                located at <a href="http://www.w3.org/Math/XMLSchema/mathml3/mathml3.xsd">http://www.w3.org/Math/XMLSchema/mathml3/mathml3.xsd</a>. The
-               provided schema  has been mechanically generated from the Relax NG schema, it omits some constraints that can not be enforced
-               using XSD syntax.
+               provided schema  has been mechanically generated from the Relax NG schema, it omits
+               some constraints that can not be enforced using XSD syntax.
             </p>
             <div class="div3">
                
-               <h3><a name="parsing.schemalocation" id="parsing.schemalocation"></a>A.4.1 Associating the MathML schema with MathML fragments
+               <h3><a id="parsing.schemalocation"></a>A.4.1 Associating the MathML schema with MathML fragments
                </h3>
-               <p>Similarly to the DOCTYPE declaration used in documents, it is possible to link a MathML fragment to the XML Schema, as shown
-                  below.
+               <p>Similarly to the DOCTYPE declaration used in documents, it is possible to link a MathML
+                  fragment to the XML Schema, as shown below.
                </p><pre class="mathml-fragment">&lt;mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://www.w3.org/1998/Math/MathML
@@ -1513,7 +1599,7 @@ include "mathml3-strict-content.rnc"</pre><p>
          </div>
          <div class="div2">
             
-            <h2><a name="parsing.mml.xhtml" id="parsing.mml.xhtml"></a>A.5 Parsing MathML in XHTML
+            <h2><a id="parsing.mml.xhtml"></a>A.5 Parsing MathML in XHTML
             </h2>
             <p>As noted in <a href="chapter6-d.html#interf.xhtml">Section&nbsp;6.4.1 Mixing MathML and XHTML</a> The schema used for
                XHTML+MathML documents extends the content model of <code>mtext</code> to
@@ -1524,7 +1610,7 @@ include "mathml3-strict-content.rnc"</pre><p>
          </div>
          <div class="div2">
             
-            <h2><a name="parsing.mml.html" id="parsing.mml.html"></a>A.6 Parsing MathML in HTML
+            <h2><a id="parsing.mml.html"></a>A.6 Parsing MathML in HTML
             </h2>
             <p>See <a href="chapter6-d.html#interf.html">Section&nbsp;6.4.3 Mixing MathML and HTML</a> for more details of the parsing of MathML in HTML.
             </p>

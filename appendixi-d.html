@@ -1,9 +1,24 @@
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Index</title><style type="text/css">
+
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
 
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
@@ -153,30 +168,40 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/base.css">
-   </head>
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css"><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script></head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br> Draft</b></div>
       
-      <h1><a name="index" id="index"></a>I Index (Non-Normative)
+      <h1><a id="index"></a>I Index (Non-Normative)
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview-d.html">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br>
-         Previous: H <a href="appendixh-d.html">References</a><br><br>
-         I <a href="appendixi-d.html">Index (Non-Normative)</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;I.1 <a href="appendixi-d.html#index.elem">MathML Elements</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;I.2 <a href="appendixi-d.html#index.att">MathML Attributes</a><br>
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview-d.html"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="appendixh-d.html"><span class="secno">H </span> References</a></li>
+            
+            
+            <li><a href="appendixi-d.html"><span class="secno">I </span>&nbsp;Index (Non-Normative)</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="appendixi-d.html#index.elem"><span class="secno">I.1 </span>&nbsp;MathML Elements</a>
+                     
+                  </li>
+                  
+                  <li><a href="appendixi-d.html#index.att"><span class="secno">I.2 </span>&nbsp;MathML Attributes</a>
+                     
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <div class="div2">
             
-            <h2><a name="index.elem" id="index.elem"></a>I.1 MathML Elements
+            <h2><a id="index.elem"></a>I.1 MathML Elements
             </h2>
             <p>References to sections in which an element is defined are marked in bold.</p>
             
@@ -2635,7 +2660,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="index.att" id="index.att"></a>I.2 MathML Attributes
+            <h2><a id="index.att"></a>I.2 MathML Attributes
             </h2>
             <p>In addition to the standard MathML attributes, some attributes from
                other namespaces such as Xlink or XML Schema are also listed here.

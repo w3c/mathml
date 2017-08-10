@@ -1,9 +1,24 @@
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Characters, Entities and Fonts</title><style type="text/css">
+
+	 /** Table of Contents taken from html 5.2 spec
+	 stop flicker in toc **/
+
+	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1rem;
+		/* Larger, more consistently-sized click target */
+		display: block;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+		border-bottom-width: 3px !important;
+		margin-bottom: 0px !important;
+	}
+
 
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
@@ -153,42 +168,90 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/base.css">
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css">
    </head>
    <body>
-      <div style="position:fixed; top: 0; left: 0.25em; width: 4em; background-color: red; color: white;"><b>Editors'<br> Draft</b></div>
       
-      <h1><a name="chars" id="chars"></a>7 Characters, Entities and Fonts
+      <h1><a id="chars"></a>7 Characters, Entities and Fonts
       </h1>
       
       <!-- TOP NAVIGATION BAR -->
       
-      <div class="minitoc">
-         
-         Overview: <a href="Overview-d.html">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br>
-         Previous: 6 <a href="chapter6-d.html">Interactions with the Host Environment</a><br>
-         Next: A <a href="appendixa-d.html">Parsing MathML</a><br><br>
-         7 <a href="chapter7-d.html">Characters, Entities and Fonts</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;7.1 <a href="chapter7-d.html#chars.intro">Introduction</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;7.2 <a href="chapter7-d.html#chars.unicodechars">Unicode Character Data</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;7.3 <a href="chapter7-d.html#chars.entities">Entity Declarations</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;7.4 <a href="chapter7-d.html#chars.mglyph">Special Characters Not in Unicode</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;7.5 <a href="chapter7-d.html#chars.BMP-SMP">Mathematical Alphanumeric Symbols</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;7.6 <a href="chapter7-d.html#chars.nonmark">Non-Marking Characters</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;7.7 <a href="chapter7-d.html#chars.anomalous">Anomalous Mathematical Characters</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.1 <a href="chapter7-d.html#chars.keyboard">Keyboard Characters</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.1.1 <a href="chapter7-d.html#chars.hyph-minus">Minus</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.1.2 <a href="chapter7-d.html#chars.prime-quote">Apostrophes, Quotes and Primes</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.1.3 <a href="chapter7-d.html#id.7.7.1.3">Other Keyboard Substitutions</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.2 <a href="chapter7-d.html#chars.pseudo-scripts">Pseudo-scripts</a><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.3 <a href="chapter7-d.html#chars.comb-chars">Combining Characters</a><br>
-         
-      </div>
+      <nav id="toc">
+         <ol class="toc">
+            <li><a href="Overview-d.html"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="chapter6-d.html"><span class="secno">6 </span> Interactions with the Host Environment</a></li>
+            <li><a href="appendixa-d.html"><span class="secno">A </span> Parsing MathML</a></li>
+            
+            
+            <li><a href="chapter7-d.html"><span class="secno">7 </span>&nbsp;Characters, Entities and Fonts</a>
+               
+               <ol class="toc">
+                  
+                  <li><a href="chapter7-d.html#chars.intro"><span class="secno">7.1 </span>&nbsp;Introduction</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter7-d.html#chars.unicodechars"><span class="secno">7.2 </span>&nbsp;Unicode Character Data</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter7-d.html#chars.entities"><span class="secno">7.3 </span>&nbsp;Entity Declarations</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter7-d.html#chars.mglyph"><span class="secno">7.4 </span>&nbsp;Special Characters Not in Unicode</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter7-d.html#chars.BMP-SMP"><span class="secno">7.5 </span>&nbsp;Mathematical Alphanumeric Symbols</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter7-d.html#chars.nonmark"><span class="secno">7.6 </span>&nbsp;Non-Marking Characters</a>
+                     
+                  </li>
+                  
+                  <li><a href="chapter7-d.html#chars.anomalous"><span class="secno">7.7 </span>&nbsp;Anomalous Mathematical Characters</a>
+                     
+                     <ol class="toc">
+                        
+                        <li><a href="chapter7-d.html#chars.keyboard"><span class="secno">7.7.1 </span>&nbsp;Keyboard Characters</a>
+                           
+                           <ol class="toc">
+                              
+                              <li><a href="chapter7-d.html#chars.hyph-minus"><span class="secno">7.7.1.1 </span>&nbsp;Minus</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter7-d.html#chars.prime-quote"><span class="secno">7.7.1.2 </span>&nbsp;Apostrophes, Quotes and Primes</a>
+                                 
+                              </li>
+                              
+                              <li><a href="chapter7-d.html#id.7.7.1.3"><span class="secno">7.7.1.3 </span>&nbsp;Other Keyboard Substitutions</a>
+                                 
+                              </li>
+                           </ol>
+                        </li>
+                        
+                        <li><a href="chapter7-d.html#chars.pseudo-scripts"><span class="secno">7.7.2 </span>&nbsp;Pseudo-scripts</a>
+                           
+                        </li>
+                        
+                        <li><a href="chapter7-d.html#chars.comb-chars"><span class="secno">7.7.3 </span>&nbsp;Combining Characters</a>
+                           
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </nav>
       
       <div class="div1">
          <div class="div2">
             
-            <h2><a name="chars.intro" id="chars.intro"></a>7.1 Introduction
+            <h2><a id="chars.intro"></a>7.1 Introduction
             </h2>
             <p>
                Notation and symbols have proved very important for
@@ -239,7 +302,8 @@ padding-right: 1em;
                A MathML token element (see <a href="chapter3-d.html#presm.tokel">Section&nbsp;3.2 Token Elements</a>, <a href="chapter4-d.html#contm.cn">Section&nbsp;4.2.1 Numbers <code>&lt;cn&gt;</code></a>,
                <a href="chapter4-d.html#contm.ci">Section&nbsp;4.2.2 Content Identifiers <code>&lt;ci&gt;</code></a>, <a href="chapter4-d.html#contm.csymbol">Section&nbsp;4.2.3 Content Symbols <code>&lt;csymbol&gt;</code></a>) takes as content a
                sequence of MathML characters or <code>mglyph</code> elements.  The latter are
-               used to represent characters that do not have a Unicode encoding, as described in <a href="chapter3-d.html#presm.mglyph">Section&nbsp;3.2.1.2 Using images to represent
+               used to represent characters that do not have a Unicode encoding, as described in
+               <a href="chapter3-d.html#presm.mglyph">Section&nbsp;3.2.1.2 Using images to represent
                   symbols <code>&lt;mglyph/&gt;</code></a>.  The need for <code>mglyph</code> should be rare because Unicode 3.1 
                provided approximately one thousand alphabetic characters for mathematics, and 
                Unicode 3.2 added over 900 more special mathematical symbols.  
@@ -248,7 +312,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="chars.unicodechars" id="chars.unicodechars"></a>7.2 Unicode Character Data
+            <h2><a id="chars.unicodechars"></a>7.2 Unicode Character Data
             </h2>
             <p>
                Any character allowed by XML may be used in MathML.  More precisely,
@@ -270,8 +334,8 @@ padding-right: 1em;
             </p>
             <ul>
                <li>
-                  <p>Using characters directly: For example, the 'é' (character U+00E9 [LATIN SMALL LETTER E WITH ACUTE]) may have been inserted.
-                     
+                  <p>Using characters directly: For example, the 'é' (character U+00E9 [LATIN SMALL LETTER
+                     E WITH ACUTE]) may have been inserted.  
                      This option is only useful
                      if the character encoding specified for the XML document includes
                      the character intended.  Note that if the document is, for example, 
@@ -288,7 +352,8 @@ padding-right: 1em;
                      Using numeric XML character references: For example, 'é' may be
                      represented as &amp;#233; (decimal) or  &amp;#xE9; (hex),
                      or &amp;#0233; (decimal) or  &amp;#x00E9;.
-                     Note that the numbers in the character references always refer to the Unicode encoding (and not to
+                     Note that the numbers in the character references always refer to the Unicode encoding
+                     (and not to
                      the character encoding used in the XML file). By using character
                      references it is always possible to access the entire Unicode range.
                      
@@ -315,7 +380,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="chars.entities" id="chars.entities"></a>7.3 Entity Declarations
+            <h2><a id="chars.entities"></a>7.3 Entity Declarations
             </h2>
             <p>Earlier versions of this MathML specification included detailed
                listings of the entity definitions to be used with the MathML DTD.
@@ -334,7 +399,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="chars.mglyph" id="chars.mglyph"></a>7.4 Special Characters Not in Unicode
+            <h2><a id="chars.mglyph"></a>7.4 Special Characters Not in Unicode
             </h2>
             <p>
                For special purposes, one may need a symbol which does not have a
@@ -353,7 +418,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="chars.BMP-SMP" id="chars.BMP-SMP"></a>7.5 Mathematical Alphanumeric Symbols
+            <h2><a id="chars.BMP-SMP"></a>7.5 Mathematical Alphanumeric Symbols
             </h2>
             <p>
                In mathematical and scientific writing, single letters often denote 
@@ -657,7 +722,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="chars.nonmark" id="chars.nonmark"></a>7.6 Non-Marking Characters
+            <h2><a id="chars.nonmark"></a>7.6 Non-Marking Characters
             </h2>
             <p>
                Some characters, although important for the quality of print or
@@ -723,7 +788,7 @@ padding-right: 1em;
          </div>
          <div class="div2">
             
-            <h2><a name="chars.anomalous" id="chars.anomalous"></a>7.7 Anomalous Mathematical Characters
+            <h2><a id="chars.anomalous"></a>7.7 Anomalous Mathematical Characters
             </h2>
             <p>Some characters which occur fairly often in mathematical texts, and
                have special significance there, are frequently confused with other
@@ -736,7 +801,7 @@ padding-right: 1em;
             </p>
             <div class="div3">
                
-               <h3><a name="chars.keyboard" id="chars.keyboard"></a>7.7.1 Keyboard Characters
+               <h3><a id="chars.keyboard"></a>7.7.1 Keyboard Characters
                </h3>
                <p>Typical Latin-1-based keyboards contain several characters that
                   are visually similar to important mathematical characters.
@@ -746,7 +811,7 @@ padding-right: 1em;
                </p>
                <div class="div4">
                   
-                  <h4><a name="chars.hyph-minus" id="chars.hyph-minus"></a>7.7.1.1 Minus
+                  <h4><a id="chars.hyph-minus"></a>7.7.1.1 Minus
                   </h4>
                   <p>The most common ordinary text character which enjoys a special
                      mathematical use is U+002D [HYPHEN-MINUS].  As its Unicode name
@@ -766,7 +831,7 @@ padding-right: 1em;
                </div>
                <div class="div4">
                   
-                  <h4><a name="chars.prime-quote" id="chars.prime-quote"></a>7.7.1.2 Apostrophes, Quotes and Primes
+                  <h4><a id="chars.prime-quote"></a>7.7.1.2 Apostrophes, Quotes and Primes
                   </h4>
                   <p>On a typical European keyboard there is a key available which is
                      viewed as an apostrophe or a single quotation mark (an upright or
@@ -797,7 +862,7 @@ padding-right: 1em;
                </div>
                <div class="div4">
                   
-                  <h4><a name="id.7.7.1.3" id="id.7.7.1.3"></a>7.7.1.3 Other Keyboard Substitutions
+                  <h4><a id="id.7.7.1.3"></a>7.7.1.3 Other Keyboard Substitutions
                   </h4>
                   <p>While the minus and prime characters are the most common and
                      important keyboard characters with more precise mathematical
@@ -805,8 +870,9 @@ padding-right: 1em;
                      substitutions that are sometime used.  For example some may expect
                      
                   </p><pre class="mathml">&lt;mo&gt;''&lt;/mo&gt;</pre><p> to be treated as 
-                     U+2033 [DOUBLE PRIME], and analogous substitutions could perhaps be made for U+2034 [TRIPLE PRIME] and U+2057 [QUADRUPLE PRIME].
-                     Similarly, sometimes U+007C [VERTICAL 
+                     U+2033 [DOUBLE PRIME], and analogous substitutions could perhaps be made for U+2034
+                     [TRIPLE PRIME] and U+2057 [QUADRUPLE PRIME]. Similarly, sometimes U+007C [VERTICAL
+                     
                      LINE] is used for U+2223 [DIVIDES].  MathML regards these as
                      application-specific authoring conventions, and recommends that
                      authoring tools generate markup using the more precise mathematical
@@ -817,7 +883,7 @@ padding-right: 1em;
             </div>
             <div class="div3">
                
-               <h3><a name="chars.pseudo-scripts" id="chars.pseudo-scripts"></a>7.7.2 Pseudo-scripts
+               <h3><a id="chars.pseudo-scripts"></a>7.7.2 Pseudo-scripts
                </h3>
                <p>There are a number of characters in the UCS that traditionally have
                   been taken to have a natural ‘script’ aspect.  The
@@ -841,7 +907,8 @@ padding-right: 1em;
                   
                </p><pre class="mathml">&lt;mi&gt;x'&lt;/mi&gt;</pre><p>
                   
-                  or any other variants not using an explicit script construct. Note, however, that within
+                  or any other variants not using an explicit script construct. Note, however, that
+                  within
                   text contexts such as <code>mtext</code>, pseudo-scripts may be used in sequence with other character data.
                </p>
                <p>There are two reasons why explicit markup is preferable in
@@ -1026,7 +1093,7 @@ padding-right: 1em;
             </div>
             <div class="div3">
                
-               <h3><a name="chars.comb-chars" id="chars.comb-chars"></a>7.7.3 Combining Characters
+               <h3><a id="chars.comb-chars"></a>7.7.3 Combining Characters
                </h3>
                <p>In the UCS there are many combining characters that are intended 
                   to be used for the many accents of numerous different natural
