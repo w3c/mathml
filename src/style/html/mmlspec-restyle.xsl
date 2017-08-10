@@ -2428,12 +2428,8 @@ but distinguished by role="editor" attribute -->
     </dd>
   </xsl:template>
 
-<!-- errata linking -->
-<!-- add the apply-templates errataloc here rather than  the main
-header template as it's smaller... -->
 
   <xsl:template match="altlocs">
-    <xsl:apply-templates select="../errataloc"/>
     <p>
       <xsl:text>In addition to the </xsl:text>
        <a href="{$front.filename.base}.html">HTML</a>

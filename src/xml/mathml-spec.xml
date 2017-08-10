@@ -11,10 +11,10 @@
 <!ENTITY doc.date      "&date.year;&date.monthnum;&date.day;"> 
 <!ENTITY doc.prefix    "WD-MathML3-">
 <!ENTITY doc.type      "Working Draft">
-<!ENTITY tr.url        "http://www.w3.org/TR">
+<!ENTITY tr.url        "https://www.w3.org/TR">
 <!ENTITY this.url      "&tr.url;/&date.year;/&doc.prefix;&doc.date;/"> 
 <!ENTITY latest.url    "&tr.url;/MathML3/">
-<!ENTITY editors.url   "http://www.w3.org/Math/draft-spec/">
+<!ENTITY editors.url   "https://w3c.github.io/mathml/">
 <!ENTITY latest.loc    "<loc href='&latest.url;'>&latest.url;</loc>">
 
 
