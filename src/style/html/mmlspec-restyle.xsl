@@ -420,11 +420,11 @@ summary="Navigation TOC"
      so main document toc and per-chapter tocs can be different
      depths.
 -->
-  <xsl:template match="*[contains(name(),'div')][head]|MMLdefinition" mode="toc">
+  <xsl:template match="*[matches(name(),'div[0-9]')][head]|MMLdefinition" mode="toc">
     <xsl:param name="indent" select="''"/>
     <xsl:param name="toc.level" select="$toc.level"/>
     <xsl:variable name="depth"
-    select="if(parent::div) then 5 else count(ancestor::*[contains(name(),'div')][head])"/>
+    select="count(ancestor::*[matches(name(),'div[0-9]')][head])"/>
     <xsl:variable name="num">
       <xsl:apply-templates select="." mode="divnum"/>
     </xsl:variable>
@@ -446,9 +446,12 @@ summary="Navigation TOC"
       <xsl:if test="self::inform-div1"> (Non-Normative)</xsl:if>
     </a>
        <xsl:text>&#10;</xsl:text>
-    <xsl:if test="$depth +1 &lt; $toc.level and *[contains(name(),'div')][head]|MMLdefinition">
+       <xsl:if test="$depth  &lt; $toc.level and *[matches(name(),'div[0-9]')][head]|MMLdefinition">
+	<xsl:if test="@id='contm_tendsto'">
+	 <xsl:message select="'@@',$depth,$toc.level,(*[matches(name(),'div[0-9]')][head]|MMLdefinition)"/>
+	</xsl:if>
      <ol class="toc">
-      <xsl:apply-templates select="*[contains(name(),'div')][head]|MMLdefinition" mode="toc">
+      <xsl:apply-templates select="*[matches(name(),'div[0-9]')][head]|MMLdefinition" mode="toc">
        <xsl:with-param name="indent" select="concat($indent,'&#160;&#160;&#160;&#160;')"/>
        <xsl:with-param name="toc.level" select="$toc.level"/>
       </xsl:apply-templates>
