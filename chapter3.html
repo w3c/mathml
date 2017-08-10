@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Presentation Markup</title><style type="text/css">
@@ -162,8 +162,7 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css">
-   </head>
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css"><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script></head>
    <body>
       
       <h1><a id="presm"></a>3 Presentation Markup
@@ -1411,7 +1410,7 @@ padding-right: 1em;
                      
                   </p>
                   
-                  <table id="presm.table-reqarg" border="1">
+                  <table id="presm.table-reqarg" class="data">
                      <thead>
                         <tr>
                            <th>Element</th>
@@ -2110,7 +2109,7 @@ padding-right: 1em;
                   <h4><a id="id.3.1.9.1"></a>3.1.9.1 Token Elements
                   </h4>
                   
-                  <table border="1">
+                  <table class="data">
                      <tbody>
                         <tr>
                            <td><a href="#presm.mi"><code>mi</code></a></td>
@@ -2148,7 +2147,7 @@ padding-right: 1em;
                   <h4><a id="id.3.1.9.2"></a>3.1.9.2 General Layout Schemata
                   </h4>
                   
-                  <table border="1">
+                  <table class="data">
                      <tbody>
                         <tr>
                            <td><a href="#presm.mrow"><code>mrow</code></a></td>
@@ -2199,7 +2198,7 @@ padding-right: 1em;
                   <h4><a id="id.3.1.9.3"></a>3.1.9.3 Script and Limit Schemata
                   </h4>
                   
-                  <table border="1">
+                  <table class="data">
                      <tbody>
                         <tr>
                            <td><a href="#presm.msub"><code>msub</code></a></td>
@@ -2238,7 +2237,7 @@ padding-right: 1em;
                   <h4><a id="id.3.1.9.4"></a>3.1.9.4 Tables and Matrices
                   </h4>
                   
-                  <table border="1">
+                  <table class="data">
                      <tbody>
                         <tr>
                            <td><a href="#presm.mtable"><code>mtable</code></a></td>
@@ -2271,7 +2270,7 @@ padding-right: 1em;
                   <h4><a id="id.3.1.9.5"></a>3.1.9.5 Elementary Math Layout
                   </h4>
                   
-                  <table border="1">
+                  <table class="data">
                      <tbody>
                         <tr>
                            <td><a href="#presm.mstack"><code>mstack</code></a></td>
@@ -2310,7 +2309,7 @@ padding-right: 1em;
                   <h4><a id="id.3.1.9.6"></a>3.1.9.6 Enlivening Expressions
                   </h4>
                   
-                  <table border="1">
+                  <table class="data">
                      <tbody>
                         <tr>
                            <td><a href="#presm.maction"><code>maction</code></a></td>
@@ -3821,7 +3820,7 @@ padding-right: 1em;
                         
                      </p>
                      
-                     <table id="presm.table-indentalign" border="1">
+                     <table id="presm.table-indentalign" class="data">
                         <thead>
                            <tr>
                               <th> Value   </th>
@@ -3935,7 +3934,7 @@ padding-right: 1em;
                      
                   </p>
                   
-                  <table border="1">
+                  <table class="data">
                      <thead>
                         <tr>
                            <th>Character</th>
@@ -4394,9 +4393,9 @@ padding-right: 1em;
   &lt;mo maxsize="100%"&gt; ) &lt;/mo&gt;
 &lt;/mrow&gt;
 </pre><p>The above should render as 
-                        <img src="image/f3001.gif" alt="(\frac{a}{b})" align="middle"> 
+                        <img src="image/f3001.gif" alt="(\frac{a}{b})" style="vertical-align:middle"> 
                         as opposed to the default rendering
-                        <img src="image/f3002.gif" alt="\left(\frac{a}{b}\right)" align="middle">.
+                        <img src="image/f3002.gif" alt="\left(\frac{a}{b}\right)" style="vertical-align:middle">.
                      </p>
                      <p>Note that each parenthesis is sized independently; if only one of
                         them had <code>maxsize</code>="100%", they would render with different
@@ -4543,7 +4542,7 @@ padding-right: 1em;
   &lt;mi&gt; y &lt;/mi&gt;
 &lt;/mrow&gt;
 </pre><p>This displays as 
-                        <img src="image/f3003.gif" alt="x \widearrow{\mathrm{maps~to}} y" align="middle">.
+                        <img src="image/f3003.gif" alt="x \widearrow{\mathrm{maps~to}} y" style="vertical-align:middle">.
                      </p>
                   </div>
                   <div class="div5">
@@ -4674,9 +4673,9 @@ padding-right: 1em;
                   <p>In some cases, text embedded in mathematics could be more appropriately
                      represented using <code>mo</code> or <code>mi</code> elements.
                      For example, the expression 'there exists
-                     <img src="image/f3004.gif" alt="\delta&gt;0" align="middle">
+                     <img src="image/f3004.gif" alt="\delta&gt;0" style="vertical-align:middle">
                      such that <var>f</var>(<var>x</var>) &lt;1' is equivalent to
-                     <img src="image/f3005.gif" alt="\exists \delta&gt;0 \backepsilon f(x)<1" align="middle"> 
+                     <img src="image/f3005.gif" alt="\exists \delta&gt;0 \backepsilon f(x)<1" style="vertical-align:middle"> 
                      and could be represented as:
                      
                   </p><pre class="mathml">
@@ -7133,9 +7132,9 @@ padding-right: 1em;
                      
                   </p>
                   <p> Note that both scripts are positioned tight against the base as shown here
-                     <img src="image/f3014.gif" alt="x_1^2" align="middle">
+                     <img src="image/f3014.gif" alt="x_1^2" style="vertical-align:middle">
                      versus the staggered positioning of nested scripts as shown here
-                     <img src="image/f3013.gif" alt="x_1{}^2" align="middle">;
+                     <img src="image/f3013.gif" alt="x_1{}^2" style="vertical-align:middle">;
                      the latter can be achieved by nesting an <code>msub</code> inside an <code>msup</code>.
                   </p>
                </div>
@@ -7310,8 +7309,8 @@ padding-right: 1em;
                      the default.
                   </p>
                   <p>Here is an example (accent versus underscript):
-                     <img src="image/f3016.gif" alt="\underbrace{x+y+z}" align="middle"> versus
-                     <img src="image/f3017.gif" alt="\underbrace{\strut x+y+z}" align="middle">.
+                     <img src="image/f3016.gif" alt="\underbrace{x+y+z}" style="vertical-align:middle"> versus
+                     <img src="image/f3017.gif" alt="\underbrace{\strut x+y+z}" style="vertical-align:middle">.
                      The MathML representation for this example is shown below.
                   </p>
                </div>
@@ -7421,12 +7420,12 @@ padding-right: 1em;
                   </table>
                   
                   <p>The difference between an accent versus limit is shown here:
-                     <img src="image/f3018.gif" alt="\hat{x}" align="middle"> versus
-                     <img src="image/f3019.gif" alt="\hat{\strut x}" align="middle">.
+                     <img src="image/f3018.gif" alt="\hat{x}" style="vertical-align:middle"> versus
+                     <img src="image/f3019.gif" alt="\hat{\strut x}" style="vertical-align:middle">.
                      These differences also apply to "mathematical accents" such as
                      bars or braces over expressions:
-                     <img src="image/f3020.gif" alt="\overbrace{x+y+z}" align="middle"> versus
-                     <img src="image/f3021.gif" alt="\overbrace{\strut x+y+z}" align="middle">.
+                     <img src="image/f3020.gif" alt="\overbrace{x+y+z}" style="vertical-align:middle"> versus
+                     <img src="image/f3021.gif" alt="\overbrace{\strut x+y+z}" style="vertical-align:middle">.
                      The MathML representation for each of these examples is shown below.
                   </p>
                   <p>The default value of <em>accent</em> is false, unless
@@ -7579,9 +7578,9 @@ padding-right: 1em;
                      to the base and so that they follow the slant of the base as in the
                      second expression shown below:
                   </p>
-                  <p><img src="image/f3022.gif" alt="\int_0^{\!\!\!\infty}" align="middle">
+                  <p><img src="image/f3022.gif" alt="\int_0^{\!\!\!\infty}" style="vertical-align:middle">
                      versus
-                     <img src="image/f3023.gif" alt="\int_0^{\infty}" align="middle">.
+                     <img src="image/f3023.gif" alt="\int_0^{\infty}" style="vertical-align:middle">.
                      The MathML representation for this example is shown below.
                   </p>
                   <p>The difference in the vertical spacing is too small to be noticed on a
@@ -7732,7 +7731,7 @@ padding-right: 1em;
     &lt;mo&gt; ) &lt;/mo&gt;
   &lt;/mrow&gt;
 &lt;/mrow&gt;
-</pre><p><img src="image/tensorindices.png" alt="R_i{}^j{}_k{}_l" align="middle">
+</pre><p><img src="image/tensorindices.png" alt="R_i{}^j{}_k{}_l" style="vertical-align:middle">
                      (where <var>k</var> and <var>l</var> are different indices)
                      
                   </p><pre class="mathml">
@@ -7747,7 +7746,7 @@ padding-right: 1em;
   &lt;mi&gt; l &lt;/mi&gt;
   &lt;none/&gt;
 &lt;/mmultiscripts&gt;
-</pre><p><img src="image/prescriptsalign.png" alt="{}_{123}^{\phantom{00}1}X{}_{123}^{1\phantom{00}}" align="middle">
+</pre><p><img src="image/prescriptsalign.png" alt="{}_{123}^{\phantom{00}1}X{}_{123}^{1\phantom{00}}" style="vertical-align:middle">
                      
                   </p><pre class="mathml">
   &lt;mmultiscripts&gt;
@@ -9111,7 +9110,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      
                   </p>
                   
-                  <table border="1">
+                  <table class="data">
                      <thead>
                         <tr>
                            <th>Element type</th>

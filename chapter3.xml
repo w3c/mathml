@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
   SYSTEM "mathml.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
    <head>
       <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
       <title>Presentation Markup</title><style type="text/css">
@@ -163,8 +163,7 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" />
-   </head>
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" /><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script></head>
    <body>
       
       <h1><a id="presm"></a>3 Presentation Markup
@@ -1461,7 +1460,7 @@ padding-right: 1em;
                      
                   </p>
                   
-                  <table id="presm.table-reqarg" border="1">
+                  <table id="presm.table-reqarg" class="data">
                      <thead>
                         <tr>
                            <th>Element</th>
@@ -2160,7 +2159,7 @@ padding-right: 1em;
                   <h4><a id="id.3.1.9.1"></a>3.1.9.1 Token Elements
                   </h4>
                   
-                  <table border="1">
+                  <table class="data">
                      <tbody>
                         <tr>
                            <td><a href="#presm.mi"><code>mi</code></a></td>
@@ -2198,7 +2197,7 @@ padding-right: 1em;
                   <h4><a id="id.3.1.9.2"></a>3.1.9.2 General Layout Schemata
                   </h4>
                   
-                  <table border="1">
+                  <table class="data">
                      <tbody>
                         <tr>
                            <td><a href="#presm.mrow"><code>mrow</code></a></td>
@@ -2249,7 +2248,7 @@ padding-right: 1em;
                   <h4><a id="id.3.1.9.3"></a>3.1.9.3 Script and Limit Schemata
                   </h4>
                   
-                  <table border="1">
+                  <table class="data">
                      <tbody>
                         <tr>
                            <td><a href="#presm.msub"><code>msub</code></a></td>
@@ -2288,7 +2287,7 @@ padding-right: 1em;
                   <h4><a id="id.3.1.9.4"></a>3.1.9.4 Tables and Matrices
                   </h4>
                   
-                  <table border="1">
+                  <table class="data">
                      <tbody>
                         <tr>
                            <td><a href="#presm.mtable"><code>mtable</code></a></td>
@@ -2321,7 +2320,7 @@ padding-right: 1em;
                   <h4><a id="id.3.1.9.5"></a>3.1.9.5 Elementary Math Layout
                   </h4>
                   
-                  <table border="1">
+                  <table class="data">
                      <tbody>
                         <tr>
                            <td><a href="#presm.mstack"><code>mstack</code></a></td>
@@ -2360,7 +2359,7 @@ padding-right: 1em;
                   <h4><a id="id.3.1.9.6"></a>3.1.9.6 Enlivening Expressions
                   </h4>
                   
-                  <table border="1">
+                  <table class="data">
                      <tbody>
                         <tr>
                            <td><a href="#presm.maction"><code>maction</code></a></td>
@@ -4095,7 +4094,7 @@ padding-right: 1em;
                         
                      </p>
                      
-                     <table id="presm.table-indentalign" border="1">
+                     <table id="presm.table-indentalign" class="data">
                         <thead>
                            <tr>
                               <th> Value   </th>
@@ -4351,7 +4350,7 @@ padding-right: 1em;
                      
                   </p>
                   
-                  <table border="1">
+                  <table class="data">
                      <thead>
                         <tr>
                            <th>Character</th>
@@ -10535,7 +10534,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      
                   </p>
                   
-                  <table border="1">
+                  <table class="data">
                      <thead>
                         <tr>
                            <th>Element type</th>

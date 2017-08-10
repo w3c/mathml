@@ -503,7 +503,7 @@ summary="Navigation TOC"
       <xsl:apply-templates select="." mode="slice-filename"/>
     </xsl:with-param>
     <xsl:with-param name="content">
-      <html>
+      <html lang="en">
       <xsl:if test="header/langusage/language">
         <xsl:attribute name="lang">
           <xsl:value-of select="header/langusage/language/@id"/>
@@ -547,7 +547,7 @@ summary="Navigation TOC"
       <xsl:apply-templates select="." mode="slice-filename"/>
     </xsl:with-param>
     <xsl:with-param name="content">
-      <html>
+      <html lang="en">
         <head>
           <title><xsl:value-of select="head"/></title>
           <xsl:call-template name="css"/>
@@ -588,7 +588,7 @@ summary="Navigation TOC"
       <xsl:apply-templates select="." mode="slice-filename"/>
     </xsl:with-param>
     <xsl:with-param name="content">
-      <html>
+      <html lang="en">
         <head>
           <title><xsl:value-of select="head"/></title>
           <xsl:call-template name="css"/>
@@ -1082,7 +1082,7 @@ summary="Navigation TOC"
 
 
  <xsl:template match="graphic[@role='inline']">
-   <img src="{@source}" alt="{@alt}" align="{(@align,'middle')[1]}"/>
+   <img src="{@source}" alt="{@alt}" style="vertical-align:{(@align,'middle')[1]}"/>
  </xsl:template>
 
  <xsl:template match="graphic">
@@ -2246,7 +2246,7 @@ import org.w3c.</xsl:text><xsl:value-of select="$theSource"/>
 
   <xsl:if test="MMLattribute">
   <dt>MMLattribute</dt>
-  <dd><table border="1">
+  <dd><table class="data">
   <tr><th>Name</th><th>Value</th><th>Default</th></tr>
   <xsl:for-each select="MMLattribute">
   <tr><xsl:apply-templates/></tr>
@@ -2507,13 +2507,16 @@ for this document, which may include some normative corrections.</p>
     <xsl:text>&#10;</xsl:text>
     <table>
         <!-- Wait: some of these aren't HTML attributes after all... -->
-        <xsl:copy-of select="@* except (@diff,@role,@rowspan[.=1],@colspan[.=1],@border[../@role='attributes'])"/>
+        <xsl:copy-of select="@* except (@diff,@role,@rowspan[.=1],@colspan[.=1],@border[../@role='attributes'],@border)"/>
         <xsl:if test="@id">
          <xsl:attribute name="id" select="translate(@id,'_','.')"/>
         </xsl:if>
         <xsl:if test="@role">
          <xsl:attribute name="class" select="@role"/>
         </xsl:if>
+      <xsl:if test="not((@class,@role)) and @border=1">
+       <xsl:attribute name="class" select="'data'"/>
+      </xsl:if>
       <xsl:apply-templates/>
 
       <xsl:if test=".//footnote">
@@ -2925,8 +2928,9 @@ padding-right: 1em;
 
  <xsl:template match="issue">
     <xsl:if test="$show.issues != 0 and @role!='closed'">
-      <xsl:text>&#10;</xsl:text>
-      <table border="1" id="{translate(@id,'_','.')}">
+     <xsl:text>&#10;</xsl:text>
+     <div class="issue">
+      <table id="{translate(@id,'_','.')}">
 	<tr>
 	  <th>Issue <xsl:value-of select="@id"/></th>
 	  <td><tt><a href="http://www.w3.org/Math/Group/wiki/Issue_{@id}">wiki (member only)</a></tt>
@@ -2949,6 +2953,7 @@ padding-right: 1em;
 	</tr>
       </table>
       <xsl:text>&#10;</xsl:text>
+     </div>
     </xsl:if>
   </xsl:template>
 

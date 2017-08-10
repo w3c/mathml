@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Content Markup</title><style type="text/css">
@@ -170,8 +170,7 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css">
-   </head>
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css"><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script></head>
    <body>
       
       <h1><a id="contm"></a>4 Content Markup
@@ -1112,7 +1111,7 @@ padding-right: 1em;
                   may lose currency, for example the use of musical sharp and flat
                   symbols to denote maxima and minima <a href="appendixh-d.html#Chaundy1954">[Chaundy1954]</a>. A
                   notation in use in 1644 for the multiplication mentioned above was
-                  <img src="image/f4001.gif" alt="\blacksquare" align="middle"><var>H</var><var>e</var> <a href="appendixh-d.html#Cajori1928">[Cajori1928]</a>.
+                  <img src="image/f4001.gif" alt="\blacksquare" style="vertical-align:middle"><var>H</var><var>e</var> <a href="appendixh-d.html#Cajori1928">[Cajori1928]</a>.
                </p>
                <p>By encoding the underlying mathematical structure explicitly,
                   without regard to how it is presented aurally or visually, it is
@@ -1232,7 +1231,7 @@ padding-right: 1em;
                   
                </p>
                
-               <table border="1" id="contm.om.correspondence">
+               <table id="contm.om.correspondence" class="data">
                   <thead>
                      <tr>
                         <th>Strict Content MathML</th>
@@ -1813,7 +1812,7 @@ padding-right: 1em;
 &lt;/apply&gt;</pre><p>The symbol used in the result depends on the <code>type</code> attribute according to the following table:
                      </p>
                      
-                     <table id="contm.table-cntype" border="1">
+                     <table id="contm.table-cntype" class="data">
                         <thead>
                            <tr>
                               <th>type attribute</th>
@@ -1886,7 +1885,7 @@ padding-right: 1em;
                         where <code>c2</code>  corresponds to <code>c</code> as specified in the following table.
                      </p>
                      
-                     <table id="contm.table-pragnum" border="1">
+                     <table id="contm.table-pragnum" class="data">
                         <thead>
                            <tr>
                               <th>Content</th>
@@ -3055,7 +3054,7 @@ padding-right: 1em;
                      acyclicity constraint, the example is not a valid MathML expression tree. It
                      might be argued that such an expression could be given the interpretation of the continued
                      fraction
-                     <img src="image/contfrac1.gif" alt="  \frac{1}{1 + \frac{1}{1 + \frac{1}{1 + \ldots}}}" align="middle">.
+                     <img src="image/contfrac1.gif" alt="  \frac{1}{1 + \frac{1}{1 + \frac{1}{1 + \ldots}}}" style="vertical-align:middle">.
                      However, the procedure of building an expression tree by replacing
                      <code>share</code> element does not terminate for such an
                      expression, and hence such expressions are not allowed by Content MathML.
@@ -3110,9 +3109,9 @@ padding-right: 1em;
                   <p>
                      
                      This represents a term
-                     <img src="image/lamshare1.gif" alt="\lambda{x}.f(\lambda{x}.g(x),g(x))" align="middle">
+                     <img src="image/lamshare1.gif" alt="\lambda{x}.f(\lambda{x}.g(x),g(x))" style="vertical-align:middle">
                      which has two sub-terms of the form
-                     <img src="image/lamshare2.gif" alt="g(x)" align="middle">,
+                     <img src="image/lamshare2.gif" alt="g(x)" style="vertical-align:middle">,
                      one with <code>id="orig"</code>
                      (the one explicitly represented) and one with <code>id="copy"</code>,
                      represented by the <code>share</code> element.
@@ -3128,9 +3127,9 @@ padding-right: 1em;
                      errors, and is not recommended.  For instance, using
                      α-conversion to rename the inner occurrence of <var>x</var>
                      into, say, <var>y</var> leads to the semantically equivalent expression
-                     <img src="image/lamshare3.gif" alt="\lambda{x}.f(\lambda{y}.g(y),g(x))" align="middle">.  
+                     <img src="image/lamshare3.gif" alt="\lambda{x}.f(\lambda{y}.g(y),g(x))" style="vertical-align:middle">.  
                      However, in this form, it is no longer possible to share the expression
-                     <img src="image/lamshare2.gif" alt="g(x)" align="middle">.
+                     <img src="image/lamshare2.gif" alt="g(x)" style="vertical-align:middle">.
                      Replacing <var>x</var> with <var>y</var> in the inner
                      <code>bvar</code> without replacing the <code>share</code> element results in a change
                      in semantics.

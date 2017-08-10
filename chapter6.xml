@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
   SYSTEM "mathml.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
    <head>
       <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
       <title>Interactions with the Host Environment</title><style type="text/css">
@@ -163,8 +163,7 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" />
-   </head>
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" /><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script></head>
    <body>
       
       <h1><a id="world-interactions"></a>6 Interactions with the Host Environment
@@ -717,7 +716,7 @@ padding-right: 1em;
                      places the following data formats on the clipboard:
                   </p>
                   
-                  <table id="table-flavor-a" border="1">
+                  <table id="table-flavor-a" class="data">
                      <thead>
                         <tr>
                            <th>Flavor Name</th>
@@ -747,7 +746,7 @@ padding-right: 1em;
                      exports the following flavors:
                   </p>
                   
-                  <table id="table-flavor-b" border="1">
+                  <table id="table-flavor-b" class="data">
                      <thead>
                         <tr>
                            <th>Flavor Name</th>
@@ -785,7 +784,7 @@ padding-right: 1em;
                      The system therefore can transfer the following data:
                   </p>
                   
-                  <table id="table-flavor-c" border="1">
+                  <table id="table-flavor-c" class="data">
                      <thead>
                         <tr>
                            <th>Flavor Name</th>
@@ -874,7 +873,7 @@ padding-right: 1em;
                      a drag-and-drop action, can offer the following flavors:
                   </p>
                   
-                  <table id="table-flavor-d" border="1">
+                  <table id="table-flavor-d" class="data">
                      <thead>
                         <tr>
                            <th>Flavor Name</th>

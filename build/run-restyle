@@ -132,7 +132,7 @@ echo "" > mathml.dtd
 cp  $HSTYLE/html5-restyle.xsl .
 $SAXON  -o:mathml.html   -it:main html5-restyle.xsl
 sed -i -e "s@></input></mtext>@/></mtext>@" mathml.html
-rm html5.xsl
+rm html5-restyle.xsl
 mv tmp.dtd mathml.dtd
 
 # exit

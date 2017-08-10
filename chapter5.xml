@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
   SYSTEM "mathml.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
    <head>
       <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
       <title>Mixing Markup Languages for Mathematical Expressions</title><style type="text/css">
@@ -163,8 +163,7 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" />
-   </head>
+</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" /><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script></head>
    <body>
       
       <h1><a id="mixing"></a>5 Mixing Markup Languages for Mathematical Expressions

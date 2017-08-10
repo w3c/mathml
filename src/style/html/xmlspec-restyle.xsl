@@ -649,8 +649,9 @@
 
   <!-- ednote: editors' note -->
   <xsl:template match="ednote">
-    <xsl:if test="$show.ednotes != 0">
-      <table border="1">
+   <xsl:if test="$show.ednotes != 0">
+    <div class="issue">
+      <table>
         <xsl:attribute name="summary">
           <xsl:text>Editorial note</xsl:text>
           <xsl:if test="name">
@@ -683,7 +684,8 @@
           </td>
         </tr>
       </table>
-    </xsl:if>
+    </div>
+   </xsl:if>
   </xsl:template>
 
   <xsl:template match="date">
@@ -789,7 +791,7 @@
         </div>
       </xsl:when>
       <xsl:otherwise>
-        <table class="eg" cellpadding="5" border="1"
+        <table class="eg" cellpadding="5"
                bgcolor="#99ffff" width="100%"
                summary="Example">
           <tr>
@@ -1114,7 +1116,8 @@ Copyright</a> &#xa9; 1998-2007 <a href="http://www.w3.org/"><acronym title="Worl
        head if it's present -->
   <xsl:template match="issue">
     <xsl:if test="$show.issues != 0 and @role!='closed'">
-      <table border="1" id="{@id}">
+<div class="issue">
+     <table id="{@id}">
 	<tr>
 	  <th>Issue</th>
 	  <td><tt><xsl:value-of select="@id"/></tt></td>
@@ -1131,6 +1134,7 @@ Copyright</a> &#xa9; 1998-2007 <a href="http://www.w3.org/"><acronym title="Worl
 	  </td>
 	</tr>
       </table>
+</div>
     </xsl:if>
   </xsl:template>
 
@@ -1894,14 +1898,10 @@ for this document, which may include some normative corrections.</p>
   <!-- but table is special, to handle footnotes -->
   <xsl:template match="table">
     <table>
-      <xsl:for-each select="@*">
-        <!-- Wait: some of these aren't HTML attributes after all... -->
-        <xsl:if test="local-name(.) != 'diff'">
-          <xsl:copy>
-<!--            <xsl:apply-templates/> -->
-          </xsl:copy>
-        </xsl:if>
-      </xsl:for-each>
+      <xsl:copy-of select="@* except (@diff,@border)"/>
+      <xsl:if test="not(@class) and @border=1">
+       <xsl:attribute name="class" select="'data'"/>
+      </xsl:if>
       <xsl:apply-templates/>
 
       <xsl:if test=".//footnote">
