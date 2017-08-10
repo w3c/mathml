@@ -1081,9 +1081,9 @@ summary="Navigation TOC"
  </xsl:template>
 
  <xsl:template match="graphic">
-   <blockquote>
+   <div class="graphic"> 
      <p><img src="{@source}" alt="{@alt}"/></p>
-   </blockquote>
+   </div>
  </xsl:template>
 
 
@@ -1119,6 +1119,8 @@ summary="Navigation TOC"
 .egmeta {
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
 }
+
+div.graphic{margin-left:2em}
 
 table.syntax {
 font-size: 75%;

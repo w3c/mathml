@@ -24,6 +24,8 @@
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
 }
 
+div.graphic{margin-left:2em}
+
 table.syntax {
 font-size: 75%;
 background-color: #DDDDDD;
@@ -1562,9 +1564,9 @@ padding-right: 1em;
                         </p>
                         <div class="mathml-example" id="contm.cn.hexdouble.ex"><pre class="mathml">
 &lt;cn type="hexdouble"&gt;7F800000&lt;/cn&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mn&gt;0x7F800000&lt;/mn&gt;</pre><blockquote>
+&lt;mn&gt;0x7F800000&lt;/mn&gt;</pre><div class="graphic">
                               <p><img src="image/contm_cn_hexdouble_ex.gif" alt="{\mn{0x7F800000}}"></p>
-                           </blockquote>
+                           </div>
                         </div>
                      </dd>
                   </dl>
@@ -1599,9 +1601,9 @@ padding-right: 1em;
                            significant.  The following example encodes the base 10 number 32736.
                         </p>
                         <div class="mathml-example" id="cn.base.ex"><pre class="mathml">&lt;cn base="16"&gt;7FE0&lt;/cn&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;msub&gt;&lt;mn&gt;7FE0&lt;/mn&gt;&lt;mn&gt;16&lt;/mn&gt;&lt;/msub&gt;</pre><blockquote>
+&lt;msub&gt;&lt;mn&gt;7FE0&lt;/mn&gt;&lt;mn&gt;16&lt;/mn&gt;&lt;/msub&gt;</pre><div class="graphic">
                               <p><img src="image/cn_base_ex.gif" alt="{\mn{7FE0}\sb{16}}"></p>
-                           </blockquote>
+                           </div>
                         </div>
                         <p>
                            When <code>base</code> &gt; 36, some integers cannot be represented using
@@ -1643,9 +1645,9 @@ padding-right: 1em;
                            separated by <code>&lt;sep/&gt;</code>.
                         </p>
                         <div class="mathml-example" id="cn.rational.ex"><pre class="mathml">&lt;cn type="rational"&gt;22&lt;sep/&gt;7&lt;/cn&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;</pre><div class="graphic">
                               <p><img src="image/cn_rational_ex.gif" alt="{{22}/{7}}"></p>
-                           </blockquote>
+                           </div>
                         </div>
                      </dd>
                      <dt class="label">complex-cartesian</dt>
@@ -1660,9 +1662,9 @@ padding-right: 1em;
 </pre><p>Sample Presentation</p><pre class="mathml">
 &lt;mrow&gt;
  &lt;mn&gt;12.3&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;<span title="#x2062">&amp;#x2062;</span><span class="uname">&lt;!--INVISIBLE TIMES--&gt;</span>&lt;/mo&gt;&lt;mi&gt;i&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                               <p><img src="image/cn_cc_ex.gif" alt="{{\mn{12.3}}+{5}\unicode{8290}i}"></p>
-                           </blockquote>
+                           </div>
                         </div>
                      </dd>
                      <dt class="label">complex-polar</dt>
@@ -1681,16 +1683,16 @@ padding-right: 1em;
   &lt;mi&gt;e&lt;/mi&gt;
   &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;<span title="#x2062">&amp;#x2062;</span><span class="uname">&lt;!--INVISIBLE TIMES--&gt;</span>&lt;/mo&gt;&lt;mn&gt;3.1415&lt;/mn&gt;&lt;/mrow&gt;
  &lt;/msup&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                               <p><img src="image/cn_cp_ex.gif" alt="{ {2} \unicode{8290} {\msup{e}{{i\unicode{8290}{\mn{3.1415}}}}} }"></p>
-                           </blockquote><pre class="mathml">
+                           </div><pre class="mathml">
 &lt;mrow&gt;
  &lt;mi&gt;Polar&lt;/mi&gt;
  &lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;
  &lt;mfenced&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;3.1415&lt;/mn&gt;&lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                               <p><img src="image/cn_cp_ex-2.gif" alt="{ \mathop{\minormal{Polar}} {\left({2},{\mn{3.1415}}\right)} }"></p>
-                           </blockquote>
+                           </div>
                         </div>
                      </dd>
                      <dt class="label">constant</dt>
@@ -2114,9 +2116,9 @@ padding-right: 1em;
     &lt;msup&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
   &lt;/annotation-xml&gt;
 &lt;/semantics&gt;</pre><p>Sample Presentation</p><pre class="mathml">
- &lt;msup&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;</pre><blockquote>
+ &lt;msup&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;</pre><div class="graphic">
                         <p><img src="image/contm_ci_c2.gif" alt="{\msup{C}{{2}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -2387,9 +2389,9 @@ padding-right: 1em;
  &lt;mo&gt;,&lt;/mo&gt;
  &lt;ms&gt;<span title="#xa0">&amp;#xa0;</span><span class="uname">&lt;!--NO-BREAK SPACE--&gt;</span><span title="#xa0">&amp;#xa0;</span><span class="uname">&lt;!--NO-BREAK SPACE--&gt;</span>&lt;/ms&gt;
  &lt;mo&gt;}&lt;/mo&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                      <p><img src="image/cs-ex.gif" alt="{\left.\middle\{\mbox{\textquotedbl A\textquotedbl},\mbox{\textquotedbl B\textquotedbl },\mbox{\textquotedbl\ \ \textquotedbl }\middle\}\right.}"></p>
-                  </blockquote>
+                  </div>
                </div>
             </div>
             <div class="div3">
@@ -3176,9 +3178,9 @@ padding-right: 1em;
 &lt;merror&gt;
   &lt;mtext&gt;DivisionByZero:&amp;#160;&lt;/mtext&gt;
   &lt;mfrac&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mfrac&gt;
-&lt;/merror&gt;</pre><blockquote>
+&lt;/merror&gt;</pre><div class="graphic">
                      <p><img src="image/cerror-ex.gif" alt="\hbox{DivisionByZero: } \frac{x}{0}"></p>
-                  </blockquote>
+                  </div>
                </div>
                <p>Note that when the context where an error occurs is so nonsensical
                   that its default presentation would not be useful, an application may
@@ -4578,18 +4580,18 @@ padding-right: 1em;
 &lt;interval closure="closed"&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;</pre><pre class="mathml">
 &lt;interval closure="open-closed"&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;</pre><pre class="mathml">
 &lt;interval closure="closed-open"&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;</pre><blockquote>
+&lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;</pre><div class="graphic">
                         <p><img src="image/interval1-interval_oo-ex1.gif" alt="{\left(x,{1}\right)}"></p>
-                     </blockquote><pre class="mathml">
-&lt;mfenced open="[" close="]"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;</pre><blockquote>
+                     </div><pre class="mathml">
+&lt;mfenced open="[" close="]"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;</pre><div class="graphic">
                         <p><img src="image/interval1-interval_cc-ex1.gif" alt="{\left[{0},{1}\right]}"></p>
-                     </blockquote><pre class="mathml">
-&lt;mfenced open="(" close="]"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;</pre><blockquote>
+                     </div><pre class="mathml">
+&lt;mfenced open="(" close="]"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;</pre><div class="graphic">
                         <p><img src="image/interval1-interval_oc-ex1.gif" alt="{\left({0},{1}\right]}"></p>
-                     </blockquote><pre class="mathml">
-&lt;mfenced open="[" close=")"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;</pre><blockquote>
+                     </div><pre class="mathml">
+&lt;mfenced open="[" close=")"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;</pre><div class="graphic">
                         <p><img src="image/interval1-interval_co-ex1.gif" alt="{\left[{0},{1}\right)}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Content MathML</em></p>
                   <p>In Strict markup, the <code>interval</code> element corresponds to one
@@ -4642,9 +4644,9 @@ padding-right: 1em;
 &lt;apply&gt;&lt;inverse/&gt;
   &lt;ci&gt; f &lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/msup&gt;</pre><blockquote>
+&lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/msup&gt;</pre><div class="graphic">
                         <p><img src="image/fns1-inverse-ex1.gif" alt="{\msup{f}{{\left.\middle({\mn{-1}}\middle)\right.}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="fns1.inverse.ex2">
                      <p>Content MathML</p><pre class="mathml">
@@ -4656,9 +4658,9 @@ padding-right: 1em;
  &lt;msup&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/msup&gt;
  &lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;
  &lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/fns1-inverse-ex2.gif" alt="{\msup{A}{{\left.\middle({\mn{-1}}\middle)\right.}}\unicode{8289}{\left(a\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -4755,9 +4757,9 @@ padding-right: 1em;
    &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
   &lt;/mrow&gt;
  &lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/fns1-lambda-ex2.gif" alt="{\unicode{955}x.{\left({\mathop{{\minormal{sin}}}{\left.\middle(x+{1}\middle)\right.}}\right)}}"></p>
-                     </blockquote><pre class="mathml">
+                     </div><pre class="mathml">
 &lt;mrow&gt;
  &lt;mi&gt;x&lt;/mi&gt;
  &lt;mo&gt;<span title="#x21a6">&amp;#x21a6;</span><span class="uname">&lt;!--RIGHTWARDS ARROW FROM BAR--&gt;</span>&lt;/mo&gt;
@@ -4766,9 +4768,9 @@ padding-right: 1em;
    &lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;
    &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
   &lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/fns1-lambda-ex2-2.gif" alt="{x\unicode{8614}{\mathop{{\minormal{sin}}}{\left.\middle(x+{1}\middle)\right.}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Markup</em></p>
                   <div class="strict-mathml-example">
@@ -4854,9 +4856,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="fns1.compose.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;compose/&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;ci&gt;g&lt;/ci&gt;&lt;ci&gt;h&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;<span title="#x2218">&amp;#x2218;</span><span class="uname">&lt;!--RING OPERATOR--&gt;</span>&lt;/mo&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;<span title="#x2218">&amp;#x2218;</span><span class="uname">&lt;!--RING OPERATOR--&gt;</span>&lt;/mo&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;<span title="#x2218">&amp;#x2218;</span><span class="uname">&lt;!--RING OPERATOR--&gt;</span>&lt;/mo&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;<span title="#x2218">&amp;#x2218;</span><span class="uname">&lt;!--RING OPERATOR--&gt;</span>&lt;/mo&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/fns1-compose-ex1.gif" alt="{f\unicode{8728}g\unicode{8728}h}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="fns1.compose.ex2">
                      <p>Content MathML</p><pre class="mathml">
@@ -4885,9 +4887,9 @@ padding-right: 1em;
   &lt;/mrow&gt;
  &lt;/mfenced&gt;
  &lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/fns1-compose-ex2.gif" alt="{{{\left.\middle(f\unicode{8728}g\middle)\right.}\unicode{8289}{\left(x\right)}}={\mathop{f}{\left({\mathop{g}{\left(x\right)}}\right)}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -4939,9 +4941,9 @@ padding-right: 1em;
  &lt;/mrow&gt;
  &lt;mo&gt;=&lt;/mo&gt;
  &lt;mi&gt;id&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/fns1-ident-ex1.gif" alt="{{f\unicode{8728}\msup{f}{{\left.\middle({\mn{-1}}\middle)\right.}}}={\minormal{id}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -4983,9 +4985,9 @@ padding-right: 1em;
  &lt;mrow&gt;&lt;mi&gt;domain&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
  &lt;mo&gt;=&lt;/mo&gt;
  &lt;mi mathvariant="double-struck"&gt;R&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/fns1-domain-ex1.gif" alt="{{\mathop{{\minormal{domain}}}{\left(f\right)}}={\midoublestruck{R}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -5028,9 +5030,9 @@ padding-right: 1em;
  &lt;mrow&gt;&lt;mi&gt;codomain&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
  &lt;mo&gt;=&lt;/mo&gt;
  &lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/fns1-range-ex1.gif" alt="{{\mathop{{\minormal{codomain}}}{\left(f\right)}}={\midoublestruck{Q}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -5073,9 +5075,9 @@ padding-right: 1em;
  &lt;mrow&gt;&lt;mi&gt;image&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
  &lt;mo&gt;=&lt;/mo&gt;
  &lt;mfenced open="[" close="]"&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/fns1-image-ex1.gif" alt="{{\mathop{{\minormal{image}}}{\left({\minormal{sin}}\right)}}={\left[{\mn{-1}},{1}\right]}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -5238,9 +5240,9 @@ padding-right: 1em;
    &lt;mtd&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;gt;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;/mtd&gt;
   &lt;/mtr&gt;
  &lt;/mtable&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/piece1-piecewise-ex1.gif" alt="{\left.\middle\{{\begin{matrix}{\unicode{8722}x}\endcell{\mathrm{\unicode{160}~if~\unicode{160}}}\endcell{x\lt{0}}\\{0}\endcell{\mathrm{\unicode{160}~if~\unicode{160}}}\endcell{x={0}}\\x\endcell{\mathrm{\unicode{160}~if~\unicode{160}}}\endcell{x\gt{0}}\end{matrix}}\right.}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Markup</em></p>
                   <p>In Strict Content MathML, the container elements
@@ -5322,9 +5324,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="integer1.quotient.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;quotient/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mo&gt;<span title="#x230a">&amp;#x230a;</span><span class="uname">&lt;!--LEFT FLOOR--&gt;</span>&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;<span title="#x230b">&amp;#x230b;</span><span class="uname">&lt;!--RIGHT FLOOR--&gt;</span>&lt;/mo&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mo&gt;<span title="#x230a">&amp;#x230a;</span><span class="uname">&lt;!--LEFT FLOOR--&gt;</span>&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;<span title="#x230b">&amp;#x230b;</span><span class="uname">&lt;!--RIGHT FLOOR--&gt;</span>&lt;/mo&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/integer1-quotient-ex1.gif" alt="{\unicode{8970}a/b\unicode{8971}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -5358,9 +5360,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="integer1.factorial.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;factorial/&gt;&lt;ci&gt;n&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;!&lt;/mo&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;!&lt;/mo&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/integer1-factorial-ex1.gif" alt="{n!}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -5397,9 +5399,9 @@ padding-right: 1em;
   &lt;ci&gt;a&lt;/ci&gt;
   &lt;ci&gt;b&lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-divide-ex1.gif" alt="{a/b}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -5447,9 +5449,9 @@ padding-right: 1em;
  &lt;mrow&gt;
   &lt;mo&gt;{&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;}&lt;/mo&gt;
  &lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/minmax1-max-ex1.gif" alt="{{\minormal{max}}{\left.\middle\{{2},{3},{5}\middle\}\right.}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="minmax1.big.max.ex1">
                      <p>Content MathML</p><pre class="mathml">
@@ -5474,9 +5476,9 @@ padding-right: 1em;
   &lt;/mrow&gt;
   &lt;mo&gt;}&lt;/mo&gt;
  &lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/minmax1-big_max-ex1.gif" alt="{{\minormal{max}}{\left.\middle\{y^3\middle|{y\unicode{8712}{\left[{0},{1}\right]}}\middle\}\right.}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -5521,9 +5523,9 @@ padding-right: 1em;
 &lt;mrow&gt;
  &lt;mi&gt;min&lt;/mi&gt;
  &lt;mrow&gt;&lt;mo&gt;{&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;}&lt;/mo&gt;&lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/minmax1-min-ex1.gif" alt="{{\minormal{min}}{\left.\middle\{a,b\middle\}\right.}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="minmax1.big.min.ex2">
                      <p>Content MathML</p><pre class="mathml">
@@ -5540,9 +5542,9 @@ padding-right: 1em;
   &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;<span title="#x2209">&amp;#x2209;</span><span class="uname">&lt;!--NOT AN ELEMENT OF--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
   &lt;mo&gt;}&lt;/mo&gt;
 &lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/minmax1-big_min-ex2.gif" alt="{{\minormal{min}}{\left.\middle\{x^2\middle|{x\unicode{8713}B}\middle\}\right.}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -5579,9 +5581,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="arith1.unary.minus.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;minus/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mo&gt;<span title="#x2212">&amp;#x2212;</span><span class="uname">&lt;!--MINUS SIGN--&gt;</span>&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mo&gt;<span title="#x2212">&amp;#x2212;</span><span class="uname">&lt;!--MINUS SIGN--&gt;</span>&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-unary_minus-ex1.gif" alt="{\unicode{8722}{3}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>If it is used with two arguments, <code>minus</code> corresponds to the
                      <a href="http://www.openmath.org/cd/arith1.xhtml#minus">minus</a> symbol
@@ -5589,9 +5591,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="arith1.minus.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;minus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;<span title="#x2212">&amp;#x2212;</span><span class="uname">&lt;!--MINUS SIGN--&gt;</span>&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;<span title="#x2212">&amp;#x2212;</span><span class="uname">&lt;!--MINUS SIGN--&gt;</span>&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-minus-ex1.gif" alt="{x\unicode{8722}y}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>In both cases, the translation to Strict Content markup is direct,
                      as described in <a href="#contm.strict-opel">Rewrite: element</a>. It is merely a
@@ -5637,9 +5639,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="arith1.plus.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;plus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-plus-ex1.gif" alt="{x+y+z}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -5674,9 +5676,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="arith1.power.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;</pre><blockquote>
+&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-power-ex1.gif" alt="\msup{x}{{3}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -5715,9 +5717,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="arith1.remainder.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;rem/&gt;&lt;ci&gt; a &lt;/ci&gt;&lt;ci&gt; b &lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;mod&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;mod&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-remainder-ex1.gif" alt="{a\mathbin{\mathrm{mod}}b}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -5759,9 +5761,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="arith1.times.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;times/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;<span title="#x2062">&amp;#x2062;</span><span class="uname">&lt;!--INVISIBLE TIMES--&gt;</span>&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;<span title="#x2062">&amp;#x2062;</span><span class="uname">&lt;!--INVISIBLE TIMES--&gt;</span>&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-times-ex1.gif" alt="{a\unicode{8290}b}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -5805,9 +5807,9 @@ padding-right: 1em;
 &lt;apply&gt;&lt;root/&gt;
   &lt;degree&gt;&lt;ci type="integer"&gt;n&lt;/ci&gt;&lt;/degree&gt;
   &lt;ci&gt;a&lt;/ci&gt;
-&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">&lt;mroot&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mroot&gt;</pre><blockquote>
+&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">&lt;mroot&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mroot&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-root-ex1.gif" alt="\sqrt[{n}]{a}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Content Markup</em></p>
                   <p>In Strict Content markup, the <a href="http://www.openmath.org/cd/arith1.xhtml#root">root</a>
@@ -5874,9 +5876,9 @@ padding-right: 1em;
  &lt;mi&gt;gcd&lt;/mi&gt;
  &lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;
  &lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-gcd-ex1.gif" alt="{\mathop{{\minormal{gcd}}}{\left(a,b,c\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>This default rendering is English-language locale specific: other locales may have
                      different default renderings.
@@ -5926,9 +5928,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="logic1.and.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;and/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;<span title="#x2227">&amp;#x2227;</span><span class="uname">&lt;!--LOGICAL AND--&gt;</span>&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;<span title="#x2227">&amp;#x2227;</span><span class="uname">&lt;!--LOGICAL AND--&gt;</span>&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/logic1-and-ex1.gif" alt="{a\unicode{8743}b}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="strict-mathml-example" id="contm.and.bvar.ex">
                      <p>Content MathML</p><pre class="mathml">
@@ -5970,9 +5972,9 @@ padding-right: 1em;
   &lt;mn&gt;0&lt;/mn&gt;
   &lt;mo&gt;)&lt;/mo&gt;
  &lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/contm_and_bvar_ex.gif" alt="{\munderover\bigwedge{i=0}{n}{\left(a\sb{i} \gt 0 \right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6010,9 +6012,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="logic1.or.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;or/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;<span title="#x2228">&amp;#x2228;</span><span class="uname">&lt;!--LOGICAL OR--&gt;</span>&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;<span title="#x2228">&amp;#x2228;</span><span class="uname">&lt;!--LOGICAL OR--&gt;</span>&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/logic1-or-ex1.gif" alt="{a\unicode{8744}b}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6051,9 +6053,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="logic1.xor.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;xor/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;xor&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;xor&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/logic1-xor-ex1.gif" alt="{a\mathbin{\mathrm{xor}}b}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6088,9 +6090,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="logic1.not.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;not/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mo&gt;<span title="#xac">&amp;#xac;</span><span class="uname">&lt;!--NOT SIGN--&gt;</span>&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mo&gt;<span title="#xac">&amp;#xac;</span><span class="uname">&lt;!--NOT SIGN--&gt;</span>&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/logic1-not-ex1.gif" alt="{\unicode{172}a}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6126,9 +6128,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="logic1.implies.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;implies/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x21d2">&amp;#x21d2;</span><span class="uname">&lt;!--RIGHTWARDS DOUBLE ARROW--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x21d2">&amp;#x21d2;</span><span class="uname">&lt;!--RIGHTWARDS DOUBLE ARROW--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/logic1-implies-ex1.gif" alt="{A\unicode{8658}B}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6188,9 +6190,9 @@ padding-right: 1em;
    &lt;mn&gt;0&lt;/mn&gt;
   &lt;/mrow&gt;
  &lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/quant1-forall-ex1.gif" alt="{\unicode{8704}x.{\left({{x\unicode{8722}x}={0}}\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Markup</em></p>
                   <div class="strict-mathml-example" id="quant1.forall.ex2">
@@ -6255,9 +6257,9 @@ padding-right: 1em;
  &lt;mfenced&gt;
   &lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;
  &lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/quant1-forall-ex2.gif" alt="{\unicode{8704}{{p\unicode{8712}{\midoublestruck{Q}}}\unicode{8743}{q\unicode{8712}{\midoublestruck{Q}}}\unicode{8743}{\left.\middle(p\lt q\middle)\right.}}.{\left({p\lt\msup{q}{{2}}}\right)}}"></p>
-                     </blockquote><pre class="mathml">
+                     </div><pre class="mathml">
 &lt;mrow&gt;
  &lt;mo&gt;<span title="#x2200">&amp;#x2200;</span><span class="uname">&lt;!--FOR ALL--&gt;</span>&lt;/mo&gt;
  &lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;/mrow&gt;
@@ -6287,9 +6289,9 @@ padding-right: 1em;
    &lt;/mrow&gt;
   &lt;/mrow&gt;
  &lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/quant1-forall-ex2-2.gif" alt="{ \unicode{8704} {p,q} . {\left({ {\left. \middle( {p\unicode{8712}{\midoublestruck{Q}}} \unicode{8743} {q\unicode{8712}{\midoublestruck{Q}}} \unicode{8743} {\left.\middle(p\lt q\middle)\right.} \middle) \right.} \unicode{8658} {\left. \middle( p \lt \msup{q}{{2}} \middle) \right.} }\right)} }"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6349,9 +6351,9 @@ padding-right: 1em;
    &lt;mn&gt;0&lt;/mn&gt;
   &lt;/mrow&gt;
  &lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/quant1-exists-ex1.gif" alt="{\unicode{8707}x.{\left({{\mathop{f}{\left(x\right)}}={0}}\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="quant1.exists.ex2">
                      <p>Content MathML</p><pre class="mathml">
@@ -6391,9 +6393,9 @@ padding-right: 1em;
    &lt;mn&gt;0&lt;/mn&gt;
   &lt;/mrow&gt;
  &lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/quant1-exists-ex2.gif" alt="{\unicode{8707}x.{\left({x\unicode{8712}{\midoublestruck{Z}}}\unicode{8743}{{\mathop{f}{\left(x\right)}}={0}}\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6429,9 +6431,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="arith1.abs.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;abs/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-abs-ex1.gif" alt="{\left.\middle|x\middle|\right.}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6480,9 +6482,9 @@ padding-right: 1em;
   &lt;mrow&gt;&lt;mn&gt;<span title="#x2148">&amp;#x2148;</span><span class="uname">&lt;!--DOUBLE-STRUCK ITALIC SMALL I--&gt;</span>&lt;/mn&gt;&lt;mo&gt;<span title="#x2062">&amp;#x2062;</span><span class="uname">&lt;!--INVISIBLE TIMES--&gt;</span>&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
  &lt;/mrow&gt;
  &lt;mo&gt;<span title="#xaf">&amp;#xaf;</span><span class="uname">&lt;!--MACRON--&gt;</span>&lt;/mo&gt;
-&lt;/mover&gt;</pre><blockquote>
+&lt;/mover&gt;</pre><div class="graphic">
                         <p><img src="image/complex1-conjugate-ex1.gif" alt="{\overline{{x+{{\mn{\unicode{8520}}}\unicode{8290}y}}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6535,9 +6537,9 @@ padding-right: 1em;
    &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;<span title="#x2062">&amp;#x2062;</span><span class="uname">&lt;!--INVISIBLE TIMES--&gt;</span>&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
   &lt;/mrow&gt;
  &lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/complex1-argument-ex1.gif" alt="{\mathop{{\minormal{arg}}}{\left({x+{i\unicode{8290}y}}\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6589,9 +6591,9 @@ padding-right: 1em;
    &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;<span title="#x2062">&amp;#x2062;</span><span class="uname">&lt;!--INVISIBLE TIMES--&gt;</span>&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
   &lt;/mrow&gt;
  &lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/complex1-real-ex1.gif" alt="{\unicode{8475}\unicode{8289}{\left({x+{i\unicode{8290}y}}\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6643,9 +6645,9 @@ padding-right: 1em;
    &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;<span title="#x2062">&amp;#x2062;</span><span class="uname">&lt;!--INVISIBLE TIMES--&gt;</span>&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
   &lt;/mrow&gt;
  &lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/complex1-imaginary-ex1.gif" alt="{\unicode{8465}\unicode{8289}{\left({x+{i\unicode{8290}y}}\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6690,9 +6692,9 @@ padding-right: 1em;
  &lt;mi&gt;lcm&lt;/mi&gt;
  &lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;
  &lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-lcm-ex1.gif" alt="{\mathop{{\minormal{lcm}}}{\left(a,b,c\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>This default rendering is English-language locale specific: other locales may have
                      different default renderings.
@@ -6731,9 +6733,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="rounding1.floor.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;floor/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mo&gt;<span title="#x230a">&amp;#x230a;</span><span class="uname">&lt;!--LEFT FLOOR--&gt;</span>&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;<span title="#x230b">&amp;#x230b;</span><span class="uname">&lt;!--RIGHT FLOOR--&gt;</span>&lt;/mo&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mo&gt;<span title="#x230a">&amp;#x230a;</span><span class="uname">&lt;!--LEFT FLOOR--&gt;</span>&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;<span title="#x230b">&amp;#x230b;</span><span class="uname">&lt;!--RIGHT FLOOR--&gt;</span>&lt;/mo&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/rounding1-floor-ex1.gif" alt="{\unicode{8970}a\unicode{8971}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6768,9 +6770,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="rounding1.ceiling.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;ceiling/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mo&gt;<span title="#x2308">&amp;#x2308;</span><span class="uname">&lt;!--LEFT CEILING--&gt;</span>&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;<span title="#x2309">&amp;#x2309;</span><span class="uname">&lt;!--RIGHT CEILING--&gt;</span>&lt;/mo&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mo&gt;<span title="#x2308">&amp;#x2308;</span><span class="uname">&lt;!--LEFT CEILING--&gt;</span>&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;<span title="#x2309">&amp;#x2309;</span><span class="uname">&lt;!--RIGHT CEILING--&gt;</span>&lt;/mo&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/rounding1-ceiling-ex1.gif" alt="{\unicode{8968}a\unicode{8969}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
             </div>
@@ -6821,9 +6823,9 @@ padding-right: 1em;
  &lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
  &lt;mo&gt;=&lt;/mo&gt;
  &lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/relation1-eq-ex1.gif" alt="{{{2}/{4}}={{1}/{2}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6858,9 +6860,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="relation1.neq.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;neq/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;<span title="#x2260">&amp;#x2260;</span><span class="uname">&lt;!--NOT EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;<span title="#x2260">&amp;#x2260;</span><span class="uname">&lt;!--NOT EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/relation1-neq-ex1.gif" alt="{{3}\unicode{8800}{4}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6901,9 +6903,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="relation1.gt.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;gt/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;gt;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;gt;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/relation1-gt-ex1.gif" alt="{{3}\gt{2}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6944,9 +6946,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="relation1.lt.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;lt/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/relation1-lt-ex1.gif" alt="{{2}\lt{3}\lt{4}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -6993,9 +6995,9 @@ padding-right: 1em;
   &lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;
  &lt;/apply&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;<span title="#x2265">&amp;#x2265;</span><span class="uname">&lt;!--GREATER-THAN OR EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;<span title="#x2265">&amp;#x2265;</span><span class="uname">&lt;!--GREATER-THAN OR EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;<span title="#x2265">&amp;#x2265;</span><span class="uname">&lt;!--GREATER-THAN OR EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;<span title="#x2265">&amp;#x2265;</span><span class="uname">&lt;!--GREATER-THAN OR EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/relation1-geq-ex1.gif" alt="{{4}\unicode{8805}{3}\unicode{8805}{3}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -7036,9 +7038,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="relation1.leq.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;leq/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;<span title="#x2264">&amp;#x2264;</span><span class="uname">&lt;!--LESS-THAN OR EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;<span title="#x2264">&amp;#x2264;</span><span class="uname">&lt;!--LESS-THAN OR EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;<span title="#x2264">&amp;#x2264;</span><span class="uname">&lt;!--LESS-THAN OR EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;<span title="#x2264">&amp;#x2264;</span><span class="uname">&lt;!--LESS-THAN OR EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/relation1-leq-ex1.gif" alt="{{3}\unicode{8804}{3}\unicode{8804}{4}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -7080,9 +7082,9 @@ padding-right: 1em;
  &lt;mi&gt;a&lt;/mi&gt;
  &lt;mo&gt;<span title="#x2261">&amp;#x2261;</span><span class="uname">&lt;!--IDENTICAL TO--&gt;</span>&lt;/mo&gt;
  &lt;mrow&gt;&lt;mo&gt;<span title="#xac">&amp;#xac;</span><span class="uname">&lt;!--NOT SIGN--&gt;</span>&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;<span title="#xac">&amp;#xac;</span><span class="uname">&lt;!--NOT SIGN--&gt;</span>&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;&lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/logic1-equivalent1-ex1.gif" alt="{a\unicode{8801}{\unicode{172}{\unicode{172}a}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -7123,9 +7125,9 @@ padding-right: 1em;
  &lt;mi&gt;<span title="#x3c0">&amp;#x3c0;</span><span class="uname">&lt;!--GREEK SMALL LETTER PI--&gt;</span>&lt;/mi&gt;
  &lt;mo&gt;<span title="#x2243">&amp;#x2243;</span><span class="uname">&lt;!--ASYMPTOTICALLY EQUAL TO--&gt;</span>&lt;/mo&gt;
  &lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/relation1-approx-ex1.gif" alt="{\unicode{960}\unicode{8771}{{22}/{7}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -7161,9 +7163,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="integer1.factorof.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;factorof/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/integer1-factorof-ex1.gif" alt="{\left.a\middle|b\right.}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
             </div>
@@ -7209,9 +7211,9 @@ padding-right: 1em;
   &lt;apply&gt;&lt;int/&gt;&lt;sin/&gt;&lt;/apply&gt;
   &lt;cos/&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;<span title="#x222b">&amp;#x222b;</span><span class="uname">&lt;!--INTEGRAL--&gt;</span>&lt;/mi&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;<span title="#x222b">&amp;#x222b;</span><span class="uname">&lt;!--INTEGRAL--&gt;</span>&lt;/mi&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/calculus1-int-ex1.gif" alt="{{\unicode{8747}{\minormal{sin}}}={\minormal{cos}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="calculus1.defint.ex1">
                      <p>Content MathML</p><pre class="mathml">
@@ -7221,9 +7223,9 @@ padding-right: 1em;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
 &lt;mrow&gt;
  &lt;msubsup&gt;&lt;mi&gt;<span title="#x222b">&amp;#x222b;</span><span class="uname">&lt;!--INTEGRAL--&gt;</span>&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/msubsup&gt;&lt;mi&gt;cos&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/calculus1-defint-ex1.gif" alt="{\mosubsup\int{a}{b}{\minormal{cos}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>The <code>int</code> element can also be used with bound variables serving as the
                      integration variables.
@@ -7246,9 +7248,9 @@ padding-right: 1em;
  &lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
  &lt;mi&gt;d&lt;/mi&gt;
  &lt;mi&gt;x&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/calculus1-defint-ex2.gif" alt="\mosubsup\int{0}{1} {\msup{x}{2}} d x"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Markup</em></p>
                   <p>As an indefinite integral applied to a function, the <code>int</code> element corresponds to
@@ -7485,9 +7487,9 @@ padding-right: 1em;
                   </p>
                   <div class="mathml-example" id="calculus1.diff.ex2">
                      <p>Content MathML</p><pre class="mathml">&lt;apply&gt;&lt;diff/&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;<span title="#x2032">&amp;#x2032;</span><span class="uname">&lt;!--PRIME--&gt;</span>&lt;/mo&gt;&lt;/msup&gt;</pre><blockquote>
+&lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;<span title="#x2032">&amp;#x2032;</span><span class="uname">&lt;!--PRIME--&gt;</span>&lt;/mo&gt;&lt;/msup&gt;</pre><div class="graphic">
                         <p><img src="image/calculus1-diff-ex2.gif" alt="\msup{f}{\unicode{8242}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="calculus1.diff.ex1">
                      <p>Content MathML</p><pre class="mathml">
@@ -7505,9 +7507,9 @@ padding-right: 1em;
  &lt;/mfrac&gt;
  &lt;mo&gt;=&lt;/mo&gt;
  &lt;mrow&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/calculus1-diff-ex1.gif" alt="{ {\frac{{d{\mathop{{\minormal{sin}}}x}}}{{dx}}} = {\mathop{{\minormal{cos}}}x} }"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>The <code>bvar</code> element may also contain a <code>degree</code> element, which specifies
                      the order of the derivative to be taken.
@@ -7664,9 +7666,9 @@ padding-right: 1em;
   &lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;
  &lt;/msub&gt;
  &lt;mi&gt;f&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/calculus1-partialdiff-ex3.gif" alt="{\msub{D}{{{1},{1},{3}}}f}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="calculus1.partialdiff.ex3b">
                      <p>Content MathML</p><pre class="mathml">
@@ -7690,9 +7692,9 @@ padding-right: 1em;
   &lt;mrow&gt;&lt;mo&gt;<span title="#x2202">&amp;#x2202;</span><span class="uname">&lt;!--PARTIAL DIFFERENTIAL--&gt;</span>&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;
   &lt;mrow&gt;&lt;mo&gt;<span title="#x2202">&amp;#x2202;</span><span class="uname">&lt;!--PARTIAL DIFFERENTIAL--&gt;</span>&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/mrow&gt;
  &lt;/mrow&gt;
-&lt;/mfrac&gt;</pre><blockquote>
+&lt;/mfrac&gt;</pre><div class="graphic">
                         <p><img src="image/calculus1-partialdiff-ex3b.gif" alt="{\frac{{ {\msup{\unicode{8706}}{3}} {f{\left(x,y,z\right)}} }}{{ {\unicode{8706}{\msup{x}{2}}} {\unicode{8706}z} }}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>In the case of algebraic expressions, the bound variables are given by <code>bvar</code>
                      elements, which are children of the containing <code>apply</code> element. The <code>bvar</code>
@@ -7719,9 +7721,9 @@ padding-right: 1em;
   &lt;mrow&gt;&lt;mo&gt;<span title="#x2202">&amp;#x2202;</span><span class="uname">&lt;!--PARTIAL DIFFERENTIAL--&gt;</span>&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
   &lt;mrow&gt;&lt;mo&gt;<span title="#x2202">&amp;#x2202;</span><span class="uname">&lt;!--PARTIAL DIFFERENTIAL--&gt;</span>&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
  &lt;/mrow&gt;
-&lt;/mfrac&gt;</pre><blockquote>
+&lt;/mfrac&gt;</pre><div class="graphic">
                         <p><img src="image/calculus1-partialdiff-ex2.gif" alt="{\frac{{\msup{\unicode{8706}}{{2}}{\mathop{f}{\left(x,y\right)}}}}{{{\unicode{8706}x}{\unicode{8706}y}}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>Where a total degree of differentiation must be specified, this is
                      indicated by use of a <code>degree</code> element at the top level,
@@ -7750,9 +7752,9 @@ padding-right: 1em;
   &lt;mrow&gt;&lt;mo&gt;<span title="#x2202">&amp;#x2202;</span><span class="uname">&lt;!--PARTIAL DIFFERENTIAL--&gt;</span>&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/msup&gt;&lt;/mrow&gt;
   &lt;mrow&gt;&lt;mo&gt;<span title="#x2202">&amp;#x2202;</span><span class="uname">&lt;!--PARTIAL DIFFERENTIAL--&gt;</span>&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;/mrow&gt;
  &lt;/mrow&gt;
-&lt;/mfrac&gt;</pre><blockquote>
+&lt;/mfrac&gt;</pre><div class="graphic">
                         <p><img src="image/calculus1-partialdiff-ex1.gif" alt="{\frac{{\msup{\unicode{8706}}{k}{\mathop{f}{\left(x,y\right)}}}}{{{\unicode{8706}\msup{x}{m}}{\unicode{8706}\msup{y}{n}}}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Markup</em></p>
                   <p>When applied to a function, the <code>partialdiff</code> element
@@ -7876,21 +7878,21 @@ padding-right: 1em;
                   <div class="mathml-example" id="veccalc1.divergence.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;divergence/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/veccalc1-divergence-ex1.gif" alt="{\mathop{{\minormal{div}}}{\left(a\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="veccalc1.divergence.ex2">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;divergence/&gt;
   &lt;ci type="vector"&gt;E&lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/veccalc1-divergence-ex2.gif" alt="{\mathop{{\minormal{div}}}{\left(E\right)}}"></p>
-                     </blockquote><pre class="mathml">
-&lt;mrow&gt;&lt;mo&gt;<span title="#x2207">&amp;#x2207;</span><span class="uname">&lt;!--NABLA--&gt;</span>&lt;/mo&gt;&lt;mo&gt;<span title="#x22c5">&amp;#x22c5;</span><span class="uname">&lt;!--DOT OPERATOR--&gt;</span>&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+                     </div><pre class="mathml">
+&lt;mrow&gt;&lt;mo&gt;<span title="#x2207">&amp;#x2207;</span><span class="uname">&lt;!--NABLA--&gt;</span>&lt;/mo&gt;&lt;mo&gt;<span title="#x22c5">&amp;#x22c5;</span><span class="uname">&lt;!--DOT OPERATOR--&gt;</span>&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/veccalc1-divergence-ex2-2.gif" alt="{\unicode{8711}\unicode{8901}E}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>The functions defining the coordinates may be defined implicitly as expressions defined
                      in terms of the coordinate names, in which case the coordinate names must be provided
@@ -7931,9 +7933,9 @@ padding-right: 1em;
   &lt;/mtd&gt;&lt;/mtr&gt;
  &lt;/mtable&gt;
  &lt;mo&gt;)&lt;/mo&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/veccalc1-divergence-ex3.gif" alt="{\left.\mathop{{\minormal{div}}}\middle({\begin{matrix}x\unicode{8614}{x+y}\\y\unicode{8614}{x+z}\\z\unicode{8614}{z+y}\end{matrix}}\middle)\right.}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -7969,12 +7971,12 @@ padding-right: 1em;
                   <div class="mathml-example" id="veccalc1.gradient.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;grad/&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;grad&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;grad&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/veccalc1-gradient-ex1.gif" alt="{\mathop{{\minormal{grad}}}{\left(f\right)}}"></p>
-                     </blockquote><pre class="mathml">
-&lt;mrow&gt;&lt;mo&gt;<span title="#x2207">&amp;#x2207;</span><span class="uname">&lt;!--NABLA--&gt;</span>&lt;/mo&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre><blockquote>
+                     </div><pre class="mathml">
+&lt;mrow&gt;&lt;mo&gt;<span title="#x2207">&amp;#x2207;</span><span class="uname">&lt;!--NABLA--&gt;</span>&lt;/mo&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/veccalc1-gradient-ex1-2.gif" alt="{\unicode{8711}\unicode{8289}{\left(f\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>The functions defining the coordinates may be defined implicitly as expressions
                      defined in terms of the coordinate names, in which case the coordinate names must
@@ -8001,9 +8003,9 @@ padding-right: 1em;
   &lt;/mrow&gt;
   &lt;mo&gt;)&lt;/mo&gt;
  &lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/veccalc1-gradient-ex2.gif" alt="{\mathop{{\minormal{grad}}}{\left.\middle({\left(x,y,z\right)}\unicode{8614}{x\unicode{8290}y\unicode{8290}z}\middle)\right.}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -8039,12 +8041,12 @@ padding-right: 1em;
                   <div class="mathml-example" id="veccalc1.curl.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;curl/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;curl&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;curl&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/veccalc1-curl-ex1.gif" alt="{\mathop{{\minormal{curl}}}{\left(a\right)}}"></p>
-                     </blockquote><pre class="mathml">
-&lt;mrow&gt;&lt;mo&gt;<span title="#x2207">&amp;#x2207;</span><span class="uname">&lt;!--NABLA--&gt;</span>&lt;/mo&gt;&lt;mo&gt;<span title="#xd7">&amp;#xd7;</span><span class="uname">&lt;!--MULTIPLICATION SIGN--&gt;</span>&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+                     </div><pre class="mathml">
+&lt;mrow&gt;&lt;mo&gt;<span title="#x2207">&amp;#x2207;</span><span class="uname">&lt;!--NABLA--&gt;</span>&lt;/mo&gt;&lt;mo&gt;<span title="#xd7">&amp;#xd7;</span><span class="uname">&lt;!--MULTIPLICATION SIGN--&gt;</span>&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/veccalc1-curl-ex1-2.gif" alt="{\unicode{8711}\unicode{215}a}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>The functions defining the coordinates may be defined implicitly as expressions
                      defined in terms of the coordinate names, in which case the coordinate names must
@@ -8089,9 +8091,9 @@ padding-right: 1em;
  &lt;msup&gt;&lt;mo&gt;<span title="#x2207">&amp;#x2207;</span><span class="uname">&lt;!--NABLA--&gt;</span>&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
  &lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;
  &lt;mfenced&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/veccalc1-laplacian-ex1.gif" alt="{\msup{\unicode{8711}}{{2}}\unicode{8289}{\left(E\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>The functions defining the coordinates may be defined implicitly as expressions
                      defined in terms of the coordinate names, in which case the coordinate names must
@@ -8120,9 +8122,9 @@ padding-right: 1em;
   &lt;/mrow&gt;
   &lt;mo&gt;)&lt;/mo&gt;
  &lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/veccalc1-laplacian-ex2.gif" alt="{\msup{\unicode{8711}}{{2}}\unicode{8289}{\left.\middle({\left(x,y,z\right)}\unicode{8614}{\mathop{f}{\left(x,y\right)}}\middle)\right.}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
             </div>
@@ -8180,9 +8182,9 @@ padding-right: 1em;
 &lt;/set&gt;</pre><p>Sample Presentation</p><pre class="mathml">
 &lt;mrow&gt;
  &lt;mo&gt;{&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;}&lt;/mo&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-set-ex1.gif" alt="{\left.\middle\{a,b,c\middle\}\right.}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>In general, a set can be constructed by providing a function and a domain of
                      application.  The elements of the set correspond to the values obtained by evaluating
@@ -8203,9 +8205,9 @@ padding-right: 1em;
  &lt;mo&gt;|&lt;/mo&gt;
  &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;
  &lt;mo&gt;}&lt;/mo&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-suchthat-ex1.gif" alt="{\left.\middle\{x\middle|{x\lt{5}}\middle\}\right.}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="set1.suchthat.ex2">
                      <p>Content MathML</p><pre class="mathml">
@@ -8222,9 +8224,9 @@ padding-right: 1em;
  &lt;mo&gt;|&lt;/mo&gt;
  &lt;mrow&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mo&gt;<span title="#x2208">&amp;#x2208;</span><span class="uname">&lt;!--ELEMENT OF--&gt;</span>&lt;/mo&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/mrow&gt;
  &lt;mo&gt;}&lt;/mo&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-suchthat-ex2.gif" alt="{\left.\middle\{S\middle|{S\unicode{8712}T}\middle\}\right.}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="set1.suchthat.ex3">
                      <p>Content MathML</p><pre class="mathml">
@@ -8250,9 +8252,9 @@ padding-right: 1em;
   &lt;/mrow&gt;
  &lt;/mrow&gt;
  &lt;mo&gt;}&lt;/mo&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-suchthat-ex3.gif" alt="{\left.\middle\{x\middle|{{\left.\middle(x\lt{5}\middle)\right.}\unicode{8743}{x\unicode{8712}{\midoublestruck{N}}}}\middle\}\right.}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -8302,9 +8304,9 @@ padding-right: 1em;
 &lt;/list&gt;</pre><p>Sample Presentation</p><pre class="mathml">
 &lt;mrow&gt;
  &lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/list1-list-ex1.gif" alt="{\left.\middle(a,b,c\middle)\right.}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>In general a list can be constructed by providing a function and
                      a domain of application.  The elements of the list correspond to the
@@ -8328,9 +8330,9 @@ padding-right: 1em;
  &lt;mo&gt;|&lt;/mo&gt;
  &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;
  &lt;mo&gt;)&lt;/mo&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/list1-suchthat-ex1.gif" alt="{\left.\middle(x\middle|{x\lt{5}}\middle)\right.}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -8370,9 +8372,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="set1.union.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;union/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x222a">&amp;#x222a;</span><span class="uname">&lt;!--UNION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x222a">&amp;#x222a;</span><span class="uname">&lt;!--UNION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-union-ex1.gif" alt="{A\unicode{8746}B}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>Arguments may also be specified using qualifier elements as described in
                      <a href="#contm.nary">Section&nbsp;4.3.4.1 N-ary Operators (classes nary-arith, nary-functional, nary-logical,
@@ -8388,9 +8390,9 @@ padding-right: 1em;
   &lt;/domainofapplication&gt;
   &lt;ci type="set"&gt; S&lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;<span title="#x22c3">&amp;#x22c3;</span><span class="uname">&lt;!--N-ARY UNION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;<span title="#x22c3">&amp;#x22c3;</span><span class="uname">&lt;!--N-ARY UNION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-big_union-ex1.gif" alt="{\munder{\unicode{8899}}{L}S}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -8436,9 +8438,9 @@ padding-right: 1em;
   &lt;ci type="set"&gt; A &lt;/ci&gt;
   &lt;ci type="set"&gt; B &lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x2229">&amp;#x2229;</span><span class="uname">&lt;!--INTERSECTION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x2229">&amp;#x2229;</span><span class="uname">&lt;!--INTERSECTION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-intersect-ex1.gif" alt="{A\unicode{8745}B}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="set1.big.intersect.ex1">
                      <p>Content MathML</p><pre class="mathml">
@@ -8447,9 +8449,9 @@ padding-right: 1em;
   &lt;domainofapplication&gt;&lt;ci type="list"&gt;L&lt;/ci&gt;&lt;/domainofapplication&gt;
   &lt;ci type="set"&gt; S &lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;<span title="#x22c2">&amp;#x22c2;</span><span class="uname">&lt;!--N-ARY INTERSECTION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;<span title="#x22c2">&amp;#x22c2;</span><span class="uname">&lt;!--N-ARY INTERSECTION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-big_intersect-ex1.gif" alt="{\munder{\unicode{8898}}{L}S}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -8484,9 +8486,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="set1.in.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;in/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci type="set"&gt;A&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;<span title="#x2208">&amp;#x2208;</span><span class="uname">&lt;!--ELEMENT OF--&gt;</span>&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;<span title="#x2208">&amp;#x2208;</span><span class="uname">&lt;!--ELEMENT OF--&gt;</span>&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-in-ex1.gif" alt="{a\unicode{8712}A}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>When translating to Strict Content Markup, if the <code>type</code>
                      has value "multiset", then the <a href="http://www.openmath.org/cd/multiset1.xhtml#in">in</a> symbol from <a href="http://www.openmath.org/cd/multiset1.xhtml">multiset1</a> should
@@ -8525,9 +8527,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="set1.notin.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;notin/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci type="set"&gt;A&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;<span title="#x2209">&amp;#x2209;</span><span class="uname">&lt;!--NOT AN ELEMENT OF--&gt;</span>&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;<span title="#x2209">&amp;#x2209;</span><span class="uname">&lt;!--NOT AN ELEMENT OF--&gt;</span>&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-notin-ex1.gif" alt="{a\unicode{8713}A}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>When translating to Strict Content Markup, if the <code>type</code> has value "multiset", then
                      the <a href="http://www.openmath.org/cd/multiset1.xhtml#in">in</a> symbol from <a href="http://www.openmath.org/cd/multiset1.xhtml">multiset1</a> should be used instead.
@@ -8568,9 +8570,9 @@ padding-right: 1em;
   &lt;ci type="set"&gt;A&lt;/ci&gt;
   &lt;ci type="set"&gt;B&lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x2286">&amp;#x2286;</span><span class="uname">&lt;!--SUBSET OF OR EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x2286">&amp;#x2286;</span><span class="uname">&lt;!--SUBSET OF OR EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-subset-ex1.gif" alt="{A\unicode{8838}B}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -8610,9 +8612,9 @@ padding-right: 1em;
   &lt;ci type="set"&gt;A&lt;/ci&gt;
   &lt;ci type="set"&gt;B&lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x2282">&amp;#x2282;</span><span class="uname">&lt;!--SUBSET OF--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x2282">&amp;#x2282;</span><span class="uname">&lt;!--SUBSET OF--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-prsubset-ex1.gif" alt="{A\unicode{8834}B}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -8650,9 +8652,9 @@ padding-right: 1em;
   &lt;ci type="set"&gt;A&lt;/ci&gt;
   &lt;ci type="set"&gt;B&lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x2288">&amp;#x2288;</span><span class="uname">&lt;!--NEITHER A SUBSET OF NOR EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x2288">&amp;#x2288;</span><span class="uname">&lt;!--NEITHER A SUBSET OF NOR EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-notsubset-ex1.gif" alt="{A\unicode{8840}B}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>When translating to Strict Content Markup, if the <code>type</code> has value "multiset", then
                      the <a href="http://www.openmath.org/cd/multiset1.xhtml#in">in</a> symbol from <a href="http://www.openmath.org/cd/multiset1.xhtml">multiset1</a> should be used instead.
@@ -8693,9 +8695,9 @@ padding-right: 1em;
   &lt;ci type="set"&gt;A&lt;/ci&gt;
   &lt;ci type="set"&gt;B&lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x2284">&amp;#x2284;</span><span class="uname">&lt;!--NOT A SUBSET OF--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x2284">&amp;#x2284;</span><span class="uname">&lt;!--NOT A SUBSET OF--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-notprsubset-ex1.gif" alt="{A\unicode{8836}B}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>When translating to Strict Content Markup, if the <code>type</code> has value "multiset", then
                      the <a href="http://www.openmath.org/cd/multiset1.xhtml#in">in</a> symbol from <a href="http://www.openmath.org/cd/multiset1.xhtml">multiset1</a> should be used instead.
@@ -8737,9 +8739,9 @@ padding-right: 1em;
   &lt;ci type="set"&gt;A&lt;/ci&gt;
   &lt;ci type="set"&gt;B&lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x2216">&amp;#x2216;</span><span class="uname">&lt;!--SET MINUS--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x2216">&amp;#x2216;</span><span class="uname">&lt;!--SET MINUS--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-setdiff-ex1.gif" alt="{A\unicode{8726}B}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>When translating to Strict Content Markup, if the <code>type</code> has value "multiset", then
                      the <a href="http://www.openmath.org/cd/multiset1.xhtml#in">in</a> symbol from <a href="http://www.openmath.org/cd/multiset1.xhtml">multiset1</a> should be used instead.
@@ -8785,9 +8787,9 @@ padding-right: 1em;
  &lt;mrow&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;
  &lt;mo&gt;=&lt;/mo&gt;
  &lt;mn&gt;5&lt;/mn&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-size-ex1.gif" alt="{{\left.\middle|A\middle|\right.}={5}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>When translating to Strict Content Markup, if the <code>type</code>
                      has value "multiset", then the <a href="http://www.openmath.org/cd/multiset1.xhtml#size">size</a> symbol from <a href="http://www.openmath.org/cd/multiset1.xhtml">multiset1</a> should be used
@@ -8832,9 +8834,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="set1.cartesianproduct.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;cartesianproduct/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#xd7">&amp;#xd7;</span><span class="uname">&lt;!--MULTIPLICATION SIGN--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#xd7">&amp;#xd7;</span><span class="uname">&lt;!--MULTIPLICATION SIGN--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-cartesianproduct-ex1.gif" alt="{A\unicode{215}B}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
             </div>
@@ -8909,9 +8911,9 @@ padding-right: 1em;
   &lt;mi&gt;b&lt;/mi&gt;
  &lt;/munderover&gt;
  &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-sum-ex1.gif" alt="{\munderover{\unicode{8721}}{{x=a}}{b}{\mathop{f}{\left(x\right)}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="arith1.sum.ex2">
                      <p>Content MathML</p><pre class="mathml">
@@ -8928,9 +8930,9 @@ padding-right: 1em;
   &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;<span title="#x2208">&amp;#x2208;</span><span class="uname">&lt;!--ELEMENT OF--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
  &lt;/munder&gt;
  &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-sum-ex2.gif" alt="{\munder{\unicode{8721}}{{x\unicode{8712}B}}{\mathop{f}{\left(x\right)}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="arith1.sum.ex3">
                      <p>Content MathML</p><pre class="mathml">
@@ -8940,9 +8942,9 @@ padding-right: 1em;
   &lt;/domainofapplication&gt;
   &lt;ci type="function"&gt;f&lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;<span title="#x2211">&amp;#x2211;</span><span class="uname">&lt;!--N-ARY SUMMATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;<span title="#x2211">&amp;#x2211;</span><span class="uname">&lt;!--N-ARY SUMMATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-sum-ex3.gif" alt="{\munder{\unicode{8721}}{B}f}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Content MathML</em></p>
                   <p>When no explicit bound variables are used, no special rules are
@@ -9039,9 +9041,9 @@ padding-right: 1em;
   &lt;mi&gt;b&lt;/mi&gt;
  &lt;/munderover&gt;
  &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-product-ex1.gif" alt="{\munderover{\unicode{8719}}{{x=a}}{b}{\mathop{f}{\left(x\right)}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="arith1.product.ex2">
                      <p>Content MathML</p><pre class="mathml">
@@ -9061,9 +9063,9 @@ padding-right: 1em;
   &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;<span title="#x2208">&amp;#x2208;</span><span class="uname">&lt;!--ELEMENT OF--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
  &lt;/munder&gt;
  &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/arith1-product-ex2.gif" alt="{\munder{\unicode{8719}}{{x\unicode{8712}B}}{\mathop{f}{\left(x\right)}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Content MathML</em></p>
                   <p>When no explicit bound variables are used, no special rules are
@@ -9149,9 +9151,9 @@ padding-right: 1em;
   &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;<span title="#x2192">&amp;#x2192;</span><span class="uname">&lt;!--RIGHTWARDS ARROW--&gt;</span>&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
  &lt;/munder&gt;
  &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/limit1-limit-ex1.gif" alt="{\munder{{\minormal{lim}}}{{x\unicode{8594}{0}}}{\mathop{{\minormal{sin}}}x}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="limit1.limit.ex2">
                      <p>Content MathML</p><pre class="mathml">
@@ -9168,9 +9170,9 @@ padding-right: 1em;
   &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;<span title="#x2192">&amp;#x2192;</span><span class="uname">&lt;!--RIGHTWARDS ARROW--&gt;</span>&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
  &lt;/munder&gt;
  &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/limit1-limit-ex2.gif" alt="{\munder{{\minormal{lim}}}{{x\unicode{8594}{0}}}{\mathop{{\minormal{sin}}}x}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="limit1.limit.ex3">
                      <p>Content MathML</p><pre class="mathml">
@@ -9187,9 +9189,9 @@ padding-right: 1em;
   &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;<span title="#x2192">&amp;#x2192;</span><span class="uname">&lt;!--RIGHTWARDS ARROW--&gt;</span>&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;/msup&gt;&lt;/mrow&gt;
  &lt;/munder&gt;
  &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/limit1-limit-ex3.gif" alt="{\munder{{\minormal{lim}}}{{x\unicode{8594}\msup{a}{+}}}{\mathop{{\minormal{sin}}}x}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p>The direction from which a limiting value is approached is given as an argument
                      <a href="http://www.openmath.org/cd/limit1.xhtml#limit">limit</a> in Strict Content MathML, which supplies the
@@ -9277,9 +9279,9 @@ padding-right: 1em;
  &lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
  &lt;mo&gt;<span title="#x2192">&amp;#x2192;</span><span class="uname">&lt;!--RIGHTWARDS ARROW--&gt;</span>&lt;/mo&gt;
  &lt;msup&gt;&lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;/msup&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/limit1-tendsto-ex1.gif" alt="\msup{x}{2}\unicode{8594}\msup{\msup{a}{2}}{+}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="limit1.tendsto.ex2">
                      <p>Content MathML</p><pre class="mathml">
@@ -9302,9 +9304,9 @@ padding-right: 1em;
   &lt;mtr&gt;&lt;mtd&gt;
     &lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mfenced&gt;
   &lt;/mtd&gt;&lt;/mtr&gt;
-&lt;/mtable&gt;&lt;/mfenced&gt;</pre><blockquote>
+&lt;/mtable&gt;&lt;/mfenced&gt;</pre><div class="graphic">
                         <p><img src="image/limit1-tendsto-ex2.gif" alt="{{\left.\middle({\begin{matrix}x\\y\end{matrix}}\middle)\right.}\unicode{8594}{\left.\middle({\begin{matrix}{\mathop{f}{\left(x,y\right)}}\\{\mathop{g}{\left(x,y\right)}}\end{matrix}}\middle)\right.}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Content MathML</em></p>
                   <p>The usage of <code>tendsto</code> to qualify a limit is formally
@@ -9376,9 +9378,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="transc1.sin.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/transc1-sin-ex1.gif" alt="{\mathop{{\minormal{sin}}}x}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="transc1.sin.ex2">
                      <p>Content MathML</p><pre class="mathml">
@@ -9398,9 +9400,9 @@ padding-right: 1em;
   &lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
   &lt;mo&gt;)&lt;/mo&gt;
  &lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/transc1-sin-ex2.gif" alt="{\mathop{{\minormal{sin}}}{\left.\middle({\mathop{{\minormal{cos}}}x}+\msup{x}{{3}}\middle)\right.}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -9445,16 +9447,16 @@ padding-right: 1em;
  &lt;mi&gt;arcsin&lt;/mi&gt;
  &lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;
  &lt;mi&gt;x&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/transc1-arcsin-ex1.gif" alt="{\mathop{{\minormal{arcsin}}}x}"></p>
-                     </blockquote><pre class="mathml">
+                     </div><pre class="mathml">
 &lt;mrow&gt;
  &lt;msup&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;
  &lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;
  &lt;mi&gt;x&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/transc1-arcsin-ex2.gif" alt="{\mathop{{\minormal{sin}}^{-1}}x}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -9578,9 +9580,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="transc1.exp.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;exp/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;msup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/msup&gt;</pre><blockquote>
+&lt;msup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/msup&gt;</pre><div class="graphic">
                         <p><img src="image/transc1-exp-ex1.gif" alt="\msup{e}{x}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -9613,9 +9615,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="transc1.ln.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;ln/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;ln&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;ln&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/transc1-ln-ex1.gif" alt="{\mathop{{\minormal{ln}}}a}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -9661,16 +9663,16 @@ padding-right: 1em;
   &lt;logbase&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/logbase&gt;
   &lt;ci&gt;x&lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/transc1-log-ex1.gif" alt="{\msub{{\minormal{log}}}{{3}}\unicode{8289}x}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="transc1.log.ex2">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;log/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/transc1-log-ex2.gif" alt="{\mathop{{\minormal{log}}}x}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Content MathML</em></p>
                   <p>When mapping <code>log</code> to Strict Content, one uses the
@@ -9753,19 +9755,19 @@ padding-right: 1em;
  &lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;
  &lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;
  &lt;mo&gt;<span title="#x27E9">&amp;#x27E9;</span><span class="uname">&lt;!--MATHEMATICAL RIGHT ANGLE BRACKET--&gt;</span>&lt;/mo&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/s_data1-mean-ex1.gif" alt="{\unicode{9001}{3},{4},{3},{7},{4}\unicode{9002}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="s.dist1.mean.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;mean/&gt;&lt;ci&gt;X&lt;/ci&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mo&gt;<span title="#x27E8">&amp;#x27E8;</span><span class="uname">&lt;!--MATHEMATICAL LEFT ANGLE BRACKET--&gt;</span>&lt;/mo&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;<span title="#x27E9">&amp;#x27E9;</span><span class="uname">&lt;!--MATHEMATICAL RIGHT ANGLE BRACKET--&gt;</span>&lt;/mo&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mo&gt;<span title="#x27E8">&amp;#x27E8;</span><span class="uname">&lt;!--MATHEMATICAL LEFT ANGLE BRACKET--&gt;</span>&lt;/mo&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;<span title="#x27E9">&amp;#x27E9;</span><span class="uname">&lt;!--MATHEMATICAL RIGHT ANGLE BRACKET--&gt;</span>&lt;/mo&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/s_dist1-mean-ex1.gif" alt="{\unicode{9001}X\unicode{9002}}"></p>
-                     </blockquote><pre class="mathml">
-&lt;mover&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;<span title="#xaf">&amp;#xaf;</span><span class="uname">&lt;!--MACRON--&gt;</span>&lt;/mo&gt;&lt;/mover&gt;</pre><blockquote>
+                     </div><pre class="mathml">
+&lt;mover&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;<span title="#xaf">&amp;#xaf;</span><span class="uname">&lt;!--MACRON--&gt;</span>&lt;/mo&gt;&lt;/mover&gt;</pre><div class="graphic">
                         <p><img src="image/s_dist1-mean-ex1-2.gif" alt="{\overline{X}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Markup</em></p>
                   <p>When the <code>mean</code> element is applied to an explicit list of arguments, the
@@ -9819,18 +9821,18 @@ padding-right: 1em;
  &lt;mo&gt;<span title="#x3c3">&amp;#x3c3;</span><span class="uname">&lt;!--GREEK SMALL LETTER SIGMA--&gt;</span>&lt;/mo&gt;
  &lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;
  &lt;mfenced&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/s_data1-sdev-ex1.gif" alt="{\unicode{963}\unicode{8289}{\left({3},{4},{2},{2}\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="s.dist1.sdev.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;sdev/&gt;
   &lt;ci type="discrete_random_variable"&gt;X&lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mo&gt;<span title="#x3c3">&amp;#x3c3;</span><span class="uname">&lt;!--GREEK SMALL LETTER SIGMA--&gt;</span>&lt;/mo&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mo&gt;<span title="#x3c3">&amp;#x3c3;</span><span class="uname">&lt;!--GREEK SMALL LETTER SIGMA--&gt;</span>&lt;/mo&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/s_dist1-sdev-ex1.gif" alt="{\unicode{963}\unicode{8289}{\left(X\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Markup</em></p>
                   <p>When the <code>sdev</code> element is applied to an explicit list of arguments, the
@@ -9888,9 +9890,9 @@ padding-right: 1em;
  &lt;/msup&gt;
  &lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;
  &lt;mfenced&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/s_data1-variance-ex1.gif" alt="\msup{\unicode{963}}{2}\unicode{8289}\left(3,4,2,2\right)"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="s.dist1.variance.ex1">
                      <p>Content MathML</p><pre class="mathml">
@@ -9902,9 +9904,9 @@ padding-right: 1em;
  &lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;
  &lt;mfenced&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;/mfenced&gt;
 &lt;/mrow&gt;
- </pre><blockquote>
+ </pre><div class="graphic">
                         <p><img src="image/s_dist1-variance-ex1.gif" alt="\msup{\unicode{963}}{2}\unicode{8289}\left(X\right)"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Markup</em></p>
                   <p>When the <code>variance</code> element is applied to an explicit list of arguments, the
@@ -9959,9 +9961,9 @@ padding-right: 1em;
  &lt;mi&gt;median&lt;/mi&gt;
  &lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;
  &lt;mfenced&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/s_data1-median-ex1.gif" alt="{\mathop{{\minormal{median}}}{\left({3},{4},{2},{2}\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Markup</em></p>
                   <p>When the <code>median</code> element is applied to an explicit list of arguments, the
@@ -10012,9 +10014,9 @@ padding-right: 1em;
  &lt;mi&gt;mode&lt;/mi&gt;
  &lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;
  &lt;mfenced&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfenced&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/s_data1-mode-ex1.gif" alt="{\mathop{{\minormal{mode}}}{\left({3},{4},{2},{2}\right)}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Markup</em></p>
                   <p>When the <code>mode</code> element is applied to an explicit list of arguments, the
@@ -10081,9 +10083,9 @@ padding-right: 1em;
   &lt;mo&gt;<span title="#x27E9">&amp;#x27E9;</span><span class="uname">&lt;!--MATHEMATICAL RIGHT ANGLE BRACKET--&gt;</span>&lt;/mo&gt;
  &lt;/mrow&gt;
  &lt;mi&gt;mean&lt;/mi&gt;
-&lt;/msub&gt;</pre><blockquote>
+&lt;/msub&gt;</pre><div class="graphic">
                         <p><img src="image/s_data1-moment-ex1.gif" alt="\msub{{\unicode{9001}\msup{{\left({6},{4},{2},{2},{5}\right)}}{{3}}\unicode{9002}}}{{\minormal{mean}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="s.dist1.moment.ex1">
                      <p>Content MathML</p><pre class="mathml">
@@ -10097,9 +10099,9 @@ padding-right: 1em;
   &lt;mo&gt;<span title="#x27E8">&amp;#x27E8;</span><span class="uname">&lt;!--MATHEMATICAL LEFT ANGLE BRACKET--&gt;</span>&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;<span title="#x27E9">&amp;#x27E9;</span><span class="uname">&lt;!--MATHEMATICAL RIGHT ANGLE BRACKET--&gt;</span>&lt;/mo&gt;
  &lt;/mrow&gt;
  &lt;mi&gt;p&lt;/mi&gt;
-&lt;/msub&gt;</pre><blockquote>
+&lt;/msub&gt;</pre><div class="graphic">
                         <p><img src="image/s_dist1-moment-ex1.gif" alt="\msub{{\unicode{9001}\msup{X}{{3}}\unicode{9002}}}{p}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <p><em>Mapping to Strict Markup</em></p>
                   <div class="strict-mathml-example" id="contm.strict-moment-degree">
@@ -10188,16 +10190,16 @@ padding-right: 1em;
   &lt;mtr&gt;&lt;mtd&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;
  &lt;/mtable&gt;
  &lt;mo&gt;)&lt;/mo&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/linalg2-vector-ex1.gif" alt="{\left.\middle({\begin{matrix}{x+y}\\{3}\\{7}\end{matrix}}\middle)\right.}"></p>
-                     </blockquote><pre class="mathml">
+                     </div><pre class="mathml">
 &lt;mfenced&gt;
   &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
   &lt;mn&gt;3&lt;/mn&gt;
   &lt;mn&gt;7&lt;/mn&gt;
-&lt;/mfenced&gt;</pre><blockquote>
+&lt;/mfenced&gt;</pre><div class="graphic">
                         <p><img src="image/linalg2-vector-ex1-2.gif" alt="{\left({x+y},{3},{7}\right)}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -10292,9 +10294,9 @@ padding-right: 1em;
   &lt;/mrow&gt;
  &lt;/mrow&gt;
  &lt;mo&gt;]&lt;/mo&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/linalg6-matrix-ex1.gif" alt="{\left.[\msub{m}{{i,j}}\middle|{\msub{m}{{i,j}}=\msup{i}{j}};{{i\unicode{8712}{\left[1,5\right]}}\unicode{8743}{j\unicode{8712}{\left[5,9\right]}}}]\right.}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -10370,9 +10372,9 @@ padding-right: 1em;
 &lt;apply&gt;&lt;determinant/&gt;
   &lt;ci type="matrix"&gt;A&lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;det&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;det&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/linalg1-determinant-ex1.gif" alt="{\mathop{{\minormal{det}}}A}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -10408,9 +10410,9 @@ padding-right: 1em;
 &lt;apply&gt;&lt;transpose/&gt;
   &lt;ci type="matrix"&gt;A&lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;msup&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/msup&gt;</pre><blockquote>
+&lt;msup&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/msup&gt;</pre><div class="graphic">
                         <p><img src="image/linalg1-transpose-ex1.gif" alt="\msup{A}{T}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -10467,9 +10469,9 @@ padding-right: 1em;
                   <div class="mathml-example" id="linalg1.vector.selector.ex1">
                      <p>Content MathML</p><pre class="mathml">
 &lt;apply&gt;&lt;selector/&gt;&lt;ci type="vector"&gt;V&lt;/ci&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;msub&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;</pre><blockquote>
+&lt;msub&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;</pre><div class="graphic">
                         <p><img src="image/linalg1-vector_selector-ex1.gif" alt="\msub{V}{{1}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="mathml-example" id="linalg1.matrix.selector.ex2">
                      <p>Content MathML</p><pre class="mathml">
@@ -10503,9 +10505,9 @@ padding-right: 1em;
   &lt;mtable&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;
   &lt;mo&gt;)&lt;/mo&gt;
  &lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/linalg1-matrix_selector-ex2.gif" alt="\msub{\left({\begin{matrix} 1\endcell 2\\ 3\endcell 4\end{matrix}}\right)}{1}=\left(\begin{matrix} 1\endcell 2\end{matrix}\right)"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -10563,9 +10565,9 @@ padding-right: 1em;
   &lt;mo&gt;<span title="#x2062">&amp;#x2062;</span><span class="uname">&lt;!--INVISIBLE TIMES--&gt;</span>&lt;/mo&gt;
   &lt;mi&gt;N&lt;/mi&gt;
  &lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/linalg1-vectorproduct-ex1.gif" alt="{{A\unicode{215}B}={a\unicode{8290}b\unicode{8290}{\mathop{{\minormal{sin}}}\unicode{952}}\unicode{8290}N}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -10620,9 +10622,9 @@ padding-right: 1em;
   &lt;mo&gt;<span title="#x2062">&amp;#x2062;</span><span class="uname">&lt;!--INVISIBLE TIMES--&gt;</span>&lt;/mo&gt;
   &lt;mrow&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;<span title="#x3b8">&amp;#x3b8;</span><span class="uname">&lt;!--GREEK SMALL LETTER THETA--&gt;</span>&lt;/mi&gt;&lt;/mrow&gt;
  &lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/linalg1-scalarproduct-ex1.gif" alt="{{A.B}={a\unicode{8290}b\unicode{8290}{\mathop{{\minormal{cos}}}\unicode{952}}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -10660,9 +10662,9 @@ padding-right: 1em;
   &lt;ci type="vector"&gt;A&lt;/ci&gt;
   &lt;ci type="vector"&gt;B&lt;/ci&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x2297">&amp;#x2297;</span><span class="uname">&lt;!--CIRCLED TIMES--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;<span title="#x2297">&amp;#x2297;</span><span class="uname">&lt;!--CIRCLED TIMES--&gt;</span>&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/linalg1-outerproduct-ex1.gif" alt="{A\unicode{8855}B}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
             </div>
@@ -10703,9 +10705,9 @@ padding-right: 1em;
   &lt;cn type="integer"&gt; 42 &lt;/cn&gt;
   &lt;integers/&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mn&gt;42&lt;/mn&gt;&lt;mo&gt;<span title="#x2208">&amp;#x2208;</span><span class="uname">&lt;!--ELEMENT OF--&gt;</span>&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mn&gt;42&lt;/mn&gt;&lt;mo&gt;<span title="#x2208">&amp;#x2208;</span><span class="uname">&lt;!--ELEMENT OF--&gt;</span>&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/setname1-integers-ex1.gif" alt="{{42}\unicode{8712}{\midoublestruck{Z}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -10742,9 +10744,9 @@ padding-right: 1em;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
 &lt;mrow&gt;
  &lt;mn&gt;44.997&lt;/mn&gt;&lt;mo&gt;<span title="#x2208">&amp;#x2208;</span><span class="uname">&lt;!--ELEMENT OF--&gt;</span>&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;R&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/setname1-reals-ex1.gif" alt="{{44.997}\unicode{8712}{\midoublestruck{R}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -10783,9 +10785,9 @@ padding-right: 1em;
  &lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;
  &lt;mo&gt;<span title="#x2208">&amp;#x2208;</span><span class="uname">&lt;!--ELEMENT OF--&gt;</span>&lt;/mo&gt;
  &lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/setname1-rationals-ex1.gif" alt="{{{22}/{7}}\unicode{8712}{\midoublestruck{Q}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -10822,9 +10824,9 @@ padding-right: 1em;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
 &lt;mrow&gt;
  &lt;mn&gt;1729&lt;/mn&gt;&lt;mo&gt;<span title="#x2208">&amp;#x2208;</span><span class="uname">&lt;!--ELEMENT OF--&gt;</span>&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;N&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/setname1-naturalnumbers-ex1.gif" alt="{{1729}\unicode{8712}{\midoublestruck{N}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -10863,9 +10865,9 @@ padding-right: 1em;
  &lt;mrow&gt;&lt;mn&gt;17&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;29&lt;/mn&gt;&lt;mo&gt;<span title="#x2062">&amp;#x2062;</span><span class="uname">&lt;!--INVISIBLE TIMES--&gt;</span>&lt;/mo&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;
  &lt;mo&gt;<span title="#x2208">&amp;#x2208;</span><span class="uname">&lt;!--ELEMENT OF--&gt;</span>&lt;/mo&gt;
  &lt;mi mathvariant="double-struck"&gt;C&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/setname1-complexes-ex1.gif" alt="{{{17}+{29}\unicode{8290}i}\unicode{8712}{\midoublestruck{C}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -10900,9 +10902,9 @@ padding-right: 1em;
   &lt;cn type="integer"&gt;17&lt;/cn&gt;
   &lt;primes/&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mn&gt;17&lt;/mn&gt;&lt;mo&gt;<span title="#x2208">&amp;#x2208;</span><span class="uname">&lt;!--ELEMENT OF--&gt;</span>&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;P&lt;/mi&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mn&gt;17&lt;/mn&gt;&lt;mo&gt;<span title="#x2208">&amp;#x2208;</span><span class="uname">&lt;!--ELEMENT OF--&gt;</span>&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;P&lt;/mi&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/setname1-primes-ex1.gif" alt="{{17}\unicode{8712}{\midoublestruck{P}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -10941,9 +10943,9 @@ padding-right: 1em;
  &lt;mrow&gt;&lt;mi&gt;ln&lt;/mi&gt;&lt;mo&gt;<span title="#x2061">&amp;#x2061;</span><span class="uname">&lt;!--FUNCTION APPLICATION--&gt;</span>&lt;/mo&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;/mrow&gt;
  &lt;mo&gt;=&lt;/mo&gt;
  &lt;mn&gt;1&lt;/mn&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/nums1-exponentiale-ex1.gif" alt="{{\mathop{{\minormal{ln}}}e}={1}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -10981,9 +10983,9 @@ padding-right: 1em;
   &lt;apply&gt;&lt;power/&gt;&lt;imaginaryi/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
   &lt;cn&gt;-1&lt;/cn&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/nums1-imaginaryi-ex1.gif" alt="{\msup{i}{{2}}={\mn{-1}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -11025,9 +11027,9 @@ padding-right: 1em;
  &lt;mrow&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
  &lt;mo&gt;=&lt;/mo&gt;
  &lt;mi&gt;NaN&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/nums1-notanumber-ex1.gif" alt="{{{0}/{0}}={\minormal{NaN}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -11069,9 +11071,9 @@ padding-right: 1em;
  &lt;mrow&gt;&lt;mi&gt;true&lt;/mi&gt;&lt;mo&gt;<span title="#x2228">&amp;#x2228;</span><span class="uname">&lt;!--LOGICAL OR--&gt;</span>&lt;/mo&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/mrow&gt;
  &lt;mo&gt;=&lt;/mo&gt;
  &lt;mi&gt;true&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/logic1-true-ex1.gif" alt="{{{\minormal{true}}\unicode{8744}P}={\minormal{true}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -11113,9 +11115,9 @@ padding-right: 1em;
  &lt;mrow&gt;&lt;mi&gt;false&lt;/mi&gt;&lt;mo&gt;<span title="#x2227">&amp;#x2227;</span><span class="uname">&lt;!--LOGICAL AND--&gt;</span>&lt;/mo&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/mrow&gt;
  &lt;mo&gt;=&lt;/mo&gt;
  &lt;mi&gt;false&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/logic1-false-ex1.gif" alt="{{{\minormal{false}}\unicode{8743}P}={\minormal{false}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -11155,9 +11157,9 @@ padding-right: 1em;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
 &lt;mrow&gt;
  &lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;mo&gt;<span title="#x2260">&amp;#x2260;</span><span class="uname">&lt;!--NOT EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mi&gt;<span title="#x2205">&amp;#x2205;</span><span class="uname">&lt;!--EMPTY SET--&gt;</span>&lt;/mi&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/set1-emptyset-ex1.gif" alt="{{\midoublestruck{Z}}\unicode{8800}\unicode{8709}}"></p>
-                     </blockquote>
+                     </div>
                      <p><em>Mapping to Strict Markup</em></p>
                      <p>In some situations, it may be clear from context that <code>emptyset</code> 
                         corresponds to the <a href="http://www.openmath.org/cd/multiset1.xhtml#emptyset">emptyset</a> 
@@ -11205,9 +11207,9 @@ padding-right: 1em;
  &lt;mi&gt;<span title="#x3c0">&amp;#x3c0;</span><span class="uname">&lt;!--GREEK SMALL LETTER PI--&gt;</span>&lt;/mi&gt;
  &lt;mo&gt;<span title="#x2243">&amp;#x2243;</span><span class="uname">&lt;!--ASYMPTOTICALLY EQUAL TO--&gt;</span>&lt;/mo&gt;
  &lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;
-&lt;/mrow&gt;</pre><blockquote>
+&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/nums1-pi-ex1.gif" alt="{\unicode{960}\unicode{8771}{{22}/{7}}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -11242,9 +11244,9 @@ padding-right: 1em;
   &lt;eulergamma/&gt;
   &lt;cn&gt;0.5772156649&lt;/cn&gt;
 &lt;/apply&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mrow&gt;&lt;mi&gt;<span title="#x3b3">&amp;#x3b3;</span><span class="uname">&lt;!--GREEK SMALL LETTER GAMMA--&gt;</span>&lt;/mi&gt;&lt;mo&gt;<span title="#x2243">&amp;#x2243;</span><span class="uname">&lt;!--ASYMPTOTICALLY EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mn&gt;0.5772156649&lt;/mn&gt;&lt;/mrow&gt;</pre><blockquote>
+&lt;mrow&gt;&lt;mi&gt;<span title="#x3b3">&amp;#x3b3;</span><span class="uname">&lt;!--GREEK SMALL LETTER GAMMA--&gt;</span>&lt;/mi&gt;&lt;mo&gt;<span title="#x2243">&amp;#x2243;</span><span class="uname">&lt;!--ASYMPTOTICALLY EQUAL TO--&gt;</span>&lt;/mo&gt;&lt;mn&gt;0.5772156649&lt;/mn&gt;&lt;/mrow&gt;</pre><div class="graphic">
                         <p><img src="image/nums1-eulergamma-ex1.gif" alt="{\unicode{947}\unicode{8771}{0.5772156649}}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
                <div class="div4">
@@ -11275,9 +11277,9 @@ padding-right: 1em;
                   <p>This element represents the notion of infinity.</p>
                   <div class="mathml-example" id="nums1.infinity.ex1">
                      <p>Content MathML</p><pre class="mathml">&lt;infinity/&gt;</pre><p>Sample Presentation</p><pre class="mathml">
-&lt;mi&gt;<span title="#x221e">&amp;#x221e;</span><span class="uname">&lt;!--INFINITY--&gt;</span>&lt;/mi&gt;</pre><blockquote>
+&lt;mi&gt;<span title="#x221e">&amp;#x221e;</span><span class="uname">&lt;!--INFINITY--&gt;</span>&lt;/mi&gt;</pre><div class="graphic">
                         <p><img src="image/nums1-infinity-ex1.gif" alt="\unicode{8734}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                </div>
             </div>

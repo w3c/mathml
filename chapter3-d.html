@@ -24,6 +24,8 @@
 color:#5555AA;font-style:italic;font-family:serif;font-weight:bold;
 }
 
+div.graphic{margin-left:2em}
+
 table.syntax {
 font-size: 75%;
 background-color: #DDDDDD;
@@ -2584,9 +2586,9 @@ padding-right: 1em;
                         This might render as:
                         
                      </p>
-                     <blockquote>
+                     <div class="graphic">
                         <p><img src="image/f3006.gif" alt="\includegraphics{image/braids}"></p>
-                     </blockquote>
+                     </div>
                   </div>
                   <div class="div5">
                      
@@ -4525,9 +4527,9 @@ padding-right: 1em;
   &lt;/mrow&gt;
  &lt;/mrow&gt;
 </pre><p>This displays as </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/linebreak-example1.png" alt="example with equal and plus signs aligned"></p>
-                  </blockquote>
+                  </div>
                   <p>Note that because <code>indentalignlast</code> defaults to "indentalign",
                      in the above example <code>indentalign</code> could have been used in place of
                      <code>indentalignlast</code>.  Also, the specifying <code>linebreakstyle='before'</code>
@@ -5280,15 +5282,15 @@ padding-right: 1em;
                      These cases are shown below:
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/f3007.gif" alt="\binom{a}{b} \quad \genfrac{}{}{1pt}{}{\frac{a}{b}}{\frac{c}{d}}"></p>
-                  </blockquote>
+                  </div>
                   <p>An example illustrating the bevelled form is shown below:
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/f3008.gif" alt="\frac{1}{x^3 + \frac{x}{3}} = \raisebox{1ex}{$1$}\!        \left/ \!\raisebox{-1ex}{$x^3+\frac{x}{3}$} \right."></p>
-                  </blockquote>
+                  </div>
                   <p>
                      In a RTL directionality context,  the numerator leads (on the right),
                      the denominator follows (on the left) and the diagonal line slants upwards going from
@@ -6171,9 +6173,9 @@ padding-right: 1em;
                      and <code>voffset</code> to shift the position of child content without
                      modifying the <code>mpadded</code> bounding box.
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/mpadded-shift.png" alt="illustration of the use of mpadded to shift the position of child content without modifying the bounding box"></p>
-                  </blockquote>
+                  </div>
                   <p>The corresponding MathML is:
                      
                   </p><pre class="mathml">
@@ -6189,9 +6191,9 @@ padding-right: 1em;
                      to modifying the <code>mpadded</code> bounding box without changing the relative position 
                      of the child content. 
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/mpadded-resize.png" alt="illustration of the use of mpadded to modifying its bounding box without shifting the relative location of its child content"></p>
-                  </blockquote>
+                  </div>
                   <p>The corresponding MathML is:
                      
                   </p><pre class="mathml">
@@ -6205,9 +6207,9 @@ padding-right: 1em;
 </pre><p>The final diagram illustrates the generic use of <code>mpadded</code> to modify both 
                      the bounding box and relative position of child content.
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/mpadded-combined.png" alt="illustration of the use of mpadded to modify both the bounding box size and position of child content"></p>
-                  </blockquote>
+                  </div>
                   <p>The corresponding MathML is:
                      
                   </p><pre class="mathml">
@@ -6310,16 +6312,16 @@ padding-right: 1em;
 </pre><p>This would render as something like
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/mphantom.gif" alt="\frac{x+y+x}{x\phantom{{}+y}+z}"></p>
-                  </blockquote>
+                  </div>
                   <p>
                      rather than as
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/mphantom-bad.gif" alt="\frac{x+y+z}{x+z}"></p>
-                  </blockquote>
+                  </div>
                   <p>The explicit attribute setting <code>form</code><code>="infix"</code> on the
                      <code>mo</code> element inside the <code>mphantom</code> sets the
                      <code>form</code> attribute to what it would have been in the absence of the
@@ -6808,9 +6810,9 @@ padding-right: 1em;
                      which renders with the box and circle overlapping roughly as
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/circlebox.png" alt="[Image of a circle and box around x plus y]"></p>
-                  </blockquote>
+                  </div>
                   <p>.
                      
                   </p>
@@ -6832,9 +6834,9 @@ padding-right: 1em;
                      which renders roughly as
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/actuarial.png" alt="[image of actuarial notation for a angle n at i]"></p>
-                  </blockquote>
+                  </div>
                   <p>An example of "phasorangle", which is used in circuit analysis, is:
                      
                   </p><pre class="mathml">
@@ -6854,9 +6856,9 @@ padding-right: 1em;
                      which renders roughly as
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/phasorangle.png" alt="[image of phasorangle notation for the angle negative pi over 2]"></p>
-                  </blockquote>
+                  </div>
                   <p>An example of "madruwb" is:
                      
                   </p><pre class="mathml">
@@ -6867,9 +6869,9 @@ padding-right: 1em;
                      which renders roughly as
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/madruwb12.png" alt="[Image of 12 factorial in Arabic style]"></p>
-                  </blockquote>
+                  </div>
                   <p>.
                      
                   </p>
@@ -7115,9 +7117,9 @@ padding-right: 1em;
                      when rendered in display style. The most common of these is the
                      integral. For example,
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/f3015.gif" alt="\int\nolimits_0^1 \eulere^x \,\diffd x"></p>
-                  </blockquote>
+                  </div>
                   <p>
                      would be represented as
                      
@@ -7683,16 +7685,16 @@ padding-right: 1em;
                      coefficient
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/binom5-12.png" alt="[binomial(5,12) in english style]"></p>
-                  </blockquote>
+                  </div>
                   <p>
                      can be displayed in Arabic style
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/arbinom5-12.png" alt="[binomial(5,12) in Arabic style]"></p>
-                  </blockquote><pre class="mathml">
+                  </div><pre class="mathml">
 &lt;mstyle dir="rtl"&gt;
   &lt;mmultiscripts&gt;&lt;mo&gt;<span title="#x0644">&amp;#x0644;</span><span class="uname">&lt;!--ARABIC LETTER LAM--&gt;</span>&lt;/mo&gt;
     &lt;mn&gt;12&lt;/mn&gt;&lt;none/&gt;
@@ -8133,9 +8135,9 @@ padding-right: 1em;
 </pre><p>This might be rendered as:
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/f3025.gif" alt="\left(\begin{array}{ccc}1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1\end{array}\right)"></p>
-                  </blockquote>
+                  </div>
                   <p>
                      Note that the parentheses must be represented explicitly; they are not
                      part of the <code>mtable</code> element's rendering. This allows
@@ -9364,9 +9366,9 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                these elements can be used to represent several notations used for repeating decimals.
             </p>
             <p>A very simple example of two-dimensional addition is shown below:</p>
-            <blockquote>
+            <div class="graphic">
                <p><img src="image/em-plus.png" alt="\begin{array}{r}   424 \\   +33 \\   \hline \end{array}"></p>
-            </blockquote>
+            </div>
             <p>The MathML for this is:</p><pre class="mathml">
 &lt;mstack&gt;
   &lt;mn&gt;424&lt;/mn&gt;
@@ -10130,9 +10132,9 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   </p>
                   <p>Notice that the <code>msline</code> spans all of the columns and that <code>none</code> is used to make the "+" appear to the left of all of the operands.
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/em-plus-shift.png" alt="\begin{array}{@{}r@{}}    424 \\   +\phantom0 33 \\   \hline \end{array}"></p>
-                  </blockquote>
+                  </div>
                   <p>The MathML for this is:</p><pre class="mathml">
 &lt;mstack&gt;
   &lt;mn&gt;424&lt;/mn&gt;
@@ -10146,9 +10148,9 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      numbers,
                      it is not necessary to pad any row.
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/em-plus-right.png" alt="\begin{array}{l}   123 \\   456+ \\   \hline   579 \end{array}"></p>
-                  </blockquote><pre class="mathml">
+                  </div><pre class="mathml">
 &lt;mstack&gt;
   &lt;mn&gt;123&lt;/mn&gt; 
   &lt;msrow&gt; &lt;mn&gt;456&lt;/mn&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;/msrow&gt;
@@ -10167,14 +10169,14 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      <tbody>
                         <tr>
                            <td>
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-sub-borrow-above.png" alt=""></p>
-                              </blockquote>
+                              </div>
                            </td>
                            <td>
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-sub-borrow-aboveleft.png" alt=""></p>
-                              </blockquote>
+                              </div>
                            </td>
                         </tr>
                      </tbody>
@@ -10209,9 +10211,9 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      amount is underlined (the example is from a <a href="http://www.fritext.se/matte/grunder/posi2.html">Swedish
                         source</a>):
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/em-sub-borrow-swedish.png" alt="\begin{array}{r} \underbar{\scriptsize 10}\!\\ 5\llap{$/$}2\\ {}-{}7\\ \hline 45 \end{array}"></p>
-                  </blockquote>
+                  </div>
                   <p>There are two things to notice.
                      The first is that <code>menclose</code> is used in the carry and that <code>none</code> is used for
                      the empty element so that <code>mscarry</code> can be used to create a crossout.
@@ -10237,9 +10239,9 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      They would set the <code>position</code> or <code>shift</code> attributes, or would add <code>none</code> elements.
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/em-mult-simple.png" alt=""></p>
-                  </blockquote><pre class="mathml">
+                  </div><pre class="mathml">
 &lt;mstack&gt;
   &lt;msgroup&gt;
     &lt;mn&gt;123&lt;/mn&gt;
@@ -10258,9 +10260,9 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      these separators in the spacing attribute value, along non-ASCII
                      values. 
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/em-mult-carries.png" alt="\begin{array}{r}  {}_1 {\hspace{0.05em}}_1\phantom{0} \\  {}_1 {\hspace{0.05em}}_1\phantom{0} \\   1,234 \\   \times 4,321 \\   \hline  {}_1 \phantom{,} {\hspace{0.05em \,}}_1 {\hspace{0.05em}}_1  {\hspace{0.05em}}_1 \phantom{,} {\hspace{0.05em \,}}_1 \phantom{00} \\   1,234 \\   24,68\phantom{0} \\   370,2\phantom{00} \\   4,936\phantom{,000} \\   \hline   5,332,114 \end{array}"></p>
-                  </blockquote><pre class="mathml">
+                  </div><pre class="mathml">
 &lt;mstack&gt;
   &lt;mscarries&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;none/&gt;&lt;/mscarries&gt;
   &lt;mscarries&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;none/&gt;&lt;/mscarries&gt;
@@ -10322,37 +10324,37 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                         <tr>
                            <td>
                               		
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-us.png" alt=""></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               		
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-french.png" alt=""></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-medium-stacked-rightright.png" alt=""></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-short-stacked-rightright.png" alt=""></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-righttop.png" alt=""></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                         </tr>
@@ -10374,37 +10376,37 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                         <tr>
                            <td>
                               		
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-leftright.png" alt=""></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               		
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-indian.png" alt=""></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-colonrightright.png" alt=""></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-mirrored-french.png" alt=""></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                            <td>
                               
-                              <blockquote>
+                              <div class="graphic">
                                  <p><img src="image/em-longdiv-arabic-lefttop.png" alt=""></p>
-                              </blockquote>
+                              </div>
                               
                            </td>
                         </tr>
@@ -10497,18 +10499,18 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                      are shown below:
                      
                   </p>
-                  <blockquote>
+                  <div class="graphic">
                      <p><img src="image/repeat1.png" alt="0.33333 \overline{3}"></p>
-                  </blockquote>
-                  <blockquote>
+                  </div>
+                  <div class="graphic">
                      <p><img src="image/repeat2.png" alt="0.\overline{142857}"></p>
-                  </blockquote>
-                  <blockquote>
+                  </div>
+                  <div class="graphic">
                      <p><img src="image/repeat3.png" alt="0.\underline{142857}"></p>
-                  </blockquote>
-                  <blockquote>
+                  </div>
+                  <div class="graphic">
                      <p><img src="image/repeat4.png" alt="0.\dot{1}4285\dot{7}"></p>
-                  </blockquote>
+                  </div>
                   <p>The MathML for these involves using <code>mstack</code>, <code>msrow</code>, and <code>msline</code>
                      in a straightforward manner.  The MathML for the preceding examples above is given
                      below.
