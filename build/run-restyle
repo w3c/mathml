@@ -87,29 +87,29 @@ echo "fixing mmlcss id"
 sed -i 's/<a name="mmlcss" id="mmlcss"><\/a> //' chapter6-d.html
 
 
-exit
+# exit
 
 echo "making xhtml stylesheets"
 echo "  " mmldiff
-$SAXON -novw -o:$HSTYLE/xmmldiff.xsl $HSTYLE/mmldiff.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+$SAXON  -o:$HSTYLE/xmmldiff-restyle.xsl $HSTYLE/mmldiff-restyle.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
 echo "  " mmlspec
-$SAXON -novw -o:$HSTYLE/xmmlspec.xsl $HSTYLE/mmlspec.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+$SAXON  -o:$HSTYLE/xmmlspec-restyle.xsl $HSTYLE/mmlspec-restyle.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
 echo "  " slices
-$SAXON -novw -o:$HSTYLE/xslices.xsl $HSTYLE/slices.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+$SAXON  -o:$HSTYLE/xslices-restyle.xsl $HSTYLE/slices-restyle.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
 echo "  " slices-common
-$SAXON -novw -o:$HSTYLE/xslices-common.xsl $HSTYLE/slices-common.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+$SAXON  -o:$HSTYLE/xslices-common-restyle.xsl $HSTYLE/slices-common-restyle.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
 echo "  " xmlspec
-$SAXON -novw -o:$HSTYLE/xxmlspec.xsl $HSTYLE/xmlspec.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+$SAXON  -o:$HSTYLE/xxmlspec-restyle.xsl $HSTYLE/xmlspec-restyle.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
 echo "  " mcd
-$SAXON -novw -o:$HSTYLE/xmcd.xsl $HSTYLE/mcd.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+$SAXON  -o:$HSTYLE/xmcd.xsl $HSTYLE/mcd.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
 echo "  " xntn-presentation
-$SAXON -novw -o:$HSTYLE/xntn-presentation.xsl $HSTYLE/ntn-presentation.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
+$SAXON  -o:$HSTYLE/xntn-presentation.xsl $HSTYLE/ntn-presentation.xsl $HSTYLE/html2xhtml.xsl system-dtd=mathml.dtd 
 
 
 
 
 echo make xhtml version
-$SAXON $SOURCE/mathml-spec.xml $HSTYLE/mathmlx.xsl show.diff.markup=0
+$SAXON $SOURCE/mathml-spec.xml $HSTYLE/mathmlx-restyle.xsl show.diff.markup=0
 
 
 
@@ -124,6 +124,7 @@ do
  rxp -sxV $i 
 done
 
+exit
 
 echo ""
 echo "making single file HTML (+MathML) version"
