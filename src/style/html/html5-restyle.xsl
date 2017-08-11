@@ -1,4 +1,4 @@
-<xsl:stylesheet version="2.0" 
+<xsl:stylesheet version="3.0" 
  xmlns="http://www.w3.org/1999/xhtml"
  xpath-default-namespace="http://www.w3.org/1999/xhtml"
  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -114,10 +114,12 @@ spn[i].appendChild(document.createTextNode(spn[i].getAttribute(att)));
    div.mathml-example-render-1 {
    display:inline-block;
    vertical-align:middle;
+   max-width:100%
    }
    .mathml-example-render-2 {
    display:inline-block;
    vertical-align:middle;
+   max-width:100%
    }
    .mathml-render {
    font-family: serif;
