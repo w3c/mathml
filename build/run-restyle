@@ -174,7 +174,7 @@ fi
 # get local tex style
 cp $PSTYLE/pmml-new.sty .
 
-
+exit
 # use nested if rather than while to limit looping
 echo generate mathml.pdf
 pdflatex \\batchmode \\input mathml.tex

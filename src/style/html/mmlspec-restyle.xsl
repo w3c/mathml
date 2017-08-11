@@ -2709,7 +2709,7 @@ for this document, which may include some normative corrections.</p>
 	  <xsl:value-of select="regex-group(3)"/>
 	  <span class="uname">
 	    <xsl:text>&lt;!--</xsl:text>
-	    <xsl:value-of select="$c/description"/>
+	    <xsl:value-of select="lower-case($c/description)"/>
 	    <xsl:text>--&gt;</xsl:text>
 	  </span>
 	</xsl:when>
@@ -2721,7 +2721,7 @@ for this document, which may include some normative corrections.</p>
 	  <xsl:value-of select="regex-group(3)"/>
 	  <span class="uname">
 	    <xsl:text>&lt;!--</xsl:text>
-	    <xsl:value-of select="$c/description"/>
+	    <xsl:value-of select="lower-case($c/description)"/>
 	    <xsl:text>--&gt;</xsl:text>
 	  </span>
 	</xsl:otherwise>

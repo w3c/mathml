@@ -56,7 +56,7 @@ It does the following things:
                 xmlns="http://www.w3.org/1999/xhtml"
 xmlns:lxslt="http://xml.apache.org/xslt"
                 xmlns:xalanredirect="org.apache.xalan.xslt.extensions.Redirect"
-                version="2.0"
+                version="3.0"
                 >
 
 <xsl:output method="xml" indent="no"/>

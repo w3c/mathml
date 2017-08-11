@@ -1215,7 +1215,7 @@ http://www.w3.org/1998/Math/MathML
                   <tr>
                      <td><pre class="mathml">
 &lt;mtext&gt;
-<span title="nbsp">&amp;#xA0;</span><span class="uname">&lt;!--NO-BREAK SPACE--&gt;</span>Theorem <span title="nbsp">&amp;#xA0;</span><span class="uname">&lt;!--NO-BREAK SPACE--&gt;</span>1: 
+<span title="nbsp">&amp;#xA0;</span><span class="uname">&lt;!--no-break space--&gt;</span>Theorem <span title="nbsp">&amp;#xA0;</span><span class="uname">&lt;!--no-break space--&gt;</span>1: 
 &lt;/mtext&gt; </pre></td>
                      <td class="mathml-render" valign="middle">
                         <math xmlns="http://www.w3.org/1998/Math/MathML">

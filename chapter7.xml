@@ -488,7 +488,7 @@ padding-right: 1em;
             <table>
                <tr>
                   <td><pre class="mathml">
-&lt;mi&gt;<span title="#x1D44E">&amp;#x1D44E;</span><span class="uname">&lt;!--MATHEMATICAL ITALIC SMALL A--&gt;</span>&lt;!--MATHEMATICAL ITALIC SMALL A--&gt;&lt;/mi&gt;
+&lt;mi&gt;<span title="#x1D44E">&amp;#x1D44E;</span><span class="uname">&lt;!--mathematical italic small a--&gt;</span>&lt;!--MATHEMATICAL ITALIC SMALL A--&gt;&lt;/mi&gt;
 </pre></td>
                   <td class="mathml-render" valign="middle">
                      <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -513,7 +513,7 @@ padding-right: 1em;
             <table>
                <tr>
                   <td><pre class="mathml">
-&lt;mi&gt;<span title="#x1D504">&amp;#x1D504;</span><span class="uname">&lt;!--MATHEMATICAL FRAKTUR CAPITAL A--&gt;</span>&lt;!--BLACK-LETTER CAPITAL A--&gt;&lt;/mi&gt;
+&lt;mi&gt;<span title="#x1D504">&amp;#x1D504;</span><span class="uname">&lt;!--mathematical fraktur capital a--&gt;</span>&lt;!--BLACK-LETTER CAPITAL A--&gt;&lt;/mi&gt;
 </pre></td>
                   <td class="mathml-render" valign="middle">
                      <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -936,7 +936,7 @@ padding-right: 1em;
                </p>
                <table>
                   <tr>
-                     <td><pre class="mathml">&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;<span title="#x2032">&amp;#x2032;</span><span class="uname">&lt;!--PRIME--&gt;</span>&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msup&gt;</pre></td>
+                     <td><pre class="mathml">&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;<span title="#x2032">&amp;#x2032;</span><span class="uname">&lt;!--prime--&gt;</span>&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msup&gt;</pre></td>
                      <td class="mathml-render" valign="middle">
                         <math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>x</mi><mo>&#x2032;</mo></msup></math>
                      </td>
@@ -972,7 +972,7 @@ padding-right: 1em;
                </p>
                <table>
                   <tr>
-                     <td><pre class="mathml">&lt;mrow&gt;&lt;msubsup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;<span title="#x2032">&amp;#x2032;</span><span class="uname">&lt;!--PRIME--&gt;</span>&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msubsup&gt;&lt;/mrow&gt;</pre></td>
+                     <td><pre class="mathml">&lt;mrow&gt;&lt;msubsup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;<span title="#x2032">&amp;#x2032;</span><span class="uname">&lt;!--prime--&gt;</span>&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msubsup&gt;&lt;/mrow&gt;</pre></td>
                      <td class="mathml-render" valign="middle">
                         <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msubsup><mi>x</mi><mn>0</mn><mo>&#x2032;</mo></msubsup></mrow></math>
                      </td>
@@ -1010,7 +1010,7 @@ padding-right: 1em;
                   <tr>
                      <td><pre class="mathml">&lt;msup&gt;
   &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-  &lt;mo&gt;<span title="#x2032">&amp;#x2032;</span><span class="uname">&lt;!--PRIME--&gt;</span>&lt;!--PRIME--&gt;&lt;/mo&gt;
+  &lt;mo&gt;<span title="#x2032">&amp;#x2032;</span><span class="uname">&lt;!--prime--&gt;</span>&lt;!--PRIME--&gt;&lt;/mo&gt;
 &lt;/msup&gt;</pre></td>
                      <td class="mathml-render" valign="middle">
                         <math xmlns="http://www.w3.org/1998/Math/MathML"><msup>
@@ -1061,7 +1061,7 @@ padding-right: 1em;
                </p>
                <table>
                   <tr>
-                     <td><pre class="mathml">&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;<span title="#x2032">&amp;#x2032;</span><span class="uname">&lt;!--PRIME--&gt;</span>&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msup&gt;&lt;/mrow&gt;</pre></td>
+                     <td><pre class="mathml">&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;<span title="#x2032">&amp;#x2032;</span><span class="uname">&lt;!--prime--&gt;</span>&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msup&gt;&lt;/mrow&gt;</pre></td>
                      <td class="mathml-render" valign="middle">
                         <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mi>x</mi><mo>&#x2032;</mo></msup></mrow></math>
                      </td>
