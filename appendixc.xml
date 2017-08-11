@@ -177,25 +177,20 @@ padding-right: 1em;
             <li><a href="appendixb.xml"><span class="secno">B </span> Media Types Registrations</a></li>
             <li><a href="appendixd.xml"><span class="secno">D </span> Glossary</a></li>
             
-            
-            <li><a href="appendixc.xml"><span class="secno">C </span> Operator Dictionary (Non-Normative)</a>
+            <li><a href="appendixc.xml"><span class="secno">C </span> Operator Dictionary (Non-Normative)</a>
                
                <ol class="toc">
-                  
-                  <li><a href="appendixc.xml#oper-dict.index"><span class="secno">C.1 </span> Indexing of the operator dictionary</a>
+                  <li><a href="appendixc.xml#oper-dict.index"><span class="secno">C.1 </span> Indexing of the operator dictionary</a>
                      
                   </li>
-                  
-                  <li><a href="appendixc.xml#oper-dict.format"><span class="secno">C.2 </span> Format of operator dictionary entries</a>
+                  <li><a href="appendixc.xml#oper-dict.format"><span class="secno">C.2 </span> Format of operator dictionary entries</a>
                      
                   </li>
-                  
-                  <li><a href="appendixc.xml#oper-dict.space"><span class="secno">C.3 </span> Notes on lspace and 
+                  <li><a href="appendixc.xml#oper-dict.space"><span class="secno">C.3 </span> Notes on lspace and 
                         rspace attributes</a>
                      
                   </li>
-                  
-                  <li><a href="appendixc.xml#oper-dict.entries-table"><span class="secno">C.4 </span> Operator dictionary entries</a>
+                  <li><a href="appendixc.xml#oper-dict.entries-table"><span class="secno">C.4 </span> Operator dictionary entries</a>
                      
                   </li>
                </ol>

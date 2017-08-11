@@ -429,7 +429,6 @@ summary="Navigation TOC"
       <xsl:apply-templates select="." mode="divnum"/>
     </xsl:variable>
 <!--    <xsl:value-of select="$indent"/>-->
-    <xsl:text>&#10;</xsl:text>
     <li>
      <a>
       <xsl:attribute name="href">
@@ -441,7 +440,7 @@ summary="Navigation TOC"
      <span class="secno">
       <xsl:copy-of select="$num"/>
      </span>
-     <xsl:text>&#160;</xsl:text>
+     <xsl:text> </xsl:text>
       <xsl:apply-templates select="head|name" mode="text"/>
       <xsl:if test="self::inform-div1"> (Non-Normative)</xsl:if>
     </a>

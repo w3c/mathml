@@ -177,62 +177,48 @@ padding-right: 1em;
             <li><a href="chapter6.xml"><span class="secno">6 </span> Interactions with the Host Environment</a></li>
             <li><a href="appendixa.xml"><span class="secno">A </span> Parsing MathML</a></li>
             
-            
-            <li><a href="chapter7.xml"><span class="secno">7 </span> Characters, Entities and Fonts</a>
+            <li><a href="chapter7.xml"><span class="secno">7 </span> Characters, Entities and Fonts</a>
                
                <ol class="toc">
-                  
-                  <li><a href="chapter7.xml#chars.intro"><span class="secno">7.1 </span> Introduction</a>
+                  <li><a href="chapter7.xml#chars.intro"><span class="secno">7.1 </span> Introduction</a>
                      
                   </li>
-                  
-                  <li><a href="chapter7.xml#chars.unicodechars"><span class="secno">7.2 </span> Unicode Character Data</a>
+                  <li><a href="chapter7.xml#chars.unicodechars"><span class="secno">7.2 </span> Unicode Character Data</a>
                      
                   </li>
-                  
-                  <li><a href="chapter7.xml#chars.entities"><span class="secno">7.3 </span> Entity Declarations</a>
+                  <li><a href="chapter7.xml#chars.entities"><span class="secno">7.3 </span> Entity Declarations</a>
                      
                   </li>
-                  
-                  <li><a href="chapter7.xml#chars.mglyph"><span class="secno">7.4 </span> Special Characters Not in Unicode</a>
+                  <li><a href="chapter7.xml#chars.mglyph"><span class="secno">7.4 </span> Special Characters Not in Unicode</a>
                      
                   </li>
-                  
-                  <li><a href="chapter7.xml#chars.BMP-SMP"><span class="secno">7.5 </span> Mathematical Alphanumeric Symbols</a>
+                  <li><a href="chapter7.xml#chars.BMP-SMP"><span class="secno">7.5 </span> Mathematical Alphanumeric Symbols</a>
                      
                   </li>
-                  
-                  <li><a href="chapter7.xml#chars.nonmark"><span class="secno">7.6 </span> Non-Marking Characters</a>
+                  <li><a href="chapter7.xml#chars.nonmark"><span class="secno">7.6 </span> Non-Marking Characters</a>
                      
                   </li>
-                  
-                  <li><a href="chapter7.xml#chars.anomalous"><span class="secno">7.7 </span> Anomalous Mathematical Characters</a>
+                  <li><a href="chapter7.xml#chars.anomalous"><span class="secno">7.7 </span> Anomalous Mathematical Characters</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter7.xml#chars.keyboard"><span class="secno">7.7.1 </span> Keyboard Characters</a>
+                        <li><a href="chapter7.xml#chars.keyboard"><span class="secno">7.7.1 </span> Keyboard Characters</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter7.xml#chars.hyph-minus"><span class="secno">7.7.1.1 </span> Minus</a>
+                              <li><a href="chapter7.xml#chars.hyph-minus"><span class="secno">7.7.1.1 </span> Minus</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter7.xml#chars.prime-quote"><span class="secno">7.7.1.2 </span> Apostrophes, Quotes and Primes</a>
+                              <li><a href="chapter7.xml#chars.prime-quote"><span class="secno">7.7.1.2 </span> Apostrophes, Quotes and Primes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter7.xml#id.7.7.1.3"><span class="secno">7.7.1.3 </span> Other Keyboard Substitutions</a>
+                              <li><a href="chapter7.xml#id.7.7.1.3"><span class="secno">7.7.1.3 </span> Other Keyboard Substitutions</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter7.xml#chars.pseudo-scripts"><span class="secno">7.7.2 </span> Pseudo-scripts</a>
+                        <li><a href="chapter7.xml#chars.pseudo-scripts"><span class="secno">7.7.2 </span> Pseudo-scripts</a>
                            
                         </li>
-                        
-                        <li><a href="chapter7.xml#chars.comb-chars"><span class="secno">7.7.3 </span> Combining Characters</a>
+                        <li><a href="chapter7.xml#chars.comb-chars"><span class="secno">7.7.3 </span> Combining Characters</a>
                            
                         </li>
                      </ol>

@@ -177,974 +177,764 @@ padding-right: 1em;
             <li><a href="chapter2.xml"><span class="secno">2 </span> MathML Fundamentals</a></li>
             <li><a href="chapter4.xml"><span class="secno">4 </span> Content Markup</a></li>
             
-            
-            <li><a href="chapter3.xml"><span class="secno">3 </span> Presentation Markup</a>
+            <li><a href="chapter3.xml"><span class="secno">3 </span> Presentation Markup</a>
                
                <ol class="toc">
-                  
-                  <li><a href="chapter3.xml#presm.intro"><span class="secno">3.1 </span> Introduction</a>
+                  <li><a href="chapter3.xml#presm.intro"><span class="secno">3.1 </span> Introduction</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter3.xml#id.3.1.1"><span class="secno">3.1.1 </span> What Presentation Elements Represent</a>
+                        <li><a href="chapter3.xml#id.3.1.1"><span class="secno">3.1.1 </span> What Presentation Elements Represent</a>
                            
                         </li>
-                        
-                        <li><a href="chapter3.xml#id.3.1.2"><span class="secno">3.1.2 </span> Terminology Used In This Chapter</a>
+                        <li><a href="chapter3.xml#id.3.1.2"><span class="secno">3.1.2 </span> Terminology Used In This Chapter</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.1.2.1"><span class="secno">3.1.2.1 </span> Types of presentation elements</a>
+                              <li><a href="chapter3.xml#id.3.1.2.1"><span class="secno">3.1.2.1 </span> Types of presentation elements</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.1.2.2"><span class="secno">3.1.2.2 </span> Terminology for other classes of elements and their relationships</a>
+                              <li><a href="chapter3.xml#id.3.1.2.2"><span class="secno">3.1.2.2 </span> Terminology for other classes of elements and their relationships</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.reqarg"><span class="secno">3.1.3 </span> Required Arguments</a>
+                        <li><a href="chapter3.xml#presm.reqarg"><span class="secno">3.1.3 </span> Required Arguments</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#presm.inferredmrow"><span class="secno">3.1.3.1 </span> Inferred <code>&lt;mrow&gt;</code>s</a>
+                              <li><a href="chapter3.xml#presm.inferredmrow"><span class="secno">3.1.3.1 </span> Inferred <code>&lt;mrow&gt;</code>s</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.1.3.2"><span class="secno">3.1.3.2 </span> Table of argument requirements</a>
+                              <li><a href="chapter3.xml#id.3.1.3.2"><span class="secno">3.1.3.2 </span> Table of argument requirements</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#id.3.1.4"><span class="secno">3.1.4 </span> Elements with Special Behaviors</a>
+                        <li><a href="chapter3.xml#id.3.1.4"><span class="secno">3.1.4 </span> Elements with Special Behaviors</a>
                            
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.bidi"><span class="secno">3.1.5 </span> Directionality</a>
+                        <li><a href="chapter3.xml#presm.bidi"><span class="secno">3.1.5 </span> Directionality</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#presm.bidi.math"><span class="secno">3.1.5.1 </span> Overall Directionality of Mathematics Formulas</a>
+                              <li><a href="chapter3.xml#presm.bidi.math"><span class="secno">3.1.5.1 </span> Overall Directionality of Mathematics Formulas</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.bidi.token"><span class="secno">3.1.5.2 </span> Bidirectional Layout in Token Elements</a>
+                              <li><a href="chapter3.xml#presm.bidi.token"><span class="secno">3.1.5.2 </span> Bidirectional Layout in Token Elements</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.scriptlevel"><span class="secno">3.1.6 </span> Displaystyle and Scriptlevel</a>
+                        <li><a href="chapter3.xml#presm.scriptlevel"><span class="secno">3.1.6 </span> Displaystyle and Scriptlevel</a>
                            
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.linebreaking"><span class="secno">3.1.7 </span> Linebreaking of Expressions</a>
+                        <li><a href="chapter3.xml#presm.linebreaking"><span class="secno">3.1.7 </span> Linebreaking of Expressions</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.1.7.1"><span class="secno">3.1.7.1 </span> Control of Linebreaks</a>
+                              <li><a href="chapter3.xml#id.3.1.7.1"><span class="secno">3.1.7.1 </span> Control of Linebreaks</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.lbalgorithm"><span class="secno">3.1.7.2 </span> Automatic Linebreaking Algorithm (Informative)</a>
+                              <li><a href="chapter3.xml#presm.lbalgorithm"><span class="secno">3.1.7.2 </span> Automatic Linebreaking Algorithm (Informative)</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.inline.lbalgorithm"><span class="secno">3.1.7.3 </span> Linebreaking Algorithm for Inline Expressions (Informative)</a>
+                              <li><a href="chapter3.xml#presm.inline.lbalgorithm"><span class="secno">3.1.7.3 </span> Linebreaking Algorithm for Inline Expressions (Informative)</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.warnfinetuning"><span class="secno">3.1.8 </span> Warning about fine-tuning of presentation</a>
+                        <li><a href="chapter3.xml#presm.warnfinetuning"><span class="secno">3.1.8 </span> Warning about fine-tuning of presentation</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#presm.warntweaking"><span class="secno">3.1.8.1 </span> Warning: non-portability of tweaking</a>
+                              <li><a href="chapter3.xml#presm.warntweaking"><span class="secno">3.1.8.1 </span> Warning: non-portability of tweaking</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.warnspacing"><span class="secno">3.1.8.2 </span> Warning: spacing should not be used to convey meaning</a>
+                              <li><a href="chapter3.xml#presm.warnspacing"><span class="secno">3.1.8.2 </span> Warning: spacing should not be used to convey meaning</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.summary"><span class="secno">3.1.9 </span> Summary of Presentation Elements</a>
+                        <li><a href="chapter3.xml#presm.summary"><span class="secno">3.1.9 </span> Summary of Presentation Elements</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.1.9.1"><span class="secno">3.1.9.1 </span> Token Elements</a>
+                              <li><a href="chapter3.xml#id.3.1.9.1"><span class="secno">3.1.9.1 </span> Token Elements</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.1.9.2"><span class="secno">3.1.9.2 </span> General Layout Schemata</a>
+                              <li><a href="chapter3.xml#id.3.1.9.2"><span class="secno">3.1.9.2 </span> General Layout Schemata</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.1.9.3"><span class="secno">3.1.9.3 </span> Script and Limit Schemata</a>
+                              <li><a href="chapter3.xml#id.3.1.9.3"><span class="secno">3.1.9.3 </span> Script and Limit Schemata</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.1.9.4"><span class="secno">3.1.9.4 </span> Tables and Matrices</a>
+                              <li><a href="chapter3.xml#id.3.1.9.4"><span class="secno">3.1.9.4 </span> Tables and Matrices</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.1.9.5"><span class="secno">3.1.9.5 </span> Elementary Math Layout</a>
+                              <li><a href="chapter3.xml#id.3.1.9.5"><span class="secno">3.1.9.5 </span> Elementary Math Layout</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.1.9.6"><span class="secno">3.1.9.6 </span> Enlivening Expressions</a>
+                              <li><a href="chapter3.xml#id.3.1.9.6"><span class="secno">3.1.9.6 </span> Enlivening Expressions</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.presatt"><span class="secno">3.1.10 </span> Mathematics style attributes common to presentation elements</a>
+                        <li><a href="chapter3.xml#presm.presatt"><span class="secno">3.1.10 </span> Mathematics style attributes common to presentation elements</a>
                            
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter3.xml#presm.tokel"><span class="secno">3.2 </span> Token Elements</a>
+                  <li><a href="chapter3.xml#presm.tokel"><span class="secno">3.2 </span> Token Elements</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter3.xml#presm.tokenchars"><span class="secno">3.2.1 </span> 
+                        <li><a href="chapter3.xml#presm.tokenchars"><span class="secno">3.2.1 </span> 
                               Token Element Content Characters, <code>&lt;mglyph/&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#presm.symbolchars"><span class="secno">3.2.1.1 </span> Alphanumeric symbol characters</a>
+                              <li><a href="chapter3.xml#presm.symbolchars"><span class="secno">3.2.1.1 </span> Alphanumeric symbol characters</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.mglyph"><span class="secno">3.2.1.2 </span> Using images to represent
+                              <li><a href="chapter3.xml#presm.mglyph"><span class="secno">3.2.1.2 </span> Using images to represent
                                     symbols <code>&lt;mglyph/&gt;</code></a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter3.xml#id.3.2.1.2.1"><span class="secno">3.2.1.2.1 </span> Description</a>
+                                    <li><a href="chapter3.xml#id.3.2.1.2.1"><span class="secno">3.2.1.2.1 </span> Description</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter3.xml#id.3.2.1.2.2"><span class="secno">3.2.1.2.2 </span> Attributes</a>
+                                    <li><a href="chapter3.xml#id.3.2.1.2.2"><span class="secno">3.2.1.2.2 </span> Attributes</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter3.xml#id.3.2.1.2.3"><span class="secno">3.2.1.2.3 </span> Example</a>
+                                    <li><a href="chapter3.xml#id.3.2.1.2.3"><span class="secno">3.2.1.2.3 </span> Example</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter3.xml#presm.mglyph.deprecated"><span class="secno">3.2.1.2.4 </span> Deprecated Attributes</a>
+                                    <li><a href="chapter3.xml#presm.mglyph.deprecated"><span class="secno">3.2.1.2.4 </span> Deprecated Attributes</a>
                                        
                                     </li>
                                  </ol>
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.commatt"><span class="secno">3.2.2 </span> Mathematics style attributes common to token elements</a>
+                        <li><a href="chapter3.xml#presm.commatt"><span class="secno">3.2.2 </span> Mathematics style attributes common to token elements</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#presm.deprecatt"><span class="secno">3.2.2.1 </span> Deprecated style attributes on token elements</a>
+                              <li><a href="chapter3.xml#presm.deprecatt"><span class="secno">3.2.2.1 </span> Deprecated style attributes on token elements</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.html.insertion"><span class="secno">3.2.2.2 </span> Embedding HTML in MathML</a>
+                              <li><a href="chapter3.xml#presm.html.insertion"><span class="secno">3.2.2.2 </span> Embedding HTML in MathML</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mi"><span class="secno">3.2.3 </span> Identifier <code>&lt;mi&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mi"><span class="secno">3.2.3 </span> Identifier <code>&lt;mi&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.2.3.1"><span class="secno">3.2.3.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.2.3.1"><span class="secno">3.2.3.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.2.3.2"><span class="secno">3.2.3.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.2.3.2"><span class="secno">3.2.3.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.mi.examples"><span class="secno">3.2.3.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#presm.mi.examples"><span class="secno">3.2.3.3 </span> Examples</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mn"><span class="secno">3.2.4 </span> Number <code>&lt;mn&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mn"><span class="secno">3.2.4 </span> Number <code>&lt;mn&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.2.4.1"><span class="secno">3.2.4.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.2.4.1"><span class="secno">3.2.4.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.2.4.2"><span class="secno">3.2.4.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.2.4.2"><span class="secno">3.2.4.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.mn.examples"><span class="secno">3.2.4.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#presm.mn.examples"><span class="secno">3.2.4.3 </span> Examples</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.not.single.mn"><span class="secno">3.2.4.4 </span> Numbers that should not be written 
+                              <li><a href="chapter3.xml#presm.not.single.mn"><span class="secno">3.2.4.4 </span> Numbers that should not be written 
                                     using <code>&lt;mn&gt;</code> alone</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mo"><span class="secno">3.2.5 </span> Operator, Fence, Separator or Accent
+                        <li><a href="chapter3.xml#presm.mo"><span class="secno">3.2.5 </span> Operator, Fence, Separator or Accent
                               <code>&lt;mo&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.2.5.1"><span class="secno">3.2.5.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.2.5.1"><span class="secno">3.2.5.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.mo.attrs"><span class="secno">3.2.5.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#presm.mo.attrs"><span class="secno">3.2.5.2 </span> Attributes</a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter3.xml#presm.mo.dict.attrs"><span class="secno">3.2.5.2.1 </span> Dictionary-based attributes</a>
+                                    <li><a href="chapter3.xml#presm.mo.dict.attrs"><span class="secno">3.2.5.2.1 </span> Dictionary-based attributes</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter3.xml#presm.lbattrs"><span class="secno">3.2.5.2.2 </span> Linebreaking attributes</a>
+                                    <li><a href="chapter3.xml#presm.lbattrs"><span class="secno">3.2.5.2.2 </span> Linebreaking attributes</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter3.xml#presm.lbindent.attrs"><span class="secno">3.2.5.2.3 </span> Indentation attributes</a>
+                                    <li><a href="chapter3.xml#presm.lbindent.attrs"><span class="secno">3.2.5.2.3 </span> Indentation attributes</a>
                                        
                                     </li>
                                  </ol>
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.2.5.3"><span class="secno">3.2.5.3 </span> Examples with ordinary operators</a>
+                              <li><a href="chapter3.xml#id.3.2.5.3"><span class="secno">3.2.5.3 </span> Examples with ordinary operators</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.2.5.4"><span class="secno">3.2.5.4 </span> Examples with fences and separators</a>
+                              <li><a href="chapter3.xml#id.3.2.5.4"><span class="secno">3.2.5.4 </span> Examples with fences and separators</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.invisibleops"><span class="secno">3.2.5.5 </span> Invisible operators</a>
+                              <li><a href="chapter3.xml#presm.invisibleops"><span class="secno">3.2.5.5 </span> Invisible operators</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.2.5.6"><span class="secno">3.2.5.6 </span> Names for other special operators</a>
+                              <li><a href="chapter3.xml#id.3.2.5.6"><span class="secno">3.2.5.6 </span> Names for other special operators</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.2.5.7"><span class="secno">3.2.5.7 </span> Detailed rendering rules for <code>&lt;mo&gt;</code> elements</a>
+                              <li><a href="chapter3.xml#id.3.2.5.7"><span class="secno">3.2.5.7 </span> Detailed rendering rules for <code>&lt;mo&gt;</code> elements</a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter3.xml#presm.opdict"><span class="secno">3.2.5.7.1 </span> The operator dictionary</a>
+                                    <li><a href="chapter3.xml#presm.opdict"><span class="secno">3.2.5.7.1 </span> The operator dictionary</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter3.xml#presm.formdefval"><span class="secno">3.2.5.7.2 </span> Default value of the form attribute</a>
+                                    <li><a href="chapter3.xml#presm.formdefval"><span class="secno">3.2.5.7.2 </span> Default value of the form attribute</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter3.xml#id.3.2.5.7.3"><span class="secno">3.2.5.7.3 </span> Exception for embellished operators</a>
+                                    <li><a href="chapter3.xml#id.3.2.5.7.3"><span class="secno">3.2.5.7.3 </span> Exception for embellished operators</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter3.xml#id.3.2.5.7.4"><span class="secno">3.2.5.7.4 </span> Rationale for definition of embellished operators</a>
+                                    <li><a href="chapter3.xml#id.3.2.5.7.4"><span class="secno">3.2.5.7.4 </span> Rationale for definition of embellished operators</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter3.xml#presm.opspacing"><span class="secno">3.2.5.7.5 </span> Spacing around an operator</a>
+                                    <li><a href="chapter3.xml#presm.opspacing"><span class="secno">3.2.5.7.5 </span> Spacing around an operator</a>
                                        
                                     </li>
                                  </ol>
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.op.stretch"><span class="secno">3.2.5.8 </span> Stretching of operators, fences and accents</a>
+                              <li><a href="chapter3.xml#presm.op.stretch"><span class="secno">3.2.5.8 </span> Stretching of operators, fences and accents</a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter3.xml#id.3.2.5.8.1"><span class="secno">3.2.5.8.1 </span> Example of stretchy attributes</a>
+                                    <li><a href="chapter3.xml#id.3.2.5.8.1"><span class="secno">3.2.5.8.1 </span> Example of stretchy attributes</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter3.xml#id.3.2.5.8.2"><span class="secno">3.2.5.8.2 </span> Vertical Stretching Rules</a>
+                                    <li><a href="chapter3.xml#id.3.2.5.8.2"><span class="secno">3.2.5.8.2 </span> Vertical Stretching Rules</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter3.xml#presm.horiz.stretch.rules"><span class="secno">3.2.5.8.3 </span> Horizontal Stretching Rules</a>
+                                    <li><a href="chapter3.xml#presm.horiz.stretch.rules"><span class="secno">3.2.5.8.3 </span> Horizontal Stretching Rules</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter3.xml#id.3.2.5.8.4"><span class="secno">3.2.5.8.4 </span> Rules Common to both Vertical and Horizontal Stretching</a>
+                                    <li><a href="chapter3.xml#id.3.2.5.8.4"><span class="secno">3.2.5.8.4 </span> Rules Common to both Vertical and Horizontal Stretching</a>
                                        
                                     </li>
                                  </ol>
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.mo.linebreaks"><span class="secno">3.2.5.9 </span> Examples of Linebreaking</a>
+                              <li><a href="chapter3.xml#presm.mo.linebreaks"><span class="secno">3.2.5.9 </span> Examples of Linebreaking</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mtext"><span class="secno">3.2.6 </span> Text <code>&lt;mtext&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mtext"><span class="secno">3.2.6 </span> Text <code>&lt;mtext&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.2.6.1"><span class="secno">3.2.6.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.2.6.1"><span class="secno">3.2.6.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.2.6.2"><span class="secno">3.2.6.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.2.6.2"><span class="secno">3.2.6.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.2.6.3"><span class="secno">3.2.6.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#id.3.2.6.3"><span class="secno">3.2.6.3 </span> Examples</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.mixtextmath"><span class="secno">3.2.6.4 </span> Mixing text and mathematics</a>
+                              <li><a href="chapter3.xml#presm.mixtextmath"><span class="secno">3.2.6.4 </span> Mixing text and mathematics</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mspace"><span class="secno">3.2.7 </span> Space <code>&lt;mspace/&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mspace"><span class="secno">3.2.7 </span> Space <code>&lt;mspace/&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.2.7.1"><span class="secno">3.2.7.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.2.7.1"><span class="secno">3.2.7.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.2.7.2"><span class="secno">3.2.7.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.2.7.2"><span class="secno">3.2.7.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.2.7.3"><span class="secno">3.2.7.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#id.3.2.7.3"><span class="secno">3.2.7.3 </span> Examples</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.2.7.4"><span class="secno">3.2.7.4 </span> Definition of space-like elements</a>
+                              <li><a href="chapter3.xml#id.3.2.7.4"><span class="secno">3.2.7.4 </span> Definition of space-like elements</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.2.7.5"><span class="secno">3.2.7.5 </span> Legal grouping of space-like elements</a>
+                              <li><a href="chapter3.xml#id.3.2.7.5"><span class="secno">3.2.7.5 </span> Legal grouping of space-like elements</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.ms"><span class="secno">3.2.8 </span> String Literal <code>&lt;ms&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.ms"><span class="secno">3.2.8 </span> String Literal <code>&lt;ms&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.2.8.1"><span class="secno">3.2.8.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.2.8.1"><span class="secno">3.2.8.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.2.8.2"><span class="secno">3.2.8.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.2.8.2"><span class="secno">3.2.8.2 </span> Attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter3.xml#presm.genlayout"><span class="secno">3.3 </span> General Layout Schemata</a>
+                  <li><a href="chapter3.xml#presm.genlayout"><span class="secno">3.3 </span> General Layout Schemata</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter3.xml#presm.mrow"><span class="secno">3.3.1 </span> Horizontally Group Sub-Expressions
+                        <li><a href="chapter3.xml#presm.mrow"><span class="secno">3.3.1 </span> Horizontally Group Sub-Expressions
                               <code>&lt;mrow&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.3.1.1"><span class="secno">3.3.1.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.3.1.1"><span class="secno">3.3.1.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.1.2"><span class="secno">3.3.1.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.3.1.2"><span class="secno">3.3.1.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.1.3"><span class="secno">3.3.1.3 </span> Proper grouping of sub-expressions using <code>&lt;mrow&gt;</code></a>
+                              <li><a href="chapter3.xml#id.3.3.1.3"><span class="secno">3.3.1.3 </span> Proper grouping of sub-expressions using <code>&lt;mrow&gt;</code></a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter3.xml#id.3.3.1.3.1"><span class="secno">3.3.1.3.1 </span> <code>&lt;mrow&gt;</code> of one argument</a>
+                                    <li><a href="chapter3.xml#id.3.3.1.3.1"><span class="secno">3.3.1.3.1 </span> <code>&lt;mrow&gt;</code> of one argument</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter3.xml#id.3.3.1.3.2"><span class="secno">3.3.1.3.2 </span> Precise rule for proper grouping</a>
+                                    <li><a href="chapter3.xml#id.3.3.1.3.2"><span class="secno">3.3.1.3.2 </span> Precise rule for proper grouping</a>
                                        
                                     </li>
                                  </ol>
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.1.4"><span class="secno">3.3.1.4 </span> Examples</a>
+                              <li><a href="chapter3.xml#id.3.3.1.4"><span class="secno">3.3.1.4 </span> Examples</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mfrac"><span class="secno">3.3.2 </span> Fractions <code>&lt;mfrac&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mfrac"><span class="secno">3.3.2 </span> Fractions <code>&lt;mfrac&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.3.2.1"><span class="secno">3.3.2.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.3.2.1"><span class="secno">3.3.2.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.2.2"><span class="secno">3.3.2.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.3.2.2"><span class="secno">3.3.2.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.2.3"><span class="secno">3.3.2.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#id.3.3.2.3"><span class="secno">3.3.2.3 </span> Examples</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mroot"><span class="secno">3.3.3 </span> Radicals <code>&lt;msqrt&gt;</code>, <code>&lt;mroot&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mroot"><span class="secno">3.3.3 </span> Radicals <code>&lt;msqrt&gt;</code>, <code>&lt;mroot&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.3.3.1"><span class="secno">3.3.3.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.3.3.1"><span class="secno">3.3.3.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.3.2"><span class="secno">3.3.3.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.3.3.2"><span class="secno">3.3.3.2 </span> Attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mstyle"><span class="secno">3.3.4 </span> Style Change <code>&lt;mstyle&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mstyle"><span class="secno">3.3.4 </span> Style Change <code>&lt;mstyle&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.3.4.1"><span class="secno">3.3.4.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.3.4.1"><span class="secno">3.3.4.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.mstyle.attrs"><span class="secno">3.3.4.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#presm.mstyle.attrs"><span class="secno">3.3.4.2 </span> Attributes</a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter3.xml#id.3.3.4.2.1"><span class="secno">3.3.4.2.1 </span> Deprecated Attributes</a>
+                                    <li><a href="chapter3.xml#id.3.3.4.2.1"><span class="secno">3.3.4.2.1 </span> Deprecated Attributes</a>
                                        
                                     </li>
                                  </ol>
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.4.3"><span class="secno">3.3.4.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#id.3.3.4.3"><span class="secno">3.3.4.3 </span> Examples</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.merror"><span class="secno">3.3.5 </span> Error Message <code>&lt;merror&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.merror"><span class="secno">3.3.5 </span> Error Message <code>&lt;merror&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.3.5.1"><span class="secno">3.3.5.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.3.5.1"><span class="secno">3.3.5.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.5.2"><span class="secno">3.3.5.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.3.5.2"><span class="secno">3.3.5.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.5.3"><span class="secno">3.3.5.3 </span> Example</a>
+                              <li><a href="chapter3.xml#id.3.3.5.3"><span class="secno">3.3.5.3 </span> Example</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mpadded"><span class="secno">3.3.6 </span> Adjust Space Around Content
+                        <li><a href="chapter3.xml#presm.mpadded"><span class="secno">3.3.6 </span> Adjust Space Around Content
                               <code>&lt;mpadded&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.3.6.1"><span class="secno">3.3.6.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.3.6.1"><span class="secno">3.3.6.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.mpaddedatt"><span class="secno">3.3.6.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#presm.mpaddedatt"><span class="secno">3.3.6.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.6.3"><span class="secno">3.3.6.3 </span> Meanings of size and position attributes</a>
+                              <li><a href="chapter3.xml#id.3.3.6.3"><span class="secno">3.3.6.3 </span> Meanings of size and position attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mphantom"><span class="secno">3.3.7 </span> Making Sub-Expressions Invisible <code>&lt;mphantom&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mphantom"><span class="secno">3.3.7 </span> Making Sub-Expressions Invisible <code>&lt;mphantom&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.3.7.1"><span class="secno">3.3.7.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.3.7.1"><span class="secno">3.3.7.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.7.2"><span class="secno">3.3.7.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.3.7.2"><span class="secno">3.3.7.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.7.3"><span class="secno">3.3.7.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#id.3.3.7.3"><span class="secno">3.3.7.3 </span> Examples</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mfenced"><span class="secno">3.3.8 </span> Expression Inside Pair of Fences
+                        <li><a href="chapter3.xml#presm.mfenced"><span class="secno">3.3.8 </span> Expression Inside Pair of Fences
                               <code>&lt;mfenced&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.3.8.1"><span class="secno">3.3.8.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.3.8.1"><span class="secno">3.3.8.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.8.2"><span class="secno">3.3.8.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.3.8.2"><span class="secno">3.3.8.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.8.3"><span class="secno">3.3.8.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#id.3.3.8.3"><span class="secno">3.3.8.3 </span> Examples</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.menclose"><span class="secno">3.3.9 </span> Enclose Expression Inside Notation
+                        <li><a href="chapter3.xml#presm.menclose"><span class="secno">3.3.9 </span> Enclose Expression Inside Notation
                               <code>&lt;menclose&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.3.9.1"><span class="secno">3.3.9.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.3.9.1"><span class="secno">3.3.9.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.9.2"><span class="secno">3.3.9.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.3.9.2"><span class="secno">3.3.9.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.3.9.3"><span class="secno">3.3.9.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#id.3.3.9.3"><span class="secno">3.3.9.3 </span> Examples</a>
                                  
                               </li>
                            </ol>
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter3.xml#presm.scrlim"><span class="secno">3.4 </span> Script and Limit Schemata</a>
+                  <li><a href="chapter3.xml#presm.scrlim"><span class="secno">3.4 </span> Script and Limit Schemata</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter3.xml#presm.msub"><span class="secno">3.4.1 </span> Subscript <code>&lt;msub&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.msub"><span class="secno">3.4.1 </span> Subscript <code>&lt;msub&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.4.1.1"><span class="secno">3.4.1.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.4.1.1"><span class="secno">3.4.1.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.4.1.2"><span class="secno">3.4.1.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.4.1.2"><span class="secno">3.4.1.2 </span> Attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.msup"><span class="secno">3.4.2 </span> Superscript <code>&lt;msup&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.msup"><span class="secno">3.4.2 </span> Superscript <code>&lt;msup&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.4.2.1"><span class="secno">3.4.2.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.4.2.1"><span class="secno">3.4.2.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.4.2.2"><span class="secno">3.4.2.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.4.2.2"><span class="secno">3.4.2.2 </span> Attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.msubsup"><span class="secno">3.4.3 </span> Subscript-superscript Pair <code>&lt;msubsup&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.msubsup"><span class="secno">3.4.3 </span> Subscript-superscript Pair <code>&lt;msubsup&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.4.3.1"><span class="secno">3.4.3.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.4.3.1"><span class="secno">3.4.3.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.subsupatt"><span class="secno">3.4.3.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#presm.subsupatt"><span class="secno">3.4.3.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.4.3.3"><span class="secno">3.4.3.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#id.3.4.3.3"><span class="secno">3.4.3.3 </span> Examples</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.munder"><span class="secno">3.4.4 </span> Underscript <code>&lt;munder&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.munder"><span class="secno">3.4.4 </span> Underscript <code>&lt;munder&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.4.4.1"><span class="secno">3.4.4.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.4.4.1"><span class="secno">3.4.4.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.4.4.2"><span class="secno">3.4.4.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.4.4.2"><span class="secno">3.4.4.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.4.4.3"><span class="secno">3.4.4.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#id.3.4.4.3"><span class="secno">3.4.4.3 </span> Examples</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mover"><span class="secno">3.4.5 </span> Overscript <code>&lt;mover&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mover"><span class="secno">3.4.5 </span> Overscript <code>&lt;mover&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.4.5.1"><span class="secno">3.4.5.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.4.5.1"><span class="secno">3.4.5.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.4.5.2"><span class="secno">3.4.5.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.4.5.2"><span class="secno">3.4.5.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.4.5.3"><span class="secno">3.4.5.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#id.3.4.5.3"><span class="secno">3.4.5.3 </span> Examples</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.munderover"><span class="secno">3.4.6 </span> Underscript-overscript Pair
+                        <li><a href="chapter3.xml#presm.munderover"><span class="secno">3.4.6 </span> Underscript-overscript Pair
                               <code>&lt;munderover&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.4.6.1"><span class="secno">3.4.6.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.4.6.1"><span class="secno">3.4.6.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.4.6.2"><span class="secno">3.4.6.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.4.6.2"><span class="secno">3.4.6.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.4.6.3"><span class="secno">3.4.6.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#id.3.4.6.3"><span class="secno">3.4.6.3 </span> Examples</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mmultiscripts"><span class="secno">3.4.7 </span> Prescripts and Tensor Indices
+                        <li><a href="chapter3.xml#presm.mmultiscripts"><span class="secno">3.4.7 </span> Prescripts and Tensor Indices
                               <code>&lt;mmultiscripts&gt;</code>,
                               <code>&lt;mprescripts/&gt;</code>,
                               <code>&lt;none/&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.4.7.1"><span class="secno">3.4.7.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.4.7.1"><span class="secno">3.4.7.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.4.7.2"><span class="secno">3.4.7.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.4.7.2"><span class="secno">3.4.7.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.4.7.3"><span class="secno">3.4.7.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#id.3.4.7.3"><span class="secno">3.4.7.3 </span> Examples</a>
                                  
                               </li>
                            </ol>
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter3.xml#presm.tabmat"><span class="secno">3.5 </span> Tabular Math</a>
+                  <li><a href="chapter3.xml#presm.tabmat"><span class="secno">3.5 </span> Tabular Math</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter3.xml#presm.mtable"><span class="secno">3.5.1 </span> Table or Matrix
+                        <li><a href="chapter3.xml#presm.mtable"><span class="secno">3.5.1 </span> Table or Matrix
                               <code>&lt;mtable&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.5.1.1"><span class="secno">3.5.1.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.5.1.1"><span class="secno">3.5.1.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.mtable.attrs"><span class="secno">3.5.1.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#presm.mtable.attrs"><span class="secno">3.5.1.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.5.1.3"><span class="secno">3.5.1.3 </span> Examples</a>
+                              <li><a href="chapter3.xml#id.3.5.1.3"><span class="secno">3.5.1.3 </span> Examples</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mtr"><span class="secno">3.5.2 </span> Row in Table or Matrix <code>&lt;mtr&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mtr"><span class="secno">3.5.2 </span> Row in Table or Matrix <code>&lt;mtr&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.5.2.1"><span class="secno">3.5.2.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.5.2.1"><span class="secno">3.5.2.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.5.2.2"><span class="secno">3.5.2.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.5.2.2"><span class="secno">3.5.2.2 </span> Attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mlabeledtr"><span class="secno">3.5.3 </span> Labeled Row in Table or Matrix
+                        <li><a href="chapter3.xml#presm.mlabeledtr"><span class="secno">3.5.3 </span> Labeled Row in Table or Matrix
                               <code>&lt;mlabeledtr&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.5.3.1"><span class="secno">3.5.3.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.5.3.1"><span class="secno">3.5.3.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.5.3.2"><span class="secno">3.5.3.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.5.3.2"><span class="secno">3.5.3.2 </span> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.5.3.3"><span class="secno">3.5.3.3 </span> Equation Numbering</a>
+                              <li><a href="chapter3.xml#id.3.5.3.3"><span class="secno">3.5.3.3 </span> Equation Numbering</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.5.3.4"><span class="secno">3.5.3.4 </span> Example</a>
+                              <li><a href="chapter3.xml#id.3.5.3.4"><span class="secno">3.5.3.4 </span> Example</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mtd"><span class="secno">3.5.4 </span> Entry in Table or Matrix <code>&lt;mtd&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mtd"><span class="secno">3.5.4 </span> Entry in Table or Matrix <code>&lt;mtd&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.5.4.1"><span class="secno">3.5.4.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.5.4.1"><span class="secno">3.5.4.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.mtdatts"><span class="secno">3.5.4.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#presm.mtdatts"><span class="secno">3.5.4.2 </span> Attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.malign"><span class="secno">3.5.5 </span> Alignment Markers
+                        <li><a href="chapter3.xml#presm.malign"><span class="secno">3.5.5 </span> Alignment Markers
                               <code>&lt;maligngroup/&gt;</code>, <code>&lt;malignmark/&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.5.5.1"><span class="secno">3.5.5.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.5.5.1"><span class="secno">3.5.5.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.5.5.2"><span class="secno">3.5.5.2 </span> Specifying alignment groups</a>
+                              <li><a href="chapter3.xml#id.3.5.5.2"><span class="secno">3.5.5.2 </span> Specifying alignment groups</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.5.5.3"><span class="secno">3.5.5.3 </span> Table cells that are not divided into alignment groups</a>
+                              <li><a href="chapter3.xml#id.3.5.5.3"><span class="secno">3.5.5.3 </span> Table cells that are not divided into alignment groups</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.5.5.4"><span class="secno">3.5.5.4 </span> Specifying alignment points using <code>&lt;malignmark/&gt;</code></a>
+                              <li><a href="chapter3.xml#id.3.5.5.4"><span class="secno">3.5.5.4 </span> Specifying alignment points using <code>&lt;malignmark/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.5.5.5"><span class="secno">3.5.5.5 </span> <code>&lt;malignmark/&gt;</code> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.5.5.5"><span class="secno">3.5.5.5 </span> <code>&lt;malignmark/&gt;</code> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.5.5.6"><span class="secno">3.5.5.6 </span> <code>&lt;maligngroup/&gt;</code> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.5.5.6"><span class="secno">3.5.5.6 </span> <code>&lt;maligngroup/&gt;</code> Attributes</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.5.5.7"><span class="secno">3.5.5.7 </span> Inheritance of groupalign values</a>
+                              <li><a href="chapter3.xml#id.3.5.5.7"><span class="secno">3.5.5.7 </span> Inheritance of groupalign values</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.5.5.8"><span class="secno">3.5.5.8 </span> MathML representation of an alignment example</a>
+                              <li><a href="chapter3.xml#id.3.5.5.8"><span class="secno">3.5.5.8 </span> MathML representation of an alignment example</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.5.5.9"><span class="secno">3.5.5.9 </span> Further details of alignment elements</a>
+                              <li><a href="chapter3.xml#id.3.5.5.9"><span class="secno">3.5.5.9 </span> Further details of alignment elements</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.5.5.10"><span class="secno">3.5.5.10 </span> A simple alignment algorithm</a>
+                              <li><a href="chapter3.xml#id.3.5.5.10"><span class="secno">3.5.5.10 </span> A simple alignment algorithm</a>
                                  
                               </li>
                            </ol>
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter3.xml#presm.elementary"><span class="secno">3.6 </span> Elementary Math</a>
+                  <li><a href="chapter3.xml#presm.elementary"><span class="secno">3.6 </span> Elementary Math</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter3.xml#presm.mstack"><span class="secno">3.6.1 </span> Stacks of Characters <code>&lt;mstack&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mstack"><span class="secno">3.6.1 </span> Stacks of Characters <code>&lt;mstack&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.6.1.1"><span class="secno">3.6.1.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.6.1.1"><span class="secno">3.6.1.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.6.1.2"><span class="secno">3.6.1.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.6.1.2"><span class="secno">3.6.1.2 </span> Attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mlongdiv"><span class="secno">3.6.2 </span> Long Division <code>&lt;mlongdiv&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mlongdiv"><span class="secno">3.6.2 </span> Long Division <code>&lt;mlongdiv&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.6.2.1"><span class="secno">3.6.2.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.6.2.1"><span class="secno">3.6.2.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.mlongdiv.attrs"><span class="secno">3.6.2.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#presm.mlongdiv.attrs"><span class="secno">3.6.2.2 </span> Attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.msgroup"><span class="secno">3.6.3 </span> Group Rows with Similiar Positions <code>&lt;msgroup&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.msgroup"><span class="secno">3.6.3 </span> Group Rows with Similiar Positions <code>&lt;msgroup&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.6.3.1"><span class="secno">3.6.3.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.6.3.1"><span class="secno">3.6.3.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.6.3.2"><span class="secno">3.6.3.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.6.3.2"><span class="secno">3.6.3.2 </span> Attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.msrow"><span class="secno">3.6.4 </span> Rows in Elementary Math <code>&lt;msrow&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.msrow"><span class="secno">3.6.4 </span> Rows in Elementary Math <code>&lt;msrow&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.6.4.1"><span class="secno">3.6.4.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.6.4.1"><span class="secno">3.6.4.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.6.4.2"><span class="secno">3.6.4.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.6.4.2"><span class="secno">3.6.4.2 </span> Attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mscarries"><span class="secno">3.6.5 </span> Carries, Borrows, and Crossouts <code>&lt;mscarries&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mscarries"><span class="secno">3.6.5 </span> Carries, Borrows, and Crossouts <code>&lt;mscarries&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.6.5.1"><span class="secno">3.6.5.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.6.5.1"><span class="secno">3.6.5.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.6.5.2"><span class="secno">3.6.5.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.6.5.2"><span class="secno">3.6.5.2 </span> Attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.mscarry"><span class="secno">3.6.6 </span> A Single Carry <code>&lt;mscarry&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.mscarry"><span class="secno">3.6.6 </span> A Single Carry <code>&lt;mscarry&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.6.6.1"><span class="secno">3.6.6.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.6.6.1"><span class="secno">3.6.6.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.6.6.2"><span class="secno">3.6.6.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.6.6.2"><span class="secno">3.6.6.2 </span> Attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.msline"><span class="secno">3.6.7 </span> Horizontal Line <code>&lt;msline/&gt;</code></a>
+                        <li><a href="chapter3.xml#presm.msline"><span class="secno">3.6.7 </span> Horizontal Line <code>&lt;msline/&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.6.7.1"><span class="secno">3.6.7.1 </span> Description</a>
+                              <li><a href="chapter3.xml#id.3.6.7.1"><span class="secno">3.6.7.1 </span> Description</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#id.3.6.7.2"><span class="secno">3.6.7.2 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.6.7.2"><span class="secno">3.6.7.2 </span> Attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter3.xml#presm.elemmath.examples"><span class="secno">3.6.8 </span> Elementary Math Examples</a>
+                        <li><a href="chapter3.xml#presm.elemmath.examples"><span class="secno">3.6.8 </span> Elementary Math Examples</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#presm.addsub"><span class="secno">3.6.8.1 </span> Addition and Subtraction</a>
+                              <li><a href="chapter3.xml#presm.addsub"><span class="secno">3.6.8.1 </span> Addition and Subtraction</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.mult"><span class="secno">3.6.8.2 </span> Multiplication</a>
+                              <li><a href="chapter3.xml#presm.mult"><span class="secno">3.6.8.2 </span> Multiplication</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.mlongdiv.ex"><span class="secno">3.6.8.3 </span> Long Division</a>
+                              <li><a href="chapter3.xml#presm.mlongdiv.ex"><span class="secno">3.6.8.3 </span> Long Division</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter3.xml#presm.repeatdec"><span class="secno">3.6.8.4 </span> Repeating decimal</a>
+                              <li><a href="chapter3.xml#presm.repeatdec"><span class="secno">3.6.8.4 </span> Repeating decimal</a>
                                  
                               </li>
                            </ol>
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter3.xml#presm.enliven"><span class="secno">3.7 </span> Enlivening Expressions</a>
+                  <li><a href="chapter3.xml#presm.enliven"><span class="secno">3.7 </span> Enlivening Expressions</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter3.xml#presm.maction"><span class="secno">3.7.1 </span> Bind Action to Sub-Expression
+                        <li><a href="chapter3.xml#presm.maction"><span class="secno">3.7.1 </span> Bind Action to Sub-Expression
                               <code>&lt;maction&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter3.xml#id.3.7.1.1"><span class="secno">3.7.1.1 </span> Attributes</a>
+                              <li><a href="chapter3.xml#id.3.7.1.1"><span class="secno">3.7.1.1 </span> Attributes</a>
                                  
                               </li>
                            </ol>
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter3.xml#presm.semantics"><span class="secno">3.8 </span> Semantics and Presentation</a>
+                  <li><a href="chapter3.xml#presm.semantics"><span class="secno">3.8 </span> Semantics and Presentation</a>
                      
                   </li>
                </ol>

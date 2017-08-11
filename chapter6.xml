@@ -177,108 +177,84 @@ padding-right: 1em;
             <li><a href="chapter5.xml"><span class="secno">5 </span> Mixing Markup Languages for Mathematical Expressions</a></li>
             <li><a href="chapter7.xml"><span class="secno">7 </span> Characters, Entities and Fonts</a></li>
             
-            
-            <li><a href="chapter6.xml"><span class="secno">6 </span> Interactions with the Host Environment</a>
+            <li><a href="chapter6.xml"><span class="secno">6 </span> Interactions with the Host Environment</a>
                
                <ol class="toc">
-                  
-                  <li><a href="chapter6.xml#world.introduction"><span class="secno">6.1 </span> Introduction</a>
+                  <li><a href="chapter6.xml#world.introduction"><span class="secno">6.1 </span> Introduction</a>
                      
                   </li>
-                  
-                  <li><a href="chapter6.xml#world.invoking.processors"><span class="secno">6.2 </span> Invoking MathML Processors</a>
+                  <li><a href="chapter6.xml#world.invoking.processors"><span class="secno">6.2 </span> Invoking MathML Processors</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter6.xml#world.recognizing.mathml"><span class="secno">6.2.1 </span> Recognizing MathML in XML</a>
+                        <li><a href="chapter6.xml#world.recognizing.mathml"><span class="secno">6.2.1 </span> Recognizing MathML in XML</a>
                            
                         </li>
-                        
-                        <li><a href="chapter6.xml#world.recognizing.mathml.html"><span class="secno">6.2.2 </span> Recognizing MathML in HTML</a>
+                        <li><a href="chapter6.xml#world.recognizing.mathml.html"><span class="secno">6.2.2 </span> Recognizing MathML in HTML</a>
                            
                         </li>
-                        
-                        <li><a href="chapter6.xml#world.resource.types"><span class="secno">6.2.3 </span> Resource Types for MathML Documents</a>
+                        <li><a href="chapter6.xml#world.resource.types"><span class="secno">6.2.3 </span> Resource Types for MathML Documents</a>
                            
                         </li>
-                        
-                        <li><a href="chapter6.xml#encoding-names"><span class="secno">6.2.4 </span> Names of MathML Encodings</a>
+                        <li><a href="chapter6.xml#encoding-names"><span class="secno">6.2.4 </span> Names of MathML Encodings</a>
                            
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter6.xml#world-int-transfers"><span class="secno">6.3 </span> Transferring MathML</a>
+                  <li><a href="chapter6.xml#world-int-transfers"><span class="secno">6.3 </span> Transferring MathML</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter6.xml#world-int-transf-flavors"><span class="secno">6.3.1 </span> Basic Transfer Flavor Names and Contents</a>
+                        <li><a href="chapter6.xml#world-int-transf-flavors"><span class="secno">6.3.1 </span> Basic Transfer Flavor Names and Contents</a>
                            
                         </li>
-                        
-                        <li><a href="chapter6.xml#world-int-transf-recommend"><span class="secno">6.3.2 </span> Recommended Behaviors when Transferring</a>
+                        <li><a href="chapter6.xml#world-int-transf-recommend"><span class="secno">6.3.2 </span> Recommended Behaviors when Transferring</a>
                            
                         </li>
-                        
-                        <li><a href="chapter6.xml#world-int-transf-discuss"><span class="secno">6.3.3 </span> Discussion</a>
+                        <li><a href="chapter6.xml#world-int-transf-discuss"><span class="secno">6.3.3 </span> Discussion</a>
                            
                         </li>
-                        
-                        <li><a href="chapter6.xml#world-int-transf-exa"><span class="secno">6.3.4 </span> Examples</a>
+                        <li><a href="chapter6.xml#world-int-transf-exa"><span class="secno">6.3.4 </span> Examples</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter6.xml#id.6.3.4.1"><span class="secno">6.3.4.1 </span> Example 1</a>
+                              <li><a href="chapter6.xml#id.6.3.4.1"><span class="secno">6.3.4.1 </span> Example 1</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter6.xml#id.6.3.4.2"><span class="secno">6.3.4.2 </span> Example 2</a>
+                              <li><a href="chapter6.xml#id.6.3.4.2"><span class="secno">6.3.4.2 </span> Example 2</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter6.xml#id.6.3.4.3"><span class="secno">6.3.4.3 </span> Example 3</a>
+                              <li><a href="chapter6.xml#id.6.3.4.3"><span class="secno">6.3.4.3 </span> Example 3</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter6.xml#id.6.3.4.4"><span class="secno">6.3.4.4 </span> Example 4</a>
+                              <li><a href="chapter6.xml#id.6.3.4.4"><span class="secno">6.3.4.4 </span> Example 4</a>
                                  
                               </li>
                            </ol>
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter6.xml#world-int-combine-other"><span class="secno">6.4 </span> Combining MathML and Other Formats</a>
+                  <li><a href="chapter6.xml#world-int-combine-other"><span class="secno">6.4 </span> Combining MathML and Other Formats</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter6.xml#interf.xhtml"><span class="secno">6.4.1 </span> Mixing MathML and XHTML</a>
+                        <li><a href="chapter6.xml#interf.xhtml"><span class="secno">6.4.1 </span> Mixing MathML and XHTML</a>
                            
                         </li>
-                        
-                        <li><a href="chapter6.xml#interf.nonxml"><span class="secno">6.4.2 </span> Mixing MathML and  non-XML contexts</a>
+                        <li><a href="chapter6.xml#interf.nonxml"><span class="secno">6.4.2 </span> Mixing MathML and  non-XML contexts</a>
                            
                         </li>
-                        
-                        <li><a href="chapter6.xml#interf.html"><span class="secno">6.4.3 </span> Mixing MathML and HTML</a>
+                        <li><a href="chapter6.xml#interf.html"><span class="secno">6.4.3 </span> Mixing MathML and HTML</a>
                            
                         </li>
-                        
-                        <li><a href="chapter6.xml#interf.link"><span class="secno">6.4.4 </span> Linking</a>
+                        <li><a href="chapter6.xml#interf.link"><span class="secno">6.4.4 </span> Linking</a>
                            
                         </li>
-                        
-                        <li><a href="chapter6.xml#interf.graphics"><span class="secno">6.4.5 </span> MathML and Graphical Markup</a>
+                        <li><a href="chapter6.xml#interf.graphics"><span class="secno">6.4.5 </span> MathML and Graphical Markup</a>
                            
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter6.xml#world-int-style"><span class="secno">6.5 </span> Using CSS with MathML</a>
+                  <li><a href="chapter6.xml#world-int-style"><span class="secno">6.5 </span> Using CSS with MathML</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter6.xml#id.6.5.1"><span class="secno">6.5.1 </span> Order of processing attributes versus style sheets</a>
+                        <li><a href="chapter6.xml#id.6.5.1"><span class="secno">6.5.1 </span> Order of processing attributes versus style sheets</a>
                            
                         </li>
                      </ol>

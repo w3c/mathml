@@ -177,16 +177,13 @@ padding-right: 1em;
             <li><a href="appendixd.xml"><span class="secno">D </span> Glossary</a></li>
             <li><a href="appendixf.xml"><span class="secno">F </span> Changes</a></li>
             
-            
-            <li><a href="appendixe.xml"><span class="secno">E </span> Working Group Membership and Acknowledgments (Non-Normative)</a>
+            <li><a href="appendixe.xml"><span class="secno">E </span> Working Group Membership and Acknowledgments (Non-Normative)</a>
                
                <ol class="toc">
-                  
-                  <li><a href="appendixe.xml#contrib"><span class="secno">E.1 </span> The Math Working Group Membership</a>
+                  <li><a href="appendixe.xml#contrib"><span class="secno">E.1 </span> The Math Working Group Membership</a>
                      
                   </li>
-                  
-                  <li><a href="appendixe.xml#contrib.ack"><span class="secno">E.2 </span> Acknowledgments</a>
+                  <li><a href="appendixe.xml#contrib.ack"><span class="secno">E.2 </span> Acknowledgments</a>
                      
                   </li>
                </ol>

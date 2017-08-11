@@ -177,25 +177,20 @@ padding-right: 1em;
             <li><a href="appendixa.xml"><span class="secno">A </span> Parsing MathML</a></li>
             <li><a href="appendixc.xml"><span class="secno">C </span> Operator Dictionary</a></li>
             
-            
-            <li><a href="appendixb.xml"><span class="secno">B </span> Media Types Registrations</a>
+            <li><a href="appendixb.xml"><span class="secno">B </span> Media Types Registrations</a>
                
                <ol class="toc">
-                  
-                  <li><a href="appendixb.xml#media-type-choosing"><span class="secno">B.1 </span> Selection of Media Types for
+                  <li><a href="appendixb.xml#media-type-choosing"><span class="secno">B.1 </span> Selection of Media Types for
                         MathML Instances</a>
                      
                   </li>
-                  
-                  <li><a href="appendixb.xml#media-types-mathml"><span class="secno">B.2 </span> Media type for Generic MathML</a>
+                  <li><a href="appendixb.xml#media-types-mathml"><span class="secno">B.2 </span> Media type for Generic MathML</a>
                      
                   </li>
-                  
-                  <li><a href="appendixb.xml#media-types-mathml-p"><span class="secno">B.3 </span> Media type for Presentation MathML</a>
+                  <li><a href="appendixb.xml#media-types-mathml-p"><span class="secno">B.3 </span> Media type for Presentation MathML</a>
                      
                   </li>
-                  
-                  <li><a href="appendixb.xml#media-types-mathml-c"><span class="secno">B.4 </span> Media type for Content MathML</a>
+                  <li><a href="appendixb.xml#media-types-mathml-c"><span class="secno">B.4 </span> Media type for Content MathML</a>
                      
                   </li>
                </ol>

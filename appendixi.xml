@@ -176,16 +176,13 @@ padding-right: 1em;
             <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
             <li><a href="appendixh.xml"><span class="secno">H </span> References</a></li>
             
-            
-            <li><a href="appendixi.xml"><span class="secno">I </span> Index (Non-Normative)</a>
+            <li><a href="appendixi.xml"><span class="secno">I </span> Index (Non-Normative)</a>
                
                <ol class="toc">
-                  
-                  <li><a href="appendixi.xml#index.elem"><span class="secno">I.1 </span> MathML Elements</a>
+                  <li><a href="appendixi.xml#index.elem"><span class="secno">I.1 </span> MathML Elements</a>
                      
                   </li>
-                  
-                  <li><a href="appendixi.xml#index.att"><span class="secno">I.2 </span> MathML Attributes</a>
+                  <li><a href="appendixi.xml#index.att"><span class="secno">I.2 </span> MathML Attributes</a>
                      
                   </li>
                </ol>

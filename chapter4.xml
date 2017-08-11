@@ -177,199 +177,155 @@ padding-right: 1em;
             <li><a href="chapter3.xml"><span class="secno">3 </span> Presentation Markup</a></li>
             <li><a href="chapter5.xml"><span class="secno">5 </span> Mixing Markup Languages for Mathematical Expressions</a></li>
             
-            
-            <li><a href="chapter4.xml"><span class="secno">4 </span> Content Markup</a>
+            <li><a href="chapter4.xml"><span class="secno">4 </span> Content Markup</a>
                
                <ol class="toc">
-                  
-                  <li><a href="chapter4.xml#contm.intro"><span class="secno">4.1 </span> Introduction</a>
+                  <li><a href="chapter4.xml#contm.intro"><span class="secno">4.1 </span> Introduction</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter4.xml#id.4.1.1"><span class="secno">4.1.1 </span> The Intent of Content Markup</a>
+                        <li><a href="chapter4.xml#id.4.1.1"><span class="secno">4.1.1 </span> The Intent of Content Markup</a>
                            
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.rendering"><span class="secno">4.1.2 </span> The Structure and Scope of Content MathML Expressions</a>
+                        <li><a href="chapter4.xml#contm.rendering"><span class="secno">4.1.2 </span> The Structure and Scope of Content MathML Expressions</a>
                            
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.strict"><span class="secno">4.1.3 </span> Strict Content MathML</a>
+                        <li><a href="chapter4.xml#contm.strict"><span class="secno">4.1.3 </span> Strict Content MathML</a>
                            
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.cds"><span class="secno">4.1.4 </span> Content Dictionaries</a>
+                        <li><a href="chapter4.xml#contm.cds"><span class="secno">4.1.4 </span> Content Dictionaries</a>
                            
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.concepts"><span class="secno">4.1.5 </span> Content MathML Concepts</a>
+                        <li><a href="chapter4.xml#contm.concepts"><span class="secno">4.1.5 </span> Content MathML Concepts</a>
                            
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter4.xml#contm.core"><span class="secno">4.2 </span> Content MathML Elements Encoding Expression Structure</a>
+                  <li><a href="chapter4.xml#contm.core"><span class="secno">4.2 </span> Content MathML Elements Encoding Expression Structure</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter4.xml#contm.cn"><span class="secno">4.2.1 </span> Numbers <code>&lt;cn&gt;</code></a>
+                        <li><a href="chapter4.xml#contm.cn"><span class="secno">4.2.1 </span> Numbers <code>&lt;cn&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.rendering.numbers"><span class="secno">4.2.1.1 </span> Rendering <code>&lt;cn&gt;</code>,<code>&lt;sep/&gt;</code>-Represented Numbers </a>
+                              <li><a href="chapter4.xml#contm.rendering.numbers"><span class="secno">4.2.1.1 </span> Rendering <code>&lt;cn&gt;</code>,<code>&lt;sep/&gt;</code>-Represented Numbers </a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.cn.strict"><span class="secno">4.2.1.2 </span> Strict uses of <code>&lt;cn&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.cn.strict"><span class="secno">4.2.1.2 </span> Strict uses of <code>&lt;cn&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.cn.extended"><span class="secno">4.2.1.3 </span> Non-Strict uses of <code>&lt;cn&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.cn.extended"><span class="secno">4.2.1.3 </span> Non-Strict uses of <code>&lt;cn&gt;</code></a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.ci"><span class="secno">4.2.2 </span> Content Identifiers <code>&lt;ci&gt;</code></a>
+                        <li><a href="chapter4.xml#contm.ci"><span class="secno">4.2.2 </span> Content Identifiers <code>&lt;ci&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.ci.strict"><span class="secno">4.2.2.1 </span> Strict uses of <code>&lt;ci&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.ci.strict"><span class="secno">4.2.2.1 </span> Strict uses of <code>&lt;ci&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.ci.extended"><span class="secno">4.2.2.2 </span> Non-Strict uses of <code>&lt;ci&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.ci.extended"><span class="secno">4.2.2.2 </span> Non-Strict uses of <code>&lt;ci&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.rendering.ci"><span class="secno">4.2.2.3 </span> Rendering Content Identifiers</a>
+                              <li><a href="chapter4.xml#contm.rendering.ci"><span class="secno">4.2.2.3 </span> Rendering Content Identifiers</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.csymbol"><span class="secno">4.2.3 </span> Content Symbols <code>&lt;csymbol&gt;</code></a>
+                        <li><a href="chapter4.xml#contm.csymbol"><span class="secno">4.2.3 </span> Content Symbols <code>&lt;csymbol&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.csymbol.strict"><span class="secno">4.2.3.1 </span> Strict uses of  <code>&lt;csymbol&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.csymbol.strict"><span class="secno">4.2.3.1 </span> Strict uses of  <code>&lt;csymbol&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.csymbol.extended"><span class="secno">4.2.3.2 </span> Non-Strict uses of <code>&lt;csymbol&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.csymbol.extended"><span class="secno">4.2.3.2 </span> Non-Strict uses of <code>&lt;csymbol&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.rendering.csymbol"><span class="secno">4.2.3.3 </span> Rendering Symbols</a>
+                              <li><a href="chapter4.xml#contm.rendering.csymbol"><span class="secno">4.2.3.3 </span> Rendering Symbols</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.cs"><span class="secno">4.2.4 </span> String Literals <code>&lt;cs&gt;</code></a>
+                        <li><a href="chapter4.xml#contm.cs"><span class="secno">4.2.4 </span> String Literals <code>&lt;cs&gt;</code></a>
                            
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.apply"><span class="secno">4.2.5 </span> Function Application <code>&lt;apply&gt;</code></a>
+                        <li><a href="chapter4.xml#contm.apply"><span class="secno">4.2.5 </span> Function Application <code>&lt;apply&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.applications.strict"><span class="secno">4.2.5.1 </span> Strict Content MathML</a>
+                              <li><a href="chapter4.xml#contm.applications.strict"><span class="secno">4.2.5.1 </span> Strict Content MathML</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.rendering.applications"><span class="secno">4.2.5.2 </span> Rendering Applications</a>
+                              <li><a href="chapter4.xml#contm.rendering.applications"><span class="secno">4.2.5.2 </span> Rendering Applications</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.binding"><span class="secno">4.2.6 </span> Bindings and Bound Variables <code>&lt;bind&gt;</code>
+                        <li><a href="chapter4.xml#contm.binding"><span class="secno">4.2.6 </span> Bindings and Bound Variables <code>&lt;bind&gt;</code>
                               and <code>&lt;bvar&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.bind"><span class="secno">4.2.6.1 </span> Bindings</a>
+                              <li><a href="chapter4.xml#contm.bind"><span class="secno">4.2.6.1 </span> Bindings</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.bvar"><span class="secno">4.2.6.2 </span> Bound Variables</a>
+                              <li><a href="chapter4.xml#contm.bvar"><span class="secno">4.2.6.2 </span> Bound Variables</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.alpharenmaing"><span class="secno">4.2.6.3 </span> Renaming Bound Variables</a>
+                              <li><a href="chapter4.xml#contm.alpharenmaing"><span class="secno">4.2.6.3 </span> Renaming Bound Variables</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.rendering.binders"><span class="secno">4.2.6.4 </span> Rendering Binding Constructions</a>
+                              <li><a href="chapter4.xml#contm.rendering.binders"><span class="secno">4.2.6.4 </span> Rendering Binding Constructions</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.sharing"><span class="secno">4.2.7 </span> Structure Sharing <code>&lt;share&gt;</code></a>
+                        <li><a href="chapter4.xml#contm.sharing"><span class="secno">4.2.7 </span> Structure Sharing <code>&lt;share&gt;</code></a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.share"><span class="secno">4.2.7.1 </span> The <code>share</code> element</a>
+                              <li><a href="chapter4.xml#contm.share"><span class="secno">4.2.7.1 </span> The <code>share</code> element</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.acyclicity"><span class="secno">4.2.7.2 </span> An Acyclicity Constraint</a>
+                              <li><a href="chapter4.xml#contm.acyclicity"><span class="secno">4.2.7.2 </span> An Acyclicity Constraint</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.share.binding"><span class="secno">4.2.7.3 </span> Structure Sharing and Binding</a>
+                              <li><a href="chapter4.xml#contm.share.binding"><span class="secno">4.2.7.3 </span> Structure Sharing and Binding</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.rendering.share"><span class="secno">4.2.7.4 </span> Rendering Expressions with Structure Sharing</a>
+                              <li><a href="chapter4.xml#contm.rendering.share"><span class="secno">4.2.7.4 </span> Rendering Expressions with Structure Sharing</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.semantics"><span class="secno">4.2.8 </span> Attribution via <code>semantics</code></a>
+                        <li><a href="chapter4.xml#contm.semantics"><span class="secno">4.2.8 </span> Attribution via <code>semantics</code></a>
                            
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.cerror"><span class="secno">4.2.9 </span> Error Markup <code>&lt;cerror&gt;</code></a>
+                        <li><a href="chapter4.xml#contm.cerror"><span class="secno">4.2.9 </span> Error Markup <code>&lt;cerror&gt;</code></a>
                            
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.cbytes"><span class="secno">4.2.10 </span> Encoded Bytes <code>&lt;cbytes&gt;</code></a>
+                        <li><a href="chapter4.xml#contm.cbytes"><span class="secno">4.2.10 </span> Encoded Bytes <code>&lt;cbytes&gt;</code></a>
                            
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter4.xml#contm.structure.extended"><span class="secno">4.3 </span> Content MathML for Specific Structures</a>
+                  <li><a href="chapter4.xml#contm.structure.extended"><span class="secno">4.3 </span> Content MathML for Specific Structures</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter4.xml#contm.container"><span class="secno">4.3.1 </span> Container Markup</a>
+                        <li><a href="chapter4.xml#contm.container"><span class="secno">4.3.1 </span> Container Markup</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.container.constructor"><span class="secno">4.3.1.1 </span> Container Markup for Constructor Symbols</a>
+                              <li><a href="chapter4.xml#contm.container.constructor"><span class="secno">4.3.1.1 </span> Container Markup for Constructor Symbols</a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.lambda.container"><span class="secno">4.3.1.2 </span> Container Markup for Binding Constructors</a>
+                              <li><a href="chapter4.xml#contm.lambda.container"><span class="secno">4.3.1.2 </span> Container Markup for Binding Constructors</a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.bind.apply"><span class="secno">4.3.2 </span> Bindings with <code>&lt;apply&gt;</code></a>
+                        <li><a href="chapter4.xml#contm.bind.apply"><span class="secno">4.3.2 </span> Bindings with <code>&lt;apply&gt;</code></a>
                            
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.qualifiers"><span class="secno">4.3.3 </span> Qualifiers</a>
+                        <li><a href="chapter4.xml#contm.qualifiers"><span class="secno">4.3.3 </span> Qualifiers</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.domainofapplication.qualifier"><span class="secno">4.3.3.1 </span> Uses of 
+                              <li><a href="chapter4.xml#contm.domainofapplication.qualifier"><span class="secno">4.3.3.1 </span> Uses of 
                                     <code>&lt;domainofapplication&gt;</code>,
                                     <code>&lt;interval&gt;</code>,
                                     <code>&lt;condition&gt;</code>,
@@ -377,463 +333,358 @@ padding-right: 1em;
                                     <code>&lt;uplimit&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.degree"><span class="secno">4.3.3.2 </span> Uses of <code>&lt;degree&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.degree"><span class="secno">4.3.3.2 </span> Uses of <code>&lt;degree&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.otherqualifiers"><span class="secno">4.3.3.3 </span> Uses of <code>&lt;momentabout&gt;</code> and <code>&lt;logbase&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.otherqualifiers"><span class="secno">4.3.3.3 </span> Uses of <code>&lt;momentabout&gt;</code> and <code>&lt;logbase&gt;</code></a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.opclasses"><span class="secno">4.3.4 </span> Operator Classes</a>
+                        <li><a href="chapter4.xml#contm.opclasses"><span class="secno">4.3.4 </span> Operator Classes</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.nary"><span class="secno">4.3.4.1 </span> N-ary Operators (classes nary-arith, nary-functional, nary-logical,
+                              <li><a href="chapter4.xml#contm.nary"><span class="secno">4.3.4.1 </span> N-ary Operators (classes nary-arith, nary-functional, nary-logical,
                                     nary-linalg, nary-set, nary-constructor)</a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter4.xml#contm.nary.schema"><span class="secno">4.3.4.1.1 </span> Schema Patterns</a>
+                                    <li><a href="chapter4.xml#contm.nary.schema"><span class="secno">4.3.4.1.1 </span> Schema Patterns</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter4.xml#contm.nary.rewrite"><span class="secno">4.3.4.1.2 </span> Rewriting to Strict Content MathML</a>
+                                    <li><a href="chapter4.xml#contm.nary.rewrite"><span class="secno">4.3.4.1.2 </span> Rewriting to Strict Content MathML</a>
                                        
                                     </li>
                                  </ol>
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.nary.setlist"><span class="secno">4.3.4.2 </span> N-ary Constructors for set and list (class nary-setlist-constructor)</a>
+                              <li><a href="chapter4.xml#contm.nary.setlist"><span class="secno">4.3.4.2 </span> N-ary Constructors for set and list (class nary-setlist-constructor)</a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter4.xml#contm.narysetlist.schema"><span class="secno">4.3.4.2.1 </span> Schema Patterns</a>
+                                    <li><a href="chapter4.xml#contm.narysetlist.schema"><span class="secno">4.3.4.2.1 </span> Schema Patterns</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter4.xml#contm.narysetlist.rewrite"><span class="secno">4.3.4.2.2 </span> Rewriting to Strict Content MathML</a>
+                                    <li><a href="chapter4.xml#contm.narysetlist.rewrite"><span class="secno">4.3.4.2.2 </span> Rewriting to Strict Content MathML</a>
                                        
                                     </li>
                                  </ol>
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.nary.reln"><span class="secno">4.3.4.3 </span> N-ary Relations (classes nary-reln, nary-set-reln)</a>
+                              <li><a href="chapter4.xml#contm.nary.reln"><span class="secno">4.3.4.3 </span> N-ary Relations (classes nary-reln, nary-set-reln)</a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter4.xml#contm.nary.reln.schema"><span class="secno">4.3.4.3.1 </span> Schema Patterns</a>
+                                    <li><a href="chapter4.xml#contm.nary.reln.schema"><span class="secno">4.3.4.3.1 </span> Schema Patterns</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter4.xml#contm.nary.reln.rewrite"><span class="secno">4.3.4.3.2 </span> Rewriting to Strict Content MathML</a>
+                                    <li><a href="chapter4.xml#contm.nary.reln.rewrite"><span class="secno">4.3.4.3.2 </span> Rewriting to Strict Content MathML</a>
                                        
                                     </li>
                                  </ol>
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.nary.unary"><span class="secno">4.3.4.4 </span> N-ary/Unary Operators (classes nary-minmax, nary-stats)</a>
+                              <li><a href="chapter4.xml#contm.nary.unary"><span class="secno">4.3.4.4 </span> N-ary/Unary Operators (classes nary-minmax, nary-stats)</a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter4.xml#contm.nary.unary.schema"><span class="secno">4.3.4.4.1 </span> Schema Patterns</a>
+                                    <li><a href="chapter4.xml#contm.nary.unary.schema"><span class="secno">4.3.4.4.1 </span> Schema Patterns</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter4.xml#contm.nary.unary.rewrite"><span class="secno">4.3.4.4.2 </span> Rewriting to Strict Content MathML</a>
+                                    <li><a href="chapter4.xml#contm.nary.unary.rewrite"><span class="secno">4.3.4.4.2 </span> Rewriting to Strict Content MathML</a>
                                        
                                     </li>
                                  </ol>
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.binary"><span class="secno">4.3.4.5 </span> Binary Operators (classes binary-arith, binary-logical, binary-reln, binary-linalg,
+                              <li><a href="chapter4.xml#contm.binary"><span class="secno">4.3.4.5 </span> Binary Operators (classes binary-arith, binary-logical, binary-reln, binary-linalg,
                                     binary-set)</a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter4.xml#contm.binary.schema"><span class="secno">4.3.4.5.1 </span> Schema Patterns</a>
+                                    <li><a href="chapter4.xml#contm.binary.schema"><span class="secno">4.3.4.5.1 </span> Schema Patterns</a>
                                        
                                     </li>
                                  </ol>
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.unary"><span class="secno">4.3.4.6 </span> Unary Operators (classes unary-arith, unary-linalg, unary-functional, unary-set,
+                              <li><a href="chapter4.xml#contm.unary"><span class="secno">4.3.4.6 </span> Unary Operators (classes unary-arith, unary-linalg, unary-functional, unary-set,
                                     unary-elementary, unary-veccalc)</a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter4.xml#contm.unary.schema"><span class="secno">4.3.4.6.1 </span> Schema Patterns</a>
+                                    <li><a href="chapter4.xml#contm.unary.schema"><span class="secno">4.3.4.6.1 </span> Schema Patterns</a>
                                        
                                     </li>
                                  </ol>
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.constant"><span class="secno">4.3.4.7 </span> Constants (classes constant-arith, constant-set)</a>
+                              <li><a href="chapter4.xml#contm.constant"><span class="secno">4.3.4.7 </span> Constants (classes constant-arith, constant-set)</a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter4.xml#contm.constant.schema"><span class="secno">4.3.4.7.1 </span> Schema Patterns</a>
+                                    <li><a href="chapter4.xml#contm.constant.schema"><span class="secno">4.3.4.7.1 </span> Schema Patterns</a>
                                        
                                     </li>
                                  </ol>
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.quantifier"><span class="secno">4.3.4.8 </span> Quantifiers (class quantifier)</a>
+                              <li><a href="chapter4.xml#contm.quantifier"><span class="secno">4.3.4.8 </span> Quantifiers (class quantifier)</a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter4.xml#contm.quantifier.schema"><span class="secno">4.3.4.8.1 </span> Schema Patterns</a>
+                                    <li><a href="chapter4.xml#contm.quantifier.schema"><span class="secno">4.3.4.8.1 </span> Schema Patterns</a>
                                        
                                     </li>
-                                    
-                                    <li><a href="chapter4.xml#contm.quantifier.rewrite"><span class="secno">4.3.4.8.2 </span> Rewriting to Strict Content MathML</a>
+                                    <li><a href="chapter4.xml#contm.quantifier.rewrite"><span class="secno">4.3.4.8.2 </span> Rewriting to Strict Content MathML</a>
                                        
                                     </li>
                                  </ol>
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.otherclass"><span class="secno">4.3.4.9 </span> Other Operators (classes lambda, interval, int, diff partialdiff, sum, product, limit)</a>
+                              <li><a href="chapter4.xml#contm.otherclass"><span class="secno">4.3.4.9 </span> Other Operators (classes lambda, interval, int, diff partialdiff, sum, product, limit)</a>
                                  
                                  <ol class="toc">
-                                    
-                                    <li><a href="chapter4.xml#contm.otherclass.schema"><span class="secno">4.3.4.9.1 </span> Schema Patterns</a>
+                                    <li><a href="chapter4.xml#contm.otherclass.schema"><span class="secno">4.3.4.9.1 </span> Schema Patterns</a>
                                        
                                     </li>
                                  </ol>
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#id.4.3.5"><span class="secno">4.3.5 </span> Non-strict Attributes</a>
+                        <li><a href="chapter4.xml#id.4.3.5"><span class="secno">4.3.5 </span> Non-strict Attributes</a>
                            
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter4.xml#contm.opel"><span class="secno">4.4 </span> Content MathML for Specific Operators and Constants</a>
+                  <li><a href="chapter4.xml#contm.opel"><span class="secno">4.4 </span> Content MathML for Specific Operators and Constants</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter4.xml#contm.basicfun"><span class="secno">4.4.1 </span> Functions and Inverses</a>
+                        <li><a href="chapter4.xml#contm.basicfun"><span class="secno">4.4.1 </span> Functions and Inverses</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.interval"><span class="secno">4.4.1.1 </span> Interval <code>&lt;interval&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.interval"><span class="secno">4.4.1.1 </span> Interval <code>&lt;interval&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.inverse"><span class="secno">4.4.1.2 </span> Inverse <code>&lt;inverse&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.inverse"><span class="secno">4.4.1.2 </span> Inverse <code>&lt;inverse&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.lambda"><span class="secno">4.4.1.3 </span> Lambda <code>&lt;lambda&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.lambda"><span class="secno">4.4.1.3 </span> Lambda <code>&lt;lambda&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.compose"><span class="secno">4.4.1.4 </span> Function composition <code>&lt;compose/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.compose"><span class="secno">4.4.1.4 </span> Function composition <code>&lt;compose/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.ident"><span class="secno">4.4.1.5 </span> Identity function <code>&lt;ident/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.ident"><span class="secno">4.4.1.5 </span> Identity function <code>&lt;ident/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.domain"><span class="secno">4.4.1.6 </span> Domain <code>&lt;domain/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.domain"><span class="secno">4.4.1.6 </span> Domain <code>&lt;domain/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.codomain"><span class="secno">4.4.1.7 </span> codomain <code>&lt;codomain/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.codomain"><span class="secno">4.4.1.7 </span> codomain <code>&lt;codomain/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.image"><span class="secno">4.4.1.8 </span> Image <code>&lt;image/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.image"><span class="secno">4.4.1.8 </span> Image <code>&lt;image/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.piecewise"><span class="secno">4.4.1.9 </span> Piecewise declaration <code>&lt;piecewise&gt;</code>, <code>&lt;piece&gt;</code>, <code>&lt;otherwise&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.piecewise"><span class="secno">4.4.1.9 </span> Piecewise declaration <code>&lt;piecewise&gt;</code>, <code>&lt;piece&gt;</code>, <code>&lt;otherwise&gt;</code></a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#id.4.4.2"><span class="secno">4.4.2 </span> Arithmetic, Algebra and Logic</a>
+                        <li><a href="chapter4.xml#id.4.4.2"><span class="secno">4.4.2 </span> Arithmetic, Algebra and Logic</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.quotient"><span class="secno">4.4.2.1 </span> Quotient <code>&lt;quotient/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.quotient"><span class="secno">4.4.2.1 </span> Quotient <code>&lt;quotient/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.factorial"><span class="secno">4.4.2.2 </span> Factorial <code>&lt;factorial/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.factorial"><span class="secno">4.4.2.2 </span> Factorial <code>&lt;factorial/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.divide"><span class="secno">4.4.2.3 </span> Division <code>&lt;divide/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.divide"><span class="secno">4.4.2.3 </span> Division <code>&lt;divide/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.max"><span class="secno">4.4.2.4 </span> Maximum <code>&lt;max/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.max"><span class="secno">4.4.2.4 </span> Maximum <code>&lt;max/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.min"><span class="secno">4.4.2.5 </span> Minimum <code>&lt;min/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.min"><span class="secno">4.4.2.5 </span> Minimum <code>&lt;min/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.minus"><span class="secno">4.4.2.6 </span> Subtraction <code>&lt;minus/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.minus"><span class="secno">4.4.2.6 </span> Subtraction <code>&lt;minus/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.plus"><span class="secno">4.4.2.7 </span> Addition <code>&lt;plus/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.plus"><span class="secno">4.4.2.7 </span> Addition <code>&lt;plus/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.power"><span class="secno">4.4.2.8 </span> Exponentiation <code>&lt;power/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.power"><span class="secno">4.4.2.8 </span> Exponentiation <code>&lt;power/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.rem"><span class="secno">4.4.2.9 </span> Remainder <code>&lt;rem/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.rem"><span class="secno">4.4.2.9 </span> Remainder <code>&lt;rem/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.times"><span class="secno">4.4.2.10 </span> Multiplication <code>&lt;times/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.times"><span class="secno">4.4.2.10 </span> Multiplication <code>&lt;times/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.root"><span class="secno">4.4.2.11 </span> Root <code>&lt;root/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.root"><span class="secno">4.4.2.11 </span> Root <code>&lt;root/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.gcd"><span class="secno">4.4.2.12 </span> Greatest common divisor <code>&lt;gcd/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.gcd"><span class="secno">4.4.2.12 </span> Greatest common divisor <code>&lt;gcd/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.and"><span class="secno">4.4.2.13 </span> And <code>&lt;and/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.and"><span class="secno">4.4.2.13 </span> And <code>&lt;and/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.or"><span class="secno">4.4.2.14 </span> Or <code>&lt;or/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.or"><span class="secno">4.4.2.14 </span> Or <code>&lt;or/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.xor"><span class="secno">4.4.2.15 </span> Exclusive Or <code>&lt;xor/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.xor"><span class="secno">4.4.2.15 </span> Exclusive Or <code>&lt;xor/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.not"><span class="secno">4.4.2.16 </span> Not <code>&lt;not/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.not"><span class="secno">4.4.2.16 </span> Not <code>&lt;not/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.implies"><span class="secno">4.4.2.17 </span> Implies <code>&lt;implies/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.implies"><span class="secno">4.4.2.17 </span> Implies <code>&lt;implies/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.forall"><span class="secno">4.4.2.18 </span> Universal quantifier <code>&lt;forall/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.forall"><span class="secno">4.4.2.18 </span> Universal quantifier <code>&lt;forall/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.exists"><span class="secno">4.4.2.19 </span> Existential quantifier <code>&lt;exists/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.exists"><span class="secno">4.4.2.19 </span> Existential quantifier <code>&lt;exists/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.abs"><span class="secno">4.4.2.20 </span> Absolute Value <code>&lt;abs/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.abs"><span class="secno">4.4.2.20 </span> Absolute Value <code>&lt;abs/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.conjugate"><span class="secno">4.4.2.21 </span> Complex conjugate <code>&lt;conjugate/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.conjugate"><span class="secno">4.4.2.21 </span> Complex conjugate <code>&lt;conjugate/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.arg"><span class="secno">4.4.2.22 </span> Argument <code>&lt;arg/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.arg"><span class="secno">4.4.2.22 </span> Argument <code>&lt;arg/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.real"><span class="secno">4.4.2.23 </span> Real part <code>&lt;real/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.real"><span class="secno">4.4.2.23 </span> Real part <code>&lt;real/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.imaginary"><span class="secno">4.4.2.24 </span> Imaginary part <code>&lt;imaginary/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.imaginary"><span class="secno">4.4.2.24 </span> Imaginary part <code>&lt;imaginary/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.lcm"><span class="secno">4.4.2.25 </span> Lowest common multiple <code>&lt;lcm/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.lcm"><span class="secno">4.4.2.25 </span> Lowest common multiple <code>&lt;lcm/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.floor"><span class="secno">4.4.2.26 </span> Floor <code>&lt;floor/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.floor"><span class="secno">4.4.2.26 </span> Floor <code>&lt;floor/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.ceiling"><span class="secno">4.4.2.27 </span> Ceiling <code>&lt;ceiling/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.ceiling"><span class="secno">4.4.2.27 </span> Ceiling <code>&lt;ceiling/&gt;</code></a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#id.4.4.3"><span class="secno">4.4.3 </span> Relations</a>
+                        <li><a href="chapter4.xml#id.4.4.3"><span class="secno">4.4.3 </span> Relations</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.eq"><span class="secno">4.4.3.1 </span> Equals <code>&lt;eq/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.eq"><span class="secno">4.4.3.1 </span> Equals <code>&lt;eq/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.neq"><span class="secno">4.4.3.2 </span> Not Equals <code>&lt;neq/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.neq"><span class="secno">4.4.3.2 </span> Not Equals <code>&lt;neq/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.gt"><span class="secno">4.4.3.3 </span> Greater than <code>&lt;gt/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.gt"><span class="secno">4.4.3.3 </span> Greater than <code>&lt;gt/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.lt"><span class="secno">4.4.3.4 </span> Less Than <code>&lt;lt/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.lt"><span class="secno">4.4.3.4 </span> Less Than <code>&lt;lt/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.geq"><span class="secno">4.4.3.5 </span> Greater Than or Equal <code>&lt;geq/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.geq"><span class="secno">4.4.3.5 </span> Greater Than or Equal <code>&lt;geq/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.leq"><span class="secno">4.4.3.6 </span> Less Than or Equal <code>&lt;leq/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.leq"><span class="secno">4.4.3.6 </span> Less Than or Equal <code>&lt;leq/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.equivalent"><span class="secno">4.4.3.7 </span> Equivalent <code>&lt;equivalent/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.equivalent"><span class="secno">4.4.3.7 </span> Equivalent <code>&lt;equivalent/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.approx"><span class="secno">4.4.3.8 </span> Approximately <code>&lt;approx/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.approx"><span class="secno">4.4.3.8 </span> Approximately <code>&lt;approx/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.factorof"><span class="secno">4.4.3.9 </span> Factor Of <code>&lt;factorof/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.factorof"><span class="secno">4.4.3.9 </span> Factor Of <code>&lt;factorof/&gt;</code></a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#id.4.4.4"><span class="secno">4.4.4 </span> Calculus and Vector Calculus</a>
+                        <li><a href="chapter4.xml#id.4.4.4"><span class="secno">4.4.4 </span> Calculus and Vector Calculus</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.int"><span class="secno">4.4.4.1 </span> Integral <code>&lt;int/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.int"><span class="secno">4.4.4.1 </span> Integral <code>&lt;int/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.diff"><span class="secno">4.4.4.2 </span> Differentiation <code>&lt;diff/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.diff"><span class="secno">4.4.4.2 </span> Differentiation <code>&lt;diff/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.partialdiff"><span class="secno">4.4.4.3 </span> Partial Differentiation <code>&lt;partialdiff/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.partialdiff"><span class="secno">4.4.4.3 </span> Partial Differentiation <code>&lt;partialdiff/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.divergence"><span class="secno">4.4.4.4 </span> Divergence <code>&lt;divergence/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.divergence"><span class="secno">4.4.4.4 </span> Divergence <code>&lt;divergence/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.grad"><span class="secno">4.4.4.5 </span> Gradient <code>&lt;grad/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.grad"><span class="secno">4.4.4.5 </span> Gradient <code>&lt;grad/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.curl"><span class="secno">4.4.4.6 </span> Curl <code>&lt;curl/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.curl"><span class="secno">4.4.4.6 </span> Curl <code>&lt;curl/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.laplacian"><span class="secno">4.4.4.7 </span> Laplacian <code>&lt;laplacian/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.laplacian"><span class="secno">4.4.4.7 </span> Laplacian <code>&lt;laplacian/&gt;</code></a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.sets"><span class="secno">4.4.5 </span> Theory of Sets</a>
+                        <li><a href="chapter4.xml#contm.sets"><span class="secno">4.4.5 </span> Theory of Sets</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.set"><span class="secno">4.4.5.1 </span> Set <code>&lt;set&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.set"><span class="secno">4.4.5.1 </span> Set <code>&lt;set&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.list"><span class="secno">4.4.5.2 </span> List <code>&lt;list&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.list"><span class="secno">4.4.5.2 </span> List <code>&lt;list&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.union"><span class="secno">4.4.5.3 </span> Union <code>&lt;union/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.union"><span class="secno">4.4.5.3 </span> Union <code>&lt;union/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.intersect"><span class="secno">4.4.5.4 </span> Intersect <code>&lt;intersect/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.intersect"><span class="secno">4.4.5.4 </span> Intersect <code>&lt;intersect/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.in"><span class="secno">4.4.5.5 </span> Set inclusion <code>&lt;in/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.in"><span class="secno">4.4.5.5 </span> Set inclusion <code>&lt;in/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.notin"><span class="secno">4.4.5.6 </span> Set exclusion <code>&lt;notin/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.notin"><span class="secno">4.4.5.6 </span> Set exclusion <code>&lt;notin/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.subset"><span class="secno">4.4.5.7 </span> Subset <code>&lt;subset/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.subset"><span class="secno">4.4.5.7 </span> Subset <code>&lt;subset/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.prsubset"><span class="secno">4.4.5.8 </span> Proper Subset <code>&lt;prsubset/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.prsubset"><span class="secno">4.4.5.8 </span> Proper Subset <code>&lt;prsubset/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.notsubset"><span class="secno">4.4.5.9 </span> Not Subset <code>&lt;notsubset/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.notsubset"><span class="secno">4.4.5.9 </span> Not Subset <code>&lt;notsubset/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.notprsubset"><span class="secno">4.4.5.10 </span> Not Proper Subset <code>&lt;notprsubset/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.notprsubset"><span class="secno">4.4.5.10 </span> Not Proper Subset <code>&lt;notprsubset/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.setdiff"><span class="secno">4.4.5.11 </span> Set Difference <code>&lt;setdiff/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.setdiff"><span class="secno">4.4.5.11 </span> Set Difference <code>&lt;setdiff/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.card"><span class="secno">4.4.5.12 </span> Cardinality <code>&lt;card/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.card"><span class="secno">4.4.5.12 </span> Cardinality <code>&lt;card/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.cartesianproduct"><span class="secno">4.4.5.13 </span> Cartesian product <code>&lt;cartesianproduct/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.cartesianproduct"><span class="secno">4.4.5.13 </span> Cartesian product <code>&lt;cartesianproduct/&gt;</code></a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#id.4.4.6"><span class="secno">4.4.6 </span> Sequences and Series</a>
+                        <li><a href="chapter4.xml#id.4.4.6"><span class="secno">4.4.6 </span> Sequences and Series</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.sum"><span class="secno">4.4.6.1 </span> Sum <code>&lt;sum/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.sum"><span class="secno">4.4.6.1 </span> Sum <code>&lt;sum/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.product"><span class="secno">4.4.6.2 </span> Product <code>&lt;product/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.product"><span class="secno">4.4.6.2 </span> Product <code>&lt;product/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.limit"><span class="secno">4.4.6.3 </span> Limits <code>&lt;limit/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.limit"><span class="secno">4.4.6.3 </span> Limits <code>&lt;limit/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.tendsto"><span class="secno">4.4.6.4 </span> Tends To <code>&lt;tendsto/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.tendsto"><span class="secno">4.4.6.4 </span> Tends To <code>&lt;tendsto/&gt;</code></a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.elemclass"><span class="secno">4.4.7 </span> Elementary classical functions</a>
+                        <li><a href="chapter4.xml#contm.elemclass"><span class="secno">4.4.7 </span> Elementary classical functions</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.trig"><span class="secno">4.4.7.1 </span> Common trigonometric functions
+                              <li><a href="chapter4.xml#contm.trig"><span class="secno">4.4.7.1 </span> Common trigonometric functions
                                     
                                     <code>&lt;sin/&gt;</code>,
                                     <code>&lt;cos/&gt;</code>,
@@ -845,8 +696,7 @@ padding-right: 1em;
                                     </a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.invtrig"><span class="secno">4.4.7.2 </span> Common inverses of trigonometric functions
+                              <li><a href="chapter4.xml#contm.invtrig"><span class="secno">4.4.7.2 </span> Common inverses of trigonometric functions
                                     <code>&lt;arcsin/&gt;</code>,
                                     <code>&lt;arccos/&gt;</code>,
                                     <code>&lt;arctan/&gt;</code>,
@@ -855,8 +705,7 @@ padding-right: 1em;
                                     <code>&lt;arccot/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.hyperbolic"><span class="secno">4.4.7.3 </span> Common hyperbolic functions
+                              <li><a href="chapter4.xml#contm.hyperbolic"><span class="secno">4.4.7.3 </span> Common hyperbolic functions
                                     <code>&lt;sinh/&gt;</code>,
                                     <code>&lt;cosh/&gt;</code>,
                                     <code>&lt;tanh/&gt;</code>,
@@ -865,8 +714,7 @@ padding-right: 1em;
                                     <code>&lt;coth/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.invhyperbolic"><span class="secno">4.4.7.4 </span> Common inverses of hyperbolic functions
+                              <li><a href="chapter4.xml#contm.invhyperbolic"><span class="secno">4.4.7.4 </span> Common inverses of hyperbolic functions
                                     <code>&lt;arcsinh/&gt;</code>,
                                     <code>&lt;arccosh/&gt;</code>,
                                     <code>&lt;arctanh/&gt;</code>,
@@ -875,182 +723,141 @@ padding-right: 1em;
                                     <code>&lt;arccoth/&gt;</code> </a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.exp"><span class="secno">4.4.7.5 </span> Exponential <code>&lt;exp/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.exp"><span class="secno">4.4.7.5 </span> Exponential <code>&lt;exp/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.ln"><span class="secno">4.4.7.6 </span> Natural Logarithm <code>&lt;ln/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.ln"><span class="secno">4.4.7.6 </span> Natural Logarithm <code>&lt;ln/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.log"><span class="secno">4.4.7.7 </span> Logarithm <code>&lt;log/&gt;</code>
+                              <li><a href="chapter4.xml#contm.log"><span class="secno">4.4.7.7 </span> Logarithm <code>&lt;log/&gt;</code>
                                     , <code>&lt;logbase&gt;</code>
                                     </a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#id.4.4.8"><span class="secno">4.4.8 </span> Statistics</a>
+                        <li><a href="chapter4.xml#id.4.4.8"><span class="secno">4.4.8 </span> Statistics</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.mean"><span class="secno">4.4.8.1 </span> Mean <code>&lt;mean/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.mean"><span class="secno">4.4.8.1 </span> Mean <code>&lt;mean/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.sdev"><span class="secno">4.4.8.2 </span> Standard Deviation <code>&lt;sdev/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.sdev"><span class="secno">4.4.8.2 </span> Standard Deviation <code>&lt;sdev/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.variance"><span class="secno">4.4.8.3 </span> Variance <code>&lt;variance/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.variance"><span class="secno">4.4.8.3 </span> Variance <code>&lt;variance/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.median"><span class="secno">4.4.8.4 </span> Median <code>&lt;median/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.median"><span class="secno">4.4.8.4 </span> Median <code>&lt;median/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.mode"><span class="secno">4.4.8.5 </span> Mode <code>&lt;mode/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.mode"><span class="secno">4.4.8.5 </span> Mode <code>&lt;mode/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.moment"><span class="secno">4.4.8.6 </span> Moment <code>&lt;moment/&gt;</code>, <code>&lt;momentabout&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.moment"><span class="secno">4.4.8.6 </span> Moment <code>&lt;moment/&gt;</code>, <code>&lt;momentabout&gt;</code></a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#id.4.4.9"><span class="secno">4.4.9 </span> Linear Algebra</a>
+                        <li><a href="chapter4.xml#id.4.4.9"><span class="secno">4.4.9 </span> Linear Algebra</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.vector"><span class="secno">4.4.9.1 </span> Vector <code>&lt;vector&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.vector"><span class="secno">4.4.9.1 </span> Vector <code>&lt;vector&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.matrix"><span class="secno">4.4.9.2 </span> Matrix <code>&lt;matrix&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.matrix"><span class="secno">4.4.9.2 </span> Matrix <code>&lt;matrix&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.matrixrow"><span class="secno">4.4.9.3 </span> Matrix row <code>&lt;matrixrow&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.matrixrow"><span class="secno">4.4.9.3 </span> Matrix row <code>&lt;matrixrow&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.determinant"><span class="secno">4.4.9.4 </span> Determinant <code>&lt;determinant/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.determinant"><span class="secno">4.4.9.4 </span> Determinant <code>&lt;determinant/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.transpose"><span class="secno">4.4.9.5 </span> Transpose <code>&lt;transpose/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.transpose"><span class="secno">4.4.9.5 </span> Transpose <code>&lt;transpose/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.selector"><span class="secno">4.4.9.6 </span> Selector <code>&lt;selector/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.selector"><span class="secno">4.4.9.6 </span> Selector <code>&lt;selector/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.vectorproduct"><span class="secno">4.4.9.7 </span> Vector product <code>&lt;vectorproduct/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.vectorproduct"><span class="secno">4.4.9.7 </span> Vector product <code>&lt;vectorproduct/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.scalarproduct"><span class="secno">4.4.9.8 </span> Scalar product <code>&lt;scalarproduct/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.scalarproduct"><span class="secno">4.4.9.8 </span> Scalar product <code>&lt;scalarproduct/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.outerproduct"><span class="secno">4.4.9.9 </span> Outer product <code>&lt;outerproduct/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.outerproduct"><span class="secno">4.4.9.9 </span> Outer product <code>&lt;outerproduct/&gt;</code></a>
                                  
                               </li>
                            </ol>
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.constantsandsymbols"><span class="secno">4.4.10 </span> Constant and Symbol Elements</a>
+                        <li><a href="chapter4.xml#contm.constantsandsymbols"><span class="secno">4.4.10 </span> Constant and Symbol Elements</a>
                            
                            <ol class="toc">
-                              
-                              <li><a href="chapter4.xml#contm.integers"><span class="secno">4.4.10.1 </span> integers <code>&lt;integers/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.integers"><span class="secno">4.4.10.1 </span> integers <code>&lt;integers/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.reals"><span class="secno">4.4.10.2 </span> reals <code>&lt;reals/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.reals"><span class="secno">4.4.10.2 </span> reals <code>&lt;reals/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.rationals"><span class="secno">4.4.10.3 </span> Rational Numbers <code>&lt;rationals/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.rationals"><span class="secno">4.4.10.3 </span> Rational Numbers <code>&lt;rationals/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.naturalnumbers"><span class="secno">4.4.10.4 </span> Natural Numbers <code>&lt;naturalnumbers/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.naturalnumbers"><span class="secno">4.4.10.4 </span> Natural Numbers <code>&lt;naturalnumbers/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.complexes"><span class="secno">4.4.10.5 </span> complexes <code>&lt;complexes/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.complexes"><span class="secno">4.4.10.5 </span> complexes <code>&lt;complexes/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.primes"><span class="secno">4.4.10.6 </span> primes <code>&lt;primes/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.primes"><span class="secno">4.4.10.6 </span> primes <code>&lt;primes/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.exponentiale"><span class="secno">4.4.10.7 </span> Exponential e <code>&lt;exponentiale/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.exponentiale"><span class="secno">4.4.10.7 </span> Exponential e <code>&lt;exponentiale/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.imaginaryi"><span class="secno">4.4.10.8 </span> Imaginary i <code>&lt;imaginaryi/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.imaginaryi"><span class="secno">4.4.10.8 </span> Imaginary i <code>&lt;imaginaryi/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.notanumber"><span class="secno">4.4.10.9 </span> Not A Number <code>&lt;notanumber/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.notanumber"><span class="secno">4.4.10.9 </span> Not A Number <code>&lt;notanumber/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.true"><span class="secno">4.4.10.10 </span> True <code>&lt;true/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.true"><span class="secno">4.4.10.10 </span> True <code>&lt;true/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.false"><span class="secno">4.4.10.11 </span> False <code>&lt;false/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.false"><span class="secno">4.4.10.11 </span> False <code>&lt;false/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.emptyset"><span class="secno">4.4.10.12 </span> Empty Set <code>&lt;emptyset/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.emptyset"><span class="secno">4.4.10.12 </span> Empty Set <code>&lt;emptyset/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.pi"><span class="secno">4.4.10.13 </span> pi <code>&lt;pi/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.pi"><span class="secno">4.4.10.13 </span> pi <code>&lt;pi/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.eulergamma"><span class="secno">4.4.10.14 </span> Euler gamma <code>&lt;eulergamma/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.eulergamma"><span class="secno">4.4.10.14 </span> Euler gamma <code>&lt;eulergamma/&gt;</code></a>
                                  
                               </li>
-                              
-                              <li><a href="chapter4.xml#contm.infinity"><span class="secno">4.4.10.15 </span> infinity <code>&lt;infinity/&gt;</code></a>
+                              <li><a href="chapter4.xml#contm.infinity"><span class="secno">4.4.10.15 </span> infinity <code>&lt;infinity/&gt;</code></a>
                                  
                               </li>
                            </ol>
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter4.xml#contm.deprecated"><span class="secno">4.5 </span> Deprecated Content Elements</a>
+                  <li><a href="chapter4.xml#contm.deprecated"><span class="secno">4.5 </span> Deprecated Content Elements</a>
                      
                      <ol class="toc">
-                        
-                        <li><a href="chapter4.xml#contm.declare"><span class="secno">4.5.1 </span> Declare <code>&lt;declare&gt;</code></a>
+                        <li><a href="chapter4.xml#contm.declare"><span class="secno">4.5.1 </span> Declare <code>&lt;declare&gt;</code></a>
                            
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.reln"><span class="secno">4.5.2 </span> Relation <code>&lt;reln&gt;</code></a>
+                        <li><a href="chapter4.xml#contm.reln"><span class="secno">4.5.2 </span> Relation <code>&lt;reln&gt;</code></a>
                            
                         </li>
-                        
-                        <li><a href="chapter4.xml#contm.fn"><span class="secno">4.5.3 </span> Relation <code>&lt;fn&gt;</code></a>
+                        <li><a href="chapter4.xml#contm.fn"><span class="secno">4.5.3 </span> Relation <code>&lt;fn&gt;</code></a>
                            
                         </li>
                      </ol>
                   </li>
-                  
-                  <li><a href="chapter4.xml#contm.p2s"><span class="secno">4.6 </span> The Strict Content MathML Transformation</a>
+                  <li><a href="chapter4.xml#contm.p2s"><span class="secno">4.6 </span> The Strict Content MathML Transformation</a>
                      
                   </li>
                </ol>

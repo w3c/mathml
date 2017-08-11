@@ -2397,6 +2397,7 @@ for this document, which may include some normative corrections.</p>
         </xsl:call-template>
       </xsl:attribute>
       <span class="secno"><xsl:apply-templates select="." mode="divnum"/></span>
+      <xsl:text> </xsl:text>
       <xsl:apply-templates select="head" mode="text"/>
     </a>
     <xsl:if test="$toc.level &gt; 1 and div2">
@@ -2418,6 +2419,7 @@ for this document, which may include some normative corrections.</p>
         </xsl:call-template>
       </xsl:attribute>
       <span class="secno"><xsl:apply-templates select="." mode="divnum"/></span>
+      <xsl:text> </xsl:text>
       <xsl:apply-templates select="head" mode="text"/>
     </a>
     <xsl:if test="$toc.level &gt; 2 and div3">
