@@ -3771,7 +3771,9 @@ infinite) set by using qualifier elements as described in <specref ref="contm_na
 <apply><compose/><ci>f</ci><ci>g</ci><ci>h</ci></apply>]]></eg>
 <p>Sample Presentation</p>
 <eg role="mathml"><![CDATA[
-<mrow><mi>f</mi><mo>&#x2218;</mo><mi>g</mi><mo>&#x2218;</mo><mi>h</mi></mrow>]]></eg>
+<mrow>
+ <mi>f</mi><mo>&#x2218;</mo><mi>g</mi><mo>&#x2218;</mo><mi>h</mi>
+</mrow>]]></eg>
 <graphic source="image/fns1-compose-ex1.gif" alt="{f\unicode{8728}g\unicode{8728}h}"/>
 </div>
 
@@ -5469,7 +5471,11 @@ of equalities, as described in <specref ref="contm_nary_reln"/>.</p>
 </apply>]]></eg>
 <p>Sample Presentation</p>
 <eg role="mathml"><![CDATA[
-<mrow><mn>4</mn><mo>&#x2265;</mo><mn>3</mn><mo>&#x2265;</mo><mn>3</mn></mrow>]]></eg>
+<mrow>
+ <mn>4</mn><mo>&#x2265;</mo>
+ <mn>3</mn><mo>&#x2265;</mo>
+ <mn>3</mn>
+</mrow>]]></eg>
 
 <graphic source="image/relation1-geq-ex1.gif" alt="{{4}\unicode{8805}{3}\unicode{8805}{3}}"/>
 </div>
@@ -5497,7 +5503,11 @@ of equalities, as described in <specref ref="contm_nary_reln"/>.</p>
 <apply><leq/><cn>3</cn><cn>3</cn><cn>4</cn></apply>]]></eg>
 <p>Sample Presentation</p>
 <eg role="mathml"><![CDATA[
-<mrow><mn>3</mn><mo>&#x2264;</mo><mn>3</mn><mo>&#x2264;</mo><mn>4</mn></mrow>]]></eg>
+<mrow>
+ <mn>3</mn><mo>&#x2264;</mo>
+ <mn>3</mn><mo>&#x2264;</mo>
+ <mn>4</mn>
+</mrow>]]></eg>
 
 <graphic source="image/relation1-leq-ex1.gif" alt="{{3}\unicode{8804}{3}\unicode{8804}{4}}"/>
 </div>
@@ -6402,11 +6412,16 @@ alt="{\left.\mathop{{\minormal{div}}}\middle({\begin{matrix}x\unicode{8614}{x+y}
 <apply><grad/><ci type="function">f</ci></apply>]]></eg>
 <p>Sample Presentation</p>
 <eg role="mathml"><![CDATA[
-<mrow><mi>grad</mi><mo>&#x2061;</mo><mfenced><mi>f</mi></mfenced></mrow>]]></eg>
+<mrow>
+ <mi>grad</mi><mo>&#x2061;</mo><mfenced><mi>f</mi></mfenced>
+</mrow>]]></eg>
 
 <graphic source="image/veccalc1-gradient-ex1.gif" alt="{\mathop{{\minormal{grad}}}{\left(f\right)}}"/>
 <eg role="mathml"><![CDATA[
-<mrow><mo>&#x2207;</mo><mo>&#x2061;</mo><mfenced><mi>f</mi></mfenced></mrow>]]></eg>
+<mrow>
+ <mo>&#x2207;</mo><mo>&#x2061;</mo>
+ <mfenced><mi>f</mi></mfenced>
+</mrow>]]></eg>
 
 <graphic source="image/veccalc1-gradient-ex1-2.gif" alt="{\unicode{8711}\unicode{8289}{\left(f\right)}}"/>
 
@@ -7923,7 +7938,9 @@ data set or random variable.</p>
 <apply><mean/><ci>X</ci></apply>]]></eg>
 <p>Sample Presentation</p>
 <eg role="mathml"><![CDATA[
-<mrow><mo>&#x27E8;</mo><mi>X</mi><mo>&#x27E9;</mo></mrow>]]></eg>
+<mrow>
+ <mo>&#x27E8;</mo><mi>X</mi><mo>&#x27E9;</mo>
+</mrow>]]></eg>
 
 <graphic source="image/s_dist1-mean-ex1.gif" alt="{\unicode{9001}X\unicode{9002}}"/>
 
@@ -7982,7 +7999,10 @@ variance.</p>
 </apply>]]></eg>
 <p>Sample Presentation</p>
 <eg role="mathml"><![CDATA[
-<mrow><mo>&#x3c3;</mo><mo>&#x2061;</mo><mfenced><mi>X</mi></mfenced></mrow>]]></eg>
+<mrow>
+ <mo>&#x3c3;</mo>
+ <mo>&#x2061;</mo><mfenced><mi>X</mi></mfenced>
+</mrow>]]></eg>
 
 <graphic source="image/s_dist1-sdev-ex1.gif" alt="{\unicode{963}\unicode{8289}{\left(X\right)}}"/>
 </div>
@@ -8203,7 +8223,9 @@ alt="\msub{{\unicode{9001}\msup{{\left({6},{4},{2},{2},{5}\right)}}{{3}}\unicode
 <eg role="mathml"><![CDATA[
 <msub>
  <mrow>
-  <mo>&#x27E8;</mo><msup><mi>X</mi><mn>3</mn></msup><mo>&#x27E9;</mo>
+  <mo>&#x27E8;</mo>
+  <msup><mi>X</mi><mn>3</mn></msup>
+  <mo>&#x27E9;</mo>
  </mrow>
  <mi>p</mi>
 </msub>]]></eg>
@@ -9078,7 +9100,9 @@ it is always acceptable to translate to the  <symbolref cd="set1" name="emptyset
 </apply>]]></eg>
 <p>Sample Presentation</p>
 <eg role="mathml"><![CDATA[
-<mrow><mi>&#x3b3;</mi><mo>&#x2243;</mo><mn>0.5772156649</mn></mrow>]]></eg>
+<mrow>
+ <mi>&#x3b3;</mi><mo>&#x2243;</mo><mn>0.5772156649</mn>
+</mrow>]]></eg>
 
 <graphic source="image/nums1-eulergamma-ex1.gif" 
 alt="{\unicode{947}\unicode{8771}{0.5772156649}}"/>
