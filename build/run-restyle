@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -e
+
+cd `dirname $0`
+
 BUILD=$PWD
 DRAFT=$PWD/../
 
@@ -11,7 +15,15 @@ PSTYLE=src/style/pdf
 
 RELAXNG=RelaxNG/mathml3
 
+if [ ! -f saxon9he.jar ]; then
+    if [ ! -f /tmp/jars/saxon9he.jar ]; then
+	cp /tmp/jars/saxon9he.jar .
+    else
+	echo install saxon9he.jar eg run build/install-tools
+    fi
+fi
 
+    
 
 SAXON="java -jar saxon9he.jar "
 
@@ -41,9 +53,11 @@ do
     cp $i ${i/.rnc/.new}
 done
 
-$SAXON -o:mathml3-content.new ../../src/xml/contm-new.xml ../../src/style/rnc/schema.xsl
+cd $DRAFT
 
-$SAXON -o:mathml3-presentation.new ../../src/xml/presentation-markup.xml ../../src/style/rnc/schema.xsl
+$SAXON -o:$RELAXNG/mathml3-content.new src/xml/contm-new.xml src/style/rnc/schema.xsl
+
+$SAXON -o:$RELAXNG/mathml3-presentation.new src/xml/presentation-markup.xml src/style/rnc/schema.xsl
 
 cd $DRAFT
 
