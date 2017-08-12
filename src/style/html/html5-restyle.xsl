@@ -88,8 +88,53 @@
 <script type="text/javascript" src="sorttable.js"></script>
 <xsl:text>&#10;</xsl:text>
 <xsl:text>&#10;</xsl:text>
-<script src="doctop.js"></script>
+
+<script>
+    function unmathjax () {
+    MathJax.Hub.Queue(
+	function () {
+	    var jax = MathJax.Hub.getJaxByInputType("math/mml");
+	    for (var i = 0; i &#1002; jax.length; i++) {
+		var sp =  document.createElement("span");
+		var orig=jax[i].SourceElement();
+		jax[i].Remove();
+		sp.innerHTML=jax[i].originalText;
+		orig.parentNode.replaceChild(sp, orig);
+	    }
+	});
+    var scs1= document.getElementsByTagName("head")[0].getElementsByTagName("script");
+    var scs = [];
+    for( var i = 0; i &#1002;scs1.length; i++ ) {
+        scs[scs.length] = scs1[i];
+    }
+
+    for(var i=0;i &#1002; scs.length;i++){
+	if(
+	    (scs[i].getAttribute("src") &#1001;&#1001; scs[i].getAttribute("src").indexOf("MathJax")!=-1)
+		||
+		(scs[i].getAttribute("type") &#1001;&#1001; scs[i].getAttribute("type").indexOf("mathjax")!=-1 )
+	)  scs[i].parentNode.removeChild(scs[i]);
+	}
+    var b=document.getElementById("unmathjaxbutton");
+    b.disabled=true;
+}
+</script>
+  
+<script type="text/javascript" src="sorttable.js"></script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  jax: ["input/MathML","output/HTML-CSS","output/NativeMML", "output/PreviewHTML"],
+  extensions: ["mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js","MathML/content-mathml.js"]
+});
+  </script>
+  
 <xsl:text>&#10;</xsl:text>
+<script src="https://www.w3.org/scripts/MathJax/2/MathJax.js"></script>
+
+<xsl:text>&#10;</xsl:text>
+
 <script>
   function showlink (e) {
   e.childNodes[0].textContent='\u00a7\u00a0';
@@ -187,15 +232,11 @@ spn[i].appendChild(document.createTextNode(spn[i].getAttribute(att)));
     <xsl:text>&#10;</xsl:text>
     <p><b>Note:</b><br/>
     <xsl:text>&#10;</xsl:text>
-    <xsl:text>Your browser may be able to display Presentation MathML but not Content MathML.</xsl:text>
+    <xsl:text>By defaultm this document uses the MathJax Javascript library to render the MathML.
+    You may disable this libray to see the rendering natively implementd by the browser.</xsl:text>
     <br/>
     <xsl:text>&#10;</xsl:text>
-    <xsl:text>You may convert the inline Content MathML to a Presentation MathML rendering using an XSLT transfomation.</xsl:text>
-    <br/>
-    <xsl:text>&#10;</xsl:text>
-    <input id="ctobbutton" type="button" onclick="doctop(0)" value="Convert Content MathML to Presentation MathML?"/><br/>
-    <xsl:text>&#10;</xsl:text>
-    <input id="ctobbuttonmj" type="button" onclick="doctopmj()" value="Convert Content MathML to Presentation MathML and display with MathJax?" />
+    <input id="unmathjaxbutton" type="button" onclick="unmathjax()" value="Remove MathJax: use native MathML rendering" />
     </p>
     <xsl:text>&#10;</xsl:text>
   </div>

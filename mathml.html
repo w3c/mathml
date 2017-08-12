@@ -169,7 +169,44 @@ padding-right: 1em;
 </style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" /><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script>
 <script type="text/javascript" src="sorttable.js"></script>
 
-<script src="doctop.js"></script>
+<script>
+    function unmathjax () {
+    MathJax.Hub.Queue(
+	function () {
+	    var jax = MathJax.Hub.getJaxByInputType("math/mml");
+	    for (var i = 0; i < jax.length; i++) {
+		var sp =  document.createElement("span");
+		var orig=jax[i].SourceElement();
+		jax[i].Remove();
+		sp.innerHTML=jax[i].originalText;
+		orig.parentNode.replaceChild(sp, orig);
+	    }
+	});
+    var scs1= document.getElementsByTagName("head")[0].getElementsByTagName("script");
+    var scs = [];
+    for( var i = 0; i <scs1.length; i++ ) {
+        scs[scs.length] = scs1[i];
+    }
+
+    for(var i=0;i < scs.length;i++){
+	if(
+	    (scs[i].getAttribute("src") && scs[i].getAttribute("src").indexOf("MathJax")!=-1)
+		||
+		(scs[i].getAttribute("type") && scs[i].getAttribute("type").indexOf("mathjax")!=-1 )
+	)  scs[i].parentNode.removeChild(scs[i]);
+	}
+	    var b=document.getElementById("unmathjaxbutton");
+    b.disabled=true;
+
+}
+</script><script type="text/javascript" src="sorttable.js"></script><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  jax: ["input/MathML","output/HTML-CSS","output/NativeMML", "output/PreviewHTML"],
+  extensions: ["mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js","MathML/content-mathml.js"]
+});
+  </script>
+<script src="https://www.w3.org/scripts/MathJax/2/MathJax.js"></script>
 <script>
   function showlink (e) {
   e.childNodes[0].textContent='\u00a7\u00a0';
@@ -277,8 +314,7 @@ By default, numeric references are used but you may alter the display by selecti
 <p><b>Note:</b><br />
 Your browser may be able to display Presentation MathML but not Content MathML.<br />
 You may convert the inline Content MathML to a Presentation MathML rendering using an XSLT transfomation.<br />
-<input id="ctobbutton" type="button" onclick="doctop(0)" value="Convert Content MathML to Presentation MathML?" /><br />
-<input id="ctobbuttonmj" type="button" onclick="doctopmj()" value="Convert Content MathML to Presentation MathML and display with MathJax?" /></p>
+<input id="unmathjaxbutton" type="button" onclick="unmathjax()" value="Remove MathJax: use native MathML rendering" /></p>
 </div>
 <div>
 
