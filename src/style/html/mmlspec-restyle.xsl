@@ -3113,7 +3113,12 @@ padding-right: 1em;
 	   </xsl:choose>
 	 </th>
 	 <th>
-	     <xsl:value-of select="codepoints-to-string($d)"/>
+	  <xsl:value-of select="
+				if($d=9001)
+				 then '&#x3008;'
+				else if($d=9002) then
+				'&#x3009;'
+				else codepoints-to-string($d)"/>
 	 </th>
 	 <th class="uname">
 <!--
