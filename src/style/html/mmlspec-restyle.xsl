@@ -510,9 +510,9 @@ summary="Navigation TOC"
       </xsl:if>
        <head>
         <title><xsl:value-of select="head"/></title>
-	
-          <xsl:call-template name="css"/>
-	  <script src="//www.w3.org/scripts/TR/2016/fixup.js"><xsl:text> </xsl:text></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <xsl:call-template name="css"/>
+	<script src="//www.w3.org/scripts/TR/2016/fixup.js"><xsl:text> </xsl:text></script>
        </head>
         <body>
           <xsl:apply-templates select="head[$title.before.navigation]"/>
@@ -549,6 +549,7 @@ summary="Navigation TOC"
       <html lang="en">
         <head>
           <title><xsl:value-of select="head"/></title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
           <xsl:call-template name="css"/>
 	  <script src="//www.w3.org/scripts/TR/2016/fixup.js"><xsl:text> </xsl:text></script>
 <xsl:if test="@id='oper-dict'">
@@ -590,6 +591,7 @@ summary="Navigation TOC"
       <html lang="en">
         <head>
           <title><xsl:value-of select="head"/></title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
           <xsl:call-template name="css"/>
 	  <script src="//www.w3.org/scripts/TR/2016/fixup.js"><xsl:text> </xsl:text></script>
         </head>

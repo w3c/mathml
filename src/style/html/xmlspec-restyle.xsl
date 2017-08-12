@@ -1689,11 +1689,12 @@ for this document, which may include some normative corrections.</p>
 	}
 
 </style>
-<xsl:call-template name="css"/>
-            <xsl:text>&#10;</xsl:text>
-	<script src="//www.w3.org/scripts/TR/2016/fixup.js"><xsl:text> </xsl:text></script>
-            <xsl:text>&#10;</xsl:text>
-	    <xsl:text>&#10;</xsl:text>
+	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	  <xsl:call-template name="css"/>
+          <xsl:text>&#10;</xsl:text>
+	  <script src="//www.w3.org/scripts/TR/2016/fixup.js"><xsl:text> </xsl:text></script>
+          <xsl:text>&#10;</xsl:text>
+	  <xsl:text>&#10;</xsl:text>
       </head>
       <xsl:text>&#10;</xsl:text>
       <body>

@@ -179,15 +179,16 @@ xmlns:lxslt="http://xml.apache.org/xslt"
      <xsl:value-of select="."/>
     </xsl:attribute>
     </xsl:if>
-
+   
   </xsl:for-each>
+  <xsl:copy-of select="self::meta/@name"/>
   <xsl:if test="@lang">
     <xsl:attribute name="xml:lang"><xsl:value-of select="@lang"/></xsl:attribute>   
   </xsl:if>
   <xsl:if test="@align[not(.=('left','right'))] and not(@style)">
     <xsl:attribute name="style">vertical-align:<xsl:value-of select="@align"/></xsl:attribute>   
   </xsl:if>
-  <xsl:if test="@name and not(@id)">
+  <xsl:if test="not(self::meta) and @name and not(@id)">
     <xsl:attribute name="id"><xsl:value-of select="@name"/></xsl:attribute>   
   </xsl:if>
   <xsl:if test="@NAME and not(@id)">
