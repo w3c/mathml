@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -e
+
+
+BUILD=$PWD
+
+
+if [ ! -d /tmp/jars ]; then
+mkdir /tmp/jars
+fi
+
+cd /tmp/jars
+
+if [ ! -f saxon9he.jar ]; then
+    wget http://central.maven.org/maven2/net/sf/saxon/Saxon-HE/9.8.0-3/Saxon-HE-9.8.0-3.jar
+    mv Saxon-HE-9.8.0-3.jar saxon9he.jar
+fi
+
+
+cd $BUILD
+
+echo texlive
+
+
+if [ ! -f /tmp/texlive/bin/x86_64-linux/pdflatex ]; then
+  # Obtain TeX Live
+  wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+  tar -xzf install-tl-unx.tar.gz
+  cd install-tl-20*
+
+  # Install a minimal system
+  ./install-tl --profile=texlive.profile
+
+tlmgr install collection-fontsrecommended
+
+# Keep no backups (not required, simply makes cache bigger)
+tlmgr option -- autobackup 0
+
+cd ..
+fi
+
+
