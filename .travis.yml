@@ -1,0 +1,18 @@
+
+notifications:
+  email:
+    recipients:
+      - d.p.carlisle@gmail.com
+      
+install:
+ - ./build/install-tools
+
+cache:
+  directories:
+    - /tmp/jars
+    - /tmp/texlive
+
+script:
+ - ./build/run-restyle
+ 
+
