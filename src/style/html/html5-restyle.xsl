@@ -411,8 +411,8 @@ m:*/@indentalignlast|m:*/@indenttarget|m:*/@indentalign"
 
 <!-- trim arabic example comments-->
 <xsl:template match="span[@class='uname']
-		     [contains(.,'ARABIC-INDIC DIGIT')]
-		     [preceding-sibling::node()[2][@class='uname'][contains(.,'ARABIC')]]
+		     [contains(.,'arabic-indic digit')]
+		     [preceding-sibling::node()[2][@class='uname'][contains(.,'arabic')]]
 		     "/>
  
  
