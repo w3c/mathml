@@ -188,6 +188,7 @@ padding-right: 1em;
 	  </xsl:if>
         </title>
         <xsl:call-template name="css"/>
+	<script src="//www.w3.org/scripts/TR/2016/fixup.js"><xsl:text> </xsl:text></script>
       </head>
       <body>
         <xsl:copy-of select="$additional.format.note"/>
