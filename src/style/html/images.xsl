@@ -5,7 +5,7 @@ $Id: images.xsl,v 1.8 2012-01-26 20:38:31 dcarlis Exp $
 images.xsl David Carlisle
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                version="2.0">
+                version="3.0">
 
 <xsl:output method="text" />
 

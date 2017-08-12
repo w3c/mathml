@@ -174,7 +174,12 @@ fi
 # get local tex style
 cp $PSTYLE/pmml-new.sty .
 
-exit
+
+# fix time to get reproducible pdf
+export SOURCE_DATE_EPOCH=1502554859 # 2017/08/12  date +'%s'
+export FORCE_SOURCE_DATE=1
+export SOURCE_DATE_EPOCH_TEX_PRIMITIVES=1 # old version
+
 # use nested if rather than while to limit looping
 echo generate mathml.pdf
 pdflatex \\batchmode \\input mathml.tex
@@ -206,12 +211,10 @@ grep -i " error" mathml.log
 grep Overfull mathml.log | sed -e "s/(\([0-9]\\.\)/(0\\1/"| sort -n
 
 
-exit
 
 echo "images"
-mv images.tex images.old
 $SAXON  -o:images.tex $SOURCE/mathml-spec.xml $HSTYLE/images.xsl
-if (cmp images.tex images.old)
+if (cmp images.tex build/images.old)
 then
 echo images same
 else
@@ -221,6 +224,7 @@ echo ""
 echo ""
 echo running generated images script
 bash images.sh
+cp images.tex build/images.old
 fi
 
 exit
