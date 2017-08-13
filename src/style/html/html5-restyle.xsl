@@ -421,7 +421,7 @@ m:*/@indentalignlast|m:*/@indenttarget|m:*/@indentalign"
 </xsl:template>
 
 <xsl:template match="table[not(tr[2])][tr[
-		     td/pre/@class='mathml' and td/@class='mathml-render']]">
+		     td/pre/@class=('mathml','strict-mathml') and td/@class='mathml-render']]">
  <div class="mathml-example-render">
   <div class="mathml-example-render-1">
    <xsl:apply-templates select="tr/td[1]/pre"/>
