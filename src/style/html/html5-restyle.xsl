@@ -232,8 +232,8 @@ spn[i].appendChild(document.createTextNode(spn[i].getAttribute(att)));
     <xsl:text>&#10;</xsl:text>
     <p><b>Note:</b><br/>
     <xsl:text>&#10;</xsl:text>
-    <xsl:text>By defaultm this document uses the MathJax Javascript library to render the MathML.
-    You may disable this libray to see the rendering natively implementd by the browser.</xsl:text>
+    <xsl:text>By default, this document uses the MathJax Javascript library to render the MathML.
+    You may disable this library to see the rendering natively implemented by the browser.</xsl:text>
     <br/>
     <xsl:text>&#10;</xsl:text>
     <input id="unmathjaxbutton" type="button" onclick="unmathjax()" value="Remove MathJax: use native MathML rendering" />
