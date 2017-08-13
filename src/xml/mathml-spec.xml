@@ -73,8 +73,8 @@
 <loc href="&tr.url;/MathML/">&tr.url;/MathML/</loc>
 </latestloc>
 <prevlocs>
-<loc href="http://www.w3.org/TR/2014/REC-MathML3-20140410/">http://www.w3.org/TR/2014/REC-MathML3-20140410/</loc>
-<!--<loc href="http://www.w3.org/TR/2010/REC-MathML3-20101021/">http://www.w3.org/TR/2010/REC-MathML3-20101021/</loc>-->
+<loc href="https://www.w3.org/TR/2014/REC-MathML3-20140410/">https://www.w3.org/TR/2014/REC-MathML3-20140410/</loc>
+<!--<loc href="https://www.w3.org/TR/2010/REC-MathML3-20101021/">https://www.w3.org/TR/2010/REC-MathML3-20101021/</loc>-->
 </prevlocs>
 <edlocs>
 <loc href="&editors.url;">&editors.url;</loc>
@@ -230,8 +230,8 @@
 -->
 </authlist>
 
-<errataloc href="http://www.w3.org/Math/Documents/mathml3-errata.html"/>
-<translationloc href="http://www.w3.org/2005/11/Translations/Query?titleMatch=MathML3"/>
+<errataloc href="https://www.w3.org/Math/Documents/mathml3-errata.html"/>
+<translationloc href="https://www.w3.org/2005/11/Translations/Query?titleMatch=MathML3"/>
 
 
 <status id="status">
@@ -241,18 +241,18 @@
 of its publication. Other documents may supersede this document. A
 list of current W3C publications and the latest revision of this
 technical report can be found in the <loc
-href="http://www.w3.org/TR/">W3C technical reports index</loc> at
-http://www.w3.org/TR/.</emph>
+href="https://www.w3.org/TR/">W3C technical reports index</loc> at
+https://www.w3.org/TR/.</emph>
 </p> 
 
 <p>
 This document was produced by the <loc
-href="http://www.w3.org/Math/">W3C Math Working Group</loc> as
-a <loc href="http://www.w3.org/Consortium/Process/tr#RecsW3C">Recommendation</loc>
+href="https://www.w3.org/Math/">W3C Math Working Group</loc> as
+a <loc href="https://www.w3.org/Consortium/Process/tr#RecsW3C">Recommendation</loc>
 and is part of the
-W3C <loc href="http://www.w3.org/Math/Activity">Math Activity</loc>.
+W3C <loc href="https://www.w3.org/Math/Activity">Math Activity</loc>.
 The goals of the W3C Math Working Group are discussed in the <loc
-href="http://www.w3.org/Math/Documents/Charter2006.html"> W3C Math WG
+href="https://www.w3.org/Math/Documents/Charter2006.html"> W3C Math WG
 Charter</loc> (revised July 2006).  The authors of this document are 
 the W3C Math Working Group members.  A list of <intref
 ref="contributors">participants in the W3C Math Working Group</intref>
@@ -283,17 +283,17 @@ the first edition have been addressed in this addition, and a full change log ap
 
 <p>
 The Working Group maintains a comprehensive 
-<loc href="http://www.w3.org/Math/testsuite/">Test Suite</loc>.  This 
+<loc href="https://www.w3.org/Math/testsuite/">Test Suite</loc>.  This 
 is publicly available and developers are encouraged to submit their results for display.  
-The <loc href="http://www.w3.org/Math/testsuite/results/tests.html">Test Results</loc> 
+The <loc href="https://www.w3.org/Math/testsuite/results/tests.html">Test Results</loc> 
 are public.  They show at least two interoperable implementations for each 
 essential test. Further details may be found in the 
-<loc href="http://www.w3.org/Math/Documents/mml3-implementation-report.html">Implementation Report</loc>.</p>
+<loc href="https://www.w3.org/Math/Documents/mml3-implementation-report.html">Implementation Report</loc>.</p>
 
 
 <!--
 <p>Closely associated with the MathML 3.0 specification is 
-<loc href="http://www.w3.org/TR/mathml-for-css/">A MathML for CSS Profile</loc>
+<loc href="https://www.w3.org/TR/mathml-for-css/">A MathML for CSS Profile</loc>
 which was simultaneously published as a Recommendation.  This 
 describes a profile of MathML 3.0 that can be well formatted with Cascading Style Sheets.  No revision of the CSS Profile is being made.
 
@@ -316,20 +316,20 @@ restructured.
 </p>
 
 <p> This document was produced by a group operating under 
-the <loc href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</loc>. W3C maintains a 
-<loc role="disclosure" href="http://www.w3.org/2004/01/pp-impl/35549/status">public list of any patent disclosures</loc> made in connection with 
+the <loc href="https://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</loc>. W3C maintains a 
+<loc role="disclosure" href="https://www.w3.org/2004/01/pp-impl/35549/status">public list of any patent disclosures</loc> made in connection with 
 the deliverables of the group; that page also includes instructions 
 for disclosing a patent. An individual who has actual knowledge of 
 a patent which the individual believes contains 
-<loc href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</loc> 
+<loc href="https://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</loc> 
 must disclose the information in accordance with 
-<loc href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the W3C Patent Policy</loc>.</p>
+<loc href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the W3C Patent Policy</loc>.</p>
 
 <p>Public discussion of MathML and issues of support through the W3C
 for mathematics on the Web takes place on <loc
 href="mailto:&pub.mail;"> the public mailing list of the Math Working
 Group</loc> (<loc
-href="http://lists.w3.org/Archives/Public/www-math/">list archives</loc>).
+href="https://lists.w3.org/Archives/Public/www-math/">list archives</loc>).
 To subscribe send an email to <loc
 href="mailto:www-math-request@w3.org">www-math-request@w3.org</loc>
 with the word <code>subscribe</code> in the subject line.
@@ -394,7 +394,7 @@ the <el>mglyph</el>, <el>mpadded</el> and <el>maction</el>
 elements and significant unification and cleanup of attribute 
 values.
 Earlier work, as recorded in the W3C Note <loc
-href="http://www.w3.org/TR/2006/NOTE-arabic-math-20060131/">Arabic
+href="https://www.w3.org/TR/2006/NOTE-arabic-math-20060131/">Arabic
 mathematical notation</loc>, has allowed clarification of the
 relationship with bidirectional text and examples
 with RTL text have been added.

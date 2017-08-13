@@ -10,8 +10,8 @@
 <ulist>
  <item><p>Changes to the references to match new W3C specification rules,
  and to use the new W3C CSS formatting style, most notably affecting the table of contents styling.</p></item>
- <item><p>Update the <specref ref="status"/>, in particular referencing the GitHub Issues page as required for current
- W3C publications </p></item>
+ <item><p>Update the <specref ref="status"/>, in particular using <code>https</code> and referencing the GitHub Issues page as required for current
+ W3C publications.</p></item>
 </ulist>
 </item>
 
