@@ -4,10 +4,10 @@
 
 <!-- entities for front-matter -->
 <!ENTITY pub.mail      "www-math@w3.org"> 
-<!ENTITY date.day      "10">
-<!ENTITY date.month    "August"> 
-<!ENTITY date.monthnum "08"> 
-<!ENTITY date.year     "2017"> 
+<!ENTITY date.day      "26">
+<!ENTITY date.month    "January"> 
+<!ENTITY date.monthnum "01"> 
+<!ENTITY date.year     "2019"> 
 <!ENTITY doc.date      "&date.year;&date.monthnum;&date.day;"> 
 <!ENTITY doc.prefix    "WD-MathML3-">
 <!ENTITY doc.type      "Working Draft">

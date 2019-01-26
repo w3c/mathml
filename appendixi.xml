@@ -4,7 +4,8 @@
    <head>
       <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
       <title>Index</title>
-      <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" /><style type="text/css">
+      <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+      <style type="text/css">
 
 	 /** Table of Contents taken from html 5.2 spec
 	 stop flicker in toc **/
@@ -164,12 +165,11 @@ border: solid 4px green;
 padding-left: 1em;
 padding-right: 1em;
 }
-</style><link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" /><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script></head>
+</style>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED.css" /><script src="//www.w3.org/scripts/TR/2016/fixup.js"> </script></head>
    <body>
       
-      <h1><a id="index"></a>I Index (Non-Normative)
-      </h1>
-      
+      <h1><a id="index"></a>I Index (Non-Normative)</h1>
       <!-- TOP NAVIGATION BAR -->
       
       <nav id="toc">
@@ -181,11 +181,9 @@ padding-right: 1em;
                
                <ol class="toc">
                   <li><a href="appendixi.xml#index.elem"><span class="secno">I.1 </span> MathML Elements</a>
-                     
-                  </li>
+                     </li>
                   <li><a href="appendixi.xml#index.att"><span class="secno">I.2 </span> MathML Attributes</a>
-                     
-                  </li>
+                     </li>
                </ol>
             </li>
          </ol>
@@ -194,8 +192,7 @@ padding-right: 1em;
       <div class="div1">
          <div class="div2">
             
-            <h2><a id="index.elem"></a>I.1 MathML Elements
-            </h2>
+            <h2><a id="index.elem"></a>I.1 MathML Elements</h2>
             <p>References to sections in which an element is defined are marked in bold.</p>
             
             <dl>
@@ -204,8 +201,7 @@ padding-right: 1em;
                
                <dd>
                   <a href="chapter4.xml#contm.abs" class="mainindex">4.4.2.20</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>and</dt>
@@ -213,8 +209,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.domainofapplication.qualifier">4.3.3.1</a>,
                   <a href="chapter4.xml#contm.and" class="mainindex">4.4.2.13</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>annotation</dt>
@@ -241,8 +236,7 @@ padding-right: 1em;
                   <a href="chapter6.xml#world-int-transf-recommend">6.3.2</a>,
                   <a href="chapter6.xml#world-int-transf-discuss">6.3.3</a>,
                   <a href="appendixb.xml#media-type-choosing">B.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>annotation-xml</dt>
@@ -277,8 +271,7 @@ padding-right: 1em;
                   <a href="appendixa.xml#parsing.rnc.module">A.2.6</a>,
                   <a href="appendixb.xml#media-type-choosing">B.1</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>apply</dt>
@@ -313,120 +306,105 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.p2s">4.6</a>,
                   <a href="chapter6.xml#world-int-combine-other">6.4</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>approx</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.approx" class="mainindex">4.4.3.8</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>arccos</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.invtrig" class="mainindex">4.4.7.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>arccosh</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.invhyperbolic" class="mainindex">4.4.7.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>arccot</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.invtrig" class="mainindex">4.4.7.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>arccoth</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.invhyperbolic" class="mainindex">4.4.7.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>arccsc</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.invtrig" class="mainindex">4.4.7.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>arccsch</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.invhyperbolic" class="mainindex">4.4.7.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>arcsec</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.invtrig" class="mainindex">4.4.7.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>arcsech</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.invhyperbolic" class="mainindex">4.4.7.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>arcsin</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.invtrig" class="mainindex">4.4.7.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>arcsinh</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.invhyperbolic" class="mainindex">4.4.7.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>arctan</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.invtrig" class="mainindex">4.4.7.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>arctanh</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.invhyperbolic" class="mainindex">4.4.7.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>arg</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.arg" class="mainindex">4.4.2.22</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>bind</dt>
@@ -446,8 +424,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.lambda">4.4.1.3</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>bvar</dt>
@@ -474,24 +451,21 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.p2s">4.6</a>,
                   <a href="chapter5.xml#mixing.cminpm">5.3.2</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>card</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.card" class="mainindex">4.4.5.12</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>cartesianproduct</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.cartesianproduct" class="mainindex">4.4.5.13</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>cbytes</dt>
@@ -500,16 +474,14 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.strict">4.1.3</a>,
                   <a href="chapter4.xml#contm.cbytes" class="mainindex">4.2.10</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>ceiling</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.ceiling" class="mainindex">4.4.2.27</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>cerror</dt>
@@ -518,8 +490,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.strict">4.1.3</a>,
                   <a href="chapter4.xml#contm.cerror" class="mainindex">4.2.9</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>ci</dt>
@@ -538,8 +509,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.bvar">4.2.6.2</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>,
                   <a href="chapter5.xml#mixing.pmincm">5.3.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>cn</dt>
@@ -558,32 +528,28 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.p2s">4.6</a>,
                   <a href="chapter5.xml#mixing.pmincm">5.3.1</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>codomain</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.codomain" class="mainindex">4.4.1.7</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>complexes</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.complexes" class="mainindex">4.4.10.5</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>compose</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.compose" class="mainindex">4.4.1.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>condition</dt>
@@ -597,48 +563,42 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.limit">4.4.6.3</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>,
                   <a href="chapter5.xml#mixing.cminpm">5.3.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>conjugate</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.conjugate" class="mainindex">4.4.2.21</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>cos</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.trig" class="mainindex">4.4.7.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>cosh</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.hyperbolic" class="mainindex">4.4.7.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>cot</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.trig" class="mainindex">4.4.7.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>coth</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.hyperbolic" class="mainindex">4.4.7.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>cs</dt>
@@ -648,24 +608,21 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.strict">4.1.3</a>,
                   <a href="chapter4.xml#contm.cs" class="mainindex">4.2.4</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>csc</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.trig" class="mainindex">4.4.7.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>csch</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.hyperbolic" class="mainindex">4.4.7.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>csymbol</dt>
@@ -687,16 +644,14 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.fn">4.5.3</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>,
                   <a href="chapter5.xml#mixing.pmincm">5.3.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>curl</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.curl" class="mainindex">4.4.4.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>declare</dt>
@@ -705,8 +660,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.container">4.3.1</a>,
                   <a href="chapter4.xml#contm.declare" class="mainindex">4.5.1</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>degree</dt>
@@ -718,16 +672,14 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.partialdiff">4.4.4.3</a>,
                   <a href="chapter4.xml#contm.moment">4.4.8.6</a>,
                   <a href="chapter5.xml#mixing.cminpm">5.3.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>determinant</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.determinant" class="mainindex">4.4.9.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>diff</dt>
@@ -735,32 +687,28 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.bind.apply">4.3.2</a>,
                   <a href="chapter4.xml#contm.diff" class="mainindex">4.4.4.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>divergence</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.divergence" class="mainindex">4.4.4.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>divide</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.divide" class="mainindex">4.4.2.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>domain</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.domain" class="mainindex">4.4.1.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>domainofapplication</dt>
@@ -773,40 +721,35 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.quantifier">4.3.4.8</a>,
                   <a href="chapter4.xml#contm.lambda">4.4.1.3</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>emptyset</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.emptyset" class="mainindex">4.4.10.12</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>eq</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.eq" class="mainindex">4.4.3.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>equivalent</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.equivalent" class="mainindex">4.4.3.7</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>eulergamma</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.eulergamma" class="mainindex">4.4.10.14</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>exists</dt>
@@ -816,56 +759,49 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.quantifier">4.3.4.8</a>,
                   <a href="chapter4.xml#contm.exists" class="mainindex">4.4.2.19</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>exp</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.exp" class="mainindex">4.4.7.5</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>exponentiale</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.exponentiale" class="mainindex">4.4.10.7</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>factorial</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.factorial" class="mainindex">4.4.2.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>factorof</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.factorof" class="mainindex">4.4.3.9</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>false</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.false" class="mainindex">4.4.10.11</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>floor</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.floor" class="mainindex">4.4.2.26</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>fn</dt>
@@ -875,8 +811,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.fn" class="mainindex">4.5.3</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>forall</dt>
@@ -886,96 +821,84 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.quantifier">4.3.4.8</a>,
                   <a href="chapter4.xml#contm.forall" class="mainindex">4.4.2.18</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>gcd</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.gcd" class="mainindex">4.4.2.12</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>geq</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.geq" class="mainindex">4.4.3.5</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>grad</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.grad" class="mainindex">4.4.4.5</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>gt</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.gt" class="mainindex">4.4.3.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>ident</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.ident" class="mainindex">4.4.1.5</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>image</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.image" class="mainindex">4.4.1.8</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>imaginary</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.imaginary" class="mainindex">4.4.2.24</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>imaginaryi</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.imaginaryi" class="mainindex">4.4.10.8</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>implies</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.implies" class="mainindex">4.4.2.17</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>in</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.in" class="mainindex">4.4.5.5</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>infinity</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.infinity" class="mainindex">4.4.10.15</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>int</dt>
@@ -983,24 +906,21 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.domainofapplication.qualifier">4.3.3.1</a>,
                   <a href="chapter4.xml#contm.int" class="mainindex">4.4.4.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>integers</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.integers" class="mainindex">4.4.10.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>intersect</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.intersect" class="mainindex">4.4.5.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>interval</dt>
@@ -1014,16 +934,14 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.interval" class="mainindex">4.4.1.1</a>,
                   <a href="chapter4.xml#contm.int">4.4.4.1</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>inverse</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.inverse" class="mainindex">4.4.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>lambda</dt>
@@ -1034,40 +952,35 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.lambda" class="mainindex">4.4.1.3</a>,
                   <a href="chapter4.xml#contm.sum">4.4.6.1</a>,
                   <a href="chapter4.xml#contm.product">4.4.6.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>laplacian</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.laplacian" class="mainindex">4.4.4.7</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>lcm</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.lcm" class="mainindex">4.4.2.25</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>leq</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.leq" class="mainindex">4.4.3.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>limit</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.limit" class="mainindex">4.4.6.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>list</dt>
@@ -1076,16 +989,14 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.ci.strict">4.2.2.1</a>,
                   <a href="chapter4.xml#contm.nary.setlist">4.3.4.2</a>,
                   <a href="chapter4.xml#contm.list" class="mainindex">4.4.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>ln</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.ln" class="mainindex">4.4.7.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>log</dt>
@@ -1094,8 +1005,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.strict">4.1.3</a>,
                   <a href="chapter4.xml#contm.otherqualifiers">4.3.3.3</a>,
                   <a href="chapter4.xml#contm.log" class="mainindex">4.4.7.7</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>logbase</dt>
@@ -1105,8 +1015,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.otherqualifiers">4.3.3.3</a>,
                   <a href="chapter4.xml#contm.log" class="mainindex">4.4.7.7</a>,
                   <a href="chapter5.xml#mixing.cminpm">5.3.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>lowlimit</dt>
@@ -1120,16 +1029,14 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.limit">4.4.6.3</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>,
                   <a href="chapter5.xml#mixing.cminpm">5.3.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>lt</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.lt" class="mainindex">4.4.3.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>maction</dt>
@@ -1148,8 +1055,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.maction" class="mainindex">3.7.1</a>,
                   <a href="chapter3.xml#id.3.7.1.1">3.7.1.1</a>,
                   <a href="chapter6.xml#world-int-combine-other">6.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>maligngroup</dt>
@@ -1171,8 +1077,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.5.9">3.5.5.9</a>,
                   <a href="chapter3.xml#id.3.5.5.10">3.5.5.10</a>,
                   <a href="chapter6.xml#interf.link">6.4.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>malignmark</dt>
@@ -1194,8 +1099,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.5.9">3.5.5.9</a>,
                   <a href="chapter3.xml#id.3.5.5.10">3.5.5.10</a>,
                   <a href="chapter6.xml#interf.link">6.4.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>math</dt>
@@ -1224,8 +1128,7 @@ padding-right: 1em;
                   <a href="appendixb.xml#media-type-choosing">B.1</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>matrix</dt>
@@ -1234,8 +1137,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.5.9">3.5.5.9</a>,
                   <a href="chapter4.xml#contm.ci.strict">4.2.2.1</a>,
                   <a href="chapter4.xml#contm.matrix" class="mainindex">4.4.9.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>matrixrow</dt>
@@ -1243,8 +1145,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.matrix">4.4.9.2</a>,
                   <a href="chapter4.xml#contm.matrixrow" class="mainindex">4.4.9.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>max</dt>
@@ -1253,8 +1154,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.nary.unary">4.3.4.4</a>,
                   <a href="chapter4.xml#contm.max" class="mainindex">4.4.2.4</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mean</dt>
@@ -1263,16 +1163,14 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.nary.unary">4.3.4.4</a>,
                   <a href="chapter4.xml#contm.mean" class="mainindex">4.4.8.1</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>median</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.median" class="mainindex">4.4.8.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>menclose</dt>
@@ -1288,8 +1186,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.3.9.3">3.3.9.3</a>,
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>,
                   <a href="chapter3.xml#presm.addsub">3.6.8.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>merror</dt>
@@ -1303,8 +1200,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.3.5.1">3.3.5.1</a>,
                   <a href="chapter3.xml#id.3.3.5.2">3.3.5.2</a>,
                   <a href="chapter4.xml#contm.cerror">4.2.9</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mfenced</dt>
@@ -1322,8 +1218,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.5.2">3.5.5.2</a>,
                   <a href="chapter3.xml#id.3.5.5.4">3.5.5.4</a>,
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mfrac</dt>
@@ -1344,8 +1239,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.5.2">3.5.5.2</a>,
                   <a href="chapter6.xml#world-int-combine-other">6.4</a>,
                   <a href="chapter6.xml#interf.nonxml">6.4.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mglyph</dt>
@@ -1367,8 +1261,7 @@ padding-right: 1em;
                   <a href="chapter7.xml#chars.intro">7.1</a>,
                   <a href="chapter7.xml#chars.mglyph">7.4</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mi</dt>
@@ -1397,8 +1290,7 @@ padding-right: 1em;
                   <a href="chapter6.xml#interf.nonxml">6.4.2</a>,
                   <a href="chapter6.xml#interf.html">6.4.3</a>,
                   <a href="chapter7.xml#chars.BMP-SMP">7.5</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>min</dt>
@@ -1407,8 +1299,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.nary.unary">4.3.4.4</a>,
                   <a href="chapter4.xml#contm.min" class="mainindex">4.4.2.5</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>minus</dt>
@@ -1417,8 +1308,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.applications.strict">4.2.5.1</a>,
                   <a href="chapter4.xml#contm.minus" class="mainindex">4.4.2.6</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mlabeledtr</dt>
@@ -1437,8 +1327,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.4.1">3.5.4.1</a>,
                   <a href="chapter3.xml#presm.mtdatts">3.5.4.2</a>,
                   <a href="chapter3.xml#id.3.5.5.7">3.5.5.7</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mlongdiv</dt>
@@ -1459,8 +1348,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.6.5.2">3.6.5.2</a>,
                   <a href="chapter3.xml#id.3.6.7.2">3.6.7.2</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mmultiscripts</dt>
@@ -1474,8 +1362,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.4.7.2">3.4.7.2</a>,
                   <a href="chapter3.xml#id.3.4.7.3">3.4.7.3</a>,
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mn</dt>
@@ -1497,8 +1384,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.rendering.numbers">4.2.1.1</a>,
                   <a href="chapter5.xml#mixing.pmincm">5.3.1</a>,
                   <a href="chapter6.xml#interf.html">6.4.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mo</dt>
@@ -1547,16 +1433,14 @@ padding-right: 1em;
                   <a href="appendixc.xml#oper-dict.format">C.2</a>,
                   <a href="appendixf.xml#changes.mathml3.03e-mathml3.02e">F.1</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mode</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.mode" class="mainindex">4.4.8.5</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>moment</dt>
@@ -1565,8 +1449,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.degree">4.3.3.2</a>,
                   <a href="chapter4.xml#contm.otherqualifiers">4.3.3.3</a>,
                   <a href="chapter4.xml#contm.moment" class="mainindex">4.4.8.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>momentabout</dt>
@@ -1575,8 +1458,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.qualifiers">4.3.3</a>,
                   <a href="chapter4.xml#contm.otherqualifiers">4.3.3.3</a>,
                   <a href="chapter4.xml#contm.moment" class="mainindex">4.4.8.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mover</dt>
@@ -1594,8 +1476,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.4.6.2">3.4.6.2</a>,
                   <a href="chapter3.xml#id.3.4.6.3">3.4.6.3</a>,
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mpadded</dt>
@@ -1617,8 +1498,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mphantom</dt>
@@ -1641,8 +1521,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.5.5">3.5.5.5</a>,
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>,
                   <a href="chapter3.xml#id.3.6.1.1">3.6.1.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mprescripts</dt>
@@ -1653,8 +1532,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mmultiscripts" class="mainindex">3.4.7</a>,
                   <a href="chapter3.xml#id.3.4.7.1">3.4.7.1</a>,
                   <a href="chapter6.xml#interf.link">6.4.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mroot</dt>
@@ -1668,8 +1546,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.3.3.1">3.3.3.1</a>,
                   <a href="chapter3.xml#id.3.3.3.2">3.3.3.2</a>,
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mrow</dt>
@@ -1716,8 +1593,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.cbytes">4.2.10</a>,
                   <a href="chapter5.xml#mixing.pmincm">5.3.1</a>,
                   <a href="appendixc.xml#oper-dict.format">C.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>ms</dt>
@@ -1732,8 +1608,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.2.8.1">3.2.8.1</a>,
                   <a href="chapter3.xml#id.3.2.8.2">3.2.8.2</a>,
                   <a href="chapter6.xml#interf.html">6.4.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mscarries</dt>
@@ -1749,8 +1624,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.6.6.1">3.6.6.1</a>,
                   <a href="chapter3.xml#presm.addsub">3.6.8.1</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mscarry</dt>
@@ -1767,8 +1641,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.6.6.2">3.6.6.2</a>,
                   <a href="chapter3.xml#presm.addsub">3.6.8.1</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>msgroup</dt>
@@ -1787,8 +1660,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.6.7.2">3.6.7.2</a>,
                   <a href="chapter3.xml#presm.mult">3.6.8.2</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>msline</dt>
@@ -1804,8 +1676,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.addsub">3.6.8.1</a>,
                   <a href="chapter3.xml#presm.repeatdec">3.6.8.4</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mspace</dt>
@@ -1832,8 +1703,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.5.5">3.5.5.5</a>,
                   <a href="chapter7.xml#chars.nonmark">7.6</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>msqrt</dt>
@@ -1849,8 +1719,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.3.3.2">3.3.3.2</a>,
                   <a href="chapter3.xml#id.3.3.9.2">3.3.9.2</a>,
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>msrow</dt>
@@ -1867,8 +1736,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mult">3.6.8.2</a>,
                   <a href="chapter3.xml#presm.repeatdec">3.6.8.4</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mstack</dt>
@@ -1896,8 +1764,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.repeatdec">3.6.8.4</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mstyle</dt>
@@ -1926,8 +1793,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>,
                   <a href="chapter3.xml#id.3.6.1.2">3.6.1.2</a>,
                   <a href="chapter3.xml#id.3.6.4.1">3.6.4.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>msub</dt>
@@ -1942,8 +1808,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.4.1.2">3.4.1.2</a>,
                   <a href="chapter3.xml#id.3.4.3.1">3.4.3.1</a>,
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>msubsup</dt>
@@ -1958,8 +1823,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.4.3.3">3.4.3.3</a>,
                   <a href="chapter3.xml#id.3.4.7.2">3.4.7.2</a>,
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>msup</dt>
@@ -1976,8 +1840,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.4.2.2">3.4.2.2</a>,
                   <a href="chapter3.xml#id.3.4.3.1">3.4.3.1</a>,
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mtable</dt>
@@ -2010,8 +1873,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.6.1.2">3.6.1.2</a>,
                   <a href="chapter4.xml#contm.matrix">4.4.9.2</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mtd</dt>
@@ -2036,8 +1898,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.5.4">3.5.5.4</a>,
                   <a href="chapter3.xml#id.3.5.5.7">3.5.5.7</a>,
                   <a href="chapter3.xml#id.3.5.5.10">3.5.5.10</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mtext</dt>
@@ -2070,8 +1931,7 @@ padding-right: 1em;
                   <a href="chapter7.xml#chars.pseudo-scripts">7.7.2</a>,
                   <a href="appendixa.xml#parsing.mml.xhtml">A.5</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mtr</dt>
@@ -2094,8 +1954,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.5.7">3.5.5.7</a>,
                   <a href="chapter3.xml#id.3.5.5.10">3.5.5.10</a>,
                   <a href="chapter4.xml#contm.matrix">4.4.9.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>munder</dt>
@@ -2113,8 +1972,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.4.6.2">3.4.6.2</a>,
                   <a href="chapter3.xml#id.3.4.6.3">3.4.6.3</a>,
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>munderover</dt>
@@ -2131,24 +1989,21 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.4.6.2">3.4.6.2</a>,
                   <a href="chapter3.xml#id.3.4.6.3">3.4.6.3</a>,
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>naturalnumbers</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.naturalnumbers" class="mainindex">4.4.10.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>neq</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.neq" class="mainindex">4.4.3.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>none</dt>
@@ -2164,56 +2019,49 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.addsub">3.6.8.1</a>,
                   <a href="chapter3.xml#presm.mult">3.6.8.2</a>,
                   <a href="chapter6.xml#interf.link">6.4.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>not</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.not" class="mainindex">4.4.2.16</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>notanumber</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.notanumber" class="mainindex">4.4.10.9</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>notin</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.notin" class="mainindex">4.4.5.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>notprsubset</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.notprsubset" class="mainindex">4.4.5.10</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>notsubset</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.notsubset" class="mainindex">4.4.5.9</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>or</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.or" class="mainindex">4.4.2.14</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>otherwise</dt>
@@ -2221,16 +2069,14 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.container.constructor">4.3.1.1</a>,
                   <a href="chapter4.xml#contm.piecewise" class="mainindex">4.4.1.9</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>outerproduct</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.outerproduct" class="mainindex">4.4.9.9</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>partialdiff</dt>
@@ -2238,8 +2084,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.structure.extended">4.3</a>,
                   <a href="chapter4.xml#contm.partialdiff" class="mainindex">4.4.4.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>pi</dt>
@@ -2247,8 +2092,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.cn.extended">4.2.1.3</a>,
                   <a href="chapter4.xml#contm.pi" class="mainindex">4.4.10.13</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>piece</dt>
@@ -2256,8 +2100,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.container.constructor">4.3.1.1</a>,
                   <a href="chapter4.xml#contm.piecewise" class="mainindex">4.4.1.9</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>piecewise</dt>
@@ -2265,8 +2108,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.container.constructor">4.3.1.1</a>,
                   <a href="chapter4.xml#contm.piecewise" class="mainindex">4.4.1.9</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>plus</dt>
@@ -2275,24 +2117,21 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.applications.strict">4.2.5.1</a>,
                   <a href="chapter4.xml#contm.plus" class="mainindex">4.4.2.7</a>,
                   <a href="chapter4.xml#contm.sum">4.4.6.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>power</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.power" class="mainindex">4.4.2.8</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>primes</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.primes" class="mainindex">4.4.10.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>product</dt>
@@ -2301,48 +2140,42 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.domainofapplication.qualifier">4.3.3.1</a>,
                   <a href="chapter4.xml#contm.times">4.4.2.10</a>,
                   <a href="chapter4.xml#contm.product" class="mainindex">4.4.6.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>prsubset</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.prsubset" class="mainindex">4.4.5.8</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>quotient</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.quotient" class="mainindex">4.4.2.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>rationals</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.rationals" class="mainindex">4.4.10.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>real</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.real" class="mainindex">4.4.2.23</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>reals</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.reals" class="mainindex">4.4.10.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>reln</dt>
@@ -2352,16 +2185,14 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.reln" class="mainindex">4.5.2</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>rem</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.rem" class="mainindex">4.4.2.9</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>root</dt>
@@ -2369,40 +2200,35 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.degree">4.3.3.2</a>,
                   <a href="chapter4.xml#contm.root" class="mainindex">4.4.2.11</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>scalarproduct</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.scalarproduct" class="mainindex">4.4.9.8</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>sdev</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.sdev" class="mainindex">4.4.8.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>sec</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.trig" class="mainindex">4.4.7.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>sech</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.hyperbolic" class="mainindex">4.4.7.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>selector</dt>
@@ -2410,8 +2236,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.selector" class="mainindex">4.4.9.6</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>semantics</dt>
@@ -2449,8 +2274,7 @@ padding-right: 1em;
                   <a href="chapter6.xml#world-int-combine-other">6.4</a>,
                   <a href="chapter6.xml#interf.graphics">6.4.5</a>,
                   <a href="appendixb.xml#media-type-choosing">B.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>sep</dt>
@@ -2459,8 +2283,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.cn">4.2.1</a>,
                   <a href="chapter4.xml#contm.rendering.numbers" class="mainindex">4.2.1.1</a>,
                   <a href="chapter4.xml#contm.cn.extended">4.2.1.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>set</dt>
@@ -2472,16 +2295,14 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.nary.setlist">4.3.4.2</a>,
                   <a href="chapter4.xml#contm.set" class="mainindex">4.4.5.1</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>setdiff</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.setdiff" class="mainindex">4.4.5.11</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>share</dt>
@@ -2495,8 +2316,7 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.rendering.share">4.2.7.4</a>,
                   <a href="chapter4.xml#contm.declare">4.5.1</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>sin</dt>
@@ -2504,32 +2324,28 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.strict">4.1.3</a>,
                   <a href="chapter4.xml#contm.trig" class="mainindex">4.4.7.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>sinh</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.hyperbolic" class="mainindex">4.4.7.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>span</dt>
                
                <dd>
                   <a href="chapter5.xml#html.annotation.xml">5.2.3.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>subset</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.subset" class="mainindex">4.4.5.7</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>sum</dt>
@@ -2539,24 +2355,21 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.domainofapplication.qualifier">4.3.3.1</a>,
                   <a href="chapter4.xml#contm.plus">4.4.2.7</a>,
                   <a href="chapter4.xml#contm.sum" class="mainindex">4.4.6.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>tan</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.trig" class="mainindex">4.4.7.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>tanh</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.hyperbolic" class="mainindex">4.4.7.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>tendsto</dt>
@@ -2564,8 +2377,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.limit">4.4.6.3</a>,
                   <a href="chapter4.xml#contm.tendsto" class="mainindex">4.4.6.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>times</dt>
@@ -2573,32 +2385,28 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.times" class="mainindex">4.4.2.10</a>,
                   <a href="chapter4.xml#contm.product">4.4.6.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>transpose</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.transpose" class="mainindex">4.4.9.5</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>true</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.true" class="mainindex">4.4.10.10</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>union</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.union" class="mainindex">4.4.5.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>uplimit</dt>
@@ -2611,16 +2419,14 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.product">4.4.6.2</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>,
                   <a href="chapter5.xml#mixing.cminpm">5.3.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>variance</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.variance" class="mainindex">4.4.8.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>vector</dt>
@@ -2629,35 +2435,28 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.ci.strict">4.2.2.1</a>,
                   <a href="chapter4.xml#contm.nary">4.3.4.1</a>,
                   <a href="chapter4.xml#contm.vector" class="mainindex">4.4.9.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>vectorproduct</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.vectorproduct" class="mainindex">4.4.9.7</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>xor</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.xor" class="mainindex">4.4.2.15</a>
-                  
-               </dd>
-               
-            </dl>
-            
-         </div>
+                  </dd>
+               </dl>
+            </div>
          <div class="div2">
             
-            <h2><a id="index.att"></a>I.2 MathML Attributes
-            </h2>
+            <h2><a id="index.att"></a>I.2 MathML Attributes</h2>
             <p>In addition to the standard MathML attributes, some attributes from
-               other namespaces such as Xlink or XML Schema are also listed here.
-            </p>
+               other namespaces such as Xlink or XML Schema are also listed here.</p>
             
             <dl>
                
@@ -2672,8 +2471,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.4.5.2">3.4.5.2</a>,
                   <a href="chapter3.xml#id.3.4.6.1">3.4.6.1</a>,
                   <a href="chapter3.xml#id.3.4.6.2">3.4.6.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>accentunder</dt>
@@ -2684,8 +2482,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.4.4.2">3.4.4.2</a>,
                   <a href="chapter3.xml#id.3.4.6.1">3.4.6.1</a>,
                   <a href="chapter3.xml#id.3.4.6.2">3.4.6.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>actiontype</dt>
@@ -2695,8 +2492,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.3.4.1">3.3.4.1</a>,
                   <a href="chapter3.xml#presm.maction">3.7.1</a>,
                   <a href="chapter3.xml#id.3.7.1.1">3.7.1.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>align</dt>
@@ -2710,8 +2506,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.6.1.1">3.6.1.1</a>,
                   <a href="chapter3.xml#id.3.6.1.2">3.6.1.2</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>alignmentscope</dt>
@@ -2720,8 +2515,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>,
                   <a href="chapter3.xml#id.3.5.5.1">3.5.5.1</a>,
                   <a href="chapter3.xml#id.3.5.5.9">3.5.5.9</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>alt</dt>
@@ -2732,56 +2526,49 @@ padding-right: 1em;
                   <a href="chapter6.xml#interf.graphics">6.4.5</a>,
                   <a href="chapter7.xml#chars.mglyph">7.4</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>altimg</dt>
                
                <dd>
                   <a href="chapter2.xml#interf.toplevel.atts">2.2.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>altimg-height</dt>
                
                <dd>
                   <a href="chapter2.xml#interf.toplevel.atts">2.2.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>altimg-valign</dt>
                
                <dd>
                   <a href="chapter2.xml#interf.toplevel.atts">2.2.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>altimg-width</dt>
                
                <dd>
                   <a href="chapter2.xml#interf.toplevel.atts">2.2.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>alttext</dt>
                
                <dd>
                   <a href="chapter2.xml#interf.toplevel.atts">2.2.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>annotation-xml</dt>
                
                <dd>
                   <a href="chapter2.xml#interf.namespace">2.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>background</dt>
@@ -2789,8 +2576,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter2.xml#fund.color">2.1.5.3</a>,
                   <a href="chapter3.xml#presm.deprecatt">3.2.2.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>base</dt>
@@ -2798,24 +2584,21 @@ padding-right: 1em;
                <dd>
                   <a href="chapter4.xml#contm.cn">4.2.1</a>,
                   <a href="chapter4.xml#contm.cn.extended">4.2.1.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>baseline</dt>
                
                <dd>
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>bevelled</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.3.2.2">3.3.2.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>cd</dt>
@@ -2830,8 +2613,7 @@ padding-right: 1em;
                   <a href="chapter5.xml#mixing.annotation.keys">5.1.2</a>,
                   <a href="chapter5.xml#id.5.2.2.2">5.2.2.2</a>,
                   <a href="chapter5.xml#id.5.2.3.2">5.2.3.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>cdgroup</dt>
@@ -2839,8 +2621,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter2.xml#interf.toplevel.atts">2.2.1</a>,
                   <a href="chapter4.xml#contm.csymbol.strict">4.2.3.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>charalign</dt>
@@ -2848,40 +2629,35 @@ padding-right: 1em;
                <dd>
                   <a href="chapter3.xml#id.3.6.1.1">3.6.1.1</a>,
                   <a href="chapter3.xml#id.3.6.1.2">3.6.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>charspacing</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.6.1.2">3.6.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>class</dt>
                
                <dd>
                   <a href="chapter2.xml#fund.globatt">2.1.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>close</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.3.8.2">3.3.8.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>closure</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.interval">4.4.1.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>color</dt>
@@ -2889,8 +2665,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter2.xml#interf.unspecified">2.3.3</a>,
                   <a href="chapter3.xml#presm.deprecatt">3.2.2.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>columnalign</dt>
@@ -2903,32 +2678,28 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.5.2">3.5.5.2</a>,
                   <a href="chapter3.xml#id.3.5.5.3">3.5.5.3</a>,
                   <a href="chapter3.xml#id.3.5.5.10">3.5.5.10</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>columnalignment</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.5.3.1">3.5.3.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>columnlines</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>columnspacing</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>columnspan</dt>
@@ -2938,8 +2709,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.1.1">3.5.1.1</a>,
                   <a href="chapter3.xml#presm.mtdatts">3.5.4.2</a>,
                   <a href="chapter3.xml#id.3.5.5.9">3.5.5.9</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>columnwidth</dt>
@@ -2948,8 +2718,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.1.1">3.5.1.1</a>,
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>,
                   <a href="chapter3.xml#id.3.5.3.1">3.5.3.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>crossout</dt>
@@ -2958,8 +2727,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.6.5.2">3.6.5.2</a>,
                   <a href="chapter3.xml#id.3.6.6.1">3.6.6.1</a>,
                   <a href="chapter3.xml#id.3.6.6.2">3.6.6.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>decimalpoint</dt>
@@ -2968,8 +2736,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mstyle.attrs">3.3.4.2</a>,
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>,
                   <a href="chapter3.xml#id.3.6.1.2">3.6.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>definitionURL</dt>
@@ -2986,16 +2753,14 @@ padding-right: 1em;
                   <a href="chapter5.xml#id.5.2.1.2">5.2.1.2</a>,
                   <a href="chapter5.xml#id.5.2.2.2">5.2.2.2</a>,
                   <a href="chapter5.xml#id.5.2.3.2">5.2.3.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>denomalign</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.3.2.2">3.3.2.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>depth</dt>
@@ -3005,8 +2770,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.3.4.1">3.3.4.1</a>,
                   <a href="chapter3.xml#presm.mpaddedatt">3.3.6.2</a>,
                   <a href="chapter3.xml#id.3.3.6.3">3.3.6.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>dir</dt>
@@ -3020,8 +2784,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.3.1.2">3.3.1.2</a>,
                   <a href="chapter3.xml#id.3.5.5.2">3.5.5.2</a>,
                   <a href="chapter3.xml#presm.elementary">3.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>display</dt>
@@ -3030,8 +2793,7 @@ padding-right: 1em;
                   <a href="chapter2.xml#interf.toplevel.atts">2.2.1</a>,
                   <a href="chapter2.xml#id.2.2.2">2.2.2</a>,
                   <a href="chapter3.xml#presm.scriptlevel">3.1.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>displaystyle</dt>
@@ -3056,8 +2818,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>,
                   <a href="chapter3.xml#id.3.6.5.1">3.6.5.1</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>edge</dt>
@@ -3065,8 +2826,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter3.xml#id.3.5.5.4">3.5.5.4</a>,
                   <a href="chapter3.xml#id.3.5.5.5">3.5.5.5</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>encoding</dt>
@@ -3086,24 +2846,21 @@ padding-right: 1em;
                   <a href="chapter6.xml#encoding-names">6.2.4</a>,
                   <a href="chapter6.xml#world-int-transf-recommend">6.3.2</a>,
                   <a href="chapter6.xml#interf.html">6.4.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>equalcolumns</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>equalrows</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>fence</dt>
@@ -3112,8 +2869,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.2.5.1">3.2.5.1</a>,
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>,
                   <a href="chapter3.xml#id.3.2.5.4">3.2.5.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>fontfamily</dt>
@@ -3122,16 +2878,14 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mglyph">3.2.1.2</a>,
                   <a href="chapter3.xml#presm.deprecatt">3.2.2.1</a>,
                   <a href="chapter3.xml#id.3.3.4.1">3.3.4.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>fontsize</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.deprecatt">3.2.2.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>fontstyle</dt>
@@ -3139,16 +2893,14 @@ padding-right: 1em;
                <dd>
                   <a href="chapter3.xml#presm.deprecatt">3.2.2.1</a>,
                   <a href="chapter3.xml#id.3.2.3.2">3.2.3.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>fontweight</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.deprecatt">3.2.2.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>form</dt>
@@ -3161,24 +2913,21 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.3.7.3">3.3.7.3</a>,
                   <a href="chapter3.xml#id.3.3.8.2">3.3.8.2</a>,
                   <a href="appendixc.xml#oper-dict.index">C.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>frame</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>framespacing</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>groupalign</dt>
@@ -3194,8 +2943,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>,
                   <a href="chapter3.xml#id.3.5.5.7">3.5.5.7</a>,
                   <a href="chapter3.xml#id.3.5.5.10">3.5.5.10</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>height</dt>
@@ -3206,8 +2954,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.3.4.1">3.3.4.1</a>,
                   <a href="chapter3.xml#presm.mpaddedatt">3.3.6.2</a>,
                   <a href="chapter3.xml#id.3.3.6.3">3.3.6.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>href</dt>
@@ -3218,8 +2965,7 @@ padding-right: 1em;
                   <a href="chapter6.xml#interf.link">6.4.4</a>,
                   <a href="appendixf.xml#changes.mathml3.03e-mathml3.02e">F.1</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>id</dt>
@@ -3235,8 +2981,7 @@ padding-right: 1em;
                   <a href="chapter6.xml#interf.link">6.4.4</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>indentalign</dt>
@@ -3244,80 +2989,70 @@ padding-right: 1em;
                <dd>
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>,
                   <a href="chapter3.xml#presm.mo.linebreaks">3.2.5.9</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>indentalignfirst</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>indentalignfirst  </dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>indentalignlast</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mo.linebreaks">3.2.5.9</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>indentalignlast   </dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>indentshift</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>indentshift      </dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>indentshiftfirst</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>indentshiftfirst </dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>indentshiftlast  </dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>indenttarget</dt>
@@ -3325,8 +3060,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>index</dt>
@@ -3334,24 +3068,21 @@ padding-right: 1em;
                <dd>
                   <a href="chapter3.xml#presm.mglyph">3.2.1.2</a>,
                   <a href="chapter3.xml#id.3.3.4.1">3.3.4.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>infixlinebreakstyle</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mstyle.attrs">3.3.4.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>integer</dt>
                
                <dd>
                   <a href="chapter2.xml#id.2.1.5.1">2.1.5.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>largeop</dt>
@@ -3359,24 +3090,21 @@ padding-right: 1em;
                <dd>
                   <a href="chapter3.xml#presm.scriptlevel">3.1.6</a>,
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>leftoverhang</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.6.7.2">3.6.7.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>length</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.6.7.2">3.6.7.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>linebreak</dt>
@@ -3385,16 +3113,14 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.1.7.1">3.1.7.1</a>,
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>,
                   <a href="chapter3.xml#id.3.2.7.2">3.2.7.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>linebreakmultchar</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>linebreakstyle</dt>
@@ -3403,16 +3129,14 @@ padding-right: 1em;
                   <a href="chapter2.xml#fund.defaults">2.1.5.4</a>,
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>,
                   <a href="appendixc.xml#oper-dict.format">C.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>lineleading </dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>linethickness</dt>
@@ -3420,8 +3144,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter3.xml#id.3.3.2.2">3.3.2.2</a>,
                   <a href="chapter3.xml#id.3.3.4.1">3.3.4.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>location</dt>
@@ -3431,8 +3154,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.6.5.2">3.6.5.2</a>,
                   <a href="chapter3.xml#id.3.6.6.1">3.6.6.1</a>,
                   <a href="chapter3.xml#id.3.6.6.2">3.6.6.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>longdivstyle</dt>
@@ -3441,16 +3163,14 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.6.2.1">3.6.2.1</a>,
                   <a href="chapter3.xml#presm.mlongdiv.attrs">3.6.2.2</a>,
                   <a href="chapter3.xml#presm.mlongdiv.ex">3.6.8.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>lquote</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.2.8.2">3.2.8.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>lspace</dt>
@@ -3464,40 +3184,35 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.3.6.3">3.3.6.3</a>,
                   <a href="appendixc.xml#oper-dict.format">C.2</a>,
                   <a href="appendixc.xml#oper-dict.space">C.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>ltr</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.bidi.math">3.1.5.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>macros</dt>
                
                <dd>
                   <a href="chapter2.xml#id.2.2.2">2.2.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>math</dt>
                
                <dd>
                   <a href="chapter2.xml#interf.namespace">2.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>math element</dt>
                
                <dd>
                   <a href="chapter2.xml#interf.namespace">2.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mathbackground</dt>
@@ -3510,8 +3225,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.3.4.1">3.3.4.1</a>,
                   <a href="chapter3.xml#id.3.5.5.5">3.5.5.5</a>,
                   <a href="chapter3.xml#id.3.5.5.6">3.5.5.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mathcolor</dt>
@@ -3534,8 +3248,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.6.5.2">3.6.5.2</a>,
                   <a href="chapter3.xml#id.3.6.6.2">3.6.6.2</a>,
                   <a href="chapter3.xml#id.3.6.7.2">3.6.7.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mathsize</dt>
@@ -3552,8 +3265,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.3.4.1">3.3.4.1</a>,
                   <a href="chapter3.xml#presm.mstyle.attrs">3.3.4.2</a>,
                   <a href="chapter6.xml#world-int-style">6.5</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mathvariant</dt>
@@ -3570,8 +3282,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.2.7.2">3.2.7.2</a>,
                   <a href="chapter7.xml#chars.BMP-SMP">7.5</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>maxsize</dt>
@@ -3580,32 +3291,28 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>,
                   <a href="chapter3.xml#presm.op.stretch">3.2.5.8</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>maxwidth</dt>
                
                <dd>
                   <a href="chapter2.xml#interf.toplevel.atts">2.2.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mediummathspace</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mstyle.attrs">3.3.4.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>menclose</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.3.9.2">3.3.9.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>minlabelspacing</dt>
@@ -3614,8 +3321,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>,
                   <a href="chapter3.xml#id.3.5.3.1">3.5.3.1</a>,
                   <a href="chapter3.xml#id.3.5.3.3">3.5.3.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>minsize</dt>
@@ -3624,16 +3330,14 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>,
                   <a href="chapter3.xml#presm.op.stretch">3.2.5.8</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mode</dt>
                
                <dd>
                   <a href="chapter2.xml#id.2.2.2">2.2.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>movablelimits</dt>
@@ -3645,24 +3349,21 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.4.4.1">3.4.4.1</a>,
                   <a href="chapter3.xml#id.3.4.5.1">3.4.5.1</a>,
                   <a href="chapter3.xml#id.3.4.6.1">3.4.6.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>msgroup</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mlongdiv.ex">3.6.8.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>mslinethickness</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.6.7.2">3.6.7.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>name</dt>
@@ -3672,24 +3373,21 @@ padding-right: 1em;
                   <a href="chapter5.xml#id.5.2.2.2">5.2.2.2</a>,
                   <a href="chapter5.xml#id.5.2.3.2">5.2.3.2</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>nargs</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.declare">4.5.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>newline</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.2.7.2">3.2.7.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>notation</dt>
@@ -3697,48 +3395,42 @@ padding-right: 1em;
                <dd>
                   <a href="chapter3.xml#id.3.3.9.1">3.3.9.1</a>,
                   <a href="chapter3.xml#id.3.3.9.2">3.3.9.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>numalign</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.3.2.2">3.3.2.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>number</dt>
                
                <dd>
                   <a href="chapter2.xml#id.2.1.5.1">2.1.5.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>occurrence</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.declare">4.5.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>open</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.3.8.2">3.3.8.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>order</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.list">4.4.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>other</dt>
@@ -3746,8 +3438,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter2.xml#fund.globatt">2.1.6</a>,
                   <a href="chapter2.xml#interf.unspecified">2.3.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>overflow</dt>
@@ -3755,8 +3446,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter2.xml#interf.toplevel.atts">2.2.1</a>,
                   <a href="chapter3.xml#id.3.1.7.1">3.1.7.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>position</dt>
@@ -3770,24 +3460,21 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.6.7.2">3.6.7.2</a>,
                   <a href="chapter3.xml#presm.mult">3.6.8.2</a>,
                   <a href="chapter3.xml#presm.mlongdiv.ex">3.6.8.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>rightoverhang</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.6.7.2">3.6.7.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>role</dt>
                
                <dd>
                   <a href="chapter5.xml#mixing.annotation.keys">5.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>rowalign</dt>
@@ -3798,24 +3485,21 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>,
                   <a href="chapter3.xml#id.3.5.2.2">3.5.2.2</a>,
                   <a href="chapter3.xml#presm.mtdatts">3.5.4.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>rowlines</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>rowspacing</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>rowspan</dt>
@@ -3825,16 +3509,14 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.1.1">3.5.1.1</a>,
                   <a href="chapter3.xml#presm.mtdatts">3.5.4.2</a>,
                   <a href="chapter3.xml#id.3.5.5.9">3.5.5.9</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>rquote</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.2.8.2">3.2.8.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>rspace</dt>
@@ -3843,8 +3525,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>,
                   <a href="chapter3.xml#id.3.2.5.7">3.2.5.7</a>,
                   <a href="appendixc.xml#oper-dict.space">C.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>schemaLocation</dt>
@@ -3852,16 +3533,14 @@ padding-right: 1em;
                <dd>
                   <a href="chapter6.xml#world-int-transf-flavors">6.3.1</a>,
                   <a href="appendixa.xml#parsing.schemalocation">A.4.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>scope</dt>
                
                <dd>
                   <a href="chapter4.xml#contm.declare">4.5.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>scriptlevel</dt>
@@ -3888,8 +3567,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>,
                   <a href="chapter3.xml#id.3.6.5.1">3.6.5.1</a>,
                   <a href="appendixc.xml#oper-dict.space">C.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>scriptminsize</dt>
@@ -3897,16 +3575,14 @@ padding-right: 1em;
                <dd>
                   <a href="chapter3.xml#presm.scriptlevel">3.1.6</a>,
                   <a href="chapter3.xml#presm.mstyle.attrs">3.3.4.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>scriptsize</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.6.5.2">3.6.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>scriptsizemultiplier</dt>
@@ -3916,16 +3592,14 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mstyle.attrs">3.3.4.2</a>,
                   <a href="chapter3.xml#id.3.6.5.1">3.6.5.1</a>,
                   <a href="chapter3.xml#id.3.6.5.2">3.6.5.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>selection</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.7.1.1">3.7.1.1</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>separator</dt>
@@ -3934,16 +3608,14 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.2.5.1">3.2.5.1</a>,
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>,
                   <a href="chapter3.xml#id.3.2.5.4">3.2.5.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>separators</dt>
                
                <dd>
                   <a href="chapter3.xml#id.3.3.8.2">3.3.8.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>shift</dt>
@@ -3956,8 +3628,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.6.5.2">3.6.5.2</a>,
                   <a href="chapter3.xml#id.3.6.7.2">3.6.7.2</a>,
                   <a href="chapter3.xml#presm.mult">3.6.8.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>side</dt>
@@ -3966,8 +3637,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>,
                   <a href="chapter3.xml#id.3.5.3.1">3.5.3.1</a>,
                   <a href="chapter3.xml#id.3.5.3.3">3.5.3.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>src</dt>
@@ -3985,8 +3655,7 @@ padding-right: 1em;
                   <a href="chapter6.xml#world-int-transf-discuss">6.3.3</a>,
                   <a href="appendixf.xml#changes.mathml3.03e-mathml3.02e">F.1</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>stackalign</dt>
@@ -3998,8 +3667,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.6.4.2">3.6.4.2</a>,
                   <a href="chapter3.xml#id.3.6.5.2">3.6.5.2</a>,
                   <a href="chapter3.xml#id.3.6.7.2">3.6.7.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>stretchy</dt>
@@ -4009,16 +3677,14 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.op.stretch">3.2.5.8</a>,
                   <a href="chapter3.xml#id.3.3.4.1">3.3.4.1</a>,
                   <a href="appendixc.xml#oper-dict.format">C.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>style</dt>
                
                <dd>
                   <a href="chapter2.xml#fund.globatt">2.1.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>subscriptshift</dt>
@@ -4026,8 +3692,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter3.xml#id.3.4.1.2">3.4.1.2</a>,
                   <a href="chapter3.xml#presm.subsupatt">3.4.3.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>superscriptshift</dt>
@@ -4035,8 +3700,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter3.xml#id.3.4.2.2">3.4.2.2</a>,
                   <a href="chapter3.xml#presm.subsupatt">3.4.3.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>symmetric</dt>
@@ -4045,24 +3709,21 @@ padding-right: 1em;
                   <a href="chapter3.xml#presm.mo.attrs">3.2.5.2</a>,
                   <a href="chapter3.xml#presm.op.stretch">3.2.5.8</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>thickmathspace</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mstyle.attrs">3.3.4.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>thinmathspace</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mstyle.attrs">3.3.4.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>type</dt>
@@ -4093,48 +3754,42 @@ padding-right: 1em;
                   <a href="chapter4.xml#contm.declare">4.5.1</a>,
                   <a href="chapter4.xml#contm.p2s">4.6</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>valign</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mglyph">3.2.1.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>verythickmathspace</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mstyle.attrs">3.3.4.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>verythinmathspace</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mstyle.attrs">3.3.4.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>veryverythickmathspace</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mstyle.attrs">3.3.4.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>veryverythinmathspace</dt>
                
                <dd>
                   <a href="chapter3.xml#presm.mstyle.attrs">3.3.4.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>voffset</dt>
@@ -4143,8 +3798,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.3.4.1">3.3.4.1</a>,
                   <a href="chapter3.xml#presm.mpaddedatt">3.3.6.2</a>,
                   <a href="chapter3.xml#id.3.3.6.3">3.3.6.3</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>width</dt>
@@ -4159,8 +3813,7 @@ padding-right: 1em;
                   <a href="chapter3.xml#id.3.5.1.1">3.5.1.1</a>,
                   <a href="chapter3.xml#presm.mtable.attrs">3.5.1.2</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>xlink:href</dt>
@@ -4168,24 +3821,21 @@ padding-right: 1em;
                <dd>
                   <a href="chapter2.xml#fund.globatt">2.1.6</a>,
                   <a href="chapter6.xml#interf.link">6.4.4</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>xml:lang</dt>
                
                <dd>
                   <a href="chapter2.xml#fund.globatt">2.1.6</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>xml:space</dt>
                
                <dd>
                   <a href="chapter2.xml#fund.collapse">2.1.7</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>xmlns</dt>
@@ -4193,8 +3843,7 @@ padding-right: 1em;
                <dd>
                   <a href="chapter2.xml#interf.namespace">2.1.2</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>xref</dt>
@@ -4203,20 +3852,16 @@ padding-right: 1em;
                   <a href="chapter2.xml#fund.globatt">2.1.6</a>,
                   <a href="chapter4.xml#contm.bvar">4.2.6.2</a>,
                   <a href="chapter5.xml#mixing.cr">5.4.2</a>
-                  
-               </dd>
+                  </dd>
                
                
                <dt>xsi:schemaLocation</dt>
                
                <dd>
                   <a href="appendixa.xml#parsing.schemalocation">A.4.1</a>
-                  
-               </dd>
-               
-            </dl>
-            
-         </div>
+                  </dd>
+               </dl>
+            </div>
       </div>
       <div class="minitoc">
          
