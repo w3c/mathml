@@ -174,7 +174,7 @@ padding-right: 1em;
       
       <nav id="toc">
          <ol class="toc">
-            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 4.0</a></li>
             <li><a href="chapter2.xml"><span class="secno">2 </span> MathML Fundamentals</a></li>
             <li><a href="chapter4.xml"><span class="secno">4 </span> Content Markup</a></li>
             
@@ -11295,7 +11295,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
       </div>
       <div class="minitoc">
          
-         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br class="html-compat" />
+         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 4.0</a><br class="html-compat" />
          Previous:     2 <a href="chapter2.xml">MathML Fundamentals</a><br class="html-compat" />
          Next:     4 <a href="chapter4.xml">Content Markup</a></div>
    </body>

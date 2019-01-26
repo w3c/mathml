@@ -174,7 +174,7 @@ padding-right: 1em;
       
       <nav id="toc">
          <ol class="toc">
-            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 4.0</a></li>
             <li><a href="appendixg.xml"><span class="secno">G </span> Normative References</a></li>
             <li><a href="appendixi.xml"><span class="secno">I </span> Index</a></li>
             
@@ -344,7 +344,7 @@ padding-right: 1em;
       </div>
       <div class="minitoc">
          
-         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br class="html-compat" />
+         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 4.0</a><br class="html-compat" />
          Previous:     G <a href="appendixg.xml">Normative References</a><br class="html-compat" />
          Next:     I <a href="appendixi.xml">Index</a></div>
    </body>

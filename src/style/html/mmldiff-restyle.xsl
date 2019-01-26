@@ -612,11 +612,11 @@ use=".//intref/@ref"/>
 use=".//bibref/@ref"/>
 
 -->
-<xsl:key name="changes" match="id('changes_mathml3.03e-mathml3.02e')/ulist/item/ulist/item[.//specref]"
+<xsl:key name="changes" match="id('changes_mathml4.0-mathml3.02e')/ulist/item/ulist/item[.//specref]"
 use=".//specref/@ref"/>
-<xsl:key name="changes" match="id('changes_mathml3.03e-mathml3.02e')/ulist/item/ulist/item[.//intref]"
+<xsl:key name="changes" match="id('changes_mathml4.0-mathml3.02e')/ulist/item/ulist/item[.//intref]"
 use=".//intref/@ref"/>
-<xsl:key name="changes" match="id('changes_mathml3.03e-mathml3.02e')/ulist/item/ulist/item[.//bibref]"
+<xsl:key name="changes" match="id('changes_mathml4.0-mathml3.02e')/ulist/item/ulist/item[.//bibref]"
 use=".//bibref/@ref"/>
 
 <xsl:template name="diff-back-link">
@@ -653,7 +653,7 @@ use=".//bibref/@ref"/>
 <xsl:template match="id('changes_mathml2.0-2.02e')/ulist/item/ulist/item">
 <xsl:template match="id('changes_mathml3.02e-3.0')/ulist/item/ulist/item">
 -->
-<xsl:template match="id('changes_mathml3.03e-mathml3.02e')/ulist/item/ulist/item">
+<xsl:template match="id('changes_mathml4.0-mathml3.02e')/ulist/item/ulist/item">
     <li id="{(@id/translate(.,'_','.'),generate-id())[1]}">
       <xsl:apply-templates/>
     </li>

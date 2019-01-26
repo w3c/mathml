@@ -174,7 +174,7 @@ padding-right: 1em;
       
       <nav id="toc">
          <ol class="toc">
-            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 4.0</a></li>
             <li><a href="appendixh.xml"><span class="secno">H </span> References</a></li>
             
             <li><a href="appendixi.xml"><span class="secno">I </span> Index (Non-Normative)</a>
@@ -1431,7 +1431,7 @@ padding-right: 1em;
                   <a href="chapter7.xml#chars.hyph-minus">7.7.1.1</a>,
                   <a href="appendixc.xml#oper-dict.index">C.1</a>,
                   <a href="appendixc.xml#oper-dict.format">C.2</a>,
-                  <a href="appendixf.xml#changes.mathml3.03e-mathml3.02e">F.1</a>,
+                  <a href="appendixf.xml#changes.mathml4.0-mathml3.02e">F.1</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
                   </dd>
                
@@ -2963,7 +2963,7 @@ padding-right: 1em;
                   <a href="chapter2.xml#fund.globatt">2.1.6</a>,
                   <a href="chapter5.xml#mixing.cr">5.4.2</a>,
                   <a href="chapter6.xml#interf.link">6.4.4</a>,
-                  <a href="appendixf.xml#changes.mathml3.03e-mathml3.02e">F.1</a>,
+                  <a href="appendixf.xml#changes.mathml4.0-mathml3.02e">F.1</a>,
                   <a href="appendixf.xml#changes.mathml2.0e-3.0">F.3</a>
                   </dd>
                
@@ -3653,7 +3653,7 @@ padding-right: 1em;
                   <a href="chapter5.xml#id.5.2.3.2">5.2.3.2</a>,
                   <a href="chapter6.xml#world-int-transf-recommend">6.3.2</a>,
                   <a href="chapter6.xml#world-int-transf-discuss">6.3.3</a>,
-                  <a href="appendixf.xml#changes.mathml3.03e-mathml3.02e">F.1</a>,
+                  <a href="appendixf.xml#changes.mathml4.0-mathml3.02e">F.1</a>,
                   <a href="appendixf.xml#changes.mathml3.02e-3.0">F.2</a>
                   </dd>
                
@@ -3865,7 +3865,7 @@ padding-right: 1em;
       </div>
       <div class="minitoc">
          
-         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br class="html-compat" />
+         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 4.0</a><br class="html-compat" />
          Previous:     H <a href="appendixh.xml">References</a><br class="html-compat" /></div>
    </body>
 </html>

@@ -174,7 +174,7 @@ padding-right: 1em;
       
       <nav id="toc">
          <ol class="toc">
-            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 4.0</a></li>
             <li><a href="appendixf.xml"><span class="secno">F </span> Changes</a></li>
             <li><a href="appendixh.xml"><span class="secno">H </span> References</a></li>
             
@@ -320,7 +320,7 @@ padding-right: 1em;
       </div>
       <div class="minitoc">
          
-         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br class="html-compat" />
+         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 4.0</a><br class="html-compat" />
          Previous:     F <a href="appendixf.xml">Changes</a><br class="html-compat" />
          Next:     H <a href="appendixh.xml">References</a></div>
    </body>

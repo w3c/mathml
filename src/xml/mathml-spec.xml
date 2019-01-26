@@ -9,11 +9,11 @@
 <!ENTITY date.monthnum "01"> 
 <!ENTITY date.year     "2019"> 
 <!ENTITY doc.date      "&date.year;&date.monthnum;&date.day;"> 
-<!ENTITY doc.prefix    "WD-MathML3-">
+<!ENTITY doc.prefix    "WD-MathML4-">
 <!ENTITY doc.type      "Working Draft">
 <!ENTITY tr.url        "https://www.w3.org/TR">
 <!ENTITY this.url      "&tr.url;/&date.year;/&doc.prefix;&doc.date;/"> 
-<!ENTITY latest.url    "&tr.url;/MathML3/">
+<!ENTITY latest.url    "&tr.url;/MathML4/">
 <!ENTITY editors.url   "https://w3c.github.io/mathml/">
 <!ENTITY latest.loc    "<loc href='&latest.url;'>&latest.url;</loc>">
 
@@ -44,7 +44,7 @@
 <spec w3c-doctype="wd"  role="editors-copy">
 <!--<spec w3c-doctype="rec">-->
 <header>
-<title>Mathematical Markup Language (MathML) Version 3.0 3rd Edition</title>
+<title>Mathematical Markup Language (MathML) Version 4.0</title>
 <w3c-designation>&doc.prefix;&doc.date;</w3c-designation>
 <w3c-doctype>W3C &doc.type;</w3c-doctype>
 <pubdate><day>&date.day;</day> <month>&date.month;</month> <year>&date.year;</year>

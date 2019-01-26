@@ -174,7 +174,7 @@ padding-right: 1em;
       
       <nav id="toc">
          <ol class="toc">
-            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a></li>
+            <li><a href="Overview.xml"><span class="secno"></span> Mathematical Markup Language (MathML) Version 4.0</a></li>
             <li><a href="chapter1.xml"><span class="secno">1 </span> Introduction</a></li>
             <li><a href="chapter3.xml"><span class="secno">3 </span> Presentation Markup</a></li>
             
@@ -1704,7 +1704,7 @@ http://www.w3.org/1998/Math/MathML
       </div>
       <div class="minitoc">
          
-         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 3.0 3rd Edition</a><br class="html-compat" />
+         Overview: <a href="Overview.xml">Mathematical Markup Language (MathML) Version 4.0</a><br class="html-compat" />
          Previous:     1 <a href="chapter1.xml">Introduction</a><br class="html-compat" />
          Next:     3 <a href="chapter3.xml">Presentation Markup</a></div>
    </body>
