@@ -1,4 +1,9 @@
 
+branches:
+  only:
+  - master
+  - gh-pages
+
 notifications:
   email:
     recipients:
