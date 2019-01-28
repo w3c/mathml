@@ -23,6 +23,7 @@ cd $BUILD
 
 echo texlive
 
+export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 
 if [ ! -f /tmp/texlive/bin/x86_64-linux/pdflatex ]; then
   # Obtain TeX Live
