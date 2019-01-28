@@ -198,6 +198,8 @@ export SOURCE_DATE_EPOCH_TEX_PRIMITIVES=1 # old version
 
 # use nested if rather than while to limit looping
 echo generate mathml.pdf
+pdflatex mathml.tex
+
 pdflatex \\batchmode \\input mathml.tex
 if (grep -i rerun mathml.log)
   then
