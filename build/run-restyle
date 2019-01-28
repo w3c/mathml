@@ -28,8 +28,8 @@ fi
 SAXON="java -jar saxon9he.jar "
 
 echo validate sources
-# rxp -sxV $DRAFT/$SOURCE/mathml-spec.xml
-# xmllint --valid --noout $DRAFT/$SOURCE/mathml-spec.xml
+rxp -sxV $DRAFT/$SOURCE/mathml-spec.xml
+
 
 # echo "updating schema"
 # (cd $DRAFT; cd $RELAXNG ; pwd; cvs -q update )
@@ -155,6 +155,7 @@ mv tmp.dtd mathml.dtd
 echo ""
 echo PDF
 echo generate TeX files
+export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 
 cd $DRAFT
 
