@@ -9,6 +9,9 @@ notifications:
     recipients:
       - d.p.carlisle@gmail.com
       
+before_install:
+  - sudo apt-get install -y rxp
+
 install:
  - ./build/install-tools
 
