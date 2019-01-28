@@ -44,5 +44,5 @@ tlmgr option -- autobackup 0
 
 cd ..
 fi
-tlmgr install collection-fontsrecommended ntgclass
+
 
