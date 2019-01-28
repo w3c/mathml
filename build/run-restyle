@@ -15,9 +15,9 @@ PSTYLE=src/style/pdf
 
 RELAXNG=RelaxNG/mathml3
 
-if [ ! -f saxon9he.jar ]; then
+if [ ! -f ../saxon9he.jar ]; then
     if [ -f /tmp/jars/saxon9he.jar ]; then
-	cp /tmp/jars/saxon9he.jar .
+	cp /tmp/jars/saxon9he.jar ..
     else
 	echo install saxon9he.jar eg run build/install-tools
     fi
