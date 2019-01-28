@@ -222,6 +222,7 @@ All parameters can be overridden by the user.
 \showboxdepth10
 \showboxdepth10
 
+\def\protected@file@percent{}
 
    \def\ps@headings{%
       \let\@oddfoot\@empty\let\@evenfoot\@empty
