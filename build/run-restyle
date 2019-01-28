@@ -229,11 +229,11 @@ fi
 
 
 echo grep latex warnings
-grep "^\!" mathml.log
-grep -i warning mathml.log | grep -v bookmarks | grep -v "Font Warning"
-grep -i rerun mathml.log
-grep -i " error" mathml.log
-grep Overfull mathml.log | sed -e "s/(\([0-9]\\.\)/(0\\1/"| sort -n
+grep "^\!" mathml.log || true
+(grep -i warning mathml.log | grep -v bookmarks | grep -v "Font Warning" ) || true
+grep -i rerun mathml.log || true
+grep -i " error" mathml.log || true
+(grep Overfull mathml.log | sed -e "s/(\([0-9]\\.\)/(0\\1/"| sort -n ) || true
 
 
 
