@@ -37,12 +37,12 @@ if [ ! -f /tmp/texlive/bin/x86_64-linux/pdflatex ]; then
   # Install a minimal system
   ./install-tl --profile=../texlive.profile
 
-tlmgr install collection-fontsrecommended
+tlmgr install collection-fontsrecommended ntgclass
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
 
 cd ..
 fi
-
+tlmgr install collection-fontsrecommended ntgclass
 
