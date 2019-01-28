@@ -31,7 +31,7 @@ if [ ! -f /tmp/texlive/bin/x86_64-linux/pdflatex ]; then
   cd install-tl-20*
 
   # Install a minimal system
-  ./install-tl --profile=texlive.profile
+  ./install-tl --profile=../texlive.profile
 
 tlmgr install collection-fontsrecommended
 
