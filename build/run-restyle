@@ -201,11 +201,10 @@ echo generate mathml.pdf
 
 # debugging on travis:
 echo one
-pdflatex mathml.tex
+# pdflatex mathml.tex
 echo two
-pdflatex mathml.tex
-echo three
-pdflatex mathml.tex
+# pdflatex mathml.tex
+
 
 pdflatex \\batchmode \\input mathml.tex
 if (grep -i rerun mathml.log)
@@ -251,6 +250,8 @@ echo running generated images script
 bash images.sh
 cp images.tex build/images.old
 fi
+
+git clean -f
 
 exit
 

@@ -4,7 +4,7 @@
 
 <!-- entities for front-matter -->
 <!ENTITY pub.mail      "www-math@w3.org"> 
-<!ENTITY date.day      "26">
+<!ENTITY date.day      "29">
 <!ENTITY date.month    "January"> 
 <!ENTITY date.monthnum "01"> 
 <!ENTITY date.year     "2019"> 
