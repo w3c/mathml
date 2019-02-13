@@ -63,7 +63,7 @@ current-group()/distinct-values((
 </xsl:template>
 
 <xsl:template name="content-preliminaries">
-#     This is the Mathematical Markup Language (MathML) 3.0, an XML
+#     This is the Mathematical Markup Language (MathML) 4.0, an XML
 #     application for describing mathematical notation and capturing
 #     both its structure and content.
 #
@@ -498,7 +498,7 @@ math.attributes &amp;= mstyle.generalattributes
 </xsl:template>
 
 <xsl:template name="presentation-preliminaries">
-#     This is the Mathematical Markup Language (MathML) 3.0, an XML
+#     This is the Mathematical Markup Language (MathML) 4.0, an XML
 #     application for describing mathematical notation and capturing
 #     both its structure and content.
 #
