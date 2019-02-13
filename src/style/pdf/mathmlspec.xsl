@@ -59,7 +59,7 @@ All parameters can be overridden by the user.
 -->
 
 <xsl:param name="status" select="/spec/@w3c-doctype"/>
-<xsl:param name="copyright">1998--2014</xsl:param>
+<xsl:param name="copyright">1998--2019</xsl:param>
 
 <!-- Main output document -->
 <xsl:template match="/">
@@ -478,7 +478,10 @@ All parameters can be overridden by the user.
 <xsl:template match="edlocs">
   <xsl:text>&#xA;£item[Editors' version</xsl:text><xsl:if 
    test="count(loc) > 1">s</xsl:if><xsl:text>:]£mbox{}</xsl:text>
-  <xsl:apply-templates/>
+      <xsl:for-each select="loc">
+        <xsl:if test="position() &gt; 1">, </xsl:if>
+	<xsl:apply-templates select="."/>
+      </xsl:for-each>
 </xsl:template>
 
   <xsl:template match="errataloc">

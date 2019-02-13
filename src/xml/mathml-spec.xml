@@ -15,6 +15,7 @@
 <!ENTITY this.url      "&tr.url;/&date.year;/&doc.prefix;&doc.date;/"> 
 <!ENTITY latest.url    "&tr.url;/MathML4/">
 <!ENTITY editors.url   "https://w3c.github.io/mathml/">
+<!ENTITY editors2.url   "https://mathml-refresh.github.io/mathml/">
 <!ENTITY latest.loc    "<loc href='&latest.url;'>&latest.url;</loc>">
 
 
@@ -77,6 +78,7 @@
 </prevlocs>
 <edlocs>
 <loc href="&editors.url;">&editors.url;</loc>
+<loc href="&editors2.url;">&editors2.url;</loc>
 </edlocs>
 <!--
 <authlist>
