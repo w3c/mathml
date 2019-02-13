@@ -4,9 +4,9 @@
 
 <!-- entities for front-matter -->
 <!ENTITY pub.mail      "www-math@w3.org"> 
-<!ENTITY date.day      "29">
-<!ENTITY date.month    "January"> 
-<!ENTITY date.monthnum "01"> 
+<!ENTITY date.day      "13">
+<!ENTITY date.month    "February"> 
+<!ENTITY date.monthnum "02"> 
 <!ENTITY date.year     "2019"> 
 <!ENTITY doc.date      "&date.year;&date.monthnum;&date.day;"> 
 <!ENTITY doc.prefix    "WD-MathML4-">
@@ -56,7 +56,6 @@
 
 <altlocs>
 <loc href="Overview-d.html">diff marked HTML version</loc>
- <loc href="Overview.xml">XHTML+MathML version</loc>
  <loc href="mathml.html">single page HTML5+MathML version</loc>
  <loc href="mathml.pdf">PDF version</loc>
 <!--

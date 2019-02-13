@@ -150,6 +150,9 @@ sed -i -e "s@></input></mtext>@/></mtext>@" mathml.html
 rm html5-restyle.xsl
 mv tmp.dtd mathml.dtd
 
+echo "remove xhtml versions"
+rm Overview.xml appendix*.xml chapter*.xml
+
 # exit
 
 echo ""
