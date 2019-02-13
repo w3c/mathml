@@ -67,11 +67,11 @@ copied -->
 <xsl:param name="css.base.uri" select="'https://www.w3.org/StyleSheets/TR/'"/>
 
 <xsl:variable name="relax-schema">
-<xsl:for-each select="('mathml3','mathml3-common','mathml3-presentation','mathml3-strict-content','mathml3-content')">
+<xsl:for-each select="('mathml4','mathml4-common','mathml4-presentation','mathml4-strict-content','mathml4-content')">
 <div3 id="parsing_{.}">
 <head><xsl:value-of select="."/></head>
 <eg>
-<xsl:for-each select="tokenize(unparsed-text(concat('../../../RelaxNG/mathml3/',.,'.rnc','-diff'[$show.diff.markup='1'])),'&#13;?&#10;')
+<xsl:for-each select="tokenize(unparsed-text(concat('../../../RelaxNG/mathml4/',.,'.rnc','-diff'[$show.diff.markup='1'])),'&#13;?&#10;')
 [$show.diff.markup='0' or position()&gt;5][not(starts-with(.,'diff --ifdef'))]">
 <xsl:analyze-string select="." regex="(^ *#(ednote\((.*?)\))?(.*)$|pattern =.*$|(element|attribute) *([\*\\a-zA-Z_\-]+|\([^\)]*\))|(([_A-Za-z.0-9\-:/]+)([/\\()=right]*&quot;| *=)?))">
 <xsl:matching-substring>
@@ -186,47 +186,47 @@ copied -->
 
 <xsl:template match="div3[@id='parsing_rnc_pres']/eg" priority="111">
 <pre>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-presentation']/eg/(node() except issue)"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-presentation']/eg/(node() except issue)"/>
 </pre>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-presentation']/eg/issue"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-presentation']/eg/issue"/>
 </xsl:template>
 
 <!--
 <xsl:template match="div3[@id='parsing_rnc_deprecated']/eg" priority="111">
 <pre>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-deprecated']/eg/(node() except issue)"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-deprecated']/eg/(node() except issue)"/>
 </pre>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-deprecated']/eg/issue"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-deprecated']/eg/issue"/>
 </xsl:template>
 -->
 
 <xsl:template match="div3[@id='parsing_rnc_full']/eg" priority="111">
 <pre>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3']/eg/(node() except issue)"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4']/eg/(node() except issue)"/>
 </pre>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3']/eg/issue"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4']/eg/issue"/>
 </xsl:template>
 
 
 <xsl:template match="div3[@id='parsing_rnc_common']/eg" priority="111">
 <pre>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-common']/eg/(node() except issue)"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-common']/eg/(node() except issue)"/>
 </pre>
 </xsl:template>
 
 <xsl:template match="div3[@id='parsing_rnc_strict']/eg" priority="111">
 <pre>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-strict-content']/eg/(node() except issue)"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-strict-content']/eg/(node() except issue)"/>
 </pre>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-strict-content']/eg/issue"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-strict-content']/eg/issue"/>
 </xsl:template>
 
 
 <xsl:template match="div3[@id='parsing_rnc_content']/eg[1]" priority="111">
 <pre>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-content']/eg/(node() except issue)"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-content']/eg/(node() except issue)"/>
 </pre>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-content']/eg/issue"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-content']/eg/issue"/>
 </xsl:template>
 
 

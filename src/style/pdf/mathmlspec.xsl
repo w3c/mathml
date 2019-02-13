@@ -2789,11 +2789,11 @@ module mathml_dom
 </xsl:template>
 
 <xsl:variable name="relax-schema">
-<xsl:for-each select="('mathml3','mathml3-common','mathml3-presentation','mathml3-strict-content','mathml3-content')">
+<xsl:for-each select="('mathml4','mathml4-common','mathml4-presentation','mathml4-strict-content','mathml4-content')">
 <div3 id="parsing_{.}">
 <head><xsl:value-of select="."/></head>
 <eg>
-<xsl:for-each select="tokenize(unparsed-text(concat('../../../RelaxNG/mathml3/',.,'.rnc')),'&#13;?&#10;')">
+<xsl:for-each select="tokenize(unparsed-text(concat('../../../RelaxNG/mathml4/',.,'.rnc')),'&#13;?&#10;')">
 <xsl:analyze-string select="." regex="(^ *#(ednote\((.*?)\))?(.*)$|pattern =.*$|(element|attribute) *([a-zA-Z_]+|\([^\)]*\))|(([_A-Za-z.0-9\-:/]+)([/\\()=right]*&quot;| *=)?))">
 <xsl:matching-substring>
   <xsl:choose>
@@ -2848,57 +2848,57 @@ module mathml_dom
 
 <xsl:template match="div3[@id='parsing_rnc_pres']/eg" priority="111">
   <xsl:text>&#10;£begin{verbatim}&#10;</xsl:text>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-presentation']/eg/(node() except issue)"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-presentation']/eg/(node() except issue)"/>
   <xsl:text>&#10;\end{verbatim}&#10;</xsl:text>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-presentation']/eg/x-issue"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-presentation']/eg/x-issue"/>
 </xsl:template>
 
 <!--
 <xsl:template match="div3[@id='parsing_rnc_deprecated']/eg" priority="111">
   <xsl:text>&#10;£begin{verbatim}&#10;</xsl:text>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-deprecated']/eg/(node() except issue)"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-deprecated']/eg/(node() except issue)"/>
   <xsl:text>&#10;\end{verbatim}&#10;</xsl:text>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-deprecated']/eg/x-issue"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-deprecated']/eg/x-issue"/>
 </xsl:template>
 -->
 
 <xsl:template match="div3[@id='parsing_rnc_full']/eg" priority="111">
   <xsl:text>&#10;£begin{verbatim}&#10;</xsl:text>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3']/eg/(node() except issue)"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4']/eg/(node() except issue)"/>
   <xsl:text>&#10;\end{verbatim}&#10;</xsl:text>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3']/eg/x-issue"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4']/eg/x-issue"/>
 </xsl:template>
 
 <xsl:template match="div3[@id='parsing_rnc_strict']/eg" priority="111">
   <xsl:text>&#10;£begin{verbatim}&#10;</xsl:text>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-strict-content']/eg/(node() except issue)"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-strict-content']/eg/(node() except issue)"/>
   <xsl:text>&#10;\end{verbatim}&#10;</xsl:text>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-strict-content']/eg/x-issue"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-strict-content']/eg/x-issue"/>
 </xsl:template>
 
 
 <xsl:template match="div3[@id='parsing_rnc_content']/eg[1]" priority="111">
   <xsl:text>&#10;£begin{verbatim}&#10;</xsl:text>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-content']/eg/(node() except issue)"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-content']/eg/(node() except issue)"/>
   <xsl:text>&#10;\end{verbatim}&#10;</xsl:text>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-content']/eg/x-issue"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-content']/eg/x-issue"/>
 </xsl:template>
 
 <!--
 <xsl:template match="div3[@id='parsing_rnc_pragmatic']/eg[2]" priority="111">
   <xsl:text>&#10;£begin{verbatim}&#10;</xsl:text>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-cds-pragmatic']/eg/(node() except issue)"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-cds-pragmatic']/eg/(node() except issue)"/>
   <xsl:text>&#10;\end{verbatim}&#10;</xsl:text>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-cds-pragmatic']/eg/x-issue"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-cds-pragmatic']/eg/x-issue"/>
 </xsl:template>
 -->
 
 
 <xsl:template match="div3[@id='parsing_rnc_common']/eg" priority="111">
   <xsl:text>&#10;£begin{verbatim}&#10;</xsl:text>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-common']/eg/(node() except issue)"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-common']/eg/(node() except issue)"/>
   <xsl:text>&#10;\end{verbatim}&#10;</xsl:text>
-<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml3-common']/eg/x-issue"/>
+<xsl:apply-templates select="$relax-schema/div3[@id='parsing_mathml4-common']/eg/x-issue"/>
 </xsl:template>
 
 <xsl:template match="p/text()">

@@ -442,7 +442,7 @@ resolve or do not understand should ignore the external references.
 <]]><![CDATA[math xmlns]]><![CDATA[="http://www.w3.org/1998/Math/MathML"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation=
-             "http://www.w3.org/Math/XMLSchema/mathml3/mathml3.xsd">
+             "http://www.w3.org/Math/XMLSchema/mathml4/mathml4.xsd">
   <]]><![CDATA[mrow>
   ...
   <]]><![CDATA[mrow>
@@ -454,7 +454,7 @@ resolve or do not understand should ignore the external references.
 <]]><![CDATA[math xmlns]]><![CDATA[="http://www.w3.org/1998/Math/MathML"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation=
-             "http://www.w3.org/Math/XMLSchema/mathml3/mathml3.xsd">
+             "http://www.w3.org/Math/XMLSchema/mathml4/mathml4.xsd">
   <]]><![CDATA[apply>
   ...
   <]]><![CDATA[apply>
@@ -466,7 +466,7 @@ resolve or do not understand should ignore the external references.
 <]]><![CDATA[math xmlns]]><![CDATA[="http://www.w3.org/1998/Math/MathML"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation=
-             "http://www.w3.org/Math/XMLSchema/mathml3/mathml3.xsd">
+             "http://www.w3.org/Math/XMLSchema/mathml4/mathml4.xsd">
   <]]><![CDATA[mrow>
     <]]><![CDATA[apply>
        ... content markup within presentation markup ...
@@ -484,7 +484,7 @@ resolve or do not understand should ignore the external references.
   <td><eg role="mathml-fragment"><![CDATA[<]]><![CDATA[math xmlns]]><![CDATA[="http://www.w3.org/1998/Math/MathML"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation=
-             "http://www.w3.org/Math/XMLSchema/mathml3/mathml3.xsd">
+             "http://www.w3.org/Math/XMLSchema/mathml4/mathml4.xsd">
   <]]><![CDATA[mrow>
   ...
   <]]><![CDATA[mrow>
@@ -523,7 +523,7 @@ resolve or do not understand should ignore the external references.
 <]]><![CDATA[math xmlns]]><![CDATA[="http://www.w3.org/1998/Math/MathML"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation=
-             "http://www.w3.org/Math/XMLSchema/mathml3/mathml3.xsd">
+             "http://www.w3.org/Math/XMLSchema/mathml4/mathml4.xsd">
   <]]><![CDATA[mrow>
   ...
   <]]><![CDATA[mrow>
@@ -535,7 +535,7 @@ resolve or do not understand should ignore the external references.
 <]]><![CDATA[math xmlns]]><![CDATA[="http://www.w3.org/1998/Math/MathML"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation=
-             "http://www.w3.org/Math/XMLSchema/mathml3/mathml3.xsd">
+             "http://www.w3.org/Math/XMLSchema/mathml4/mathml4.xsd">
   <]]><![CDATA[apply>
   ...
   <]]><![CDATA[apply>
@@ -547,7 +547,7 @@ resolve or do not understand should ignore the external references.
 <]]><![CDATA[math xmlns]]><![CDATA[="http://www.w3.org/1998/Math/MathML"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation=
-             "http://www.w3.org/Math/XMLSchema/mathml3/mathml3.xsd">
+             "http://www.w3.org/Math/XMLSchema/mathml4/mathml4.xsd">
   <]]><![CDATA[mrow>
     <]]><![CDATA[apply>
        ... content markup within presentation markup ...
@@ -568,7 +568,7 @@ resolve or do not understand should ignore the external references.
   <td><eg role="mathml-fragment"><![CDATA[<]]><![CDATA[math xmlns]]><![CDATA[="http://www.w3.org/1998/Math/MathML"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation=
-             "http://www.w3.org/Math/XMLSchema/mathml3/mathml3.xsd">
+             "http://www.w3.org/Math/XMLSchema/mathml4/mathml4.xsd">
   <]]><![CDATA[mrow>
   ...
   <]]><![CDATA[mrow>
@@ -648,7 +648,7 @@ encounter unknown markup should behave as follows:
 
 default namespace m = "http://www.w3.org/1998/Math/MathML"
 
-include "mathml3.rnc" {
+include "mathml4.rnc" {
 mtext = element mtext {mtext.attributes, (token.content|anyElement)*}
 }
 </eg>

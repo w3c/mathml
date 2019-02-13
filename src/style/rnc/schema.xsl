@@ -67,13 +67,13 @@ current-group()/distinct-values((
 #     application for describing mathematical notation and capturing
 #     both its structure and content.
 #
-#     Copyright 1998-2014 W3C (MIT, ERCIM, Keio, Beihang)
+#     Copyright 1998-2019 W3C (MIT, ERCIM, Keio, Beihang)
 # 
 #     Use and distribution of this code are permitted under the terms
 #     W3C Software Notice and License
 #     http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
 
-include "mathml3-strict-content.rnc"{
+include "mathml4-strict-content.rnc"{
   cn.content = (text | mglyph | sep | PresentationExpression)* 
   cn.attributes = CommonAtt, DefEncAtt, attribute type {text}?, base?
 
@@ -502,7 +502,7 @@ math.attributes &amp;= mstyle.generalattributes
 #     application for describing mathematical notation and capturing
 #     both its structure and content.
 #
-#     Copyright 1998-2014 W3C (MIT, ERCIM, Keio, Beihang)
+#     Copyright 1998-2019 W3C (MIT, ERCIM, Keio, Beihang)
 # 
 #     Use and distribution of this code are permitted under the terms
 #     W3C Software Notice and License

@@ -386,12 +386,12 @@ spn[i].appendChild(document.createTextNode(spn[i].getAttribute(att)));
 <!--
 <xsl:template match="m:mlongdiv|m:mstack" xmlns:m="http://www.w3.org/1998/Math/MathML" priority="5">
  <xsl:element name="mi" namespace="http://www.w3.org/1998/Math/MathML">
-  <xsl:value-of select="'mathml3',local-name()"/>
+  <xsl:value-of select="'mathml4',local-name()"/>
  </xsl:element>
 </xsl:template>
 <xsl:template match="m:bind|m:share|m:cs|m:cerror" xmlns:m="http://www.w3.org/1998/Math/MathML" priority="5">
  <xsl:element name="ci"  namespace="http://www.w3.org/1998/Math/MathML">
-  <xsl:value-of select="'mathml3',local-name()"/>
+  <xsl:value-of select="'mathml4',local-name()"/>
  </xsl:element>
 </xsl:template>
 <xsl:template match="m:ci[@other:att]" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:other="http://example.com" priority="5">

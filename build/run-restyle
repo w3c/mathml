@@ -13,7 +13,7 @@ HSTYLE=src/style/html
 PSTYLE=src/style/pdf
 #W3CMATH=../..
 
-RELAXNG=RelaxNG/mathml3
+RELAXNG=RelaxNG/mathml4
 
 if [ ! -f ../saxon9he.jar ]; then
     if [ -f /tmp/jars/saxon9he.jar ]; then
@@ -49,16 +49,16 @@ echo clear old versions
 echo "generate schema"
 
 cd $RELAXNG
-for i in mathml3*rnc
+for i in mathml4*rnc
 do
-    cp $i ${i/.rnc/.new}
+    cp $i ${i/.rnc/.old}
 done
 
 cd $DRAFT
 
-$SAXON -o:$RELAXNG/mathml3-content.new src/xml/contm-new.xml src/style/rnc/schema.xsl
+$SAXON -o:$RELAXNG/mathml4-content.rnc src/xml/contm-new.xml src/style/rnc/schema.xsl
 
-$SAXON -o:$RELAXNG/mathml3-presentation.new src/xml/presentation-markup.xml src/style/rnc/schema.xsl
+$SAXON -o:$RELAXNG/mathml4-presentation.rnc src/xml/presentation-markup.xml src/style/rnc/schema.xsl
 
 cd $DRAFT
 
@@ -77,9 +77,9 @@ echo "making  diff-marked HTML version"
 # could set up git diff --ext-diff to use same
 # but seems easier to set up for general use to do it in two stages
 cd $RELAXNG
-for i in mathml3*rnc
+for i in mathml4*rnc
 do
-   diff --ifdef=diff $i ${i/.rnc/.new} > $i-diff
+   diff --ifdef=diff ${i/.rnc/.old} $i > $i-diff
 done
 #diff makes empty file rather than original if there are no diffs so:
 for i in `grep -L ifdef *diff`
