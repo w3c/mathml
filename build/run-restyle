@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+# debug travis set -e
 
 cd `dirname $0`
 
