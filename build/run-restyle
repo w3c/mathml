@@ -82,9 +82,9 @@ do
    diff --ifdef=diff ${i/.rnc/.old} $i > $i-diff
 done
 #diff makes empty file rather than original if there are no diffs so:
-for i in `grep -L ifdef *diff`
+for i in `grep -L ifdef *diff || true`
 do cp ${i/-diff/} $i;done
-cd $DRAFT
+cd $DRAFT 
 
 
 echo "getting rec version of unicode, for op dictionary diffs (cvs based)"
