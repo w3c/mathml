@@ -4,6 +4,7 @@ namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
 
 unicode =
   element unicode {
+    attribute unicode { text },
     (entitygroups?, mathvariants?, unicodeblocks?, mathclasses?, charlist)*
   }
 
@@ -15,10 +16,12 @@ character =
   element character {
     attlist.character,
     unicodedata?,
+    combref*,	       
+    noncombref*,	       
     afii?,
-    latex?,
-    varlatex?,
-    mathlatex?,
+    latex*,
+    varlatex*,
+    mathlatex*,
     Elsevier?,
     AMS?,
     APS?,
@@ -66,11 +69,12 @@ unicodedata = element unicodedata {
   attribute upper { text }?,
   attribute lower { text }?,
   attribute title { text }?,
-  attribute mathclass { text }?
+  attribute mathclass { text }?,
+  attribute alias { text }?
 }
-latex = element latex { text }
-varlatex = element varlatex { text }
-mathlatex = element mathlatex { text }
+latex = element latex { attribute set { text }?, text }
+varlatex = element varlatex { attribute set { text }?, text }
+mathlatex = element mathlatex { attribute set { text }?, text }
 
 font = element font {
   attribute name { text },
@@ -84,11 +88,16 @@ surrogate = element surrogate {
 }
 
 bmp = element bmp { attribute ref { xsd:IDREF }}
+combref = element combref { attribute style {"above"|"below"|"over"},
+			    attribute ref { xsd:IDREF }}
+noncombref = element noncombref { attribute style {"above"|"below"|"over"},
+				  attribute ref { xsd:IDREF }}
 
 entity =
   element entity {
   attribute id { text },
   attribute set { text },
+  attribute optional-semi { "yes" }?,
   desc?, comment?, xref?
   }
 
