@@ -2752,12 +2752,12 @@ padding-right: 1em;
                      </tbody>
                   </table>
                   
-                  <p>The <code>share</code> element has an <span class="diff-chg"><code>src</code><a href="appendixf-d.html#d7e34054"><sub class="diff-link">F</sub></a></span> attribute used to
+                  <p>The <code>share</code> element has an <span class="diff-chg"><code>src</code><a href="appendixf-d.html#d7e34056"><sub class="diff-link">F</sub></a></span> attribute used to
                      to reference a MathML expression tree. The value of the
-                     <span class="diff-chg"><code>src</code><a href="appendixf-d.html#d7e34054"><sub class="diff-link">F</sub></a></span> attribute is a URI specifying the <code>id</code>
+                     <span class="diff-chg"><code>src</code><a href="appendixf-d.html#d7e34056"><sub class="diff-link">F</sub></a></span> attribute is a URI specifying the <code>id</code>
                      attribute of the root node of the expression tree.  When building a  
                      MathML expression tree, the <code>share</code> element is equivalent to a copy of the MathML
-                     expression tree referenced by the <span class="diff-chg"><code>src</code><a href="appendixf-d.html#d7e34054"><sub class="diff-link">F</sub></a></span> attribute. Note that this copy is
+                     expression tree referenced by the <span class="diff-chg"><code>src</code><a href="appendixf-d.html#d7e34056"><sub class="diff-link">F</sub></a></span> attribute. Note that this copy is
                      <em>structurally equal</em>, but not identical to the element referenced. The
                      values of the <code>share</code> will often be relative URI references, in which case they
                      are resolved using the base URI of the document containing the <code>share</code> element.
@@ -2822,7 +2822,7 @@ padding-right: 1em;
 
 
 
-&lt;/apply&gt;</pre><a href="appendixf-d.html#d7e34054"><sub class="diff-link">F</sub></a></div>
+&lt;/apply&gt;</pre><a href="appendixf-d.html#d7e34056"><sub class="diff-link">F</sub></a></div>
                               
                            </td>
                         </tr>
@@ -2837,9 +2837,9 @@ padding-right: 1em;
                   <p>Say that an element <em>dominates</em> all its children and all
                      elements they dominate. Say also that a
                      <code>share</code> element dominates its target, i.e. the element that carries the
-                     <code>id</code> attribute pointed to by the <span class="diff-chg"><code>src</code><a href="appendixf-d.html#d7e34054"><sub class="diff-link">F</sub></a></span> attribute. For instance in the
+                     <code>id</code> attribute pointed to by the <span class="diff-chg"><code>src</code><a href="appendixf-d.html#d7e34056"><sub class="diff-link">F</sub></a></span> attribute. For instance in the
                      representation on the right above, the <code>apply</code> element with <code>id="t1"</code> and also the
-                     second <code>share</code> (with <span class="diff-chg"><code>src="t11"</code><a href="appendixf-d.html#d7e34054"><sub class="diff-link">F</sub></a></span>) both dominate the
+                     second <code>share</code> (with <span class="diff-chg"><code>src="t11"</code><a href="appendixf-d.html#d7e34056"><sub class="diff-link">F</sub></a></span>) both dominate the
                      <code>apply</code> element with <code>id="t11"</code>.
                   </p>
                   <p>The occurrences of the <code>share</code> element must obey the following global
@@ -2855,7 +2855,7 @@ padding-right: 1em;
     &lt;cn&gt;1&lt;/cn&gt;
     &lt;share src="#badid1"/&gt;
   &lt;/apply&gt;
-&lt;/apply&gt;</pre><a href="appendixf-d.html#d7e34054"><sub class="diff-link">F</sub></a></div>
+&lt;/apply&gt;</pre><a href="appendixf-d.html#d7e34056"><sub class="diff-link">F</sub></a></div>
                   <p>Here, the <code>apply</code> element with <code>id="badid1"</code> dominates its third child,
                      which dominates the <code>share</code> element, which dominates its target: the element with
                      <code>id="badid1"</code>. So by transitivity, this element dominates itself. By the
@@ -2878,14 +2878,14 @@ padding-right: 1em;
   &lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;     &lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;
   &lt;cn&gt;1&lt;/cn&gt;                              &lt;cn&gt;1&lt;/cn&gt;
   &lt;share src="#baz"/&gt;                    &lt;share src="#bar"/&gt;
-&lt;/apply&gt;                                &lt;/apply&gt;</pre><a href="appendixf-d.html#d7e34054"><sub class="diff-link">F</sub></a></div>
+&lt;/apply&gt;                                &lt;/apply&gt;</pre><a href="appendixf-d.html#d7e34056"><sub class="diff-link">F</sub></a></div>
                   <p>
                      
                      Here, the <code>apply</code> with <code>id="bar"</code> dominates its third child, the
-                     <code>share</code> with <span class="diff-chg"><code>src="#baz"</code><a href="appendixf-d.html#d7e34054"><sub class="diff-link">F</sub></a></span>.  That element dominates its target <code>apply</code>
+                     <code>share</code> with <span class="diff-chg"><code>src="#baz"</code><a href="appendixf-d.html#d7e34056"><sub class="diff-link">F</sub></a></span>.  That element dominates its target <code>apply</code>
                      (with <code>id="baz"</code>), which in turn dominates its third child, the <code>share</code>
-                     with <span class="diff-chg"><code>src="#bar"</code><a href="appendixf-d.html#d7e34054"><sub class="diff-link">F</sub></a></span>. Finally, the <code>share</code> with
-                     <span class="diff-chg"><code>src="#bar"</code><a href="appendixf-d.html#d7e34054"><sub class="diff-link">F</sub></a></span> dominates its target, the original 
+                     with <span class="diff-chg"><code>src="#bar"</code><a href="appendixf-d.html#d7e34056"><sub class="diff-link">F</sub></a></span>. Finally, the <code>share</code> with
+                     <span class="diff-chg"><code>src="#bar"</code><a href="appendixf-d.html#d7e34056"><sub class="diff-link">F</sub></a></span> dominates its target, the original 
                      <code>apply</code> element with <code>id="bar"</code>. So this pair of representations
                      ultimately violates the acyclicity constraint.
                   </p>
@@ -2913,7 +2913,7 @@ padding-right: 1em;
     &lt;/bind&gt;
     &lt;apply id="orig"&gt;&lt;ci&gt;g&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
   &lt;/apply&gt;
-&lt;/bind&gt;</pre><a href="appendixf-d.html#d7e34054"><sub class="diff-link">F</sub></a></div>
+&lt;/bind&gt;</pre><a href="appendixf-d.html#d7e34056"><sub class="diff-link">F</sub></a></div>
                   <p>
                      
                      This represents a term
@@ -2950,7 +2950,7 @@ padding-right: 1em;
                   <p>There are several acceptable renderings for the <code>share</code> element.  These include rendering the element
                      as a hypertext link to the referenced element and using the rendering of the element
                      referenced by the
-                     <span class="diff-chg"><code>src</code><a href="appendixf-d.html#d7e34054"><sub class="diff-link">F</sub></a></span> attribute.
+                     <span class="diff-chg"><code>src</code><a href="appendixf-d.html#d7e34056"><sub class="diff-link">F</sub></a></span> attribute.
                   </p>
                </div>
             </div>
