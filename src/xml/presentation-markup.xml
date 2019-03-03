@@ -1736,12 +1736,12 @@ Deprecated in favor of <att>mathvariant</att>.
 Specified the size for the token.
 Deprecated in favor of <att>mathsize</att>.
 </td>
-<td><coreref type="no"/></td>
 </tr>
 <tr>
 <td rowspan="2" role="attname">color</td>
 <td><intref ref="type_color"><emph>color</emph></intref></td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
 <td colspan="3" role="attdesc">
@@ -3684,6 +3684,7 @@ the content should be encoded as described in that section.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -4393,7 +4394,6 @@ on the <el>mstyle</el> element, but are expected to have no effect.
 <td>Name</td>
 <td>values</td>
 <td>default</td>
-<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -8193,9 +8193,10 @@ Any rules drawn as part of division layout should be drawn using the color speci
                 "righttop" | "left/\right" | "left)(right" | ":right=right" | "stackedleftleft" | 
                 "stackedleftlinetop" </td>
 	   <td>lefttop</td>
+	   <td><coreref type="no"/></td>
 	</tr>
 	<tr>
-	   <td colspan="2" role="attdesc">
+	   <td colspan="3" role="attdesc">
 		  Controls the style of the long division layout.  The names are meant as a rough mnemonic that describes the position of the divisor and result in relation to the dividend. 		  
 	   </td>
 	</tr>
