@@ -261,7 +261,7 @@ p.pcd.mix =
   | loc.class
   | ednote.class
   | local.p.pcd.mix
-local.head.pcd.mix = notAllowed
+
 # compensate for IE bug; suggested by ht
 head.pcd.mix =
   text
@@ -271,6 +271,7 @@ head.pcd.mix =
   | loc.class
   | ednote.class
   | local.head.pcd.mix
+  | coreref
 local.label.pcd.mix = notAllowed
 # compensate for IE bug; suggested by ht
 label.pcd.mix =
@@ -1015,7 +1016,7 @@ tr = element tr { attlist.tr, (th | td)+ }
 attlist.tr &= common.att, cellhalign.att, cellvalign.att
 th = element th { attlist.th, (p.pcd.mix | p.mix)* }
 attlist.th &= common.att, thtd.att, cellhalign.att, cellvalign.att
-td = element td { attlist.td, (p.pcd.mix | p.mix)* }
+td = element td { attlist.td, (p.pcd.mix | p.mix|coreref)* }
 attlist.td &= common.att, thtd.att, cellhalign.att, cellvalign.att
 # ...............................................................
 

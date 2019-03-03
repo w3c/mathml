@@ -1122,6 +1122,7 @@ all MathML presentation elements accept the following two attributes:
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -1129,9 +1130,10 @@ all MathML presentation elements accept the following two attributes:
 <td rowspan="2" role="attname">mathcolor</td>
 <td><intref ref="type_color"><emph>color</emph></intref></td>
 <td><emph>inherited</emph></td>
+<td><coreref ref="mathmltree.p4"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the foreground color to use when drawing the components of this element,
 such as the content for token elements or any lines, surds, or other decorations.
 It also establishes the default <att>mathcolor</att> used for child elements
@@ -1142,9 +1144,10 @@ when used on a layout element.
 <td rowspan="2" role="attname">mathbackground</td>
 <td><intref ref="type_color"><emph>color</emph></intref> | "transparent"</td>
 <td>transparent</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the background color to be used to fill in the bounding box
 of the element and its children. The default, "transparent", lets the
 background color, if any, used in the current rendering context to show through.
@@ -1295,7 +1298,7 @@ and a complete technical description of the corresponding characters is given in
 </div4>
 
 <div4 id="presm_mglyph"><head><phrase>Using images to represent
- symbols</phrase> <el role="defn emptytag">mglyph</el></head>
+ symbols</phrase> <el role="defn emptytag">mglyph</el> <coreref type="no"/></head>
 
 <div5><head>Description</head>
 
@@ -1336,6 +1339,7 @@ if the specified image has transparency.
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -1343,21 +1347,22 @@ if the specified image has transparency.
 <td rowspan="2" role="attname">src</td>
 <td><intref ref="type_uri"><emph>URI</emph></intref></td>
 <td><emph>required</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the location of the image resource;
 it may be a URI relative to the base-URI of the source of the MathML, if any.
-
 </td>
 </tr>
 <tr>
 <td rowspan="2" role="attname">width</td>
 <td><!-- unsigned--><intref ref="type_length"><emph>length</emph></intref></td>
 <td><emph>from image</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the desired width of the glyph; see <att>height</att>.
 </td>
 </tr>
@@ -1365,9 +1370,10 @@ Specifies the desired width of the glyph; see <att>height</att>.
 <td rowspan="2" role="attname">height</td>
 <td><!--unsigned--><intref ref="type_length"><emph>length</emph></intref></td>
 <td><emph>from image</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the desired height of the glyph.
 If only one of <att>width</att> and <att>height</att> are given,
 the image should be scaled to preserve the aspect ratio;
@@ -1378,9 +1384,10 @@ if neither are given, the image should be displayed at its natural size.
 <td rowspan="2" role="attname">valign</td>
 <td><intref ref="type_length"><emph>length</emph></intref> </td>
 <td>0ex</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the baseline alignment point of the image with respect to the current baseline.
 A positive value shifts the bottom of the image above the current baseline
 while a negative value lowers it.
@@ -1391,9 +1398,10 @@ A value of 0 (the default) means that the baseline of the image is at the bottom
 <td rowspan="2" role="attname">alt</td>
 <td><intref ref="type_string"><emph>string</emph></intref></td>
 <td><emph>required</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Provides an alternate name for the glyph.  If the specified image can't be found or displayed,
 the renderer may use this name in a warning message or some unknown glyph notation.
 The name might also be used by an audio renderer or symbol processing
@@ -1435,15 +1443,17 @@ For reference, the following attributes were previously defined:
 <tr>
 <td>Name</td>
 <td>values</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td rowspan="2" role="attname">fontfamily</td>
 <td><intref ref="type_string"><emph>string</emph></intref></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td role="attdesc">
+<td colspan="2" role="attdesc">
 the name of a font that may be available to a MathML renderer,
 or a CSS font specification; See  <specref ref="world-int-style"/>
 and CSS <bibref ref="CSS21"/> for more information.
@@ -1452,9 +1462,10 @@ and CSS <bibref ref="CSS21"/> for more information.
 <tr>
 <td rowspan="2" role="attname">index</td>
 <td><intref ref="type_integer"><emph>integer</emph></intref></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td role="attdesc">
+<td colspan="2" role="attdesc">
 Specified a position of the desired glyph within the font named
 by the <att>fontfamily</att> attribute (see <specref ref="presm_deprecatt"/>).
 </td>
@@ -1492,6 +1503,7 @@ The attributes are:
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -1505,9 +1517,10 @@ The attributes are:
 "initial" | "tailed" | "looped" | "stretched"
 </td>
 <td>normal (<emph>except on</emph> <el role="starttag">mi</el>)</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the logical class of the token. Note that this class
 is more than styling, it typically conveys semantic intent; see the discussion below.
 </td>
@@ -1516,9 +1529,10 @@ is more than styling, it typically conveys semantic intent; see the discussion b
 <td rowspan="2" role="attname">mathsize</td>
 <td>"small" | "normal" | "big" | <intref ref="type_length"><emph>length</emph></intref></td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the size to display the token content.
 The values <attval>small</attval> and <attval>big</attval> choose a size
 smaller or larger than the current font size, but leave the exact proportions
@@ -1530,9 +1544,10 @@ it is equivalent to <attval>100%</attval> or <attval>1em</attval>, it has no eff
 <td rowspan="2" role="attname">dir</td>
 <td>"ltr" | "rtl"</td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the initial directionality for text within the token:
 <code>ltr</code> (Left To Right) or <code>rtl</code> (Right To Left).
 This attribute should only be needed in rare cases involving weak or neutral characters;
@@ -1647,7 +1662,7 @@ most intelligible, highest quality rendering.
 Note that many MathML elements automatically change the font size
 in some of their children; see the discussion in <specref ref="presm_scriptlevel"/>.</p>
 
-<div4 id="presm_deprecatt"><head>Deprecated style attributes on token elements</head> 
+<div4 id="presm_deprecatt"><head>Deprecated style attributes on token elements <coreref type="no"/></head> 
 
 <p>The MathML 1.01 style attributes listed below
 are <intref ref="interf_deprec">deprecated</intref> in MathML 2 and 3.  
@@ -1668,6 +1683,7 @@ the former attributes should be ignored.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -1675,9 +1691,10 @@ the former attributes should be ignored.</p>
 <td rowspan="2" role="attname">fontfamily</td>
 <td><intref ref="type_string"><emph>string</emph></intref></td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Should be the name of a font that may be available to a MathML renderer,
 or a CSS font specification; See  <specref ref="world-int-style"/>
 and CSS <bibref ref="CSS21"/> for more information.
@@ -1688,9 +1705,10 @@ Deprecated in favor of <att>mathvariant</att>.
 <td rowspan="2" role="attname">fontweight</td>
 <td>"normal" | "bold"</td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specified the font weight for the token.
 Deprecated in favor of <att>mathvariant</att>.
 </td>
@@ -1699,9 +1717,10 @@ Deprecated in favor of <att>mathvariant</att>.
 <td rowspan="2" role="attname">fontstyle</td>
 <td>"normal" | "italic"</td>
 <td>normal (<emph>except on</emph> <el role="starttag">mi</el>)</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specified the font style to use for the token.
 Deprecated in favor of <att>mathvariant</att>.
 </td>
@@ -1710,12 +1729,14 @@ Deprecated in favor of <att>mathvariant</att>.
 <td rowspan="2" role="attname">fontsize</td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specified the size for the token.
 Deprecated in favor of <att>mathsize</att>.
 </td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
 <td rowspan="2" role="attname">color</td>
@@ -1723,7 +1744,7 @@ Deprecated in favor of <att>mathsize</att>.
 <td><emph>inherited</emph></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specified the color for the token.
 Deprecated in favor of <att>mathcolor</att>.
 </td>
@@ -1732,9 +1753,10 @@ Deprecated in favor of <att>mathcolor</att>.
 <td rowspan="2" role="attname">background</td>
 <td><intref ref="type_color"><emph>color</emph></intref> | "transparent"</td>
 <td>transparent</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specified the background color to be used to fill in the bounding box
 of the element and its children. Deprecated in favor of <att>mathbackground</att>.
 </td>
@@ -1781,7 +1803,7 @@ those that would be used for characters of the containing leaf element
 </div4>
 </div3>
 
-<div3 id="presm_mi"><head>Identifier <el role="defn starttag">mi</el></head>
+<div3 id="presm_mi"><head>Identifier <el role="defn starttag">mi</el> <coreref ref="mi"/></head>
 
 <div4><head>Description</head>
 
@@ -1823,6 +1845,7 @@ identifier, see the description of <el>ci</el> in
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -1835,9 +1858,10 @@ identifier, see the description of <el>ci</el> in
 "initial" | "tailed" | "looped" | "stretched"
 </td>
 <td><emph>(depends on content; described below)</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 
 Specifies the logical class of the token.
 The default is <attval>normal</attval> (non-slanted) unless the content
@@ -1924,7 +1948,7 @@ renderers.</p>
 </div4>
 </div3>
 
-<div3 id="presm_mn"><head>Number <el role="defn starttag">mn</el></head>
+<div3 id="presm_mn"><head>Number <el role="defn starttag">mn</el> <coreref ref="mn"/></head>
 
 <div4><head>Description</head>
 
@@ -2003,7 +2027,7 @@ such numbers include:
 </div3>
 
 <div3 id="presm_mo"><head>Operator, Fence, Separator or Accent
-  <el role="defn starttag">mo</el></head>
+  <el role="defn starttag">mo</el> <coreref ref="mo"/></head>
 
 <div4><head>Description</head>
 
@@ -2101,6 +2125,7 @@ parentheses is used.
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -2108,9 +2133,10 @@ parentheses is used.
 <td rowspan="2" role="attname">form</td>
 <td>"prefix" | "infix" | "postfix"</td>
 <td><emph>set by position of operator in an</emph> <el>mrow</el></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the role of the operator in the enclosing expression.
 This role and the operator content affect the lookup of the operator in the operator dictionary
 which affects the spacing and other default properties;
@@ -2121,9 +2147,10 @@ see <specref ref="presm_formdefval"/>.
 <td rowspan="2" role="attname">fence</td>
 <td>"true" | "false"</td>
 <td><emph>set by dictionary</emph> (false)</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether the operator represents a &#x2018;fence&#x2019;, such as a parenthesis.
 This attribute generally has no direct effect on the visual rendering,
 but may be useful in specific cases, such as non-visual renderers.
@@ -2133,9 +2160,10 @@ but may be useful in specific cases, such as non-visual renderers.
 <td rowspan="2" role="attname">separator</td>
 <td>"true" | "false"</td>
 <td><emph>set by dictionary</emph> (false)</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether the operator represents a &#x2018;separator&#x2019;, or punctuation.
 This attribute generally has no direct effect on the visual rendering,
 but may be useful in specific cases, such as non-visual renderers.
@@ -2145,9 +2173,10 @@ but may be useful in specific cases, such as non-visual renderers.
 <td rowspan="2" role="attname">lspace</td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td><emph>set by dictionary</emph> (thickmathspace)</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the leading space appearing before the operator;
 see <specref ref="presm_opspacing"/>.
 (Note that before is on the right in a RTL context; see <specref ref="presm_bidi"/>).
@@ -2157,9 +2186,10 @@ see <specref ref="presm_opspacing"/>.
 <td rowspan="2" role="attname">rspace</td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td><emph>set by dictionary</emph> (thickmathspace)</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the trailing space appearing after the operator;
 see <specref ref="presm_opspacing"/>.
 (Note that after is on the left in a RTL context; see <specref ref="presm_bidi"/>).
@@ -2169,9 +2199,10 @@ see <specref ref="presm_opspacing"/>.
 <td rowspan="2" role="attname">stretchy</td>
 <td>"true" | "false"</td>
 <td><emph>set by dictionary</emph> (false)</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether the operator should stretch to the size of adjacent material;
 see <specref ref="presm_op_stretch"/>.
 </td>
@@ -2180,9 +2211,10 @@ see <specref ref="presm_op_stretch"/>.
 <td rowspan="2" role="attname">symmetric</td>
 <td>"true" | "false"</td>
 <td><emph>set by dictionary</emph> (false)</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether the operator should be kept symmetric around the math 
 <intref ref="dt-axis">axis</intref> when stretchy.
 Note this property only applies to vertically stretched symbols.
@@ -2193,9 +2225,10 @@ See <specref ref="presm_op_stretch"/>.
 <td rowspan="2" role="attname">maxsize</td>
 <td> <intref ref="type_length"><emph>length</emph></intref> | "infinity"</td>
 <td><emph>set by dictionary</emph> (infinity)</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the maximum size of the operator when stretchy;
 see <specref ref="presm_op_stretch"/>.
 <phrase>Unitless or percentage values indicate a multiple
@@ -2206,9 +2239,10 @@ of the reference size, being the size of the unstretched glyph.</phrase>
 <td rowspan="2" role="attname">minsize</td>
 <td> <intref ref="type_length"><emph>length</emph></intref></td>
 <td><emph>set by dictionary</emph> <phrase>(100%)</phrase></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the minimum size of the operator when stretchy;
 see <specref ref="presm_op_stretch"/>.
 <phrase>Unitless or percentage values indicate a multiple
@@ -2219,9 +2253,10 @@ of the reference size, being the size of the unstretched glyph.</phrase>
 <td rowspan="2" role="attname">largeop</td>
 <td>"true" | "false"</td>
 <td><emph>set by dictionary</emph> (false)</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether the operator is considered a &#x2018;large&#x2019; operator,
 that is, whether it should be drawn larger than normal when
 <att>displaystyle</att>=<attval>true</attval>
@@ -2235,9 +2270,10 @@ See <specref ref="presm_scriptlevel"/> for more discussion.
 <td rowspan="2" role="attname">movablelimits</td>
 <td>"true" | "false"</td>
 <td><emph>set by dictionary</emph> (false)</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether under- and overscripts attached to
 this operator &#x2018;move&#x2019; to the more compact sub- and superscript positions
 when <att>displaystyle</att> is false.
@@ -2250,9 +2286,10 @@ See <specref ref="presm_scriptlevel"/> for more discussion.
 <td rowspan="2" role="attname">accent</td>
 <td>"true" | "false"</td>
 <td><emph>set by dictionary</emph> (false)</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether this operator should be treated as an accent (diacritical mark)
 when used as an underscript or overscript;
 see <intref ref="presm_munder"><el>munder</el></intref>,
@@ -2275,15 +2312,17 @@ and the appearance of the linebreak when it does occur.</p>
 <td> Name </td>
 <td> values </td>
 <td> default </td>
+<td>Core</td>
 </tr></thead>
 <tbody>
 <tr>
 <td rowspan="2" role="attname">linebreak</td>
 <td>"auto" | "newline" | "nobreak" | "goodbreak" | "badbreak"</td>
 <td>auto</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the desirability of a linebreak occurring at this operator:
 the default <attval>auto</attval> indicates the renderer should use its default
 linebreaking algorithm to determine whether to break;
@@ -2297,9 +2336,10 @@ For automatic linebreaking, <attval>nobreak</attval> forbids a break;
 <td rowspan="2" role="attname">lineleading </td>
 <td> <intref ref="type_length"><emph>length</emph></intref> </td>
 <td><emph>inherited</emph> (100%) </td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the amount of vertical space to use after a linebreak.
 For tall lines, it is often clearer to use more leading at linebreaks.
 Rendering agents are free to choose an appropriate default.
@@ -2310,9 +2350,10 @@ Rendering agents are free to choose an appropriate default.
 <td> "before" | "after" | "duplicate"
     | "infixlinebreakstyle"</td>
 <td><emph>set by dictionary</emph> (before) </td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether a linebreak occurs &#x2018;before&#x2019; or &#x2018;after&#x2019; the operator
 when a linebreaks occur on this operator; or whether the operator is duplicated.
 <attval>before</attval> causes the operator to appears at the beginning of the new line
@@ -2330,9 +2371,10 @@ the application or bound by <intref ref="presm_mstyle"><el>mstyle</el></intref>
 <td rowspan="2" role="attname">linebreakmultchar</td>
 <td><intref ref="type_string"><emph>string</emph></intref></td>
 <td><emph>inherited</emph> (&amp;InvisibleTimes;) </td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the character used to make an &amp;InvisibleTimes; operator visible at a linebreak.
 For example, <att>linebreakmultchar</att>="&amp;#xB7;"  would make the
 multiplication visible as a center dot.
@@ -2377,6 +2419,7 @@ which the remaining width exceeds the available linewrapping width. </p>
 <td> Name   </td>
 <td> values </td>
 <td> default </td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -2384,9 +2427,10 @@ which the remaining width exceeds the available linewrapping width. </p>
 <td rowspan="2" role="attname">indentalign</td>
 <td>"left" | "center" | "right" | "auto" | "id"</td>
 <td><emph>inherited</emph> (auto)       </td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the positioning of lines when linebreaking takes place within an <el>mrow</el>;
 see below for discussion of the attribute values.
 </td>
@@ -2395,9 +2439,10 @@ see below for discussion of the attribute values.
 <td rowspan="2" role="attname">indentshift      </td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td><emph>inherited</emph> (0) </td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies an additional indentation offset relative to the position determined
 by <att>indentalign</att>.
 <phrase>When the value is a percentage value or number without unit,
@@ -2410,9 +2455,10 @@ linebreaking as specified in <specref ref="presm_linebreaking"/></phrase>
 <td rowspan="2" role="attname">indenttarget</td>
 <td><intref ref="type_idref"><emph>idref</emph></intref></td>
 <td><emph> inherited (none)</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the <intref ref="type_id">id</intref> of another element
 whose horizontal position determines the position of indented lines
 when <att>indentalign</att>=<attval>id</attval>.
@@ -2429,9 +2475,10 @@ In such cases, the <att>indentalign</att> should revert to <attval>auto</attval>
 <td rowspan="2" role="attname">indentalignfirst  </td>
 <td>"left" | "center" | "right" | "auto" | "id" | "indentalign"</td>
 <td><emph>inherited</emph> (indentalign) </td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the indentation style to use for the first line of a formula;
 the value <attval>indentalign</attval> (the default) means
 to indent the same way as used for the general line.
@@ -2441,9 +2488,10 @@ to indent the same way as used for the general line.
 <td rowspan="2" role="attname">indentshiftfirst </td>
 <td><intref ref="type_length"><emph>length</emph></intref> | "indentshift"  </td>
 <td><emph>inherited</emph> (indentshift) </td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the offset to use for the first line of a formula;
 the value <attval>indentshift</attval> (the default) means 
 to use the same offset as used for the general line.
@@ -2454,9 +2502,10 @@ to use the same offset as used for the general line.
 <td rowspan="2" role="attname">indentalignlast   </td>
 <td>"left" | "center" | "right" | "auto" | "id" | "indentalign"</td>
 <td><emph>inherited</emph> (indentalign) </td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the indentation style to use for the last line when a linebreak
 occurs within a given <el>mrow</el>;
 the value <attval>indentalign</attval> (the default) means 
@@ -2469,9 +2518,10 @@ be used for the second line in preference to <att>indentalign</att>.
 <td rowspan="2" role="attname">indentshiftlast  </td>
 <td><intref ref="type_length"><emph>length</emph></intref> | "indentshift" </td>
 <td><emph>inherited</emph> (indentshift) </td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the offset to use for the last line when a linebreak
 occurs within a given <el>mrow</el>;
 the value <attval>indentshift</attval> (the default) means
@@ -3245,7 +3295,7 @@ is not needed because that is the default value.  </p>
 
 </div3>
 
-<div3 id="presm_mtext"><head>Text <el role="defn starttag">mtext</el></head>
+<div3 id="presm_mtext"><head>Text <el role="defn starttag">mtext</el> <coreref ref="mtext"/></head>
 
 <div4><head>Description</head>
 
@@ -3355,7 +3405,7 @@ an <el>mtext</el> element.</p>
 </div4>
 </div3>
 
-<div3 id="presm_mspace"><head>Space <el role="defn emptytag">mspace</el></head>
+<div3 id="presm_mspace"><head>Space <el role="defn emptytag">mspace</el> <coreref ref="mspace"/></head>
 
 <div4><head>Description</head>
 
@@ -3392,6 +3442,7 @@ Additionally, it accepts the attributes described in
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -3399,9 +3450,10 @@ Additionally, it accepts the attributes described in
 <td rowspan="2" role="attname">width</td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td>0em</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the desired width of the space.
 </td>
 </tr>
@@ -3409,9 +3461,10 @@ Specifies the desired width of the space.
 <td rowspan="2" role="attname">height</td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td>0ex</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the desired height (above the baseline) of the space.
 </td>
 </tr>
@@ -3419,9 +3472,10 @@ Specifies the desired height (above the baseline) of the space.
 <td rowspan="2" role="attname">depth</td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td>0ex</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the desired depth (below the baseline) of the space.
 </td>
 </tr>
@@ -3429,9 +3483,10 @@ Specifies the desired depth (below the baseline) of the space.
 <td rowspan="2" role="attname">linebreak</td>
 <td>"auto" | "newline" | "nobreak" | "goodbreak" | "badbreak"</td>
 <td>auto</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the desirability of a linebreak at this space.
 <phrase>This attribute should be ignored if any dimensional attribute is set.</phrase>
 </td>
@@ -3581,7 +3636,7 @@ the correct expression would be:
 </div4>
 </div3>
 
-<div3 id="presm_ms"><head>String Literal <el role="defn starttag">ms</el></head>
+<div3 id="presm_ms"><head>String Literal <el role="defn starttag">ms</el> <coreref ref="ms"/></head>
 
 <div4><head>Description</head>
 
@@ -3636,9 +3691,10 @@ the content should be encoded as described in that section.</p>
 <td rowspan="2" role="attname">lquote</td>
 <td><intref ref="type_string"><emph>string</emph></intref></td>
 <td><kw role="entity">quot</kw></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the opening quote to enclose the content.
 (not necessarily &#x2018;left quote&#x2019; in RTL context).
 </td>
@@ -3647,9 +3703,10 @@ Specifies the opening quote to enclose the content.
 <td rowspan="2" role="attname">rquote</td>
 <td><intref ref="type_string"><emph>string</emph></intref></td>
 <td><kw role="entity">quot</kw></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the closing quote to enclose the content.
 (not necessarily &#x2018;right quote&#x2019; in RTL context).
 </td>
@@ -3673,7 +3730,7 @@ notations such as fractions and radicals, or deal with general functions
 such as setting style properties and error handling.</p>
 
 <div3 id="presm_mrow"><head>Horizontally Group Sub-Expressions
-  <el role="defn starttag">mrow</el></head>
+  <el role="defn starttag">mrow</el> <coreref ref="mrow"/></head>
 
 <div4><head>Description</head>
 
@@ -3723,6 +3780,7 @@ those listed in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -3730,9 +3788,10 @@ those listed in <specref ref="presm_presatt"/>.</p>
 <td rowspan="2" role="attname">dir</td>
 <td>"ltr" | "rtl"</td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the overall directionality <code>ltr</code> (Left To Right) or
 <code>rtl</code> (Right To Left) to use to layout the children of the row.
 See <specref ref="presm_bidi_math"/> for further discussion.
@@ -3863,7 +3922,7 @@ separator <quote>operators</quote>, do not act together on their arguments.</p>
 </div4>
 </div3>
 
-<div3 id="presm_mfrac"><head>Fractions <el role="defn starttag">mfrac</el></head>
+<div3 id="presm_mfrac"><head>Fractions <el role="defn starttag">mfrac</el> <coreref ref="mfrac"/></head>
 
 <div4><head>Description</head>
 
@@ -3893,6 +3952,7 @@ The fraction line, if any, should be drawn using the color specified by <att>mat
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -3900,9 +3960,10 @@ The fraction line, if any, should be drawn using the color specified by <att>mat
 <td rowspan="2" role="attname">linethickness</td>
 <td> <intref ref="type_length"><emph>length</emph></intref> | "thin" | "medium" | "thick"</td>
 <td>medium</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the thickness of the horizontal <quote>fraction bar</quote>, or <quote>rule</quote>
 The default value is <attval>medium</attval>,
 <attval>thin</attval> is thinner, but visible, 
@@ -3914,9 +3975,10 @@ the exact thickness of these is left up to the rendering agent.
 <td rowspan="2" role="attname">numalign</td>
 <td>"left" | "center" | "right"</td>
 <td>center</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the alignment of the numerator over the fraction.
 </td>
 </tr>
@@ -3924,9 +3986,10 @@ Specifies the alignment of the numerator over the fraction.
 <td rowspan="2" role="attname">denomalign</td>
 <td>"left" | "center" | "right"</td>
 <td>center</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the alignment of the denominator under the fraction.
 </td>
 </tr>
@@ -3934,9 +3997,10 @@ Specifies the alignment of the denominator under the fraction.
 <td rowspan="2" role="attname">bevelled</td>
 <td>"true" | "false"</td>
 <td>false</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether the fraction should be displayed in a beveled style
 (the numerator slightly raised, the denominator slightly lowered
 and both separated by a slash), rather than "build up" vertically.
@@ -4037,7 +4101,8 @@ alternative markup, such as an <el>mo</el> within an <el>mrow</el> should be use
 </div4>
 </div3>
 
-<div3 id="presm_mroot"><head>Radicals <el role="defn starttag">msqrt</el>, <el role="defn starttag">mroot</el></head>
+<div3 id="presm_mroot"><head>Radicals <el role="defn starttag">msqrt</el> <coreref type="no"/>,
+<el role="defn starttag">mroot</el> <coreref ref="msqrt"/></head>
 
 <div4><head>Description</head>
 
@@ -4074,7 +4139,7 @@ color specified by <att>mathcolor</att>.</p>
 </div4>
 </div3>
 
-<div3 id="presm_mstyle"><head>Style Change <el role="defn starttag">mstyle</el></head>
+<div3 id="presm_mstyle"><head>Style Change <el role="defn starttag">mstyle</el> <coreref ref="mstyle"/></head>
 
 <div4><head>Description</head>
 
@@ -4212,6 +4277,7 @@ part of its rendering environment:
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -4219,9 +4285,10 @@ part of its rendering environment:
 <td rowspan="2" role="attname">scriptlevel</td>
 <td>( "+" | "-" )? <intref ref="type_unsigned-integer"><emph>unsigned-integer</emph></intref></td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Changes the <att>scriptlevel</att> in effect for the children.
 When the value is given without a sign, it sets <att>scriptlevel</att> to the specified value;
 when a sign is given, it increments ("+") or decrements ("-") the current value.
@@ -4234,9 +4301,10 @@ See <specref ref="presm_scriptlevel"/>.
 <td rowspan="2" role="attname">displaystyle</td>
 <td>"true" | "false"</td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Changes the <att>displaystyle</att> in effect for the children.
 See <specref ref="presm_scriptlevel"/>.
 </td>
@@ -4245,9 +4313,10 @@ See <specref ref="presm_scriptlevel"/>.
 <td rowspan="2" role="attname">scriptsizemultiplier</td>
 <td><intref ref="type_number"><emph>number</emph></intref></td>
 <td>0.71</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the multiplier to be used to adjust font size due
 to changes in <att>scriptlevel</att>.
 See <specref ref="presm_scriptlevel"/>.
@@ -4257,9 +4326,10 @@ See <specref ref="presm_scriptlevel"/>.
 <td rowspan="2" role="attname">scriptminsize</td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td>8pt</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the minimum font size allowed due to changes in <att>scriptlevel</att>.
 Note that this does not limit the font size due to changes to <att>mathsize</att>.
 See <specref ref="presm_scriptlevel"/>.
@@ -4269,9 +4339,10 @@ See <specref ref="presm_scriptlevel"/>.
 <td rowspan="2" role="attname">infixlinebreakstyle</td>
 <td>"before" | "after" | "duplicate"</td>
 <td>before</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the default linebreakstyle to use for infix operators;
 see <specref ref="presm_lbattrs"/>
 </td>
@@ -4280,9 +4351,10 @@ see <specref ref="presm_lbattrs"/>
 <td rowspan="2" role="attname">decimalpoint</td>
 <td><intref ref="type_character"><emph>character</emph></intref></td>
 <td>.</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the character used to determine the alignment point within
 <intref ref="presm_mstack"><el>mstack</el></intref>
 and 
@@ -4321,6 +4393,7 @@ on the <el>mstyle</el> element, but are expected to have no effect.
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -4392,7 +4465,7 @@ section on &lt;mo&gt;,
 </div4>
 </div3>
 
-<div3 id="presm_merror"><head>Error Message <el role="defn starttag">merror</el></head>
+<div3 id="presm_merror"><head>Error Message <el role="defn starttag">merror</el> <coreref ref="merror"/></head>
 
 <div4><head>Description</head>
 
@@ -4472,7 +4545,7 @@ but the error message it outputs is valid MathML.</p>
 </div3>
 
 <div3 id="presm_mpadded"><head>Adjust Space Around Content
-  <el role="defn starttag">mpadded</el></head>
+  <el role="defn starttag">mpadded</el> <coreref ref="mpadded"/></head>
 
 <div4><head>Description</head>
 
@@ -4509,6 +4582,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -4523,9 +4597,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
     | <intref ref="type_namedspace"><emph>namedspace</emph></intref>
  )?</td>
 <td><emph>same as content</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Sets or increments the height of the <el>mpadded</el> element.
 See below for discussion.
 </td>
@@ -4541,9 +4616,10 @@ See below for discussion.
     | <intref ref="type_namedspace"><emph>namedspace</emph></intref>
    )?</td>
 <td><emph>same as content</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Sets or increments the depth of the <el>mpadded</el> element.
 See below for discussion.
 </td>
@@ -4559,9 +4635,10 @@ See below for discussion.
     | <intref ref="type_namedspace"><emph>namedspace</emph></intref>
  )?</td>
 <td><emph>same as content</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Sets or increments the width of the <el>mpadded</el> element.
 See below for discussion.
 </td>
@@ -4577,9 +4654,10 @@ See below for discussion.
     | <intref ref="type_namedspace"><emph>namedspace</emph></intref>
  )?</td>
 <td>0em</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Sets the horizontal position of the child content.
 See below for discussion.
 </td>
@@ -4595,9 +4673,10 @@ See below for discussion.
     | <intref ref="type_namedspace"><emph>namedspace</emph></intref>
  )?</td>
 <td>0em</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Sets the vertical position of the child content.
 See below for discussion.
 </td>
@@ -4864,7 +4943,7 @@ child content"/>
 
 </div3>
 
-<div3 id="presm_mphantom"><head>Making Sub-Expressions Invisible <el role="defn starttag">mphantom</el></head>
+<div3 id="presm_mphantom"><head>Making Sub-Expressions Invisible <el role="defn starttag">mphantom</el> <coreref ref="mphantom"/></head>
 
 <div4><head>Description</head>
 
@@ -4989,7 +5068,7 @@ own <el>mphantom</el> element, i.e.
 </div3>
 
 <div3 id="presm_mfenced"><head>Expression Inside Pair of Fences
-  <el role="defn starttag">mfenced</el></head>
+  <el role="defn starttag">mfenced</el> <coreref ref="mfenced"/></head>
 
 <div4><head>Description</head>
 
@@ -5046,6 +5125,7 @@ The delimiters and separators should be drawn using the color specified by <att>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -5053,9 +5133,10 @@ The delimiters and separators should be drawn using the color specified by <att>
 <td rowspan="2" role="attname">open</td>
 <td><intref ref="type_string"><emph>string</emph></intref></td>
 <td>(</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the opening delimiter.
 Since it is used as the content of an <el>mo</el> element, any whitespace
 will be trimmed and collapsed as described in <specref ref="fund_collapse"/>.
@@ -5065,9 +5146,10 @@ will be trimmed and collapsed as described in <specref ref="fund_collapse"/>.
 <td rowspan="2" role="attname">close</td>
 <td><intref ref="type_string"><emph>string</emph></intref></td>
 <td>)</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the closing delimiter.
 Since it is used as the content of an <el>mo</el> element, any whitespace
 will be trimmed and collapsed as described in <specref ref="fund_collapse"/>.
@@ -5077,9 +5159,10 @@ will be trimmed and collapsed as described in <specref ref="fund_collapse"/>.
 <td rowspan="2" role="attname">separators</td>
 <td><intref ref="type_string"><emph>string</emph></intref></td>
 <td>,</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies a sequence of zero or more separator characters, optionally separated by whitespace.
 Each pair of arguments is displayed separated by the corresponding separator
 (none appears after the last argument).
@@ -5257,7 +5340,7 @@ would render incorrectly as <quote>(<var>a</var>, +,
 </div3>
 
 <div3 id="presm_menclose"><head>Enclose Expression Inside Notation
-  <el role="defn starttag">menclose</el></head>
+  <el role="defn starttag">menclose</el> <coreref ref="menclose"/></head>
 
 <div4><head>Description</head>
 
@@ -5286,6 +5369,7 @@ possible.
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -5297,9 +5381,10 @@ possible.
 | <attval>madruwb</attval> | text) + 
 </td>
 <td>longdiv</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies a space separated list of notations to be used to enclose the children.
 See below for a description of each type of notation.
 </td>
@@ -5540,7 +5625,7 @@ scripted, not just the trailing character. For example,
 ]]></eg>
 </p>
 
-<div3 id="presm_msub"><head>Subscript <el role="defn starttag">msub</el></head>
+<div3 id="presm_msub"><head>Subscript <el role="defn starttag">msub</el> <coreref ref="msub"/></head>
 
 <div4><head>Description</head>
 
@@ -5563,6 +5648,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -5570,9 +5656,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td rowspan="2" role="attname">subscriptshift</td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td><emph>automatic</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the minimum amount to shift the baseline of <emph>subscript</emph> down;
 the default is for the rendering agent to use its own positioning rules.
 </td>
@@ -5582,7 +5669,7 @@ the default is for the rendering agent to use its own positioning rules.
 </div4>
 </div3>
 
-<div3 id="presm_msup"><head>Superscript <el role="defn starttag">msup</el></head>
+<div3 id="presm_msup"><head>Superscript <el role="defn starttag">msup</el> <coreref ref="msup"/></head>
 
 <div4><head>Description</head>
 
@@ -5606,6 +5693,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -5613,9 +5701,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td  rowspan="2" role="attname">superscriptshift</td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td><emph>automatic</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the minimum amount to shift the baseline of <emph>superscript</emph> up;
 the default is for the rendering agent to use its own positioning rules.
 </td>
@@ -5626,7 +5715,7 @@ the default is for the rendering agent to use its own positioning rules.
 </div4>
 </div3>
 
-<div3 id="presm_msubsup"><head>Subscript-superscript Pair <el role="defn starttag">msubsup</el></head>
+<div3 id="presm_msubsup"><head>Subscript-superscript Pair <el role="defn starttag">msubsup</el> <coreref ref="msubsup"/></head>
 
 <div4><head>Description</head>
 <p>The <el>msubsup</el> element is used to attach both a subscript and
@@ -5657,6 +5746,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -5664,9 +5754,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td  rowspan="2" role="attname">subscriptshift</td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td><emph>automatic</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the minimum amount to shift the baseline of <emph>subscript</emph> down;
 the default is for the rendering agent to use its own positioning rules.
 </td>
@@ -5675,9 +5766,10 @@ the default is for the rendering agent to use its own positioning rules.
 <td  rowspan="2" role="attname">superscriptshift</td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td><emph>automatic</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the minimum amount to shift the baseline of <emph>superscript</emph> up;
 the default is for the rendering agent to use its own positioning rules.
 </td>
@@ -5756,6 +5848,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -5763,9 +5856,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td rowspan="2" role="attname">accentunder</td>
 <td>"true" | "false"</td>
 <td><emph>automatic</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether <emph>underscript</emph> is drawn as an <quote>accent</quote> or as a limit.
 An accent is drawn the same size as the base (without incrementing <att>scriptlevel</att>)
 and is drawn closer to the base.
@@ -5775,9 +5869,10 @@ and is drawn closer to the base.
 <td rowspan="2" role="attname">align</td>
 <td>"left" | "right" | "center"</td>
 <td>center</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether the script is aligned left, center, or right under/over the base.
 <phrase>As specfied in <specref ref="presm_horiz_stretch_rules"/>,
 the core of underscripts that are embellished operators should stretch to cover the base,
@@ -5871,6 +5966,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -5878,9 +5974,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td rowspan="2" role="attname">accent</td>
 <td>"true" | "false"</td>
 <td><emph>automatic</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether <emph>overscript</emph> is drawn as an <quote>accent</quote> or as a limit.
 An accent is drawn the same size as the base (without incrementing <att>scriptlevel</att>)
 and is drawn closer to the base.
@@ -5890,9 +5987,10 @@ and is drawn closer to the base.
 <td rowspan="2" role="attname">align</td>
 <td>"left" | "right" | "center"</td>
 <td>center</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether the script is aligned left, center, or right under/over the base.
 <phrase>As specfied in <specref ref="presm_horiz_stretch_rules"/>,
 the core of overscripts that are embellished operators should stretch to cover the base,
@@ -6004,6 +6102,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -6011,9 +6110,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td rowspan="2" role="attname">accent</td>
 <td>"true" | "false"</td>
 <td><emph>automatic</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether <emph>overscript</emph> is drawn as an <quote>accent</quote> or as a limit.
 An accent is drawn the same size as the base (without incrementing <att>scriptlevel</att>)
 and is drawn closer to the base.
@@ -6023,9 +6123,10 @@ and is drawn closer to the base.
 <td rowspan="2" role="attname">accentunder</td>
 <td>"true" | "false"</td>
 <td><emph>automatic</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether <emph>underscript</emph> is drawn as an <quote>accent</quote> or as a limit.
 An accent is drawn the same size as the base (without incrementing <att>scriptlevel</att>)
 and is drawn closer to the base.
@@ -6035,9 +6136,10 @@ and is drawn closer to the base.
 <td rowspan="2" role="attname">align</td>
 <td>"left" | "right" | "center"</td>
 <td>center</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies whether the scripts are aligned left, center, or right under/over the base.
 <phrase>As specfied in <specref ref="presm_horiz_stretch_rules"/>,
 the core of underscripts and overscripts that are embellished operators should stretch to cover the base,
@@ -6271,7 +6373,7 @@ in the matrix and is not counted when determining the number of columns
 in that row.</p>
 
 <div3 id="presm_mtable"><head>Table or Matrix
-  <el role="defn starttag">mtable</el></head>
+  <el role="defn starttag">mtable</el> <coreref ref="mtable"/></head>
 
 <div4><head>Description</head>
 
@@ -6320,6 +6422,7 @@ specified by <att>mathcolor</att>.</p>
 <td >Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -6327,9 +6430,10 @@ specified by <att>mathcolor</att>.</p>
 <td rowspan="2" role="attname">align</td>
 <td>("top" | "bottom" | "center" | "baseline" | "axis"), <emph>rownumber</emph>?</td>
 <td>axis</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the vertical alignment of the table with respect to its environment.
 <attval>axis</attval> means to align the vertical center of the table on
 the environment's <termref def="dt-axis">axis</termref>.
@@ -6353,9 +6457,10 @@ value is <attval>baseline</attval> or <attval>axis</attval>; MathML does not spe
 <td rowspan="2" role="attname">rowalign</td>
 <td>("top" | "bottom" | "center" | "baseline" | "axis") +</td>
 <td>baseline</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the vertical alignment of the cells with respect to other cells within the same row:
 <attval>top</attval> aligns the tops of each entry across the row;
 <attval>bottom</attval> aligns the bottoms of the cells,
@@ -6369,9 +6474,10 @@ specifies the vertical alignment of the cells with respect to other cells within
 <td rowspan="2" role="attname">columnalign</td>
 <td>("left" | "center" | "right") +</td>
 <td>center</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the horizontal alignment of the cells with respect to other cells within the same column:
 <attval>left</attval> aligns the left side of the cells;
 <attval>center</attval> centers each cells;
@@ -6383,9 +6489,10 @@ specifies the horizontal alignment of the cells with respect to other cells with
 <td rowspan="2" role="attname">groupalign</td>
 <td><intref ref="type_group-align"><emph>group-alignment-list-list</emph></intref></td>
 <td>{left}</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 [this attribute is described with the alignment elements, <el>maligngroup</el> and <el>malignmark</el>,
 in <specref ref="presm_malign"/>.]
 </td>
@@ -6394,9 +6501,10 @@ in <specref ref="presm_malign"/>.]
 <td rowspan="2" role="attname">alignmentscope</td>
 <td>("true" | "false") +</td>
 <td>true</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 [this attribute is described with the alignment elements, <el>maligngroup</el> and <el>malignmark</el>,
 in <specref ref="presm_malign"/>.]
 </td>
@@ -6405,9 +6513,10 @@ in <specref ref="presm_malign"/>.]
 <td rowspan="2" role="attname">columnwidth</td>
 <td>("auto" | <intref ref="type_length"><emph>length</emph></intref> | "fit") +</td>
 <td>auto</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies how wide a column should be:
 <attval>auto</attval> means that the column should be as wide as needed;
 an explicit length means that the column is exactly that wide and the contents of that column are made to fit
@@ -6432,9 +6541,10 @@ covers the specified percentage of the entire table width.
 <td rowspan="2" role="attname">width</td>
 <td>"auto" | <intref ref="type_length"><emph>length</emph></intref></td>
 <td>auto</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the desired width of the entire table and is intended for visual user agents.
 <phrase>When the value is a percentage value or number without unit,
 the value is relative to the
@@ -6453,9 +6563,10 @@ whatever layout algorithm it chooses.
 <td rowspan="2" role="attname">rowspacing</td>
 <td>(<intref ref="type_length"><emph>length</emph></intref>) +</td>
 <td>1.0ex</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies how much space to add between rows.
 (See the note below about multiple values).
 </td>
@@ -6464,9 +6575,10 @@ specifies how much space to add between rows.
 <td rowspan="2" role="attname">columnspacing</td>
 <td>(<intref ref="type_length"><emph>length</emph></intref>) +</td>
 <td>0.8em</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies how much space to add between <phrase>columns</phrase>.
 (See the note below about multiple values).
 </td>
@@ -6475,9 +6587,10 @@ specifies how much space to add between <phrase>columns</phrase>.
 <td rowspan="2" role="attname">rowlines</td>
 <td>("none" | "solid" | "dashed") +</td>
 <td>none</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies whether and what kind of lines should be added between each row:
 <attval>none</attval> means no lines;
 <attval>solid</attval> means solid lines;
@@ -6489,9 +6602,10 @@ specifies whether and what kind of lines should be added between each row:
 <td rowspan="2" role="attname">columnlines</td>
 <td>("none" | "solid" | "dashed") +</td>
 <td>none</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies whether and what kind of lines should be added between each column:
 <attval>none</attval> means no lines;
 <attval>solid</attval> means solid lines;
@@ -6503,9 +6617,10 @@ specifies whether and what kind of lines should be added between each column:
 <td rowspan="2" role="attname">frame</td>
 <td>"none" | "solid" | "dashed"</td>
 <td>none</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies whether and what kind of lines should be drawn around the table.
 <attval>none</attval> means no lines;
 <attval>solid</attval> means solid lines;
@@ -6516,9 +6631,10 @@ specifies whether and what kind of lines should be drawn around the table.
 <td rowspan="2" role="attname">framespacing</td>
 <td><intref ref="type_length"><emph>length</emph></intref>, <intref ref="type_length"><emph>length</emph></intref></td>
 <td>0.4em 0.5ex</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the additional spacing added between the table and frame,
 if <att>frame</att> is not <attval>none</attval>.
 The first value specifies the spacing on the right and left;
@@ -6529,9 +6645,10 @@ the second value specifies the spacing above and below.
 <td rowspan="2" role="attname">equalrows</td>
 <td>"true" | "false"</td>
 <td>false</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies whether to force all rows to have the same total height.
 </td>
 </tr>
@@ -6539,9 +6656,10 @@ specifies whether to force all rows to have the same total height.
 <td rowspan="2" role="attname">equalcolumns</td>
 <td>"true" | "false"</td>
 <td>false</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies whether to force all columns to have the same total width.
 </td>
 </tr>
@@ -6549,9 +6667,10 @@ specifies whether to force all columns to have the same total width.
 <td rowspan="2" role="attname">displaystyle</td>
 <td>"true" | "false"</td>
 <td>false</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the value of <att>displaystyle</att> within each cell,
 (<att>scriptlevel</att> is not changed);
 see <specref ref="presm_scriptlevel"/>.
@@ -6561,9 +6680,10 @@ see <specref ref="presm_scriptlevel"/>.
 <td rowspan="2" role="attname">side</td>
 <td>"left" | "right" | "leftoverlap" | "rightoverlap"</td>
 <td>right</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies on what side of the table labels from enclosed <el>mlabeledtr</el> (if any) should be  placed.
 The variants <attval>leftoverlap</attval> and <attval>rightoverlap</attval>
 are useful when the table fits with the allowed width
@@ -6577,9 +6697,10 @@ otherwise it is placed below it.
 <td rowspan="2" role="attname">minlabelspacing</td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td>0.8em</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the minimum space allowed between a label and the adjacent cell in the row.
 </td>
 </tr>
@@ -6646,7 +6767,7 @@ use of other surrounding fences, such as brackets, or none at all.</p>
 </div4>
 </div3>
 
-<div3 id="presm_mtr"><head>Row in Table or Matrix <el role="defn starttag">mtr</el></head>
+<div3 id="presm_mtr"><head>Row in Table or Matrix <el role="defn starttag">mtr</el> <coreref ref="mtr"/></head>
 
 <div4><head>Description</head>
 
@@ -6677,6 +6798,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -6684,9 +6806,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td rowspan="2" role="attname">rowalign</td>
 <td>"top" | "bottom" | "center" | "baseline" | "axis"</td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 overrides, for this row, the vertical alignment of cells specified 
 by the <intref ref="presm_mtable_attrs"><att>rowalign</att></intref> attribute on the <el>mtable</el>.
 </td>
@@ -6695,9 +6818,10 @@ by the <intref ref="presm_mtable_attrs"><att>rowalign</att></intref> attribute o
 <td rowspan="2" role="attname">columnalign</td>
 <td>("left" | "center" | "right") +</td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 overrides, for this row, the horizontal alignment of cells specified 
 by the <intref ref="presm_mtable_attrs"><att>columnalign</att></intref> attribute on the <el>mtable</el>.
 </td>
@@ -6706,9 +6830,10 @@ by the <intref ref="presm_mtable_attrs"><att>columnalign</att></intref> attribut
 <td rowspan="2" role="attname">groupalign</td>
 <td><intref ref="type_group-align"><emph>group-alignment-list-list</emph></intref></td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 [this attribute is described with the alignment elements, <el>maligngroup</el> and <el>malignmark</el>,
 in <specref ref="presm_malign"/>.]
 </td>
@@ -6873,6 +6998,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -6880,9 +7006,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td rowspan="2" role="attname">rowspan</td>
 <td><intref ref="type_positive-integer"><emph>positive-integer</emph></intref></td>
 <td>1</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 causes the cell to be treated as if it occupied the number of rows specified.
 The corresponding <el>mtd</el> in the following <attval>rowspan</attval>-1 rows must be omitted.
 The interpretation corresponds with the similar attributes for HTML 4.01 tables.
@@ -6892,9 +7019,10 @@ The interpretation corresponds with the similar attributes for HTML 4.01 tables.
 <td rowspan="2" role="attname">columnspan</td>
 <td><intref ref="type_positive-integer"><emph>positive-integer</emph></intref></td>
 <td>1</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 causes the cell to be treated as if it occupied the number of columns specified.
 The following <attval>rowspan</attval>-1 <el>mtd</el>s must be omitted.
 The interpretation corresponds with the similar attributes for HTML 4.01 tables.
@@ -6904,9 +7032,10 @@ The interpretation corresponds with the similar attributes for HTML 4.01 tables.
 <td rowspan="2" role="attname">rowalign</td>
 <td>"top" | "bottom" | "center" | "baseline" | "axis"</td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the vertical alignment of this cell, overriding any value
 specified on the containing <el>mrow</el> and <el>mtable</el>.
 See the <intref ref="presm_mtable_attrs"><att>rowalign</att></intref> attribute of <el>mtable</el>.
@@ -6916,9 +7045,10 @@ See the <intref ref="presm_mtable_attrs"><att>rowalign</att></intref> attribute 
 <td rowspan="2" role="attname">columnalign</td>
 <td>"left" | "center" | "right"</td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the horizontal alignment of this cell, overriding any value
 specified on the containing <el>mrow</el> and <el>mtable</el>.
 See the <intref ref="presm_mtable_attrs"><att>columnalign</att></intref> attribute of <el>mtable</el>.
@@ -6928,9 +7058,10 @@ See the <intref ref="presm_mtable_attrs"><att>columnalign</att></intref> attribu
 <td rowspan="2" role="attname">groupalign</td>
 <td><intref ref="type_group-align"><emph>group-alignment-list</emph></intref></td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 [this attribute is described with the alignment elements, <el>maligngroup</el> and <el>malignmark</el>,
 in <specref ref="presm_malign"/>.]
 </td>
@@ -7259,6 +7390,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -7266,9 +7398,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>
 <td rowspan="2" role="attname">edge</td>
 <td>"left" | "right"</td>
 <td>left</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 see the discussion below.
 </td>
 </tr>
@@ -7333,6 +7466,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -7340,9 +7474,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>
 <td rowspan="2" role="attname">groupalign</td>
 <td>"left" | "center" | "right" | "decimalpoint"</td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 see the discussion below.
 </td>
 </tr>
@@ -7912,6 +8047,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -7919,9 +8055,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td rowspan="2" role="attname">align</td>
 <td>("top" | "bottom" | "center" | "baseline" | "axis"), <emph>rownumber</emph>?</td>
 <td>baseline</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the vertical alignment of the <el>mstack</el> with respect to its environment.
 The legal values and their meanings are the same as that for <el>mtable</el>'s
 <intref ref="presm_mtable_attrs"><att>align</att></intref> attribute.
@@ -7931,9 +8068,10 @@ The legal values and their meanings are the same as that for <el>mtable</el>'s
 <td rowspan="2" role="attname">stackalign</td>
 <td>"left" | "center" | "right" | "decimalpoint"</td>
 <td>decimalpoint</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies which column is used to horizontally align the rows.
 For <attval>left</attval>, rows are aligned flush on the left;
 similarly for <attval>right</attval>, rows are flush on the right;
@@ -7955,9 +8093,10 @@ of <attval>decimalpoint</attval>.
 <td rowspan="2" role="attname">charalign</td>
 <td>"left" | "center" | "right" </td>
 <td>right</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the horizontal alignment of digits within a column.
 If the content is larger than the column width, then it overflows the opposite side from the alignment.
 For example, for <attval>right</attval>, the content will overflow on the left side; for center,
@@ -7971,9 +8110,10 @@ In these cases, authors should take care to avoid collisions between column over
 <td rowspan="2" role="attname">charspacing</td>
 <td><intref ref="type_length"><emph>length</emph></intref> | "loose" | "medium" | "tight"</td>
 <td>medium</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the amount of space to put between each column.
 Larger spacing might be useful if carries are not placed above or are particularly wide.
 The keywords
@@ -8043,6 +8183,7 @@ Any rules drawn as part of division layout should be drawn using the color speci
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -8130,6 +8271,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -8137,9 +8279,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td rowspan="2" role="attname">position</td>
 <td><intref ref="type_integer"><emph>integer</emph></intref></td>
 <td>0</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the horizontal position of the rows within this group relative
 the position determined by the containing <el>msgroup</el> (according to its
 <att>position</att> and <att>shift</att> attributes).
@@ -8156,9 +8299,10 @@ The decimal point is counted as a column and should be taken into account for ne
 <td rowspan="2" role="attname">shift</td>
 <td><intref ref="type_integer"><emph>integer</emph></intref></td>
 <td>0</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies an incremental shift of position for successive children (rows or groups)
 within this group. The value is interpreted as with position, but specifies the
 position of each child (except the first) with respect to the previous child in the group.
@@ -8214,6 +8358,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -8221,9 +8366,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td rowspan="2" role="attname">position</td>
 <td><intref ref="type_integer"><emph>integer</emph></intref></td>
 <td>0</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the horizontal position of the rows within this group relative
 the position determined by the containing <el>msgroup</el> (according to its
 <att>position</att> and <att>shift</att> attributes).
@@ -8290,6 +8436,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -8297,9 +8444,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td rowspan="2" role="attname">position</td>
 <td><intref ref="type_integer"><emph>integer</emph></intref></td>
 <td>0</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the horizontal position of the rows within this group relative
 the position determined by the containing <el>msgroup</el> (according to its
 <att>position</att> and <att>shift</att> attributes).
@@ -8314,9 +8462,10 @@ the second digit column from the right.
 <td rowspan="2" role="attname">location</td>
 <td>"w" | "nw" | "n" | "ne" | "e" | "se" | "s" | "sw" </td>
 <td>n</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the location of the carry or borrow relative to the character below it in the associated column.
 Compass directions are used for the values; the default is to place the carry above the character.
 </td>
@@ -8325,9 +8474,10 @@ Compass directions are used for the values; the default is to place the carry ab
 <td rowspan="2" role="attname">crossout</td>
 <td>("none" | "updiagonalstrike" | "downdiagonalstrike" | "verticalstrike" | "horizontalstrike")*  </td>
 <td>none</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies how the column content below each carry is "crossed out";
 one or more values may be given and all values are drawn.
 If <attval>none</attval> is given with other values, it is ignored.
@@ -8341,9 +8491,10 @@ The crossouts should be drawn using the color specified by <att>mathcolor</att>.
 <td rowspan="2" role="attname">scriptsizemultiplier</td>
 <td> <intref ref="type_number"><emph>number</emph></intref></td>
 <td><emph>inherited (0.6)</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the factor to change the font size by.
 See <specref ref="presm_scriptlevel"/> for a description of how this works with the <att>scriptsize</att> attribute.
 </td>
@@ -8383,6 +8534,7 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -8390,9 +8542,10 @@ below in addition to those specified in <specref ref="presm_presatt"/>.</p>
 <td rowspan="2" role="attname">location</td>
 <td>"w" | "nw" | "n" | "ne" | "e" | "se" | "s" | "sw"</td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the location of the carry or borrow relative to the character in the corresponding column in the row below it.
 Compass directions are used for the values.
 </td>
@@ -8401,9 +8554,10 @@ Compass directions are used for the values.
 <td rowspan="2" role="attname">crossout</td>
 <td>("none" | "updiagonalstrike" | "downdiagonalstrike" | "verticalstrike" | "horizontalstrike")*  </td>
 <td><emph>inherited</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies how the column content associated with the carry is "crossed out";
 one or more values may be given and all values are drawn.
 If <attval>none</attval> is given with other values, it is essentially ignored.
@@ -8438,6 +8592,7 @@ The line should be drawn using the color specified by <att>mathcolor</att>.
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -8445,9 +8600,10 @@ The line should be drawn using the color specified by <att>mathcolor</att>.
 <td rowspan="2" role="attname">position</td>
 <td><intref ref="type_integer"><emph>integer</emph></intref></td>
 <td>0</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 specifies the horizontal position of the rows within this group relative
 the position determined by the containing <el>msgroup</el> (according to its
 <att>position</att> and <att>shift</att> attributes).
@@ -8463,9 +8619,10 @@ the position has no effect unless the <att>length</att> is specified as non-zero
 <td rowspan="2" role="attname">length</td>
 <td><intref ref="type_unsigned-integer"><emph>unsigned-integer</emph></intref></td>
 <td>0</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies the the number of columns that should be spanned by the line.
 A value of '0' (the default) means that <emph>all</emph> columns in
 the row are spanned (in which case <att>position</att> and <att>stackalign</att> have no effect).
@@ -8475,9 +8632,10 @@ the row are spanned (in which case <att>position</att> and <att>stackalign</att>
 <td rowspan="2" role="attname">leftoverhang</td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td>0</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies an extra amount that the line should overhang on the left of the leftmost column spanned by the line.
 </td>
 </tr>
@@ -8485,9 +8643,10 @@ Specifies an extra amount that the line should overhang on the left of the leftm
 <td rowspan="2" role="attname">rightoverhang</td>
 <td><intref ref="type_length"><emph>length</emph></intref></td>
 <td>0</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies an extra amount that the line should overhang on the right of the rightmost column spanned by the line.
 </td>
 </tr>
@@ -8495,9 +8654,10 @@ Specifies an extra amount that the line should overhang on the right of the righ
 <td rowspan="2" role="attname">mslinethickness</td>
 <td><intref ref="type_length"><emph>length</emph></intref> | "thin" | "medium" | "thick"</td>
 <td>medium</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies how thick the line should be drawn.
 The line should have height=0, and depth=mslinethickness so that the top
 of the <el>msline</el> is on the baseline of the surrounding context (if any).
@@ -8974,6 +9134,7 @@ error; the appropriate rendering in that case is as described in
 <td>Name</td>
 <td>values</td>
 <td>default</td>
+<td>Core</td>
 </tr>
 </thead>
 <tbody>
@@ -8981,9 +9142,10 @@ error; the appropriate rendering in that case is as described in
 <td rowspan="2" role="attname">actiontype</td>
 <td><intref ref="type_string"><emph>string</emph></intref></td>
 <td><emph>required</emph></td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies what should happen for this element.
 The values allowed are open-ended. Conforming renderers may ignore any value they do not handle,
 although renderers are encouraged to render the values listed below. 
@@ -8992,9 +9154,10 @@ although renderers are encouraged to render the values listed below.
 <td rowspan="2" role="attname">selection</td>
 <td><intref ref="type_positive-integer"><emph>positive-integer</emph></intref></td>
 <td>1</td>
+<td><coreref type="no"/></td>
 </tr>
 <tr>
-<td colspan="2" role="attdesc">
+<td colspan="3" role="attdesc">
 Specifies which child should be used for viewing. Its value should be between 1 and the number of
 children of the element. The specified child is referred to as the <quote>selected sub-expression</quote> of the
 <el>maction</el> element. If the value specified is out of range, it is an error. When the

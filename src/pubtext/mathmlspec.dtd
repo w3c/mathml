@@ -5,7 +5,7 @@
 #2000-03-19: Nico Poppelier: Added intref to local.ref.class.
 -->
 
-<!ENTITY % local.ref.class      "|intref|symbolref|cdref">
+<!ENTITY % local.ref.class      "|intref|symbolref|cdref|coreref">
 <!ENTITY % local.div.mix      "|importexamples|div">
 
 <!ENTITY % attribute.element "IGNORE">
@@ -42,6 +42,8 @@
 <!ENTITY % union.element "IGNORE">
 
 <!ENTITY % local.obj.mix " | div">
+
+<!ENTITY % local.head.pcd.mix " | coreref">
 
 <!ENTITY % xmlspec SYSTEM "xmlspec.dtd">
 %xmlspec;
@@ -107,6 +109,10 @@ same way as specref, but *with* content.
         %common.att;
         %ref-req.att;>
 
+<!ELEMENT coreref EMPTY>
+<!ATTLIST coreref type (yes|no) #IMPLIED
+          ref CDATA #IMPLIED
+>
 <!ELEMENT symbolref EMPTY>
 <!ATTLIST symbolref %common.att; cd CDATA #REQUIRED name CDATA #REQUIRED>
 

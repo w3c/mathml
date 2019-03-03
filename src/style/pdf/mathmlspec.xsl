@@ -1069,6 +1069,7 @@ lLlLl
        <xsl:text>£hyperref[status]{Status}</xsl:text>
 </xsl:template>
 
+
 <!--
   <xsl:template match="specref">
     <xsl:variable name="target" select="key('ids', @ref)[1]"/>
@@ -1206,6 +1207,16 @@ lLlLl
   <xsl:text>]{</xsl:text>
     <xsl:apply-templates/>
   <xsl:text>}</xsl:text>
+</xsl:template>
+
+<xsl:template match="coreref[@type='no']">
+   <xsl:text>core-no</xsl:text>>
+</xsl:template>
+<xsl:template match="coreref[@type='yes']">
+   <xsl:text>core-yes">core-yes</xsl:text>
+</xsl:template>
+<xsl:template match="coreref[@ref]">
+   <xsl:text>core-yes</xsl:text>
 </xsl:template>
 
 <xsl:template match="xspecref">

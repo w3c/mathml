@@ -909,7 +909,19 @@ summary="Navigation TOC"
       prefix reference with Chapter Section or Appendix for div*
       targets (and make it not bold)
 -->
-  <!-- specref: reference to another part of the current specification -->
+
+<!-- coreref: link to mathml core -->
+<xsl:template match="coreref[@type='no']">
+   <span class="coreno">core&#x2716;</span>
+</xsl:template>
+<xsl:template match="coreref[@type='yes']">
+   <span class="coreyes">core&#x2714;</span>
+</xsl:template>
+<xsl:template match="coreref[@ref]">
+   <a class="coreyes" href="../mathml-core/#{@ref}">core&#x2714;</a>
+</xsl:template>
+
+<!-- specref: reference to another part of the current specification -->
 
 <xsl:template match="specref[@ref='mmlcss']">
  <span>Layout engines that lack native MathML support</span>

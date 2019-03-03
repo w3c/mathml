@@ -35,6 +35,12 @@ intref = element intref { attlist.intref, p.pcd.mix* }
 # The purpose of a specref element is to link to a div, item
 # in an olist, or production in the current spec.
 attlist.intref &= common.att, ref-req.att
+
+coreref = element coreref {
+	      attribute type {"yes"|"no"}?,
+			     attribute ref {text}?
+	  }
+local.head.pcd.mix |= coreref
 attlist.graphic &= cellvalign.att
 
 attlist.MMLattribute &= empty
