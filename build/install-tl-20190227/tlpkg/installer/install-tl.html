@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<title>The TeX Live installer</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<!-- $Id: -->
+<h1>The TeX Live installer</h1>
+This is the installation program of the TeX Live distribution.
+<p>
+The installation procedure is simple: just go through the
+menus until you are happy with the way all options are set up,
+and then do <tt>&lt;I&gt;</tt> (start installation).
+<p>
+To select a menu item (a letter or a number marked with brackets)
+just enter the corresponding letter or number and press return
+(the letters are case insensitive except when collections
+are being selected). Do not enter the angle brackets <tt>&lt;&gt;</tt> themselves.
+<p>
+We will now consider each menu item in more detail:
+
+<h2>The binary systems menu (<tt>&lt;B&gt;</tt>)</h2>
+
+The systems menu allows you to select and deselect the binary
+packages for various different platforms.  You cannot install Unix
+binaries on Windows but vice versa.
+
+<h2>The schemes menu (<tt>&lt;S&gt;</tt>)</h2>
+
+You can choose from a number of different installation schemes 
+for TeX Live. Selecting one of these selects some collections
+in the Collections and Languages lists which you can subsequently
+modify.
+
+<h2>The collections menu (<tt>&lt;C&gt;</tt>)</h2>
+
+The collections menu allows you to select and deselect standard
+collections. Each collection &mdash; TeX macro files, Metafont font
+families, and so on &mdash; consists of several packages.
+<p>
+More than one collection can be selected/deselected at the same time.
+
+<h2>The language collections menu (<tt>&lt;L&gt;</tt>)</h2>
+
+The language collections menu allows you to select and deselect
+language support collections. Each collection consists of several
+packages, which provide features like hyphenation files and fonts.
+<p>
+More than one collection can be selected/deselected at the same time.
+
+<h2>The directories menu (<tt>&lt;D&gt;</tt>)</h2>
+
+The TeX Live distribution will be installed in a single directory tree
+(<tt>TEXDIR</tt>). You may choose any directory you like since there are
+no absolute paths compiled into the binaries. Instead, the Kpathsea 
+library selfdir feature ensures that all paths are relative to the
+plocation of the binaries.
+<p>
+The platform independent files are stored in a directory tree in
+<tt>TEXDIR/texmf</tt>. There are also extra directories for performing
+administrative tasks like change of configuration and languages. They
+default to <tt>TEXDIR/texmf-var</tt> and <tt>TEXDIR/texmf-config</tt>.
+<p>
+This system allows you to mount your <tt>TEXDIR/texmf</tt> tree read-only.
+
+<h2>The options menu (<tt>&lt;O&gt;</tt>)</h2>
+
+The options are not applicable to all installations.  Set them as
+appropriate for yours.
+
+<h3>use letter size instead of a4 by default</h3>
+
+You can choose letter as the default paper size for some programs.
+
+<h3>create all format files</h3>
+
+If this option is set, format files are created for system-wide use
+by the installer. Otherwise they are will be created automatically
+when needed.  
+<p>
+In the latter case format files are stored in user's directory trees
+and in some cases have to be re-created when new packages are
+installed. 
+
+<h3>install doc or source trees</h3>
+
+Normally all packages are installed with the source and documentation,
+but these are not needed to actually run the software. If you
+are installing a system for other people, it would be unfriendly to
+select these options; if you know what you are doing and need a
+minimal disk footprint, go ahead
+
+<h3>symlinks in standard directories (UNIX only)</h3>
+
+You can make the binaries, man pages, and info files available on your
+system in either (or both) of two ways:
+<ol>
+  <li> install them in <i>standard places</i> that are searched for these files
+  <li> change your search paths to include the new directories
+</ol>
+If you select the <i>symlinks</i> option, symbolic links will be installed in
+the directories you choose. Note that if you share the TeX Live installation
+accross several machines across NFS and if the chosen <i>standard places</i> are
+not shared, you need to create the symbolic links on each client, too
+(or use method 2 on your clients).
+<p>
+If you do not use the <i>symlinks</i> option, you probably need to set up
+your search paths (<tt>PATH</tt>, <tt>MANPATH</tt>, <tt>INFOPATH</tt>).
+
+<h2>Install for running from DVD (<tt>&lt;V&gt;</tt>)</h2>
+
+This option sets up a minimal setup which allows TeX Live to 
+be run directly from the DVD.
+<p>
+A few directories on the hard disk have to be created for files
+created by the TeX system itsef and for modified configuration files.
+Please change <tt>TEXDIRW</tt> first in the directories menu <tt>&lt;D&gt;</tt>.
+
+</body>
+</html>

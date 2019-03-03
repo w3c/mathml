@@ -1,0 +1,84 @@
+(last status change 2009-07-02)
+
+%vars key                     default      text   perltk   wizard
+   $tlpdb->option("key")
+   description
+   used in install-tl/tlmgr/TLMedia
+----------------------------------------------------------------------------
+tlpdbopt_install_docfiles       1             x       x
+   option("install_docfiles")
+   install doc files
+   install-tl: sub do_install_packages
+   TLMedia.pm: sub install_package
+
+tlpdbopt_install_srcfiles       1             x       x
+   option("install_srcfiles")
+   install src files
+   install-tl: sub do_install_packages
+   TLMedia.pm: sub install_package
+
+tlpdbopt_create_formats         1             x       x
+   option("create_formats")
+   create all formats
+   install-tl: sub do_postinst_stuff
+   tlmgr: sub handle_execute_actions
+
+tlpdbopt_file_assocs            1             w32     w32
+   option("file_assocs")
+   file associations and file type
+   file type is always done
+   file associations:
+     0: do nothing
+     1: do only new/unchanged
+     2: always do
+   install-tl: sub do_tlpdb_postactions
+   TLMedia: remove_package, install_package
+
+tlpdbopt_desktop_integration    1             w32     w32       w32
+   option("desktop_integration")
+   shortcuts etc
+   currently effects w32 only
+   install-tl: sub do_tlpdb_postactions
+   TLMedia: remove_package, install_package
+
+tlpdbopt_post_code              1
+   option("post_code")
+   postaction code
+   install-tl: sub do_tlpdb_postactions
+   TLMedia: remove_package, install_package
+
+tlpdbopt_sys_bin/man/info       /u/l/...      unix    unix
+   option("sys_bin") ...
+   unix link dests (if instopt_adjustpath == 1)
+   TLPDB add/remove_symlinks 
+   (via tlmgr action_symlinks and install-tl do_path_adjustments)
+
+tlpdbopt_w32_multi_user         1             w32     w32       w32
+   option("w32_multi_user")
+   sysadmin as multi user
+   install-tl: sub do_path_adjustments
+   TLMedia: remove_package, install_package
+
+instopt_letter                0             x       x         x
+   not saved into the local TLPDB
+   only for install time setting
+   use letter
+   install-tl: sub do_postinst_stuff
+
+instopt_adjustpath          0 unix/1 win    x       x 
+   path adjustment
+   not saved into the local TLPDB
+   only for install time setting
+   (unix symlinks, w32 reg)
+
+addon_editor                  0             w32     w32       -
+   not saved into the local TLPDB
+   only for install time setting
+   install texworks
+
+unix are things only visible on unix
+w32  are things only visible on w32
+(x)  are things that should be done
+??   are things I am not sure
+-    are things that are not relevant
+
