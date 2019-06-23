@@ -1,6 +1,6 @@
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
- <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" encoding="US-ASCII"/>
+ <xsl:output method="xhtml"  indent="yes" omit-xml-declaration="yes" encoding="US-ASCII"/>
  
  <xsl:template match="*">
   <xsl:message select="'###: ',name()"/>
@@ -124,11 +124,11 @@
    <xsl:for-each-group select="node()" group-adjacent="self::ulist or self::olist or self::glist">
     <xsl:choose>
      <xsl:when test="current-grouping-key()">
-      <xsl:apply-templates select="."/>
+      <xsl:apply-templates select="current-group()"/>
      </xsl:when>
      <xsl:otherwise>
       <p>
-        <xsl:apply-templates select="."/>
+        <xsl:apply-templates select="current-group()"/>
       </p>
      </xsl:otherwise>
     </xsl:choose>
