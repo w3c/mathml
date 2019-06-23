@@ -143,8 +143,7 @@
          
          
          <p>MathML 3 provides two predefined annotation keys for the most common
-            kinds of annotations: <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a> and <a class="omsymbol" href="mathmlkeys#contentequiv">contentequiv</a> defined in the 
-            <cdref cd="mathmlkeys"></cdref> content
+            kinds of annotations: <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a> and <a class="omsymbol" href="mathmlkeys#contentequiv">contentequiv</a> defined in the <a class="omcd" href="mathmlkeys">mathmlkeys</a> content
             dictionary. The <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a> annotation key specifies that the
             annotation value provides an alternate representation for an
             expression in some other markup language, and the <a class="omsymbol" href="mathmlkeys#contentequiv">contentequiv</a> annotation key specifies that
@@ -636,8 +635,7 @@
                symbol as a single attribute.  If none of these attributes are present,
                the annotation key symbol is the symbol
                <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a>
-               from the 
-               <cdref cd="mathmlkeys"></cdref> content dictionary.</p>
+               from the <a class="omcd" href="mathmlkeys">mathmlkeys</a> content dictionary.</p>
             
             
             <p>The <code class="attribute">encoding</code> attribute describes the content type of the
@@ -785,8 +783,7 @@
                symbol as a single attribute.  If none of these attributes are present,
                the annotation key symbol is the symbol
                <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a>
-               from the 
-               <cdref cd="mathmlkeys"></cdref> content dictionary.</p>
+               from the <a class="omcd" href="mathmlkeys">mathmlkeys</a> content dictionary.</p>
             
             
             <p>The <code class="attribute">encoding</code> attribute describes the content type of the
@@ -920,7 +917,7 @@
                </p>
             
             <p>If the above is parsed by an HTML parser it produces a result equivalent to the following
-               invalid input, where the <code class="element">span</code> element has caused all MathML elements to be prematurely closed. The remaining MathML
+               invalid input, where the <code class="element" data-namespace="xhtml">span</code> element has caused all MathML elements to be prematurely closed. The remaining MathML
                elements following the <code class="element">span</code> are no longer contained within <code class="starttag">math</code> so will be parsed as unknown HTML elements and render incorrectly.
                
                <pre class="mathml-error">
@@ -937,7 +934,7 @@
 </pre>
                </p>
             
-            <p>Note here that the HTML <code class="element">span</code> element has
+            <p>Note here that the HTML <code class="element" data-namespace="xhtml">span</code> element has
                caused all open MathML elements to be prematurely closed, resulting in
                the following MathML elements being treated as unknown HTML elements
                as they are no longer descendents of <code class="element">math</code>. See <a href="#interf_html"></a> for more details of the parsing of MathML in HTML.
@@ -1320,8 +1317,8 @@
   &lt;/annotation-xml&gt;
 &lt;/semantics&gt;
 </pre>
-            Here <code class="element">OMA</code>, <code class="element">OMS</code>
-            and <code class="element">OMV</code> are elements defined in the OpenMath
+            Here <code class="element" data-namespace="openmath">OMA</code>, <code class="element" data-namespace="openmath">OMS</code>
+            and <code class="element" data-namespace="openmath">OMV</code> are elements defined in the OpenMath
             standard for representing application, symbol, and variable, respectively. 
             The references from the OpenMath annotation are given by the
             <code class="attribute">href</code> attributes.
