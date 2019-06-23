@@ -216,6 +216,9 @@
     <xsl:apply-templates select="@*,node()"/>
    </code>
   </xsl:template>
+  <xsl:template match="el/@namespace">
+   <xsl:attribute name="data-namespace" select="."/>
+  </xsl:template>
 
     <xsl:template match="code">
    <code>
@@ -268,6 +271,10 @@
 
 <xsl:template match="symbolref">
  <a class="omsymbol" href="{@cd}#{@name}"><xsl:value-of select="@name"/></a>
+</xsl:template>
+
+<xsl:template match="cdref">
+ <a class="omcd" href="{@cd}"><xsl:value-of select="@cd"/></a>
 </xsl:template>
 
 
