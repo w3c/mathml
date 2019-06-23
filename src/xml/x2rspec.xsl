@@ -119,6 +119,25 @@
    <dt><xsl:apply-templates select="label/node()"/></dt>
    <dd><xsl:apply-templates select="def/node()"/></dd>
   </xsl:template>
+
+
+    <xsl:template match="blist">
+   <dl>
+    <xsl:apply-templates/>
+   </dl>
+  </xsl:template>
+
+  <xsl:template match="bibl">
+   <dt id="{@id}">[<xsl:value-of select="@id"/>]</dt>
+   <dd><xsl:apply-templates/></dd>
+  </xsl:template>
+
+   <xsl:template match="loc">
+    <a href="{@href}">
+     <xsl:apply-templates/>
+    </a>
+  </xsl:template>
+
   
   <xsl:template match="p">
    <xsl:for-each-group select="node()" group-adjacent="self::ulist or self::olist or self::glist">
