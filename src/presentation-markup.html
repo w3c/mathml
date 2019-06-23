@@ -6006,7 +6006,7 @@
    &lt;mn&gt; 2 &lt;/mn&gt;
 &lt;/mfraction&gt;
 </pre>
-               which contains the non-MathML element <code class="element">mfraction</code>
+               which contains the non-MathML element <code class="element" data-namespace="mathml-error">mfraction</code>
                (presumably in place of the MathML element <code class="element">mfrac</code>),
                it might generate the error message
                
@@ -8332,7 +8332,7 @@
          up using <code class="element">mtable</code>,
          <code class="element">mtr</code>, <code class="element">mlabeledtr</code> and
          <code class="element">mtd</code> elements. These elements are similar to the
-         <code class="element">table</code>, <code class="element">tr</code> and <code class="element">td</code> elements of HTML, except that they provide
+         <code class="element" data-namespace="xhtml">table</code>, <code class="element" data-namespace="xhtml">tr</code> and <code class="element" data-namespace="xhtml">td</code> elements of HTML, except that they provide
          specialized attributes for the fine layout control
          necessary for commutative diagrams, block matrices and so on.</p>
       
@@ -9395,7 +9395,7 @@ mtd.eqnum:before {content: "(" counter(eqnum) ")"}
             <p>The reason <code class="element">mtable</code> columns are used as
                alignment scopes is that they are the only general way in MathML to
                arrange expressions into vertical columns. Future versions of MathML
-               may provide an <code class="element">malignscope</code> element that allows
+               may provide an <code class="element" data-namespace="future-mathml">malignscope</code> element that allows
                an alignment scope to be created around any MathML element, but even
                then, table columns would still sometimes need to act as alignment
                scopes, and since they are not elements themselves, but rather are

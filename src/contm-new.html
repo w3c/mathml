@@ -197,63 +197,63 @@
                      
                      <td><a class="intref" href="#contm_cn"><code class="element">cn</code></a></td>
                      
-                     <td><code class="element">OMI</code>, <code class="element">OMF</code></td>
+                     <td><code class="element" data-namespace="openmath">OMI</code>, <code class="element" data-namespace="openmath">OMF</code></td>
                      </tr>
                   
                   <tr>
                      
                      <td><a class="intref" href="#contm_csymbol"><code class="element">csymbol</code></a></td>
                      
-                     <td><code class="element">OMS</code></td>
+                     <td><code class="element" data-namespace="openmath">OMS</code></td>
                      </tr>
                   
                   <tr>
                      
                      <td><a class="intref" href="#contm_ci"><code class="element">ci</code></a></td>
                      
-                     <td><code class="element">OMV</code></td>
+                     <td><code class="element" data-namespace="openmath">OMV</code></td>
                      </tr>
                   
                   <tr>
                      
                      <td><a class="intref" href="#contm_cs"><code class="element">cs</code></a></td>
                      
-                     <td><code class="element">OMSTR</code></td>
+                     <td><code class="element" data-namespace="openmath">OMSTR</code></td>
                      </tr>
                   
                   <tr>
                      
                      <td><a class="intref" href="#contm_apply"><code class="element">apply</code></a></td>
                      
-                     <td><code class="element">OMA</code></td>
+                     <td><code class="element" data-namespace="openmath">OMA</code></td>
                      </tr>
                   
                   <tr>
                      
                      <td><a class="intref" href="#contm_binding"><code class="element">bind</code></a></td>
                      
-                     <td><code class="element">OMBIND</code></td>
+                     <td><code class="element" data-namespace="openmath">OMBIND</code></td>
                      </tr>
                   
                   <tr>
                      
                      <td><a class="intref" href="#contm_binding"><code class="element">bvar</code></a></td>
                      
-                     <td><code class="element">OMBVAR</code></td>
+                     <td><code class="element" data-namespace="openmath">OMBVAR</code></td>
                      </tr>
                   
                   <tr>
                      
                      <td><a class="intref" href="#contm_sharing"><code class="element">share</code></a></td>
                      
-                     <td><code class="element">OMR</code></td>
+                     <td><code class="element" data-namespace="openmath">OMR</code></td>
                      </tr>
                   
                   <tr>
                      
                      <td><a class="intref" href="#contm_semantics"><code class="element">semantics</code></a></td>
                      
-                     <td><code class="element">OMATTR</code></td>
+                     <td><code class="element" data-namespace="openmath">OMATTR</code></td>
                      </tr>
                   
                   <tr>
@@ -261,21 +261,21 @@
                      <td><a class="intref" href="#contm_semantics"><code class="element">annotation</code></a>,
                         <a class="intref" href="#contm_semantics"><code class="element">annotation-xml</code></a></td>
                      
-                     <td><code class="element">OMATP</code>, <code class="element">OMFOREIGN</code></td>
+                     <td><code class="element" data-namespace="openmath">OMATP</code>, <code class="element" data-namespace="openmath">OMFOREIGN</code></td>
                      </tr>
                   
                   <tr>
                      
                      <td><a class="intref" href="#contm_cerror"><code class="element">cerror</code></a></td>
                      
-                     <td><code class="element">OME</code></td>
+                     <td><code class="element" data-namespace="openmath">OME</code></td>
                      </tr>
                   
                   <tr>
                      
                      <td><a class="intref" href="#contm_cbytes"><code class="element">cbytes</code></a></td>
                      
-                     <td><code class="element">OMB</code></td>
+                     <td><code class="element" data-namespace="openmath">OMB</code></td>
                      </tr>
                   </tbody>
                </table>
@@ -1034,8 +1034,7 @@
                
                <p>In Strict Content MathML, constants should be represented using
                   <code class="element">csymbol</code> elements.  A number of important constants are defined in the
-                  
-                  <cdref cd="nums1"></cdref> content dictionary. An expression of the form 
+                  <a class="omcd" href="nums1">nums1</a> content dictionary. An expression of the form 
                   
                   <pre class="mathml">&lt;cn type="constant"&gt;c&lt;/cn&gt;</pre>
                   has the Strict Content MathML equivalent
@@ -1301,8 +1300,7 @@
                <a class="omsymbol" href="mathmltypes#list_type">list_type</a>, 
                <a class="omsymbol" href="mathmltypes#set_type">set_type</a>, and 
                <a class="omsymbol" href="mathmltypes#matrix_type">matrix_type</a> in the 
-               
-               <cdref cd="mathmltypes"></cdref> Content Dictionary: In this sense the following two expressions are considered equivalent:
+               <a class="omcd" href="mathmltypes">mathmltypes</a> Content Dictionary: In this sense the following two expressions are considered equivalent:
                
                </p>
             
@@ -3057,8 +3055,7 @@
             
             <p>The <code class="element">lambda</code> element is a container element
                corresponding to the <a class="omsymbol" href="fns1#lambda">lambda</a> symbol
-               in the 
-               <cdref cd="fns1"></cdref> Content Dictionary.  However, unlike the
+               in the <a class="omcd" href="fns1">fns1</a> Content Dictionary.  However, unlike the
                container elements of the preceding section, which purely
                construct mathematical objects from arguments, the <code class="element">lambda</code>
                element performs variable binding as well.  Therefore, the child
@@ -3791,9 +3788,7 @@
                <p>The above rule applies to all symbols in the listed classes.
                   In the  case of <code>nary-set.class</code> the choice of Content
                   Dictionary to use depends on the <code class="attribute">type</code> attribute on the
-                  <span>arguments</span>, defaulting to 
-                  <cdref cd="set1"></cdref>, but 
-                  <cdref cd="multiset1"></cdref>
+                  <span>arguments</span>, defaulting to <a class="omcd" href="set1">set1</a>, but <a class="omcd" href="multiset1">multiset1</a>
                   should be used if <code class="attribute">type</code>=<code class="attributevalue">multiset</code>.</p>
                
                
@@ -3971,9 +3966,7 @@
                <p>The above rules apply to all symbols in classes <code>nary-reln.class</code>
                   and <code>nary-set-reln.class</code>. In the latter case the choice of Content
                   Dictionary to use depends on the <code class="attribute">type</code> attribute on the
-                  symbol, defaulting to 
-                  <cdref cd="set1"></cdref>, but 
-                  <cdref cd="multiset1"></cdref>
+                  symbol, defaulting to <a class="omcd" href="set1">set1</a>, but <a class="omcd" href="multiset1">multiset1</a>
                   should be used if <code class="attribute">type</code>=<code class="attributevalue">multiset</code>.</p>
                </section>
             </section>
@@ -4320,8 +4313,7 @@
 &lt;/semantics&gt;</pre>
                
                For MathML attributes not allowed in Strict Content MathML the content
-               dictionary 
-               <cdref cd="mathmlattr"></cdref> is referenced, which provides
+               dictionary <a class="omcd" href="mathmlattr">mathmlattr</a> is referenced, which provides
                symbols for all attributes allowed on content MathML
                elements.</p>
             </div>
@@ -4468,8 +4460,7 @@
             
             
             <p>In Strict markup, the <code class="element">interval</code> element corresponds to one
-               of four symbols from the 
-               <cdref cd="interval1"></cdref> content
+               of four symbols from the <a class="omcd" href="interval1">interval1</a> content
                dictionary. If <code class="attribute">closure</code> has the value <code class="attributevalue">open</code> then
                <code class="element">interval</code> corresponds to the
                <a class="omsymbol" href="interval1#interval_oo">interval_oo</a>.
@@ -5317,8 +5308,7 @@
             <p>In Strict Content MathML, the container elements
                <code class="element">piecewise</code>, <code class="element">piece</code> and <code class="element">otherwise</code> are mapped
                to applications of the constructor symbols of the same names in the
-               
-               <cdref cd="piece1"></cdref> CD.  Apart from the fact that these three
+               <a class="omcd" href="piece1">piece1</a> CD.  Apart from the fact that these three
                elements (respectively symbols) are used together, the mapping to
                Strict markup is straightforward:</p>
             
@@ -8087,12 +8077,10 @@
             
             
             <p>As an indefinite integral applied to a function, the <code class="element">int</code> element corresponds to
-               the <a class="omsymbol" href="calculus1#int">int</a> symbol from the 
-               <cdref cd="calculus1"></cdref> content
+               the <a class="omsymbol" href="calculus1#int">int</a> symbol from the <a class="omcd" href="calculus1">calculus1</a> content
                dictionary. As a definite integral applied to a function, the <code class="element">int</code> element
                corresponds to the <a class="omsymbol" href="calculus1#defint">defint</a> symbol
-               from the 
-               <cdref cd="calculus1"></cdref> content dictionary.</p>
+               from the <a class="omcd" href="calculus1">calculus1</a> content dictionary.</p>
             
             
             
@@ -8752,8 +8740,7 @@
             
             <p>When applied to a function, the <code class="element">partialdiff</code> element
                corresponds to the <a class="omsymbol" href="calculus1#partialdiff">partialdiff</a>
-               symbol from the 
-               <cdref cd="calculus1"></cdref> content dictionary. No special
+               symbol from the <a class="omcd" href="calculus1">calculus1</a> content dictionary. No special
                rules are necessary as the two arguments of <code class="element">partialdiff</code>
                translate directly to the two arguments of
                <a class="omsymbol" href="calculus1#partialdiff">partialdiff</a>.</p>
@@ -9765,8 +9752,7 @@
             
             
             <p>When translating to Strict Content Markup, if the <code class="attribute">type</code>
-               has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="multiset1#in">in</a> symbol from 
-               <cdref cd="multiset1"></cdref> should
+               has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should
                be used instead.</p>
             
             </section>
@@ -9824,8 +9810,7 @@
             
             
             <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
-               the <a class="omsymbol" href="multiset1#in">in</a> symbol from 
-               <cdref cd="multiset1"></cdref> should be used instead.</p> 
+               the <a class="omsymbol" href="multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p> 
             
             </section>
          
@@ -10003,8 +9988,7 @@
             
             
             <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
-               the <a class="omsymbol" href="multiset1#in">in</a> symbol from 
-               <cdref cd="multiset1"></cdref> should be used instead.</p> 
+               the <a class="omsymbol" href="multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p> 
             
             </section>
          
@@ -10065,8 +10049,7 @@
                </div>
             
             <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
-               the <a class="omsymbol" href="multiset1#in">in</a> symbol from 
-               <cdref cd="multiset1"></cdref> should be used instead.</p> 
+               the <a class="omsymbol" href="multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p> 
             </section>
          
          
@@ -10126,8 +10109,7 @@
                </div>
             
             <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
-               the <a class="omsymbol" href="multiset1#in">in</a> symbol from 
-               <cdref cd="multiset1"></cdref> should be used instead.</p> 
+               the <a class="omsymbol" href="multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p> 
             </section>
          
          
@@ -10191,8 +10173,7 @@
                </div>
             
             <p>When translating to Strict Content Markup, if the <code class="attribute">type</code>
-               has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="multiset1#size">size</a> symbol from 
-               <cdref cd="multiset1"></cdref> should be used
+               has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="multiset1#size">size</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used
                instead.</p>
             </section>
          
@@ -11526,11 +11507,9 @@
             
             
             <p>When the <code class="element">mean</code> element is applied to an explicit list of arguments, the
-               translation to Strict Content markup is direct, using the <a class="omsymbol" href="s_data1#mean">mean</a> symbol from the 
-               <cdref cd="s_data1"></cdref> content dictionary, as described in
+               translation to Strict Content markup is direct, using the <a class="omsymbol" href="s_data1#mean">mean</a> symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
                <a href="#contm_strict-opel"></a>. When it is applied to a distribution, then the
-               <a class="omsymbol" href="s_dist1#mean">mean</a> symbol from the 
-               <cdref cd="s_dist1"></cdref> content
+               <a class="omsymbol" href="s_dist1#mean">mean</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
                dictionary should be used.  In the case with qualifiers use <a href="#contm_p2s.lifted"></a> 
                with the same caveat.</p>
             </section>
@@ -11625,11 +11604,9 @@
             
             <p>When the <code class="element">sdev</code> element is applied to an explicit list of arguments, the
                translation to Strict Content markup is direct, using the <a class="omsymbol" href="s_data1#sdev">sdev</a> 
-               symbol from the 
-               <cdref cd="s_data1"></cdref> content dictionary, as described in
+               symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
                <a href="#contm_strict-opel"></a>. When it is applied to a distribution, then the
-               <a class="omsymbol" href="s_dist1#sdev">sdev</a> symbol from the 
-               <cdref cd="s_dist1"></cdref> content
+               <a class="omsymbol" href="s_dist1#sdev">sdev</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
                dictionary should be used. In the case with qualifiers use
                <a href="#contm_p2s.lifted"></a> with the same caveat.</p>
             </section>
@@ -11730,11 +11707,9 @@
             
             <p>When the <code class="element">variance</code> element is applied to an explicit list of arguments, the
                translation to Strict Content markup is direct, using the <a class="omsymbol" href="s_data1#variance">variance</a> 
-               symbol from the 
-               <cdref cd="s_data1"></cdref> content dictionary, as described in
+               symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
                <a href="#contm_strict-opel"></a>. When it is applied to a distribution, then the
-               <a class="omsymbol" href="s_dist1#variance">variance</a> symbol from the 
-               <cdref cd="s_dist1"></cdref> content
+               <a class="omsymbol" href="s_dist1#variance">variance</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
                dictionary should be used. In the case with qualifiers use <a href="#contm_p2s.lifted"></a> 
                with the same caveat.</p>
             </section>
@@ -11808,8 +11783,7 @@
             
             <p>When the <code class="element">median</code> element is applied to an explicit list of arguments, the
                translation to Strict Content markup is direct, using the <a class="omsymbol" href="s_data1#median">median</a> 
-               symbol from the 
-               <cdref cd="s_data1"></cdref> content dictionary, as described in
+               symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
                <a href="#contm_strict-opel"></a>.</p>
             </section>
          
@@ -11882,8 +11856,7 @@
             
             <p>When the <code class="element">mode</code> element is applied to an explicit list of arguments, the
                translation to Strict Content markup is direct, using the <a class="omsymbol" href="s_data1#mode">mode</a> 
-               symbol from the 
-               <cdref cd="s_data1"></cdref> content dictionary, as described in
+               symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
                <a href="#contm_strict-opel"></a>.</p>
             </section>
          
@@ -11998,13 +11971,11 @@
             
             <div id="contm_strict-moment-degree" class="strict-mathml-example">
                
-               <p>When rewriting to Strict Markup, the <a class="omsymbol" href="s_dist1#moment">moment</a> <span>symbol from the 
-                     <cdref cd="s_data1"></cdref> content 
+               <p>When rewriting to Strict Markup, the <a class="omsymbol" href="s_dist1#moment">moment</a> <span>symbol from the <a class="omcd" href="s_data1">s_data1</a> content 
                      dictionary</span> is used <span>when the <code class="element">moment</code> element is applied 
                      to an explicit list of arguments.  When it is applied to a distribution, then the
                      
-                     <a class="omsymbol" href="s_dist1#moment">moment</a> symbol from the 
-                     <cdref cd="s_dist1"></cdref> content
+                     <a class="omsymbol" href="s_dist1#moment">moment</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
                      dictionary should be used.</span> <span>Both operators take</span> 
                   the degree as the first argument, the point as the second, <span>followed by</span> 
                   the data set or random variable <span>respectively</span>.</p>
@@ -13404,8 +13375,7 @@
                   corresponds to the <a class="omsymbol" href="multiset1#emptyset">emptyset</a> 
                   However, as there is no method other than annotation for an author to explicitly indicate
                   this,
-                  it is always acceptable to translate to the  <a class="omsymbol" href="set1#emptyset">emptyset</a> symbol from the 
-                  <cdref cd="set1"></cdref> CD.</p>
+                  it is always acceptable to translate to the  <a class="omsymbol" href="set1#emptyset">emptyset</a> symbol from the <a class="omcd" href="set1">set1</a> CD.</p>
                </div>
             </section>
          
@@ -13953,8 +13923,7 @@
                <li>
                   
                   <p>into a construction using the <a class="omsymbol" href="set1#suchthat">suchthat</a> symbol
-                     from the 
-                     <cdref cd="set1"></cdref> content dictionary in an <code class="element">apply</code> with bound
+                     from the <a class="omcd" href="set1">set1</a> content dictionary in an <code class="element">apply</code> with bound
                      variables via the <a href="#contm_dombind-strict"></a> rule.</p>
                   </li>
                </ol>

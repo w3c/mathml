@@ -999,7 +999,7 @@ mtext = element mtext {mtext.attributes, (token.content|anyElement)*}
             in
             XHTML, but also to embed XHTML in MathML.
             <span>The schema used for the W3C HTML5 validator extends <code class="element">mtext</code> to allow all
-               inline (phrasing) HTML elements (including <code class="element">svg</code>) to be used within the
+               inline (phrasing) HTML elements (including <code class="element" data-namespace="svg">svg</code>) to be used within the
                content of <code class="element">mtext</code>. See the example in <a href="#presm_html_insertion"></a>. As noted above,
                MathML fragments using XHTML elements within <code class="element">mtext</code> will not be valid MathML if extracted
                from the document and used in isolation. Editing tools may offer support for removing
@@ -1262,7 +1262,7 @@ mtext = element mtext {mtext.attributes, (token.content|anyElement)*}
                Graphics&#x201d;</span> format [[SVG1.1]]
             (see [[XHTML-MathML-SVG]] for the definition of an XHTML profile integrating MathML and SVG), the second one
             uses the
-            XHTML <code class="element">img</code> element embedded as an XHTML fragment.
+            XHTML <code class="element" data-namespace="xhtml">img</code> element embedded as an XHTML fragment.
             In this situation, a MathML processor can use any of these
             representations for display,  perhaps producing a graphical format
             such as the image below.</p>
@@ -1275,7 +1275,7 @@ mtext = element mtext {mtext.attributes, (token.content|anyElement)*}
             in  MathML-Content markup, as the first child of the
             <code class="element">semantics</code> element.  In this regard, it is the
             representation most analogous to the <code class="attribute">alt</code> attribute of the
-            <code class="element">img</code> element in XHTML, and would likely be
+            <code class="element" data-namespace="xhtml">img</code> element in XHTML, and would likely be
             the best choice for non-visual rendering.</p>
          </section>
       
