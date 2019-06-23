@@ -1,0 +1,117 @@
+<section class="appendix">
+   <h2 id="oper-dict">Operator Dictionary</h2>
+   <p>The following table gives the suggested dictionary of rendering
+properties for operators, fences, separators, and accents in MathML, all of
+which are represented by </p>
+   <section>
+      <h3 id="oper-dict_index">Indexing of the operator dictionary</h3>
+      <p>Note that the dictionary is indexed not just by the element
+content, but by the element content and </p>
+      <p>Having made that choice, or with the </p>
+      <p>In the table below, all non-ASCII characters are represented by
+XML-style hexadecimal numeric character references.
+The choice of markup (character data, numeric character reference or named entity reference)
+for a given character in MathML has no effect on its rendering.</p>
+   </section>
+   <section>
+      <h3 id="oper-dict_format">Format of operator dictionary entries</h3>
+      <p>Each row of the table is indexed as described above by the both the character
+(given by code point and Unicode Name) and the value of the form attribute.
+The fourth column gives the </p>
+      <p>The length valued attributes such as </p>
+      <p>Any attribute not listed for some entry has its default value,
+which is given in parentheses in the table of attributes in </p>
+      <table>
+         <tbody>
+            <tr>
+               <th>(</th>
+               <th>(</th>
+               <th class="uname">left parenthesis</th>
+               <th>prefix</th>
+               <td>1</td>
+               <td>0</td>
+               <td>0</td>
+               <td/>
+               <td>fence<span>,</span> stretchy</td>
+            </tr>
+         </tbody>
+      </table>
+      <p>could be expressed as an </p>
+      <p>This entry means that, for MathML renderers which use this
+suggested operator dictionary, giving the element
+</p>
+      <p>In some versions of this specification,
+the rows of the table may be reordered by clicking on a heading in the top row,
+to cause the table to be ordered by that column.</p>
+   </section>
+   <section>
+      <h3 id="oper-dict_space">Notes on <code class="attribute">lspace</code> and 
+<code class="attribute">rspace</code> attributes</h3>
+      <p>The values for </p>
+      <table>
+         <thead>
+            <tr>
+               <td>Table Entry</td>
+               <td>Named Space</td>
+               <td>Default Length</td>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>0</td>
+               <td/>
+               <td>0 em</td>
+            </tr>
+            <tr>
+               <td>1</td>
+               <td>veryverythinmathspace</td>
+               <td>1/18 em</td>
+            </tr>
+            <tr>
+               <td>2</td>
+               <td>verythinmathspace</td>
+               <td>2/18 em</td>
+            </tr>
+            <tr>
+               <td>3</td>
+               <td>thinmathspace</td>
+               <td>3/18 em</td>
+            </tr>
+            <tr>
+               <td>4</td>
+               <td>mediummathspace</td>
+               <td>4/18 em</td>
+            </tr>
+            <tr>
+               <td>5</td>
+               <td>thickmathspace</td>
+               <td>5/18 em</td>
+            </tr>
+            <tr>
+               <td>6</td>
+               <td>verythickmathspace</td>
+               <td>6/18 em</td>
+            </tr>
+            <tr>
+               <td>7</td>
+               <td>veryverythickmathspace</td>
+               <td>7/18 em</td>
+            </tr>
+         </tbody>
+      </table>
+      <p>
+For the invisible operators whose content is </p>
+      <p>Some renderers may wish to use no spacing for most operators
+appearing in scripts (i.e. when </p>
+   </section>
+   <section>
+      <h3 id="oper-dict_entries-table">Operator dictionary entries</h3>
+      <table>
+         <tbody>
+            <tr>
+               <td/>
+            </tr>
+         </tbody>
+      </table>
+   </section>
+</section>
