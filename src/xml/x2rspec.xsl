@@ -128,9 +128,20 @@
   </xsl:template>
 
   <xsl:template match="bibl">
-   <dt id="{@id}">[<xsl:value-of select="@id"/>]</dt>
+   <dt id="bib-{@id}">[<xsl:value-of select="@id"/>]</dt>
    <dd><xsl:apply-templates/></dd>
   </xsl:template>
+
+  <xsl:template match="orglist">
+   <dl>
+    <xsl:apply-templates/>
+   </dl>
+  </xsl:template>
+  <xsl:template match="orglist/member">
+   <dt><xsl:apply-templates select="name/node()"/></dt>
+   <dd><xsl:apply-templates select="affiliation/node()"/></dd>
+  </xsl:template>
+  
 
    <xsl:template match="loc">
     <a href="{@href}">
@@ -140,7 +151,7 @@
 
   
   <xsl:template match="p">
-   <xsl:for-each-group select="node()" group-adjacent="self::ulist or self::olist or self::glist">
+   <xsl:for-each-group select="node()" group-adjacent="self::ulist or self::olist or self::glist or self::orglist">
     <xsl:choose>
      <xsl:when test="current-grouping-key()">
       <xsl:apply-templates select="current-group()"/>
@@ -277,5 +288,14 @@
  <a class="omcd" href="{@cd}"><xsl:value-of select="@cd"/></a>
 </xsl:template>
 
+<xsl:template match="div[@role='strict-mathml-example']">
+ <div class="example strict-mathml-example" id="{@id}" title="{head}">
+  <h6><xsl:apply-templates select="head/node()"/></h6>
+  <xsl:apply-templates/>
+ </div>
+</xsl:template>
 
+<xsl:template match="code/@meta">
+ <xsl:attribute name="class" select="'meta-code'"/>
+</xsl:template>
 </xsl:stylesheet>
