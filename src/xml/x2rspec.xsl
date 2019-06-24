@@ -295,8 +295,8 @@
 </xsl:template>
 
 <xsl:template match="div[@role='strict-mathml-example']">
- <div class="example strict-mathml-example" id="{@id}" title="{head}">
-  <h6><xsl:apply-templates select="head/node()"/></h6>
+ <div class="example strict-mathml-example">
+  <h6 id="{@id}"><xsl:apply-templates select="head/node()"/></h6>
   <xsl:apply-templates/>
  </div>
 </xsl:template>
