@@ -10,7 +10,7 @@
 <ulist>
  <item><p>Changes to the references to match new W3C specification rules,
  and to use the new W3C CSS formatting style, most notably affecting the table of contents styling.</p></item>
- <item><p>Update the <specref ref="status"/>, in particular using <code>https</code> and referencing the GitHub Issues page as required for current
+ <item><p>Update the <specref ref="sotd"/>, in particular using <code>https</code> and referencing the GitHub Issues page as required for current
  W3C publications.</p></item>
 </ulist>
 </item>
@@ -59,7 +59,7 @@
 <ulist>
 <item><p>Changes to <specref ref="authors"/> to acknowlege the death of Robert Miner.</p></item>
 <item><p>Changes to <specref ref="abstract"/> to highlight MathML may be used in HTML as well as XML.</p></item>
-<item><p>Update  the <specref ref="status"/>.</p></item>
+<item><p>Update  the <specref ref="sotd"/>.</p></item>
 </ulist>
 </item>
 <item>
