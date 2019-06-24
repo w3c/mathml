@@ -156,8 +156,12 @@
      <xsl:when test="current-grouping-key()">
       <xsl:apply-templates select="current-group()"/>
      </xsl:when>
+     <xsl:when test="not(current-group()[2]) and not(normalize-space(.))"/>
      <xsl:otherwise>
       <p>
+       <xsl:if test="position()=1">
+	<xsl:copy-of select="@id"/>
+       </xsl:if>
         <xsl:apply-templates select="current-group()"/>
       </p>
      </xsl:otherwise>
