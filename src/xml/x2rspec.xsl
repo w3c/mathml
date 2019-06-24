@@ -105,6 +105,7 @@
 
   <xsl:template match="item">
    <li>
+    <xsl:copy-of select="@id"/>
     <xsl:apply-templates/>
    </li>
   </xsl:template>
@@ -116,7 +117,7 @@
   </xsl:template>
 
   <xsl:template match="gitem">
-   <dt><xsl:apply-templates select="label/node()"/></dt>
+   <dt><xsl:copy-of select="label/@id"/><xsl:apply-templates select="label/node()"/></dt>
    <dd><xsl:apply-templates select="def/node()"/></dd>
   </xsl:template>
 
@@ -160,7 +161,7 @@
      <xsl:otherwise>
       <p>
        <xsl:if test="position()=1">
-	<xsl:copy-of select="@id"/>
+	<xsl:copy-of select="../@id"/>
        </xsl:if>
         <xsl:apply-templates select="current-group()"/>
       </p>
