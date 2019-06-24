@@ -232,7 +232,7 @@
 <ulist>
 <item><p>Make <bibref ref="HTML5"/> normative.</p></item>
 <item><p>Update the references to current versions, 
-<bibref ref="Bidi"/>, <bibref ref="Entities"/>, <bibref ref="ISO10646"/>,
+<bibref ref="Bidi"/>, <bibref ref="Entities"/>,
 <bibref ref="Normal"/>, <bibref ref="RELAX-NG"/>,
 <bibref ref="Unicode"/>.</p></item>
 </ulist>
