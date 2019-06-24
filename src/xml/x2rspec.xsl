@@ -151,7 +151,7 @@
 
   
   <xsl:template match="p">
-   <xsl:for-each-group select="node()" group-adjacent="self::ulist or self::olist or self::glist or self::orglist">
+   <xsl:for-each-group select="node()" group-adjacent="self::ulist or self::olist or self::glist or self::orglist or self::graphic[not(@role='inline')]">
     <xsl:choose>
      <xsl:when test="current-grouping-key()">
       <xsl:apply-templates select="current-group()"/>
@@ -166,9 +166,15 @@
   </xsl:template>
 
 
-  <xsl:template match="graphic">
-   <img src="{@source}" alt="{@alt}"/>
-  </xsl:template>
+<xsl:template match="graphic[@role='inline']">
+   <img src="{@source}" alt="{@alt}" align="{(@align,'middle')[1]}"/>
+ </xsl:template>
+
+ <xsl:template match="graphic">
+   <blockquote>
+     <p><img src="{@source}" alt="{@alt}"/></p>
+   </blockquote>
+ </xsl:template>
 
   <xsl:template match="eg">
    <pre>
