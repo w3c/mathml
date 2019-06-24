@@ -1896,8 +1896,7 @@
 &lt;/mrow&gt;
 </pre>
                   This might render as:
-                  
-                  <ing src="image/f3006.gif" alt="\includegraphics{image/braids}"></ing> 
+                  <img src="image/f3006.gif" alt="\includegraphics{image/braids}"></img> 
                   </p>
                
                </section>
@@ -4118,11 +4117,9 @@
                
                
                <p>The above should render as 
-                  
-                  <ing src="image/f3001.gif" alt="(\frac{a}{b})"></ing> 
+                  <img src="image/f3001.gif" alt="(\frac{a}{b})"></img> 
                   as opposed to the default rendering
-                  
-                  <ing src="image/f3002.gif" alt="\left(\frac{a}{b}\right)"></ing>.</p>
+                  <img src="image/f3002.gif" alt="\left(\frac{a}{b}\right)"></img>.</p>
                
                
                <p>Note that each parenthesis is sized independently; if only one of
@@ -4295,8 +4292,7 @@
                
                
                <p>This displays as 
-                  
-                  <ing src="image/f3003.gif" alt="x \widearrow{\mathrm{maps~to}} y"></ing>.</p>
+                  <img src="image/f3003.gif" alt="x \widearrow{\mathrm{maps~to}} y"></img>.</p>
                </section>
             
             
@@ -4366,8 +4362,7 @@
             
             <p>This displays as </p>
             
-            <p>
-               <ing src="image/linebreak-example1.png" alt="example with equal and plus signs aligned"></ing>
+            <p><img src="image/linebreak-example1.png" alt="example with equal and plus signs aligned"></img>
                </p>
             
             <p>Note that because <code class="attribute">indentalignlast</code> defaults to <code class="attributevalue">indentalign</code>,
@@ -4447,11 +4442,9 @@
             <p>In some cases, text embedded in mathematics could be more appropriately
                represented using <code class="element">mo</code> or <code class="element">mi</code> elements.
                For example, the expression 'there exists
-               
-               <ing src="image/f3004.gif" alt="\delta&gt;0"></ing>
+               <img src="image/f3004.gif" alt="\delta&gt;0"></img>
                such that <i class="var">f</i>(<i class="var">x</i>) &lt;1' is equivalent to
-               
-               <ing src="image/f3005.gif" alt="\exists \delta&gt;0 \backepsilon f(x)&lt;1"></ing> 
+               <img src="image/f3005.gif" alt="\exists \delta&gt;0 \backepsilon f(x)&lt;1"></img> 
                and could be represented as:
                
                <pre class="mathml">
@@ -5336,14 +5329,11 @@
             <p>Thicker lines (e.g. <code class="attribute">linethickness</code>="thick") might be used with nested fractions;
                a value of "0" renders without the bar such as for  binomial coefficients.
                These cases are shown below:
-               
-               <ing src="image/f3007.gif" alt="\binom{a}{b} \quad \genfrac{}{}{1pt}{}{\frac{a}{b}}{\frac{c}{d}}"></ing>
-            </p>
+               <img src="image/f3007.gif" alt="\binom{a}{b} \quad \genfrac{}{}{1pt}{}{\frac{a}{b}}{\frac{c}{d}}"></img></p>
             
             
             <p>An example illustrating the bevelled form is shown below:
-               
-               <ing src="image/f3008.gif" alt="\frac{1}{x^3 + \frac{x}{3}} = \raisebox{1ex}{$1$}\!        \left/ \!\raisebox{-1ex}{$x^3+\frac{x}{3}$} \right."></ing>
+               <img src="image/f3008.gif" alt="\frac{1}{x^3 + \frac{x}{3}} = \raisebox{1ex}{$1$}\!        \left/ \!\raisebox{-1ex}{$x^3+\frac{x}{3}$} \right."></img>
                In a RTL directionality context,  the numerator leads (on the right),
                the denominator follows (on the left) and the diagonal line slants upwards going from
                right to left<span> (See <a href="#presm_bidi_math"></a> for clarification)</span>.
@@ -6444,8 +6434,7 @@
                and <code class="attribute">voffset</code> to shift the position of child content without
                modifying the <code class="element">mpadded</code> bounding box.</p>
             
-            
-            <ing src="image/mpadded-shift.png" alt="illustration of the use of mpadded to shift the position of child content without modifying the bounding box"></ing>
+            <img src="image/mpadded-shift.png" alt="illustration of the use of mpadded to shift the position of child content without modifying the bounding box"></img>
             
             
             
@@ -6467,8 +6456,7 @@
                to modifying the <code class="element">mpadded</code> bounding box without changing the relative position 
                of the child content. </p>
             
-            
-            <ing src="image/mpadded-resize.png" alt="illustration of the use of mpadded to modifying its bounding box without shifting the relative location of its child content"></ing>
+            <img src="image/mpadded-resize.png" alt="illustration of the use of mpadded to modifying its bounding box without shifting the relative location of its child content"></img>
             
             
             <p>The corresponding MathML is:
@@ -6488,8 +6476,7 @@
             <p>The final diagram illustrates the generic use of <code class="element">mpadded</code> to modify both 
                the bounding box and relative position of child content.</p>
             
-            
-            <ing src="image/mpadded-combined.png" alt="illustration of the use of mpadded to modify both the bounding box size and position of child content"></ing>
+            <img src="image/mpadded-combined.png" alt="illustration of the use of mpadded to modify both the bounding box size and position of child content"></img>
             
             
             <p>The corresponding MathML is:
@@ -6608,11 +6595,9 @@
             
             
             <p>This would render as something like
-               
-               <ing src="image/mphantom.gif" alt="\frac{x+y+x}{x\phantom{{}+y}+z}"></ing>
+               <img src="image/mphantom.gif" alt="\frac{x+y+x}{x\phantom{{}+y}+z}"></img>
                rather than as
-               
-               <ing src="image/mphantom-bad.gif" alt="\frac{x+y+z}{x+z}"></ing>
+               <img src="image/mphantom-bad.gif" alt="\frac{x+y+z}{x+z}"></img>
                </p>
             
             
@@ -7217,8 +7202,7 @@
 &lt;/menclose&gt;
 </pre>
                which renders with the box and circle overlapping roughly as
-               
-               <ing src="image/circlebox.png" alt="[Image of a circle and box around x plus y]"></ing>.
+               <img src="image/circlebox.png" alt="[Image of a circle and box around x plus y]"></img>.
                </p>
             
             
@@ -7238,8 +7222,7 @@
 &lt;/msub&gt;
 </pre>
                which renders roughly as
-               
-               <ing src="image/actuarial.png" alt="[image of actuarial notation for a angle n at i]"></ing> 
+               <img src="image/actuarial.png" alt="[image of actuarial notation for a angle n at i]"></img> 
                </p>
             
             
@@ -7260,8 +7243,7 @@
   &lt;/mrow&gt;
 </pre>
                which renders roughly as
-               
-               <ing src="image/phasorangle.png" alt="[image of phasorangle notation for the angle negative pi over 2]"></ing> 
+               <img src="image/phasorangle.png" alt="[image of phasorangle notation for the angle negative pi over 2]"></img> 
                </p>
             
             <p>An example of <code class="attributevalue">madruwb</code> is:
@@ -7272,8 +7254,7 @@
   &lt;/menclose&gt;
 </pre>
                which renders roughly as
-               
-               <ing src="image/madruwb12.png" alt="[Image of 12 factorial in Arabic style]"></ing>.
+               <img src="image/madruwb12.png" alt="[Image of 12 factorial in Arabic style]"></img>.
                </p>
             </section>
          </section>
@@ -7502,11 +7483,9 @@
             
             
             <p> Note that both scripts are positioned tight against the base as shown here
-               
-               <ing src="image/f3014.gif" alt="x_1^2"></ing>
+               <img src="image/f3014.gif" alt="x_1^2"></img>
                versus the staggered positioning of nested scripts as shown here
-               
-               <ing src="image/f3013.gif" alt="x_1{}^2"></ing>;
+               <img src="image/f3013.gif" alt="x_1{}^2"></img>;
                the latter can be achieved by nesting an <code class="element">msub</code> inside an <code class="element">msup</code>.</p>
             </section>
          
@@ -7591,8 +7570,7 @@
                integral. For example,</p>
             
             
-            <p>
-               <ing src="image/f3015.gif" alt="\int\nolimits_0^1 \eulere^x \,\diffd x"></ing>
+            <p><img src="image/f3015.gif" alt="\int\nolimits_0^1 \eulere^x \,\diffd x"></img>
                would be represented as
                
                <pre class="mathml">
@@ -7735,10 +7713,8 @@
             
             
             <p>Here is an example (accent versus underscript):
-               
-               <ing src="image/f3016.gif" alt="\underbrace{x+y+z}"></ing> versus
-               
-               <ing src="image/f3017.gif" alt="\underbrace{\strut x+y+z}"></ing>.
+               <img src="image/f3016.gif" alt="\underbrace{x+y+z}"></img> versus
+               <img src="image/f3017.gif" alt="\underbrace{\strut x+y+z}"></img>.
                The MathML representation for this example is shown below.</p>
             
             </section>
@@ -7883,16 +7859,12 @@
             
             
             <p>The difference between an accent versus limit is shown here:
-               
-               <ing src="image/f3018.gif" alt="\hat{x}"></ing> versus
-               
-               <ing src="image/f3019.gif" alt="\hat{\strut x}"></ing>.
+               <img src="image/f3018.gif" alt="\hat{x}"></img> versus
+               <img src="image/f3019.gif" alt="\hat{\strut x}"></img>.
                These differences also apply to <span>&#x201c;mathematical accents&#x201d;</span> such as
                bars <span>or braces</span> over expressions:
-               
-               <ing src="image/f3020.gif" alt="\overbrace{x+y+z}"></ing> versus
-               
-               <ing src="image/f3021.gif" alt="\overbrace{\strut x+y+z}"></ing>.
+               <img src="image/f3020.gif" alt="\overbrace{x+y+z}"></img> versus
+               <img src="image/f3021.gif" alt="\overbrace{\strut x+y+z}"></img>.
                The MathML representation for each of these examples is shown below.</p>
             
             
@@ -8088,11 +8060,9 @@
                second expression shown below:</p>
             
             
-            <p>
-               <ing src="image/f3022.gif" alt="\int_0^{\!\!\!\infty}"></ing>
+            <p><img src="image/f3022.gif" alt="\int_0^{\!\!\!\infty}"></img>
                versus
-               
-               <ing src="image/f3023.gif" alt="\int_0^{\infty}"></ing>.
+               <img src="image/f3023.gif" alt="\int_0^{\infty}"></img>.
                The MathML representation for this example is shown below.</p>
             
             
@@ -8265,8 +8235,7 @@
                </p>
             
             
-            <p>
-               <ing src="image/tensorindices.png" alt="R_i{}^j{}_k{}_l"></ing>
+            <p><img src="image/tensorindices.png" alt="R_i{}^j{}_k{}_l"></img>
                (where <i class="var">k</i> and <i class="var">l</i> are different indices)
                
                <pre class="mathml">
@@ -8285,8 +8254,7 @@
                </p>
             
             
-            <p>
-               <ing src="image/prescriptsalign.png" alt="{}_{123}^{\phantom{00}1}X{}_{123}^{1\phantom{00}}"></ing>
+            <p><img src="image/prescriptsalign.png" alt="{}_{123}^{\phantom{00}1}X{}_{123}^{1\phantom{00}}"></img>
                
                <pre class="mathml">
   &lt;mmultiscripts&gt;
@@ -8303,12 +8271,9 @@
             
             <p>An additional example of <code class="element">mmultiscripts</code> shows how the binomial
                coefficient
-               
-               <ing src="image/binom5-12.png" alt="[binomial(5,12) in english style]"></ing>
+               <img src="image/binom5-12.png" alt="[binomial(5,12) in english style]"></img>
                can be displayed in Arabic style
-               
-               <ing src="image/arbinom5-12.png" alt="[binomial(5,12) in Arabic style]"></ing>
-            </p>
+               <img src="image/arbinom5-12.png" alt="[binomial(5,12) in Arabic style]"></img></p>
             
             <pre class="mathml">
 &lt;mstyle dir="rtl"&gt;
@@ -8898,8 +8863,7 @@
             
             
             <p>This might be rendered as:
-               
-               <ing src="image/f3025.gif" alt="\left(\begin{array}{ccc}1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1\end{array}\right)"></ing>
+               <img src="image/f3025.gif" alt="\left(\begin{array}{ccc}1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1\end{array}\right)"></img>
                Note that the parentheses must be represented explicitly; they are not
                part of the <code class="element">mtable</code> element's rendering. This allows
                use of other surrounding fences, such as brackets, or none at all.</p>
@@ -10386,8 +10350,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
       
       <p>A very simple example of two-dimensional addition is shown below:</p>
       
-      
-      <ing src="image/em-plus.png" alt="\begin{array}{r}   424 \\   +33 \\   \hline \end{array}"></ing>
+      <img src="image/em-plus.png" alt="\begin{array}{r}   424 \\   +33 \\   \hline \end{array}"></img>
       
       <p>The MathML for this is:</p>
       
@@ -11447,8 +11410,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
             
             
             <p>Notice that the <code class="element">msline</code> spans all of the columns and that <code class="element">none</code> is used to make the "+" appear to the left of all of the operands.</p>
-            
-            <ing src="image/em-plus-shift.png" alt="\begin{array}{@{}r@{}}    424 \\   +\phantom0 33 \\   \hline \end{array}"></ing>
+            <img src="image/em-plus-shift.png" alt="\begin{array}{@{}r@{}}    424 \\   +\phantom0 33 \\   \hline \end{array}"></img>
             
             <p>The MathML for this is:</p>
             
@@ -11469,8 +11431,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                because the default alignment <span>is</span> on the implied decimal point to the right of the numbers,
                it is not necessary to pad any row.</p>
             
-            
-            <ing src="image/em-plus-right.png" alt="\begin{array}{l}   123 \\   456+ \\   \hline   579 \end{array}"></ing>
+            <img src="image/em-plus-right.png" alt="\begin{array}{l}   123 \\   456+ \\   \hline   579 \end{array}"></img>
             
             
             <pre class="mathml">
@@ -11498,13 +11459,9 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   
                   <tr>
                      
-                     <td>
-                        <ing src="image/em-sub-borrow-above.png" alt=""></ing>
-                     </td>
+                     <td><img src="image/em-sub-borrow-above.png" alt=""></img></td>
                      
-                     <td>
-                        <ing src="image/em-sub-borrow-aboveleft.png" alt=""></ing>
-                     </td>
+                     <td><img src="image/em-sub-borrow-aboveleft.png" alt=""></img></td>
                      </tr>
                   </tbody>
                </table>
@@ -11549,8 +11506,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   source</a>):</p>
             
             
-            
-            <ing src="image/em-sub-borrow-swedish.png" alt="\begin{array}{r} \underbar{\scriptsize 10}\!\\ 5\llap{$/$}2\\ {}-{}7\\ \hline 45 \end{array}"></ing>
+            <img src="image/em-sub-borrow-swedish.png" alt="\begin{array}{r} \underbar{\scriptsize 10}\!\\ 5\llap{$/$}2\\ {}-{}7\\ \hline 45 \end{array}"></img>
             
             
             
@@ -11585,8 +11541,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                They would set the <code class="attribute">position</code> or <code class="attribute">shift</code> attributes, or would add <code class="element">none</code> elements.
                </p>
             
-            
-            <ing src="image/em-mult-simple.png" alt=""></ing>
+            <img src="image/em-mult-simple.png" alt=""></img>
             
             
             <pre class="mathml">
@@ -11612,8 +11567,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                values. </p>
             
             
-            
-            <ing src="image/em-mult-carries.png" alt="\begin{array}{r}  {}_1 {\hspace{0.05em}}_1\phantom{0} \\  {}_1 {\hspace{0.05em}}_1\phantom{0} \\   1,234 \\   \times 4,321 \\   \hline  {}_1 \phantom{,} {\hspace{0.05em \,}}_1 {\hspace{0.05em}}_1  {\hspace{0.05em}}_1 \phantom{,} {\hspace{0.05em \,}}_1 \phantom{00} \\   1,234 \\   24,68\phantom{0} \\   370,2\phantom{00} \\   4,936\phantom{,000} \\   \hline   5,332,114 \end{array}"></ing>
+            <img src="image/em-mult-carries.png" alt="\begin{array}{r}  {}_1 {\hspace{0.05em}}_1\phantom{0} \\  {}_1 {\hspace{0.05em}}_1\phantom{0} \\   1,234 \\   \times 4,321 \\   \hline  {}_1 \phantom{,} {\hspace{0.05em \,}}_1 {\hspace{0.05em}}_1  {\hspace{0.05em}}_1 \phantom{,} {\hspace{0.05em \,}}_1 \phantom{00} \\   1,234 \\   24,68\phantom{0} \\   370,2\phantom{00} \\   4,936\phantom{,000} \\   \hline   5,332,114 \end{array}"></img>
             
             
             <pre class="mathml">
@@ -11693,28 +11647,23 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   <tr>
                      
                      <td>
-                        		
-                        <ing src="image/em-longdiv-us.png" alt=""></ing>
+                        		<img src="image/em-longdiv-us.png" alt=""></img>
                         </td>
                      
                      <td>
-                        		
-                        <ing src="image/em-longdiv-french.png" alt=""></ing>
+                        		<img src="image/em-longdiv-french.png" alt=""></img>
                         </td>
                      
                      <td>
-                        
-                        <ing src="image/em-longdiv-medium-stacked-rightright.png" alt=""></ing>
+                        <img src="image/em-longdiv-medium-stacked-rightright.png" alt=""></img>
                         </td>
                      
                      <td>
-                        
-                        <ing src="image/em-longdiv-short-stacked-rightright.png" alt=""></ing>
+                        <img src="image/em-longdiv-short-stacked-rightright.png" alt=""></img>
                         </td>
                      
                      <td>
-                        
-                        <ing src="image/em-longdiv-righttop.png" alt=""></ing>
+                        <img src="image/em-longdiv-righttop.png" alt=""></img>
                         </td>
                      </tr>
                   </tbody>
@@ -11744,28 +11693,23 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   <tr>
                      
                      <td>
-                        		
-                        <ing src="image/em-longdiv-leftright.png" alt=""></ing>
+                        		<img src="image/em-longdiv-leftright.png" alt=""></img>
                         </td>
                      
                      <td>
-                        		
-                        <ing src="image/em-longdiv-indian.png" alt=""></ing>
+                        		<img src="image/em-longdiv-indian.png" alt=""></img>
                         </td>
                      
                      <td>
-                        
-                        <ing src="image/em-longdiv-colonrightright.png" alt=""></ing>
+                        <img src="image/em-longdiv-colonrightright.png" alt=""></img>
                         </td>
                      
                      <td>
-                        
-                        <ing src="image/em-longdiv-mirrored-french.png" alt=""></ing>
+                        <img src="image/em-longdiv-mirrored-french.png" alt=""></img>
                         </td>
                      
                      <td>
-                        
-                        <ing src="image/em-longdiv-arabic-lefttop.png" alt=""></ing>
+                        <img src="image/em-longdiv-arabic-lefttop.png" alt=""></img>
                         </td>
                      </tr>
                   </tbody>
@@ -11867,14 +11811,10 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                </p>
             
             
-            
-            <ing src="image/repeat1.png" alt="0.33333 \overline{3}"></ing> 
-            
-            <ing src="image/repeat2.png" alt="0.\overline{142857}"></ing> 
-            
-            <ing src="image/repeat3.png" alt="0.\underline{142857}"></ing> 
-            
-            <ing src="image/repeat4.png" alt="0.\dot{1}4285\dot{7}"></ing> 
+            <img src="image/repeat1.png" alt="0.33333 \overline{3}"></img> 
+            <img src="image/repeat2.png" alt="0.\overline{142857}"></img> 
+            <img src="image/repeat3.png" alt="0.\underline{142857}"></img> 
+            <img src="image/repeat4.png" alt="0.\dot{1}4285\dot{7}"></img> 
             
             
             

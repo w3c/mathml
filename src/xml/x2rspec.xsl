@@ -167,7 +167,7 @@
 
 
   <xsl:template match="graphic">
-   <ing src="{@source}" alt="{@alt}"/>
+   <img src="{@source}" alt="{@alt}"/>
   </xsl:template>
 
   <xsl:template match="eg">
