@@ -1,0 +1,23 @@
+<pre>#     This is the Mathematical Markup Language (MathML) 3.0, an XML
+#     application for describing mathematical notation and capturing
+#     both its structure and content.
+#
+#     Copyright 1998-2019 W3C (MIT, ERCIM, Keio)
+# 
+#     Use and distribution of this code are permitted under the terms
+#     W3C Software Notice and License
+#     http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
+
+
+<b>default</b> <b>namespace</b> <b id="parsing_m">m</b> = "http://www.w3.org/1998/Math/MathML"
+
+## Content  MathML
+<b>include</b> "mathml4-content.rnc" 
+
+## Presentation MathML
+<b>include</b> "mathml4-presentation.rnc"
+
+## math and semantics common to both Content and Presentation
+<b>include</b> "mathml4-common.rnc"
+
+</pre>

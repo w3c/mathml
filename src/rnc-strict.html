@@ -1,0 +1,63 @@
+<pre>#     This is the Mathematical Markup Language (MathML) 3.0, an XML
+#     application for describing mathematical notation and capturing
+#     both its structure and content.
+#
+#     Copyright 1998-2014 W3C (MIT, ERCIM, Keio, Beihang)
+# 
+#     Use and distribution of this code are permitted under the terms
+#     W3C Software Notice and License
+#     http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
+
+
+<b>default</b> <b>namespace</b> <b>m</b> = "http://www.w3.org/1998/Math/MathML"
+
+<b id="parsing_ContExp">ContExp</b> = <a href="#parsing_semantics-contexp">semantics-contexp</a> | <a href="#parsing_cn">cn</a> | <a href="#parsing_ci">ci</a> | <a href="#parsing_csymbol">csymbol</a> | <a href="#parsing_apply">apply</a> | <a href="#parsing_bind">bind</a> | <a href="#parsing_share">share</a> | <a href="#parsing_cerror">cerror</a> | <a href="#parsing_cbytes">cbytes</a> | <a href="#parsing_cs">cs</a>
+
+<b id="parsing_cn">cn</b> = <b>element</b> <code>cn</code> {<a href="#parsing_cn.attributes">cn.attributes</a>,<a href="#parsing_cn.content">cn.content</a>}
+<b id="parsing_cn.content">cn.content</b> = text
+<b id="parsing_cn.attributes">cn.attributes</b> = <a href="#parsing_CommonAtt">CommonAtt</a>, <b>attribute</b> <code>type</code> {"integer" | "real" | "double" | "hexdouble"}
+
+<b id="parsing_semantics-ci">semantics-ci</b> = <b>element</b> <code>semantics</code> {<a href="#parsing_semantics.attributes">semantics.attributes</a>,(<a href="#parsing_ci">ci</a>|<a href="#parsing_semantics-ci">semantics-ci</a>), 
+  (<a href="#parsing_annotation">annotation</a>|<a href="#parsing_annotation-xml">annotation-xml</a>)*}
+
+<b id="parsing_semantics-contexp">semantics-contexp</b> = <b>element</b> <code>semantics</code> {<a href="#parsing_semantics.attributes">semantics.attributes</a>,<a href="#parsing_ContExp">ContExp</a>, 
+  (<a href="#parsing_annotation">annotation</a>|<a href="#parsing_annotation-xml">annotation-xml</a>)*}
+
+<b id="parsing_ci">ci</b> = <b>element</b> <code>ci</code> {<a href="#parsing_ci.attributes">ci.attributes</a>, <a href="#parsing_ci.content">ci.content</a>}
+<b id="parsing_ci.attributes">ci.attributes</b> = <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_ci.type">ci.type</a>?
+<b id="parsing_ci.type">ci.type</b> = <b>attribute</b> <code>type</code> {"integer" | "rational" | "real" | "complex" | "complex-polar" | "complex-cartesian" |
+          "constant" | "function" | "vector" | "list" | "set" | "matrix"}
+<b id="parsing_ci.content">ci.content</b> = text
+
+
+<b id="parsing_csymbol">csymbol</b> = <b>element</b> <code>csymbol</code> {<a href="#parsing_csymbol.attributes">csymbol.attributes</a>,<a href="#parsing_csymbol.content">csymbol.content</a>}
+
+<b id="parsing_SymbolName">SymbolName</b> = xsd:NCName
+<b id="parsing_csymbol.attributes">csymbol.attributes</b> = <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_cd">cd</a>
+<b id="parsing_csymbol.content">csymbol.content</b> = <a href="#parsing_SymbolName">SymbolName</a>
+
+<b id="parsing_BvarQ">BvarQ</b> = <a href="#parsing_bvar">bvar</a>*
+<b id="parsing_bvar">bvar</b> = <b>element</b> <code>bvar</code> {<a href="#parsing_CommonAtt">CommonAtt</a>, (<a href="#parsing_ci">ci</a> | <a href="#parsing_semantics-ci">semantics-ci</a>)}
+
+<b id="parsing_apply">apply</b> = <b>element</b> <code>apply</code> {<a href="#parsing_CommonAtt">CommonAtt</a>,<a href="#parsing_apply.content">apply.content</a>}
+<b id="parsing_apply.content">apply.content</b> = <a href="#parsing_ContExp">ContExp</a>+
+
+
+<b id="parsing_bind">bind</b> = <b>element</b> <code>bind</code> {<a href="#parsing_CommonAtt">CommonAtt</a>,<a href="#parsing_bind.content">bind.content</a>}
+<b id="parsing_bind.content">bind.content</b> = <a href="#parsing_ContExp">ContExp</a>,<a href="#parsing_bvar">bvar</a>*,<a href="#parsing_ContExp">ContExp</a>
+
+<b id="parsing_share">share</b> = <b>element</b> <code>share</code> {<a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_src">src</a>, empty}
+
+<b id="parsing_cerror">cerror</b> = <b>element</b> <code>cerror</code> {<a href="#parsing_cerror.attributes">cerror.attributes</a>, <a href="#parsing_csymbol">csymbol</a>, <a href="#parsing_ContExp">ContExp</a>*}
+<b id="parsing_cerror.attributes">cerror.attributes</b> = <a href="#parsing_CommonAtt">CommonAtt</a>
+
+<b id="parsing_cbytes">cbytes</b> = <b>element</b> <code>cbytes</code> {<a href="#parsing_cbytes.attributes">cbytes.attributes</a>, <a href="#parsing_base64">base64</a>}
+<b id="parsing_cbytes.attributes">cbytes.attributes</b> = <a href="#parsing_CommonAtt">CommonAtt</a>
+<b id="parsing_base64">base64</b> = xsd:base64Binary
+
+<b id="parsing_cs">cs</b> = <b>element</b> <code>cs</code> {<a href="#parsing_cs.attributes">cs.attributes</a>, text}
+<b id="parsing_cs.attributes">cs.attributes</b> = <a href="#parsing_CommonAtt">CommonAtt</a>
+
+<a href="#parsing_MathExpression">MathExpression</a> |= <a href="#parsing_ContExp">ContExp</a>
+
+</pre>
