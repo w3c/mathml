@@ -181,14 +181,36 @@
    </blockquote>
  </xsl:template>
 
-  <xsl:template match="eg">
-   <pre>
-    <xsl:if test="@role">
-<xsl:attribute name="class" select="@role" />
-    </xsl:if>
-    <xsl:apply-templates/>
-   </pre>
+ <xsl:template match="eg">
+  <pre>
+   <xsl:if test="@role">
+    <xsl:attribute name="class" select="@role" />
+   </xsl:if>
+   <xsl:apply-templates/>
+  </pre>
   </xsl:template>
+  
+  <xsl:template match="div3[@id='parsing_rnc_full']/eg">
+   <pre data-include="src/rnc-full.html" data-include-replace="true"></pre>
+  </xsl:template>
+  
+  <xsl:template match="div3[@id='parsing_rnc_common']/eg">
+   <pre data-include="src/rnc-common.html" data-include-replace="true"></pre>
+  </xsl:template>
+  
+  <xsl:template match="div3[@id='parsing_rnc_pres']/eg">
+   <pre data-include="src/rnc-pres.html" data-include-replace="true"></pre>
+  </xsl:template>
+  
+  <xsl:template match="div3[@id='parsing_rnc_strict']/eg">
+   <pre data-include="src/rnc-strict.html" data-include-replace="true"></pre>
+  </xsl:template>
+  
+  <xsl:template match="div3[@id='parsing_rnc_content']/eg">
+   <pre data-include="src/rnc-content.html" data-include-replace="true"></pre>
+  </xsl:template>
+  
+
 
   <xsl:template match="phrase">
    <span>
