@@ -235,9 +235,15 @@
   
   <xsl:template match="el">
    <code class="element">
-    <xsl:apply-templates select="@*,node()"/>
+    <xsl:apply-templates select="@*"/>
+    <xsl:if test="contains(@role,'tag')">&lt;</xsl:if>
+    <xsl:if test="contains(@role,'endtag')">/</xsl:if>
+    <xsl:apply-templates/>
+    <xsl:if test="contains(@role,'emptytag')">/</xsl:if>
+    <xsl:if test="contains(@role,'tag')">&gt;</xsl:if>
    </code>
   </xsl:template>
+
   <xsl:template match="el/@namespace">
    <xsl:attribute name="data-namespace" select="."/>
   </xsl:template>

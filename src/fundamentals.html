@@ -1174,7 +1174,7 @@ http://www.w3.org/1998/Math/MathML
          
          <p>MathML ignores whitespace occurring outside token elements.
             Non-whitespace characters are not allowed there. Whitespace occurring
-            within the content of token elements <span>, except for <a class="intref" href="#contm_cs"><code class="starttag">cs</code></a>, </span>is <span>normalized as follows. All whitespace at the beginning and end of the content is
+            within the content of token elements <span>, except for <a class="intref" href="#contm_cs"><code class="starttag">&lt;cs&gt;</code></a>, </span>is <span>normalized as follows. All whitespace at the beginning and end of the content is
                removed, and </span>whitespace internal to content of the element is
             collapsed canonically, i.e.,  each sequence of 1 or more
             whitespace characters is replaced with one space character (U+0020, sometimes
@@ -1239,7 +1239,7 @@ http://www.w3.org/1998/Math/MathML
    
    <section>
       <h3 id="interf_toplevel">The Top-Level 
-         <code class="defn starttag">math</code> Element</h3>
+         <code class="defn starttag">&lt;math&gt;</code> Element</h3>
       
       
       <p>MathML specifies a single top-level or root <code class="element">math</code> element, 
@@ -1247,7 +1247,7 @@ http://www.w3.org/1998/Math/MathML
          MathML markup within a document.  All other MathML content must be
          contained in a <code class="element">math</code> element; in other words,
          every valid MathML expression is wrapped in outer
-         <code class="starttag">math</code> tags. The <code class="element">math</code>
+         <code class="starttag">&lt;math&gt;</code> tags. The <code class="element">math</code>
          element must always be the outermost element in a MathML expression;
          it is an error for one <code class="element">math</code> element to contain
          another.  These considerations also apply when sub-expressions are

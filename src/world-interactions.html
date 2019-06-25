@@ -1029,7 +1029,7 @@ mtext = element mtext {mtext.attributes, (token.content|anyElement)*}
             discussed in the
             next section, however other examples exist. It is possible to use a TeX-like syntax
             such as
-            <code>\frac{a}{b}</code> rather than explicitly using <code class="starttag">mfrac</code> and <code class="starttag">mi</code>. If a system parses a specified syntax and produces a tree that may be
+            <code>\frac{a}{b}</code> rather than explicitly using <code class="starttag">&lt;mfrac&gt;</code> and <code class="starttag">&lt;mi&gt;</code>. If a system parses a specified syntax and produces a tree that may be
             validated against the <a class="intref" href="#parsing">MathML schema</a> then it may be viewed as
             as a MathML application. Note however that documents using such a system are not valid
             MathML.
@@ -1107,13 +1107,13 @@ mtext = element mtext {mtext.attributes, (token.content|anyElement)*}
             </li>
             
             <li>
-               <p>Unless inside the token elements <code class="starttag">mtext</code>, <code class="starttag">mo</code>, <code class="starttag">mn</code>, <code class="starttag">mi</code>,
-                  <code class="starttag">ms</code>, or inside an <code class="starttag">annotation-xml</code> with <code class="attribute">encoding</code> attribute
+               <p>Unless inside the token elements <code class="starttag">&lt;mtext&gt;</code>, <code class="starttag">&lt;mo&gt;</code>, <code class="starttag">&lt;mn&gt;</code>, <code class="starttag">&lt;mi&gt;</code>,
+                  <code class="starttag">&lt;ms&gt;</code>, or inside an <code class="starttag">&lt;annotation-xml&gt;</code> with <code class="attribute">encoding</code> attribute
                   <code class="attributevalue">text/html</code> or <code class="attributevalue">annotation/xhtml+xml</code>, the presence of an HTML element
                   will <em>terminate</em> the math expression by closing all open MathML elements, so
                   that the HTML element is interpreted as being in the outer HTML context. Any following
                   MathML
-                  elements are then not contained in <code class="starttag">math</code> so will be parsed as invalid HTML elements and not
+                  elements are then not contained in <code class="starttag">&lt;math&gt;</code> so will be parsed as invalid HTML elements and not
                   rendered as MathML. See for example the example given in <a href="#html_annotation_xml"></a>.</p>
             </li>
             </ul>
