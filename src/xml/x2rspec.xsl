@@ -182,12 +182,11 @@
  </xsl:template>
 
  <xsl:template match="eg">
+  <div class="example {@role}">
   <pre>
-   <xsl:if test="@role">
-    <xsl:attribute name="class" select="@role" />
-   </xsl:if>
    <xsl:apply-templates/>
   </pre>
+  </div>
   </xsl:template>
   
   <xsl:template match="div3[@id='parsing_rnc_full']/eg">

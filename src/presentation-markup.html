@@ -49,7 +49,8 @@
             a single <code class="element">mrow</code>.  For example, <span>&#x201c;<i class="var">x</i> + <i class="var">a</i> /
                <i class="var">b</i>&#x201d;</span> typically is represented as:
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mrow&gt;
   &lt;mi&gt; x &lt;/mi&gt;
   &lt;mo&gt; + &lt;/mo&gt;
@@ -60,6 +61,7 @@
   &lt;/mrow&gt;
 &lt;/mrow&gt;
 </pre>
+            </div>
             </p>
          
          
@@ -238,29 +240,36 @@
             
             <p>For example,
                
-               <pre class="mathml-fragment">
+               <div class="example mathml-fragment">
+                  <pre>
 &lt;mtd&gt;
 &lt;/mtd&gt;
 </pre>
+               </div>
                is treated as if it were
                
-               <pre class="mathml-fragment">
+               <div class="example mathml-fragment">
+                  <pre>
 &lt;mtd&gt;
   &lt;mrow&gt;
   &lt;/mrow&gt;
 &lt;/mtd&gt;
 </pre>
+               </div>
                and
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;msqrt&gt;
   &lt;mo&gt; - &lt;/mo&gt;
   &lt;mn&gt; 1 &lt;/mn&gt;
 &lt;/msqrt&gt;
 </pre>
+               </div>
                is treated as if it were
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;msqrt&gt;
   &lt;mrow&gt;
     &lt;mo&gt; - &lt;/mo&gt;
@@ -268,6 +277,7 @@
   &lt;/mrow&gt;
 &lt;/msqrt&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -1884,7 +1894,8 @@
                   the <code class="element">mglyph</code> construct with a set of images to work
                   with braid group notation.
                   
-                  <pre class="mathml-fragment">
+                  <div class="example mathml-fragment">
+                     <pre>
 &lt;mrow&gt;
   &lt;mi&gt;&lt;mglyph src="my-braid-23" alt="2 3 braid"/&gt;&lt;/mi&gt;
   &lt;mo&gt;+&lt;/mo&gt;
@@ -1893,6 +1904,7 @@
   &lt;mi&gt;&lt;mglyph src="my-braid-13" alt="1 3 braid"/&gt;&lt;/mi&gt;
 &lt;/mrow&gt;
 </pre>
+                  </div>
                   This might render as:
                   </p>
                <blockquote>
@@ -2362,7 +2374,8 @@
             
             <p>Here is an example of embedding SVG inside of mtext in an HTML context:</p>
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mtable&gt;
   &lt;mtr&gt;
     &lt;mtd&gt;
@@ -2384,6 +2397,7 @@
   &lt;/mtr&gt;
 &lt;/mtable&gt;
 </pre>
+            </div>
             </section>
          </section>
       
@@ -2499,15 +2513,25 @@
          <section>
             <h5 id="presm_mi_examples">Examples</h5>
             
-            <pre class="mathml">&lt;mi&gt;x&lt;/mi&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mi&gt;x&lt;/mi&gt;</pre>
+            </div>
             
-            <pre class="mathml">&lt;mi&gt;D&lt;/mi&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mi&gt;D&lt;/mi&gt;</pre>
+            </div>
             
-            <pre class="mathml">&lt;mi&gt;sin&lt;/mi&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mi&gt;sin&lt;/mi&gt;</pre>
+            </div>
             
-            <pre class="mathml">&lt;mi mathvariant='script'&gt;L&lt;/mi&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mi mathvariant='script'&gt;L&lt;/mi&gt;</pre>
+            </div>
             
-            <pre class="mathml">&lt;mi&gt;&lt;/mi&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mi&gt;&lt;/mi&gt;</pre>
+            </div>
             
             
             
@@ -2524,20 +2548,23 @@
                (which also has the entity names <code class="entity">af</code> and <code class="entity">ApplyFunction</code>) as shown below;
                see also the discussion of invisible operators in <a href="#presm_mo"></a>.
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mi&gt; sin &lt;/mi&gt;
   &lt;mo&gt; &amp;ApplyFunction; &lt;/mo&gt;
   &lt;mi&gt; x &lt;/mi&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
             <p>Miscellaneous text that should be treated as a <span>&#x201c;term&#x201d;</span> can also be
                represented by an <code class="element">mi</code> element, as in:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mn&gt; 1 &lt;/mn&gt;
   &lt;mo&gt; + &lt;/mo&gt;
@@ -2546,6 +2573,7 @@
   &lt;mi&gt; n &lt;/mi&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -2558,11 +2586,13 @@
             <p>The names of symbolic constants should be represented as
                <code class="element">mi</code> elements:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mi&gt; &amp;pi; &lt;/mi&gt;
 &lt;mi&gt; &amp;ImaginaryI; &lt;/mi&gt;
 &lt;mi&gt; &amp;ExponentialE; &lt;/mi&gt;
 </pre>
+               </div>
                </p>
             
             </section>
@@ -2623,19 +2653,33 @@
          <section>
             <h5 id="presm_mn_examples">Examples</h5>
             
-            <pre class="mathml">&lt;mn&gt; 2 &lt;/mn&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mn&gt; 2 &lt;/mn&gt;</pre>
+            </div>
             
-            <pre class="mathml">&lt;mn&gt; 0.123 &lt;/mn&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mn&gt; 0.123 &lt;/mn&gt;</pre>
+            </div>
             
-            <pre class="mathml">&lt;mn&gt; 1,000,000 &lt;/mn&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mn&gt; 1,000,000 &lt;/mn&gt;</pre>
+            </div>
             
-            <pre class="mathml">&lt;mn&gt; 2.1e10 &lt;/mn&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mn&gt; 2.1e10 &lt;/mn&gt;</pre>
+            </div>
             
-            <pre class="mathml">&lt;mn&gt; 0xFFEF &lt;/mn&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mn&gt; 0xFFEF &lt;/mn&gt;</pre>
+            </div>
             
-            <pre class="mathml">&lt;mn&gt; MCMLXIX &lt;/mn&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mn&gt; MCMLXIX &lt;/mn&gt;</pre>
+            </div>
             
-            <pre class="mathml">&lt;mn&gt; twenty one &lt;/mn&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mn&gt; twenty one &lt;/mn&gt;</pre>
+            </div>
             </section>
          
          
@@ -2650,7 +2694,8 @@
                names of numeric constants. Examples of MathML representations of
                such numbers include:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mn&gt; 2 &lt;/mn&gt;
   &lt;mo&gt; + &lt;/mo&gt;
@@ -2661,14 +2706,23 @@
   &lt;/mrow&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                
-               <pre class="mathml">&lt;mfrac&gt; &lt;mn&gt; 1 &lt;/mn&gt; &lt;mn&gt; 2 &lt;/mn&gt; &lt;/mfrac&gt;</pre>
+               <div class="example mathml">
+                  <pre>&lt;mfrac&gt; &lt;mn&gt; 1 &lt;/mn&gt; &lt;mn&gt; 2 &lt;/mn&gt; &lt;/mfrac&gt;</pre>
+               </div>
                
-               <pre class="mathml">&lt;mrow&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;</pre>
+               <div class="example mathml">
+                  <pre>&lt;mrow&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;</pre>
+               </div>
                
-               <pre class="mathml">&lt;mi&gt; &amp;pi; &lt;/mi&gt;</pre>
+               <div class="example mathml">
+                  <pre>&lt;mi&gt; &amp;pi; &lt;/mi&gt;</pre>
+               </div>
                
-               <pre class="mathml">&lt;mi&gt; &amp;ExponentialE; &lt;/mi&gt;</pre>
+               <div class="example mathml">
+                  <pre>&lt;mi&gt; &amp;ExponentialE; &lt;/mi&gt;</pre>
+               </div>
                </p>
             </section>
          </section>
@@ -3464,25 +3518,45 @@
             <h5>Examples with ordinary operators</h5>
             
             
-            <pre class="mathml">&lt;mo&gt; + &lt;/mo&gt;                    </pre>
+            <div class="example mathml">
+               <pre>&lt;mo&gt; + &lt;/mo&gt;                    </pre>
+            </div>
             
-            <pre class="mathml">&lt;mo&gt; &amp;lt; &lt;/mo&gt;                 </pre>
+            <div class="example mathml">
+               <pre>&lt;mo&gt; &amp;lt; &lt;/mo&gt;                 </pre>
+            </div>
             
-            <pre class="mathml">&lt;mo&gt; &amp;le; &lt;/mo&gt; </pre>
+            <div class="example mathml">
+               <pre>&lt;mo&gt; &amp;le; &lt;/mo&gt; </pre>
+            </div>
             
-            <pre class="mathml">&lt;mo&gt; &amp;lt;= &lt;/mo&gt;                </pre>
+            <div class="example mathml">
+               <pre>&lt;mo&gt; &amp;lt;= &lt;/mo&gt;                </pre>
+            </div>
             
-            <pre class="mathml">&lt;mo&gt; ++ &lt;/mo&gt;                   </pre>
+            <div class="example mathml">
+               <pre>&lt;mo&gt; ++ &lt;/mo&gt;                   </pre>
+            </div>
             
-            <pre class="mathml">&lt;mo&gt; &amp;sum; &lt;/mo&gt; </pre>
+            <div class="example mathml">
+               <pre>&lt;mo&gt; &amp;sum; &lt;/mo&gt; </pre>
+            </div>
             
-            <pre class="mathml">&lt;mo&gt; .NOT. &lt;/mo&gt;                </pre>
+            <div class="example mathml">
+               <pre>&lt;mo&gt; .NOT. &lt;/mo&gt;                </pre>
+            </div>
             
-            <pre class="mathml">&lt;mo&gt; and &lt;/mo&gt;                  </pre>
+            <div class="example mathml">
+               <pre>&lt;mo&gt; and &lt;/mo&gt;                  </pre>
+            </div>
             
-            <pre class="mathml">&lt;mo&gt; &amp;InvisibleTimes; &lt;/mo&gt; </pre>
+            <div class="example mathml">
+               <pre>&lt;mo&gt; &amp;InvisibleTimes; &lt;/mo&gt; </pre>
+            </div>
             
-            <pre class="mathml">&lt;mo mathvariant='bold'&gt; + &lt;/mo&gt; </pre>
+            <div class="example mathml">
+               <pre>&lt;mo mathvariant='bold'&gt; + &lt;/mo&gt; </pre>
+            </div>
             
             </section>
          
@@ -3501,7 +3575,8 @@
             
             <p>(<i class="var">a</i>+<i class="var">b</i>)
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mo&gt; ( &lt;/mo&gt;
   &lt;mrow&gt;
@@ -3512,12 +3587,14 @@
   &lt;mo&gt; ) &lt;/mo&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
             <p>[0,1)
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mo&gt; [ &lt;/mo&gt;
   &lt;mrow&gt;
@@ -3528,12 +3605,14 @@
   &lt;mo&gt; ) &lt;/mo&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
             <p><i class="var">f</i>(<i class="var">x</i>,<i class="var">y</i>)
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mi&gt; f &lt;/mi&gt;
   &lt;mo&gt; &amp;ApplyFunction; &lt;/mo&gt;
@@ -3548,6 +3627,7 @@
   &lt;/mrow&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             </section>
          
@@ -3631,7 +3711,8 @@
             
             <p>The MathML representations of the examples in the above table are:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mi&gt; f &lt;/mi&gt;
   &lt;mo&gt; &amp;ApplyFunction; &lt;/mo&gt;
@@ -3642,27 +3723,33 @@
   &lt;/mrow&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mi&gt; sin &lt;/mi&gt;
   &lt;mo&gt; &amp;ApplyFunction; &lt;/mo&gt;
   &lt;mi&gt; x &lt;/mi&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mi&gt; x &lt;/mi&gt;
   &lt;mo&gt; &amp;InvisibleTimes; &lt;/mo&gt;
   &lt;mi&gt; y &lt;/mi&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;msub&gt;
   &lt;mi&gt; m &lt;/mi&gt;
   &lt;mrow&gt;
@@ -3672,9 +3759,11 @@
   &lt;/mrow&gt;
 &lt;/msub&gt;
 </pre>
+               </div>
                
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mn&gt; 2 &lt;/mn&gt;
   &lt;mo&gt; &amp;#x2064; &lt;/mo&gt;
@@ -3684,6 +3773,7 @@
   &lt;/mfrac&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -3944,7 +4034,8 @@
                   <span>&#x201c;embellisher&#x201d;</span> because of the common notation for a
                   differential operator:
                   
-                  <pre class="mathml">
+                  <div class="example mathml">
+                     <pre>
 &lt;mfrac&gt;
   &lt;mo&gt; &amp;DifferentialD; &lt;/mo&gt;
   &lt;mrow&gt;
@@ -3953,6 +4044,7 @@
   &lt;/mrow&gt;
 &lt;/mfrac&gt;
 </pre>
+                  </div>
                   </p>
                
                
@@ -4068,7 +4160,8 @@
                have if they were not underlined and overlined, and furthermore will
                cover the same vertical interval:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;munder&gt;
     &lt;mo&gt; ( &lt;/mo&gt;
@@ -4084,6 +4177,7 @@
   &lt;/mover&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -4100,7 +4194,8 @@
                   it does not grow, even though its default value is
                   <code class="attribute">stretchy</code>=<code class="attributevalue">true</code>.
                   
-                  <pre class="mathml">
+                  <div class="example mathml">
+                     <pre>
 &lt;mrow&gt;
   &lt;mo maxsize="1<span>00%</span>"&gt; ( &lt;/mo&gt;
   &lt;mfrac&gt;
@@ -4109,6 +4204,7 @@
   &lt;mo maxsize="1<span>00%</span>"&gt; ) &lt;/mo&gt;
 &lt;/mrow&gt;
 </pre>
+                  </div>
                   </p>
                
                
@@ -4179,16 +4275,20 @@
                         If <code class="attribute">symmetric</code>=<code class="attributevalue">true</code>, then the computed height
                         and depth of the stretchy operator are:
                         
-                        <pre class="algorithm">
+                        <div class="example algorithm">
+                           <pre>
    height=max(maxheight-axis, maxdepth+axis) + axis
    depth =max(maxheight-axis, maxdepth+axis) - axis
 </pre>
+                        </div>
                         Otherwise the height and depth are:
                         
-                        <pre class="algorithm">
+                        <div class="example algorithm">
+                           <pre>
    height= maxheight
    depth = maxdepth
 </pre>
+                        </div>
                         </p>
                      </li>
                   
@@ -4274,7 +4374,8 @@
                   stretchiness include scripts to make examples such as the following
                   work:
                   
-                  <pre class="mathml">
+                  <div class="example mathml">
+                     <pre>
 &lt;mrow&gt;
   &lt;mi&gt; x &lt;/mi&gt;
   &lt;munder&gt;
@@ -4284,6 +4385,7 @@
   &lt;mi&gt; y &lt;/mi&gt;
 &lt;/mrow&gt;
 </pre>
+                  </div>
                   </p>
                
                
@@ -4327,7 +4429,8 @@
             
             <p>The following example demonstrates forced linebreaks and forced alignment:</p>
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
  &lt;mrow&gt;
   &lt;mrow&gt;  &lt;mi&gt;f&lt;/mi&gt; &lt;mo&gt;&amp;ApplyFunction;&lt;/mo&gt; &lt;mo&gt;(&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;)&lt;/mo&gt;  &lt;/mrow&gt;
 
@@ -4355,6 +4458,7 @@
   &lt;/mrow&gt;
  &lt;/mrow&gt;
 </pre>
+            </div>
             
             <p>This displays as </p>
             
@@ -4423,12 +4527,14 @@
          <section>
             <h5>Examples</h5>
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mtext&gt; Theorem 1: &lt;/mtext&gt;
 &lt;mtext&gt; &amp;ThinSpace; &lt;/mtext&gt;
 &lt;mtext&gt; &amp;ThickSpace;&amp;ThickSpace; &lt;/mtext&gt;
 &lt;mtext&gt; /* a comment */ &lt;/mtext&gt;
 </pre>
+            </div>
             </section>
          
          
@@ -4444,7 +4550,8 @@
                <img src="image/f3005.gif" alt="\exists \delta&gt;0 \backepsilon f(x)&lt;1" align="middle"></img> 
                and could be represented as:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mo&gt; there exists &lt;/mo&gt;
   &lt;mrow&gt;
@@ -4470,6 +4577,7 @@
   &lt;/mrow&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -4482,8 +4590,10 @@
             <p>On the other hand, expository text within MathML is best
                represented with an <code class="element">mtext</code> element. An example
                of this is: 
-               <pre class="text"> Theorem 1: if <i class="var">x</i> &gt; 1, then
-<i class="var">x</i><sup>2</sup> &gt; <i class="var">x</i>.  </pre> However, when MathML is
+               <div class="example text">
+                  <pre> Theorem 1: if <i class="var">x</i> &gt; 1, then
+<i class="var">x</i><sup>2</sup> &gt; <i class="var">x</i>.  </pre>
+               </div> However, when MathML is
                embedded in HTML, or another document markup language, the example is
                probably best rendered with only the two inequalities represented as
                MathML at all, letting the text be part of the surrounding HTML.</p>
@@ -4698,7 +4808,8 @@
             <h5>Examples</h5>
             
             
-            <pre class="mathml-fragment">
+            <div class="example mathml-fragment">
+               <pre>
 &lt;mspace height="3ex" depth="2ex"/&gt;
 
 &lt;mrow&gt;
@@ -4710,6 +4821,7 @@
   &lt;mi&gt;c&lt;/mi&gt;
 &lt;/mrow&gt;
 </pre>
+            </div>
             
             <p>
                In the last example, <code class="element">mspace</code> will cause the line to end after the "b" and the following line to be indented so
@@ -4787,17 +4899,20 @@
                to allow for vertical alignment on the right edge of the base of a
                superscript, the expression
                
-               <pre class="mathml-error">
+               <div class="example mathml-error">
+                  <pre>
 &lt;msup&gt;
   &lt;mi&gt; x &lt;/mi&gt;
   &lt;malignmark edge="right"/&gt;
   &lt;mn&gt; 2 &lt;/mn&gt;
 &lt;/msup&gt;
 </pre>
+               </div>
                is illegal, because <code class="element">msup</code> must have exactly 2 arguments;
                the correct expression would be:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;msup&gt;
   &lt;mrow&gt;
     &lt;mi&gt; x &lt;/mi&gt;
@@ -4806,6 +4921,7 @@
   &lt;mn&gt; 2 &lt;/mn&gt;
 &lt;/msup&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -5146,7 +5262,8 @@
             <p>As an example, 2<i class="var">x</i>+<i class="var">y</i>-<i class="var">z</i>
                should be written as:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mrow&gt;
     &lt;mn&gt; 2 &lt;/mn&gt;
@@ -5159,13 +5276,15 @@
   &lt;mi&gt; z &lt;/mi&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
             <p>The proper encoding of (<i class="var">x</i>, <i class="var">y</i>) furnishes a less obvious
                example of nesting <code class="element">mrow</code>s:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mo&gt; ( &lt;/mo&gt;
   &lt;mrow&gt;
@@ -5176,6 +5295,7 @@
   &lt;mo&gt; ) &lt;/mo&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -5198,9 +5318,11 @@
                also be used to mark up fraction-like objects such as binomial coefficients
                and Legendre symbols. The syntax for <code class="element">mfrac</code> is
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;mfrac&gt; <em>numerator</em> <em>denominator</em> &lt;/mfrac&gt;
 </pre>
+               </div>
             </p>
             
             <p>The <code class="element">mfrac</code> element sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code>, or if it
@@ -5353,7 +5475,8 @@
             
             <p>The examples shown above can be represented in MathML as:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
    &lt;mo&gt; ( &lt;/mo&gt;
    &lt;mfrac linethickness="0"&gt;
@@ -5373,9 +5496,11 @@
    &lt;/mfrac&gt;
 &lt;/mfrac&gt;
 </pre>
+               </div>
                
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mfrac&gt;
    &lt;mn&gt; 1 &lt;/mn&gt;
    &lt;mrow&gt;
@@ -5406,13 +5531,15 @@
    &lt;/mrow&gt;
 &lt;/mfrac&gt;
 </pre>
+               </div>
                
                </p>
             
             
             <p>A more generic example is:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mfrac&gt;
    &lt;mrow&gt;
       &lt;mn&gt; 1 &lt;/mn&gt;
@@ -5424,6 +5551,7 @@
    &lt;mn&gt; 2 &lt;/mn&gt;
 &lt;/mfrac&gt;
 </pre>
+               </div>
                </p>
             </section>
          </section>
@@ -5443,10 +5571,12 @@
                to draw radicals with indices, e.g. a cube root. The syntax for these
                elements is:
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;msqrt&gt; <em>base</em> &lt;/msqrt&gt;
 &lt;mroot&gt; <em>base</em> <em>index</em> &lt;/mroot&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -5894,19 +6024,22 @@
             <p>The example of limiting the stretchiness of a parenthesis shown in the
                section on &lt;mo&gt;,
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
    &lt;mo maxsize="1<span>00%</span>"&gt; ( &lt;/mo&gt;
    &lt;mfrac&gt; &lt;mi&gt; a &lt;/mi&gt; &lt;mi&gt; b &lt;/mi&gt; &lt;/mfrac&gt;
    &lt;mo maxsize="1<span>00%</span>"&gt; ) &lt;/mo&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
             <p>can be rewritten using <code class="element">mstyle</code> as:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mstyle maxsize="1<span>00%</span>"&gt;
    &lt;mrow&gt;
       &lt;mo&gt; ( &lt;/mo&gt;
@@ -5915,6 +6048,7 @@
    &lt;/mrow&gt;
 &lt;/mstyle&gt;
 </pre>
+               </div>
                </p>
             </section>
          </section>
@@ -5989,17 +6123,20 @@
             <p>If a MathML syntax-checking preprocessor
                received the input
                
-               <pre class="mathml-error">
+               <div class="example mathml-error">
+                  <pre>
 &lt;mfraction&gt;
    &lt;mrow&gt; &lt;mn&gt; 1 &lt;/mn&gt; &lt;mo&gt; + &lt;/mo&gt; &lt;msqrt&gt; &lt;mn&gt; 5 &lt;/mn&gt; &lt;/msqrt&gt; &lt;/mrow&gt;
    &lt;mn&gt; 2 &lt;/mn&gt;
 &lt;/mfraction&gt;
 </pre>
+               </div>
                which contains the non-MathML element <code class="element" data-namespace="mathml-error">mfraction</code>
                (presumably in place of the MathML element <code class="element">mfrac</code>),
                it might generate the error message
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;merror&gt;
    &lt;mtext&gt; Unrecognized element: mfraction;
            arguments were:  &lt;/mtext&gt;
@@ -6008,6 +6145,7 @@
    &lt;mn&gt; 2 &lt;/mn&gt;
 &lt;/merror&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -6282,7 +6420,8 @@
                settings have the same effect, which is to leave the content's
                dimensions unchanged:
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;mpadded width="+0em"&gt; ... &lt;/mpadded&gt;
 &lt;mpadded width="+0%"&gt; ... &lt;/mpadded&gt;
 &lt;mpadded width="-0em"&gt; ... &lt;/mpadded&gt;
@@ -6293,6 +6432,7 @@
 &lt;mpadded width="1.0width"&gt; ... &lt;/mpadded&gt;
 &lt;mpadded&gt; ... &lt;/mpadded&gt;
 </pre>
+               </div>
                Note that the examples in the Version 2 of the MathML specification showed
                spaces within the attribute values, suggesting that this was the intended format.
                Formally, spaces are not allowed within these values, but implementers may
@@ -6442,7 +6582,8 @@
             
             <p>The corresponding MathML is:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mi&gt;x&lt;/mi&gt;
   &lt;mpadded lspace="0.2em" voffset="0.3ex"&gt;
@@ -6451,6 +6592,7 @@
   &lt;mi&gt;z&lt;/mi&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             <p>The next diagram illustrates the use of 
@@ -6466,7 +6608,8 @@
             
             <p>The corresponding MathML is:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mi&gt;x&lt;/mi&gt;
   &lt;mpadded width="+90%width" height="+0.3ex" depth="+0.3ex"&gt;
@@ -6475,6 +6618,7 @@
   &lt;mi&gt;z&lt;/mi&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -6489,7 +6633,8 @@
             
             <p>The corresponding MathML is:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mi&gt;x&lt;/mi&gt;
   &lt;mpadded lspace="0.3em" width="+0.6em"&gt;
@@ -6498,6 +6643,7 @@
   &lt;mi&gt;z&lt;/mi&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             </section>
          
@@ -6579,7 +6725,8 @@
                alignment of corresponding parts of the numerator and denominator of a
                fraction:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mfrac&gt;
   &lt;mrow&gt;
     &lt;mi&gt; x &lt;/mi&gt;
@@ -6599,6 +6746,7 @@
   &lt;/mrow&gt;
 &lt;/mfrac&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -6628,7 +6776,8 @@
                <code>&lt;mo&gt;+&lt;/mo&gt;</code> and <code>&lt;mi&gt;y&lt;/mi&gt;</code> in its
                own <code class="element">mphantom</code> element, i.e.
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mfrac&gt;
    &lt;mrow&gt;
       &lt;mi&gt; x &lt;/mi&gt;
@@ -6650,6 +6799,7 @@
    &lt;/mrow&gt;
 &lt;/mfrac&gt;
 </pre>
+               </div>
                </p>
             </section>
          </section>
@@ -6673,21 +6823,25 @@
             <p>For example, <code>&lt;mfenced&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;/mfenced&gt;</code>
                renders as <span>&#x201c;(<i class="var">x</i>)&#x201d;</span> and is equivalent to
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt; &lt;mo&gt; ( &lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt; ) &lt;/mo&gt; &lt;/mrow&gt;
 </pre>
+               </div>
                and
                <code>&lt;mfenced&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mi&gt;y&lt;/mi&gt; &lt;/mfenced&gt;</code>
                renders as <span>&#x201c;(<i class="var">x</i>, <i class="var">y</i>)&#x201d;</span>
                and is equivalent to
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mo&gt; ( &lt;/mo&gt;
   &lt;mrow&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;,&lt;/mo&gt; &lt;mi&gt;y&lt;/mi&gt; &lt;/mrow&gt;
   &lt;mo&gt; ) &lt;/mo&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -6808,7 +6962,8 @@
             <p>A generic <code class="element">mfenced</code> element, with all attributes
                explicit, looks as follows:
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;mfenced open="opening-fence"
          close="closing-fence"
          separators="sep#1 sep#2 ... sep#(n-1)" &gt;
@@ -6817,6 +6972,7 @@
    arg#n
 &lt;/mfenced&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -6831,7 +6987,8 @@
             <p>The general <code class="element">mfenced</code> element shown above is
                equivalent to the following expanded form:
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;mrow&gt;
    &lt;mo fence="true"&gt; opening-fence &lt;/mo&gt;
    &lt;mrow&gt;
@@ -6844,6 +7001,7 @@
    &lt;mo fence="true"&gt; closing-fence &lt;/mo&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -6856,13 +7014,15 @@
                since <code>&lt;mrow&gt; arg#1 &lt;/mrow&gt;</code> is equivalent to
                <code>arg#1</code> (as described in <a href="#presm_mrow"></a>), this case is also equivalent to:
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;mrow&gt;
    &lt;mo fence="true"&gt; opening-fence &lt;/mo&gt;
    arg#1
    &lt;mo fence="true"&gt; closing-fence &lt;/mo&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -6882,21 +7042,25 @@
             
             <p>Finally, for the case with no arguments, i.e.
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;mfenced open="opening-fence"
          close="closing-fence"
          separators="anything" &gt;
 &lt;/mfenced&gt;
 </pre>
+               </div>
                the equivalent expanded form is defined to include just
                the fences within an <code class="element">mrow</code>:
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;mrow&gt;
    &lt;mo fence="true"&gt; opening-fence &lt;/mo&gt;
    &lt;mo fence="true"&gt; closing-fence &lt;/mo&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -6931,11 +7095,13 @@
                with a separator of, for instance, <span>&#x201c;+&#x201d;</span>, as an abbreviation for an
                expression using <span>&#x201c;+&#x201d;</span> as an ordinary operator, e.g.
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mi&gt;y&lt;/mi&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mi&gt;z&lt;/mi&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                This is because the <code>+</code> signs would be treated as separators,
                not infix operators. That is, it would render as if they were marked up as
                <code>&lt;mo separator="true"&gt;+&lt;/mo&gt;</code>, which might therefore
@@ -6949,7 +7115,8 @@
             
             <p>(<i class="var">a</i>+<i class="var">b</i>)
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mfenced&gt;
   &lt;mrow&gt;
     &lt;mi&gt; a &lt;/mi&gt;
@@ -6958,6 +7125,7 @@
   &lt;/mrow&gt;
 &lt;/mfenced&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -6969,18 +7137,21 @@
             
             <p>[0,1)
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mfenced open="["&gt;
   &lt;mn&gt; 0 &lt;/mn&gt;
   &lt;mn&gt; 1 &lt;/mn&gt;
 &lt;/mfenced&gt;
 </pre>
+               </div>
                </p>
             
             
             <p><i class="var">f</i>(<i class="var">x</i>,<i class="var">y</i>)
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mi&gt; f &lt;/mi&gt;
   &lt;mo&gt; &amp;ApplyFunction; &lt;/mo&gt;
@@ -6990,6 +7161,7 @@
   &lt;/mfenced&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             </section>
          </section>
@@ -7206,11 +7378,13 @@
             
             <p>An example of using multiple attributes is
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;menclose notation='circle box'&gt;
   &lt;mi&gt; x &lt;/mi&gt;&lt;mo&gt; + &lt;/mo&gt;&lt;mi&gt; y &lt;/mi&gt;
 &lt;/menclose&gt;
 </pre>
+               </div>
                which renders with the box and circle overlapping roughly as
                </p>
             <blockquote>
@@ -7223,7 +7397,8 @@
             <p>An example of using <code class="element">menclose</code> for actuarial
                notation is
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;msub&gt;
   &lt;mi&gt;a&lt;/mi&gt;
   &lt;mrow&gt;
@@ -7235,6 +7410,7 @@
   &lt;/mrow&gt;
 &lt;/msub&gt;
 </pre>
+               </div>
                which renders roughly as
                </p>
             <blockquote>
@@ -7244,7 +7420,8 @@
             
             <p>An example of <code class="attributevalue">phasorangle</code>, which is used in circuit analysis, is:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
   &lt;mi&gt;C&lt;/mi&gt;
   &lt;mrow&gt;
     &lt;menclose notation='phasorangle'&gt;
@@ -7258,6 +7435,7 @@
     &lt;/menclose&gt;
   &lt;/mrow&gt;
 </pre>
+               </div>
                which renders roughly as
                </p>
             <blockquote>
@@ -7266,11 +7444,13 @@
             
             <p>An example of <code class="attributevalue">madruwb</code> is:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
   &lt;menclose notation="madruwb"&gt;
     &lt;mn&gt;12&lt;/mn&gt;
   &lt;/menclose&gt;
 </pre>
+               </div>
                which renders roughly as
                </p>
             <blockquote>
@@ -7329,7 +7509,8 @@
          scripted, not just the trailing character. For example,
          (<i class="var">x</i>+<i class="var">y</i>)<sup>2</sup> should be written as:
          
-         <pre class="mathml">
+         <div class="example mathml">
+            <pre>
 &lt;msup&gt;
   &lt;mrow&gt;
     &lt;mo&gt; ( &lt;/mo&gt;
@@ -7343,6 +7524,7 @@
   &lt;mn&gt; 2 &lt;/mn&gt;
 &lt;/msup&gt;
 </pre>
+         </div>
          </p>
       
       
@@ -7356,9 +7538,11 @@
             
             <p>The <code class="element">msub</code> element attaches a subscript to a base using the syntax
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;msub&gt; <em>base</em> <em>subscript</em> &lt;/msub&gt;
 </pre>
+               </div>
                It increments <code class="attribute">scriptlevel</code> by 1, and sets <code class="attribute">displaystyle</code> to
                <code class="attributevalue">false</code>, within <em>subscript</em>, but leaves both attributes
                unchanged within <em>base</em>. (See <a href="#presm_scriptlevel"></a>.)</p>
@@ -7424,9 +7608,11 @@
             
             <p>The <code class="element">msup</code> element attaches a superscript to a base using the syntax
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;msup&gt; <em>base</em> <em>superscript</em> &lt;/msup&gt;
 </pre>
+               </div>
                It increments <code class="attribute">scriptlevel</code> by 1, and sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code>, within
                <em>superscript</em>, but leaves both attributes unchanged within
                <em>base</em>. (See <a href="#presm_scriptlevel"></a>.) </p>
@@ -7494,9 +7680,11 @@
             <p>The <code class="element">msubsup</code> element is used to attach both a subscript and
                superscript to a base expression.
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;msubsup&gt; <em>base</em> <em>subscript</em> <em>superscript</em> &lt;/msubsup&gt;
 </pre>
+               </div>
                It increments <code class="attribute">scriptlevel</code> by 1, and sets <code class="attribute">displaystyle</code> to
                <code class="attributevalue">false</code>, within <em>subscript</em> and <em>superscript</em>,
                but leaves both attributes unchanged within <em>base</em>.
@@ -7598,7 +7786,8 @@
             <p>
                would be represented as
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;msubsup&gt;
     &lt;mo&gt; &amp;int; &lt;/mo&gt;
@@ -7618,6 +7807,7 @@
   &lt;/mrow&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             </section>
          </section>
@@ -7633,9 +7823,11 @@
             
             <p>The <code class="element">munder</code> element attaches an accent or limit placed under a base using the syntax
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;munder&gt; <em>base</em> <em>underscript</em> &lt;/munder&gt;
 </pre>
+               </div>
                It always sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code> within the underscript,
                but increments <code class="attribute">scriptlevel</code> by 1 only when <code class="attribute">accentunder</code> is <code class="attributevalue">false</code>.
                Within <em>base</em>, it always leaves both attributes unchanged.
@@ -7751,7 +7943,8 @@
             
             <p>The MathML representation for the example shown above is:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;munder accentunder="true"&gt;
     &lt;mrow&gt;
@@ -7776,6 +7969,7 @@
   &lt;/munder&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             </section>
          </section>
@@ -7790,9 +7984,11 @@
             
             <p>The <code class="element">mover</code> element attaches an accent or limit placed over a base using the syntax
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;mover&gt; <em>base</em> <em>overscript</em> &lt;/mover&gt;
 </pre>
+               </div>
                It always sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code> within overscript,
                but increments <code class="attribute">scriptlevel</code> by 1 only when <code class="attribute">accent</code> is <code class="attributevalue">false</code>.
                Within <em>base</em>, it always leaves both attributes unchanged.
@@ -7911,7 +8107,8 @@
             
             <p>The MathML representation for the examples shown above is:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mover accent="true"&gt;
     &lt;mi&gt; x &lt;/mi&gt;
@@ -7924,8 +8121,10 @@
   &lt;/mover&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mover accent="true"&gt;
     &lt;mrow&gt;
@@ -7950,6 +8149,7 @@
   &lt;/mover&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             </section>
          </section>
@@ -7965,9 +8165,11 @@
             
             <p>The <code class="element">munderover</code> element attaches accents or limits placed both over and under a base using the syntax
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;munderover&gt; <em>base</em> <em>underscript</em> <em>overscript</em> &lt;/munderover&gt;
 </pre>
+               </div>
                It always sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code>
                within <em>underscript</em> and <em>overscript</em>,
                but increments <code class="attribute">scriptlevel</code> by 1 only when 
@@ -8116,7 +8318,8 @@
                <code class="element">mover</code> elements, and the second one using an
                <code class="element">munderover</code> element, is:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mover&gt;
     &lt;munder&gt;
@@ -8133,6 +8336,7 @@
   &lt;/munderover&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             </section>
          </section>
@@ -8152,13 +8356,15 @@
             <p>Presubscripts and tensor notations are represented by a single
                element, <code class="element">mmultiscripts</code>, using the syntax:
                
-               <pre>
+               <div class="example ">
+                  <pre>
 &lt;mmultiscripts&gt;
     <em>base</em>
      (<em>subscript superscript</em>)*
      [ &lt;mprescripts/&gt; (<em>presubscript presuperscript</em>)* ]
 &lt;/mmultiscripts&gt;
 </pre>
+               </div>
                </p>
             
             <p>This element allows the representation of any number of vertically-aligned pairs of
@@ -8234,7 +8440,8 @@
             
             <p><sub>0</sub><i class="var">F</i><sub>1</sub>(;<i class="var">a</i>;<i class="var">z</i>).
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mmultiscripts&gt;
     &lt;mi&gt; F &lt;/mi&gt;
@@ -8257,13 +8464,15 @@
   &lt;/mrow&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
             <p><img src="image/tensorindices.png" alt="R_i{}^j{}_k{}_l" align="middle"></img>
                (where <i class="var">k</i> and <i class="var">l</i> are different indices)
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mmultiscripts&gt;
   &lt;mi&gt; R &lt;/mi&gt;
   &lt;mi&gt; i &lt;/mi&gt;
@@ -8276,12 +8485,14 @@
   &lt;none/&gt;
 &lt;/mmultiscripts&gt;
 </pre>
+               </div>
                </p>
             
             
             <p><img src="image/prescriptsalign.png" alt="{}_{123}^{\phantom{00}1}X{}_{123}^{1\phantom{00}}" align="middle"></img>
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
   &lt;mmultiscripts&gt;
     &lt;mi&gt;  X &lt;/mi&gt;
     &lt;mn&gt; 123 &lt;/mn&gt;
@@ -8291,6 +8502,7 @@
     &lt;mn&gt; 1 &lt;/mn&gt;
   &lt;/mmultiscripts&gt;
   </pre>
+               </div>
                </p>
             
             
@@ -8307,7 +8519,8 @@
                <p><img src="image/arbinom5-12.png" alt="[binomial(5,12) in Arabic style]"></img></p>
             </blockquote>
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mstyle dir="rtl"&gt;
   &lt;mmultiscripts&gt;&lt;mo&gt;&amp;#x0644;&lt;/mo&gt;
     &lt;mn&gt;12&lt;/mn&gt;&lt;none/&gt;
@@ -8316,6 +8529,7 @@
   &lt;/mmultiscripts&gt;
 &lt;/mstyle&gt;
 </pre>
+            </div>
             </section>
          </section>
       </section>
@@ -8868,7 +9082,8 @@
             
             <p>A 3 by 3 identity matrix could be represented as follows:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mrow&gt;
   &lt;mo&gt; ( &lt;/mo&gt;
   &lt;mtable&gt;
@@ -8891,6 +9106,7 @@
   &lt;mo&gt; ) &lt;/mo&gt;
 &lt;/mrow&gt;
 </pre>
+               </div>
                </p>
             
             
@@ -9082,11 +9298,13 @@
                <code class="element">mlabeledtr</code> that apply to column elements
                also apply to the label.  For example, in a one column table,
                
-               <pre class="mathml-fragment">
+               <div class="example mathml-fragment">
+                  <pre>
 
 &lt;mlabeledtr rowalign='top'&gt;
 
 </pre>
+               </div>
                means that the label and other entries in the row are vertically aligned
                along their top.  To force a particular alignment on the label,
                the appropriate attribute would normally be set on the
@@ -9122,11 +9340,13 @@
                   as the first child of <code class="element">mlabeledtr</code> and use CSS counters and generated content
                   to fill in the equation number using a CSS style such as</span>
                
-               <pre>
+               <div class="example ">
+                  <pre>
 body {counter-reset: eqnum;}
 mtd.eqnum {counter-increment: eqnum;}
 mtd.eqnum:before {content: "(" counter(eqnum) ")"}
 </pre>
+               </div>
                </p>
             
             </section>
@@ -9134,7 +9354,8 @@ mtd.eqnum:before {content: "(" counter(eqnum) ")"}
          <section>
             <h5>Example</h5>
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mtable&gt;
   &lt;mlabeledtr id='e-is-m-c-square'&gt;
     &lt;mtd&gt;
@@ -9157,6 +9378,7 @@ mtd.eqnum:before {content: "(" counter(eqnum) ")"}
   &lt;/mlabeledtr&gt;
 &lt;/mtable&gt;
 </pre>
+            </div>
             
             
             <p>This should be rendered as:
@@ -9358,17 +9580,21 @@ mtd.eqnum:before {content: "(" counter(eqnum) ")"}
                alignment of the coefficients and variables of each term, by
                inserting spacing somewhat like that shown here:
                
-               <pre>
+               <div class="example ">
+                  <pre>
     8.44x + 55  y =  0
     3.1 x -  0.7y = -1.1
 </pre>
+               </div>
                If the example expressions shown above were arranged in a column
                but not aligned, they would appear as:
                
-               <pre>
+               <div class="example ">
+                  <pre>
     8.44x + 55y = 0
     3.1x - 0.7y = -1.1
 </pre>
+               </div>
                For audio renderers, it is suggested that the alignment elements
                produce the analogous behavior of altering the rhythm of pronunciation
                so that it is the same for several sub-expressions in a column, by the
@@ -9586,18 +9812,22 @@ mtd.eqnum:before {content: "(" counter(eqnum) ")"}
                default <code class="attribute">columnalign</code>="center" for the table, to
                produce:
                
-               <pre>
+               <div class="example ">
+                  <pre>
 equations with aligned variables
       8.44x + 55  y =  0
       3.1 x -  0.7y = -1.1
 </pre>
+               </div>
                or, with a shorter heading,
                
-               <pre>
+               <div class="example ">
+                  <pre>
    some equations
 8.44x + 55  y =  0
 3.1 x -  0.7y = -1.1
 </pre>
+               </div>
                </p>
             </section>
          
@@ -9949,11 +10179,13 @@ equations with aligned variables
                using the following syntax rules:
                
                
-               <pre>
+               <div class="example ">
+                  <pre>
 group-alignment             = "left" | "right" | "center" | "decimalpoint"
 group-alignment-list        = <em>group-alignment</em> +
 group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
 </pre>
+               </div>
                </p>
             
             
@@ -10058,16 +10290,19 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                of the example given near the start of this section. 
                To repeat the example, the desired rendering is:
                
-               <pre>
+               <div class="example ">
+                  <pre>
     8.44x + 55  y =  0
     3.1 x -  0.7y = -1.1
 </pre>
+               </div>
                </p>
             
             
             <p>One way to represent that in MathML is:
                
-               <pre class="mathml">
+               <div class="example mathml">
+                  <pre>
 &lt;mtable groupalign=
          "{decimalpoint left left decimalpoint left left decimalpoint}"&gt;
   &lt;mtr&gt;
@@ -10131,6 +10366,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
   &lt;/mtr&gt;
 &lt;/mtable&gt;
 </pre>
+               </div>
                </p>
             </section>
          
@@ -10392,13 +10628,15 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
       <p>The MathML for this is:</p>
       
       
-      <pre class="mathml">
+      <div class="example mathml">
+         <pre>
 &lt;mstack&gt;
   &lt;mn&gt;424&lt;/mn&gt;
   &lt;msrow&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mn&gt;33&lt;/mn&gt; &lt;/msrow&gt;
   &lt;msline/&gt;
 &lt;/mstack&gt;
 </pre>
+      </div>
       
       
       <p> Many more examples are given in <a href="#presm_elemmath_examples"></a>.</p>
@@ -11453,13 +11691,15 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
             <p>The MathML for this is:</p>
             
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mstack&gt;
   &lt;mn&gt;424&lt;/mn&gt;
   &lt;msrow&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;none/&gt; &lt;mn&gt;33&lt;/mn&gt; &lt;/msrow&gt;
   &lt;msline/&gt;
 &lt;/mstack&gt;
 </pre>
+            </div>
             
             
             
@@ -11475,7 +11715,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
             </blockquote>
             
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mstack&gt;
   &lt;mn&gt;123&lt;/mn&gt; 
   &lt;msrow&gt; &lt;mn&gt;456&lt;/mn&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;/msrow&gt;
@@ -11483,6 +11724,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
   &lt;mn&gt;579&lt;/mn&gt;
 &lt;/mstack&gt;
 </pre>
+            </div>
             
             
             <p>Because the default alignment is placed to the right of number, the
@@ -11518,7 +11760,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
             
             <p>The MathML for the first example is:</p>
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mstack&gt;
   &lt;mscarries crossout='updiagonalstrike'&gt;
     &lt;mn&gt;2&lt;/mn&gt;  &lt;mn&gt;12&lt;/mn&gt;  &lt;mscarry crossout='none'&gt; &lt;none/&gt; &lt;/mscarry&gt;
@@ -11529,11 +11772,13 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
   &lt;mn&gt;1,171&lt;/mn&gt;
 &lt;/mstack&gt;
 </pre>
+            </div>
             
             
             <p>The MathML for the second example uses <code class="element">mscarry</code> because a crossout should only happen on a single column:</p>
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mstack&gt;
   &lt;mscarries location='nw'&gt;
     &lt;none/&gt;
@@ -11547,6 +11792,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
   &lt;mn&gt;1,171&lt;/mn&gt;
 &lt;/mstack&gt;
 </pre>
+            </div>
             
             
             <p>Here is an example of subtraction where there is a borrow with
@@ -11567,7 +11813,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                the empty element so that <code class="element">mscarry</code> can be used to create a crossout.</p>
             
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mstack&gt;
   &lt;mscarries&gt;
     &lt;mscarry crossout='updiagonalstrike'&gt;&lt;none/&gt;&lt;/mscarry&gt;
@@ -11579,6 +11826,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
   &lt;mn&gt;45&lt;/mn&gt;
 &lt;/mstack&gt;
 </pre>
+            </div>
             
             </section>
          
@@ -11599,7 +11847,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
             </blockquote>
             
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mstack&gt;
   &lt;msgroup&gt;
     &lt;mn&gt;123&lt;/mn&gt;
@@ -11614,6 +11863,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
   &lt;msline/&gt;
 &lt;/mstack&gt;
 </pre>
+            </div>
             
             
             <p>This example has multiple rows of carries. It also (somewhat
@@ -11628,7 +11878,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
             </blockquote>
             
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mstack&gt;
   &lt;mscarries&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;none/&gt;&lt;/mscarries&gt;
   &lt;mscarries&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;none/&gt;&lt;/mscarries&gt;
@@ -11656,6 +11907,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
   &lt;mn&gt;5,332,114&lt;/mn&gt;
 &lt;/mstack&gt;
 </pre>
+            </div>
             
             </section>
          
@@ -11809,7 +12061,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                <code class="attribute">msgroup</code>s and how the <code class="attribute">position</code> is calculated in those usages.
                </p>
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mlongdiv longdivstyle="lefttop"&gt;
   &lt;mn&gt; 3 &lt;/mn&gt;
   &lt;mn&gt; 435.3&lt;/mn&gt;
@@ -11840,6 +12093,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
   &lt;/msgroup&gt;
 &lt;/mlongdiv&gt;
 </pre>
+            </div>
             
             <p>
                With the exception of the last example,
@@ -11850,7 +12104,8 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                <code class="attribute">longdivstyle</code> is that Arabic numerals have been used in place of Latin numerals, 
                as shown  below.</p>
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mstyle decimalpoint="&amp;#x066B;"&gt;
 &lt;mlongdiv longdivstyle="stackedleftlinetop"&gt;
   &lt;mn&gt; &amp;#x0663; &lt;/mn&gt;
@@ -11881,6 +12136,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
   &lt;/msgroup&gt;
 &lt;/mlongdiv&gt;
 &lt;/mstyle&gt;</pre>
+            </div>
             
             </section>
          
@@ -11923,36 +12179,44 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                below.</p>
             
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mstack stackalign="right"&gt;
   &lt;msline length="1"/&gt;
   &lt;mn&gt; 0.3333 &lt;/mn&gt;
 &lt;/mstack&gt;
 </pre>
+            </div>
             
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mstack stackalign="right"&gt;
   &lt;msline length="6"/&gt;
   &lt;mn&gt; 0.142857 &lt;/mn&gt;
 &lt;/mstack&gt;
 </pre>
+            </div>
             
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mstack stackalign="right"&gt;
   &lt;mn&gt; 0.142857 &lt;/mn&gt;
   &lt;msline length="6"/&gt;
 &lt;/mstack&gt;
 </pre>
+            </div>
             
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mstack stackalign="right"&gt;
   &lt;msrow&gt; &lt;mo&gt;.&lt;/mo&gt; &lt;none/&gt;&lt;none/&gt;&lt;none/&gt;&lt;none/&gt; &lt;mo&gt;.&lt;/mo&gt; &lt;/msrow&gt;
   &lt;mn&gt; 0.142857 &lt;/mn&gt;
 &lt;/mstack&gt;
 </pre>
+            </div>
             
             </section>
          </section>

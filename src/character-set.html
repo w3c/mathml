@@ -279,15 +279,19 @@
          to U+1D467 ("z").  Thus, a typical example of an identifier for a
          variable, marked up as
          
-         <pre class="mathml">
+         <div class="example mathml">
+            <pre>
 &lt;mi&gt;a&lt;/mi&gt;
 </pre>
+         </div>
          and rendered in a mathematical italic font (as described in
          <a href="#presm_mi"></a>) could equivalently be marked up as
          
-         <pre class="mathml">
+         <div class="example mathml">
+            <pre>
 &lt;mi&gt;&amp;#x1D44E;&lt;!--MATHEMATICAL ITALIC SMALL A--&gt;&lt;/mi&gt;
 </pre>
+         </div>
          which invokes the Mathematical Italic lower-case a explicitly.
          </p>
       
@@ -300,15 +304,19 @@
          Thus, an identifier for a variable that uses Fraktur characters could
          be marked up as
          
-         <pre class="mathml">
+         <div class="example mathml">
+            <pre>
 &lt;mi&gt;&amp;#x1D504;&lt;!--BLACK-LETTER CAPITAL A--&gt;&lt;/mi&gt;
 </pre>
+         </div>
          An alternative, equivalent markup for this example is to use the
          common upper-case A, modified by using the <code class="attribute">mathvariant</code> attribute:
          
-         <pre class="mathml">
+         <div class="example mathml">
+            <pre>
 &lt;mi mathvariant="fraktur"&gt;A&lt;/mi&gt;
 </pre>
+         </div>
          </p>
       
       
@@ -834,7 +842,9 @@
                counterparts, there are a number of other keyboard character
                substitutions that are sometime used.  For example some may expect
                
-               <pre class="mathml">&lt;mo&gt;''&lt;/mo&gt;</pre> to be treated as 
+               <div class="example mathml">
+                  <pre>&lt;mo&gt;''&lt;/mo&gt;</pre>
+               </div> to be treated as 
                U+2033 [DOUBLE PRIME], and analogous substitutions could perhaps be made for U+2034
                [TRIPLE PRIME] and U+2057 [QUADRUPLE PRIME]. Similarly, sometimes U+007C [VERTICAL
                
@@ -870,12 +880,16 @@
             example, the preferred encoding of <span>&#x201c;x prime&#x201d;</span> is
             
             
-            <pre class="mathml">&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msup&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msup&gt;</pre>
+            </div>
             
             and not
             
             
-            <pre class="mathml">&lt;mi&gt;x'&lt;/mi&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mi&gt;x'&lt;/mi&gt;</pre>
+            </div>
             
             or any other variants not using an explicit script construct. Note, however, that
             within
@@ -890,12 +904,16 @@
             easily accomplished with script markup, for example:
             
             
-            <pre class="mathml">&lt;mrow&gt;&lt;msubsup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msubsup&gt;&lt;/mrow&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mrow&gt;&lt;msubsup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msubsup&gt;&lt;/mrow&gt;</pre>
+            </div>
             
             By contrast,
             
             
-            <pre class="mathml">&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;x'&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;x'&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;</pre>
+            </div>
             will render with staggered scripts.</p>  
          
          
@@ -910,10 +928,12 @@
             juxtaposition of characters is that it generally better reflects the
             intended mathematical structure. For example, 
             
-            <pre class="mathml">&lt;msup&gt;
+            <div class="example mathml">
+               <pre>&lt;msup&gt;
   &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
   &lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;
 &lt;/msup&gt;</pre>
+            </div>
             accurately reflects that the prime here is operating on an entire
             expression, and does not suggest that the prime is acting on the final right parenthesis.
             </p>
@@ -923,10 +943,14 @@
             so one cannot rule out the possibility of valid MathML markup 
             containing constructions such as 
             
-            <pre class="mathml">&lt;mrow&gt;&lt;mi&gt;x'&lt;/mi&gt;&lt;/mrow&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mrow&gt;&lt;mi&gt;x'&lt;/mi&gt;&lt;/mrow&gt;</pre>
+            </div>
             and
             
-            <pre class="mathml">&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;'&lt;/mo&gt;&lt;/mrow&gt;</pre>  
+            <div class="example mathml">
+               <pre>&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;'&lt;/mo&gt;&lt;/mrow&gt;</pre>
+            </div>  
             
             While the first form may, in some rare situations, legitmately be used
             to distinguish a multi-character identifer named x' from the
@@ -934,7 +958,9 @@
             Authoring and validation tools are encouraged to generate the
             recommended script markup:
             
-            <pre class="mathml">&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msup&gt;&lt;/mrow&gt;</pre>
+            <div class="example mathml">
+               <pre>&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msup&gt;&lt;/mrow&gt;</pre>
+            </div>
             </p>
          
          

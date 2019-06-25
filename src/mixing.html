@@ -58,7 +58,8 @@
          
          
          <p>
-            <pre class="mathml">&lt;semantics&gt;
+            <div class="example mathml">
+               <pre>&lt;semantics&gt;
   &lt;mrow&gt;
     &lt;mrow&gt;
       &lt;mi&gt;sin&lt;/mi&gt;
@@ -79,6 +80,7 @@
     &lt;/OMA&gt;
   &lt;/annotation-xml&gt;
 &lt;/semantics&gt;</pre>
+            </div>
          </p>
          
          
@@ -224,7 +226,8 @@
          
          
          <p>
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;semantics&gt;
   &lt;apply&gt;
     &lt;plus/&gt;
@@ -261,6 +264,7 @@
     &lt;/OMA&gt;
   &lt;/annotation-xml&gt;
 &lt;/semantics&gt;</pre>
+            </div>
          </p>
          
          <p id="html-xml2">Note that this example makes use of the namespace extensibility
@@ -304,7 +308,8 @@
          
          
          <p>
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;semantics&gt;
   &lt;mrow&gt;
     &lt;mrow&gt;
@@ -322,6 +327,7 @@
     &lt;/apply&gt;
   &lt;/annotation-xml&gt;
 &lt;/semantics&gt;</pre>
+            </div>
          </p>
          </section>
       
@@ -352,12 +358,14 @@
          
          
          <p>
-            <pre class="mathml-fragment">
+            <div class="example mathml-fragment">
+               <pre>
 &lt;semantics&gt;
   &lt;mfrac&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;
   &lt;annotation encoding="image/png" src="333/formula56.png"/&gt;
   &lt;annotation encoding="application/x-maple" src="333/formula56.ms"/&gt;
 &lt;/semantics&gt;</pre>
+            </div>
          </p>
          
          
@@ -422,7 +430,8 @@
             
             
             <p>
-               <pre class="mathml">&lt;semantics&gt;
+               <div class="example mathml">
+                  <pre>&lt;semantics&gt;
   &lt;mrow&gt;
     &lt;mrow&gt;
       &lt;mi&gt;sin&lt;/mi&gt;
@@ -443,6 +452,7 @@
     \sin x + 5
   &lt;/annotation&gt;
 &lt;/semantics&gt;</pre>
+               </div>
             </p>
             </section>
          
@@ -650,8 +660,10 @@
             
             
             <p>
-               <pre class="mathml-fragment">
+               <div class="example mathml-fragment">
+                  <pre>
 &lt;annotation encoding="image/png" src="333/formula56.png"/&gt;</pre>
+               </div>
             </p>
             
             
@@ -800,7 +812,8 @@
             
             
             <p>
-               <pre class="mathml-fragment">&lt;annotation-xml cd="mathmlkeys" name="contentequiv" encoding="MathML-Content"&gt;
+               <div class="example mathml-fragment">
+                  <pre>&lt;annotation-xml cd="mathmlkeys" name="contentequiv" encoding="MathML-Content"&gt;
   &lt;apply&gt;
     &lt;plus/&gt;
     &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
@@ -815,6 +828,7 @@
     &lt;OMI&gt;5&lt;/OMI&gt;
   &lt;/OMA&gt;
 &lt;/annotation-xml&gt;</pre>
+               </div>
             </p>
             
             
@@ -825,7 +839,8 @@
             
             
             <p>
-               <pre class="mathml-fragment">
+               <div class="example mathml-fragment">
+                  <pre>
 &lt;annotation-xml encoding="application/xhtml+xml"&gt;
   &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
     &lt;head&gt;&lt;title&gt;E&lt;/title&gt;&lt;/head&gt;
@@ -834,6 +849,7 @@
     &lt;/body&gt;
   &lt;/html&gt;
 &lt;/annotation-xml&gt;</pre>
+               </div>
             </p>
             
             
@@ -885,7 +901,8 @@
             <p>These issues mean that the following example is valid whether parsed by an XML or
                HTML parser:
                
-               <pre class="mathml-fragment">
+               <div class="example mathml-fragment">
+                  <pre>
 &lt;math&gt;
  &lt;semantics&gt;
   &lt;mi&gt;a&lt;/mi&gt;
@@ -897,12 +914,14 @@
  &lt;mi&gt;b&lt;/mi&gt;
 &lt;/math&gt;
 </pre>
+               </div>
                
                However the if the <code class="attribute">encoding</code> attribute is omitted then the expression
                is only valid if parsed as XML:
                
                
-               <pre class="mathml-error">
+               <div class="example mathml-error">
+                  <pre>
 &lt;math&gt;
  &lt;semantics&gt;
   &lt;mi&gt;a&lt;/mi&gt;
@@ -914,13 +933,15 @@
  &lt;mi&gt;b&lt;/mi&gt;
 &lt;/math&gt;
 </pre>
+               </div>
                </p>
             
             <p>If the above is parsed by an HTML parser it produces a result equivalent to the following
                invalid input, where the <code class="element" data-namespace="xhtml">span</code> element has caused all MathML elements to be prematurely closed. The remaining MathML
                elements following the <code class="element">span</code> are no longer contained within <code class="starttag">&lt;math&gt;</code> so will be parsed as unknown HTML elements and render incorrectly.
                
-               <pre class="mathml-error">
+               <div class="example mathml-error">
+                  <pre>
 &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
  &lt;semantics&gt;
   &lt;mi&gt;a&lt;/mi&gt;
@@ -932,6 +953,7 @@
 &lt;mo xmlns="http://www.w3.org/1999/xhtml"&gt;+&lt;/mo&gt;
 &lt;mi xmlns="http://www.w3.org/1999/xhtml"&gt;b&lt;/mi&gt;
 </pre>
+               </div>
                </p>
             
             <p>Note here that the HTML <code class="element" data-namespace="xhtml">span</code> element has
@@ -1116,7 +1138,8 @@
             The following example encodes the Boolean arithmetic expression
             (<i class="var">a</i>+<i class="var">b</i>)(<i class="var">c</i>+<i class="var">d</i>) in this way.
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;semantics&gt;
   &lt;mrow&gt;
     &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
@@ -1130,6 +1153,7 @@
     &lt;/apply&gt;
   &lt;/annotation-xml&gt;
 &lt;/semantics&gt;</pre>
+            </div>
             Note that the above markup annotates the presentation markup as
             the first child element, with the content markup as part of the
             <code class="element">annotation-xml</code> element.  An equivalent form could be given
@@ -1167,7 +1191,8 @@
             (<i class="var">a</i>+<i class="var">b</i>)(<i class="var">c</i>+<i class="var">d</i>).
             
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;semantics&gt;
   &lt;mrow id="E"&gt;
     &lt;mrow id="E.1"&gt;
@@ -1200,6 +1225,7 @@
   &lt;/annotation-xml&gt;
 &lt;/semantics&gt;
 </pre>
+            </div>
          </p>
          
          
@@ -1264,7 +1290,8 @@
             the Boolean expression of the previous section is
             annotated with OpenMath markup that includes cross-references:
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;semantics&gt;
   &lt;mrow id="EE"&gt;
     &lt;mrow id="EE.1"&gt;
@@ -1315,6 +1342,7 @@
   &lt;/annotation-xml&gt;
 &lt;/semantics&gt;
 </pre>
+            </div>
             Here <code class="element" data-namespace="openmath">OMA</code>, <code class="element" data-namespace="openmath">OMS</code>
             and <code class="element" data-namespace="openmath">OMV</code> are elements defined in the OpenMath
             standard for representing application, symbol, and variable, respectively. 

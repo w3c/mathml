@@ -59,9 +59,11 @@
          <p>An XML namespace [[Namespaces]] is a collection of names identified by a URI.
             The URI for the MathML namespace is:</p> 
          
-         <pre>
+         <div class="example ">
+            <pre>
 http://www.w3.org/1998/Math/MathML
 </pre>
+         </div>
          
          
          <p>To declare a namespace<span> when using the XML serialisation of MathML</span>,
@@ -72,11 +74,13 @@ http://www.w3.org/1998/Math/MathML
             appears, and for any child elements.  For example:</p> 
          
          
-         <pre>
+         <div class="example ">
+            <pre>
 &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
 &lt;mrow&gt;...&lt;/mrow&gt;
 &lt;/math&gt;
 </pre>
+         </div>
          
          
          <p>When the <code class="attribute">xmlns</code> attribute is used as a
@@ -86,13 +90,15 @@ http://www.w3.org/1998/Math/MathML
             When embedding MathML within XHTML, one might use:
             </p>
          
-         <pre>
+         <div class="example ">
+            <pre>
 &lt;body xmlns:m="http://www.w3.org/1998/Math/MathML"&gt;
 ...
 &lt;m:math&gt;&lt;m:mrow&gt;...&lt;/m:mrow&gt;&lt;/m:math&gt;
 ...
 &lt;/body&gt;
 </pre>
+         </div>
          
          
          <p>HTML does not support namespace extensibility in the same way, the HTML parser
@@ -106,11 +112,13 @@ http://www.w3.org/1998/Math/MathML
             parser or an HTML parser, it SHOULD
             use the following form to ensure maximum compatibility:
             
-            <pre class="mathml-fragment">
+            <div class="example mathml-fragment">
+               <pre>
 &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
   ...
 &lt;/math&gt;
 </pre>
+            </div>
          </p>
          </section>
       
@@ -1184,12 +1192,14 @@ http://www.w3.org/1998/Math/MathML
          <p>For example, <code>&lt;mo&gt; ( &lt;/mo&gt;</code> is equivalent to
             <code>&lt;mo&gt;(&lt;/mo&gt;</code>, and
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mtext&gt;
   Theorem
   1:
 &lt;/mtext&gt;
 </pre>
+            </div>
             is equivalent to 
             <code>&lt;mtext&gt;Theorem 1:&lt;/mtext&gt;</code>
             or
@@ -1203,10 +1213,12 @@ http://www.w3.org/1998/Math/MathML
             For example, compare the above use of an <code class="element">mtext</code> element 
             with
             
-            <pre class="mathml">
+            <div class="example mathml">
+               <pre>
 &lt;mtext&gt;
 &amp;nbsp;Theorem &amp;nbsp;1: 
 &lt;/mtext&gt; </pre>
+            </div>
             </p>
          
          
@@ -1972,22 +1984,26 @@ http://www.w3.org/1998/Math/MathML
             that information should be passed in using the <code class="attribute">other</code> attribute:</p>
          
          
-         <pre>
+         <div class="example ">
+            <pre>
 &lt;maction actiontype="highlight" other="color='#ff0000'"&gt; expression &lt;/maction&gt;
 </pre>
+         </div>
          
          
          <p>From MathML 2.0 onwards, a <code class="attribute">color</code> 
             attribute from another namespace would be used:</p>
          
          
-         <pre>
+         <div class="example ">
+            <pre>
 &lt;body xmlns:my="http://www.example.com/MathML/extensions"&gt;
 ...
 &lt;maction actiontype="highlight" my:color="#ff0000"&gt; expression &lt;/maction&gt;
 ...
 &lt;/body&gt;
 </pre>
+         </div>
          
          
          <p>Note that the intent of allowing non-standard attributes is
