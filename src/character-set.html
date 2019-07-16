@@ -1,0 +1,1183 @@
+<section>
+   <h2 id="chars">Characters, Entities and Fonts</h2>
+   
+   
+   
+   
+   <section>
+      <h3 id="chars_intro">Introduction</h3>
+      
+      
+      <div class="issue" id="regenerate_character_and_entity_tables"><span class="head">Character and entity tables need to be updated for MathML3 and ISO 9573-13</span>
+         
+         
+         <p>Many of the tables in chapter 6 need to be updated and regenerated.
+            In this draft references to tables in chapter 6 link to the
+            published MathML2 Recommendation, and are marked [MathML2]</p>
+         
+         <div class="resolution">
+            <p>Separate xml-entity-names WD</p>
+         </div>
+         </div>
+      
+      
+      <p>
+         Notation and symbols have proved very important for
+         mathematics. Mathematics has grown in part because 
+         <span>its notation continually changes toward being succinct and 
+            suggestive</span>. 
+         Many new signs have been developed for use in mathematical notation, 
+         and many have been adopted 
+         that were  originally introduced elsewhere.The result is
+         that mathematics makes use of a very large collection of
+         symbols.  It is difficult to write mathematics fluently if these
+         characters are not available for use. It is difficult
+         to read mathematics if corresponding glyphs are not available
+         for presentation on specific display devices.
+         </p>
+      
+      
+      <p>The W3C Math Working Group therefore took on the job
+         of specifying part of the mechanism needed to proceed from
+         notation to final presentation, and has collaborated with the
+         <a href="http://www.unicode.org/">Unicode Technical Committee</a>
+         (UTC) and the <a href="http://www.stixfonts.org/">STIX Fonts Project</a>
+         in undertaking specification of the rest.</p>
+      
+      
+      <p>This chapter contains discussion of
+         characters for use within MathML, recommendations for their use,
+         and warnings concerning the correct form of the
+         corresponding code points given in the Universal Multiple-Octet Coded Character
+         Set (UCS) ISO-10646 as codified in Unicode [[Unicode]].
+         For simplicity we refer to this character set by the short name Unicode.
+         Unless otherwise stated, the mappings discussed in this chapter and
+         elsewhere in the MathML 3.0 recommendation are based on Unicode 5.2.
+         Conformant MathML processors (see <a href="#interf_genproc"></a>) are
+         free to use characters defined in Unicode 5.2 or later.
+         </p>
+      
+      
+      <p>While a long process of review and adoption by UTC and ISO/IEC
+         of the characters of special interest to mathematics and MathML is
+         now complete, more characters may be added in the future. For the latest 
+         character tables and font information,
+         see the [[Entities]] and the <a href="http://www.unicode.org/">Unicode
+            Home Page</a>, notably 
+         <a href="http://www.unicode.org/unicode/alloc/Pipeline.html">Unicode Work
+            in Progress</a> and 
+         <a href="http://www.unicode.org/reports/tr25/tr25-8.html">
+            Unicode Technical Report #25 &#x201c;Unicode Support for Mathematics&#x201d;</a>.</p>
+      
+      
+      <p>
+         A MathML token element (see <a href="#presm_tokel"></a>, <a href="#contm_cn"></a>,
+         <a href="#contm_ci"></a>, <a href="#contm_csymbol"></a>) takes as content a
+         sequence of MathML characters or <code class="element">mglyph</code> elements.  The latter are
+         used to represent characters that do not have a Unicode encoding, as described in
+         <a href="#presm_mglyph"></a>.  The need for <code class="element">mglyph</code> should be rare because Unicode 3.1 
+         provided approximately one thousand alphabetic characters for mathematics, and 
+         Unicode 3.2 added over 900 more special mathematical symbols.  
+         </p>
+      
+      </section>
+   
+   
+   
+   <section>
+      <h3 id="chars_unicodechars">Unicode Character Data</h3>
+      
+      
+      <p>
+         Any character allowed by XML may be used in MathML.  More precisely,
+         the legal Unicode characters have the hexadecimal code
+         numbers 09 (tab = U+0009), 0A (line feed = U+000A), 0D (carriage
+         return = U+000D), 20-D7FF (U+0020..U+D7FF), E000-FFFD
+         (U+E000..U+FFFD), and 10000-10FFFF (U+10000..U+10FFFF).  
+         The exclusions above code number D7FF are of the blocks used
+         in surrogate pairs, and the two characters guaranteed not to be
+         Unicode characters at all.  U+FFFE is excluded to allow determination
+         of byte order in certain encodings.
+         </p>
+      
+      
+      <p>
+         There are essentially three different ways of encoding character data
+         in an XML document.
+         
+         </p>
+      <ul>
+         
+         <li>
+            
+            <p>Using characters directly: For example, the '&#xe9;' (character U+00E9 [LATIN SMALL LETTER
+               E WITH ACUTE]) may have been inserted.  
+               This option is only useful
+               if the character encoding specified for the XML document includes
+               the character intended.  Note that if the document is, for example, 
+               encoded in
+               Latin-1 (ISO-8859-1) then <em>only</em> the characters in that
+               encoding are available directly; for instance character 
+               <span>U+00E9</span> (eacute) is, but character 
+               <span>U+03B1</span> (alpha) is not.   
+               </p>
+            </li>
+         
+         
+         <li>
+            
+            <p>
+               Using numeric XML character references: For example, '&#xe9;' may be
+               represented as &amp;<span>#233;</span> (decimal) or  &amp;#xE9; (hex),
+               or &amp;<span>#0233;</span> (decimal) or  &amp;#x00E9;.
+               Note that the numbers in the character references always refer to the Unicode encoding
+               (and not to
+               the character encoding used in the XML file). By using <span>character</span>
+               references it is always possible to access the entire Unicode range.
+               </p>
+            </li>
+         
+         
+         <li>
+            
+            <p>
+               Using entity references: The MathML DTD defines internal entities that
+               expand to character data. Thus for example the entity reference
+               &amp;eacute; may be used rather than the character reference
+               &amp;#xE9;. An XML fragment that uses an entity
+               reference which is not defined in a DTD is not well-formed; therefore
+               it will be rejected by an XML parser. For this reason
+               every fragment using entity references must
+               use a DOCTYPE declaration which specifies the MathML DTD, or a DTD
+               that at least declares any entity reference used in the MathML
+               instance.  The need to use a DOCTYPE complicates inclusion of MathML in
+               some documents. However, entity references can be useful for small
+               illustrative examples.
+               </p>
+            
+            
+            </li>
+         
+         </ul>
+      
+      </section>
+   
+   
+   <section>
+      <h3 id="chars_entities">Entity Declarations</h3>
+      
+      
+      <p>Earlier versions of this MathML specification included detailed
+         listings of the entity definitions to be used with the MathML DTD.
+         These entity definitions are of more general use, and have now been
+         separated into an ancillary document, XML Entity Definitions for
+         Characters [[Entities]].  The
+         tables there list the entity names and the corresponding 
+         Unicode character references.
+         That document describes several entity sets; not all of them are used in
+         the MathML DTD. 
+         <span>The MathML DTD references the
+            <a href="http://www.w3.org/2003/entities/2007/htmlmathml.ent">combined HTML MathML entity set</a>
+            defined in [[Entities]].</span>
+         </p>
+      </section>
+   
+   
+   <section>
+      <h3 id="chars_mglyph">Special Characters Not in Unicode</h3>
+      
+      
+      <p>
+         For special purposes, one may need a symbol which does not have a
+         Unicode representation. 
+         In these cases one may use the <a class="intref" href="#presm_mglyph"><code class="element">mglyph</code></a>
+         element for direct access to a glyph as an image, or (in some systems)
+         from a font that uses a non-Unicode encoding. 
+         All MathML token elements accept characters in their content and 
+         also accept an <code class="element">mglyph</code> there.
+         Beware, however, that use of <code class="element">mglyph</code> to access a font is
+         deprecated and the mechanism may not work in all systems. The
+         <code class="element">mglyph</code> element should always supply a useful alternative
+         representation in its <code class="attribute">alt</code> attribute.
+         </p>
+      </section>
+   
+   
+   <section>
+      <h3 id="chars_BMP-SMP">Mathematical Alphanumeric Symbols</h3>
+      
+      
+      <p>
+         In mathematical and scientific writing, single letters often denote 
+         variables and constants in a given context.  The increasing complexity 
+         of science has led to the use of
+         certain common alphabet and font variations to provide enough special
+         symbols of this letter-like type.  These denotations are generally 
+         <em>not</em> letters that may be used to make up words with
+         recognized meanings, but individual carriers of semantics themselves.
+         Writing a string of such symbols is usually interpreted in terms of
+         some composition law, for instance, multiplication.  Many letter-like
+         symbols may be quickly interpreted as
+         of a certain mathematical type by specialists in a given area: 
+         for instance, bold symbols, whether
+         based on Latin or Greek letters, as vectors in physics or engineering,
+         or Fraktur symbols as Lie algebras in part of pure mathematics.
+         </p>
+      
+      
+      <p>
+         The <span>additional</span> Mathematical Alphanumeric Symbols 
+         <span>provided</span> in Unicode 3.1 have
+         code points in the range U+1D400 to U+1D7FF in <em>Plane 1</em>, that is, in the first
+         plane with Unicode values higher than 2<sup>16</sup>.  This plane of
+         characters is also known as the Secondary Multilingual Plane (SMP),
+         in contrast to the Basic Multilingual Plane (BMP) which <span>
+            was originally the entire extent of Unicode</span>.  Support for Plane 1 characters in currently
+         deployed software is not always reliable, but it should be possible in
+         multilingual operating systems, since Plane 2 has many Chinese
+         characters that must be displayable in East Asian locales.</p>
+      
+      
+      <p>
+         As discussed in <a href="#presm_commatt"></a>, MathML offers an
+         alternative mechanism to specify mathematical alphanumeric characters.
+         This alternative mechanism spans the gap between the
+         specification of the mathematical alphanumeric symbols as Unicode
+         code points, and the deployment of software and fonts that support them.
+         Namely, one uses the <code class="attribute">mathvariant</code> attribute on a token element
+         such as <code class="element">mi</code> to indicate that the character data in the token
+         element selects a mathematical alphanumeric symbol.
+         </p>
+      
+      
+      <p>
+         In principle, any mathvariant value may be used with any character
+         data to define a specific symbolic token.  In practice, only certain
+         combinations of character data and mathvariant values will be visually
+         distinguished by a given renderer.
+         In this section we explain the correspondence between certain characters
+         in Plane 0 that, when modified by the <code class="attribute">mathvariant</code> attribute,
+         are considered equivalent to mathematical alphanumeric symbol characters.
+         </p>
+      
+      
+      <p>
+         The mathematical alphanumeric symbol characters in Plane 1 include
+         alphabets for Latin upper-case and lower-case letters, including
+         dotless i and j, Greek upper-case and lower-case letters, Greek symbols
+         (also known as variants), including upper-case and lower-case digamma,
+         and Latin digits.  These alphabets provide Plane 1 Unicode code points
+         that differ from corresponding Plane 0 characters only by a variation
+         in font that carries mathematical semantics when used in a formula.
+         </p>
+      
+      
+      <p>
+         The <code class="attribute">mathvariant</code> attribute uses exactly this correspondence to
+         provide an alternate markup encoding that selects these Plane 1 characters.
+         For example, the Mathematical Italic alphabet runs from U+1D434 ("A")
+         to U+1D467 ("z").  Thus, a typical example of an identifier for a
+         variable, marked up as
+         
+         <div class="example mathml">
+            <pre>
+&lt;mi&gt;a&lt;/mi&gt;
+</pre>
+         </div>
+         and rendered in a mathematical italic font (as described in
+         <a href="#presm_mi"></a>) could equivalently be marked up as
+         
+         <div class="example mathml">
+            <pre>
+&lt;mi&gt;&amp;#x1D44E;&lt;!--MATHEMATICAL ITALIC SMALL A--&gt;&lt;/mi&gt;
+</pre>
+         </div>
+         which invokes the Mathematical Italic lower-case a explicitly.
+         </p>
+      
+      
+      <p>
+         An important use of the mathematical alphanumeric symbols in Plane 1
+         is for identifiers normally printed in special mathematical fonts,
+         such as Fraktur, Greek, Boldface, or Script.  As another example,
+         the Mathematical Fraktur alphabet runs from U+1D504 ("A") to U+1D537 ("z").
+         Thus, an identifier for a variable that uses Fraktur characters could
+         be marked up as
+         
+         <div class="example mathml">
+            <pre>
+&lt;mi&gt;&amp;#x1D504;&lt;!--BLACK-LETTER CAPITAL A--&gt;&lt;/mi&gt;
+</pre>
+         </div>
+         An alternative, equivalent markup for this example is to use the
+         common upper-case A, modified by using the <code class="attribute">mathvariant</code> attribute:
+         
+         <div class="example mathml">
+            <pre>
+&lt;mi mathvariant="fraktur"&gt;A&lt;/mi&gt;
+</pre>
+         </div>
+         </p>
+      
+      
+      <p>
+         A MathML processor must treat a mathematical alphanumeric character
+         (when it appears) as identical to the corresponding combination of
+         the unstyled character and mathvariant attribute value.
+         It is important to note that the mathvariant attribute specifies a
+         semantic class of characters, each of which has a specific appearance
+         that should be protected from document-wide style changes, so the
+         intended meaning of the character may be preserved.  The use of a
+         mathematical alphanumeric character is also intended to preserve
+         this specific appearance, and so these characters are also not to
+         be affected by surrounding style changes.
+         </p>
+      
+      
+      <p>
+         Not all combinations of character data and mathvariant values have assigned
+         Unicode code points.  For example, sans-serif Greek alphabets are
+         omitted, while bold sans-serif Greek alphabets are included, and
+         bold digits are included, while bold-italic digits are excluded.
+         A renderer should visually distinguish those combinations of character data
+         and mathvariant attribute values that it can subject to the
+         availability of font characters.
+         It is intended that renderers distinghish at least those combinations
+         that have equivalent Unicode code points, and renderers are free to
+         ignore those combinations that have no assigned Unicode code point
+         or for which adequate font support is unavailable.
+         </p>
+      
+      
+      <p>
+         The exact correspondence between a mathematical alphabetic character
+         and an unstyled character is complicated by the fact that certain
+         characters that were already present in Unicode in Plane 0 are not in
+         the 'expected' sequence in Plane 1.  The table below shows the Plane 0
+         mathematical alphanumeric symbols, listing for each character its
+         Unicode code point, its Unicode character name, its corresponding
+         unstyled alphabetic character, and the code point in Plane 1 where
+         one might naturally have sought this character.
+         </p>
+      
+      
+      <p>
+         
+         <table id="chars_letter-like-tables" border="1">
+            
+            <thead>
+               
+               <tr>
+                  
+                  <td>Unicode code point</td>
+                  
+                  <td>Unicode name</td>
+                  
+                  <td>BMP code</td>
+                  
+                  <td>Plane-1 code</td>
+                  </tr>
+               </thead>
+            
+            <tbody>
+               
+               <tr>
+                  
+                  <td>U+210E</td>
+                  
+                  <td>PLANCK CONSTANT</td>
+                  
+                  <td>U+0068</td>
+                  
+                  <td>U+1D455</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+212C</td>
+                  
+                  <td>SCRIPT CAPITAL B</td>
+                  
+                  <td>U+0042</td>
+                  
+                  <td>U+1D49D</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2130</td>
+                  
+                  <td>SCRIPT CAPITAL E</td>
+                  
+                  <td>U+0045</td>
+                  
+                  <td>U+1D4A0</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2131</td>
+                  
+                  <td>SCRIPT CAPITAL F</td>
+                  
+                  <td>U+0046</td>
+                  
+                  <td>U+1D4A1</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+210B</td>
+                  
+                  <td>SCRIPT CAPITAL H</td>
+                  
+                  <td>U+0048</td>
+                  
+                  <td>U+1D4A3</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2110</td>
+                  
+                  <td>SCRIPT CAPITAL I</td>
+                  
+                  <td>U+0049</td>
+                  
+                  <td>U+1D4A4</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2112</td>
+                  
+                  <td>SCRIPT CAPITAL L</td>
+                  
+                  <td>U+004C</td>
+                  
+                  <td>U+1D4A7</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2133</td>
+                  
+                  <td>SCRIPT CAPITAL M</td>
+                  
+                  <td>U+004D</td>
+                  
+                  <td>U+1D4A8</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+211B</td>
+                  
+                  <td>SCRIPT CAPITAL R</td>
+                  
+                  <td>U+0052</td>
+                  
+                  <td>U+1D4AD</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+212F</td>
+                  
+                  <td>SCRIPT SMALL E</td>
+                  
+                  <td>U+0065</td>
+                  
+                  <td>U+1D4BA</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+210A</td>
+                  
+                  <td>SCRIPT SMALL G</td>
+                  
+                  <td>U+0067</td>
+                  
+                  <td>U+1D4BC</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2134</td>
+                  
+                  <td>SCRIPT SMALL O</td>
+                  
+                  <td>U+006F</td>
+                  
+                  <td>U+1D4C4</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+212D</td>
+                  
+                  <td>BLACK-LETTER CAPITAL C</td>
+                  
+                  <td>U+0043</td>
+                  
+                  <td>U+1D506</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+210C</td>
+                  
+                  <td>BLACK-LETTER CAPITAL H</td>
+                  
+                  <td>U+0048</td>
+                  
+                  <td>U+1D50B</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2111</td>
+                  
+                  <td>BLACK-LETTER CAPITAL I</td>
+                  
+                  <td>U+0049</td>
+                  
+                  <td>U+1D50C</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+211C</td>
+                  
+                  <td>BLACK-LETTER CAPITAL R</td>
+                  
+                  <td>U+0052</td>
+                  
+                  <td>U+1D515</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2128</td>
+                  
+                  <td>BLACK-LETTER CAPITAL Z</td>
+                  
+                  <td>U+005A</td>
+                  
+                  <td>U+1D51D</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2102</td>
+                  
+                  <td>DOUBLE-STRUCK CAPITAL C</td>
+                  
+                  <td>U+0043</td>
+                  
+                  <td>U+1D53A</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+210D</td>
+                  
+                  <td>DOUBLE-STRUCK CAPITAL H</td>
+                  
+                  <td>U+0048</td>
+                  
+                  <td>U+1D53F</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2115</td>
+                  
+                  <td>DOUBLE-STRUCK CAPITAL N</td>
+                  
+                  <td>U+004E</td>
+                  
+                  <td>U+1D545</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2119</td>
+                  
+                  <td>DOUBLE-STRUCK CAPITAL P</td>
+                  
+                  <td>U+0050</td>
+                  
+                  <td>U+1D547</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+211A</td>
+                  
+                  <td>DOUBLE-STRUCK CAPITAL Q</td>
+                  
+                  <td>U+0051</td>
+                  
+                  <td>U+1D548</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+211D</td>
+                  
+                  <td>DOUBLE-STRUCK CAPITAL R</td>
+                  
+                  <td>U+0052</td>
+                  
+                  <td>U+1D549</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2124</td>
+                  
+                  <td>DOUBLE-STRUCK CAPITAL Z</td>
+                  
+                  <td>U+005A</td>
+                  
+                  <td>U+1D551</td>
+                  </tr>
+               </tbody>
+            </table>
+         </p>
+      
+      
+      
+      
+      <p>
+         Mathematical Alphanumeric Symbol characters should not be used for styled prose.
+         For example, Mathematical Fraktur A must not be used to just select
+         a blackletter font for an uppercase A as it
+         would create problems for searching, restyling (e.g. for accessibility), 
+         and many other kinds of processing.
+         </p>
+      </section>
+   
+   
+   <section>
+      <h3 id="chars_nonmark">Non-Marking Characters</h3>
+      
+      
+      
+      <p>
+         Some characters, although important for the quality of print or
+         alternative rendering, do not have glyph marks that correspond
+         directly <span>to them</span>.  They are called here non-marking characters.
+         Their roles are
+         discussed in <a href="#presm"></a> and <a href="#contm"></a>.</p>
+      
+      
+      <p>In MathML, control of page composition, such as line-breaking, is
+         effected by the use of the proper attributes on the <code class="element">mo</code> and <code class="element">mspace</code> elements.</p>
+      
+      
+      <p>The characters below are not simple spacers.  They are
+         especially important new additions to the UCS because they provide
+         textual clues which can increase the quality of print rendering,
+         permit correct audio rendering, and allow the unique recovery of
+         mathematical semantics from text which is visually ambiguous.
+         </p>
+      
+      
+      <p>
+         
+         <table id="chars_table-white">
+            
+            <thead>
+               
+               <tr>
+                  
+                  <td>Unicode code point</td>
+                  
+                  <td>Unicode name</td>
+                  
+                  <td>Description</td>
+                  </tr>
+               </thead>
+            
+            <tbody>
+               
+               <tr>
+                  
+                  <td>U+2061</td>
+                  
+                  <td>FUNCTION APPLICATION</td>
+                  
+                  <td>character showing function application in presentation tagging
+                     (<a href="#presm_mo"></a>)</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2062</td>
+                  
+                  <td>INVISIBLE TIMES</td>
+                  
+                  <td>marks multiplication when it is understood without a mark
+                     (<a href="#presm_mo"></a>)</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2063</td>
+                  
+                  <td>INVISIBLE SEPARATOR</td>
+                  
+                  <td>used as a separator, e.g., in indices (<a href="#presm_mo"></a>)</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>U+2064</td>
+                  
+                  <td>INVISIBLE PLUS</td>
+                  
+                  <td>marks addition, especially in constructs such as 1&#xbd;
+                     (<a href="#presm_mo"></a>)</td>
+                  </tr>
+               </tbody>
+            </table>
+         </p>
+      
+      </section>
+   
+   
+   <section>
+      <h3 id="chars_anomalous">Anomalous Mathematical Characters</h3>
+      
+      
+      
+      <p>Some characters which occur fairly often in mathematical texts, and
+         have special significance there, are frequently confused with other
+         similar characters in the UCS.  In some cases, common keyboard
+         characters have become entrenched as alternatives to the more appropriate
+         mathematical characters.  In others, characters have legitimate uses in
+         both formulas and text, but conflicting rendering and font
+         conventions. All these characters are called here anomalous
+         characters.</p>
+      
+      
+      <section>
+         <h4 id="chars_keyboard">Keyboard Characters</h4>
+         
+         
+         <p>Typical Latin-1-based keyboards contain several characters that
+            are visually similar to important mathematical characters.
+            Consequently, these characters are frequently substituted,
+            intentionally or unintentionally, for their more correct mathematical
+            counterparts.</p>
+         
+         
+         
+         <section>
+            <h5 id="chars_hyph-minus">Minus</h5>
+            
+            
+            <p>The most common ordinary text character which enjoys a special
+               mathematical use is U+002D [HYPHEN-MINUS].  As its Unicode name
+               suggests, it is used as a hyphen in prose contexts, and as a minus
+               or negative sign in formulas.
+               For text use, there is a specific code point U+2010 [HYPHEN] which is
+               intended for prose contexts, and which should render as a hyphen or
+               short dash.
+               For mathematical use, there is another code point U+2212 [MINUS SIGN]
+               which is intended for mathematical formulas, and which should render
+               as a longer minus or negative sign.
+               MathML renderers should treat U+002D [HYPHEN-MINUS] as equivalent to
+               U+2212 [MINUS SIGN] in formula contexts such as <code class="element">mo</code>, and as
+               equivalent to U+2010 [HYPHEN] in text contexts such as <code class="element">mtext</code>.
+               </p>
+            
+            </section>
+         
+         
+         <section>
+            <h5 id="chars_prime-quote">Apostrophes, Quotes and Primes</h5>
+            
+            
+            <p>On a typical European keyboard there is a key available which is
+               viewed as an apostrophe or a single quotation mark (an upright or
+               right quotation mark).  Thus one key is doing double duty for prose
+               input to enter U+0027 [APOSTROPHE] and U+2019 [RIGHT SINGLE QUOTATION
+               MARK].  In mathematical contexts it is also commonly used for the
+               prime, which should be U+2032 [PRIME].  Unicode recognizes the
+               overloading of this symbol and remarks that it can also signify the
+               units of minutes or feet.  In the unstructured printed text of normal
+               prose the characters are placed next to one another.  The U+0027
+               [APOSTROPHE] and U+2019 [RIGHT SINGLE QUOTATION MARK] are marked with
+               glyphs that are small and raised with respect to the center line of
+               the text.  The fonts used provide small raised glyphs in the
+               appropriate places indexed by the Unicode codes.  The U+2032 [PRIME]
+               of mathematics is similarly treated in fuller Unicode fonts.
+               </p>
+            
+            
+            <p>MathML renderers are encouraged to treat U+0027
+               [APOSTROPHE] as U+2032 [PRIME] when appropriate in
+               formula contexts.</p>
+            
+            
+            <p>A final remark is that a &#x2018;prime&#x2019; is often used in
+               transliteration of the Cyrillic character U+044C [CYRILLIC SMALL
+               LETTER SOFT SIGN].  This different use of primes is not part of
+               considerations for mathematical formulas. 
+               </p>
+            
+            </section>
+         
+         
+         <section>
+            <h5>Other Keyboard Substitutions</h5>
+            
+            
+            <p>While the minus and prime characters are the most common and
+               important keyboard characters with more precise mathematical
+               counterparts, there are a number of other keyboard character
+               substitutions that are sometime used.  For example some may expect
+               
+               <div class="example mathml">
+                  <pre>&lt;mo&gt;''&lt;/mo&gt;</pre>
+               </div> to be treated as 
+               U+2033 [DOUBLE PRIME], and analogous substitutions could perhaps be made for U+2034
+               [TRIPLE PRIME] and U+2057 [QUADRUPLE PRIME]. Similarly, sometimes U+007C [VERTICAL
+               
+               LINE] is used for U+2223 [DIVIDES].  MathML regards these as
+               application-specific authoring conventions, and recommends that
+               authoring tools generate markup using the more precise mathematical
+               characters for better interoperability. 
+               </p>
+            
+            </section>
+         
+         </section>
+      
+      
+      
+      <section>
+         <h4 id="chars_pseudo-scripts">Pseudo-scripts</h4>
+         
+         
+         <p>There are a number of characters in the UCS that traditionally have
+            been taken to have a natural &#x2018;script&#x2019; aspect.  The
+            visual presentation of these characters is similar to a script, that
+            is, raised from the baseline, and smaller than the base font size.  The
+            degree symbol and prime characters are examples.  For use in text, such
+            characters occur in sequence with the identifier they follow, and are
+            typically rendered using the same font.  These characters are called
+            pseudo-scripts here.</p>
+         
+         
+         <p>In almost all mathematical contexts, pseudo-script characters should
+            be associated
+            with a base expression using explicit script markup in MathML.  For
+            example, the preferred encoding of <span>&#x201c;x prime&#x201d;</span> is
+            
+            
+            <div class="example mathml">
+               <pre>&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msup&gt;</pre>
+            </div>
+            
+            and not
+            
+            
+            <div class="example mathml">
+               <pre>&lt;mi&gt;x'&lt;/mi&gt;</pre>
+            </div>
+            
+            or any other variants not using an explicit script construct. Note, however, that
+            within
+            text contexts such as <code class="element">mtext</code>, pseudo-scripts may be used in sequence with other character data.</p>
+         
+         
+         
+         <p>There are two reasons why explicit markup is preferable in
+            mathematical contexts.  First, a problem arises with typesetting, when
+            pseudo-scripts are used with subscripted identifiers.  Traditionally,
+            subscripting of x' would be rendered stacked under the prime. This is
+            easily accomplished with script markup, for example:
+            
+            
+            <div class="example mathml">
+               <pre>&lt;mrow&gt;&lt;msubsup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msubsup&gt;&lt;/mrow&gt;</pre>
+            </div>
+            
+            By contrast,
+            
+            
+            <div class="example mathml">
+               <pre>&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;x'&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;</pre>
+            </div>
+            will render with staggered scripts.</p>  
+         
+         
+         <p>Note this means that a renderer of MathML will have to treat
+            pseudo-scripts differently from most other character codes it finds in
+            a superscript position; in most fonts, the glyphs for pseudo-scripts
+            are already shrunk and raised from the baseline.
+            </p>
+         
+         
+         <p>The second reason that explicit script markup is preferrable to
+            juxtaposition of characters is that it generally better reflects the
+            intended mathematical structure. For example, 
+            
+            <div class="example mathml">
+               <pre>&lt;msup&gt;
+  &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+  &lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;
+&lt;/msup&gt;</pre>
+            </div>
+            accurately reflects that the prime here is operating on an entire
+            expression, and does not suggest that the prime is acting on the final right parenthesis.
+            </p>
+         
+         
+         <p>However, the data model for all MathML token elements is Unicode text, 
+            so one cannot rule out the possibility of valid MathML markup 
+            containing constructions such as 
+            
+            <div class="example mathml">
+               <pre>&lt;mrow&gt;&lt;mi&gt;x'&lt;/mi&gt;&lt;/mrow&gt;</pre>
+            </div>
+            and
+            
+            <div class="example mathml">
+               <pre>&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;'&lt;/mo&gt;&lt;/mrow&gt;</pre>
+            </div>  
+            
+            While the first form may, in some rare situations, legitmately be used
+            to distinguish a multi-character identifer named x' from the
+            derivative of a function x, such forms should generally be avoided.
+            Authoring and validation tools are encouraged to generate the
+            recommended script markup:
+            
+            <div class="example mathml">
+               <pre>&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msup&gt;&lt;/mrow&gt;</pre>
+            </div>
+            </p>
+         
+         
+         <p>The U+2032 [PRIME] character is perhaps the most common
+            pseudo-script, but there are many others, as listed below:
+            
+            
+            <table>
+               
+               <thead>
+                  
+                  <tr>
+                     <td colspan="2">Pseudo-script Characters</td>
+                  </tr>
+                  </thead>
+               
+               <tbody>
+                  
+                  <tr>
+                     <td>U+0022</td>
+                     <td>QUOTATION MARK</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+0027</td>
+                     <td>APOSTROPHE</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+002A</td>
+                     <td>ASTERISK</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+0060</td>
+                     <td>GRAVE ACCENT</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+00AA</td>
+                     <td>FEMININE ORDINAL INDICATOR</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+00B0</td>
+                     <td>DEGREE SIGN</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+00B2</td>
+                     <td>SUPERSCRIPT TWO</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+00B3</td>
+                     <td>SUPERSCRIPT THREE</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+00B4</td>
+                     <td>ACUTE ACCENT</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+00B9</td>
+                     <td>SUPERSCRIPT ONE</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+00BA</td>
+                     <td>MASCULINE ORDINAL INDICATOR</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+2018</td>
+                     <td>LEFT SINGLE QUOTATION MARK</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+2019</td>
+                     <td>RIGHT SINGLE QUOTATION MARK</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+201A</td>
+                     <td>SINGLE LOW-9 QUOTATION MARK</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+201B</td>
+                     <td>SINGLE HIGH-REVERSED-9 QUOTATION MARK</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+201C</td>
+                     <td>LEFT DOUBLE QUOTATION MARK</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+201D</td>
+                     <td>RIGHT DOUBLE QUOTATION MARK</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+201E</td>
+                     <td>DOUBLE LOW-9 QUOTATION MARK</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+201F</td>
+                     <td>DOUBLE HIGH-REVERSED-9 QUOTATION MARK</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+2032</td>
+                     <td>PRIME</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+2033</td>
+                     <td>DOUBLE PRIME</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+2034</td>
+                     <td>TRIPLE PRIME</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+2035</td>
+                     <td>REVERSED PRIME</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+2036</td>
+                     <td>REVERSED DOUBLE PRIME</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+2037</td>
+                     <td>REVERSED TRIPLE PRIME</td>
+                  </tr>
+                  
+                  <tr>
+                     <td>U+2057</td>
+                     <td>QUADRUPLE PRIME</td>
+                  </tr>
+                  </tbody>
+               </table>
+            </p>
+         
+         
+         <p>
+            In addition, the characters in the Unicode Superscript and Subscript block
+            (beginning at U+2070) should be treated as pseudo-scripts when they
+            appear in mathematical formulas.
+            </p>
+         
+         
+         <p>Note that several of these characters are common on keyboards,
+            including U+002A [ASTERISK], U+00B0 [DEGREE SIGN], U+2033 [DOUBLE PRIME],
+            and U+2035 [REVERSED PRIME] also known as a back prime. 
+            </p>
+         
+         </section>
+      
+      
+      <section>
+         <h4 id="chars_comb-chars">Combining Characters</h4>
+         
+         
+         <p>In the UCS there are many combining characters that are intended 
+            to be used for the many accents of numerous different natural
+            languages.  Some of them may seem to provide markup needed for 
+            mathematical accents. They should not be used in mathematical markup.  
+            Superscript, subscript, underscript, and overscript constructions as
+            just discussed above
+            should be used for this purpose.  Of course, combining
+            characters may be used in multi-character identifiers as they are 
+            needed, or in text contexts.  
+            </p>
+         
+         
+         <p>
+            There is one more case where combining characters turn up naturally
+            in mathematical markup.  Some relations have associated negations,
+            such as U+226F [NOT GREATER-THAN] for the negation of 
+            U+003E [GREATER-THAN SIGN].  The glyph for U+226F [NOT GREATER-THAN]
+            is usually just that for U+003E [GREATER-THAN SIGN] with a slash through
+            it.  Thus it could also be expressed by U+003E-0338 making use of
+            the combining slash U+0338 [COMBINING LONG SOLIDUS OVERLAY].
+            That is true of 25 other characters in common enough mathematical use
+            to merit their own Unicode code points.  In the other direction there are 
+            31 character entity names listed in [[Entities]] which
+            are to be expressed using U+0338 [COMBINING LONG SOLIDUS OVERLAY].
+            </p>
+         
+         
+         <p>In a similar way there are mathematical characters which have negations 
+            given by a vertical bar overlay U+20D2 [COMBINING LONG VERTICAL LINE OVERLAY].
+            Some are available in pre-composed forms, and some named character entities 
+            are given explicitly as combinations.  In addition there are examples
+            using U+0333 [COMBINING DOUBLE LOW LINE] and 
+            U+20E5 [COMBINING REVERSE SOLIDUS OVERLAY], and variants specified 
+            by use of the U+FE00 [VARIATION SELECTOR-1].  For fuller listing of
+            these cases see the listings in [[Entities]].
+            </p>
+         
+         
+         <p>The general rule is that a base character followed by a string of
+            combining characters should be treated just as though it were the
+            pre-composed character that results from the combination,
+            if such a character exists.
+            </p>
+         
+         </section>
+      
+      </section>
+   
+   </section>

@@ -1,0 +1,154 @@
+   
+   <section>
+      <h3 id="parsing_usingdtd">Using the MathML DTD</h3>
+      
+      
+      
+      
+      <section>
+         <h4 id="interf_validation">Document Validation Issues</h4>
+         
+         
+         <p>The use of namespace prefixes creates an issue for DTD validation
+            of documents embedding MathML.  DTD validation requires knowing the
+            literal (possibly prefixed) element names used in the document.
+            However, the Namespaces in XML Recommendation [[Namespaces]] allows the prefix to be changed at arbitrary points
+            in the document, since namespace prefixes may be declared on any
+            element.</p>
+         
+         
+         
+         <p>The MathML DTD uses the strategy outlined in [[Modularization]]
+            of making every element
+            name in the DTD be accessed by an entity reference. This means that by
+            declaring a couple of entities to specify the prefix before the DTD is
+            loaded, the prefix can be chosen by a document author, and compound
+            DTDs that include several modules can, without changing the module
+            DTDs, specify unique prefixes for each module to avoid clashes.</p>
+         
+         </section>
+      
+      
+      <section>
+         <h4>Attribute values in the MathML DTD</h4>
+         
+         
+         
+         
+         <p>Note that the DTD is far more permissive than the Relax NG schema, many constraints
+            on attribute values may not be enforced using DTD syntax.
+            For example, many attributes expect numerical values or specific micro-syntax, but
+            are declared as CDATA (arbitrary string) in the DTD.
+            However, lack of enforcement of a requirement in the DTD
+            does <em>not</em> imply that the requirement is not part of the MathML
+            language itself, or that it will not be enforced by a particular MathML
+            renderer. (See <a href="#interf_error"></a> for a description of how
+            MathML renderers should respond to MathML errors.)</p>
+         
+         
+         <p>Furthermore, the MathML DTD is provided for convenience; although it is
+            intended to be fully compatible with the text of the specification, the
+            text should be taken as definitive if there is a contradiction.  (Any
+            contradictions which may exist between various chapters of the text should
+            be resolved by favoring <a href="#chars"></a> first, then <a href="#presm"></a>, <a href="#contm"></a>, then <a href="#fund_syntax"></a>,
+            and then other parts of the text.)</p>
+         
+         </section>
+      
+      
+      
+      
+      <section>
+         <h4 id="parsing_doctype">DOCTYPE declaration for MathML</h4>
+         
+         <p>MathML documents should be validated using the XML DTD for
+            MathML,
+            <a href="http://www.w3.org/Math/DTD/mathml4/mathml4.dtd">http://www.w3.org/Math/DTD/mathml4/mathml4.dtd</a>.
+            </p> 
+         
+         
+         <p>Documents using this DTD should contain a DOCTYPE declaration
+            of the form:
+            
+            <div class="example ">
+               <pre>&lt;!DOCTYPE math 
+    PUBLIC "-//W3C//DTD MathML 3.0//EN"
+           "http://www.w3.org/Math/DTD/mathml4/mathml4.dtd"&gt;</pre>
+            </div>
+            The URI may be changed to that of a local copy
+            of the DTD if required.</p>
+         </section>
+      
+      </section>
+   
+   
+   <section>
+      <h3 id="parsing_usingxsd">Using the MathML XML Schema</h3>
+      
+      
+      
+      
+      <p>MathML fragments can be validated using the XML Schema for MathML,
+         located at <a href="http://www.w3.org/Math/XMLSchema/mathml4/mathml4.xsd">http://www.w3.org/Math/XMLSchema/mathml4/mathml4.xsd</a>. The
+         provided schema  has been mechanically generated from the Relax NG schema, it omits
+         some constraints that can not be enforced using XSD syntax.</p>
+      
+      
+      
+      <section>
+         <h4 id="parsing_schemalocation">Associating the MathML schema with MathML fragments</h4>
+         
+         
+         
+         <p>Similarly to the DOCTYPE declaration used in documents, it is possible to link a MathML
+            fragment to the XML Schema, as shown below.</p>
+         
+         
+         <div class="example mathml-fragment">
+            <pre>&lt;mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.w3.org/1998/Math/MathML
+            http://www.w3.org/Math/XMLSchema/mathml4/mathml4.xsd"&gt;
+...
+&lt;/mml:math&gt;</pre>
+         </div>
+         
+         
+         <p>The <code class="attribute">xsi:schemaLocation</code> attribute belongs to the XML Schema
+            instance namespace, defined in [[XMLSchemas]].  The value
+            of the attribute is a pair of URIs: the first is the MathML namespace
+            URI and the second is the location of the schema for that
+            namespace. The second URI may be changed to that of a local copy if
+            required.</p>
+         
+         
+         <p>As the XML Schema specification indicates, the use of the
+            <code class="attribute">schemaLocation</code> attribute is only a hint for schema
+            processors: validation by a MathML-aware processor can be performed
+            without requiring that the <code class="attribute">schemaLocation</code> attribute be
+            declared in the instance. Moreover, a processor can even ignore or
+            override the specified schema URI, if it is directed to.</p>
+         </section>
+      
+      
+      </section>
+   
+   
+   <section>
+      <h3 id="parsing_mml_xhtml">Parsing MathML in XHTML</h3>
+      
+      
+      <p>As noted in <a href="#interf_xhtml"></a> The schema used for
+         XHTML+MathML documents extends the content model of <code class="element">mtext</code> to
+         allow inline (phrasing) html elements. The extension used by the W3C
+         validator uses the RelaxNG schema, however DTD and XSD versions of the
+         grammar may be similarly extended.</p>
+      </section>
+   
+   
+   <section>
+      <h3 id="parsing_mml_html">Parsing MathML in HTML</h3>
+      
+      
+      <p>See <a href="#interf_html"></a> for more details of the parsing of MathML in HTML.</p>
+      </section>

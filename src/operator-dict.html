@@ -1,0 +1,257 @@
+<section class="appendix">
+   <h2 id="oper-dict">Operator Dictionary</h2>
+   
+   
+   
+   
+   <p>The following table gives the suggested dictionary of rendering
+      properties for operators, fences, separators, and accents in MathML, all of
+      which are represented by <code class="element">mo</code> elements. For brevity,
+      all such elements will be called simply <span>&#x201c;operators&#x201d;</span> in this
+      Appendix.</p>
+   
+   
+   <section>
+      <h3 id="oper-dict_index">Indexing of the operator dictionary</h3>
+      
+      
+      <p>Note that the dictionary is indexed not just by the element
+         content, but by the element content and <code class="attribute">form</code> attribute
+         value, together. Operators with more than one possible form have more
+         than one entry. The MathML specification describes how the renderer
+         chooses (<span>&#x201c;infers&#x201d;</span>) which form to use when no <code class="attribute">form</code>
+         attribute is given; see <a href="#presm_formdefval"></a>. </p>
+      
+      
+      <p>Having made that choice, or with the <code class="attribute">form</code> attribute
+         explicitly specified in the <code class="starttag">&lt;mo&gt;</code> element's start
+         tag, the MathML renderer uses the remaining attributes from the
+         dictionary entry for the appropriate single form of that operator,
+         ignoring the entries for the other possible forms.</p>
+      
+      
+      
+      <p>In the table below, all non-ASCII characters are represented by
+         XML-style hexadecimal numeric character references.
+         The choice of markup (character data, numeric character reference or named entity
+         reference)
+         for a given character in MathML has no effect on its rendering.</p>
+      
+      </section>
+   
+   
+   
+   <section>
+      <h3 id="oper-dict_format">Format of operator dictionary entries</h3>
+      
+      
+      <p>Each row of the table is indexed as described above by the both the character
+         (given by code point and Unicode Name) and the value of the form attribute.
+         The fourth column gives the <code>priority</code> which as described in <a href="#presm_mrow"></a>),
+         is significant for the proper grouping of sub-expressions using <code class="starttag">&lt;mrow&gt;</code>.
+         The rule described
+         there is especially relevant to the automatic generation of MathML by
+         conversion from other formats for displayed mathematics, such as T<sub>E</sub>X,
+         which do not always specify how sub-expressions nest.</p>
+      
+      
+      <p>The length valued attributes such as <code class="attribute">lspace</code> are given explicitly in the following columns.
+         Boolean valued attributes such as <code class="attribute">stretchy</code> are specified together in the final <code>Properties</code>
+         column by listing the attribute name if its value should be set to <code>true</code> by the dictionary.
+         <span>Finally some rarely used non-boolean properties are shown in the Properties column
+            together with a value,
+            for example <code class="attribute">linebreakstyle</code>=after.</span></p>
+      
+      
+      <p>Any attribute not listed for some entry has its default value,
+         which is given in parentheses in the table of attributes in <a href="#presm_mo"></a>.</p>
+      
+      
+      <table>
+         
+         <tbody>
+            
+            <tr>
+               
+               <th>(</th>
+               
+               <th>(</th>
+               
+               <th class="uname">left parenthesis</th>
+               
+               <th>prefix</th>
+               
+               <td>1</td>
+               
+               <td>0</td>
+               
+               <td>0</td>
+               
+               <td></td>
+               
+               <td>fence<span>,</span> stretchy</td>
+               </tr>
+            </tbody>
+         </table>
+      
+      
+      <p>could be expressed as an <code class="element">mo</code> element by:
+         
+         <div class="example mathml">
+            <pre>
+&lt;mo form="prefix" fence="true" stretchy="true" lspace="0em" rspace="0em"&gt; ( &lt;/mo&gt;
+</pre>
+         </div>
+         (note the whitespace added around the content for readability;
+         Such whitespace will be ignored by a MathML system,
+         as described in <a href="#fund_collapse"></a>.</p>
+      
+      
+      <p>This entry means that, for MathML renderers which use this
+         suggested operator dictionary, giving the element
+         <code>&lt;mo form="prefix"&gt; ( &lt;/mo&gt;</code>
+         alone, or simply
+         <code>&lt;mo&gt; ( &lt;/mo&gt;</code>
+         in a position for which
+         <code>form="prefix"</code>
+         would be inferred (see below), is equivalent to giving the element
+         with all attributes as shown above.</p>
+      
+      
+      <p>In some versions of this specification,
+         the rows of the table may be reordered by clicking on a heading in the top row,
+         to cause the table to be ordered by that column.</p>
+      </section>
+   
+   
+   
+   <section>
+      <h3 id="oper-dict_space">Notes on <code class="attribute">lspace</code> and 
+         <code class="attribute">rspace</code> attributes</h3>
+      
+      
+      <p>The values for <code class="attribute">lspace</code> and <code class="attribute">rspace</code> given here range from 0 to 7,
+         they are given numerically in order to save space in the table,
+         the values should be taken as referring to the named mathematical spaces, as follows.</p>
+      
+      <table>
+         
+         <thead>
+            
+            <tr>
+               <td>Table Entry</td>
+               <td>Named Space</td>
+               <td>Default Length</td>
+            </tr>
+            </thead>
+         
+         <tbody>
+            
+            <tr>
+               <td>0</td>
+               <td></td>
+               <td>0 em</td>
+            </tr>
+            
+            <tr>
+               
+               <td>1</td>
+               
+               <td>veryverythinmathspace</td>
+               
+               <td>1/18 em</td>
+               </tr>
+            
+            <tr>
+               
+               <td>2</td>
+               
+               <td>verythinmathspace</td>
+               
+               <td>2/18 em</td>
+               </tr>
+            
+            <tr>
+               
+               <td>3</td>
+               
+               <td>thinmathspace</td>
+               
+               <td>3/18 em</td>
+               </tr>
+            
+            <tr>
+               
+               <td>4</td>
+               
+               <td>mediummathspace</td>
+               
+               <td>4/18 em</td>
+               </tr>
+            
+            <tr>
+               
+               <td>5</td>
+               
+               <td>thickmathspace</td>
+               
+               <td>5/18 em</td>
+               </tr>
+            
+            <tr>
+               
+               <td>6</td>
+               
+               <td>verythickmathspace</td>
+               
+               <td>6/18 em</td>
+               </tr>
+            
+            <tr>
+               
+               <td>7</td>
+               
+               <td>veryverythickmathspace</td>
+               
+               <td>7/18 em</td>
+               </tr>
+            </tbody>
+         </table>
+      
+      <p>
+         For the invisible operators whose content is <code class="entity">InvisibleTimes</code> or <code class="entity">ApplyFunction</code>,
+         it is suggested that MathML renderers choose spacing in a context-sensitive
+         way (which is an exception to the static values given in the following
+         table). For <code>&lt;mo&gt;&amp;ApplyFunction;&lt;/mo&gt;</code>, the total
+         spacing (<code class="attributevalue">lspace</code>+<code class="attributevalue">rspace</code>) in
+         expressions such as <span>&#x201c;sin <i class="var">x</i>&#x201d;</span> (where the right operand
+         doesn't start with a fence) should be greater than zero; for
+         <code>&lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt;</code>, the total spacing
+         should be greater than zero when both operands (or the nearest tokens on
+         either side, if on the baseline) are identifiers displayed in a non-slanted
+         font (i.e.. under the suggested rules, when both operands are
+         multi-character identifiers).</p>
+      
+      
+      <p>Some renderers may wish to use no spacing for most operators
+         appearing in scripts (i.e. when <code class="attribute">scriptlevel</code> is greater
+         than 0; see <a href="#presm_mstyle"></a>), as is the case in T<sub>E</sub>X.</p>
+      </section>
+   
+   
+   <section>
+      <h3 id="oper-dict_entries-table">Operator dictionary entries</h3>
+      
+      
+      <table>
+         <tbody>
+            <tr>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      
+      </section>
+   
+   
+   </section>

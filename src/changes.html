@@ -1,0 +1,752 @@
+<section class="appendix">
+   <h2 id="changes">Changes</h2>
+   
+   
+   
+   <section>
+      <h3 id="changes_mathml4.0-mathml3.02e">Changes between MathML 3.0 Second Edition and MathML 4.0</h3>
+      
+      
+      <ul>
+         
+         
+         <li>
+            
+            <p>Changes to the Frontmatter</p>
+            
+            <ul>
+               
+               <li>
+                  <p>Changes to the references to match new W3C specification rules,
+                     and to use the new W3C CSS formatting style, most notably affecting the table of contents
+                     styling.</p>
+               </li>
+               
+               <li>
+                  <p>Update the <a href="#sotd"></a>, in particular using <code>https</code> and referencing the GitHub Issues page as required for current
+                     W3C publications.</p>
+               </li>
+               </ul>
+            </li>
+         
+         
+         <li>
+            
+            <p>Changes to <a href="#fund"></a></p>
+            
+            <ul>
+               
+               <li>
+                  <p>Clarify the description of <code>%</code> in <a href="#fund_units"></a></p>
+               </li>
+               </ul>
+            </li>
+         
+         <li>
+            
+            <p>Changes to <a href="#presm"></a></p>
+            
+            <ul>
+               
+               <li>
+                  <p>Separate the the examples in <a href="#presm_mi_examples"></a> and <a href="#presm_mn_examples"></a> to improve their appearance when rendered.</p>
+               </li>
+               
+               <li>
+                  <p>Clarify that negative numbers should be marked up with an explicit <code class="element">mo</code> operator in <a href="#presm_not_single_mn"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Correct the long division notation names in <a href="#presm_mlongdiv_attrs"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Clarify that the horizontal alignment of scripts in <a href="#presm_mmultiscripts"></a> is towards the base, and add a new example.</p>
+               </li>
+               </ul>
+            </li>
+         
+         
+         <li>
+            
+            <p>Changes to <a href="#contm"></a></p>
+            
+            <ul>
+               
+               <li>
+                  <p>Correct examples in <a href="#contm_share"></a>, <a href="#contm_acyclicity"></a>, <a href="#contm_share_binding"></a>,  <a href="#contm_rendering_share"></a>  to use <code class="attribute">src</code> (to match the normative schema) not <code class="attribute">href</code>. The previous examples were also valid, as <code class="attribute">href</code> is a common presentational attribute allowed on all elements.</p>
+               </li>
+               </ul>
+            </li>
+         
+         
+         <li>
+            
+            <p>Changes to <a href="#mixing"></a></p>
+            
+            <ul>
+               
+               <li>
+                  <p>Fix grammatical and spelling typos in <a class="intref" href="#html-xml1">note</a> and <a href="#mixing_annotation_keys"></a>.</p>
+               </li>
+               </ul>
+            </li>
+         </ul>
+      </section>
+   
+   
+   <section>
+      <h3 id="changes_mathml3.02e-3.0">Changes between MathML 3.0 First Edition and Second Edition</h3>
+      
+      
+      
+      
+      
+      <ul>
+         
+         
+         <li>
+            
+            <p>Changes to the Frontmatter</p>
+            
+            <ul>
+               
+               <li>
+                  <p>Changes to Authors to acknowlege the death of Robert Miner.</p>
+               </li>
+               
+               <li>
+                  <p>Changes to <a href="#abstract"></a> to highlight MathML may be used in HTML as well as XML.</p>
+               </li>
+               
+               <li>
+                  <p>Update  the <a href="#sotd"></a>.</p>
+               </li>
+               </ul>
+            </li>
+         
+         <li>
+            
+            <p>Changes to the <a href="#intro"></a></p>
+            
+            <ul>
+               
+               <li>
+                  <p>Changes to <a href="#intro_overview"></a> to highlight MathML may be used in HTML as well as XML.</p>
+               </li>
+               </ul>
+            </li>
+         
+         <li>
+            
+            <p>Changes to the <a href="#fund"></a></p>
+            
+            <ul>
+               
+               <li>
+                  <p>Changes to <a href="#fund_xmlgeneral"></a> to highlight MathML may be used in HTML as well as XML.</p>
+               </li>
+               
+               <li>
+                  <p>Add element markup to heading in <a href="#interf_toplevel"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Changes to <a href="#interf_namespace"></a> the <code class="attribute">xmlns</code> syntax for namespaces only applies to the XML serialisation.</p>
+               </li>
+               
+               <li>
+                  <p>Changes to <a href="#fund_units"></a> to clarify that values specified with a <code>%</code> or no unit are multiples of a <em>reference</em> value, which may differ from the <em>default</em> value used when the value is not specified.</p>
+               </li>
+               
+               <li id="chg3e_attval">
+                  <p>Changes to <a class="intref" href="#type_namedspace"><em>namedspace</em></a> in <a href="#fund_units"></a> some attribute values such as <code class="attributevalue">thinmathspace</code> were marked up as attribute <em>names</em>. (This affected  formatting and also the index).</p>
+               </li>
+               
+               <li>
+                  <p>Additional paragraph describing global document property defaults in <a href="#fund_defaults"></a></p>
+               </li>
+               </ul>
+            </li>
+         
+         <li>
+            
+            <p>Changes to the <a href="#presm"></a></p>
+            
+            <ul>
+               
+               <li>
+                  <p>Refer to <span>&#x201c;characters&#x201d;</span> rather than <span>&#x201c;MathML Characters&#x201d;</span> in <a href="#presm_intro"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Delete the note about bidi in HTML in <a href="#presm_bidi_token"></a> (As there are proposals to change the HTML behavior).</p>
+               </li>
+               
+               <li>
+                  <p>Corrected mistaken refererence to <code class="element">mtext</code>, replaced by reference to <code class="element">mo</code> in <a href="#presm_warnspacing"></a></p>
+               </li>
+               
+               <li>
+                  <p>Refer to HTML rather than XHTML in <a href="#presm_presatt"></a></p>
+               </li>
+               
+               <li>
+                  <p>Modify heading of <a href="#presm_tokenchars"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Note in <a href="#presm_mglyph"></a> that the requirement to use  <code class="attribute">src</code> and <code class="attribute">alt</code> is not enforced by the schema.</p>
+               </li>
+               
+               <li>
+                  <p>New section <a href="#presm_html_insertion"></a> detailing the use of HTML elements on MathML token elements</p>
+               </li>
+               
+               <li>
+                  <p>Use U+2026 rather than <code>. . .</code> in the example in <a href="#presm_mi"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Use percentage lengths rather than unitless lengths in examples in <a href="#presm_op_stretch"></a> 
+                     and <a href="#presm_mfrac"></a></p>
+               </li>
+               
+               <li>
+                  <p>Reference the Arabic Mathematical Symbols block in describing <code class="attribute">mathvariant</code> in <a href="#presm_commatt"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Do not specify that Math defaults may be set by using attributes in the MathML Namespace
+                     on the containing document, leave the mechanism open. <a href="#presm_mo"></a></p>
+               </li>
+               
+               <li>
+                  <p>Changes to <a href="#presm_mo_attrs"></a> to clarify defaults may be specified in any containing document.</p>
+               </li>
+               
+               <li>
+                  <p>Changes to <a href="#presm_mo_dict_attrs"></a> to clarify the interpretation of <code class="attribute">maxsize</code>, <code class="attribute">minsize</code> and <code class="attribute">symmetric</code> values.</p>
+               </li>
+               
+               <li>
+                  <p>Changes to <a href="#presm_lbindent_attrs"></a> to clarify behaviour if <code class="attribute">indenttarget</code> results in an unachievable alignment specification.</p>
+               </li>
+               
+               <li>
+                  <p>Changes to the examples in <a href="#presm_invisibleops"></a> so that each example is rendered as a separate <code class="element">math</code> expression.</p>
+               </li>
+               
+               <li>
+                  <p>Suggest CSS Counters as a possible mechanism for equation numbering in <a href="#presm_mlabeledtr"></a></p>
+               </li>
+               
+               <li>
+                  <p>Minor improvements to the markup in <a href="#presm_mstyle"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Minor improvements to the markup in <a href="#presm_menclose"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Changes to the attribute table <a href="#presm_mpaddedatt"></a> To clarify that unitless lengths are allowed on <code class="element">mpadded</code>, meaning, as usual, a multiplier of the stated default. Note that this change also
+                     affects the <code>mpadded-length</code> grammar uin the extracted schema.</p>
+               </li>
+               
+               <li>
+                  <p>Explictly list mprescripts and none in heading for <a href="#presm_mmultiscripts"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Changes to <a href="#presm_mtable_attrs"></a> to clarify that <code class="attribute">displaystyle</code> defaults to <code class="attributevalue">false</code> and to clarify the wording describing percentage values for <code class="attribute">width</code>.</p>
+               </li>
+               
+               <li>
+                  <p>Minor improvements to the markup in <a href="#presm_mstack"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Editorial improvements to <a href="#presm_addsub"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Modify the markup in the examples in <a href="#presm_repeatdec"></a> so that MathML renderings are shown in some versions of this specification.</p>
+               </li>
+               
+               <li>
+                  <p>Note that attributes in other namespaces are not available in HTML in <a href="#presm_maction"></a></p>
+               </li>
+               </ul>
+            </li>
+         
+         <li>
+            
+            <p>Changes to the <a href="#contm"></a></p>
+            
+            <ul>
+               
+               <li>
+                  <p>Add element markup to heading in <a href="#contm_rendering_numbers"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Add syntax table for qualifier elements in  <a href="#contm_domainofapplication_qualifier"></a> and <a href="#contm_degree"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Modify the text in  <a href="#contm_concepts"></a> to clarify the role of the <code>Qualifier</code> row of syntax tables. (AM)</p>
+               </li>
+               
+               <li>
+                  <p>Spurious <code class="element">apply</code> removed from the <span>&#x201c;0&#x201d;</span> case in  <a class="intref" href="#contm_piecewise-example">the example</a> in <a href="#contm_piecewise"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Changes to <a href="#contm_p2s.partialdiff"></a> The expression <em>expression-in-x1-xk</em> was rewritten to <em>A</em>. (AM)</p>
+               </li>
+               
+               <li>
+                  <p>Additional note added to the <a class="intref" href="#contm_ci_mathmltypes">mathmltypes</a> description clarifying that <code class="attributevalue">complex</code> should be taken as an alias for <code class="attributevalue">complex-cartesian</code> when rewriting to Strict Content MathML. (AM)</p>
+               </li>
+               
+               <li>
+                  <p>Changes to <a class="intref" href="#s_data1.mean.ex1">s_data1.mean</a>, <a class="intref" href="#s_dist1.mean.ex1">s_dist1.mean</a>, <a class="intref" href="#s_dist1.moment.ex1">s_dist1.moment</a> and <a class="intref" href="#s_data1.moment.ex1">s_data1.moment</a> examples to use new values for &amp;lang; and &amp;rang; so the result is in Unicode NFC
+                     form.</p>
+               </li>
+               
+               <li>
+                  <p>Changes to markup of syntax tables in <a href="#contm_apply"></a> and <a href="#contm_share"></a> to avoid redundant colspans, which make the html5 version invalid.</p>
+               </li>
+               
+               <li>
+                  <p>Clarify the behavior of qualifiers in <a class="intref" href="#contm_p2s_step_vector">Step 4b</a> of the rewrite to Strict Content MathML. (AM)</p>
+               </li>
+               
+               <li>
+                  <p>Clarify that the types of the <em>arguments</em> are used to distinguish between set and multiset use of the <code class="element">set</code> constructor in <a href="#contm_nary_rewrite"></a> and <a href="#contm_narysetlist_rewrite"></a>. (AM)</p>
+               </li>
+               
+               <li>
+                  <p>Fix spelling in <a href="#contm_not"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Fix spelling in <a href="#contm_eq"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Split <a href="#contm_trig"></a> into separate sections <a href="#contm_trig"></a>,
+                     <a href="#contm_trig"></a>,<a href="#contm_invtrig"></a>, <a href="#contm_hyperbolic"></a>, <a href="#contm_invhyperbolic"></a>, add new presentation images for
+                     <a class="intref" href="#transc1.arcsin.ex1">arcsin</a>.</p>
+               </li>
+               
+               <li>
+                  <p>Add element markup to heading in <a href="#contm_log"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Minor rearrangement of heading in <a href="#contm_moment"></a></p>
+               </li>
+               
+               <li>
+                  <p>Add syntax table for deprecated elements in  <a href="#contm_declare"></a>, <a href="#contm_fn"></a> and <a href="#contm_reln"></a>.</p>
+               </li>
+               </ul>
+            </li>
+         
+         <li>
+            <p>Changes to <a href="#mixing"></a>.</p>
+            
+            <ul>
+               
+               <li>
+                  <p>Changes to <a href="#mixing_annotation_elements"></a> to highlight MathML may be used in HTML as well as XML.</p>
+               </li>
+               
+               <li>
+                  <p>Add additional <a class="intref" href="#html-xml1">note</a> warning namespace extensibility example not applicable to HTML.</p>
+               </li>
+               
+               <li>
+                  <p>Add additional <a class="intref" href="#html-xml2">note</a> warning namespace extensibility example not applicable to HTML.</p>
+               </li>
+               
+               <li>
+                  <p>Add additional <a class="intref" href="#html-xml3">note</a> warning namespace extensibility example not applicable to HTML.</p>
+               </li>
+               
+               <li>
+                  <p>Additional section <a href="#html_annotation_xml"></a> detailing the use of <code class="element">annotation-xml</code>in HTML documents</p>
+               </li>
+               
+               <li>
+                  <p>Show tag markup around element names in section headings in <a class="intref" href="#mixing_elements_semantics">semantics</a>, <a class="intref" href="#mixing_elements_annotation">annotation</a> and  <a class="intref" href="#mixing_elements_annotation_xml">annotation-xml</a>.</p>
+               </li>
+               </ul>
+            </li>
+         
+         
+         
+         <li>
+            <p>Changes to <a href="#world-interactions"></a>.</p>
+            
+            <ul>
+               
+               <li>
+                  <p>Editorial wording changes in <a href="#world-int-combine-other"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Editorial wording changes in <a href="#world-int-style"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Changes to wording on namespace use in <a href="#world_introduction"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Additional section <a href="#world_recognizing_mathml_html"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Remove XML Declaration and <code>mml</code> namespace prefix from the examples in <a href="#world-int-transf-exa"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Delete recommendation to use prefixed element names in XHTML in <a href="#interf_xhtml"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Split HTML into a separate section from other non-XML use <a href="#interf_html"></a> and <a href="#interf_nonxml"></a></p>
+               </li>
+               
+               <li>
+                  <p>Remove the reference to [[MathMLforCSS]] in <a href="#world-interactions"></a>.</p>
+               </li>
+               </ul>
+            </li>
+         
+         
+         <li>
+            <p>Changes to <a href="#chars"></a>.</p>
+            
+            <ul>
+               
+               <li>
+                  <p>Change the DTD description in <a href="#chars_entities"></a> to reference the Combined HTML MathML entity set rather than the legacy ISO entity
+                     sets. This does not change any existing definition, but adds the following 38 entity
+                     definitions:
+                     <code class="entity">QUOT</code> (U+0022), 
+                     <code class="entity">AMP</code> (U+0026), 
+                     <code class="entity">LT</code> (U+003C), 
+                     <code class="entity">GT</code> (U+003E), 
+                     <code class="entity">COPY</code> (U+00A9), 
+                     <code class="entity">REG</code> (U+00AE), 
+                     <code class="entity">Alpha</code> (U+0391), 
+                     <code class="entity">Beta</code> (U+0392), 
+                     <code class="entity">Epsilon</code> (U+0395), 
+                     <code class="entity">Zeta</code> (U+0396), 
+                     <code class="entity">Eta</code> (U+0397), 
+                     <code class="entity">Iota</code> (U+0399), 
+                     <code class="entity">Kappa</code> (U+039A), 
+                     <code class="entity">Mu</code> (U+039C), 
+                     <code class="entity">Nu</code> (U+039D), 
+                     <code class="entity">Omicron</code> (U+039F), 
+                     <code class="entity">Rho</code> (U+03A1), 
+                     <code class="entity">Tau</code> (U+03A4), 
+                     <code class="entity">Chi</code> (U+03A7), 
+                     <code class="entity">epsilon</code> (U+03B5), 
+                     <code class="entity">omicron</code> (U+03BF), 
+                     <code class="entity">sigmaf</code> (U+03C2), 
+                     <code class="entity">thetasym</code> (U+03D1), 
+                     <code class="entity">upsih</code> (U+03D2), 
+                     <code class="entity">zwnj</code> (U+200C), 
+                     <code class="entity">zwj</code> (U+200D), 
+                     <code class="entity">lrm</code> (U+200E), 
+                     <code class="entity">rlm</code> (U+200F), 
+                     <code class="entity">sbquo</code> (U+201A), 
+                     <code class="entity">bdquo</code> (U+201E), 
+                     <code class="entity">lsaquo</code> (U+2039), 
+                     <code class="entity">rsaquo</code> (U+203A), 
+                     <code class="entity">oline</code> (U+203E), 
+                     <code class="entity">frasl</code> (U+2044), 
+                     <code class="entity">euro</code> (U+20AC), 
+                     <code class="entity">TRADE</code> (U+2122), 
+                     <code class="entity">alefsym</code> (U+2135), 
+                     <code class="entity">crarr</code> (U+21B5).</p>
+               </li>
+               </ul>
+            </li>
+         
+         
+         <li>
+            <p>Changes to <a href="#parsing"></a>.</p>
+            
+            <ul>
+               
+               <li>
+                  <p>Modify the schema regular expression to allow the deprecated unitless length attributes.</p>
+               </li>
+               
+               <li>
+                  <p>The schema now enforces a mandatory space and optional minus sign before <em>rownumber</em> in the <code class="attribute">align</code> attribute of <code class="element">mtable</code> and <code class="element">mstack</code>.</p>
+               </li>
+               
+               <li>
+                  <p>Modify the schema (including DTD and XSD versions) to include the attributes listed
+                     in <a href="#presm_lbindent_attrs"></a> on <code class="element">mspace</code> to match the text description in <a href="#presm_mspace"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Modify the schema  to include the Common Attributes such as <code class="attribute">id</code> on <code class="element">bvar</code> and <code class="element">cn</code> to match the attribute tables in the text</p>
+               </li>
+               
+               <li>
+                  <p>Modify the regular expressions used for <code>mpadded-length</code> and <code>length</code> so that there must be at most one <code>.</code> and at least one digit. (FW)</p>
+               </li>
+               
+               <li>
+                  <p>New sections: <a href="#parsing_mml_xhtml"></a> and <a href="#parsing_mml_html"></a>.</p>
+               </li>
+               </ul>
+            </li>
+         
+         
+         
+         <li>
+            <p>Changes to <a href="#oper-dict"></a>.</p>
+            
+            <ul>
+               
+               <li>
+                  <p>Add entries for the characters listed in <a href="#chars_pseudo-scripts"></a>.</p>
+               </li>
+               </ul>
+            </li>
+         
+         
+         <li>
+            <p>Changes to <a href="#contributors"></a>.</p>
+            
+            <ul>
+               
+               <li>
+                  <p>Changes to <a href="#contrib"></a> to note the death of Robert Miner.</p>
+               </li>
+               </ul>
+            </li>
+         
+         
+         
+         
+         <li>
+            <p>Changes to <a href="#references"></a>.</p>
+            
+            <ul>
+               
+               <li>
+                  <p>Make [[HTML5]] normative.</p>
+               </li>
+               
+               <li>
+                  <p>Update the references to current versions, 
+                     [[Bidi]], [[Entities]],
+                     [[Normal]], [[RELAX-NG]],
+                     [[Unicode]].</p>
+               </li>
+               </ul>
+            </li>
+         
+         
+         
+         <li>
+            <p>Changes to <a href="#references"></a>.</p>
+            
+            <ul>
+               
+               <li>
+                  <p>Update the references to current versions, 
+                     [[AAP-math]], [[Abramowitz1977]],
+                     [[CSS21]], [[ISO-12083]],
+                     [[XLink]].</p>
+               </li>
+               </ul>
+            </li>
+         
+         
+         </ul>
+      
+      </section>
+   
+   
+   <section>
+      <h3 id="changes_mathml2.0e-3.0">Changes between MathML 2.0 Second Edition and MathML 3.0</h3>
+      
+      
+      
+      
+      <ul>
+         
+         
+         <li>
+            <p>Changes to <a href="#fund"></a>.</p>
+            
+            <ul>
+               
+               <li>
+                  <p>The attribute <code class="attribute">href</code> added to the common MathML attributes, <a href="#fund_globatt"></a> to allow hypertext links.</p>
+               </li>
+               
+               <li>
+                  <p>Additional attributes added to the <code class="element">math</code> element, see
+                     <a href="#interf_toplevel_atts"></a>.</p>
+               </li>
+               </ul>
+            </li>
+         
+         <li>
+            
+            <p>Changes to <a href="#presm"></a>.</p>
+            
+            
+            <ul>
+               
+               <li>
+                  <p>Introduced mechanisms for controlling the Directionality of layout, as described in
+                     <a href="#presm_bidi"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Introduced mechanisms for controlling linebreaking <a href="#presm_linebreaking"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>Extended <code class="element">mglyph</code> to support general image inclusion, <a href="#presm_mglyph"></a>.</p>
+               </li>
+               
+               <li>
+                  <p>The facilities for adjusting spacing with <code class="element">mpadded</code> have been extended and rationalised, <a href="#presm_mpadded"></a>.</p>
+               </li>
+               
+               <li>
+                  
+                  <p>Introduced new presentation elements for elementary math layouts, <a href="#presm_elementary"></a>: <code class="element">mstack</code>, <code class="element">mlongdiv</code>, <code class="element">msgroup</code>, <code class="element">msrow</code>, <code class="element">mscarries</code>, <code class="element">mscarry</code>, and <code class="element">msline</code>.</p>
+                  </li>
+               </ul>
+            
+            </li>
+         
+         
+         <li>
+            
+            <p>Changes to <a href="#contm"></a>.</p> 
+            
+            
+            <ul>
+               
+               <li>
+                  
+                  <p>Introduced new content elements <code class="element">bind</code>, <code class="element">share</code>, <code class="element">cerror</code>, <code class="element">cs</code> and  <code class="element">cbytes</code>.</p>
+                  </li>
+               
+               
+               <li>
+                  
+                  <p>Removed deprecated content elements <code class="element">reln</code> and <code class="element">fn</code>.</p>
+                  </li>
+               
+               
+               <li>
+                  
+                  <p>Removed content element <code class="element">declare</code>.</p>
+                  </li>
+               
+               
+               <li>
+                  
+                  <p>The concept of Strict Content MathML and the use of OpenMath Content Dictionaries
+                     has been introduced, and the whole chapter restructured.</p>
+                  </li>
+               </ul>
+            </li>
+         
+         
+         
+         
+         <li>
+            
+            <p>Changes to <a href="#mixing"></a>.</p> 
+            </li>
+         
+         
+         
+         <li>
+            
+            <p>New Chapter: <a href="#world-interactions"></a>.</p> 
+            </li>
+         
+         
+         
+         <li>
+            
+            <p>Changes to <a href="#chars"></a>.</p>
+            
+            <p>This chapter is much reduced from the corresponding chapter in previous releases of
+               MathML. All the tables and much of the other content of this chapter is now maintained
+               as a separate document [[Entities]]</p>
+            </li>
+         
+         
+         <li>
+            
+            <p>Changes to <a href="#parsing"></a>.</p>
+            
+            
+            <ul>
+               
+               <li>
+                  
+                  <p>The Normative version of the grammar is now expressed in Relax NG, with DTD and XSD
+                     versions being derived.</p>
+                  </li>
+               
+               <li>
+                  
+                  <p>Three MathML 1 attrbutes on <code class="element">math</code> that were deprecated and undocumented in MathML2 but retained in the MathML2 DTD
+                     have been removed. <code class="attribute">name</code> (use <code class="attribute">id</code> instead), <code class="attribute">baseline</code> and <code class="attribute">type</code> (These are not used by any known implementation, so can be removed.) See Chapter
+                     7 of [[MathML1]].</p>
+                  </li>
+               </ul>
+            </li>
+         
+         
+         
+         <li>
+            
+            <p>New Appendix: <a href="#media-types-reg"></a>.</p> 
+            </li>
+         
+         
+         
+         <li>
+            
+            <p>Changes to <a href="#oper-dict"></a>.</p>
+            
+            <p>The Operator Dictionary table has been updated and rationalised and presented in a
+               new format.</p>
+            </li>
+         
+         
+         <li>
+            
+            <p>MathML DOM</p>
+            
+            <p>The chapter and appendices relating to the MathML DOM have been removed from this
+               specification, with the intention of updating them and publishing them as a separate
+               document at a later time.</p>
+            </li>
+         </ul>
+      
+      </section>
+   </section>

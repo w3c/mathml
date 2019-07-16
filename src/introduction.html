@@ -1,0 +1,408 @@
+<section>
+   <h2 id="intro">Introduction</h2>
+   
+   
+   
+   <section>
+      <h3 id="intro_notation">Mathematics and its Notation</h3>
+      
+      
+      <p>A distinguishing feature of mathematics is the use of a complex and
+         highly evolved system of two-dimensional symbolic notation.  As
+         J.&#xa0;R.&#xa0;Pierce writes in his book on communication theory,
+         mathematics and its notation should not be viewed as one and the same
+         thing [[Pierce1961]]. Mathematical ideas can exist independently of
+         the notation that represents them. However, the relation between meaning
+         and notation is subtle, and part of the power of mathematics to describe
+         and analyze derives from its ability to represent and manipulate ideas in
+         symbolic form. The challenge before a Mathematical Markup Language (MathML)
+         in enabling mathematics on the World Wide Web
+         is to capture both notation and content (that is, its meaning) in such a way
+         that documents can utilize the highly evolved notation of written
+         and printed mathematics as well as the new potential for interconnectivity in
+         electronic media.</p>
+      
+      
+      <p>Mathematical notation evolves constantly as people continue
+         to innovate in ways of approaching and expressing ideas. Even
+         the common notation of arithmetic has gone through an amazing
+         variety of styles, including many defunct ones advocated by leading
+         mathematical figures of their day [[Cajori1928]]. Modern
+         mathematical notation is the product of centuries of refinement, and
+         the notational conventions for high-quality typesetting are quite
+         complicated and subtle. For example, variables and letters which stand for
+         numbers are usually typeset today in a special mathematical italic
+         font subtly distinct from the usual text italic; this seems to have been
+         introduced in Europe in the late sixteenth century.  Spacing around
+         symbols for operations such as +, -, &#xd7; and / is slightly
+         different from that of text, to reflect conventions about operator
+         precedence that have evolved over centuries.
+         Entire books have been devoted to the conventions of
+         mathematical typesetting, from the alignment of superscripts and
+         subscripts, to rules for choosing parenthesis sizes, and on to
+         specialized notational practices for subfields of mathematics.  The 
+         manuals describing the nuances of present-day computer typesetting and 
+         composition systems can run to hundreds of pages.</p>
+      
+      
+      <p>Notational conventions in mathematics, and in printed text in general,
+         guide the eye and make printed expressions much easier to read and
+         understand. Though we usually take them for granted, we, as modern readers,
+         rely on 
+         numerous conventions such as paragraphs, capital letters, font
+         families and cases, and even the device of decimal-like numbering of
+         sections such as is used in this document.  
+         Such notational conventions are perhaps even more important
+         for electronic media, where one must contend with the difficulties of
+         on-screen reading.  Appropriate standards coupled with computers
+         enable a broadening of access to mathematics beyond the world of 
+         print. The markup methods for mathematics in use 
+         just before the Web rose to prominence importantly included T<sub>E</sub>X
+         (also written <code>TeX</code>) [[Knuth1986]]
+         and approaches based on SGML ([[AAP-math]], [[Poppelier1992]] and [[ISO-12083]]).
+         </p>
+      
+      
+      <p>It is remarkable how widespread the current
+         conventions of mathematical notation have become. The general
+         two-dimensional layout, and most of the same symbols, are used
+         in all modern mathematical communications,
+         whether the participants are, say, European, writing left-to-right,
+         or Middle-Eastern, writing right-to-left.  Of course, conventions
+         for the symbols used, particularly those naming functions and
+         variables, may tend to favor a local language and script.
+         The largest variation from the most common is a form used in
+         some Arabic-speaking communities which lays out the entire
+         mathematical notation from right-to-left, roughly in mirror image
+         of the European tradition.</p>
+      
+      
+      <p>However, there is more to putting mathematics on the Web
+         than merely finding ways of displaying traditional
+         mathematical notation in a Web browser. The Web represents a
+         fundamental change in the underlying metaphor for knowledge
+         storage, a change in which <em>interconnection</em>
+         plays a central role. It has become important to
+         find ways of communicating mathematics which facilitate
+         automatic processing, searching and indexing, and reuse in
+         other mathematical applications and contexts. With this
+         advance in communication technology, there is an opportunity
+         to expand our ability to represent, encode, and ultimately to
+         communicate our mathematical insights and understanding with
+         each other. We believe that MathML as specified below is an important step in
+         developing mathematics on the Web.</p>
+      </section>
+   
+   
+   <section>
+      <h3 id="intro_origin">Origins and Goals</h3>
+      
+      
+      
+      <section>
+         <h4 id="intro_goals">Design Goals of MathML</h4>
+         
+         
+         <p>MathML  has   been  designed  from the beginning with  the  following
+            ultimate goals in mind.</p>
+         
+         
+         <p>MathML should ideally:
+            </p>
+         <ul>
+            
+            <li>
+               
+               <p>Encode mathematical material suitable for all educational
+                  and scientific communication.
+                  </p>
+               </li>
+            
+            <li>
+               
+               <p>Encode both mathematical notation and mathematical meaning.</p>
+               </li>
+            
+            <li>
+               
+               <p>Facilitate conversion to and from other mathematical
+                  formats, both presentational and semantic. Output formats should include:
+                  </p>
+               <ul>
+                  
+                  <li>
+                     
+                     <p>graphical displays</p>
+                     </li>
+                  
+                  <li>
+                     
+                     <p>speech synthesizers</p>
+                     </li>
+                  
+                  <li>
+                     
+                     <p>input for computer algebra systems</p>
+                     </li>
+                  
+                  <li>
+                     
+                     <p>other mathematics typesetting languages, such as T<sub>E</sub>X</p>
+                     </li>
+                  
+                  <li>
+                     
+                     <p>plain text displays, e.g. VT100 emulators</p>
+                     </li>
+                  
+                  <li>
+                     
+                     <p>international print media, including braille</p>
+                     </li>
+                  </ul>
+               
+               <p>It is recognized that conversion to and from other notational
+                  systems or media may entail loss of information in the process.</p>
+               </li>
+            
+            <li>
+               
+               <p>Allow the passing of information intended for
+                  specific renderers and applications.</p>
+               </li>
+            
+            <li>
+               
+               <p>Support efficient browsing of lengthy expressions.</p>
+               </li>
+            
+            <li>
+               
+               <p>Provide for extensibility.</p>
+               </li>
+            
+            <li>
+               
+               <p>Be well suited to templates and other common techniques for editing formulas.</p>
+               </li>
+            
+            <li>
+               
+               <p>Be legible to humans, and simple for software to generate and process.</p>
+               </li>
+            </ul>
+         
+         
+         <p>No matter how successfully  MathML achieves its goals as
+            a markup language, it is clear that MathML is useful only
+            if it is  implemented well. The W3C Math Working
+            Group has identified a short list of additional implementation
+            goals. These  goals attempt to describe  concisely the minimal
+            functionality MathML rendering  and processing software should
+            try to provide.
+            </p>
+         
+         
+         <ul>
+            
+            
+            <li>
+               
+               <p>MathML expressions in HTML (and XHTML) pages should render
+                  properly in popular Web browsers, in accordance with reader and author
+                  viewing preferences, and at the highest quality possible given the
+                  capabilities of the platform.</p>
+            </li>
+            
+            
+            <li>
+               
+               <p>HTML (and XHTML) documents containing MathML expressions should
+                  print properly and at high-quality printer resolutions.</p>
+            </li>
+            
+            
+            <li>
+               
+               <p>MathML expressions in Web pages  should be able to  react to
+                  user  gestures, such those as  with a  mouse,  and to coordinate
+                  communication  with  other applications through   the
+                  browser.</p>
+            </li>
+            
+            
+            <li>
+               
+               <p>Mathematical expression editors and converters should be developed
+                  to facilitate the creation of Web pages containing MathML
+                  expressions.</p>
+            </li>
+            
+            </ul>
+         
+         
+         <p>The extent to which these goals are ultimately met depends on the
+            cooperation and support of browser vendors and other developers. The W3C
+            Math Working Group has continued to work with other working groups of the W3C,
+            and outside the W3C, to ensure that the
+            needs of the scientific community will be met.
+            MathML 2 and its implementations showed considerable progress in this area 
+            over the situation that obtained at
+            the time of the MathML 1.0 Recommendation (April 1998) [[MathML1]].  MathML3 and the developing Web are expected to 
+            allow much more.</p>
+         
+         </section>
+      </section>
+   
+   
+   <section>
+      <h3 id="intro_overview">Overview</h3>
+      
+      <p>
+         <span>MathML is a markup language for describing mathematics.
+            It is usually expressed in XML syntax, although HTML and other syntaxes are possible.</span>
+         A special aspect of MathML is that there are two main strains of markup:
+         Presentation markup, discussed in <a href="#presm"></a>,
+         is used to display mathematical expressions;
+         and Content markup, discussed in <a href="#contm"></a>,
+         is used to convey mathematical meaning.
+         Content markup is specified in particular detail.   
+         This specification makes use of
+         <span>an XML</span>
+         format called Content Dictionaries
+         This format has been developed by the
+         OpenMath Society, [[OpenMath2004]] with the dictionaries being used by this specification involving joint development
+         by the OpenMath Society and the W3C Math Working Group.
+         </p>
+      
+      
+      <p>Fundamentals common to both strains of markup
+         are covered in <a href="#fund"></a>,
+         while the means for combining these strains,
+         as well as external markup, into single MathML objects
+         are discussed in <a href="#mixing"></a>.
+         How MathML interacts with applications is covered
+         in <a href="#world-interactions"></a>.
+         Finally, a discussion of special symbols,
+         and issues regarding characters, entities and fonts,
+         is given in <a href="#chars"></a>.</p>
+      </section>
+   
+   
+   <section>
+      <h3 id="intro_example">A First Example</h3>
+      
+      <p>
+         The quadratic formula provides a 
+         simple but instructive illustration of MathML markup.
+         </p>
+      
+      <blockquote>
+         <p><img src="image/f1002.gif" alt="x = \frac{-b\pm\sqrt{b^2 - 4ac}}{2a}"></img></p>
+      </blockquote>
+      
+      
+      <p>MathML offers two flavors of markup of this formula.  The first is
+         the style which emphasizes the actual presentation of a formula, the 
+         two-dimensional layout in which the symbols are arranged. An example 
+         of this type is given just below. The second flavor
+         emphasizes the mathematical content and an example of it follows the first one. 
+         
+         </p>
+      
+      <div class="example mathml">
+         <pre>
+&lt;mrow&gt;
+  &lt;mi&gt;x&lt;/mi&gt;
+  &lt;mo&gt;=&lt;/mo&gt;
+  &lt;mfrac&gt;
+    &lt;mrow&gt;
+      &lt;mrow&gt;
+        &lt;mo&gt;-&lt;/mo&gt;
+        &lt;mi&gt;b&lt;/mi&gt;
+      &lt;/mrow&gt;
+      &lt;mo&gt;&amp;PlusMinus;&lt;/mo&gt;
+      &lt;msqrt&gt;
+        &lt;mrow&gt;
+          &lt;msup&gt;
+            &lt;mi&gt;b&lt;/mi&gt;
+            &lt;mn&gt;2&lt;/mn&gt;
+          &lt;/msup&gt;
+          &lt;mo&gt;-&lt;/mo&gt;
+          &lt;mrow&gt;
+            &lt;mn&gt;4&lt;/mn&gt;
+            &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt;
+            &lt;mi&gt;a&lt;/mi&gt;
+            &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt;
+            &lt;mi&gt;c&lt;/mi&gt;
+          &lt;/mrow&gt;
+        &lt;/mrow&gt;
+      &lt;/msqrt&gt;
+    &lt;/mrow&gt;
+    &lt;mrow&gt;
+      &lt;mn&gt;2&lt;/mn&gt;
+      &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt;
+      &lt;mi&gt;a&lt;/mi&gt;
+    &lt;/mrow&gt;
+  &lt;/mfrac&gt;
+&lt;/mrow&gt;
+</pre>
+      </div>
+      
+      <p>
+         Consider the superscript 2 in this formula.  It represents the squaring operation
+         here, but the meaning of a superscript in other situations depends on
+         the context.  A letter with a superscript can be used to signify a particular 
+         component of a vector, or maybe the superscript just labels a different 
+         type of some structure.  Similarly two letters written one just after the 
+         other could signify two variables multiplied together, as they do in the 
+         quadratic formula, or they could be two letters making up the name of a 
+         single variable.   What is called Content Markup in MathML allows closer
+         specification of the mathematical meaning of many common formulas.  The
+         quadratic formula given in this style of markup is as follows.
+         </p>
+      
+      <div class="example mathml">
+         <pre>
+&lt;apply&gt;
+  &lt;eq/&gt;
+  &lt;ci&gt;x&lt;/ci&gt;
+  &lt;apply&gt;
+    &lt;divide/&gt;
+    &lt;apply&gt;
+      &lt;plus/&gt;
+      &lt;apply&gt;
+        &lt;minus/&gt;
+        &lt;ci&gt;b&lt;/ci&gt;
+      &lt;/apply&gt;
+      &lt;apply&gt;
+        &lt;root/&gt;
+        &lt;apply&gt;
+          &lt;minus/&gt;
+          &lt;apply&gt;
+            &lt;power/&gt;
+            &lt;ci&gt;b&lt;/ci&gt;
+            &lt;cn&gt;2&lt;/cn&gt;
+          &lt;/apply&gt;
+          &lt;apply&gt;
+            &lt;times/&gt;
+            &lt;cn&gt;4&lt;/cn&gt;
+            &lt;ci&gt;a&lt;/ci&gt;
+            &lt;ci&gt;c&lt;/ci&gt;
+          &lt;/apply&gt;
+        &lt;/apply&gt;
+      &lt;/apply&gt;
+    &lt;/apply&gt;
+    &lt;apply&gt;
+      &lt;times/&gt;
+      &lt;cn&gt;2&lt;/cn&gt;
+      &lt;ci&gt;a&lt;/ci&gt;
+    &lt;/apply&gt;
+  &lt;/apply&gt;
+&lt;/apply&gt;
+</pre>
+      </div>
+      
+      </section>
+   
+   </section>

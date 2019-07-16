@@ -1,0 +1,2019 @@
+<section>
+   <h2 id="fund">MathML Fundamentals</h2>
+   
+   
+   
+   
+   
+   <section>
+      <h3 id="fund_syntax">MathML Syntax and Grammar</h3>
+      
+      
+      
+      <section>
+         <h4 id="fund_xmlgeneral">General Considerations</h4>
+         
+         
+         
+         
+         <p>The basic &#x2018;syntax&#x2019; of MathML is
+            <span>defined using XML syntax,
+               but other syntaxes that can encode labeled trees are possible. Notably the HTML parser
+               may
+               also be used with MathML</span>.
+            Upon this, we layer a &#x2018;grammar&#x2019;, being the rules for allowed elements,
+            the order in which they can appear,
+            and how they may be contained within each other,
+            as well as additional syntactic rules for the values of attributes.
+            These rules are defined by this specification,
+            and formalized by a RelaxNG schema  [[RELAX-NG]].
+            The RelaxNG Schema is normative, but a DTD (Document Type Definition)
+            and an XML Schema [[XMLSchemas]] are provided
+            for continuity (they were normative for MathML2).
+            See <a href="#parsing"></a>.
+            </p>
+         
+         
+         <p>MathML's character set 
+            <span>consists</span>
+            of legal characters 
+            as specified by Unicode [[Unicode]]<span>, further restricted
+               by the characters not allowed in XML</span>.
+            The use of Unicode characters for mathematics is 
+            discussed in <a href="#chars"></a>.</p>
+         
+         
+         <p>The following sections discuss the general aspects
+            of the MathML grammar as well as describe the syntaxes used
+            for attribute values.
+            </p>
+         
+         
+         </section>
+      
+      
+      <section>
+         <h4 id="interf_namespace">MathML and Namespaces</h4>
+         
+         
+         <p>An XML namespace [[Namespaces]] is a collection of names identified by a URI.
+            The URI for the MathML namespace is:</p> 
+         
+         <div class="example ">
+            <pre>
+http://www.w3.org/1998/Math/MathML
+</pre>
+         </div>
+         
+         
+         <p>To declare a namespace<span> when using the XML serialisation of MathML</span>,
+            one uses an <code class="attribute">xmlns</code>
+            attribute, or an attribute with an <code class="attribute">xmlns</code> prefix.
+            When the <code class="attribute">xmlns</code> attribute is used alone, it sets 
+            the default namespace for the element on which it
+            appears, and for any child elements.  For example:</p> 
+         
+         
+         <div class="example ">
+            <pre>
+&lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
+&lt;mrow&gt;...&lt;/mrow&gt;
+&lt;/math&gt;
+</pre>
+         </div>
+         
+         
+         <p>When the <code class="attribute">xmlns</code> attribute is used as a
+            prefix, it declares a prefix which can then be used to explicitly associate other
+            elements
+            and attributes with a particular namespace.
+            When embedding MathML within XHTML, one might use:
+            </p>
+         
+         <div class="example ">
+            <pre>
+&lt;body xmlns:m="http://www.w3.org/1998/Math/MathML"&gt;
+...
+&lt;m:math&gt;&lt;m:mrow&gt;...&lt;/m:mrow&gt;&lt;/m:math&gt;
+...
+&lt;/body&gt;
+</pre>
+         </div>
+         
+         
+         <p>HTML does not support namespace extensibility in the same way, the HTML parser
+            has in-built knowledge of the HTML, SVG and MathML namespaces. <code class="attribute">xmlns</code> attributes are
+            just treated as normal attributes. Thus when using the HTML serialisation of MathML,
+            prefixed element names must not be used. <code class="attribute">xmlns</code>=<code class="attributevalue">http://www.w3.org/1998/Math/MathML</code>
+            may be used on the <code class="attribute">math element</code>, it will be ignored by the HTML parser,
+            which always places <code class="attribute">math</code> elements and its descendents in the MathML namespace
+            (other than special rules described in <a href="#parsing"></a>for invalid input, and for <code class="attribute">annotation-xml</code>.
+            If a MathML expression is likely to be in contexts where it may be parsed by an XML
+            parser or an HTML parser, it SHOULD
+            use the following form to ensure maximum compatibility:
+            
+            <div class="example mathml-fragment">
+               <pre>
+&lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
+  ...
+&lt;/math&gt;
+</pre>
+            </div>
+         </p>
+         </section>
+      
+      
+      <section>
+         <h4 id="fund_xmlsyntax">Children versus Arguments</h4>
+         
+         
+         <p>Most MathML elements act as &#x2018;containers&#x2019;; such an element's 
+            children are not distinguished from each other except as individual members of the
+            
+            list of children.  Commonly there is no limit imposed on the number of children
+            an element may have.  This is the case for most presentation
+            elements and some content elements such as <code class="element">set</code>. 
+            But many
+            MathML elements require a specific number of children, or
+            attach a particular meaning to children in certain positions.
+            Such elements are best considered to represent constructors of mathematical
+            objects, and hence thought of as functions of their children.  Therefore
+            children of such a MathML element 
+            will often be referred to as its <em>arguments</em> instead of merely as children.
+            Examples of this can be found, say, in <a href="#presm_reqarg"></a>.
+            </p>
+         
+         
+         <p>There are presentation elements that conceptually accept only
+            a single argument, but which for convenience have been written to accept any number
+            of children;
+            then we infer an <code class="element">mrow</code> containing those children which acts as
+            the argument to the element in question; see <a href="#presm_inferredmrow"></a>.
+            </p>
+         
+         
+         
+         
+         <p>In the detailed discussions of element syntax given with each
+            element throughout the MathML specification, the correspondence
+            of children with arguments, the number of arguments required and
+            their order, as well as other constraints on the content, are specified.
+            This information is also tabulated
+            for the presentation elements in <a href="#presm_reqarg"></a>.</p>
+         
+         </section>
+      
+      
+      <section>
+         <h4 id="fund_renderingmodel">MathML and Rendering</h4>
+         
+         
+         <p>MathML presentation elements only recommend (i.e., do not require)
+            specific ways of rendering; this is in order to allow for medium-dependent
+            rendering and for individual preferences of style.</p>
+         
+         
+         <p>Nevertheless, some parts of this specification describe these
+            recommended visual rendering rules in detail; in those
+            descriptions it is often assumed that the model of rendering
+            used supports the concepts of a well-defined 'current rendering
+            environment' which, in particular, specifies a 'current font',
+            a 'current display' (for pixel size) and a 'current baseline'.
+            The 'current font' provides certain metric properties and an
+            encoding of glyphs.</p>
+         </section>
+      
+      
+      <section>
+         <h4 id="fund_attval">MathML Attribute Values</h4>
+         
+         
+         
+         <p>MathML elements take attributes with values that further specialize
+            the meaning or effect of the element. Attribute names are shown in a
+            <code>monospaced</code> font throughout this document. The meanings of attributes and their
+            allowed values are described within the specification of each element. 
+            The syntax notation explained in this section is used in specifying allowed values.
+            </p>
+         
+         
+         <p>Except when explicitly forbidden by the specification for an attribute,
+            MathML attribute values may contain any legal characters specified by
+            the XML recommendation. See <a href="#chars"></a> for further
+            clarification.
+            </p>
+         
+         
+         <section>
+            <h5>Syntax notation used in the MathML specification</h5>
+            
+            
+            <p>To  describe  the  MathML-specific  syntax  of 
+               attribute values, the  following conventions and notations are
+               used for most attributes in the present document.  
+               We use below the notation
+               beginning with U+ that is recommended by Unicode
+               for referring to Unicode characters [see [[Unicode]], page
+               xxviii].
+               
+               <table border="1" id="fund_table-attval">
+                  
+                  <thead>
+                     
+                     <tr>
+                        
+                        <td>Notation</td>
+                        
+                        <td>What it matches</td>
+                        </tr>
+                     </thead>
+                  
+                  <tbody>
+                     
+                     <tr>
+                        
+                        <td id="type_digit"><em>decimal-digit</em></td>
+                        
+                        <td>a decimal digit from the range U+0030 to U+0039</td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td id="type_hexdigit"><em>hexadecimal-digit</em></td>
+                        
+                        <td>a hexadecimal (base 16) digit from the ranges U+0030 to U+0039, U+0041 to 
+                           U+0046 and  U+0061 to U+0066</td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td id="type_unsigned-integer"><em>unsigned-integer</em></td>
+                        
+                        <td>a string of <a class="intref" href="#type_digit"><em>decimal-digit</em></a>s,
+                           representing a non-negative integer</td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td id="type_positive-integer"><em>positive-integer</em></td>
+                        
+                        <td>a string of <a class="intref" href="#type_digit"><em>decimal-digit</em></a>s,
+                           but not consisting solely of "0"s (U+0030), representing a positive integer</td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td id="type_integer"><em>integer</em></td>
+                        
+                        <td>an optional "-"  (U+002D), followed by a string of 
+                           <a class="intref" href="#type_digit"><em>decimal digit</em></a>s,
+                           and representing an integer
+                           </td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td id="type_unsigned-number"><em>unsigned-number</em></td>
+                        
+                        <td>
+                           a string of <a class="intref" href="#type_digit"><em>decimal digit</em></a>s 
+                           with up to one decimal point (U+002E), 
+                           representing a non-negative terminating decimal number 
+                           (a type of rational number)</td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td id="type_number"><em>number</em></td>
+                        
+                        <td>
+                           an optional prefix of "-" (U+002D), followed by an unsigned number,  
+                           representing a terminating decimal number (a type of rational number)</td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td id="type_character"><em>character</em></td>
+                        
+                        <td>a single non-whitespace character</td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td id="type_string"><em>string</em></td>
+                        
+                        <td>an arbitrary, nonempty and finite, string of <em>character</em>s</td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><em>length</em></td>
+                        
+                        <td>a length, as explained below, <a href="#fund_units"></a></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><em>unit</em></td>
+                        
+                        <td>a unit, typically used as part of a length, as explained below, <a href="#fund_units"></a></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><em>namedlength</em></td>
+                        
+                        <td>a named length, as explained below, <a href="#fund_units"></a></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><em>color</em></td>
+                        
+                        <td>a color, as explained below, <a href="#fund_color"></a></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td id="type_id"><em>id</em></td>
+                        
+                        <td>an identifier, unique within the document;
+                           must satisfy the NAME syntax of the XML recommendation [[XML]]</td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td id="type_idref"><em>idref</em></td>
+                        
+                        <td>an identifier referring to another element within the document;
+                           must satisfy the NAME syntax of the XML recommendation [[XML]]</td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td id="type_uri"><em>URI</em></td>
+                        
+                        <td>a Uniform Resource Identifier [[RFC3986]]. Note that the attribute value
+                           is typed in the schema as anyURI which allows any sequence of XML characters. 
+                           Systems needing to use this string as a URI must encode the bytes of the UTF-8 encoding
+                           of any characters not allowed in URI using %HH encoding where HH are the byte value
+                           in hexadecimal.
+                           This ensures that such an attribute value may be interpreted as an IRI,
+                           or more generally a LEIRI, see  [[IRI]].</td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><em>italicized word</em></td>
+                        
+                        <td>values as explained in the text for each attribute; see <a href="#fund_defaults"></a></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td>"literal"</td>
+                        
+                        <td>quoted symbol, literally present in the attribute value (e.g. "+" or '+')</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </p>
+            
+            
+            <p>The &#x2018;types&#x2019; described above, except for <em>string</em>,
+               may be combined into composite patterns using the following operators. The whole
+               attribute value must be delimited by single (') or double (") quotation marks in the
+               marked up 
+               document.  Note that double quotation marks are often used in this specification to
+               mark up 
+               literal expressions; an example is the "-" in line 5 of the table above.
+               </p>
+            
+            <p>
+               In the table
+               below a form <em>f</em> means an instance of a type described in the table above.
+               The combining operators are shown in order of precedence from highest 
+               to lowest:</p>
+            
+            <table id="fund_table_notn" border="1">
+               
+               <thead>
+                  
+                  <tr>
+                     <td>Notation</td>
+                     <td>What it matches</td>
+                  </tr>
+                  </thead>
+               
+               <tbody>
+                  
+                  <tr>
+                     
+                     <td>( <em>f</em> )</td>
+                     
+                     <td>same as <em>f</em></td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td><em>f</em><code>?</code></td>
+                     
+                     <td>an optional instance of <em>f</em></td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td><em>f</em> <code>*</code></td>
+                     
+                     <td>zero or more instances of <em>f</em>, with 
+                        separating whitespace characters</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td><em>f</em> +</td>
+                     
+                     <td>one or more instances of <em>f</em>, with 
+                        separating whitespace characters</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td><em>f<sub>1</sub> f<sub>2</sub> ... f<sub>n</sub></em></td>
+                     
+                     <td>one instance of each form <em>f<sub>i</sub></em>, in sequence, 
+                        with no separating whitespace</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td><em>f<sub>1</sub>, f<sub>2</sub>, ..., f<sub>n</sub></em></td>
+                     
+                     <td>one instance of each form <em>f<sub>i</sub></em>, in sequence, with 
+                        separating whitespace characters (but no commas)</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td><em>f<sub>1</sub></em> | <em>f<sub>2</sub></em> | ... | <em>f<sub>n</sub></em></td>
+                     
+                     <td>any one of the specified forms <em>f<sub>i</sub></em></td>
+                     </tr>
+                  </tbody>
+               </table>
+            
+            
+            <p>The notation we have chosen here is in the style of the syntactical notation of the
+               RelaxNG
+               used for MathML's basic schema, <a href="#parsing"></a>.
+               </p>
+            
+            
+            <p>Since some applications are inconsistent about normalization
+               of whitespace, for maximum interoperability it is advisable to use only
+               a single whitespace character for separating parts of a value.
+               Moreover, leading and trailing whitespace in attribute values should be avoided.</p>
+            
+            
+            
+            
+            <p>For most numerical attributes, only those in a subset of the
+               expressible values are sensible; values outside this subset are not
+               errors, unless otherwise specified, but rather are rounded up or down
+               (at the discretion of the renderer) to the closest value within the
+               allowed subset.  The set of allowed values may depend on the renderer,
+               and is not specified by MathML.</p>
+            
+            
+            <p>If a numerical value within an attribute value syntax description
+               is declared to allow a minus sign ('-'), e.g., <code class="attribute">number</code> or
+               <code class="attribute">integer</code>, it is not a syntax error when one is provided in
+               cases where a negative value is not sensible. Instead, the value
+               should be handled by the processing application as described in the
+               preceding paragraph.  An explicit plus sign ('+') is not allowed as
+               part of a numerical value except when it is specifically listed in the
+               syntax (as a quoted '+' or "+"), and its presence can change the
+               meaning of the attribute value (as documented with each attribute
+               which permits it).</p>
+            
+            </section>
+         
+         
+         <section>
+            <h5 id="fund_units">Length Valued Attributes</h5>
+            
+            
+            
+            <p>Most presentation elements have attributes that accept values
+               representing lengths to be used for size, spacing or similar properties.
+               The syntax of a length is specified as</p>
+            
+            <table border="1" id="type_length">
+               
+               <thead>
+                  
+                  <tr>
+                     <td>Type</td>
+                     <td>Syntax</td>
+                  </tr>
+                  </thead>
+               
+               <tbody>
+                  
+                  <tr>
+                     
+                     <td><em>length</em></td>
+                     
+                     <td>
+                        <a class="intref" href="#type_number"><em>number</em></a>
+                        | <a class="intref" href="#type_number"><em>number</em></a>
+                        <a class="intref" href="#type_unit"><em>unit</em></a>
+                        | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
+                        </td>
+                  </tr>
+                  </tbody>
+               </table>
+            
+            <p>There should be no space between the number and the unit of a length.</p>
+            
+            
+            <p>The possible <em>unit</em>s and <em>namedspace</em>s, along with their interpretations, are
+               shown below. Note that although the units and their meanings are taken from
+               CSS, the syntax of lengths is not identical. A few MathML elements
+               have length attributes that accept additional keywords; these are termed pseudo-units
+               
+               and specified
+               in the description of those particular elements; see, for instance, <a href="#presm_mpadded"></a>.</p>
+            
+            
+            <p>
+               A trailing "%" represents a percent of
+               <span>a reference value; unless otherwise stated,
+                  the reference value is</span>
+               the default value.
+               The default value, or how it is obtained,
+               is listed in the table of attributes for each element
+               <span>along with the reference value when
+                  it differs from the default</span>.
+               (See also <a href="#fund_defaults"></a>.)
+               A number without a unit is intepreted as a multiple of the 
+               <span>reference</span> value.
+               This form is primarily for backward compatibility and should be avoided,
+               prefering explicit units for clarity.
+               </p>
+            
+            
+            <p>In some cases, the range of acceptable values for a particular attribute may be restricted;
+               implementations are free to round up or down to the closest allowable value.</p>
+            
+            
+            <p id="type_unit">The possible <em>unit</em>s in MathML are:</p>
+            
+            <table border="1">
+               
+               <thead>
+                  
+                  <tr>
+                     
+                     <td>Unit</td>
+                     
+                     <td>Description</td>
+                     </tr>
+                  </thead>
+               
+               <tbody>
+                  
+                  <tr>
+                     
+                     <td><code>em</code></td>
+                     
+                     <td>an em (font-relative unit traditionally used for horizontal lengths)</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td><code>ex</code></td>
+                     
+                     <td>an ex (font-relative unit traditionally used for vertical lengths)</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td><code>px</code></td>
+                     
+                     <td>pixels, or size of a  pixel in the current display</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td><code>in</code></td>
+                     
+                     <td>inches (1 inch = 2.54 centimeters)</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td><code>cm</code></td>
+                     
+                     <td>centimeters</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td><code>mm</code></td>
+                     
+                     <td>millimeters</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td><code>pt</code></td>
+                     
+                     <td>points (1 point = 1/72 inch)</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td><code>pc</code></td>
+                     
+                     <td>picas (1 pica = 12 points)</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td><code>%</code></td>
+                     
+                     <td>percentage of the <span data-diff="chg">reference</span> value</td>
+                     </tr>
+                  </tbody>
+               </table>
+            
+            <p>Some additional aspects of units are discussed further 
+               below, in <a href="#units_addl_notes"></a>.</p>
+            
+            
+            <p id="type_namedspace">The following constants, <em>namedspace</em>s,
+               may also be used where a length is needed; they are typically used for
+               spacing or padding between tokens.
+               
+               Recommended default values for these constants are shown;
+               the actual spacing used is implementation specific.
+               
+               <table border="1">
+                  
+                  <thead>
+                     
+                     <tr>
+                        
+                        <td><em>namedspace</em></td>
+                        
+                        <td>Recommended default</td>
+                        </tr>
+                     </thead>
+                  
+                  <tbody>
+                     
+                     <tr>
+                        
+                        <td><code class="attributevalue">veryverythinmathspace</code></td> 
+                        <td>1/18<code>em</code></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><code class="attributevalue">verythinmathspace</code></td> 
+                        <td>2/18<code>em</code></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><code class="attributevalue">thinmathspace</code></td> 
+                        <td>3/18<code>em</code></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><code class="attributevalue">mediummathspace</code></td> 
+                        <td>4/18<code>em</code></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><code class="attributevalue">thickmathspace</code></td> 
+                        <td>5/18<code>em</code></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><code class="attributevalue">verythickmathspace</code></td> 
+                        <td>6/18<code>em</code></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><code class="attributevalue">veryverythickmathspace</code></td> 
+                        <td>7/18<code>em</code></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><code class="attributevalue">negativeveryverythinmathspace</code></td> 
+                        <td>-1/18<code>em</code></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><code class="attributevalue">negativeverythinmathspace</code></td> 
+                        <td>-2/18<code>em</code></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><code class="attributevalue">negativethinmathspace</code></td> 
+                        <td>-3/18<code>em</code></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><code class="attributevalue">negativemediummathspace</code></td> 
+                        <td>-4/18<code>em</code></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><code class="attributevalue">negativethickmathspace</code></td> 
+                        <td>-5/18<code>em</code></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><code class="attributevalue">negativeverythickmathspace</code></td> 
+                        <td>-6/18<code>em</code></td>
+                        </tr>
+                     
+                     <tr>
+                        
+                        <td><code class="attributevalue">negativeveryverythickmathspace</code></td> 
+                        <td>-7/18<code>em</code></td>
+                        </tr> 
+                     </tbody>
+                  </table>
+               </p>
+            
+            
+            <section>
+               <h6 id="units_addl_notes">Additional notes about units</h6>
+               
+               
+               <p>Lengths are only used in MathML for presentation, and presentation
+                  will ultimately involve rendering in or on some medium. For visual media,
+                  the display context is assumed to have certain properties available to
+                  the rendering agent. A <code>px</code> corresponds to a pixel on the display, to
+                  the extent that is meaningful. The resolution of the display device
+                  will affect the correspondence of pixels to the units
+                  <code>in</code>, <code>cm</code>, <code>mm</code>, <code>pt</code> and <code>pc</code>.
+                  </p>
+               
+               
+               <p>Moreover, the display context will also provide a default for the font size;
+                  the parameters of this font determine the initial values used to interpret
+                  the units <code>em</code> and <code>ex</code>, and thus indirectly the sizes
+                  of namedspaces. Since these units track the display context, and in particular,
+                  the user's preferences for display, the relative units <code>em</code> and <code>ex</code>
+                  are generally to be preferred over absolute units such as <code>px</code> or <code>cm</code>.
+                  </p>
+               
+               
+               <p>Two additional aspects of relative units must be clarified, however.
+                  First, some elements such as <a href="#presm_scrlim"></a> or <code class="element">mfrac</code>,
+                  implicitly switch to smaller font sizes for some of their arguments.
+                  Similarly, <code class="element">mstyle</code> can be used to explicitly change
+                  the current font size. In such cases, the effective values of
+                  an <code>em</code> or <code>ex</code> inside those contexts will be
+                  different than outside. The second point is that the effective value
+                  of an <code>em</code> or <code>ex</code> used for an attribute value
+                  can be affected by changes to the current font size.
+                  Thus, attributes that affect the current font size,
+                  such as <code class="attribute">mathsize</code>
+                  and <code class="attribute">scriptlevel</code>, must be processed before
+                  evaluating other length valued attributes.
+                  
+                  </p>
+               
+               
+               <p>If, and how, lengths might affect non-visual media is implementation specific.</p>
+               
+               </section>
+            </section>
+         
+         
+         <section>
+            <h5 id="fund_color">Color Valued Attributes</h5>
+            
+            
+            <p>The color, or background color, of presentation elements
+               may be specified as a <em>color</em> using the following syntax:</p>
+            
+            <table border="1" id="type_color">
+               
+               <thead>
+                  
+                  <tr>
+                     <td>Type</td>
+                     <td>Syntax</td>
+                  </tr>
+                  </thead>
+               
+               <tbody>
+                  
+                  <tr>
+                     
+                     <td><em>color</em></td>
+                     
+                     <td>
+                        #<a class="intref" href="#type_hexdigit"><em>R</em></a><a class="intref" href="#type_hexdigit"><em>G</em></a><a class="intref" href="#type_hexdigit"><em>B</em></a>
+                        | #<a class="intref" href="#type_hexdigit"><em>R</em></a><a class="intref" href="#type_hexdigit"><em>R</em></a><a class="intref" href="#type_hexdigit"><em>G</em></a><a class="intref" href="#type_hexdigit"><em>G</em></a><a class="intref" href="#type_hexdigit"><em>B</em></a><a class="intref" href="#type_hexdigit"><em>B</em></a>
+                        | <a class="intref" href="#type_html-color"><em>html-color-name</em></a>
+                        </td>
+                  </tr>
+                  </tbody>
+               </table>
+            
+            
+            <p>A color is specified either by <span>&#x201c;#&#x201d;</span> followed
+               by hexadecimal values for the red, green, and blue components,
+               with no intervening whitespace, or by an <em>html-color-name</em>.
+               The color components can be either 1-digit or 2-digit, but
+               must all have the same number of digits; the component
+               ranges from 0 (component not present) to <code>FF</code> (component fully present).
+               Note that, for example, by the digit-doubling rule specified under Colors in 
+               [[CSS21]]
+               <code>#123</code> is a short form for <code>#112233</code>.
+               </p>
+            
+            
+            <p id="type_html-color">Color values can also be specified as an <em>html-color-name</em>,
+               one of the color-name keywords defined in [[HTML4]]
+               (<code class="attributevalue">aqua</code>,
+               <code class="attributevalue">black</code>,
+               <code class="attributevalue">blue</code>,
+               <code class="attributevalue">fuchsia</code>,
+               <code class="attributevalue">gray</code>,
+               <code class="attributevalue">green</code>,
+               <code class="attributevalue">lime</code>,
+               <code class="attributevalue">maroon</code>,
+               <code class="attributevalue">navy</code>,
+               <code class="attributevalue">olive</code>,
+               <code class="attributevalue">purple</code>,
+               <code class="attributevalue">red</code>,
+               <code class="attributevalue">silver</code>,
+               <code class="attributevalue">teal</code>,
+               <code class="attributevalue">white</code>, and
+               <code class="attributevalue">yellow</code>).
+               Note that the color name keywords are not case-sensitive, unlike most 
+               keywords in MathML attribute values, for compatibility with CSS and HTML.</p>
+            
+            
+            <p>When a <em>color</em> is applied to an element,
+               it is the color in which the content of tokens is rendered.
+               Additionally, when inherited from a surrounding element or from the environment in
+               which the complete MathML expression is embedded, it controls the color of
+               all other drawing due to MathML elements, including the lines
+               or radical signs that can be drawn in rendering <code class="element">mfrac</code>, <code class="element">mtable</code>, or
+               <code class="element">msqrt</code>.</p>
+            
+            
+            <p>When used to specify a background color, the keyword <code class="attributevalue">transparent</code>
+               is also allowed.
+               The recommended MathML visual rendering rules do not define the
+               precise extent of the region whose background is affected by using the
+               <code class="attribute">background</code> attribute on an element,
+               except that, when the element's content does not have
+               negative dimensions and its drawing region is not overlapped by other
+               drawing due to surrounding negative spacing, this region should lie
+               behind all the drawing done to render the content of the
+               element, but should not lie behind any of the
+               drawing done to render surrounding expressions. The effect of overlap
+               of drawing regions caused by negative spacing on the extent of the
+               region affected by the <code class="attribute">background</code> attribute is not
+               defined by these rules.</p>
+            
+            </section>
+         
+         
+         <section>
+            <h5 id="fund_defaults">Default values of attributes</h5>
+            
+            
+            
+            <p>Default values for MathML attributes are, in general, given along with the
+               detailed descriptions of specific elements in the text.  Default values
+               shown in plain text in the tables of attributes for an element are literal,
+               but when italicized are descriptions of how default values can be computed.</p>
+            
+            
+            <p>Default values described as <em>inherited</em> are taken from the
+               rendering environment, as described in <a href="#presm_mstyle"></a>,
+               or in some cases (which are described individually) taken from the values of other
+               attributes of surrounding elements, or from certain parts of those
+               values. The value used will always be one which could have been specified
+               explicitly, had it been known; it will never depend on the content or
+               attributes of the same element, only on its environment. (What it means
+               when used may, however, depend on those attributes or the content.)</p>
+            
+            
+            <p>Default values described as <em>automatic</em> should be computed by
+               a MathML renderer in a way which will produce a high-quality rendering; how
+               to do this is not usually specified by the MathML specification. The value
+               computed will always be one which could have been specified explicitly, had
+               it been known, but it will usually depend on the element content and
+               possibly on the context in which the element is rendered.</p>
+            
+            
+            <p>Other italicized descriptions of default values which appear in the
+               tables of attributes are explained individually for each attribute.</p>
+            
+            
+            <p>The single or double quotes which are required around attribute values
+               in an XML start tag are not shown in the tables of attribute value syntax
+               for each element, but are around attribute values in examples in the
+               text, so that the pieces of code shown are correct.</p>
+            
+            
+            <p>Note that, in general, there is no mechanism in MathML to simulate the 
+               effect of not specifying attributes which are <em>inherited</em> or
+               <em>automatic</em>.  Giving the words <span>&#x201c;inherited&#x201d;</span> or
+               <span>&#x201c;automatic&#x201d;</span> explicitly will not work, and is not generally
+               allowed.  Furthermore, the <code class="element">mstyle</code> element (<a href="#presm_mstyle"></a>)
+               can even be used to change the default values of presentation attributes 
+               for its children.</p>
+            
+            
+            <p>Note also that these defaults describe the
+               behavior of MathML applications when an attribute is not supplied;
+               they do not indicate a value that will be filled in by an XML parser,
+               as is sometimes mandated by DTD-based specifications.</p>
+            
+            
+            <p>In general, there are a number of
+               properties of MathML rendering that may be thought of as overall
+               properties of a document, or at least of sections of a large
+               document.  Examples might be <code class="attribute">mathsize</code> (the math font
+               size: see <a href="#presm_commatt"></a>), or the
+               behavior in setting limits on operators such as integrals or sums
+               (e.g., <code class="attribute">movablelimits</code> or <code class="attribute">displaystyle</code>), or
+               upon breaking formulas over lines (e.g.
+               <code class="attribute">linebreakstyle</code>); for such attributes see several
+               elements in <a href="#presm_tokel"></a>. 
+               These may be thought to be inherited from some such
+               containing scope. Just above we have mentioned the setting of default
+               values of MathML attributes as <em>inherited</em> or
+               <em>automatic</em>; there is a third source of global default values
+               for behavior in rendering MathML, a MathML operator dictionary. A
+               default example is provided in <a href="#oper-dict"></a>.
+               This is also discussed in <a href="#presm_opdict"></a> and examples are given in 
+               <a href="#presm_mo_dict_attrs"></a>.</p> 
+            </section>
+         
+         </section>
+      
+      
+      <section>
+         <h4 id="fund_globatt">Attributes Shared by all MathML Elements</h4>
+         
+         
+         
+         <p>In addition to the attributes described specifically for each element,
+            the attributes in the following table are allowed on every MathML element.
+            Also allowed are attributes from the xml namespace, such as <code class="attribute">xml:lang</code>,
+            and attributes from namespaces other than MathML,
+            which are ignored by default.</p>
+         
+         
+         <table border="1" class="attributes">
+            
+            <thead>
+               
+               <tr>
+                  
+                  <td>Name</td>
+                  
+                  <td>values</td>
+                  
+                  <td>default</td>
+                  </tr>
+               </thead>
+            
+            <tbody>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">id</td>
+                  
+                  <td><a class="intref" href="#type_id"><em>id</em></a></td>
+                  
+                  <td><em>none</em></td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td colspan="2" class="attdesc">
+                     Establishes a unique identifier associated with the element
+                     to support linking, cross-references and parallel markup.
+                     See <code class="attribute">xref</code> and <a href="#mixing_parallel"></a>.
+                     </td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">xref</td>
+                  
+                  <td><a class="intref" href="#type_idref"><em>idref</em></a></td>
+                  
+                  <td><em>none</em></td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td colspan="2" class="attdesc">
+                     References another element within the document.
+                     See <code class="attribute">id</code> and <a href="#mixing_parallel"></a>.
+                     </td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">class</td>
+                  
+                  <td><a class="intref" href="#type_string"><em>string</em></a></td>
+                  
+                  <td><em>none</em></td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td colspan="2" class="attdesc">
+                     Associates the element with a set of style classes for use with
+                     [[XSLT]] and [[CSS21]].
+                     Typically this would be a space separated sequence of words,
+                     but this is not specified by MathML.
+                     See <a href="#world-int-style"></a> for discussion of the interaction of MathML and CSS.
+                     </td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">style</td>
+                  
+                  <td><a class="intref" href="#type_string"><em>string</em></a></td>
+                  
+                  <td><em>none</em></td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td colspan="2" class="attdesc">
+                     Associates style information with the element for use with
+                     [[XSLT]] and [[CSS21]].
+                     This typically would be an inline CSS style,
+                     but this is not specified by MathML.
+                     See <a href="#world-int-style"></a> for discussion of the interaction
+                     of MathML and CSS.</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">href</td>
+                  
+                  <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
+                  
+                  <td><em>none</em></td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td colspan="2" class="attdesc">
+                     Can be used to establish the element as a hyperlink to the specfied <em>URI</em>.
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         
+         
+         
+         
+         
+         
+         
+         
+         <p>Note that MathML 2 had no direct support for linking, and instead
+            followed the W3C Recommendation <span>&#x201c;XML Linking Language&#x201d;</span>
+            [[XLink]] in defining links using the
+            <code class="attribute">xlink:href</code> attribute.  This has changed, and MathML 3 now
+            uses an <code class="attribute">href</code> attribute.  However, particular compound
+            document formats may specify the use of XML linking with MathML
+            elements, so user agents that support XML linking should continue to
+            support the use of the <code class="attribute">xlink:href</code> attribute with MathML 3
+            as well.</p>
+         
+         
+         <p>See also <a href="#presm_commatt"></a> for a list of MathML attributes
+            which can be used on most presentation token elements.
+            </p>
+         
+         
+         
+         
+         <p>The attribute <code class="attribute">other</code>,
+            is <a class="intref" href="#interf_deprec">deprecated</a> 
+            (<a href="#interf_unspecified"></a>) in favor of the use of 
+            attributes from other namespaces.
+            </p>
+         
+         
+         <table border="1" class="attributes">
+            
+            <thead>
+               
+               <tr>
+                  
+                  <td>Name</td>
+                  
+                  <td>values</td>
+                  
+                  <td>default</td>
+                  </tr>
+               </thead>
+            
+            <tbody>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">other</td>
+                  
+                  <td><a class="intref" href="#type_string"><em>string</em></a></td>
+                  
+                  <td><em>none</em></td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td colspan="2" class="attdesc">
+                     DEPRECATED but in MathML 1.0.
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         
+         </section>
+      
+      
+      <section>
+         <h4 id="fund_collapse">Collapsing Whitespace in Input</h4>
+         
+         
+         
+         <p>In MathML, as in XML, <span>&#x201c;whitespace&#x201d;</span> means simple spaces,
+            tabs, newlines, or carriage returns, i.e.,  characters with hexadecimal
+            Unicode codes U+0020, U+0009, U+000A, or
+            U+000D, respectively; see also the discussion of whitespace in Section 2.3 of
+            [[XML]].</p>
+         
+         
+         <p>MathML ignores whitespace occurring outside token elements.
+            Non-whitespace characters are not allowed there. Whitespace occurring
+            within the content of token elements <span>, except for <a class="intref" href="#contm_cs"><code class="starttag">&lt;cs&gt;</code></a>, </span>is <span>normalized as follows. All whitespace at the beginning and end of the content is
+               removed, and </span>whitespace internal to content of the element is
+            collapsed canonically, i.e.,  each sequence of 1 or more
+            whitespace characters is replaced with one space character (U+0020, sometimes
+            called a blank character).</p>
+         
+         
+         <p>For example, <code>&lt;mo&gt; ( &lt;/mo&gt;</code> is equivalent to
+            <code>&lt;mo&gt;(&lt;/mo&gt;</code>, and
+            
+            <div class="example mathml">
+               <pre>
+&lt;mtext&gt;
+  Theorem
+  1:
+&lt;/mtext&gt;
+</pre>
+            </div>
+            is equivalent to 
+            <code>&lt;mtext&gt;Theorem 1:&lt;/mtext&gt;</code>
+            or
+            <code>&lt;mtext&gt;Theorem&amp;#x20;1:&lt;/mtext&gt;</code>.</p>
+         
+         
+         <p>Authors wishing to encode <span>white space</span> characters at the start or end of
+            the content of a token, or in sequences other than a single space, without
+            having them ignored, must use <code class="entity">nbsp</code> <span>(U+00A0)</span>
+            or other non-marking characters that are not trimmed.
+            For example, compare the above use of an <code class="element">mtext</code> element 
+            with
+            
+            <div class="example mathml">
+               <pre>
+&lt;mtext&gt;
+&amp;nbsp;Theorem &amp;nbsp;1: 
+&lt;/mtext&gt; </pre>
+            </div>
+            </p>
+         
+         
+         <p>When the first example is rendered, there is nothing before
+            <span>&#x201c;Theorem&#x201d;</span>, one Unicode space character between <span>&#x201c;Theorem&#x201d;</span> and
+            <span>&#x201c;1:&#x201d;</span>, and nothing after <span>&#x201c;1:&#x201d;</span>. In the
+            second example, a single space character is to be rendered before
+            <span>&#x201c;Theorem&#x201d;</span>; two spaces, one a Unicode space character and 
+            one a Unicode no-break space character, are to be rendered before
+            <span>&#x201c;1:&#x201d;</span>; and there is nothing after the
+            <span>&#x201c;1:&#x201d;</span>.</p>
+         
+         
+         <p>Note that the value of the <code class="attribute">xml:space</code> attribute is not relevant
+            in this situation since XML processors pass whitespace in tokens to a
+            MathML processor; it is the requirements of MathML processing which specify that
+            whitespace is trimmed and collapsed.</p>
+         
+         
+         <p>For whitespace occurring outside the content of the token elements 
+            <code class="element">mi</code>, <code class="element">mn</code>, <code class="element">mo</code>, <code class="element">ms</code>, <code class="element">mtext</code>, 
+            <code class="element">ci</code>, <code class="element">cn</code>, <code class="element">cs</code>, <code class="element">csymbol</code> and <code class="element">annotation</code>,
+            an <code class="element">mspace</code> element should be used, as opposed to an <code class="element">mtext</code> element containing 
+            only whitespace entities.</p>
+         
+         </section>
+      
+      </section>
+   
+   
+   <section>
+      <h3 id="interf_toplevel">The Top-Level 
+         <code class="defn starttag">&lt;math&gt;</code> Element</h3>
+      
+      
+      <p>MathML specifies a single top-level or root <code class="element">math</code> element, 
+         which encapsulates each instance of
+         MathML markup within a document.  All other MathML content must be
+         contained in a <code class="element">math</code> element; in other words,
+         every valid MathML expression is wrapped in outer
+         <code class="starttag">&lt;math&gt;</code> tags. The <code class="element">math</code>
+         element must always be the outermost element in a MathML expression;
+         it is an error for one <code class="element">math</code> element to contain
+         another.  These considerations also apply when sub-expressions are
+         passed between applications, such as for cut-and-paste operations;
+         See <a href="#world-int-transfers"></a>.</p>
+      
+      
+      <p>The <code class="element">math</code> element can contain an arbitrary number
+         of child elements. They render by default as if they
+         were contained in an <code class="element">mrow</code> element.</p>
+      
+      
+      <section>
+         <h4 id="interf_toplevel_atts">Attributes</h4>
+         
+         <p>The <code class="element">math</code> element accepts any of the attributes that can be set on
+            <a href="#presm_mstyle"></a>, including the common attributes 
+            specified in <a href="#fund_globatt"></a>.
+            In particular, it accepts the <code class="attribute">dir</code> attribute for
+            setting the overall directionality; the <code class="element">math</code> element is usually
+            the most useful place to specify the directionality
+            (See <a href="#presm_bidi"></a> for further discussion).
+            Note that the <code class="attribute">dir</code> attribute defaults to <code class="attributevalue">ltr</code>
+            on the <code class="element">math</code> element (but <em>inherits</em> on all other elements
+            which accept the <code class="attribute">dir</code> attribute); this provides for backward
+            compatibility with MathML 2.0 which had no notion of directionality.
+            <span>Also, it accepts the <code class="attribute">mathbackground</code> attribute in the same sense
+               as <code class="element">mstyle</code> and other presentation elements to set the background
+               color of the bounding box, rather than specifying a default for the attribute
+               (see <a href="#presm_presatt"></a>)</span></p>
+         
+         
+         <p>In addition to those attributes, the <code class="element">math</code> element accepts:</p>
+         
+         
+         
+         <table border="1" class="attributes">
+            
+            <thead>
+               
+               <tr>
+                  
+                  <td>Name</td>
+                  
+                  <td>values</td>
+                  
+                  <td>default</td>
+                  </tr>
+               </thead>
+            
+            <tbody>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">display</td>
+                  
+                  <td>"block" | "inline"</td>
+                  
+                  <td>inline</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td colspan="2" class="attdesc">
+                     specifies whether the enclosed MathML expression should be rendered
+                     as a separate vertical block (in display style)
+                     or inline, aligned with adjacent text.
+                     When <code class="attribute">display</code>=<code class="attributevalue">block</code>, <code class="attribute">displaystyle</code> is initialized 
+                     to <code class="attributevalue">true</code>,
+                     whereas when <code class="attribute">display</code>=<code class="attributevalue">inline</code>, <code class="attribute">displaystyle</code> 
+                     is initialized to <code class="attributevalue">false</code>;
+                     in both cases <code class="attribute">scriptlevel</code> is initialized to 0
+                     (See <a href="#presm_scriptlevel"></a>).
+                     Moreover, when the math element is embedded in a larger document,
+                     a block math element should be treated as a block element as appropriate
+                     for the document type (typically as a new vertical block),
+                     whereas an inline math element should be treated as inline
+                     (typically exactly as if it were a sequence of words in normal text).
+                     In particular, this applies to spacing and linebreaking: for instance,
+                     there should not be spaces or line breaks inserted between inline math
+                     and any immediately following punctuation.
+                     When the display attribute is missing, a rendering agent is free to initialize
+                     as appropriate to the context.
+                     </td>
+               </tr>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">maxwidth</td>
+                  
+                  <td><a class="intref" href="#type_length"><em>length</em></a></td>
+                  
+                  <td><em>available width</em></td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td colspan="2" class="attdesc">
+                     specifies the maximum width to be used for linebreaking.
+                     The default is the maximum width available in the surrounding environment.
+                     If that value cannot be determined, the renderer should assume an infinite rendering
+                     width.
+                     </td>
+               </tr>
+               
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">overflow</td>
+                  
+                  <td>"linebreak" | "scroll" | "elide" | "truncate" | "scale"</td>
+                  
+                  <td>linebreak</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td colspan="2" class="attdesc">
+                     specifies the preferred handing in cases where an expression is too long to
+                     fit in the allowed width. See the discussion below.
+                     </td>
+               </tr>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">altimg</td>
+                  
+                  <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
+                  
+                  <td><em>none</em></td>
+                  </tr>
+               
+               <tr>
+                  <td colspan="2" class="attdesc">
+                     provides a URI referring to an image to display as a fall-back
+                     for user agents that do not support embedded MathML. 
+                     </td>
+               </tr>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">altimg-width</td>
+                  
+                  <td><a class="intref" href="#type_length"><em>length</em></a></td>
+                  
+                  <td><em>width of </em><code class="attribute">altimg</code></td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td colspan="2" class="attdesc">
+                     specifies the width to display <code class="attribute">altimg</code>, scaling the image if necessary;
+                     See <code class="attribute">altimg-height</code>.
+                     </td>
+               </tr>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">altimg-height</td>
+                  
+                  <td><a class="intref" href="#type_length"><em>length</em></a></td>
+                  
+                  <td><em>height of </em><code class="attribute">altimg</code></td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td colspan="2" class="attdesc">
+                     specifies the height to display <code class="attribute">altimg</code>, scaling the image if necessary;
+                     if only one of the attributes <code class="attribute">altimg-width</code> and <code class="attribute">altimg-height</code>
+                     are given, the scaling should preserve the image's aspect ratio;
+                     if neither attribute is given, the image should be shown at its natural size.
+                     </td>
+               </tr>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">altimg-valign</td>
+                  
+                  <td><a class="intref" href="#type_length"><em>length</em></a>
+                     | "top" | "middle" | "bottom" </td>
+                  
+                  <td>0ex</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td colspan="2" class="attdesc">
+                     specifies the vertical alignment of the image with respect to adjacent inline material.
+                     A positive value of <code class="attribute">altimg-valign</code> shifts the bottom of the image above the
+                     current baseline, while a negative value lowers it.
+                     The keyword "top" aligns the top of the image with the top of adjacent inline material;
+                     "center" aligns the middle of the image to the middle of adjacent material;
+                     "bottom" aligns the bottom of the image to the bottom of adjacent material
+                     (not necessarily the baseline). This attribute only has effect
+                     when <code class="attribute">display</code>=<code class="attributevalue">inline</code>.
+                     By default, the bottom of the image aligns to the baseline. 
+                     </td>
+               </tr>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">alttext</td>
+                  
+                  <td><a class="intref" href="#type_string"><em>string</em></a></td>
+                  
+                  <td><em>none</em></td>
+                  </tr>
+               
+               <tr>
+                  <td colspan="2" class="attdesc">
+                     provides a textual alternative as a fall-back for user agents
+                     that do not support embedded MathML or images.
+                     </td>
+               </tr>
+               
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">cdgroup</td>
+                  
+                  <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
+                  
+                  <td><em>none</em></td>
+                  </tr>
+               
+               <tr>
+                  <td colspan="2" class="attdesc">
+                     specifies a CD group file that acts as a catalogue of CD bases for locating
+                     OpenMath content dictionaries of <code class="element">csymbol</code>, <code class="element">annotation</code>, and
+                     <code class="element">annotation-xml</code> elements in this <code class="element">math</code> element; see <a href="#contm_csymbol"></a>. When no <code class="attribute">cdgroup</code> attribute is explicitly specified, the
+                     document format embedding this <code class="element">math</code> element may provide a method for determining
+                     CD bases. Otherwise the system must determine a CD base; in the absence of specific
+                     information <code>http://www.openmath.org/cd</code> is assumed as the CD base for all
+                     <code class="element">csymbol</code>, <code class="element">annotation</code>, and <code class="element">annotation-xml</code> elements.  This is the
+                     CD base for the collection of standard CDs maintained by the OpenMath Society.
+                     </td>
+               </tr>
+               </tbody>
+            </table>
+         
+         
+         
+         
+         
+         <p>In cases where size negotiation is not possible or fails
+            (for example in the case of an expression that is too long to fit in the allowed width),
+            the <code class="attribute">overflow</code> attribute is provided to suggest a processing method to the renderer.
+            Allowed values are:</p>
+         
+         <table id="fund_table-overflow" border="1">
+            <thead>
+               <tr>
+                  
+                  <td> Value   </td>
+                  
+                  <td> Meaning</td>
+                  </tr>
+               </thead>
+            
+            <tbody>
+               
+               <tr>
+                  
+                  <td>"linebreak"</td>
+                  
+                  <td>The expression will be broken across several lines.
+                     See <a href="#presm_linebreaking"></a> for further discussion.
+                     </td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>"scroll"</td>
+                  
+                  <td>The window provides a viewport
+                     into the larger complete display of the mathematical
+                     expression. Horizontal or vertical scroll bars are added to the window
+                     as necessary to allow the viewport to be moved to a different
+                     position.</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>"elide"</td>
+                  
+                  <td>The display is abbreviated by removing enough of it so that
+                     the remainder fits into the window. For example, a large polynomial
+                     might have the first and last terms displayed with <span>&#x201c;+ ... +&#x201d;</span> 
+                     between
+                     them. Advanced renderers may provide a facility to zoom in on elided
+                     areas.
+                     </td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>"truncate"</td>
+                  
+                  <td>The display is abbreviated by simply truncating it at the right and
+                     bottom borders. It is recommended that some indication of truncation is
+                     made to the viewer.</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td>"scale"</td>
+                  
+                  <td>The fonts used to display the mathematical expression are
+                     chosen so that the full expression fits in the window. Note that this
+                     only happens if the expression is too large. In the case of a window
+                     larger than necessary, the expression is shown at its normal size
+                     within the larger window.</td>
+                  </tr>
+               </tbody>
+            </table>
+         
+         
+         
+         
+         <div class="issue" id="linebreak-control"><span class="head">linebreak control</span>
+            
+            
+            <p>Should there be a way to specify some sort of control over how line breaks are chosen
+               (e.g., before or after an infix operator, or if the infix operator is duplicated)?</p>
+            </div>
+         
+         <div class="issue" id="indent-control"><span class="head">indent control</span>
+            
+            
+            <p>Should there be a way to specify some sort of indenting style?</p>
+            </div>
+         </section>
+      
+      <section>
+         <h4>Deprecated Attributes</h4>
+         
+         <p>The following attributes of <code class="element">math</code> are deprecated:</p>
+         
+         <table border="1" class="attributes">
+            
+            <thead>
+               
+               <tr>
+                  
+                  <td>Name</td>
+                  
+                  <td>values</td>
+                  
+                  <td>default</td>
+                  </tr>
+               </thead>
+            
+            <tbody>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">macros</td>
+                  
+                  <td><a class="intref" href="#type_uri"><em>URI</em></a> *</td>
+                  
+                  <td><em>none</em></td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td colspan="2" class="attdesc">
+                     intended to provide a way of pointing to external macro definition files.
+                     Macros are not part of the MathML specification.
+                     </td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td rowspan="2" class="attname">mode</td>
+                  
+                  <td>"display" | "inline"</td>
+                  
+                  <td>inline</td>
+                  </tr>
+               
+               <tr>
+                  
+                  <td colspan="2" class="attdesc">
+                     specified whether the enclosed MathML expression should be rendered in
+                     a display style or an inline style.
+                     This attribute is <a class="intref" href="#interf_deprec">deprecated</a> in
+                     favor of the <code class="attribute">display</code> attribute.
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         
+         
+         </section>
+      </section>
+   
+   
+   <section>
+      <h3 id="interf_genproc">Conformance</h3>
+       
+      
+      
+      <p>Information nowadays is commonly 
+         generated, processed and rendered by
+         software tools. The exponential growth of the Web is fueling the
+         development of advanced systems for automatically searching,
+         categorizing, and interconnecting information. 
+         In addition, there are increasing numbers of
+         Web services, some of which offer technically based materials
+         and activities. Thus, although MathML
+         can be written by hand and read by humans,
+         whether machine-aided or just with much concentration, 
+         the future of MathML is
+         largely tied to the ability to process it with software tools.</p>
+      
+      
+      <p>There are many different kinds of MathML 
+         processors: editors for authoring MathML expressions, translators for
+         converting to and from other encodings, validators for checking MathML
+         expressions, computation engines that evaluate, manipulate, or compare
+         MathML expressions, and rendering engines that produce visual, aural,
+         or tactile representations of mathematical notation.  What it
+         means to support MathML varies widely between applications.  For
+         example, the issues that arise with a  validating
+         parser are very different from those for an equation
+         editor.</p>
+      
+      
+      <p>This section gives guidelines that describe different types
+         of MathML support and make clear the extent of MathML support in
+         a given application.  Developers, users, and reviewers are encouraged
+         to use these guidelines in characterizing products.  The intention
+         behind these guidelines is to facilitate reuse by
+         and interoperability
+         of MathML applications by accurately setting out their
+         capabilities in quantifiable terms.</p>
+      
+      
+      <p>The W3C Math Working Group maintains <a href="http://www.w3.org/Math/iandi/compliance">MathML Compliance
+            Guidelines</a>.  Consult this document for future updates on 
+         conformance activities and resources.
+         </p>
+      
+      
+      <section>
+         <h4 id="fund_mathmlconf">MathML Conformance</h4>
+         
+         
+         <p>A valid MathML expression is an XML construct determined by the MathML
+            RelaxNG Schema together with the additional requirements given in this specification.</p>
+         
+         
+         
+         
+         <p>We shall use the phrase <span>&#x201c;a MathML processor&#x201d;</span> 
+            to mean any application that
+            can accept or produce a valid MathML
+            expression.  A MathML processor that both accepts and produces valid 
+            MathML expressions may be able to <span>&#x201c;round-trip&#x201d;</span> MathML.
+            Perhaps the simplest example of an 
+            application that might round-trip a MathML
+            expression would be an editor that writes it to a new file without
+            modifications.</p>
+         
+         
+         <p>Three forms of MathML conformance are specified:
+            </p>
+         <ol>
+            
+            <li>
+               <p>A MathML-input-conformant processor must
+                  accept all valid MathML expressions; it should appropriately translate all
+                  MathML expressions into application-specific form allowing native
+                  application operations to be performed.</p>
+               </li>
+            
+            
+            <li>
+               <p>A MathML-output-conformant processor must
+                  generate valid MathML, appropriately representing all
+                  application-specific data.</p>
+               </li>
+            
+            
+            <li>
+               <p>A MathML-round-trip-conformant processor must
+                  preserve MathML equivalence. Two MathML expressions are
+                  <span>&#x201c;equivalent&#x201d;</span> if and only if both expressions have the
+                  same interpretation (as stated by the MathML 
+                  Schema and  specification)
+                  under any relevant circumstances, by any MathML processor. Equivalence on an
+                  element-by-element basis is discussed elsewhere in this document.</p>
+               
+               </li>
+            </ol>
+         
+         
+         <p>Beyond the above definitions, the MathML specification makes no
+            demands of individual processors.  In order to guide developers, the
+            MathML specification includes advisory material; for example, there
+            are many recommended rendering rules throughout <a href="#presm"></a>. 
+            However, in general, developers are given wide latitude to
+            interpret what kind of MathML implementation is meaningful for
+            their own particular application.</p>
+         
+         
+         <p>To clarify the difference between conformance and
+            interpretation of what is meaningful, consider some examples:
+            </p>
+         <ol>
+            <li>
+               <p>In order 
+                  to be MathML-input-conformant, a
+                  validating parser needs only to accept expressions, and return
+                  <span>&#x201c;true&#x201d;</span> for expressions that are valid MathML. In
+                  particular, it need not render or interpret the MathML expressions at
+                  all.</p>
+               </li>
+            
+            
+            <li>
+               <p>A MathML computer-algebra interface based on content markup
+                  might choose to ignore all presentation markup. Provided the interface
+                  accepts all valid MathML expressions including those containing
+                  presentation markup, it would be technically correct to characterize
+                  the application as MathML-input-conformant.</p>
+               </li>
+            
+            
+            <li>
+               <p>An equation editor might have an internal data representation
+                  that makes it easy to export some equations as MathML but not
+                  others. If the editor exports the simple equations as valid MathML,
+                  and merely displays an error message to the effect that conversion
+                  failed for the others, it is still technically
+                  MathML-output-conformant.</p> </li> </ol>
+         
+         
+         <section>
+            <h5 id="interf_testsuite">MathML Test Suite and Validator</h5>
+            
+            
+            <p>As the previous examples show, to be useful, the concept of MathML
+               conformance frequently involves a judgment about what parts of the
+               language are meaningfully implemented, as opposed to parts that are
+               merely processed in a technically correct way with respect to the
+               definitions of conformance.  This requires some mechanism for giving a
+               quantitative statement about which parts of MathML are meaningfully
+               implemented by a given application.  To this end, the W3C Math Working
+               Group has provided a <a href="http://www.w3.org/Math/testsuite/">test
+                  suite</a>.</p>
+            
+            
+            <p>The test suite consists of a large number of MathML expressions
+               categorized by markup category and dominant MathML element being
+               tested.  The existence of this test suite makes it possible, for example,
+               to characterize quantitatively the hypothetical computer algebra interface
+               mentioned above by saying that it is a MathML-input-conformant processor
+               which meaningfully implements MathML content markup, including all of
+               the expressions in the content markup section of the test suite.</p> 
+            
+            
+            <p>Developers who choose not to implement parts of the MathML
+               specification in a meaningful way are encouraged to itemize the parts
+               they leave out by referring to specific categories in the test suite.</p>
+            
+            
+            <p>For MathML-output-conformant processors, information about currently 
+               available tools to validate MathML is
+               maintained at the <a href="http://www.w3.org/Math/validator/">W3C MathML Validator</a>. 
+               Developers of MathML-output-conformant processors are encouraged to verify 
+               their output using this
+               validator.</p>
+            
+            
+            <p>Customers of MathML applications who wish to verify claims as to which
+               parts of the MathML specification are implemented by an application are
+               encouraged to use the test suites as a part of their decision
+               processes.</p>
+            </section>
+         
+         
+         <section>
+            <h5 id="interf_deprec">Deprecated MathML 1.x and MathML 2.x Features</h5>
+            
+            
+            <p>MathML 3.0 contains a number of features of earlier MathML
+               which are now deprecated.  The following points define what it means for a
+               feature to be deprecated, and clarify the relation between
+               deprecated features and  current MathML conformance.</p>
+            
+            
+            <ol>
+               
+               <li>
+                  <p>In order to be MathML-output-conformant, authoring tools may not
+                     generate MathML markup containing deprecated features.</p>
+               </li>
+               
+               
+               <li>
+                  <p>In order to be MathML-input-conformant, rendering and reading
+                     tools must support deprecated features if they are to be 
+                     in conformance with MathML 1.x or MathML 2.x.   They do not have to support deprecated
+                     features to be considered in conformance with MathML 3.0.  However, all tools
+                     are encouraged to support the old forms as much as
+                     possible.</p>
+               </li>
+               
+               
+               <li>
+                  <p>In order to be MathML-round-trip-conformant, a processor need
+                     only preserve MathML equivalence on expressions containing no
+                     deprecated features.</p>
+               </li>
+               </ol>
+            
+            </section>
+         
+         
+         <section>
+            <h5 id="interf_extension">MathML 
+               Extension Mechanisms and Conformance</h5>
+            
+            
+            <p>MathML 3.0 defines three basic extension mechanisms:  the <code class="element">mglyph</code>
+               element provides a way of displaying glyphs for non-Unicode
+               characters, and glyph variants for existing Unicode characters; the
+               <code class="element">maction</code> element uses attributes from other namespaces to obtain
+               implementation-specific parameters; and content markup makes use of
+               the <code class="attribute">definitionURL</code> attribute, as well as
+               Content Dictionaries and the <code class="attribute">cd</code> attribute, to point to external
+               definitions of mathematical semantics.</p>
+            
+            
+            <p>These extension mechanisms are important because they provide a way
+               of encoding concepts that are beyond the scope of MathML 3.0 as presently 
+               explicitly specified, which
+               allows MathML to be used for exploring new ideas not yet susceptible
+               to standardization.  However, as new ideas take hold, they may become
+               part of future standards.  For example, an emerging character that
+               must be represented by an <code class="element">mglyph</code> element today may be
+               assigned a Unicode code point in the future. At that time,
+               representing the character directly by its Unicode code point would be
+               preferable.  This transition into Unicode has
+               already taken place for hundreds of characters used for mathematics.</p>
+            
+            
+            <p>Because the possibility of future obsolescence is inherent in the
+               use of extension mechanisms to facilitate the discussion of new ideas,
+               MathML can reasonably make 
+               no conformance requirements concerning the use of
+               extension mechanisms, even when alternative standard markup is
+               available.  For example, using an <code class="element">mglyph</code> element to represent
+               an 'x' is permitted.  However, authors and implementers are
+               strongly encouraged to use standard markup whenever possible.
+               Similarly, maintainers of documents employing MathML 3.0 extension
+               mechanisms are encouraged to monitor relevant standards activity
+               (e.g., Unicode, OpenMath, etc.) and to update documents as more
+               standardized markup becomes available.</p> </section> </section>
+      
+      
+      <section>
+         <h4 id="interf_error">Handling of Errors</h4>
+         
+         
+         <p>If a MathML-input-conformant application receives
+            input containing one or more elements with an illegal number or type
+            of attributes or child schemata, it should nonetheless attempt to
+            render all the input in an intelligible way, i.e., to render normally
+            those parts of the input that were valid, and to render error messages
+            (rendered as if enclosed in an <a class="intref" href="#presm_merror"><code class="element">merror</code></a> element) in place of
+            invalid expressions.</p>
+         
+         
+         <p>MathML-output-conformant applications such as
+            editors and translators may choose to generate <code class="element">merror</code>
+            expressions to signal errors in their input. This is usually
+            preferable to generating valid, but possibly erroneous, MathML.</p>
+         </section>
+      
+      
+      <section>
+         <h4 id="interf_unspecified">Attributes for unspecified data</h4>
+         
+         
+         <p>The MathML attributes described in the MathML specification are
+            intended to allow for good presentation and content markup. However
+            it is never possible to cover all users' needs for markup. Ideally, the MathML
+            attributes should be an open-ended list so that users can add specific
+            attributes for specific renderers. However, this cannot be done within
+            the confines of a single XML DTD or in a Schema. 
+            Although it can be done using extensions of the standard DTD, say,
+            some authors will wish to use non-standard
+            attributes to take advantage of renderer-specific capabilities while
+            remaining strictly in conformance with the standard
+            DTD.</p>
+         
+         
+         <p>To allow this, the MathML 1.0 specification [[MathML1]]
+            allowed the attribute <code class="attribute">other</code> on all elements, for use as a hook to pass
+            on renderer-specific information. In particular, it was intended as a hook for
+            passing information to audio renderers, computer algebra systems, and for pattern
+            matching in future macro/extension mechanisms. The motivation for this approach to
+            the problem was historical, looking to PostScript, for example, where comments are
+            widely used to pass information that is not part of PostScript.</p>
+         
+         
+         <p>In the next period of evolution of MathML the
+            development of a general XML namespace mechanism
+            seemed to make the use of the <code class="attribute">other</code>
+            attribute obsolete.  In MathML 2.0, the <code class="attribute">other</code> attribute is
+            <a class="intref" href="#interf_deprec">deprecated</a> in favor of the use of
+            namespace prefixes to identify non-MathML attributes.  <span>The 
+               <code class="attribute">other</code> attribute remains deprecated in MathML 3.0.</span></p>
+         
+         
+         <p>For example, in MathML 1.0, it was recommended that if additional information
+            was used in a renderer-specific implementation for the <code class="element">maction</code> element 
+            (<a href="#presm_maction"></a>),
+            that information should be passed in using the <code class="attribute">other</code> attribute:</p>
+         
+         
+         <div class="example ">
+            <pre>
+&lt;maction actiontype="highlight" other="color='#ff0000'"&gt; expression &lt;/maction&gt;
+</pre>
+         </div>
+         
+         
+         <p>From MathML 2.0 onwards, a <code class="attribute">color</code> 
+            attribute from another namespace would be used:</p>
+         
+         
+         <div class="example ">
+            <pre>
+&lt;body xmlns:my="http://www.example.com/MathML/extensions"&gt;
+...
+&lt;maction actiontype="highlight" my:color="#ff0000"&gt; expression &lt;/maction&gt;
+...
+&lt;/body&gt;
+</pre>
+         </div>
+         
+         
+         <p>Note that the intent of allowing non-standard attributes is
+            <em>not</em> to encourage software developers to use this as a
+            loophole for circumventing the core conventions for MathML markup. 
+            Authors and applications should use non-standard attributes
+            judiciously.</p>
+         
+         </section>
+      </section>
+   
+   
+   </section>

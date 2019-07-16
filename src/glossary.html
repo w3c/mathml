@@ -1,0 +1,583 @@
+<section class="appendix">
+   <h2 id="glossary">Glossary</h2>
+   
+   
+   
+   <p>Several of the following definitions of terms have been borrowed or
+      modified from similar definitions in documents originating from W3C or
+      standards organizations. See the individual definitions for more
+      information.</p>
+   
+   
+   <dl>
+      
+      <dt id="dt-argument">Argument</dt>
+      <dd>
+         <p>A child of a presentation layout schema. That is, <span>&#x201c;A is an
+               argument of B&#x201d;</span> means <span>&#x201c;A is a child of B and B is a
+               presentation layout schema&#x201d;</span>. Thus, token elements have no arguments,
+            even if they have children (which can only be 
+            <code class="element">malignmark</code>).</p>
+      </dd>
+      
+      
+      <dt id="dt-attribute">Attribute</dt>
+      <dd>
+         <p>A parameter used to specify some property of an SGML or XML element
+            type. It is defined in terms of an attribute name, attribute type, and a
+            default value.  A value may be specified for it on a start-tag for that
+            element type.</p>
+      </dd>
+      
+      
+      <dt id="dt-axis">Axis</dt>
+      <dd>
+         <p>The axis is an imaginary alignment line upon which a fraction line
+            is centered. Often, operators as well as characters that can stretch, such
+            as parentheses, brackets, braces, summation signs etc., are centered on
+            the axis, and are symmetric with respect to it.</p>
+      </dd>
+      
+      
+      <dt id="dt-baseline">Baseline</dt>
+      <dd>
+         <p>The baseline is an imaginary alignment line upon which a glyph
+            without a descender rests.  The baseline is an intrinsic property of the
+            glyph (namely a horizontal line). Often baselines are aligned (joined)
+            during typesetting.</p>
+      </dd>
+      
+      
+      <dt id="dt-blackbox">Black box</dt>
+      <dd>
+         <p>The bounding box of the actual size taken up by the viewable
+            portion (ink) of a glyph or expression.</p>
+      </dd>
+      
+      
+      <dt id="dt-boundingbox">Bounding box</dt>
+      <dd>
+         <p>The rectangular box of smallest size, taking into account the
+            constraints on boxes allowed in a particular context, which contains some
+            specific part of a rendered display.</p>
+      </dd>
+      
+      
+      <dt id="dt-box">Box</dt>
+      <dd>
+         <p>A rectangular plane area considered to contain a character or
+            further sub-boxes, used in discussions of rendering for display. It is
+            usually considered to have a baseline, height, depth and width.</p>
+      </dd>
+      
+      
+      <dt id="dt-css">Cascading Style Sheets (CSS)</dt>
+      <dd>
+         <p>A language that allows authors and readers to attach style
+            (e.g. fonts, colors and spacing) to HTML and XML documents.</p>
+      </dd>
+      
+      
+      <dt id="dt-character">Character</dt>
+      <dd>
+         <p>A member of a set of identifiers used for the organization, control
+            or representation of text. ISO/IEC Standard 10646-1:1993 uses the word
+            <span>&#x201c;data&#x201d;</span> here instead of <span>&#x201c;text&#x201d;</span>.</p>
+      </dd>
+      
+      
+      <dt id="dt-cdata">Character data (<code>CDATA</code>)</dt>
+      <dd>
+         <p>A data type in SGML and XML for raw data that does not include
+            markup or entity references. Attributes of type <code>CDATA</code> may contain
+            entity references. These are expanded by an XML processor before the
+            attribute value is processed as <code>CDATA</code>.</p>
+      </dd>
+      
+      
+      <dt id="dt-char-depth">Character or expression depth</dt>
+      <dd>
+         <p>Distance between the baseline and bottom edge of the character
+            glyph or expression. Also known as the descent.</p>
+      </dd>
+      
+      
+      <dt id="dt-char-height">Character or expression height</dt>
+      <dd>
+         <p>Distance between the baseline and top edge of the character glyph
+            or expression. Also known as the ascent.</p>
+      </dd>
+      
+      
+      <dt id="dt-char-width">Character or expression width</dt>
+      <dd>
+         <p>Horizontal distance taken by the character glyph as indicated in
+            the font metrics, or the total width of an expression.</p>
+      </dd>
+      
+      
+      <dt id="dt-condition">Condition</dt>
+      <dd>
+         <p>A MathML content element used to place a mathematical condition on
+            one or more variables.</p>
+      </dd>
+      
+      
+      <dt id="dt-contained">Contained (element A is contained in element B)</dt>
+      <dd>
+         <p>A is part of B's content.</p>
+      </dd>
+      
+      
+      <dt id="dt-container">Container (Constructor)</dt>
+      <dd>
+         <p>A non-empty Content MathML element that is used to construct a
+            mathematical object such as a number, set, or list.</p>
+      </dd>
+      
+      
+      <dt id="dt-content-elements">Content elements</dt>
+      <dd>
+         <p>MathML elements that explicitly specify the mathematical meaning
+            of a portion of a MathML expression (defined in <a href="#contm"></a>).</p>
+      </dd>
+      
+      
+      <dt id="dt-content-token-element">Content token element</dt>
+      <dd>
+         <p>Content element having only <code>PCDATA</code>, <code class="element">sep</code>
+            and presentation expressions as content. Represents either an identifier
+            (<code class="element">ci</code>) or a number (<code class="element">cn</code>).</p>
+      </dd>
+      
+      
+      <dt id="dt-context">Context (of a given MathML expression)</dt>
+      <dd>
+         <p>Information provided during the rendering of some MathML data to
+            the rendering process for the given MathML expression; especially
+            information about the MathML markup surrounding the expression.</p>
+      </dd>
+      
+      
+      <dt id="dt-declaration">Declaration</dt>
+      <dd>
+         <p>An instance of the declare element.</p>
+      </dd>
+      
+      
+      <dt id="dt-depth">Depth</dt>
+      <dd>
+         <p>(of a box) The distance from the baseline of the box to the bottom
+            edge of the box.</p>
+      </dd>
+      
+      
+      <dt id="dt-direct-sub-expression">Direct sub-expression
+         (of a MathML expression <span>&#x201c;E&#x201d;</span>)</dt>
+      <dd>
+         <p>A sub-expression directly contained in E.</p>
+      </dd>
+      
+      
+      <dt id="dt-directly-contained">Directly contained
+         (element A in element B)</dt>
+      <dd>
+         <p>A is a child of B (as defined in XML), in other words
+            A is contained in B, but not in any element that is itself contained in
+            B.</p>
+      </dd>
+      
+      
+      <dt id="dt-dom">Document Object Model</dt>
+      <dd>
+         <p>A model in which the document or Web page is treated as an object
+            repository. This model is developed by the DOM Working Group (DOM) of the
+            W3C.</p>
+      </dd>
+      
+      
+      <dt id="dt-dsssl">Document Style Semantics and Specification Language (DSSSL)</dt>
+      <dd>
+         <p>A method of specifying the formatting and transformation of
+            SGML documents. ISO International Standard 10179:1996.</p>
+      </dd>
+      
+      
+      <dt id="dt-dtd">Document Type Definition (DTD)</dt>
+      <dd>
+         <p>In SGML or XML, a DTD is a formal definition of the elements and
+            the relationship among the data elements (the structure) for a particular
+            type of document.</p>
+      </dd>
+      
+      
+      <dt id="dt-em">Em</dt>
+      <dd>
+         <p>A font-relative measure encoded by the font. Before electronic
+            typesetting, an <code class="attributevalue">em</code> was the width of an
+            <span>&#x201c;M&#x201d;</span> in the font. In modern usage, an <code class="attributevalue">em</code>
+            is either specified by the designer of the font or is taken to be the
+            height (point size) of the font. Em's are typically used for font-relative
+            horizontal sizes.</p>
+      </dd>
+      
+      
+      <dt id="dt-ex">Ex</dt>
+      <dd>
+         <p>A font-relative measure that is the height of an <span>&#x201c;x&#x201d;</span>
+            in the font.  <code class="attributevalue">ex</code>s are typically used for
+            font-relative vertical sizes.</p>
+      </dd>
+      
+      
+      <dt id="dt-height">Height</dt>
+      <dd>
+         <p>(of a box) The distance from the baseline of the box to the top
+            edge of the box.</p>
+      </dd>
+      
+      
+      <dt id="dt-inferred-mrow">Inferred <code class="element">mrow</code></dt>
+      <dd>
+         <p>An <code class="element">mrow</code> element that is
+            <span>&#x201c;inferred&#x201d;</span> around the contents of certain layout schemata when
+            they have other than exactly one argument. Defined precisely in <a href="#presm_summary"></a></p>
+         </dd>
+      
+      
+      <dt id="dt-embedded-object">Embedded object</dt>
+      <dd>
+         <p>Embedded objects such as Java applets, Microsoft Component Object
+            Model (COM) objects (e.g. ActiveX Controls and ActiveX Document
+            embeddings), and plug-ins that reside in an HTML document.</p>
+      </dd>
+      
+      
+      <dt id="dt-embellished-operator">Embellished operator</dt>
+      <dd>
+         <p>An operator, including any <span>&#x201c;embellishment&#x201d;</span> it may
+            have, such as superscripts or style information. The
+            <span>&#x201c;embellishment&#x201d;</span> is represented by a layout schema that
+            contains the operator itself.
+            Defined precisely in <a href="#presm_mo"></a>.</p>
+      </dd>
+      
+      
+      <dt id="dt-entity-reference">Entity reference</dt>
+      <dd>
+         <p>A sequence of ASCII characters of the form <code class="entity">name</code> representing some other data, typically a
+            non-ASCII character, a sequence of characters, or an external source of
+            data, e.g. a file containing a set of standard entity definitions such as
+            ISO Latin 1.</p>
+      </dd>
+      
+      
+      <dt id="dt-xml">Extensible Markup Language (XML)</dt>
+      <dd>
+         <p>A simple dialect of SGML intended to enable generic SGML to be
+            served, received, and processed on the Web.</p>
+      </dd>
+      
+      
+      <dt id="dt-fences">Fences</dt>
+      <dd>
+         <p>In typesetting, bracketing tokens like parentheses, braces, and
+            brackets, which usually appear in matched pairs.</p>
+      </dd>
+      
+      
+      <dt id="dt-font">Font</dt>
+      <dd>
+         <p>A particular collection of glyphs of a typeface of a given size,
+            weight and style, for example <span>&#x201c;Times Roman Bold 12 point&#x201d;</span>.</p>
+      </dd>
+      
+      
+      <dt id="dt-glyph">Glyph</dt>
+      <dd>
+         <p>The actual shape (bit pattern, outline) of a character.
+            ISO/IEC Standard 9541-1:1991 defines a glyph as a recognizable abstract 
+            graphic symbol that is independent of any specific design.</p>
+      </dd>
+      
+      
+      <dt id="dt-indirectly-contained">Indirectly contained</dt>
+      <dd>
+         <p>A is contained in B, but not directly contained in B.</p>
+      </dd>
+      
+      
+      <dt id="dt-mathml-instance">Instance of MathML</dt>
+      <dd>
+         <p>A single instance of the top level element of MathML, and/or a
+            single instance of embedded MathML in some other data format.</p>
+      </dd>
+      
+      
+      <dt id="dt-inverse-function">Inverse function</dt>
+      <dd>
+         <p>A mathematical function that, when composed with the original
+            function acts like an identity function.</p>
+      </dd>
+      
+      
+      <dt id="dt-lambda-exp">Lambda expression</dt>
+      <dd>
+         <p>A mathematical expression used to define a function in terms of
+            variables and an expression in those variables.</p>
+      </dd>
+      
+      
+      <dt id="dt-layout-schema">Layout schema (plural: schemata)</dt>
+      <dd>
+         <p>A presentation element defined in chapter 3, other than the token
+            elements and empty elements defined there (i.e. not the elements defined in
+            <a href="#presm_tokel"></a> and <a href="#presm_malign"></a>, or the
+            empty elements <code class="element">none</code> and
+            <code class="element">mprescripts</code> defined in <a href="#presm_mmultiscripts"></a>).
+            The layout schemata are never empty elements (though their content may
+            contain nothing in some cases), are always expressions, and all allow any
+            MathML expressions as arguments (except for requirements on argument count,
+            and the requirement for a certain empty element in <code class="element">mmultiscripts</code>).</p>
+      </dd>
+      
+      
+      <dt id="dt-mathml">Mathematical Markup Language (MathML)</dt>
+      <dd>
+         <p>The markup language specified in this document for describing
+            the structure of mathematical expressions, together with a mathematical
+            context.</p>
+      </dd>
+      
+      
+      <dt id="dt-mathml-element">MathML element</dt>
+      <dd>
+         <p>An XML element that forms part of the logical structure of a
+            MathML document.</p>
+      </dd>
+      
+      
+      <dt id="dt-mathml-exp">MathML expression (within some valid MathML
+         data)</dt>
+      <dd>
+         <p>A single instance of a presentation element, except for the empty
+            elements <code class="element">none</code> or
+            <code class="element">mprescripts</code>, or an instance of <code class="element">malignmark</code> within a token element (defined below);
+            or a single instance of certain of the content elements
+            (see <a href="#contm"></a> for a precise definition of which ones).</p>
+      </dd>
+      
+      
+      <dt id="dt-mime">Multi-purpose Internet Mail Extensions (MIME)</dt>
+      <dd>
+         <p>A set of specifications that offers a way to interchange text in
+            languages with different character sets, and multimedia content among many
+            different computer systems that use Internet mail standards.</p>
+      </dd>
+      
+      
+      <dt id="dt-operator-content">Operator, content element</dt>
+      <dd>
+         <p>A mathematical object that is applied to arguments using the 
+            <code class="element">apply</code> element.</p>
+      </dd>
+      
+      
+      <dt id="dt-operator">Operator, an <code class="element">mo</code>
+         element</dt>
+      <dd>
+         <p>Used to represent ordinary operators, fences, separators in MathML
+            presentation. (The token element <code class="element">mo</code> is defined in
+            <a href="#presm_mo"></a>).</p>
+      </dd>
+      
+      
+      <dt id="dt-openmath">OpenMath</dt>
+      <dd>
+         <p>A general representation language for communicating mathematical
+            objects between application programs.</p>
+      </dd>
+      
+      
+      <dt id="dt-pcdata">Parsed character data (<code>PCDATA</code>)</dt>
+      <dd>
+         <p>An SGML/XML data type for raw data occurring in a context where
+            text is parsed and markup (for instance entity references and element
+            start/end tags) is recognized.</p>
+      </dd>
+      
+      
+      <dt id="dt-pt">Point</dt>
+      <dd>
+         <p>Point is often abbreviated <span>&#x201c;pt&#x201d;</span>. The value of 1 pt 
+            is approximately 1/72 inch. Points are typically used to specify
+            absolute sizes for font-related objects.</p>
+      </dd>
+      
+      
+      <dt id="dt-pres-elements">Presentation elements</dt>
+      <dd>
+         <p>MathML tags and entities intended to express the syntactic
+            structure of mathematical notation (defined in <a href="#presm"></a>).</p>
+      </dd>
+      
+      
+      <dt id="dt-pres-layout-schema">Presentation layout schema</dt>
+      <dd>
+         <p>A presentation element that can have other MathML elements as
+            content.</p>
+      </dd>
+      
+      
+      <dt id="dt-pres-token-element">Presentation token element</dt>
+      <dd>
+         <p>A presentation element that can contain only parsed character data
+            or the <code class="element">malignmark</code> element.</p>
+      </dd>
+      
+      
+      <dt id="dt-qualifier">Qualifier</dt>
+      <dd>
+         <p>A MathML content element that is used to specify the value of a
+            specific named parameter in the application of selected pre-defined
+            functions.</p>
+      </dd>
+      
+      
+      <dt id="dt-relation">Relation</dt>
+      <dd>
+         <p>A MathML content element used to construct expressions such as
+            <i class="var">a</i> &lt; <i class="var">b</i>.</p>
+      </dd>
+      
+      
+      <dt id="dt-render">Render</dt>
+      <dd>
+         <p>Faithfully translate into application-specific form allowing native
+            application operations to be performed.</p>
+      </dd>
+      
+      
+      <dt id="dt-schema">Schema</dt>
+      <dd>
+         <p>Schema (plural: schemata or schemata). See <span>&#x201c;presentation layout
+               schema&#x201d;</span>.</p>
+      </dd>
+      
+      
+      <dt id="dt-declaration-scope">Scope of a declaration</dt>
+      <dd>
+         <p>The portion of a MathML document in which a particular
+            definition is active.</p>
+      </dd>
+      
+      
+      <dt id="dt-selected-sub-exp">Selected sub-expression
+         (of an <code class="element">maction</code> element)</dt>
+      <dd>
+         <p>The argument of an <code class="element">maction</code> element (a
+            layout schema defined in <a href="#presm_enliven"></a>) that is (at any
+            given time) <span>&#x201c;selected&#x201d;</span> within the viewing state of a MathML
+            renderer, or by the <code class="attribute">selection</code> attribute when the
+            element exists only in MathML data. Defined precisely in the aforementioned
+            section.</p>
+      </dd>
+      
+      
+      <dt id="dt-spacelike">Space-like (MathML expression)</dt>
+      <dd>
+         <p>A MathML expression that is ignored by the suggested rendering
+            rules for MathML presentation elements when they determine operator forms
+            and effective operator rendering attributes based on operator positions in
+            <code class="element">mrow</code> elements. Defined precisely in <a href="#presm_mspace"></a>.</p>
+      </dd>
+      
+      
+      <dt id="dt-sgml">Standard Generalized Markup Language (SGML)</dt>
+      <dd>
+         <p>An ISO standard (ISO 8879:1986) that provides a formal
+            mechanism for the definition of document structure via DTDs (Document
+            Type Definitions), and a notation for the markup of document instances
+            conforming to a DTD.</p>
+      </dd>
+      
+      
+      <dt id="dt-sub-exp">Sub-expression (of a MathML expression
+         <span>&#x201c;E&#x201d;</span>)</dt>
+      <dd>
+         <p>A MathML expression contained (directly or indirectly) in the
+            content of E.</p>
+      </dd>
+      
+      
+      <dt id="dt-suggested-rendering-rules">Suggested rendering rules for
+         MathML presentation elements</dt>
+      <dd>
+         <p>Defined throughout <a href="#presm"></a>; the ones that use other
+            terms defined here occur mainly in <a href="#presm_mo"></a> and in
+            <a href="#presm_enliven"></a>.</p>
+      </dd>
+      
+      
+      <dt id="dt-tex">T<sub>E</sub>X</dt>
+      <dd>
+         <p>A software system developed by Professor Donald Knuth for
+            typesetting documents.</p>
+      </dd>
+      
+      
+      <dt id="dt-token-element">Token element</dt>
+      <dd>
+         <p>Presentation token element or a Content token element.  (See
+            above.)</p>
+      </dd>
+      
+      
+      <dt id="dt-toplevel-element">Top-level element (of MathML)</dt>
+      <dd>
+         <p><code class="element">math</code> (defined in <a href="#interf_toplevel"></a>).</p>
+      </dd>
+      
+      
+      <dt id="dt-typeface">Typeface</dt>
+      <dd>
+         <p>A typeface is a specific design of a set of letters, numbers and
+            symbols, such as <span>&#x201c;Times Roman&#x201d;</span> or <span>&#x201c;Chicago&#x201d;</span>.</p>
+      </dd>
+      
+      
+      <dt id="dt-valid-mathml">Valid MathML data</dt>
+      <dd>
+         <p>MathML data that (1) conforms to the MathML DTD, (2) obeys the
+            additional rules defined in the MathML standard for the legal contents and
+            attribute values of each MathML element, and (3) satisfies the EBNF grammar
+            for content elements.</p>
+      </dd>
+      
+      
+      <dt id="dt-width">Width (of a box)</dt>
+      <dd>
+         <p>The distance from the left edge of the box to the right edge of the
+            box.</p>
+      </dd>
+      
+      
+      <dt id="dt-xsl">Extensible Style Language (XSL)</dt>
+      <dd>
+         <p>A style language for XML developed by W3C. See XSL FO and XSLT.</p>
+      </dd>
+      
+      
+      <dt id="dt-xslfo">XSL Formatting Objects (XSL FO)</dt>
+      <dd>
+         <p>An XML vocabulary to express formatting, which is a part of XSL.</p>
+      </dd>
+      
+      
+      <dt id="dt-xslt">XSL Transformation (XSLT)</dt>
+      <dd>
+         <p>A language to express the transformation of XML documents
+            into other XML documents.</p>
+      </dd>
+      </dl>
+   </section>

@@ -1,0 +1,374 @@
+<pre>
+#     This is the Mathematical Markup Language (MathML) 4.0, an XML
+#     application for describing mathematical notation and capturing
+#     both its structure and content.
+#
+#     Copyright 1998-2019 W3C (MIT, ERCIM, Keio, Beihang)
+# 
+#     Use and distribution of this code are permitted under the terms
+#     W3C Software Notice and License
+#     http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
+
+<b>include</b> "mathml4-strict-content.rnc"{
+  <b>cn.content</b> = (text | <a href="#parsing_mglyph">mglyph</a> | <a href="#parsing_sep">sep</a> | <a href="#parsing_PresentationExpression">PresentationExpression</a>)* 
+  <b>cn.attributes</b> = <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, <b>attribute</b> <code>type</code> {text}?, <a href="#parsing_base">base</a>?
+
+  <b>ci.attributes</b> = <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, <a href="#parsing_ci.type">ci.type</a>?
+  <b>ci.type</b> = <b>attribute</b> <code>type</code> {text}
+  <b>ci.content</b> = (text | <a href="#parsing_mglyph">mglyph</a> | <a href="#parsing_PresentationExpression">PresentationExpression</a>)* 
+
+  <b>csymbol.attributes</b> = <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, <b>attribute</b> <code>type</code> {text}?,<a href="#parsing_cd">cd</a>?
+  <b>csymbol.content</b> = (text | <a href="#parsing_mglyph">mglyph</a> | <a href="#parsing_PresentationExpression">PresentationExpression</a>)* 
+
+  <b>bvar</b> = <b>element</b> <code>bvar</code> {<a href="#parsing_CommonAtt">CommonAtt</a>, ((<a href="#parsing_ci">ci</a> | <a href="#parsing_semantics-ci">semantics-ci</a>) &amp; <a href="#parsing_degree">degree</a>?)}
+
+  <b>cbytes.attributes</b> = <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>
+
+  <b>cs.attributes</b> = <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>
+
+  <b>apply.content</b> = <a href="#parsing_ContExp">ContExp</a>+ | (<a href="#parsing_ContExp">ContExp</a>, <a href="#parsing_BvarQ">BvarQ</a>, <a href="#parsing_Qualifier">Qualifier</a>*, <a href="#parsing_ContExp">ContExp</a>*)
+
+  <b>bind.content</b> = <a href="#parsing_apply.content">apply.content</a>
+}
+
+<b id="parsing_base">base</b> = <b>attribute</b> <code>base</code> {text}
+
+
+<b id="parsing_sep">sep</b> = <b>element</b> <code>sep</code> {empty}
+<a href="#parsing_PresentationExpression">PresentationExpression</a> |= notAllowed
+
+
+<b id="parsing_DomainQ">DomainQ</b> = (<a href="#parsing_domainofapplication">domainofapplication</a>|<a href="#parsing_condition">condition</a>|<a href="#parsing_interval">interval</a>|(<a href="#parsing_lowlimit">lowlimit</a>,<a href="#parsing_uplimit">uplimit</a>?))*
+<b id="parsing_domainofapplication">domainofapplication</b> = <b>element</b> <code>domainofapplication</code> {<a href="#parsing_ContExp">ContExp</a>}
+<b id="parsing_condition">condition</b> = <b>element</b> <code>condition</code> {<a href="#parsing_ContExp">ContExp</a>}
+<b id="parsing_uplimit">uplimit</b> = <b>element</b> <code>uplimit</code> {<a href="#parsing_ContExp">ContExp</a>}
+<b id="parsing_lowlimit">lowlimit</b> = <b>element</b> <code>lowlimit</code> {<a href="#parsing_ContExp">ContExp</a>}
+
+<b id="parsing_Qualifier">Qualifier</b> = <a href="#parsing_DomainQ">DomainQ</a>|<a href="#parsing_degree">degree</a>|<a href="#parsing_momentabout">momentabout</a>|<a href="#parsing_logbase">logbase</a>
+<b id="parsing_degree">degree</b> = <b>element</b> <code>degree</code> {<a href="#parsing_ContExp">ContExp</a>}
+<b id="parsing_momentabout">momentabout</b> = <b>element</b> <code>momentabout</code> {<a href="#parsing_ContExp">ContExp</a>}
+<b id="parsing_logbase">logbase</b> = <b>element</b> <code>logbase</code> {<a href="#parsing_ContExp">ContExp</a>}
+
+<b id="parsing_type">type</b> = <b>attribute</b> <code>type</code> {text}
+<b id="parsing_order">order</b> = <b>attribute</b> <code>order</code> {"numeric" | "lexicographic"}
+<b id="parsing_closure">closure</b> = <b>attribute</b> <code>closure</code> {text}
+
+
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_piecewise">piecewise</a>
+
+
+<b id="parsing_piecewise">piecewise</b> = <b>element</b> <code>piecewise</code> {<a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>,(<a href="#parsing_piece">piece</a>* &amp; <a href="#parsing_otherwise">otherwise</a>?)}
+
+<b id="parsing_piece">piece</b> = <b>element</b> <code>piece</code> {<a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, <a href="#parsing_ContExp">ContExp</a>, <a href="#parsing_ContExp">ContExp</a>}
+
+<b id="parsing_otherwise">otherwise</b> = <b>element</b> <code>otherwise</code> {<a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, <a href="#parsing_ContExp">ContExp</a>}
+
+
+<b id="parsing_DeprecatedContExp">DeprecatedContExp</b> = <a href="#parsing_reln">reln</a> | <a href="#parsing_fn">fn</a> | <a href="#parsing_declare">declare</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_DeprecatedContExp">DeprecatedContExp</a>
+
+<b id="parsing_reln">reln</b> = <b>element</b> <code>reln</code> {<a href="#parsing_ContExp">ContExp</a>*}
+<b id="parsing_fn">fn</b> = <b>element</b> <code>fn</code> {<a href="#parsing_ContExp">ContExp</a>}
+<b id="parsing_declare">declare</b> = <b>element</b> <code>declare</code> {<b>attribute</b> <code>type</code> {xsd:string}?,
+                           <b>attribute</b> <code>scope</code> {xsd:string}?,
+                           <b>attribute</b> <code>nargs</code> {xsd:nonNegativeInteger}?,
+                           <b>attribute</b> <code>occurrence</code> {"prefix"|"infix"|"function-model"}?,
+                           <a href="#parsing_DefEncAtt">DefEncAtt</a>, 
+                           <a href="#parsing_ContExp">ContExp</a>+}
+
+
+<b id="parsing_interval.class">interval.class</b> = <a href="#parsing_interval">interval</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_interval.class">interval.class</a>
+
+
+<b id="parsing_interval">interval</b> = <b>element</b> <code>interval</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>,<a href="#parsing_closure">closure</a>?, <a href="#parsing_ContExp">ContExp</a>,<a href="#parsing_ContExp">ContExp</a>}
+
+<b id="parsing_unary-functional.class">unary-functional.class</b> = <a href="#parsing_inverse">inverse</a> | <a href="#parsing_ident">ident</a> | <a href="#parsing_domain">domain</a> | <a href="#parsing_codomain">codomain</a> | <a href="#parsing_image">image</a> | <a href="#parsing_ln">ln</a> | <a href="#parsing_log">log</a> | <a href="#parsing_moment">moment</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_unary-functional.class">unary-functional.class</a>
+
+
+<b id="parsing_inverse">inverse</b> = <b>element</b> <code>inverse</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_ident">ident</b> = <b>element</b> <code>ident</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_domain">domain</b> = <b>element</b> <code>domain</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_codomain">codomain</b> = <b>element</b> <code>codomain</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_image">image</b> = <b>element</b> <code>image</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_ln">ln</b> = <b>element</b> <code>ln</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_log">log</b> = <b>element</b> <code>log</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_moment">moment</b> = <b>element</b> <code>moment</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_lambda.class">lambda.class</b> = <a href="#parsing_lambda">lambda</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_lambda.class">lambda.class</a>
+
+
+<b id="parsing_lambda">lambda</b> = <b>element</b> <code>lambda</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, <a href="#parsing_BvarQ">BvarQ</a>, <a href="#parsing_DomainQ">DomainQ</a>, <a href="#parsing_ContExp">ContExp</a>}
+
+<b id="parsing_nary-functional.class">nary-functional.class</b> = <a href="#parsing_compose">compose</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_nary-functional.class">nary-functional.class</a>
+
+
+<b id="parsing_compose">compose</b> = <b>element</b> <code>compose</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_binary-arith.class">binary-arith.class</b> = <a href="#parsing_quotient">quotient</a> | <a href="#parsing_divide">divide</a> | <a href="#parsing_minus">minus</a> | <a href="#parsing_power">power</a> | <a href="#parsing_rem">rem</a> | <a href="#parsing_root">root</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_binary-arith.class">binary-arith.class</a>
+
+
+<b id="parsing_quotient">quotient</b> = <b>element</b> <code>quotient</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_divide">divide</b> = <b>element</b> <code>divide</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_minus">minus</b> = <b>element</b> <code>minus</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_power">power</b> = <b>element</b> <code>power</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_rem">rem</b> = <b>element</b> <code>rem</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_root">root</b> = <b>element</b> <code>root</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_unary-arith.class">unary-arith.class</b> = <a href="#parsing_factorial">factorial</a> | <a href="#parsing_minus">minus</a> | <a href="#parsing_root">root</a> | <a href="#parsing_abs">abs</a> | <a href="#parsing_conjugate">conjugate</a> | <a href="#parsing_arg">arg</a> | <a href="#parsing_real">real</a> | <a href="#parsing_imaginary">imaginary</a> | <a href="#parsing_floor">floor</a> | <a href="#parsing_ceiling">ceiling</a> | <a href="#parsing_exp">exp</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_unary-arith.class">unary-arith.class</a>
+
+
+<b id="parsing_factorial">factorial</b> = <b>element</b> <code>factorial</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_abs">abs</b> = <b>element</b> <code>abs</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_conjugate">conjugate</b> = <b>element</b> <code>conjugate</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_arg">arg</b> = <b>element</b> <code>arg</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_real">real</b> = <b>element</b> <code>real</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_imaginary">imaginary</b> = <b>element</b> <code>imaginary</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_floor">floor</b> = <b>element</b> <code>floor</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_ceiling">ceiling</b> = <b>element</b> <code>ceiling</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_exp">exp</b> = <b>element</b> <code>exp</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_nary-minmax.class">nary-minmax.class</b> = <a href="#parsing_max">max</a> | <a href="#parsing_min">min</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_nary-minmax.class">nary-minmax.class</a>
+
+
+<b id="parsing_max">max</b> = <b>element</b> <code>max</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_min">min</b> = <b>element</b> <code>min</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_nary-arith.class">nary-arith.class</b> = <a href="#parsing_plus">plus</a> | <a href="#parsing_times">times</a> | <a href="#parsing_gcd">gcd</a> | <a href="#parsing_lcm">lcm</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_nary-arith.class">nary-arith.class</a>
+
+
+<b id="parsing_plus">plus</b> = <b>element</b> <code>plus</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_times">times</b> = <b>element</b> <code>times</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_gcd">gcd</b> = <b>element</b> <code>gcd</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_lcm">lcm</b> = <b>element</b> <code>lcm</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_nary-logical.class">nary-logical.class</b> = <a href="#parsing_and">and</a> | <a href="#parsing_or">or</a> | <a href="#parsing_xor">xor</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_nary-logical.class">nary-logical.class</a>
+
+
+<b id="parsing_and">and</b> = <b>element</b> <code>and</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_or">or</b> = <b>element</b> <code>or</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_xor">xor</b> = <b>element</b> <code>xor</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_unary-logical.class">unary-logical.class</b> = <a href="#parsing_not">not</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_unary-logical.class">unary-logical.class</a>
+
+
+<b id="parsing_not">not</b> = <b>element</b> <code>not</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_binary-logical.class">binary-logical.class</b> = <a href="#parsing_implies">implies</a> | <a href="#parsing_equivalent">equivalent</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_binary-logical.class">binary-logical.class</a>
+
+
+<b id="parsing_implies">implies</b> = <b>element</b> <code>implies</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_equivalent">equivalent</b> = <b>element</b> <code>equivalent</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_quantifier.class">quantifier.class</b> = <a href="#parsing_forall">forall</a> | <a href="#parsing_exists">exists</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_quantifier.class">quantifier.class</a>
+
+
+<b id="parsing_forall">forall</b> = <b>element</b> <code>forall</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_exists">exists</b> = <b>element</b> <code>exists</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_nary-reln.class">nary-reln.class</b> = <a href="#parsing_eq">eq</a> | <a href="#parsing_gt">gt</a> | <a href="#parsing_lt">lt</a> | <a href="#parsing_geq">geq</a> | <a href="#parsing_leq">leq</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_nary-reln.class">nary-reln.class</a>
+
+
+<b id="parsing_eq">eq</b> = <b>element</b> <code>eq</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_gt">gt</b> = <b>element</b> <code>gt</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_lt">lt</b> = <b>element</b> <code>lt</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_geq">geq</b> = <b>element</b> <code>geq</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_leq">leq</b> = <b>element</b> <code>leq</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_binary-reln.class">binary-reln.class</b> = <a href="#parsing_neq">neq</a> | <a href="#parsing_approx">approx</a> | <a href="#parsing_factorof">factorof</a> | <a href="#parsing_tendsto">tendsto</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_binary-reln.class">binary-reln.class</a>
+
+
+<b id="parsing_neq">neq</b> = <b>element</b> <code>neq</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_approx">approx</b> = <b>element</b> <code>approx</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_factorof">factorof</b> = <b>element</b> <code>factorof</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_tendsto">tendsto</b> = <b>element</b> <code>tendsto</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, <a href="#parsing_type">type</a>?, empty}
+
+<b id="parsing_int.class">int.class</b> = <a href="#parsing_int">int</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_int.class">int.class</a>
+
+
+<b id="parsing_int">int</b> = <b>element</b> <code>int</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_Differential-Operator.class">Differential-Operator.class</b> = <a href="#parsing_diff">diff</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_Differential-Operator.class">Differential-Operator.class</a>
+
+
+<b id="parsing_diff">diff</b> = <b>element</b> <code>diff</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_partialdiff.class">partialdiff.class</b> = <a href="#parsing_partialdiff">partialdiff</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_partialdiff.class">partialdiff.class</a>
+
+
+<b id="parsing_partialdiff">partialdiff</b> = <b>element</b> <code>partialdiff</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_unary-veccalc.class">unary-veccalc.class</b> = <a href="#parsing_divergence">divergence</a> | <a href="#parsing_grad">grad</a> | <a href="#parsing_curl">curl</a> | <a href="#parsing_laplacian">laplacian</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_unary-veccalc.class">unary-veccalc.class</a>
+
+
+<b id="parsing_divergence">divergence</b> = <b>element</b> <code>divergence</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_grad">grad</b> = <b>element</b> <code>grad</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_curl">curl</b> = <b>element</b> <code>curl</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_laplacian">laplacian</b> = <b>element</b> <code>laplacian</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_nary-setlist-constructor.class">nary-setlist-constructor.class</b> = <a href="#parsing_set">set</a> | \<a href="#parsing_list">list</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_nary-setlist-constructor.class">nary-setlist-constructor.class</a>
+
+
+<b id="parsing_set">set</b> = <b>element</b> <code>set</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, <a href="#parsing_type">type</a>?, <a href="#parsing_BvarQ">BvarQ</a>*, <a href="#parsing_DomainQ">DomainQ</a>*, <a href="#parsing_ContExp">ContExp</a>*}
+\<b id="parsing_list">list</b> = <b>element</b> <code>\list</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, <a href="#parsing_order">order</a>?, <a href="#parsing_BvarQ">BvarQ</a>*, <a href="#parsing_DomainQ">DomainQ</a>*, <a href="#parsing_ContExp">ContExp</a>*}
+
+<b id="parsing_nary-set.class">nary-set.class</b> = <a href="#parsing_union">union</a> | <a href="#parsing_intersect">intersect</a> | <a href="#parsing_cartesianproduct">cartesianproduct</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_nary-set.class">nary-set.class</a>
+
+
+<b id="parsing_union">union</b> = <b>element</b> <code>union</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_intersect">intersect</b> = <b>element</b> <code>intersect</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_cartesianproduct">cartesianproduct</b> = <b>element</b> <code>cartesianproduct</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_binary-set.class">binary-set.class</b> = <a href="#parsing_in">in</a> | <a href="#parsing_notin">notin</a> | <a href="#parsing_notsubset">notsubset</a> | <a href="#parsing_notprsubset">notprsubset</a> | <a href="#parsing_setdiff">setdiff</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_binary-set.class">binary-set.class</a>
+
+
+<b id="parsing_in">in</b> = <b>element</b> <code>in</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_notin">notin</b> = <b>element</b> <code>notin</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_notsubset">notsubset</b> = <b>element</b> <code>notsubset</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_notprsubset">notprsubset</b> = <b>element</b> <code>notprsubset</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_setdiff">setdiff</b> = <b>element</b> <code>setdiff</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_nary-set-reln.class">nary-set-reln.class</b> = <a href="#parsing_subset">subset</a> | <a href="#parsing_prsubset">prsubset</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_nary-set-reln.class">nary-set-reln.class</a>
+
+
+<b id="parsing_subset">subset</b> = <b>element</b> <code>subset</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_prsubset">prsubset</b> = <b>element</b> <code>prsubset</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_unary-set.class">unary-set.class</b> = <a href="#parsing_card">card</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_unary-set.class">unary-set.class</a>
+
+
+<b id="parsing_card">card</b> = <b>element</b> <code>card</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_sum.class">sum.class</b> = <a href="#parsing_sum">sum</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_sum.class">sum.class</a>
+
+
+<b id="parsing_sum">sum</b> = <b>element</b> <code>sum</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_product.class">product.class</b> = <a href="#parsing_product">product</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_product.class">product.class</a>
+
+
+<b id="parsing_product">product</b> = <b>element</b> <code>product</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_limit.class">limit.class</b> = <a href="#parsing_limit">limit</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_limit.class">limit.class</a>
+
+
+<b id="parsing_limit">limit</b> = <b>element</b> <code>limit</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_unary-elementary.class">unary-elementary.class</b> = <a href="#parsing_sin">sin</a> | <a href="#parsing_cos">cos</a> | <a href="#parsing_tan">tan</a> | <a href="#parsing_sec">sec</a> | <a href="#parsing_csc">csc</a> | <a href="#parsing_cot">cot</a> | <a href="#parsing_sinh">sinh</a> | <a href="#parsing_cosh">cosh</a> | <a href="#parsing_tanh">tanh</a> | <a href="#parsing_sech">sech</a> | <a href="#parsing_csch">csch</a> | <a href="#parsing_coth">coth</a> | <a href="#parsing_arcsin">arcsin</a> | <a href="#parsing_arccos">arccos</a> | <a href="#parsing_arctan">arctan</a> | <a href="#parsing_arccosh">arccosh</a> | <a href="#parsing_arccot">arccot</a> | <a href="#parsing_arccoth">arccoth</a> | <a href="#parsing_arccsc">arccsc</a> | <a href="#parsing_arccsch">arccsch</a> | <a href="#parsing_arcsec">arcsec</a> | <a href="#parsing_arcsech">arcsech</a> | <a href="#parsing_arcsinh">arcsinh</a> | <a href="#parsing_arctanh">arctanh</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_unary-elementary.class">unary-elementary.class</a>
+
+
+<b id="parsing_sin">sin</b> = <b>element</b> <code>sin</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_cos">cos</b> = <b>element</b> <code>cos</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_tan">tan</b> = <b>element</b> <code>tan</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_sec">sec</b> = <b>element</b> <code>sec</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_csc">csc</b> = <b>element</b> <code>csc</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_cot">cot</b> = <b>element</b> <code>cot</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_sinh">sinh</b> = <b>element</b> <code>sinh</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_cosh">cosh</b> = <b>element</b> <code>cosh</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_tanh">tanh</b> = <b>element</b> <code>tanh</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_sech">sech</b> = <b>element</b> <code>sech</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_csch">csch</b> = <b>element</b> <code>csch</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_coth">coth</b> = <b>element</b> <code>coth</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_arcsin">arcsin</b> = <b>element</b> <code>arcsin</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_arccos">arccos</b> = <b>element</b> <code>arccos</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_arctan">arctan</b> = <b>element</b> <code>arctan</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_arccosh">arccosh</b> = <b>element</b> <code>arccosh</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_arccot">arccot</b> = <b>element</b> <code>arccot</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_arccoth">arccoth</b> = <b>element</b> <code>arccoth</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_arccsc">arccsc</b> = <b>element</b> <code>arccsc</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_arccsch">arccsch</b> = <b>element</b> <code>arccsch</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_arcsec">arcsec</b> = <b>element</b> <code>arcsec</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_arcsech">arcsech</b> = <b>element</b> <code>arcsech</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_arcsinh">arcsinh</b> = <b>element</b> <code>arcsinh</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_arctanh">arctanh</b> = <b>element</b> <code>arctanh</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_nary-stats.class">nary-stats.class</b> = <a href="#parsing_mean">mean</a> | <a href="#parsing_sdev">sdev</a> | <a href="#parsing_variance">variance</a> | <a href="#parsing_median">median</a> | <a href="#parsing_mode">mode</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_nary-stats.class">nary-stats.class</a>
+
+
+<b id="parsing_mean">mean</b> = <b>element</b> <code>mean</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_sdev">sdev</b> = <b>element</b> <code>sdev</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_variance">variance</b> = <b>element</b> <code>variance</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_median">median</b> = <b>element</b> <code>median</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_mode">mode</b> = <b>element</b> <code>mode</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_nary-constructor.class">nary-constructor.class</b> = <a href="#parsing_vector">vector</a> | <a href="#parsing_matrix">matrix</a> | <a href="#parsing_matrixrow">matrixrow</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_nary-constructor.class">nary-constructor.class</a>
+
+
+<b id="parsing_vector">vector</b> = <b>element</b> <code>vector</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, <a href="#parsing_BvarQ">BvarQ</a>, <a href="#parsing_DomainQ">DomainQ</a>, <a href="#parsing_ContExp">ContExp</a>*}
+<b id="parsing_matrix">matrix</b> = <b>element</b> <code>matrix</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, <a href="#parsing_BvarQ">BvarQ</a>, <a href="#parsing_DomainQ">DomainQ</a>, <a href="#parsing_ContExp">ContExp</a>*}
+<b id="parsing_matrixrow">matrixrow</b> = <b>element</b> <code>matrixrow</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, <a href="#parsing_BvarQ">BvarQ</a>, <a href="#parsing_DomainQ">DomainQ</a>, <a href="#parsing_ContExp">ContExp</a>*}
+
+<b id="parsing_unary-linalg.class">unary-linalg.class</b> = <a href="#parsing_determinant">determinant</a> | <a href="#parsing_transpose">transpose</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_unary-linalg.class">unary-linalg.class</a>
+
+
+<b id="parsing_determinant">determinant</b> = <b>element</b> <code>determinant</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_transpose">transpose</b> = <b>element</b> <code>transpose</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_nary-linalg.class">nary-linalg.class</b> = <a href="#parsing_selector">selector</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_nary-linalg.class">nary-linalg.class</a>
+
+
+<b id="parsing_selector">selector</b> = <b>element</b> <code>selector</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_binary-linalg.class">binary-linalg.class</b> = <a href="#parsing_vectorproduct">vectorproduct</a> | <a href="#parsing_scalarproduct">scalarproduct</a> | <a href="#parsing_outerproduct">outerproduct</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_binary-linalg.class">binary-linalg.class</a>
+
+
+<b id="parsing_vectorproduct">vectorproduct</b> = <b>element</b> <code>vectorproduct</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_scalarproduct">scalarproduct</b> = <b>element</b> <code>scalarproduct</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_outerproduct">outerproduct</b> = <b>element</b> <code>outerproduct</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_constant-set.class">constant-set.class</b> = <a href="#parsing_integers">integers</a> | <a href="#parsing_reals">reals</a> | <a href="#parsing_rationals">rationals</a> | <a href="#parsing_naturalnumbers">naturalnumbers</a> | <a href="#parsing_complexes">complexes</a> | <a href="#parsing_primes">primes</a> | <a href="#parsing_emptyset">emptyset</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_constant-set.class">constant-set.class</a>
+
+
+<b id="parsing_integers">integers</b> = <b>element</b> <code>integers</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_reals">reals</b> = <b>element</b> <code>reals</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_rationals">rationals</b> = <b>element</b> <code>rationals</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_naturalnumbers">naturalnumbers</b> = <b>element</b> <code>naturalnumbers</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_complexes">complexes</b> = <b>element</b> <code>complexes</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_primes">primes</b> = <b>element</b> <code>primes</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_emptyset">emptyset</b> = <b>element</b> <code>emptyset</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+
+<b id="parsing_constant-arith.class">constant-arith.class</b> = <a href="#parsing_exponentiale">exponentiale</a> | <a href="#parsing_imaginaryi">imaginaryi</a> | <a href="#parsing_notanumber">notanumber</a> | <a href="#parsing_true">true</a> | <a href="#parsing_false">false</a> | <a href="#parsing_pi">pi</a> | <a href="#parsing_eulergamma">eulergamma</a> | <a href="#parsing_infinity">infinity</a>
+<a href="#parsing_ContExp">ContExp</a> |= <a href="#parsing_constant-arith.class">constant-arith.class</a>
+
+
+<b id="parsing_exponentiale">exponentiale</b> = <b>element</b> <code>exponentiale</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_imaginaryi">imaginaryi</b> = <b>element</b> <code>imaginaryi</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_notanumber">notanumber</b> = <b>element</b> <code>notanumber</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_true">true</b> = <b>element</b> <code>true</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_false">false</b> = <b>element</b> <code>false</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_pi">pi</b> = <b>element</b> <code>pi</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_eulergamma">eulergamma</b> = <b>element</b> <code>eulergamma</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+<b id="parsing_infinity">infinity</b> = <b>element</b> <code>infinity</code> { <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_DefEncAtt">DefEncAtt</a>, empty}
+</pre>

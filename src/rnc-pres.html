@@ -1,0 +1,563 @@
+<pre>
+#     This is the Mathematical Markup Language (MathML) 4.0, an XML
+#     application for describing mathematical notation and capturing
+#     both its structure and content.
+#
+#     Copyright 1998-2019 W3C (MIT, ERCIM, Keio, Beihang)
+# 
+#     Use and distribution of this code are permitted under the terms
+#     W3C Software Notice and License
+#     http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
+
+<b>default</b> <b>namespace</b> <b>m</b> = "http://www.w3.org/1998/Math/MathML"
+
+<a href="#parsing_MathExpression">MathExpression</a> |= <a href="#parsing_PresentationExpression">PresentationExpression</a>
+
+<b id="parsing_ImpliedMrow">ImpliedMrow</b> = <a href="#parsing_MathExpression">MathExpression</a>*
+
+<b id="parsing_TableRowExpression">TableRowExpression</b> = <a href="#parsing_mtr">mtr</a>|<a href="#parsing_mlabeledtr">mlabeledtr</a>
+
+<b id="parsing_TableCellExpression">TableCellExpression</b> = <a href="#parsing_mtd">mtd</a>
+
+<b id="parsing_MstackExpression">MstackExpression</b> = <a href="#parsing_MathExpression">MathExpression</a>|<a href="#parsing_mscarries">mscarries</a>|<a href="#parsing_msline">msline</a>|<a href="#parsing_msrow">msrow</a>|<a href="#parsing_msgroup">msgroup</a>
+
+<b id="parsing_MsrowExpression">MsrowExpression</b> = <a href="#parsing_MathExpression">MathExpression</a>|<a href="#parsing_none">none</a>
+
+<b id="parsing_MultiScriptExpression">MultiScriptExpression</b> = (<a href="#parsing_MathExpression">MathExpression</a>|<a href="#parsing_none">none</a>),(<a href="#parsing_MathExpression">MathExpression</a>|<a href="#parsing_none">none</a>)
+
+<b id="parsing_mpadded-length">mpadded-length</b>
+# wrapped for display
+ = xsd:string {
+  pattern = '\s*([\+\-]?[0-9]*([0-9]\.?|\.[0-9])[0-9]*\s*((%?\s*(height|depth|width)?)|
+         e[mx]|in|cm|mm|p[xtc]|((negative)?((very){0,2}thi(n|ck)|medium)mathspace))?)\s*' }
+
+<b id="parsing_linestyle">linestyle</b> = "none" | "solid" | "dashed"
+
+<b id="parsing_verticalalign">verticalalign</b> =
+      "top" |
+      "bottom" |
+      "center" |
+      "baseline" |
+      "axis"
+
+<b id="parsing_columnalignstyle">columnalignstyle</b> = "left" | "center" | "right"
+
+<b id="parsing_notationstyle">notationstyle</b> =
+     "longdiv" |
+     "actuarial" |
+     "radical" |
+     "box" |
+     "roundedbox" |
+     "circle" |
+     "left" |
+     "right" |
+     "top" |
+     "bottom" |
+     "updiagonalstrike" |
+     "downdiagonalstrike" |
+     "verticalstrike" |
+     "horizontalstrike" |
+     "madruwb"
+
+<b id="parsing_idref">idref</b> = text
+<b id="parsing_unsigned-integer">unsigned-integer</b> = xsd:unsignedLong
+<b id="parsing_integer">integer</b> = xsd:integer
+<b id="parsing_number">number</b> = xsd:decimal
+
+<b id="parsing_character">character</b> = xsd:string {
+  pattern = '\s*\S\s*'}
+
+<b id="parsing_color">color</b>
+# wrapped for display
+ =  xsd:string {
+  pattern = '\s*((#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?)|[aA][qQ][uU][aA]|[bB][lL][aA][cC][kK]|
+         [bB][lL][uU][eE]|[fF][uU][cC][hH][sS][iI][aA]|[gG][rR][aA][yY]|[gG][rR][eE][eE][nN]|
+         [lL][iI][mM][eE]|[mM][aA][rR][oO][oO][nN]|[nN][aA][vV][yY]|[oO][lL][iI][vV][eE]|[pP][uU][rR][pP][lL][eE]|
+         [rR][eE][dD]|[sS][iI][lL][vV][eE][rR]|[tT][eE][aA][lL]|[wW][hH][iI][tT][eE]|[yY][eE][lL][lL][oO][wW])\s*'}
+
+
+<b id="parsing_group-alignment">group-alignment</b> = "left" | "center" | "right" | "decimalpoint"
+<b id="parsing_group-alignment-list">group-alignment-list</b> = <a href="#parsing_list">list</a> {<a href="#parsing_group-alignment">group-alignment</a>+}
+<b id="parsing_group-alignment-list-list">group-alignment-list-list</b> = xsd:string {
+  pattern = '(\s*\{\s*(left|center|right|decimalpoint)(\s+(left|center|right|decimalpoint))*\})*\s*' }
+<b id="parsing_positive-integer">positive-integer</b> = xsd:positiveInteger
+
+
+<b id="parsing_TokenExpression">TokenExpression</b> = <a href="#parsing_mi">mi</a>|<a href="#parsing_mn">mn</a>|<a href="#parsing_mo">mo</a>|<a href="#parsing_mtext">mtext</a>|<a href="#parsing_mspace">mspace</a>|<a href="#parsing_ms">ms</a>
+
+<b id="parsing_token.content">token.content</b> = <a href="#parsing_mglyph">mglyph</a>|<a href="#parsing_malignmark">malignmark</a>|text
+
+<b id="parsing_mi">mi</b> = <b>element</b> <code>mi</code> {<a href="#parsing_mi.attributes">mi.attributes</a>, <a href="#parsing_token.content">token.content</a>*}
+<b id="parsing_mi.attributes">mi.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>,
+  <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <a href="#parsing_TokenAtt">TokenAtt</a>
+
+
+<b id="parsing_mn">mn</b> = <b>element</b> <code>mn</code> {<a href="#parsing_mn.attributes">mn.attributes</a>, <a href="#parsing_token.content">token.content</a>*}
+<b id="parsing_mn.attributes">mn.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>,
+  <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <a href="#parsing_TokenAtt">TokenAtt</a>
+
+
+<b id="parsing_mo">mo</b> = <b>element</b> <code>mo</code> {<a href="#parsing_mo.attributes">mo.attributes</a>, <a href="#parsing_token.content">token.content</a>*}
+<b id="parsing_mo.attributes">mo.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>,
+  <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <a href="#parsing_TokenAtt">TokenAtt</a>,
+  <b>attribute</b> <code>form</code> {"prefix" | "infix" | "postfix"}?,
+  <b>attribute</b> <code>fence</code> {"true" | "false"}?,
+  <b>attribute</b> <code>separator</code> {"true" | "false"}?,
+  <b>attribute</b> <code>lspace</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>rspace</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>stretchy</code> {"true" | "false"}?,
+  <b>attribute</b> <code>symmetric</code> {"true" | "false"}?,
+  <b>attribute</b> <code>maxsize</code> {<a href="#parsing_length">length</a> | "infinity"}?,
+  <b>attribute</b> <code>minsize</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>largeop</code> {"true" | "false"}?,
+  <b>attribute</b> <code>movablelimits</code> {"true" | "false"}?,
+  <b>attribute</b> <code>accent</code> {"true" | "false"}?,
+  <b>attribute</b> <code>linebreak</code> {"auto" | "newline" | "nobreak" | "goodbreak" | "badbreak"}?,
+  <b>attribute</b> <code>lineleading</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>linebreakstyle</code> {"before" | "after" | "duplicate" | "infixlinebreakstyle"}?,
+  <b>attribute</b> <code>linebreakmultchar</code> {text}?,
+  <b>attribute</b> <code>indentalign</code> {"left" | "center" | "right" | "auto" | "id"}?,
+  <b>attribute</b> <code>indentshift</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>indenttarget</code> {<a href="#parsing_idref">idref</a>}?,
+  <b>attribute</b> <code>indentalignfirst</code> {"left" | "center" | "right" | "auto" | "id" | "indentalign"}?,
+  <b>attribute</b> <code>indentshiftfirst</code> {<a href="#parsing_length">length</a> | "indentshift"}?,
+  <b>attribute</b> <code>indentalignlast</code> {"left" | "center" | "right" | "auto" | "id" | "indentalign"}?,
+  <b>attribute</b> <code>indentshiftlast</code> {<a href="#parsing_length">length</a> | "indentshift"}?
+
+
+<b id="parsing_mtext">mtext</b> = <b>element</b> <code>mtext</code> {<a href="#parsing_mtext.attributes">mtext.attributes</a>, <a href="#parsing_token.content">token.content</a>*}
+<b id="parsing_mtext.attributes">mtext.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>,
+  <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <a href="#parsing_TokenAtt">TokenAtt</a>
+
+
+<b id="parsing_mspace">mspace</b> = <b>element</b> <code>mspace</code> {<a href="#parsing_mspace.attributes">mspace.attributes</a>, empty}
+<b id="parsing_mspace.attributes">mspace.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>,
+  <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <a href="#parsing_TokenAtt">TokenAtt</a>,
+  <b>attribute</b> <code>width</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>height</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>depth</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>linebreak</code> {"auto" | "newline" | "nobreak" | "goodbreak" | "badbreak" | "indentingnewline"}?,
+  <b>attribute</b> <code>indentalign</code> {"left" | "center" | "right" | "auto" | "id"}?,
+  <b>attribute</b> <code>indentshift</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>indenttarget</code> {<a href="#parsing_idref">idref</a>}?,
+  <b>attribute</b> <code>indentalignfirst</code> {"left" | "center" | "right" | "auto" | "id" | "indentalign"}?,
+  <b>attribute</b> <code>indentshiftfirst</code> {<a href="#parsing_length">length</a> | "indentshift"}?,
+  <b>attribute</b> <code>indentalignlast</code> {"left" | "center" | "right" | "auto" | "id" | "indentalign"}?,
+  <b>attribute</b> <code>indentshiftlast</code> {<a href="#parsing_length">length</a> | "indentshift"}?
+
+
+<b id="parsing_ms">ms</b> = <b>element</b> <code>ms</code> {<a href="#parsing_ms.attributes">ms.attributes</a>, <a href="#parsing_token.content">token.content</a>*}
+<b id="parsing_ms.attributes">ms.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>,
+  <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <a href="#parsing_TokenAtt">TokenAtt</a>,
+  <b>attribute</b> <code>lquote</code> {text}?,
+  <b>attribute</b> <code>rquote</code> {text}?
+
+
+<b id="parsing_mglyph">mglyph</b> = <b>element</b> <code>mglyph</code> {<a href="#parsing_mglyph.attributes">mglyph.attributes</a>,<a href="#parsing_mglyph.deprecatedattributes">mglyph.deprecatedattributes</a>,empty}
+<b id="parsing_mglyph.attributes">mglyph.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>,  <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>src</code> {xsd:anyURI}?,
+  <b>attribute</b> <code>width</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>height</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>valign</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>alt</code> {text}?
+<b id="parsing_mglyph.deprecatedattributes">mglyph.deprecatedattributes</b> =
+  <b>attribute</b> <code>index</code> {<a href="#parsing_integer">integer</a>}?,
+  <b>attribute</b> <code>mathvariant</code> {"normal" | "bold" | "italic" | "bold-italic" | "double-struck" | "bold-fraktur" |
+          "script" | "bold-script" | "fraktur" | "sans-serif" | "bold-sans-serif" | "sans-serif-italic" |
+          "sans-serif-bold-italic" | "monospace" | "initial" | "tailed" | "looped" | "stretched"}?,
+  <b>attribute</b> <code>mathsize</code> {"small" | "normal" | "big" | <a href="#parsing_length">length</a>}?,
+  <a href="#parsing_DeprecatedTokenAtt">DeprecatedTokenAtt</a>
+
+<b id="parsing_msline">msline</b> = <b>element</b> <code>msline</code> {<a href="#parsing_msline.attributes">msline.attributes</a>,empty}
+<b id="parsing_msline.attributes">msline.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>,  <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>position</code> {<a href="#parsing_integer">integer</a>}?,
+  <b>attribute</b> <code>length</code> {<a href="#parsing_unsigned-integer">unsigned-integer</a>}?,
+  <b>attribute</b> <code>leftoverhang</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>rightoverhang</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>mslinethickness</code> {<a href="#parsing_length">length</a> | "thin" | "medium" | "thick"}?
+
+<b id="parsing_none">none</b> = <b>element</b> <code>none</code> {<a href="#parsing_none.attributes">none.attributes</a>,empty}
+<b id="parsing_none.attributes">none.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>,
+  <a href="#parsing_CommonPresAtt">CommonPresAtt</a>
+
+<b id="parsing_mprescripts">mprescripts</b> = <b>element</b> <code>mprescripts</code> {<a href="#parsing_mprescripts.attributes">mprescripts.attributes</a>,empty}
+<b id="parsing_mprescripts.attributes">mprescripts.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>,
+  <a href="#parsing_CommonPresAtt">CommonPresAtt</a>
+
+
+<b id="parsing_CommonPresAtt">CommonPresAtt</b> = 
+  <b>attribute</b> <code>mathcolor</code> {<a href="#parsing_color">color</a>}?,
+  <b>attribute</b> <code>mathbackground</code> {<a href="#parsing_color">color</a> | "transparent"}?
+
+<b id="parsing_TokenAtt">TokenAtt</b> = 
+  <b>attribute</b> <code>mathvariant</code> {"normal" | "bold" | "italic" | "bold-italic" | "double-struck" | "bold-fraktur" |
+          "script" | "bold-script" | "fraktur" | "sans-serif" | "bold-sans-serif" | "sans-serif-italic" |
+          "sans-serif-bold-italic" | "monospace" | "initial" | "tailed" | "looped" | "stretched"}?,
+  <b>attribute</b> <code>mathsize</code> {"small" | "normal" | "big" | <a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>dir</code> {"ltr" | "rtl"}?,
+  <a href="#parsing_DeprecatedTokenAtt">DeprecatedTokenAtt</a>
+
+<b id="parsing_DeprecatedTokenAtt">DeprecatedTokenAtt</b> = 
+  <b>attribute</b> <code>fontfamily</code> {text}?,
+  <b>attribute</b> <code>fontweight</code> {"normal" | "bold"}?,
+  <b>attribute</b> <code>fontstyle</code> {"normal" | "italic"}?,
+  <b>attribute</b> <code>fontsize</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>color</code> {<a href="#parsing_color">color</a>}?,
+  <b>attribute</b> <code>background</code> {<a href="#parsing_color">color</a> | "transparent"}?
+
+<b id="parsing_MalignExpression">MalignExpression</b> = <a href="#parsing_maligngroup">maligngroup</a>|<a href="#parsing_malignmark">malignmark</a>
+
+<b id="parsing_malignmark">malignmark</b> = <b>element</b> <code>malignmark</code> {<a href="#parsing_malignmark.attributes">malignmark.attributes</a>, empty}
+<b id="parsing_malignmark.attributes">malignmark.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>edge</code> {"left" | "right"}?
+
+
+<b id="parsing_maligngroup">maligngroup</b> = <b>element</b> <code>maligngroup</code> {<a href="#parsing_maligngroup.attributes">maligngroup.attributes</a>, empty}
+<b id="parsing_maligngroup.attributes">maligngroup.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>groupalign</code> {"left" | "center" | "right" | "decimalpoint"}?
+
+
+<b id="parsing_PresentationExpression">PresentationExpression</b> = <a href="#parsing_TokenExpression">TokenExpression</a>|<a href="#parsing_MalignExpression">MalignExpression</a>|
+                         <a href="#parsing_mrow">mrow</a>|<a href="#parsing_mfrac">mfrac</a>|<a href="#parsing_msqrt">msqrt</a>|<a href="#parsing_mroot">mroot</a>|<a href="#parsing_mstyle">mstyle</a>|<a href="#parsing_merror">merror</a>|<a href="#parsing_mpadded">mpadded</a>|<a href="#parsing_mphantom">mphantom</a>|
+                         <a href="#parsing_mfenced">mfenced</a>|<a href="#parsing_menclose">menclose</a>|<a href="#parsing_msub">msub</a>|<a href="#parsing_msup">msup</a>|<a href="#parsing_msubsup">msubsup</a>|<a href="#parsing_munder">munder</a>|<a href="#parsing_mover">mover</a>|<a href="#parsing_munderover">munderover</a>|
+                         <a href="#parsing_mmultiscripts">mmultiscripts</a>|<a href="#parsing_mtable">mtable</a>|<a href="#parsing_mstack">mstack</a>|<a href="#parsing_mlongdiv">mlongdiv</a>|<a href="#parsing_maction">maction</a>
+
+
+
+<b id="parsing_mrow">mrow</b> = <b>element</b> <code>mrow</code> {<a href="#parsing_mrow.attributes">mrow.attributes</a>, <a href="#parsing_MathExpression">MathExpression</a>*}
+<b id="parsing_mrow.attributes">mrow.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>dir</code> {"ltr" | "rtl"}?
+
+
+<b id="parsing_mfrac">mfrac</b> = <b>element</b> <code>mfrac</code> {<a href="#parsing_mfrac.attributes">mfrac.attributes</a>, <a href="#parsing_MathExpression">MathExpression</a>, <a href="#parsing_MathExpression">MathExpression</a>}
+<b id="parsing_mfrac.attributes">mfrac.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>linethickness</code> {<a href="#parsing_length">length</a> | "thin" | "medium" | "thick"}?,
+  <b>attribute</b> <code>numalign</code> {"left" | "center" | "right"}?,
+  <b>attribute</b> <code>denomalign</code> {"left" | "center" | "right"}?,
+  <b>attribute</b> <code>bevelled</code> {"true" | "false"}?
+
+
+<b id="parsing_msqrt">msqrt</b> = <b>element</b> <code>msqrt</code> {<a href="#parsing_msqrt.attributes">msqrt.attributes</a>, <a href="#parsing_ImpliedMrow">ImpliedMrow</a>}
+<b id="parsing_msqrt.attributes">msqrt.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>
+
+
+<b id="parsing_mroot">mroot</b> = <b>element</b> <code>mroot</code> {<a href="#parsing_mroot.attributes">mroot.attributes</a>, <a href="#parsing_MathExpression">MathExpression</a>, <a href="#parsing_MathExpression">MathExpression</a>}
+<b id="parsing_mroot.attributes">mroot.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>
+
+
+<b id="parsing_mstyle">mstyle</b> = <b>element</b> <code>mstyle</code> {<a href="#parsing_mstyle.attributes">mstyle.attributes</a>, <a href="#parsing_ImpliedMrow">ImpliedMrow</a>}
+<b id="parsing_mstyle.attributes">mstyle.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <a href="#parsing_mstyle.specificattributes">mstyle.specificattributes</a>,
+  <a href="#parsing_mstyle.generalattributes">mstyle.generalattributes</a>,
+  <a href="#parsing_mstyle.deprecatedattributes">mstyle.deprecatedattributes</a>
+
+<b id="parsing_mstyle.specificattributes">mstyle.specificattributes</b> =
+  <b>attribute</b> <code>scriptlevel</code> {<a href="#parsing_integer">integer</a>}?,
+  <b>attribute</b> <code>displaystyle</code> {"true" | "false"}?,
+  <b>attribute</b> <code>scriptsizemultiplier</code> {<a href="#parsing_number">number</a>}?,
+  <b>attribute</b> <code>scriptminsize</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>infixlinebreakstyle</code> {"before" | "after" | "duplicate"}?,
+  <b>attribute</b> <code>decimalpoint</code> {<a href="#parsing_character">character</a>}?
+
+<b id="parsing_mstyle.generalattributes">mstyle.generalattributes</b> =
+  <b>attribute</b> <code>accent</code> {"true" | "false"}?,
+  <b>attribute</b> <code>accentunder</code> {"true" | "false"}?,
+  <b>attribute</b> <code>align</code> {"left" | "right" | "center"}?,
+  <b>attribute</b> <code>alignmentscope</code> {<a href="#parsing_list">list</a> {("true" | "false") +}}?,
+  <b>attribute</b> <code>bevelled</code> {"true" | "false"}?,
+  <b>attribute</b> <code>charalign</code> {"left" | "center" | "right"}?,
+  <b>attribute</b> <code>charspacing</code> {<a href="#parsing_length">length</a> | "loose" | "medium" | "tight"}?,
+  <b>attribute</b> <code>close</code> {text}?,
+  <b>attribute</b> <code>columnalign</code> {<a href="#parsing_list">list</a> {<a href="#parsing_columnalignstyle">columnalignstyle</a>+} }?,
+  <b>attribute</b> <code>columnlines</code> {<a href="#parsing_list">list</a> {<a href="#parsing_linestyle">linestyle</a> +}}?,
+  <b>attribute</b> <code>columnspacing</code> {<a href="#parsing_list">list</a> {(<a href="#parsing_length">length</a>) +}}?,
+  <b>attribute</b> <code>columnspan</code> {<a href="#parsing_positive-integer">positive-integer</a>}?,
+  <b>attribute</b> <code>columnwidth</code> {<a href="#parsing_list">list</a> {("auto" | <a href="#parsing_length">length</a> | "fit") +}}?,
+  <b>attribute</b> <code>crossout</code> {<a href="#parsing_list">list</a> {("none" | "updiagonalstrike" | "downdiagonalstrike" | "verticalstrike" | "horizontalstrike")*}}?,
+  <b>attribute</b> <code>denomalign</code> {"left" | "center" | "right"}?,
+  <b>attribute</b> <code>depth</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>dir</code> {"ltr" | "rtl"}?,
+  <b>attribute</b> <code>edge</code> {"left" | "right"}?,
+  <b>attribute</b> <code>equalcolumns</code> {"true" | "false"}?,
+  <b>attribute</b> <code>equalrows</code> {"true" | "false"}?,
+  <b>attribute</b> <code>fence</code> {"true" | "false"}?,
+  <b>attribute</b> <code>form</code> {"prefix" | "infix" | "postfix"}?,
+  <b>attribute</b> <code>frame</code> {<a href="#parsing_linestyle">linestyle</a>}?,
+  <b>attribute</b> <code>framespacing</code> {<a href="#parsing_list">list</a> {<a href="#parsing_length">length</a>, <a href="#parsing_length">length</a>}}?,
+  <b>attribute</b> <code>groupalign</code> {<a href="#parsing_group-alignment-list-list">group-alignment-list-list</a>}?,
+  <b>attribute</b> <code>height</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>indentalign</code> {"left" | "center" | "right" | "auto" | "id"}?,
+  <b>attribute</b> <code>indentalignfirst</code> {"left" | "center" | "right" | "auto" | "id" | "indentalign"}?,
+  <b>attribute</b> <code>indentalignlast</code> {"left" | "center" | "right" | "auto" | "id" | "indentalign"}?,
+  <b>attribute</b> <code>indentshift</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>indentshiftfirst</code> {<a href="#parsing_length">length</a> | "indentshift"}?,
+  <b>attribute</b> <code>indentshiftlast</code> {<a href="#parsing_length">length</a> | "indentshift"}?,
+  <b>attribute</b> <code>indenttarget</code> {<a href="#parsing_idref">idref</a>}?,
+  <b>attribute</b> <code>largeop</code> {"true" | "false"}?,
+  <b>attribute</b> <code>leftoverhang</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>length</code> {<a href="#parsing_unsigned-integer">unsigned-integer</a>}?,
+  <b>attribute</b> <code>linebreak</code> {"auto" | "newline" | "nobreak" | "goodbreak" | "badbreak"}?,
+  <b>attribute</b> <code>linebreakmultchar</code> {text}?,
+  <b>attribute</b> <code>linebreakstyle</code> {"before" | "after" | "duplicate" | "infixlinebreakstyle"}?,
+  <b>attribute</b> <code>lineleading</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>linethickness</code> {<a href="#parsing_length">length</a> | "thin" | "medium" | "thick"}?,
+  <b>attribute</b> <code>location</code> {"w" | "nw" | "n" | "ne" | "e" | "se" | "s" | "sw"}?,
+  <b>attribute</b> <code>longdivstyle</code> {"lefttop" | "stackedrightright" | "mediumstackedrightright" | "shortstackedrightright" |
+          "righttop" | "left/\right" | "left)(right" | ":right=right" | "stackedleftleft" |
+          "stackedleftlinetop"}?,
+  <b>attribute</b> <code>lquote</code> {text}?,
+  <b>attribute</b> <code>lspace</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>mathsize</code> {"small" | "normal" | "big" | <a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>mathvariant</code> {"normal" | "bold" | "italic" | "bold-italic" | "double-struck" | "bold-fraktur" |
+          "script" | "bold-script" | "fraktur" | "sans-serif" | "bold-sans-serif" | "sans-serif-italic" |
+          "sans-serif-bold-italic" | "monospace" | "initial" | "tailed" | "looped" | "stretched"}?,
+  <b>attribute</b> <code>maxsize</code> {<a href="#parsing_length">length</a> | "infinity"}?,
+  <b>attribute</b> <code>minlabelspacing</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>minsize</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>movablelimits</code> {"true" | "false"}?,
+  <b>attribute</b> <code>mslinethickness</code> {<a href="#parsing_length">length</a> | "thin" | "medium" | "thick"}?,
+  <b>attribute</b> <code>notation</code> {text}?,
+  <b>attribute</b> <code>numalign</code> {"left" | "center" | "right"}?,
+  <b>attribute</b> <code>open</code> {text}?,
+  <b>attribute</b> <code>position</code> {<a href="#parsing_integer">integer</a>}?,
+  <b>attribute</b> <code>rightoverhang</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>rowalign</code> {<a href="#parsing_list">list</a> {<a href="#parsing_verticalalign">verticalalign</a>+} }?,
+  <b>attribute</b> <code>rowlines</code> {<a href="#parsing_list">list</a> {<a href="#parsing_linestyle">linestyle</a> +}}?,
+  <b>attribute</b> <code>rowspacing</code> {<a href="#parsing_list">list</a> {(<a href="#parsing_length">length</a>) +}}?,
+  <b>attribute</b> <code>rowspan</code> {<a href="#parsing_positive-integer">positive-integer</a>}?,
+  <b>attribute</b> <code>rquote</code> {text}?,
+  <b>attribute</b> <code>rspace</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>selection</code> {<a href="#parsing_positive-integer">positive-integer</a>}?,
+  <b>attribute</b> <code>separator</code> {"true" | "false"}?,
+  <b>attribute</b> <code>separators</code> {text}?,
+  <b>attribute</b> <code>shift</code> {<a href="#parsing_integer">integer</a>}?,
+  <b>attribute</b> <code>side</code> {"left" | "right" | "leftoverlap" | "rightoverlap"}?,
+  <b>attribute</b> <code>stackalign</code> {"left" | "center" | "right" | "decimalpoint"}?,
+  <b>attribute</b> <code>stretchy</code> {"true" | "false"}?,
+  <b>attribute</b> <code>subscriptshift</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>superscriptshift</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>symmetric</code> {"true" | "false"}?,
+  <b>attribute</b> <code>valign</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>width</code> {<a href="#parsing_length">length</a>}?
+
+<b id="parsing_mstyle.deprecatedattributes">mstyle.deprecatedattributes</b> =
+  <a href="#parsing_DeprecatedTokenAtt">DeprecatedTokenAtt</a>,
+  <b>attribute</b> <code>veryverythinmathspace</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>verythinmathspace</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>thinmathspace</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>mediummathspace</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>thickmathspace</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>verythickmathspace</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>veryverythickmathspace</code> {<a href="#parsing_length">length</a>}?
+
+<a href="#parsing_math.attributes">math.attributes</a> &amp;= <a href="#parsing_CommonPresAtt">CommonPresAtt</a>
+<a href="#parsing_math.attributes">math.attributes</a> &amp;= <a href="#parsing_mstyle.specificattributes">mstyle.specificattributes</a>
+<a href="#parsing_math.attributes">math.attributes</a> &amp;= <a href="#parsing_mstyle.generalattributes">mstyle.generalattributes</a>
+
+
+
+
+<b id="parsing_merror">merror</b> = <b>element</b> <code>merror</code> {<a href="#parsing_merror.attributes">merror.attributes</a>, <a href="#parsing_ImpliedMrow">ImpliedMrow</a>}
+<b id="parsing_merror.attributes">merror.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>
+
+
+<b id="parsing_mpadded">mpadded</b> = <b>element</b> <code>mpadded</code> {<a href="#parsing_mpadded.attributes">mpadded.attributes</a>, <a href="#parsing_ImpliedMrow">ImpliedMrow</a>}
+<b id="parsing_mpadded.attributes">mpadded.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>height</code> {<a href="#parsing_mpadded-length">mpadded-length</a>}?,
+  <b>attribute</b> <code>depth</code> {<a href="#parsing_mpadded-length">mpadded-length</a>}?,
+  <b>attribute</b> <code>width</code> {<a href="#parsing_mpadded-length">mpadded-length</a>}?,
+  <b>attribute</b> <code>lspace</code> {<a href="#parsing_mpadded-length">mpadded-length</a>}?,
+  <b>attribute</b> <code>voffset</code> {<a href="#parsing_mpadded-length">mpadded-length</a>}?
+
+
+<b id="parsing_mphantom">mphantom</b> = <b>element</b> <code>mphantom</code> {<a href="#parsing_mphantom.attributes">mphantom.attributes</a>, <a href="#parsing_ImpliedMrow">ImpliedMrow</a>}
+<b id="parsing_mphantom.attributes">mphantom.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>
+
+
+<b id="parsing_mfenced">mfenced</b> = <b>element</b> <code>mfenced</code> {<a href="#parsing_mfenced.attributes">mfenced.attributes</a>, <a href="#parsing_MathExpression">MathExpression</a>*}
+<b id="parsing_mfenced.attributes">mfenced.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>open</code> {text}?,
+  <b>attribute</b> <code>close</code> {text}?,
+  <b>attribute</b> <code>separators</code> {text}?
+
+
+<b id="parsing_menclose">menclose</b> = <b>element</b> <code>menclose</code> {<a href="#parsing_menclose.attributes">menclose.attributes</a>, <a href="#parsing_ImpliedMrow">ImpliedMrow</a>}
+<b id="parsing_menclose.attributes">menclose.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>notation</code> {text}?
+
+
+<b id="parsing_msub">msub</b> = <b>element</b> <code>msub</code> {<a href="#parsing_msub.attributes">msub.attributes</a>, <a href="#parsing_MathExpression">MathExpression</a>, <a href="#parsing_MathExpression">MathExpression</a>}
+<b id="parsing_msub.attributes">msub.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>subscriptshift</code> {<a href="#parsing_length">length</a>}?
+
+
+<b id="parsing_msup">msup</b> = <b>element</b> <code>msup</code> {<a href="#parsing_msup.attributes">msup.attributes</a>, <a href="#parsing_MathExpression">MathExpression</a>, <a href="#parsing_MathExpression">MathExpression</a>}
+<b id="parsing_msup.attributes">msup.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>superscriptshift</code> {<a href="#parsing_length">length</a>}?
+
+
+<b id="parsing_msubsup">msubsup</b> = <b>element</b> <code>msubsup</code> {<a href="#parsing_msubsup.attributes">msubsup.attributes</a>, <a href="#parsing_MathExpression">MathExpression</a>, <a href="#parsing_MathExpression">MathExpression</a>, <a href="#parsing_MathExpression">MathExpression</a>}
+<b id="parsing_msubsup.attributes">msubsup.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>subscriptshift</code> {<a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>superscriptshift</code> {<a href="#parsing_length">length</a>}?
+
+
+<b id="parsing_munder">munder</b> = <b>element</b> <code>munder</code> {<a href="#parsing_munder.attributes">munder.attributes</a>, <a href="#parsing_MathExpression">MathExpression</a>, <a href="#parsing_MathExpression">MathExpression</a>}
+<b id="parsing_munder.attributes">munder.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>accentunder</code> {"true" | "false"}?,
+  <b>attribute</b> <code>align</code> {"left" | "right" | "center"}?
+
+
+<b id="parsing_mover">mover</b> = <b>element</b> <code>mover</code> {<a href="#parsing_mover.attributes">mover.attributes</a>, <a href="#parsing_MathExpression">MathExpression</a>, <a href="#parsing_MathExpression">MathExpression</a>}
+<b id="parsing_mover.attributes">mover.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>accent</code> {"true" | "false"}?,
+  <b>attribute</b> <code>align</code> {"left" | "right" | "center"}?
+
+
+<b id="parsing_munderover">munderover</b> = <b>element</b> <code>munderover</code> {<a href="#parsing_munderover.attributes">munderover.attributes</a>, <a href="#parsing_MathExpression">MathExpression</a>, <a href="#parsing_MathExpression">MathExpression</a>, <a href="#parsing_MathExpression">MathExpression</a>}
+<b id="parsing_munderover.attributes">munderover.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>accent</code> {"true" | "false"}?,
+  <b>attribute</b> <code>accentunder</code> {"true" | "false"}?,
+  <b>attribute</b> <code>align</code> {"left" | "right" | "center"}?
+
+
+<b id="parsing_mmultiscripts">mmultiscripts</b> = <b>element</b> <code>mmultiscripts</code> {<a href="#parsing_mmultiscripts.attributes">mmultiscripts.attributes</a>, <a href="#parsing_MathExpression">MathExpression</a>,<a href="#parsing_MultiScriptExpression">MultiScriptExpression</a>*,(<a href="#parsing_mprescripts">mprescripts</a>,<a href="#parsing_MultiScriptExpression">MultiScriptExpression</a>*)?}
+<b id="parsing_mmultiscripts.attributes">mmultiscripts.attributes</b> = 
+  <a href="#parsing_msubsup.attributes">msubsup.attributes</a>
+
+
+<b id="parsing_mtable">mtable</b> = <b>element</b> <code>mtable</code> {<a href="#parsing_mtable.attributes">mtable.attributes</a>, <a href="#parsing_TableRowExpression">TableRowExpression</a>*}
+<b id="parsing_mtable.attributes">mtable.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>align</code> {xsd:string {
+    pattern ='\s*(top|bottom|center|baseline|axis)(\s+-?[0-9]+)?\s*'}}?,
+  <b>attribute</b> <code>rowalign</code> {<a href="#parsing_list">list</a> {<a href="#parsing_verticalalign">verticalalign</a>+} }?,
+  <b>attribute</b> <code>columnalign</code> {<a href="#parsing_list">list</a> {<a href="#parsing_columnalignstyle">columnalignstyle</a>+} }?,
+  <b>attribute</b> <code>groupalign</code> {<a href="#parsing_group-alignment-list-list">group-alignment-list-list</a>}?,
+  <b>attribute</b> <code>alignmentscope</code> {<a href="#parsing_list">list</a> {("true" | "false") +}}?,
+  <b>attribute</b> <code>columnwidth</code> {<a href="#parsing_list">list</a> {("auto" | <a href="#parsing_length">length</a> | "fit") +}}?,
+  <b>attribute</b> <code>width</code> {"auto" | <a href="#parsing_length">length</a>}?,
+  <b>attribute</b> <code>rowspacing</code> {<a href="#parsing_list">list</a> {(<a href="#parsing_length">length</a>) +}}?,
+  <b>attribute</b> <code>columnspacing</code> {<a href="#parsing_list">list</a> {(<a href="#parsing_length">length</a>) +}}?,
+  <b>attribute</b> <code>rowlines</code> {<a href="#parsing_list">list</a> {<a href="#parsing_linestyle">linestyle</a> +}}?,
+  <b>attribute</b> <code>columnlines</code> {<a href="#parsing_list">list</a> {<a href="#parsing_linestyle">linestyle</a> +}}?,
+  <b>attribute</b> <code>frame</code> {<a href="#parsing_linestyle">linestyle</a>}?,
+  <b>attribute</b> <code>framespacing</code> {<a href="#parsing_list">list</a> {<a href="#parsing_length">length</a>, <a href="#parsing_length">length</a>}}?,
+  <b>attribute</b> <code>equalrows</code> {"true" | "false"}?,
+  <b>attribute</b> <code>equalcolumns</code> {"true" | "false"}?,
+  <b>attribute</b> <code>displaystyle</code> {"true" | "false"}?,
+  <b>attribute</b> <code>side</code> {"left" | "right" | "leftoverlap" | "rightoverlap"}?,
+  <b>attribute</b> <code>minlabelspacing</code> {<a href="#parsing_length">length</a>}?
+
+
+<b id="parsing_mlabeledtr">mlabeledtr</b> = <b>element</b> <code>mlabeledtr</code> {<a href="#parsing_mlabeledtr.attributes">mlabeledtr.attributes</a>, <a href="#parsing_TableCellExpression">TableCellExpression</a>+}
+<b id="parsing_mlabeledtr.attributes">mlabeledtr.attributes</b> = 
+  <a href="#parsing_mtr.attributes">mtr.attributes</a>
+
+
+<b id="parsing_mtr">mtr</b> = <b>element</b> <code>mtr</code> {<a href="#parsing_mtr.attributes">mtr.attributes</a>, <a href="#parsing_TableCellExpression">TableCellExpression</a>*}
+<b id="parsing_mtr.attributes">mtr.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>rowalign</code> {"top" | "bottom" | "center" | "baseline" | "axis"}?,
+  <b>attribute</b> <code>columnalign</code> {<a href="#parsing_list">list</a> {<a href="#parsing_columnalignstyle">columnalignstyle</a>+} }?,
+  <b>attribute</b> <code>groupalign</code> {<a href="#parsing_group-alignment-list-list">group-alignment-list-list</a>}?
+
+
+<b id="parsing_mtd">mtd</b> = <b>element</b> <code>mtd</code> {<a href="#parsing_mtd.attributes">mtd.attributes</a>, <a href="#parsing_ImpliedMrow">ImpliedMrow</a>}
+<b id="parsing_mtd.attributes">mtd.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>rowspan</code> {<a href="#parsing_positive-integer">positive-integer</a>}?,
+  <b>attribute</b> <code>columnspan</code> {<a href="#parsing_positive-integer">positive-integer</a>}?,
+  <b>attribute</b> <code>rowalign</code> {"top" | "bottom" | "center" | "baseline" | "axis"}?,
+  <b>attribute</b> <code>columnalign</code> {<a href="#parsing_columnalignstyle">columnalignstyle</a>}?,
+  <b>attribute</b> <code>groupalign</code> {<a href="#parsing_group-alignment-list">group-alignment-list</a>}?
+
+
+<b id="parsing_mstack">mstack</b> = <b>element</b> <code>mstack</code> {<a href="#parsing_mstack.attributes">mstack.attributes</a>, <a href="#parsing_MstackExpression">MstackExpression</a>*}
+<b id="parsing_mstack.attributes">mstack.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>align</code> {xsd:string {
+    pattern ='\s*(top|bottom|center|baseline|axis)(\s+-?[0-9]+)?\s*'}}?,
+  <b>attribute</b> <code>stackalign</code> {"left" | "center" | "right" | "decimalpoint"}?,
+  <b>attribute</b> <code>charalign</code> {"left" | "center" | "right"}?,
+  <b>attribute</b> <code>charspacing</code> {<a href="#parsing_length">length</a> | "loose" | "medium" | "tight"}?
+
+
+<b id="parsing_mlongdiv">mlongdiv</b> = <b>element</b> <code>mlongdiv</code> {<a href="#parsing_mlongdiv.attributes">mlongdiv.attributes</a>, <a href="#parsing_MstackExpression">MstackExpression</a>,<a href="#parsing_MstackExpression">MstackExpression</a>,<a href="#parsing_MstackExpression">MstackExpression</a>+}
+<b id="parsing_mlongdiv.attributes">mlongdiv.attributes</b> = 
+  <a href="#parsing_msgroup.attributes">msgroup.attributes</a>,
+  <b>attribute</b> <code>longdivstyle</code> {"lefttop" | "stackedrightright" | "mediumstackedrightright" | "shortstackedrightright" |
+          "righttop" | "left/\right" | "left)(right" | ":right=right" | "stackedleftleft" |
+          "stackedleftlinetop"}?
+
+
+<b id="parsing_msgroup">msgroup</b> = <b>element</b> <code>msgroup</code> {<a href="#parsing_msgroup.attributes">msgroup.attributes</a>, <a href="#parsing_MstackExpression">MstackExpression</a>*}
+<b id="parsing_msgroup.attributes">msgroup.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>position</code> {<a href="#parsing_integer">integer</a>}?,
+  <b>attribute</b> <code>shift</code> {<a href="#parsing_integer">integer</a>}?
+
+
+<b id="parsing_msrow">msrow</b> = <b>element</b> <code>msrow</code> {<a href="#parsing_msrow.attributes">msrow.attributes</a>, <a href="#parsing_MsrowExpression">MsrowExpression</a>*}
+<b id="parsing_msrow.attributes">msrow.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>position</code> {<a href="#parsing_integer">integer</a>}?
+
+
+<b id="parsing_mscarries">mscarries</b> = <b>element</b> <code>mscarries</code> {<a href="#parsing_mscarries.attributes">mscarries.attributes</a>, (<a href="#parsing_MsrowExpression">MsrowExpression</a>|<a href="#parsing_mscarry">mscarry</a>)*}
+<b id="parsing_mscarries.attributes">mscarries.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>position</code> {<a href="#parsing_integer">integer</a>}?,
+  <b>attribute</b> <code>location</code> {"w" | "nw" | "n" | "ne" | "e" | "se" | "s" | "sw"}?,
+  <b>attribute</b> <code>crossout</code> {<a href="#parsing_list">list</a> {("none" | "updiagonalstrike" | "downdiagonalstrike" | "verticalstrike" | "horizontalstrike")*}}?,
+  <b>attribute</b> <code>scriptsizemultiplier</code> {<a href="#parsing_number">number</a>}?
+
+
+<b id="parsing_mscarry">mscarry</b> = <b>element</b> <code>mscarry</code> {<a href="#parsing_mscarry.attributes">mscarry.attributes</a>, <a href="#parsing_MsrowExpression">MsrowExpression</a>*}
+<b id="parsing_mscarry.attributes">mscarry.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>location</code> {"w" | "nw" | "n" | "ne" | "e" | "se" | "s" | "sw"}?,
+  <b>attribute</b> <code>crossout</code> {<a href="#parsing_list">list</a> {("none" | "updiagonalstrike" | "downdiagonalstrike" | "verticalstrike" | "horizontalstrike")*}}?
+
+
+<b id="parsing_maction">maction</b> = <b>element</b> <code>maction</code> {<a href="#parsing_maction.attributes">maction.attributes</a>, <a href="#parsing_MathExpression">MathExpression</a>+}
+<b id="parsing_maction.attributes">maction.attributes</b> = 
+  <a href="#parsing_CommonAtt">CommonAtt</a>, <a href="#parsing_CommonPresAtt">CommonPresAtt</a>,
+  <b>attribute</b> <code>actiontype</code> {text},
+  <b>attribute</b> <code>selection</code> {<a href="#parsing_positive-integer">positive-integer</a>}?
+
+</pre>

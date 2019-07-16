@@ -1,0 +1,90 @@
+<pre>
+#     This is the Mathematical Markup Language (MathML) 3.0, an XML
+#     application for describing mathematical notation and capturing
+#     both its structure and content.
+#
+#     Copyright 1998-2014 W3C (MIT, ERCIM, Keio, Beihang)
+# 
+#     Use and distribution of this code are permitted under the terms
+#     W3C Software Notice and License
+#     http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
+
+
+<b>default</b> <b>namespace</b> <b>m</b> = "http://www.w3.org/1998/Math/MathML"
+<b>namespace</b> <b id="parsing_local">local</b> = ""
+
+<b id="parsing_start">start</b> = <a href="#parsing_math">math</a>
+
+<b id="parsing_math">math</b> = <b>element</b> <code>math</code> {<a href="#parsing_math.attributes">math.attributes</a>,<a href="#parsing_MathExpression">MathExpression</a>*}
+<b id="parsing_MathExpression">MathExpression</b> = <a href="#parsing_semantics">semantics</a>
+
+<b id="parsing_NonMathMLAtt">NonMathMLAtt</b> = <b>attribute</b> <code>(* - (local:*|m:*)</code>) {xsd:string} 
+
+<b id="parsing_CommonDeprecatedAtt">CommonDeprecatedAtt</b> = <b>attribute</b> <code>other</code> {text}?
+
+<b id="parsing_CommonAtt">CommonAtt</b> = <b>attribute</b> <code>id</code> {xsd:ID}?,
+            <b>attribute</b> <code>xref</code> {text}?,
+            <b>attribute</b> <code>class</code> {xsd:NMTOKENS}?,
+            <b>attribute</b> <code>style</code> {xsd:string}?,
+            <b>attribute</b> <code>href</code> {xsd:anyURI}?,
+            <a href="#parsing_CommonDeprecatedAtt">CommonDeprecatedAtt</a>,
+            <a href="#parsing_NonMathMLAtt">NonMathMLAtt</a>*
+
+
+<b id="parsing_math.attributes">math.attributes</b> = <a href="#parsing_CommonAtt">CommonAtt</a>,
+               <b>attribute</b> <code>display</code> {"block" | "inline"}?,
+               <b>attribute</b> <code>maxwidth</code> {<a href="#parsing_length">length</a>}?,
+               <b>attribute</b> <code>overflow</code> {"linebreak" | "scroll" | "elide" | "truncate" | "scale"}?,
+               <b>attribute</b> <code>altimg</code> {xsd:anyURI}?,
+               <b>attribute</b> <code>altimg-width</code> {<a href="#parsing_length">length</a>}?,
+               <b>attribute</b> <code>altimg-height</code> {<a href="#parsing_length">length</a>}?,
+               <b>attribute</b> <code>altimg-valign</code> {<a href="#parsing_length">length</a> | "top" | "middle" | "bottom"}?,
+               <b>attribute</b> <code>alttext</code> {text}?,
+               <b>attribute</b> <code>cdgroup</code> {xsd:anyURI}?,
+               <a href="#parsing_math.deprecatedattributes">math.deprecatedattributes</a>
+
+# the mathml3-presentation schema  adds additional attributes
+# to the math element, all those valid on mstyle
+
+<b id="parsing_math.deprecatedattributes">math.deprecatedattributes</b> = <b>attribute</b> <code>mode</code> {xsd:string}?,
+                            <b>attribute</b> <code>macros</code> {xsd:string}?
+
+
+<b id="parsing_name">name</b> = <b>attribute</b> <code>name</code> {xsd:NCName}
+<b id="parsing_cd">cd</b> = <b>attribute</b> <code>cd</code> {xsd:NCName}
+
+<b id="parsing_src">src</b> = <b>attribute</b> <code>src</code> {xsd:anyURI}?
+
+<b id="parsing_annotation">annotation</b> = <b>element</b> <code>annotation</code> {<a href="#parsing_annotation.attributes">annotation.attributes</a>,text}
+                     
+<b id="parsing_annotation-xml.model">annotation-xml.model</b> = (<a href="#parsing_MathExpression">MathExpression</a>|<a href="#parsing_anyElement">anyElement</a>)*
+
+<b id="parsing_anyElement">anyElement</b> =  <b>element</b> (* - m:*) {(<b>attribute</b> <code>*</code> {text}|text| <a href="#parsing_anyElement">anyElement</a>)*}
+
+<b id="parsing_annotation-xml">annotation-xml</b> = <b>element</b> <code>annotation-xml</code> {<a href="#parsing_annotation.attributes">annotation.attributes</a>,
+                                         <a href="#parsing_annotation-xml.model">annotation-xml.model</a>}
+<b id="parsing_annotation.attributes">annotation.attributes</b> = <a href="#parsing_CommonAtt">CommonAtt</a>,
+	                <a href="#parsing_cd">cd</a>?,
+                        <a href="#parsing_name">name</a>?,
+                        <a href="#parsing_DefEncAtt">DefEncAtt</a>,
+                        <a href="#parsing_src">src</a>?
+
+<b id="parsing_DefEncAtt">DefEncAtt</b> = <b>attribute</b> <code>encoding</code> {xsd:string}?,
+            <b>attribute</b> <code>definitionURL</code> {xsd:anyURI}?
+
+<b id="parsing_semantics">semantics</b> = <b>element</b> <code>semantics</code> {<a href="#parsing_semantics.attributes">semantics.attributes</a>,
+                               <a href="#parsing_MathExpression">MathExpression</a>, 
+                              (<a href="#parsing_annotation">annotation</a>|<a href="#parsing_annotation-xml">annotation-xml</a>)*}
+<b id="parsing_semantics.attributes">semantics.attributes</b> = <a href="#parsing_CommonAtt">CommonAtt</a>,<a href="#parsing_DefEncAtt">DefEncAtt</a>,<a href="#parsing_cd">cd</a>?,<a href="#parsing_name">name</a>?
+
+
+
+<b id="parsing_length">length</b>
+# wrapped for display
+ = xsd:string {
+  pattern = '\s*((-?[0-9]*([0-9]\.?|\.[0-9])[0-9]*(e[mx]|in|cm|mm|p[xtc]|%)?)|(negative)?((very){0,2}thi(n|
+         ck)|medium)mathspace)\s*' 
+}
+
+
+</pre>

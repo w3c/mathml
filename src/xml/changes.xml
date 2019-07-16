@@ -10,7 +10,7 @@
 <ulist>
  <item><p>Changes to the references to match new W3C specification rules,
  and to use the new W3C CSS formatting style, most notably affecting the table of contents styling.</p></item>
- <item><p>Update the <specref ref="status"/>, in particular using <code>https</code> and referencing the GitHub Issues page as required for current
+ <item><p>Update the <specref ref="sotd"/>, in particular using <code>https</code> and referencing the GitHub Issues page as required for current
  W3C publications.</p></item>
 </ulist>
 </item>
@@ -57,9 +57,9 @@
 <item>
 <p>Changes to the Frontmatter</p>
 <ulist>
-<item><p>Changes to <specref ref="authors"/> to acknowlege the death of Robert Miner.</p></item>
+<item><p>Changes to <!--<specref ref="authors"/>-->Authors to acknowlege the death of Robert Miner.</p></item>
 <item><p>Changes to <specref ref="abstract"/> to highlight MathML may be used in HTML as well as XML.</p></item>
-<item><p>Update  the <specref ref="status"/>.</p></item>
+<item><p>Update  the <specref ref="sotd"/>.</p></item>
 </ulist>
 </item>
 <item>
@@ -75,7 +75,7 @@
 <item><p>Add element markup to heading in <specref ref="interf_toplevel"/>.</p></item>
 <item><p>Changes to <specref ref="interf_namespace"/> the <att>xmlns</att> syntax for namespaces only applies to the XML serialisation.</p></item>
 <item><p>Changes to <specref ref="fund_units"/> to clarify that values specified with a <code>%</code> or no unit are multiples of a <emph>reference</emph> value, which may differ from the <emph>default</emph> value used when the value is not specified.</p></item>
-<item id="chg3e_attval"><p>Changes to <intref ref="type_namedspace"><emph>namedspace</emph></intref> in <specref ref="fund_units"/> some attribute values such as <attval>thinmathspace</attval> were marked up as attribute <emph>names</emph>. (This affected  formatting and also the index <specref ref="index_att"/>).</p></item>
+<item id="chg3e_attval"><p>Changes to <intref ref="type_namedspace"><emph>namedspace</emph></intref> in <specref ref="fund_units"/> some attribute values such as <attval>thinmathspace</attval> were marked up as attribute <emph>names</emph>. (This affected  formatting and also the index<!-- <specref ref="index_att"/>-->).</p></item>
 <item><p>Additional paragraph describing global document property defaults in <specref ref="fund_defaults"/></p></item>
 </ulist>
 </item>
@@ -228,11 +228,11 @@
 
 
 
-<item><p>Changes to <specref ref="n_references"/>.</p>
+<item><p>Changes to <specref ref="references"/>.</p>
 <ulist>
 <item><p>Make <bibref ref="HTML5"/> normative.</p></item>
 <item><p>Update the references to current versions, 
-<bibref ref="Bidi"/>, <bibref ref="Entities"/>, <bibref ref="ISO10646"/>,
+<bibref ref="Bidi"/>, <bibref ref="Entities"/>,
 <bibref ref="Normal"/>, <bibref ref="RELAX-NG"/>,
 <bibref ref="Unicode"/>.</p></item>
 </ulist>
@@ -248,12 +248,15 @@
 </ulist>
 </item>
 
+<!--
 <item><p>Changes to <specref ref="index"/>.</p>
 <ulist>
 <item><p>Changes to <specref ref="index_att"/>.</p></item>
 </ulist>
 </item>
+-->
 </ulist>
+
 </div2>
 
 <div2 id="changes_mathml2.0e-3.0">

@@ -1,0 +1,70 @@
+<section>
+      <h3 id="parsing_wellformed">Use of MathML as Well-Formed
+         XML</h3>
+      
+      
+      <div class="issue" id="update_schema"><span class="head">DTD and W3C XML Schema</span>
+         
+         
+         <p>DTD and W3C XML Schema need updating to MathML3</p>
+         </div>
+      
+      
+      <div class="issue" id="relax_schema"><span class="head">Relax Schema</span>
+         
+         
+         <p>Should we add a (normative?) Relax NG schema.</p>
+         
+         <div class="resolution">
+            <p>We make it normative</p>
+         </div>
+         </div>
+      
+      
+      <p>A MathML document must be a well-formed XML document using elements in the MathML
+         namespace as defined by this specification, however it is not required that the document
+         refer to any specific Document Type Definition (DTD) or schema that specifies MathML.
+         It
+         is sometimes advantageous <em>not</em> to specify such a language definition as these
+         files are large, often much larger than the MathML expression and unless they have
+         been
+         previously cached by the MathML application, the time taken to fetch the DTD or schema
+         may
+         have an appreciable effect on the processing of the MathML document.</p>
+      
+      
+      <p>Note that if no DTD is specified with a DOCTYPE declaration, that entity
+         references (for example to refer to MathML characters by name) may not be used. The
+         document should be encoded in an encoding (for example UTF-8) in which all needed
+         characters may be encoded as character data, or characters may be referenced using
+         numeric
+         character references, for example &amp;#x222B; rather than &amp;int;</p>
+      
+      
+      <p>If a MathML fragment is parsed without a DTD, in other words as a well-formed XML
+         fragment, it is the responsibility of the processing application to treat the white
+         space
+         characters occurring outside of token elements as not significant.</p>
+      
+      
+      <p>However, in many circumstances, especially while producing or editing MathML, it is
+         useful to use a language definition to constrain the editing process or to check the
+         correctness of generated files. The following section, <a href="#parsing_usingrnc"></a>,
+         discusses the RelaxNG Schema for Mathml4 [[RELAX-NG]], which forms a normative
+         part of the specification. Following that, <a href="#parsing_usingxsd"></a>, and <a href="#parsing_usingdtd"></a> discuss alternative languages definition using the document type
+         definitions (DTD) and the W3C XML schema language, [[XMLSchemas]], both of
+         which are derived from the normative RelaxNG schema automatically.  One should note
+         that
+         the schema definitions of the language is currently stricter than the DTD version.
+         That
+         is, a schema validating processor will declare invalid documents that are declared
+         valid
+         by a (DTD) validating XML parser. This is partly due to the fact that the XML schema
+         language may express additional constraints not expressable in the DTD, and partly
+         due to
+         the fact that for reasons of compatibility with earlier releases, the DTD is intentionally
+         forgiving in some places and does not enforce constraints that are specified in the
+         text
+         of this specification.</p>
+      </section>
+   

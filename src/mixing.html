@@ -1,0 +1,1362 @@
+<section>
+   <h2 id="mixing">Mixing Markup Languages for Mathematical Expressions</h2>
+   
+   
+   
+   
+   
+   <p>MathML markup can be combined with other markup languages, and
+      these mixing constructions are realized by the semantic annotation
+      elements.  The semantic annotation elements provide an important tool
+      for making associations between alternate representations of an
+      expression, and for associating semantic properties and other
+      attributions with a MathML expression.  These elements allow
+      presentation markup and content markup to be combined in several
+      different ways.  One method, known as <em>mixed markup</em>, is to
+      intersperse content and presentation elements in what is essentially a
+      single tree.  Another method, known as <em>parallel markup</em>,
+      is to provide both explicit presentation markup and content markup in
+      a pair of markup expressions, combined by a single <code class="element">semantics</code>
+      element.
+      </p>
+   
+   
+   <section>
+      <h3 id="mixing_semantic_annotations">Annotation Framework</h3>
+      
+      
+      
+      <p>
+         An important concern of MathML is to represent associations between
+         presentation and content markup forms for an expression.  Representing
+         associations between MathML expressions and data of other kinds is
+         also important in many contexts.  For this reason, MathML provides a
+         general framework for annotation.  A MathML expression may be
+         decorated with a sequence of pairs made up of a symbol that indicates
+         the kind of annotation, known as the <em>annotation key</em>, and
+         associated data, known as the <em>annotation value</em>.
+         </p>
+      
+      
+      <section>
+         <h4 id="mixing_annotation_elements">Annotation elements</h4>
+         
+         
+         
+         <p>
+            The <code class="element">semantics</code>, <code class="element">annotation</code>, and
+            <code class="element">annotation-xml</code> elements are used together to represent
+            annotations in MathML.  The <code class="element">semantics</code> element provides the
+            container for a expression and its annotations.  The
+            <code class="element">annotation</code> element is the container for text
+            annotations, and the <code class="element">annotation-xml</code> element is used for
+            <span>structured</span>
+            annotations. The <code class="element">semantics</code> element contains the expression
+            being annotated as its first child, followed by a sequence of zero or
+            more <code class="element">annotation</code> and/or <code class="element">annotation-xml</code> elements.
+            </p>
+         
+         
+         <p>
+            <div class="example mathml">
+               <pre>&lt;semantics&gt;
+  &lt;mrow&gt;
+    &lt;mrow&gt;
+      &lt;mi&gt;sin&lt;/mi&gt;
+      &lt;mo&gt;&amp;ApplyFunction;&lt;/mo&gt;
+      &lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mfenced&gt;
+    &lt;/mrow&gt;
+    &lt;mo&gt;+&lt;/mo&gt;
+    &lt;mn&gt;5&lt;/mn&gt;
+  &lt;/mrow&gt;
+  &lt;annotation encoding="application/x-tex"&gt;
+    \sin x + 5
+  &lt;/annotation&gt;
+  &lt;annotation-xml encoding="application/openmath+xml"&gt;
+    &lt;OMA xmlns="http://www.openmath.org/OpenMath"&gt;
+      &lt;OMS cd="arith1" name="plus"/&gt;
+      &lt;OMA&gt;&lt;OMS cd="transc1" name="sin"/&gt;&lt;OMV name="x"/&gt;&lt;/OMA&gt;
+      &lt;OMI&gt;5&lt;/OMI&gt;
+    &lt;/OMA&gt;
+  &lt;/annotation-xml&gt;
+&lt;/semantics&gt;</pre>
+            </div>
+         </p>
+         
+         
+         <p id="html-xml1">Note that this example makes use of the namespace extensibility
+            that is only available in the XML syntax of MathML. If this example is included in
+            an HTML document
+            then it would be considered <em>invalid</em> and the OpenMath elements would be parsed as
+            elements <span data-diff="chg">in</span> the MathML namespace. See <a href="#html_annotation_xml"></a> for details.</p>
+         
+         
+         <p>The <code class="element">semantics</code> element is considered to be both a presentation
+            element and a content element, and may be used in either context.
+            All MathML processors should process the <code class="element">semantics</code> element,
+            even if they only process one of these two subsets of MathML.
+            </p>
+         
+         </section>
+      
+      
+      <section>
+         <h4 id="mixing_annotation_keys">Annotation keys</h4>
+         
+         
+         
+         <p>An <em>annotation key</em> specifies the relationship between an
+            expression and an annotation. Many kinds of relationships are possible.
+            Examples include alternate representations, specification or clarification
+            of semantics, type information, rendering hints, and private data
+            intended for specific processors.  The annotation key is the primary
+            means by which a processor determines whether or not to process an
+            annotation.</p>
+         
+         
+         <p>The logical relationship between an expression and an annotation
+            can have a significant impact on the proper processing of the
+            expression.  For example, a particular annotation form, called <em>semantic  
+               attributions</em>, cannot be ignored without altering the meaning
+            of the annotated expression, at  
+            least in some processing contexts. On the other hand, alternate
+            representations do not alter the meaning of an expression, but may
+            alter the presentation of the expression as they are frequently used
+            to provide rendering hints.  Still other annotations carry private data or
+            metadata that are useful in a specific context, but do not alter either
+            the semantics or the presentation of the expression.</p>
+         
+         
+         <p>In MathML 3, annotation keys are defined as symbols in <a class="intref" href="#contm_cds">Content Dictionaries</a>, and are specified using
+            <span data-diff="del">of </span>the <code class="attribute">cd</code> and <code class="attribute">name</code> attributes on the
+            <code class="element">annotation</code> and <code class="element">annotation-xml</code> elements.  For backward
+            compatibility with MathML 2, an annotation key may also be referenced
+            using the <code class="attribute">definitionURL</code> attribute as an alternative to the
+            <code class="attribute">cd</code> and <code class="attribute">name</code> attributes.  Further details on
+            referencing symbols in Content Dictionaries are discussed in <a href="#contm_csymbol"></a>.  The symbol definition in a Content Dictionary
+            for an annotation key may have a <code class="attribute">role</code> property.  Two
+            particular roles are relevant for annotations:  a role of
+            <code class="attributevalue">attribution</code> identifies a generic annotation that can
+            be ignored without altering the meaning of the annotated term, and a
+            role of <code class="attributevalue">semantic-attribution</code> indicates that the annotation
+            is a semantic annotation, that is, the annotation cannot be ignored
+            without potentially altering the meaning of the expression.
+            </p>
+         
+         
+         <p>MathML 3 provides two predefined annotation keys for the most common
+            kinds of annotations: <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a> and <a class="omsymbol" href="mathmlkeys#contentequiv">contentequiv</a> defined in the <a class="omcd" href="mathmlkeys">mathmlkeys</a> content
+            dictionary. The <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a> annotation key specifies that the
+            annotation value provides an alternate representation for an
+            expression in some other markup language, and the <a class="omsymbol" href="mathmlkeys#contentequiv">contentequiv</a> annotation key specifies that
+            the annotation value provides a semantically equivalent alternative
+            for the annotated expression.  Further details about the use of
+            these keys is given in the sections below.</p>
+         
+         
+         <p>The default annotation key is <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a> when no annotation key is
+            explicitly specified on an <code class="element">annotation</code> or
+            <code class="element">annotation-xml</code> element.</p>
+         
+         
+         <p>Typically, annotation keys specify only the logical nature of the
+            relationship between an expression and an annotation.  The data format
+            for an annotation is indicated with the <code class="attribute">encoding</code>
+            attribute.  In MathML 2, the <code class="attribute">encoding</code> attribute was the
+            primary information that a processor could use to determine whether or
+            not it could understand an annotation.  For backward compatibility,
+            processors are encouraged to examine both the annotation key and
+            <code class="attribute">encoding</code> attribute.  In
+            particular, MathML 2 specified the predefined encoding values
+            <code>MathML</code>, <code>MathML-Content</code>, and
+            <code>MathML-Presentation</code>.  The <code>MathML</code> encoding
+            value is used to indicate an <code class="element">annotation-xml</code> element contains
+            a MathML expression.  The use of the other values is more specific, as
+            discussed in following sections.</p>
+         
+         
+         <p>While the predefined <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a> and <a class="omsymbol" href="mathmlkeys#contentequiv">contentequiv</a> keys cover many common use cases, user
+            communities are encouraged to define and standardize additional
+            content dictionaries as necessary.  Annotation keys in user-defined,
+            public Content Dictionaries are preferred over private encoding
+            attribute value conventions, since content dictionaries are more
+            expressive, more open and more maintainable than private encoding
+            values.  However, for backward compatibility with MathML 2, the
+            encoding attribute may also be used.
+            </p>
+         </section>
+      
+      
+      
+      <section>
+         <h4 id="mixing_alternate_representations">Alternate representations</h4>
+         
+         
+         
+         <p>Alternate representation annotations are most often used to
+            provide renderings for an expression, or to provide an equivalent
+            representation in another markup language.  In general, alternate
+            representation annotations do not alter the meaning of the annotated
+            expression, but may alter its presentation.</p>
+         
+         
+         <p>A particularly important case is the use of a presentation MathML
+            expression to indicate a preferred rendering for a content MathML
+            expression.  This case may be represented by labeling the annotation
+            with the <code>application/mathml-presentation+xml</code> value for
+            the <code class="attribute">encoding</code> attribute.  For backward compatibility with
+            MathML 2.0, this case can also be represented with the equivalent
+            <code>MathML-Presentation</code> value for the <code class="attribute">encoding</code>
+            attribute.  Note that when a presentation MathML annotation is
+            present in a <code class="element">semantics</code> element, it may be used as the
+            default rendering of the <code class="element">semantics</code> element, instead of
+            the default rendering of the first child.
+            </p>
+         
+         
+         <p>In the example below, the <code class="element">semantics</code> element binds together
+            various alternate representations for a content MathML expression.
+            The presentation MathML annotation may be used as the
+            default rendering, while the other annotations give representations
+            in other markup languages.  Since no attribution keys are explicitly
+            specified, the default annotation key
+            <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a> applies
+            to each of the annotations.
+            </p>
+         
+         
+         <p>
+            <div class="example mathml">
+               <pre>
+&lt;semantics&gt;
+  &lt;apply&gt;
+    &lt;plus/&gt;
+    &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+    &lt;cn&gt;5&lt;/cn&gt;
+  &lt;/apply&gt;
+  &lt;annotation-xml encoding="MathML-Presentation"&gt;
+    &lt;mrow&gt;
+      &lt;mrow&gt;
+        &lt;mi&gt;sin&lt;/mi&gt;
+        &lt;mo&gt;&amp;ApplyFunction;&lt;/mo&gt;
+        &lt;mfenced open="(" close=")"&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mfenced&gt;
+      &lt;/mrow&gt;
+      &lt;mo&gt;+&lt;/mo&gt;
+      &lt;mn&gt;5&lt;/mn&gt;
+    &lt;/mrow&gt;
+  &lt;/annotation-xml&gt;
+  &lt;annotation encoding="application/x-maple"&gt;
+    sin(x) + 5
+  &lt;/annotation&gt;
+  &lt;annotation encoding="application/vnd.wolfram.mathematica"&gt;
+    Sin[x] + 5
+  &lt;/annotation&gt;
+  &lt;annotation encoding="application/x-tex"&gt;
+    \sin x + 5
+  &lt;/annotation&gt;
+  &lt;annotation-xml encoding="application/openmath+xml"&gt;
+    &lt;OMA xmlns="http://www.openmath.org/OpenMath"&gt;
+      &lt;OMA&gt;
+        &lt;OMS cd="arith1" name="plus"/&gt;
+        &lt;OMA&gt;&lt;OMS cd="transc1" name="sin"/&gt;&lt;OMV name="x"/&gt;&lt;/OMA&gt;
+        &lt;OMI&gt;5&lt;/OMI&gt;
+      &lt;/OMA&gt;
+    &lt;/OMA&gt;
+  &lt;/annotation-xml&gt;
+&lt;/semantics&gt;</pre>
+            </div>
+         </p>
+         
+         <p id="html-xml2">Note that this example makes use of the namespace extensibility
+            that is only available in the XML syntax of MathML. If this example is included in
+            an HTML document
+            then it would be considered <em>invalid</em> and the OpenMath elements would be parsed as
+            elements un the MathML namespace. See <a href="#html_annotation_xml"></a> for details.</p>
+         </section>
+      
+      
+      <section>
+         <h4 id="mixing_content_equiv">Content equivalents</h4>
+         
+         
+         
+         <p>Content equivalent annotations provide additional computational
+            information about an expression.  Annotations with the
+            <a class="omsymbol" href="mathmlkeys#contentequiv">contentequiv</a> key cannot be ignored
+            without potentially changing the behavior of an expression.</p>
+         
+         
+         <p>An important case arises when a content MathML annotation is used
+            to disambiguate the meaning of a presentation MathML expression.
+            This case may be represented by labeling the annotation with the
+            <code>application/mathml-content+xml</code> value for the
+            <code class="attribute">encoding</code> attribute.  In
+            MathML 2, this type of annotation was represented with the equivalent
+            <code>MathML-Content</code> value for the <code class="attribute">encoding</code> attribute,
+            so processors are urged to support this usage for backward compatibility.
+            A content MathML annotation, whether in MathML 2 or 3, may be used for
+            other purposes as well, such as for other kinds of semantic assertions.
+            Consequently, in MathML 3, the
+            <a class="omsymbol" href="mathmlkeys#contentequiv">contentequiv</a> annotation key should
+            be used to make an explicit assertion that the annotation provides a
+            definitive content markup equivalent for an expression.</p>
+         
+         
+         <p>In the example below, an ambiguous presentation MathML expression
+            is annotated with a <code>MathML-Content</code> annotation clarifying
+            its precise meaning.</p>
+         
+         
+         <p>
+            <div class="example mathml">
+               <pre>
+&lt;semantics&gt;
+  &lt;mrow&gt;
+    &lt;mrow&gt;
+      &lt;mi&gt;a&lt;/mi&gt;
+      &lt;mfenced open="(" close=")"&gt;
+        &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;
+      &lt;/mfenced&gt;
+    &lt;/mrow&gt;
+  &lt;/mrow&gt;
+  &lt;annotation-xml cd="mathmlkeys" name="contentequiv"
+                  encoding="MathML-Content"&gt;
+    &lt;apply&gt;
+      &lt;ci&gt;a&lt;/ci&gt;
+      &lt;apply&gt;&lt;plus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;5&lt;/cn&gt;&lt;/apply&gt;
+    &lt;/apply&gt;
+  &lt;/annotation-xml&gt;
+&lt;/semantics&gt;</pre>
+            </div>
+         </p>
+         </section>
+      
+      
+      <section>
+         <h4 id="mixing_annotation_references">Annotation references</h4>
+         
+         
+         
+         <p>In the usual case, each annotation element includes either character data
+            content (in the case of <code class="element">annotation</code>) or XML markup data (in the case
+            of <code class="element">annotation-xml</code>) that represents the <em>annotation value</em>.
+            There is no restriction on the type of annotation that may appear within a
+            <code class="element">semantics</code> element.  For example, an annotation could provide a
+            T<sub>E</sub>X encoding, a linear input form for a computer algebra system,
+            a rendered image, or detailed mathematical type information.</p>
+         
+         
+         <p>In some cases the alternative children of a <code class="element">semantics</code> element
+            are not an essential part of the behavior of the annotated expression, but
+            may be useful to specialized processors.  To enable the availability of
+            several annotation formats in a more efficient manner, a <code class="element">semantics</code>
+            element may contain empty <code class="element">annotation</code> and <code class="element">annotation-xml</code>
+            elements that provide <code class="attribute">encoding</code> and <code class="attribute">src</code> attributes
+            to specify an external location for the annotation value associated with
+            the annotation.  This type of annotation is known as an <em>annotation
+               reference</em>.</p>
+         
+         
+         <p>
+            <div class="example mathml-fragment">
+               <pre>
+&lt;semantics&gt;
+  &lt;mfrac&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;
+  &lt;annotation encoding="image/png" src="333/formula56.png"/&gt;
+  &lt;annotation encoding="application/x-maple" src="333/formula56.ms"/&gt;
+&lt;/semantics&gt;</pre>
+            </div>
+         </p>
+         
+         
+         <p>Processing agents that anticipate that consumers of exported markup may
+            not be able to retrieve the external entity referenced by such annotations
+            should request the content of the external entity at the indicated location
+            and replace the annotation with its expanded form.</p>
+         
+         
+         <p>An annotation reference follows the same rules as for other annotations
+            to determine the annotation key that specifies the relationship between
+            the annotated object and the annotation value.</p>
+         
+         </section>
+      
+      </section>
+   
+   
+   <section>
+      <h3 id="mixing_semantic_elements">Elements for Semantic Annotations</h3>
+      
+      
+      
+      <p>This section explains the semantic mapping elements <code class="element">semantics</code>,
+         <code class="element">annotation</code>, and <code class="element">annotation-xml</code>.  These elements associate
+         alternate representations for a presentation or content expression, or
+         associate semantic or other attributions that may modify the meaning of
+         the annotated expression.</p>
+      
+      
+      <section>
+         <h4 id="mixing_elements_semantics">The <code class="defn starttag">&lt;semantics&gt;</code> element</h4>
+         
+         
+         
+         <section>
+            <h5>Description</h5>
+            
+            
+            <p>The <code class="element">semantics</code> element is the container element that
+               associates annotations with a MathML expression.  The
+               <code class="element">semantics</code> element has as its first child the expression to be
+               annotated.  Any MathML expression may appear as the first child of the
+               <code class="element">semantics</code> element.  Subsequent <code class="element">annotation</code> and
+               <code class="element">annotation-xml</code> children enclose the annotations.
+               An annotation represented in XML is enclosed in an
+               <code class="element">annotation-xml</code> element.  An annotation represented
+               in character data is enclosed in an <code class="element">annotation</code> element.</p>
+            
+            
+            <p>As noted above, the <code class="element">semantics</code> element is considered to be
+               both a presentation element and a content element, since it can act
+               as either, depending on its content.  Consequently, all MathML
+               processors should process the <code class="element">semantics</code> element, even if they
+               process only presentation markup or only content markup.
+               </p>
+            
+            
+            <p>The default rendering of a <code class="element">semantics</code> element is the default
+               rendering of its first child.  A renderer may use the information contained
+               in the annotations to customize its rendering of the annotated element.</p>
+            
+            
+            <p>
+               <div class="example mathml">
+                  <pre>&lt;semantics&gt;
+  &lt;mrow&gt;
+    &lt;mrow&gt;
+      &lt;mi&gt;sin&lt;/mi&gt;
+      &lt;mo&gt;&amp;ApplyFunction;&lt;/mo&gt;
+      &lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mfenced&gt;
+    &lt;/mrow&gt;
+    &lt;mo&gt;+&lt;/mo&gt;
+    &lt;mn&gt;5&lt;/mn&gt;
+  &lt;/mrow&gt;
+  &lt;annotation-xml cd="mathmlkeys" name="contentequiv" encoding="MathML-Content"&gt;
+    &lt;apply&gt;
+      &lt;plus/&gt;
+      &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+      &lt;cn&gt;5&lt;/cn&gt;
+    &lt;/apply&gt;
+  &lt;/annotation-xml&gt;
+  &lt;annotation encoding="application/x-tex"&gt;
+    \sin x + 5
+  &lt;/annotation&gt;
+&lt;/semantics&gt;</pre>
+               </div>
+            </p>
+            </section>
+         
+         
+         <section>
+            <h5>Attributes</h5>
+            
+            
+            <table border="1" class="attributes">
+               
+               <thead>
+                  
+                  <tr>
+                     
+                     <td>Name</td>
+                     
+                     <td>values</td>
+                     
+                     <td>default</td>
+                     </tr>
+                  </thead>
+               
+               <tbody>
+                  
+                  <tr>
+                     
+                     <td rowspan="2" class="attname">definitionURL</td>
+                     
+                     <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
+                     
+                     <td><em>none</em></td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td colspan="2" class="attdesc">The location of an external source for semantic information</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td rowspan="2" class="attname">encoding</td>
+                     
+                     <td><a class="intref" href="#type_string"><em>string</em></a></td>
+                     
+                     <td><em>none</em></td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td colspan="2" class="attdesc">The encoding of the external semantic information</td>
+                     </tr>
+                  </tbody>
+               </table>
+            
+            
+            <p>The <code class="element">semantics</code> element takes the <code class="attribute">definitionURL</code> and
+               <code class="attribute">encoding</code> attributes, which reference an external source for some
+               or all of the semantic information for the annotated element, as modified
+               by the annotation.  The use of these attributes on the <code class="element">semantics</code>
+               element is deprecated in MathML3.
+               </p>
+            
+            </section>
+         
+         </section>
+      
+      
+      <section>
+         <h4 id="mixing_elements_annotation">The <code class="defn starttag">&lt;annotation&gt;</code> element</h4>
+         
+         
+         
+         <section>
+            <h5>Description</h5>
+            
+            
+            <p>The <code class="element">annotation</code> element is the container element for a semantic
+               annotation whose representation is parsed character data in a non-XML
+               format.  The <code class="element">annotation</code> element should contain the character
+               data for the annotation, and should not contain XML markup elements.
+               If the annotation contains one of the XML reserved characters
+               <code>&amp;</code>, <code>&lt;</code> then these characters must
+               be encoded using an entity reference or
+               <span>(in the XML syntax) </span>
+               an XML <code>CDATA</code> section.</p>
+            
+            </section>
+         
+         
+         <section>
+            <h5>Attributes</h5>
+            
+            
+            <table border="1" class="attributes">
+               
+               <thead>
+                  
+                  <tr>
+                     
+                     <td>Name</td>
+                     
+                     <td>values</td>
+                     
+                     <td>default</td>
+                     </tr>
+                  </thead>
+               
+               <tbody>
+                  
+                  <tr>
+                     
+                     <td rowspan="2" class="attname">definitionURL</td>
+                     
+                     <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
+                     
+                     <td><em>none</em></td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td colspan="2" class="attdesc">The location of the annotation key symbol</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td rowspan="2" class="attname">encoding</td>
+                     
+                     <td><a class="intref" href="#type_string"><em>string</em></a></td>
+                     
+                     <td><em>none</em></td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td colspan="2" class="attdesc">The encoding of the semantic information in the annotation</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td rowspan="2" class="attname">cd</td>
+                     
+                     <td><a class="intref" href="#type_string"><em>string</em></a></td>
+                     
+                     <td>mathmlkeys</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td colspan="2" class="attdesc">The content dictionary that contains the annotation key symbol</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td rowspan="2" class="attname">name</td>
+                     
+                     <td><a class="intref" href="#type_string"><em>string</em></a></td>
+                     
+                     <td>alternate-representation</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td colspan="2" class="attdesc">The name of the annotation key symbol</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td rowspan="2" class="attname">src</td>
+                     
+                     <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
+                     
+                     <td><em>none</em></td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td colspan="2" class="attdesc">The location of an external source for semantic information</td>
+                     </tr>
+                  </tbody>
+               </table>
+            
+            
+            
+            
+            <p>Taken together, the <code class="attribute">cd</code> and <code class="attribute">name</code> attributes
+               specify the annotation key symbol, which identifies the relationship
+               between the annotated element and the annotation, as described in
+               <a href="#mixing_annotation_elements"></a>. The <code class="attribute">definitionURL</code>
+               attribute provides an alternate way to reference the annotation key
+               symbol as a single attribute.  If none of these attributes are present,
+               the annotation key symbol is the symbol
+               <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a>
+               from the <a class="omcd" href="mathmlkeys">mathmlkeys</a> content dictionary.</p>
+            
+            
+            <p>The <code class="attribute">encoding</code> attribute describes the content type of the
+               annotation.  The value of the <code class="attribute">encoding</code> attribute may contain
+               a media type that identifies the data format for the encoding data.  For
+               data formats that do not have an associated media type, implementors may
+               choose a self-describing character string to identify their content type.</p>
+            
+            
+            <p>The <code class="attribute">src</code> attribute provides a mechanism to attach external
+               entities as annotations on MathML expressions.</p>
+            
+            
+            <p>
+               <div class="example mathml-fragment">
+                  <pre>
+&lt;annotation encoding="image/png" src="333/formula56.png"/&gt;</pre>
+               </div>
+            </p>
+            
+            
+            <p>The <code class="element">annotation</code> element is a semantic mapping element that may
+               only be used as a child of the <code class="element">semantics</code> element.  While there is
+               no default rendering for the <code class="element">annotation</code> element, a renderer may
+               use the information contained in an annotation to customize its rendering
+               of the annotated element.</p>
+            
+            </section>
+         </section>
+      
+      
+      <section>
+         <h4 id="mixing_elements_annotation_xml">The <code class="defn starttag">&lt;annotation-xml&gt;</code> element</h4>
+         
+         
+         
+         <section>
+            <h5>Description</h5>
+            
+            
+            <p>The <code class="element">annotation-xml</code> element is the container element for a
+               semantic annotation whose representation is structured markup.  The <code class="element">annotation-xml</code> element should contain the markup
+               elements, attributes, and character data for the annotation.</p>
+            
+            </section>
+         
+         
+         <section>
+            <h5>Attributes</h5>
+            
+            
+            <table border="1" class="attributes">
+               
+               <thead>
+                  
+                  <tr>
+                     
+                     <td>Name</td>
+                     
+                     <td>values</td>
+                     
+                     <td>default</td>
+                     </tr>
+                  </thead>
+               
+               <tbody>
+                  
+                  <tr>
+                     
+                     <td rowspan="2" class="attname">definitionURL</td>
+                     
+                     <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
+                     
+                     <td><em>none</em></td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td colspan="2" class="attdesc">The location of the annotation key symbol</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td rowspan="2" class="attname">encoding</td>
+                     
+                     <td><a class="intref" href="#type_string"><em>string</em></a></td>
+                     
+                     <td><em>none</em></td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td colspan="2" class="attdesc">The encoding of the semantic information in the annotation</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td rowspan="2" class="attname">cd</td>
+                     
+                     <td><a class="intref" href="#type_string"><em>string</em></a></td>
+                     
+                     <td>mathmlkeys</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td colspan="2" class="attdesc">The content dictionary that contains the annotation key symbol</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td rowspan="2" class="attname">name</td>
+                     
+                     <td><a class="intref" href="#type_string"><em>string</em></a></td>
+                     
+                     <td>alternate-representation</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td colspan="2" class="attdesc">The name of the annotation key symbol</td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td rowspan="2" class="attname">src</td>
+                     
+                     <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
+                     
+                     <td><em>none</em></td>
+                     </tr>
+                  
+                  <tr>
+                     
+                     <td colspan="2" class="attdesc">The location of an external source for semantic information</td>
+                     </tr>
+                  </tbody>
+               </table>
+            
+            
+            
+            <p>Taken together, the <code class="attribute">cd</code> and <code class="attribute">name</code> attributes
+               specify the annotation key symbol, which identifies the relationship
+               between the annotated element and the annotation, as described in
+               <a href="#mixing_annotation_elements"></a>. The <code class="attribute">definitionURL</code>
+               attribute provides an alternate way to reference the annotation key
+               symbol as a single attribute.  If none of these attributes are present,
+               the annotation key symbol is the symbol
+               <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a>
+               from the <a class="omcd" href="mathmlkeys">mathmlkeys</a> content dictionary.</p>
+            
+            
+            <p>The <code class="attribute">encoding</code> attribute describes the content type of the
+               annotation.  The value of the <code class="attribute">encoding</code> attribute may contain
+               a media type that identifies the data format for the encoding data.  For
+               data formats that do not have an associated media type, implementors may
+               choose a self-describing character string to identify their content type.
+               In particular, as described above and in <a href="#encoding-names"></a>, MathML specifies
+               <code>MathML</code>, <code>MathML-Presentation</code>, and
+               <code>MathML-Content</code> as predefined values for the
+               <code class="attribute">encoding</code> attribute.   Finally, The <code class="attribute">src</code>
+               attribute provides a mechanism to attach external XML entities as
+               annotations on MathML expressions.</p>
+            
+            
+            <p>
+               <div class="example mathml-fragment">
+                  <pre>&lt;annotation-xml cd="mathmlkeys" name="contentequiv" encoding="MathML-Content"&gt;
+  &lt;apply&gt;
+    &lt;plus/&gt;
+    &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+    &lt;cn&gt;5&lt;/cn&gt;
+  &lt;/apply&gt;
+&lt;/annotation-xml&gt;
+
+&lt;annotation-xml encoding="application/openmath+xml"&gt;
+  &lt;OMA xmlns="http://www.openmath.org/OpenMath"&gt;
+    &lt;OMS cd="arith1" name="plus"/&gt;
+    &lt;OMA&gt;&lt;OMS cd="transc1" name="sin"/&gt;&lt;OMV name="x"/&gt;&lt;/OMA&gt;
+    &lt;OMI&gt;5&lt;/OMI&gt;
+  &lt;/OMA&gt;
+&lt;/annotation-xml&gt;</pre>
+               </div>
+            </p>
+            
+            
+            <p>When <span>the MathML is being parsed as XML and </span>
+               the annotation value is represented in an XML dialect other than MathML, the
+               namespace for the XML markup for the annotation should be identified by means of namespace
+               attributes and/or namespace prefixes on the annotation value.  For instance:</p>
+            
+            
+            <p>
+               <div class="example mathml-fragment">
+                  <pre>
+&lt;annotation-xml encoding="application/xhtml+xml"&gt;
+  &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+    &lt;head&gt;&lt;title&gt;E&lt;/title&gt;&lt;/head&gt;
+    &lt;body&gt;
+      &lt;p&gt;The base of the natural logarithms, approximately 2.71828.&lt;/p&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+&lt;/annotation-xml&gt;</pre>
+               </div>
+            </p>
+            
+            
+            
+            <p>The <code class="element">annotation-xml</code> element is a semantic mapping element that may only be used
+               as a child of the <code class="element">semantics</code> element.  While there is no default rendering for the
+               <code class="element">annotation-xml</code> element, a renderer may use the information contained in an
+               annotation to customize its rendering of the annotated element.</p>
+            
+            </section>
+         
+         
+         <section>
+            <h5 id="html_annotation_xml">Using <code class="element">annotation-xml</code> in HTML documents</h5>
+            
+            
+            <p>Note that the Namespace extensibility used in the above examples
+               may not be available if the MathML is not being treated as an XML document. In particular
+               HTML parsers
+               treat <code>xmlns</code> attributes as ordinary attributes, so the OpenMath example would be classified as
+               invalid
+               by an HTML validator. The OpenMath elements would still be parsed as children of the
+               <code class="element">annotation-xml</code> element, however they would be placed in the <em>MathML</em> namespace. The above examples are not rendered in the HTML version of this specification,
+               to ensure that that document is a valid HTML5 document.</p>
+            
+            
+            <p>The details of the HTML parser handling of <code class="element">annotation-xml</code> is specified in [[HTML5]] and summarized in <a href="#interf_html"></a>, however the main differences from the behavior of an XML parser that affect MathML
+               annotations are that the HTML parser does not treat <code>xmlns</code> attributes, nor <code>:</code> in element names as special and has built-in rules determining whether the three
+               <span>&#x201c;known&#x201d;</span> namespaces, HTML, SVG or MathML are used.
+               </p>
+            <ul>
+               
+               <li>
+                  <p>If the <code class="element">annotation-xml</code> has an <code class="attribute">encoding</code> attribute that is (ignoring case differences) <code class="attributevalue">text/html</code> or <code class="attributevalue">annotation/xhtml+xml</code> then the content  is parsed as HTML and placed (initially) in the HTML namespace.</p>
+               </li>
+               
+               <li>
+                  <p>Otherwise it is parsed as <em>foreign content</em> and parsed in a more XML-like manner (like MathML itself in HTML) in which <code>/&gt;</code> signifies an empty element. Content will be placed in the MathML namespace.</p>
+                  
+                  <p>If any recognised HTML element appears in this foreign content annotation the HTML
+                     parser will effectively termnate the math expression, closing all open elements until
+                     the <code class="element">math</code> element is closed, and then process the nested HTML as if it were not inside the
+                     math context. Any following MathML elements will then not render correctly as they
+                     are not in a math context, or in the MathML namespace.</p>
+               </li>
+               </ul>
+            
+            
+            <p>These issues mean that the following example is valid whether parsed by an XML or
+               HTML parser:
+               
+               <div class="example mathml-fragment">
+                  <pre>
+&lt;math&gt;
+ &lt;semantics&gt;
+  &lt;mi&gt;a&lt;/mi&gt;
+  &lt;annotation-xml encoding="text/html"&gt;
+   &lt;span&gt;xxx&lt;/span&gt;
+  &lt;/annotation-xml&gt;
+ &lt;/semantics&gt;
+ &lt;mo&gt;+&lt;/mo&gt;
+ &lt;mi&gt;b&lt;/mi&gt;
+&lt;/math&gt;
+</pre>
+               </div>
+               
+               However the if the <code class="attribute">encoding</code> attribute is omitted then the expression
+               is only valid if parsed as XML:
+               
+               
+               <div class="example mathml-error">
+                  <pre>
+&lt;math&gt;
+ &lt;semantics&gt;
+  &lt;mi&gt;a&lt;/mi&gt;
+  &lt;annotation-xml&gt;
+   &lt;span&gt;xxx&lt;/span&gt;
+  &lt;/annotation-xml&gt;
+ &lt;/semantics&gt;
+ &lt;mo&gt;+&lt;/mo&gt;
+ &lt;mi&gt;b&lt;/mi&gt;
+&lt;/math&gt;
+</pre>
+               </div>
+               </p>
+            
+            <p>If the above is parsed by an HTML parser it produces a result equivalent to the following
+               invalid input, where the <code class="element" data-namespace="xhtml">span</code> element has caused all MathML elements to be prematurely closed. The remaining MathML
+               elements following the <code class="element">span</code> are no longer contained within <code class="starttag">&lt;math&gt;</code> so will be parsed as unknown HTML elements and render incorrectly.
+               
+               <div class="example mathml-error">
+                  <pre>
+&lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
+ &lt;semantics&gt;
+  &lt;mi&gt;a&lt;/mi&gt;
+  &lt;annotation-xml&gt;
+  &lt;/annotation-xml&gt;
+ &lt;/semantics&gt;
+&lt;/math&gt;
+&lt;span xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/span&gt;
+&lt;mo xmlns="http://www.w3.org/1999/xhtml"&gt;+&lt;/mo&gt;
+&lt;mi xmlns="http://www.w3.org/1999/xhtml"&gt;b&lt;/mi&gt;
+</pre>
+               </div>
+               </p>
+            
+            <p>Note here that the HTML <code class="element" data-namespace="xhtml">span</code> element has
+               caused all open MathML elements to be prematurely closed, resulting in
+               the following MathML elements being treated as unknown HTML elements
+               as they are no longer descendents of <code class="element">math</code>. See <a href="#interf_html"></a> for more details of the parsing of MathML in HTML.
+               </p>
+            
+            
+            <p>Any use of elements in other vocabularies (such as the OpenMath
+               examples above) is considered <em>invalid</em> in HTML.  If
+               validity is not a strict requirement it is possible to use such
+               elements but they will be parsed as elements on the
+               <em>MathML</em> namespace. Documents SHOULD NOT use namespace
+               prefixes and element names containing colon (<code>:</code>) as the
+               element nodes produced by the HTML parser with have local names
+               containing a colon, which can not be constructed by a namespace aware
+               XML parser. Rather than use such foreign annotations, when using an HTML parser
+               it is better to encode the annotation using the existing
+               vocabulary. For example as shown in <a href="#contm"></a> OpenMath
+               may be encoded faithfuly as <em>Strict Content
+                  MathML</em>. Similarly RDF annotations could be encoded using RDFa
+               in <code>text/html</code> annotation or (say) N3 notation in
+               <code class="element">annotation</code> rather than using RDF/XML encoding in an
+               <code class="element">annotation-xml</code> element.</p>
+            
+            </section>
+         
+         </section>
+      
+      </section>
+   
+   
+   <section>
+      <h3 id="mixing_markup">Combining Presentation and Content Markup</h3>
+      
+      
+      <p>
+         Presentation markup encodes the <em>notational structure</em> of an expression.
+         Content markup encodes the <em>functional structure</em> of an expression.  In certain
+         cases, a particular application of MathML may require a combination of both presentation
+         and content markup.  This section describes specific constraints that govern the use
+         of
+         presentation markup within content markup, and vice versa.
+         </p>
+      
+      
+      
+      <section>
+         <h4 id="mixing_pmincm">Presentation Markup in Content Markup</h4>
+         
+         
+         <p>
+            Presentation markup may be embedded within content markup so long as the
+            resulting expression retains an unambiguous function application structure.
+            
+            Specifically, presentation markup may only appear in content markup
+            in three ways:
+            </p>
+         <ol>
+            
+            <li>
+               <p>within <code class="element">ci</code> and <code class="element">cn</code> token elements</p>
+               </li>
+            
+            <li>
+               <p>within the <code class="element">csymbol</code> element</p>
+               </li>
+            
+            <li>
+               <p>within the <code class="element">semantics</code> element</p>
+               </li>
+            </ol>
+         <p>
+            Any other presentation markup occurring within content markup is a
+            MathML error.  More detailed discussion of these three cases follows:
+            </p>
+         <dl>
+            
+            <dt>Presentation markup within token elements.</dt>
+            <dd>
+               <p>The token elements <code class="element">ci</code> and <code class="element">cn</code> are permitted to
+                  contain any sequence of MathML characters (defined in <a href="#chars"></a>)
+                  and/or presentation elements.  Contiguous blocks of MathML characters in
+                  <code class="element">ci</code> or <code class="element">cn</code> elements are treated as if wrapped in
+                  <code class="element">mi</code> or <code class="element">mn</code> elements, as appropriate, and the resulting
+                  collection of presentation elements is rendered as if wrapped in an
+                  implicit <code class="element">mrow</code> element.</p>
+            </dd>
+            
+            
+            <dt>Presentation markup within the <code class="element">csymbol</code> element.</dt>
+            <dd>
+               <p>The <code class="element">csymbol</code> element may contain either MathML characters
+                  interspersed with presentation markup, or content markup.  It is a MathML
+                  error for a <code class="element">csymbol</code> element to contain both presentation and
+                  content elements.  When the <code class="element">csymbol</code> element contains
+                  character data and presentation markup, the same rendering rules that apply
+                  to the token elements <code class="element">ci</code> and <code class="element">cn</code> should be used.</p>
+            </dd>
+            
+            
+            <dt>Presentation markup within the <code class="element">semantics</code> element.</dt>
+            <dd>
+               <p>One of the main purposes of the <code class="element">semantics</code> element is to
+                  provide a mechanism for incorporating arbitrary MathML expressions into
+                  content markup in a semantically meaningful way.  In particular, any valid
+                  presentation expression can be embedded in a content expression by placing
+                  it as the first child of a <code class="element">semantics</code> element.  The meaning of this
+                  wrapped expression should be indicated by one or more annotation elements
+                  also contained in the <code class="element">semantics</code> element.</p>
+            </dd>
+            </dl>
+         </section>
+      
+      
+      <section>
+         <h4 id="mixing_cminpm">Content Markup in Presentation Markup</h4>
+         
+         
+         <p>
+            Content markup may be embedded within presentation markup so long as the
+            resulting expression has an unambiguous rendering.  That is, it must be
+            possible, in principle, to produce a presentation markup fragment for
+            each content markup fragment that appears in the combined expression.
+            The replacement of each content markup fragment by its corresponding
+            presentation markup should produce a well-formed presentation markup
+            expression.  A presentation engine should then be able to process this
+            presentation expression without reference to the content markup bits
+            included in the original expression.
+            </p>
+         
+         
+         <p>
+            In general, this constraint means that each embedded content expression
+            must be well-formed, as a content expression, and must be able to stand
+            alone outside the context of any containing content markup element.  As
+            a result, the following content elements may not appear as an immediate
+            child of a presentation element:
+            <code class="element">annotation</code>, <code class="element">annotation-xml</code>,
+            <code class="element">bvar</code>, <code class="element">condition</code>, <code class="element">degree</code>,
+            <code class="element">logbase</code>, <code class="element">lowlimit</code>, <code class="element">uplimit</code>.
+            </p>
+         
+         
+         <p>
+            In addition, within presentation markup, content markup may not appear
+            within presentation token elements.
+            </p>
+         
+         </section>
+      
+      </section>
+   
+   
+   <section>
+      <h3 id="mixing_parallel">Parallel Markup</h3>
+      
+      
+      <p>
+         Some applications are able to use <em>both</em> presentation
+         and content information.  <em>Parallel markup</em> is a way to
+         combine two or more markup trees for the same mathematical expression.
+         Parallel markup is achieved with the <code class="element">semantics</code> element.
+         Parallel markup for an expression may appear on its own, or as part
+         of a larger content or presentation tree.
+         </p>
+      
+      
+      <section>
+         <h4 id="mixing_top_level">Top-level Parallel Markup</h4>
+         
+         <p>
+            In many cases, the goal is to provide presentation markup and content
+            markup for a mathematical expression as a whole.
+            A single <code class="element">semantics</code> element may be used to pair two markup trees,
+            where one child element provides the presentation markup, and the
+            other child element provides the content markup.</p>
+         
+         
+         <p>
+            The following example encodes the Boolean arithmetic expression
+            (<i class="var">a</i>+<i class="var">b</i>)(<i class="var">c</i>+<i class="var">d</i>) in this way.
+            
+            <div class="example mathml">
+               <pre>
+&lt;semantics&gt;
+  &lt;mrow&gt;
+    &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+    &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt;
+    &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mi&gt;d&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+  &lt;/mrow&gt;
+  &lt;annotation-xml encoding="MathML-Content"&gt;
+    &lt;apply&gt;&lt;and/&gt;
+      &lt;apply&gt;&lt;xor/&gt;&lt;ci&gt;a&lt;/ci&gt; &lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
+      &lt;apply&gt;&lt;xor/&gt;&lt;ci&gt;c&lt;/ci&gt; &lt;ci&gt;d&lt;/ci&gt;&lt;/apply&gt;
+    &lt;/apply&gt;
+  &lt;/annotation-xml&gt;
+&lt;/semantics&gt;</pre>
+            </div>
+            Note that the above markup annotates the presentation markup as
+            the first child element, with the content markup as part of the
+            <code class="element">annotation-xml</code> element.  An equivalent form could be given
+            that annotates the content markup as the first child element, with
+            the presentation markup as part of the <code class="element">annotation-xml</code> element.
+            </p>
+         
+         </section>
+      
+      
+      <section>
+         <h4 id="mixing_cr">Parallel Markup via Cross-References</h4>
+         
+         
+         
+         <p>
+            To accommodate applications that must process sub-expressions of large
+            objects, MathML supports cross-references between the branches of a
+            <code class="element">semantics</code> element to identify corresponding sub-structures.
+            These cross-references are established by the use of the <code class="attribute">id</code>
+            and <code class="attribute">xref</code> attributes within a <code class="element">semantics</code> element.
+            This application of the <code class="attribute">id</code> and <code class="attribute">xref</code> attributes within
+            a <code class="element">semantics</code> element should be viewed as best practice to enable
+            a recipient to select arbitrary sub-expressions in each alternative
+            branch of a <code class="element">semantics</code> element.  The <code class="attribute">id</code> and
+            <code class="attribute">xref</code> attributes may be placed on MathML elements of any type.
+            </p>
+         
+         
+         
+         
+         <p>
+            The following example demonstrates cross-references for the
+            Boolean arithmetic expression
+            (<i class="var">a</i>+<i class="var">b</i>)(<i class="var">c</i>+<i class="var">d</i>).
+            
+            
+            <div class="example mathml">
+               <pre>
+&lt;semantics&gt;
+  &lt;mrow id="E"&gt;
+    &lt;mrow id="E.1"&gt;
+      &lt;mo id="E.1.1"&gt;(&lt;/mo&gt;
+      &lt;mi id="E.1.2"&gt;a&lt;/mi&gt;
+      &lt;mo id="E.1.3"&gt;+&lt;/mo&gt;
+      &lt;mi id="E.1.4"&gt;b&lt;/mi&gt;
+      &lt;mo id="E.1.5"&gt;)&lt;/mo&gt;
+    &lt;/mrow&gt;
+    &lt;mo id="E.2"&gt;&amp;InvisibleTimes;&lt;/mo&gt;
+    &lt;mrow id="E.3"&gt;
+      &lt;mo id="E.3.1"&gt;(&lt;/mo&gt;
+      &lt;mi id="E.3.2"&gt;c&lt;/mi&gt;
+      &lt;mo id="E.3.3"&gt;+&lt;/mo&gt;
+      &lt;mi id="E.3.4"&gt;d&lt;/mi&gt;
+      &lt;mo id="E.3.5"&gt;)&lt;/mo&gt;
+    &lt;/mrow&gt;
+  &lt;/mrow&gt;
+
+  &lt;annotation-xml encoding="MathML-Content"&gt;
+    &lt;apply xref="E"&gt;
+      &lt;and xref="E.2"/&gt;
+      &lt;apply xref="E.1"&gt;
+        &lt;xor xref="E.1.3"/&gt;&lt;ci xref="E.1.2"&gt;a&lt;/ci&gt;&lt;ci xref="E.1.4"&gt;b&lt;/ci&gt;
+      &lt;/apply&gt;
+      &lt;apply xref="E.3"&gt;
+        &lt;xor xref="E.3.3"/&gt;&lt;ci xref="E.3.2"&gt;c&lt;/ci&gt;&lt;ci xref="E.3.4"&gt;d&lt;/ci&gt;
+      &lt;/apply&gt;
+    &lt;/apply&gt;
+  &lt;/annotation-xml&gt;
+&lt;/semantics&gt;
+</pre>
+            </div>
+         </p>
+         
+         
+         <p>
+            An <code class="attribute">id</code> attribute and associated <code class="attribute">xref</code> attributes
+            that appear within the same <code class="element">semantics</code> element establish the
+            cross-references between corresponding sub-expressions.
+            </p>
+         
+         
+         <p>
+            For parallel markup, all of the <code class="attribute">id</code> attributes referenced by any <code class="attribute">xref</code>
+            attribute should be in the <em>same</em> branch of an enclosing
+            <code class="element">semantics</code> element.  This constraint guarantees that the
+            cross-references do not create unintentional cycles.  This restriction
+            does <em>not</em> exclude the use of <code class="attribute">id</code> attributes within
+            other branches of the enclosing <code class="element">semantics</code> element.  It does,
+            however, exclude references to these other <code class="attribute">id</code> attributes
+            originating from the same <code class="element">semantics</code> element.
+            </p>
+         
+         
+         <p>
+            There is no restriction on which branch of the <code class="element">semantics</code> element
+            may contain the destination <code class="attribute">id</code> attributes.  It is up to the
+            application to determine which branch to use.
+            </p>
+         
+         
+         <p>
+            In general, there will not be a one-to-one correspondence between nodes
+            in parallel branches.  For example, a presentation tree may contain elements,
+            such as parentheses, that have no correspondents in the content tree.  It is
+            therefore often useful to put the <code class="attribute">id</code> attributes on the branch with
+            the finest-grained node structure.  Then all of the other branches will have
+            <code class="attribute">xref</code> attributes to some subset of the <code class="attribute">id</code> attributes.
+            </p>
+         
+         
+         <p>
+            In absence of other criteria, the first branch of the <code class="element">semantics</code>
+            element is a sensible choice to contain the <code class="attribute">id</code> attributes.
+            Applications that add or remove annotations will then not have to re-assign
+            these attributes as the annotations change.
+            </p>
+         
+         
+         <p>
+            In general, the use of <code class="attribute">id</code> and <code class="attribute">xref</code> attributes allows
+            a full correspondence between sub-expressions to be given in text that is
+            at most a constant factor larger than the original.  The direction of the
+            references should not be taken to imply that sub-expression selection is
+            intended to be permitted only on one child of the <code class="element">semantics</code> element.
+            It is equally feasible to select a subtree in any branch and
+            to recover the corresponding subtrees of the other branches.
+            </p>
+         
+         
+         <p>
+            Parallel markup with cross-references may be used in any XML-encoded branch
+            of the semantic annotations, as shown by the following example where
+            the Boolean expression of the previous section is
+            annotated with OpenMath markup that includes cross-references:
+            
+            <div class="example mathml">
+               <pre>
+&lt;semantics&gt;
+  &lt;mrow id="EE"&gt;
+    &lt;mrow id="EE.1"&gt;
+      &lt;mo id="EE.1.1"&gt;(&lt;/mo&gt;
+      &lt;mi id="EE.1.2"&gt;a&lt;/mi&gt;
+      &lt;mo id="EE.1.3"&gt;+&lt;/mo&gt;
+      &lt;mi id="EE.1.4"&gt;b&lt;/mi&gt;
+      &lt;mo id="EE.1.5"&gt;)&lt;/mo&gt;
+    &lt;/mrow&gt;
+    &lt;mo id="EE.2"&gt;&amp;InvisibleTimes;&lt;/mo&gt;
+    &lt;mrow id="EE.3"&gt;
+      &lt;mo id="EE.3.1"&gt;(&lt;/mo&gt;
+      &lt;mi id="EE.3.2"&gt;c&lt;/mi&gt;
+      &lt;mo id="EE.3.3"&gt;+&lt;/mo&gt;
+      &lt;mi id="EE.3.4"&gt;d&lt;/mi&gt;
+      &lt;mo id="EE.3.5"&gt;)&lt;/mo&gt;
+    &lt;/mrow&gt;
+  &lt;/mrow&gt;
+
+  &lt;annotation-xml encoding="MathML-Content"&gt;
+    &lt;apply xref="EE"&gt;
+      &lt;and xref="EE.2"/&gt;
+      &lt;apply xref="EE.1"&gt;
+        &lt;xor xref="EE.1.3"/&gt;&lt;ci xref="EE.1.2"&gt;a&lt;/ci&gt;&lt;ci xref="EE.1.4"&gt;b&lt;/ci&gt;
+      &lt;/apply&gt;
+      &lt;apply xref="EE.3"&gt;
+        &lt;xor xref="EE.3.3"/&gt;&lt;ci xref="EE.3.2"&gt;c&lt;/ci&gt;&lt;ci xref="EE.3.4"&gt;d&lt;/ci&gt;
+      &lt;/apply&gt;
+    &lt;/apply&gt;
+  &lt;/annotation-xml&gt;
+
+  &lt;annotation-xml encoding="application/openmath+xml"&gt;
+    &lt;om:OMA xmlns:om="http://www.openmath.org/OpenMath" href="EE"&gt;
+      &lt;om:OMS name="and" cd="logic1" href="EE.2"/&gt;
+
+      &lt;om:OMA href="EE.1"&gt;
+        &lt;om:OMS name="xor" cd="logic1" href="EE.1.3"/&gt;
+        &lt;om:OMV name="a" href="EE.1.2"/&gt;
+        &lt;om:OMV name="b" href="EE.1.4"/&gt;
+      &lt;/om:OMA&gt;
+
+      &lt;om:OMA href="EE.3"&gt;
+        &lt;om:OMS name="xor" cd="logic1" href="EE.3.3"/&gt;
+        &lt;om:OMV name="c" href="EE.3.2"/&gt;
+        &lt;om:OMV name="d" href="EE.3.4"/&gt;
+      &lt;/om:OMA&gt;
+    &lt;/om:OMA&gt;
+  &lt;/annotation-xml&gt;
+&lt;/semantics&gt;
+</pre>
+            </div>
+            Here <code class="element" data-namespace="openmath">OMA</code>, <code class="element" data-namespace="openmath">OMS</code>
+            and <code class="element" data-namespace="openmath">OMV</code> are elements defined in the OpenMath
+            standard for representing application, symbol, and variable, respectively. 
+            The references from the OpenMath annotation are given by the
+            <code class="attribute">href</code> attributes.
+            <span id="html-xml3">As noted above, the use of namespaces other than MathML, SVG 
+               or HTML within <code class="element">annotation-xml</code> is not considered valid in the HTML syntax.
+               Use of colons and namespace-prefixed element names should be avoided
+               as the HTML parser will generate nodes with <em>local</em> name <code>om:OMA</code>
+               (for example), and such nodes can not be constructed by a namespace-aware XML parser.</span>
+            </p>
+         
+         </section>
+      
+      </section>
+   
+   </section>
