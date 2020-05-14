@@ -1,4 +1,3 @@
-# Math Accessibility Explainer
 
 ## Authors
  * Sam Dooley
@@ -43,20 +42,20 @@ Not used much.
 
 
 ### Examples of speech
-<img src="/docs/tex/ef4740140c8741b5abffcf442f79c1c7.svg?invert_in_darkmode&sanitize=true" align=middle width=17.521011749999992pt height=21.839370299999988pt/>, special cases for <img src="/docs/tex/6177db6fc70d94fdb9dbe1907695fce6.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> and <img src="/docs/tex/3c63d4517a41fc372162eaa29bc7d970.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> are common
+<img src="/docs/tex/ef4740140c8741b5abffcf442f79c1c7.svg?invert_in_darkmode&sanitize=true" align=middle width=17.521011749999992pt height=21.839370299999988pt/> may be spoken as "x raised to the nth power". However, this pattern is not always followed for powers.
+There are often special cases that people speak differently.
+<img src="/docs/tex/6177db6fc70d94fdb9dbe1907695fce6.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> ("x squared") and <img src="/docs/tex/3c63d4517a41fc372162eaa29bc7d970.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> ("x cubed") are two such examples.
 
-<img src="/docs/tex/863019f4cc45632fc74617cee3eff54f.svg?invert_in_darkmode&sanitize=true" align=middle width=50.279027699999986pt height=26.76175259999998pt/> -- also usually specially cased
+<img src="/docs/tex/863019f4cc45632fc74617cee3eff54f.svg?invert_in_darkmode&sanitize=true" align=middle width=50.279027699999986pt height=26.76175259999998pt/> is also usually specially cased ("inverse sine of x" vs "sine raised to the negative one power of x")
 
-<img src="/docs/tex/47d54de4e337a06266c0e1d22c9b417b.svg?invert_in_darkmode&sanitize=true" align=middle width=6.552545999999997pt height=27.77565449999998pt/> -- special cased?
-
-<img src="/docs/tex/a9e181dc572cb3ed023e845d7844e89e.svg?invert_in_darkmode&sanitize=true" align=middle width=19.657639649999997pt height=27.77565449999998pt/>
+Some small numeric fractions are special cased <img src="/docs/tex/47d54de4e337a06266c0e1d22c9b417b.svg?invert_in_darkmode&sanitize=true" align=middle width=6.552545999999997pt height=27.77565449999998pt/> ("one half") but not this similar numeric fraction <img src="/docs/tex/a9e181dc572cb3ed023e845d7844e89e.svg?invert_in_darkmode&sanitize=true" align=middle width=19.657639649999997pt height=27.77565449999998pt/> ("start fraction 3 over 111 end fraction").
 
 ### Examples of ambiguity
-<img src="/docs/tex/117d5fafc41a6d9edd6fdbfec19eb2a7.svg?invert_in_darkmode&sanitize=true" align=middle width=36.52973609999999pt height=24.65753399999998pt/>
+#### <img src="/docs/tex/117d5fafc41a6d9edd6fdbfec19eb2a7.svg?invert_in_darkmode&sanitize=true" align=middle width=36.52973609999999pt height=24.65753399999998pt/>
 
-<img src="/docs/tex/aa6187664247ff6929af116a80a61803.svg?invert_in_darkmode&sanitize=true" align=middle width=27.27343409999999pt height=27.6567522pt/>
+#### <img src="/docs/tex/aa6187664247ff6929af116a80a61803.svg?invert_in_darkmode&sanitize=true" align=middle width=27.27343409999999pt height=27.6567522pt/>
 
-Binomial Coefficient: <img src="/docs/tex/8afda0bcf2f9f7e7008eadbe487e90f6.svg?invert_in_darkmode&sanitize=true" align=middle width=23.194596149999988pt height=27.94539330000001pt/>
+#### Binomial Coefficient: <img src="/docs/tex/8afda0bcf2f9f7e7008eadbe487e90f6.svg?invert_in_darkmode&sanitize=true" align=middle width=23.194596149999988pt height=27.94539330000001pt/>
 
 The MathML spec suggests using a fraction with `linethickness="0"` for encoding the binomial coefficient (this is what TeX does). Here is the MathML for that:
 ```
@@ -88,8 +87,14 @@ The later encoding is ambiguous in that it can also be a 2x1 matrix/vector.
 
 In addition to be two ways to encode this, the binomial coefficient is also sometimes represented as <img src="/docs/tex/2a6f37b6b81ea5c439d6f551a63ec936.svg?invert_in_darkmode&sanitize=true" align=middle width=21.05066039999999pt height=22.465723500000017pt/>.
 
-
-## Ideas
+#### Chemistry
+Chemical formulas are often marked up using math editors. The chemical elements are one source of ambiguity, but all the notation around them, including bonds, are other sources of ambiguity
+\[
+K= \frac
+    {[\rm{C}\rm{H}_2\mathord{=}\rm{C}\rm{H}_2][\rm{H}\rm{Br}]}
+    {[\rm{C}\rm{H}_2\rm{Br}\mathord{-}\rm{C}\rm{H}_3]}
+\]
+## Ideas for Resolving Ambiguity
 
 ### "subject" attribute
 
