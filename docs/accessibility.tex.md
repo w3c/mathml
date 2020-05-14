@@ -56,7 +56,43 @@ $(1,5)$
 
 $M^T$
 
-$\binom{n}{k}$ also as 2x1 matrix
+Binomial Coefficient: $\binom{n}{k}$
+
+The MathML spec suggests using a fraction with `linethickness="0"` for encoding the binomial coefficient (this is what TeX does). Here is the MathML for that:
+```
+<mrow>
+    <mo>(</mo>
+      <mfrac linethickness="0">
+        <mi>r</mi>
+        <mi>k</mi>
+      </mfrac>
+    <mo>)</mo>
+</mrow>
+```
+However, many WYSIWYG editors don't have this construct and so a 2x1 matrix is often used instead. This is encoded as:
+```
+<mrow>
+    <mtable>
+        <mtr>
+            <mtd><mi>n</mi></mtd>
+        </mtr>
+        <mtr>
+            <mtd><mi>k</mi></mtd>
+        </mtr>
+    </mtable>
+</mrow>
+```
+</mrow>
+```
+Visually, there is a slight different in their display, but the difference is small enough that most people probably would not notice it.
+
+The later encoding is ambiguous in that it can also be a 2x1 matrix/vector.
+
+In addition to be two ways to encode this, the binomial coefficient is also sometimes represented as $C_k^n$.
 
 
 ## Ideas
+
+### "subject" attribute
+
+### "mathrole" attribute
