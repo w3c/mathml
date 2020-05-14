@@ -1,4 +1,3 @@
-# Math Accessibility Explainer
 
 ## Authors
  * Sam Dooley
@@ -43,20 +42,20 @@ Not used much.
 
 
 ### Examples of speech
-$x^n$, special cases for $x^2$ and $x^3$ are common
+$x^n$ may be spoken as "x raised to the nth power". However, this pattern is not always followed for powers.
+There are often special cases that people speak differently.
+$x^2$ ("x squared") and $x^3$ ("x cubed") are two such examples.
 
-$sin^{-1} x$ -- also usually specially cased
+$sin^{-1} x$ is also usually specially cased ("inverse sine of x" vs "sine raised to the negative one power of x")
 
-$\frac{1}{2}$ -- special cased?
-
-$\frac{3}{111}$
+Some small numeric fractions are special cased $\frac{1}{2}$ ("one half") but not this similar numeric fraction $\frac{3}{111}$ ("start fraction 3 over 111 end fraction").
 
 ### Examples of ambiguity
-$(1,5)$
+#### $(1,5)$
 
-$M^T$
+#### $M^T$
 
-Binomial Coefficient: $\binom{n}{k}$
+#### Binomial Coefficient: $\binom{n}{k}$
 
 The MathML spec suggests using a fraction with `linethickness="0"` for encoding the binomial coefficient (this is what TeX does). Here is the MathML for that:
 ```
@@ -88,8 +87,14 @@ The later encoding is ambiguous in that it can also be a 2x1 matrix/vector.
 
 In addition to be two ways to encode this, the binomial coefficient is also sometimes represented as $C_k^n$.
 
-
-## Ideas
+#### Chemistry
+Chemical formulas are often marked up using math editors. The chemical elements are one source of ambiguity, but all the notation around them, including bonds, are other sources of ambiguity
+\[
+K= \frac
+    {[\rm{C}\rm{H}_2\mathord{=}\rm{C}\rm{H}_2][\rm{H}\rm{Br}]}
+    {[\rm{C}\rm{H}_2\rm{Br}\mathord{-}\rm{C}\rm{H}_3]}
+\]
+## Ideas for Resolving Ambiguity
 
 ### "subject" attribute
 
