@@ -1,8 +1,8 @@
 # Math Accessibility Explainer
 
 ## Authors
- * Neil Soiffer
  * Sam Dooley
+ * Neil Soiffer
 
 ## Abstract
 [MathML 3](https://www.w3.org/TR/MathML3/) is a W3C recommendation for including mathematical expressions in Web pages. MathML has two parts: presentation MathML that describes how the math looks and content MathML that describes the meaning of the math. Presentation is by far the most commonly used part of MathML and is the focus of this document. Assuming they know the subject matter, a person reading math notation typically can understand its meaning. Although it is occasionally ambiguous, context resolves the ambiguity. One goal of MathML 4 is to allow authors provide context as part of the MathML to resolve the ambiguity.
@@ -38,18 +38,24 @@ Show an example.
 ### Content MathML
 Brief explanation of content MathML and parallel markup.
 Show an example.
+
 Not used much.
 
 
 ### Examples of speech
 $x^n$, special cases for $x^2$ and $x^3$ are common
+
 $sin^{-1} x$ -- also usually specially cased
+
 $\frac{1}{2}$ -- special cased?
+
 $\frac{3}{111}$
 
 ### Examples of ambiguity
 $(1,5)$
+
 $M^T$
+
 $\binom{n}{k}$ also as 2x1 matrix
 
 
