@@ -56,7 +56,43 @@ Not used much.
 
 <img src="/docs/tex/aa6187664247ff6929af116a80a61803.svg?invert_in_darkmode&sanitize=true" align=middle width=27.27343409999999pt height=27.6567522pt/>
 
-<img src="/docs/tex/8afda0bcf2f9f7e7008eadbe487e90f6.svg?invert_in_darkmode&sanitize=true" align=middle width=23.194596149999988pt height=27.94539330000001pt/> also as 2x1 matrix
+Binomial Coefficient: <img src="/docs/tex/8afda0bcf2f9f7e7008eadbe487e90f6.svg?invert_in_darkmode&sanitize=true" align=middle width=23.194596149999988pt height=27.94539330000001pt/>
+
+The MathML spec suggests using a fraction with `linethickness="0"` for encoding the binomial coefficient (this is what TeX does). Here is the MathML for that:
+```
+<mrow>
+    <mo>(</mo>
+      <mfrac linethickness="0">
+        <mi>r</mi>
+        <mi>k</mi>
+      </mfrac>
+    <mo>)</mo>
+</mrow>
+```
+However, many WYSIWYG editors don't have this construct and so a 2x1 matrix is often used instead. This is encoded as:
+```
+<mrow>
+    <mtable>
+        <mtr>
+            <mtd><mi>n</mi></mtd>
+        </mtr>
+        <mtr>
+            <mtd><mi>k</mi></mtd>
+        </mtr>
+    </mtable>
+</mrow>
+```
+</mrow>
+```
+Visually, there is a slight different in their display, but the difference is small enough that most people probably would not notice it.
+
+The later encoding is ambiguous in that it can also be a 2x1 matrix/vector.
+
+In addition to be two ways to encode this, the binomial coefficient is also sometimes represented as <img src="/docs/tex/2a6f37b6b81ea5c439d6f551a63ec936.svg?invert_in_darkmode&sanitize=true" align=middle width=21.05066039999999pt height=22.465723500000017pt/>.
 
 
 ## Ideas
+
+### "subject" attribute
+
+### "mathrole" attribute
