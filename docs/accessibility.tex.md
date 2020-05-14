@@ -89,11 +89,11 @@ In addition to be two ways to encode this, the binomial coefficient is also some
 
 #### Chemistry
 Chemical formulas are often marked up using math editors. The chemical elements are one source of ambiguity, but all the notation around them, including bonds, are other sources of ambiguity
-\[
+$$
 K= \frac
     {[\rm{C}\rm{H}_2\mathord{=}\rm{C}\rm{H}_2][\rm{H}\rm{Br}]}
     {[\rm{C}\rm{H}_2\rm{Br}\mathord{-}\rm{C}\rm{H}_3]}
-\]
+$$
 ## Ideas for Resolving Ambiguity
 
 ### "subject" attribute
