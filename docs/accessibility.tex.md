@@ -31,10 +31,26 @@ The following are reasons why math accessibility is different from text accessib
 ## Background: MathML
 
 ### Presentation MathML
+Brief explanation of presentation MathML.
+Show an example.
 
 
 ### Content MathML
+Brief explanation of content MathML and parallel markup.
+Show an example.
+Not used much.
 
+
+### Examples of speech
+$x^n$, special cases for $x^2$ and $x^3$ are common
+$sin^{-1} x$ -- also usually specially cased
+$\frac{1}{2}$ -- special cased?
+$\frac{3}{111}$
+
+### Examples of ambiguity
+$(1,5)$
+$M^T$
+$\binom{n}{k}$ also as 2x1 matrix
 
 
 ## Ideas
