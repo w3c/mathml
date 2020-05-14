@@ -82,8 +82,6 @@ However, many WYSIWYG editors don't have this construct and so a 2x1 matrix is o
     </mtable>
 </mrow>
 ```
-</mrow>
-```
 Visually, there is a slight different in their display, but the difference is small enough that most people probably would not notice it.
 
 The later encoding is ambiguous in that it can also be a 2x1 matrix/vector.
