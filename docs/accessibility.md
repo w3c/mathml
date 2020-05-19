@@ -17,7 +17,6 @@ The following are reasons why math accessibility is different from text accessib
 * **Spoken Math v Braille Math** For most text, both the speech and braille used to reprsent the text come directly from the words in the text.  For math, most braille systems encode the syntax of the math, which can be quite different from the words used to speak to speak the math.
 * **Custom AT Needs for Math** The words that a screen reader should use need to be tailored to the disability of the user. For those who cannot see the math notation, the functional structure of math needs to be explained and/or navigated. A screen reader can communicate this information with words, sounds, or prosody changes (e.g., pitch or rate). For those who can see the math, such unfamiliar sounds or words can make understanding more difficult.
 * **Math Notations v Math Instances** The notations and tokens taken together may affect how the math should be spoken. For example, the ‘4’ in <img src="/docs/tex/4199db0b0356e8ace7a77ef6b7477bab.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> might be spoken as a cardinal number (“x to the fourth power”) while the ‘2’ in <img src="/docs/tex/6177db6fc70d94fdb9dbe1907695fce6.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> is spoken as “squared” (“x squared”).
-
 * **Overloaded Math Notations** Depending on context, the same notation may have different meanings. For example, “(1, 5)” could be a point in the plane or it could be the numbers from 1 to 5, exclusive of 1 and 5. Although it could be spoken syntactically (“open paren 1 comma 2 close paren”), listeners tend to prefer to hear the meaning of the math spoken the way a teacher or another person would typically say it.
 * **Math Idioms for Expert Users** As one becomes more experienced with a notation, the words used to speak the notation might change to use idioms that are understood by those who are fluent with the underlying concepts. Examples are given below.
 
@@ -130,4 +129,5 @@ In addition to be two ways to encode this, the binomial coefficient is also some
 #### Chemistry
 Chemical formulas are often marked up using math editors. The chemical elements are one source of ambiguity, but all the notation around them, including bonds, are other sources of ambiguity
 <p align="center"><img src="/docs/tex/c7e6aa29086880ef36e9c468938d8411.svg?invert_in_darkmode&sanitize=true" align=middle width=163.6394661pt height=38.83491479999999pt/></p>
+
 ## Ideas for Resolving Ambiguity
