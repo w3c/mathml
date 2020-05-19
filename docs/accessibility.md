@@ -13,7 +13,7 @@ Math accessibility has significant differences from text accessibility because m
 ## Math Accessibility Background
 The following are reasons why math accessibility is different from text accessibility. Details are in the next section:
 
-* Mathematical expressions encode concepts, not words. The same concept can be spoken in many different ways. With the exception of abbreviations and a few words (e.g, “read”), words are always read the same.
+* Mathematical expressions encode concepts, not words. The same concept can be spoken in many different ways. With the exception of abbreviations and a few words (e.g, “*read*”), words are always *read* the same.
 
 * The words that should be used need to be tailored to the disability. For people who cannot see the mathematical expression, the 2D structure of math needs to be disambiguated. This can be done with words, sounds, or prosody changes (e.g., pitch or rate). For those who can see the math, such unfamiliar sounds or words make understanding more difficult.  
 * Most braille systems encode the syntax of math, not the words used to speak to speak math.
