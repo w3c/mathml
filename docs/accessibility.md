@@ -10,17 +10,47 @@ Math accessibility has significant differences from text accessibility because m
 
 ## Table of Contents
 
-## Math Accessibility Background
+## Why is math accessibility different from text accessibility?
 The following are reasons why math accessibility is different from text accessibility. Details are in the next section:
 
-* Mathematical expressions encode concepts, not words. The same concept can be spoken in many different ways. With the exception of abbreviations and a few words (e.g, “*read*”), words are always *read* the same.
+* **Math Concepts v Text Words** Mathematical expressions encode concepts, not words. The same concept can be spoken or brailled in many different ways, and the same notation may encode different concepts. For text, with the exception of abbreviations and a few words (e.g, “*read*”), words are almost always *read* the same.
+* **Spoken Math v Braille Math** For most text, both the speech and braille used to reprsent the text come directly from the words in the text.  For math, most braille systems encode the syntax of the math, which can be quite different from the words used to speak to speak the math.
+* **Custom AT Needs for Math** The words that a screen reader should use need to be tailored to the disability of the user. For those who cannot see the math notation, the functional structure of math needs to be explained and/or navigated. A screen reader can communicate this information with words, sounds, or prosody changes (e.g., pitch or rate). For those who can see the math, such unfamiliar sounds or words can make understanding more difficult.
+* **Math Notations v Math Instances** The notations and tokens taken together may affect how the math should be spoken. For example, the ‘4’ in <img src="/docs/tex/4199db0b0356e8ace7a77ef6b7477bab.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> might be spoken as a cardinal number (“x to the fourth power”) while the ‘2’ in <img src="/docs/tex/6177db6fc70d94fdb9dbe1907695fce6.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> is spoken as “squared” (“x squared”).
+* **Overloaded Math Notations** Depending on context, the same notation may have different meanings. For example, “(1, 5)” could be a point in the plane or it could be the numbers from 1 to 5, exclusive of 1 and 5. Although it could be spoken syntactically (“open paren 1 comma 2 close paren”), listeners tend to prefer to hear the meaning of the math spoken the way a teacher or another person would typically say it.
+* **Math Idioms for Expert Users** As one becomes more experienced with a notation, the words used to speak the notation might change to use idioms that are understood by those who are fluent with the underlying concepts. Examples are given below.
 
-* The words that should be used need to be tailored to the disability. For people who cannot see the mathematical expression, the 2D structure of math needs to be disambiguated. This can be done with words, sounds, or prosody changes (e.g., pitch or rate). For those who can see the math, such unfamiliar sounds or words make understanding more difficult.  
-* Most braille systems encode the syntax of math, not the words used to speak to speak math.
-* The notations and tokens taken together determine how the math is spoken. For example, the ‘4’ in <img src="/docs/tex/4199db0b0356e8ace7a77ef6b7477bab.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> might be spoken as a cardinal number (“x to the fourth power”) but the ‘2’ in <img src="/docs/tex/6177db6fc70d94fdb9dbe1907695fce6.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> is spoken as “squared” (“x squared”).
-* Depending on context, the same notation may have different meanings. For example, “(1, 5)” could be a point in the plane or it could be the numbers from 1 to 5, exclusive of 1 and 5. Although it could be spoken syntactically (“open paren 1 comma 2 close paren”), people don’t typically say those words when speaking it. Instead they speak the meaning and listeners tend to prefer to hear math spoken by AT the way a teacher or other people typically say it.
-* As one becomes more experienced with a notation, the words used to speak the notation might change. Examples are given below.
+For these reasons, tools for accessibility require more information about math content than they do about text content to achieve the same level of support for accessibility.
 
+## What information makes math accessible?
+
+Almost all of the information needed to make text accessible is carried by the words in the text, and knowledge of the spoken language being used.  In the vast majority of cases, this information is enough to provide a vocalization of the text for a screen reader, and a braille encoding of the text for a tactile reader, that can easily be navigated and understood by visually impaired readers.
+
+In contrast, because of the richness of math notation, and the varieties of ways it is used to convey math concepts, the symbols on the printed page used for math are often not enough to provide an accurate spoken reading of a formula, or a precise braille encoding, in a way that can be understood by a reader who uses accessible technology.
+
+To make math content accessible with the same richness as the text that surrounds it, additional information about the semantics, or meaning, of the math must be provided.
+
+## How can this information be provided to AT tools?
+
+Tremendous progress toward math accessibility has been made by using markup languages for math such as LaTeX and MathML.  While these languages do not encode semantic information, they provide a structure within which other tools may infer enough of the math meaning to be properly understood.
+
+In a web browser, presentation MathML now represents the most accessible alternative for encoding math.  Solutions based on LaTeX are not as fully integrated into the web technology stack, and tools based on content MathML, while they can provide the necessary semantic information, are more difficult to create, and often less natural for untrained users.
+
+## What do we mean by semantic markup?
+
+Since the use of Content MathML, especially in addition to Presentation MathML, involves adding more markup to an encoding that is already verbose, alternatives have been sought to minimize the amount of additional markup needed to recover the semantic interpretation of a presentational expression.  Semantic markup refers to alternative proposals to meet this need.
+
+The markup form that has been proposed for semantic markup extends presentation MathML with a math subject attribute to carry the semantic context, and a math role attribute to carry the semantic information.  The current discussion within the W3C MathML Working Group seeks to set expectations for the use of these attributes.
+
+### "mathsubject" attribute
+
+### "mathrole" attribute
+
+## Expectations for authors
+
+## Expectations for authoring tools
+
+## Expectations for screen readers
 
 ## Goals
 
@@ -99,8 +129,5 @@ In addition to be two ways to encode this, the binomial coefficient is also some
 #### Chemistry
 Chemical formulas are often marked up using math editors. The chemical elements are one source of ambiguity, but all the notation around them, including bonds, are other sources of ambiguity
 <p align="center"><img src="/docs/tex/c7e6aa29086880ef36e9c468938d8411.svg?invert_in_darkmode&sanitize=true" align=middle width=163.6394661pt height=38.83491479999999pt/></p>
+
 ## Ideas for Resolving Ambiguity
-
-### "subject" attribute
-
-### "mathrole" attribute
