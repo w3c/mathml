@@ -50,6 +50,15 @@ There are often special cases that people speak differently.
 
 Some small numeric fractions are special cased <img src="/docs/tex/47d54de4e337a06266c0e1d22c9b417b.svg?invert_in_darkmode&sanitize=true" align=middle width=6.552545999999997pt height=27.77565449999998pt/> ("one half") but not this similar numeric fraction <img src="/docs/tex/a9e181dc572cb3ed023e845d7844e89e.svg?invert_in_darkmode&sanitize=true" align=middle width=19.657639649999997pt height=27.77565449999998pt/> ("start fraction 3 over 111 end fraction").
 
+Knowing the audience for the speech is important. If someone is blind, typical speech does not distinguish where 2D structures start and end. E.g., the fraction
+<p align="center"><img src="/docs/tex/1bc7176567a891933d9e60a621e033cf.svg?invert_in_darkmode&sanitize=true" align=middle width=38.1354039pt height=36.1865163pt/></p>
+is typically spoken as "one over x plus y". That that could also be interpreted as
+<p align="center"><img src="/docs/tex/5e3758943554559c449f298e7209f8bd.svg?invert_in_darkmode&sanitize=true" align=middle width=40.10798055pt height=32.990165999999995pt/></p>
+Pausing can help a little, but at least one study has shown students prefer strong lexical cues such as saying start/end words. So for someone who is blind, "start fraction one over x plus y end fraction" is unambiguous. However, for a student with dyslexia who can see but is aided by audio, those extra words are confusing and add complexity. Hence, the words used for the speech needed to be chosen based on the audience.
+
+Another important factor when speaking is to know the skill level of the audience. For example, <img src="/docs/tex/8ff8438149960d1cd56e441e41d4d09d.svg?invert_in_darkmode&sanitize=true" align=middle width=37.80642524999999pt height=22.831056599999986pt/> is spoken as “the log base 2 of x”, but people who use that term a lot would shorten the speech to “log 2 x”.
+<img src="/docs/tex/5e7f059f50c438c67a2308c39003bae2.svg?invert_in_darkmode&sanitize=true" align=middle width=61.68602714999999pt height=28.92634470000001pt/> is introduced as “the first derivative with respect to x of sine of x” and would later be spoken as “d by dx of sine x”.
+
 ### Examples of ambiguity
 #### <img src="/docs/tex/117d5fafc41a6d9edd6fdbfec19eb2a7.svg?invert_in_darkmode&sanitize=true" align=middle width=36.52973609999999pt height=24.65753399999998pt/>
 
