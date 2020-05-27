@@ -1,7 +1,8 @@
 ---
-title: "Accessibility"
+title: "Math Accessibility Primer"
 ---
 
+# Math Accessibility Primer
 ## Authors
  * Sam Dooley
  * Neil Soiffer
