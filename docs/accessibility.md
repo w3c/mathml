@@ -1,7 +1,16 @@
+---
+title: "Accessibility"
+---
+
+* TOC
+{:toc}
+
 
 ## Authors
  * Sam Dooley
  * Neil Soiffer
+
+
 
 ## Abstract
 [MathML 3](https://www.w3.org/TR/MathML3/) is a W3C recommendation for including mathematical expressions in Web pages. MathML has two parts: Presentation MathML that describes how the math looks and Content MathML that describes the meaning of the math. Presentation is by far the most commonly used part of MathML and is the focus of this document. Assuming they know the subject matter, a person reading math notation typically can understand its meaning. Although it is occasionally ambiguous, context resolves the ambiguity. One goal of MathML 4 is to allow authors provide context as part of the MathML to resolve the ambiguity.
@@ -16,7 +25,7 @@ The following are reasons why math accessibility is different from text accessib
 * **Math Concepts v Text Words** Mathematical expressions encode concepts, not words. The same concept can be spoken or brailled in many different ways, and the same notation may encode different concepts. For text, with the exception of abbreviations and a few words (e.g, “*read*”), words are almost always *read* the same.
 * **Spoken Math v Braille Math** For most text, both the speech and braille used to reprsent the text come directly from the words in the text.  For math, most braille systems encode the syntax of the math, which can be quite different from the words used to speak to speak the math.
 * **Custom AT Needs for Math** The words that a screen reader should use need to be tailored to the disability of the user. For those who cannot see the math notation, the functional structure of math needs to be explained and/or navigated. A screen reader can communicate this information with words, sounds, or prosody changes (e.g., pitch or rate). For those who can see the math, such unfamiliar sounds or words can make understanding more difficult.
-* **Math Notations v Math Instances** The notations and tokens taken together may affect how the math should be spoken. For example, the ‘4’ in <img src="/docs/tex/4199db0b0356e8ace7a77ef6b7477bab.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> might be spoken as a cardinal number (“x to the fourth power”) while the ‘2’ in <img src="/docs/tex/6177db6fc70d94fdb9dbe1907695fce6.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> is spoken as “squared” (“x squared”).
+* **Math Notations v Math Instances** The notations and tokens taken together may affect how the math should be spoken. For example, the ‘4’ in $x^4$ might be spoken as a cardinal number (“x to the fourth power”) while the ‘2’ in $x^2$ is spoken as “squared” (“x squared”).
 * **Overloaded Math Notations** Depending on context, the same notation may have different meanings. For example, “(1, 5)” could be a point in the plane or it could be the numbers from 1 to 5, exclusive of 1 and 5. Although it could be spoken syntactically (“open paren 1 comma 2 close paren”), listeners tend to prefer to hear the meaning of the math spoken the way a teacher or another person would typically say it.
 * **Math Idioms for Expert Users** As one becomes more experienced with a notation, the words used to speak the notation might change to use idioms that are understood by those who are fluent with the underlying concepts. Examples are given below.
 
@@ -68,29 +77,29 @@ Presentation MathML is the subset of MathML that is concerned with the visual ap
 Content MathML is the subset of MathML that is concerned with the underlying structure of mathematical notations.  It provides a precise way to communicate the order of operations in an expression, and the exact intent of the user who created it.  For example, when a user creates the expression 'a(b + c)', Content MathML provides a way to say whether it means 'a times the quantity b plus c' or 'the function a applied to the quantity b plus c'.  There are many other examples of math expressions that look the same on the printed page, but may mean very different things.  Human beings can usually tell the difference based on context.  Content MathML preserves these differences, independent of context, and so it provides a solid foundation for any task that requires access to the meaning of a mathematical formula.
 
 ### Examples of speech
-<img src="/docs/tex/ef4740140c8741b5abffcf442f79c1c7.svg?invert_in_darkmode&sanitize=true" align=middle width=17.521011749999992pt height=21.839370299999988pt/> may be spoken as "x raised to the nth power". However, this pattern is not always followed for powers.
+$x^n$ may be spoken as "x raised to the nth power". However, this pattern is not always followed for powers.
 There are often special cases that people speak differently.
-<img src="/docs/tex/6177db6fc70d94fdb9dbe1907695fce6.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> ("x squared") and <img src="/docs/tex/3c63d4517a41fc372162eaa29bc7d970.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> ("x cubed") are two such examples.
+$x^2$ ("x squared") and $x^3$ ("x cubed") are two such examples.
 
-<img src="/docs/tex/863019f4cc45632fc74617cee3eff54f.svg?invert_in_darkmode&sanitize=true" align=middle width=50.279027699999986pt height=26.76175259999998pt/> is also usually specially cased ("inverse sine of x" vs "sine raised to the negative one power of x")
+$sin^{-1} x$ is also usually specially cased ("inverse sine of x" vs "sine raised to the negative one power of x")
 
-Some small numeric fractions are special cased <img src="/docs/tex/47d54de4e337a06266c0e1d22c9b417b.svg?invert_in_darkmode&sanitize=true" align=middle width=6.552545999999997pt height=27.77565449999998pt/> ("one half") but not this similar numeric fraction <img src="/docs/tex/a9e181dc572cb3ed023e845d7844e89e.svg?invert_in_darkmode&sanitize=true" align=middle width=19.657639649999997pt height=27.77565449999998pt/> ("start fraction 3 over 111 end fraction").
+Some small numeric fractions are special cased $\frac{1}{2}$ ("one half") but not this similar numeric fraction $\frac{3}{111}$ ("start fraction 3 over 111 end fraction").
 
 Knowing the audience for the speech is important. If someone is blind, typical speech does not distinguish where 2D structures start and end. E.g., the fraction
-<p align="center"><img src="/docs/tex/1bc7176567a891933d9e60a621e033cf.svg?invert_in_darkmode&sanitize=true" align=middle width=38.1354039pt height=36.1865163pt/></p>
+$$ \frac{1}{x+y}$$
 is typically spoken as "one over x plus y". That that could also be interpreted as
-<p align="center"><img src="/docs/tex/5e3758943554559c449f298e7209f8bd.svg?invert_in_darkmode&sanitize=true" align=middle width=40.10798055pt height=32.990165999999995pt/></p>
+$$\frac{1}{x}+y$$
 Pausing can help a little, but at least one study has shown students prefer strong lexical cues such as saying start/end words. So for someone who is blind, "start fraction one over x plus y end fraction" is unambiguous. However, for a student with dyslexia who can see but is aided by audio, those extra words are confusing and add complexity. Hence, the words used for the speech needed to be chosen based on the audience.
 
-Another important factor when speaking is to know the skill level of the audience. For example, <img src="/docs/tex/8ff8438149960d1cd56e441e41d4d09d.svg?invert_in_darkmode&sanitize=true" align=middle width=37.80642524999999pt height=22.831056599999986pt/> is spoken as “the log base 2 of x”, but people who use that term a lot would shorten the speech to “log 2 x”.
-<img src="/docs/tex/5e7f059f50c438c67a2308c39003bae2.svg?invert_in_darkmode&sanitize=true" align=middle width=61.68602714999999pt height=28.92634470000001pt/> is introduced as “the first derivative with respect to x of sine of x” and would later be spoken as “d by dx of sine x”.
+Another important factor when speaking is to know the skill level of the audience. For example, $log_2 x$ is spoken as “the log base 2 of x”, but people who use that term a lot would shorten the speech to “log 2 x”.
+$\frac{d}{dx} sin(x)$ is introduced as “the first derivative with respect to x of sine of x” and would later be spoken as “d by dx of sine x”.
 
 ### Examples of ambiguity
-#### <img src="/docs/tex/117d5fafc41a6d9edd6fdbfec19eb2a7.svg?invert_in_darkmode&sanitize=true" align=middle width=36.52973609999999pt height=24.65753399999998pt/>
+#### $(1,5)$
 
-#### <img src="/docs/tex/aa6187664247ff6929af116a80a61803.svg?invert_in_darkmode&sanitize=true" align=middle width=27.27343409999999pt height=27.6567522pt/>
+#### $M^T$
 
-#### Binomial Coefficient: <img src="/docs/tex/8afda0bcf2f9f7e7008eadbe487e90f6.svg?invert_in_darkmode&sanitize=true" align=middle width=23.194596149999988pt height=27.94539330000001pt/>
+#### Binomial Coefficient: $\binom{n}{k}$
 
 The MathML spec suggests using a fraction with `linethickness="0"` for encoding the binomial coefficient (this is what TeX does). Here is the MathML for that:
 ```
@@ -120,10 +129,14 @@ Visually, there is a slight different in their display, but the difference is sm
 
 The later encoding is ambiguous in that it can also be a 2x1 matrix/vector.
 
-In addition to be two ways to encode this, the binomial coefficient is also sometimes represented as <img src="/docs/tex/2a6f37b6b81ea5c439d6f551a63ec936.svg?invert_in_darkmode&sanitize=true" align=middle width=21.05066039999999pt height=22.465723500000017pt/>.
+In addition to be two ways to encode this, the binomial coefficient is also sometimes represented as $C_k^n$.
 
 #### Chemistry
 Chemical formulas are often marked up using math editors. The chemical elements are one source of ambiguity, but all the notation around them, including bonds, are other sources of ambiguity
-<p align="center"><img src="/docs/tex/c7e6aa29086880ef36e9c468938d8411.svg?invert_in_darkmode&sanitize=true" align=middle width=163.6394661pt height=38.83491479999999pt/></p>
+$$
+K= \frac
+    {[\rm{C}\rm{H}_2\mathord{=}\rm{C}\rm{H}_2][\rm{H}\rm{Br}]}
+    {[\rm{C}\rm{H}_2\rm{Br}\mathord{-}\rm{C}\rm{H}_3]}
+$$
 
 ## Ideas for Resolving Ambiguity
