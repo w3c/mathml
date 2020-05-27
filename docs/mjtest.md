@@ -28,6 +28,6 @@ title: MathJax Test
 
 # MathML input
 
-1. inline <math display="inline"><mfrac><mi>a<mi><mi>b</mi></math> inline
+1. inline <math display="inline"><mfrac><mi>a</mi><mi>b</mi></mfrac></math> inline
 
-2. display <math display="block"><mfrac><mi>a<mi><mi>b</mi></math> display
+2. display <math display="block"><mfrac><mi>a</mi><mi>b</mi></mfrac></math> display
