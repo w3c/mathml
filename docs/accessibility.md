@@ -81,24 +81,19 @@ $x^n$ may be spoken as "x raised to the nth power". However, this pattern is not
 There are often special cases that people speak differently.
 $x^2$ ("x squared") and $x^3$ ("x cubed") are two such examples.
 
-$sin^{-1} x$ is also usually specially cased ("inverse sine of x" vs "sine raised to the negative one power of x")
+$\sin^{-1} x$ is also usually specially cased ("inverse sine of x" vs "sine raised to the negative one power of x")
 
 Some small numeric fractions are special cased $\frac{1}{2}$ ("one half") but not this similar numeric fraction $\frac{3}{111}$ ("start fraction 3 over 111 end fraction").
 
-XX Knowing the audience for the speech is important. If someone is blind, typical speech does not distinguish where 2D structures start and end. E.g., the fraction
-$$ \frac{1}{x+y}$$
-is typically spoken as "one over x plus y". That that could also be interpreted as
-$$\frac{1}{x}+y$$
-Pausing can help a little, but at least one study has shown students prefer strong lexical cues such as saying start/end words. So for someone who is blind, "start fraction one over x plus y end fraction" is unambiguous. However, for a student with dyslexia who can see but is aided by audio, those extra words are confusing and add complexity. Hence, the words used for the speech needed to be chosen based on the audience.
 
-YY Knowing the audience for the speech is important. If someone is blind, typical speech does not distinguish where 2D structures start and end. E.g., the fraction
+Knowing the audience for the speech is important. If someone is blind, typical speech does not distinguish where 2D structures start and end. E.g., the fraction
 \\[ \frac{1}{x+y}\\]
 is typically spoken as "one over x plus y". That that could also be interpreted as
 \\[\frac{1}{x}+y\\]
 Pausing can help a little, but at least one study has shown students prefer strong lexical cues such as saying start/end words. So for someone who is blind, "start fraction one over x plus y end fraction" is unambiguous. However, for a student with dyslexia who can see but is aided by audio, those extra words are confusing and add complexity. Hence, the words used for the speech needed to be chosen based on the audience.
 
-Another important factor when speaking is to know the skill level of the audience. For example, $log_2 x$ is spoken as “the log base 2 of x”, but people who use that term a lot would shorten the speech to “log 2 x”.
-$\frac{d}{dx} sin(x)$ is introduced as “the first derivative with respect to x of sine of x” and would later be spoken as “d by dx of sine x”.
+Another important factor when speaking is to know the skill level of the audience. For example, $\log_2 x$ is spoken as “the log base 2 of x”, but people who use that term a lot would shorten the speech to “log 2 x”.
+$\frac{d}{dx} \sin(x)$ is introduced as “the first derivative with respect to x of sine of x” and would later be spoken as “d by dx of sine x”.
 
 ### Examples of ambiguity
 #### $(1,5)$
@@ -139,10 +134,10 @@ In addition to be two ways to encode this, the binomial coefficient is also some
 
 #### Chemistry
 Chemical formulas are often marked up using math editors. The chemical elements are one source of ambiguity, but all the notation around them, including bonds, are other sources of ambiguity
-$$
+\\[
 K= \frac
-    {[\rm{C}\rm{H}_2\mathord{=}\rm{C}\rm{H}_2][\rm{H}\rm{Br}]}
-    {[\rm{C}\rm{H}_2\rm{Br}\mathord{-}\rm{C}\rm{H}_3]}
-$$
+    {[\mathrm{C}\mathrm{H}_2\mathord{=}\mathrm{C}\mathrm{H}_2][\mathrm{H}\mathrm{Br}]}
+    {[\mathrm{C}\mathrm{H}_2\mathrm{Br}\mathord{-}\mathrm{C}\mathrm{H}_3]}
+\\]
 
 ## Ideas for Resolving Ambiguity
