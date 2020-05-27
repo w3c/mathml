@@ -4,7 +4,7 @@
  * Neil Soiffer
 
 ## Abstract
-[MathML 3](https://www.w3.org/TR/MathML3/) is a W3C recommendation for including mathematical expressions in Web pages. MathML has two parts: presentation MathML that describes how the math looks and content MathML that describes the meaning of the math. Presentation is by far the most commonly used part of MathML and is the focus of this document. Assuming they know the subject matter, a person reading math notation typically can understand its meaning. Although it is occasionally ambiguous, context resolves the ambiguity. One goal of MathML 4 is to allow authors provide context as part of the MathML to resolve the ambiguity.
+[MathML 3](https://www.w3.org/TR/MathML3/) is a W3C recommendation for including mathematical expressions in Web pages. MathML has two parts: Presentation MathML that describes how the math looks and Content MathML that describes the meaning of the math. Presentation is by far the most commonly used part of MathML and is the focus of this document. Assuming they know the subject matter, a person reading math notation typically can understand its meaning. Although it is occasionally ambiguous, context resolves the ambiguity. One goal of MathML 4 is to allow authors provide context as part of the MathML to resolve the ambiguity.
 
 Math accessibility has significant differences from text accessibility because math notation is a shorthand for its meaning. The words spoken for it differ from the braille that would be used for it. Furthermore, the words that are spoken need to differ based on the reader’s disabilities and familiarity of the content. Hence, enough information from MathML should be given to the assistive technology of a user so that it can generate a meaningful presentation of the math to the user. 
 
@@ -32,15 +32,15 @@ To make math content accessible with the same richness as the text that surround
 
 ## How can this information be provided to AT tools?
 
-Tremendous progress toward math accessibility has been made by using markup languages for math such as LaTeX and MathML.  While these languages do not encode semantic information, they provide a structure within which other tools may infer enough of the math meaning to be properly understood.
+Tremendous progress toward math accessibility has been made using markup languages for math such as LaTeX and MathML.  LaTeX can be written by the visually impaired with a plain-text editor and used to create typeset math for sighted users.  MathML in a web page allows Javascript tools to process math markup in ways that go beyond simply adding alternate text for math images.  While these languages do not encode semantic information, they provide a structure within which other tools may infer enough of the math meaning to be properly understood.
 
-In a web browser, presentation MathML now represents the most accessible alternative for encoding math.  Solutions based on LaTeX are not as fully integrated into the web technology stack, and tools based on content MathML, while they can provide the necessary semantic information, are more difficult to create, and often less natural for untrained users.
+In a web browser, Presentation MathML now represents the most accessible alternative for encoding math.  Solutions based on LaTeX are not as fully integrated into the web technology stack, and tools based on Content MathML, while they can provide the necessary semantic information, are more difficult to create, and often less natural for untrained users.
 
 ## What do we mean by semantic markup?
 
 Since the use of Content MathML, especially in addition to Presentation MathML, involves adding more markup to an encoding that is already verbose, alternatives have been sought to minimize the amount of additional markup needed to recover the semantic interpretation of a presentational expression.  Semantic markup refers to alternative proposals to meet this need.
 
-The markup form that has been proposed for semantic markup extends presentation MathML with a math subject attribute to carry the semantic context, and a math role attribute to carry the semantic information.  The current discussion within the W3C MathML Working Group seeks to set expectations for the use of these attributes.
+The markup form that has been proposed for semantic markup extends Presentation MathML with a math subject attribute to carry the semantic context, and a math role attribute to carry the semantic information.  The current discussion within the W3C MathML Working Group seeks to set expectations for the use of these attributes.
 
 ### "mathsubject" attribute
 
@@ -60,16 +60,12 @@ The markup form that has been proposed for semantic markup extends presentation 
 ## Background: MathML
 
 ### Presentation MathML
-Brief explanation of presentation MathML.
-Show an example.
 
+Presentation MathML is the subset of MathML that is concerned with the visual appearance of mathematical notations.  It is the most commonly used variety of MathML, and is sufficient to provide read-only visual access to static math in a web page, which satisfies many common end user requirements.  Just as with LaTeX, the primary purpose for Presentation MathML is to produce high quality images of technical mathematics for consumption by sighted human readers. In this way, it is similar to how PDF documents produce high quality images of textual materials.
 
 ### Content MathML
-Brief explanation of content MathML and parallel markup.
-Show an example.
 
-Not used much.
-
+Content MathML is the subset of MathML that is concerned with the underlying structure of mathematical notations.  It provides a precise way to communicate the order of operations in an expression, and the exact intent of the user who created it.  For example, when a user creates the expression 'a(b + c)', Content MathML provides a way to say whether it means 'a times the quantity b plus c' or 'the function a applied to the quantity b plus c'.  There are many other examples of math expressions that look the same on the printed page, but may mean very different things.  Human beings can usually tell the difference based on context.  Content MathML preserves these differences, independent of context, and so it provides a solid foundation for any task that requires access to the meaning of a mathematical formula.
 
 ### Examples of speech
 <img src="/docs/tex/ef4740140c8741b5abffcf442f79c1c7.svg?invert_in_darkmode&sanitize=true" align=middle width=17.521011749999992pt height=21.839370299999988pt/> may be spoken as "x raised to the nth power". However, this pattern is not always followed for powers.
