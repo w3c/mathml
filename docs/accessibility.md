@@ -17,9 +17,7 @@ title: "Accessibility"
 
 Math accessibility has significant differences from text accessibility because math notation is a shorthand for its meaning. The words spoken for it differ from the braille that would be used for it. Furthermore, the words that are spoken need to differ based on the reader’s disabilities and familiarity of the content. Hence, enough information from MathML should be given to the assistive technology of a user so that it can generate a meaningful presentation of the math to the user. 
 
-## Table of Contents
-
-## Why is math accessibility different from text accessibility?
+# Why is math accessibility different from text accessibility?
 The following are reasons why math accessibility is different from text accessibility. Details are in the next section:
 
 * **Math Concepts v Text Words** Mathematical expressions encode concepts, not words. The same concept can be spoken or brailled in many different ways, and the same notation may encode different concepts. For text, with the exception of abbreviations and a few words (e.g, “*read*”), words are almost always *read* the same.
@@ -45,38 +43,51 @@ Tremendous progress toward math accessibility has been made using markup languag
 
 In a web browser, Presentation MathML now represents the most accessible alternative for encoding math.  Solutions based on LaTeX are not as fully integrated into the web technology stack, and tools based on Content MathML, while they can provide the necessary semantic information, are more difficult to create, and often less natural for untrained users.
 
+# Background: MathML
+[The MathML 3 recommendation](https://www.w3.org/TR/MathML3/) has two subsets: Presentation MathML and Content MathML. Although these subsets can be intermixed, in practice that is very rare. Both subsets can be combined into a [parallel markup](https://www.w3.org/TR/MathML3/chapter5.html), but that is complicated and also rarely done in practice.
+
+## Presentation MathML
+
+Presentation MathML is the subset of MathML that is concerned with the visual appearance of mathematical notations.  It is by far the most commonly used variety of MathML. Presentation MathML is sufficient to provide read-only visual access to static math in a web page, which satisfies many common end user requirements.  Just as with LaTeX, the primary purpose for Presentation MathML is to produce high quality images of technical mathematics for consumption by sighted human readers. In this way, it is similar to how PDF documents produce high quality images of textual materials.
+
+## Content MathML
+
+Content MathML is the subset of MathML that is concerned with the underlying structure of mathematical notations.  It provides a precise way to communicate the order of operations in an expression, and the exact intent of the user who created it.  For example, when a user creates the expression 'a(b + c)', Content MathML provides a way to say whether it means 'a times the quantity b plus c' or 'the function a applied to the quantity b plus c'.  There are many other examples of math expressions that look the same on the printed page, but may mean very different things.  Human beings can usually tell the difference based on context.  Content MathML preserves these differences, independent of context, and so it provides a solid foundation for any task that requires access to the meaning of a mathematical formula. However, how that content is displayed is not specified. For example, a fraction may be displayed in its 2D form, as a "bevelled" fraction, or linearly with parentheses and "/".
+
 ## What do we mean by semantic markup?
 
-Since the use of Content MathML, especially in addition to Presentation MathML, involves adding more markup to an encoding that is already verbose, alternatives have been sought to minimize the amount of additional markup needed to recover the semantic interpretation of a presentational expression.  Semantic markup refers to alternative proposals to meet this need.
+Since the use of Content MathML, especially in addition to Presentation MathML, involves adding more markup to an encoding that is already verbose, The [MathML 4 refresh community group](https://www.w3.org/community/mathml4/) is working on a way to minimize the amount of additional markup needed to recover the semantic interpretation of a presentational expression.  _Semantic markup_ refers to the proposals of that group to meet this need.
 
 The markup form that has been proposed for semantic markup extends Presentation MathML with a math subject attribute to carry the semantic context, and a math role attribute to carry the semantic information.  The current discussion within the W3C MathML Working Group seeks to set expectations for the use of these attributes.
 
-### "mathsubject" attribute
+# Semantic Markup
 
-### "mathrole" attribute
+## "mathsubject" attribute
+
+## "mathrole" attribute
 
 ## Expectations for authors
+MathML is very verbose. Few people author HTML directly; even fewer author MathML directly. Semantic markup _allows_ authors to add semantic information, but does not require them to do so.
 
-## Expectations for authoring tools
+Most presentation MathML is likely disambiguated correctly in a generic context, but remediation of MathML should not be cumbersome in most cases. In particular, a webpage is likely concerned with a single subject and the simple addition of a subject area to each `math` tag will likely resolve a large percentage of the ambiguities, especially if the invisible Unicode characters U+2061 (FUNCTION APPLICATION) and U+2062 (INVISIBLE TIMES) are present in the MathML to disambiguate those cases.
+
+## Expectations for authoring tools and convertors
+
+WYSIWYG math editors have typically focused 
+
+Conversion tools from TeX to MathML should be able to produce semantic markup in some cases:
+* there is some semantics in TeX's basic macros: function call in `\sin x`, binomial coefficient in `\binom{n}{m}`, etc.
+* some authoring systems such as [PreTeXt](https://pretextbook.org/) use many more macros to disambiguate the meaning and improve layout. They may be able to produce semantic markup if the authors use the macros.
+
+Convertors from Content MathML to Presentation MathML should be able to produce semantic markup all of the time.
 
 ## Expectations for screen readers
 
-## Goals
 
-## Non-Goals
+# Examples
 
 
-## Background: MathML
-
-### Presentation MathML
-
-Presentation MathML is the subset of MathML that is concerned with the visual appearance of mathematical notations.  It is the most commonly used variety of MathML, and is sufficient to provide read-only visual access to static math in a web page, which satisfies many common end user requirements.  Just as with LaTeX, the primary purpose for Presentation MathML is to produce high quality images of technical mathematics for consumption by sighted human readers. In this way, it is similar to how PDF documents produce high quality images of textual materials.
-
-### Content MathML
-
-Content MathML is the subset of MathML that is concerned with the underlying structure of mathematical notations.  It provides a precise way to communicate the order of operations in an expression, and the exact intent of the user who created it.  For example, when a user creates the expression 'a(b + c)', Content MathML provides a way to say whether it means 'a times the quantity b plus c' or 'the function a applied to the quantity b plus c'.  There are many other examples of math expressions that look the same on the printed page, but may mean very different things.  Human beings can usually tell the difference based on context.  Content MathML preserves these differences, independent of context, and so it provides a solid foundation for any task that requires access to the meaning of a mathematical formula.
-
-### Examples of speech
+## Examples of speech
 $x^n$ may be spoken as "x raised to the nth power". However, this pattern is not always followed for powers.
 There are often special cases that people speak differently.
 $x^2$ ("x squared") and $x^3$ ("x cubed") are two such examples.
@@ -95,12 +106,12 @@ Pausing can help a little, but at least one study has shown students prefer stro
 Another important factor when speaking is to know the skill level of the audience. For example, $\log_2 x$ is spoken as “the log base 2 of x”, but people who use that term a lot would shorten the speech to “log 2 x”.
 $\frac{d}{dx} \sin(x)$ is introduced as “the first derivative with respect to x of sine of x” and would later be spoken as “d by dx of sine x”.
 
-### Examples of ambiguity
-#### $(1,5)$
+## Examples of ambiguity
+### $(1,5)$
 
-#### $M^T$
+### $M^T$
 
-#### Binomial Coefficient: $\binom{n}{k}$
+### Binomial Coefficient: $\binom{n}{k}$
 
 The MathML spec suggests using a fraction with `linethickness="0"` for encoding the binomial coefficient (this is what TeX does). Here is the MathML for that:
 ```
@@ -132,7 +143,7 @@ The later encoding is ambiguous in that it can also be a 2x1 matrix/vector.
 
 In addition to be two ways to encode this, the binomial coefficient is also sometimes represented as $C_k^n$.
 
-#### Chemistry
+### Chemistry
 Chemical formulas are often marked up using math editors. The chemical elements are one source of ambiguity, but all the notation around them, including bonds, are other sources of ambiguity
 \\[
 K= \frac
@@ -140,4 +151,4 @@ K= \frac
     {[\mathrm{C}\mathrm{H}_2\mathrm{Br}\mathord{-}\mathrm{C}\mathrm{H}_3]}
 \\]
 
-## Ideas for Resolving Ambiguity
+# Summary 
