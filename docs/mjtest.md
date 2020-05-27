@@ -7,11 +7,12 @@ title: MathJax Test
 # TeX input
 
 {% raw %}
-You can mark up inline math with `$...$` or display with `\\[...\\]`
-Some tex costructs notably `{{` or `{%` get picked up by the templating
-language and so simple cases it is enough just to use the above but in
-general you can surround with `{%` raw `%}`...`{%` endraw `%}` to protect
-the TeX markup from the Jekyll templating.
+You can mark up inline math with `$...$` or display with
+`\\[...\\]` Some tex constructs, notably `{{` or `{%`, get picked up
+by the templating language and so for simple cases it is enough just
+to use the above but in general you need to also surround with
+`{%` raw `%}`...`{%` endraw `%}`
+to protect the TeX markup from the Jekyll templating.
 {% endraw %}
 
 1. inline $\frac{a}{b}$ and $\frac{{a}}{{b}}$ inline BAD
