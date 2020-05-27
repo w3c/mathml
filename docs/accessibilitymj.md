@@ -1,5 +1,5 @@
 ---
-title: "accessibility"
+title: "Accessibility"
 ---
 
 * TOC
