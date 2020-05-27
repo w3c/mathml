@@ -5,11 +5,11 @@ title: MathJax Test
 
 # TeX input
 
-1. inline $\frac{a}{b}$ and $\frac{{a}}{{b}}$ inline
+1. inline $\frac{a}{b}$ and $\frac{{a}}{{b}}$ inline BAD
 
 2. inline {% raw %}$\frac{a}{b}$ and $\frac{{a}}{{b}}${%endraw %} inline
 
-3. display
+3. display BAD
    \\[\frac{a}{b} + \frac{{a}}{{b}}\\]
    display
 
@@ -26,3 +26,8 @@ title: MathJax Test
    display
 
 
+# MathML input
+
+1. inline <math display="inline"><mfrac><mi>a<mi><mi>b</mi></math> inline
+
+2. display <math display="block"><mfrac><mi>a<mi><mi>b</mi></math> display
