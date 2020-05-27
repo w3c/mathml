@@ -2,10 +2,6 @@
 title: "Accessibility"
 ---
 
-* TOC
-{:toc}
-
-
 ## Authors
  * Sam Dooley
  * Neil Soiffer
@@ -16,6 +12,10 @@ title: "Accessibility"
 [MathML 3](https://www.w3.org/TR/MathML3/) is a W3C recommendation for including mathematical expressions in Web pages. MathML has two parts: Presentation MathML that describes how the math looks and Content MathML that describes the meaning of the math. Presentation is by far the most commonly used part of MathML and is the focus of this document. Assuming they know the subject matter, a person reading math notation typically can understand its meaning. Although it is occasionally ambiguous, context resolves the ambiguity. One goal of MathML 4 is to allow authors provide context as part of the MathML to resolve the ambiguity.
 
 Math accessibility has significant differences from text accessibility because math notation is a shorthand for its meaning. The words spoken for it differ from the braille that would be used for it. Furthermore, the words that are spoken need to differ based on the reader’s disabilities and familiarity of the content. Hence, enough information from MathML should be given to the assistive technology of a user so that it can generate a meaningful presentation of the math to the user. 
+
+* TOC
+{:toc}
+
 
 # Why is math accessibility different from text accessibility?
 The following are reasons why math accessibility is different from text accessibility. Details are in the next section:
