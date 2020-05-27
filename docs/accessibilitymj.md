@@ -6,6 +6,10 @@ title: "accessibility"
  * Sam Dooley
  * Neil Soiffer
 
+* TOC
+{:toc}
+
+
 ## Abstract
 [MathML 3](https://www.w3.org/TR/MathML3/) is a W3C recommendation for including mathematical expressions in Web pages. MathML has two parts: Presentation MathML that describes how the math looks and Content MathML that describes the meaning of the math. Presentation is by far the most commonly used part of MathML and is the focus of this document. Assuming they know the subject matter, a person reading math notation typically can understand its meaning. Although it is occasionally ambiguous, context resolves the ambiguity. One goal of MathML 4 is to allow authors provide context as part of the MathML to resolve the ambiguity.
 
