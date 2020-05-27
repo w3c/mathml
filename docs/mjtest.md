@@ -10,7 +10,7 @@ title: MathJax Test
 You can mark up inline math with `$...$` or display with `\\[...\\]`
 Some tex costructs notably `{{` or `{%` get picked up by the templating
 language and so simple cases it is enough just to use the above but in
-general you can surround with `{% raw %}...{% endraw %}` to protect
+general you can surround with `{%` raw `%}`...`{%` endraw `%}` to protect
 the TeX markup from the Jekyll templating.
 {% endraw %}
 
