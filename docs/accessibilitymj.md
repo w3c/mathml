@@ -2,12 +2,14 @@
 title: "accessibility"
 ---
 
+* TOC
+{:toc}
+
+
 ## Authors
  * Sam Dooley
  * Neil Soiffer
 
-* TOC
-{:toc}
 
 
 ## Abstract
