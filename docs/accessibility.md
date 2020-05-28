@@ -1,5 +1,6 @@
 ---
 title: "Math Accessibility Primer"
+layout: cgreport
 ---
 
 ## Authors
@@ -13,13 +14,14 @@ title: "Math Accessibility Primer"
 
 Math accessibility has significant differences from text accessibility because math notation is a shorthand for its meaning. The words spoken for it differ from the braille that would be used for it. Furthermore, the words that are spoken need to differ based on the reader’s disabilities and familiarity of the content. Hence, enough information from MathML should be given to the assistive technology of a user so that it can generate a meaningful presentation of the math to the user. 
 
-
+<nav id="toc" kramdown="1">
 # Table of Contents
 {:.no_toc}
 
 * toc
 {:toc}
 
+</nav>
 
 # Why is math accessibility different from text accessibility?
 The following are reasons why math accessibility is different from text accessibility. Details are in the next section:
