@@ -106,7 +106,7 @@ Some small numeric fractions are special cased $\frac{1}{2}$ ("one half") but no
 
 Knowing the audience for the speech is important. If someone is blind, typical speech does not distinguish where 2D structures start and end. E.g., the fraction
 \\[ \frac{1}{x+y}\\]
-is typically spoken as "one over x plus y". That that could also be interpreted as
+is typically spoken as "one over x plus y". That could also be interpreted as
 \\[\frac{1}{x}+y\\]
 Pausing can help a little, but at least one study has shown students prefer strong lexical cues such as saying start/end words. So for someone who is blind, "start fraction one over x plus y end fraction" is unambiguous. However, for a student with dyslexia who can see but is aided by audio, those extra words are confusing and add complexity. Hence, the words used for the speech needed to be chosen based on the audience.
 
