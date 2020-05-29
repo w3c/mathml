@@ -1,5 +1,6 @@
 ---
 title: "Math Accessibility Primer"
+layout: cgreport
 ---
 
 ## Authors
@@ -13,6 +14,7 @@ title: "Math Accessibility Primer"
 
 Math accessibility has significant differences from text accessibility because math notation is a shorthand for its meaning. The words spoken for it differ from the braille that would be used for it. Furthermore, the words that are spoken need to differ based on the reader’s disabilities and familiarity of the content. Hence, enough information from MathML should be given to the assistive technology of a user so that it can generate a meaningful presentation of the math to the user. 
 
+<nav id="toc" markdown="1">
 
 # Table of Contents
 {:.no_toc}
@@ -20,6 +22,7 @@ Math accessibility has significant differences from text accessibility because m
 * toc
 {:toc}
 
+</nav>
 
 # Why is math accessibility different from text accessibility?
 The following are reasons why math accessibility is different from text accessibility. Details are in the next section:
@@ -108,7 +111,7 @@ Some small numeric fractions are special cased $\frac{1}{2}$ ("one half") but no
 
 Knowing the audience for the speech is important. If someone is blind, typical speech does not distinguish where 2D structures start and end. E.g., the fraction
 \\[ \frac{1}{x+y}\\]
-is typically spoken as "one over x plus y". That that could also be interpreted as
+is typically spoken as "one over x plus y". That could also be interpreted as
 \\[\frac{1}{x}+y\\]
 Pausing can help a little, but at least one study has shown students prefer strong lexical cues such as saying start/end words. So for someone who is blind, "start fraction one over x plus y end fraction" is unambiguous. However, for a student with dyslexia who can see but is aided by audio, those extra words are confusing and add complexity. Hence, the words used for the speech needed to be chosen based on the audience.
 
