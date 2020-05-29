@@ -70,20 +70,25 @@ The markup form that has been proposed for semantic markup extends Presentation 
 
 ## "mathrole" attribute
 
-## Expectations for authors
-MathML is very verbose. Few people author HTML directly; even fewer author MathML directly. Semantic markup _allows_ authors to add semantic information, but does not require them to do so.
-
-Most presentation MathML is likely disambiguated correctly in a generic context, but remediation of MathML should not be cumbersome in most cases. In particular, a webpage is likely concerned with a single subject and the simple addition of a subject area to each `math` tag will likely resolve a large percentage of the ambiguities, especially if the invisible Unicode characters U+2061 (FUNCTION APPLICATION) and U+2062 (INVISIBLE TIMES) are present in the MathML to disambiguate those cases.
-
 ## Expectations for authoring tools and convertors
+MathML is very verbose. Few people author HTML directly; even fewer author MathML directly. Authoring math is typically done either in a WYSIWYG math editor or in a typesetting language such as TeX/LaTeX which was designed to support math notation. For the most part, the focus of both is to make the visual presentation look good.
 
-WYSIWYG math editors have typically focused 
+WYSIWYG math editors have focused on making math look nice. They typically offer palettes of common notations and characters used in math with keyboard equivalents to simplify authoring. They provide little support to disambiguate the notations except where doing so produces better display. For example, typing "sin" would normally display as "_sin_", but the editors recognize this as a mathematical function; they don't use italics and correctly generate a single `<mi>sin</mi>` rather than three separate `mi`'s, one for each letter as would be appropriate for multiplication of the three letters/variables. In the future, we expect editors will include support to allow (not _require_) users to add additional semantics to the generated MathML via the above tagging. We expect this to happen because such additions are relatively simple and because users will request such features due to their desire and/or requirement to produce accessible material.
 
+TeX (and its extension LaTeX) are used to write entire documents. In markdown and other authoring systems, the math part of TeX is often used for math content. However, TeX is extensible and authors frequently add macros for commonly used notations in math. This means that each system supports similar but differing subsets of TeX for math. Because TeX use macros for some notations, this can be exploited in TeX to MathML translators. For example, TeX has the macro `\sin` for the mathematical function of the same name.
 Conversion tools from TeX to MathML should be able to produce semantic markup in some cases:
-* there is some semantics in TeX's basic macros: function call in `\sin x`, binomial coefficient in `\binom{n}{m}`, etc.
-* some authoring systems such as [PreTeXt](https://pretextbook.org/) use many more macros to disambiguate the meaning and improve layout. They may be able to produce semantic markup if the authors use the macros.
+* TeX's basic macros are already semantically translated properly as noted with "sin" above. We expect additional support for other macros such as `\binom{n}{m}` to added to be added to translators because doing so is relatively easy.
+* More general support for the semantic macros requires the addition of two additional macros/commands. We expect the MathML refresh CG to propose details for those macros. Addition of them to translators will happen if the user community pushes for them. We expect supporting whatever gets proposed to be relatively simple.
+* Some authoring systems such as [PreTeXt](https://pretextbook.org/) use many more macros to disambiguate the meaning and improve layout. They may be able to produce semantic markup if the authors use the macros.
 
 Convertors from Content MathML to Presentation MathML should be able to produce semantic markup all of the time.
+
+## Expectations for authors
+ Semantic markup _allows_ authors to add semantic information, but does not require them to do so.
+
+When people author math, they are mostly concerned about making it look right and not about the semantics
+
+Most presentation MathML is likely disambiguated correctly in a generic context, but remediation of MathML should not be cumbersome in most cases. In particular, a webpage is likely concerned with a single subject and the simple addition of a subject area to each `math` tag will likely resolve a large percentage of the ambiguities, especially if the invisible Unicode characters U+2061 (FUNCTION APPLICATION) and U+2062 (INVISIBLE TIMES) are present in the MathML to disambiguate those cases. An exception is "units"
 
 ## Expectations for screen readers
 
