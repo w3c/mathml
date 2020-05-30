@@ -71,6 +71,8 @@ The markup form that has been proposed for semantic markup extends Presentation 
 
 ## "mathrole" attribute
 
+# Expectations: From Authors to AT
+
 ## Expectations for authoring tools and convertors
 MathML is XML-based and is very verbose. Few people author HTML directly; even fewer author MathML directly. Authoring math is typically done either in a WYSIWYG math editor or in a typesetting language such as TeX/LaTeX which was designed to support math notation. For the most part, the focus of both is to make the visual presentation look good.
 
@@ -78,7 +80,7 @@ WYSIWYG math editors have focused immediate feedback of mtematical notation. The
 
 TeX (and its extension LaTeX) are used to write entire documents,usually those with a technical focus because of its excellent built-in support for math. In markdown and other authoring systems, the math syntax of TeX is often used for math content. However, TeX is extensible and authors frequently add macros for commonly used notations in math. This means that each system supports similar but differing subsets of TeX for math. Because TeX uses macros for some notations, this can be exploited in TeX to MathML translators. For example, TeX has the macro `\sin` for the mathematical function of the same name.
 Conversion tools from TeX to MathML should be able to produce semantic markup in some cases:
-* TeX's basic macros are already semantically translated properly as noted with "sin" above. We expect additional support for other macros such as `\binom{n}{m}` ($\binom{n}{m}$) to be added to translators because doing so is relatively easy.
+* TeX's basic macros are already semantically translated properly as noted with "sin" above. We expect additional support for other macros such as `\binom{n}{m}` (displays as $\binom{n}{m}$) to be added to translators because doing so is relatively easy.
 * More general support for the proposed MathML semantics requires the addition of two additional macros/commands. We expect the MathML refresh CG to propose details for those macros. Addition of them to translators will happen if the user community pushes for them. We expect supporting whatever gets proposed to be relatively simple.
 * Some authoring systems such as [PreTeXt](https://pretextbook.org/) use many more macros to disambiguate the meaning and improve layout. We expect translators from PreTeXt will produce semantic markup if the authors use the macros because semantics is iey reason to use PreTeXt.
 
