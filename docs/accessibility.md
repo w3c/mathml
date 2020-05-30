@@ -3,7 +3,7 @@ title: "Math Accessibility Primer"
 layout: cgreport
 ---
 
-**Authors**: Sam Dooley, Neil Soiffer
+*Authors*: Sam Dooley, Neil Soiffer
 
 
 
@@ -59,13 +59,13 @@ Presentation MathML is the subset of MathML that is concerned with the visual ap
 
 Content MathML is the subset of MathML that is concerned with the underlying structure of mathematical notations.  It provides a precise way to communicate the order of operations in an expression, and the exact intent of the user who created it.  For example, when a user creates the expression 'a(b + c)', Content MathML provides a way to say whether it means 'a times the quantity b plus c' or 'the function a applied to the quantity b plus c'.  There are many other examples of math expressions that look the same on the printed page, but may mean very different things.  Human beings can usually tell the difference based on context.  Content MathML preserves these differences, independent of context, and so it provides a solid foundation for any task that requires access to the meaning of a mathematical formula. However, how that content is displayed is not specified. For example, a fraction may be displayed in its 2D form, as a "bevelled" fraction, or linearly with parentheses and "/".
 
+# Semantic Markup
+
 ## What do we mean by semantic markup?
 
 Since the use of Content MathML, especially in addition to Presentation MathML, involves adding more markup to an encoding that is already verbose, The [MathML 4 refresh community group](https://www.w3.org/community/mathml4/) is working on a way to minimize the amount of additional markup needed to recover the semantic interpretation of a presentational expression.  _Semantic markup_ refers to the proposals of that group to meet this need.
 
 The markup form that has been proposed for semantic markup extends Presentation MathML with a math subject attribute to carry the semantic context, and a math role attribute to carry the semantic information.  The current discussion within the W3C MathML Working Group seeks to set expectations for the use of these attributes.
-
-# Semantic Markup
 
 ## "mathsubject" attribute
 
@@ -85,14 +85,14 @@ Conversion tools from TeX to MathML should be able to produce semantic markup in
 Convertors from Content MathML to Presentation MathML should be able to produce semantic markup all of the time.
 
 ## Expectations for authors
- As discussed above, authors do not typically author MathML directly. Their ability to add semantics to resolve ambiguity mainly will be function of whether the tool they are using supports that. Some "training" is likely needed for users to learn to recognize ambiguous notation and use the appropriate means in their authoring tool to resolve it. This is analogous to training users of WYSIWYG word processors to use styles and not directly create (for example) a header by changing the font size and font weight.
+ As discussed above, authors do not typically author MathML directly. Their ability to add semantics to resolve ambiguity  mainly be a function of whether the tool they are using supports that. When their tool does support adding semantic markup, some training is likely needed for users to learn to recognize ambiguous notation and use the appropriate means in their authoring tool to resolve it. This is analogous to training users of WYSIWYG word processors to use styles and not to directly create (for example) a header by changing the font size and font weight.
 
-If the tool doesn't support generating semantic markup, then remediation of the resulting MathML will be needed. In many cases, knowing the subject area is enough to disambiguate the MathML. A single webpage is likely concerned with a single subject and the simple addition of a subject area to each `math` tag will likely resolve most ambiguities; this should be trivial to do. We expect publishers and individuals concerned about the accessibility of their web pages will likely do at least this step. There are some common ambiguities that are resolved by subject area such as function call versus multiplication. Many these are listed in the examples in the following section.
+If the tool doesn't support generating semantic markup, then remediation of the resulting MathML will be needed. In many cases, knowing the subject area is enough to disambiguate the MathML. A single webpage is likely concerned with a single subject and the simple addition of a subject area to each `math` tag will likely resolve most ambiguities; this should be trivial to do. We expect publishers and individuals concerned about the accessibility of their web pages will likely do at least this step. There are some common ambiguities that are not resolved by subject area such as function call versus multiplication. Many these ambiguities are listed in the examples in the following section.
 
 ## Expectations for AT
-Presentation MathML describes how math looks. If all that was needed was to describe what the math looks like, then speech generation is relatively easy. However, most AT users would not be happy hearing "x superscript 2 end superscript" and would much prefer to hear "x squared" because it is both shorter and more familiar. Some more examples are given in the next section. Generating familiar speech is a challenge because of the large number of specialized ways of speaking notations that have been developed over the centuries. On top of this, how AT should be speak a notation depends on the user's disability and familiarity with the notation.
+Presentation MathML describes how math looks. If all that was needed was to describe what the math looks like, then speech generation is relatively easy. However, most AT users would not be happy hearing "x superscript 2 end superscript" and would much prefer to hear "x squared" because it is both shorter and more familiar. Some more examples are given in the next section. Generating familiar speech is a challenge because of the large number of specialized ways of speaking notations that have become common over the centuries. On top of this, how AT should be speak a notation depends on the user's disability and familiarity with the notation.
 
-Simple AT implementations add a few tens of rules to catch cases such as $x^2$. The most sophisticated implementations have over 1,000 rules and support different styles of speaking math. Adding semantics markup will not reduce the number of rules needed to produce familiar speech because AT will still need to handle MathML without semantic markup. However, when semantic markup is present, it will remove the heuristic nature of the rules.
+Simple AT implementations add a few tens of rules to catch cases such as $x^2$. The most sophisticated implementations have over 1,000 rules and support different styles of speaking math. Adding semantics markup will not reduce the number of rules needed to produce familiar speech because AT will still need to handle MathML without semantic markup. However, when semantic markup is present, it will eliminate the heuristic nature of the rules.
 
 [One proposal for semantic markup might lend itself to a dictionary-based approach to speech. Potentially a common dictionary can be developed and used by multiple AT which might significantly reduce implementation effort.]
 
