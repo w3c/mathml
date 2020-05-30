@@ -3,9 +3,7 @@ title: "Math Accessibility Primer"
 layout: cgreport
 ---
 
-## Authors
- * Sam Dooley
- * Neil Soiffer
+**Authors**: Sam Dooley, Neil Soiffer
 
 
 
@@ -74,27 +72,29 @@ The markup form that has been proposed for semantic markup extends Presentation 
 ## "mathrole" attribute
 
 ## Expectations for authoring tools and convertors
-MathML is very verbose. Few people author HTML directly; even fewer author MathML directly. Authoring math is typically done either in a WYSIWYG math editor or in a typesetting language such as TeX/LaTeX which was designed to support math notation. For the most part, the focus of both is to make the visual presentation look good.
+MathML is XML-based and is very verbose. Few people author HTML directly; even fewer author MathML directly. Authoring math is typically done either in a WYSIWYG math editor or in a typesetting language such as TeX/LaTeX which was designed to support math notation. For the most part, the focus of both is to make the visual presentation look good.
 
-WYSIWYG math editors have focused on making math look nice. They typically offer palettes of common notations and characters used in math with keyboard equivalents to simplify authoring. They provide little support to disambiguate the notations except where doing so produces better display. For example, typing "sin" would normally display as "_sin_", but the editors recognize this as a mathematical function; they don't use italics and correctly generate a single `<mi>sin</mi>` rather than three separate `mi`'s, one for each letter as would be appropriate for multiplication of the three letters/variables. In the future, we expect editors will include support to allow (not _require_) users to add additional semantics to the generated MathML via the above tagging. We expect this to happen because such additions are relatively simple and because users will request such features due to their desire and/or requirement to produce accessible material.
+WYSIWYG math editors have focused immediate feedback of mtematical notation. They typically offer palettes of common notations and characters used in math with keyboard equivalents to simplify authoring. They provide little support to disambiguate the notations except where doing so produces better display. For example, typing "sin" would normally display as "_sin_", but the editors recognize this as a mathematical function; they don't use italics and correctly generate a single `<mi>sin</mi>` rather than three separate `mi`'s, one for each letter as would be appropriate for multiplication of the three letters/variables. In the future, we expect editors will include support to allow (not _require_) users to add additional semantics to the generated MathML via the above tagging. We expect this to happen because such additions are relatively simple and because users will request such features due to their desire and/or requirement to produce accessible material.
 
-TeX (and its extension LaTeX) are used to write entire documents. In markdown and other authoring systems, the math part of TeX is often used for math content. However, TeX is extensible and authors frequently add macros for commonly used notations in math. This means that each system supports similar but differing subsets of TeX for math. Because TeX use macros for some notations, this can be exploited in TeX to MathML translators. For example, TeX has the macro `\sin` for the mathematical function of the same name.
+TeX (and its extension LaTeX) are used to write entire documents,usually those with a technical focus because of its excellent built-in support for math. In markdown and other authoring systems, the math syntax of TeX is often used for math content. However, TeX is extensible and authors frequently add macros for commonly used notations in math. This means that each system supports similar but differing subsets of TeX for math. Because TeX uses macros for some notations, this can be exploited in TeX to MathML translators. For example, TeX has the macro `\sin` for the mathematical function of the same name.
 Conversion tools from TeX to MathML should be able to produce semantic markup in some cases:
-* TeX's basic macros are already semantically translated properly as noted with "sin" above. We expect additional support for other macros such as `\binom{n}{m}` to added to be added to translators because doing so is relatively easy.
-* More general support for the semantic macros requires the addition of two additional macros/commands. We expect the MathML refresh CG to propose details for those macros. Addition of them to translators will happen if the user community pushes for them. We expect supporting whatever gets proposed to be relatively simple.
-* Some authoring systems such as [PreTeXt](https://pretextbook.org/) use many more macros to disambiguate the meaning and improve layout. They may be able to produce semantic markup if the authors use the macros.
+* TeX's basic macros are already semantically translated properly as noted with "sin" above. We expect additional support for other macros such as `\binom{n}{m}` ($\binom{n}{m}$) to be added to translators because doing so is relatively easy.
+* More general support for the proposed MathML semantics requires the addition of two additional macros/commands. We expect the MathML refresh CG to propose details for those macros. Addition of them to translators will happen if the user community pushes for them. We expect supporting whatever gets proposed to be relatively simple.
+* Some authoring systems such as [PreTeXt](https://pretextbook.org/) use many more macros to disambiguate the meaning and improve layout. We expect translators from PreTeXt will produce semantic markup if the authors use the macros because semantics is iey reason to use PreTeXt.
 
 Convertors from Content MathML to Presentation MathML should be able to produce semantic markup all of the time.
 
 ## Expectations for authors
- Semantic markup _allows_ authors to add semantic information, but does not require them to do so.
+ As discussed above, authors do not typically author MathML directly. Their ability to add semantics to resolve ambiguity mainly will be function of whether the tool they are using supports that. Some "training" is likely needed for users to learn to recognize ambiguous notation and use the appropriate means in their authoring tool to resolve it. This is analogous to training users of WYSIWYG word processors to use styles and not directly create (for example) a header by changing the font size and font weight.
 
-When people author math, they are mostly concerned about making it look right and not about the semantics
+If the tool doesn't support generating semantic markup, then remediation of the resulting MathML will be needed. In many cases, knowing the subject area is enough to disambiguate the MathML. A single webpage is likely concerned with a single subject and the simple addition of a subject area to each `math` tag will likely resolve most ambiguities; this should be trivial to do. We expect publishers and individuals concerned about the accessibility of their web pages will likely do at least this step. There are some common ambiguities that are resolved by subject area such as function call versus multiplication. Many these are listed in the examples in the following section.
 
-Most presentation MathML is likely disambiguated correctly in a generic context, but remediation of MathML should not be cumbersome in most cases. In particular, a webpage is likely concerned with a single subject and the simple addition of a subject area to each `math` tag will likely resolve a large percentage of the ambiguities, especially if the invisible Unicode characters U+2061 (FUNCTION APPLICATION) and U+2062 (INVISIBLE TIMES) are present in the MathML to disambiguate those cases. An exception is "units"
+## Expectations for AT
+Presentation MathML describes how math looks. If all that was needed was to describe what the math looks like, then speech generation is relatively easy. However, most AT users would not be happy hearing "x superscript 2 end superscript" and would much prefer to hear "x squared" because it is both shorter and more familiar. Some more examples are given in the next section. Generating familiar speech is a challenge because of the large number of specialized ways of speaking notations that have been developed over the centuries. On top of this, how AT should be speak a notation depends on the user's disability and familiarity with the notation.
 
-## Expectations for screen readers
+Simple AT implementations add a few tens of rules to catch cases such as $x^2$. The most sophisticated implementations have over 1,000 rules and support different styles of speaking math. Adding semantics markup will not reduce the number of rules needed to produce familiar speech because AT will still need to handle MathML without semantic markup. However, when semantic markup is present, it will remove the heuristic nature of the rules.
 
+[One proposal for semantic markup might lend itself to a dictionary-based approach to speech. Potentially a common dictionary can be developed and used by multiple AT which might significantly reduce implementation effort.]
 
 # Examples
 
@@ -119,6 +119,7 @@ Another important factor when speaking is to know the skill level of the audienc
 $\frac{d}{dx} \sin(x)$ is introduced as “the first derivative with respect to x of sine of x” and would later be spoken as “d by dx of sine x”.
 
 ## Examples of ambiguity
+The invisible Unicode characters U+2061 (FUNCTION APPLICATION) and U+2062 (INVISIBLE TIMES) can disambiguate some common cases. An exception is "units"
 ### $(1,5)$
 
 ### $M^T$
