@@ -25,11 +25,18 @@ at least minimal semantic information to Presentation MathML to support accessib
 </nav>
 
 ## Motivation
+Presentation MathML, of course, specifies the visual rendering of mathematical expressions.
+We'll use the term "rendering", here, in a generic sense to indicate the
+conversion of Presentation MathML to text, vocalized text, braille or whatever
+form is appropriate to the context.  To carry out that conversion, some additional semantic
+information is necessary beyond that which Presentation MathML supplies.
+
 To add semantic information to Presentation MathML,
 an obvious first step might be to add an annotation encoding the "meaning" of each symbol,
 for example as an attribute on its token. That covers a lot of cases in a natural way,
 but begins to fail when we encounter the various purposes of sub/superscripts
-(eg. powers $x^2$, operator application like $A^T$, indexing) or constructs
+(eg. powers $x^2$, operator application like $A^T$, indexing,
+or even composite symbols like $x^*$) or constructs
 representing special notations such as binomial coefficients.
 In these cases there may be no (or many) tokens which deserve this meaning attribute,
 and it fails to capture the fact that the entire construct (eg. msup, mrow),
@@ -45,13 +52,14 @@ Moreover, we would have to distinguish different possible markup patterns
 associated with the same meaning (eg. transpose as superscript, transpose as function,...;
 different notations for binomial coefficients).  
 
+
 ## Proposal
 Lets explore the feasibility of abstracting a (hopefully) small set of markup patterns,
 disentangling them from the meanings, for distinguishing these cases;
 The presentation markup would thus be annotated with 2 attributes,
 which (for purposes of discussion) I'll call "meaning" and "composition".
-* **meaning** indicates the meaning of the expression on which it resides
-  (possibly with arguments); The set of meanings is (potentially open-ended;
+* **meaning** indicates the natural language name of the mathematical object
+   on which it resides; the set of meanings is intended to be open-ended;
 * **composition** a keyword indicating the markup pattern.
 
 *The names of these attributes are subject to change.*
@@ -74,6 +82,15 @@ With this model, the two ```msup``` examples, power and transpose, would be dist
 The latter is easily extended to cover conjugate and adjoint,
 or even the "Tralfamadorian inverse",
 without needing any additional dictionary entries.
+In contrast,
+```
+<msup meaning="frobulator">
+  <mi>x</mi>
+  <mo>*</mo>
+</msup>
+```
+would be used for a composite symbol $x^*$ which stands for the frobulator;
+in this case, neither "x" nor "*" have any particular significance alone.
 
 A binomial would be marked up as:
 ```
@@ -138,9 +155,12 @@ stacked-fenced | ```<mrow><open/><mfrac>#1#2</mfrac><close/></mrow>``` | #0 of #
 table-fenced (?) | ```<mrow><open/><mtable>[<mtr>[<a/>*]</mtr>]*<close/></mrow>``` | ?
 
 In the above:
- ```#0``` refers to the meaning attribute of the element itself;
+ ```#0``` refers to the meaning attribute of the container element itself;
  ```ord(#1)``` should generate an ordinal form for argument 1.
- 
+For brevity, the patterns above should be taken as implicitly defining
+the locations (eg. XPath) of the arguments within the expression
+(no pattern matching by the user agent should be necessary).
+
 ## Examples
 
 ### superscripts
@@ -163,7 +183,7 @@ binomial, Jacobi and Legendre symbols, Eulerian numbers
 Pochhammer symbols
 
 ### table-fenced
-matrics, Clebsch-Gordon coefficients, 3j, 6j, etc symbols,
+matrices, Clebsch-Gordon coefficients, 3j, 6j, etc symbols,
 
 ## Summary
 This idea has a lot of detail to be worked out, including at least
@@ -172,3 +192,4 @@ This idea has a lot of detail to be worked out, including at least
 * the set of MathML container elements which give rise to such constructs
   and need corresponding composition keywords;
 * defaults
+* pattern precedence (eg. when sub-expressions may need to be verbally parenthesized).
