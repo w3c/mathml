@@ -75,7 +75,7 @@ Based on experience with math speech rules and a review of several textbooks, kn
 
 To indicate the context/subject area, an attribute is added to a MathML tag. Typically, it would be added to the `math` tag, but in the case of a chemical formula inside of a chemical equation, it might also be on an `mrow` or other MathML element. The example section below provides details.
 
-There are some notations that aren't resolved by knowing the subject area. For example, if the subject area is calculus, $(0, \pi)$ could be either the point in the plane with coordinates 0 and $pi$ or (more likely) the open interval from 0 to $\pi$.
+There are some notations that aren't resolved by knowing the subject area. For example, if the subject area is calculus, $(0, \pi)$ could be either the point in the plane with coordinates 0 and $\pi$ or (more likely) the open interval from 0 to $\pi$.
 
 Conversely, an integral such as $\int \sin x\,dx$ is unambiguously an integral regardless of subject area. However, the related concept of derivatives $dy/dx$ is potentially ambiguous and providing a subject area would disambiguate it.
 Each notation needs to be evaluated and a determination made as to whether it is ambiguous or not.
