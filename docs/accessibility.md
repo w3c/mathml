@@ -61,8 +61,6 @@ Content MathML is the subset of MathML that is concerned with the underlying str
 
 # Semantic Markup
 
-## What do we mean by semantic markup?
-
 Since the use of Content MathML, especially in addition to Presentation MathML, involves adding more markup to an encoding that is already verbose, The [MathML 4 refresh community group](https://www.w3.org/community/mathml4/) is working on a way to minimize the amount of additional markup needed to recover the semantic interpretation of a presentational expression.  _Semantic markup_ refers to the proposals of that group to meet this need.
 
 *Note: the CG is still actively discussing potential solutions, so the solutions mentioned here are not final and will likely change. What is likely to be true of any solution is that it will entail the addition of attributes to Presentation MathML*
@@ -82,7 +80,16 @@ Each notation needs to be evaluated and a determination made as to whether it is
 
 ## "mathrole" attribute
 
-## Overview of how to extract semantics
+## Extracting semantics
+In the absence semantic markup, AT uses heuristics to determine what speech to generate. For example, AT will typically default to assuming a `msup` (superscript) element represents a power, but will have some special cases based on the values of the children. For example $sin^{-1} x$ will be read as "inverse sine of x" and $x^3$ will also have a special case. All AT have some form of tree pattern matching the complexity of the matching and number of matching rules varies widely.
+
+The goal of providing a subject area is to provide context so that defaults change. The goal of providing a role is specify which pattern should be used among the possible pattern matches Given that pattern, speech can be generated. This can be viewed as two mappings:
+$$ \rm{MathML tree} \rm{role}\over\longleftarrow 
+   \rm{Semantic Meaning} \rm{dictionary}\over\longleftarrow 
+   \rm{{Text for Speech}$$
+With a default or given role, the arguments (subtrees) are known (perhaps given by an xpath expression). A "dictionary" that takes the semantic name, args, and user preferences (language, disability, expertise, ...) is used. Using the $sin^{-1} x$ example, this is either recognized as an "inverse function" pattern or it is explicitly marked as such. This pattern has two args, so the semantics becomes `inverseFunction("sin", "x")` and a lookup might change this to the string "the inverse sin of x" or "sin inverse x" or something else.
+
+The mappings are not part of MathML but a note will likely give some mapping from MathML to semantics. A dictionary to speech may also be included as a means to allow AT easy access to base level functionality.
 
 # Expectations: From Authors to AT
 
