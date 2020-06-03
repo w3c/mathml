@@ -71,8 +71,18 @@ The markup form that has been proposed for semantic markup extends Presentation 
 `aria-label` can be used to force the words to speak. 
 
 ## "mathsubject" attribute
+Based on experience with math speech rules and a review of several textbooks, knowing the subject area provides enough context to eliminate a significant amount of ambiguity. For example, if the subject area is linear algebra, then $A^T$ almost certainly means the transpose of $A$.
+
+To indicate the context/subject area, an attribute is added to a MathML tag. Typically, it would be added to the `math` tag, but in the case of a chemical formula inside of a chemical equation, it might also be on an `mrow` or other MathML element. The example section below provides details.
+
+There are some notations that aren't resolved by knowing the subject area. For example, if the subject area is calculus, $(0, \pi)$ could be either the point in the plane with coordinates 0 and $pi$ or (more likely) the open interval from 0 to $\pi$.
+
+Conversely, an integral such as $\int \sin x\,dx$ is unambiguously an integral regardless of subject area. However, the related concept of derivatives $dy/dx$ is potentially ambiguous and providing a subject area would disambiguate it.
+Each notation needs to be evaluated and a determination made as to whether it is ambiguous or not.
 
 ## "mathrole" attribute
+
+## Overview of how to extract semantics
 
 # Expectations: From Authors to AT
 
@@ -128,6 +138,14 @@ $\frac{d}{dx} \sin(x)$ is introduced as “the first derivative with respect to 
 ## Examples of ambiguity
 The invisible Unicode characters U+2061 (FUNCTION APPLICATION) and U+2062 (INVISIBLE TIMES) can disambiguate some common cases. An exception is "units"
 ### $(1,5)$
+
+### $\bar x$
+
+As another example of the grayness of this determination, $\bar x$ has many potential meanings.
+* $\overline{a+bi}$ -- complex conjugate
+* $\overline{AB}$ -- line segment
+* $\overline{\mu}$ -- mean
+* $\overline{x}$ -- not
 
 ### $M^T$
 
