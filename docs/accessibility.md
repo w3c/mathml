@@ -81,17 +81,17 @@ Each notation needs to be evaluated and a determination made as to whether it is
 ## "mathrole" attribute
 
 ## Extracting semantics
-In the absence semantic markup, AT uses heuristics to determine what speech to generate. For example, AT will typically default to assuming a `msup` (superscript) element represents a power, but will have some special cases based on the values of the children. For example $sin^{-1} x$ will be read as "inverse sine of x" and $x^3$ will also have a special case. All AT have some form of tree pattern matching -- the complexity of the matching and number of matching rules varies widely.
+In the absence semantic markup, AT uses heuristics to determine the speech to generate. For example, AT will typically default to assuming a `msup` (superscript) element represents a power, but will have some special cases based on the values of the children. For example $sin^{-1} x$ will be read as "inverse sine of x" and $x^3$ will also have a special case. All AT have some form of tree pattern matching -- the complexity of the matching and number of matching rules varies widely.
 
-The goal of providing a subject area is to provide context so that defaults change. The goal of providing a role is specify which pattern should be used among the possible pattern matches. Given that pattern, speech can be generated. This can be viewed as two mappings:
+The goal of providing a subject area is to provide context so that defaults change. The goal of providing a role is to specify which pattern should be used among the possible pattern matches. Given that pattern, speech can be generated. This can be viewed as two mappings:
 $$
    \rm{MathML tree}
-     \overset{ \rm{role} }{ \rightarrow } 
-   \rm{Semantic Meaning} 
-     \overset{ \rm{dictionary} }{ \rightarrow }
-   \rm{Text for Speech}
+     \;\overset{ \rm{role} }{ \longrightarrow }\;
+   \rm{Semantic\ Meaning} 
+     \;\overset{ \rm{dictionary} }{ \longrightarrow }\;
+   \rm{Text\ for\ Speech}
 $$
-with a default or given role, the arguments (subtrees) are known (perhaps given by an xpath expression). A "dictionary" that takes the semantic name, args, and user preferences (language, disability, expertise, ...) is used. Using the $sin^{-1} x$ example, this is either recognized as an "inverse function" pattern or it is explicitly marked as such. This pattern has two args, so the semantics becomes `inverseFunction("sin", "x")` and a lookup might change this to the string "the inverse sin of x" or "sin inverse x" or something else.
+With a default or given role, the arguments (subtrees) are known (perhaps given by an xpath expression). A "dictionary" that takes the semantic name, args, and user preferences (language, disability, expertise, ...) is used. Using the $sin^{-1} x$ example, this is either recognized as an "inverse function" pattern or it is explicitly marked as such. This pattern has two args, so the semantics becomes `inverseFunction("sin", "x")` and a lookup might change this to the string "the inverse sin of x" or "sin inverse x" or something else.
 
 The mappings are not part of MathML but a note will likely give some mapping from MathML to semantics. A dictionary to speech may also be included as a means to allow AT easy access to base level functionality.
 
