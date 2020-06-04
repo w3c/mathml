@@ -190,7 +190,7 @@ Visually, there is a slight different in their display, but the difference is sm
 
 The later encoding is ambiguous in that it can also be a 2x1 matrix/vector.
 
-In addition to be two ways to encode this, the binomial coefficient is also sometimes represented as $C_k^n$.
+In addition to the two ways to encode this, the binomial coefficient is also sometimes represented as ${}^nC_r$ or $C_k^n$.
 
 ### Chemistry
 Chemical formulas are often marked up using math editors. The chemical elements are one source of ambiguity, but all the notation around them, including bonds, are other sources of ambiguity
