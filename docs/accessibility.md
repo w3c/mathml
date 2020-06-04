@@ -85,8 +85,10 @@ In the absence semantic markup, AT uses heuristics to determine what speech to g
 
 The goal of providing a subject area is to provide context so that defaults change. The goal of providing a role is specify which pattern should be used among the possible pattern matches. Given that pattern, speech can be generated. This can be viewed as two mappings:
 $$
-   \rm{MathML tree} \rm{role}\over\longleftarrow 
-   \rm{Semantic Meaning} \rm{dictionary}\over\longleftarrow 
+   \rm{MathML tree}
+     \overset{ \rm{role} }{ \rightarrow } 
+   \rm{Semantic Meaning} 
+     \overset{ \rm{dictionary} }{ \rightarrow }
    \rm{Text for Speech}
 $$
 with a default or given role, the arguments (subtrees) are known (perhaps given by an xpath expression). A "dictionary" that takes the semantic name, args, and user preferences (language, disability, expertise, ...) is used. Using the $sin^{-1} x$ example, this is either recognized as an "inverse function" pattern or it is explicitly marked as such. This pattern has two args, so the semantics becomes `inverseFunction("sin", "x")` and a lookup might change this to the string "the inverse sin of x" or "sin inverse x" or something else.
