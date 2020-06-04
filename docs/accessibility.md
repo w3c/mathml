@@ -91,7 +91,7 @@ The goal of providing a subject area is to provide context so that defaults chan
      \;\overset{ \rm{dictionary} }{ \longrightarrow }\;
    \rm{Text\ for\ Speech}
 \\]
-With a default or given role, the arguments (subtrees) are known (perhaps given by an xpath expression). A "dictionary" that takes the semantic name, args, and user preferences (language, disability, expertise, ...) is used. Using the $sin^{-1} x$ example, this is either recognized as an "inverse function" pattern or it is explicitly marked as such. This pattern has two args, so the semantics becomes `inverseFunction("sin", "x")` and a lookup might change this to the string "the inverse sin of x" or "sin inverse x" or something else.
+With a default or given role, the arguments (subtrees) are known (perhaps given by an xpath expression). A "dictionary" that takes the semantic name, args, and user preferences (language, disability, expertise, ...) is used to generate speech strings. Using the $sin^{-1} x$ example, this is either recognized as an "inverse function" pattern or it is explicitly marked as such. This pattern has two args, so the semantics becomes `inverseFunction("sin", "x")` and a lookup might change this to the string "the inverse sin of x" or "sin inverse x" or something else.
 
 The mappings are not part of MathML but a group note will likely give some mapping from MathML to semantics. A dictionary to speech may also be included as a means to allow AT easy access to base level functionality.
 
