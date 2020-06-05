@@ -37,7 +37,7 @@ For these reasons, tools for accessibility require more information about math c
 
 There are two other important requirements for math accessibility that are similar in some ways to text accessibility:
 
-* **Navigation** Navigation for text often means moving area by different increments. For short inline math, navigation is probably not needed, but as expressions increase in size, navigation to help understand struct is important. For example, the two point formula for a line is:
+* **Navigation** Navigation for text often means moving the focus to different areas; maybe even just to the next word. For larger math expressions, navigation to help understand structure is important. For example, the two point formula for a line is:
 <math xmlns='http://www.w3.org/1998/Math/MathML' display='block'>
     <mrow>
         <mi>y</mi>
@@ -82,7 +82,7 @@ There are two other important requirements for math accessibility that are simil
     </mrow>
 </math>
 
-  This is often too large to understand being read from start to finish. Techniques for navigation are supported by many screenreaders, but techniques differ and features such as outlines and ellison are still being experimented with.
+    This is often too large to understand being read from start to finish. Techniques for navigation are supported by many screenreaders, but techniques differ and features such as outlines and ellison are still being experimented with.
 * **Synchronized highlighting of text/math with speech** Tools such as TextHELP! and ZoomText both support highlighting of text as it is spoken. The same should work with math. This is currently supported in [MathShare](https://mathshare.benetech.org/#/).
 
 ## What information makes math accessible?
