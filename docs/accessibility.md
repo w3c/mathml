@@ -35,6 +35,56 @@ The following are reasons why math accessibility is different from text accessib
 
 For these reasons, tools for accessibility require more information about math content than they do about text content to achieve the same level of support for accessibility.
 
+There are two other important requirements for math accessibility that are similar in some ways to text accessibility:
+
+* **Navigation** Navigation for text often means moving area by different increments. For short inline math, navigation is probably not needed, but as expressions increase in size, navigation to help understand struct is important. For example, the two point formula for a line is:
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='block'>
+    <mrow>
+        <mi>y</mi>
+        <mo>−</mo>
+        <msub>
+            <mi>y</mi>
+            <mn>1</mn>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+            <mrow>
+                <msub>
+                    <mi>y</mi>
+                    <mn>2</mn>
+                </msub>
+                <mo>−</mo>
+                <msub>
+                    <mi>y</mi>
+                    <mn>1</mn>
+                </msub>
+            </mrow>
+            <mrow>
+                <msub>
+                    <mi>x</mi>
+                    <mn>2</mn>
+                </msub>
+                <mo>−</mo>
+                <msub>
+                    <mi>x</mi>
+                    <mn>1</mn>
+                </msub>
+            </mrow>
+        </mfrac>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>−</mo>
+        <msub>
+            <mi>x</mi>
+            <mn>1</mn>
+        </msub>
+        <mo>)</mo>
+        <mo>,</mo>
+    </mrow>
+</math>
+This is often too large to understand being read from start to finish. Techniques for navigation are supported by most browsers, but ideas such as outlines and ellison are still being experimented with.
+* **Synchronized highlighting of text/math with speech** Tools such as TextHELP! and ZoomText both support highlighting of text as it is spoken. The same should work with math. This is currently supported in [MathShare](https://mathshare.benetech.org/#/).
+
 ## What information makes math accessible?
 
 Almost all of the information needed to make text accessible is carried by the words in the text, and knowledge of the spoken language being used.  In the vast majority of cases, this information is enough to provide a vocalization of the text for a screen reader, and a braille encoding of the text for a tactile reader, that can easily be navigated and understood by visually impaired readers.
@@ -157,7 +207,7 @@ As another example of the grayness of this determination, $\bar x$ has many pote
 * $\overline{a+bi}$ -- complex conjugate
 * $\overline{AB}$ -- line segment
 * $\overline{\mu}$ -- mean
-* $\overline{x}$ -- not
+* $\bar{x}$ -- not
 
 ### $M^T$
 
