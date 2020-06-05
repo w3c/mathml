@@ -81,7 +81,8 @@ There are two other important requirements for math accessibility that are simil
         <mo>)</mo>
     </mrow>
 </math>
-  This is often too large to understand being read from start to finish. Techniques for navigation are supported by most browsers, but ideas such as outlines and ellison are still being experimented with.
+
+  This is often too large to understand being read from start to finish. Techniques for navigation are supported by many screenreaders, but techniques differ and features such as outlines and ellison are still being experimented with.
 * **Synchronized highlighting of text/math with speech** Tools such as TextHELP! and ZoomText both support highlighting of text as it is spoken. The same should work with math. This is currently supported in [MathShare](https://mathshare.benetech.org/#/).
 
 ## What information makes math accessible?
