@@ -135,7 +135,7 @@ There are some notations that aren't resolved by knowing the subject area. For e
 Conversely, an integral such as $\int \sin x\,dx$ is unambiguously an integral regardless of subject area. However, the related concept of derivatives is potentially ambiguous (e.g., $dy/dx$) and providing a subject area would disambiguate it.
 Each notation needs to be evaluated and a determination made as to whether it is ambiguous or not.
 
-## "mathrole" attribute
+## "form" and "meaning" attributes
 
 
 ## Extracting semantics
@@ -144,7 +144,7 @@ In the absence semantic markup, AT uses heuristics to determine the speech to ge
 The goal of providing a subject area is to provide context so that defaults change. The goal of providing a role is to specify which pattern should be used among the possible pattern matches. Given that pattern, speech can be generated. This can be viewed as two mappings:
 \\[
    \rm{MathML tree}
-     \;\overset{ \rm{context \\ role} }{ \longrightarrow }\;
+     \;\overset{ \rm{context \linebreak role} }{ \longrightarrow }\;
    \rm{Semantic\ Meaning} 
      \;\overset{ \rm{dictionary} }{ \longrightarrow }\;
    \rm{Text\ for\ Speech}
