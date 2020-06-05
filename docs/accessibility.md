@@ -135,7 +135,48 @@ There are some notations that aren't resolved by knowing the subject area. For e
 Conversely, an integral such as $\int \sin x\,dx$ is unambiguously an integral regardless of subject area. However, the related concept of derivatives is potentially ambiguous (e.g., $dy/dx$) and providing a subject area would disambiguate it.
 Each notation needs to be evaluated and a determination made as to whether it is ambiguous or not.
 
-## "form" and "meaning" attributes
+## "mathrole" attribute
+[*MathML CG is currently debating alternatives/details: there may be a single `mathrole` attribute or structure maybe be extracted out into a `pattern` attribute. The former alternative is mentioned here.*]
+
+Every MathML expression has several potential meanings; `mathrole` is used to specify a specific meaning. Using the examples from the previous section, $A^T$ would be encoded as:
+<details markdown="1">
+<summary>MathML for transpose as superscript</summary>
+```
+<msup mathrole="transpose">
+  <mi>A</mi>
+  <mi>T</mi>
+</msup>
+```
+</details>
+The default interpretation if `subject` is not present is "power", which is equivalent to:
+<details markdown="1">
+<summary>MathML for power</summary>
+```
+<msup mathrole="power">
+  <mi>A</mi>
+  <mi>T</mi>
+</msup>
+```
+</details>
+A MathML note will be written that lists mappings (in JSON?) from "(tagName, mathrole)" to "mathrole(args)". Continuing the above example,
+$$(\rm{msup}, \rm{transpose}) \rightarrow \rm{transpose}(A, T)).$$
+Transpose might also be written as $T(A)$, with the following MathML.
+<details markdown="1">
+<summary>MathML for transpose as function call</summary>
+```
+<mrow meaning="transpose">
+    <mi>T</mi>
+    <mo>&#x2061</mo> <!-- ApplyFunction -->
+    <mrow>
+        <mo>(</mo>
+        <mi>T</mi>
+        <mo>)</mo>
+    </mrow>
+</mrow>
+```
+</details>
+It would have a rule
+$$(\rm{mr0w}, \rm{transpose}) \rightarrow \rm{transpose}(A, T)).$$
 
 
 ## Extracting semantics
@@ -144,7 +185,7 @@ In the absence semantic markup, AT uses heuristics to determine the speech to ge
 The goal of providing a subject area is to provide context so that defaults change. The goal of providing a role is to specify which pattern should be used among the possible pattern matches. Given that pattern, speech can be generated. This can be viewed as two mappings:
 \\[
    \rm{MathML tree}
-     \;\overset{ \rm{context \linebreak role} }{ \longrightarrow }\;
+     \;\overset{ \rm{context+role} }{ \longrightarrow }\;
    \rm{Semantic\ Meaning} 
      \;\overset{ \rm{dictionary} }{ \longrightarrow }\;
    \rm{Text\ for\ Speech}
