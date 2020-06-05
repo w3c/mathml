@@ -22,13 +22,14 @@ Math accessibility has significant differences from text accessibility because m
 
 </nav>
 
-# Why is math accessibility different from text accessibility?
+# Why Is Math Accessibility Different From Text Accessibility?
 The following are reasons why math accessibility is different from text accessibility. Details are in the next section:
 
-* **Math Concepts v Text Words** Mathematical expressions encode concepts, not words. The same concept can be spoken or brailled in many different ways, and the same notation may encode different concepts. For text, with the exception of abbreviations and a few words (e.g, “*read*”), words are almost always *read* the same.
-* **Spoken Math v Braille Math** For most text, both the speech and braille used to represent the text come directly from the words in the text.  For math, most braille systems encode the syntax of the math, which can be quite different from the words used to speak the math.
+* **Math Concepts vs Text Words** Mathematical expressions encode concepts, not words. The same concept can be spoken or brailled in many different ways, and the same notation may encode different concepts. For text, with the exception of abbreviations and a few words (e.g, “*read*”), words are almost always *read* the same.
+* **Spoken Math vs Braille Math** For most text, both the speech and braille used to represent the text come directly from the words in the text.  For math, most braille systems encode the syntax of the math, which can be quite different from the words used to speak the math.
+* **Spoken Math vs Spoken Text** Speech engines are tuned to speak text, not mathematical text. This results in strange or missing prosody when math is spoken as if it were common text. In math, the long version of vowel should always be used; speech engines usually use the short 'a' sound when speaking math which can be confusing.
 * **Custom AT Needs for Math** The words that a screen reader should use need to be tailored to the disability of the user. For those who cannot see the math notation, the functional structure of math needs to be explained and/or navigated. A screen reader can communicate this information with words, sounds, or prosody changes (e.g., pitch or rate). For those who can see the math, such unfamiliar sounds or words can make understanding more difficult.
-* **Math Notations v Math Instances** The notations and tokens taken together may affect how the math should be spoken. For example, the ‘4’ in $x^4$ might be spoken as a cardinal number (“x to the fourth power”) while the ‘2’ in $x^2$ is spoken as “squared” (“x squared”).
+* **Math Notations vs Math Instances** The notations and tokens taken together may affect how the math should be spoken. For example, the ‘4’ in $x^4$ might be spoken as a cardinal number (“x to the fourth power”) while the ‘2’ in $x^2$ is spoken as “squared” (“x squared”).
 * **Overloaded Math Notations** Depending on context, the same notation may have different meanings. For example, “(1, 5)” could be a point in the plane or it could be the numbers from 1 to 5, exclusive of 1 and 5. Although it could be spoken syntactically (“open paren 1 comma 2 close paren”), listeners tend to prefer to hear the meaning of the math spoken the way a teacher or another person would typically say it.
 * **Math Idioms for Expert Users** As one becomes more experienced with a notation, the words used to speak the notation might change to use idioms that are understood by those who are fluent with the underlying concepts. Examples are given below.
 
@@ -81,7 +82,7 @@ Each notation needs to be evaluated and a determination made as to whether it is
 ## "mathrole" attribute
 
 ## Extracting semantics
-In the absence semantic markup, AT uses heuristics to determine the speech to generate. For example, AT will typically default to assuming a `msup` (superscript) element represents a power, but will have some special cases based on the values of the children. For example $sin^{-1} x$ will be read as "inverse sine of x" and $x^3$ will also have a special case. All AT have some form of tree pattern matching -- the complexity of the matching and number of matching rules varies widely.
+In the absence semantic markup, AT uses heuristics to determine the speech to generate. For example, AT will typically default to assuming a `msup` (superscript) element represents a power, but will have some special cases based on the values of the children. For example $\sin^{-1} x$ will be read as "inverse sine of x" and $x^3$ will also have a special case. All AT have some form of tree pattern matching -- the complexity of the matching and number of matching rules varies widely.
 
 The goal of providing a subject area is to provide context so that defaults change. The goal of providing a role is to specify which pattern should be used among the possible pattern matches. Given that pattern, speech can be generated. This can be viewed as two mappings:
 \\[
@@ -91,7 +92,7 @@ The goal of providing a subject area is to provide context so that defaults chan
      \;\overset{ \rm{dictionary} }{ \longrightarrow }\;
    \rm{Text\ for\ Speech}
 \\]
-With a default or given role, the arguments (subtrees) are known (perhaps given by an xpath expression). A "dictionary" that takes the semantic name, args, and user preferences (language, disability, expertise, ...) is used to generate speech strings. Using the $sin^{-1} x$ example, this is either recognized as an "inverse function" pattern or it is explicitly marked as such. This pattern has two args, so the semantics becomes `inverseFunction("sin", "x")` and a lookup might change this to the string "the inverse sin of x" or "sin inverse x" or something else.
+With a default or given role, the arguments (subtrees) are known (perhaps given by an xpath expression). A "dictionary" that takes the semantic name, args, and user preferences (language, disability, expertise, ...) is used to generate speech strings. Using the $\sin^{-1} x$ example, this is either recognized as an "inverse function" pattern or it is explicitly marked as such. This pattern has two args, so the semantics becomes `inverseFunction("sin", "x")` and a lookup might change this to the string "the inverse sin of x" or "sin inverse x" or something else.
 
 The mappings are not part of MathML but a group note will likely give some mapping from MathML to semantics. A dictionary to speech may also be included as a means to allow AT to more easily incorporate base level functionality.
 
@@ -163,6 +164,8 @@ As another example of the grayness of this determination, $\bar x$ has many pote
 ### Binomial Coefficient: $\binom{n}{k}$
 
 The MathML spec suggests using a fraction with `linethickness="0"` for encoding the binomial coefficient (this is what TeX does). Here is the MathML for that:
+<details markdown="1">
+<summary>Click to show MathML</summary>
 ```
 <mrow>
     <mo>(</mo>
@@ -173,8 +176,11 @@ The MathML spec suggests using a fraction with `linethickness="0"` for encoding 
     <mo>)</mo>
 </mrow>
 ```
+</details>
 However, many WYSIWYG editors don't have this construct and so a 2x1 matrix is often used instead. This is encoded as:
-```
+<details markdown="1">
+<summary>Click to show MathML</summary>
+<pre>
 <mrow>
     <mtable>
         <mtr>
@@ -185,7 +191,8 @@ However, many WYSIWYG editors don't have this construct and so a 2x1 matrix is o
         </mtr>
     </mtable>
 </mrow>
-```
+</pre>
+</details>
 Visually, there is a slight different in their display, but the difference is small enough that most people probably would not notice it.
 
 The later encoding is ambiguous in that it can also be a 2x1 matrix/vector.
