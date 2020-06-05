@@ -38,7 +38,7 @@ For these reasons, tools for accessibility require more information about math c
 There are two other important requirements for math accessibility that are similar in some ways to text accessibility:
 
 <ul>
-<li> **Navigation** Navigation for text often means moving the focus to different areas; maybe even just to the next word. For larger math expressions, navigation to help understand structure is important. For example, the two point formula for a line is:
+<li> <b>Navigation</b> Navigation for text often means moving the focus to different areas; maybe even just to the next word. For larger math expressions, navigation to help understand structure is important. For example, the two point formula for a line is:
 <math xmlns='http://www.w3.org/1998/Math/MathML' display='block'>
     <mrow>
         <mi>y</mi>
@@ -87,9 +87,10 @@ There are two other important requirements for math accessibility that are simil
  This is often too large to understand being read from start to finish. Techniques for navigation are supported by many screen readers, but techniques differ and features such as outlines and ellison are still being experimented with.
  </li>
 <li>
-**Synchronized highlighting of text/math with speech** Tools such as TextHELP! and ZoomText both support highlighting of text as it is spoken. The same should work with math. This is currently supported in [MathShare](https://mathshare.benetech.org/#/).
+<b>Synchronized highlighting of text/math with speech</b> Tools such as TextHELP! and ZoomText both support highlighting of text as it is spoken. The same should work with math. This is currently supported in <a src="https://mathshare.benetech.org">MathShare</a>.
 </li>
-<ul>
+</ul>
+
 ## What information makes math accessible?
 
 Almost all of the information needed to make text accessible is carried by the words in the text, and knowledge of the spoken language being used.  In the vast majority of cases, this information is enough to provide a vocalization of the text for a screen reader, and a braille encoding of the text for a tactile reader, that can easily be navigated and understood by visually impaired readers.
@@ -183,7 +184,7 @@ Simple AT implementations add a few tens of rules to catch cases such as $x^2$. 
 # Examples
 
 
-## Examples of speech
+## Special cases
 $x^n$ may be spoken as "x raised to the nth power". However, this pattern is not always followed for powers.
 There are often special cases that people speak differently.
 $x^2$ ("x squared") and $x^3$ ("x cubed") are two such examples.
