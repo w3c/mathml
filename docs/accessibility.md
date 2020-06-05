@@ -132,10 +132,11 @@ To indicate the context/subject area, an attribute is added to a MathML tag. Typ
 
 There are some notations that aren't resolved by knowing the subject area. For example, if the subject area is calculus, $(0, \pi)$ could be either the point in the plane with coordinates 0 and $\pi$ or (more likely) the open interval from 0 to $\pi$.
 
-Conversely, an integral such as $\int \sin x\,dx$ is unambiguously an integral regardless of subject area. However, the related concept of derivatives $dy/dx$ is potentially ambiguous and providing a subject area would disambiguate it.
+Conversely, an integral such as $\int \sin x\,dx$ is unambiguously an integral regardless of subject area. However, the related concept of derivatives is potentially ambiguous (e.g., $dy/dx$) and providing a subject area would disambiguate it.
 Each notation needs to be evaluated and a determination made as to whether it is ambiguous or not.
 
 ## "mathrole" attribute
+
 
 ## Extracting semantics
 In the absence semantic markup, AT uses heuristics to determine the speech to generate. For example, AT will typically default to assuming a `msup` (superscript) element represents a power, but will have some special cases based on the values of the children. For example $\sin^{-1} x$ will be read as "inverse sine of x" and $x^3$ will also have a special case. All AT have some form of tree pattern matching -- the complexity of the matching and number of matching rules varies widely.
@@ -143,12 +144,12 @@ In the absence semantic markup, AT uses heuristics to determine the speech to ge
 The goal of providing a subject area is to provide context so that defaults change. The goal of providing a role is to specify which pattern should be used among the possible pattern matches. Given that pattern, speech can be generated. This can be viewed as two mappings:
 \\[
    \rm{MathML tree}
-     \;\overset{ \rm{role} }{ \longrightarrow }\;
+     \;\overset{ \rm{context\\role} }{ \longrightarrow }\;
    \rm{Semantic\ Meaning} 
      \;\overset{ \rm{dictionary} }{ \longrightarrow }\;
    \rm{Text\ for\ Speech}
 \\]
-With a default or given role, the arguments (subtrees) are known (perhaps given by an xpath expression). A "dictionary" that takes the semantic name, args, and user preferences (language, disability, expertise, ...) is used to generate speech strings. Using the $\sin^{-1} x$ example, this is either recognized as an "inverse function" pattern or it is explicitly marked as such. This pattern has two args, so the semantics becomes `inverseFunction("sin", "x")` and a lookup might change this to the string "the inverse sin of x" or "sin inverse x" or something else.
+With a default or given role, the arguments (subtrees) are known (perhaps given by an xpath expression or a CSS selector). A "dictionary" that takes the semantic name, args, and user preferences (language, disability, expertise, ...) is used to generate speech strings. Using the $\sin^{-1} x$ example, this is either recognized as an "inverse function" pattern or it is explicitly marked as such. This pattern has two args, so the semantics becomes `inverseFunction("sin", "x")` and a lookup might change this to the string "the inverse sin of x" or "sin inverse x" or something else.
 
 The mappings are not part of MathML but a group note will likely give some mapping from MathML to semantics. A dictionary to speech may also be included as a means to allow AT to more easily incorporate base level functionality.
 
