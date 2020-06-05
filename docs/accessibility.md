@@ -144,7 +144,7 @@ In the absence semantic markup, AT uses heuristics to determine the speech to ge
 The goal of providing a subject area is to provide context so that defaults change. The goal of providing a role is to specify which pattern should be used among the possible pattern matches. Given that pattern, speech can be generated. This can be viewed as two mappings:
 \\[
    \rm{MathML tree}
-     \;\overset{ \rm{context\\role} }{ \longrightarrow }\;
+     \;\overset{ \rm{context \\ role} }{ \longrightarrow }\;
    \rm{Semantic\ Meaning} 
      \;\overset{ \rm{dictionary} }{ \longrightarrow }\;
    \rm{Text\ for\ Speech}
