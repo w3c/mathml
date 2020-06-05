@@ -180,7 +180,7 @@ The MathML spec suggests using a fraction with `linethickness="0"` for encoding 
 However, many WYSIWYG editors don't have this construct and so a 2x1 matrix is often used instead. This is encoded as:
 <details markdown="1">
 <summary>Click to show MathML</summary>
-<pre>
+```
 <mrow>
     <mtable>
         <mtr>
@@ -191,7 +191,7 @@ However, many WYSIWYG editors don't have this construct and so a 2x1 matrix is o
         </mtr>
     </mtable>
 </mrow>
-</pre>
+```
 </details>
 Visually, there is a slight different in their display, but the difference is small enough that most people probably would not notice it.
 
