@@ -120,7 +120,7 @@ Content MathML is the subset of MathML that is concerned with the underlying str
 
 Since the use of Content MathML, especially in addition to Presentation MathML, involves adding more markup to an encoding that is already verbose, The [MathML 4 refresh community group](https://www.w3.org/community/mathml4/) is working on a way to minimize the amount of additional markup needed to recover the semantic interpretation of a presentational expression.  _Semantic markup_ refers to the proposals of that group to meet this need.
 
-*Note: the CG is still actively discussing potential solutions, so the solutions mentioned here are not final and will likely change. What is likely to be true of any solution is that it will entail the addition of attributes to Presentation MathML*
+*Note: the CG is still actively discussing potential solutions, so the solutions mentioned here are not final and will likely change. What is likely to be true of any solution is that it will entail the addition of attributes to Presentation MathML*.
 
 The markup form that has been proposed for semantic markup extends Presentation MathML with a math subject attribute to carry the semantic context, and a math role attribute to carry the semantic information.
 `aria-label` can be used to force the words to speak. 
@@ -136,7 +136,7 @@ Conversely, an integral such as $\int \sin x\,dx$ is unambiguously an integral r
 Each notation needs to be evaluated and a determination made as to whether it is ambiguous or not.
 
 ## "mathrole" attribute
-[*MathML CG is currently debating alternatives/details: there may be a single `mathrole` attribute or structure maybe be extracted out into a `pattern` attribute. The former alternative is mentioned here.*]
+*The MathML CG is currently debating alternatives/details: there may be a single `mathrole` attribute or structure maybe be extracted out into a `pattern` attribute which would be used with a `meaning` attribute. The former alternative is mentioned here.*
 
 Every MathML expression has several potential meanings; `mathrole` is used to specify a specific meaning. Using the examples from the previous section, $A^T$ would be encoded as:
 <details markdown="1">
@@ -161,7 +161,7 @@ The default interpretation if `subject` is not present is "power", which is equi
 
 A MathML note will be written that lists mappings (in JSON?) from "(tagName, mathrole, args)" to "mathrole(args)". Continuing the above example,
 \\[(\rm{msup}, \rm{transpose}, &lt;children&gt;) \rightarrow \rm{transpose}(A, T).\\]
-Transpose might also be written as $T(A)$, with the following MathML.
+Transpose might also be written as $T(A)$, with the following MathML:
 <details markdown="1">
 <summary>MathML for transpose as function call</summary>
 ```
@@ -222,11 +222,14 @@ Presentation MathML describes how math looks. If all that was needed was to desc
 
 Simple AT implementations add a few tens of rules to catch cases such as $x^2$. The most sophisticated implementations have over 1,000 rules and support different styles of speaking math. Adding semantics markup will not reduce the number of rules needed to produce familiar speech because AT will still need to handle MathML without semantic markup. However, when semantic markup is present, it will eliminate the heuristic nature of the rules.
 
-[One proposal for semantic markup might lend itself to a dictionary-based approach to speech. Potentially a common dictionary can be developed and used by multiple AT which might significantly reduce implementation effort.]
+Three potential tools/libraries could simplify AT implementations for math:
+* a library that adds `mathrole` for all notations;
+* tables that map the tag, mathrole, and children to a semantic meaning;
+* code/table that given the semantics, user preferences, and speech engine embedded markup language, returns the string to be passed to the speech engine.
+
+Prototypes for the later two will likely be developed by the MathML CG in a note. 
 
 # Examples
-
-
 ## Special cases
 $x^n$ may be spoken as "x raised to the nth power". However, this pattern is not always followed for powers.
 There are often special cases that people speak differently.
