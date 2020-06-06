@@ -158,8 +158,9 @@ The default interpretation if `subject` is not present is "power", which is equi
 </msup>
 ```
 </details>
+
 A MathML note will be written that lists mappings (in JSON?) from "(tagName, mathrole)" to "mathrole(args)". Continuing the above example,
-$$(\rm{msup}, \rm{transpose}) \rightarrow \rm{transpose}(A, T)).$$
+$$(\rm{&lt;msup&gt;...&lt;/msup&gt;}, \rm{transpose}) \rightarrow \rm{transpose}(A, T).$$
 Transpose might also be written as $T(A)$, with the following MathML.
 <details markdown="1">
 <summary>MathML for transpose as function call</summary>
@@ -176,7 +177,7 @@ Transpose might also be written as $T(A)$, with the following MathML.
 ```
 </details>
 It would have a rule
-$$(\rm{mr0w}, \rm{transpose}) \rightarrow \rm{transpose}(A, T)).$$
+$$(\rm{&lt;mrow&gt;...&lt;/mrow&gt;}, \rm{transpose}) \rightarrow \rm{transpose}(A, T).$$
 
 
 ## Extracting semantics
