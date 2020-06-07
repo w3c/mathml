@@ -136,7 +136,7 @@ Conversely, an integral such as $\int \sin x\,dx$ is unambiguously an integral r
 Each notation needs to be evaluated and a determination made as to whether it is ambiguous or not.
 
 ## "mathrole" attribute
-*The MathML CG is currently debating alternatives/details: there may be a single `mathrole` attribute or structure maybe be extracted out into a `pattern` attribute which would be used with a `meaning` attribute. The former alternative is mentioned here.*
+*The MathML CG is currently debating alternatives/details: there may be a single `mathrole` attribute or structure maybe be abstracted out into a `pattern` attribute which would be used with a `meaning` attribute. The former alternative is described here.*
 
 Every MathML expression has several potential meanings; `mathrole` is used to specify a specific meaning. Using the examples from the previous section, $A^T$ would be encoded as:
 <details markdown="1">
@@ -159,8 +159,10 @@ The default interpretation if `subject` is not present is "power", which is equi
 ```
 </details>
 
-A MathML note will be written that lists mappings (in JSON?) from "(tagName, mathrole, args)" to "mathrole(args)". Continuing the above example,
-\\[(\rm{msup}, \rm{transpose}, &lt;children&gt;) \rightarrow \rm{transpose}(A, T).\\]
+A MathML note will be written that provides mappings (in JSON?) from "(tagName, mathrole, args)" to "mathrole(args)". Continuing the above examples,
+\\[(\rm{msup}, \rm{transpose}, &lt;children&gt;) \rightarrow \rm{transpose}(A, T)\\]
+and
+\\[(\rm{msup}, \rm{power}, &lt;children&gt;) \rightarrow \rm{power}(A, T).\\]
 Transpose might also be written as $T(A)$, with the following MathML:
 <details markdown="1">
 <summary>MathML for transpose as function call</summary>
@@ -179,9 +181,8 @@ Transpose might also be written as $T(A)$, with the following MathML:
 It would have a rule
 \\[(\rm{mrow}, \rm{transpose}, &lt;children&gt;) \rightarrow \rm{transpose}(A, T).\\]
 
-
 ## Extracting semantics
-In the absence semantic markup, AT uses heuristics to determine the speech to generate. For example, AT will typically default to assuming a `msup` (superscript) element represents a power, but will have some special cases based on the values of the children. For example $\sin^{-1} x$ will be read as "inverse sine of x" and $x^3$ will also have a special case. All AT have some form of tree pattern matching -- the complexity of the matching and number of matching rules varies widely.
+In the absence semantic markup, AT will need to use heuristics to determine the speech to generate. For example, AT will typically default to assuming a `msup` (superscript) element represents a power, but will have some special cases based on the values of the children. For example $\sin^{-1} x$ will be read as "inverse sine of x" and $x^3$ will also have a special case. All AT have some form of tree pattern matching -- the complexity of the matching and number of matching rules varies widely.
 
 The goal of providing a subject area is to provide context so that defaults change. The goal of providing a role is to specify which pattern should be used among the possible pattern matches. Given that pattern, speech can be generated. This can be viewed as two mappings:
 \\[
@@ -223,7 +224,7 @@ Presentation MathML describes how math looks. If all that was needed was to desc
 Simple AT implementations add a few tens of rules to catch cases such as $x^2$. The most sophisticated implementations have over 1,000 rules and support different styles of speaking math. Adding semantics markup will not reduce the number of rules needed to produce familiar speech because AT will still need to handle MathML without semantic markup. However, when semantic markup is present, it will eliminate the heuristic nature of the rules.
 
 Three potential tools/libraries could simplify AT implementations for math:
-* a library that adds `mathrole` for all notations;
+* a library that uses heuristics to add `mathrole` to all notations that aren't already labeled with a `mathrole`;
 * tables that map the tag, mathrole, and children to a semantic meaning;
 * code/table that given the semantics, user preferences, and speech engine embedded markup language, returns the string to be passed to the speech engine.
 
