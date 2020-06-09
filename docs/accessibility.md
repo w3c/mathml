@@ -160,9 +160,9 @@ The default interpretation if `subject` is not present is "power", which is equi
 </details>
 
 A MathML note will be written that provides mappings (in JSON?) from "(tagName, mathrole, args)" to "mathrole(args)". Continuing the above examples,
-\\[(\rm{msup}, \rm{transpose}, &lt;children&gt;) \rightarrow \rm{transpose}(A, T)\\]
+\\[(\mathrm{msup}, \mathrm{transpose}, &lt;children&gt;) \rightarrow \mathrm{transpose}(A, T)\\]
 and
-\\[(\rm{msup}, \rm{power}, &lt;children&gt;) \rightarrow \rm{power}(A, T).\\]
+\\[(\mathrm{msup}, \mathrm{power}, &lt;children&gt;) \rightarrow \mathrm{power}(A, T).\\]
 Transpose might also be written as $T(A)$, with the following MathML:
 <details markdown="1">
 <summary>MathML for transpose as function call</summary>
@@ -179,18 +179,18 @@ Transpose might also be written as $T(A)$, with the following MathML:
 ```
 </details>
 It would have a rule
-\\[(\rm{mrow}, \rm{transpose}, &lt;children&gt;) \rightarrow \rm{transpose}(A, T).\\]
+\\[(\mathrm{mrow}, \mathrm{transpose}, &lt;children&gt;) \rightarrow \mathrm{transpose}(A, T).\\]
 
 ## Extracting semantics
 In the absence semantic markup, AT will need to use heuristics to determine the speech to generate. For example, AT will typically default to assuming a `msup` (superscript) element represents a power, but will have some special cases based on the values of the children. For example $\sin^{-1} x$ will be read as "inverse sine of x" and $x^3$ will also have a special case. All AT have some form of tree pattern matching -- the complexity of the matching and number of matching rules varies widely.
 
 The goal of providing a subject area is to provide context so that defaults change. The goal of providing a role is to specify which pattern should be used among the possible pattern matches. Given that pattern, speech can be generated. This can be viewed as two mappings:
 \\[
-   \rm{MathML tree}
-     \;\overset{ \rm{context+role} }{ \longrightarrow }\;
-   \rm{Semantic\ Meaning} 
-     \;\overset{ \rm{dictionary} }{ \longrightarrow }\;
-   \rm{Text\ for\ Speech}
+   \mathrm{MathML tree}
+     \;\overset{ \mathrm{context+role} }{ \longrightarrow }\;
+   \mathrm{Semantic\ Meaning} 
+     \;\overset{ \mathrm{dictionary} }{ \longrightarrow }\;
+   \mathrm{Text\ for\ Speech}
 \\]
 With a default or given role, the arguments (subtrees) are known (perhaps given by an xpath expression or a CSS selector). A "dictionary" that takes the semantic name, args, and user preferences (language, disability, expertise, ...) is used to generate speech strings. Using the $\sin^{-1} x$ example, this is either recognized as an "inverse function" pattern or it is explicitly marked as such. This pattern has two args, so the semantics becomes `inverseFunction("sin", "x")` and a lookup might change this to the string "the inverse sin of x" or "sin inverse x" or something else.
 
