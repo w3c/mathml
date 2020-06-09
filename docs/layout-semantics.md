@@ -204,31 +204,195 @@ The following table is intended to be illustrative.
 *The names of these keywords are subject to change; the set is far from complete,
 and not all have been completely thought out.*
 
-Notation | Pattern (informative)
------------ | ------- | ---------
+Notation | Description
+----------- | -------
 infix | ```<mrow notation="infix"> #arg [#op #arg]* </mrow>```
+ | row of alternating terms and infix operators; the operators would typically have a meaning assigned.
+ | Example: arithmetic $a+b-c+d$; cross-product $\mathbf{a} \times \mathbf{b}$; area $n\times m$.
 prefix | ```<mrow notation="prefix"> #op #arg </mrow>```
+ | operator preceding its argument
+ | Example: negative $-a$.
 postfix | ```<mrow notation="postfix"> #arg #op </mrow>```
+ | operator following its argument
+ | Example: factorial $n!$.
 power | ```<msup notation="power"> #arg1 #arg2 </msup>```
+ | base raised to the power of the superscript
+ | Example: $x^n$, $x^2$.
+applicative-power | ```<msup notation="applicative-power"> #arg1 #arg2 </msup>```
+ | base applied the superscript number of times
+ | Example: inverse $\sin^{-1}$.
 indexed | ```<msup notation="indexed"> #arg1 #arg2 </msup>```
+ | array-like base indexed by the superscript
 base-operator | ```<msup notation="base-operator"> #op #arg </msup>```
+ | the base is an operator applied to the superscript
 sup-operator | ```<msup notation="sup-operator"> #arg #op </msup>```
-fenced | ```<mrow meaning="#meaning"> #fence #arg [#punct #arg]* #fence </mrow>```
+ | the superscript is an operator applied to the base
+ | Example: transpose $A^T$; adjoint $A^\dagger$
+fenced | ```<mrow notation="fenced" meaning="#meaning"> #fence #arg [#punct #arg]* #fence </mrow>```
+ | a fenced sequence of items with a semantic significance
+ | Examples: interval $(a,b$)$.
 fenced-indexed | ```<msub><mrow> #fence #arg [#punct #arg]* #fence </mrow> #arg </msub>```
+ | like fenced, but also indexed
 stacked-fenced | ```<mrow> #fence <mfrac> #1 #2 </mfrac> #fence </mrow>```
+ | a fenced fraction (often with linethickness=0) with a semantic significance
+ | Examples: binomial $\binom{n}{m}$.
 table-fenced (?) | ```<mrow> #fence <mtable> [<mtr> [<mtd> #arg </mtd>]* </mtr>]* </mtable> #fence </mrow>```
+ | ?
 
 The patterns are informative, primarily to serve as a shorthand for the
 locations of operators (```#op```) and arguments (```#arg```).
 
 Fences and punctuation (```#fence```, ```#punct```) indicate the positions
-of fences and punctuation which are ignorable; perhaps they deserve
-a special attribution (meaning?, notation?). This would reduce the number
-of notation keywords, but may increasing the burden of authoring tools,
-and user agents?
+of fences and punctuation.
+### Speculation on ignorable fences, punctuation
+Since the notation has been explicitly given by the author,
+fences and punctuation are ignorable from the point of view of
+determining the operator and arguments. Perhaps they deserve
+a special attribution (eg. meaning="ignorable" or notation="ignorable"?).
+This would collapse the number of notation keywords, but perhaps at
+the cost of increasing the burden of authoring tools, and user agents?
+
+## Table Tests
+I'm trying to embed a marked-down block within a table cell.
+According to the "spec", this should work, but doesn't in Jekyll
+
+<table>
+<tr><td>
+<pre>
+**not really bold**,
+
+**really bold**.
+
+</pre>
+</td></tr>
+</table>
+
+
+
+This uses a nomarkdown special directive, which does work in Jekyll
+
+{::nomarkdown}
+<table>
+<tr><td>
+<pre>
+**not really bold**,
+{:/nomarkdown}
+**really bold**.
+{::nomarkdown}
+</pre>
+</td></tr>
+</table>
+{:/nomarkdown}
+
 
 ## Examples of notations
 
+Notation | Description | Code
+-------  | ----------- | ----
+infix | $a+b-c+d$ | `<mrow notation="infix">`<br>`<mi>a</mi>`<br>`<mo meaning="plus">+</mo>`<br>`<mi>b</mi>`<br>`<mo meaning="minus">-</mo>`<br>`<mi>c</mi>`<br>`<mo meaning="plus">+</mo>`<br>`<mi>d</mi>`<br>`</mrow>`
+prefix | $-a$ | `<mrow notation="prefix">`
+|~ | `<mo meaning="unary-minus">-</mo>`
+|~ | `<mi>a</mi>`
+|~ | `</mrow>`
+
+{::nomarkdown}
+<table>
+<tr><td>
+<pre  markdown="1">
+**not really bold**,
+{:/nomarkdown}
+
+**really bold**.
+
+{::nomarkdown}
+</pre>
+</td></tr>
+</table>
+{:/nomarkdown}
+
+{::nomarkdown}
+<table>
+<thead><tr><th>Notation</th><th>Description</th><th>Code</th></tr></thead><tbody>
+<tr><td>postfix</td>
+<td>$n!$</td>
+<td>
+{:/nomarkdown}
+```
+<mrow notation="postfix">
+  <mi>a</mi>
+  <mo meaning="factorial">!</mo>
+</mrow>
+```
+{::nomarkdown}
+</td>  
+</tr>
+</tbody>
+</table>
+{:/nomarkdown}
+
+
+======================================================================
+```
+<msup notation="power">
+  <mi>x</mi>
+  <mi>n</mi>
+</msup>
+```
+Here, the meaning defaults to "power". The translation could be of various
+forms including "the n-th power of x", or "x squared" for $x^2$.
+The transpose example would be marked up as
+```
+<msup notation="sup-operator">
+  <mi>A</mi>
+  <mi meaning="transpose">T</mi>
+</msup>
+```
+which is easily extended to cover conjugate and adjoint.
+Or even
+```
+<msup notation="sup-operator">
+  <mi>A</mi>
+  <mi meaning="Tralfamadorian inverse">T</mi>
+</msup>
+```
+which could be translated as "the Tralfamadorian inverse of A",
+without needing any additional dictionary entries.
+Likewise,
+```
+<msup meaning="frobulator">
+  <mi>x</mi>
+  <mo>'</mo>
+</msup>
+```
+would be used for a composite symbol $x'$ which stands for the frobulator;
+the translation would simply be "frobulator".
+
+A binomial would be marked up as:
+```
+<mrow notation="stacked-fenced" meaning="binomial">
+  <mo>(</mo>
+  <mfrac thickness="0pt">
+    <mi>n</mi>
+    <mi>m</mi>    
+  </mfrac>
+</mrow>
+```
+This pattern covers Eulerian numbers, Jacobi and Legendre symbols.
+Conversely, it  still allows alternate notations for binomials while keeping the same
+semantics, since we can write:
+```
+<msubsup notation="base-operation">
+  <mi meaning="binomial">C</mi>
+  <mi>n</mi>
+  <mi>m</mi>
+</msubsup>
+```
+with (presumably) exactly the same translation as above.
+
+Infix may be a bit of a special case, depending on how ```mrow``` is used,
+since there may be multiple operators involved.
+For example,
+======================================================================
 ### infix
 TBD
 
