@@ -122,8 +122,31 @@ Since the use of Content MathML, especially in addition to Presentation MathML, 
 
 *Note: the CG is still actively discussing potential solutions, so the solutions mentioned here are not final and will likely change. What is likely to be true of any solution is that it will entail the addition of attributes to Presentation MathML*.
 
-The markup form that has been proposed for semantic markup extends Presentation MathML with a math subject attribute to carry the semantic context, and a math role attribute to carry the semantic information.
-`aria-label` can be used to force the words to speak. 
+The markup form that has been proposed for semantic markup extends Presentation MathML with a math `subject` attribute to carry the semantic context, a `notation` attribute to indicate where the operator/operands are, and a `meaning` attribute on the operator to give a meaning to the operation.
+`aria-label` can be used to force the words to speak.
+
+A few examples to give some idea about how these can be used:
+<table>
+    <tr>
+        <td>Open Interval</td>
+        <td>
+            <details markdown="1">
+                <summary>MathML for open interval/summary>
+```
+<mrow notation="fenced" meaning="open-interval">
+    <mo>(</mo>
+    <mrow>
+        <mi>a</mi>
+        <mo>,</mo>
+        <mi>b</mi>
+    </mrow>
+    <mo>)</mo>
+</mrow>
+```
+            </details>
+        </td>
+    </tr>
+</table>
 
 ## "mathsubject" attribute
 Based on experience with math speech rules and a review of several textbooks, knowing the subject area provides enough context to eliminate a significant amount of ambiguity. For example, if the subject area is linear algebra, then $A^T$ almost certainly means the transpose of $A$.
