@@ -160,6 +160,7 @@ A binomial would be marked up as:
     <mi>n</mi>
     <mi>m</mi>    
   </mfrac>
+  <mo>)</mo>
 </mrow>
 ```
 This pattern covers Eulerian numbers, Jacobi and Legendre symbols.
@@ -384,6 +385,17 @@ Note that often the same meaning will appear within different notations.
 {::nomarkdown}
 </td></tr>
 <!-- ======================================== -->
+<tr><td> sub </td><td> indexing $a_i$ </td><td>
+{:/nomarkdown}
+```
+<msup notation="sub" meaning="index">
+  <mi>a</mi>
+  <mi>i</mi>
+</msup>
+```
+{::nomarkdown}
+</td></tr>
+<!-- ======================================== -->
 <tr><td> sup-operator </td><td> transpose $A^T$ </td><td>
 {:/nomarkdown}
 ```
@@ -539,7 +551,7 @@ Note that often the same meaning will appear within different notations.
 {::nomarkdown}
 </td></tr>
 
-<tr><td> </td><td> Legendre symbol $(n|p)|$</td><td>
+<tr><td> </td><td> Legendre symbol $(n|p)$</td><td>
 {:/nomarkdown}
 ```
 <mrow notation="fenced" meaning="Legendre symbol">
@@ -554,10 +566,10 @@ Note that often the same meaning will appear within different notations.
 </td></tr>
 <tr><td/><td>Jacobi symbol</td><td>similarly</td></tr>
 
-<tr><td> </td><td> Clebsch-Gordon<br/> $(j_1 m_1 j_2 m_2 | j_1 j_2 j_3 m_3)|$</td><td>
+<tr><td> </td><td> Clebsch-Gordan<br/> $(j_1 m_1 j_2 m_2 | j_1 j_2 j_3 m_3)|$</td><td>
 {:/nomarkdown}
 ```
-<mrow notation="fenced" meaning="Clebsch-Gordon">
+<mrow notation="fenced" meaning="Clebsch-Gordan">
   <mo>(</mo>
   <msub><mi>j</mi><mn>1</mn>
   <msub><mi>m</mi><mn>1</mn>
@@ -581,7 +593,7 @@ Note that often the same meaning will appear within different notations.
   <mrow>
     <mo>(</mo>
     <mi>a</mi>
-    <mo>&gt;</mo>
+    <mo>)</mo>
   </mrow>
   <mi>n</mi>
 </msup>
