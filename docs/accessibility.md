@@ -87,7 +87,7 @@ There are two other important requirements for math accessibility that are simil
  This is often too large to understand being read from start to finish. Techniques for navigation are supported by many screen readers, but techniques differ and features such as outlines and ellison are still being experimented with.
  </li>
 <li>
-<b>Synchronized highlighting of text/math with speech</b> Tools such as TextHELP! and ZoomText both support highlighting of text as it is spoken. The same should work with math. This is currently supported in <a src="https://mathshare.benetech.org">MathShare</a>.
+<b>Synchronized highlighting of text/math with speech</b> Tools such as TextHELP! and ZoomText both support highlighting of text as it is spoken. The same should work with math. This is currently supported in <a src="https://mathshare.benetech.org">Mathshare</a>.
 </li>
 </ul>
 
