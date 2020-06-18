@@ -125,13 +125,15 @@ Since the use of Content MathML, especially in addition to Presentation MathML, 
 The markup form that has been proposed for semantic markup extends Presentation MathML with a math `subject` attribute to carry the semantic context, a `notation` attribute to indicate where the operator/operands are, and a `meaning` attribute on the operator to give a meaning to the operation.
 `aria-label` can be used to force the words to speak.
 
-A few examples to give some idea about how these can be used:
+A few fully marked up examples to give some idea about how these can be used:
+{::nomarkdown}
 <table>
     <tr>
         <td>Open Interval $(0, \pi)$</td>
         <td>
             <details markdown="1">
                 <summary>MathML for open interval</summary>
+{:/nomarkdown}
 ```
 <mrow notation="fenced" meaning="open-interval">
     <mo>(</mo>
@@ -143,7 +145,8 @@ A few examples to give some idea about how these can be used:
     <mo>)</mo>
 </mrow>
 ```
-            </details>
+{::nomarkdown}
+           </details>
         </td>
     </tr>
     <tr>
@@ -151,6 +154,7 @@ A few examples to give some idea about how these can be used:
         <td>
             <details markdown="1">
                 <summary>MathML for open point</summary>
+{:/nomarkdown}
 ```
 <mrow notation="fenced" meaning="open-interval">
     <mo>(</mo>
@@ -162,10 +166,41 @@ A few examples to give some idea about how these can be used:
     <mo>)</mo>
 </mrow>
 ```
+{::nomarkdown}
             </details>
         </td>
     </tr>
+    <tr>
+        <td>Transpose $A^T$<</td>
+        <td>
+            <details markdown="1">
+                <summary>MathML for transpose</summary>
+```
+{:/nomarkdown}
+<msup notation="sup-operator">
+  <mi>A</mi>
+  <mi meaning="transpose">T</mn>
+</msup>
+```
+{::nomarkdown}
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td> dot product $\mathbf{a}\cdot\mathbf{b}$ </td><td>
+{:/nomarkdown}
+```
+<mrow notation="infix">
+  <mi mathvariant="bold">a</mi>
+  <mo meaning="inner-product>&#x22C5;</mo>
+  <mi mathvariant="bold">b</mi>
+</mrow>
+```
+{::nomarkdown}
+        </td>
+    </tr>
 </table>
+{:/nomarkdown}
 
 ## "mathsubject" attribute
 Based on experience with math speech rules and a review of several textbooks, knowing the subject area provides enough context to eliminate a significant amount of ambiguity. For example, if the subject area is linear algebra, then $A^T$ almost certainly means the transpose of $A$.
