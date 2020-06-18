@@ -8,7 +8,7 @@ layout: cgreport
 
 
 ## Abstract
-[MathML 3](https://www.w3.org/TR/MathML3/) is a W3C recommendation for including mathematical expressions in Web pages. MathML has two parts: Presentation MathML that describes how the math looks and Content MathML that describes the meaning of the math. Presentation is by far the most commonly used part of MathML and is the focus of this document. Assuming they know the subject matter, a person reading math notation typically can understand its meaning. Although it is occasionally ambiguous, context resolves the ambiguity. One goal of MathML 4 is to allow authors provide context as part of the MathML to resolve the ambiguity.
+[MathML 3](https://www.w3.org/TR/MathML3/) is a W3C recommendation for including mathematical expressions in Web pages. MathML has two parts: Presentation MathML that describes how the math looks and Content MathML that describes the meaning of the math. Presentation is by far the most commonly used part of MathML and is the focus of this document. Assuming they know the subject matter, persons reading math notation typically can understand its meaning. Although it is occasionally ambiguous, context usually resolves the ambiguity. One goal of MathML 4 is to allow authors provide context as part of the MathML to resolve the ambiguity.
 
 Math accessibility has significant differences from text accessibility because math notation is a shorthand for its meaning. The words spoken for it differ from the braille that would be used for it. Furthermore, the words that are spoken need to differ based on the reader’s disabilities and familiarity of the content. Hence, enough information from MathML should be given to the assistive technology of a user so that it can generate a meaningful presentation of the math to the user. 
 
@@ -157,7 +157,7 @@ A few fully marked up examples to give some idea about how these can be used:
                 <summary>MathML for point in a plane</summary>
 {:/nomarkdown}
 ```
-<mrow notation="fenced" meaning="open-interval">
+<mrow notation="fenced" meaning="point">
     <mo>(</mo>
     <mrow>
         <mi>0</mi>
@@ -207,7 +207,7 @@ A few fully marked up examples to give some idea about how these can be used:
 </table>
 {:/nomarkdown}
 
-The mappings from the semantic markup using notation/meaning to a semantic tree are not part of MathML but a group note will likely give some mapping from MathML to semantics. A dictionary that maps that semantic tree to speech (given inputs such as user disability, speech style, expertise, ...) may also be included as a means to allow AT to more easily incorporate base level functionality.
+The mappings from the semantic markup using notation/meaning to a semantic tree are not part of MathML but a group note should give a mapping from MathML to semantics. A dictionary that maps that semantic tree to speech (given inputs such as user disability, speech style, expertise, ...) may also be included as a means to allow AT to more easily incorporate base level functionality.
 
 # Expectations: From Authors to AT
 
@@ -216,10 +216,10 @@ MathML is XML-based and is very verbose. Few people author HTML directly; even f
 
 WYSIWYG math editors have focused immediate feedback of mtematical notation. They typically offer palettes of common notations and characters used in math with keyboard equivalents to simplify authoring. They provide little support to disambiguate the notations except where doing so produces better display. For example, typing "sin" would normally display as "_sin_", but the editors recognize this as a mathematical function; they don't use italics and correctly generate a single `<mi>sin</mi>` rather than three separate `mi`'s, one for each letter as would be appropriate for multiplication of the three letters/variables. In the future, we expect editors will include support to allow (not _require_) users to add additional semantics to the generated MathML via the above tagging. We expect this to happen because such additions are relatively simple and because users will request such features due to their desire and/or requirement to produce accessible material.
 
-TeX (and its extension LaTeX) are used to write entire documents, usually those with a technical focus because of its excellent built-in support for math. In markdown and other authoring systems, the math syntax of TeX is often used for math content. However, TeX is extensible and authors frequently add macros for commonly used notations in math. This means that each system supports similar but differing subsets of TeX for math. Because TeX uses macros for some notations, this can be exploited in TeX to MathML translators. For example, TeX has the macro `\sin` for the mathematical function of the same name.
+TeX (and its extension LaTeX) are used to write entire documents, usually those with a technical focus because of its excellent built-in support for math. In arkdown and other authoring systems, the math syntax of TeX is often used for math content. However, TeX is extensible and authors frequently add macros for commonly used notations in math. This means that each system supports similar but differing subsets of TeX for math. Because TeX uses macros for some notations, this can be exploited in TeX to MathML translators. For example, TeX has the macro `\sin` for the mathematical function of the same name.
 Conversion tools from TeX to MathML should be able to produce semantic markup in some cases:
 * TeX's basic macros are already semantically translated properly as noted with "sin" above. We expect additional support for other macros such as `\binom{n}{m}` (displays as $\binom{n}{m}$) to be added to translators because doing so is relatively easy.
-* More general support for the proposed MathML semantics requires the addition of two additional macros/commands. We expect the MathML refresh CG to propose details for those macros. Addition of them to translators will happen if the user community pushes for them. We expect supporting whatever gets proposed to be relatively simple.
+* More general support for the proposed MathML semantics requires the addition of two additional macros/commands. We expect the MathML Refresh CG to propose details for those macros. Addition of them to translators will happen if the user community pushes for them. We expect supporting whatever gets proposed to be relatively simple.
 * Some authoring systems such as [PreTeXt](https://pretextbook.org/) use many more macros to disambiguate the meaning and improve layout. We expect translators from PreTeXt will produce semantic markup if the authors use the macros because semantics is a key reason to use PreTeXt.
 
 Convertors from Content MathML to Presentation MathML should be able to produce semantic markup all of the time.
@@ -237,11 +237,11 @@ Presentation MathML describes how math looks. If all that was needed was to desc
 Simple AT implementations add a few tens of rules to catch cases such as $x^2$. The most sophisticated implementations have over 1,000 rules and support different styles of speaking math. Adding semantics markup will not reduce the number of rules needed to produce familiar speech because AT will still need to handle MathML without semantic markup. However, when semantic markup is present, it will eliminate the heuristic nature of the rules.
 
 Three potential tools/libraries could simplify AT implementations for math:
-* a library that uses heuristics to add `mathrole` to all notations that aren't already labeled with a `mathrole`;
-* tables that map the tag, mathrole, and children to a semantic meaning;
+* a library that uses heuristics to add `notation` and `meaning` to all notations that aren't already labeled with `notation` and/or `meaning`;
+* tables that map the tag, semantic attributes, and children to a semantic meaning;
 * code/table that given the semantics, user preferences, and speech engine embedded markup language, returns the string to be passed to the speech engine.
 
-Prototypes for the later two will likely be developed by the MathML CG in a note. 
+Prototypes for the latter two will likely be developed by the MathML CG in a note. 
 
 # Examples
 ## Special cases
@@ -264,7 +264,9 @@ Another important factor when speaking is to know the skill level of the audienc
 $\frac{d}{dx} \sin(x)$ is introduced as “the first derivative with respect to x of sine of x” and would later be spoken as “d by dx of sine x”.
 
 ## Examples of ambiguity
-The invisible Unicode characters U+2061 (FUNCTION APPLICATION) and U+2062 (INVISIBLE TIMES) can disambiguate some common cases. An exception is "units"
+The invisible Unicode characters U+2061 (FUNCTION APPLICATION) and U+2062 (INVISIBLE TIMES) can disambiguate some common cases.
+
+An exception is "units". E.g., in $3m$, the $m$ could be a regular 'm' or it could stand for 'meters'. Typically units are not displayed in italics, so some additional markup is required. However, for two character units like 'km', no additional markup is need for display (but this is not typically ambiguous).
 ### $(1,5)$
 
 ### $\bar x$
@@ -298,6 +300,7 @@ However, many WYSIWYG editors don't have this construct and so a 2x1 matrix is o
 <summary>Click to show MathML</summary>
 ```
 <mrow>
+    <mo>(</mo>
     <mtable>
         <mtr>
             <mtd><mi>n</mi></mtd>
@@ -306,6 +309,7 @@ However, many WYSIWYG editors don't have this construct and so a 2x1 matrix is o
             <mtd><mi>k</mi></mtd>
         </mtr>
     </mtable>
+    <mo>)</mo>
 </mrow>
 ```
 </details>
@@ -316,7 +320,7 @@ The later encoding is ambiguous in that it can also be a 2x1 matrix/vector.
 In addition to the two ways to encode this, the binomial coefficient is also sometimes represented as ${}^nC_k$ or $C_k^n$.
 
 ### Chemistry
-Chemical formulas are often marked up using math editors. The chemical elements are one source of ambiguity, but all the notation around them, including bonds, are other sources of ambiguity
+Chemical formulas are often marked up using math editors. The chemical elements are one source of ambiguity, but all the notations around them, including bonds, are other sources of ambiguity
 \\[
 K= \frac
     {[\mathrm{C}\mathrm{H}_2\mathord{=}\mathrm{C}\mathrm{H}_2][\mathrm{H}\mathrm{Br}]}
