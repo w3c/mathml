@@ -151,10 +151,10 @@ A few fully marked up examples to give some idea about how these can be used:
         </td>
     </tr>
     <tr>
-        <td>Cartesian Point $(0, \pi)$<</td>
+        <td>Cartesian Point $(0, \pi)$</td>
         <td>
             <details markdown="1">
-                <summary>MathML for open point</summary>
+                <summary>MathML for point in a plane</summary>
 {:/nomarkdown}
 ```
 <mrow notation="fenced" meaning="open-interval">
@@ -172,12 +172,12 @@ A few fully marked up examples to give some idea about how these can be used:
         </td>
     </tr>
     <tr>
-        <td>Transpose $A^T$<</td>
+        <td>Transpose $A^T$</td>
         <td>
             <details markdown="1">
                 <summary>MathML for transpose</summary>
-```
 {:/nomarkdown}
+```
 <msup notation="sup-operator">
   <mi>A</mi>
   <mi meaning="transpose">T</mn>
@@ -188,7 +188,7 @@ A few fully marked up examples to give some idea about how these can be used:
         </td>
     </tr>
     <tr>
-        <td> dot product $\mathbf{a}\cdot\mathbf{b}$ </td>
+        <td>Dot Product $\mathbf{a}\cdot\mathbf{b}$</td>
         <td>
             <details markdown="1">
                 <summary>MathML for dot product</summary>
