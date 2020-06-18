@@ -128,17 +128,36 @@ The markup form that has been proposed for semantic markup extends Presentation 
 A few examples to give some idea about how these can be used:
 <table>
     <tr>
-        <td>Open Interval</td>
+        <td>Open Interval $(0, \pi)$</td>
         <td>
             <details markdown="1">
-                <summary>MathML for open interval/summary>
+                <summary>MathML for open interval</summary>
 ```
 <mrow notation="fenced" meaning="open-interval">
     <mo>(</mo>
     <mrow>
-        <mi>a</mi>
+        <mi>0</mi>
         <mo>,</mo>
-        <mi>b</mi>
+        <mi>π</mi>
+    </mrow>
+    <mo>)</mo>
+</mrow>
+```
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Cartesian Point $(0, \pi)$<</td>
+        <td>
+            <details markdown="1">
+                <summary>MathML for open point</summary>
+```
+<mrow notation="fenced" meaning="open-interval">
+    <mo>(</mo>
+    <mrow>
+        <mi>0</mi>
+        <mo>,</mo>
+        <mi>π</mi>
     </mrow>
     <mo>)</mo>
 </mrow>
