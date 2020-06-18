@@ -126,6 +126,7 @@ The markup form that has been proposed for semantic markup extends Presentation 
 `aria-label` can be used to force the words to speak.
 
 A few fully marked up examples to give some idea about how these can be used:
+
 {::nomarkdown}
 <table>
     <tr>
@@ -187,7 +188,10 @@ A few fully marked up examples to give some idea about how these can be used:
         </td>
     </tr>
     <tr>
-        <td> dot product $\mathbf{a}\cdot\mathbf{b}$ </td><td>
+        <td> dot product $\mathbf{a}\cdot\mathbf{b}$ </td>
+        <td>
+            <details markdown="1">
+                <summary>MathML for dot product</summary>
 {:/nomarkdown}
 ```
 <mrow notation="infix">
@@ -197,11 +201,14 @@ A few fully marked up examples to give some idea about how these can be used:
 </mrow>
 ```
 {::nomarkdown}
+            </details>
         </td>
     </tr>
 </table>
 {:/nomarkdown}
 
+{::nomarkdown}
+<span display="none"> <!-- probably going to throw this out -->
 ## "mathsubject" attribute
 Based on experience with math speech rules and a review of several textbooks, knowing the subject area provides enough context to eliminate a significant amount of ambiguity. For example, if the subject area is linear algebra, then $A^T$ almost certainly means the transpose of $A$.
 
@@ -270,6 +277,9 @@ The goal of providing a subject area is to provide context so that defaults chan
    \mathrm{Text\ for\ Speech}
 \\]
 With a default or given role, the arguments (subtrees) are known (perhaps given by an xpath expression or a CSS selector). A "dictionary" that takes the semantic name, args, and user preferences (language, disability, expertise, ...) is used to generate speech strings. Using the $\sin^{-1} x$ example, this is either recognized as an "inverse function" pattern or it is explicitly marked as such. This pattern has two args, so the semantics becomes `inverseFunction("sin", "x")` and a lookup might change this to the string "the inverse sin of x" or "sin inverse x" or something else.
+
+</span>
+{:/nomarkdown}
 
 The mappings are not part of MathML but a group note will likely give some mapping from MathML to semantics. A dictionary to speech may also be included as a means to allow AT to more easily incorporate base level functionality.
 
