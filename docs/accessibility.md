@@ -207,7 +207,7 @@ A few fully marked up examples to give some idea about how these can be used:
 </table>
 {:/nomarkdown}
 
-The mappings are not part of MathML but a group note will likely give some mapping from MathML to semantics. A dictionary to speech may also be included as a means to allow AT to more easily incorporate base level functionality.
+The mappings from the semantic markup using notation/meaning to a semantic tree are not part of MathML but a group note will likely give some mapping from MathML to semantics. A dictionary that maps that semantic tree to speech (given inputs such as user disability, speech style, expertise, ...) may also be included as a means to allow AT to more easily incorporate base level functionality.
 
 # Expectations: From Authors to AT
 
