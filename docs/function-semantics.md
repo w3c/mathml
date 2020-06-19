@@ -36,7 +36,7 @@ I'll start with two simple examples using transpose and binomial coefficient exa
 * $\binom{n}{m}$
 
 ```
-<mrow notation="binomial(@n, @m">
+<mrow notation="binomial(@n, @m)">
   <mo>(</mo>
   <mfrac thickness="0pt">
     <mi arg="n">n</mi>
@@ -91,7 +91,7 @@ This idea is not fully fleshed out, but some things can be clarified:
 * `@<digits>+` or `@<letter><alphaChars>+` -- if digits, then then it refers to the ith child (0-based) of the element with the notation attr. If it starts with a letter, then it refers to the value of an `arg` attribute. If there are more than one `@`s present, they refer to the child of the match of the previous `@`.
 * `@@<letter><alphaChars>+` -- nary match. All children are searched instead of stopping at the first child.
 
-It is probably possible to extend the nary notation to work with a number also, but I'm less sure of that. E.g, maybe `notation=set("@1,@@2)" could mean match the second child, then continue matching all siblings that are offset by two from that. Maybe a slightly different "@>2" would make more sense. Potentially multiple nary picks could be given and the pattern repeated until the children of the element are exhausted. I don't have a use case for that though.
+It is probably possible to extend the nary notation to work with a number also, but I'm less sure of that. E.g, maybe "notation=set(@1,@@2)" could mean match the second child, then continue matching all siblings that are offset by two from that. Maybe a slightly different "@>2" would make more sense. Potentially multiple nary picks could be given and the pattern repeated until the children of the element are exhausted. I don't have a use case for that though.
 
 In the case of a named argument, the children would be searched for using a depth first search. The search stops when:
 1. The element has an `arg` attribute and the value matches, the element is searched for a secondary `@` arg; if there are no more `@` args, the element is returned. If no match, the search continues on the next sibling of the current element.
@@ -156,7 +156,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 ```
 <mrow notation="unary-minus(@operand)">
   <mo>-</mo>
-  <mi arg="operand">a</mi>`
+  <mi arg="operand">a</mi>
 </mrow>
 ```
 {::nomarkdown}
@@ -170,7 +170,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
     <mi>&#x2207;</mi>
     <mn>2</mn>
   </msup>
-  <mi>f</mi>`
+  <mi>f</mi>
 </mrow>
 ```
 {::nomarkdown}
@@ -519,7 +519,7 @@ Some further remarks...
 
 ## Two masters
 I think we have all been focused on getting semantics out and figured conversion to Content MathML, Speech, Braille, and anything else would just follow. However, here are two cases where speech doesn't necessarily flow from a function-based version of semantics:
-* Transpose can be written as $A^T$ and as $T(A)$. Both would have the value `transpose(A)` in the above scheme. But it is likely we would want to speak the first as "A transpose" and the second as "the transpose of A".
+* Transpose can be written as $A^T$ or ${}^T\! A$ or as $T(A)$. All would have the value `transpose(A)` in the above scheme. But it is likely we would want to speak the first as "A transpose", the second as "transpose A" and the third as "the transpose of A".
 * Infix notation seems simple: grab the operands and name the function the name of the operands as in `plus(a,b,c)`. However, "a-b+c" is problematic because there are two operators: `+` and `-`. Computation systems typically solve this by using a unary minus as in `plus(a, times(-1, b), c)`. The exact same representation would be used for "1+-2+3". Speech needs to distinguish these two forms. Also, without "good" `mrow` structure, operators tend to be mixed (e.g., $2x+1$ all in one `mrow`). This isn't a problem for speech or braille, but it is one for conversion to Content MathML and computation systems.
 
 Having targets with different needs is a problem for Bruce's proposal and this proposal. Potentially the speech problem is solved using the "hack" in the $a+b+c+d$ example above where both the operands and operators are returned. It isn't good for conversion to Content MathML though.
@@ -529,7 +529,7 @@ All the examples above were "simple" examples in that `notation` only occurred o
 
 Here's an example of nesting $\binom{n^2}{m}$ where both notations use the same argument names:
 ```
-<mrow notation="binomial(@arg1, @arg1">
+<mrow notation="binomial(@arg1, @arg1)">
   <mo>(</mo>
   <mfrac thickness="0pt">
     <msup notation="power(@arg1,@arg2)" arg='arg1'>
