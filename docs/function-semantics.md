@@ -19,7 +19,7 @@ layout: cgreport
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 # Motivation
-These ideas were motivated by a comment by Deyan Ginev on the June 18 MathML. He had some reservations about [Bruce Miller's proposal](https://mathml-refresh.github.io/mathml/docs/layout-semantics); maybe he had the following in mind or maybe something different. His concern was that `notation` didn't capture the "tail" of what people do. This proposal is more flexible and I believe simpler in that there is no need to categorize abstractions.
+These ideas were motivated by a comment by Deyan Ginev on the June 18 MathML. He had some reservations about [Bruce Miller's proposal](https://mathml-refresh.github.io/mathml/docs/layout-semantics); maybe he had the following in mind or maybe something different. His concern was that `notation` didn't capture the "tail" of what people do. This proposal is more flexible and I believe simpler than Bruce's proposal in that there is no need to categorize abstractions. It does crib many ideas from Bruce's thinking.
 
 # The Basics
 I'll start with two simple examples using transpose and binomial coefficient examples:
@@ -46,7 +46,7 @@ I'll start with two simple examples using transpose and binomial coefficient exa
 </mrow>
 ```
 
-The idea is that a `notation` attribute names a function and its arguments. `@xxx` is used to mean "find the argument with `arg` attribute value _xxx_" and replace `@xxx` with it.
+The idea is that a `notation` attribute names a function and its arguments. `@xxx` is used to mean "find the argument with `arg` attribute value _xxx_ and replace `@xxx` with it.
 
 Many notations such as the transpose notation are simple, so this proposal has an alternative method of markup that avoids some work: numbered arguments.
 
@@ -59,7 +59,7 @@ Many notations such as the transpose notation are simple, so this proposal has a
 </msup>
 ```
 
-Here, the number '0' refers to the first (0-based) child of element with the notation attribute. Finding the ith child can be extended to arbitrary descendants by simply repeating it. For example:
+Here, the number '0' refers to the first (0-based) child of element of the notation attribute. Finding the ith child can be extended to arbitrary descendants by simply repeating it. For example:
 
 * $\binom{n}{m}$
 
@@ -75,17 +75,17 @@ Here, the number '0' refers to the first (0-based) child of element with the not
 ```
 
 # Pros and Cons
-Although the `arg` attribute fills a similar function to `id`, it has a big advantage over using `id` in that it does not need to be globally unique. This makes it easier to generate and easier to reuse in a web page versus `id`.
+Although the `arg` attribute has similar functionality to `id`, it has a big advantage over using `id` in that it does not need to be globally unique. This makes it easier to generate and easier to reuse in a web page versus `id`.
 
 Note: it is possible that we might be able to reuse an existing HTML attribute instead of creating a new one (`arg`). On the call, David Carlisle suggested that maybe we could use `name`. In this note, I'll use `arg`.
 
-Numbered attribute values avoid the need for adding an `arg` attribute and are therefore less work to manually author. Their disadvantage is that they are fragile -- if a polyfill such as one for `mfenced` for MathML Core changes the document, the location of the children might change. A good polyfill hopefully at least preserves the non-`mfrenced` attributes of the `mfenced` element by transferring them to the corresponding `mrow`, so the named approach would still work.
+Numbered attribute values avoid the need for adding an `arg` attribute and are therefore less work to manually author. Their disadvantage is that they are fragile -- if a polyfill such as one for `mfenced` for MathML Core changes the document, the location of the children might change. A good polyfill hopefully at least preserves the non-`mfrenced` attributes of the `mfenced` element by transferring them to the corresponding `mrow`, so the named approach would still work. Two other potential polyfills are a canonicalization polyfill that "fixes" the `mrow` structure and a line breaking polyfill creates new (indented) lines. Both would like alter the number of children in an mrow. 
 
 Conversely, named arguments require more manual markup. Supporting both allows authors to choose what works best for their use case.
 
 # _Some_ Details
 This idea is not fully fleshed out, but some things can be clarified:
-* The notation attribute can take any value, but it is likely only some values will be listed as known. Typically the value will be either a string representing a constant (e.g., "EulerNumber") or a string representing a function with arguments an in the examples above.
+* The notation attribute can take any value, but it is likely only some values will be listed as "known". Typically the value will be either a string representing a constant (e.g., "EulerNumber") or a string representing a function with arguments an in the examples above.
 
 * The arguments to a function have one of the forms:
 * `@<digits>+` or `@<letter><alphaChars>+` -- if digits, then then it refers to the ith child (0-based) of the element with the notation attr. If it starts with a letter, then it refers to the value of an `arg` attribute. If there are more than one `@`s present, they refer to the child of the match of the previous `@`.
@@ -94,20 +94,22 @@ This idea is not fully fleshed out, but some things can be clarified:
 It is probably possible to extend the nary notation to work with a number also, but I'm less sure of that. E.g, maybe `notation=set("@1,@@2)" could mean match the second child, then continue matching all siblings that are offset by two from that. Maybe a slightly different "@>2" would make more sense. Potentially multiple nary picks could be given and the pattern repeated until the children of the element are exhausted. I don't have a use case for that though.
 
 In the case of a named argument, the children would be searched for using a depth first search. The search stops when:
-1. The element has an `arg` attribute. If the value matches, the element is searched for a secondary `@` arg; if there are no more args, the element is returned. If no match, the search continues on the next sibling of the current element.
+1. The element has an `arg` attribute and the value matches, the element is searched for a secondary `@` arg; if there are no more `@` args, the element is returned. If no match, the search continues on the next sibling of the current element.
 2. A `notation` attribute is found. The search continues on the next sibling of the current element. Note that the `arg` attribute has already been checked for a match.
 
 In step one, if an nary parameter is being matched, the search would continue on the next sibling instead of stopping.
 
+Step two is to prevent searching children of another notation and finding a match there. See the [Nested Notation section below](nested-notations) for an example.
+
 A few things to note:
-* although depth first might needless search deep down the tree, non-matching nodes are very likely to be leaf elements like fences or operators, so very little time will be wasted.
+* although depth first search might needlessly search deep down the tree, non-matching nodes are very likely to be leaf elements like fences or operators, so very little time will be wasted.
 * potentially all the arguments could be searched for at once and a dictionary is returned of the matches.
 
 
 
 
 # Examples of notations
-Here are Bruce's example with this new style. I'll do some with numbers and others with names.
+Here are Bruce's example with this new proposal's markup. Some use numbers and others with names. The choice was arbitrary.
 
 <!-- ======================================================================
   Big problems laying out tables. The goal is to embed multi-line quoted code
@@ -513,32 +515,34 @@ Here are Bruce's example with this new style. I'll do some with numbers and othe
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 # The Good, the bad, and the lost in the fog
-Special cases and various bits not quite worked out.
+Some further remarks...
 
 ## Two masters
 I think we have all been focused on getting semantics out and figured conversion to Content MathML, Speech, Braille, and anything else would just follow. However, here are two cases where speech doesn't necessarily flow from a function-based version of semantics:
-* Transpose can be written as $A^T$ and as $\mathrm{trans}(A)$. Both would have the value `transpose(A)` in the above scheme. But it is likely we would want to speak the first as "A transpose" and the second as "the transpose of A".
-* Infix notation seems simple: grab the operands and name the function the name of the operands as in `plus(a,b,c)`. However, "a-b+c" is problematic because there are two operators: `+` and `-`. Computation systems typically solve this by using a unary minus as in `plus(a1, times(-1, b), c)`. The exact same representation would be used for "1+-2+3". Speech needs to distinguish these two forms. Without "good" `mrow` structure, operators tend to be mixed. This isn't a problem for speech or braille, but is one for conversion to Content MathML and computation systems.
+* Transpose can be written as $A^T$ and as $T(A)$. Both would have the value `transpose(A)` in the above scheme. But it is likely we would want to speak the first as "A transpose" and the second as "the transpose of A".
+* Infix notation seems simple: grab the operands and name the function the name of the operands as in `plus(a,b,c)`. However, "a-b+c" is problematic because there are two operators: `+` and `-`. Computation systems typically solve this by using a unary minus as in `plus(a, times(-1, b), c)`. The exact same representation would be used for "1+-2+3". Speech needs to distinguish these two forms. Also, without "good" `mrow` structure, operators tend to be mixed (e.g., $2x+1$ all in one `mrow`). This isn't a problem for speech or braille, but it is one for conversion to Content MathML and computation systems.
 
-This is a problem for Bruce's proposal and this proposal. Potentially the speech problem is solved using the "hack" in the $a+b+c+d$ example above where both the operands and operators are returned. It isn't good for conversion to Content MathML though.
+Having targets with different needs is a problem for Bruce's proposal and this proposal. Potentially the speech problem is solved using the "hack" in the $a+b+c+d$ example above where both the operands and operators are returned. It isn't good for conversion to Content MathML though.
 
 ## Nested notations
-All the examples were "simple" examples in that "notation" only occurred once. Arguably, the ones with subscripted variables such as Clebsch-Gordan should probably have tagged the `msub`, but I just followed Bruce's example.
+All the examples above were "simple" examples in that `notation` only occurred once. Arguably, the examples with subscripted variables such as Clebsch-Gordan should have tagged the `msub`, but I just followed Bruce's example.
 
-Here's an example of nesting $\binom{n^2}{m}$:
+Here's an example of nesting $\binom{n^2}{m}$ where both notations use the same argument names:
 ```
-<mrow notation="binomial(@n, @m">
+<mrow notation="binomial(@arg1, @arg1">
   <mo>(</mo>
   <mfrac thickness="0pt">
-    <msup notation="power(@base,@exp)" arg='n'>
-      <mi arg="@base">n</mi>
-      <mn arg="@exp">2</mn>
+    <msup notation="power(@arg1,@arg2)" arg='arg1'>
+      <mi arg="@arg1">n</mi>
+      <mn arg="@arg2">2</mn>
     </msup>
-    <mi arg="m">m</mi>    
+    <mi arg="arg2">m</mi>    
   </mfrac>
   <mo>)</mo>
 </mrow>
 ```
+
+Because search for arguments to "binomial" stops when `notation` is found on the `msup`, the search for its "arg2" will not find the "2" and will instead properly find the "m".
 
 ## infix, prefix, postfix
 At least for Content MathML conversion, "good" `mrow` structure is needed for both Bruce and my proposal. For speech, my proposal can get by with flattened `mrow`s.
@@ -557,8 +561,9 @@ The details for nary matches need to be worked out so that one can grab the oper
 
 These don't cause problems in this system. In particular:
 * any notation for function call is easily supported
-* find the $dx$ in integrals, etc., is not a problem 
+* finding the $dx$ in integrals, etc., is not a problem 
 * continued functions just work with `notation="ContinuedFraction([@a0, @a1, @a2, @a3])` for a fraction like
+
 \[
   a_0+\cfrac{1}{a_1+\cfrac{1}{a_2+\cfrac{1}{a_3+\cdots}}}
 \]
@@ -567,5 +572,5 @@ These don't cause problems in this system. In particular:
 As with `mathrole` and `meaning`, this proposal will only be useful if we end up standardizing "some" names. This was definitely a problem for Content MathML in the past. Hopefully with the passage of time and also the (maybe) reduction in complexity of this proposal, we can create a larger and more useful list more quickly. We should be able to easily create a list equivalent to pragmatic Content MathML easily. 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 # Summary
-I believe this proposal is an improvement over using `mathrole` because it bundles the meaning with its arguments without addition tables to figure them out. I also feel it is an improvement over trying to extract out patterns of usage and name them as that requires developing (and remembering) to open-ended sets of names and introduces an indirection that doesn't add any power.
+I believe this proposal is an improvement over using `mathrole` because it bundles the meaning with its arguments without addition tables to figure them out. I also feel it is an improvement over trying to extract out patterns of usage and name them as that requires developing (and remembering) two open-ended sets of names and introduces an indirection that doesn't add any power.
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
