@@ -575,7 +575,7 @@ Hiding behind the naming problem is the problem of deciding defaults. We can go 
 1. $\mathrm{trigFunc} ^ {\mathrm{exp}}(\mathrm{arg})$ ⟶ `notation=power( @trigFunc(@arg), @exp )`
 1. everything else => `notation=power(@0, @1)`
 
-or we can go for a more complete set that includes $log^2(x)$, $ℝ^2$, various calculus notations ($f'$, $d^2/dx^2$, ...), $A^T$, etc. Or maybe some of these should only be defaults for a given subject area (yet another naming elephant in the room).
+or we can go for a more complete set that includes $\log^2(x)$, $ℝ^2$, various calculus notations ($f'$, $d^2/dx^2$, ...), $A^T$, etc. Or maybe some of these should only be defaults for a given subject area (yet another naming elephant in the room).
 
 Bottom line: there are a lot of elephants to feed once we get past figuring out how to mark up semantics.
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
