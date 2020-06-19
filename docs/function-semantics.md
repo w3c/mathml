@@ -122,7 +122,7 @@ Here are Bruce's example with this new style. I'll do some with numbers and othe
 <thead><tr><th>Description</th><th>Code</th></tr></thead>
 <tbody>
 <!-- ======================================== -->
-<tr><td> infix </td><td> nary (discussed later)<br/> $a+b-c+d$ </td><td>
+<tr><td> nary (discussed later)<br/> $a+b-c+d$ </td><td>
 {:/nomarkdown}
 ```
 <mrow notation="@@all">
@@ -395,7 +395,7 @@ Here are Bruce's example with this new style. I'll do some with numbers and othe
 ```
 {::nomarkdown}
 </td></tr>
-<tr><td/><td>Jacobi symbol</td><td>similarly</td></tr>
+<tr>acobi symbol</td><td>similarly</td></tr>
 
 <tr><td> Clebsch-Gordan<br/> $(j_1 m_1 j_2 m_2 | j_1 j_2 j_3 m_3)|$</td><td>
 {:/nomarkdown}
@@ -505,7 +505,7 @@ Here are Bruce's example with this new style. I'll do some with numbers and othe
 ```
 {::nomarkdown}
 </td></tr>
-<tr><td/><td>6j, 9j, ...</td><td>similarly</td></tr>
+<tr><td>6j, 9j, ...</td><td>similarly</td></tr>
 <!-- ======================================== -->
 </tbody>
 </table>
@@ -542,6 +542,8 @@ Here's an example of nesting $\binom{n^2}{m}$:
 
 ## infix, prefix, postfix
 At least for Content MathML conversion, "good" `mrow` structure is needed for both Bruce and my proposal. For speech, my proposal can get by with flattened `mrow`s.
+
+The details for nary matches need to be worked out so that one can grab the operands in something like $a*b*c*d$. There is some hand waving in [the section that introduces the nary notation](#_some_ details), but that part of the section is not thought through.
 
 ## Other cases Bruce lists:
 
