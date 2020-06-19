@@ -79,16 +79,16 @@ Although the `arg` attribute has similar functionality to `id`, it has a big adv
 
 Note: it is possible that we might be able to reuse an existing HTML attribute instead of creating a new one (`arg`). On the call, David Carlisle suggested that maybe we could use `name`. In this note, I'll use `arg`.
 
-Numbered attribute values avoid the need for adding an `arg` attribute and are therefore less work to manually author. Their disadvantage is that they are fragile -- if a polyfill such as one for `mfenced` for MathML Core changes the document, the location of the children might change. A good polyfill hopefully at least preserves the non-`mfrenced` attributes of the `mfenced` element by transferring them to the corresponding `mrow`, so the named approach would still work. Two other potential polyfills are a canonicalization polyfill that "fixes" the `mrow` structure and a line breaking polyfill creates new (indented) lines. Both would like alter the number of children in an mrow. 
+Numbered attribute values avoid the need for adding an `arg` attribute and are therefore less work to manually author. Their disadvantage is that they are fragile -- if a polyfill such as one for `mfenced` for MathML Core changes the document, the location of the children might change. A good polyfill hopefully at least preserves the non-`mfenced` attributes of the `mfenced` element by transferring them to the corresponding `mrow`, so the named approach would still work. Two other potential polyfills are a canonicalization polyfill that "fixes" the `mrow` structure and a line breaking polyfill creates new (indented) lines. Both would like alter the number of children in an mrow. 
 
 Conversely, named arguments require more manual markup. Supporting both allows authors to choose what works best for their use case.
 
 # _Some_ Details
 This idea is not fully fleshed out, but some things can be clarified:
-* The notation attribute can take any value, but it is likely only some values will be listed as "known". Typically the value will be either a string representing a constant (e.g., "EulerNumber") or a string representing a function with arguments an in the examples above.
+* The notation attribute can take any value, but it is likely only some values will be listed as "known". Typically the value will be either a string representing a constant (e.g., "EulerNumber") or a string representing a function with arguments as in the examples above.
 
 * The arguments to a function have one of the forms:
-* `@<digits>+` or `@<letter><alphaChars>+` -- if digits, then then it refers to the ith child (0-based) of the element with the notation attr. If it starts with a letter, then it refers to the value of an `arg` attribute. If there are more than one `@`s present, they refer to the child of the match of the previous `@`.
+* `@<digits>+` or `@<letter><alphaChars>+` -- if digits, then then it refers to the ith child (0-based) of the element with the notation attr. If it starts with a letter, then it refers to the value of an `arg` attribute. If there is more than one `@`s present, they refer to the child of the match of the previous `@`.
 * `@@<letter><alphaChars>+` -- nary match. All children are searched instead of stopping at the first child.
 
 It is probably possible to extend the nary notation to work with a number also, but I'm less sure of that. E.g, maybe `notation=set("@1,@@2)" could mean match the second child, then continue matching all siblings that are offset by two from that. Maybe a slightly different "@>2" would make more sense. Potentially multiple nary picks could be given and the pattern repeated until the children of the element are exhausted. I don't have a use case for that though.
@@ -165,12 +165,12 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 <tr><td> Laplacian $\nabla^2 f$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="prefix">
-  <msup meaning="laplacian(@1)">
+<mrow notation="compose(@laplacian, @function)">
+  <msup arg="laplacian" meaning="laplacian(@1)">
     <mi>&#x2207;</mi>
     <mn>2</mn>
   </msup>
-  <mi>f</mi>`
+  <mi arg="function">f</mi>`
 </mrow>
 ```
 {::nomarkdown}
@@ -397,7 +397,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 ```
 {::nomarkdown}
 </td></tr>
-<tr>acobi symbol</td><td>similarly</td></tr>
+<tr>Jacobi symbol</td><td>similarly</td></tr>
 
 <tr><td> Clebsch-Gordan<br/> $(j_1 m_1 j_2 m_2 | j_1 j_2 j_3 m_3)|$</td><td>
 {:/nomarkdown}
@@ -568,8 +568,17 @@ These don't cause problems in this system. In particular:
 \\]
 
 ## The Elephant in the Room Everyone Knows Wants To Be Fed
-As with `mathrole` and `meaning`, this proposal will only be useful if we end up standardizing "some" names. This was definitely a problem for Content MathML in the past. Hopefully with the passage of time and also the (maybe) reduction in complexity of this proposal, we can create a larger and more useful list more quickly. We should be able to easily create a list equivalent to pragmatic Content MathML easily. 
+As with `mathrole` and `meaning`, this proposal will only be useful if we end up standardizing "some" names. This was definitely a problem for Content MathML in the past. Hopefully with the passage of time and also the (maybe) reduction in complexity of this proposal, we can create a larger and more useful list more quickly. We should be able to easily create a list equivalent to pragmatic Content MathML easily.
+
+Hiding behind the naming problem is the problem of deciding defaults. We can go small and have only very simple defaults. E.g., for `msup`:
+1. $\mathrm{trigFunc} ^ {-1}$ ⟶ `notation="inverse-function(@0)"`
+1. $\mathrm{trigFunc} ^ {\mathrm{exp}}(\mathrm{arg})$ ⟶ `notation=power( @trigFunc(@arg), @exp )`
+1. everything else => `notation=power(@0, @1)`
+
+or we can go for a more complete set that includes $log^2(x)$, $ℝ^2$, various calculus notations ($f'$, $d^2/dx^2$, ...), $A^T$, etc. Or maybe some of these should only be defaults for a given subject area (yet another naming elephant in the room).
+
+Bottom line: there are a lot of elephants to feed once we get past figuring out how to mark up semantics.
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 # Summary
-I believe this proposal is an improvement over using `mathrole` because it bundles the meaning with its arguments without addition tables to figure them out. I also feel it is an improvement over trying to extract out patterns of usage and name them as that requires developing (and remembering) two open-ended sets of names and introduces an indirection that doesn't add any power.
+I believe this proposal is an improvement over using `mathrole` because it bundles the meaning with its arguments without the addition of tables to figure them out. I also feel it is an improvement over trying to extract patterns of usage and name them as that requires developing (and remembering) two open-ended sets of names and introduces an indirection that doesn't add any power.
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
