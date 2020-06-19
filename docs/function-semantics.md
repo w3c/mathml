@@ -153,7 +153,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 ```
 <mrow notation="inner-product(@0, @2)">
   <mi mathvariant="bold">a</mi>
-  <mo meaning="inner-product>&#x22C5;</mo>
+  <mo>&#x22C5;</mo>
   <mi mathvariant="bold">b</mi>
 </mrow>
 ```
