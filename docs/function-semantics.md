@@ -64,7 +64,7 @@ Here, the number '0' refers to the first (0-based) child of element of the notat
 * $\binom{n}{m}$
 
 ```
-<mrow notation="binomial(@1@0, @1@1">
+<mrow notation="binomial(@1@0, @1@1)">
   <mo>(</mo>
   <mfrac thickness="0pt">
     <mi>n</mi>
