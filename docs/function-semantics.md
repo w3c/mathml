@@ -547,7 +547,7 @@ Because search for arguments to "binomial" stops when `notation` is found on the
 ## infix, prefix, postfix
 At least for Content MathML conversion, "good" `mrow` structure is needed for both Bruce and my proposal. For speech, my proposal can get by with flattened `mrow`s.
 
-The details for nary matches need to be worked out so that one can grab the operands in something like $a * b * c *d$. There is some hand waving in [the section that introduces the nary notation](#some-details), but that part of the section is not thought through.
+The details for nary matches need to be worked out so that one can grab the operands in something like $a \times b \times c \times d$. There is some hand waving in [the section that introduces the nary notation](#some-details), but that part of the section is not thought through.
 
 ## Other cases Bruce lists:
 
@@ -563,10 +563,9 @@ These don't cause problems in this system. In particular:
 * any notation for function call is easily supported
 * finding the $dx$ in integrals, etc., is not a problem 
 * continued functions just work with `notation="ContinuedFraction([@a0, @a1, @a2, @a3])` for a fraction like
-
-\[
+\\[
   a_0+\cfrac{1}{a_1+\cfrac{1}{a_2+\cfrac{1}{a_3+\cdots}}}
-\]
+\\]
 
 ## The Elephant in the Room Everyone Knows Wants To Be Fed
 As with `mathrole` and `meaning`, this proposal will only be useful if we end up standardizing "some" names. This was definitely a problem for Content MathML in the past. Hopefully with the passage of time and also the (maybe) reduction in complexity of this proposal, we can create a larger and more useful list more quickly. We should be able to easily create a list equivalent to pragmatic Content MathML easily. 
