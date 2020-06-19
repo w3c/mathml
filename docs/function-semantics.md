@@ -3,7 +3,7 @@ title: "Functional Patterns for Semantic Annotation"
 layout: cgreport
 ---
 
-*Authors*: Neil Soiffer
+*Author*: Neil Soiffer
 
 
 
@@ -25,6 +25,7 @@ These ideas were motivated by a comment by Deyan Ginev on the June 18 MathML. He
 I'll start with two simple examples using transpose and binomial coefficient examples:
 
 * $A^T$:
+
 ```
 <msup notation="transpose(@matrix)">
   <mi arg="matrix">A</mi>
@@ -33,6 +34,7 @@ I'll start with two simple examples using transpose and binomial coefficient exa
 ```
 
 * $\binom{n}{m}$
+
 ```
 <mrow notation="binomial(@n, @m">
   <mo>(</mo>
@@ -49,6 +51,7 @@ The idea is that a `notation` attribute names a function and its arguments. `@xx
 Many notations such as the transpose notation are simple, so this proposal has an alternative method of markup that avoids some work: numbered arguments.
 
 * $A^T$:
+
 ```
 <msup notation="transpose(@0)">
   <mi>A</mi>
@@ -59,6 +62,7 @@ Many notations such as the transpose notation are simple, so this proposal has a
 Here, the number '0' refers to the first (0-based) child of element with the notation attribute. Finding the ith child can be extended to arbitrary descendants by simply repeating it. For example:
 
 * $\binom{n}{m}$
+
 ```
 <mrow notation="binomial(@1@0, @1@1">
   <mo>(</mo>
