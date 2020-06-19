@@ -174,7 +174,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 {:/nomarkdown}
 ```
 <mrow notation="compose(@laplacian, @function)">
-  <msup arg="laplacian" meaning="laplacian(@1)">
+  <msup arg="laplacian" notation="laplacian(@1)">
     <mi>&#x2207;</mi>
     <mn>2</mn>
   </msup>
@@ -259,7 +259,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 ```
 <msup notation="transpose(@0)">
   <mi>A</mi>
-  <mi meaning="transpose">T</mn>
+  <mi>T</mn>
 </msup>
 ```
 {::nomarkdown}
