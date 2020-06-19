@@ -18,10 +18,10 @@ layout: cgreport
 </nav>
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-## Motivation
+# Motivation
 These ideas were motivated by a comment by Deyan Ginev on the June 18 MathML. He had some reservations about [Bruce Miller's proposal](https://mathml-refresh.github.io/mathml/docs/layout-semantics); maybe he had the following in mind or maybe something different. His concern was that `notation` didn't capture the "tail" of what people do. This proposal is more flexible and I believe simpler in that there is no need to categorize abstractions.
 
-## The Basics
+# The Basics
 I'll start with two simple examples using transpose and binomial coefficient examples:
 
 * $A^T$:
@@ -106,7 +106,7 @@ A few things to note:
 
 
 
-## Examples of notations
+# Examples of notations
 Here are Bruce's example with this new style. I'll do some with numbers and others with names.
 
 <!-- ======================================================================
@@ -512,17 +512,17 @@ Here are Bruce's example with this new style. I'll do some with numbers and othe
 {:/nomarkdown}
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-## The Good, the bad, and the lost in the fog
+# The Good, the bad, and the lost in the fog
 Special cases and various bits not quite worked out.
 
-### Two masters
+## Two masters
 I think we have all been focused on getting semantics out and figured conversion to Content MathML, Speech, Braille, and anything else would just follow. However, here are two cases where speech doesn't necessarily flow from a function-based version of semantics:
 * Transpose can be written as $A^T$ and as $\mathrm{trans}(A)$. Both would have the value `transpose(A)` in the above scheme. But it is likely we would want to speak the first as "A transpose" and the second as "the transpose of A".
 * Infix notation seems simple: grab the operands and name the function the name of the operands as in `plus(a,b,c)`. However, "a-b+c" is problematic because there are two operators: `+` and `-`. Computation systems typically solve this by using a unary minus as in `plus(a1, times(-1, b), c)`. The exact same representation would be used for "1+-2+3". Speech needs to distinguish these two forms. Without "good" `mrow` structure, operators tend to be mixed. This isn't a problem for speech or braille, but is one for conversion to Content MathML and computation systems.
 
 This is a problem for Bruce's proposal and this proposal. Potentially the speech problem is solved using the "hack" in the $a+b+c+d$ example above where both the operands and operators are returned. It isn't good for conversion to Content MathML though.
 
-### Nested notations
+## Nested notations
 All the examples were "simple" examples in that "notation" only occurred once. Arguably, the ones with subscripted variables such as Clebsch-Gordan should probably have tagged the `msub`, but I just followed Bruce's example.
 
 Here's an example of nesting $\binom{n^2}{m}$:
@@ -540,10 +540,10 @@ Here's an example of nesting $\binom{n^2}{m}$:
 </mrow>
 ```
 
-### infix, prefix, postfix
+## infix, prefix, postfix
 At least for Content MathML conversion, "good" `mrow` structure is needed for both Bruce and my proposal. For speech, my proposal can get by with flattened `mrow`s.
 
-### Other cases Bruce lists:
+## Other cases Bruce lists:
 
 * powers and defaults
 * sub-, super-, over-, under-scripts
@@ -561,9 +561,9 @@ These don't cause problems in this system. In particular:
   a_0+\cfrac{1}{a_1+\cfrac{1}{a_2+\cfrac{1}{a_3+\cdots}}}
 \]
 
-### The Elephant in the Room Everyone Knows Wants To Be Fed
+## The Elephant in the Room Everyone Knows Wants To Be Fed
 As with `mathrole` and `meaning`, this proposal will only be useful if we end up standardizing "some" names. This was definitely a problem for Content MathML in the past. Hopefully with the passage of time and also the (maybe) reduction in complexity of this proposal, we can create a larger and more useful list more quickly. We should be able to easily create a list equivalent to pragmatic Content MathML easily. 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-## Summary
+# Summary
 I believe this proposal is an improvement over using `mathrole` because it bundles the meaning with its arguments without addition tables to figure them out. I also feel it is an improvement over trying to extract out patterns of usage and name them as that requires developing (and remembering) to open-ended sets of names and introduces an indirection that doesn't add any power.
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
