@@ -496,7 +496,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 <tr><td> 3j symbol<br/> $\left(\begin{array}{ccc}j_1& j_2 &j_3 \\ m_1 &m_2 &m_3\end{array}\right)$</td><td>
 {:/nomarkdown}
 ```
-<mrow notation="3j([@j1,@j2,@j3][@m1,@m2,@m3])">
+<mrow notation="3j([@j1,@j2,@j3], [@m1,@m2,@m3])">
   <mo>(</mo>
   <mtable>
     <mtr>
@@ -581,7 +581,7 @@ As with `mathrole` and `meaning`, this proposal will only be useful if we end up
 Hiding behind the naming problem is the problem of deciding defaults. We can go small and have only very simple defaults. E.g., for `msup`:
 1. $\mathrm{trigFunc} ^ {-1}$ ⟶ `notation="inverse-function(@0)"`
 1. $\mathrm{trigFunc} ^ {\mathrm{exp}}(\mathrm{arg})$ ⟶ `notation=power( @trigFunc(@arg), @exp )`
-1. everything else => `notation=power(@0, @1)`
+1. everything else ⟶ `notation=power(@0, @1)`
 
 or we can go for a more complete set that includes $\log^2(x)$, $ℝ^2$, various calculus notations ($f'$, $d^2/dx^2$, ...), $A^T$, etc. Or maybe some of these should only be defaults for a given subject area (yet another naming elephant in the room).
 
