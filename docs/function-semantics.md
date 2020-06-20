@@ -553,7 +553,7 @@ Here's an example of nesting $\binom{n^2}{m}$ where both notations use the same 
 Because search for arguments to "binomial" stops when `notation` is found on the `msup`, the search for its "arg2" will not find the "2" and will instead properly find the "m".
 
 ## infix, prefix, postfix
-At least for Content MathML conversion, "good" `mrow` structure is needed for both Bruce and my proposal. For speech, my proposal can get by with flattened `mrow`s.
+At least for Content MathML conversion, "good" `mrow` structure is needed for both Bruce's proposal and this proposal. For speech, this proposal can get by with flattened `mrow`s.
 
 The details for nary matches need to be worked out so that one can grab the operands in something like $a \times b \times c \times d$. There is some hand waving in [the section that introduces the nary notation](#some-details), but that part of the section is not thought through.
 
