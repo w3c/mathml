@@ -12,7 +12,8 @@ layout: cgreport
 
 Math accessibility has significant differences from text accessibility because math notation is a shorthand for its meaning. The words spoken for it differ from the braille that would be used for it. Furthermore, the words that are spoken need to differ based on the reader’s disabilities and familiarity of the content. Hence, enough information from MathML should be given to the assistive technology (AT) of a user so that it can generate a meaningful presentation of the math to the user.
 
-Although this document uses the word "math", the notations described here are used by science, engineering, and other fields. These include notations used in Chemistry that make use of standard mathematical notations (e.g., $Al^{+3}O^{-2} \rightarrow Al_2 O_3$). "Math" Accessibility extends far beyond just mathematics.
+Although this document uses the word "math", the notations described here are used by science, engineering, and other fields. These include notations used in Chemistry that make use of standard mathematical notations (e.g., $Al^{+3}O^{-2} \rightarrow Al_2 O_3$).
+"Math" accessibility applies to not just documents about mathematical topics, but is relevant to almost all technical documents.
 
 <nav id="toc" markdown="1">
 
