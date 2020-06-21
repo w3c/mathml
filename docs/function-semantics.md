@@ -130,7 +130,7 @@ A few things to note:
 
 
 # Examples of notations
-Here are Bruce's example with this new proposal's markup. Some use numbers and others with names. The choice was arbitrary.
+Here are Bruce's example with this new proposal's markup. Some use numbers and others with names. The choice was arbitrary. Neither Bruce nor I (copied from Bruce's names) endorse the specific meaning/notation names used; they are merely meant to be suggestive of the meaning.
 
 <!-- ======================================================================
   Big problems laying out tables. The goal is to embed multi-line quoted code
