@@ -10,7 +10,9 @@ layout: cgreport
 ## Abstract
 [MathML 3](https://www.w3.org/TR/MathML3/) is a W3C recommendation for including mathematical expressions in Web pages. MathML has two parts: Presentation MathML that describes how the math looks and Content MathML that describes the meaning of the math. Presentation is by far the most commonly used part of MathML and is the focus of this document. Assuming they know the subject matter, persons reading math notation typically can understand its meaning. Although it is occasionally ambiguous, context usually resolves the ambiguity. One goal of MathML 4 is to allow authors provide context as part of the MathML to resolve the ambiguity.
 
-Math accessibility has significant differences from text accessibility because math notation is a shorthand for its meaning. The words spoken for it differ from the braille that would be used for it. Furthermore, the words that are spoken need to differ based on the reader’s disabilities and familiarity of the content. Hence, enough information from MathML should be given to the assistive technology (AT) of a user so that it can generate a meaningful presentation of the math to the user. 
+Math accessibility has significant differences from text accessibility because math notation is a shorthand for its meaning. The words spoken for it differ from the braille that would be used for it. Furthermore, the words that are spoken need to differ based on the reader’s disabilities and familiarity of the content. Hence, enough information from MathML should be given to the assistive technology (AT) of a user so that it can generate a meaningful presentation of the math to the user.
+
+Although this document uses the word "math", the notations described here are used by science, engineering, and other fields. These include notations used in Chemistry that make use of standard mathematical notations (e.g., $Al^{+3}O^{-2} \rightarrow Al_2 O_3$). "Math" Accessibility extends far beyond just mathematics.
 
 <nav id="toc" markdown="1">
 
