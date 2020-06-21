@@ -87,7 +87,11 @@ Although the `arg` attribute has similar functionality to `id`, it has a big adv
 
 Note: it is possible that we might be able to reuse an existing HTML attribute instead of creating a new one (`arg`). On the call, David Carlisle suggested that maybe we could use `name`. In this note, I'll use `arg`.
 
-Numbered attribute values avoid the need for adding an `arg` attribute and are therefore less work to manually author. Their disadvantage is that they are fragile -- if a polyfill such as one for `mfenced` for MathML Core changes the document, the location of the children might change. A good polyfill hopefully at least preserves the non-`mfenced` attributes of the `mfenced` element by transferring them to the corresponding `mrow`, so the named approach would still work. Two other potential polyfills are a canonicalization polyfill that "fixes" the `mrow` structure and a line breaking polyfill creates new (indented) lines. Both would like alter the number of children in an mrow. 
+Numbered attribute values avoid the need for adding an `arg` attribute and are therefore less work to manually author. Their disadvantage is that they are fragile -- if a polyfill such as one for `mfenced` for MathML Core changes the document, the location of the children might change. A good polyfill hopefully at least preserves the non-`mfenced` attributes of the `mfenced` element by transferring them to the corresponding `mrow`, so the named approach would still work. Two other potential polyfills are a canonicalization polyfill that "fixes" the `mrow` structure and a line breaking polyfill creates new (indented) lines. Both would like alter the number of children in an mrow.
+
+David Carlisle pointed out that numbered attributes are even more fragile than mentioned above because some normalization may add or remove an `mrow`. E.g, the contents of `msqrt` may be a single `mrow` with children or may omit that `mrow`. If the `mrow` has only one child, MathML defines it to be equivalent to just having that child.
+David also suggests using 1-based counting if we do use numbered attributes because that is what xpath and CSS selectors use.
+
 
 Conversely, named arguments require more manual markup. Supporting both allows authors to choose what works best for their use case.
 
@@ -100,6 +104,15 @@ This idea is not fully fleshed out, but some things can be clarified:
 * `@@<letter><alphaChars>+` -- nary match. All children are searched instead of stopping at the first child.
 
 It is probably possible to extend the nary notation to work with a number also, but I'm less sure of that. E.g, maybe `notation=set(@1,@@2)` could mean match the second child, then continue matching all siblings that are offset by two from that. Maybe a slightly different "@>2" would make more sense. Potentially multiple nary picks could be given and the pattern repeated until the children of the element are exhausted. I don't have a use case for that though. It's probably best to keep things simple. We should not duplicate xpath or CSS selectors -- "that way madness lies". Named arguments work nary operators so there is no pressing need to complicate the simple indexing of children with numbers.
+
+David Carlisle has a proposal that involves gathering up all the non-`mo` elements and making them arguments to the operator. That suggests that the `@@` notation be modified to do the same thing by having no arguments. That would allow the following short version of dot product ($\mathbf{a}\cdot\mathbf{b}$)to work without having to use potentially fragile numbering:
+```
+<mrow notation="inner-product(@@)">
+  <mi mathvariant="bold">a</mi>
+  <mo>&#x22C5;</mo>
+  <mi mathvariant="bold">b</mi>
+</mrow>
+```
 
 In the case of a named argument, the children would be searched for using a depth first search. The search stops when:
 1. The element has an `arg` attribute and the value matches, the element is searched for a secondary `@` arg; if there are no more `@` args, the element is returned. If no match, the search continues on the next sibling of the current element.
