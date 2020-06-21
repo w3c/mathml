@@ -122,7 +122,7 @@ Since the use of Content MathML, especially in addition to Presentation MathML, 
 
 *Note: the CG is still actively discussing potential solutions, so the solutions mentioned here are not final and will likely change. What is likely to be true of any solution is that it will entail the addition of attributes to Presentation MathML*.
 
-The markup form that has been proposed for semantic markup extends Presentation MathML with a math `subject` attribute to carry the semantic context, a `notation` attribute to indicate where the operator/operands are, and a `meaning` attribute on the operator to give a meaning to the operation.
+The markup form that has been proposed for semantic markup extends Presentation MathML with a math `subject` attribute to carry the semantic context, a `notation` attribute to indicate the functionality and location of arguments, and a `arg` attribute to identify the location of the function's argument (the functionality and rationale for the proposal/choices are described elsewhere; the MathML CG has not discussed names for the semantics functions yet).
 `aria-label` can be used to force the words to speak.
 
 A few fully marked up examples to give some idea about how these can be used:
@@ -136,12 +136,12 @@ A few fully marked up examples to give some idea about how these can be used:
                 <summary>MathML for open interval</summary>
 {:/nomarkdown}
 ```
-<mrow notation="fenced" meaning="open-interval">
+<mrow notation="open-interval(@start, @end)">
     <mo>(</mo>
     <mrow>
-        <mi>0</mi>
+        <mi attr="start">0</mi>
         <mo>,</mo>
-        <mi>π</mi>
+        <mi attr="end">π</mi>
     </mrow>
     <mo>)</mo>
 </mrow>
@@ -157,12 +157,12 @@ A few fully marked up examples to give some idea about how these can be used:
                 <summary>MathML for point in a plane</summary>
 {:/nomarkdown}
 ```
-<mrow notation="fenced" meaning="point">
+<mrow notation="point(@x,@y)">
     <mo>(</mo>
     <mrow>
-        <mi>0</mi>
+        <mi attr="x">0</mi>
         <mo>,</mo>
-        <mi>π</mi>
+        <mi attr="y">π</mi>
     </mrow>
     <mo>)</mo>
 </mrow>
@@ -178,9 +178,9 @@ A few fully marked up examples to give some idea about how these can be used:
                 <summary>MathML for transpose</summary>
 {:/nomarkdown}
 ```
-<msup notation="sup-operator">
-  <mi>A</mi>
-  <mi meaning="transpose">T</mn>
+<msup notation="transpose(@matrix)">
+  <mi arg="matrix">A</mi>
+  <mi>T</mn>
 </msup>
 ```
 {::nomarkdown}
@@ -194,10 +194,10 @@ A few fully marked up examples to give some idea about how these can be used:
                 <summary>MathML for dot product</summary>
 {:/nomarkdown}
 ```
-<mrow notation="infix">
-  <mi mathvariant="bold">a</mi>
-  <mo meaning="inner-product>&#x22C5;</mo>
-  <mi mathvariant="bold">b</mi>
+<mrow notation="inner-product(@arg1, @arg2)">
+  <mi mathvariant="bold" attr="arg1">a</mi>
+  <mo>&#x22C5;</mo>
+  <mi mathvariant="bold attr="arg2">b</mi>
 </mrow>
 ```
 {::nomarkdown}
