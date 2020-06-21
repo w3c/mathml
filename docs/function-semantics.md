@@ -105,7 +105,7 @@ This idea is not fully fleshed out, but some things can be clarified:
 
 It is probably possible to extend the nary notation to work with a number also, but I'm less sure of that. E.g, maybe `notation=set(@1,@@2)` could mean match the second child, then continue matching all siblings that are offset by two from that. Maybe a slightly different "@>2" would make more sense. Potentially multiple nary picks could be given and the pattern repeated until the children of the element are exhausted. I don't have a use case for that though. It's probably best to keep things simple. We should not duplicate xpath or CSS selectors -- "that way madness lies". Named arguments work nary operators so there is no pressing need to complicate the simple indexing of children with numbers.
 
-David Carlisle has a proposal that involves gathering up all the non-`mo` elements and making them arguments to the operator. That suggests that the `@@` notation be modified to do the same thing by having no arguments. That would allow the following short version of dot product ($\mathbf{a}\cdot\mathbf{b}$)to work without having to use potentially fragile numbering:
+David Carlisle has a proposal that involves gathering up all the non-`mo` elements and making them arguments to the operator. That suggests that the `@@` notation be modified to do the same thing by having no arguments. That would allow the following short version of dot product ($\mathbf{a}\cdot\mathbf{b}$) to work without having to use of the potentially fragile numbering notation:
 ```
 <mrow notation="inner-product(@@)">
   <mi mathvariant="bold">a</mi>
