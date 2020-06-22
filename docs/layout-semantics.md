@@ -288,7 +288,7 @@ Note that often the same meaning will appear within different notations.
 {::nomarkdown}
 </td></tr>
 
-<tr><td>  </td><td> dot product $\mathbf{a}\cdot\mathbf{b}$ </td><td>
+<tr><td>  </td><td> inner product $\mathbf{a}\cdot\mathbf{b}$ </td><td>
 {:/nomarkdown}
 ```
 <mrow notation="infix">

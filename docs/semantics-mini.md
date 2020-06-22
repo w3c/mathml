@@ -677,26 +677,6 @@ Note that often the same meaning will appear within different notations.
 <tr><td>fenced-table</td><td> 3j symbol<br/> $\left(\begin{array}{ccc}j_1& j_2 &j_3 \\ m_1 &m_2 &m_3\end{array}\right)$</td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="@1(@3,@5,@7,@9)">
-  <mi>A</mi>
-  <mo>(</mo>
-  <mi>a</mi>
-  <mo>,</mo>
-  <mi>b</mi>
-  <mo>;</mo>
-  <mi>z</mi>
-  <mo>|</mo>
-  <mi>q</mi>
-  <mo>(</mo>
-</mrow>
-```
-{::nomarkdown}
-</td></tr>
-<tr><td/><td>6j, 9j, ...</td><td>similarly</td></tr>
-<!-- ======================================== -->
-<tr><td>functions</td><td> function $A(a,b;z|q)$</td><td>
-{:/nomarkdown}
-```
 <mrow semantic="3j(@2/1/1,@2/1/2,@2/1/3,@2/2/1,@2/2/2,@2/2/3)">
   <mo>(</mo>
   <mtable>
@@ -713,6 +693,26 @@ Note that often the same meaning will appear within different notations.
   </mtable>
   <mo>)</mo>
 </msup>
+```
+{::nomarkdown}
+</td></tr>
+<tr><td/><td>6j, 9j, ...</td><td>similarly</td></tr>
+<!-- ======================================== -->
+<tr><td>functions</td><td> function $A(a,b;z|q)$</td><td>
+{:/nomarkdown}
+```
+<mrow semantic="@1(@3,@5,@7,@9)">
+  <mi>A</mi>
+  <mo>(</mo>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mo>;</mo>
+  <mi>z</mi>
+  <mo>|</mo>
+  <mi>q</mi>
+  <mo>(</mo>
+</mrow>
 ```
 {::nomarkdown}
 </td></tr>
@@ -789,7 +789,7 @@ Note that often the same meaning will appear within different notations.
 <tr><td>continued fractions</td><td> $a_0+\displaystyle\frac{1}{a_1+\displaystyle\frac{1}{a_2+\cdots}}$</td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="continued-fraction(@1,@3/1/2/1,@3/1/2/3/1/2)">
+<mrow semantic="infinite-continued-fraction(@1,1,@3/1/2/1,1,@3/1/2/3/1/2)">
   <msub><mi>a</mi><mn>0</mn></msub>
   <mo>+</mo>
   <mstyle display="true">
