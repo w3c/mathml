@@ -246,16 +246,31 @@ Two potential tools/libraries could simplify AT implementations for math:
 The MathML CG may produce prototypes of both of these tools
 
 # Examples
+This section demonstrates some of the complexities of math accessibility via examples.
+
 ## Special cases
-$x^n$ may be spoken as "x raised to the nth power". However, this pattern is not always followed for powers.
-There are often special cases that people speak differently.
-$x^2$ ("x squared") and $x^3$ ("x cubed") are two such examples.
+Even when the semantics are clear, there are often many special cases that need to handled to make the speech reflect how humans read the math. Here are some examples for superscripts:
+{::nomarkdown}
+<table>
+<thead><tr><th>Notation</th><th>Speech</th></tr></thead>
+<tbody>
 
-$\sin^{-1} x$ is also usually specially cased ("inverse sine of x" vs "sine raised to the negative one power of x")
+<tr><td> $x^{n+1}$ </td><td>
+“x raised to the n plus one power”
+</td></tr>
+<tr><td> $x^3$ </td><td>
+“x cubed”
+</td></tr>
+<tr><td> $sin^{-1}(x)$ </td><td>
+“the inverse sine of x”
+</td></tr>
+<tr><td> $f^'(x)$ </td><td>
+“f prime of x”
+</td></tr>
+</table>
+{:/nomarkdown}
 
-Some small numeric fractions are special cased $\frac{1}{2}$ ("one half") but not this similar numeric fraction $\frac{3}{111}$ ("start fraction 3 over 111 end fraction").
-
-
+## Know Your Audience
 Knowing the audience for the speech is important. If someone is blind, typical speech does not distinguish where 2D structures start and end. E.g., the fraction
 \\[ \frac{1}{x+y}\\]
 is typically spoken as "one over x plus y". That could also be interpreted as
