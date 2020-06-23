@@ -326,6 +326,7 @@ In MathML, there are multiple ways to markup the same expression. A number of th
 
 In addition to character equivalents, some notations can be marked up in different ways. A common issue is that MathML says that [an `mrow` is not required for some elements that take one or more children](https://www.w3.org/TR/MathML3/chapter3.html#presm.inferredmrow). For example $\sqrt{-1}$ can be written in either of these two forms:
 {::nomarkdown}
+
 <table>
 <thead><tr><th>Type of Markup</th><th>MathML</th></tr></thead>
 <tbody>
@@ -334,7 +335,6 @@ In addition to character equivalents, some notations can be marked up in differe
 <details markdown="1">
 <summary>Click to show MathML</summary>
 {:/nomarkdown}
-
 ```
 <msqrt>
   <mo> - </mo>
@@ -417,10 +417,11 @@ Visually, there is a slight difference in their display, but the difference is s
 
 The later encoding is ambiguous in that it can also be a 2x1 matrix/vector.
 
-In addition to the two ways to encode this, the binomial coefficient is also sometimes represented as ${}_nC_k$, $C(n,r)$, or $C_k^n$.
+In addition to the two ways to encode this, the binomial coefficient is also sometimes represented as ${}_nC_k$, $C(n,r)$, or $C_k^n$; they are all read the same.
 
 ### Chemistry
-Chemical formulas and chemical equations are often marked up using math editors because they share similar notation constructs. However ,the speech is different. For example, $\mathrm{H}_2\mathrm{O}$ is read as "H 2 O", not "H sub 2, O".
+Chemical formulas and chemical equations are often marked up using math editors because they share similar notation constructs. However,the speech is different. For example, $\mathrm{H}_2\mathrm{O}$ is read as "H 2 O", not "H sub 2, O"; or it might be read simply as "water".
+
 The chemical elements are one source of ambiguity, but all the notations around them, including bonds, are other sources of ambiguity
 \\[
 K_\mathrm{eq}= \frac
