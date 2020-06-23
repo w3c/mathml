@@ -142,9 +142,9 @@ A few fully marked up examples to give some idea about how these can be used:
 <mrow notation="open-interval(@start, @end)">
     <mo>(</mo>
     <mrow>
-        <mi attr="start">0</mi>
+        <mi arg="start">0</mi>
         <mo>,</mo>
-        <mi attr="end">π</mi>
+        <mi arg="end">π</mi>
     </mrow>
     <mo>)</mo>
 </mrow>
@@ -163,9 +163,9 @@ A few fully marked up examples to give some idea about how these can be used:
 <mrow notation="point(@x,@y)">
     <mo>(</mo>
     <mrow>
-        <mi attr="x">0</mi>
+        <mi arg="x">0</mi>
         <mo>,</mo>
-        <mi attr="y">π</mi>
+        <mi arg="y">π</mi>
     </mrow>
     <mo>)</mo>
 </mrow>
@@ -198,9 +198,9 @@ A few fully marked up examples to give some idea about how these can be used:
 {:/nomarkdown}
 ```
 <mrow notation="inner-product(@arg1, @arg2)">
-  <mi mathvariant="bold" attr="arg1">a</mi>
+  <mi mathvariant="bold" arg="arg1">a</mi>
   <mo>&#x22C5;</mo>
-  <mi mathvariant="bold attr="arg2">b</mi>
+  <mi mathvariant="bold arg="arg2">b</mi>
 </mrow>
 ```
 {::nomarkdown}
