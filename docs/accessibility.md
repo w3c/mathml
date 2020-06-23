@@ -283,26 +283,29 @@ Another important factor when speaking is to know the skill level of the audienc
 Another example is $\frac{d}{dx} \sin(x).$ When it is first introduced, it is often spoken as “the first derivative with respect to x of sine of x”. Later on, it gets shortened to “d by dx of sine x”.
 
 ## Examples of ambiguity
-Probably the most common ambiguity happens because a multiplication sign is often elided. For example, $a(x+y)$ might be a constant $a$ times $x+y$, or it might be a function (e.g, "area") with argument $x+y$. The invisible Unicode characters U+2061 (FUNCTION APPLICATION) and U+2062 (INVISIBLE TIMES) can disambiguate these cases, but they are not always used so AT has to guess what is the best way to speak it.
+Probably the most common ambiguity happens because multiplication signs are often elided which means sometimes the same notation means function application. For example, $a(x+y)$ might be a constant $a$ times $x+y$, or it might be a function $a$ (e.g, "area") with argument $x+y$. The invisible Unicode characters U+2061 (FUNCTION APPLICATION) and U+2062 (INVISIBLE TIMES) can disambiguate these cases, but they are not always used so AT has to guess what is the best way to speak it.
 
 Mathematical notation is reused in different subject areas. Typically, speaking what something looks like is hard to understand. As an example, saying "x with a line over it" for $\bar x$ would make most people stop to try and understand what is meant. Putting a bar over a variable or expressions has many meanings, most of which are resolved based on knowing the subject area. Here are some ways that notation might be spoken:
 
 {::nomarkdown}
 <table>
-<thead><tr><th>Notation</th><th>Speech</th></tr></thead>
+<thead><tr><th>Notation</th><th>Speech</th><th>Subject Area</th></tr></thead>
 <tbody>
-
 <tr><td>  $\overline{a+bi}$ </td><td>
 “the conjugate of a plus b i”
+</td>Algebra 2</td>
 </td></tr>
 <tr><td>  $\overline{AB}$ </td><td>
 “the line segment A B”
+</td>Geometry</td>
 </td></tr>
 <tr><td> $\bar{x}$ </td><td>
-“x bar” (in statistics, it is the mean of $\mathbf{x}$)
+“x bar”
+</td> Statistics (mean of $\mathbf{x}$)</td>
 </td></tr>
 <tr><td> $\bar{x}$ </td><td>
-“not x” (logic)
+“not x”
+</td>Logic</td>
 </td></tr>
 </tbody>
 </table>
