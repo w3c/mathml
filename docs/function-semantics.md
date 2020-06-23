@@ -205,19 +205,6 @@ notation="unary-minus(//*[@arg="operand"])"
 ```
 {::nomarkdown}
 </td>
-{:/nomarkdown}
-```
-<mrow notation="compose(//*[arg=@arg='laplacian'],//*[@arg='function'])">
-  <msup arg="laplacian" notation="laplacian(//*[2])">
-    <mi>&#x2207;</mi>
-    <mn>2</mn>
-  </msup>
-  <mi arg="function">f</mi>`
-</mrow>
-```
-{::nomarkdown}
-</td>
-{:/nomarkdown}
 </td></tr>
 <!-- ======================================== -->
 <tr><td> factorial $n!$ </td><td>
