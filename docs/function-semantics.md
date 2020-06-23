@@ -142,7 +142,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 
 {::nomarkdown}
 <table>
-<thead><tr><th>Description</th><th>Code</th></tr></thead>
+<thead><tr><th>Description</th><th>Code</th><th>XPath version</th></tr></thead>
 <tbody>
 <!-- ======================================== -->
 <tr><td> nary (discussed later)<br/> $a+b-c+d$ </td><td>
@@ -159,6 +159,9 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 </mrow>
 ```
 {::nomarkdown}
+</td>
+<td>
+
 </td></tr>
 
 <tr><td> dot product $\mathbf{a}\cdot\mathbf{b}$ </td><td>
@@ -171,6 +174,9 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 </mrow>
 ```
 {::nomarkdown}
+</td>
+<td>
+notation="inner-product(//*1., //*3)"
 </td></tr>
 <tr><td> negation $-a$ </td><td>
 {:/nomarkdown}
@@ -181,6 +187,9 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 </mrow>
 ```
 {::nomarkdown}
+</td>
+notation="unary-minus(//*[@arg="operand"])"
+<td>
 </td></tr>
 
 <tr><td> Laplacian $\nabla^2 f$ </td><td>
@@ -195,6 +204,18 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 </mrow>
 ```
 {::nomarkdown}
+</td>
+{:/nomarkdown}
+```
+<mrow notation="compose(//*[arg=@arg='laplacian'],//*[@arg='function'])">
+  <msup arg="laplacian" notation="laplacian(//*[2])">
+    <mi>&#x2207;</mi>
+    <mn>2</mn>
+  </msup>
+  <mi arg="function">f</mi>`
+</mrow>
+```
+<td>
 </td></tr>
 <!-- ======================================== -->
 <tr><td> factorial $n!$ </td><td>
@@ -206,6 +227,8 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 </mrow>
 ```
 {::nomarkdown}
+</td>
+<td>
 </td></tr>
 <!-- ======================================== -->
 <tr><td> power $x^n$ </td><td>
@@ -217,6 +240,8 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 </msup>
 ```
 {::nomarkdown}
+</td>
+<td>
 </td></tr>
 
 <tr><td> repeated application <br/> $f^n$ ($=f(f(...f))$)</td><td>
@@ -228,6 +253,8 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 </msup>
 ```
 {::nomarkdown}
+</td>
+<td>
 </td></tr>
 
 <tr><td> inverse $\sin^{-1}$ </td><td>
@@ -239,6 +266,8 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 </msup>
 ```
 {::nomarkdown}
+</td>
+<td>
 </td></tr>
 
 <tr><td> $n$-th derivative $f^{(n)}$ </td><td>
@@ -254,6 +283,8 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 </msup>
 ```
 {::nomarkdown}
+</td>
+<td>
 </td></tr>
 <!-- ======================================== -->
 <tr><td> indexing $a_i$ </td><td>
@@ -265,6 +296,8 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 </msup>
 ```
 {::nomarkdown}
+</td>
+<td>
 </td></tr>
 <!-- ======================================== -->
 <tr><td> transpose $A^T$ </td><td>
@@ -276,6 +309,8 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 </msup>
 ```
 {::nomarkdown}
+</td>
+<td>
 </td></tr>
 
 <tr><td> adjoint $A^\dagger$ </td><td>
@@ -287,6 +322,8 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 </msup>
 ```
 {::nomarkdown}
+</td>
+<td>
 </td></tr>
 <tr><td> $2$-nd derivative $f''$ </td><td>
 {:/nomarkdown}
@@ -297,9 +334,13 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 </msup>
 ```
 {::nomarkdown}
+</td>
+<td>
 </td></tr>
 
 <!-- ======================================== -->
+</td>
+<td>
 <tr><td> binomial $C^n_m$ </td><td>
 {:/nomarkdown}
 ```
@@ -318,7 +359,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
   <mo>|</mo>
   <mi>x</mi>
   <mo>|</mo>
-</msup>
+</mrow>
 ```
 {::nomarkdown}
 </td></tr>
@@ -330,7 +371,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
   <mo>|</mo>
   <mi> mathvariant="bold"x</mi>
   <mo>|</mo>
-</msup>
+</mrow>
 ```
 {::nomarkdown}
 </td></tr>
@@ -342,7 +383,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
   <mo>|</mo>
   <mi mathvariant="bold" arg="matrix">X</mi>
   <mo>|</mo>
-</msup>
+</mrow>
 ```
 {::nomarkdown}
 </td></tr>
@@ -357,7 +398,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
     <mi arg="index">n</mi>
   </msub>
   <mo>}</mo>
-</msup>
+</mrow>
 ```
 {::nomarkdown}
 </td></tr>
@@ -371,7 +412,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
   <mo>,</mo>
   <mi arg="end">b</mi>
   <mo>)</mo>
-</msup>
+</mrow>
 ```
 {::nomarkdown}
 </td></tr>
@@ -385,7 +426,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
   <mo>,</mo>
   <mi arg="end">b</mi>
   <mo>[</mo>
-</msup>
+</mrow>
 ```
 {::nomarkdown}
 </td></tr>
@@ -400,7 +441,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
   <mo>,</mo>
   <mi mathvariant="bold" arg="arg2">b</mi>
   <mo>&gt;</mo>
-</msup>
+</mrow>
 ```
 {::nomarkdown}
 </td></tr>
@@ -414,7 +455,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
   <mo>|</mo>
   <mi arg="arg2">p</mi>
   <mo>)</mo>
-</msup>
+</mrow>
 ```
 {::nomarkdown}
 </td></tr>
@@ -435,7 +476,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
   <msub><mi>j</mi><mn>3</mn>
   <msub><mi>m</mi><mn>3</mn>
   <mo>)</mo>
-</msup>
+</mrow>
 ```
 {::nomarkdown}
 </td></tr>
@@ -524,7 +565,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
     </mtr>
   </mtable>
   <mo>)</mo>
-</msup>
+</mrow>
 ```
 {::nomarkdown}
 </td></tr>
@@ -554,8 +595,8 @@ Here's an example of nesting $\binom{n^2}{m}$ where both notations use the same 
   <mo>(</mo>
   <mfrac thickness="0pt">
     <msup notation="power(@arg1,@arg2)" arg='arg1'>
-      <mi arg="@arg1">n</mi>
-      <mn arg="@arg2">2</mn>
+      <mi arg="arg1">n</mi>
+      <mn arg="arg2">2</mn>
     </msup>
     <mi arg="arg2">m</mi>    
   </mfrac>
