@@ -299,7 +299,7 @@ Mathematical notation is reused in different subject areas. Typically, speaking 
 “the line segment A B”
 </td></tr>
 <tr><td> $\bar{x}$ </td><td>
-“x bar” (in statistics, it is the mean of $\mathbold{x}$)
+“x bar” (in statistics, it is the mean of $\mathbf{x}$)
 </td></tr>
 <tr><td> $\bar{x}$ </td><td>
 “not x” (logic)
@@ -312,14 +312,61 @@ Without semantic markup or context given by a subject area, some meanings are gu
 * if the expression under the bar has an $i$ in it, then it is probably a (complex) conjugate
 * if there are two capital letters under the bar, then it is probably a line segment.
 
-These patterns can be detected, but doing so for hundreds of cases imposes a large burden on AT. An (open source) library like the one contemplated being developed by the MathML CG to add semantics could substantially decrease the work required by AT to produce good speech.
+These patterns can be detected, but doing so for hundreds of cases imposes a large burden on AT. An (open source) library like the one contemplated being developed by the MathML CG to add semantic markup could substantially decrease the work required by AT to produce good speech.
 
 ### Different Markup, Same Meaning
-Binomial Coefficient: $\binom{n}{k}$
+In MathML, there are multiple ways to markup the same expression. A number of these are [equivalent characters in MathML](https://www.w3.org/TR/MathML3/chapter7.html#chars.anomalous) and include characters as common as U+002D [HYPHEN-MINUS] and U+2212 [MINUS SIGN].
 
-The MathML spec suggests using a fraction with `linethickness="0"` for encoding the binomial coefficient (this is what TeX does). Here is the MathML for that:
+In addition to character equivalents, some notations can be marked up in different ways. A common issue is that MathML says that an `mrow` is not required for some elements that take one or more children](https://www.w3.org/TR/MathML3/chapter3.html#presm.inferredmrow). For example $\sqrt{-1}$ can be written in either of these two forms:
+{::nomarkdown}
+<table>
+<thead><tr><th>Type of Markup</th><th>MathML</th></tr></thead>
+<tbody>
+
+<tr><td> Inferred `mrow` </td><td>
 <details markdown="1">
 <summary>Click to show MathML</summary>
+{:/nomarkdown}
+```
+<msqrt>
+  <mo> - </mo>
+  <mn> 1 </mn>
+</msqrt>
+```
+{::nomarkdown}
+</details>
+</td></tr>
+<tr><td> Explicit `mrow` </td><td>
+<details markdown="1">
+<summary>Click to show MathML</summary>
+{:/nomarkdown}
+```
+<msqrt>
+  <mrow>
+    <mo> - </mo>
+    <mn> 1 </mn>
+  </mrow>
+</msqrt>
+```
+{::nomarkdown}
+</details>
+</td></tr>
+</tbody>
+</table>
+{:/nomarkdown}
+
+
+Outside of specified MathML equivalents, some notations can be written in different ways that look similar. For example, binomial coefficient $\binom{n}{k}$ can be written in these two ways:
+
+{::nomarkdown}
+<table>
+<thead><tr><th>Type of Markup</th><th>MathML</th></tr></thead>
+<tbody>
+
+<tr><td>  Using a fraction with linethickness="0" </td><td>
+<details markdown="1">
+<summary>Click to show MathML</summary>
+{:/nomarkdown}
 ```
 <mrow>
     <mo>(</mo>
@@ -330,10 +377,13 @@ The MathML spec suggests using a fraction with `linethickness="0"` for encoding 
     <mo>)</mo>
 </mrow>
 ```
+{::nomarkdown}
 </details>
-However, many WYSIWYG editors don't have this construct and so a 2x1 matrix is often used instead. This is encoded as:
+</td></tr>
+<tr><td> Using a 2x1 matrix </td><td>
 <details markdown="1">
 <summary>Click to show MathML</summary>
+{:/nomarkdown}
 ```
 <mrow>
     <mo>(</mo>
@@ -348,12 +398,18 @@ However, many WYSIWYG editors don't have this construct and so a 2x1 matrix is o
     <mo>)</mo>
 </mrow>
 ```
+{::nomarkdown}
 </details>
-Visually, there is a slight different in their display, but the difference is small enough that most people probably would not notice it.
+</td></tr>
+</tbody>
+</table>
+{:/nomarkdown}
+
+Visually, there is a slight difference in their display, but the difference is small enough that most people probably would not notice it.
 
 The later encoding is ambiguous in that it can also be a 2x1 matrix/vector.
 
-In addition to the two ways to encode this, the binomial coefficient is also sometimes represented as ${}^nC_k$ or $C_k^n$.
+In addition to the two ways to encode this, the binomial coefficient is also sometimes represented as ${}_nC_k$, $C(n,r)$, or $C_k^n$.
 
 ### Chemistry
 Chemical formulas are often marked up using math editors. The chemical elements are one source of ambiguity, but all the notations around them, including bonds, are other sources of ambiguity
