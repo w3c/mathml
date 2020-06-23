@@ -321,7 +321,7 @@ Without semantic markup or context given by a subject area, some meanings are gu
 
 These patterns can be detected, but doing so for hundreds of cases imposes a large burden on AT. An (open source) library like the one contemplated being developed by the MathML CG to add semantic markup could substantially decrease the work required by AT to produce good speech.
 
-### Different Markup, Same Meaning
+## Different Markup, Same Meaning
 In MathML, there are multiple ways to markup the same expression. A number of these are [equivalent characters in MathML](https://www.w3.org/TR/MathML3/chapter7.html#chars.anomalous) and include characters as common as U+002D [HYPHEN-MINUS] and U+2212 [MINUS SIGN].
 
 In addition to character equivalents, some notations can be marked up in different ways. A common issue is that MathML says that [an `mrow` is not required for some elements that take one or more children](https://www.w3.org/TR/MathML3/chapter3.html#presm.inferredmrow). For example $\sqrt{-1}$ can be written in either of these two forms:
@@ -422,7 +422,7 @@ The later encoding is ambiguous in that it can also be a 2x1 matrix/vector.
 
 In addition to the two ways to encode this, the binomial coefficient is also sometimes represented as ${}_nC_k$, $C(n,r)$, or $C_k^n$; they are all read the same.
 
-### Chemistry
+## Chemistry
 Chemical formulas and chemical equations are often marked up using math editors because they share similar notation constructs. However the speech is different. For example,
 $\mathrm{H}_2 \mathrm{O}$
 is read as "H 2 O", not "H sub 2, O"; or it might be read simply as "water". Similarly, ${}^{235}\mathrm{U}$ is read differently in Chemistry: "Uranium 235".
