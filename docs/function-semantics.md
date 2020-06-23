@@ -215,7 +215,9 @@ notation="unary-minus(//*[@arg="operand"])"
   <mi arg="function">f</mi>`
 </mrow>
 ```
-<td>
+{::nomarkdown}
+</td>
+{:/nomarkdown}
 </td></tr>
 <!-- ======================================== -->
 <tr><td> factorial $n!$ </td><td>
