@@ -230,7 +230,7 @@ Convertors from Content MathML to Presentation MathML should be able to produce 
 ## Expectations for authors
  As discussed above, authors do not typically author MathML directly. Their ability to add semantics to resolve ambiguity  mainly be a function of whether the tool they are using supports that. When their tool does support adding semantic markup, some training is likely needed for users to learn to recognize ambiguous notation and use the appropriate means in their authoring tool to resolve it. This is analogous to training users of WYSIWYG word processors to use styles and not to directly create (for example) a header by changing the font size and font weight.
 
-If the tool doesn't support generating semantic markup, then remediation of the resulting MathML will be needed. In many cases, knowing the subject area is enough to disambiguate the MathML. A single webpage is usually concerned with a single subject and the simple addition of a subject area to each `math` tag will likely resolve most ambiguities; this should be trivial to do. We expect publishers and individuals concerned about the accessibility of their web pages will do at least this step. There are some common ambiguities that are not resolved by subject area such as function call versus multiplication. Many these ambiguities are listed in the examples in the following section. Fixing these ambiguities is likely considerably more work. However, two potential tools could help out:
+If the tool doesn't support generating semantic markup, then remediation of the resulting MathML will be needed. In many cases, knowing the subject area is enough to disambiguate the MathML. A single webpage is usually concerned with a single subject and the simple addition of a subject area to each `math` tag will likely resolve most ambiguities; this should be trivial to do. We expect publishers and individuals concerned about the accessibility of their web pages will do at least this step. There are some common ambiguities that are not resolved by subject area such as function call versus multiplication. Some other ambiguities are listed in the examples in the following section. Fixing these ambiguities is likely considerably more work. However, two potential tools could help out:
 * a tool that scans a web page for MathML and flags potential ambiguities, at least more common ones. Ideally the tool would allow the user to easily fix the ambiguity.
 * a WYSIWYG math editor that supports semantic markup. Most math editors support import and export of MathML. Even if the original author did not use an editor that supported semantic markup, the person doing the remediation could.
 
@@ -277,28 +277,45 @@ Knowing the audience for the speech is important. If someone is blind, typical s
 \\[ \frac{1}{x+y}\\]
 is typically spoken as "one over x plus y". That could also be interpreted as
 \\[\frac{1}{x}+y\\]
-Pausing can help a little, but at least one study has shown students prefer strong lexical cues such as saying start/end words. So for someone who is blind, "start fraction one over x plus y end fraction" is unambiguous. However, for a student with dyslexia who can see but is aided by audio, those extra words are confusing and add complexity. Hence, the words used for the speech needed to be chosen based on the audience.
+Pausing can help a little, but at least one study has shown students prefer strong lexical cues such as saying start/end words. So for someone who is blind, "fraction one over x plus y end fraction" is unambiguous. However, for a student with dyslexia who can see but is aided by audio, those extra words are confusing and add complexity. Hence, the words used for the speech needed to be chosen based on the audience.
 
 Another important factor when speaking is to know the skill level of the audience. For example, $\log_2 x$ is spoken as “the log base 2 of x”, but people who use that term a lot would shorten the speech to “log 2 x”.
-$\frac{d}{dx} \sin(x)$ is introduced as “the first derivative with respect to x of sine of x” and would later be spoken as “d by dx of sine x”.
+Another example is $\frac{d}{dx} \sin(x).$ When it is first introduced, it is often spoken as “the first derivative with respect to x of sine of x”. Later on, it gets shortened to “d by dx of sine x”.
 
 ## Examples of ambiguity
-The invisible Unicode characters U+2061 (FUNCTION APPLICATION) and U+2062 (INVISIBLE TIMES) can disambiguate some common cases.
+Probably the most common ambiguity happens because a multiplication sign is often elided. For example, $a(x+y)$ might be a constant $a$ times $x+y$, or it might be a function (e.g, "area") with argument $x+y$. The invisible Unicode characters U+2061 (FUNCTION APPLICATION) and U+2062 (INVISIBLE TIMES) can disambiguate these cases, but they are not always used so AT has to guess what is the best way to speak it.
 
-An exception is "units". E.g., in $3m$, the $m$ could be a regular 'm' or it could stand for 'meters'. Typically units are not displayed in italics, so some additional markup is required. However, for two character units like 'km', no additional markup is need for display (but this is not typically ambiguous).
-### $(1,5)$
+Mathematical notation is reused in different subject areas. Typically, speaking what something looks like is hard to understand. As an example, saying "x with a line over it" for $\bar x$ would make most people stop to try and understand what is meant. Putting a bar over a variable or expressions has many meanings, most of which are resolved based on knowing the subject area. Here are some ways that notation might be spoken:
 
-### $\bar x$
+{::nomarkdown}
+<table>
+<thead><tr><th>Notation</th><th>Speech</th></tr></thead>
+<tbody>
 
-As another example of the grayness of this determination, $\bar x$ has many potential meanings.
-* $\overline{a+bi}$ -- complex conjugate
-* $\overline{AB}$ -- line segment
-* $\overline{\mu}$ -- mean
-* $\bar{x}$ -- not
+<tr><td>  $\overline{a+bi}$ </td><td>
+“the conjugate of a plus b i”
+</td></tr>
+<tr><td>  $\overline{AB}$ </td><td>
+“the line segment A B”
+</td></tr>
+<tr><td> $\bar{x}$ </td><td>
+“x bar” (in statistics, it is the mean of $\mathbold{x}$)
+</td></tr>
+<tr><td> $\bar{x}$ </td><td>
+“not x” (logic)
+</td></tr>
+</tbody>
+</table>
+{:/nomarkdown}
 
-### $M^T$
+Without semantic markup or context given by a subject area, some meanings are guessable:
+* if the expression under the bar has an $i$ in it, then it is probably a (complex) conjugate
+* if there are two capital letters under the bar, then it is probably a line segment.
 
-### Binomial Coefficient: $\binom{n}{k}$
+These patterns can be detected, but doing so for hundreds of cases imposes a large burden on AT. An (open source) library like the one contemplated being developed by the MathML CG to add semantics could substantially decrease the work required by AT to produce good speech.
+
+### Different Markup, Same Meaning
+Binomial Coefficient: $\binom{n}{k}$
 
 The MathML spec suggests using a fraction with `linethickness="0"` for encoding the binomial coefficient (this is what TeX does). Here is the MathML for that:
 <details markdown="1">
