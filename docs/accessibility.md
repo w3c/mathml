@@ -30,7 +30,7 @@ The following are reasons why math accessibility is different from text accessib
 
 * **Math Concepts vs Text Words** Mathematical expressions encode concepts, not words. The same concept can be spoken or brailled in many different ways, and the same notation may encode different concepts. For text, with the exception of abbreviations and a few words (e.g, “*read*”), words are almost always *read* the same.
 * **Spoken Math vs Braille Math** For most text, both the speech and braille used to represent the text come directly from the words in the text.  For math, most braille systems encode the syntax of the math, which can be quite different from the words used to speak the math.
-* **Spoken Math vs Spoken Text** Speech engines are tuned to speak text, not mathematical text. This results in strange or missing prosody when math is spoken as if it were common text. In math, the long version of vowels should always be used; speech engines usually use the short 'a' sound when speaking math which can be confusing. Because speech cues can't be part of `aria-label`, their use results in inferior speech for math.
+* **Spoken Math vs Spoken Text** Speech engines are tuned to speak text, not mathematical text. This results in strange or missing prosody when math is spoken as if it were common text. In math, the long version of vowels should always be used; speech engines usually use the short 'a' sound when speaking math which can be confusing. Because speech cues can't be part of `aria-label`, using `aria-label` as the text to speak for math results in inferior speech for math.
 * **Custom AT Needs for Math** The words that a screen reader should use need to be tailored to the disability of the user. For those who cannot see the math notation, the functional structure of math needs to be explained and/or navigated. A screen reader can communicate this information with words, sounds, or prosody changes (e.g., pitch or rate). For those who can see the math, such unfamiliar sounds or words can make understanding more difficult.
 * **Math Notations vs Math Instances** The notations and tokens taken together may affect how the math should be spoken. For example, the ‘4’ in $x^4$ might be spoken as a cardinal number (“x to the fourth power”) while the ‘2’ in $x^2$ is spoken as “squared” (“x squared”).
 * **Overloaded Math Notations** Depending on context, the same notation may have different meanings. For example, “(1, 5)” could be a point in the plane or it could be the numbers from 1 to 5, exclusive of 1 and 5. Although it could be spoken syntactically (“open paren 1 comma 2 close paren”), listeners tend to prefer to hear the meaning of the math spoken the way a teacher or another person would typically say it.
@@ -427,11 +427,13 @@ $\mathrm{H}_2 \mathrm{O}$
 is read as "H 2 O", not "H sub 2, O"; or it might be read simply as "water". Similarly, ${}^{235}U$ is read differently in Chemistry: "Uranium 235".
 
 Chemistry makes use of $-$ for single bonds and $=$ double bonds. These can occur inside chemical equations such as:
+
 \\[
 K_\mathrm{eq}= \frac
     {[\mathrm{C}\mathrm{H}_2\mathord{=}\mathrm{C}\mathrm{H}_2][\mathrm{H}\mathrm{Br}]}
     {[\mathrm{C}\mathrm{H}_2\mathrm{Br}\mathord{-}\mathrm{C}\mathrm{H}_3]}
 \\]
+
 Knowing the subject area (which changes _inside_ the `math` element), allows for proper semantic markup so that AT reads this well. 
 # Summary
 Math accessibility is different from text accessibility. It has it's own unique challenges. Trying to fit math accessibility into a framework that is designed for text will result in an inferior experience for AT users.
