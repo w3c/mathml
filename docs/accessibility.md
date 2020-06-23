@@ -250,6 +250,7 @@ This section demonstrates some of the complexities of math accessibility via exa
 
 ## Special cases
 Even when the semantics are clear, there are often many special cases that need to handled to make the speech reflect how humans read the math. Here are some examples for superscripts:
+
 {::nomarkdown}
 <table>
 <thead><tr><th>Notation</th><th>Speech</th></tr></thead>
