@@ -267,6 +267,7 @@ Even when the semantics are clear, there are often many special cases that need 
 <tr><td> $f'(x)$ </td><td>
 “f prime of x”
 </td></tr>
+</tbody>
 </table>
 {:/nomarkdown}
 
