@@ -30,7 +30,7 @@ The following are reasons why math accessibility is different from text accessib
 
 * **Math Concepts vs Text Words** Mathematical expressions encode concepts, not words. The same concept can be spoken or brailled in many different ways, and the same notation may encode different concepts. For text, with the exception of abbreviations and a few words (e.g, “*read*”), words are almost always *read* the same.
 * **Spoken Math vs Braille Math** For most text, both the speech and braille used to represent the text come directly from the words in the text.  For math, most braille systems encode the syntax of the math, which can be quite different from the words used to speak the math.
-* **Spoken Math vs Spoken Text** Speech engines are tuned to speak text, not mathematical text. This results in strange or missing prosody when math is spoken as if it were common text. In math, the long version of vowel should always be used; speech engines usually use the short 'a' sound when speaking math which can be confusing.
+* **Spoken Math vs Spoken Text** Speech engines are tuned to speak text, not mathematical text. This results in strange or missing prosody when math is spoken as if it were common text. In math, the long version of vowels should always be used; speech engines usually use the short 'a' sound when speaking math which can be confusing.
 * **Custom AT Needs for Math** The words that a screen reader should use need to be tailored to the disability of the user. For those who cannot see the math notation, the functional structure of math needs to be explained and/or navigated. A screen reader can communicate this information with words, sounds, or prosody changes (e.g., pitch or rate). For those who can see the math, such unfamiliar sounds or words can make understanding more difficult.
 * **Math Notations vs Math Instances** The notations and tokens taken together may affect how the math should be spoken. For example, the ‘4’ in $x^4$ might be spoken as a cardinal number (“x to the fourth power”) while the ‘2’ in $x^2$ is spoken as “squared” (“x squared”).
 * **Overloaded Math Notations** Depending on context, the same notation may have different meanings. For example, “(1, 5)” could be a point in the plane or it could be the numbers from 1 to 5, exclusive of 1 and 5. Although it could be spoken syntactically (“open paren 1 comma 2 close paren”), listeners tend to prefer to hear the meaning of the math spoken the way a teacher or another person would typically say it.
@@ -87,7 +87,7 @@ There are two other important requirements for math accessibility that are simil
         </mrow>
     </mrow>
 </math>
- This is often too large to understand being read from start to finish. Techniques for navigation are supported by many screen readers, but techniques differ and features such as outlines and ellison are still being experimented with.
+ Many people find this too large to understand if read uninterrupted from start to finish. Techniques for navigation are supported by many screen readers, but techniques differ and features such as outlines and ellison are still being experimented with.
  </li>
 <li>
 <b>Synchronized highlighting of text/math with speech</b> Tools such as TextHELP! and ZoomText both support highlighting of text as it is spoken. The same should work with math. This is currently supported in <a src="https://mathshare.benetech.org">Mathshare</a>.
@@ -96,9 +96,9 @@ There are two other important requirements for math accessibility that are simil
 
 ## What information makes math accessible?
 
-Almost all of the information needed to make text accessible is carried by the words in the text, and knowledge of the spoken language being used.  In the vast majority of cases, this information is enough to provide a vocalization of the text for a screen reader, and a braille encoding of the text for a tactile reader, that can easily be navigated and understood by visually impaired readers.
+Almost all of the information needed to make text accessible is carried by the words in the text and knowledge of the spoken language of the text.  In the vast majority of cases, this information is enough to provide a vocalization of the text for a screen reader. It is also enough to generate a braille encoding of the text for a tactile reader that can be navigated.
 
-In contrast, because of the richness of math notation, and the varieties of ways it is used to convey math concepts, the symbols on the printed page used for math are often not enough to provide an accurate spoken reading of a formula, or a precise braille encoding, in a way that can be understood by a reader who uses accessible technology.
+In contrast, because of the richness of math notation, the symbols on the printed page used for math are often not enough to provide an accurate spoken reading of a formula, or a precise braille encoding, in a way that can be understood by a reader who uses accessible technology.
 
 To make math content accessible with the same richness as the text that surrounds it, additional information about the semantics, or meaning, of the math must be provided.
 
@@ -117,7 +117,7 @@ Presentation MathML is the subset of MathML that is concerned with the visual ap
 
 ## Content MathML
 
-Content MathML is the subset of MathML that is concerned with the underlying structure of mathematical notations.  It provides a precise way to communicate the order of operations in an expression, and the exact intent of the user who created it.  For example, when a user creates the expression $a(b + c)$, Content MathML provides a way to say whether it means 'a times the quantity b plus c' or 'the function a applied to the quantity b plus c'.  There are many other examples of math expressions that look the same on the printed page, but may mean very different things.  Human beings can usually tell the difference based on context.  Content MathML preserves these differences, independent of context, and so it provides a solid foundation for any task that requires access to the meaning of a mathematical formula. However, how that content is displayed is not specified. For example, a fraction may be displayed in its 2D form, as a "bevelled" fraction, or linearly with parentheses and "/".
+Content MathML is the subset of MathML that is concerned with the underlying structure of mathematical notations.  It provides a precise way to communicate the order of operations in an expression, and the exact intent of the user who created it.  For example, when a user creates the expression $h(l+w)$, Content MathML provides a way to say whether it means 'h times the quantity l plus w' or 'the function 'h' applied to the quantity 'l plus w'.  There are many other examples of math expressions that look the same on the printed page, but may mean very different things.  Human beings can usually tell the difference based on context.  Content MathML preserves these differences, independent of context, and so it provides a solid foundation for any task that requires access to the meaning of a mathematical formula. However, how that content is displayed is not specified. For example, a fraction may be displayed in its 2D form, as a "bevelled" fraction, or linearly with parentheses and "/".
 
 # Semantic Markup
 
@@ -210,20 +210,20 @@ A few fully marked up examples to give some idea about how these can be used:
 </table>
 {:/nomarkdown}
 
-The mappings from the semantic markup using notation/meaning to a semantic tree are not part of MathML but a group note should give a mapping from MathML to semantics. A dictionary that maps that semantic tree to speech (given inputs such as user disability, speech style, expertise, ...) may also be included as a means to allow AT to more easily incorporate base level functionality.
+The mappings from the semantic markup using notation/meaning to a semantic tree are not part of MathML. It is likely that a group note will give a mapping from MathML to a defined semantics. Mathematical semantics is open-ended, so the note will give a known set of semantics that developers and target/implement. A dictionary that maps that semantic tree to speech (given inputs such as user disability, speech style, expertise, ...) may also be included as a means to allow AT to more easily incorporate base level functionality.
 
 # Expectations: From Authors to AT
 
 ## Expectations for authoring tools and convertors
 MathML is XML-based and is very verbose. Few people author HTML directly; even fewer author MathML directly. Authoring math is typically done either in a WYSIWYG math editor or in a typesetting language such as TeX/LaTeX which was designed to support math notation. For the most part, the focus of both is to make the visual presentation look good.
 
-WYSIWYG math editors have focused immediate feedback of mtematical notation. They typically offer palettes of common notations and characters used in math with keyboard equivalents to simplify authoring. They provide little support to disambiguate the notations except where doing so produces better display. For example, typing "sin" would normally display as "_sin_", but the editors recognize this as a mathematical function; they don't use italics and correctly generate a single `<mi>sin</mi>` rather than three separate `mi`'s, one for each letter as would be appropriate for multiplication of the three letters/variables. In the future, we expect editors will include support to allow (not _require_) users to add additional semantics to the generated MathML via the above tagging. We expect this to happen because such additions are relatively simple and because users will request such features due to their desire and/or requirement to produce accessible material.
+WYSIWYG math editors have focused immediate feedback of mathematical notation. They typically offer palettes of common notations and characters used in math with keyboard equivalents to simplify authoring. They provide little support to disambiguate the notations except where doing so produces better display. For example, typing "sin" would normally display as "_sin_", but the editors recognize this as a mathematical function; they don't use italics and correctly generate a single `<mi>sin</mi>` rather than three separate `mi`'s, one for each letter as would be appropriate for multiplication of the three letters/variables. In the future, we hope editors will include support to allow (not _require_) users to add additional semantics to the generated MathML via the above tagging. We hope this will happen because such additions are relatively simple and because we hope users will request such features due to their desire and/or requirement to produce accessible material.
 
-TeX (and its extension LaTeX) are used to write entire documents, usually those with a technical focus because of its excellent built-in support for math. In arkdown and other authoring systems, the math syntax of TeX is often used for math content. However, TeX is extensible and authors frequently add macros for commonly used notations in math. This means that each system supports similar but differing subsets of TeX for math. Because TeX uses macros for some notations, this can be exploited in TeX to MathML translators. For example, TeX has the macro `\sin` for the mathematical function of the same name.
+TeX (and its extension LaTeX) are used to write entire documents, usually those with a technical focus because of its excellent built-in support for math. In markdown and other authoring systems, the math syntax of TeX is often used for math content. However, TeX is extensible and authors frequently add macros for commonly used notations in math. This means that each system supports similar but differing extensions of TeX's builtin commands for math. Because TeX uses macros for some notations, this can be exploited in TeX to MathML translators. For example, TeX has the macro `\sin` for the mathematical function of the same name.
 Conversion tools from TeX to MathML should be able to produce semantic markup in some cases:
 * TeX's basic macros are already semantically translated properly as noted with "sin" above. We expect additional support for other macros such as `\binom{n}{m}` (displays as $\binom{n}{m}$) to be added to translators because doing so is relatively easy.
 * More general support for the proposed MathML semantics requires the addition of two additional macros/commands. We expect the MathML Refresh CG to propose details for those macros. Addition of them to translators will happen if the user community pushes for them. We expect supporting whatever gets proposed to be relatively simple.
-* Some authoring systems such as [PreTeXt](https://pretextbook.org/) use many more macros to disambiguate the meaning and improve layout. We expect translators from PreTeXt will produce semantic markup if the authors use the macros because semantics is a key reason to use PreTeXt.
+* Some authoring systems such as [PreTeXt](https://pretextbook.org/) use many more macros to disambiguate the meaning and improve layout. We expect translators from PreTeXt will produce semantic markup because semantics is a key reason to use PreTeXt.
 
 Convertors from Content MathML to Presentation MathML should be able to produce semantic markup all of the time.
 
@@ -237,14 +237,13 @@ If the tool doesn't support generating semantic markup, then remediation of the 
 ## Expectations for AT
 Presentation MathML describes how math looks. If all that was needed was to describe what the math looks like, then speech generation is relatively easy. However, most AT users would not be happy hearing "x superscript 2 end superscript" and would much prefer to hear "x squared" because it is both shorter and more familiar. Some more examples are given in the next section. Generating familiar speech is a challenge because of the large number of specialized ways of speaking notations that have become common over the centuries. On top of this, how AT should be speak a notation depends on the user's disability and familiarity with the notation.
 
-Simple AT implementations add a few tens of rules to catch cases such as $x^2$. The most sophisticated implementations have over 1,000 rules and support different styles of speaking math. Adding semantics markup will not reduce the number of rules needed to produce familiar speech because AT will still need to handle MathML without semantic markup. However, when semantic markup is present, it will eliminate the heuristic nature of the rules.
+Simple AT implementations add a few tens of rules to catch cases such as $x^2$. The most sophisticated implementations have over 1,000 rules and support different styles of speaking math. Adding semantics markup will not reduce the complexity needed to produce familiar speech because AT will still need to handle MathML without semantic markup. However, when semantic markup is present, it will eliminate the heuristic nature of the rules.
 
-Three potential tools/libraries could simplify AT implementations for math:
+Two potential tools/libraries could simplify AT implementations for math:
 * a library that uses heuristics to add `notation` and `meaning` to all notations that aren't already labeled with `notation` and/or `meaning`;
-* tables that map the tag, semantic attributes, and children to a semantic meaning;
-* code/table that given the semantics, user preferences, and speech engine embedded markup language, returns the string to be passed to the speech engine.
+* code/tables that given the semantics, user preferences, and a target speech engine embedded markup language, returns the string to be passed to the speech engine used by the AT.
 
-Prototypes for the latter two will likely be developed by the MathML CG in a note. 
+The MathML CG may produce prototypes of both of these tools
 
 # Examples
 ## Special cases
