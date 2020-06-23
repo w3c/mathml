@@ -437,5 +437,4 @@ K_\mathrm{eq}= \frac
 
 Knowing the subject area (which changes _inside_ the `math` element), allows for proper semantic markup so that AT reads this well. 
 # Summary
-Math accessibility is different from text accessibility. It has it's own unique challenges. Trying to fit math accessibility into a framework that is designed for text will result in an inferior experience for AT users. Attributes within math markup that describe the math semantics can provide essential information to allow AT to deliver a superior experience for math that is on par with the experience provided for text.
-
+Math accessibility is different from text accessibility. It has its own unique challenges. If you are using AT, you may have encountered some of the challenges your AT has yet to tackle while reading this primer. Trying to fit math accessibility into a framework that is designed for text will result in an inferior experience for AT users. Full access to MathML, including its attributes can provide the information that allows AT to deliver an experience for math that is on par with the experience provided for text and to the experience afforded to sighted readers.
