@@ -119,7 +119,7 @@ Presentation MathML is the subset of MathML that is concerned with the visual ap
 
 Content MathML is the subset of MathML that is concerned with the underlying structure of mathematical notations.  It provides a precise way to communicate the order of operations in an expression, and the exact intent of the user who created it.  For example, when a user creates the expression $h(l+w)$, Content MathML provides a way to say whether it means 'h times the quantity l plus w' or 'the function 'h' applied to the quantity 'l plus w'.  There are many other examples of math expressions that look the same on the printed page, but may mean very different things.  Human beings can usually tell the difference based on context.  Content MathML preserves these differences, independent of context, and so it provides a solid foundation for any task that requires access to the meaning of a mathematical formula. However, how that content is displayed is not specified. For example, a fraction may be displayed in its 2D form, as a "bevelled" fraction, or linearly with parentheses and "/".
 
-# Semantic Markup
+## Semantic Markup
 
 Since the use of Content MathML, especially in addition to Presentation MathML, involves adding more markup to an encoding that is already verbose, The [MathML 4 refresh community group](https://www.w3.org/community/mathml4/) is working on a way to minimize the amount of additional markup needed to recover the semantic interpretation of a presentational expression.  _Semantic markup_ refers to the proposals of that group to meet this need.
 
@@ -437,4 +437,4 @@ K_\mathrm{eq}= \frac
 
 Knowing the subject area (which changes _inside_ the `math` element), allows for proper semantic markup so that AT reads this well. 
 # Summary
-Math accessibility is different from text accessibility. It has its own unique challenges. If you are using AT, you may have encountered some of the challenges your AT has yet to tackle while reading this primer. Trying to fit math accessibility into a framework that is designed for text will result in an inferior experience for AT users. Full access to MathML, including its attributes can provide the information that allows AT to deliver an experience for math that is on par with the experience provided for text and to the experience afforded to sighted readers.
+Math accessibility is different from text accessibility. It has its own unique challenges. If you are using AT, you may have encountered some of the challenges your AT has yet to tackle while reading this primer. Trying to fit math accessibility into a framework that is designed for text will result in an inferior experience for AT users. Full access to MathML, including the proposed semantic attributes, can provide the information that allows AT to deliver an experience for math that is on par with the experience provided for text and to the experience afforded to sighted readers.
