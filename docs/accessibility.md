@@ -293,19 +293,23 @@ Mathematical notation is reused in different subject areas. Typically, speaking 
 <tbody>
 <tr><td>  $\overline{a+bi}$ </td><td>
 “the conjugate of a plus b i”
-</td>Algebra 2</td>
+</td></td>
+Algebra 2
 </td></tr>
 <tr><td>  $\overline{AB}$ </td><td>
 “the line segment A B”
-</td>Geometry</td>
+</td></td>
+Geometry
 </td></tr>
 <tr><td> $\bar{x}$ </td><td>
 “x bar”
-</td> Statistics (mean of $\mathbf{x}$)</td>
+</td></td>
+Statistics (mean of $\mathbf{x}$)
 </td></tr>
 <tr><td> $\bar{x}$ </td><td>
 “not x”
-</td>Logic</td>
+</td></td>
+Logic
 </td></tr>
 </tbody>
 </table>
@@ -320,7 +324,7 @@ These patterns can be detected, but doing so for hundreds of cases imposes a lar
 ### Different Markup, Same Meaning
 In MathML, there are multiple ways to markup the same expression. A number of these are [equivalent characters in MathML](https://www.w3.org/TR/MathML3/chapter7.html#chars.anomalous) and include characters as common as U+002D [HYPHEN-MINUS] and U+2212 [MINUS SIGN].
 
-In addition to character equivalents, some notations can be marked up in different ways. A common issue is that MathML says that an `mrow` is not required for some elements that take one or more children](https://www.w3.org/TR/MathML3/chapter3.html#presm.inferredmrow). For example $\sqrt{-1}$ can be written in either of these two forms:
+In addition to character equivalents, some notations can be marked up in different ways. A common issue is that MathML says that [an `mrow` is not required for some elements that take one or more children](https://www.w3.org/TR/MathML3/chapter3.html#presm.inferredmrow). For example $\sqrt{-1}$ can be written in either of these two forms:
 {::nomarkdown}
 <table>
 <thead><tr><th>Type of Markup</th><th>MathML</th></tr></thead>
@@ -329,6 +333,7 @@ In addition to character equivalents, some notations can be marked up in differe
 <tr><td> Inferred `mrow` </td><td>
 <details markdown="1">
 <summary>Click to show MathML</summary>
+
 {:/nomarkdown}
 ```
 <msqrt>
