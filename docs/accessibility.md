@@ -264,7 +264,7 @@ Even when the semantics are clear, there are often many special cases that need 
 <tr><td> $sin^{-1}(x)$ </td><td>
 “the inverse sine of x”
 </td></tr>
-<tr><td> $f^'(x)$ </td><td>
+<tr><td> $f'(x)$ </td><td>
 “f prime of x”
 </td></tr>
 </table>
