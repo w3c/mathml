@@ -293,22 +293,22 @@ Mathematical notation is reused in different subject areas. Typically, speaking 
 <tbody>
 <tr><td>  $\overline{a+bi}$ </td><td>
 “the conjugate of a plus b i”
-</td></td>
+</td><td>
 Algebra 2
 </td></tr>
 <tr><td>  $\overline{AB}$ </td><td>
 “the line segment A B”
-</td></td>
+</td><td>
 Geometry
 </td></tr>
 <tr><td> $\bar{x}$ </td><td>
 “x bar”
-</td></td>
+</td><td>
 Statistics (mean of $\mathbf{x}$)
 </td></tr>
 <tr><td> $\bar{x}$ </td><td>
 “not x”
-</td></td>
+</td><td>
 Logic
 </td></tr>
 </tbody>
@@ -333,8 +333,8 @@ In addition to character equivalents, some notations can be marked up in differe
 <tr><td> Inferred `mrow` </td><td>
 <details markdown="1">
 <summary>Click to show MathML</summary>
-
 {:/nomarkdown}
+
 ```
 <msqrt>
   <mo> - </mo>
@@ -420,9 +420,10 @@ The later encoding is ambiguous in that it can also be a 2x1 matrix/vector.
 In addition to the two ways to encode this, the binomial coefficient is also sometimes represented as ${}_nC_k$, $C(n,r)$, or $C_k^n$.
 
 ### Chemistry
-Chemical formulas are often marked up using math editors. The chemical elements are one source of ambiguity, but all the notations around them, including bonds, are other sources of ambiguity
+Chemical formulas and chemical equations are often marked up using math editors because they share similar notation constructs. However ,the speech is different. For example, $\mathrm{H}_2\mathrm{O}$ is read as "H 2 O", not "H sub 2, O".
+The chemical elements are one source of ambiguity, but all the notations around them, including bonds, are other sources of ambiguity
 \\[
-K= \frac
+K_\mathrm{eq}= \frac
     {[\mathrm{C}\mathrm{H}_2\mathord{=}\mathrm{C}\mathrm{H}_2][\mathrm{H}\mathrm{Br}]}
     {[\mathrm{C}\mathrm{H}_2\mathrm{Br}\mathord{-}\mathrm{C}\mathrm{H}_3]}
 \\]
