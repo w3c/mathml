@@ -126,7 +126,7 @@ Since the use of Content MathML, especially in addition to Presentation MathML, 
 *Note: the CG is still actively discussing potential solutions, so the solutions mentioned here are not final and will likely change. What is likely to be true of any solution is that it will entail the addition of attributes to Presentation MathML*.
 
 The markup form that has been proposed for semantic markup extends Presentation MathML with a math `subject` attribute to carry the semantic context, a math `meaning` attribute to carry the mathematical semantics, a `notation` attribute to indicate the functionality and location of arguments, and an `arg` attribute to identify the location of the function's arguments. The functionality and rationale for the proposal/choices are described elsewhere; the MathML CG has not discussed names for the semantics functions yet.
-`aria-label` can be used to force the words to speak.
+`aria-label` can be used to force the words to speak (pronunciation of those words can't be controlled though) .
 
 A few fully marked up examples to give some idea about how these can be used:
 
