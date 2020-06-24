@@ -30,7 +30,8 @@ The following are reasons why math accessibility is different from text accessib
 
 * **Math Concepts vs Text Words** Mathematical expressions encode concepts, not words. The same concept can be spoken or brailled in many different ways, and the same notation may encode different concepts. For text, with the exception of abbreviations and a few words (e.g, “*read*”), words are almost always *read* the same.
 * **Spoken Math vs Braille Math** For most text, both the speech and braille used to represent the text come directly from the words in the text.  For math, most braille systems encode the syntax of the math, which can be quite different from the words used to speak the math.
-* **Spoken Math vs Spoken Text** Speech engines are tuned to speak text, not math formulas. This tuning results in strange or missing prosody when math is spoken as if it were common text. In math, the long version of vowels should always be used; speech engines usually use the short 'a' sound when speaking math which can be confusing. Because speech cues can't be part of `aria-label`, using `aria-label` as the text to speak for math results in inferior speech for math.
+* **Spoken Math vs Spoken Text** Speech engines are tuned to speak text, not math formulas. This tuning results in strange or missing prosody when math is spoken as if it were common text. In math, the long version of vowels should always be used; speech engines usually use the short 'a' sound when speaking math which can be confusing. 
+Because speech cues can't be part of `aria-label`, using `aria-label` as the text to speak for math results in inferior speech for math. This same problem affects `aria-live` regions. These regions are used for interactive math such as an accessible math editor. AT currently ignores MathML in such regions. Placing plain text in the region results in poor readings for the reasons mentioned.
 * **Custom AT Needs for Math** The words that a screen reader should use need to be tailored to the disability of the user. For those who cannot see the math notation, the functional structure of math needs to be explained and/or navigated. A screen reader can communicate this information with words, sounds, or prosody changes (e.g., pitch or rate). For those who can see the math, such unfamiliar sounds or words can make understanding more difficult.
 * **Math Notations vs Math Instances** The notations and tokens taken together may affect how the math should be spoken. For example, the ‘4’ in $x^4$ might be spoken as a cardinal number (“x to the fourth power”) while the ‘2’ in $x^2$ is spoken as “squared” (“x squared”).
 * **Overloaded Math Notations** Depending on context, the same notation may have different meanings. For example, “(1, 5)” could be a point in the plane or it could be the numbers from 1 to 5, exclusive of 1 and 5. Although it could be spoken syntactically (“open paren 1 comma 2 close paren”), listeners tend to prefer to hear the meaning of the math spoken the way a teacher or another person would typically say it.
@@ -87,7 +88,7 @@ There are two other important requirements for math accessibility that are simil
         </mrow>
     </mrow>
 </math>
- Many people find this too large to understand if read uninterrupted from start to finish. Techniques for navigation are supported by many screen readers, but techniques differ and features such as outlines and ellison are under active investigation.
+ Many people find this too large to understand if read uninterrupted from start to finish. Techniques for navigation are supported by many screen readers, but techniques differ and features such as outlines and ellison are under active investigation. If this content were in a button (e.g, "Click on the correct solution"), does navigability of the math become not possible/illegal?
  </li>
 <li>
 <b>Synchronized highlighting of text/math with speech</b> Tools such as TextHELP! and ZoomText both support highlighting of text as it is spoken. The same features should work with math, and are currently supported in <a src="https://mathshare.benetech.org">Mathshare</a>.
@@ -442,5 +443,22 @@ K_\mathrm{eq}= \frac
 
 Knowing the subject area (which changes _inside_ the `math` element), allows for proper semantic markup so that AT reads this well. 
 # Summary
-Math accessibility is different from text accessibility. It has its own unique challenges. If you are using AT, you may have encountered some of the challenges your AT has yet to tackle while reading this primer. Trying to fit math accessibility into a framework that is designed for text will result in an inferior experience for AT users. Full access to MathML, including the proposed semantic attributes, can provide the information that allows AT to deliver an experience for math that is on par with the experience provided for text and to the experience afforded to sighted readers.
+Math accessibility is different from text accessibility. It has its own unique challenges. If you are using AT to read this primer, you may have encountered some of the challenges your AT has yet to tackle.
 
+Two key points from the above discussion are:
+* authors are responsible for ensuring that the semantic meaning of the math are correct;
+* the words use to speak the math can only be generated once the target audience/user is known.
+
+Full access to MathML, including the proposed semantic attributes, can provide the information that allows AT to deliver an experience for math that is on par with the experience provided for text and to the experience afforded to sighted readers.
+
+<!--
+[aria-braillelabel property](https://w3c.github.io/aria/#aria-braillelabel)
+
+Because speech cues can’t be part of aria-label, using aria-label as the text to speak for math results in inferior speech for math.
+author can't generate words for speech (know your audience)
+in most cases speech must be generated by AT
+
+Navigation inside active content
+
+MathML or SSML tagged text in aria-live regions; sone means to get braille out.
+-->
