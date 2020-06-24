@@ -446,7 +446,7 @@ Knowing the subject area (which changes _inside_ the `math` element), allows for
 Math accessibility is different from text accessibility. It has its own unique challenges. If you are using AT to read this primer, you may have encountered some of the challenges your AT has yet to tackle.
 
 Two key points from the above discussion are:
-* authors are responsible for ensuring that the semantic meaning of the math are correct;
+* authors are responsible for ensuring that the semantic meaning of the math is correct;
 * the words use to speak the math can only be generated once the target audience/user is known.
 
 Full access to MathML, including the proposed semantic attributes, can provide the information that allows AT to deliver an experience for math that is on par with the experience provided for text and to the experience afforded to sighted readers.
