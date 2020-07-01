@@ -76,12 +76,16 @@ semantic ::=
            | literal
            | semantic '(' semantic [ ',' semantic ]* ')'
 
-literal ::= [letters|digits|_|-]+
-selector ::= path | idref | ...
+literal  ::= [letters|digits|_|-]+
+selector ::= argref
+argref   ::= '#' NCName
+```
+<!-- path | idref | ...
 path    ::= '@' [digit]+ | path/path
 idref   ::= '#' NCName
 ```
-[The syntactic details, and whether all options are needed, is up for debate.]
+-->
+[The syntactic details, and whether alternative selectors are needed, is up for debate.]
 
 The literals are intended to correspond to some mathematical concept
 or operator, or some application specific quantity or operation;
@@ -109,12 +113,18 @@ significant strengths and weaknesses:
   it is thus brittle to small changes in markup.
 * id: clearer and easier to read, but must be globally unique in the document
 
-A softer form of id might be considered, similar to HTML's `name` attribute,
-or perhaps class,
-not required to be globally unique: The argument would be the first descendant with
-that nama (not masked by another `semantic` attribute?).
-Other forms of selector, such as XPath or CSS selectors, are probably more powerful
-than is needed, and are quite verbose.
+The group concensus is currently leaning towards the `argref` style of selector. An argref is like
+an idref, but unlike `xml:id` which must be globally unique (i.e. within the entire document),
+an argument identifier, supplied by the `arg` attribute,
+is scoped by elements with the `semantic` attribute.
+That is, an `arg` attribute is visible only to the nearest ancestor with a `semantic`
+attribute, and therefore need not be unique to the document, nor even within a given
+`m:math` element.  The downside of this method is that when resolving a semantic attribute,
+a bit of special code is needed to find the arguments.  For example to find an argument
+with identifier `arg1`, something like the following XPath could be used:
+```
+.//@arg[.='arg`'] except .//*[@notation]/*//@arg
+```
 
 In any case, author supplied annotation has simplified the task by
 isolating the operator and arguments of subexpressions, (mostly?) eliminating
@@ -126,16 +136,9 @@ the need to pattern match on the presentation tree.
 With this model, the two ```msup``` examples, power $x^n$ and transpose $A^T$,
 would be distinguished as follows:
 ```
-<msup semantic="power(@1,@2)">
-  <mi>x</mi>
-  <mi>n</mi>
-</msup>
-```
-which could be expressed using ids, as:
-```
-<msup semantic="power(#m1.base,#m1.exp)">
-  <mi id="m1.base">x</mi>
-  <mi id="m1.exp">n</mi>
+<msup semantic="power(#base,#exp)">
+  <mi arg="base">x</mi>
+  <mi arg="exp">n</mi>
 </msup>
 ```
 
@@ -143,17 +146,17 @@ The translation could be of various
 forms including "the n-th power of x", or "x squared" for $x^2$.
 The transpose example would be marked up as
 ```
-<msup semantic="@2(@1)">
-  <mi>A</mi>
-  <mi semantic="transpose">T</mi>
+<msup semantic="#op(#a)">
+  <mi arg="a">A</mi>
+  <mi arg="op" semantic="transpose">T</mi>
 </msup>
 ```
 which is easily extended to cover conjugate and adjoint.
 Or even
 ```
-<msup semantic="@2(@1)">
-  <mi>A</mi>
-  <mi semantic="Tralfamadorian inverse">T</mi>
+<msup semantic="#op(#a)">
+  <mi arg="a">A</mi>
+  <mi arg="op" semantic="Tralfamadorian inverse">T</mi>
 </msup>
 ```
 which could be translated as "the Tralfamadorian inverse of A",
@@ -179,27 +182,27 @@ The transpose could be
 </msup>
 ```
 ```
-<msup semantic="transpose(@1)">
-  <mi>A</mi>
+<msup semantic="transpose(#a)">
+  <mi arg="a">A</mi>
   <mi>T</mi>
 </msup>
 ```
 ```
 <msup semantic="#mop(#marg)">
-  <mi id="marg">A</mi>
-  <mi id="mop" semantic="transpose">T</mi>
+  <mi arg="marg">A</mi>
+  <mi arg="mop" semantic="transpose">T</mi>
 </msup>
 ```
-and so on.
-
+and so on; the latter, fine-grained, form gives the user agent
+more leeway for highlighting, navigation, etc.
 
 A binomial would be marked up as:
 ```
-<mrow semantic="binomial(@2/1,@2/2)">
+<mrow semantic="binomial(#n,#m)">
   <mo>(</mo>
   <mfrac thickness="0pt">
-    <mi>n</mi>
-    <mi>m</mi>    
+    <mi arg="n">n</mi>
+    <mi arg="m">m</mi>
   </mfrac>
   <mo>)</mo>
 </mrow>
@@ -208,66 +211,69 @@ This pattern covers Eulerian numbers, Jacobi and Legendre symbols.
 Conversely, it  still allows alternate notations for binomials while keeping the same
 semantics, since we can write:
 ```
-<msubsup semantic="@1(@2,@3)">
-  <mi semantic="binomial">C</mi>
-  <mi>n</mi>
-  <mi>m</mi>
+<msubsup semantic="#op(#n,#m)">
+  <mi arg="op" semantic="binomial">C</mi>
+  <mi arg="n">n</mi>
+  <mi arg="m">m</mi>
 </msubsup>
 ```
-[Or did you mean
+Or as some would prefer
 ```
-<msubsup semantic="@1(@3,@2)">
-  <mi semantic="binomial">C</mi>
-  <mi>m</mi>
-  <mi>n</mi>
+<msubsup semantic="#op(#n,#m)">
+  <mi arg="op" semantic="binomial">C</mi>
+  <mi arg="m">m</mi>
+  <mi arg="n">n</mi>
 </msubsup>
 ```
-?]
-with (presumably) exactly the same translation as above.
+Each of the above binomials have the same semantic content,
+and (presumably) would generate the same translation.
 
-Infix may be a bit of a special case, depending on how ```mrow``` is used,
-since there may be multiple operators involved.
-For example, dending on how you want to nest operators:
+A row of infix with multiple operators may seem to be a special case,
+depending on how `mrow` is used, but basically it forces the annotator
+to specify the exact nesting and precedence of operators:
 ```
-<mrow semantic="@2(@1,@3,@4(@5),@7)">
-  <mi>a</mi>
-  <mo semantic="plus">+</mo>
-  <mi>b</mi>
-  <mo semantic="minus">-</mo>
-  <mi>c</mi>
+<mrow semantic="#p(#a,#b,#m(#c),#d)">
+  <mi arg="a">a</mi>
+  <mo arg="p" semantic="plus">+</mo>
+  <mi arg="b">b</mi>
+  <mo arg="m" semantic="minus">-</mo>
+  <mi arg="c">c</mi>
   <mo>+</mo>
-  <mi>d</mi>
+  <mi arg="d">d</mi>
 </mrow>
 ```
+Such expressions can be annotated whether the presentation
+is rich or poor in `mrow`s; one only has to annotate at the appropriate
+level in the tree.
+
 A variety of infix operators ($\times$, $\cdot$, etc) are handled by
 adding the appropriate meaning to each.
 
 Prefix and Postfix operators, are simple, provided they are contained
 within an ```mrow```:
 ```
-<mrow semantic="@2(@1)">
-  <mi>n</mi>
-  <mo semantic="factorial">!</mo>
+<mrow semantic="#op(#a)">
+  <mi arg="a">n</mi>
+  <mo arg="op" semantic="factorial">!</mo>
 </mrow>
 ```
 A little less simple if they are not
 ```
-<mrow semantic="@2(@1,@4(@3))">
-  <mi>a</mi>
-  <mo semantic="plus">+</mo>
-  <mi>b</mi>
-  <mo semantic="factorial">!</mo>
+<mrow semantic="#p(#a,#f(#b))">
+  <mi arg="a">a</mi>
+  <mo arg="p" semantic="plus">+</mo>
+  <mi arg="b">b</mi>
+  <mo arg="f" semantic="factorial">!</mo>
 </mrow>
 ```
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 ## Notation Catalog
 
-Conceivably, a collection of common shorthands could be collected
-as named notations. To be reusable, they must be expressed in relative
-terms, so they would use the path form of selector, rather than ids.
-They would thus be appropriate only for the simpler, common forms.
-Some of the most common patterns appear to be prefix: `@1(@2)`, postfix: `@2(@1)`.
+In the case of argument selectors being relative paths,
+a collection of common shorthands could be collected
+as named notations.
+With `xml:id`s or even `argid`s, this is not so clearly feasible.
 
 We defer this, for now.
 
@@ -291,14 +297,14 @@ Note that often the same meaning will appear within different notations.
 <tr><td> infix </td><td> arithmetic<br/> $a+b-c+d$ </td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="@2(@1,@3,@4(@5),@7)">
-  <mi>a</mi>
-  <mo semantic="plus">+</mo>
-  <mi>b</mi>
-  <mo semantic="minus">-</mo>
-  <mi>c</mi>
-  <mo semantic="plus">+</mo>
-  <mi>d</mi>
+<mrow semantic="#op1(#arg1,#arg2,#op2(#arg3),#arg4)">
+  <mi arg="arg1">a</mi>
+  <mo arg="op1" semantic="plus">+</mo>
+  <mi arg="arg2">b</mi>
+  <mo arg="op2" semantic="minus">-</mo>
+  <mi arg="arg3">c</mi>
+  <mo>+</mo>
+  <mi arg="arg4">d</mi>
 </mrow>
 ```
 {::nomarkdown}
@@ -307,10 +313,10 @@ Note that often the same meaning will appear within different notations.
 <tr><td>  </td><td> inner product $\mathbf{a}\cdot\mathbf{b}$ </td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="@2(@1,@3)">
-  <mi mathvariant="bold">a</mi>
-  <mo semantic="inner-product>&#x22C5;</mo>
-  <mi mathvariant="bold">b</mi>
+<mrow semantic="#op(#arg1,#arg2)">
+  <mi arg="arg1" mathvariant="bold">a</mi>
+  <mo arg="op" semantic="inner-product>&#x22C5;</mo>
+  <mi arg="arg2" mathvariant="bold">b</mi>
 </mrow>
 ```
 {::nomarkdown}
@@ -320,9 +326,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td> prefix </td><td> negation $-a$ </td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="@1(@2)">
-  <mo semantic="unary-minus">-</mo>
-  <mi>a</mi>`
+<mrow semantic="#op(#arg)">
+  <mo arg="op" semantic="unary-minus">-</mo>
+  <mi arg="arg">a</mi>`
 </mrow>
 ```
 {::nomarkdown}
@@ -331,12 +337,12 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> Laplacian $\nabla^2 f$ </td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="@1(@2)">
-  <msup semantic="laplacian">
+<mrow semantic="#op(#arg)">
+  <msup arg="op" semantic="laplacian">
     <mi>&#x2207;</mi>
     <mn>2</mn>
   </msup>
-  <mi>f</mi>`
+  <mi arg="arg">f</mi>`
 </mrow>
 ```
 {::nomarkdown}
@@ -345,9 +351,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td> postfix </td><td> factorial $n!$ </td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="@2(@1)">
-  <mi>a</mi>
-  <mo semantic="factorial">!</mo>
+<mrow semantic="#op(#arg)">
+  <mi arg="arg">a</mi>
+  <mo arg="op" semantic="factorial">!</mo>
 </mrow>
 ```
 {::nomarkdown}
@@ -356,9 +362,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td> sup </td><td> power $x^n$ </td><td>
 {:/nomarkdown}
 ```
-<msup semantic="power(@1,@2)">
-  <mi>x</mi>
-  <mi>n</mi>
+<msup semantic="power(#base,#exp)">
+  <mi arg="base">x</mi>
+  <mi arg="exp">n</mi>
 </msup>
 ```
 {::nomarkdown}
@@ -367,9 +373,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> repeated application <br/> $f^n$ ($=f(f(...f))$)</td><td>
 {:/nomarkdown}
 ```
-<msup semantic="applicative-power(@1,@2)">
-  <mi>f</mi>
-  <mi>n</mi>
+<msup semantic="applicative-power(#op,$n)">
+  <mi arg="op">f</mi>
+  <mi arg="n">n</mi>
 </msup>
 ```
 {::nomarkdown}
@@ -378,9 +384,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> inverse $\sin^{-1}$ </td><td>
 {:/nomarkdown}
 ```
-<msup semantic="applicative-power(@1,@2)">
-  <mi>sin</mi>
-  <mn>-1</mn>
+<msup semantic="applicative-power(#op,#n)">
+  <mi arg="op">sin</mi>
+  <mn arg="n">-1</mn>
 </msup>
 ```
 {::nomarkdown}
@@ -389,11 +395,11 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> $n$-th derivative $f^{(n)}$ </td><td>
 {:/nomarkdown}
 ```
-<msup semantic="derivative-implicit-variable(@1,@2/2)">
-  <mi>f</mi>
+<msup semantic="derivative-implicit-variable(#op,#n)">
+  <mi arg="op">f</mi>
   <mrow>
     <mo>(</mo>
-    <mi>n</mi>
+    <mi arg="n">n</mi>
     <mo>)</mo>
   </mrow>
 </msup>
@@ -404,9 +410,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td> sub </td><td> indexing $a_i$ </td><td>
 {:/nomarkdown}
 ```
-<msup semantic="index(@1,@2)">
-  <mi>a</mi>
-  <mi>i</mi>
+<msup semantic="index(#array,#index)">
+  <mi arg="array">a</mi>
+  <mi arg="index">i</mi>
 </msup>
 ```
 {::nomarkdown}
@@ -415,9 +421,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td> sup-operator </td><td> transpose $A^T$ </td><td>
 {:/nomarkdown}
 ```
-<msup semantic="@2(@1)">
-  <mi>A</mi>
-  <mi semantic="transpose">T</mn>
+<msup semantic="#op(#x)">
+  <mi arg="x">A</mi>
+  <mi arg="op" semantic="transpose">T</mn>
 </msup>
 ```
 {::nomarkdown}
@@ -426,9 +432,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> adjoint $A^\dagger$ </td><td>
 {:/nomarkdown}
 ```
-<msup semantic="@2(@1)">
-  <mi>A</mi>
-  <mi semantic="adjoint">&dagger;</mn>
+<msup semantic="#op(#x)">
+  <mi arg="x">A</mi>
+  <mi arg="op" semantic="adjoint">&dagger;</mn>
 </msup>
 ```
 {::nomarkdown}
@@ -436,9 +442,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> $2$-nd derivative $f''$ </td><td>
 {:/nomarkdown}
 ```
-<msup semantic="sup" semantic="derivative-implicit-variable(@1,2)">
-  <mi>f</mi>
-  <mo>''</mo>
+<msup semantic="derivative-implicit-variable(#op,#n)">
+  <mi arg="op">f</mi>
+  <mo arg="n" semantic="2">''</mo>
 </msup>
 ```
 {::nomarkdown}
@@ -446,9 +452,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td>Awkward nesting</td><td> $x'_i$ </td><td>
 {:/nomarkdown}
 ```
- <msubsup semantic="derivative-implicit-variable(index(@1,@2))">
-   <mi>x</mi>
-   <mi>i</mi>
+ <msubsup semantic="derivative-implicit-variable(index(#array,#index))">
+   <mi arg="array">x</mi>
+   <mi arg="index">i</mi>
    <mo>'</mo>
   </msubsup>
 ```
@@ -457,9 +463,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td></td><td> or maybe</td><td>
 {:/nomarkdown}
 ```
- <msubsup semantic="index(derivative-implicit-variable(@1),@2)">
-   <mi>x</mi>
-   <mi>i</mi>
+ <msubsup semantic="index(derivative-implicit-variable(#op),#index)">
+   <mi arg="op">x</mi>
+   <mi arg="index">i</mi>
    <mo>'</mo>
   </msubsup>
 ```
@@ -468,12 +474,12 @@ Note that often the same meaning will appear within different notations.
 <tr><td></td><td> midpoint $\overline{x}_i$ </td><td>
 {:/nomarkdown}
 ```
- <msub semantic="midpoint(index(@1/2,@2))">
+ <msub semantic="#op(index(#line,#index))">
     <mover accent="true">
-      <mi>x</mi>
-      <mo>¯</mo>
+      <mi arg="line">x</mi>
+      <mo arg="op" semantic="midpoint">¯</mo>
     </mover>
-    <mi>i</mi>
+    <mi arg="index">i</mi>
   </msub>
 ```
 {::nomarkdown}
@@ -483,10 +489,10 @@ Note that often the same meaning will appear within different notations.
 <tr><td> base-operator </td><td> binomail $C^n_m$ </td><td>
 {:/nomarkdown}
 ```
-<msubsup semantic="@1(@3,@2)">
-  <mi semantic="binomial">C</mi>
-  <mi>m</mi>
-  <mi>n</mi>
+<msubsup semantic="#op(#n,#m)">
+  <mi arg="op" semantic="binomial">C</mi>
+  <mi arg="m">m</mi>
+  <mi arg="n">n</mi>
 </msubsup>
 ```
 {::nomarkdown}
@@ -510,9 +516,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td> fenced </td><td> absolute value $|x|$ </td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="absolute-value(@2)">
+<mrow semantic="absolute-value(#x)">
   <mo>|</mo>
-  <mi>x</mi>
+  <mi arg="x">x</mi>
   <mo>|</mo>
 </msup>
 ```
@@ -522,9 +528,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> norm $|\mathbf{x}|$ </td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="norm(@2)">
+<mrow semantic="norm(#x)">
   <mo>|</mo>
-  <mi> mathvariant="bold"x</mi>
+  <mi arg="x"> mathvariant="bold"x</mi>
   <mo>|</mo>
 </msup>
 ```
@@ -534,9 +540,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> determinant $|\mathbf{X}|$ </td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="determinant(@2)">
+<mrow semantic="determinant(#x)">
   <mo>|</mo>
-  <mi mathvariant="bold">X</mi>
+  <mi arg="x" mathvariant="bold">X</mi>
   <mo>|</mo>
 </msup>
 ```
@@ -546,9 +552,9 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> sequence $\lbrace a_n\rbrace$ </td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="sequence(@2)">
+<mrow semantic="sequence(#arg)">
   <mo>{</mo>
-  <msub>
+  <msub arg="arg">
     <mi>x</mi>
     <mi>n</mi>
   </msub>
@@ -561,11 +567,11 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> open interval $(a,b)$ </td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="open-interval(@2,@4)">
+<mrow semantic="open-interval(#a,#b)">
   <mo>(</mo>
-  <mi>a</mi>
+  <mi arg="a">a</mi>
   <mo>,</mo>
-  <mi>b</mi>
+  <mi arg="b">b</mi>
   <mo>)</mo>
 </msup>
 ```
@@ -575,11 +581,11 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> open interval $]a,b[$ </td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="open-interval(@2,@4)">
+<mrow semantic="open-interval(#a,#b)">
   <mo>]</mo>
-  <mi>a</mi>
+  <mi arg="a">a</mi>
   <mo>,</mo>
-  <mi>b</mi>
+  <mi arg="b">b</mi>
   <mo>[</mo>
 </msup>
 ```
@@ -590,11 +596,11 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> inner product $\left<\mathbf{a},\mathbf{b}\right>$</td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="inner-product(@2,@4)">
+<mrow semantic="inner-product(#a,#b)">
   <mo>&lt;</mo>
-  <mi mathvariant="bold">a</mi>
+  <mi arg="a" mathvariant="bold">a</mi>
   <mo>,</mo>
-  <mi mathvariant="bold">b</mi>
+  <mi arg="b" mathvariant="bold">b</mi>
   <mo>&gt;</mo>
 </msup>
 ```
@@ -604,11 +610,11 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> Legendre symbol $(n|p)$</td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="Legendre-symbol(@2,@4)">
+<mrow semantic="Legendre-symbol(#n,#p)">
   <mo>(</mo>
-  <mi>n</mi>
+  <mi arg="n">n</mi>
   <mo>|</mo>
-  <mi>p</mi>
+  <mi arg="p">p</mi>
   <mo>)</mo>
 </msup>
 ```
@@ -619,17 +625,17 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> Clebsch-Gordan<br/> $(j_1 m_1 j_2 m_2 | j_1 j_2 j_3 m_3)|$</td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="Clebsch-Gordan(@2,@3,@4,@5,@7,@8,@9,@10)">
+<mrow semantic="Clebsch-Gordan(#a1,#a2,#a3,#a4,#b1,#b2,#b3,#b4)">
   <mo>(</mo>
-  <msub><mi>j</mi><mn>1</mn>
-  <msub><mi>m</mi><mn>1</mn>
-  <msub><mi>j</mi><mn>2</mn>
-  <msub><mi>m</mi><mn>2</mn>
+  <msub arg="a1"><mi>j</mi><mn>1</mn>
+  <msub arg="a2"><mi>m</mi><mn>1</mn>
+  <msub arg="a3"><mi>j</mi><mn>2</mn>
+  <msub arg="a4"><mi>m</mi><mn>2</mn>
   <mo>|</mo>
-  <msub><mi>j</mi><mn>1</mn>
-  <msub><mi>j</mi><mn>2</mn>
-  <msub><mi>j</mi><mn>3</mn>
-  <msub><mi>m</mi><mn>3</mn>
+  <msub arg="b1"><mi>j</mi><mn>1</mn>
+  <msub arg="b2"><mi>j</mi><mn>2</mn>
+  <msub arg="b3"><mi>j</mi><mn>3</mn>
+  <msub arg="b4"><mi>m</mi><mn>3</mn>
   <mo>)</mo>
 </msup>
 ```
@@ -639,13 +645,13 @@ Note that often the same meaning will appear within different notations.
 <tr><td>fenced-sub </td><td> Pochhammer $\left(a\right)_n$ </td><td>
 {:/nomarkdown}
 ```
-<msup semantic="Pochhammer(@1/2,@2)">
+<msup semantic="Pochhammer(#a,#n)">
   <mrow>
     <mo>(</mo>
-    <mi>a</mi>
+    <mi arg="a">a</mi>
     <mo>)</mo>
   </mrow>
-  <mi>n</mi>
+  <mi arg="n">n</mi>
 </msup>
 ```
 {::nomarkdown}
@@ -655,11 +661,11 @@ Note that often the same meaning will appear within different notations.
 {:/nomarkdown}
 <!-- <mrow semantic="binomial(@2/1,@2/2)"> -->
 ```
-<mrow semantic="binomial(#m5.n,#m5.m)">
+<mrow semantic="binomial(#n,#m)">
   <mo>(</mo>
   <mfrac thickness="0pt">
-    <mi id="m5.n">n</mi>
-    <mi id="m5.m">m</mi>
+    <mi arg="n">n</mi>
+    <mi arg="m">m</mi>
   </mfrac>
   <mo>)</mo>
 </mrow>
@@ -671,16 +677,16 @@ Note that often the same meaning will appear within different notations.
 {:/nomarkdown}
 <!-- <mrow semantic="multinomial(@2/1,@2/2/1,@2/2/3,@2/2/5)"> -->
 ```
-<mrow semantic="multinomial(#m6.n,#m6.m1,#m6.m2,#m6.m3)">
+<mrow semantic="multinomial(#n,#m1,#m2,#m3)">
   <mo>(</mo>
   <mfrac thickness="0pt">
-    <mi id="m6.n">n</mi>
+    <mi arg="n">n</mi>
     <mrow>
-      <msub id="m6.m1"><mi>m</mi><mn>1</mn></msup>
+      <msub arg="m1"><mi>m</mi><mn>1</mn></msup>
       <mo>,</mo>
-      <msub id="m6.m2"><mi>m</mi><mn>2</mn></msup>
+      <msub arg="m2"><mi>m</mi><mn>2</mn></msup>
       <mo>,</mo>
-      <msub id="m6.m3"><mi>m</mi><mn>3</mn></msup>
+      <msub arg="m3"><mi>m</mi><mn>3</mn></msup>
     </mrow>
   </mfrac>
   <mo>)</mo>
@@ -693,11 +699,11 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> Eulerian numbers $\left< n \atop k \right>$ </td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="Eulerian-numbers(@2/1,@2/2)">
+<mrow semantic="Eulerian-numbers(#n,#k)">
   <mo>&lt;</mo>
   <mfrac thickness="0pt">
-    <mi>n</mi>
-    <mi>k</mi>    
+    <mi arg="n">n</mi>
+    <mi arg="k">k</mi>
   </mfrac>
   <mo>&gt;</mo>
 </mrow>
@@ -709,18 +715,18 @@ Note that often the same meaning will appear within different notations.
 {:/nomarkdown}
 <!-- <mrow semantic="3j(@2/1/1,@2/1/2,@2/1/3,@2/2/1,@2/2/2,@2/2/3)">-->
 ```
-<mrow semantic="3j(#m7.j1,#m7.j2,#m7.j3,#m7.m1,#m7.m2,#m7.m3)">
+<mrow semantic="3j(#j1,#j2,#j3,#m1,#m2,#m3)">
   <mo>(</mo>
   <mtable>
     <mtr>
-      <mtd id="m7.j1"><msub><mi>j</mi><mn>1</mn></mtd>
-      <mtd id="m7.j2"><msub><mi>j</mi><mn>2</mn></mtd>
-      <mtd id="m7.j3"><msub><mi>j</mi><mn>3</mn></mtd>
+      <mtd arg="j1"><msub><mi>j</mi><mn>1</mn></mtd>
+      <mtd arg="j2"><msub><mi>j</mi><mn>2</mn></mtd>
+      <mtd arg="j3"><msub><mi>j</mi><mn>3</mn></mtd>
     </mtr>
     <mtr>
-      <mtd id="m7.m1"><msub><mi>m</mi><mn>1</mn></mtd>
-      <mtd id="m7.m2"><msub><mi>m</mi><mn>2</mn></mtd>
-      <mtd id="m7.m3"><msub><mi>m</mi><mn>3</mn></mtd>
+      <mtd arg="m1"><msub><mi>m</mi><mn>1</mn></mtd>
+      <mtd arg="m2"><msub><mi>m</mi><mn>2</mn></mtd>
+      <mtd arg="m3"><msub><mi>m</mi><mn>3</mn></mtd>
     </mtr>
   </mtable>
   <mo>)</mo>
@@ -733,16 +739,16 @@ Note that often the same meaning will appear within different notations.
 <tr><td>functions</td><td> function $A(a,b;z|q)$</td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="@1(@3,@5,@7,@9)">
-  <mi>A</mi>
+<mrow semantic="#op(#p1,#p2,#a1,#q)">
+  <mi arg="op">A</mi>
   <mo>(</mo>
-  <mi>a</mi>
+  <mi arg="p1">a</mi>
   <mo>,</mo>
-  <mi>b</mi>
+  <mi arg="p2">b</mi>
   <mo>;</mo>
-  <mi>z</mi>
+  <mi arg="a1">z</mi>
   <mo>|</mo>
-  <mi>q</mi>
+  <mi arg="q">q</mi>
   <mo>(</mo>
 </mrow>
 ```
@@ -751,13 +757,13 @@ Note that often the same meaning will appear within different notations.
 <tr><td></td><td> Bessel $J_\nu(z)$</td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="@1/1(@1/2,@3)">
+<mrow semantic="#op(#nu,#z)">
   <msub>
-    <mi semantic="BesselJ">J</mi>
-    <mi>&#x3BD;</mi>
+    <mi arg="op" semantic="BesselJ">J</mi>
+    <mi arg="nu">&#x3BD;</mi>
   </msub>
   <mo>(</mo>
-  <mi>z</mi>
+  <mi arg="z">z</mi>
   <mo>(</mo>
 </mrow>
 ```
@@ -766,13 +772,13 @@ Note that often the same meaning will appear within different notations.
 <tr><td></td><td> curried Bessel $J_\nu(z)$</td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="@1/1(@1/2)(@3)">
+<mrow semantic="#op(#nu)(#z)">
   <msub>
-    <mi semantic="BesselJ">J</mi>
-    <mi>&#x3BD;</mi>
+    <mi arg="op" semantic="BesselJ">J</mi>
+    <mi arg="nu" >&#x3BD;</mi>
   </msub>
   <mo>(</mo>
-  <mi>z</mi>
+  <mi arg="z">z</mi>
   <mo>(</mo>
 </mrow>
 ```
@@ -783,20 +789,20 @@ Note that often the same meaning will appear within different notations.
 {:/nomarkdown}
 <!-- <mfrac semantic="Leibnitz-derivative(@1/2,@2/1/2,@1/1/2)"> -->
 ```
-<mfrac semantic="Leibnitz-derivative(#m8.func,#m8.var,#m8.deg)">
+<mfrac semantic="Leibnitz-derivative(#func,#var,#deg)">
   <mrow>
     <msup>
       <mo>d</mo>
       <mn>2</mn>
     </msup>
-    <mi id="m8.func">f</mix>
+    <mi arg="func">f</mix>
   </mrow>
   <msup>
     <mrow>
       <mo>d</mo>
-      <mi id="m8.var">x</mix>
+      <mi arg="var">x</mix>
     </mrow>
-    <mn id="m8.deg">2</mn>
+    <mn arg="deg">2</mn>
   </msup>
 </mfrac>
 ```
@@ -806,38 +812,39 @@ Note that often the same meaning will appear within different notations.
 <tr><td>integrals</td><td> $\int\frac{dr}{r}$</td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="integral(divide(1,@2/2),@2/1/2)">
-  <mo>&x222B;</mo>
+<mrow semantic="#op(divide(1,#r),#bvar)">
+  <mo arg="op" semantic="integral">&x222B;</mo>
   <mfrac>
     <mrow>
       <mi>d</mi>
-      <mi>r</mi>
+      <mi arg="bvar">r</mi>
     </mrow>
-    <mi>r</mi>
+    <mi arg="r">r</mi>
   </mfrac>
 </mrow>
 ```
 {::nomarkdown}
 </td></tr>
+<tr><td/><td colspan="2">One might be tempted put semantic="divide(1,#r)" on the mfrac, but this blocks access to #bvar</td></tr>
 <!-- ======================================== -->
 <tr><td>continued fractions</td><td> $a_0+\displaystyle\frac{1}{a_1+\displaystyle\frac{1}{a_2+\cdots}}$</td><td>
 {:/nomarkdown}
 <!--<mrow semantic="infinite-continued-fraction(@1,1,@3/1/2/1,1,@3/1/2/3/1/2)">-->
 ```
-<mrow semantic="infinite-continued-fraction(#m9.a0,#m9.b1,#m9.a1,#m9.b2,#m9.a2)">
-  <msub id="m9.a0"><mi>a</mi><mn>0</mn></msub>
+<mrow semantic="infinite-continued-fraction(#a0,#b1,#a1,#b2,#a2)">
+  <msub arg="a0"><mi>a</mi><mn>0</mn></msub>
   <mo>+</mo>
   <mstyle display="true">
     <mfrac>
-      <mn id="m9.b1">1</mn>
+      <mn arg="b1">1</mn>
       <mrow>
-        <msub id="m9.a1"><mi>a</mi><mn>1</mn></msub>
+        <msub arg="a1"><mi>a</mi><mn>1</mn></msub>
         <mo>+</mo>
         <mstyle display="true">
           <mfrac>
-            <mn id="m9.b2">1</mn>
+            <mn arg="b2">1</mn>
             <mrow>
-              <msub id="m9.a2"><mi>a</mi><mn>2</mn></msub>
+              <msub arg="a2"><mi>a</mi><mn>2</mn></msub>
               <mo>+</mo>
               <mo>&#22EF;</mo>
             </mrow>
