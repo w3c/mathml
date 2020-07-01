@@ -9,7 +9,7 @@ title: "Semantic Annotation Mini-Language"
 *Authors*:  Neil Soiffer, and unkowningly Bruce Miller, Deyan Ginev,
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-## Abstract
+## Side-by-Side Comparison Between Proposals
 This extracts out the table from Bruce's and Deyan's proposal and adds in my proposal.
 The proposals have many similarities.
 Putting them side by side hopefully makes it easier to compare the differences.
@@ -38,7 +38,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="plus-minus(#arg1,#arg2,#op2,#arg3,#arg4,#arg5)">
+<mrow semantic="plus-minus(@arg1,@arg2,@op2,@arg3,@arg4,@arg5)">
   <mi arg="arg1">a</mi>
   <mo arg="op1">+</mo>
   <mi arg="arg2">b</mi>
@@ -66,7 +66,8 @@ Putting them side by side hopefully makes it easier to compare the differences.
 {::nomarkdown}
 </td></tr>
 
-<tr><td>  </td><td> inner product $\mathbf{a}\cdot\mathbf{b}$ </td><td>
+<tr><td>  </td><td> inner product $\mathbf{a}\cdot\mathbf{b}$ </td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="#op(#arg1,#arg2)">
@@ -76,10 +77,34 @@ Putting them side by side hopefully makes it easier to compare the differences.
 </mrow>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="inner-product(@arg1,@op,@arg2)">
+  <mi arg="arg1" mathvariant="bold">a</mi>
+  <mo arg="op">&#x22C5;</mo>
+  <mi arg="arg2" mathvariant="bold">b</mi>
+</mrow>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="inner-product(@*)">
+  <mi mathvariant="bold">a</mi>
+  <mo>&#x22C5;</mo>
+  <mi mathvariant="bold">b</mi>
+</mrow>
+```
+{::nomarkdown}
+</td>
+</tr>
 <tr><td/><td colspan="2">Easily extended to other operators and meanings: cross-product, "by", etc.</td></tr>
 <!-- ======================================== -->
-<tr><td> prefix </td><td> negation $-a$ </td><td>
+<tr><td> prefix </td><td> negation $-a$ </td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="#op(#arg)">
@@ -88,9 +113,31 @@ Putting them side by side hopefully makes it easier to compare the differences.
 </mrow>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="unary-minus(@op, @arg)">
+  <mo arg="op">-</mo>
+  <mi arg="arg">a</mi>`
+</mrow>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="unary-minus(@*)">
+  <mo arg="op">-</mo>
+  <mi arg="arg">a</mi>`
+</mrow>
+```
+{::nomarkdown}
+</td>
+</tr>
 
-<tr><td> </td><td> Laplacian $\nabla^2 f$ </td><td>
+<tr><td> </td><td> Laplacian $\nabla^2 f$ </td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="#op(#arg)">
@@ -102,9 +149,37 @@ Putting them side by side hopefully makes it easier to compare the differences.
 </mrow>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="laplacian(@op, @arg)">
+  <msup arg="op">
+    <mi>&#x2207;</mi>
+    <mn>2</mn>
+  </msup>
+  <mi arg="arg">f</mi>`
+</mrow>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="laplacian(@*)">
+  <msup>
+    <mi>&#x2207;</mi>
+    <mn>2</mn>
+  </msup>
+  <mi>f</mi>`
+</mrow>
+```
+{::nomarkdown}
+</td>
+</tr>
 <!-- ======================================== -->
-<tr><td> postfix </td><td> factorial $n!$ </td><td>
+<tr><td> postfix </td><td> factorial $n!$ </td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="#op(#arg)">
@@ -113,9 +188,21 @@ Putting them side by side hopefully makes it easier to compare the differences.
 </mrow>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="factorial(@*)">
+  <mi>a</mi>
+  <mo>!</mo>
+</mrow>
+```
+{::nomarkdown}
+</td>
+</tr>
 <!-- ======================================== -->
-<tr><td> sup </td><td> power $x^n$ </td><td>
+<tr><td> sup </td><td> power $x^n$ </td>
+<td>
 {:/nomarkdown}
 ```
 <msup semantic="power(#base,#exp)">
@@ -124,9 +211,31 @@ Putting them side by side hopefully makes it easier to compare the differences.
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="power(@base,@exp)">
+  <mi arg="base">x</mi>
+  <mi arg="exp">n</mi>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="power(@*)">
+  <mi>x</mi>
+  <mi>n</mi>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 
-<tr><td> </td><td> repeated application <br/> $f^n$ ($=f(f(...f))$)</td><td>
+<tr><td> </td><td> repeated application <br/> $f^n$ ($=f(f(...f))$)</td>
+<td>
 {:/nomarkdown}
 ```
 <msup semantic="applicative-power(#op,$n)">
@@ -135,9 +244,31 @@ Putting them side by side hopefully makes it easier to compare the differences.
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="applicative-power(@op,@n)">
+  <mi arg="op">f</mi>
+  <mi arg="n">n</mi>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="applicative-power(@*)">
+  <mi>f</mi>
+  <mi>n</mi>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 
-<tr><td> </td><td> inverse $\sin^{-1}$ </td><td>
+<tr><td> </td><td> inverse $\sin^{-1}$ </td>
+<td>
 {:/nomarkdown}
 ```
 <msup semantic="applicative-power(#op,#n)">
@@ -146,9 +277,31 @@ Putting them side by side hopefully makes it easier to compare the differences.
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="applicative-power(@op,@n)">
+  <mi arg="op">sin</mi>
+  <mn arg="n">-1</mn>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="applicative-power(@*)">
+  <mi>sin</mi>
+  <mn>-1</mn>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 
-<tr><td> </td><td> $n$-th derivative $f^{(n)}$ </td><td>
+<tr><td> </td><td> $n$-th derivative $f^{(n)}$ </td>
+<td>
 {:/nomarkdown}
 ```
 <msup semantic="derivative-implicit-variable(#op,#n)">
@@ -161,7 +314,36 @@ Putting them side by side hopefully makes it easier to compare the differences.
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="derivative-implicit-variable(@op,@n)">
+  <mi arg="op">f</mi>
+  <mrow>
+    <mo>(</mo>
+    <mi arg="n">n</mi>
+    <mo>)</mo>
+  </mrow>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="derivative-implicit-variable(@1,@2@1)">
+  <mi>f</mi>
+  <mrow>
+    <mo>(</mo>
+    <mi>n</mi>
+    <mo>)</mo>
+  </mrow>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 <!-- ======================================== -->
 <tr><td> sub </td><td> indexing $a_i$ </td><td>
 {:/nomarkdown}
