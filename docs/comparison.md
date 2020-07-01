@@ -128,8 +128,8 @@ Putting them side by side hopefully makes it easier to compare the differences.
 {:/nomarkdown}
 ```
 <mrow semantic="unary-minus(@*)">
-  <mo arg="op">-</mo>
-  <mi arg="arg">a</mi>`
+  <mo>-</mo>
+  <mi>a</mi>`
 </mrow>
 ```
 {::nomarkdown}
@@ -183,6 +183,16 @@ Putting them side by side hopefully makes it easier to compare the differences.
 {:/nomarkdown}
 ```
 <mrow semantic="#op(#arg)">
+  <mi arg="arg">a</mi>
+  <mo arg="op" semantic="factorial">!</mo>
+</mrow>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="factorial(@arg, @op)">
   <mi arg="arg">a</mi>
   <mo arg="op" semantic="factorial">!</mo>
 </mrow>
@@ -345,7 +355,8 @@ Putting them side by side hopefully makes it easier to compare the differences.
 </td>
 </tr>
 <!-- ======================================== -->
-<tr><td> sub </td><td> indexing $a_i$ </td><td>
+<tr><td> sub </td><td> indexing $a_i$ </td>
+<td>
 {:/nomarkdown}
 ```
 <msup semantic="index(#array,#index)">
@@ -354,9 +365,32 @@ Putting them side by side hopefully makes it easier to compare the differences.
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<tr><td> sub </td><td> indexing $a_i$ </td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="index(@array,@index)">
+  <mi arg="array">a</mi>
+  <mi arg="index">i</mi>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="index(@*)">
+  <mi>a</mi>
+  <mi>i</mi>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 <!-- ======================================== -->
-<tr><td> sup-operator </td><td> transpose $A^T$ </td><td>
+<tr><td> sup-operator </td><td> transpose $A^T$ </td>
+<td>
 {:/nomarkdown}
 ```
 <msup semantic="#op(#x)">
@@ -365,9 +399,32 @@ Putting them side by side hopefully makes it easier to compare the differences.
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+For speech, we need two different transpose functions ("A transpose" vs "transpose of A for T(A)") or the speech needs to find the "operator" and deduce the form from that.
+```
+<msup semantic="transpose(@x, @op)">
+  <mi arg="x">A</mi>
+  <mi arg="op">T</mn>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="transpose(@*)">
+  <mi>A</mi>
+  <mi>T</mn>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 
-<tr><td> </td><td> adjoint $A^\dagger$ </td><td>
+<tr><td> </td><td> adjoint $A^\dagger$ </td>
+<td>
 {:/nomarkdown}
 ```
 <msup semantic="#op(#x)">
@@ -376,8 +433,31 @@ Putting them side by side hopefully makes it easier to compare the differences.
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
-<tr><td> </td><td> $2$-nd derivative $f''$ </td><td>
+</td>
+<td>
+{:/nomarkdown}
+Note: 'adjoint' needs t0 know the second arg is the argument. It could just as easily be the first arg if we define it that way.
+```
+<msup semantic="adjoint(@op, @x)">
+  <mi arg="x">A</mi>
+  <mi arg="op">&dagger;</mn>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="adjoint(@2, @1)">
+  <mi>A</mi>
+  <mi>&dagger;</mn>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
+<tr><td> </td><td> $2$-nd derivative $f''$ </td>
+<td>
 {:/nomarkdown}
 ```
 <msup semantic="derivative-implicit-variable(#op,#n)">
@@ -386,7 +466,28 @@ Putting them side by side hopefully makes it easier to compare the differences.
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="derivative-implicit-variable(@op,@n)">
+  <mi arg="op">f</mi>
+  <mo arg="n">''</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="derivative-implicit-variable(@*)">
+  <mi>f</mi>
+  <mo>''</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 <tr><td>Awkward nesting</td><td> $x'_i$ </td><td>
 {:/nomarkdown}
 ```
