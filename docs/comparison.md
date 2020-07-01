@@ -1,6 +1,5 @@
 ---
 title: "Semantic Annotation Mini-Language"
-layout: cgreport
 ---
 
 *Authors*:  Neil Soiffer, and unkowningly Bruce Miller, Deyan Ginev,
@@ -11,17 +10,6 @@ This extracts out the table from Bruce's and Deyan's proposal and adds in my pro
 The proposals have many similarities.
 Putting them side by side hopefully makes it easier to compare the differences.
  
-
-<nav id="toc" markdown="1">
-
-# Table of Contents
-{:.no_toc}
-
-* toc
-{:toc}
-
-</nav>
-
 
 {::nomarkdown}
 <table>
