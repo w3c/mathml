@@ -3,7 +3,7 @@ title: "Semantic Annotation Mini-Language"
 ---
 
 <style>
-.container-lg {max-width:100%}
+.container-lg {max-width:100%;  font-size:90%;}
 </style>
 
 *Authors*:  Neil Soiffer, and unkowningly Bruce Miller, Deyan Ginev,
