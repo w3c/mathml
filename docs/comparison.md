@@ -366,7 +366,6 @@ Putting them side by side hopefully makes it easier to compare the differences.
 ```
 {::nomarkdown}
 </td>
-<tr><td> sub </td><td> indexing $a_i$ </td>
 <td>
 {:/nomarkdown}
 ```
@@ -436,7 +435,7 @@ For speech, we need two different transpose functions ("A transpose" vs "transpo
 </td>
 <td>
 {:/nomarkdown}
-Note: 'adjoint' needs t0 know the second arg is the argument. It could just as easily be the first arg if we define it that way.
+Note: 'adjoint' needs to know the second arg is the operand. It could just as easily be the first arg if we _define_ it that way.
 ```
 <msup semantic="adjoint(@op, @x)">
   <mi arg="x">A</mi>
@@ -488,7 +487,8 @@ Note: 'adjoint' needs t0 know the second arg is the argument. It could just as e
 {::nomarkdown}
 </td>
 </tr>
-<tr><td>Awkward nesting</td><td> $x'_i$ </td><td>
+<tr><td>Awkward nesting</td><td> $x'_i$ </td>
+<td>
 {:/nomarkdown}
 ```
  <msubsup semantic="derivative-implicit-variable(index(#array,#index))">
@@ -498,8 +498,41 @@ Note: 'adjoint' needs t0 know the second arg is the argument. It could just as e
   </msubsup>
 ```
 {::nomarkdown}
-</td></tr>
-<tr><td></td><td> or maybe</td><td>
+</td>
+<td>
+{:/nomarkdown}
+```
+ <msubsup semantic="derivative-implicit-variable(index(@array,@index), @deg)">
+   <mi arg="array">x</mi>
+   <mi arg="index">i</mi>
+   <mo arg="deg">'</mo>
+  </msubsup>
+```
+or could be
+```
+ <msubsup semantic="derivative-implicit-variable(index(@array,@index), '2')">
+   <mi arg="array">x</mi>
+   <mi arg="index">i</mi>
+   <mo>'</mo>
+  </msubsup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+ <msubsup semantic="derivative-implicit-variable(index(@1,@2), @3)">
+   <mi>x</mi>
+   <mi>i</mi>
+   <mo>'</mo>
+  </msubsup>
+```
+or as above with '2'
+{::nomarkdown}
+</td>
+</tr>
+<tr><td></td><td> or maybe</td>
+<td>
 {:/nomarkdown}
 ```
  <msubsup semantic="index(derivative-implicit-variable(#op),#index)">
@@ -509,8 +542,34 @@ Note: 'adjoint' needs t0 know the second arg is the argument. It could just as e
   </msubsup>
 ```
 {::nomarkdown}
-</td></tr>
-<tr><td></td><td> midpoint $\overline{x}_i$ </td><td>
+</td>
+<td>
+{:/nomarkdown}
+```
+ <msubsup semantic="index(derivative-implicit-variable(@op,@deg), @index)">
+   <mi arg="op">x</mi>
+   <mi arg="index">i</mi>
+   <mo arg="deg">'</mo>
+  </msubsup>
+```
+or with "@deg" being "1"
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+ <msubsup semantic="index(derivative-implicit-variable(@o1,@3), @2)">
+   <mi>x</mi>
+   <mi>i</mi>
+   <mo>'</mo>
+  </msubsup>
+```
+or with "@3" being "1"
+{::nomarkdown}
+</td>
+></tr>
+<tr><td></td><td> midpoint $\overline{x}_i$ </td>
+<td>
 {:/nomarkdown}
 ```
  <msub semantic="#op(index(#line,#index))">
@@ -522,7 +581,8 @@ Note: 'adjoint' needs t0 know the second arg is the argument. It could just as e
   </msub>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+</tr>
 
 <!-- ======================================== -->
 <tr><td> base-operator </td><td> binomail $C^n_m$ </td><td>
