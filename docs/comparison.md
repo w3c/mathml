@@ -1530,7 +1530,8 @@ Need to distinguish between $\frac{d^2f}{dx^2}$ and $\frac{d^2}{dx^2}f$ in speec
       </mrow>
     </mfrac>
   </mstyle>
-</mrow>```
+</mrow>
+```
 {::nomarkdown}
 </td>
 <td>
