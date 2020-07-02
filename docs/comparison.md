@@ -1009,8 +1009,10 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 ```
 {::nomarkdown}
 </td>
-<td>Looking at the Wikipedia page on these, I think you need to know where the "|" is, so that 'semantic' doesn't seem right. On the other hand, all I know about Clebsch-Gordan is from two minutes of reading that page...
+<td>
+<p>Looking at the Wikipedia page on these, I think you need to know where the "|" is, so that 'semantic' doesn't seem right. On the other hand, all I know about Clebsch-Gordan is from two minutes of reading that page...</p>
 </td>
+<td></td>
 </tr>
 <!-- ======================================== -->
 <tr><td>fenced-sub </td><td> Pochhammer $\left(a\right)_n$ </td>
@@ -1039,10 +1041,11 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
   </mrow>
   <mi arg="n">n</mi>
 </msup>
+```
+{::nomarkdown}
 </td>
 <td>
 {:/nomarkdown}
-```
 <msup semantic="Pochhammer(@1@2,@2)">
   <mrow>
     <mo>(</mo>
@@ -1051,7 +1054,6 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
   </mrow>
   <mi>n</mi>
 </msup>
-
 ```
 {::nomarkdown}
 </td>
@@ -1284,7 +1286,8 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </tr>
 <tr><td/><td>6j, 9j, ...</td><td>similarly</td></tr>
 <!-- ======================================== -->
-<tr><td>functions</td><td> function $A(a,b;z|q)$</td><td>
+<tr><td>functions</td><td> function $A(a,b;z|q)$</td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="#op(#p1,#p2,#a1,#q)">
@@ -1297,11 +1300,48 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
   <mi arg="a1">z</mi>
   <mo>|</mo>
   <mi arg="q">q</mi>
-  <mo>(</mo>
+  <mo>)</mo>
 </mrow>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="function@open,@p1,@p2,@a1,@q,@close)">
+  <mi arg="op">A</mi>
+  <mo>(</mo>
+  <mi arg="p1">a</mi>
+  <mo>,</mo>
+  <mi arg="p2">b</mi>
+  <mo>;</mo>
+  <mi arg="a1">z</mi>
+  <mo>|</mo>
+  <mi arg="q">q</mi>
+  <mo>)</mo>
+</mrow>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="function(@*)">
+  <mi>A</mi>
+  <mo>(</mo>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mo>;</mo>
+  <mi>z</mi>
+  <mo>|</mo>
+  <mi>q</mi>
+  <mo>)</mo>
+</mrow>
+```
+{::nomarkdown}
+</td>
+</tr>
 <tr><td></td><td> Bessel $J_\nu(z)$</td><td>
 {:/nomarkdown}
 ```
