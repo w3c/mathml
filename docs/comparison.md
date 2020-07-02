@@ -738,7 +738,8 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </td>
 </tr>
 
-<tr><td> </td><td> determinant $|\mathbf{X}|$ </td><td>
+<tr><td> </td><td> determinant $|\mathbf{X}|$ </td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="determinant(#x)">
@@ -748,9 +749,33 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td style="background-color: lightyellow;">
+{:/nomarkdown}
+```
+<mrow semantic="determinant(@open, @x, @close)">
+  <mo arg="open">|</mo>
+  <mi arg="x">x</mi>
+  <mo arg="close">|</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td style="background-color: lightyellow;">
+{:/nomarkdown}
+```
+<mrow semantic="determinant(@*)">
+  <mo>|</mo>
+  <mix</mi>
+  <mo>|</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 
-<tr><td> </td><td> sequence $\lbrace a_n\rbrace$ </td><td>
+<tr><td> </td><td> sequence $\lbrace a_n\rbrace$ </td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="sequence(#arg)">
@@ -763,7 +788,36 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td style="background-color: lightyellow;">
+{:/nomarkdown}
+```
+<mrow semantic="sequence(@open,@arg,@close)">
+  <mo arg="open">{</mo>
+  <msub semantic="index(@base,@index)" arg="arg">
+    <mi arg="base">x</mi>
+    <mi arg="index">n</mi>
+  </msub>
+  <mo arg="close">}</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td style="background-color: lightyellow;">
+{:/nomarkdown}
+```
+<mrow semantic="sequence(@*)">
+  <mo arg="open">{</mo>
+  <msub semantic="index(@*)" arg="arg">
+    <mi arg="base">x</mi>
+    <mi arg="index">n</mi>
+  </msub>
+  <mo arg="close">}</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 
 <tr><td> </td><td> open interval $(a,b)$ </td><td>
 {:/nomarkdown}
