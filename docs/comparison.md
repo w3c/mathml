@@ -819,7 +819,8 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </td>
 </tr>
 
-<tr><td> </td><td> open interval $(a,b)$ </td><td>
+<tr><td> </td><td> open interval $(a,b)$ </td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="open-interval(#a,#b)">
@@ -831,9 +832,37 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="open-interval(@open,@a,@sep,@b,@close)">
+  <mo arg="open">(</mo>
+  <mi arg="a">a</mi>
+  <mo arg="sep">,</mo>
+  <mi arg="b">b</mi>
+  <mo arg="close">)</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="open-interval(@*)">
+  <mo>(</mo>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mo>)</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 
-<tr><td> </td><td> open interval $]a,b[$ </td><td>
+<tr><td> </td><td> open interval $]a,b[$ </td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="open-interval(#a,#b)">
@@ -845,10 +874,38 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="open-interval(@open,@a,@sep,@b,@close)">
+  <mo arg="open">(</mo>
+  <mi arg="a">a</mi>
+  <mo arg="sep">,</mo>
+  <mi arg="b">b</mi>
+  <mo arg="close">)</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="open-interval(@*)">
+  <mo>(</mo>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mo>)</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 <tr><td/><td colspan="2">closed, open-closed, etc. similarly</td></tr>
 
-<tr><td> </td><td> inner product $\left<\mathbf{a},\mathbf{b}\right>$</td><td>
+<tr><td> </td><td> inner product $\left<\mathbf{a},\mathbf{b}\right>$</td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="inner-product(#a,#b)">
@@ -856,13 +913,41 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
   <mi arg="a" mathvariant="bold">a</mi>
   <mo>,</mo>
   <mi arg="b" mathvariant="bold">b</mi>
-  <mo>&gt;</mo>
+  <mo>&lt;</mo>
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="inner-product(@open,@a,@sep,@b,@close)">
+  <mo arg="open">&lt;</mo>
+  <mi arg="a">a</mi>
+  <mo arg="sep">,</mo>
+  <mi arg="b">b</mi>
+  <mo arg="close">&lt;</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="inner-product(@*)">
+  <mo>&lt;</mo>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mo>&lt;</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 
-<tr><td> </td><td> Legendre symbol $(n|p)$</td><td>
+<tr><td> </td><td> Legendre symbol $(n|p)$</td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="Legendre-symbol(#n,#p)">
@@ -874,7 +959,35 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="Legendre-symbol(@open,@a,@sep,@b,@close)">
+  <mo arg="open">(</mo>
+  <mi arg="a">a</mi>
+  <mo arg="sep">  <mo>|</mo>
+</mo>
+  <mi arg="b">b</mi>
+  <mo arg="close">)</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="Legendre-symbol(@*)">
+  <mo>(</mo>
+  <mi>a</mi>
+  <mo>|</mo>
+  <mi>b</mi>
+  <mo>)</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 <tr><td/><td>Jacobi symbol</td><td>similarly</td></tr>
 
 <tr><td> </td><td> Clebsch-Gordan<br/> $(j_1 m_1 j_2 m_2 | j_1 j_2 j_3 m_3)|$</td><td>
