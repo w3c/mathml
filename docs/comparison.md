@@ -1374,7 +1374,8 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 {::nomarkdown}
 </td></tr>
 <!-- ======================================== -->
-<tr><td>derivatives</td><td> $\frac{d^2f}{dx^2}$</td><td>
+<tr><td>derivatives</td><td> $\frac{d^2f}{dx^2}$</td>
+<td>
 {:/nomarkdown}
 <!-- <mfrac semantic="Leibnitz-derivative(@1/2,@2/1/2,@1/1/2)"> -->
 ```
@@ -1396,9 +1397,56 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </mfrac>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td style="background-color: lightyellow;">
+{:/nomarkdown}
+Need to distinguish between $\frac{d^2f}{dx^2}$ and $\frac{d^2}{dx^2}f$ in speech ("d squared f, d x squared" vs "d squared, d x squared, [of?] f"). But still need semantics.
+```
+<mfrac semantic="Leibnitz-derivative(@deriv1,@deg1,@deriv2,@deg2, @var, @func)">
+  <mrow>
+    <msup>
+      <mo arg="deriv1">d</mo>
+      <mn arg="deg1">2</mn>
+    </msup>
+    <mi arg="func">f</mix>
+  </mrow>
+  <msup>
+    <mrow>
+      <mo arg="deriv2">d</mo>
+      <mi arg="var">x</mix>
+    </mrow>
+    <mn arg="deg2">2</mn>
+  </msup>
+</mfrac>
+```
+{::nomarkdown}
+</td>
+<td style="background-color: lightyellow;">
+{:/nomarkdown}
+```
+<mfrac semantic="Leibnitz-derivative(@1@1@1,@1@1@2,@2@1@1,@2@2, @2@1@2, @1@2)">
+  <mrow>
+    <msup>
+      <mo>d</mo>
+      <mn>2</mn>
+    </msup>
+    <mi>f</mix>
+  </mrow>
+  <msup>
+    <mrow>
+      <mo>d</mo>
+      <mi>x</mix>
+    </mrow>
+    <mn>2</mn>
+  </msup>
+</mfrac>
+```
+{::nomarkdown}
+</td>
+</tr>
 <!-- ======================================== -->
-<tr><td>integrals</td><td> $\int\frac{dr}{r}$</td><td>
+<tr><td>integrals</td><td> $\int\frac{dr}{r}$</td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="#op(divide(1,#r),#bvar)">
@@ -1413,10 +1461,12 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </mrow>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+</tr>
 <tr><td/><td colspan="2">One might be tempted put semantic="divide(1,#r)" on the mfrac, but this blocks access to #bvar</td></tr>
 <!-- ======================================== -->
-<tr><td>continued fractions</td><td> $a_0+\displaystyle\frac{1}{a_1+\displaystyle\frac{1}{a_2+\cdots}}$</td><td>
+<tr><td>continued fractions</td><td> $a_0+\displaystyle\frac{1}{a_1+\displaystyle\frac{1}{a_2+\cdots}}$</td>
+<td>
 {:/nomarkdown}
 <!--<mrow semantic="infinite-continued-fraction(@1,1,@3/1/2/1,1,@3/1/2/3/1/2)">-->
 ```
@@ -1445,7 +1495,75 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </mrow>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="infinite-continued-fraction(@a0,@p0,@b0,@a1,@p1,@b2,@a2,@p2,@ddd)">
+  <msub notation="index(@b, @i)" arg="a0">
+    <mi arg="b">a</mi>
+    <mn arg="i">0</mn>
+  </msub>
+  <mo arg="p0">+</mo>
+  <mstyle display="true">
+    <mfrac>
+      <mn arg="b1">1</mn>
+      <mrow>
+        <msub notation="index(@b, @i)" arg="a1">
+          <mi arg="b">a</mi>
+          <mn arg="i">1</mn>
+        </msub>
+        <mo arg="p1">+</mo>
+        <mstyle display="true">
+          <mfrac>
+            <mn arg="b2">1</mn>
+            <mrow>
+              <msub notation="index(@b, @i)" arg="a2">
+                <mi arg="b">a</mi>
+                <mn arg="i">2</mn>
+              </msub>
+              <mo arg="p2">+</mo>
+              <mo arg="ddd">&#22EF;</mo>
+            </mrow>
+          </mfrac>
+        </mstyle>
+      </mrow>
+    </mfrac>
+  </mstyle>
+</mrow>```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+Need to decide if mstyle/mpadded/singleton mrow are ignored. Assuming yes...
+```
+<mrow semantic="infinite-continued-fraction(@1,@2,@3@1,@3@2@1,@3@2@2,@3@2@3@1,@3@2@3@2@1,@3@2@3@2@2,@3@2@3@2@3)">
+  <msub><mi>a</mi><mn>0</mn></msub>
+  <mo>+</mo>
+  <mstyle display="true">
+    <mfrac>
+      <mn>1</mn>
+      <mrow>
+        <msub><mi>a</mi><mn>1</mn></msub>
+        <mo>+</mo>
+        <mstyle display="true">
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <msub><mi>a</mi><mn>2</mn></msub>
+              <mo>+</mo>
+              <mo>&#22EF;</mo>
+            </mrow>
+          </mfrac>
+        </mstyle>
+      </mrow>
+    </mfrac>
+  </mstyle>
+</mrow>
+```
+{::nomarkdown}
+</td>
+</tr>
 <!-- ======================================== -->
 </tbody>
 </table>
