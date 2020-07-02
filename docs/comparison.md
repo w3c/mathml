@@ -1039,6 +1039,7 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
   </mrow>
   <mi arg="n">n</mi>
 </msup>
+</td>
 <td>
 {:/nomarkdown}
 ```
@@ -1166,7 +1167,8 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </tr>
 <tr><td/><td/><td>??? puntuation separates the several arguments?</td></tr>
 
-<tr><td> </td><td> Eulerian numbers $\left< n \atop k \right>$ </td><td>
+<tr><td> </td><td> Eulerian numbers $\left< n \atop k \right>$ </td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="Eulerian-numbers(#n,#k)">
@@ -1179,7 +1181,36 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </mrow>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="Eulerian-numbers(@n,@k)">
+  <mo>&lt;</mo>
+  <mfrac thickness="0pt">
+    <mi arg="n">n</mi>
+    <mi arg="k">k</mi>
+  </mfrac>
+  <mo>&gt;</mo>
+</mrow>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="Eulerian-numbers(@2@1,@2@1)">
+  <mo>&lt;</mo>
+  <mfrac thickness="0pt">
+    <mi arg="n">n</mi>
+    <mi arg="k">k</mi>
+  </mfrac>
+  <mo>&gt;</mo>
+</mrow>
+```
+{::nomarkdown}
+</td>
+</tr>
 <!-- ======================================== -->
 <tr><td>fenced-table</td><td> 3j symbol<br/> $\left(\begin{array}{ccc}j_1& j_2 &j_3 \\ m_1 &m_2 &m_3\end{array}\right)$</td><td>
 {:/nomarkdown}
