@@ -1400,47 +1400,44 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </td>
 <td style="background-color: lightyellow;">
 {:/nomarkdown}
-Need to distinguish between $\frac{d^2f}{dx^2}$ and $\frac{d^2}{dx^2}f$ in speech ("d squared f, d x squared" vs "d squared, d x squared, [of?] f"). But still need semantics.
+Need to distinguish between $\frac{d^2f}{dx^2}$ and $\frac{d^2}{dx^2}f$ in speech ("d squared f, d x squared" vs "d squared, d x squared, [of?] f"). Maybe an alternative to "derivative(#func,#var,#deg)" is to name the parts and leave them in the order they occur.
 ```
-<mfrac semantic="Leibnitz-derivative(@deriv1,@deg1,@deriv2,@deg2, @var, @func)">
-  <mrow>
-    <msup>
-      <mo arg="deriv1">d</mo>
-      <mn arg="deg1">2</mn>
+<mfrac semantic="Leibnitz-derivative(@diff1, @func, @diff2)">
+    <msup arg="diffd1" notation="LeibnitzD1(@d, @deg)">
+      <mo arg="d">d</mo>
+      <mn arg="deg">2</mn>
     </msup>
-    <mi arg="func">f</mix>
+    <mi arg="func" notation="LeibnitzF">f</mix>
   </mrow>
-  <msup>
+  <msup arg="diffd2" notation="LeibnitzD2(@d, @var, @deg)">
     <mrow>
-      <mo arg="deriv2">d</mo>
+      <mo arg="d">d</mo>
       <mi arg="var">x</mix>
     </mrow>
-    <mn arg="deg2">2</mn>
+    <mn arg="deg">2</mn>
   </msup>
 </mfrac>
 ```
-{::nomarkdown}
-</td>
-<td style="background-color: lightyellow;">
-{:/nomarkdown}
+The second expr would be
 ```
-<mfrac semantic="Leibnitz-derivative(@1@1@1,@1@1@2,@2@1@1,@2@2, @2@1@2, @1@2)">
-  <mrow>
-    <msup>
-      <mo>d</mo>
-      <mn>2</mn>
+<mrow semantic="Leibnitz-derivative(@diff1, @diff2, @func)">
+  <mfrac>
+    <msup arg="diffd1" notation="LeibnitzD1(@d, @deg)">
+      <mo arg="d">d</mo>
+      <mn arg="deg">2</mn>
     </msup>
-    <mi>f</mix>
-  </mrow>
-  <msup>
-    <mrow>
-      <mo>d</mo>
-      <mi>x</mix>
-    </mrow>
-    <mn>2</mn>
-  </msup>
-</mfrac>
+    <msup arg="diffd2" notation="LeibnitzD2(@d, @var, @deg)">
+      <mrow>
+        <mo arg="d">d</mo>
+        <mi arg="var">x</mix>
+      </mrow>
+      <mn arg="deg">2</mn>
+    </msup>
+  </mfrac>
+  <mi arg="func" notation="LeibnitzF">f</mix>
+</mrow>
 ```
+Or maybe there needs to be two versions of 'Leibnitz-derivative'
 {::nomarkdown}
 </td>
 </tr>
