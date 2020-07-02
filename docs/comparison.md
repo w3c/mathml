@@ -1072,6 +1072,7 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </mrow>
 ```
 {::nomarkdown}
+</td>
 <td>
 {:/nomarkdown}
 ```
@@ -1212,7 +1213,8 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </td>
 </tr>
 <!-- ======================================== -->
-<tr><td>fenced-table</td><td> 3j symbol<br/> $\left(\begin{array}{ccc}j_1& j_2 &j_3 \\ m_1 &m_2 &m_3\end{array}\right)$</td><td>
+<tr><td>fenced-table</td><td> 3j symbol<br/> $\left(\begin{array}{ccc}j_1& j_2 &j_3 \\ m_1 &m_2 &m_3\end{array}\right)$</td>
+<td>
 {:/nomarkdown}
 <!-- <mrow semantic="3j(@2/1/1,@2/1/2,@2/1/3,@2/2/1,@2/2/2,@2/2/3)">-->
 ```
@@ -1234,7 +1236,52 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="3j(@j1,@j2,@j3,@m1,@m2,@m3)">
+  <mo>(</mo>
+  <mtable>
+    <mtr>
+      <mtd arg="j1"><msub><mi>j</mi><mn>1</mn></mtd>
+      <mtd arg="j2"><msub><mi>j</mi><mn>2</mn></mtd>
+      <mtd arg="j3"><msub><mi>j</mi><mn>3</mn></mtd>
+    </mtr>
+    <mtr>
+      <mtd arg="m1"><msub><mi>m</mi><mn>1</mn></mtd>
+      <mtd arg="m2"><msub><mi>m</mi><mn>2</mn></mtd>
+      <mtd arg="m3"><msub><mi>m</mi><mn>3</mn></mtd>
+    </mtr>
+  </mtable>
+  <mo>)</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="3j(@2/@1/@1,@2/@1/@2,@2/@1/@3,@2/@2/@1,@2/@2/@2,@2/@2/@3)">
+  <mo>(</mo>
+  <mtable>
+    <mtr>
+      <mtd><msub><mi>j</mi><mn>1</mn></mtd>
+      <mtd><msub><mi>j</mi><mn>2</mn></mtd>
+      <mtd><msub><mi>j</mi><mn>3</mn></mtd>
+    </mtr>
+    <mtr>
+      <mtd><msub><mi>m</mi><mn>1</mn></mtd>
+      <mtd><msub><mi>m</mi><mn>2</mn></mtd>
+      <mtd><msub><mi>m</mi><mn>3</mn></mtd>
+    </mtr>
+  </mtable>
+  <mo>)</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 <tr><td/><td>6j, 9j, ...</td><td>similarly</td></tr>
 <!-- ======================================== -->
 <tr><td>functions</td><td> function $A(a,b;z|q)$</td><td>
