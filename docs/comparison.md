@@ -3,7 +3,7 @@ title: "Semantic Annotation Mini-Language"
 ---
 
 <style>
-.container-lg {max-width:100%;  font-size:90%;}
+.container-lg {max-width:100%;  font-size:100%;}
 </style>
 
 *Authors*:  Neil Soiffer, and unkowningly Bruce Miller, Deyan Ginev,
@@ -554,6 +554,7 @@ or as above with '2'
   </msubsup>
 ```
 or with "@deg" being "1"
+
 {::nomarkdown}
 </td>
 <td>
@@ -566,6 +567,7 @@ or with "@deg" being "1"
   </msubsup>
 ```
 or with "@3" being "1"
+
 {::nomarkdown}
 </td>
 ></tr>
@@ -583,10 +585,38 @@ or with "@3" being "1"
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+ <msub semantic="midpoint(index(@line,@index))">
+    <mover accent="true">
+      <mi arg="line">x</mi>
+      <mo arg="op">¯</mo>
+    </mover>
+    <mi arg="index">i</mi>
+  </msub>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+ <msub semantic="midpoint(index(@1@,@2),@1@2)">
+    <mover accent="true">
+      <mi arg="line">x</mi>
+      <mo arg="op">¯</mo>
+    </mover>
+    <mi arg="index">i</mi>
+  </msub>
+```
+{::nomarkdown}
+</td>
 </tr>
 
 <!-- ======================================== -->
-<tr><td> base-operator </td><td> binomail $C^n_m$ </td><td>
+<tr><
+td> base-operator </td><td> binomail $C^n_m$ </td>
+<td>
 {:/nomarkdown}
 ```
 <msubsup semantic="#op(#n,#m)">
@@ -596,7 +626,30 @@ or with "@3" being "1"
 </msubsup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<msubsup semantic="binomial(#n,#m)">
+  <mi arg="op">C</mi>
+  <mi arg="m">m</mi>
+  <mi arg="n">n</mi>
+</msubsup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<msubsup semantic="binomial(#3,#2)">
+  <mi arg="op">C</mi>
+  <mi arg="m">m</mi>
+  <mi arg="n">n</mi>
+</msubsup>
+```
+{::nomarkdown}
+</td>
+</tr>
 <!-- ======================================== -->
 <!--
 <tr><td> fenced </td><td> grouping $(a+b)$ </td><td>
@@ -613,7 +666,8 @@ or with "@3" being "1"
 {::nomarkdown}
 </td></tr>
 -->
-<tr><td> fenced </td><td> absolute value $|x|$ </td><td>
+<tr><td> fenced </td><td> absolute value $|x|$ </td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="absolute-value(#x)">
@@ -623,7 +677,30 @@ or with "@3" being "1"
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td style="background-color: lightyellow;">
+{:/nomarkdown}
+```
+<mrow semantic="absolute-value(@open, @x, @close)">
+  <mo arg="open">|</mo>
+  <mi arg="x">x</mi>
+  <mo arg="close">|</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td style="background-color: lightyellow;">
+{:/nomarkdown}
+```
+<mrow semantic="absolute-value(@*)">
+  <mo>|</mo>
+  <mix</mi>
+  <mo>|</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 
 <tr><td> </td><td> norm $|\mathbf{x}|$ </td><td>
 {:/nomarkdown}
