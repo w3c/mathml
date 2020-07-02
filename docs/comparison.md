@@ -615,7 +615,7 @@ or with "@3" being "1"
 
 <!-- ======================================== -->
 <tr><
-td> base-operator </td><td> binomail $C^n_m$ </td>
+td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 <td>
 {:/nomarkdown}
 ```
@@ -702,7 +702,8 @@ td> base-operator </td><td> binomail $C^n_m$ </td>
 </td>
 </tr>
 
-<tr><td> </td><td> norm $|\mathbf{x}|$ </td><td>
+<tr><td> </td><td> norm $|\mathbf{x}|$ </td>
+<td>
 {:/nomarkdown}
 ```
 <mrow semantic="norm(#x)">
@@ -712,7 +713,30 @@ td> base-operator </td><td> binomail $C^n_m$ </td>
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td style="background-color: lightyellow;">
+{:/nomarkdown}
+```
+<mrow semantic="norm(@open, @x, @close)">
+  <mo arg="open">|</mo>
+  <mi arg="x">x</mi>
+  <mo arg="close">|</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td style="background-color: lightyellow;">
+{:/nomarkdown}
+```
+<mrow semantic="norm(@*)">
+  <mo>|</mo>
+  <mix</mi>
+  <mo>|</mo>
+</msup>
+```
+{::nomarkdown}
+</td>
+</tr>
 
 <tr><td> </td><td> determinant $|\mathbf{X}|$ </td><td>
 {:/nomarkdown}
