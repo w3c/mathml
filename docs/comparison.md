@@ -1046,6 +1046,7 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </td>
 <td>
 {:/nomarkdown}
+```
 <msup semantic="Pochhammer(@1@2,@2)">
   <mrow>
     <mo>(</mo>
@@ -1168,7 +1169,7 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 {::nomarkdown}
 </td>
 </tr>
-<tr><td/><td/><td>??? puntuation separates the several arguments?</td></tr>
+<tr><td/><td/><td>??? punctuation separates the several arguments?</td></tr>
 
 <tr><td> </td><td> Eulerian numbers $\left< n \atop k \right>$ </td>
 <td>
@@ -1308,17 +1309,17 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="function@open,@p1,@p2,@a1,@q,@close)">
+<mrow semantic="function(@open,@p1,@comma,@p2,@semi,@a1,@bar,@q,@close)">
   <mi arg="op">A</mi>
-  <mo>(</mo>
+  <mo arg="open">(</mo>
   <mi arg="p1">a</mi>
-  <mo>,</mo>
+  <mo arg="comma">,</mo>
   <mi arg="p2">b</mi>
-  <mo>;</mo>
+  <mo arg="semi">;</mo>
   <mi arg="a1">z</mi>
-  <mo>|</mo>
+  <mo arg="bar">|</mo>
   <mi arg="q">q</mi>
-  <mo>)</mo>
+  <mo arg="close">)</mo>
 </mrow>
 ```
 {::nomarkdown}
