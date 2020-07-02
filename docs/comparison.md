@@ -1008,9 +1008,13 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>Looking at the Wikipedia page on these, I think you need to know where the "|" is, so that 'semantic' doesn't seem right. On the other hand, all I know about Clebsch-Gordan is from two minutes of reading that page...
+</td>
+</tr>
 <!-- ======================================== -->
-<tr><td>fenced-sub </td><td> Pochhammer $\left(a\right)_n$ </td><td>
+<tr><td>fenced-sub </td><td> Pochhammer $\left(a\right)_n$ </td>
+<td>
 {:/nomarkdown}
 ```
 <msup semantic="Pochhammer(#a,#n)">
@@ -1023,9 +1027,37 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </msup>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="Pochhammer(@a,@n)">
+  <mrow>
+    <mo>(</mo>
+    <mi arg="a">a</mi>
+    <mo>)</mo>
+  </mrow>
+  <mi arg="n">n</mi>
+</msup>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="Pochhammer(@1@2,@2)">
+  <mrow>
+    <mo>(</mo>
+    <mi>a</mi>
+    <mo>)</mo>
+  </mrow>
+  <mi>n</mi>
+</msup>
+
+```
+{::nomarkdown}
+</td>
+</tr>
 <!-- ======================================== -->
-<tr><td>fenced-stacked </td><td> binomial $\binom{n}{m}$ </td><td>
+<tr><td>fenced-stacked </td><td> binomial $\binom{n}{m}$ </td>
+<td>
 {:/nomarkdown}
 <!-- <mrow semantic="binomial(@2/1,@2/2)"> -->
 ```
@@ -1039,9 +1071,38 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </mrow>
 ```
 {::nomarkdown}
-</td></tr>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="binomial(@n,@m)">
+  <mo>(</mo>
+  <mfrac thickness="0pt">
+    <mi arg="n">n</mi>
+    <mi arg="m">m</mi>
+  </mfrac>
+  <mo>)</mo>
+</mrow>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="binomial(@2@1,@2@2)">
+  <mo>(</mo>
+  <mfrac thickness="0pt">
+    <mi>n</mi>
+    <mi>m</mi>
+  </mfrac>
+  <mo>)</mo>
+</mrow>
+```
+{::nomarkdown}
+</td>
+</tr>
 
-<tr><td> </td><td> multinomial $\binom{n}{m_1,m_2,m_3}$ </td><td>
+<tr><td> </td><td> multinomial $\binom{n}{m_1,m_2,m_3}$ </td>
+<td>
 {:/nomarkdown}
 <!-- <mrow semantic="multinomial(@2/1,@2/2/1,@2/2/3,@2/2/5)"> -->
 ```
@@ -1061,7 +1122,48 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 </mrow>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="multinomial(@n,@m1,@m2,@m3)">
+  <mo>(</mo>
+  <mfrac thickness="0pt">
+    <mi arg="n">n</mi>
+    <mrow>
+      <msub arg="m1"><mi>m</mi><mn>1</mn></msup>
+      <mo>,</mo>
+      <msub arg="m2"><mi>m</mi><mn>2</mn></msup>
+      <mo>,</mo>
+      <msub arg="m3"><mi>m</mi><mn>3</mn></msup>
+    </mrow>
+  </mfrac>
+  <mo>)</mo>
+</mrow>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="multinomial(@2@1,@2@2@1,@2@2@2,@2@2@3)">
+  <mo>(</mo>
+  <mfrac thickness="0pt">
+    <mi arg="n">n</mi>
+    <mrow>
+      <msub arg="m1"><mi>m</mi><mn>1</mn></msup>
+      <mo>,</mo>
+      <msub arg="m2"><mi>m</mi><mn>2</mn></msup>
+      <mo>,</mo>
+      <msub arg="m3"><mi>m</mi><mn>3</mn></msup>
+    </mrow>
+  </mfrac>
+  <mo>)</mo>
+</mrow>
+```
+{::nomarkdown}
+</td>
+</tr>
 <tr><td/><td/><td>??? puntuation separates the several arguments?</td></tr>
 
 <tr><td> </td><td> Eulerian numbers $\left< n \atop k \right>$ </td><td>
