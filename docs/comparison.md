@@ -1401,21 +1401,24 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 <td style="background-color: lightyellow;">
 {:/nomarkdown}
 Need to distinguish between $\frac{d^2f}{dx^2}$ and $\frac{d^2}{dx^2}f$ in speech ("d squared f, d x squared" vs "d squared, d x squared, [of?] f"). Maybe an alternative to "derivative(#func,#var,#deg)" is to name the parts and leave them in the order they occur.
+
+Still thinking about this...
 ```
 <mfrac semantic="Leibnitz-derivative(@diff1, @func, @diff2)">
-    <msup arg="diffd1" notation="LeibnitzD1(@d, @deg)">
+  <mrow semantic="diffD(@d, @func)">
+    <msup arg="d" semantic="applicative-power(@d, @deg)">
       <mo arg="d">d</mo>
       <mn arg="deg">2</mn>
     </msup>
-    <mi arg="func" notation="LeibnitzF">f</mix>
+    <mi arg="func">f</mix>
   </mrow>
-  <msup arg="diffd2" notation="LeibnitzD2(@d, @var, @deg)">
-    <mrow>
-      <mo arg="d">d</mo>
+  <mrow semantic="diffD(@d, @x)">
+    <mo arg="d">d</mo>
+    <msup arg="x" notation="applicative-power(@var, @deg)">
       <mi arg="var">x</mix>
-    </mrow>
-    <mn arg="deg">2</mn>
-  </msup>
+      <mn arg="deg">2</mn>
+    </msup>
+  </mrow>
 </mfrac>
 ```
 The second expr would be
@@ -1452,6 +1455,24 @@ Or maybe there needs to be two versions of 'Leibnitz-derivative'
   <mfrac>
     <mrow>
       <mi>d</mi>
+      <mi arg="bvar">r</mi>
+    </mrow>
+    <mi arg="r">r</mi>
+  </mfrac>
+</mrow>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+This requires converters that want to find the bound variable to look for semantic="diffD(...)",
+replace that by '1', and take the second arg of the 'diffD' as the bound variable.
+```
+<mrow semantic="integral(@op, @integrand)">
+  <mo arg="op"</mo>
+  <mfrac arg="integrand" semantic="divide">
+    <mrow semantic="diffD(@d, @bvar)">
+      <mi arg="d">d</mi>
       <mi arg="bvar">r</mi>
     </mrow>
     <mi arg="r">r</mi>
