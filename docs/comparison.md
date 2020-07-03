@@ -1467,6 +1467,7 @@ Or maybe there needs to be two versions of 'Leibnitz-derivative'
 {:/nomarkdown}
 This requires converters that want to find the bound variable to look for semantic="diffD(...)",
 replace that by '1', and take the second arg of the 'diffD' as the bound variable.
+Another option would be to have semantic="integral(@op, @integrand, @bvar)" or maybe point to the 'diffD' to make the bound var obvious.
 ```
 <mrow semantic="integral(@op, @integrand)">
   <mo arg="op"</mo>
