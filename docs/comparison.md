@@ -1594,5 +1594,8 @@ Need to decide if mstyle/mpadded/singleton mrow are ignored. Assuming yes...
 ## Summary
 The main differences appear to be:
 * the location of the name of the function
+* more substantively, the first proposal abstracts away the presentation, the second one preserves it and requires converters to know the syntax of the function (e.g, "factorial" is a postfix function, therefore the operand they care about is the first argument)
+
+Abstracting away the presentation means speech can't use semantics alone because it matters. E.g, $a/b$, $a \div b$, and $\frac{a}{b}$ want to be spoken differently, but they would all have the same semantic value. This happens in many other cases.
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
