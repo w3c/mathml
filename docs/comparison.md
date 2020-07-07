@@ -1454,7 +1454,9 @@ These forms are unambiguous and relatively easy to convert to Content MathML and
 <tr><td>integrals</td><td> $\int\frac{dr}{r}$</td>
 <td>
 {:/nomarkdown}
+
 One might be tempted put semantic="divide(1,#r)" on the mfrac, but this blocks access to #bvar
+
 ```
 <mrow semantic="#op(divide(1,#r),#bvar)">
   <mo arg="op" semantic="integral">&x222B;</mo>
@@ -1467,6 +1469,7 @@ One might be tempted put semantic="divide(1,#r)" on the mfrac, but this blocks a
   </mfrac>
 </mrow>
 ```
+
 {::nomarkdown}
 </td>
 <td>
