@@ -1426,7 +1426,7 @@ The first has the function in the numerator and the denominator shows MathML for
   </mrow>
 </mfrac>
 ```
-The second expr has the $f$ outside the fraction and the denominator show MathML for $(dx)^2$):
+The second expr has the $f$ outside the fraction and the denominator shows MathML for $(dx)^2$:
 ```
 <mrow semantic="function(@diff-op, @func)">
   <mfrac arg="diff-op" semantic="Leibnitz-derivative(@diff-op,@diff-var)">
