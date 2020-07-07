@@ -1405,9 +1405,10 @@ Need to distinguish between $\frac{d^2f}{dx^2}$ and $\frac{d^2}{dx^2}f$ in speec
 
 Note also that $dx^2$ might be marked up as `{dx}^2` which is technically correct, but will more likely be marked up as `d x^2` (i.e, `d {x^2}`)
 
-This solution goes back to the basics of Liebnitz's notation: $\frac{d}{dx}$. This is an operator and $\frac{d^2}{dx^2}$ is really $\frac{d}{dx} (\frac{d}{dx})$. From these we get shorthands $\frac{df}{dx}$ and $\frac{d^2}{dx^2}$. Without the shorthand, we have `function( power(Leibnitz-derivative(dNum, dDenom(var)), degree), func)`. This doesn't extend well to partial derivatives where the degree is potentially spread among different variables. That leads to associating the power with each $d$ to get `function( deriv(power(dNum, degree), power(dDenom(var), degree)), func)`.Although power is not technically correct, it corresponds to the way it is spoken. To handle the shorthand where the function is part of the numerator, I add a three argument version of `Leibnitz-derivative`. Also, rather than having `diffD-numerator` and `diffD-denominator`, I have two and three arg versions of just `diffD`.
+This solution goes back to the basics of Liebnitz's notation: $\frac{d}{dx}$. This is an operator and $\frac{d^2}{dx^2}$ is really $\frac{d}{dx} (\frac{d}{dx})$. From these we get shorthands $\frac{df}{dx}$ and $\frac{d^2}{dx^2}$. Without the shorthand, we have `function( power(deriv(dNum, dDenom(var)), degree), func)`. This doesn't extend well to partial derivatives where the degree is potentially spread among different variables. That leads to associating the power with each $d$ to get `function( deriv(power(dNum, degree), power(dDenom(var), degree)), func)`. Although power is not technically correct, it corresponds to the way it is spoken. To handle the shorthand where the function is part of the numerator, I add a three argument version of `Leibnitz-derivative`. Also, rather than having `diffD-numerator` and `diffD-denominator`, I have two and three arg versions of just `diffD`.
 
-With that rationale, here are two markups (denoms shows MathML for $dx^2$ and $(dx)^2$):
+With that rationale, here are two markups.
+The first has the function in the numerator and the denominator shows MathML for $dx^2$:
 ```
 <mfrac semantic="Leibnitz-derivative(@diff-op,@diff-var,@func)">
     <msup arg="diff-op" notation="diffD(@d, @deg)">
@@ -1425,15 +1426,15 @@ With that rationale, here are two markups (denoms shows MathML for $dx^2$ and $(
   </mrow>
 </mfrac>
 ```
-The second expr is:
+The second expr has the $f$ outside the fraction and the denominator show MathML for $(dx)^2$):
 ```
 <mrow semantic="function(@diff-op, @func)">
   <mfrac arg="diff-op" semantic="Leibnitz-derivative(@diff-op,@diff-var)">
-    <msup arg="diffd1" semantic="diffD(@d, @deg)">
+    <msup arg="diff-op" semantic="diffD(@d, @deg)">
       <mo arg="d">d</mo>
       <mn arg="deg">2</mn>
     </msup>
-    <msup arg="diff-var" semantic="diffD-var(@d, @deg, @var)">
+    <msup arg="diff-var" semantic="diffD(@d, @deg, @var)">
       <mrow>
         <mo arg="d">d</mo>
         <mi arg="var">x</mix>
