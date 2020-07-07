@@ -1478,7 +1478,7 @@ Another option would be to have semantic="integral(@op, @integrand, @bvar)" or m
 <mrow semantic="integral(@op, @integrand)">
   <mo arg="op"</mo>
   <mfrac arg="integrand" semantic="divide">
-    <mrow semantic="diffD(@d, @bvar)">
+    <mrow semantic="diffD(@d, "1", @bvar)">
       <mi arg="d">d</mi>
       <mi arg="bvar">r</mi>
     </mrow>
