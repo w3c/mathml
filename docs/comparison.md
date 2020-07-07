@@ -1409,16 +1409,14 @@ This solution goes back to the basics of Liebnitz's notation: $\frac{d}{dx}$. Th
 
 With that rationale, here are two markups (denoms shows MathML for $dx^2$ and $(dx)^2$):
 ```
-<mfrac semantic="Leibnitz-derivative(@diff1,@diff2,@func)">
-  <mrow semantic="diffD(@d, @func)">
-  <mfrac>
-    <msup arg="diffd1" notation="diffD-op(@d, @deg)">
+<mfrac semantic="Leibnitz-derivative(@diff-op,@diff-var,@func)">
+    <msup arg="diff-op" notation="diffD(@d, @deg)">
       <mo arg="d">d</mo>
       <mn arg="deg">2</mn>
     </msup>
     <mi arg="func">f</mix>
   </mrow>
-  <mrow semantic="diffD-var(@d, @deg, @var)">
+  <mrow arg="diff-var" semantic="diffD(@d, @deg, @var)">
     <mo arg="d">d</mo>
     <msup>
       <mi arg="var">x</mix>
@@ -1430,12 +1428,12 @@ With that rationale, here are two markups (denoms shows MathML for $dx^2$ and $(
 The second expr is:
 ```
 <mrow semantic="function(@diff-op, @func)">
-  <mfrac arg="diff-op" Leibnitz-derivative(@diff1,@diff2>
-    <msup arg="diffd1" semantic="diffD-op(@d, @deg)">
+  <mfrac arg="diff-op" semantic="Leibnitz-derivative(@diff-op,@diff-var)">
+    <msup arg="diffd1" semantic="diffD(@d, @deg)">
       <mo arg="d">d</mo>
       <mn arg="deg">2</mn>
     </msup>
-    <msup arg="diffd2" semantic="diffD-var(@d, @deg, @var)">
+    <msup arg="diff-var" semantic="diffD-var(@d, @deg, @var)">
       <mrow>
         <mo arg="d">d</mo>
         <mi arg="var">x</mix>
@@ -1447,6 +1445,7 @@ The second expr is:
 </mrow>
 ```
 These forms are unambiguous and relatively easy to convert to Content MathML and to speech that distinguishes the two forms.
+
 {::nomarkdown}
 </td>
 </tr>
@@ -1454,9 +1453,7 @@ These forms are unambiguous and relatively easy to convert to Content MathML and
 <tr><td>integrals</td><td> $\int\frac{dr}{r}$</td>
 <td>
 {:/nomarkdown}
-
 One might be tempted put semantic="divide(1,#r)" on the mfrac, but this blocks access to #bvar
-
 ```
 <mrow semantic="#op(divide(1,#r),#bvar)">
   <mo arg="op" semantic="integral">&x222B;</mo>
