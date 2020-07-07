@@ -1396,40 +1396,46 @@ td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
   </msup>
 </mfrac>
 ```
+
 {::nomarkdown}
 </td>
 <td style="background-color: lightyellow;">
 {:/nomarkdown}
-Need to distinguish between $\frac{d^2f}{dx^2}$ and $\frac{d^2}{dx^2}f$ in speech ("d squared f, d x squared" vs "d squared, d x squared, [of?] f"). Maybe an alternative to "derivative(#func,#var,#deg)" is to name the parts and leave them in the order they occur.
+Need to distinguish between $\frac{d^2f}{dx^2}$ and $\frac{d^2}{dx^2}f$ in speech ("d squared f, d x squared" vs "d squared, d x squared, [of?] f").
 
-Still thinking about this...
+Note also that $dx^2$ might be marked up as `{dx}^2` which is technically correct, but will more likely be marked up as `d x^2` (i.e, `d {x^2}`)
+
+This solution goes back to the basics of Liebnitz's notation: $\frac{d}{dx}$. This is an operator and $\frac{d^2}{dx^2}$ is really $\frac{d}{dx} (\frac{d}{dx})$. From these we get shorthands $\frac{df}{dx}$ and $\frac{d^2}{dx^2}$. Without the shorthand, we have `function( power(Leibnitz-derivative(dNumerator, dDenominator(var)), degree), func)`. This doesn't extend well to partial derivatives where the degree is potentially spread among different variables. That leads to associating the power with each $d$ to get `function( Leibnitz-derivative(power(dNumerator, degree), power(dDenominator(var)), degree)), func)`, although power is not technically correct but corresponds to the way it is spoken. To handle the shorthand where the function is part of the numerator, I add a three argument version of `Leibnitz-derivative`. Also, rather than having `diffD-numerator` and `diffD-denominator`, I have two and three arg versions of just `diffD`.
+
+With that rationale, here are two markups (denoms shows MathML for $dx^2$ and $(dx)^2$):
 ```
-<mfrac semantic="Leibnitz-derivative(@diff1, @func, @diff2)">
+<mfrac semantic="Leibnitz-derivative(@diff1,@diff2,@func)">
   <mrow semantic="diffD(@d, @func)">
-    <msup arg="d" semantic="applicative-power(@d, @deg)">
+  <mfrac>
+    <msup arg="diffd1" notation="diffD-op(@d, @deg)">
       <mo arg="d">d</mo>
       <mn arg="deg">2</mn>
     </msup>
     <mi arg="func">f</mix>
   </mrow>
-  <mrow semantic="diffD(@d, @x)">
+  <mrow semantic="diffD-var(@d, @deg, @var)">
     <mo arg="d">d</mo>
-    <msup arg="x" notation="applicative-power(@var, @deg)">
+    <msup>
       <mi arg="var">x</mix>
       <mn arg="deg">2</mn>
     </msup>
   </mrow>
 </mfrac>
 ```
-The second expr would be
+The second expr is:
 ```
-<mrow semantic="Leibnitz-derivative(@diff1, @diff2, @func)">
-  <mfrac>
-    <msup arg="diffd1" notation="LeibnitzD1(@d, @deg)">
+<mrow semantic="function(@diff-op, @func)">
+  <mfrac arg="diff-op" Leibnitz-derivative(@diff1,@diff2>
+    <msup arg="diffd1" semantic="diffD-op(@d, @deg)">
       <mo arg="d">d</mo>
       <mn arg="deg">2</mn>
     </msup>
-    <msup arg="diffd2" notation="LeibnitzD2(@d, @var, @deg)">
+    <msup arg="diffd2" semantic="diffD-var(@d, @deg, @var)">
       <mrow>
         <mo arg="d">d</mo>
         <mi arg="var">x</mix>
@@ -1437,11 +1443,10 @@ The second expr would be
       <mn arg="deg">2</mn>
     </msup>
   </mfrac>
-  <mi arg="func" notation="LeibnitzF">f</mix>
+  <mi arg="func">f</mix>
 </mrow>
 ```
-Or maybe there needs to be two versions of 'Leibnitz-derivative'
-
+These forms are unambiguous and relatively easy to convert to Content MathML and to speech that distinguishes the two forms.
 {::nomarkdown}
 </td>
 </tr>
@@ -1449,6 +1454,7 @@ Or maybe there needs to be two versions of 'Leibnitz-derivative'
 <tr><td>integrals</td><td> $\int\frac{dr}{r}$</td>
 <td>
 {:/nomarkdown}
+One might be tempted put semantic="divide(1,#r)" on the mfrac, but this blocks access to #bvar
 ```
 <mrow semantic="#op(divide(1,#r),#bvar)">
   <mo arg="op" semantic="integral">&x222B;</mo>
@@ -1483,8 +1489,6 @@ Another option would be to have semantic="integral(@op, @integrand, @bvar)" or m
 {::nomarkdown}
 </td>
 </tr>
-<tr><td/><td colspan="2">One might be tempted put semantic="divide(1,#r)" on the mfrac, but this blocks access to #bvar</td></tr>
-<!-- ======================================== -->
 <tr><td>continued fractions</td><td> $a_0+\displaystyle\frac{1}{a_1+\displaystyle\frac{1}{a_2+\cdots}}$</td>
 <td>
 {:/nomarkdown}
