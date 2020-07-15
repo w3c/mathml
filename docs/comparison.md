@@ -1,5 +1,5 @@
 ---
-title: "Semantic Annotation Mini-Language"
+title: "Semantic Annotation Comparison
 ---
 
 <style>
