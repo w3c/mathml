@@ -348,6 +348,16 @@ Putting them side by side hopefully makes it easier to compare the differences.
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="applicative-power">
+  <mi arg="1">f</mi>
+  <mi arg="2">n</mi>
+</msup>
+```
+{::nomarkdown}
+</td>
 </tr>
 
 <tr><td> </td><td> inverse $\sin^{-1}$ </td>
@@ -378,6 +388,23 @@ Putting them side by side hopefully makes it easier to compare the differences.
   <mi>sin</mi>
   <mn>-1</mn>
 </msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="arcsin">
+  <msup arg="0">
+    <mi>sin</mi>
+    <mrow>
+      <mo>-</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+  <mo>&#x2061;</mo>
+  <mi arg="1">x</mi>
+</mrow>
 ```
 {::nomarkdown}
 </td>
@@ -426,8 +453,22 @@ Putting them side by side hopefully makes it easier to compare the differences.
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="derivative-implicit-variable">
+  <mi arg="1">f</mi>
+  <mrow>
+    <mo>(</mo>
+    <mi arg="2">n</mi>
+    <mo>)</mo>
+  </mrow>
+</msup>
+```
+{::nomarkdown}
+</td>
 </tr>
-<!-- ======================================== -->
+
 <tr><td> sub </td><td> indexing $a_i$ </td>
 <td>
 {:/nomarkdown}
@@ -459,8 +500,18 @@ Putting them side by side hopefully makes it easier to compare the differences.
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+<msub semantic="index">
+  <mi arg="1">a</mi>
+  <mi arg="2">i</mi>
+</msub>
+```
+{::nomarkdown}
+</td>
 </tr>
-<!-- ======================================== -->
+
 <tr><td> sup-operator </td><td> transpose $A^T$ </td>
 <td>
 {:/nomarkdown}
