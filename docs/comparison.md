@@ -4,6 +4,8 @@ title: "Semantic Annotation Comparison"
 
 <style>
 .container-lg {max-width:100%;  font-size:100%;}
+td:nth-child(3) { display: none; }
+td:nth-child(5) { display: none; }
 </style>
 
 *Authors*:  Neil Soiffer, Bruce Miller, Deyan Ginev, Sam Dooley
@@ -613,7 +615,7 @@ or with "@3" being "1"
 </td>
 </tr>
 
-<tr><td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
+<tr><td> base-operator </td><td> binomial $C^n_m$ </td>
 <td>
 {:/nomarkdown}
 ```
