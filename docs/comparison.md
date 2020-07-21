@@ -1,23 +1,23 @@
 ---
-title: "Semantic Annotation Comparison
+title: "Semantic Annotation Comparison"
 ---
 
 <style>
 .container-lg {max-width:100%;  font-size:100%;}
 </style>
 
-*Authors*:  Neil Soiffer, and unkowningly Bruce Miller, Deyan Ginev,
+*Authors*:  Neil Soiffer, Bruce Miller, Deyan Ginev, Sam Dooley
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 ## Side-by-Side Comparison Between Proposals
-This extracts out the table from Bruce's and Deyan's proposal and adds in my proposal.
+This table extracts the examples from the various proposals.
 The proposals have many similarities.
 Putting them side by side hopefully makes it easier to compare the differences.
  
 
 {::nomarkdown}
 <table>
-<thead><tr><th>Notation</th><th>Description</th><th>Brue & Deyan proposal</th><th>Neil arg proposal</th><th>Neil position proposal</th></tr></thead>
+<thead><tr><th>Notation</th><th>Description</th><th>Bruce/Deyan</th><th>Neil arg</th><th>Neil position</th><th>Sam</th></tr></thead>
 <tbody>
 <!-- ======================================== -->
 <tr><td> infix </td><td> arithmetic<br/> $a+b-c+d$ </td><td>
@@ -613,9 +613,7 @@ or with "@3" being "1"
 </td>
 </tr>
 
-<!-- ======================================== -->
-<tr><
-td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
+<tr><td> base-operator </td><td> binomial </td><td>$C^n_m$ </td>
 <td>
 {:/nomarkdown}
 ```
