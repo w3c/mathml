@@ -4,8 +4,8 @@ title: "Semantic Annotation Comparison"
 
 <style>
 .container-lg {max-width:100%;  font-size:100%;}
-th:nth-child(3), td:nth-child(3) { display: none; }
-th:nth-child(5), td:nth-child(5) { display: none; }
+/* th:nth-child(3), td:nth-child(3) { display: none; } */
+/* th:nth-child(5), td:nth-child(5) { display: none; } */
 </style>
 
 *Authors*:  Neil Soiffer, Bruce Miller, Deyan Ginev, Sam Dooley
@@ -544,6 +544,12 @@ For speech, we need two different transpose functions ("A transpose" vs "transpo
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
 </tr>
 
 <tr><td> </td><td> adjoint $A^\dagger$ </td>
@@ -578,7 +584,14 @@ Note: 'adjoint' needs to know the second arg is the operand. It could just as ea
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
 </tr>
+
 <tr><td> </td><td> $2$-nd derivative $f''$ </td>
 <td>
 {:/nomarkdown}
@@ -610,7 +623,14 @@ Note: 'adjoint' needs to know the second arg is the operand. It could just as ea
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
 </tr>
+
 <tr><td>Awkward nesting</td><td> $x'_i$ </td>
 <td>
 {:/nomarkdown}
@@ -656,6 +676,7 @@ or as above with '2'
 {::nomarkdown}
 </td>
 </tr>
+
 <tr><td></td><td> or maybe</td>
 <td>
 {:/nomarkdown}
@@ -694,7 +715,8 @@ or with "@3" being "1"
 
 {::nomarkdown}
 </td>
-></tr>
+</tr>
+
 <tr><td></td><td> midpoint $\overline{x}_i$ </td>
 <td>
 {:/nomarkdown}
@@ -735,6 +757,12 @@ or with "@3" being "1"
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
 </tr>
 
 <tr><td> base-operator </td><td> binomial $C^n_m$ </td>
@@ -771,8 +799,14 @@ or with "@3" being "1"
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
 </tr>
-<!-- ======================================== -->
+
 <!--
 <tr><td> fenced </td><td> grouping $(a+b)$ </td><td>
 {:/nomarkdown}
@@ -822,6 +856,12 @@ or with "@3" being "1"
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
 </tr>
 
 <tr><td> </td><td> norm $|\mathbf{x}|$ </td>
@@ -858,6 +898,12 @@ or with "@3" being "1"
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
 </tr>
 
 <tr><td> </td><td> determinant $|\mathbf{X}|$ </td>
@@ -891,6 +937,12 @@ or with "@3" being "1"
   <mix</mi>
   <mo>|</mo>
 </msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
 ```
 {::nomarkdown}
 </td>
@@ -939,6 +991,12 @@ or with "@3" being "1"
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
 </tr>
 
 <tr><td> </td><td> open interval $(a,b)$ </td>
@@ -978,6 +1036,12 @@ or with "@3" being "1"
   <mi>b</mi>
   <mo>)</mo>
 </msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
 ```
 {::nomarkdown}
 </td>
@@ -1023,7 +1087,14 @@ or with "@3" being "1"
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
 </tr>
+
 <tr><td/><td colspan="2">closed, open-closed, etc. similarly</td></tr>
 
 <tr><td> </td><td> inner product $\left<\mathbf{a},\mathbf{b}\right>$</td>
@@ -1063,6 +1134,12 @@ or with "@3" being "1"
   <mi>b</mi>
   <mo>&lt;</mo>
 </msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
 ```
 {::nomarkdown}
 </td>
@@ -1109,7 +1186,14 @@ or with "@3" being "1"
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
 </tr>
+
 <tr><td/><td>Jacobi symbol</td><td>similarly</td></tr>
 
 <tr><td> </td><td> Clebsch-Gordan<br/> $(j_1 m_1 j_2 m_2 | j_1 j_2 j_3 m_3)|$</td><td>
@@ -1136,7 +1220,7 @@ or with "@3" being "1"
 </td>
 <td></td>
 </tr>
-<!-- ======================================== -->
+
 <tr><td>fenced-sub </td><td> Pochhammer $\left(a\right)_n$ </td>
 <td>
 {:/nomarkdown}
@@ -1180,8 +1264,14 @@ or with "@3" being "1"
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
 </tr>
-<!-- ======================================== -->
+
 <tr><td>fenced-stacked </td><td> binomial $\binom{n}{m}$ </td>
 <td>
 {:/nomarkdown}
@@ -1223,6 +1313,12 @@ or with "@3" being "1"
   </mfrac>
   <mo>)</mo>
 </mrow>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
 ```
 {::nomarkdown}
 </td>
@@ -1290,7 +1386,14 @@ or with "@3" being "1"
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
 </tr>
+
 <tr><td/><td/><td>??? punctuation separates the several arguments?</td></tr>
 
 <tr><td> </td><td> Eulerian numbers $\left< n \atop k \right>$ </td>
@@ -1336,8 +1439,14 @@ or with "@3" being "1"
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
 </tr>
-<!-- ======================================== -->
+
 <tr><td>fenced-table</td><td> 3j symbol<br/> $\left(\begin{array}{ccc}j_1& j_2 &j_3 \\ m_1 &m_2 &m_3\end{array}\right)$</td>
 <td>
 {:/nomarkdown}
@@ -1407,8 +1516,9 @@ or with "@3" being "1"
 {::nomarkdown}
 </td>
 </tr>
+
 <tr><td/><td>6j, 9j, ...</td><td>similarly</td></tr>
-<!-- ======================================== -->
+
 <tr><td>functions</td><td> function $A(a,b;z|q)$</td>
 <td>
 {:/nomarkdown}
@@ -1464,7 +1574,14 @@ or with "@3" being "1"
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
 </tr>
+
 <tr><td></td><td> Bessel $J_\nu(z)$</td><td>
 {:/nomarkdown}
 ```
@@ -1480,6 +1597,7 @@ or with "@3" being "1"
 ```
 {::nomarkdown}
 </td></tr>
+
 <tr><td></td><td> curried Bessel $J_\nu(z)$</td><td>
 {:/nomarkdown}
 ```
@@ -1495,7 +1613,7 @@ or with "@3" being "1"
 ```
 {::nomarkdown}
 </td></tr>
-<!-- ======================================== -->
+
 <tr><td>derivatives</td><td> $\frac{d^2f}{dx^2}$</td>
 <td>
 {:/nomarkdown}
@@ -1572,7 +1690,7 @@ These forms are unambiguous and relatively easy to convert to Content MathML and
 {::nomarkdown}
 </td>
 </tr>
-<!-- ======================================== -->
+
 <tr><td>integrals</td><td> $\int\frac{dr}{r}$</td>
 <td>
 {:/nomarkdown}
@@ -1612,6 +1730,7 @@ Another option would be to have semantic="integral(@op, @integrand, @bvar)" or m
 {::nomarkdown}
 </td>
 </tr>
+
 <tr><td>continued fractions</td><td> $a_0+\displaystyle\frac{1}{a_1+\displaystyle\frac{1}{a_2+\cdots}}$</td>
 <td>
 {:/nomarkdown}
@@ -1712,7 +1831,7 @@ Need to decide if mstyle/mpadded/singleton mrow are ignored. Assuming yes...
 {::nomarkdown}
 </td>
 </tr>
-<!-- ======================================== -->
+
 </tbody>
 </table>
 {:/nomarkdown}
