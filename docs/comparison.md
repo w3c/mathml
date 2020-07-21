@@ -4,8 +4,8 @@ title: "Semantic Annotation Comparison"
 
 <style>
 .container-lg {max-width:100%;  font-size:100%;}
-td:nth-child(3) { display: none; }
-td:nth-child(5) { display: none; }
+th:nth-child(3), td:nth-child(3) { display: none; }
+th:nth-child(5), td:nth-child(5) { display: none; }
 </style>
 
 *Authors*:  Neil Soiffer, Bruce Miller, Deyan Ginev, Sam Dooley
@@ -63,6 +63,23 @@ Putting them side by side hopefully makes it easier to compare the differences.
   <mi>c</mi>
   <mo>+</mo>
   <mi>d</mi>
+</mrow>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="plus">
+  <mi arg="1">a</mi>
+  <mo arg="0">+</mo>
+  <mrow semantic="minus" arg="2">
+    <mi arg="1">b</mi>
+    <mo arg="0">-</mo>
+    <mi arg="2">c</mi>
+  </mrow>
+  <mo arg="0">+</mo>
+  <mi arg="3">d</mi>
 </mrow>
 ```
 {::nomarkdown}
