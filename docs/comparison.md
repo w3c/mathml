@@ -21,7 +21,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <table>
 <thead><tr><th>Notation</th><th>Description</th><th>Bruce/Deyan</th><th>Neil arg</th><th>Neil position</th><th>Sam</th></tr></thead>
 <tbody>
-<!-- ======================================== -->
+
 <tr><td> infix </td><td> arithmetic<br/> $a+b-c+d$ </td><td>
 {:/nomarkdown}
 ```
@@ -119,9 +119,19 @@ Putting them side by side hopefully makes it easier to compare the differences.
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="inner-product">
+  <mi arg="1" mathvariant="bold">a</mi>
+  <mo arg="0">&#x22c5;</mo>
+  <mi arg="2" mathvariant="bold">b</mi>
+</mrow>
+```
+{::nomarkdown}
+</td>
 </tr>
-<tr><td/><td colspan="2">Easily extended to other operators and meanings: cross-product, "by", etc.</td></tr>
-<!-- ======================================== -->
+
 <tr><td> prefix </td><td> negation $-a$ </td>
 <td>
 {:/nomarkdown}
@@ -149,6 +159,16 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <mrow semantic="unary-minus(@*)">
   <mo>-</mo>
   <mi>a</mi>`
+</mrow>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="minus">
+  <mo arg="0">-</mo>
+  <mi arg="1">a</mi>
 </mrow>
 ```
 {::nomarkdown}
@@ -195,8 +215,22 @@ Putting them side by side hopefully makes it easier to compare the differences.
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="laplacian">
+  <msup arg="0">
+    <mi>&#x2207;</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2061;</mo>
+  <mi arg="1">f</mi>
+</mrow>
+```
+{::nomarkdown}
+</td>
 </tr>
-<!-- ======================================== -->
+
 <tr><td> postfix </td><td> factorial $n!$ </td>
 <td>
 {:/nomarkdown}
@@ -228,8 +262,18 @@ Putting them side by side hopefully makes it easier to compare the differences.
 ```
 {::nomarkdown}
 </td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="factorial">
+  <mi arg="1">n</mi>
+  <mo arg="0">!</mo>
+</mrow>
+```
+{::nomarkdown}
+</td>
 </tr>
-<!-- ======================================== -->
+
 <tr><td> sup </td><td> power $x^n$ </td>
 <td>
 {:/nomarkdown}
@@ -257,6 +301,16 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <msup semantic="power(@*)">
   <mi>x</mi>
   <mi>n</mi>
+</msup>
+```
+{::nomarkdown}
+</td>
+<td>
+{:/nomarkdown}
+```
+<msup semantic="power">
+  <mi arg="1">x</mi>
+  <mi arg="2">n</mi>
 </msup>
 ```
 {::nomarkdown}
