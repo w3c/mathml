@@ -428,7 +428,28 @@ Note that often the same meaning will appear within different notations.
 ```
 {::nomarkdown}
 </td></tr>
-
+<tr><td> </td><td> Compare to $\mathrm{trans}(A)$ </td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="#op(#x)">
+  <mi arg="op" semantic="transpose">trans</mi>
+  <!-- optionally &ApplyFunction; -->
+  <mi arg="x">A</mn>
+</mrow>
+```
+{::nomarkdown}
+</td>
+</tr>
+<tr><td> </td><td> Or the function $\mathrm{trans}$ </td>
+<td>
+{:/nomarkdown}
+```
+<mi semantic="transpose">trans</mi>
+```
+{::nomarkdown}
+</td>
+</tr>
 <tr><td> </td><td> adjoint $A^\dagger$ </td><td>
 {:/nomarkdown}
 ```
@@ -471,7 +492,8 @@ Note that often the same meaning will appear within different notations.
 ```
 {::nomarkdown}
 </td></tr>
-<tr><td></td><td> midpoint $\overline{x}_i$ </td><td>
+<tr><td></td><td>  $\overline{x}_i$ being midpoint of $x_i$</td>
+<td>
 {:/nomarkdown}
 ```
  <msub semantic="#op(index(#line,#index))">
@@ -483,7 +505,23 @@ Note that often the same meaning will appear within different notations.
   </msub>
 ```
 {::nomarkdown}
-</td></tr>
+</td>
+</tr>
+<tr><td></td><td> Versus: $\overline{x}_i$ being ith element of $\overline{x}$ </td>
+<td>
+{:/nomarkdown}
+```
+ <msub semantic="index(#arr,#index)">
+    <mover arg="arr" accent="true" semantic="#op(#line)>
+      <mi arg="line">x</mi>
+      <mo arg="op" semantic="midpoint">¯</mo>
+    </mover>
+    <mi arg="index">i</mi>
+  </msub>
+```
+{::nomarkdown}
+</td>
+</tr>
 
 <!-- ======================================== -->
 <tr><td> base-operator </td><td> binomail $C^n_m$ </td><td>
