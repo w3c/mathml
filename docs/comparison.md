@@ -552,6 +552,42 @@ For speech, we need two different transpose functions ("A transpose" vs "transpo
 </td>
 </tr>
 
+<tr><td> </td><td> Compare to $\mathrm{trans}(A)$ </td>
+<td>
+{:/nomarkdown}
+```
+<mrow semantic="#op(#x)">
+  <mi arg="op" semantic="transpose">trans</mi>
+  <!-- optionally &ApplyFunction; -->
+  <mi arg="x">A</mn>
+</mrow>
+```
+{::nomarkdown}
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr><td> </td><td> Or the function $\mathrm{trans}$ </td>
+<td>
+{:/nomarkdown}
+```
+<mi semantic="transpose">trans</mi>
+```
+{::nomarkdown}
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+
+
 <tr><td> </td><td> adjoint $A^\dagger$ </td>
 <td>
 {:/nomarkdown}
@@ -717,7 +753,8 @@ or with "@3" being "1"
 </td>
 </tr>
 
-<tr><td></td><td> midpoint $\overline{x}_i$ </td>
+***
+<tr><td></td><td>  $\overline{x}_i$ being midpoint of $x_i$</td>
 <td>
 {:/nomarkdown}
 ```
@@ -764,7 +801,32 @@ or with "@3" being "1"
 {::nomarkdown}
 </td>
 </tr>
-
+<tr><td></td><td> Versus: $\overline{x}_i$ being ith element of $\overline{x}$ </td>
+<td>
+{:/nomarkdown}
+```
+ <msub semantic="index(#arr,#index)">
+    <mover arg="arr" accent="true" semantic="#op(#line)>
+      <mi arg="line">x</mi>
+      <mo arg="op" semantic="midpoint">¯</mo>
+    </mover>
+    <mi arg="index">i</mi>
+  </msub>
+```
+{::nomarkdown}
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+{:/nomarkdown}
+```
+```
+{::nomarkdown}
+</td>
+</tr>
+**
 <tr><td> base-operator </td><td> binomial $C^n_m$ </td>
 <td>
 {:/nomarkdown}
