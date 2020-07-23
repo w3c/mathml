@@ -5,6 +5,11 @@ layout: cgreport
 
 *Authors*: Bruce Miller
 
+## OBSOLETE
+This proposal should be considered obsolete;
+it has been superceded by [Semantics Mini](semantics-mini).
+(although the list of samples that need effective annotation is useful)
+
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 ## Abstract
 [MathML 3](https://www.w3.org/TR/MathML3/) is a W3C recommendation for representing
