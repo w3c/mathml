@@ -370,10 +370,10 @@ Note that often the same meaning will appear within different notations.
 {::nomarkdown}
 </td></tr>
 
-<tr><td> </td><td> repeated application <br/> $f^n$ ($=f(f(...f))$)</td><td>
+<tr><td> </td><td> iterated function <br/> $f^n$ ($=f(f(...f))$)</td><td>
 {:/nomarkdown}
 ```
-<msup semantic="applicative-power(#op,$n)">
+<msup semantic="functional-power(#op,$n)">
   <mi arg="op">f</mi>
   <mi arg="n">n</mi>
 </msup>
@@ -384,7 +384,7 @@ Note that often the same meaning will appear within different notations.
 <tr><td> </td><td> inverse $\sin^{-1}$ </td><td>
 {:/nomarkdown}
 ```
-<msup semantic="applicative-power(#op,#n)">
+<msup semantic="functional-power(#op,#n)">
   <mi arg="op">sin</mi>
   <mn arg="n">-1</mn>
 </msup>
