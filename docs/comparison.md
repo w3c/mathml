@@ -753,7 +753,6 @@ or with "@3" being "1"
 </td>
 </tr>
 
-***
 <tr><td></td><td>  $\overline{x}_i$ being midpoint of $x_i$</td>
 <td>
 {:/nomarkdown}
@@ -826,7 +825,7 @@ or with "@3" being "1"
 {::nomarkdown}
 </td>
 </tr>
-**
+
 <tr><td> base-operator </td><td> binomial $C^n_m$ </td>
 <td>
 {:/nomarkdown}
