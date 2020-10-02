@@ -105,7 +105,7 @@
          </p>
     </section>
     <section id='sotd'>
-         <p><strong>This document is an editors' copy that has no official standing. (Date: 2019-11-27)</strong></p>
+         <p><strong>This document is an editors' copy that has no official standing. (Date: 2020-10-01)</strong></p>
          <p><em> This section describes the status of this document at the time
                of its publication. Other documents may supersede this document. A
                list of current W3C publications and the latest revision of this
@@ -118,11 +118,11 @@
          </p>
          <p>         For MathML 4, the <a href="https://www.w3.org/community/mathml4/">MathML refresh community group</a> plans to split the current MathML 3 spec into three separate documents:</p>
 	 <ul>
-	   <li><a href="https://mathml-refresh.github.io/mathml-core">MathML Core</a>,</li>
-	   <li><a href="https://mathml-refresh.github.io/mathml">MathML Full</a>,</li>
-	   <li><a href="https://mathml-refresh.github.io/notes-on-mathml">Notes on MathML</a>.</li>
+	   <li><a href="https://mathml-refresh.github.io/mathml-core">MathML Core (Normative)</a>,</li>
+	   <li><a href="https://mathml-refresh.github.io/mathml">MathML Full (Normative)</a>,</li>
+	   <li><a href="https://mathml-refresh.github.io/notes-on-mathml">Notes on MathML (non-normative)</a>.</li>
 	 </ul>
-	 <p>MathML core is a distillation of the commonly used parts of MathML, rewritten to align with current W3C standards such as HTML and CSS. The full MathML spec maintains (mostly) backward compatibility with MathML 3. Examples of elements in MathML core include the elements for fractions, roots, scripts, limits, rows, and token elements (identifiers, numbers, operators, etc). Problematic and less commonly used MathML features will make use of polyfills (likely via in part using Shadow DOM) to implement these features. Examples of features left out of MathML core but part of full MathML are <code>mfenced</code> and the elementary math elements.
+	 <p>MathML core is a distillation of the commonly used parts of MathML, rewritten to align with current W3C standards such as HTML and CSS. The full MathML spec maintains (mostly) backward compatibility with MathML 3. Examples of elements in MathML core include the elements for fractions, roots, scripts, limits, rows, and token elements (identifiers, numbers, operators, etc). Problematic, harder to implement, and less commonly used MathML features will make use of polyfills (likely via in part using Shadow DOM) to implement these features. Examples of features left out of MathML core but part of full MathML are <code>mfenced</code>, <code>menclose</code>, the elementary math elements, and linebreaking. Some features such as linebreaking will likely be part of a MathML Core Level 2 recommendation in the future.
      </p>
 	 <p> MathML 3 is a very lengthy spec. We expect the Full MathML 4 document to be considerably shorter because we intend to pull most of the informative sections into a notes document. Additionally, much of chapter on presentation MathML concerns layout, and the full spec will reference MathML Core for details on layout.
          </p>
@@ -132,9 +132,9 @@
          <ul>
          <li>Chapter 1 is mostly informative information. It will likely be shortened or eliminated, with the existing content potentially moved to a notes document.</li>
          <li>Chapter 2 discusses the syntax and grammar of MathML along with the <code>math</code> element. It will likely have a similar structure to that of MathML 3. The committee is discussing adding some semantic disambiguation to presentation MathML, and a new "subject" attribute (name not finalized) might be added to give some context to the math.</li>
-         <li>Chapter 3 covers presentation MathML. This chapter will likely be significantly smaller. Much of the content will point to MathML core for a description of the layout and attributes allowed. There will be a general discussion of the relationship between MathML Full's presentation element and MathML Core's rules: MathML Full is meant to be used in situations outside of the web also, so we need to allow for none CSS-based rendering. The chapter will still include material about appropriate markup (what should be an mi, mo, mn, ...) along with a description of those elements not in MathML core. It will also likely include a "mathrole" attribute (name not finalized) to help disambiguate meaning when the meaning of the presentation is not the default meaning in the context of the optional subject area.</li>
+         <li>Chapter 3 covers presentation MathML. This chapter will likely be significantly smaller. Much of the content will point to MathML core for a description of the layout and attributes allowed. There will be a general discussion of the relationship between MathML Full's presentation element and MathML Core's rules: MathML Full is meant to be used in situations outside of the web also, so we need to allow for none CSS-based rendering. The chapter will still include material about appropriate markup (what should be an mi, mo, mn, ...) along with a description of those elements not in MathML core. It will also likely include an "intent" attribute to help disambiguate meaning when the meaning of the presentation is not the default meaning in the context of the optional subject area.</li>
          <li>Chapter 4 is about Content MathML. At this time, there are no plans to revise Content MathML and the chapter will likely be relatively unchanged.</li>
-         <li>Chapter 5 discusses mixing presentation and content markup to give meaning to presentation MathML or to give a presentation to content MathML. This is somewhat complicated and rarely used. It is informative and will move to the notes document. The MathML refresh CG feels the "subject" and "mathrole" attributes will likely replace this method. Those will be discussed in chapter 3. Hence, this chapter will be eliminated from the MathML Full spec.</li>
+         <li>Chapter 5 discusses mixing presentation and content markup to give meaning to presentation MathML or to give a presentation to content MathML. This is somewhat complicated and rarely used. It is informative and will move to the notes document. The MathML refresh CG feels the "subject" and "intent" attributes will likely replace this method. Those will be discussed in chapter 3. Hence, this chapter will be eliminated from the MathML Full spec.</li>
          <li>Chapters 6 and 7 contain very useful informative information on interacting with HTML, XML, etc., along with usage suggestions and warnings about specific characters. Because these are informative, these two chapters will be removed from the MathML Full spec and move to the notes.</li>
          <li>The MathML 3 spec has several appendices. No decisions on how they will be handled in the MathML 4 spec have been made yet.</li>
          </ul>
