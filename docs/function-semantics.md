@@ -35,7 +35,7 @@ I'll start with two simple examples using transpose and binomial coefficient exa
 * $A^T$:
 
 ```
-<msup notation="transpose(@matrix)">
+<msup intent="transpose(@matrix)">
   <mi arg="matrix">A</mi>
   <mi>T</mi>
 </msup>
@@ -44,7 +44,7 @@ I'll start with two simple examples using transpose and binomial coefficient exa
 * $\binom{n}{m}$
 
 ```
-<mrow notation="binomial(@n, @m)">
+<mrow intent="binomial(@n, @m)">
   <mo>(</mo>
   <mfrac thickness="0pt">
     <mi arg="n">n</mi>
@@ -61,7 +61,7 @@ Many notations such as the transpose notation are simple, so this proposal has a
 * $A^T$:
 
 ```
-<msup notation="transpose(@0)">
+<msup intent="transpose(@0)">
   <mi>A</mi>
   <mi>T</mi>
 </msup>
@@ -72,7 +72,7 @@ Here, the number '0' refers to the first (0-based) child of element of the notat
 * $\binom{n}{m}$
 
 ```
-<mrow notation="binomial(@1@0, @1@1)">
+<mrow intent="binomial(@1@0, @1@1)">
   <mo>(</mo>
   <mfrac thickness="0pt">
     <mi>n</mi>
@@ -103,11 +103,11 @@ This idea is not fully fleshed out, but some things can be clarified:
 * `@<digits>+` or `@<letter><alphaChars>+` -- if digits, then then it refers to the ith child (0-based) of the element with the notation attr. If it starts with a letter, then it refers to the value of an `arg` attribute. If there is more than one `@`s present, they refer to the child of the match of the previous `@`.
 * `@@<letter><alphaChars>+` -- nary match. All children are searched instead of stopping at the first child.
 
-It is probably possible to extend the nary notation to work with a number also, but I'm less sure of that. E.g, maybe `notation=set(@1,@@2)` could mean match the second child, then continue matching all siblings that are offset by two from that. Maybe a slightly different "@>2" would make more sense. Potentially multiple nary picks could be given and the pattern repeated until the children of the element are exhausted. I don't have a use case for that though. It's probably best to keep things simple. We should not duplicate xpath or CSS selectors -- "that way madness lies". Named arguments work nary operators so there is no pressing need to complicate the simple indexing of children with numbers.
+It is probably possible to extend the nary notation to work with a number also, but I'm less sure of that. E.g, maybe `intent=set(@1,@@2)` could mean match the second child, then continue matching all siblings that are offset by two from that. Maybe a slightly different "@>2" would make more sense. Potentially multiple nary picks could be given and the pattern repeated until the children of the element are exhausted. I don't have a use case for that though. It's probably best to keep things simple. We should not duplicate xpath or CSS selectors -- "that way madness lies". Named arguments work nary operators so there is no pressing need to complicate the simple indexing of children with numbers.
 
 David Carlisle has a proposal that involves gathering up all the non-`mo` elements and making them arguments to the operator. That suggests that the `@@` notation be modified to do the same thing by having no arguments. That would allow the following short version of dot product ($\mathbf{a}\cdot\mathbf{b}$) to work without having to use of the potentially fragile numbering notation or tagging the arguments:
 ```
-<mrow notation="inner-product(@@)">
+<mrow intent="inner-product(@@)">
   <mi mathvariant="bold">a</mi>
   <mo>&#x22C5;</mo>
   <mi mathvariant="bold">b</mi>
@@ -148,7 +148,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 <tr><td> nary (discussed later)<br/> $a+b-c+d$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="@@all">
+<mrow intent="@@all">
   <mi arg="all">a</mi>
   <mo arg="all">+</mo>
   <mi arg="all">b</mi>
@@ -167,7 +167,7 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 <tr><td> dot product $\mathbf{a}\cdot\mathbf{b}$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="inner-product(@0, @2)">
+<mrow intent="inner-product(@0, @2)">
   <mi mathvariant="bold">a</mi>
   <mo>&#x22C5;</mo>
   <mi mathvariant="bold">b</mi>
@@ -176,27 +176,27 @@ Here are Bruce's example with this new proposal's markup. Some use numbers and o
 {::nomarkdown}
 </td>
 <td>
-notation="inner-product(//*1., //*3)"
+intent="inner-product(//*1., //*3)"
 </td></tr>
 <tr><td> negation $-a$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="unary-minus(@operand)">
+<mrow intent="unary-minus(@operand)">
   <mo>-</mo>
   <mi arg="operand">a</mi>
 </mrow>
 ```
 {::nomarkdown}
 </td>
-notation="unary-minus(//*[@arg="operand"])"
+intent="unary-minus(//*[@arg="operand"])"
 <td>
 </td></tr>
 
 <tr><td> Laplacian $\nabla^2 f$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="compose(@laplacian, @function)">
-  <msup arg="laplacian" notation="laplacian(@1)">
+<mrow intent="compose(@laplacian, @function)">
+  <msup arg="laplacian" intent="laplacian(@1)">
     <mi>&#x2207;</mi>
     <mn>2</mn>
   </msup>
@@ -210,7 +210,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> factorial $n!$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="factorial(@0)">
+<mrow intent="factorial(@0)">
   <mi>a</mi>
   <mo>!</mo>
 </mrow>
@@ -223,7 +223,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> power $x^n$ </td><td>
 {:/nomarkdown}
 ```
-<msup notation="power(@base,@exp)">
+<msup intent="power(@base,@exp)">
   <mi arg="base">x</mi>
   <mi arg="exp">n</mi>
 </msup>
@@ -236,7 +236,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> repeated application <br/> $f^n$ ($=f(f(...f))$)</td><td>
 {:/nomarkdown}
 ```
-<msup notation="applicative-power(@0,@1)">
+<msup intent="applicative-power(@0,@1)">
   <mi>f</mi>
   <mi>n</mi>
 </msup>
@@ -249,7 +249,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> inverse $\sin^{-1}$ </td><td>
 {:/nomarkdown}
 ```
-<msup notation="applicative-power(@0,@1)">
+<msup intent="applicative-power(@0,@1)">
   <mi>sin</mi>
   <mn>-1</mn>
 </msup>
@@ -262,7 +262,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> $n$-th derivative $f^{(n)}$ </td><td>
 {:/nomarkdown}
 ```
-<msup notation="nth-derivative-implicit-variable(@function, @n)">
+<msup intent="nth-derivative-implicit-variable(@function, @n)">
   <mi arg="function">f</mi>
   <mrow>
     <mo>(</mo>
@@ -279,7 +279,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> indexing $a_i$ </td><td>
 {:/nomarkdown}
 ```
-<msup notation="index(@0,@1)">
+<msup intent="index(@0,@1)">
   <mi>a</mi>
   <mi>i</mi>
 </msup>
@@ -292,7 +292,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> transpose $A^T$ </td><td>
 {:/nomarkdown}
 ```
-<msup notation="transpose(@0)">
+<msup intent="transpose(@0)">
   <mi>A</mi>
   <mi>T</mn>
 </msup>
@@ -305,7 +305,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> adjoint $A^\dagger$ </td><td>
 {:/nomarkdown}
 ```
-<msup notation="adjoint(@0)">
+<msup intent="adjoint(@0)">
   <mi>A</mi>
   <mi>&dagger;</mn>
 </msup>
@@ -317,7 +317,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> $2$-nd derivative $f''$ </td><td>
 {:/nomarkdown}
 ```
-<msup notation="2nd-derivative-implicit-variable(@0)">
+<msup intent="2nd-derivative-implicit-variable(@0)">
   <mi>f</mi>
   <mo>''</mo>
 </msup>
@@ -333,7 +333,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> binomial $C^n_m$ </td><td>
 {:/nomarkdown}
 ```
-<msubsup notation="binomial(@1, @2)">
+<msubsup intent="binomial(@1, @2)">
   <mi>C</mi>
   <mi>m</mi>
   <mi>n</mi>
@@ -344,7 +344,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> absolute value $|x|$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="absolute-value(@1)">
+<mrow intent="absolute-value(@1)">
   <mo>|</mo>
   <mi>x</mi>
   <mo>|</mo>
@@ -356,7 +356,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> norm $|\mathbf{x}|$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="norm(@1)">
+<mrow intent="norm(@1)">
   <mo>|</mo>
   <mi> mathvariant="bold"x</mi>
   <mo>|</mo>
@@ -368,7 +368,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> determinant $|\mathbf{X}|$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="determinant(@matrix)">
+<mrow intent="determinant(@matrix)">
   <mo>|</mo>
   <mi mathvariant="bold" arg="matrix">X</mi>
   <mo>|</mo>
@@ -380,7 +380,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> sequence $\lbrace a_n\rbrace$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="sequence(@base, @index)">
+<mrow intent="sequence(@base, @index)">
   <mo>{</mo>
   <msub>
     <mi arg="base">x</mi>
@@ -395,7 +395,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> open interval $(a,b)$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="open-interval(@start, @end)">
+<mrow intent="open-interval(@start, @end)">
   <mo>(</mo>
   <mi arg="start">a</mi>
   <mo>,</mo>
@@ -409,7 +409,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> open interval $]a,b[$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="open-interval(@start, @end)">
+<mrow intent="open-interval(@start, @end)">
   <mo>]</mo>
   <mi arg="start">a</mi>
   <mo>,</mo>
@@ -424,7 +424,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> inner product $\left<\mathbf{a},\mathbf{b}\right>$</td><td>
 {:/nomarkdown}
 ```
-<mrow notation="inner-product(@arg1, @arg2)">
+<mrow intent="inner-product(@arg1, @arg2)">
   <mo>&lt;</mo>
   <mi mathvariant="bold" arg="arg1">a</mi>
   <mo>,</mo>
@@ -438,7 +438,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> Legendre symbol $(n|p)$</td><td>
 {:/nomarkdown}
 ```
-<mrow notation="Legendre-symbol(@arg1, arg2)">
+<mrow intent="Legendre-symbol(@arg1, arg2)">
   <mo>(</mo>
   <mi arg="arg1">n</mi>
   <mo>|</mo>
@@ -453,7 +453,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> Clebsch-Gordan<br/> $(j_1 m_1 j_2 m_2 | j_1 j_2 j_3 m_3)|$</td><td>
 {:/nomarkdown}
 ```
-<mrow notation="Clebsch-Gordan([@1,@2,@3,@4], [@6,@7,@8,@9])">
+<mrow intent="Clebsch-Gordan([@1,@2,@3,@4], [@6,@7,@8,@9])">
   <mo>(</mo>
   <msub><mi>j</mi><mn>1</mn>
   <msub><mi>m</mi><mn>1</mn>
@@ -473,7 +473,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> Pochhammer $\left(a\right)_n$ </td><td>
 {:/nomarkdown}
 ```
-<msup notation="Pochhammer(@x, @n)">
+<msup intent="Pochhammer(@x, @n)">
   <mrow>
     <mo>(</mo>
     <mi arg="x">a</mi>
@@ -488,7 +488,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> binomial $\binom{n}{m}$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="binomial(@n, @m)">
+<mrow intent="binomial(@n, @m)">
   <mo>(</mo>
   <mfrac thickness="0pt">
     <mi arg="n">n</mi>
@@ -503,7 +503,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> multinomial $\binom{n}{m_1,m_2,m_3}$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="multinomial(@n, [@k1, @k2, @k3])">
+<mrow intent="multinomial(@n, [@k1, @k2, @k3])">
   <mo>(</mo>
   <mfrac thickness="0pt">
     <mi arg="n">n</mi>
@@ -524,7 +524,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> Eulerian numbers $\left< n \atop k \right>$ </td><td>
 {:/nomarkdown}
 ```
-<mrow notation="Eulerian-numbers(@n, @k)">
+<mrow intent="Eulerian-numbers(@n, @k)">
   <mo>&lt;</mo>
   <mfrac thickness="0pt">
     <mi arg="n">n</mi>
@@ -539,7 +539,7 @@ notation="unary-minus(//*[@arg="operand"])"
 <tr><td> 3j symbol<br/> $\left(\begin{array}{ccc}j_1& j_2 &j_3 \\ m_1 &m_2 &m_3\end{array}\right)$</td><td>
 {:/nomarkdown}
 ```
-<mrow notation="3j([@j1,@j2,@j3], [@m1,@m2,@m3])">
+<mrow intent="3j([@j1,@j2,@j3], [@m1,@m2,@m3])">
   <mo>(</mo>
   <mtable>
     <mtr>
@@ -580,10 +580,10 @@ All the examples above were "simple" examples in that `notation` only occurred o
 
 Here's an example of nesting $\binom{n^2}{m}$ where both notations use the same argument names:
 ```
-<mrow notation="binomial(@arg1, @arg1)">
+<mrow intent="binomial(@arg1, @arg1)">
   <mo>(</mo>
   <mfrac thickness="0pt">
-    <msup notation="power(@arg1,@arg2)" arg='arg1'>
+    <msup intent="power(@arg1,@arg2)" arg='arg1'>
       <mi arg="arg1">n</mi>
       <mn arg="arg2">2</mn>
     </msup>
@@ -613,7 +613,7 @@ The details for nary matches need to be worked out so that one can grab the oper
 These don't cause problems in this system. In particular:
 * any notation for function call is easily supported
 * finding the $dx$ in integrals, etc., is not a problem 
-* continued functions just work with `notation="ContinuedFraction([@a0, @a1, @a2, @a3])` for a fraction like
+* continued functions just work with `intent="ContinuedFraction([@a0, @a1, @a2, @a3])` for a fraction like
 \\[
   a_0+\cfrac{1}{a_1+\cfrac{1}{a_2+\cfrac{1}{a_3+\cdots}}}
 \\]
@@ -622,9 +622,9 @@ These don't cause problems in this system. In particular:
 As with `mathrole` and `meaning`, this proposal will only be useful if we end up standardizing "some" names. This was definitely a problem for Content MathML in the past. Hopefully with the passage of time and also the (maybe) reduction in complexity of this proposal, we can create a larger and more useful list more quickly. We should be able to easily create a list equivalent to pragmatic Content MathML easily.
 
 Hiding behind the naming problem is the problem of deciding defaults. We can go small and have only very simple defaults. E.g., for `msup`:
-1. $\mathrm{trigFunc} ^ {-1}$ ⟶ `notation="inverse-function(@0)"`
-1. $\mathrm{trigFunc} ^ {\mathrm{exp}}(\mathrm{arg})$ ⟶ `notation=power( @trigFunc(@arg), @exp )`
-1. everything else ⟶ `notation=power(@0, @1)`
+1. $\mathrm{trigFunc} ^ {-1}$ ⟶ `intent="inverse-function(@0)"`
+1. $\mathrm{trigFunc} ^ {\mathrm{exp}}(\mathrm{arg})$ ⟶ `intent=power( @trigFunc(@arg), @exp )`
+1. everything else ⟶ `intent=power(@0, @1)`
 
 or we can go for a more complete set that includes $\log^2(x)$, $ℝ^2$, various calculus notations ($f'$, $d^2/dx^2$, ...), $A^T$, etc. Or maybe some of these should only be defaults for a given subject area (yet another naming elephant in the room).
 

@@ -1,5 +1,5 @@
 ---
-title: "Semantic Annotation Comparison"
+title: "Intent Annotation Comparison"
 ---
 
 <style>
@@ -25,11 +25,11 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <tr><td> infix </td><td> arithmetic<br/> $a+b-c+d$ </td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="#op1(#arg1,#arg2,#op2(#arg3),#arg4)">
+<mrow intent="@op1(@arg1,@arg2,@op2(@arg3),@arg4)">
   <mi arg="arg1">a</mi>
-  <mo arg="op1" semantic="plus">+</mo>
+  <mo arg="op1" intent="plus">+</mo>
   <mi arg="arg2">b</mi>
-  <mo arg="op2" semantic="minus">-</mo>
+  <mo arg="op2" intent="minus">-</mo>
   <mi arg="arg3">c</mi>
   <mo>+</mo>
   <mi arg="arg4">d</mi>
@@ -40,7 +40,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="plus-minus(@arg1,@arg2,@op2,@arg3,@arg4,@arg5)">
+<mrow intent="plus-minus(@arg1,@arg2,@op2,@arg3,@arg4,@arg5)">
   <mi arg="arg1">a</mi>
   <mo arg="op1">+</mo>
   <mi arg="arg2">b</mi>
@@ -55,7 +55,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="plus-minus(@*)">
+<mrow intent="plus-minus(@*)">
   <mi>a</mi>
   <mo>+</mo>
   <mi>b</mi>
@@ -70,10 +70,10 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="plus">
+<mrow intent="plus">
   <mi arg="1">a</mi>
   <mo arg="0">+</mo>
-  <mrow semantic="minus" arg="2">
+  <mrow intent="minus" arg="2">
     <mi arg="1">b</mi>
     <mo arg="0">-</mo>
     <mi arg="2">c</mi>
@@ -89,9 +89,9 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="#op(#arg1,#arg2)">
+<mrow intent="@op(@arg1,@arg2)">
   <mi arg="arg1" mathvariant="bold">a</mi>
-  <mo arg="op" semantic="inner-product>&#x22C5;</mo>
+  <mo arg="op" intent="inner-product>&#x22C5;</mo>
   <mi arg="arg2" mathvariant="bold">b</mi>
 </mrow>
 ```
@@ -100,7 +100,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="inner-product(@arg1,@op,@arg2)">
+<mrow intent="inner-product(@arg1,@op,@arg2)">
   <mi arg="arg1" mathvariant="bold">a</mi>
   <mo arg="op">&#x22C5;</mo>
   <mi arg="arg2" mathvariant="bold">b</mi>
@@ -111,7 +111,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="inner-product(@*)">
+<mrow intent="inner-product(@*)">
   <mi mathvariant="bold">a</mi>
   <mo>&#x22C5;</mo>
   <mi mathvariant="bold">b</mi>
@@ -122,7 +122,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="inner-product">
+<mrow intent="inner-product">
   <mi arg="1" mathvariant="bold">a</mi>
   <mo arg="0">&#x22c5;</mo>
   <mi arg="2" mathvariant="bold">b</mi>
@@ -136,8 +136,8 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="#op(#arg)">
-  <mo arg="op" semantic="unary-minus">-</mo>
+<mrow intent="@op(@arg)">
+  <mo arg="op" intent="unary-minus">-</mo>
   <mi arg="arg">a</mi>`
 </mrow>
 ```
@@ -146,7 +146,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="unary-minus(@op, @arg)">
+<mrow intent="unary-minus(@op, @arg)">
   <mo arg="op">-</mo>
   <mi arg="arg">a</mi>`
 </mrow>
@@ -156,7 +156,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="unary-minus(@*)">
+<mrow intent="unary-minus(@*)">
   <mo>-</mo>
   <mi>a</mi>`
 </mrow>
@@ -166,7 +166,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="minus">
+<mrow intent="minus">
   <mo arg="0">-</mo>
   <mi arg="1">a</mi>
 </mrow>
@@ -179,8 +179,8 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="#op(#arg)">
-  <msup arg="op" semantic="laplacian">
+<mrow intent="@op(@arg)">
+  <msup arg="op" intent="laplacian">
     <mi>&#x2207;</mi>
     <mn>2</mn>
   </msup>
@@ -192,7 +192,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="laplacian(@op, @arg)">
+<mrow intent="laplacian(@op, @arg)">
   <msup arg="op">
     <mi>&#x2207;</mi>
     <mn>2</mn>
@@ -205,7 +205,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="laplacian(@*)">
+<mrow intent="laplacian(@*)">
   <msup>
     <mi>&#x2207;</mi>
     <mn>2</mn>
@@ -218,7 +218,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="laplacian">
+<mrow intent="laplacian">
   <msup arg="0">
     <mi>&#x2207;</mi>
     <mn>2</mn>
@@ -235,9 +235,9 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="#op(#arg)">
+<mrow intent="@op(@arg)">
   <mi arg="arg">a</mi>
-  <mo arg="op" semantic="factorial">!</mo>
+  <mo arg="op" intent="factorial">!</mo>
 </mrow>
 ```
 {::nomarkdown}
@@ -245,9 +245,9 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="factorial(@arg, @op)">
+<mrow intent="factorial(@arg, @op)">
   <mi arg="arg">a</mi>
-  <mo arg="op" semantic="factorial">!</mo>
+  <mo arg="op" intent="factorial">!</mo>
 </mrow>
 ```
 {::nomarkdown}
@@ -255,7 +255,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="factorial(@*)">
+<mrow intent="factorial(@*)">
   <mi>a</mi>
   <mo>!</mo>
 </mrow>
@@ -265,7 +265,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="factorial">
+<mrow intent="factorial">
   <mi arg="1">n</mi>
   <mo arg="0">!</mo>
 </mrow>
@@ -278,7 +278,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="power(#base,#exp)">
+<msup intent="power(#base,#exp)">
   <mi arg="base">x</mi>
   <mi arg="exp">n</mi>
 </msup>
@@ -288,7 +288,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="power(@base,@exp)">
+<msup intent="power(@base,@exp)">
   <mi arg="base">x</mi>
   <mi arg="exp">n</mi>
 </msup>
@@ -298,7 +298,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="power(@*)">
+<msup intent="power(@*)">
   <mi>x</mi>
   <mi>n</mi>
 </msup>
@@ -308,7 +308,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="power">
+<msup intent="power">
   <mi arg="1">x</mi>
   <mi arg="2">n</mi>
 </msup>
@@ -321,7 +321,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="applicative-power(#op,$n)">
+<msup intent="applicative-power(@op,$n)">
   <mi arg="op">f</mi>
   <mi arg="n">n</mi>
 </msup>
@@ -331,7 +331,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="applicative-power(@op,@n)">
+<msup intent="applicative-power(@op,@n)">
   <mi arg="op">f</mi>
   <mi arg="n">n</mi>
 </msup>
@@ -341,7 +341,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="applicative-power(@*)">
+<msup intent="applicative-power(@*)">
   <mi>f</mi>
   <mi>n</mi>
 </msup>
@@ -351,7 +351,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="applicative-power">
+<msup intent="applicative-power">
   <mi arg="1">f</mi>
   <mi arg="2">n</mi>
 </msup>
@@ -364,7 +364,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="applicative-power(#op,#n)">
+<msup intent="applicative-power(@op,#n)">
   <mi arg="op">sin</mi>
   <mn arg="n">-1</mn>
 </msup>
@@ -374,7 +374,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="applicative-power(@op,@n)">
+<msup intent="applicative-power(@op,@n)">
   <mi arg="op">sin</mi>
   <mn arg="n">-1</mn>
 </msup>
@@ -384,7 +384,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="applicative-power(@*)">
+<msup intent="applicative-power(@*)">
   <mi>sin</mi>
   <mn>-1</mn>
 </msup>
@@ -394,7 +394,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="arcsin">
+<mrow intent="arcsin">
   <msup arg="0">
     <mi>sin</mi>
     <mrow>
@@ -414,7 +414,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="derivative-implicit-variable(#op,#n)">
+<msup intent="derivative-implicit-variable(@op,#n)">
   <mi arg="op">f</mi>
   <mrow>
     <mo>(</mo>
@@ -428,7 +428,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="derivative-implicit-variable(@op,@n)">
+<msup intent="derivative-implicit-variable(@op,@n)">
   <mi arg="op">f</mi>
   <mrow>
     <mo>(</mo>
@@ -442,7 +442,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="derivative-implicit-variable(@1,@2@1)">
+<msup intent="derivative-implicit-variable(@1,@2@1)">
   <mi>f</mi>
   <mrow>
     <mo>(</mo>
@@ -456,7 +456,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="derivative-implicit-variable">
+<msup intent="derivative-implicit-variable">
   <mi arg="1">f</mi>
   <mrow>
     <mo>(</mo>
@@ -473,7 +473,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="index(#array,#index)">
+<msup intent="index(#array,#index)">
   <mi arg="array">a</mi>
   <mi arg="index">i</mi>
 </msup>
@@ -483,7 +483,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="index(@array,@index)">
+<msup intent="index(@array,@index)">
   <mi arg="array">a</mi>
   <mi arg="index">i</mi>
 </msup>
@@ -493,7 +493,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="index(@*)">
+<msup intent="index(@*)">
   <mi>a</mi>
   <mi>i</mi>
 </msup>
@@ -503,7 +503,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msub semantic="index">
+<msub intent="index">
   <mi arg="1">a</mi>
   <mi arg="2">i</mi>
 </msub>
@@ -516,9 +516,9 @@ Putting them side by side hopefully makes it easier to compare the differences.
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="#op(#x)">
+<msup intent="@op(#x)">
   <mi arg="x">A</mi>
-  <mi arg="op" semantic="transpose">T</mn>
+  <mi arg="op" intent="transpose">T</mn>
 </msup>
 ```
 {::nomarkdown}
@@ -527,7 +527,7 @@ Putting them side by side hopefully makes it easier to compare the differences.
 {:/nomarkdown}
 For speech, we need two different transpose functions ("A transpose" vs "transpose of A for T(A)") or the speech needs to find the "operator" and deduce the form from that.
 ```
-<msup semantic="transpose(@x, @op)">
+<msup intent="transpose(@x, @op)">
   <mi arg="x">A</mi>
   <mi arg="op">T</mn>
 </msup>
@@ -537,7 +537,7 @@ For speech, we need two different transpose functions ("A transpose" vs "transpo
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="transpose(@*)">
+<msup intent="transpose(@*)">
   <mi>A</mi>
   <mi>T</mn>
 </msup>
@@ -556,8 +556,8 @@ For speech, we need two different transpose functions ("A transpose" vs "transpo
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="#op(#x)">
-  <mi arg="op" semantic="transpose">trans</mi>
+<mrow intent="@op(#x)">
+  <mi arg="op" intent="transpose">trans</mi>
   <!-- optionally &ApplyFunction; -->
   <mi arg="x">A</mn>
 </mrow>
@@ -575,7 +575,7 @@ For speech, we need two different transpose functions ("A transpose" vs "transpo
 <td>
 {:/nomarkdown}
 ```
-<mi semantic="transpose">trans</mi>
+<mi intent="transpose">trans</mi>
 ```
 {::nomarkdown}
 </td>
@@ -592,9 +592,9 @@ For speech, we need two different transpose functions ("A transpose" vs "transpo
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="#op(#x)">
+<msup intent="@op(#x)">
   <mi arg="x">A</mi>
-  <mi arg="op" semantic="adjoint">&dagger;</mn>
+  <mi arg="op" intent="adjoint">&dagger;</mn>
 </msup>
 ```
 {::nomarkdown}
@@ -603,7 +603,7 @@ For speech, we need two different transpose functions ("A transpose" vs "transpo
 {:/nomarkdown}
 Note: 'adjoint' needs to know the second arg is the operand. It could just as easily be the first arg if we _define_ it that way.
 ```
-<msup semantic="adjoint(@op, @x)">
+<msup intent="adjoint(@op, @x)">
   <mi arg="x">A</mi>
   <mi arg="op">&dagger;</mn>
 </msup>
@@ -613,7 +613,7 @@ Note: 'adjoint' needs to know the second arg is the operand. It could just as ea
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="adjoint(@2, @1)">
+<msup intent="adjoint(@2, @1)">
   <mi>A</mi>
   <mi>&dagger;</mn>
 </msup>
@@ -632,9 +632,9 @@ Note: 'adjoint' needs to know the second arg is the operand. It could just as ea
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="derivative-implicit-variable(#op,#n)">
+<msup intent="derivative-implicit-variable(@op,#n)">
   <mi arg="op">f</mi>
-  <mo arg="n" semantic="2">''</mo>
+  <mo arg="n" intent="2">''</mo>
 </msup>
 ```
 {::nomarkdown}
@@ -642,7 +642,7 @@ Note: 'adjoint' needs to know the second arg is the operand. It could just as ea
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="derivative-implicit-variable(@op,@n)">
+<msup intent="derivative-implicit-variable(@op,@n)">
   <mi arg="op">f</mi>
   <mo arg="n">''</mo>
 </msup>
@@ -652,7 +652,7 @@ Note: 'adjoint' needs to know the second arg is the operand. It could just as ea
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="derivative-implicit-variable(@*)">
+<msup intent="derivative-implicit-variable(@*)">
   <mi>f</mi>
   <mo>''</mo>
 </msup>
@@ -671,7 +671,7 @@ Note: 'adjoint' needs to know the second arg is the operand. It could just as ea
 <td>
 {:/nomarkdown}
 ```
- <msubsup semantic="derivative-implicit-variable(index(#array,#index))">
+ <msubsup intent="derivative-implicit-variable(index(#array,#index))">
    <mi arg="array">x</mi>
    <mi arg="index">i</mi>
    <mo>'</mo>
@@ -682,7 +682,7 @@ Note: 'adjoint' needs to know the second arg is the operand. It could just as ea
 <td>
 {:/nomarkdown}
 ```
- <msubsup semantic="derivative-implicit-variable(index(@array,@index), @deg)">
+ <msubsup intent="derivative-implicit-variable(index(@array,@index), @deg)">
    <mi arg="array">x</mi>
    <mi arg="index">i</mi>
    <mo arg="deg">'</mo>
@@ -690,7 +690,7 @@ Note: 'adjoint' needs to know the second arg is the operand. It could just as ea
 ```
 or could be
 ```
- <msubsup semantic="derivative-implicit-variable(index(@array,@index), '2')">
+ <msubsup intent="derivative-implicit-variable(index(@array,@index), '2')">
    <mi arg="array">x</mi>
    <mi arg="index">i</mi>
    <mo>'</mo>
@@ -701,7 +701,7 @@ or could be
 <td>
 {:/nomarkdown}
 ```
- <msubsup semantic="derivative-implicit-variable(index(@1,@2), @3)">
+ <msubsup intent="derivative-implicit-variable(index(@1,@2), @3)">
    <mi>x</mi>
    <mi>i</mi>
    <mo>'</mo>
@@ -717,7 +717,7 @@ or as above with '2'
 <td>
 {:/nomarkdown}
 ```
- <msubsup semantic="index(derivative-implicit-variable(#op),#index)">
+ <msubsup intent="index(derivative-implicit-variable(@op),#index)">
    <mi arg="op">x</mi>
    <mi arg="index">i</mi>
    <mo>'</mo>
@@ -728,7 +728,7 @@ or as above with '2'
 <td>
 {:/nomarkdown}
 ```
- <msubsup semantic="index(derivative-implicit-variable(@op,@deg), @index)">
+ <msubsup intent="index(derivative-implicit-variable(@op,@deg), @index)">
    <mi arg="op">x</mi>
    <mi arg="index">i</mi>
    <mo arg="deg">'</mo>
@@ -741,7 +741,7 @@ or with "@deg" being "1"
 <td>
 {:/nomarkdown}
 ```
- <msubsup semantic="index(derivative-implicit-variable(@o1,@3), @2)">
+ <msubsup intent="index(derivative-implicit-variable(@o1,@3), @2)">
    <mi>x</mi>
    <mi>i</mi>
    <mo>'</mo>
@@ -757,10 +757,10 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
- <msub semantic="#op(index(#line,#index))">
+ <msub intent="@op(index(#line,#index))">
     <mover accent="true">
       <mi arg="line">x</mi>
-      <mo arg="op" semantic="midpoint">¯</mo>
+      <mo arg="op" intent="midpoint">¯</mo>
     </mover>
     <mi arg="index">i</mi>
   </msub>
@@ -770,7 +770,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
- <msub semantic="midpoint(index(@line,@index))">
+ <msub intent="midpoint(index(@line,@index))">
     <mover accent="true">
       <mi arg="line">x</mi>
       <mo arg="op">¯</mo>
@@ -783,7 +783,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
- <msub semantic="midpoint(index(@1@,@2),@1@2)">
+ <msub intent="midpoint(index(@1@,@2),@1@2)">
     <mover accent="true">
       <mi arg="line">x</mi>
       <mo arg="op">¯</mo>
@@ -804,10 +804,10 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
- <msub semantic="index(#arr,#index)">
-    <mover arg="arr" accent="true" semantic="#op(#line)>
+ <msub intent="index(#arr,#index)">
+    <mover arg="arr" accent="true" intent="@op(#line)>
       <mi arg="line">x</mi>
-      <mo arg="op" semantic="midpoint">¯</mo>
+      <mo arg="op" intent="midpoint">¯</mo>
     </mover>
     <mi arg="index">i</mi>
   </msub>
@@ -830,8 +830,8 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<msubsup semantic="#op(#n,#m)">
-  <mi arg="op" semantic="binomial">C</mi>
+<msubsup intent="@op(#n,#m)">
+  <mi arg="op" intent="binomial">C</mi>
   <mi arg="m">m</mi>
   <mi arg="n">n</mi>
 </msubsup>
@@ -841,7 +841,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<msubsup semantic="binomial(#n,#m)">
+<msubsup intent="binomial(#n,#m)">
   <mi arg="op">C</mi>
   <mi arg="m">m</mi>
   <mi arg="n">n</mi>
@@ -852,7 +852,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<msubsup semantic="binomial(#3,#2)">
+<msubsup intent="binomial(#3,#2)">
   <mi arg="op">C</mi>
   <mi arg="m">m</mi>
   <mi arg="n">n</mi>
@@ -887,7 +887,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="absolute-value(#x)">
+<mrow intent="absolute-value(#x)">
   <mo>|</mo>
   <mi arg="x">x</mi>
   <mo>|</mo>
@@ -898,7 +898,7 @@ or with "@3" being "1"
 <td style="background-color: lightyellow;">
 {:/nomarkdown}
 ```
-<mrow semantic="absolute-value(@open, @x, @close)">
+<mrow intent="absolute-value(@open, @x, @close)">
   <mo arg="open">|</mo>
   <mi arg="x">x</mi>
   <mo arg="close">|</mo>
@@ -909,7 +909,7 @@ or with "@3" being "1"
 <td style="background-color: lightyellow;">
 {:/nomarkdown}
 ```
-<mrow semantic="absolute-value(@*)">
+<mrow intent="absolute-value(@*)">
   <mo>|</mo>
   <mix</mi>
   <mo>|</mo>
@@ -929,7 +929,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="norm(#x)">
+<mrow intent="norm(#x)">
   <mo>|</mo>
   <mi arg="x"> mathvariant="bold"x</mi>
   <mo>|</mo>
@@ -940,7 +940,7 @@ or with "@3" being "1"
 <td style="background-color: lightyellow;">
 {:/nomarkdown}
 ```
-<mrow semantic="norm(@open, @x, @close)">
+<mrow intent="norm(@open, @x, @close)">
   <mo arg="open">|</mo>
   <mi arg="x">x</mi>
   <mo arg="close">|</mo>
@@ -951,7 +951,7 @@ or with "@3" being "1"
 <td style="background-color: lightyellow;">
 {:/nomarkdown}
 ```
-<mrow semantic="norm(@*)">
+<mrow intent="norm(@*)">
   <mo>|</mo>
   <mix</mi>
   <mo>|</mo>
@@ -971,7 +971,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="determinant(#x)">
+<mrow intent="determinant(#x)">
   <mo>|</mo>
   <mi arg="x" mathvariant="bold">X</mi>
   <mo>|</mo>
@@ -982,7 +982,7 @@ or with "@3" being "1"
 <td style="background-color: lightyellow;">
 {:/nomarkdown}
 ```
-<mrow semantic="determinant(@open, @x, @close)">
+<mrow intent="determinant(@open, @x, @close)">
   <mo arg="open">|</mo>
   <mi arg="x">x</mi>
   <mo arg="close">|</mo>
@@ -993,7 +993,7 @@ or with "@3" being "1"
 <td style="background-color: lightyellow;">
 {:/nomarkdown}
 ```
-<mrow semantic="determinant(@*)">
+<mrow intent="determinant(@*)">
   <mo>|</mo>
   <mix</mi>
   <mo>|</mo>
@@ -1013,7 +1013,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="sequence(#arg)">
+<mrow intent="sequence(@arg)">
   <mo>{</mo>
   <msub arg="arg">
     <mi>x</mi>
@@ -1027,9 +1027,9 @@ or with "@3" being "1"
 <td style="background-color: lightyellow;">
 {:/nomarkdown}
 ```
-<mrow semantic="sequence(@open,@arg,@close)">
+<mrow intent="sequence(@open,@arg,@close)">
   <mo arg="open">{</mo>
-  <msub semantic="index(@base,@index)" arg="arg">
+  <msub intent="index(@base,@index)" arg="arg">
     <mi arg="base">x</mi>
     <mi arg="index">n</mi>
   </msub>
@@ -1041,9 +1041,9 @@ or with "@3" being "1"
 <td style="background-color: lightyellow;">
 {:/nomarkdown}
 ```
-<mrow semantic="sequence(@*)">
+<mrow intent="sequence(@*)">
   <mo arg="open">{</mo>
-  <msub semantic="index(@*)" arg="arg">
+  <msub intent="index(@*)" arg="arg">
     <mi arg="base">x</mi>
     <mi arg="index">n</mi>
   </msub>
@@ -1064,7 +1064,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="open-interval(#a,#b)">
+<mrow intent="open-interval(#a,#b)">
   <mo>(</mo>
   <mi arg="a">a</mi>
   <mo>,</mo>
@@ -1077,7 +1077,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="open-interval(@open,@a,@sep,@b,@close)">
+<mrow intent="open-interval(@open,@a,@sep,@b,@close)">
   <mo arg="open">(</mo>
   <mi arg="a">a</mi>
   <mo arg="sep">,</mo>
@@ -1090,7 +1090,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="open-interval(@*)">
+<mrow intent="open-interval(@*)">
   <mo>(</mo>
   <mi>a</mi>
   <mo>,</mo>
@@ -1112,7 +1112,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="open-interval(#a,#b)">
+<mrow intent="open-interval(#a,#b)">
   <mo>]</mo>
   <mi arg="a">a</mi>
   <mo>,</mo>
@@ -1125,7 +1125,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="open-interval(@open,@a,@sep,@b,@close)">
+<mrow intent="open-interval(@open,@a,@sep,@b,@close)">
   <mo arg="open">(</mo>
   <mi arg="a">a</mi>
   <mo arg="sep">,</mo>
@@ -1138,7 +1138,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="open-interval(@*)">
+<mrow intent="open-interval(@*)">
   <mo>(</mo>
   <mi>a</mi>
   <mo>,</mo>
@@ -1162,7 +1162,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="inner-product(#a,#b)">
+<mrow intent="inner-product(#a,#b)">
   <mo>&lt;</mo>
   <mi arg="a" mathvariant="bold">a</mi>
   <mo>,</mo>
@@ -1175,7 +1175,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="inner-product(@open,@a,@sep,@b,@close)">
+<mrow intent="inner-product(@open,@a,@sep,@b,@close)">
   <mo arg="open">&lt;</mo>
   <mi arg="a">a</mi>
   <mo arg="sep">,</mo>
@@ -1188,7 +1188,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="inner-product(@*)">
+<mrow intent="inner-product(@*)">
   <mo>&lt;</mo>
   <mi>a</mi>
   <mo>,</mo>
@@ -1210,7 +1210,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="Legendre-symbol(#n,#p)">
+<mrow intent="Legendre-symbol(#n,#p)">
   <mo>(</mo>
   <mi arg="n">n</mi>
   <mo>|</mo>
@@ -1223,7 +1223,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="Legendre-symbol(@open,@a,@sep,@b,@close)">
+<mrow intent="Legendre-symbol(@open,@a,@sep,@b,@close)">
   <mo arg="open">(</mo>
   <mi arg="a">a</mi>
   <mo arg="sep">  <mo>|</mo>
@@ -1237,7 +1237,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="Legendre-symbol(@*)">
+<mrow intent="Legendre-symbol(@*)">
   <mo>(</mo>
   <mi>a</mi>
   <mo>|</mo>
@@ -1260,7 +1260,7 @@ or with "@3" being "1"
 <tr><td> </td><td> Clebsch-Gordan<br/> $(j_1 m_1 j_2 m_2 | j_1 j_2 j_3 m_3)|$</td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="Clebsch-Gordan(#a1,#a2,#a3,#a4,#b1,#b2,#b3,#b4)">
+<mrow intent="Clebsch-Gordan(#a1,#a2,#a3,#a4,#b1,#b2,#b3,#b4)">
   <mo>(</mo>
   <msub arg="a1"><mi>j</mi><mn>1</mn>
   <msub arg="a2"><mi>m</mi><mn>1</mn>
@@ -1277,7 +1277,7 @@ or with "@3" being "1"
 {::nomarkdown}
 </td>
 <td>
-<p>Looking at the Wikipedia page on these, I think you need to know where the "|" is, so that 'semantic' doesn't seem right. On the other hand, all I know about Clebsch-Gordan is from two minutes of reading that page...</p>
+<p>Looking at the Wikipedia page on these, I think you need to know where the "|" is, so that 'intent' doesn't seem right. On the other hand, all I know about Clebsch-Gordan is from two minutes of reading that page...</p>
 </td>
 <td></td>
 </tr>
@@ -1286,7 +1286,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="Pochhammer(#a,#n)">
+<msup intent="Pochhammer(#a,#n)">
   <mrow>
     <mo>(</mo>
     <mi arg="a">a</mi>
@@ -1300,7 +1300,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="Pochhammer(@a,@n)">
+<msup intent="Pochhammer(@a,@n)">
   <mrow>
     <mo>(</mo>
     <mi arg="a">a</mi>
@@ -1314,7 +1314,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<msup semantic="Pochhammer(@1@2,@2)">
+<msup intent="Pochhammer(@1@2,@2)">
   <mrow>
     <mo>(</mo>
     <mi>a</mi>
@@ -1336,9 +1336,9 @@ or with "@3" being "1"
 <tr><td>fenced-stacked </td><td> binomial $\binom{n}{m}$ </td>
 <td>
 {:/nomarkdown}
-<!-- <mrow semantic="binomial(@2/1,@2/2)"> -->
+<!-- <mrow intent="binomial(@2/1,@2/2)"> -->
 ```
-<mrow semantic="binomial(#n,#m)">
+<mrow intent="binomial(#n,#m)">
   <mo>(</mo>
   <mfrac thickness="0pt">
     <mi arg="n">n</mi>
@@ -1352,7 +1352,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="binomial(@n,@m)">
+<mrow intent="binomial(@n,@m)">
   <mo>(</mo>
   <mfrac thickness="0pt">
     <mi arg="n">n</mi>
@@ -1366,7 +1366,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="binomial(@2@1,@2@2)">
+<mrow intent="binomial(@2@1,@2@2)">
   <mo>(</mo>
   <mfrac thickness="0pt">
     <mi>n</mi>
@@ -1388,9 +1388,9 @@ or with "@3" being "1"
 <tr><td> </td><td> multinomial $\binom{n}{m_1,m_2,m_3}$ </td>
 <td>
 {:/nomarkdown}
-<!-- <mrow semantic="multinomial(@2/1,@2/2/1,@2/2/3,@2/2/5)"> -->
+<!-- <mrow intent="multinomial(@2/1,@2/2/1,@2/2/3,@2/2/5)"> -->
 ```
-<mrow semantic="multinomial(#n,#m1,#m2,#m3)">
+<mrow intent="multinomial(#n,#m1,#m2,#m3)">
   <mo>(</mo>
   <mfrac thickness="0pt">
     <mi arg="n">n</mi>
@@ -1410,7 +1410,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="multinomial(@n,@m1,@m2,@m3)">
+<mrow intent="multinomial(@n,@m1,@m2,@m3)">
   <mo>(</mo>
   <mfrac thickness="0pt">
     <mi arg="n">n</mi>
@@ -1430,7 +1430,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="multinomial(@2@1,@2@2@1,@2@2@2,@2@2@3)">
+<mrow intent="multinomial(@2@1,@2@2@1,@2@2@2,@2@2@3)">
   <mo>(</mo>
   <mfrac thickness="0pt">
     <mi arg="n">n</mi>
@@ -1461,7 +1461,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="Eulerian-numbers(#n,#k)">
+<mrow intent="Eulerian-numbers(#n,#k)">
   <mo>&lt;</mo>
   <mfrac thickness="0pt">
     <mi arg="n">n</mi>
@@ -1475,7 +1475,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="Eulerian-numbers(@n,@k)">
+<mrow intent="Eulerian-numbers(@n,@k)">
   <mo>&lt;</mo>
   <mfrac thickness="0pt">
     <mi arg="n">n</mi>
@@ -1489,7 +1489,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="Eulerian-numbers(@2@1,@2@1)">
+<mrow intent="Eulerian-numbers(@2@1,@2@1)">
   <mo>&lt;</mo>
   <mfrac thickness="0pt">
     <mi arg="n">n</mi>
@@ -1511,9 +1511,9 @@ or with "@3" being "1"
 <tr><td>fenced-table</td><td> 3j symbol<br/> $\left(\begin{array}{ccc}j_1& j_2 &j_3 \\ m_1 &m_2 &m_3\end{array}\right)$</td>
 <td>
 {:/nomarkdown}
-<!-- <mrow semantic="3j(@2/1/1,@2/1/2,@2/1/3,@2/2/1,@2/2/2,@2/2/3)">-->
+<!-- <mrow intent="3j(@2/1/1,@2/1/2,@2/1/3,@2/2/1,@2/2/2,@2/2/3)">-->
 ```
-<mrow semantic="3j(#j1,#j2,#j3,#m1,#m2,#m3)">
+<mrow intent="3j(#j1,#j2,#j3,#m1,#m2,#m3)">
   <mo>(</mo>
   <mtable>
     <mtr>
@@ -1535,7 +1535,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="3j(@j1,@j2,@j3,@m1,@m2,@m3)">
+<mrow intent="3j(@j1,@j2,@j3,@m1,@m2,@m3)">
   <mo>(</mo>
   <mtable>
     <mtr>
@@ -1557,7 +1557,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="3j(@2/@1/@1,@2/@1/@2,@2/@1/@3,@2/@2/@1,@2/@2/@2,@2/@2/@3)">
+<mrow intent="3j(@2/@1/@1,@2/@1/@2,@2/@1/@3,@2/@2/@1,@2/@2/@2,@2/@2/@3)">
   <mo>(</mo>
   <mtable>
     <mtr>
@@ -1584,7 +1584,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="#op(#p1,#p2,#a1,#q)">
+<mrow intent="@op(#p1,#p2,#a1,#q)">
   <mi arg="op">A</mi>
   <mo>(</mo>
   <mi arg="p1">a</mi>
@@ -1602,7 +1602,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="function(@open,@p1,@comma,@p2,@semi,@a1,@bar,@q,@close)">
+<mrow intent="function(@open,@p1,@comma,@p2,@semi,@a1,@bar,@q,@close)">
   <mi arg="op">A</mi>
   <mo arg="open">(</mo>
   <mi arg="p1">a</mi>
@@ -1620,7 +1620,7 @@ or with "@3" being "1"
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="function(@*)">
+<mrow intent="function(@*)">
   <mi>A</mi>
   <mo>(</mo>
   <mi>a</mi>
@@ -1646,9 +1646,9 @@ or with "@3" being "1"
 <tr><td></td><td> Bessel $J_\nu(z)$</td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="#op(#nu,#z)">
+<mrow intent="@op(#nu,#z)">
   <msub>
-    <mi arg="op" semantic="BesselJ">J</mi>
+    <mi arg="op" intent="BesselJ">J</mi>
     <mi arg="nu">&#x3BD;</mi>
   </msub>
   <mo>(</mo>
@@ -1662,9 +1662,9 @@ or with "@3" being "1"
 <tr><td></td><td> curried Bessel $J_\nu(z)$</td><td>
 {:/nomarkdown}
 ```
-<mrow semantic="#op(#nu)(#z)">
+<mrow intent="@op(#nu)(#z)">
   <msub>
-    <mi arg="op" semantic="BesselJ">J</mi>
+    <mi arg="op" intent="BesselJ">J</mi>
     <mi arg="nu" >&#x3BD;</mi>
   </msub>
   <mo>(</mo>
@@ -1678,9 +1678,9 @@ or with "@3" being "1"
 <tr><td>derivatives</td><td> $\frac{d^2f}{dx^2}$</td>
 <td>
 {:/nomarkdown}
-<!-- <mfrac semantic="Leibnitz-derivative(@1/2,@2/1/2,@1/1/2)"> -->
+<!-- <mfrac intent="Leibnitz-derivative(@1/2,@2/1/2,@1/1/2)"> -->
 ```
-<mfrac semantic="Leibnitz-derivative(#func,#var,#deg)">
+<mfrac intent="Leibnitz-derivative(#func,#var,#deg)">
   <mrow>
     <msup>
       <mo>d</mo>
@@ -1711,14 +1711,14 @@ This solution goes back to the basics of Liebnitz's notation: $\frac{d}{dx}$. Th
 With that rationale, here are two markups.
 The first has the function in the numerator and the denominator shows MathML for $dx^2$:
 ```
-<mfrac semantic="Leibnitz-derivative(@diff-op,@diff-var,@func)">
+<mfrac intent="Leibnitz-derivative(@diff-op,@diff-var,@func)">
     <msup arg="diff-op" notation="diffD(@d, @deg)">
       <mo arg="d">d</mo>
       <mn arg="deg">2</mn>
     </msup>
     <mi arg="func">f</mix>
   </mrow>
-  <mrow arg="diff-var" semantic="diffD(@d, @deg, @var)">
+  <mrow arg="diff-var" intent="diffD(@d, @deg, @var)">
     <mo arg="d">d</mo>
     <msup>
       <mi arg="var">x</mix>
@@ -1729,13 +1729,13 @@ The first has the function in the numerator and the denominator shows MathML for
 ```
 The second expr has the $f$ outside the fraction and the denominator shows MathML for $(dx)^2$:
 ```
-<mrow semantic="function(@diff-op, @func)">
-  <mfrac arg="diff-op" semantic="Leibnitz-derivative(@diff-op,@diff-var)">
-    <msup arg="diff-op" semantic="diffD(@d, @deg)">
+<mrow intent="function(@diff-op, @func)">
+  <mfrac arg="diff-op" intent="Leibnitz-derivative(@diff-op,@diff-var)">
+    <msup arg="diff-op" intent="diffD(@d, @deg)">
       <mo arg="d">d</mo>
       <mn arg="deg">2</mn>
     </msup>
-    <msup arg="diff-var" semantic="diffD(@d, @deg, @var)">
+    <msup arg="diff-var" intent="diffD(@d, @deg, @var)">
       <mrow>
         <mo arg="d">d</mo>
         <mi arg="var">x</mix>
@@ -1755,10 +1755,10 @@ These forms are unambiguous and relatively easy to convert to Content MathML and
 <tr><td>integrals</td><td> $\int\frac{dr}{r}$</td>
 <td>
 {:/nomarkdown}
-One might be tempted put semantic="divide(1,#r)" on the mfrac, but this blocks access to #bvar
+One might be tempted put intent="divide(1,#r)" on the mfrac, but this blocks access to #bvar
 ```
-<mrow semantic="#op(divide(1,#r),#bvar)">
-  <mo arg="op" semantic="integral">&x222B;</mo>
+<mrow intent="@op(divide(1,#r),#bvar)">
+  <mo arg="op" intent="integral">&x222B;</mo>
   <mfrac>
     <mrow>
       <mi>d</mi>
@@ -1773,14 +1773,14 @@ One might be tempted put semantic="divide(1,#r)" on the mfrac, but this blocks a
 </td>
 <td>
 {:/nomarkdown}
-This requires converters that want to find the bound variable to look for semantic="diffD(...)",
+This requires converters that want to find the bound variable to look for intent="diffD(...)",
 replace that by '1', and take the second arg of the 'diffD' as the bound variable.
-Another option would be to have semantic="integral(@op, @integrand, @bvar)" or maybe point to the 'diffD' to make the bound var obvious.
+Another option would be to have intent="integral(@op, @integrand, @bvar)" or maybe point to the 'diffD' to make the bound var obvious.
 ```
-<mrow semantic="integral(@op, @integrand)">
+<mrow intent="integral(@op, @integrand)">
   <mo arg="op"</mo>
-  <mfrac arg="integrand" semantic="divide">
-    <mrow semantic="diffD(@d, "1", @bvar)">
+  <mfrac arg="integrand" intent="divide">
+    <mrow intent="diffD(@d, "1", @bvar)">
       <mi arg="d">d</mi>
       <mi arg="bvar">r</mi>
     </mrow>
@@ -1795,9 +1795,9 @@ Another option would be to have semantic="integral(@op, @integrand, @bvar)" or m
 <tr><td>continued fractions</td><td> $a_0+\displaystyle\frac{1}{a_1+\displaystyle\frac{1}{a_2+\cdots}}$</td>
 <td>
 {:/nomarkdown}
-<!--<mrow semantic="infinite-continued-fraction(@1,1,@3/1/2/1,1,@3/1/2/3/1/2)">-->
+<!--<mrow intent="infinite-continued-fraction(@1,1,@3/1/2/1,1,@3/1/2/3/1/2)">-->
 ```
-<mrow semantic="infinite-continued-fraction(#a0,#b1,#a1,#b2,#a2)">
+<mrow intent="infinite-continued-fraction(#a0,#b1,#a1,#b2,#a2)">
   <msub arg="a0"><mi>a</mi><mn>0</mn></msub>
   <mo>+</mo>
   <mstyle display="true">
@@ -1826,7 +1826,7 @@ Another option would be to have semantic="integral(@op, @integrand, @bvar)" or m
 <td>
 {:/nomarkdown}
 ```
-<mrow semantic="infinite-continued-fraction(@a0,@p0,@b0,@a1,@p1,@b2,@a2,@p2,@ddd)">
+<mrow intent="infinite-continued-fraction(@a0,@p0,@b0,@a1,@p1,@b2,@a2,@p2,@ddd)">
   <msub notation="index(@b, @i)" arg="a0">
     <mi arg="b">a</mi>
     <mn arg="i">0</mn>
@@ -1865,7 +1865,7 @@ Another option would be to have semantic="integral(@op, @integrand, @bvar)" or m
 {:/nomarkdown}
 Need to decide if mstyle/mpadded/singleton mrow are ignored. Assuming yes...
 ```
-<mrow semantic="infinite-continued-fraction(@1,@2,@3@1,@3@2@1,@3@2@2,@3@2@3@1,@3@2@3@2@1,@3@2@3@2@2,@3@2@3@2@3)">
+<mrow intent="infinite-continued-fraction(@1,@2,@3@1,@3@2@1,@3@2@2,@3@2@3@1,@3@2@3@2@1,@3@2@3@2@2,@3@2@3@2@3)">
   <msub><mi>a</mi><mn>0</mn></msub>
   <mo>+</mo>
   <mstyle display="true">
@@ -1904,6 +1904,6 @@ The main differences appear to be:
 * the location of the name of the function
 * more substantively, the first proposal abstracts away the presentation, the second one preserves it and requires converters to know the syntax of the function (e.g, "factorial" is a postfix function, therefore the operand they care about is the first argument)
 
-Abstracting away the presentation means speech can't use semantics alone because it matters. E.g, $a/b$, $a \div b$, and $\frac{a}{b}$ want to be spoken differently, but they would all have the same semantic value. This happens in many other cases.
+Abstracting away the presentation means speech can't use intent alone because it matters. E.g, $a/b$, $a \div b$, and $\frac{a}{b}$ want to be spoken differently, but they would all have the same intent value. This happens in many other cases.
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->

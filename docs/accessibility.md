@@ -141,7 +141,7 @@ The table below shows a few semantically marked up examples:
                 <summary>MathML for open interval</summary>
 {:/nomarkdown}
 ```
-<mrow notation="open-interval(@start, @end)">
+<mrow intent="open-interval(@start, @end)">
     <mo>(</mo>
     <mrow>
         <mi arg="start">0</mi>
@@ -162,7 +162,7 @@ The table below shows a few semantically marked up examples:
                 <summary>MathML for point in a plane</summary>
 {:/nomarkdown}
 ```
-<mrow notation="point(@x,@y)">
+<mrow intent="point(@x,@y)">
     <mo>(</mo>
     <mrow>
         <mi arg="x">0</mi>
@@ -183,7 +183,7 @@ The table below shows a few semantically marked up examples:
                 <summary>MathML for transpose</summary>
 {:/nomarkdown}
 ```
-<msup notation="transpose(@matrix)">
+<msup intent="transpose(@matrix)">
   <mi arg="matrix">A</mi>
   <mi>T</mn>
 </msup>
@@ -199,7 +199,7 @@ The table below shows a few semantically marked up examples:
                 <summary>MathML for dot product</summary>
 {:/nomarkdown}
 ```
-<mrow notation="inner-product(@arg1, @arg2)">
+<mrow intent="inner-product(@arg1, @arg2)">
   <mi mathvariant="bold" arg="arg1">a</mi>
   <mo>&#x22C5;</mo>
   <mi mathvariant="bold arg="arg2">b</mi>
