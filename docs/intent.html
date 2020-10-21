@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <title>Semantic Intent</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [ ['$$', '$$'], ['\\[', '\\]']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+.container-lg {max-width:100%;  font-size:120%;}
+    </style>
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+
+<b>Abstract</b>
+<p>
+MathML is a W3C recommendation that represents mathematical expressions.  This note describes a way to add semantic information to presentation markup.
+</p>
+
+<b>Table of Contents</b>
+<ul>
+<li><a href="#defns">Definitions</a></li>
+<li><a href="#opname">Examples -- Operator Name</a></li>
+<li><a href="#arglist">Examples -- Argument List</a></li>
+<li><a href="#argindex">Examples -- Argument Index</a></li>
+<li><a href="#argname">Examples -- Argument Name</a></li>
+<li><a href="#superscript">Examples -- Superscript</a></li>
+<li><a href="#binomial">Examples -- Binomial</a></li>
+<li><a href="#multiop">Examples -- Multiple Operators</a></li>
+<li><a href="#intfrac">Examples -- Integrals of Fractions</a></li>
+</ul>
+
+<b id="defns">Definitions</b>
+<p>
+The <i>intent</i> of an element is a functional expression that captures the meaning conveyed by the author.  It should also reflect the meaning that would be understood by a human reader.  The intent may often be inferred from the presentation, especially when the author supplies information such as the subject area.
+</p>
+
+<p>
+The <tt>intent</tt> attribute encodes the intent of an element in terms of the intent of its sub elements.  It may contain an operator name, which may be followed by a parenthesized list of zero or more arguments.  An operator name creates a function application when it is followed by a list of arguments, or when the element contains one or more sub elements with intent.  Otherwise, the name refers to a mathematical constant or function in isolation.
+</p>
+
+<p>
+The <tt>arg</tt> attribute provides a numeric index or a symbolic name for a sub element that may be used within an enclosing intent attribute to refer to the intent of the sub element.  The form of an argument reference is the "@" sign, followed by the numeric index or symbolic name.
+</p>
+
+<p>
+The default intent of an atomic element <tt>mi</tt> or <tt>mn</tt> is taken from the character data of the element.  Other rules for inferring default intent for known notational patterns may be defined by the consumer of the markup.  These rules may be influenced by subject area information provided by the author.
+</p>
+
+<hr>
+<b id="opname">Examples -- Operator Name</b>
+
+<p>
+The operator name and the existence of arguments determine the intent.  The intent attribute may express:
+<ul>
+<li>an operator name, with arguments collected from the sub elements</li>
+<li>a mathematical constant with no arguments</li>
+<li>a mathematical function in isolation</li>
+<li>a mathematical function with zero arguments</li>
+</ul>
+</p>
+
+<hr>
+<b>Function application</b>
+<p>The intent attribute may express an operator name, with arguments collected from the sub elements.
+</p>
+<p>$a+b$ as $plus(a,b)$</p>
+<pre>
+&lt;mrow intent="plus">
+  &lt;mi>a&lt;/mi>
+  &lt;mo>+&lt;/mo>
+  &lt;mi>b&lt;/mi>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b>Mathematical constant</b>
+<p>The intent attribute may express a mathematical constant with no arguments.
+</p>
+<p>$e$ as $exponentiale$</p>
+<pre>
+&lt;mi intent="exponentiale">e&lt;/mi>
+</pre>
+
+<hr>
+<b>Function in isolation</b>
+<p>The intent attribute may express a function in isolation, where the arguments have been omitted or supplied elsewhere.
+</p>
+<p>$T$ as $transpose$</p>
+<pre>
+&lt;mo intent="transpose">T&lt;/mo>
+</pre>
+
+<hr>
+<b>Function with zero arguments</b>
+<p>The intent attribute may express a function with zero arguments.
+</p>
+<p>$I$ as $identity()$</p>
+<pre>
+&lt;mi intent="identity()">I&lt;/mi>
+</pre>
+
+<hr>
+<b id="arglist">Examples -- Argument List</b>
+
+<p>
+The argument list determines the sub structures of the intent.  It may be omitted, or may contain zero, one, or more intent values:
+<ul>
+<li>missing arguments express a constant or function name</li>
+<li>zero arguments express a function of zero arguments</li>
+<li>one argument expresses a function of one argument</li>
+<li>multiple comma-separated arguments express a function of multiple arguments</li>
+</ul>
+</p>
+
+<hr>
+<b>Missing argument list</b>
+<p>An name with no argument list, and no sub elements with intent, expresses a constant or function name.
+</p>
+<p>$e$ as $exponentiale$</p>
+<pre>
+&lt;mi intent="exponentiale">e&lt;/mi>
+</pre>
+
+<hr>
+<b>Empty argument list</b>
+<p>An empty argument list expresses a function with zero arguments.
+</p>
+<p>$I$ as $identity()$</p>
+<pre>
+&lt;mi intent="identity()">I&lt;/mi>
+</pre>
+
+<hr>
+<b>One argument list</b>
+<p>One intent expression within open and close parentheses expresses a function with one argument.
+</p>
+<p>$n!$ as $factorial(n)$</p>
+<pre>
+&lt;mrow intent="factorial(@1)">
+  &lt;mi>n&lt;/mi>
+  &lt;mo>!&lt;/mo>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b>Multiple arguments</b>
+<p>Multiple comma-separated intent expressions describe a function with multiple arguments.
+</p>
+<p>$a+b$ as $plus(a,b)$</p>
+<pre>
+&lt;mrow intent="plus(@1,@2)">
+  &lt;mi>a&lt;/mi>
+  &lt;mo>+&lt;/mo>
+  &lt;mi>b&lt;/mi>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b id="argindex">Examples -- Argument Index</b>
+
+<p>
+The direct sub elements with intent form the actual argument list.  Each actual argument may be referenced by its position in the actual argument list:
+<ul>
+<li>index one refers to the intent of the first actual argument</li>
+<li>index two refers to the intent of the next actual argument</li>
+<li>index zero refers to the intent of the actual operator</li>
+<li>the argument index may reorder the actual arguments</li>
+</ul>
+</p>
+
+<hr>
+<b>Index one</b>
+<p>Index one refers to the intent of the first actual argument.
+</p>
+<p>$n!$ as $factorial(n)$</p>
+<pre>
+&lt;mrow intent="factorial(@1)">
+  &lt;mi>n&lt;/mi>
+  &lt;mo>!&lt;/mo>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b>Index two</b>
+<p>Index two refers to the intent of the next actual argument.
+</p>
+<p>$a+b$ as $plus(a,b)$</p>
+<pre>
+&lt;mrow intent="plus(@1,@2)">
+  &lt;mi>a&lt;/mi>
+  &lt;mo>+&lt;/mo>
+  &lt;mi>b&lt;/mi>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b>Index zero</b>
+<p>Index zero refers to the intent of the actual operator.
+</p>
+<p>$n!$ as $factorial(n)$</p>
+<pre>
+&lt;mrow intent="@0(@1)">
+  &lt;mi>n&lt;/mi>
+  &lt;mo intent="factorial">!&lt;/mo>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b>Argument order</b>
+<p>The argument index references may reorder the actual arguments.
+<p>$\int_0^1 x^2 dx$ as $integral(power(x,2),x,0,1)$</p>
+<pre>
+&lt;mrow intent="@0(@3,@4,@1,@2)">
+  &lt;msubsup>
+    &lt;mo intent="integral">&x222B;&lt;/mo>
+    &lt;mn>0&lt;/mn>
+    &lt;mn>1&lt;/mn>
+  &lt;/msubsup>
+  &lt;msup intent="power">
+    &lt;mi>x&lt;/mi>
+    &lt;mn>2&lt;/mn>
+  &lt;/msup>
+  &lt;mtext>d&lt;/mtext>
+  &lt;mi>x&lt;/mi>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b id="argname">Examples -- Argument Name</b>
+
+<p>
+A sub element may be assigned an argument name that may be used as an alternative way to reference its intent within its outer element:
+<ul>
+<li>the arg attribute defines an argument name within an expression</li>
+<li>the argument name may be used within the outer intent attribute</li>
+<li>the operator may be assigned an argument name</li>
+<li>the argument name may reorder the actual arguments</li>
+</ul>
+</p>
+
+<hr>
+<b>Argument name</b>
+<p>The arg attribute defines an argument name within an expression.
+</p>
+<p>$n!$ as $factorial(n)$</p>
+<pre>
+&lt;mrow intent="factorial(@x)">
+  &lt;mi arg="x">n&lt;/mi>
+  &lt;mo>!&lt;/mo>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b>Argument reference</b>
+<p>The argument name may be used within the outer intent attribute.
+</p>
+<p>$a+b$ as $plus(a,b)$</p>
+<pre>
+&lt;mrow intent="plus(@x,@y)">
+  &lt;mi arg="x">a&lt;/mi>
+  &lt;mo>+&lt;/mo>
+  &lt;mi arg="y">b&lt;/mi>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b>Operator name</b>
+<p>The operator may be assigned an argument name.
+</p>
+<p>$n!$ as $factorial(n)$</p>
+<pre>
+&lt;mrow intent="@fn(@x)">
+  &lt;mi arg="x">n&lt;/mi>
+  &lt;mo arg="fn" intent="factorial">!&lt;/mo>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b>Argument order</b>
+<p>The argument name references may reorder the actual arguments.
+<p>$\int_0^1 x^2 dx$ as $integral(power(x,2),x,0,1)$</p>
+<pre>
+&lt;mrow intent="@op(@fn,@var,@lo,@hi)">
+  &lt;msubsup>
+    &lt;mo arg="op" intent="integral">&x222B;&lt;/mo>
+    &lt;mn arg="lo">0&lt;/mn>
+    &lt;mn arg="hi">1&lt;/mn>
+  &lt;/msubsup>
+  &lt;msup arg="fn" intent="power(@base,@exp)">
+    &lt;mi arg="base">x&lt;/mi>
+    &lt;mn arg="exp">2&lt;/mn>
+  &lt;/msup>
+  &lt;mtext>d&lt;/mtext>
+  &lt;mi arg="var">x&lt;/mi>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b id="superscript">Examples -- Superscript</b>
+
+<p>
+When the same notation may express different intent in printed material, the author and reader typically use other means to agree on the intent, such as notational conventions or expository text.  For online markup, the intent can resolve the ambiguity directly.  For example, the superscript notation may intend:
+<ul>
+<li>the most common use to denote exponentiation</li>
+<li>another important use to index into tensors or matrices</li>
+<li>one of several operators found in the superscript itself</li>
+</ul>
+</p>
+
+<hr>
+<b>Superscript as exponent</b>
+<p>The most common use of superscript is to denote exponentiation.</p>
+<p>$x^2$ as $power(x,2)$</p>
+<pre>
+&lt;msup intent="power">
+  &lt;mi>x&lt;/mi>
+  &lt;mn>2&lt;/mn>
+&lt;/msup>
+</pre>
+<p>$x^n$ as $power(x,n)$</p>
+<pre>
+&lt;msup intent="power">
+  &lt;mi>x&lt;/mi>
+  &lt;mi>n&lt;/mi>
+&lt;/msup>
+</pre>
+
+<hr>
+<b>Superscript as tensor or matrix index</b>
+<p>Another important use to index into tensors or matrices.</p>
+<p>$c_ix^i$ as $times(index(c,i),index(x,i))$</p>
+<pre>
+&lt;mrow intent="times">
+  &lt;msub intent="index">
+    &lt;mi>c&lt;/mi>
+    &lt;mi>i&lt;/mi>
+  &lt;/msub>
+  &lt;mo>&amp;#x2062;&lt/mo>
+  &lt;msup intent="index">
+    &lt;mi>x&lt;/mi>
+    &lt;mi>i&lt;/mi>
+  &lt;/msup>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b>Superscript as the operator</b>
+<p>The superscript itself may supply the operator.</p>
+<p>$z^*$ as $conjugate(z)$</p>
+<pre>
+&lt;msup intent="conjugate">
+  &lt;mi>z&lt;/mi>
+  &lt;mo>*&lt;/mo>
+&lt;/msup>
+</pre>
+<pre>
+&lt;msup intent="@0">
+  &lt;mi>z&lt;/mi>
+  &lt;mo intent="conjugate">*&lt;/mo>
+&lt;/msup>
+</pre>
+<p>$A^T$ as $transpose(A)$</p>
+<pre>
+&lt;msup intent="transpose">
+  &lt;mi>A&lt;/mi>
+  &lt;mo>T&lt;/mo>
+&lt;/msup>
+</pre>
+<pre>
+&lt;msup intent="@0">
+  &lt;mi>A&lt;/mi>
+  &lt;mo intent="transpose">T&lt;/mo>
+&lt;/msup>
+</pre>
+<p>$A^\dagger$ as $adjoint(A)$</p>
+<pre>
+&lt;msup intent="adjoint">
+  &lt;mi>A&lt;/mi>
+  &lt;mo>&#x2020;&lt;/mo>
+&lt;/msup>
+</pre>
+<pre>
+&lt;msup intent="@0">
+  &lt;mi>A&lt;/mi>
+  &lt;mo intent="adjoint">&#x2020;&lt;/mo>
+&lt;/msup>
+</pre>
+
+<hr>
+<b id="binomial">Examples -- Binomial</b>
+
+<p>
+The same intent may be expressed by different printed notations.  For example, the binomial coefficient may be expressed as:
+<ul>
+<li>a stack of two numbers, enclosed in parentheses</li>
+<li>a literal C with subscript and superscript</li>
+</ul>
+</p>
+
+<hr>
+<b>Binomial as stacked numbers</b>
+<p>One notation for the binomial coefficient is as a stack of two numbers, enclosed in parentheses.</p>
+<p>$\binom{n}{m}$ as $binom(n,m)$</p>
+<pre>
+&lt;mfenced intent="binom">
+  &lt;msubsup>
+    &lt;mrow/>
+    &lt;mi arg="2">m&lt;/mi>
+    &lt;mi arg="1">n&lt;/mi>
+  &lt;/msubsup>
+&lt;/mfenced>
+</pre>
+
+<hr>
+<b>Binomial as subscript and superscript</b>
+<p>Another notation for the binomial coefficient is as a literal C with subscript and superscript.</p>
+<p>$C^n_m$ as $binom(n,m)$</p>
+<pre>
+&lt;msubsup intent="binom">
+  &lt;mo>C&lt;/mo>
+  &lt;mi arg="2">m&lt;/mi>
+  &lt;mi arg="1">n&lt;/mi>
+&lt;/msubsup>
+</pre>
+<pre>
+&lt;msubsup intent="@0">
+  &lt;mo intent="binom">C&lt;/mo>
+  &lt;mi arg="2">m&lt;/mi>
+  &lt;mi arg="1">n&lt;/mi>
+&lt;/msubsup>
+</pre>
+
+<hr>
+<b id="multiop">Examples -- Multiple Operators</b>
+
+<p>
+When the presentation supplies an element for each intended structure, the intent attribute can be placed naturally on the element that presents the structure.  When the presentation combines multiple structures into a single element, that element can be marked with the intent of the multiple structures:
+<ul>
+<li>multiple infix operators</li>
+<li>unary prefix operators</li>
+<li>postfix operators</li>
+</ul>
+</p>
+
+<hr>
+<b>One mrow with multiple infix operators</b>
+<p>A single mrow that contains multiple infix operators can be marked with the intent of the multiple infix operators.</p>
+<p>$a+b-c+d$ as $plus(a,plus(minus(b,c),d))$</p>
+<pre>
+&lt;mrow intent="@p1(@a,@p2(@m(@b,@c),@d))">
+  &lt;mi arg="a">a&lt;/mi>
+  &lt;mo arg="p1" intent="plus">+&lt;/mo>
+  &lt;mi arg="b">b&lt;/mi>
+  &lt;mo arg="m" intent="minus">-&lt;/mo>
+  &lt;mi arg="c">c&lt;/mi>
+  &lt;mo arg="p2" intent="plus">+&lt;/mo>
+  &lt;mi arg="d">d&lt;/mi>
+&lt;/mrow>
+</pre>
+
+<p>$a+b-c+d$ as $plus(plus(a,minus(b,c)),d)$</p>
+<pre>
+&lt;mrow intent="@p2(@p1(@a,@m(@b,@c)),@d)">
+  &lt;mi arg="a">a&lt;/mi>
+  &lt;mo arg="p1" intent="plus">+&lt;/mo>
+  &lt;mi arg="b">b&lt;/mi>
+  &lt;mo arg="m" intent="minus">-&lt;/mo>
+  &lt;mi arg="c">c&lt;/mi>
+  &lt;mo arg="p2" intent="plus">+&lt;/mo>
+  &lt;mi arg="d">d&lt;/mi>
+&lt;/mrow>
+</pre>
+
+<p>The nesting can also be made clear with additional mrow elements:</p>
+
+<p>$a+b-c+d$ as $plus(a,plus(minus(b,c),d))$</p>
+<pre>
+&lt;mrow intent="plus">
+  &lt;mi>a&lt;/mi>
+  &lt;mo>+&lt;/mo>
+  &lt;mrow intent="plus">
+    &lt;mrow intent="minus">
+      &lt;mi>b&lt;/mi>
+      &lt;mo>-&lt;/mo>
+      &lt;mi>c&lt;/mi>
+    &lt;/mrow>
+    &lt;mo>+&lt;/mo>
+    &lt;mi>d&lt;/mi>
+  &lt;/mrow>
+&lt;/mrow>
+</pre>
+
+<p>$a+b-c+d$ as $plus(plus(a,minus(b,c)),d)$</p>
+<pre>
+&lt;mrow intent="plus">
+  &lt;mrow intent="plus">
+    &lt;mi>a&lt;/mi>
+    &lt;mo>+&lt;/mo>
+    &lt;mrow intent="minus">
+      &lt;mi>b&lt;/mi>
+      &lt;mo>-&lt;/mo>
+      &lt;mi>c&lt;/mi>
+    &lt;/mrow>
+  &lt;/mrow>
+  &lt;mo>+&lt;/mo>
+  &lt;mi>d&lt;/mi>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b>One mrow with unary prefix operators</b>
+<p>A single mrow that contains unary prefix operators can be marked with the intent of the unary prefix operators.</p>
+<p>$a+b-c+d$ as $plus(a,b,minus(c),d)$</p>
+<pre>
+&lt;mrow intent="@p1(@a,@b,@m(@c),@d)">
+  &lt;mi arg="a">a&lt;/mi>
+  &lt;mo arg="p1" intent="plus">+&lt;/mo>
+  &lt;mi arg="b">b&lt;/mi>
+  &lt;mo arg="m" intent="minus">-&lt;/mo>
+  &lt;mi arg="c">c&lt;/mi>
+  &lt;mo arg="p2" intent="plus">+&lt;/mo>
+  &lt;mi arg="d">d&lt;/mi>
+&lt;/mrow>
+</pre>
+
+<pre>
+&lt;mrow intent="plus">
+  &lt;mi>a&lt;/mi>
+  &lt;mo>+&lt;/mo>
+  &lt;mi>b&lt;/mi>
+  &lt;mrow intent="minus">
+    &lt;mo>-&lt;/mo>
+    &lt;mi>c&lt;/mi>
+  &lt;/mrow>
+  &lt;mo>+&lt;/mo>
+  &lt;mi>d&lt;/mi>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b>One mrow with unary postfix operators</b>
+<p>A single mrow that contains unary postfix operators can be marked with the intent of the unary postfix operators.</p>
+<p>$a+b!$ as $plus(a,factorial(b))$</p>
+<pre>
+&lt;mrow intent="@p(@a,@f(@b))">
+  &lt;mi arg="a">a&lt;/mi>
+  &lt;mo arg="p" intent="plus">+&lt;/mo>
+  &lt;mi arg="b">b&lt;/mi>
+  &lt;mo arg="f" intent="factorial">!&lt;/mo>
+&lt;/mrow>
+</pre>
+
+<pre>
+&lt;mrow intent="plus">
+  &lt;mi>a&lt;/mi>
+  &lt;mo>+&lt;/mo>
+  &lt;mrow intent="factorial">
+    &lt;mi>b&lt;/mi>
+    &lt;mo>!&lt;/mo>
+  &lt;/mrow>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b id="intfrac">Examples -- Integrals of Fractions</b>
+
+<p>
+Integrals of fractions are often presented with the differential $dx$ as part of the fraction.  For these cases, the intent of the integral uses a named argument reference to find the bound variable, and special care to arrange for the correct intent for the integrand:
+<ul>
+<li>Differential alone in the numerator</li>
+<li>Differential in a binary product</li>
+<li>Differential in an nary product</li>
+<li>Differential next to an exponent</li>
+</ul>
+</p>
+
+<hr>
+<b>Differential alone in the numerator</b>
+<p>The intent of the fraction uses the numeral 1 as the numerator, and no other elements contribute to the numerator.</p>
+<p>$\int_0^1 {dx \over x^2+1}$ as $integral(divide(1,plus(power(x,2),1)),x,0,1)$</p>
+<pre>
+&lt;mrow intent="@0(@3,@bvar,@1,@2)">
+  &lt;msubsup>
+    &lt;mo intent="integral">&x222B;&lt;/mo>
+    &lt;mn>0&lt;/mn>
+    &lt;mn>1&lt;/mn>
+  &lt;/msubsup>
+  &lt;mfrac intent="divide">
+    &lt;mrow intent="1">
+      &lt;mtext>d&lt;/mtext>
+      &lt;mi intent="bvar">x&lt;/mi>
+    &lt;/mrow>
+    &lt;mrow intent="plus">
+      &lt;msup intent="power">
+        &lt;mi>x&lt;/mi>
+        &lt;mn>2&lt;/mn>
+      &lt;/msup>
+      &lt;mo>+&lt;/mo>
+      &lt;mn>1&lt;/mn>
+    &lt;/mrow>
+  &lt;/mfrac>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b>Differential in a binary product</b>
+<p>The intent of the fraction uses the initial $x$ as the numerator, and no other elements contribute to the numerator.</p>
+<p>$\int_0^1 {x\,dx \over x^2+1}$ as $integral(divide(x,plus(power(x,2),1)),x,0,1)$</p>
+<pre>
+&lt;mrow intent="@0(@3,@bvar,@1,@2)">
+  &lt;msubsup>
+    &lt;mo intent="integral">&x222B;&lt;/mo>
+    &lt;mn>0&lt;/mn>
+    &lt;mn>1&lt;/mn>
+  &lt;/msubsup>
+  &lt;mfrac intent="divide">
+    &lt;mrow>
+      &lt;mi>x&lt;/mi>
+      &lt;mtext>d&lt;/mtext>
+      &lt;mi intent="bvar">x&lt;/mi>
+    &lt;/mrow>
+    &lt;mrow intent="plus">
+      &lt;msup intent="power">
+        &lt;mi>x&lt;/mi>
+        &lt;mn>2&lt;/mn>
+      &lt;/msup>
+      &lt;mo>+&lt;/mo>
+      &lt;mn>1&lt;/mn>
+    &lt;/mrow>
+  &lt;/mfrac>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b>Differential in an nary product</b>
+<p>The intent of the fraction uses $2x$ as the numerator, and no other elements contribute to the product.</p>
+<p>$\int_0^1 {2x\,dx \over x^2+1}$ as $integral(divide(times(2,x),plus(power(x,2),1)),x,0,1)$</p>
+<pre>
+&lt;mrow intent="@0(@3,@bvar,@1,@2)">
+  &lt;msubsup>
+    &lt;mo intent="integral">&x222B;&lt;/mo>
+    &lt;mn>0&lt;/mn>
+    &lt;mn>1&lt;/mn>
+  &lt;/msubsup>
+  &lt;mfrac intent="divide">
+    &lt;mrow intent="times">
+      &lt;mn>2&lt;/mn>
+      &lt;mi>x&lt;/mi>
+      &lt;mtext>d&lt;/mtext>
+      &lt;mi intent="bvar">x&lt;/mi>
+    &lt;/mrow>
+    &lt;mrow intent="plus">
+      &lt;msup intent="power">
+        &lt;mi>x&lt;/mi>
+        &lt;mn>2&lt;/mn>
+      &lt;/msup>
+      &lt;mo>+&lt;/mo>
+      &lt;mn>1&lt;/mn>
+    &lt;/mrow>
+  &lt;/mfrac>
+&lt;/mrow>
+</pre>
+
+<hr>
+<b>Differential next to an exponent</b>
+<p>The intent of the fraction uses $x^2$ as the numerator, and no other elements contribute to the numerator.</p>
+<p>$\int_0^1 {x^2\,dx \over x^2+1}$ as $integral(divide(power(x,2),plus(power(x,2),1)),x,0,1)$</p>
+<pre>
+&lt;mrow intent="@0(@3,@bvar,@1,@2)">
+  &lt;msubsup>
+    &lt;mo intent="integral">&x222B;&lt;/mo>
+    &lt;mn>0&lt;/mn>
+    &lt;mn>1&lt;/mn>
+  &lt;/msubsup>
+  &lt;mfrac intent="divide">
+    &lt;mrow>
+      &lt;msup intent="power">
+        &lt;mi>x&lt;/mi>
+        &lt;mn>2&lt;/mn>
+      &lt;/msup>
+      &lt;mtext>d&lt;/mtext>
+      &lt;mi intent="bvar">x&lt;/mi>
+    &lt;/mrow>
+    &lt;mrow intent="plus">
+      &lt;msup intent="power">
+        &lt;mi>x&lt;/mi>
+        &lt;mn>2&lt;/mn>
+      &lt;/msup>
+      &lt;mo>+&lt;/mo>
+      &lt;mn>1&lt;/mn>
+    &lt;/mrow>
+  &lt;/mfrac>
+&lt;/mrow>
+</pre>
+
+    </div>
+  </body>
+</html>
