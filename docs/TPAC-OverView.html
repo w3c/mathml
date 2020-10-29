@@ -3,12 +3,8 @@
     <head>
       <meta charset="utf-8"/>
       <title>TPAC Breakout: Making Mathematics a First Class Citizen of the Web</title>
-      <link rel="stylesheet"
-            href="style.css">
-        <script type="text/javascript"
-                id="MathJax-script"
-                async
-                src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+      <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>
       </head>
       <body>
@@ -16,7 +12,7 @@
           <h2>MathML Status</h2>
           <ul>
             <li>
-              <span>MathML 1.0 -- 1998; Currently at V3 2nd Edition (2014)</span>
+              <span>MathML 1.0 &mdash; 1998; Currently at V3, 2nd Edition (2014)</span>
             </li>
             <li>
               <span>Support in Firefox and Safari, but some incompatibilities around the edges</span>
@@ -52,192 +48,268 @@
               Improved accessibility by allowing authors to specify intent.
               As an example, one proposal is that the binomial
               <math xmlns='http://www.w3.org/1998/Math/MathML'>
-                <mrow intent="binomial(@n,@m)">
+                <mrow intent="binomial(@1,@2)">
                   <mo>(</mo>
                   <mfrac linethickness="0pt">
-                    <mi arg="n">n</mi>
-                    <mi arg="m">m</mi>
+                    <mi arg="1">n</mi>
+                    <mi arg="2">m</mi>
                   </mfrac>
                   <mo>)</mo>
                 </mrow>
               </math>
               could be marked up as:
-              <code><br>
-                &lt;mrow <span style="font-weight: bold;"> intent=&quot;binomial(@1,@2)&quot;</span>&gt;<br>
-                &nbsp;&nbsp;&lt;mo&gt;(&lt;/mo&gt;<br>
-                &nbsp;&nbsp;&lt;mfrac linethickness=&quot;0pt&quot;&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;mi <span style="font-weight: bold;"> arg=&quot;1&quot;</span>&gt;n&lt;/mi&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;mi <span style="font-weight: bold;"> arg=&quot;2&quot;</span>&gt;m&lt;/mi&gt;<br>
-                &nbsp;&nbsp;&lt;/mfrac&gt;<br>
-                &nbsp;&nbsp;&lt;mo&gt;)&lt;/mo&gt;<br>
-                &lt;/mrow&gt;
-              </code>
-            </li>
-            <li>
-              <a href="https://mathml.igalia.com">Work by Igalia</a>
-              &nbsp;(Chrome/Edge under experimental flag: chrome://flags/#enable-experimental-web-platform-features)
-            </li>
-            <li>
-              <span>Bringing other implementations closer together</span>
-            </li>
-            <li>
-              <span>Have thousands of WPT</span>
-            </li>
-          </ul>
-          <h2>
-            Demo of what is in core and what is not in
-          </h2>
-          <ul>
-            <li>In: scripts, limits/accents, fractions, roots, large operators, stretchy chars</li>
-            <li>Out (for now):
-              linebreaking & indentation, elementary math, bevelled fractions, left/center/right alignment in fractions &amp; limits, labeled rows in tables, most &quote;mstyle&quote; attrs, little-used attrs
-            </li>
-          </ul>
-          <h2>
-            Moving towards a WG
-            (<a href="https://mathml-refresh.github.io/charter-drafts/math-2020.html">charter draft</a>)
-          </h2>
-          <ul>
-            <li>
-              <span>Scope</span>
-            </li>
-            <ul>
-              <li>
-                <span>Development of recs and test suites</span>
-              </li>
-              <li>
-                <span>Clarifications to the current use of Web Platform technologies, such as supported JavaScript APIs and CSS modules.</span>
-              </li>
-              <li>
-                <span>Integration of new and existing Web Platform technologies, including, but not limited to hyperlinks, DOM APIs, </span>
-                <span>Shadow DOM and Custom Elements, CSS</span>
-              </li>
-              <li>
-                <span>Identification of normative requirements needed to ensure accessibility</span>
-              </li>
-              <li>
-                <span>Removing elements and attributes from MathML that have had minimal adoption</span>
-              </li>
-            </ul>
-            <li>
-              <span>Out of Scope</span>
-            </li>
-            <ul>
-              <li>
-                <span>Adding new elements for use exclusively outside the platform</span>
-              </li>
-              <li>
-                <span>Changes that would cause legacy MathML that has significant usage to stop working on the Web Platform or elsewhere.</span>
-              </li>
-              <li>
-                <span>Changes to Content MathML. These will be considered at a later time after gaining experience and feedback from proposed additions to enhance accessibility and searchability in Presentation MathML.</span>
-              </li>
-            </ul>
-            <li>
-              <span>Normative Deliverables</span>
-            </li>
-            <ul>
-              <li>
-                <span>Core Level 1</span>
-              </li>
-              <li>
-                <span>Core Level 2</span>
-              </li>
-              <li>
-                <span>MathML Full</span>
-              </li>
-            </ul>
-            <li>
-              <span>Non-normative Deliverables</span>
-            </li>
-            <ul>
-              <li>
-                <span>Test suites and implementation reports for the specification</span>
-              </li>
-              <li>
-                <span>MathML Accessibility Techniques</span>
-              </li>
-              <li>
-                <span>Guides on annotating Presentation MathML for accessibility and search</span>
-              </li>
-              <li>
-                <span>A living catalog for annotations beyond those defined in a MathML 4 recommendation.</span>
-              </li>
-              <li>
-                <span>Sample code that converts default &quot;intent&quot; values to explicit &quot;intent&quot; values in Presentation MathML.</span>
-              </li>
-              <li>
-                <span>At least one TeX-to-MathML converter that incorporates accessibility/searchability annotations in its MathML output.</span>
-              </li>
-              <li>
-                <span>Code to convert Content MathML to Presentation MathML with accessibility and searchability annotations.</span>
-              </li>
-              <li>
-                <span>Sample code for conversion of annotated Presentation MathML to an external form such as speech and/or Content MathML</span>
-              </li>
-            </ul>
-          </ul>
-          <h2>
-            <span>Discussion Topics</span>
-          </h2>
-          <ul>
-            <li>
-              <span>Charter feedback</span>
-            </li>
-            <ul>
-              <li>
-                <span>Polyfilling or extending MathML</span>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <span>shadow DOM</span>
-              </li>
-              <li>
-                <span>custom elements</span>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <span>CSS layout API or other Houdini APIs</span>
-              </li>
-              <li>
-                <span>Fonts</span>
-              </li>
-              <li>
-                <span>Linking</span>
-              </li>
-            </ul>
-            <li>
-              <span>Accessibility mappings of elements and attributes.</span>
-            </li>
-            <li>
-              <span>Search for math</span>
-            </li>
-            <li>
-              <span>Who&rsquo;s doing the work?</span>
-            </li>
-            <ul>
-              <li>
-                <span>Igalia -- needs a long term funding solution</span>
-              </li>
-              <li>
-                <span>Vendor support?</span>
-              </li>
-              <li>
-                <span>Other implementations</span>
-              </li>
-              <ul>
-                <li>
-                  <span>H&aring;kon Wium Lie (Prince formatting engine)</span>
-                </li>
-                <li>
-                  <span>TeX to HTML/MathML translators (target core, include author intent)</span>
-                </li>
-                <li>
-                  <span>NVDIA&rsquo;s MathML support to make use of author intent</span>
-                </li>
-              </ul>
-            </div>
-          </body>
-        </html>
+              <code>
+                <br>
+                  &lt;mrow <span style="font-weight: bold;"> intent=&quot;binomial(@1,@2)&quot;</span>&gt;<br>
+                    &nbsp;&nbsp;&lt;mo&gt;(&lt;/mo&gt;<br>
+                      &nbsp;&nbsp;&lt;mfrac linethickness=&quot;0pt&quot;&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;mi <span style="font-weight: bold;"> arg=&quot;1&quot;</span>&gt;n&lt;/mi&gt;<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&lt;mi <span style="font-weight: bold;"> arg=&quot;2&quot;</span>&gt;m&lt;/mi&gt;<br>
+                            &nbsp;&nbsp;&lt;/mfrac&gt;<br>
+                              &nbsp;&nbsp;&lt;mo&gt;)&lt;/mo&gt;<br>
+                                &lt;/mrow&gt;
+                              </code>
+                            </li>
+                            <li>
+                              <a href="https://mathml.igalia.com">Work by Igalia</a>
+                              &nbsp;(Chrome/Edge under experimental flag: chrome://flags/#enable-experimental-web-platform-features)
+                            </li>
+                            <li>
+                              <span>Bringing other implementations closer together</span>
+                            </li>
+                            <li>
+                              <span>Have thousands of WPT</span>
+                            </li>
+                          </ul>
+                          <h2>
+                            What is in core and what is not
+                          </h2>
+                          <ul>
+                            <li>In:</li>
+                            <ul>
+                              <li>scripts &mdash; \(x^2\), \(y_1\)</li>
+                              <li>limits/accents &mdash; \(\displaystyle\lim_{x→0} \frac{x}{\sin x}\), \(\hat{y}\)</li>
+                              <li>fractions &mdash; \(\frac{x+y}{x-y}\)</li>
+                              <li>roots &mdash; \(\sqrt{x}\), \(\root{3} \of x\)</li>
+                              <li>large operators &mdash; \(\displaystyle\sum x_i\)</li>
+                              <li>stretchy chars &mdash; \(\displaystyle\big(\sum x_i\big)\cdot\big(\sum y_i\big)\), \(\overbrace{x+y}\)</li>
+                              <li>proper math typography &mdash;b spacing, size changes, script positioning...
+                               <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>&#x3C3;</mi>
+  <mo>=</mo>
+  <msqrt>
+    <mfrac>
+      <mn>1</mn>
+      <mi>N</mi>
+    </mfrac>
+    <munderover>
+      <mo data-mjx-texclass="OP">&#x2211;</mo>
+      <mrow>
+        <mi>i</mi>
+        <mo>=</mo>
+        <mn>1</mn>
+      </mrow>
+      <mi>N</mi>
+    </munderover>
+    <mo stretchy="false">(</mo>
+    <msub>
+      <mi>x</mi>
+      <mi>i</mi>
+    </msub>
+    <mo>&#x2212;</mo>
+    <mi>&#x3BC;</mi>
+    <msup>
+      <mo stretchy="false">)</mo>
+      <mn>2</mn>
+    </msup>
+  </msqrt>
+</math></li>
+                            </ul>
+                            <li>Out (for now):
+                              <ul>
+                                <li>linebreaking & indentation</li>
+                                <li>bevelled fractions&mdash;
+                                  <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mfrac bevelled="true">
+                                      <mrow>
+                                        <mi>x</mi>
+                                        <mo>+</mo>
+                                        <mi>y</mi>
+                                      </mrow>
+                                      <mn>2</mn>
+                                    </mfrac>
+                                  </math>
+                                </li>
+                                <li>left/center/right alignment in fractions &amp; limits</li>
+                                <li>elementary math &mdash;
+                                  <img src="https://www.w3.org/Math/draft-spec/image/em-sub-borrow-above.png" alt="2D substraction problem with crossouts" align="center">&nbsp;&nbsp;
+                                    <img src="https://www.w3.org/TR/MathML3/image/em-longdiv-us.png" alt="long division problem showing the various steps" align="center">
+                                    </li>
+                                    <li>
+                                      <code>menclose</code> &mdash;
+                                      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                                        <mn>4</mn>
+                                        <menclose notation="updiagonalstrike downdiagonalstrike">
+                                          <mo>+</mo>
+                                          <mn>10</mn>
+                                          <mo>/</mo>
+                                          <mn>2</mn>
+                                          <mo>-</mo>
+                                          <mn>5</mn>
+                                        </menclose>
+                                      </math>
+                                    </li>
+                                    <li>most <code>mstyle</code> attrs</li>
+                                    <li>labeled rows in tables</li>
+                                    <li>little-used attrs</li>
+                                    <li>obscure and mostly unimplemented tags for alignment</li>
+                                  </ul>
+                                </ul>
+                                <h2>
+                                  Moving towards a WG
+                                  (<a href="https://mathml-refresh.github.io/charter-drafts/math-2020.html">charter draft</a>)
+                                </h2>
+                                <ul>
+                                  <li>
+                                    <span>Scope</span>
+                                  </li>
+                                  <ul>
+                                    <li>
+                                      <span>Development of recs and test suites</span>
+                                    </li>
+                                    <li>
+                                      <span>Clarifications to the current use of Web Platform technologies, such as supported JavaScript APIs and CSS modules.</span>
+                                    </li>
+                                    <li>
+                                      <span>Integration of new and existing Web Platform technologies, including, but not limited to hyperlinks, DOM APIs, </span>
+                                      <span>Shadow DOM and Custom Elements, CSS</span>
+                                    </li>
+                                    <li>
+                                      <span>Identification of normative requirements needed to ensure accessibility</span>
+                                    </li>
+                                    <li>
+                                      <span>Removing elements and attributes from MathML that have had minimal adoption</span>
+                                    </li>
+                                  </ul>
+                                  <li>
+                                    <span>Out of Scope</span>
+                                  </li>
+                                  <ul>
+                                    <li>
+                                      <span>Adding new elements for use exclusively outside the platform</span>
+                                    </li>
+                                    <li>
+                                      <span>Changes that would cause legacy MathML that has significant usage to stop working on the Web Platform or elsewhere.</span>
+                                    </li>
+                                    <li>
+                                      <span>Changes to Content MathML. These will be considered at a later time after gaining experience and feedback from proposed additions to enhance accessibility and searchability in Presentation MathML.</span>
+                                    </li>
+                                  </ul>
+                                  <li>
+                                    <span>Normative Deliverables</span>
+                                  </li>
+                                  <ul>
+                                    <li>
+                                      <span>Core Level 1</span>
+                                    </li>
+                                    <li>
+                                      <span>Core Level 2</span>
+                                    </li>
+                                    <li>
+                                      <span>MathML Full</span>
+                                    </li>
+                                  </ul>
+                                  <li>
+                                    <span>Non-normative Deliverables</span>
+                                  </li>
+                                  <ul>
+                                    <li>
+                                      <span>Test suites and implementation reports for the specification</span>
+                                    </li>
+                                    <li>
+                                      <span>MathML Accessibility Techniques</span>
+                                    </li>
+                                    <li>
+                                      <span>Guides on annotating Presentation MathML for accessibility and search</span>
+                                    </li>
+                                    <li>
+                                      <span>A living catalog for annotations beyond those defined in a MathML 4 recommendation.</span>
+                                    </li>
+                                    <li>
+                                      <span>Sample code that converts default &quot;intent&quot; values to explicit &quot;intent&quot; values in Presentation MathML.</span>
+                                    </li>
+                                    <li>
+                                      <span>At least one TeX-to-MathML converter that incorporates accessibility/searchability annotations in its MathML output.</span>
+                                    </li>
+                                    <li>
+                                      <span>Code to convert Content MathML to Presentation MathML with accessibility and searchability annotations.</span>
+                                    </li>
+                                    <li>
+                                      <span>Sample code for conversion of annotated Presentation MathML to an external form such as speech and/or Content MathML</span>
+                                    </li>
+                                  </ul>
+                                </ul>
+                                <h2>
+                                  <span>Discussion Topics</span>
+                                </h2>
+                                <ul>
+                                  <li>
+                                    <span>Charter feedback</span>
+                                  </li>
+                                  <ul>
+                                    <li>
+                                      <span>Polyfilling or extending MathML</span>
+                                    </li>
+                                  </ul>
+                                  <ul>
+                                    <li>
+                                      <span>shadow DOM</span>
+                                    </li>
+                                    <li>
+                                      <span>custom elements</span>
+                                    </li>
+                                  </ul>
+                                  <ul>
+                                    <li>
+                                      <span>CSS layout API or other Houdini APIs</span>
+                                    </li>
+                                    <li>
+                                      <span>Fonts</span>
+                                    </li>
+                                    <li>
+                                      <span>Linking</span>
+                                    </li>
+                                  </ul>
+                                  <li>
+                                    <span>Accessibility mappings of elements and attributes.</span>
+                                  </li>
+                                  <li>
+                                    <span>Search for math</span>
+                                  </li>
+                                  <li>
+                                    <span>Who&rsquo;s doing the work?</span>
+                                  </li>
+                                  <ul>
+                                    <li>
+                                      <span>Igalia -- needs a long term funding solution</span>
+                                    </li>
+                                    <li>
+                                      <span>Vendor support?</span>
+                                    </li>
+                                    <li>
+                                      <span>Other implementations</span>
+                                    </li>
+                                    <ul>
+                                      <li>
+                                        <span>H&aring;kon Wium Lie (Prince formatting engine)</span>
+                                      </li>
+                                      <li>
+                                        <span>TeX to HTML/MathML translators (target core, include author intent)</span>
+                                      </li>
+                                      <li>
+                                        <span>NVDIA&rsquo;s MathML support to make use of author intent</span>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </body>
+                              </html>
