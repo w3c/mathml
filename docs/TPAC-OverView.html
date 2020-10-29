@@ -3,154 +3,179 @@
     <head>
       <meta charset="utf-8"/>
       <title>TPAC Breakout: Making Mathematics a First Class Citizen of the Web</title>
-      <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-      <div>
-        <h2>MathML Status</h2>
-        <ul>
-          <li>
-            <span>MathML 1.0 -- 1998; Currently at V3 2nd Edition (2014)</span>
-          </li>
-          <li>
-            <span>Support in Firefox and Safari, but some incompatibilities around the edges</span>
-          </li>
-          <li>
-            <span>Lots of stuff under specified, unusual qualities in those implementations (DOM APIs), how CSS should/shouldn&#39;t work for those</span>
-          </li>
-          <li>
-            <span>Parsed, but not rendered/otherwise supported in Chrome, Edge</span>
-          </li>
-          <li>
-            <span>Very well supported by AT (JAWS, NVDA, Safari, ORCA)</span>
-          </li>
-          <li>
-            <span>MathJaX JS library is main way of displaying math</span>
-          </li>
-          <li>
-            <span>
-              <a href="https://www.w3.org/community/mathml4/">MathML Refresh CG</a>
-            </span>
-            <span>&nbsp;(2019)</span>
-          </li>
-          <li>
-            <a href="https://mathml-refresh.github.io/mathml-core">Core</a>
-            (<a href="https://mathml-refresh.github.io/mathml-core/docs/explainer">explainer</a>)
-          </li>
-          <li>
-            <span>
-              <a href="https://mathml-refresh.github.io/mathml-polyfills/acid-test.html">Polyfills</a>
-            </span>
-          </li>
-          <li>
-            <span>Other work, primarily focusing on allowing for authoring </span>
-            <span>intent</span>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="https://mathml.igalia.com">Work by Igalia</a>
-            &nbsp;(Chrome/Edge under experimental flag: chrome://flags/#enable-experimental-web-platform-features)h
-          </li>
-          <li>
-            <span>Bringing other implementations closer together</span>
-          </li>
-          <li>
-            <span>Have thousands of WPT</span>
-          </li>
-        </ul>
-        <h2>
-          Demo of what is in core and what is not in
-        </h2>
-        <ul>
-          <li>In: scripts, limits/accents, fractions, roots, large operators, stretchy chars</li>
-          <li>Out (for now):
-          linebreaking & indentation, elementary math, bevelled fractions, left/center/right alignment in fractions &amp; limits, labeled rows in tables, most &quote;mstyle&quote; attrs, little-used attrs
-          </li>
-        </ul>
-        <h2>
-          Moving towards a WG (
-          <a href="https://mathml-refresh.github.io/charter-drafts/math-2020.html">charter draft</a>
-          )
-        </h2>
-        <ul>
-          <li>
-            <span>Scope</span>
-          </li>
+      <link rel="stylesheet"
+            href="style.css">
+        <script type="text/javascript"
+                id="MathJax-script"
+                async
+                src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+      </head>
+      <body>
+        <div>
+          <h2>MathML Status</h2>
           <ul>
             <li>
-              <span>Development of recs and test suites</span>
+              <span>MathML 1.0 -- 1998; Currently at V3 2nd Edition (2014)</span>
             </li>
             <li>
-              <span>Clarifications to the current use of Web Platform technologies, such as supported JavaScript APIs and CSS modules.</span>
+              <span>Support in Firefox and Safari, but some incompatibilities around the edges</span>
             </li>
             <li>
-              <span>Integration of new and existing Web Platform technologies, including, but not limited to hyperlinks, DOM APIs, </span>
-              <span>Shadow DOM and Custom Elements, CSS</span>
+              <span>Lots of stuff under specified, unusual qualities in those implementations (DOM APIs), how CSS should/shouldn&#39;t work for those</span>
             </li>
             <li>
-              <span>Identification of normative requirements needed to ensure accessibility</span>
+              <span>Parsed, but not rendered/otherwise supported in Chrome, Edge</span>
             </li>
             <li>
-              <span>Removing elements and attributes from MathML that have had minimal adoption</span>
+              <span>Very well supported by AT (JAWS, NVDA, Safari, ORCA)</span>
+            </li>
+            <li>
+              <span>MathJaX JS library is main way of displaying math</span>
+            </li>
+            <li>
+              <span>
+                <a href="https://www.w3.org/community/mathml4/">MathML Refresh CG</a>
+              </span>
+              <span>&nbsp;(2019)</span>
+            </li>
+            <li>
+              <a href="https://mathml-refresh.github.io/mathml-core">Core</a>
+              (<a href="https://mathml-refresh.github.io/mathml-core/docs/explainer">explainer</a>)
+            </li>
+            <li>
+              <span>
+                <a href="https://mathml-refresh.github.io/mathml-polyfills/acid-test.html">Polyfills</a>
+              </span>
+            </li>
+            <li>
+              Improved accessibility by allowing authors to specify intent.
+              As an example, one proposal is that the binomial
+              <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                <mrow intent="binomial(@n,@m)">
+                  <mo>(</mo>
+                  <mfrac linethickness="0pt">
+                    <mi arg="n">n</mi>
+                    <mi arg="m">m</mi>
+                  </mfrac>
+                  <mo>)</mo>
+                </mrow>
+              </math>
+              could be marked up as:
+              <code><br>
+                &lt;mrow <span style="font-weight: bold;"> intent=&quot;binomial(@1,@2)&quot;</span>&gt;<br>
+                &nbsp;&nbsp;&lt;mo&gt;(&lt;/mo&gt;<br>
+                &nbsp;&nbsp;&lt;mfrac linethickness=&quot;0pt&quot;&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;mi <span style="font-weight: bold;"> arg=&quot;1&quot;</span>&gt;n&lt;/mi&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;mi <span style="font-weight: bold;"> arg=&quot;2&quot;</span>&gt;m&lt;/mi&gt;<br>
+                &nbsp;&nbsp;&lt;/mfrac&gt;<br>
+                &nbsp;&nbsp;&lt;mo&gt;)&lt;/mo&gt;<br>
+                &lt;/mrow&gt;
+              </code>
+            </li>
+            <li>
+              <a href="https://mathml.igalia.com">Work by Igalia</a>
+              &nbsp;(Chrome/Edge under experimental flag: chrome://flags/#enable-experimental-web-platform-features)
+            </li>
+            <li>
+              <span>Bringing other implementations closer together</span>
+            </li>
+            <li>
+              <span>Have thousands of WPT</span>
             </li>
           </ul>
-          <li>
-            <span>Out of Scope</span>
-          </li>
+          <h2>
+            Demo of what is in core and what is not in
+          </h2>
           <ul>
-            <li>
-              <span>Adding new elements for use exclusively outside the platform</span>
-            </li>
-            <li>
-              <span>Changes that would cause legacy MathML that has significant usage to stop working on the Web Platform or elsewhere.</span>
-            </li>
-            <li>
-              <span>Changes to Content MathML. These will be considered at a later time after gaining experience and feedback from proposed additions to enhance accessibility and searchability in Presentation MathML.</span>
+            <li>In: scripts, limits/accents, fractions, roots, large operators, stretchy chars</li>
+            <li>Out (for now):
+              linebreaking & indentation, elementary math, bevelled fractions, left/center/right alignment in fractions &amp; limits, labeled rows in tables, most &quote;mstyle&quote; attrs, little-used attrs
             </li>
           </ul>
-          <li>
-            <span>Normative Deliverables</span>
-          </li>
+          <h2>
+            Moving towards a WG
+            (<a href="https://mathml-refresh.github.io/charter-drafts/math-2020.html">charter draft</a>)
+          </h2>
           <ul>
             <li>
-              <span>Core Level 1</span>
+              <span>Scope</span>
             </li>
+            <ul>
+              <li>
+                <span>Development of recs and test suites</span>
+              </li>
+              <li>
+                <span>Clarifications to the current use of Web Platform technologies, such as supported JavaScript APIs and CSS modules.</span>
+              </li>
+              <li>
+                <span>Integration of new and existing Web Platform technologies, including, but not limited to hyperlinks, DOM APIs, </span>
+                <span>Shadow DOM and Custom Elements, CSS</span>
+              </li>
+              <li>
+                <span>Identification of normative requirements needed to ensure accessibility</span>
+              </li>
+              <li>
+                <span>Removing elements and attributes from MathML that have had minimal adoption</span>
+              </li>
+            </ul>
             <li>
-              <span>Core Level 2</span>
+              <span>Out of Scope</span>
             </li>
+            <ul>
+              <li>
+                <span>Adding new elements for use exclusively outside the platform</span>
+              </li>
+              <li>
+                <span>Changes that would cause legacy MathML that has significant usage to stop working on the Web Platform or elsewhere.</span>
+              </li>
+              <li>
+                <span>Changes to Content MathML. These will be considered at a later time after gaining experience and feedback from proposed additions to enhance accessibility and searchability in Presentation MathML.</span>
+              </li>
+            </ul>
             <li>
-              <span>MathML Full</span>
+              <span>Normative Deliverables</span>
             </li>
-          </ul>
-          <li>
-            <span>Non-normative Deliverables</span>
-          </li>
-          <ul>
+            <ul>
+              <li>
+                <span>Core Level 1</span>
+              </li>
+              <li>
+                <span>Core Level 2</span>
+              </li>
+              <li>
+                <span>MathML Full</span>
+              </li>
+            </ul>
             <li>
-              <span>Test suites and implementation reports for the specification</span>
+              <span>Non-normative Deliverables</span>
             </li>
-            <li>
-              <span>MathML Accessibility Techniques</span>
-            </li>
-            <li>
-              <span>Guides on annotating Presentation MathML for accessibility and search</span>
-            </li>
-            <li>
-              <span>A living catalog for annotations beyond those defined in a MathML 4 recommendation.</span>
-            </li>
-            <li>
-              <span>Sample code that converts default &quot;intent&quot; values to explicit &quot;intent&quot; values in Presentation MathML.</span>
-            </li>
-            <li>
-              <span>At least one TeX-to-MathML converter that incorporates accessibility/searchability annotations in its MathML output.</span>
-            </li>
-            <li>
-              <span>Code to convert Content MathML to Presentation MathML with accessibility and searchability annotations.</span>
-            </li>
-            <li>
-              <span>Sample code for conversion of annotated Presentation MathML to an external form such as speech and/or Content MathML</span>
-            </li>
+            <ul>
+              <li>
+                <span>Test suites and implementation reports for the specification</span>
+              </li>
+              <li>
+                <span>MathML Accessibility Techniques</span>
+              </li>
+              <li>
+                <span>Guides on annotating Presentation MathML for accessibility and search</span>
+              </li>
+              <li>
+                <span>A living catalog for annotations beyond those defined in a MathML 4 recommendation.</span>
+              </li>
+              <li>
+                <span>Sample code that converts default &quot;intent&quot; values to explicit &quot;intent&quot; values in Presentation MathML.</span>
+              </li>
+              <li>
+                <span>At least one TeX-to-MathML converter that incorporates accessibility/searchability annotations in its MathML output.</span>
+              </li>
+              <li>
+                <span>Code to convert Content MathML to Presentation MathML with accessibility and searchability annotations.</span>
+              </li>
+              <li>
+                <span>Sample code for conversion of annotated Presentation MathML to an external form such as speech and/or Content MathML</span>
+              </li>
+            </ul>
           </ul>
           <h2>
             <span>Discussion Topics</span>
@@ -202,18 +227,17 @@
               <li>
                 <span>Other implementations</span>
               </li>
-            <ul>
-              <li>
-                <span>H&aring;kon Wium Lie (Prince formatting engine)</span>
-              </li>
-              <li>
-                <span>TeX to HTML/MathML translators (target core, include author intent)</span>
-              </li>
-              <li>
-                <span>NVDIA&rsquo;s MathML support to make use of author intent</span>
-              </li>
-            </ul>
-            </ul>
-          </div>
-        </body>
-      </html>
+              <ul>
+                <li>
+                  <span>H&aring;kon Wium Lie (Prince formatting engine)</span>
+                </li>
+                <li>
+                  <span>TeX to HTML/MathML translators (target core, include author intent)</span>
+                </li>
+                <li>
+                  <span>NVDIA&rsquo;s MathML support to make use of author intent</span>
+                </li>
+              </ul>
+            </div>
+          </body>
+        </html>
