@@ -93,37 +93,40 @@
                               <li>roots &mdash; \(\sqrt{x}\), \(\root{3} \of x\)</li>
                               <li>large operators &mdash; \(\displaystyle\sum x_i\)</li>
                               <li>stretchy chars &mdash; \(\displaystyle\big(\sum x_i\big)\cdot\big(\sum y_i\big)\), \(\overbrace{x+y}\)</li>
-                              <li>proper math typography &mdash;b spacing, size changes, script positioning...
-                               <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>&#x3C3;</mi>
-  <mo>=</mo>
-  <msqrt>
-    <mfrac>
-      <mn>1</mn>
-      <mi>N</mi>
-    </mfrac>
-    <munderover>
-      <mo data-mjx-texclass="OP">&#x2211;</mo>
-      <mrow>
-        <mi>i</mi>
-        <mo>=</mo>
-        <mn>1</mn>
-      </mrow>
-      <mi>N</mi>
-    </munderover>
-    <mo stretchy="false">(</mo>
-    <msub>
-      <mi>x</mi>
-      <mi>i</mi>
-    </msub>
-    <mo>&#x2212;</mo>
-    <mi>&#x3BC;</mi>
-    <msup>
-      <mo stretchy="false">)</mo>
-      <mn>2</mn>
-    </msup>
-  </msqrt>
-</math></li>
+                              <li>proper math typography &mdash; spacing, size changes, script positioning... &nbsp;&nbsp;&nbsp;
+                                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mstyle displaystyle="true">
+                                  <mi>&#x3C3;</mi>
+                                  <mo>=</mo>
+                                  <msqrt>
+                                    <mfrac>
+                                      <mn>1</mn>
+                                      <mi>N</mi>
+                                    </mfrac>
+                                    <munderover>
+                                      <mo data-mjx-texclass="OP">&#x2211;</mo>
+                                      <mrow>
+                                        <mi>i</mi>
+                                        <mo>=</mo>
+                                        <mn>1</mn>
+                                      </mrow>
+                                      <mi>N</mi>
+                                    </munderover>
+                                    <mo stretchy="false">(</mo>
+                                    <msub>
+                                      <mi>x</mi>
+                                      <mi>i</mi>
+                                    </msub>
+                                    <mo>&#x2212;</mo>
+                                    <mi>&#x3BC;</mi>
+                                    <msup>
+                                      <mo stretchy="false">)</mo>
+                                      <mn>2</mn>
+                                    </msup>
+                                  </msqrt>
+                                </mstyle>
+                                </math>
+                              </li>
                             </ul>
                             <li>Out (for now):
                               <ul>
@@ -142,7 +145,7 @@
                                 </li>
                                 <li>left/center/right alignment in fractions &amp; limits</li>
                                 <li>elementary math &mdash;
-                                  <img src="https://www.w3.org/Math/draft-spec/image/em-sub-borrow-above.png" alt="2D substraction problem with crossouts" align="center">&nbsp;&nbsp;
+                                  <img src="https://www.w3.org/Math/draft-spec/image/em-sub-borrow-above.png" alt="2D subtraction problem with crossouts" align="center">&nbsp;&nbsp;
                                     <img src="https://www.w3.org/TR/MathML3/image/em-longdiv-us.png" alt="long division problem showing the various steps" align="center">
                                     </li>
                                     <li>
@@ -230,15 +233,6 @@
                                       <span>MathML Accessibility Techniques</span>
                                     </li>
                                     <li>
-                                      <span>Guides on annotating Presentation MathML for accessibility and search</span>
-                                    </li>
-                                    <li>
-                                      <span>A living catalog for annotations beyond those defined in a MathML 4 recommendation.</span>
-                                    </li>
-                                    <li>
-                                      <span>Sample code that converts default &quot;intent&quot; values to explicit &quot;intent&quot; values in Presentation MathML.</span>
-                                    </li>
-                                    <li>
                                       <span>At least one TeX-to-MathML converter that incorporates accessibility/searchability annotations in its MathML output.</span>
                                     </li>
                                     <li>
@@ -307,7 +301,7 @@
                                         <span>TeX to HTML/MathML translators (target core, include author intent)</span>
                                       </li>
                                       <li>
-                                        <span>NVDIA&rsquo;s MathML support to make use of author intent</span>
+                                        <span>NVDA&rsquo;s MathML support to make use of author intent</span>
                                       </li>
                                     </ul>
                                   </div>
