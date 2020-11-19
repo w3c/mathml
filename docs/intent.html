@@ -230,7 +230,7 @@ Examples of default intent values:
 </li>
 
 <li>a fraction with default <tt>intent="divide(a,b)"</tt>
-<p>$a/b$ as $divide(a,b)$</p>
+<p>$a\over b$ as $divide(a,b)$</p>
 <pre>
 &lt;mfrac>
   &lt;mi>a&lt;/mi>
@@ -489,12 +489,13 @@ An element may be assigned an argument name that may be used as a way to referen
 The intent attribute may express the application of a named function to a list of implied arguments collected from the sub elements.  The implied argument list is collected from sub elements that have an intent attribute, supplied either as an explicit attribute value, or as a default intent value.
 </p>
 
+<ul>
 <li>The <tt>mrow</tt> element applies the operator to the argument.
 <p>$n!$ as $factorial(n)$</p>
 <pre>
 &lt;mrow intent="@$op">
-  &lt;mi intent="n">n&lt;/mi>
-  &lt;mo intent="factorial">!&lt;/mo>
+  &lt;mi arg="1" intent="n">n&lt;/mi>
+  &lt;mo arg="op" intent="factorial">!&lt;/mo>
 &lt;/mrow>
 </pre>
 <pre>
@@ -510,7 +511,7 @@ The intent attribute may express the application of a named function to a list o
 <pre>
 &lt;mrow intent="@$op">
   &lt;mi arg="1" intent="a">a&lt;/mi>
-  &lt;mo intent="plus">+&lt;/mo>
+  &lt;mo arg="op" intent="plus">+&lt;/mo>
   &lt;mi arg="2" intent="b">b&lt;/mi>
 &lt;/mrow>
 </pre>
@@ -521,11 +522,11 @@ The intent attribute may express the application of a named function to a list o
   &lt;mi>b&lt;/mi>
 &lt;/mrow>
 </pre>
-</li>
 
 <p>
 In this example, the default intent for the operator is <tt>plus</tt>, and the arguments are collected from the <tt>mi</tt> elements, which have a default intent value.
 </p>
+</li>
 
 <li>The argument name references may reorder the actual arguments.
 <p>$\int_0^1 x^2 dx$ as $integral(power(x,2),x,0,1)$</p>
@@ -559,11 +560,12 @@ In this example, the default intent for the operator is <tt>plus</tt>, and the a
   &lt;mi>x&lt;/mi>
 &lt;/mrow>
 </pre>
-</li>
 
 <p>
 In this example, the default intent for the operator is <tt>integral</tt>, arguments <tt>$1</tt> and <tt>$2</tt> are collected from the first two <tt>mn</tt> elements, which become the limits of integration, argument <tt>$3</tt> is the <tt>msup</tt> element, which becomes the integrand, and <tt>$4</tt> is the final <tt>mi</tt> element, which becomes the integration variable.
 </p>
+</li>
+</ul>
 
 <hr>
 <b id="transpose">Examples -- Transpose</b>
