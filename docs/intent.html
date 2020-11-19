@@ -33,13 +33,15 @@ MathML is a W3C recommendation that represents mathematical expressions.  This n
 <b>Table of Contents</b>
 <ul>
 <li><a href="#attintent">The intent attribute</a></li>
-<li><a href="#exintent">Basic intent values</a></li>
+<li><a href="#exintent">Explicit intent values</a></li>
 <li><a href="#defintent">Default intent values</a></li>
 <li><a href="#attarg">The arg attribute</a></li>
-<li><a href="#argindex">Argument index values</a></li>
-<li><a href="#argname">Argument name values</a></li>
-
+<li><a href="#argindex">Argument index references</a></li>
+<li><a href="#argindexex">Argument index examples</a></li>
+<li><a href="#argname">Argument name references</a></li>
+<li><a href="#argnameex">Argument name examples</a></li>
 <li><a href="#implied">Implied arguments examples</a></li>
+<li><a href="#transpose">Examples -- Transpose</a></li>
 <li><a href="#superscript">Examples -- Superscript</a></li>
 <li><a href="#binomial">Examples -- Binomial</a></li>
 <li><a href="#multiop">Examples -- Multiple Operators</a></li>
@@ -70,10 +72,10 @@ intent :=
 <p>
 The <tt>intent</tt> attribute value may contain:
 <ul>
-<li> <tt>{numeral}</tt> - to denote a numeric constant</li>
-<li> <tt>{NCName}</tt> - to denote an identifier or function symbol</li>
-<li> <tt>{NCName} '(' ')'</tt> - to denote a function of zero arguments</li>
-<li> <tt>{NCName} '(' {intent} [ ',' {intent} ]* ')'</tt> - to denote a function of one or more arguments</li>
+<li> <tt>{numeral}</tt> - a numeric constant</li>
+<li> <tt>{NCName}</tt> - an identifier or function symbol</li>
+<li> <tt>{NCName} '(' ')'</tt> - a function of zero arguments</li>
+<li> <tt>{NCName} '(' {intent} [ ',' {intent} ]* ')'</tt> - a function of one or more arguments</li>
 <li> <tt>'$' {numeral}</tt> - to refer to the intent of an argument by index</li>
 <li> <tt>'$' {NCName}</tt> - to refer to the intent of an argument by name</li>
 <li> <tt>'@' {NCName}</tt> - to apply a named function to implied arguments</li>
@@ -81,10 +83,10 @@ The <tt>intent</tt> attribute value may contain:
 </p>
 
 <hr>
-<b id="exintent">Basic intent values</b>
+<b id="exintent">Explicit intent values</b>
 
 <p>
-Basic examples of the intent attribute may express:
+Explicit examples of the intent attribute may express:
 <ul>
 
 <li>a numeric constant using a special form
@@ -122,6 +124,17 @@ Basic examples of the intent attribute may express:
 </pre>
 </li>
 
+<li>a function name with one or more arguments
+<p>$a+b$ as $plus(a,b)$</p>
+<pre>
+&lt;mrow intent="plus(a,b)">
+  &lt;mi>a&lt;/mi>
+  &lt;mo>+&lt;/mo>
+  &lt;mi>b&lt;/mi>
+&lt;/mrow>
+</pre>
+</li>
+
 </ul>
 </p>
 
@@ -129,7 +142,44 @@ Basic examples of the intent attribute may express:
 <b id="defintent">Default intent values</b>
 
 <p>
-The default intent of an atomic element <tt>mn</tt> or <tt>mi</tt> is taken from the character data of the element.  The atomic element <tt>mo</tt> has no predefined default intent.  See below for other rules for inferring default intent for common notational patterns.  These rules may be influenced by subject area information provided by the author.
+Many presentation elements have predefined default intent values:
+
+<table>
+<tr><td><tt>&lt;mn&gt;</tt></td><td><tt>@cdata</tt></td></tr>
+<tr><td><tt>&lt;mi&gt;</tt></td><td><tt>@cdata</tt></td></tr>
+<tr><td><tt>&lt;mo&gt;</tt></td><td><tt>opname(@cdata)</tt></td></tr>
+<tr><td><tt>&lt;mtext&gt;</tt></td><td><tt>[none]</tt></td></tr>
+<tr><td><tt>&lt;mspace&gt;</tt></td><td><tt>[none]</tt></td></tr>
+<tr><td><tt>&lt;ms&gt;</tt></td><td><tt>[none]</tt></td></tr>
+
+<tr><td><tt>&lt;mrow&gt;</tt></td><td><tt>@$op</tt></td></tr>
+<tr><td><tt>&lt;mfrac&gt;</tt></td><td><tt>@divide</tt></td></tr>
+<tr><td><tt>&lt;msqrt&gt;</tt></td><td><tt>@sqrt</tt></td></tr>
+<tr><td><tt>&lt;mroot&gt;</tt></td><td><tt>@root</tt></td></tr>
+<tr><td><tt>&lt;mstyle&gt;</tt></td><td><tt>[mrow]</tt></td></tr>
+<tr><td><tt>&lt;merror&gt;</tt></td><td><tt>[mrow]</tt></td></tr>
+<tr><td><tt>&lt;mpadded&gt;</tt></td><td><tt>[mrow]</tt></td></tr>
+<tr><td><tt>&lt;mphantom&gt;</tt></td><td><tt>[mrow]</tt></td></tr>
+
+<tr><td><tt>&lt;msub&gt;</tt></td><td><tt>[none]</tt></td></tr>
+<tr><td><tt>&lt;msup&gt;</tt></td><td><tt>@power</tt></td></tr>
+<tr><td><tt>&lt;msubsup&gt;</tt></td><td><tt>[none]</tt></td></tr>
+<tr><td><tt>&lt;munder&gt;</tt></td><td><tt>[none]</tt></td></tr>
+<tr><td><tt>&lt;mover&gt;</tt></td><td><tt>[none]</tt></td></tr>
+<tr><td><tt>&lt;munderover&gt;</tt></td><td><tt>[none]</tt></td></tr>
+<tr><td><tt>&lt;mmultiscripts&gt;</tt></td><td><tt>[none]</tt></td></tr>
+
+<tr><td><tt>&lt;mtable&gt;</tt></td><td><tt>[none]</tt></td></tr>
+<tr><td><tt>&lt;maction&gt;</tt></td><td><tt>[none]</tt></td></tr>
+</table>
+</p>
+
+<p>
+The default intent of an atomic element <tt>mn</tt> or <tt>mi</tt> is taken from the character data of the element.  The atomic element <tt>mo</tt> may be given a predefined default intent based on the character data of the operator.  An <tt>mrow</tt> element that contains a single <tt>mo</tt> element is given a predefined default intent <tt>@$op</tt> which applies the operator to the implied argument list. 
+</p>
+
+<p>
+See below for examples of other rules for inferring default intent for presentation elements.  These rules may be influenced by subject area information provided by the author.
 </p>
 
 <p>
@@ -137,7 +187,7 @@ These rules provide default intent values for tools that process the intent valu
 </p>
 
 <p>
-Basic examples of default intent values:
+Examples of default intent values:
 <ul>
 
 <li>a numeric constant with default <tt>intent="3"</tt>
@@ -154,10 +204,57 @@ Basic examples of default intent values:
 </pre>
 </li>
 
+<li>a function symbol with default <tt>intent="plus"</tt>
+<p>$+$ as $plus$</p>
+<pre>
+&lt;mo>+&lt;/mo>
+</pre>
+</li>
+
 <li>a function symbol with no default intent
 <p>$T$ as $transpose$</p>
 <pre>
 &lt;mo intent="transpose">T&lt;/mo>
+</pre>
+</li>
+
+<li>a function application with default <tt>intent="plus(a,b)"</tt>
+<p>$a+b$ as $plus(a,b)$</p>
+<pre>
+&lt;mrow>
+  &lt;mi>a&lt;/mi>
+  &lt;mo>+&lt;/mo>
+  &lt;mi>b&lt;/mi>
+&lt;/mrow>
+</pre>
+</li>
+
+<li>a fraction with default <tt>intent="divide(a,b)"</tt>
+<p>$a/b$ as $divide(a,b)$</p>
+<pre>
+&lt;mfrac>
+  &lt;mi>a&lt;/mi>
+  &lt;mi>b&lt;/mi>
+&lt;/mfrac>
+</pre>
+</li>
+
+<li>a square root with default <tt>intent="sqrt(x)"</tt>
+<p>$\sqrt{x}$ as $sqrt(x)$</p>
+<pre>
+&lt;msqrt>
+  &lt;mi>x&lt;/mi>
+&lt;/msqrt>
+</pre>
+</li>
+
+<li>a cube root with default <tt>intent="root(x,3)"</tt>
+<p>$\sqrt[3]{x}$ as $root(x,3)$</p>
+<pre>
+&lt;mroot>
+  &lt;mi>x&lt;/mi>
+  &lt;mn>3&lt;/mn>
+&lt;/mroot>
 </pre>
 </li>
 
@@ -196,7 +293,43 @@ The <tt>arg</tt> attribute behaves like an ID attribute that need only be unique
 </p>
 
 <hr>
-<b id="argindex">Argument index values</b>
+<b id="argindex">Argument index references</b>
+
+<p>
+The <tt>arg</tt> attribute may assign a numeric index for an element.
+<pre>
+arg := {numeral}
+</pre>
+</p>
+
+<p>
+The <i>argument index</i> can be used in an <i>argument index reference</i>.
+<pre>
+ref := '$' {numeral}
+</pre>
+</p>
+
+<p>
+The <i>argument list</i> for an element consists of its visible descendant
+elements with intent in document order, that is, its descendant elements
+with either an explicit intent attribute or an inferred default intent,
+that are not contained within an intervening element with intent, and
+that are not otherwise assigned an argument name.
+</p>
+
+<p>
+Within an element, the first <tt>mo</tt> element that would otherwise
+appear in the argument list is assigned the argument name <tt>op</tt>
+by default, and is excluded from the argument list.
+</p>
+
+<p>
+The elements in the argument list are assigned a default argument index
+to fill the unassigned numeric argument index values starting from one.
+</p>
+
+<hr>
+<b id="argindexex">Argument index examples</b>
 
 <p>
 The argument index may be used to reference the intent of a sub expression:
@@ -223,12 +356,12 @@ The argument index may be used to reference the intent of a sub expression:
 </pre>
 </li>
 
-<li>Index zero refers to the intent of the actual operator.
+<li>The operator does not appear in the argument list.
 <p>$n!$ as $factorial(n)$</p>
 <pre>
-&lt;mrow intent="$0($1)">
+&lt;mrow intent="$op($1)">
   &lt;mi arg="1">n&lt;/mi>
-  &lt;mo arg="0" intent="factorial">!&lt;/mo>
+  &lt;mo arg="op" intent="factorial">!&lt;/mo>
 &lt;/mrow>
 </pre>
 </li>
@@ -236,9 +369,9 @@ The argument index may be used to reference the intent of a sub expression:
 <li>The argument index references may reorder the actual arguments.
 <p>$\int_0^1 x^2 dx$ as $integral(power(x,2),x,0,1)$</p>
 <pre>
-&lt;mrow intent="$0($3,$4,$1,$2)">
+&lt;mrow intent="$op($3,$4,$1,$2)">
   &lt;msubsup>
-    &lt;mo arg="0" intent="integral">&x222B;&lt;/mo>
+    &lt;mo arg="op" intent="integral">&x222B;&lt;/mo>
     &lt;mn arg="1">0&lt;/mn>
     &lt;mn arg="2">1&lt;/mn>
   &lt;/msubsup>
@@ -256,10 +389,44 @@ The argument index may be used to reference the intent of a sub expression:
 </p>
 
 <hr>
-<b id="argname">Argument name values</b>
+<b id="argname">Argument name references</b>
 
 <p>
-A sub element may be assigned an argument name that may be used as an alternative way to reference its intent within its outer element:
+The <tt>arg</tt> attribute may assign a symbolic name for an element.
+<pre>
+arg := {NCName}
+</pre>
+</p>
+
+<p>
+The <i>argument name</i> can be used in an <i>argument name reference</i>.
+<pre>
+ref := '$' {NCName}
+</pre>
+</p>
+
+<p>
+An argument name may be used within the intent attribute of any ancestor
+element of the element where it is assigned.  The intent attribute of an
+element may refer to the argument name assigned to any of its descendant
+elements.
+</p>
+
+<p>
+An argument name must be unique within the element that uses it.
+</p>
+
+<p>
+Within an element, the first <tt>mo</tt> element that would otherwise
+appear in the argument list is assigned the argument name <tt>op</tt>
+by default, and is excluded from the argument list.
+</p>
+
+<hr>
+<b id="argnameex">Argument name examples</b>
+
+<p>
+An element may be assigned an argument name that may be used as a way to reference its intent within an ancestor element:
 <ul>
 
 <li>The arg attribute defines an argument name within an expression.
@@ -272,7 +439,7 @@ A sub element may be assigned an argument name that may be used as an alternativ
 </pre>
 </li>
 
-<li>The argument name may be used within the outer intent attribute.
+<li>The argument name may be used within an outer intent attribute.
 <p>$a+b$ as $plus(a,b)$</p>
 <pre>
 &lt;mrow intent="plus($x,$y)">
@@ -322,17 +489,130 @@ A sub element may be assigned an argument name that may be used as an alternativ
 The intent attribute may express the application of a named function to a list of implied arguments collected from the sub elements.  The implied argument list is collected from sub elements that have an intent attribute, supplied either as an explicit attribute value, or as a default intent value.
 </p>
 
+<li>The <tt>mrow</tt> element applies the operator to the argument.
+<p>$n!$ as $factorial(n)$</p>
+<pre>
+&lt;mrow intent="@$op">
+  &lt;mi intent="n">n&lt;/mi>
+  &lt;mo intent="factorial">!&lt;/mo>
+&lt;/mrow>
+</pre>
+<pre>
+&lt;mrow>
+  &lt;mi>n&lt;/mi>
+  &lt;mo>!&lt;/mo>
+&lt;/mrow>
+</pre>
+</li>
+
+<li>The operator does not appear in the argument list.
 <p>$a+b$ as $plus(a,b)$</p>
 <pre>
-&lt;mrow intent="@plus">
+&lt;mrow intent="@$op">
+  &lt;mi arg="1" intent="a">a&lt;/mi>
+  &lt;mo intent="plus">+&lt;/mo>
+  &lt;mi arg="2" intent="b">b&lt;/mi>
+&lt;/mrow>
+</pre>
+<pre>
+&lt;mrow>
   &lt;mi>a&lt;/mi>
   &lt;mo>+&lt;/mo>
   &lt;mi>b&lt;/mi>
 &lt;/mrow>
 </pre>
+</li>
 
 <p>
-In this example, the operator is plus, and the arguments are collected from the <tt>mi</tt> elements, which have a default intent value, but not the <tt>mo</tt> element, which does not.
+In this example, the default intent for the operator is <tt>plus</tt>, and the arguments are collected from the <tt>mi</tt> elements, which have a default intent value.
+</p>
+
+<li>The argument name references may reorder the actual arguments.
+<p>$\int_0^1 x^2 dx$ as $integral(power(x,2),x,0,1)$</p>
+<pre>
+&lt;mrow intent="$op($fn,$var,$lo,$hi)">
+  &lt;msubsup>
+    &lt;mo arg="op" intent="integral">&x222B;&lt;/mo>
+    &lt;mn arg="lo">0&lt;/mn>
+    &lt;mn arg="hi">1&lt;/mn>
+  &lt;/msubsup>
+  &lt;msup arg="fn" intent="power($base,$exp)">
+    &lt;mi arg="base">x&lt;/mi>
+    &lt;mn arg="exp">2&lt;/mn>
+  &lt;/msup>
+  &lt;mtext>d&lt;/mtext>
+  &lt;mi arg="var">x&lt;/mi>
+&lt;/mrow>
+</pre>
+<pre>
+&lt;mrow intent="$op($3,$4,$1,$2)">
+  &lt;msubsup>
+    &lt;mo>&x222B;&lt;/mo>
+    &lt;mn>0&lt;/mn>
+    &lt;mn>1&lt;/mn>
+  &lt;/msubsup>
+  &lt;msup>
+    &lt;mi>x&lt;/mi>
+    &lt;mn>2&lt;/mn>
+  &lt;/msup>
+  &lt;mtext>d&lt;/mtext>
+  &lt;mi>x&lt;/mi>
+&lt;/mrow>
+</pre>
+</li>
+
+<p>
+In this example, the default intent for the operator is <tt>integral</tt>, arguments <tt>$1</tt> and <tt>$2</tt> are collected from the first two <tt>mn</tt> elements, which become the limits of integration, argument <tt>$3</tt> is the <tt>msup</tt> element, which becomes the integrand, and <tt>$4</tt> is the final <tt>mi</tt> element, which becomes the integration variable.
+</p>
+
+<hr>
+<b id="transpose">Examples -- Transpose</b>
+
+<p>
+The transpose operation may be expressed as the letter "T", either using superscript notation or using prefix function notation.
+</p>
+
+<ul>
+<li>Transpose operation using superscript notation: 
+<p>$A^T$ as $transpose(A)$</p>
+<pre>
+&lt;msup intent="@transpose">
+  &lt;mi>A&lt;/mi>
+  &lt;mo>T&lt;/mo>
+&lt;/msup>
+</pre>
+<pre>
+&lt;msup intent="$op($1)">
+  &lt;mi>A&lt;/mi>
+  &lt;mo intent="transpose">T&lt;/mo>
+&lt;/msup>
+</pre>
+</li>
+<li>Transpose operation using function notation:
+<p>$T(A)$ as $transpose(A)$</p>
+<pre>
+&lt;mrow>
+  &lt;mo intent="transpose">T&lt;/mo>
+  &lt;mo>(&lt;/mo>
+  &lt;mi>A&lt;/mi>
+  &lt;mo>)&lt;/mo>
+&lt;/mrow>
+</pre>
+<pre>
+&lt;mrow>
+  &lt;mo intent="transpose">T&lt;/mo>
+  &lt;mfenced>
+    &lt;mi>A&lt;/mi>
+  &lt;/mfenced>
+&lt;/mrow>
+</pre>
+</li>
+</ul>
+
+<p>
+Either case works out to supply <tt>intent="transpose(A)"</tt>.  There are
+good reasons to voice these notations differently.  Doing so requires using
+both the markup and the intent to select the voicing.
 </p>
 
 <hr>
@@ -394,9 +674,9 @@ When the same notation may express different intent in printed material, the aut
 &lt;/msup>
 </pre>
 <pre>
-&lt;msup intent="$0($1)">
-  &lt;mi arg="1">z&lt;/mi>
-  &lt;mo arg="0" intent="conjugate">*&lt;/mo>
+&lt;msup intent="$op($1)">
+  &lt;mi>z&lt;/mi>
+  &lt;mo intent="conjugate">*&lt;/mo>
 &lt;/msup>
 </pre>
 <p>$A^T$ as $transpose(A)$</p>
@@ -407,9 +687,9 @@ When the same notation may express different intent in printed material, the aut
 &lt;/msup>
 </pre>
 <pre>
-&lt;msup intent="$0($1)">
-  &lt;mi arg="1">A&lt;/mi>
-  &lt;mo arg="0" intent="transpose">T&lt;/mo>
+&lt;msup intent="$op($1)">
+  &lt;mi>A&lt;/mi>
+  &lt;mo intent="transpose">T&lt;/mo>
 &lt;/msup>
 </pre>
 <p>$A^\dagger$ as $adjoint(A)$</p>
@@ -420,9 +700,9 @@ When the same notation may express different intent in printed material, the aut
 &lt;/msup>
 </pre>
 <pre>
-&lt;msup intent="$0($1)">
-  &lt;mi arg="1">A&lt;/mi>
-  &lt;mo arg="0" intent="adjoint">&#x2020;&lt;/mo>
+&lt;msup intent="$op($1)">
+  &lt;mi>A&lt;/mi>
+  &lt;mo intent="adjoint">&#x2020;&lt;/mo>
 &lt;/msup>
 </pre>
 
@@ -451,10 +731,10 @@ The same intent may be expressed by different printed notations.  For example, t
 &lt;/mfenced>
 </pre>
 <pre>
-&lt;mfenced intent="@binom">
+&lt;mfenced intent="@binom($n,$m)">
   &lt;mfrac linethickness="0">
-    &lt;mi arg="1">n&lt;/mi>
-    &lt;mi arg="2">m&lt;/mi>
+    &lt;mi arg="n">n&lt;/mi>
+    &lt;mi arg="m">m&lt;/mi>
   &lt;/mfrac>
 &lt;/mfenced>
 </pre>
@@ -471,7 +751,7 @@ The same intent may be expressed by different printed notations.  For example, t
 &lt;/msubsup>
 </pre>
 <pre>
-&lt;msubsup intent="$0($1,$2)">
+&lt;msubsup intent="$op($1,$2)">
   &lt;mo intent="binom">C&lt;/mo>
   &lt;mi arg="2">m&lt;/mi>
   &lt;mi arg="1">n&lt;/mi>
@@ -523,11 +803,11 @@ When the presentation supplies an element for each intended structure, the inten
 
 <p>$a+b-c+d$ as $plus(a,plus(minus(b,c),d))$</p>
 <pre>
-&lt;mrow intent="@plus">
+&lt;mrow>
   &lt;mi>a&lt;/mi>
   &lt;mo>+&lt;/mo>
-  &lt;mrow intent="@plus">
-    &lt;mrow intent="@minus">
+  &lt;mrow>
+    &lt;mrow>
       &lt;mi>b&lt;/mi>
       &lt;mo>-&lt;/mo>
       &lt;mi>c&lt;/mi>
@@ -540,11 +820,11 @@ When the presentation supplies an element for each intended structure, the inten
 
 <p>$a+b-c+d$ as $plus(plus(a,minus(b,c)),d)$</p>
 <pre>
-&lt;mrow intent="@plus">
-  &lt;mrow intent="@plus">
+&lt;mrow>
+  &lt;mrow>
     &lt;mi>a&lt;/mi>
     &lt;mo>+&lt;/mo>
-    &lt;mrow intent="@minus">
+    &lt;mrow>
       &lt;mi>b&lt;/mi>
       &lt;mo>-&lt;/mo>
       &lt;mi>c&lt;/mi>
@@ -572,11 +852,11 @@ When the presentation supplies an element for each intended structure, the inten
 </pre>
 
 <pre>
-&lt;mrow intent="@plus">
+&lt;mrow>
   &lt;mi>a&lt;/mi>
   &lt;mo>+&lt;/mo>
   &lt;mi>b&lt;/mi>
-  &lt;mrow intent="@minus">
+  &lt;mrow>
     &lt;mo>-&lt;/mo>
     &lt;mi>c&lt;/mi>
   &lt;/mrow>
@@ -599,10 +879,10 @@ When the presentation supplies an element for each intended structure, the inten
 </pre>
 
 <pre>
-&lt;mrow intent="@plus">
+&lt;mrow>
   &lt;mi>a&lt;/mi>
   &lt;mo>+&lt;/mo>
-  &lt;mrow intent="@factorial">
+  &lt;mrow>
     &lt;mi>b&lt;/mi>
     &lt;mo>!&lt;/mo>
   &lt;/mrow>
@@ -627,19 +907,19 @@ Integrals of fractions are often presented with the differential $dx$ as part of
 <p>The intent of the fraction uses the numeral 1 as the numerator, and no other elements contribute to the numerator.</p>
 <p>$\int_0^1 {dx \over x^2+1}$ as $integral(divide(1,plus(power(x,2),1)),x,0,1)$</p>
 <pre>
-&lt;mrow intent="$0($3,$bvar,$1,$2)">
+&lt;mrow intent="$op($3,$bvar,$1,$2)">
   &lt;msubsup>
-    &lt;mo intent="integral">&x222B;&lt;/mo>
+    &lt;mo>&x222B;&lt;/mo>
     &lt;mn>0&lt;/mn>
     &lt;mn>1&lt;/mn>
   &lt;/msubsup>
-  &lt;mfrac intent="@divide">
+  &lt;mfrac>
     &lt;mrow intent="1">
       &lt;mtext>d&lt;/mtext>
-      &lt;mi intent="bvar">x&lt;/mi>
+      &lt;mi arg="bvar">x&lt;/mi>
     &lt;/mrow>
-    &lt;mrow intent="@plus">
-      &lt;msup intent="@power">
+    &lt;mrow>
+      &lt;msup>
         &lt;mi>x&lt;/mi>
         &lt;mn>2&lt;/mn>
       &lt;/msup>
@@ -649,26 +929,65 @@ Integrals of fractions are often presented with the differential $dx$ as part of
   &lt;/mfrac>
 &lt;/mrow>
 </pre>
+
+<ul>
+<li>
+The <tt>msubsup</tt> element does not supply a default intent, and so the child
+elements of <tt>msubsup</tt> are visible to the outer <tt>mrow</tt> as implied
+arguments.
+</li>
+
+<li>
+The <tt>mo</tt> element supplies the default <tt>integral</tt> as the operator
+of the outer <tt>mrow</tt>, <tt>&lt;mn>0&lt;/mn></tt> becomes <tt>$1</tt>, and
+<tt>&lt;mn>1&lt;/mn></tt> becomes <tt>$2</tt>.
+</li>
+
+<li>
+The <tt>mfrac</tt> element supplies the default <tt>intent="@divide"</tt>,
+and so it becomes <tt>$3</tt>.
+</li>
+
+<li>
+The numerator of the fraction supplies <tt>intent="1"</tt> to force the intent
+of the numerator to be one, instead of its contents.
+</li>
+
+<li>
+The bound variable supplies <tt>arg="bvar"</tt> to assign an argument name
+that is visible to the outer <tt>mrow</tt> context as <tt>$bvar</tt>.
+</li>
+
+<li>
+The denominator of the fraction uses the default intent from <tt>mrow</tt> as
+<tt>"@plus"</tt> and from <tt>msup</tt> as <tt>"@power"</tt>.
+</li>
+</ul>
+
+<p>
+So the intent constructed by the outer <tt>mrow</tt>
+works out to be <tt>integral(divide(1,plus(power(x,2),1)),x,0,1)</tt>.
+</p>
 
 <hr>
 <b>Differential in a binary product</b>
 <p>The intent of the fraction uses the initial $x$ as the numerator, and no other elements contribute to the numerator.</p>
 <p>$\int_0^1 {x\,dx \over x^2+1}$ as $integral(divide(x,plus(power(x,2),1)),x,0,1)$</p>
 <pre>
-&lt;mrow intent="$0($3,$bvar,$1,$2)">
+&lt;mrow intent="$op($3,$bvar,$1,$2)">
   &lt;msubsup>
-    &lt;mo intent="integral">&x222B;&lt;/mo>
+    &lt;mo>&x222B;&lt;/mo>
     &lt;mn>0&lt;/mn>
     &lt;mn>1&lt;/mn>
   &lt;/msubsup>
-  &lt;mfrac intent="@divide">
-    &lt;mrow>
+  &lt;mfrac>
+    &lt;mrow intent="$1">
       &lt;mi>x&lt;/mi>
       &lt;mtext>d&lt;/mtext>
-      &lt;mi intent="bvar">x&lt;/mi>
+      &lt;mi arg="bvar">x&lt;/mi>
     &lt;/mrow>
-    &lt;mrow intent="@plus">
-      &lt;msup intent="@power">
+    &lt;mrow>
+      &lt;msup>
         &lt;mi>x&lt;/mi>
         &lt;mn>2&lt;/mn>
       &lt;/msup>
@@ -678,27 +997,42 @@ Integrals of fractions are often presented with the differential $dx$ as part of
   &lt;/mfrac>
 &lt;/mrow>
 </pre>
+
+<ul>
+<li>
+The numerator of the fraction supplies <tt>intent="$1"</tt> to force
+the intent of the numerator to be <tt>x</tt>, instead of the default.
+</li>
+</ul>
+
+<p>
+So the intent constructed by the outer <tt>mrow</tt>
+works out to be <tt>integral(divide(x,plus(power(x,2),1)),x,0,1)</tt>.
+</p>
 
 <hr>
 <b>Differential in an nary product</b>
 <p>The intent of the fraction uses $2x$ as the numerator, and no other elements contribute to the product.</p>
 <p>$\int_0^1 {2x\,dx \over x^2+1}$ as $integral(divide(times(2,x),plus(power(x,2),1)),x,0,1)$</p>
 <pre>
-&lt;mrow intent="$0($3,$bvar,$1,$2)">
+&lt;mrow intent="$op($3,$bvar,$1,$2)">
   &lt;msubsup>
-    &lt;mo intent="integral">&x222B;&lt;/mo>
+    &lt;mo>&x222B;&lt;/mo>
     &lt;mn>0&lt;/mn>
     &lt;mn>1&lt;/mn>
   &lt;/msubsup>
-  &lt;mfrac intent="@divide">
-    &lt;mrow intent="@times">
-      &lt;mn>2&lt;/mn>
-      &lt;mi>x&lt;/mi>
+  &lt;mfrac>
+    &lt;mrow intent="$1">
+      &lt;mrow>
+        &lt;mn>2&lt;/mn>
+        &lt;mo>&#x2062;&lt;/m0>
+        &lt;mi>x&lt;/mi>
+      &lt;/mrow>
       &lt;mtext>d&lt;/mtext>
-      &lt;mi intent="bvar">x&lt;/mi>
+      &lt;mi arg="bvar">x&lt;/mi>
     &lt;/mrow>
-    &lt;mrow intent="@plus">
-      &lt;msup intent="@power">
+    &lt;mrow>
+      &lt;msup>
         &lt;mi>x&lt;/mi>
         &lt;mn>2&lt;/mn>
       &lt;/msup>
@@ -709,28 +1043,40 @@ Integrals of fractions are often presented with the differential $dx$ as part of
 &lt;/mrow>
 </pre>
 
+<ul>
+<li>
+The numerator of the fraction supplies <tt>intent="$1"</tt> to force
+the intent of the numerator to be <tt>times(2,x)</tt>, instead of the default.
+</li>
+</ul>
+
+<p>
+So the intent constructed by the outer <tt>mrow</tt>
+works out to be <tt>integral(divide(times(2,x),plus(power(x,2),1)),x,0,1)</tt>.
+</p>
+
 <hr>
 <b>Differential next to an exponent</b>
 <p>The intent of the fraction uses $x^2$ as the numerator, and no other elements contribute to the numerator.</p>
 <p>$\int_0^1 {x^2\,dx \over x^2+1}$ as $integral(divide(power(x,2),plus(power(x,2),1)),x,0,1)$</p>
 <pre>
-&lt;mrow intent="$0($3,$bvar,$1,$2)">
+&lt;mrow intent="$op($3,$bvar,$1,$2)">
   &lt;msubsup>
     &lt;mo intent="integral">&x222B;&lt;/mo>
     &lt;mn>0&lt;/mn>
     &lt;mn>1&lt;/mn>
   &lt;/msubsup>
-  &lt;mfrac intent="@divide">
-    &lt;mrow>
-      &lt;msup intent="@power">
+  &lt;mfrac>
+    &lt;mrow intent="$1">
+      &lt;msup>
         &lt;mi>x&lt;/mi>
         &lt;mn>2&lt;/mn>
       &lt;/msup>
       &lt;mtext>d&lt;/mtext>
-      &lt;mi intent="bvar">x&lt;/mi>
+      &lt;mi arg="bvar">x&lt;/mi>
     &lt;/mrow>
-    &lt;mrow intent="@plus">
-      &lt;msup intent="@power">
+    &lt;mrow>
+      &lt;msup>
         &lt;mi>x&lt;/mi>
         &lt;mn>2&lt;/mn>
       &lt;/msup>
@@ -740,6 +1086,18 @@ Integrals of fractions are often presented with the differential $dx$ as part of
   &lt;/mfrac>
 &lt;/mrow>
 </pre>
+
+<ul>
+<li>
+The numerator of the fraction supplies <tt>intent="$1"</tt> to force
+the intent of the numerator to be <tt>power(x,2)</tt>, instead of the default.
+</li>
+</ul>
+
+<p>
+So the intent constructed by the outer <tt>mrow</tt>
+works out to be <tt>integral(divide(power(x,2),plus(power(x,2),1)),x,0,1)</tt>.
+</p>
 
     </div>
   </body>
