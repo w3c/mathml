@@ -27,31 +27,55 @@
 
 <b>Abstract</b>
 <p>
-MathML is a W3C recommendation that represents mathematical expressions.  This note describes a way to add semantic information to presentation markup.
+MathML is a W3C recommendation that represents mathematical expressions.  This note describes a way to add semantic intent to presentation markup.
 </p>
 
 <b>Table of Contents</b>
 <ul>
+<li><a href="#introduction">Introduction</a></li>
 <li><a href="#attintent">The intent attribute</a></li>
+<ul>
 <li><a href="#exintent">Explicit intent values</a></li>
 <li><a href="#defintent">Default intent values</a></li>
+<li><a href="#defintentex">Default intent examples</a></li>
+</ul>
 <li><a href="#attarg">The arg attribute</a></li>
+<ul>
 <li><a href="#argindex">Argument index references</a></li>
 <li><a href="#argindexex">Argument index examples</a></li>
 <li><a href="#argname">Argument name references</a></li>
 <li><a href="#argnameex">Argument name examples</a></li>
+</ul>
 <li><a href="#implied">Implied arguments examples</a></li>
+<ul>
 <li><a href="#transpose">Examples -- Transpose</a></li>
 <li><a href="#superscript">Examples -- Superscript</a></li>
 <li><a href="#binomial">Examples -- Binomial</a></li>
 <li><a href="#multiop">Examples -- Multiple Operators</a></li>
+<li><a href="#diffop">Examples -- Derivative Operators</a></li>
 <li><a href="#intfrac">Examples -- Integrals of Fractions</a></li>
+<li><a href="#tables">Examples -- Matrices and Tables</a></li>
 </ul>
+</ul>
+
+<hr>
+<b id="introduction">Introduction</b>
+<p>
+The <i>presentation</i> of an expression consists of special symbols arranged to convey mathematical meaning.  Conventional math notation includes ambiguities that a human reader is taught to resolve in context in ways that may be difficult to infer by computational systems.
+</p>
+
+<p>
+The <i>content</i> of an expression consists of operator symbols applied to sequences of arguments, which may themselves be function applications or ground terms such as numerals or variables.  The content markup used to encode such expressions is often complex, and often not included with the presentation.
+</p>
+
+<p>
+The <i>intent</i> of an element is a functional expression that captures the meaning conveyed by the author.  It is meant to bridge the gap between the presentation of an expression, and its underlying content and semantics, to resolve ambiguities that may affect the reading and understanding of the notation.
+</p>
 
 <hr>
 <b id="attintent">The intent attribute</b>
 <p>
-The <i>intent</i> of an element is a functional expression that captures the meaning conveyed by the author.  It should also reflect the meaning that would be understood by a human reader.  The intent may often be inferred from the presentation, especially when the author supplies information such as the subject area.
+The <i>intent</i> of an element is a functional expression that captures the meaning conveyed by the author.  It should reflect the meaning that would be understood by a human reader.  The intent may often be inferred from the presentation, especially when the author supplies information such as the subject area.
 </p>
 
 <p>
@@ -147,19 +171,19 @@ Many presentation elements have predefined default intent values:
 <table>
 <tr><td><tt>&lt;mn&gt;</tt></td><td><tt>@cdata</tt></td></tr>
 <tr><td><tt>&lt;mi&gt;</tt></td><td><tt>@cdata</tt></td></tr>
-<tr><td><tt>&lt;mo&gt;</tt></td><td><tt>opname(@cdata)</tt></td></tr>
-<tr><td><tt>&lt;mtext&gt;</tt></td><td><tt>[none]</tt></td></tr>
-<tr><td><tt>&lt;mspace&gt;</tt></td><td><tt>[none]</tt></td></tr>
+<tr><td><tt>&lt;mo&gt;</tt></td><td><tt>@opname</tt></td></tr>
+<tr><td><tt>&lt;mtext&gt;</tt></td><td><tt>@ignore</tt></td></tr>
+<tr><td><tt>&lt;mspace&gt;</tt></td><td><tt>@ignore</tt></td></tr>
 <tr><td><tt>&lt;ms&gt;</tt></td><td><tt>[none]</tt></td></tr>
 
-<tr><td><tt>&lt;mrow&gt;</tt></td><td><tt>@$op</tt></td></tr>
+<tr><td><tt>&lt;mrow&gt;</tt></td><td><tt>@op | @append</tt></td></tr>
 <tr><td><tt>&lt;mfrac&gt;</tt></td><td><tt>@divide</tt></td></tr>
 <tr><td><tt>&lt;msqrt&gt;</tt></td><td><tt>@sqrt</tt></td></tr>
 <tr><td><tt>&lt;mroot&gt;</tt></td><td><tt>@root</tt></td></tr>
-<tr><td><tt>&lt;mstyle&gt;</tt></td><td><tt>[mrow]</tt></td></tr>
-<tr><td><tt>&lt;merror&gt;</tt></td><td><tt>[mrow]</tt></td></tr>
-<tr><td><tt>&lt;mpadded&gt;</tt></td><td><tt>[mrow]</tt></td></tr>
-<tr><td><tt>&lt;mphantom&gt;</tt></td><td><tt>[mrow]</tt></td></tr>
+<tr><td><tt>&lt;mstyle&gt;</tt></td><td><tt>@mrow</tt></td></tr>
+<tr><td><tt>&lt;merror&gt;</tt></td><td><tt>@mrow</tt></td></tr>
+<tr><td><tt>&lt;mpadded&gt;</tt></td><td><tt>@mrow</tt></td></tr>
+<tr><td><tt>&lt;mphantom&gt;</tt></td><td><tt>@ignore</tt></td></tr>
 
 <tr><td><tt>&lt;msub&gt;</tt></td><td><tt>[none]</tt></td></tr>
 <tr><td><tt>&lt;msup&gt;</tt></td><td><tt>@power</tt></td></tr>
@@ -175,7 +199,19 @@ Many presentation elements have predefined default intent values:
 </p>
 
 <p>
-The default intent of an atomic element <tt>mn</tt> or <tt>mi</tt> is taken from the character data of the element.  The atomic element <tt>mo</tt> may be given a predefined default intent based on the character data of the operator.  An <tt>mrow</tt> element that contains a single <tt>mo</tt> element is given a predefined default intent <tt>@$op</tt> which applies the operator to the implied argument list. 
+There are a few special cases with specific behavior:
+<ul>
+<li><tt>@cdata</tt> - Use the character data of the element.</li>
+<li><tt>@opname</tt> - Look up the character data as an operator.</li>
+<li><tt>@ignore</tt> - Treat the element as having no intent.</li>
+<li><tt>@op</tt> - Apply the operator to the implied arguments.</li>
+<li><tt>@append</tt> - Concatenate the intent of the child elements.</li>
+<li><tt>@mrow</tt> - Use the intent of the implied mrow element.</li>
+</ul>
+</p>
+
+<p>
+The default intent of an atomic element <tt>mn</tt> or <tt>mi</tt> is taken from the character data of the element.  The atomic element <tt>mo</tt> may be given a predefined default intent based on the character data of the operator.  Several presentation elements are given a predefined intent <tt>@ignore</tt> which treats the element has having no intent.  An <tt>mrow</tt> element that contains a unique visible descendant <tt>mo</tt> element on its implied argument list is given a predefined default intent <tt>@op</tt> which applies the unique operator to the implied argument list.  Any other <tt>mrow</tt> element is given a predefined default intent <tt>@append</tt> which concatenates the intent of its child elements.  Several presentation elements are defined as having an implied <tt>mrow</tt> around its child elements.  These elements use the intent of the implied <tt>mrow</tt> element.
 </p>
 
 <p>
@@ -185,6 +221,9 @@ See below for examples of other rules for inferring default intent for presentat
 <p>
 These rules provide default intent values for tools that process the intent values.  They are not intended to provide default values for the XML attributes as part of the document markup.
 </p>
+
+<hr>
+<b id="defintentex">Default intent examples</b>
 
 <p>
 Examples of default intent values:
@@ -258,19 +297,12 @@ Examples of default intent values:
 </pre>
 </li>
 
-<li>superscript notation with default <tt>intent="@power"</tt>
+<li>superscript notation with default <tt>intent="power(x,2)"</tt>
 <p>$x^2$ as $power(x,2)$</p>
 <pre>
 &lt;msup>
   &lt;mi>x&lt;/mi>
   &lt;mn>2&lt;/mn>
-&lt;/msup>
-</pre>
-<p>$x^n$ as $power(x,n)$</p>
-<pre>
-&lt;msup>
-  &lt;mi>x&lt;/mi>
-  &lt;mi>n&lt;/mi>
 &lt;/msup>
 </pre>
 </li>
@@ -320,7 +352,8 @@ that are not otherwise assigned an argument name.
 <p>
 Within an element, the first <tt>mo</tt> element that would otherwise
 appear in the argument list is assigned the argument name <tt>op</tt>
-by default, and is excluded from the argument list.
+by default, and is excluded from the argument list.  Any other <tt>mo</tt>
+element with the same intent is likewise excluded from the argument list.
 </p>
 
 <p>
@@ -356,7 +389,7 @@ The argument index may be used to reference the intent of a sub expression:
 </pre>
 </li>
 
-<li>The operator does not appear in the argument list.
+<li>The operator is excluded from the argument list.
 <p>$n!$ as $factorial(n)$</p>
 <pre>
 &lt;mrow intent="$op($1)">
@@ -379,7 +412,7 @@ The argument index may be used to reference the intent of a sub expression:
     &lt;mi arg="1">x&lt;/mi>
     &lt;mn arg="2">2&lt;/mn>
   &lt;/msup>
-  &lt;mtext>d&lt;/mtext>
+  &lt;mo>&amp;#x2146;&lt;/mo>
   &lt;mi arg="4">x&lt;/mi>
 &lt;/mrow>
 </pre>
@@ -473,7 +506,7 @@ An element may be assigned an argument name that may be used as a way to referen
     &lt;mi arg="base">x&lt;/mi>
     &lt;mn arg="exp">2&lt;/mn>
   &lt;/msup>
-  &lt;mtext>d&lt;/mtext>
+  &lt;mo>&amp;#x2146;&lt;/mo>
   &lt;mi arg="var">x&lt;/mi>
 &lt;/mrow>
 </pre>
@@ -493,7 +526,7 @@ The intent attribute may express the application of a named function to a list o
 <li>The <tt>mrow</tt> element applies the operator to the argument.
 <p>$n!$ as $factorial(n)$</p>
 <pre>
-&lt;mrow intent="@$op">
+&lt;mrow intent="@op">
   &lt;mi arg="1" intent="n">n&lt;/mi>
   &lt;mo arg="op" intent="factorial">!&lt;/mo>
 &lt;/mrow>
@@ -506,10 +539,14 @@ The intent attribute may express the application of a named function to a list o
 </pre>
 </li>
 
+<p>
+The default intent for the operator is <tt>factorial</tt>, and the argument is the <tt>mi</tt> element, which has its default intent value.
+</p>
+
 <li>The operator does not appear in the argument list.
 <p>$a+b$ as $plus(a,b)$</p>
 <pre>
-&lt;mrow intent="@$op">
+&lt;mrow intent="@op">
   &lt;mi arg="1" intent="a">a&lt;/mi>
   &lt;mo arg="op" intent="plus">+&lt;/mo>
   &lt;mi arg="2" intent="b">b&lt;/mi>
@@ -524,7 +561,47 @@ The intent attribute may express the application of a named function to a list o
 </pre>
 
 <p>
-In this example, the default intent for the operator is <tt>plus</tt>, and the arguments are collected from the <tt>mi</tt> elements, which have a default intent value.
+The default intent for the operator is <tt>plus</tt>, and the arguments are collected from the <tt>mi</tt> elements, which have default intent values.
+</p>
+</li>
+
+<li>Nested operators create nested expressions.
+<p>$x^2 + 2x + 1$ as $plus(power(x,2),times(2,x),1)$
+<pre>
+&lt;mrow intent="@op">
+  &lt;msup arg="1" intent="@power">
+    &lt;mi arg="1" intent="x">x&lt;/mi>
+    &lt;mn arg="2" intent="2">2&lt;/mn>
+  &lt;/msup>
+  &lt;mo arg="op" intent="plus">+&lt;/mo>
+  &lt;mrow arg="2" intent="@op">
+    &lt;mn arg="1" intent="2">2&lt;/mn>
+    &lt;mo arg="op" intent="times">&amp;#x2062;&lt/mo>
+    &lt;mi arg="2" intent="x">x&lt;/mi>
+  &lt;/mrow>
+  &lt;mo arg="op" intent="plus">+&lt;/mo>
+  &lt;mn arg="3" intent="1">1&lt;/mn>
+&lt;/mrow>
+</pre>
+<pre>
+&lt;mrow>
+  &lt;msup>
+    &lt;mi>x&lt;/mi>
+    &lt;mn>2&lt;/mn>
+  &lt;/msup>
+  &lt;mo>+&lt;/mo>
+  &lt;mrow>
+    &lt;mn>2&lt;/mn>
+    &lt;mo>&amp;#x2062;&lt/mo>
+    &lt;mi>x&lt;/mi>
+  &lt;/mrow>
+  &lt;mo>+&lt;/mo>
+  &lt;mn>1&lt;/mn>
+&lt;/mrow>
+</pre>
+
+<p>
+The default intent for the outer operator is <tt>plus</tt>, and the arguments are collected from the other child elements that do not have intent <tt>plus</tt>.
 </p>
 </li>
 
@@ -541,7 +618,7 @@ In this example, the default intent for the operator is <tt>plus</tt>, and the a
     &lt;mi arg="base">x&lt;/mi>
     &lt;mn arg="exp">2&lt;/mn>
   &lt;/msup>
-  &lt;mtext>d&lt;/mtext>
+  &lt;mo>&amp;#x2146;&lt;/mo>
   &lt;mi arg="var">x&lt;/mi>
 &lt;/mrow>
 </pre>
@@ -556,13 +633,13 @@ In this example, the default intent for the operator is <tt>plus</tt>, and the a
     &lt;mi>x&lt;/mi>
     &lt;mn>2&lt;/mn>
   &lt;/msup>
-  &lt;mtext>d&lt;/mtext>
+  &lt;mo>&amp;#x2146;&lt;/mo>
   &lt;mi>x&lt;/mi>
 &lt;/mrow>
 </pre>
 
 <p>
-In this example, the default intent for the operator is <tt>integral</tt>, arguments <tt>$1</tt> and <tt>$2</tt> are collected from the first two <tt>mn</tt> elements, which become the limits of integration, argument <tt>$3</tt> is the <tt>msup</tt> element, which becomes the integrand, and <tt>$4</tt> is the final <tt>mi</tt> element, which becomes the integration variable.
+The default intent for the operator is <tt>integral</tt>, arguments <tt>$1</tt> and <tt>$2</tt> are collected from the first two <tt>mn</tt> elements, which become the limits of integration, argument <tt>$3</tt> is the <tt>msup</tt> element, which becomes the integrand, and <tt>$4</tt> is the final <tt>mi</tt> element, which becomes the integration variable.
 </p>
 </li>
 </ul>
@@ -584,30 +661,30 @@ The transpose operation may be expressed as the letter "T", either using supersc
 &lt;/msup>
 </pre>
 <pre>
-&lt;msup intent="$op($1)">
+&lt;msup intent="@op">
   &lt;mi>A&lt;/mi>
   &lt;mo intent="transpose">T&lt;/mo>
 &lt;/msup>
 </pre>
+<p>
+The intent for the operator is <tt>transpose</tt>, and the argument is the <tt>mi</tt> element, which has its default intent.  The <tt>msup</tt> element has <tt>intent="@op"</tt> to override its default intent and apply the operator to the argument.
+</p>
 </li>
+
 <li>Transpose operation using function notation:
 <p>$T(A)$ as $transpose(A)$</p>
 <pre>
 &lt;mrow>
   &lt;mo intent="transpose">T&lt;/mo>
+  &lt;mo>&amp;#x2061;&lt;/mo>
   &lt;mo>(&lt;/mo>
   &lt;mi>A&lt;/mi>
   &lt;mo>)&lt;/mo>
 &lt;/mrow>
 </pre>
-<pre>
-&lt;mrow>
-  &lt;mo intent="transpose">T&lt;/mo>
-  &lt;mfenced>
-    &lt;mi>A&lt;/mi>
-  &lt;/mfenced>
-&lt;/mrow>
-</pre>
+<p>
+The intent for the operator is <tt>transpose</tt>, and the argument is the <tt>mi</tt> element, which has its default intent.  The other <tt>mo</tt> elements have no default intent and so are not included in the implied arguments.
+</p>
 </li>
 </ul>
 
@@ -647,12 +724,16 @@ When the same notation may express different intent in printed material, the aut
 &lt;/msup>
 </pre>
 
+<p>
+The default intent for <tt>msup</tt> is to apply the <tt>power</tt> operation.
+</p>
+
 <hr>
 <b>Superscript as tensor or matrix index</b>
 <p>Another important use to index into tensors or matrices.</p>
 <p>$c_ix^i$ as $times(index(c,i),index(x,i))$</p>
 <pre>
-&lt;mrow intent="@times">
+&lt;mrow>
   &lt;msub intent="@index">
     &lt;mi>c&lt;/mi>
     &lt;mi>i&lt;/mi>
@@ -665,6 +746,10 @@ When the same notation may express different intent in printed material, the aut
 &lt;/mrow>
 </pre>
 
+<p>
+The default intent for the <tt>mo</tt> element for invisible times is to apply the <tt>times</tt> operation.  The <tt>msub</tt> and <tt>msup</tt> element have <tt>intent="@index"</tt> to apply the <tt>index</tt> operation.
+</p>
+
 <hr>
 <b>Superscript as the operator</b>
 <p>The superscript itself may supply the operator.</p>
@@ -676,7 +761,7 @@ When the same notation may express different intent in printed material, the aut
 &lt;/msup>
 </pre>
 <pre>
-&lt;msup intent="$op($1)">
+&lt;msup intent="@op">
   &lt;mi>z&lt;/mi>
   &lt;mo intent="conjugate">*&lt;/mo>
 &lt;/msup>
@@ -689,7 +774,7 @@ When the same notation may express different intent in printed material, the aut
 &lt;/msup>
 </pre>
 <pre>
-&lt;msup intent="$op($1)">
+&lt;msup intent="@op">
   &lt;mi>A&lt;/mi>
   &lt;mo intent="transpose">T&lt;/mo>
 &lt;/msup>
@@ -702,11 +787,15 @@ When the same notation may express different intent in printed material, the aut
 &lt;/msup>
 </pre>
 <pre>
-&lt;msup intent="$op($1)">
+&lt;msup intent="@op">
   &lt;mi>A&lt;/mi>
   &lt;mo intent="adjoint">&#x2020;&lt;/mo>
 &lt;/msup>
 </pre>
+
+<p>
+In each of these cases, the intent may be supplied on the <tt>msup</tt> element directly, or using <tt>@op</tt> to collect the intent supplied on the <tt>mo</tt> element.
+</p>
 
 <hr>
 <b id="binomial">Examples -- Binomial</b>
@@ -724,22 +813,18 @@ The same intent may be expressed by different printed notations.  For example, t
 <p>One notation for the binomial coefficient is as a stack of two numbers, enclosed in parentheses.</p>
 <p>$\binom{n}{m}$ as $binom(n,m)$</p>
 <pre>
-&lt;mfenced intent="@binom">
-  &lt;msubsup>
-    &lt;mrow/>
-    &lt;mi arg="2">m&lt;/mi>
-    &lt;mi arg="1">n&lt;/mi>
-  &lt;/msubsup>
-&lt;/mfenced>
-</pre>
-<pre>
-&lt;mfenced intent="@binom($n,$m)">
-  &lt;mfrac linethickness="0">
-    &lt;mi arg="n">n&lt;/mi>
-    &lt;mi arg="m">m&lt;/mi>
+&lt;mrow intent="$1">
+  &lt;mo>(&lt;/mo>
+  &lt;mfrac linethickness="0" intent="@binom">
+    &lt;mi>n&lt;/mi>
+    &lt;mi>m&lt;/mi>
   &lt;/mfrac>
+  &lt;mo>)&lt;/mo>
 &lt;/mfenced>
 </pre>
+<p>
+The <tt>mfrac</tt> element supplies <tt>intent="@binom"</tt> to apply <tt>binom</tt> to the arguments in the <tt>mi</tt> elements, and the <tt>mrow</tt> element supplies <tt>intent="$1"</tt> to use the intent of the <tt>mfrac</tt> element.
+</p>
 
 <hr>
 <b>Binomial as subscript and superscript</b>
@@ -753,12 +838,15 @@ The same intent may be expressed by different printed notations.  For example, t
 &lt;/msubsup>
 </pre>
 <pre>
-&lt;msubsup intent="$op($1,$2)">
+&lt;msubsup intent="@op">
   &lt;mo intent="binom">C&lt;/mo>
   &lt;mi arg="2">m&lt;/mi>
   &lt;mi arg="1">n&lt;/mi>
 &lt;/msubsup>
 </pre>
+<p>
+The <tt>msubsup</tt> element supplies an <tt>intent</tt> attribute to apply the <tt>binom</tt> operation to the arguments in the <tt>mi</tt> elements.  The operator itself may be supplied on the <tt>msubsup</tt> element directly, or on the <tt>mo</tt> element.
+</p>
 
 <hr>
 <b id="multiop">Examples -- Multiple Operators</b>
@@ -892,6 +980,28 @@ When the presentation supplies an element for each intended structure, the inten
 </pre>
 
 <hr>
+<b id="diffop">Examples -- Derivative Operators</b>
+<p>
+The intent of the fraction is to express the derivative operator, which is applied to the expression $\sin x$, and the differentiation variable $x$.
+</p>
+<p>${d \over dx}\sin x$ as $diff(sin(x),x)$</p>
+<pre>
+&lt;mrow intent="$op($1,$bvar)">
+  &lt;mfrac intent="diff">
+    &lt;mo>&amp;#x2146;&lt;/mo>
+    &lt;mrow>
+      &lt;mo>&amp;#x2146;&lt;/mo>
+      &lt;mi arg="bvar">x&lt;/mi>
+    &lt;/mrow>
+  &lt;/mfrac>
+  &lt;mrow>
+    &lt;mo>sin&lt;/mo>
+    &lt;mi>x&lt;/mi>
+  &lt;/mrow>
+&lt;/mrow>
+</pre>
+
+<hr>
 <b id="intfrac">Examples -- Integrals of Fractions</b>
 
 <p>
@@ -901,6 +1011,7 @@ Integrals of fractions are often presented with the differential $dx$ as part of
 <li>Differential in a binary product</li>
 <li>Differential in an nary product</li>
 <li>Differential next to an exponent</li>
+<li>Differentials within nested integrals</li>
 </ul>
 </p>
 
@@ -917,7 +1028,7 @@ Integrals of fractions are often presented with the differential $dx$ as part of
   &lt;/msubsup>
   &lt;mfrac>
     &lt;mrow intent="1">
-      &lt;mtext>d&lt;/mtext>
+      &lt;mo>&amp;#x2146;&lt;/mo>
       &lt;mi arg="bvar">x&lt;/mi>
     &lt;/mrow>
     &lt;mrow>
@@ -985,7 +1096,7 @@ works out to be <tt>integral(divide(1,plus(power(x,2),1)),x,0,1)</tt>.
   &lt;mfrac>
     &lt;mrow intent="$1">
       &lt;mi>x&lt;/mi>
-      &lt;mtext>d&lt;/mtext>
+      &lt;mo>&amp;#x2146;&lt;/mo>
       &lt;mi arg="bvar">x&lt;/mi>
     &lt;/mrow>
     &lt;mrow>
@@ -1030,7 +1141,7 @@ works out to be <tt>integral(divide(x,plus(power(x,2),1)),x,0,1)</tt>.
         &lt;mo>&#x2062;&lt;/m0>
         &lt;mi>x&lt;/mi>
       &lt;/mrow>
-      &lt;mtext>d&lt;/mtext>
+      &lt;mo>&amp;#x2146;&lt;/mo>
       &lt;mi arg="bvar">x&lt;/mi>
     &lt;/mrow>
     &lt;mrow>
@@ -1074,7 +1185,7 @@ works out to be <tt>integral(divide(times(2,x),plus(power(x,2),1)),x,0,1)</tt>.
         &lt;mi>x&lt;/mi>
         &lt;mn>2&lt;/mn>
       &lt;/msup>
-      &lt;mtext>d&lt;/mtext>
+      &lt;mo>&amp;#x2146;&lt;/mo>
       &lt;mi arg="bvar">x&lt;/mi>
     &lt;/mrow>
     &lt;mrow>
@@ -1099,6 +1210,145 @@ the intent of the numerator to be <tt>power(x,2)</tt>, instead of the default.
 <p>
 So the intent constructed by the outer <tt>mrow</tt>
 works out to be <tt>integral(divide(power(x,2),plus(power(x,2),1)),x,0,1)</tt>.
+</p>
+
+<hr>
+<b>Differentials within nested integrals</b>
+<p>$\int_0^1 {\int_0^x {dy \over y} dx \over x+1}$ as $integral(divide(integral(divide(1,y),y,0,x),plus(x,1)),x,0,1)$</p>
+<pre>
+&lt;mrow intent="$op($3,$bvar,$1,$2)">
+  &lt;msubsup>
+    &lt;mo>&x222B;&lt;/mo>
+    &lt;mn>0&lt;/mn>
+    &lt;mn>1&lt;/mn>
+  &lt;/msubsup>
+  &lt;mfrac>
+    &lt;mrow intent="$1">
+      &lt;mrow intent="$op($3,$bvar,$1,$2)">
+        &lt;msubsup>
+          &lt;mo>&x222B;&lt;/mo>
+          &lt;mn>0&lt;/mn>
+          &lt;mi>x&lt;/mi>
+        &lt;/msubsup>
+        &lt;mfrac>
+          &lt;mrow intent="1">
+            &lt;mo>&amp;#x2146;&lt;/mo>
+            &lt;mi arg="bvar">y&lt;/mi>
+          &lt;/mrow>
+          &lt;mi>y&lt;/mi>
+        &lt;/mfrac>
+      &lt;/mrow>
+      &lt;mo>&amp;#x2146;&lt;/mo>
+      &lt;mi arg="bvar">x&lt;/mi>
+    &lt;/mrow>
+    &lt;mrow>
+      &lt;mi>x&lt;/mi>
+      &lt;mo>+&lt;/mo>
+      &lt;mn>1&lt;/mn>
+    &lt;/mrow>
+  &lt;/mfrac>
+&lt;/mrow>
+</pre>
+<p>
+Both integral expressions define the argument <tt>$bvar</tt>.
+</p>
+
+<hr>
+<b id="tables">Examples -- Matrices and Tables</b>
+
+<hr>
+<b>Matrices</b>
+<p>The intent of an <tt>mtable</tt> can be used to construct a matrix.</p>
+<p>$array(arrayrow(1,0),arrayrow(0,1))$</p>
+<pre>
+&lt;mtable>
+  &lt;mtr>
+    &lt;mtd>&lt;mn>1&lt;/mn>&lt;/mtd>
+    &lt;mtd>&lt;mn>0&lt;/mn>&lt;/mtd>
+  &lt;/mtr>
+  &lt;mtr>
+    &lt;mtd>&lt;mn>0&lt;/mn>&lt;/mtd>
+    &lt;mtd>&lt;mn>1&lt;/mn>&lt;/mtd>
+  &lt;/mtr>
+&lt;/mtable>
+</pre>
+<p>
+The intent of the table uses <tt>@array</tt>, the intent of each row uses <tt>@arrayrow</tt> and the intent of each element uses <tt>@mrow</tt>.
+</p>
+
+<hr>
+<b>Equation arrays</b>
+<p>The intent of an <tt>mtable</tt> can be used to construct a list of equations.</p>
+<p>$list(append(times(2,x),eq,1),append(y,gt,minus(x,3)))$</p>
+<pre>
+&lt;mtable intent="@list">
+  &lt;mtr>
+    &lt;mtd columnalign="right">
+      &lt;mn>2&lt;/mn>
+      &lt;mo>&amp;#x2062;&lt;mo>
+      &lt;mi>x&lt;/mi>
+    &lt;/mtd>
+    &lt;mtd columnalign="center">
+      &lt;mo>=&lt;/mo>
+    &lt;/mtd>
+    &lt;mtd columnalign="left">
+      &lt;mn>1&lt;/mn>
+    &lt;/mtd>
+  &lt;/mtr>
+  &lt;mtr>
+    &lt;mtd columnalign="right">
+      &lt;mi>y&lt;/mi>
+    &lt;/mtd>
+    &lt;mtd columnalign="center">
+      &lt;mo>&amp;gt;&lt;/mo>
+    &lt;/mtd>
+    &lt;mtd columnalign="left">
+      &lt;mi>x&lt;/mi>
+      &lt;mo>-&lt;/mo>
+      &lt;mn>3&lt;/mn>
+    &lt;/mtd>
+  &lt;/mtr>
+&lt;/mtable>
+</pre>
+<p>
+The intent of the table uses <tt>@list</tt>, the intent of each row uses <tt>@append</tt> and the intent of each element uses <tt>@mrow</tt>.
+</p>
+
+<hr>
+<b>Equation arrays</b>
+<p>The intent of an <tt>mtable</tt> can be used to line break an equation.</p>
+<p>$list(append(a,eq,append(b,plus,c,minus,d),append(plus,e,minus,f)))$</p>
+<pre>
+&lt;mtable>
+  &lt;mtr>
+    &lt;mtd columnalign="right">
+      &lt;mi>a&lt;/mi>
+    &lt;/mtd>
+    &lt;mtd columnalign="center">
+      &lt;mo>=&lt;/mo>
+    &lt;/mtd>
+    &lt;mtd columnalign="left">
+      &lt;mi>b&lt;/mi>
+      &lt;mo>+&lt;/mo>
+      &lt;mi>c&lt;/mi>
+      &lt;mo>-&lt;/mo>
+      &lt;mi>d&lt;/mi>
+    &lt;/mtd>
+  &lt;/mtr>
+  &lt;mtr intent="@extend">
+    &lt;mtd columnalign="right">&lt;/mtd>
+    &lt;mtd columnalign="center">&lt;/mtd>
+    &lt;mtd columnalign="left">
+      &lt;mo>+&lt;/mo>
+      &lt;mi>e&lt;/mi>
+      &lt;mo>-&lt;/mo>
+      &lt;mi>f&lt;/mi>
+    &lt;/mtd>
+  &lt;/mtr>
+&lt;/mtable>
+</pre>
+<p>
+The intent of the table uses <tt>@list</tt>, the intent of the first row uses <tt>@append</tt> and the intent of each element uses <tt>@mrow</tt>.  The intent of the second row uses <tt>@extend</tt> to append its child elements to the previous row.
 </p>
 
     </div>
