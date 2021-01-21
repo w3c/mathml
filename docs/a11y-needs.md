@@ -15,13 +15,13 @@ For many common linear expression, AT just reads the text and life is good. Some
 * $\sin(x+y)$ -- want to pronounce "sin" as "sine" and may want to add "of"
 * $n!$ -- here "!" has the pronunciation "factorial", but it could be "not" if used in a prefix context.
 
-In general, AT wants to read the content in the order it is presented. There are some exceptions such as '\$2' and a level 3 $\lozenge x$ (“x is positive”), but these exceptions are rare.
+In general, AT wants to read the content in the order it is presented. There are some exceptions such as '\\$2' and a level 3 $\lozenge x$ (“x is positive”), but these exceptions are rare.
 
 Some common notations are spoken in different ways depending on the arguments. Assuming superscripts are powers (more on that assumption later), here are some cases and how they might be spoken:
 * $x^{m+n}$ -- "x to the m plus n power"
 * $x^2$ -- "x squared": a simple special case
 * $x^5$ -- "x to the fifth power": "small" numbers are spoken as ordinals
-* $(n+1)^x^4+1$ -- "open paren n plus 1 close paren super x super super 4 baseline plus 1" -- MathSpeak style of speech indicating nesting level of an exponent.
+* $(n+1)^{x^4}+1$ -- "open paren n plus 1 close paren super x super super 4 baseline plus 1" -- MathSpeak style of speech indicating nesting level of an exponent.
 
 These all are powers but have different ways of being spoken, so even if we add `intent`, AT needs to do some pattern matching on the MathML to generate good speech.
 
@@ -29,23 +29,23 @@ An important point these examples make is that there is no "right" way to speak 
 
 Although it is tempting to say that "msup" should always be a power, there are some very common cases where it is not:
 * $\sin^{-1}x$ -- inverse
-* $f \prime(x)$ -- derivative
+* $f^ \prime(x)$ -- derivative
 
 It is clear (to most readers) that these are not intended to be powers; if they actually are intended to be powers, then `intent` should be used. They are easy to match for AT and a blanket 'superscripts are always powers' would mean a lot of math is misread without specifying author intent. The key thing for AT is that these cases be called as needed special cases.
 
 # Lend AT a Hand
 In the CG, we have spent a lot of time discussing a way to allow authors to express their intent. In the above, I am assuming that without any outside guidance, superscripts are interpreted as "power" with some exceptions. But if the author wants to be absolutely clear, they could use the notation we have been developing. For example:
 * $x^2$ -- `<msup intent="power(@base,@exp)">...`
-* $f \prime(x)$ -- `<msup intent="derivative-implicit-variable(@op,@n)">...` where the n=$'$ has `intent`=1
+* $f^ \prime(x)$ -- `<msup intent="derivative-implicit-variable(@op,@n)">...` where the n=$'$ has `intent`=1
 
 The only part of this AT really needs is the function name ("power", "derivative-implicit-variable"). As long as those names are documented with their meaning, AT can map those to patterns/words to speak.
 
-We have discussed "transpose" a lot. To give a sense of where the state of the art for AT is at, none of the math-to-speech systems have rules to speak $A^T$ as transpose. For usual cases, it is no harder to match than $x^2$, but should the following be read as "... transpose": $i^T$, $3^T$, $\sqrt{x}^T$. So maybe the base needs to be a matrix or capital letter for the default to kick in. That would exclude something that is probably in every linear algebra book though: $A^T^T = A$.
+We have discussed "transpose" a lot. To give a sense of where the state of the art for AT is at, none of the math-to-speech systems have rules to speak $A^T$ as transpose. For usual cases, it is no harder to match than $x^2$, but should the following be read as "... transpose": $i^T$, $3^T$, $\sqrt{x}^T$. So maybe the base needs to be a matrix or capital letter for the default to kick in. That would exclude something that is probably in every linear algebra book though: ${A^T}^T = A$.
 
 Transpose is also written as $T(A)$ and $\textrm{Transpose} (A)$. These three forms can be marked up as:
 * $A^T$ -- `<msup intent="transpose($base)">...`
 * $T(A)$ -- `<mrow intent="transpose($func-arg)">...`
-* $Transpose(A)$ -- `<mrow intent="transpose($func-arg)">...`
+* $\textrm{Transpose}(A)$ -- `<mrow intent="transpose($func-arg)">...`
 
 In discussions, figuring out how to handle integrals, especially those where the variable of integration is not at the end of the integral (e.g., in the numerator of a fraction) has proved challenging. However, for speech, integrals and other large operators are easy to recognize and as long as "d x" is an acceptable form of speech (as opposed to "with respect to x"), then locating/singling out the variable of integration is not important.
 
@@ -62,7 +62,7 @@ Differentiation on the other hand is much more challenging to recognize because 
     </mfrac>
     ...
 ```
-* $f^{(n)}(e^{ax})$
+* $f^{(n)}e^{ax}$
 ```
     <mrow>
         <msup intent="derivative-implicit-variable(@op,@n)">
@@ -74,7 +74,7 @@ Differentiation on the other hand is much more challenging to recognize because 
         </mrow>
         </msup>
 ```
-and so on. AT really just cares about the values "Leibnitz-derivative" and "derivative-implicit-variable". In the first case, AT needs to indirectly find the value of `intent`, so this iteration of `intent` is more complicated for AT. For example, SRE uses xpath to do the pattern match. Doing the pattern match for "@intent" (and then truncating at the open paren) is relatively easy. I suspect a built in function would be required to deal with the indirect reference to the `intent` value.
+and so on. AT really just cares about the values "Leibnitz-derivative" and "derivative-implicit-variable". In the first case, AT needs to indirectly find the value of `intent`, so this iteration of `intent` is more complicated for AT. For example, SRE uses xpath to do the pattern match. Doing the pattern match for "@intent" (and then truncating at the open paren) is relatively easy. I suspect a built in function would be required to deal with the indirect reference to the `intent` value because the xpath for that case would be very long and complicated.
 
 An overbar can mean many things in math, so `intent` is needed to resolve ambiguity. Something like $\bar{x}$ might have `intent="mean($var)"` and be easily spoken. The "awkward index" example $\bar{x}_i$ might have the markup:
 ```
@@ -91,11 +91,11 @@ This is awkward for AT both because finding that it is a midpoint pattern requir
 
 # Exploring the Vast Unknown
 Hopefully we develop a set of known values in level 1 that covers grade 4 - 14 (or whatever) textbooks and hence covers 99.99% (99.9999%?) of math expressions on the web, etc. But there is an even greater number of rarely-used notations that won't be covered. Using `intent` will work in many of the examples in level 3, but not all. Here are some cases where `intent` works if the value of `intent` is what is suppose to be spoken:
-* $H \leq G$: read as "H is a subgroup of G" -- $\leq$ can be marked up with `intent`="is a subgroup of"
-* $f: X \twoheadrightarrow Y$: read as "f is a surjection from X onto Y" -- the ":" can be marked up with intent="is-a-surjection-from" and the arrow marked up with intent="onto".
+* $H \leq G$: read as "H is a subgroup of G" -- $\leq$ can be marked up with `intent="is a subgroup of"`
+* $f: X \twoheadrightarrow Y$: read as "f is a surjection from X onto Y" -- the ":" can be marked up with `intent="is-a-surjection-from"` and the arrow marked up with intent="onto".
 
 Although this works (assuming AT just speaks the name when it doesn't know about the name), this seems very hacky and does nothing for computability. A better solution is to make use the existing ARIA functionality that is meant to override (or provide) speech for (missing) content: [`aria-label`](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/aria-labels-and-relationships). Overriding the default speech is exactly what `aria-label` is suppose to do and our spec should say that this behavior applies to its use in MathML -- this is another way we can align the spec with the rest of HTML. Using `aria-label` also allows for `intent` to be used as designed. Here's a fully marked up example using `aria-label` for another case:
-* poisson-bracket: $\{f, g\}$ -- "poisson bracket of f and g"
+* poisson-bracket: $\\{f, g\\}$ -- "poisson bracket of f and g"
 ```
 <mrow intent="poisson-bracket($arg1, $arg2">
    <mo aria-label="poisson bracket of">{</mo>
@@ -112,7 +112,7 @@ AT would not make use of `intent` -- it is included to show that this approach i
 A majority of the level 3 notations (at least those where appropriate speech has been identified) can be handled via the use of `aria-label`. There some that require more markup:
 * multiplicative-order: $O_n(a)$ -- "multiplicative order of a modulo n"
 * positivity-predicate: $\lozenge x$ -- "x is positive"
-* lie-derivative: $\mathcal {L}}_{X}(T)$ -- "lie derivative of T with respect to X"
+* lie-derivative: $\mathcal {L}_{X}(T)$ -- "lie derivative of T with respect to X"
 
 Both of these examples involve switching the word order from the symbol order and so the approach of tagging some leaf elements with alternative reading cannot work.
 
@@ -172,7 +172,7 @@ In conjunction with some judiciously-placed `aria-label=""`, the three problemat
       </mrow>
     </math>
 ```
-* lie-derivative: $\mathcal{L}}_{X}(T)$ -- "lie derivative of T with respect to X"
+* lie-derivative: $\mathcal{L}_{X}(T)$ -- "lie derivative of T with respect to X"
 ```
     <math>
       <mrow intent="lie-derivative($x, $t)"
