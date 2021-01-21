@@ -115,7 +115,7 @@ A majority of the level 3 notations (at least those where appropriate speech has
 * positivity-predicate: $\lozenge x$ -- "x is positive"
 * lie-derivative: $\mathcal{L}_{X}(T)$ -- "lie derivative of T with respect to X"
 
-Both of these examples involve switching the word order from the symbol order and so the approach of tagging some leaf elements with alternative reading cannot work.
+All of these examples involve switching the word order from the symbol order and so the approach of tagging some leaf elements with alternative reading cannot work (unless the text lies about the content it is labeling).
 
 For 2D notations like msub or mfrac, there is no content element that can carry an `aria-label` between the connective. This could be solved by putting an aria label on an outer element and adding an empty label to the descendants (`aria-label` does not stop speech for children). For example, $O_n(a)$ can be tagged as 
 ```
@@ -144,7 +144,7 @@ To provide the required additional info, we can add four new attributes:
 
 If speak-intent is given (or = "true"), then unlike all the previous examples, `intent` is used to drive the speech. Due to order reversal, the order of the arguments may not be in what is otherwise considered the natural order, but in these cases, the speech order rather than the order of presentation reflects the natural order.
 
-In conjunction with some judiciously-placed `aria-label=""`, the three problematic cases above can be handled:
+In conjunction with some judiciously-placed `aria-label=""`s, the three problematic cases above can be handled:
 * multiplicative-order: $O_n(a)$ -- "multiplicative order of a modulo n"
 ```
     <math>
@@ -196,6 +196,6 @@ To sum up: when dealing with notations that AT doesn't know how to speak, actual
 1. Using `aria-label` for many simple cases where a name needs to be provided for some symbol
 2. Using `intent` and words to be sprinkled among the arguments to `intent` when `aria-label` isn't sufficient such as when word order needs to be changed.
 
-Both solutions suffer from the long/short "a" problem and other potential pronunciation issues as there is no way to hint to the speech engine how the words should be spoken. They also suffer from potential internationalization issues: although the notations are universal, the words are not. However, at this high level of math, names used are often the same in most languages.
+Both solutions suffer from the long/short "a" problem and other potential pronunciation issues as there is no way to hint to the speech engine how the words should be spoken. They also suffer from potential internationalization issues: although the notations are universal, the words are not. However, at this high level of math, names used are often the same in many languages.
 
-This proposal to use speak-xxx is just a straw man: it may suffer from significant problems or it may not solve all the problems that come up.
+Warning: this suggestion to use speak-xxx is just a straw man: it may suffer from significant problems or it may not solve all the problems that come up.
