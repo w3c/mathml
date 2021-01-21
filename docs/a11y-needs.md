@@ -27,11 +27,11 @@ These all are powers but have different ways of being spoken, so even if we add 
 
 An important point these examples make is that there is no "right" way to speak a math expression. What is said depends upon many factors such as disability, familiarity with the subject matter, and what one wants to gain from "reading" the expression. Another important point is that there are no studies showing that a semantic reading is "better" (for some measure of "better") than a syntactic one. However, anecdotal evidence strongly points to students preferring a semantic reading as that more closely follows what they hear in the classroom. However, Braille (and hence, MathSpeak in its pure form) is syntactic.
 
-Although it is tempting to say that "msup" should always be a power, there are some very common cases where it is not:
+Although it is tempting to say that "msup" should always default to be a power, there are some very common cases where it is not:
 * $\sin^{-1}x$ -- inverse
 * $f^ \prime(x)$ -- derivative
 
-It is clear (to most readers) that these are not intended to be powers; if they actually are intended to be powers, then `intent` should be used. They are easy to match for AT and a blanket 'superscripts are always powers' would mean a lot of math is misread without specifying author intent. The key thing for AT is that these cases be called as needed special cases.
+It is clear (to most readers) that these are not intended to be powers; if they actually are intended to be powers, then `intent` should be used. They are easy to match for AT and a blanket 'superscripts are always powers' would mean a lot of math is misread without specifying author intent. The key thing for AT is that these cases be listed somewhere as needed special cases so they don't get left out of an implementation by oversight.
 
 # Lend AT a Hand
 In the CG, we have spent a lot of time discussing a way to allow authors to express their intent. In the above, I am assuming that without any outside guidance, superscripts are interpreted as "power" with some exceptions. But if the author wants to be absolutely clear, they could use the notation we have been developing. For example:
