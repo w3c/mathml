@@ -1,14 +1,10 @@
 # mathml
-MathML editors' draft
+
+MathML4 editors' draft
 
 See https://w3c.github.io/mathml/
 
-Note the build scripts are _not_ fully converted
-to the github layout at this time.
+Note the issues list here covers mathml-core and other related drafts as well as MathML4.
 
-Use
-
-http://www.w3.org/Math/draft-spec/mathml.html
-
-as a more reliable build of the draft until this
-github based build is announced.
+For a full list of MathML related drafts and repositories see
+https://mathml-refresh.github.io/
