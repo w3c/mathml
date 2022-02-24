@@ -2541,17 +2541,6 @@
                </p>
             
             
-            <div class="issue" id="share_presentation"><span class="head"><code class="element">share</code> in Presentation MathML as well?</span>
-               
-               
-               <p>In order to get parallel markup working, we might want to introduce a sharing element
-                  for Presentation MathML as well. That would also potentially give us size benefits.</p>
-               
-               <div class="resolution">
-                  <p>The WG decided on the Boston F2F that we do not want sharing in presentation (too
-                     complicated with all the inherited elements</p>
-               </div>
-               </div>
             
             
             <p>For instance, the mathematical object <i class="var">f(f(f(a,a),f(a,a)),f(f(a,a),f(a,a)))</i> can
@@ -3185,19 +3174,7 @@
                   </div>
                   </p>
                </div>
-            
-            
-            <div class="issue" id="dom_for_containers"><span class="head">MathML DOM for Container Elements</span>
-               
-               
-               <p>Do we want to prescribe one of the representations for the DOM? That would make
-                  the processing much simpler.</p>
-               
-               <div class="resolution">
-                  <p>We have decided to keep the MathML DOM directly in equivalent to the
-                     XML DOM of this, then this becomes a non-issue</p>
-               </div>
-               </div>
+
             
             </section>
          
@@ -4609,19 +4586,7 @@
          the <code class="attribute">definitionURL</code> value.</p>
       
       
-      <div class="issue" id="ops_attribs"><span class="head">Operator elements with Attributes</span>
-         
-         
-         <p>In MathML 2, the meaning of various operator elements could be specialized via
-            various attributes, usually the <code class="attribute">type</code> attribute. Strict Content MathML
-            does not have this possibility</p>
-         
-         <div class="resolution">
-            <p>We pass these attributes
-               as extra arguments in the <code class="element">apply</code> (or <code class="element">bind</code> elements), or add new
-               symbols for the non-default case to the respective content dictionaries.</p>
-         </div>
-         </div>
+
       
       
       <section>

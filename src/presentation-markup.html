@@ -714,13 +714,6 @@
                like directionality, applies to each token element's contents individually.</p>
             
             
-            <div class="issue" id="bidi-unicode-properties"><span class="head">Check Unicode additions and properties for bidirectionality</span>
-               
-               
-               <p>We need to check on the status of various characters added to support
-                  Arabic, and also check that the directionality and mirroring properties are correct.
-                  (e.g. summation and similar)</p> 
-               </div>
             
             
             <p>Please note that for the transfinite cardinals represented
@@ -4764,44 +4757,8 @@
                not, in itself, inhibit a break on an adjacent <code class="element">mo</code> element.
                </p>
             
-            
-            
-            
-            <div class="issue" id="missing-char"><span class="head">Missing Character</span>
-               
-               
-               <p>There are two ways that a character value might not be present.
-                  The first is that it wasn't part of the MathML.
-                  The second is that it was inserted, but the line from the character to the line break
-                  was so long
-                  that it wrapped and the character ended up on a line prior to the previous line.
-                  Is the "Indent" behavior appropriate?</p>
-               </div>
-            
-            
-            <div class="issue" id="indent-count"><span class="head">Indent Count</span>
-               
-               
-               <p>Another possible value, which is similar to what Word uses, is specify a number and
-                  that number means 'indent to the ith operator on the previous line'. The operator
-                  is not specified.</p>
-               </div>
-            
-            
-            <div class="issue" id="indent-align"><span class="head">Indent Align</span>
-               
-               
-               <p>Another option is to add a new element (or reuse malignmark) and allow the value "AlignMark"
-                  as an indent value. In this case, it would align to the mark in the previous line.</p>
-               </div>
-            
-            
-            <div class="issue" id="indent-id"><span class="head">Indent ID</span>
-               
-               
-               <p>Yet another idea is to have indent=id and have an id specified on some element mean
-                  the point to be indented to.</p>
-               </div>
+           
+
             </section>
          
          
@@ -6566,12 +6523,6 @@
                how non-default attribute values of an <code class="element">mpadded</code> element interact 
                with the linebreaking algorithm.</p>
             
-            
-            <div class="issue" id="mpadded-examples"><span class="head"><code class="element">mpadded</code> examples</span>
-               
-               
-               <p>One or more illustrated examples should be included.</p>
-               </div>
             
             
             <p>The effects of the size and position attributes are illustrated
@@ -10723,177 +10674,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
                   <p>The baseline of the mstack element is determined by the <code class="attribute">align</code> attribute.</p>
                </li>
                </ol>
-            
-            
-            
-            <div class="issue" id="centering-overflows-mcolumn"><span class="head">mcolumn overflow</span>
-               
-               
-               <p>Should an entry too large or
-                  too small for a column be centered?</p>
-               </div>
-            
-            
-            <div class="issue" id="mphantom-mcolumn"><span class="head">mstack mphantom</span>
-               
-               
-               <p>Should an <code class="element">mphantom</code> also act as a
-                  wrapper for computing digits? If so, people might be encouraged to use
-                  it to play alignment games that make the result not very accessible.</p>
-               </div>
-            </section>
-         
-         
-         <section>
-            <h5>Attributes</h5>
-            
-            
-            <p><code class="element">mstack</code> elements accept the attributes listed
-               below in addition to those specified in <a href="#presm_presatt"></a>.</p>
-            
-            
-            
-            <table border="1" class="attributes">
-               
-               <thead>
-                  
-                  <tr>
-                     
-                     <td>Name</td>
-                     
-                     <td>values</td>
-                     
-                     <td>default</td>
-                     
-                     <td>Core</td>
-                     </tr>
-                  </thead>
-               
-               <tbody>
-                  
-                  <tr>
-                     
-                     <td rowspan="2" class="attname">align</td>
-                     
-                     <td>("top" | "bottom" | "center" | "baseline" | "axis"), <em>rownumber</em>?</td>
-                     
-                     <td>baseline</td>
-                     
-                     <td><span class="coreno">core&#x2716;</span></td>
-                     </tr>
-                  
-                  <tr>
-                     
-                     <td colspan="3" class="attdesc">
-                        specifies the vertical alignment of the <code class="element">mstack</code> with respect to its environment.
-                        The legal values and their meanings are the same as that for <code class="element">mtable</code>'s
-                        <a class="intref" href="#presm_mtable_attrs"><code class="attribute">align</code></a> attribute.
-                        </td>
-                     </tr>
-                  
-                  <tr>
-                     
-                     <td rowspan="2" class="attname">stackalign</td>
-                     
-                     <td>"left" | "center" | "right" | "decimalpoint"</td>
-                     
-                     <td>decimalpoint</td>
-                     
-                     <td><span class="coreno">core&#x2716;</span></td>
-                     </tr>
-                  
-                  <tr>
-                     
-                     <td colspan="3" class="attdesc">
-                        specifies which column is used to horizontally align the rows.
-                        For <code class="attributevalue">left</code>, rows are aligned flush on the left;
-                        similarly for <code class="attributevalue">right</code>, rows are flush on the right;
-                        for <code class="attributevalue">center</code>, the middle column (or to the right of the middle, for an even number of columns)
-                        is used for alignment.
-                        Rows with non-zero <code class="attribute">position</code>, or affected by a <code class="attribute">shift</code>,
-                        are treated as if the
-                        requisite number of empty columns were added on the appropriate side;
-                        see <a href="#presm_msgroup"></a> and <a href="#presm_msrow"></a>.
-                        For <code class="attributevalue">decimalpoint</code>, the column used is the left-most column in each
-                        row that contains the decimalpoint character specified
-                        using the <code class="attribute">decimalpoint</code> attribute of <code class="element">mstyle</code> (default ".").
-                        If there is no decimalpoint character in the row, an implied decimal is assumed on
-                        the right of the first number in the row;
-                        See <a class="intref" href="#presm_mstyle"><code class="attributevalue">decimalpoint</code></a> for a discussion
-                        of <code class="attributevalue">decimalpoint</code>.
-                        </td>
-                     </tr>
-                  
-                  <tr>
-                     
-                     <td rowspan="2" class="attname">charalign</td>
-                     
-                     <td>"left" | "center" | "right" </td>
-                     
-                     <td>right</td>
-                     
-                     <td><span class="coreno">core&#x2716;</span></td>
-                     </tr>
-                  
-                  <tr>
-                     
-                     <td colspan="3" class="attdesc">
-                        specifies the horizontal alignment of digits within a column.
-                        If the content is larger than the column width, then it overflows the opposite side
-                        from the alignment.
-                        For example, for <code class="attributevalue">right</code>, the content will overflow on the left side; for center,
-                        it overflows on both sides.
-                        This excess does not participate in the column width calculation, nor does it participate
-                        in the overall width of the <code class="element">mstack</code>.
-                        In these cases, authors should take care to avoid collisions between column overflows.
-                        </td>
-                     </tr>
-                  
-                  <tr>
-                     
-                     <td rowspan="2" class="attname">charspacing</td>
-                     
-                     <td><a class="intref" href="#type_length"><em>length</em></a> | "loose" | "medium" | "tight"</td>
-                     
-                     <td>medium</td>
-                     
-                     <td><span class="coreno">core&#x2716;</span></td>
-                     </tr>
-                  
-                  <tr>
-                     
-                     <td colspan="3" class="attdesc">
-                        specifies the amount of space to put between each column.
-                        Larger spacing might be useful if carries are not placed above or are particularly
-                        wide.
-                        The keywords
-                        <code class="attributevalue">loose</code>, <code class="attributevalue">medium</code>, and <code class="attributevalue">tight</code>
-                        automatically adjust spacing to when carries or other entries in a column are wide.
-                        The three values allow authors to some flexibility in choosing what the layout looks
-                        like
-                        without having to figure out what values works well.
-                        In all cases, the spacing between columns is a fixed amount and does not vary between
-                        different columns.
-                        </td>
-                     </tr>
-                  </tbody>
-               </table>
-            
-            
-            <div class="issue" id="decimalseparator"><span class="head">decimalsperator discussion</span>
-               
-               
-               <p>Need to add a discussion of decimalseparator to mstyle.</p>
-            </div> 
-            
-            
-            <div class="issue" id="mcolumn-multidigit-alignment"><span class="head">mcolumn multidigit alignment</span>
-               
-               
-               <p>If there is more than one
-                  number in a row, which number should be used to determine the
-                  alignment if decimal point alignment is specified?</p>
-            </div> 
+ 
             
             </section>
          </section>
@@ -12240,20 +12021,7 @@ group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
          <h4 id="presm_maction">Bind Action to Sub-Expression
             <code class="defn starttag">&lt;maction&gt;</code></h4>
          
-         
-         <div class="issue" id="deprecate_maction"><span class="head">Deprecate <code class="element">maction</code></span>
-            
-            
-            <p>There is concensus that <code class="element">maction</code> should be deprecated or restricted
-               in some way.  There is also consensus that in any event, all attribute
-               values and their behavior should be fully specified (in contrast to
-               the present text). Note that <code class="element">maction</code> is currently used for linking, so
-               the fate of <code class="element">maction</code> is tied to producing a satisfactory substitute.
-               There is also a dependency on the decision on how to handle foreign
-               markup within MathML.  MathQTI has a requirement for form elements
-               that appear in typeset equations, e.g. an input field for an exponent,
-               which could be satisfied by either <code class="element">maction</code> or XForms.</p>
-            </div>
+
          
          
          <p>To provide a mechanism for binding actions to expressions, MathML
