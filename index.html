@@ -66,6 +66,13 @@
    }
    };
   </script>
+  <script class='remove'>
+    function relaxhl (r,s,u) {
+	var s2=s.replaceAll(/#[^\n]*/g,'<span style="color:brown">$&</span>');
+	s2=s2.replaceAll(/include *"([^"]*)"/g,'<span style="color:green">include</span> "<span style="color:red">$1</span>"');
+	return  s2;
+    }
+    </script>
  </head>
  <body>
   <section id='abstract'>
@@ -389,7 +396,7 @@
     <section>
      <h4 id="parsing_rnc_pres">The Grammar for Presentation MathML</h4>
      
-     <pre data-include="src/rnc-pres.html" data-include-replace="true"></pre>
+     <pre class="nohighlight" data-oninclude="relaxhl" data-include-format='html' data-include="RelaxNG/mathml4/mathml4-presentation.rnc" ></pre>
 
     </section>
     
