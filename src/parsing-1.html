@@ -4,8 +4,7 @@
  <p>Presented here are Relax NG schema for MathML.
  A Relax NG Schema is most naturally associated with the XML serialization
  of MathML, but may also form the basis of  validation in other
- formats. (Some HTML validators are based on Relax NG for
- example).</p>
+ formats such as HTML5.</p>
  <p>Even when using the XML serialization, some normalization of
  the input may be required before applying these schema, Notably,
  following HTML, [[MathML-Core]] allows attributes such as
@@ -15,7 +14,7 @@
  case insensitive here so only the lowercase names are allowed.
  Similarly any attribute with name starting with the prefix
  <code>data-</code> should be considered valid. The schema here only
- allows a fixed attribute, <code>data-extra</code>,so input should be
+ allows a fixed attribute, <code>data-extra</code>, so input should be
  normalized to remove data attributes before validating, or the schema
  should be extended to support th attributes used in a particular
  application.</p>

@@ -2,46 +2,20 @@
    <section>
       <h3 id="parsing_usingdtd">Using the MathML DTD</h3>
       
-      
-                
+        
          <p>The MathML DTD uses the strategy outlined in
            [[Modularization]] to allow the use of namespace prefixes
-           on MathML eelements. However it is recommended that
+           on MathML elements. However it is recommended that
            namespace prefixes are not used in XML serialisation of
            MathML, for compatibility with the HTML serialisation.</p>
+                 
          
-               
-         <p>Furthermore, the MathML DTD is provided for convenience; although it is
-            intended to be fully compatible with the text of the specification, the
-            text should be taken as definitive if there is a contradiction.  (Any
-            contradictions which may exist between various chapters of the text should
-            be resolved by favoring <a href="#chars"></a> first, then <a href="#presm"></a>, <a href="#contm"></a>, then <a href="#fund_syntax"></a>,
-            and then other parts of the text.)</p>
-         
-      
-         <p>MathML documents should be validated using the XML DTD for
-            MathML,
-            <a href="http://www.w3.org/Math/DTD/mathml4/mathml4.dtd">http://www.w3.org/Math/DTD/mathml4/mathml4.dtd</a>.
-            </p> 
-         
-         
-         <p>Documents using this DTD should contain a DOCTYPE declaration
-            of the form:
-            
-            <div class="example ">
-               <pre>&lt;!DOCTYPE math 
-    PUBLIC "-//W3C//DTD MathML 4.0//EN"
-           "http://www.w3.org/Math/DTD/mathml4/mathml4.dtd"&gt;</pre>
-            </div>
-            The URI may be changed to that of a local copy
-         of the DTD if required.</p>
-
 	 <p>Note that unlike the HTML serialization, when using the
 	 XML serialization, character entity references such as
 	 <code>&amp;int</code> may not be used unless a DTD is
 	 specified, either the full MathML DTD as described here or the
          set of HTML/MathML entity declarations as specified by [[Entities].
-	 Characters may always be specified by using character data directly, or numeric character referencess, so
+	 Characters may always be specified by using character data directly, or numeric character references, so
 	 <code>∫</code> or <code>&amp;#x222B;</code> rather than
 	 <code>&amp;int;</code>.</p>
       
