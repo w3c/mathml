@@ -1,23 +1,22 @@
 <section>
   <h3 id="parsing_wellformed">Validating MathML</h3>
       
- <p>Presented here are Relax NG schema for MathML.
- A Relax NG Schema is most naturally associated with the XML serialization
- of MathML, but may also form the basis of  validation in other
- formats such as HTML5.</p>
- <p>Even when using the XML serialization, some normalization of
- the input may be required before applying these schema, Notably,
- following HTML, [[MathML-Core]] allows attributes such as
- <code>onclick</code> to be specified in any case, eg
- <code>OnClick="..."</code>
- It is not practically feasible to specify that attribute names are
- case insensitive here so only the lowercase names are allowed.
- Similarly any attribute with name starting with the prefix
- <code>data-</code> should be considered valid. The schema here only
- allows a fixed attribute, <code>data-extra</code>, so input should be
- normalized to remove data attributes before validating, or the schema
- should be extended to support th attributes used in a particular
- application.</p>
-           
+  <p>The Relax NG schema may be used to check the XML serialization of
+  MathML and serves as a foundation for validaing other serializations
+  of MathML, such as the HTML serialization.</p>
+  <p>Even when using the XML serialization, some normalization of
+  the input may be required before applying these schema, Notably,
+  following HTML, [[MathML-Core]] allows attributes such as
+  <code>onclick</code> to be specified in any case, eg
+  <code>OnClick="..."</code>
+  It is not practically feasible to specify that attribute names are
+  case insensitive here so only the lowercase names are allowed.
+  Similarly any attribute with name starting with the prefix
+  <code>data-</code> should be considered valid. The schema here only
+  allows a fixed attribute, <code>data-extra</code>, so input should be
+  normalized to remove data attributes before validating, or the schema
+  should be extended to support the attributes used in a particular
+  application.</p>
+ 
 </section>
    
