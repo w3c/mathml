@@ -36,6 +36,14 @@
 	  ],
    github: "https://github.com/w3c/mathml",
    localBiblio: {     
+	      "MathML-Core": {
+		  title: "MathML Core",
+		                    authors: [
+                      "Frédéric Wang, et al."
+                  ],
+                  status: "ED",
+                  href: "https://w3c.github.io/mathml-core/"
+	      },
    "Pierce1961": {title: "Pierce1961"},
    "Cajori1928": {title: "Cajori1928"},
    "Knuth1986": {title: "Knuth1986"},
@@ -48,7 +56,7 @@
    "XMLSchemas": {title: "XMLSchemas"},
    "Namespaces": {title: "Namespaces"},
    "HTML4": {title: "HTML4"},
-   "Entities": {title: "Entities"},
+   "Entities": {title: "XML Entity Definitions for Characters"},
    "MathMLforCSS": {title: "MathMLforCSS"},
    "Chaundy1954": {title: "Chaundy1954"},
    "IEEE754": {title: "IEEE754"},
@@ -66,6 +74,14 @@
    }
    };
   </script>
+  <script class='remove'>
+    function relaxhl (r,s,u) {
+	var s2=s.replaceAll(/#[^\n]*/g,'<span style="color:brown">$&</span>');
+	s2=s2.replaceAll(/([a-z0-9A-Z-]+)(\s*=\s*[^"])/g,'<b>$1</b>$2');
+	s2=s2.replaceAll(/include *"([^"]*)"/g,'<span style="color:green">include</span> "<span style="color:red">$1</span>"');
+	return  s2;
+    }
+    </script>
  </head>
  <body>
   <section id='abstract'>
@@ -351,45 +367,20 @@
     <p>In contrast to DTDs there is no in-document method to associate a RelaxNG schema with
     a document.</p>
     
-    <p>We provide five RelaxNG schema for Mathml4 in five parts:
-    </p>
-    <ul>
-     <li>
-      <p>The grammar for full MathML</p>
-     </li>
-     <li>
-      <p>The grammar for elements common to Content and Presentation</p>
-     </li>
-     <li>
-      <p>The grammar for Presentation MathML</p>
-     </li>
-     <li>
-      <p>The grammar for Strict Content MathML</p>
-     </li>
-     <li>
-      <p>The grammar for Content Mathml4</p>
-     </li>
-    </ul>
-    
+  
+   
+
     <section>
-     <h4 id="parsing_rnc_full">Full MathML</h4>
+     <h4 id="parsing_rnc_pres">The Grammar for MathML Core</h4>
      
-     <p>The RelaxNG schema for full MathML builds on the schema describing the various parts
-     of the language which are given in the following sections. It can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc</a>.</p>
-     
-     <pre data-include="src/rnc-full.html" data-include-replace="true"></pre>
-    </section>
-    
-    <section>
-     <h4 id="parsing_rnc_common">Elements Common to Presentation and Content MathML</h4>
-     
-     <pre data-include="src/rnc-common.html" data-include-replace="true"></pre>
+     <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-core.rnc" ></pre>
+
     </section>
     
     <section>
      <h4 id="parsing_rnc_pres">The Grammar for Presentation MathML</h4>
      
-     <pre data-include="src/rnc-pres.html" data-include-replace="true"></pre>
+     <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-presentation.rnc" ></pre>
 
     </section>
     
@@ -398,7 +389,7 @@
      
      <p>The grammar for Strict Content Mathml4 can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc</a>.</p>
      
-     <pre data-include="src/rnc-strict.html" data-include-replace="true"></pre>
+     <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-strict-content.rnc" ></pre>
     </section>
     
     
@@ -408,178 +399,23 @@
      <p>The grammar for Content Mathml4 builds on the grammar for the Strict Content MathML
      subset, and can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4-content.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4-content.rnc</a>.</p>
      
-     <pre data-include="src/rnc-content.html" data-include-replace="true"></pre>
+     <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-content.rnc" ></pre>
      
     </section>
-    
+
     <section>
-     <h4 id="parsing_rnc_module">MathML as a module in a RelaxNG Schema</h4>
+     <h4 id="parsing_rnc_full">The Grammar for Full MathML</h4>
      
-     <p>Normally, a MathML expression does not constitute an entire XML document. MathML is
-     designed to be used as the mathematics fragment of larger markup languages. In
-     particular it is designed to be used as a <em>module</em> in documents marked up
-     with the XHTML family of markup languages. As RelaxNG directly supports modular
-     development, this is usually very easy: an XHTML+MathML schema can be specified as
-     simply as
+     <p>The grammar for full Mathml4 is simply a merger of the above grammars,
+     and can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc</a>.</p>
      
-     <div class="example ">
-      <pre># A RelaxNG Schema for  XHTML+MathML
-      include "xhtml.rnc"
-      math = external "mathml4.rnc"
-      Inline.class |= math
-      Block.class |= math</pre>
-     </div>
-     
-     assuming that we have access to a modular RelaxNG schema for XHTML that uses
-     <code>Inline.class</code> and <code>Block.class</code> to collect the the content models
-     for inline and block-level elements.</p>
-     
-     <p>Customizing the Mathml4 schema so that we can restrict the content of
-     <code class="element">annotation-xml</code> elements is similarly simple, for example:
-     
-     <div class="example ">
-      <pre># A RelaxNG Schema for MathML with OpenMath3 annotations
-      omobj = external "openmath3.rnc" 
-      include "mathml4.rnc" {anotation-xml.model = omobj}</pre>
-     </div>
-     </p>
-     
-     <p>
-      The Mathml4 schema is organized so that subsetting to one of the sublanguages specified
-      here is easy.
-      To include strict content Mathml4 in a schema just include
-      
-      <div class="example ">
-       <pre>include "mathml4-common.rnc"
-       include "mathml4-strict-content.rnc"</pre>
-      </div>
-      instead of <code>include mathml4.rnc</code>.
-     </p>
-     
-     <p>For details about RelaxNG grammars and modularization see [[RELAX-NG]] or [[RelaxNGBook]].</p>
+     <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4.rnc" ></pre>
      
     </section>
+
+
    </section>
-   <section>
-    <h3 id="parsing_usingrnc">Using the RelaxNG Schema for Mathml4</h3>
-    
-    <p>MathML documents should be validated using the RelaxNG Schema for MathML, either in
-    the XML encoding (<a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rng">http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rng</a>)
-    or in compact notation (<a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc</a>)
-    which is also shown below.</p>
-    
-    <p>In contrast to DTDs there is no in-document method to associate a RelaxNG schema with
-    a document.</p>
-    
-    <p>We provide five RelaxNG schema for Mathml4 in five parts:
-    </p>
-    <ul>
-     <li>
-      <p>The grammar for full MathML</p>
-     </li>
-     <li>
-      <p>The grammar for elements common to Content and Presentation</p>
-     </li>
-     <li>
-      <p>The grammar for Presentation MathML</p>
-     </li>
-     <li>
-      <p>The grammar for Strict Content MathML</p>
-     </li>
-     <li>
-      <p>The grammar for Content Mathml4</p>
-     </li>
-    </ul>
-    
-    <section>
-     <h4 id="parsing_rnc_full">Full MathML</h4>
-     
-     <p>The RelaxNG schema for full MathML builds on the schema describing the various parts
-     of the language which are given in the following sections. It can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc</a>.</p>
-     
-     <pre data-include="src/rnc-full.html" data-include-replace="true"></pre>
-    </section>
-    
-    <section>
-     <h4 id="parsing_rnc_common">Elements Common to Presentation and Content MathML</h4>
-     
-     <pre data-include="src/rnc-common.html" data-include-replace="true"></pre>
-    </section>
-    
-    <section>
-     <h4 id="parsing_rnc_pres">The Grammar for Presentation MathML</h4>
-     
-     <pre data-include="src/rnc-pres.html" data-include-replace="true"></pre>
-     
-    </section>
-    
-    <section>
-     <h4 id="parsing_rnc_strict">The Grammar for Strict Content Mathml4</h4>
-     
-     
-     <p>The grammar for Strict Content Mathml4 can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc</a>.</p>
-     
-     <pre data-include="src/rnc-strict.html" data-include-replace="true"></pre>
-    </section>
-    
-    <section>
-     <h4 id="parsing_rnc_content">The Grammar for Content MathML</h4>
-     
-     <p>The grammar for Content Mathml4 builds on the grammar for the Strict Content MathML
-     subset, and can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4-content.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4-content.rnc</a>.</p>
-     
-     <pre data-include="src/rnc-content.html" data-include-replace="true"></pre>
-     
-    </section>
-    
-    <section>
-     <h4 id="parsing_rnc_module">MathML as a module in a RelaxNG Schema</h4>
-     
-     <p>Normally, a MathML expression does not constitute an entire XML document. MathML is
-     designed to be used as the mathematics fragment of larger markup languages. In
-     particular it is designed to be used as a <em>module</em> in documents marked up
-     with the XHTML family of markup languages. As RelaxNG directly supports modular
-     development, this is usually very easy: an XHTML+MathML schema can be specified as
-     simply as
-     
-     <div class="example ">
-      <pre># A RelaxNG Schema for  XHTML+MathML
-      include "xhtml.rnc"
-      math = external "mathml4.rnc"
-      Inline.class |= math
-      Block.class |= math</pre>
-     </div>
-     
-     assuming that we have access to a modular RelaxNG schema for XHTML that uses
-     <code>Inline.class</code> and <code>Block.class</code> to collect the the content models
-     for inline and block-level elements.</p>
-     
-     <p>Customizing the Mathml4 schema so that we can restrict the content of
-     <code class="element">annotation-xml</code> elements is similarly simple, for example:
-     
-     <div class="example ">
-      <pre># A RelaxNG Schema for MathML with OpenMath3 annotations
-      omobj = external "openmath3.rnc" 
-      include "mathml4.rnc" {anotation-xml.model = omobj}</pre>
-     </div>
-     </p>
-     
-     <p>
-      The Mathml4 schema is organized so that subsetting to one of the sublanguages specified
-      here is easy.
-      To include strict content Mathml4 in a schema just include
-      
-      <div class="example ">
-       <pre>include "mathml4-common.rnc"
-       include "mathml4-strict-content.rnc"</pre>
-      </div>
-      instead of <code>include mathml4.rnc</code>.
-     </p>
-     
-     <p>For details about RelaxNG grammars and modularization see [[RELAX-NG]] or [[RelaxNGBook]].</p>
-     
-    </section>
-   </section>
+
    
    <section data-include="src/parsing-2.html" data-include-replace="true"></section>
   </section>
