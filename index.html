@@ -76,7 +76,7 @@
   </script>
   <script class='remove'>
     function relaxhl (r,s,u) {
-	var s2=s.replaceAll(/#[^\n]*/g,'<span style="color:brown">$&</span>');
+	var s2=s.replaceAll(/(\n|^)([^'#\n]*)(#[^\n]*)/g,'$1$2<span style="color:brown">$3</span>');
 	s2=s2.replaceAll(/([a-z0-9.A-Z-]+)(\s*=\s*[^"])/g,'<b>$1</b>$2');
 	s2=s2.replaceAll(/include *"([^"]*)"/g,'<span style="color:green">include</span> "<span style="color:red">$1</span>"');
 	return  s2;
