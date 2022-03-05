@@ -594,14 +594,16 @@
 
         <div class="example mathml">
          <pre>
-	 &lt;cn type="hexdouble"&gt;7F800000&lt;/cn&gt;</pre>
+	  &lt;cn type="hexdouble"&gt;7F800000&lt;/cn&gt;
+	 </pre>
         </div>
 
         <p>Sample Presentation</p>
 
         <div class="example mathml">
          <pre>
-	 &lt;mn&gt;0x7F800000&lt;/mn&gt;</pre>
+	  &lt;mn&gt;0x7F800000&lt;/mn&gt;
+	 </pre>
         </div>
 
         <blockquote>
@@ -653,7 +655,8 @@
 
         <div class="example mathml">
          <pre>
-	 &lt;msub&gt;&lt;mn&gt;7FE0&lt;/mn&gt;&lt;mn&gt;16&lt;/mn&gt;&lt;/msub&gt;</pre>
+	  &lt;msub&gt;&lt;mn&gt;7FE0&lt;/mn&gt;&lt;mn&gt;16&lt;/mn&gt;&lt;/msub&gt;
+	 </pre>
         </div>
 
         <blockquote>
@@ -718,7 +721,8 @@
 
         <div class="example mathml">
          <pre>
-	 &lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;</pre>
+	  &lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;
+	 </pre>
         </div>
 
         <blockquote>
@@ -749,7 +753,8 @@
          <pre>
 	  &lt;mrow&gt;
 	  &lt;mn&gt;12.3&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;i&lt;/mi&gt;
-	 &lt;/mrow&gt;</pre>
+	  &lt;/mrow&gt;
+	 </pre>
         </div>
 
         <blockquote>
@@ -770,7 +775,8 @@
 
         <div class="example mathml">
          <pre>
-	 &lt;cn type="complex-polar"&gt; 2 &lt;sep/&gt; 3.1415 &lt;/cn&gt;</pre>
+	  &lt;cn type="complex-polar"&gt; 2 &lt;sep/&gt; 3.1415 &lt;/cn&gt;
+	 </pre>
         </div>
 
         <p>Sample Presentation</p>
@@ -784,7 +790,8 @@
 	  &lt;mi&gt;e&lt;/mi&gt;
 	  &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mn&gt;3.1415&lt;/mn&gt;&lt;/mrow&gt;
 	  &lt;/msup&gt;
-	 &lt;/mrow&gt;</pre>
+	  &lt;/mrow&gt;
+	 </pre>
         </div>
 
         <blockquote>
@@ -797,7 +804,8 @@
 	  &lt;mi&gt;Polar&lt;/mi&gt;
 	  &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	  &lt;mfenced&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;3.1415&lt;/mn&gt;&lt;/mfenced&gt;
-	 &lt;/mrow&gt;</pre>
+	  &lt;/mrow&gt;
+	 </pre>
         </div>
 
         <blockquote>
@@ -848,7 +856,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;cn type="rational" base="b"&gt;n&lt;sep/&gt;d&lt;/cn&gt;</pre>
+	&lt;cn type="rational" base="b"&gt;n&lt;sep/&gt;d&lt;/cn&gt;
+       </pre>
       </div>
 
       <p> is rewritten to</p>
@@ -858,7 +867,8 @@
 	&lt;apply&gt;&lt;csymbol cd="nums1"&gt;rational&lt;/csymbol&gt;
 	&lt;cn type="integer" base="b"&gt;n&lt;/cn&gt;
 	&lt;cn type="integer" base="b"&gt;d&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>The symbol used in the result depends on the <code class="attribute">type</code> attribute according to the following table:</p>
@@ -923,7 +933,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;cn type="integer" base="16"&gt;FF60&lt;/cn&gt;</pre>
+	&lt;cn type="integer" base="16"&gt;FF60&lt;/cn&gt;
+       </pre>
       </div>
 
       <div class="example strict-mathml">
@@ -931,7 +942,8 @@
 	&lt;apply&gt;&lt;csymbol cd="nums1"&gt;based_integer&lt;/csymbol&gt;
 	&lt;cn type="integer"&gt;16&lt;/cn&gt;
 	&lt;cs&gt;FF60&lt;/cs&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>If the original element specified type <code class="attributevalue">integer</code>
@@ -1018,7 +1030,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;cn type="rational"&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;sep/&gt;&lt;mi&gt;Q&lt;/mi&gt;&lt;/cn&gt;</pre>
+	&lt;cn type="rational"&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;sep/&gt;&lt;mi&gt;Q&lt;/mi&gt;&lt;/cn&gt;
+       </pre>
       </div>
       is transformed to Strict Content MathML by rewriting it to
 
@@ -1037,7 +1050,8 @@
 	&lt;mi&gt;Q&lt;/mi&gt;
 	&lt;/annotation-xml&gt;
 	&lt;/semantics&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       Where the identifier names, p and q, (which have to be a text string) should be
       determined from the presentation MathML content, in a system defined way, perhaps
@@ -1210,7 +1224,8 @@
 	&lt;annotation-xml cd="mathmltypes" name="type" encoding="MathML-Content"&gt;
 	&lt;csymbol cd="mathmltypes"&gt;integer_type&lt;/csymbol&gt;
 	&lt;/annotation-xml&gt;
-       &lt;/semantics&gt;</pre>
+	&lt;/semantics&gt;
+       </pre>
       </div>
 
       <p>Note that <code class="attributevalue">complex</code> should be considered
@@ -1256,7 +1271,8 @@
 	&lt;annotation-xml cd="mathmltypes" name="type" encoding="MathML-Content"&gt;
 	&lt;ci&gt;T&lt;/ci&gt;
 	&lt;/annotation-xml&gt;
-       &lt;/semantics&gt;</pre>
+	&lt;/semantics&gt;
+       </pre>
       </div>
       </p>
      </div>
@@ -1283,7 +1299,8 @@
 	&lt;annotation-xml encoding="MathML-Presentation"&gt;
 	&lt;mi&gt;P&lt;/mi&gt;
 	&lt;/annotation-xml&gt;
-       &lt;/semantics&gt;</pre>
+	&lt;/semantics&gt;
+       </pre>
       </div>
       Where the identifier name, p, (which has to be a text string) should be
       determined from the presentation MathML content, in a system defined way, perhaps
@@ -1308,7 +1325,8 @@
        <pre>
 	&lt;ci&gt;
 	&lt;msup&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
-       &lt;/ci&gt;</pre>
+	&lt;/ci&gt;
+       </pre>
       </div>
 
       <p>The Strict Content MathML equivalent is</p>
@@ -1320,14 +1338,16 @@
 	&lt;annotation-xml encoding="MathML-Presentation"&gt;
 	&lt;msup&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
 	&lt;/annotation-xml&gt;
-       &lt;/semantics&gt;</pre>
+	&lt;/semantics&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;msup&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;</pre>
+	&lt;msup&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -1565,7 +1585,8 @@
 	&lt;annotation-xml cd="mathmltypes" name="type" encoding="MathML-Content"&gt;
 	&lt;ci&gt;T&lt;/ci&gt;
 	&lt;/annotation-xml&gt;
-       &lt;/semantics&gt;</pre>
+	&lt;/semantics&gt;
+       </pre>
       </div>
       </p>
      </div>
@@ -1647,7 +1668,8 @@
       <pre>
        &lt;set&gt;
        &lt;cs&gt;A&lt;/cs&gt;&lt;cs&gt;B&lt;/cs&gt;&lt;cs&gt;  &lt;/cs&gt;
-      &lt;/set&gt;</pre>
+       &lt;/set&gt;
+      </pre>
      </div>
 
      <p>Sample Presentation</p>
@@ -1662,7 +1684,8 @@
        &lt;mo&gt;,&lt;/mo&gt;
        &lt;ms&gt;&amp;#xa0;&amp;#xa0;&lt;/ms&gt;
        &lt;mo&gt;}&lt;/mo&gt;
-      &lt;/mrow&gt;</pre>
+       &lt;/mrow&gt;
+      </pre>
      </div>
 
      <blockquote>
@@ -1765,7 +1788,8 @@
        &lt;ci&gt;x&lt;/ci&gt;
        &lt;ci&gt;y&lt;/ci&gt;
        &lt;ci&gt;z&lt;/ci&gt;
-      &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+      </pre>
      </div>
      Note that MathML also allows applications without operands, e.g. to represent functions
      like <code>random()</code>, or  <code>current-date()</code>.</p>
@@ -1782,7 +1806,8 @@
        &lt;ci&gt;x&lt;/ci&gt;
        &lt;/apply&gt;
        &lt;ci&gt;b&lt;/ci&gt;
-      &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+      </pre>
      </div>
      </p>
 
@@ -1806,7 +1831,8 @@
        &lt;ci&gt;G&lt;/ci&gt;
        &lt;/apply&gt;
        &lt;ci&gt;x&lt;/ci&gt;
-      &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+      </pre>
      </div>
 
      or it might indicate the application of the function <i class="var">F</i> + <i class="var">G</i> to
@@ -1826,7 +1852,8 @@
        &lt;ci&gt;G&lt;/ci&gt;
        &lt;/apply&gt;
        &lt;ci&gt;x&lt;/ci&gt;
-      &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+      </pre>
      </div>
 
      In both cases, the interpretation of the outer <code class="element">apply</code> is
@@ -1870,7 +1897,8 @@
 	&lt;ci&gt;a2&lt;/ci&gt;
 	&lt;ci&gt;...&lt;/ci&gt;
 	&lt;ci&gt;an&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -1891,7 +1919,8 @@
 	&lt;mi&gt;An&lt;/mi&gt;
 	&lt;mo fence="true"&gt;)&lt;/mo&gt;
 	&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
      </div>
 
@@ -1916,7 +1945,8 @@
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;domainofapplication&gt;&lt;ci&gt;d&lt;/ci&gt;&lt;/domainofapplication&gt;
 	&lt;ci&gt;expression-in-x&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -1934,7 +1964,8 @@
 	&lt;mi&gt;Expression-in-X&lt;/mi&gt;
 	&lt;mo fence="true"&gt;)&lt;/mo&gt;
 	&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
      </div>
 
@@ -2094,7 +2125,8 @@
        &lt;ci xref="var-x"&gt;x&lt;/ci&gt;
        &lt;cn&gt;1&lt;/cn&gt;
        &lt;/apply&gt;
-      &lt;/bind&gt;</pre>
+       &lt;/bind&gt;
+      </pre>
      </div>
 
      This <code class="attribute">id</code> based approach is especially helpful when constructions
@@ -2123,7 +2155,8 @@
        &lt;apply&gt;&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
        &lt;apply&gt;&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
        &lt;/apply&gt;
-      &lt;/bind&gt;</pre>
+       &lt;/bind&gt;
+      </pre>
      </div>
 
      <p>In non-Strict Content markup, the <code class="element">bvar</code> element is used in
@@ -2180,7 +2213,8 @@
 	&lt;bvar&gt;&lt;ci&gt;...&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;bvar&gt;&lt;ci&gt;xn&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;ci&gt;s&lt;/ci&gt;
-       &lt;/bind&gt;</pre>
+	&lt;/bind&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -2198,7 +2232,8 @@
 	&lt;/mrow&gt;
 	&lt;mo separator="true"&gt;.&lt;/mo&gt;
 	&lt;mi&gt;S&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
      </div>
     </section>
@@ -2306,7 +2341,8 @@
 	   &lt;ci&gt;a&lt;/ci&gt;
 	   &lt;/apply&gt;
 	   &lt;/apply&gt;
-	  &lt;/apply&gt;</pre>
+	   &lt;/apply&gt;
+	  </pre>
 	 </div>
 	</td>
 
@@ -2325,7 +2361,8 @@
 	   &lt;/apply&gt;
 	   &lt;share src="#t1"/&gt;
 
-	  &lt;/apply&gt;</pre>
+	   &lt;/apply&gt;
+	  </pre>
 	 </div>
 	</td>
        </tr>
@@ -2357,7 +2394,8 @@
        &lt;cn&gt;1&lt;/cn&gt;
        &lt;share src="#badid1"/&gt;
        &lt;/apply&gt;
-      &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+      </pre>
      </div>
      </p>
 
@@ -2382,7 +2420,8 @@
        &lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;     &lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;
        &lt;cn&gt;1&lt;/cn&gt;                              &lt;cn&gt;1&lt;/cn&gt;
        &lt;share src="#baz"/&gt;                    &lt;share src="#bar"/&gt;
-      &lt;/apply&gt;                                &lt;/apply&gt;</pre>
+       &lt;/apply&gt;                                &lt;/apply&gt;
+      </pre>
      </div>
 
      Here, the <code class="element">apply</code> with <code>id="bar"</code> dominates its third child, the
@@ -2415,7 +2454,8 @@
        &lt;/bind&gt;
        &lt;apply id="orig"&gt;&lt;ci&gt;g&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
        &lt;/apply&gt;
-      &lt;/bind&gt;</pre>
+       &lt;/bind&gt;
+      </pre>
      </div>
 
      This represents a term
@@ -2545,7 +2585,8 @@
       &lt;cerror&gt;
       &lt;csymbol cd="aritherror"&gt;DivisionByZero&lt;/csymbol&gt;
       &lt;apply&gt;&lt;csymbol cd="arith1"&gt;divide&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;
-     &lt;/cerror&gt;</pre>
+      &lt;/cerror&gt;
+     </pre>
     </div>
 
     Note that error markup generally should enclose only the smallest
@@ -2560,7 +2601,8 @@
       &lt;apply&gt;&lt;csymbol cd="arith1"&gt;divide&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;
       &lt;/cerror&gt;
       &lt;cn&gt;0&lt;/cn&gt;
-     &lt;/apply&gt;</pre>
+      &lt;/apply&gt;
+     </pre>
     </div>
     </p>
 
@@ -2579,7 +2621,8 @@
        &lt;cerror&gt;
        &lt;csymbol cd="aritherror"&gt;DivisionByZero&lt;/csymbol&gt;
        &lt;apply&gt;&lt;csymbol cd="arith1"&gt;divide&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;
-      &lt;/cerror&gt;</pre>
+       &lt;/cerror&gt;
+      </pre>
      </div>
 
      <p>Sample Presentation</p>
@@ -2589,7 +2632,8 @@
        &lt;merror&gt;
        &lt;mtext&gt;DivisionByZero:&amp;#160;&lt;/mtext&gt;
        &lt;mfrac&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mfrac&gt;
-      &lt;/merror&gt;</pre>
+       &lt;/merror&gt;
+      </pre>
      </div>
 
      <blockquote>
@@ -2607,7 +2651,8 @@
       &lt;cerror&gt;
       &lt;csymbol cd="error"&gt;Illegal bound variable&lt;/csymbol&gt;
       &lt;cs&gt; &amp;lt;bvar&amp;gt;&amp;lt;plus/&amp;gt;&amp;lt;/bvar&amp;gt; &lt;/cs&gt;
-     &lt;/cerror&gt;</pre>
+      &lt;/cerror&gt;
+     </pre>
     </div>
     </p>
    </section>
@@ -2811,7 +2856,8 @@
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;domainofapplication&gt;&lt;integers/&gt;&lt;/domainofapplication&gt;
 	&lt;apply&gt;&lt;times/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/set&gt;</pre>
+	&lt;/set&gt;
+       </pre>
       </div>
 
       This may be written as follows in Strict Content MathML:
@@ -2827,7 +2873,8 @@
 	&lt;/apply&gt;
 	&lt;/bind&gt;
 	&lt;csymbol cd="setname1"&gt;Z&lt;/csymbol&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       </p>
      </div>
@@ -2865,7 +2912,8 @@
        <pre>
 	&lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;&lt;ci&gt;x&lt;/ci&gt;
-       &lt;/bind&gt;</pre>
+	&lt;/bind&gt;
+       </pre>
       </div>
 
      </div>
@@ -2919,7 +2967,8 @@
        &lt;apply&gt;&lt;forall/&gt;
        &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
        &lt;apply&gt;&lt;geq/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-      &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+      </pre>
      </div>
      The equivalent Strict expression is:
 
@@ -2928,7 +2977,8 @@
        &lt;bind&gt;&lt;csymbol cd="logic1"&gt;forall&lt;/csymbol&gt;
        &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
        &lt;apply&gt;&lt;csymbol cd="relation1"&gt;geq&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-      &lt;/bind&gt;</pre>
+       &lt;/bind&gt;
+      </pre>
      </div>
      </p>
     </div>
@@ -2950,7 +3000,8 @@
        &lt;lowlimit&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/lowlimit&gt;
        &lt;uplimit&gt;&lt;cn&gt;100&lt;/cn&gt;&lt;/uplimit&gt;
        &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/apply&gt;
-      &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+      </pre>
      </div>
      The equivalent Strict expression is:
 
@@ -2968,7 +3019,8 @@
        &lt;ci&gt;i&lt;/ci&gt;
        &lt;/apply&gt;
        &lt;/bind&gt;
-      &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+      </pre>
      </div>
      </p>
     </div>
@@ -3075,7 +3127,8 @@
        &lt;ci type="set"&gt;C&lt;/ci&gt;
        &lt;/domainofapplication&gt;
        &lt;ci type="function"&gt;f&lt;/ci&gt;
-      &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+      </pre>
      </div>
      </p>
 
@@ -3089,7 +3142,8 @@
        &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
        &lt;interval&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;
        &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
-      &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+      </pre>
      </div>
      </p>
 
@@ -3103,7 +3157,8 @@
        &lt;lowlimit&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/lowlimit&gt;
        &lt;uplimit&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/uplimit&gt;
        &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
-      &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+      </pre>
      </div>
      </p>
 
@@ -3121,7 +3176,8 @@
        &lt;/apply&gt;
        &lt;/condition&gt;
        &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
-      &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+      </pre>
      </div>
 
      Note the use of the explicit bound variable within the
@@ -3159,7 +3215,8 @@
        &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
        &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
        &lt;/apply&gt;
-      &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+      </pre>
      </div>
      </p>
 
@@ -3187,7 +3244,8 @@
 	&lt;lowlimit&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/lowlimit&gt;
 	&lt;uplimit&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/uplimit&gt;
 	&lt;ci&gt;C&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <div class="example strict-mathml">
@@ -3201,7 +3259,8 @@
 	&lt;/apply&gt;
 	&lt;/domainofapplication&gt;
 	&lt;ci&gt;C&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>The symbol used in this translation depends on the head of the
@@ -3236,7 +3295,8 @@
        <pre>
 	&lt;bvar&gt;&lt;ci&gt;x1&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;bvar&gt;&lt;ci&gt;xn&lt;/ci&gt;&lt;/bvar&gt;
-       &lt;condition&gt;&lt;ci&gt;P&lt;/ci&gt;&lt;/condition&gt;</pre>
+	&lt;condition&gt;&lt;ci&gt;P&lt;/ci&gt;&lt;/condition&gt;
+       </pre>
       </div>
 
       is rewritten to
@@ -3254,7 +3314,8 @@
 	&lt;ci&gt;P&lt;/ci&gt;
 	&lt;/bind&gt;
 	&lt;/apply&gt;
-       &lt;/domainofapplication&gt;</pre>
+	&lt;/domainofapplication&gt;
+       </pre>
       </div>
       If the <code class="element">apply</code> has a <code class="element">domainofapplication</code> (perhaps originally expressed as
       <code class="element">interval</code> or an <code class="element">uplimit</code>/<code class="element">lowlimit</code> pair) then that is used for
@@ -3289,7 +3350,8 @@
 	&lt;/domainofapplication&gt;
 	&lt;ci&gt;a1&lt;/ci&gt;
 	&lt;ci&gt;an&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>may be written as:</p>
@@ -3303,7 +3365,8 @@
 	&lt;/apply&gt;
 	&lt;ci&gt;a1&lt;/ci&gt;
 	&lt;ci&gt;an&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
      </div>
 
@@ -3329,7 +3392,8 @@
 	&lt;ci&gt;A1&lt;/ci&gt;
 	...
 	&lt;ci&gt;Am&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       is rewritten to
 
@@ -3350,7 +3414,8 @@
 	&lt;bvar&gt;&lt;ci&gt;vn&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;ci&gt;Am&lt;/ci&gt;
 	&lt;/bind&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       If there is no <code class="element">domainofapplication</code> qualifier the <code class="meta-code">&lt;ci&gt;D&lt;/ci&gt;</code> child is
       omitted.</p>
@@ -3413,7 +3478,8 @@
        &lt;degree&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/degree&gt;
        &lt;/bvar&gt;
        &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;
-      &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+      </pre>
      </div>
 
      <p>For details see <a href="#contm_diff"></a> and <a href="#contm_partialdiff"></a>.</p>
@@ -3523,7 +3589,8 @@
 	 &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	 &lt;domainofapplication&gt;&lt;ci&gt;D&lt;/ci&gt;&lt;/domainofapplication&gt;
 	 &lt;ci&gt;expression-in-x&lt;/ci&gt;
-	&lt;/apply&gt;</pre>
+	 &lt;/apply&gt;
+	</pre>
        </div>
        is rewritten to
 
@@ -3538,7 +3605,8 @@
 	 &lt;/bind&gt;
 	 &lt;ci&gt;D&lt;/ci&gt;
 	 &lt;/apply&gt;
-	&lt;/apply&gt;</pre>
+	 &lt;/apply&gt;
+	</pre>
        </div>
        </p>
       </div>
@@ -3594,7 +3662,8 @@
 	 &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	 &lt;domainofapplication&gt;&lt;ci&gt;D&lt;/ci&gt;&lt;/domainofapplication&gt;
 	 &lt;ci&gt;expression-in-x&lt;/ci&gt;
-	&lt;/set&gt;</pre>
+	 &lt;/set&gt;
+	</pre>
        </div>
        is rewritten to
 
@@ -3606,7 +3675,8 @@
 	 &lt;ci&gt;expression-in-x&lt;/ci&gt;
 	 &lt;/bind&gt;
 	 &lt;ci&gt;D&lt;/ci&gt;
-	&lt;/apply&gt;</pre>
+	 &lt;/apply&gt;
+	</pre>
        </div>
        </p>
 
@@ -3666,7 +3736,8 @@
 	<pre>
 	 &lt;apply&gt;&lt;lt/&gt;
 	 &lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;&lt;ci&gt;d&lt;/ci&gt;
-	&lt;/apply&gt;</pre>
+	 &lt;/apply&gt;
+	</pre>
        </div>
 
        rewrites to Strict Content MathML
@@ -3679,6 +3750,7 @@
 	 &lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;&lt;ci&gt;d&lt;/ci&gt;
 	 &lt;/apply&gt;
 	 &lt;/apply&gt;
+	 
 	</pre>
        </div>
        </p>
@@ -3695,7 +3767,8 @@
 	 &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	 &lt;domainofapplication&gt;&lt;ci&gt;R&lt;/ci&gt;&lt;/domainofapplication&gt;
 	 &lt;ci&gt;expression-in-x&lt;/ci&gt;
-	&lt;/apply&gt;</pre>
+	 &lt;/apply&gt;
+	</pre>
        </div>
 
        where
@@ -3714,7 +3787,8 @@
 	 &lt;ci&gt;expression-in-x&lt;/ci&gt;
 	 &lt;/bind&gt;
 	 &lt;/apply&gt;
-	&lt;/apply&gt;</pre>
+	 &lt;/apply&gt;
+	</pre>
        </div>
        </p>
       </div>
@@ -3765,7 +3839,8 @@
 
        <div class="example mathml">
 	<pre>
-	&lt;apply&gt;&lt;max/&gt;&lt;ci&gt;a1&lt;/ci&gt;&lt;ci&gt;a2&lt;/ci&gt;&lt;ci&gt;an&lt;/ci&gt;&lt;/apply&gt;</pre>
+	 &lt;apply&gt;&lt;max/&gt;&lt;ci&gt;a1&lt;/ci&gt;&lt;ci&gt;a2&lt;/ci&gt;&lt;ci&gt;an&lt;/ci&gt;&lt;/apply&gt;
+	</pre>
        </div>
 
        <p>It is is translated to the unary application of the symbol
@@ -3781,7 +3856,8 @@
 	 &lt;apply&gt;&lt;csymbol cd="set1"&gt;set&lt;/csymbol&gt;
 	 &lt;ci&gt;a1&lt;/ci&gt;&lt;ci&gt;a2&lt;/ci&gt;&lt;ci&gt;an&lt;/ci&gt;
 	 &lt;/apply&gt;
-	&lt;/apply&gt;</pre>
+	 &lt;/apply&gt;
+	</pre>
        </div>
       </div>
 
@@ -3807,7 +3883,8 @@
 	 &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	 &lt;domainofapplication&gt;&lt;ci&gt;D&lt;/ci&gt;&lt;/domainofapplication&gt;
 	 &lt;ci&gt;expression-in-x&lt;/ci&gt;
-	&lt;/apply&gt;</pre>
+	 &lt;/apply&gt;
+	</pre>
        </div>
        is rewritten to
 
@@ -3821,7 +3898,8 @@
 	 &lt;/bind&gt;
 	 &lt;ci&gt;D&lt;/ci&gt;
 	 &lt;/apply&gt;
-	&lt;/apply&gt;</pre>
+	 &lt;/apply&gt;
+	</pre>
        </div>
        </p>
 
@@ -3847,7 +3925,8 @@
 
        <div class="example mathml">
 	<pre>
-	&lt;apply&gt;&lt;max/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;</pre>
+	 &lt;apply&gt;&lt;max/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
+	</pre>
        </div>
 
        <p>It is is translated to the unary application of the symbol
@@ -3855,7 +3934,8 @@
 
        <div class="example strict-mathml">
 	<pre>
-	&lt;apply&gt;&lt;csymbol cd="minmax1"&gt;max&lt;/csymbol&gt; &lt;ci&gt;a&lt;/ci&gt; &lt;/apply&gt;</pre>
+	 &lt;apply&gt;&lt;csymbol cd="minmax1"&gt;max&lt;/csymbol&gt; &lt;ci&gt;a&lt;/ci&gt; &lt;/apply&gt;
+	</pre>
        </div>
       </div>
 
@@ -3974,7 +4054,8 @@
 	 &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	 &lt;domainofapplication&gt;&lt;ci&gt;D&lt;/ci&gt;&lt;/domainofapplication&gt;
 	 &lt;ci&gt;expression-in-x&lt;/ci&gt;
-	&lt;/apply&gt;</pre>
+	 &lt;/apply&gt;
+	</pre>
        </div>
        is rewritten to an expression
 
@@ -3987,6 +4068,7 @@
 	 &lt;ci&gt;expression-in-x&lt;/ci&gt;
 	 &lt;/apply&gt;
 	 &lt;/bind&gt;
+	 
 	</pre>
        </div>
        where the symbols
@@ -4045,7 +4127,8 @@
 
      <div class="example mathml">
       <pre>
-      &lt;ci class="foo" xmlns:other="http://example.com" other:att="bla"&gt;x&lt;/ci&gt;</pre>
+       &lt;ci class="foo" xmlns:other="http://example.com" other:att="bla"&gt;x&lt;/ci&gt;
+      </pre>
      </div>
      is rewritten to
 
@@ -4063,7 +4146,8 @@
        &lt;cs&gt;bla&lt;/cs&gt;
        &lt;/apply&gt;
        &lt;/annotation-xml&gt;
-      &lt;/semantics&gt;</pre>
+       &lt;/semantics&gt;
+      </pre>
      </div>
 
      For MathML attributes not allowed in Strict Content MathML the content
@@ -4151,29 +4235,34 @@
 
       <div class="example mathml">
        <pre>
-       &lt;interval closure="open"&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;</pre>
+	&lt;interval closure="open"&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;
+       </pre>
       </div>
 
       <div class="example mathml">
        <pre>
-       &lt;interval closure="closed"&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;</pre>
+	&lt;interval closure="closed"&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;
+       </pre>
       </div>
 
       <div class="example mathml">
        <pre>
-       &lt;interval closure="open-closed"&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;</pre>
+	&lt;interval closure="open-closed"&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;
+       </pre>
       </div>
 
       <div class="example mathml">
        <pre>
-       &lt;interval closure="closed-open"&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;</pre>
+	&lt;interval closure="closed-open"&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;</pre>
+	&lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -4182,7 +4271,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;mfenced open="[" close="]"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;</pre>
+	&lt;mfenced open="[" close="]"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -4191,7 +4281,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;mfenced open="(" close="]"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;</pre>
+	&lt;mfenced open="(" close="]"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -4200,7 +4291,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;mfenced open="[" close=")"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;</pre>
+	&lt;mfenced open="[" close=")"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -4267,14 +4359,16 @@
        <pre>
 	&lt;apply&gt;&lt;inverse/&gt;
 	&lt;ci&gt; f &lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/msup&gt;</pre>
+	&lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/msup&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -4291,7 +4385,8 @@
 	&lt;apply&gt;
 	&lt;apply&gt;&lt;inverse/&gt;&lt;ci type="matrix"&gt;A&lt;/ci&gt;&lt;/apply&gt;
 	&lt;ci&gt;a&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -4302,7 +4397,8 @@
 	&lt;msup&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/msup&gt;
 	&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	&lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -4369,7 +4465,8 @@
        &lt;bvar&gt;&lt;ci&gt; x &lt;/ci&gt;&lt;/bvar&gt;
        &lt;domainofapplication&gt;&lt;integers/&gt;&lt;/domainofapplication&gt;
        &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt; x &lt;/ci&gt;&lt;/apply&gt;
-      &lt;/lambda&gt;</pre>
+       &lt;/lambda&gt;
+      </pre>
      </div>
 
      If a <code class="element">lambda</code> construct does not contain bound variables, then
@@ -4385,7 +4482,8 @@
        &lt;lambda&gt;
        &lt;domainofapplication&gt;&lt;integers/&gt;&lt;/domainofapplication&gt;
        &lt;sin/&gt;
-      &lt;/lambda&gt;</pre>
+       &lt;/lambda&gt;
+      </pre>
      </div>
 
      Otherwise, if the last child of the <code class="element">lambda</code> construct is not a
@@ -4403,7 +4501,8 @@
 	&lt;apply&gt;&lt;sin/&gt;
 	&lt;apply&gt;&lt;plus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/apply&gt;
 	&lt;/apply&gt;
-       &lt;/lambda&gt;</pre>
+	&lt;/lambda&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -4421,7 +4520,8 @@
 	&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
 	&lt;/mrow&gt;
 	&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -4438,7 +4538,8 @@
 	&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
 	&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -4461,7 +4562,8 @@
 	&lt;lambda&gt;
 	&lt;bvar&gt;&lt;ci&gt;x1&lt;/ci&gt;&lt;/bvar&gt;&lt;bvar&gt;&lt;ci&gt;xn&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;ci&gt;expression-in-x1-xn&lt;/ci&gt;
-       &lt;/lambda&gt;</pre>
+	&lt;/lambda&gt;
+       </pre>
       </div>
 
       <p>rewrites to the Strict Content MathML</p>
@@ -4471,7 +4573,8 @@
 	&lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
 	&lt;bvar&gt;&lt;ci&gt;x1&lt;/ci&gt;&lt;/bvar&gt;&lt;bvar&gt;&lt;ci&gt;xn&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;ci&gt;expression-in-x1-xn&lt;/ci&gt;
-       &lt;/bind&gt;</pre>
+	&lt;/bind&gt;
+       </pre>
       </div>
      </div>
 
@@ -4491,7 +4594,8 @@
 	&lt;bvar&gt;&lt;ci&gt;x1&lt;/ci&gt;&lt;/bvar&gt;&lt;bvar&gt;&lt;ci&gt;xn&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;domainofapplication&gt;&lt;ci&gt;D&lt;/ci&gt;&lt;/domainofapplication&gt;
 	&lt;ci&gt;expression-in-x1-xn&lt;/ci&gt;
-       &lt;/lambda&gt;</pre>
+	&lt;/lambda&gt;
+       </pre>
       </div>
 
       <p>rewrites to the Strict Content MathML</p>
@@ -4504,7 +4608,8 @@
 	&lt;ci&gt;expression-in-x1-xn&lt;/ci&gt;
 	&lt;/bind&gt;
 	&lt;ci&gt;D&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
      </div>
 
@@ -4560,7 +4665,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;compose/&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;ci&gt;g&lt;/ci&gt;&lt;ci&gt;h&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;compose/&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;ci&gt;g&lt;/ci&gt;&lt;ci&gt;h&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -4569,7 +4675,8 @@
        <pre>
 	&lt;mrow&gt;
 	&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2218;&lt;/mo&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;&amp;#x2218;&lt;/mo&gt;&lt;mi&gt;h&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -4589,7 +4696,8 @@
 	&lt;ci&gt;x&lt;/ci&gt;
 	&lt;/apply&gt;
 	&lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;apply&gt;&lt;ci&gt;g&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -4614,7 +4722,8 @@
 	&lt;/mrow&gt;
 	&lt;/mfenced&gt;
 	&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -4671,7 +4780,8 @@
 	&lt;/apply&gt;
 	&lt;/apply&gt;
 	&lt;ident/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -4686,7 +4796,8 @@
 	&lt;/mrow&gt;
 	&lt;mo&gt;=&lt;/mo&gt;
 	&lt;mi&gt;id&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -4736,7 +4847,8 @@
 	&lt;apply&gt;&lt;eq/&gt;
 	&lt;apply&gt;&lt;domain/&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;/apply&gt;
 	&lt;reals/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -4747,7 +4859,8 @@
 	&lt;mrow&gt;&lt;mi&gt;domain&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
 	&lt;mo&gt;=&lt;/mo&gt;
 	&lt;mi mathvariant="double-struck"&gt;R&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -4799,7 +4912,8 @@
 	&lt;apply&gt;&lt;eq/&gt;
 	&lt;apply&gt;&lt;codomain/&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;/apply&gt;
 	&lt;rationals/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -4810,7 +4924,8 @@
 	&lt;mrow&gt;&lt;mi&gt;codomain&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
 	&lt;mo&gt;=&lt;/mo&gt;
 	&lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -4861,7 +4976,8 @@
 	&lt;apply&gt;&lt;eq/&gt;
 	&lt;apply&gt;&lt;image/&gt;&lt;sin/&gt;&lt;/apply&gt;
 	&lt;interval&gt;&lt;cn&gt;-1&lt;/cn&gt;&lt;cn&gt; 1&lt;/cn&gt;&lt;/interval&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -4872,7 +4988,8 @@
 	&lt;mrow&gt;&lt;mi&gt;image&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
 	&lt;mo&gt;=&lt;/mo&gt;
 	&lt;mfenced open="[" close="]"&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5033,7 +5150,8 @@
 	&lt;ci&gt;x&lt;/ci&gt;
 	&lt;apply&gt;&lt;gt/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;
 	&lt;/piece&gt;
-       &lt;/piecewise&gt;</pre>
+	&lt;/piecewise&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -5059,7 +5177,8 @@
 	&lt;mtd&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;gt;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;/mtd&gt;
 	&lt;/mtr&gt;
 	&lt;/mtable&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5095,7 +5214,8 @@
 	&lt;otherwise&gt;
 	&lt;ci&gt;x&lt;/ci&gt;
 	&lt;/otherwise&gt;
-       &lt;/piecewise&gt;</pre>
+	&lt;/piecewise&gt;
+       </pre>
       </div>
 
       <p>Strict Content MathML equivalent</p>
@@ -5114,7 +5234,8 @@
 	&lt;apply&gt;&lt;csymbol cd="piece1"&gt;otherwise&lt;/csymbol&gt;
 	&lt;ci&gt;x&lt;/ci&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
      </div>
 
@@ -5168,14 +5289,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;quotient/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;quotient/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mo&gt;&amp;#x230a;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;&amp;#x230b;&lt;/mo&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mo&gt;&amp;#x230a;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;&amp;#x230b;&lt;/mo&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5222,14 +5345,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;factorial/&gt;&lt;ci&gt;n&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;factorial/&gt;&lt;ci&gt;n&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;!&lt;/mo&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;!&lt;/mo&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5278,14 +5403,16 @@
 	&lt;apply&gt;&lt;divide/&gt;
 	&lt;ci&gt;a&lt;/ci&gt;
 	&lt;ci&gt;b&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5341,7 +5468,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;max/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;5&lt;/cn&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;max/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;5&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -5353,7 +5481,8 @@
 	&lt;mrow&gt;
 	&lt;mo&gt;{&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;}&lt;/mo&gt;
 	&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5375,7 +5504,8 @@
 	&lt;/apply&gt;
 	&lt;/condition&gt;
 	&lt;apply&gt;&lt;power/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -5393,7 +5523,8 @@
 	&lt;/mrow&gt;
 	&lt;mo&gt;}&lt;/mo&gt;
 	&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5448,7 +5579,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;min/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;min/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -5458,7 +5590,8 @@
 	&lt;mrow&gt;
 	&lt;mi&gt;min&lt;/mi&gt;
 	&lt;mrow&gt;&lt;mo&gt;{&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;}&lt;/mo&gt;&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5477,7 +5610,8 @@
 	&lt;apply&gt;&lt;notin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci type="set"&gt;B&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/condition&gt;
 	&lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -5490,7 +5624,8 @@
 	&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2209;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;mo&gt;}&lt;/mo&gt;
 	&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5540,14 +5675,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;minus/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;minus/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5564,14 +5701,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;minus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;minus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5631,14 +5770,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;plus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;plus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5686,14 +5827,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;</pre>
+	&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5744,14 +5887,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;rem/&gt;&lt;ci&gt; a &lt;/ci&gt;&lt;ci&gt; b &lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;rem/&gt;&lt;ci&gt; a &lt;/ci&gt;&lt;ci&gt; b &lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;mod&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;mod&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5806,14 +5951,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;times/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;times/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -5872,7 +6019,8 @@
 	&lt;apply&gt;&lt;root/&gt;
 	&lt;degree&gt;&lt;ci type="integer"&gt;n&lt;/ci&gt;&lt;/degree&gt;
 	&lt;ci&gt;a&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -5908,7 +6056,8 @@
 	&lt;apply&gt;&lt;csymbol cd="arith1"&gt;root&lt;/csymbol&gt;
 	&lt;ci&gt;x&lt;/ci&gt;
 	&lt;cn type="integer"&gt;2&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
      </div>
 
@@ -5921,7 +6070,8 @@
 	&lt;apply&gt;&lt;root/&gt;
 	&lt;degree&gt;&lt;ci type="integer"&gt;n&lt;/ci&gt;&lt;/degree&gt;
 	&lt;ci&gt;a&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Strict Content MathML equivalent</p>
@@ -5931,7 +6081,8 @@
 	&lt;apply&gt;&lt;csymbol cd="arith1"&gt;root&lt;/csymbol&gt;
 	&lt;ci&gt;a&lt;/ci&gt;
 	&lt;cn type="integer"&gt;n&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
      </div>
     </section>
@@ -5981,7 +6132,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;gcd/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;gcd/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -5992,7 +6144,8 @@
 	&lt;mi&gt;gcd&lt;/mi&gt;
 	&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	&lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6054,14 +6207,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;and/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;and/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2227;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2227;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6081,7 +6236,8 @@
 	&lt;lowlimit&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/lowlimit&gt;
 	&lt;uplimit&gt;&lt;ci&gt;n&lt;/ci&gt;&lt;/uplimit&gt;
 	&lt;apply&gt;&lt;gt/&gt;&lt;apply&gt;&lt;selector/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/apply&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Strict Content MathML</p>
@@ -6106,7 +6262,8 @@
 	&lt;ci&gt;n&lt;/ci&gt;
 	&lt;/apply&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -6126,7 +6283,8 @@
 	&lt;mn&gt;0&lt;/mn&gt;
 	&lt;mo&gt;)&lt;/mo&gt;
 	&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6179,14 +6337,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;or/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;or/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2228;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2228;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6238,14 +6398,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;xor/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;xor/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;xor&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;xor&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6293,14 +6455,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;not/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;not/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mo&gt;&amp;#xac;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mo&gt;&amp;#xac;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6348,14 +6512,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;implies/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;implies/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x21d2;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x21d2;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6417,7 +6583,8 @@
 	&lt;apply&gt;&lt;minus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
 	&lt;cn&gt;0&lt;/cn&gt;
 	&lt;/apply&gt;
-       &lt;/bind&gt;</pre>
+	&lt;/bind&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -6435,7 +6602,8 @@
 	&lt;mn&gt;0&lt;/mn&gt;
 	&lt;/mrow&gt;
 	&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6468,7 +6636,8 @@
 	&lt;ci&gt;p&lt;/ci&gt;
 	&lt;apply&gt;&lt;power/&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
 	&lt;/apply&gt;
-       &lt;/bind&gt;</pre>
+	&lt;/bind&gt;
+       </pre>
       </div>
       translates to
 
@@ -6497,7 +6666,8 @@
 	&lt;/apply&gt;
 	&lt;/apply&gt;
 	&lt;/apply&gt;
-       &lt;/bind&gt;</pre>
+	&lt;/bind&gt;
+       </pre>
       </div>
       </p>
 
@@ -6518,7 +6688,8 @@
 	&lt;mfenced&gt;
 	&lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;
 	&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6556,7 +6727,8 @@
 	&lt;/mrow&gt;
 	&lt;/mrow&gt;
 	&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6618,7 +6790,8 @@
 	&lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
 	&lt;cn&gt;0&lt;/cn&gt;
 	&lt;/apply&gt;
-       &lt;/bind&gt;</pre>
+	&lt;/bind&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -6636,7 +6809,8 @@
 	&lt;mn&gt;0&lt;/mn&gt;
 	&lt;/mrow&gt;
 	&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6659,7 +6833,8 @@
 	&lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
 	&lt;cn&gt;0&lt;/cn&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Strict MathML equivalent:</p>
@@ -6678,7 +6853,8 @@
 	&lt;cn&gt;0&lt;/cn&gt;
 	&lt;/apply&gt;
 	&lt;/apply&gt;
-       &lt;/bind&gt;</pre>
+	&lt;/bind&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -6698,7 +6874,8 @@
 	&lt;mn&gt;0&lt;/mn&gt;
 	&lt;/mrow&gt;
 	&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6747,14 +6924,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;abs/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;abs/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6808,7 +6987,8 @@
 	&lt;ci&gt;x&lt;/ci&gt;
 	&lt;apply&gt;&lt;times/&gt;&lt;cn&gt;&amp;#x2148;&lt;/cn&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -6822,7 +7002,8 @@
 	&lt;mrow&gt;&lt;mn&gt;&amp;#x2148;&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;/mrow&gt;
 	&lt;mo&gt;&amp;#xaf;&lt;/mo&gt;
-       &lt;/mover&gt;</pre>
+	&lt;/mover&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6877,7 +7058,8 @@
 	&lt;ci&gt; x &lt;/ci&gt;
 	&lt;apply&gt;&lt;times/&gt;&lt;imaginaryi/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -6894,7 +7076,8 @@
 	&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;/mrow&gt;
 	&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -6948,7 +7131,8 @@
 	&lt;ci&gt;x&lt;/ci&gt;
 	&lt;apply&gt;&lt;times/&gt;&lt;imaginaryi/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -6965,7 +7149,8 @@
 	&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;/mrow&gt;
 	&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7019,7 +7204,8 @@
 	&lt;ci&gt;x&lt;/ci&gt;
 	&lt;apply&gt;&lt;times/&gt;&lt;imaginaryi/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -7036,7 +7222,8 @@
 	&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;/mrow&gt;
 	&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7090,7 +7277,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;lcm/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;lcm/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -7101,7 +7289,8 @@
 	&lt;mi&gt;lcm&lt;/mi&gt;
 	&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	&lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7152,14 +7341,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;floor/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;floor/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mo&gt;&amp;#x230a;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x230b;&lt;/mo&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mo&gt;&amp;#x230a;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x230b;&lt;/mo&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7206,14 +7397,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;ceiling/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;ceiling/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mo&gt;&amp;#x2308;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2309;&lt;/mo&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mo&gt;&amp;#x2308;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2309;&lt;/mo&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7272,7 +7465,8 @@
 	&lt;apply&gt;&lt;eq/&gt;
 	&lt;cn type="rational"&gt;2&lt;sep/&gt;4&lt;/cn&gt;
 	&lt;cn type="rational"&gt;1&lt;sep/&gt;2&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -7283,7 +7477,8 @@
 	&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
 	&lt;mo&gt;=&lt;/mo&gt;
 	&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7331,14 +7526,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;neq/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;neq/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;#x2260;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;#x2260;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7392,14 +7589,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;gt/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;gt/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;gt;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;gt;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7455,14 +7654,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;lt/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;lt/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7518,7 +7719,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;geq/&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;geq/&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Strict Content MathML</p>
@@ -7530,7 +7732,8 @@
 	&lt;apply&gt;&lt;csymbol cd="list1"&gt;list&lt;/csymbol&gt;
 	&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -7541,7 +7744,8 @@
 	&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;&amp;#x2265;&lt;/mo&gt;
 	&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;#x2265;&lt;/mo&gt;
 	&lt;mn&gt;3&lt;/mn&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7595,7 +7799,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;leq/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;leq/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -7606,7 +7811,8 @@
 	&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;
 	&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;
 	&lt;mn&gt;4&lt;/mn&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7656,7 +7862,8 @@
 	&lt;apply&gt;&lt;equivalent/&gt;
 	&lt;ci&gt;a&lt;/ci&gt;
 	&lt;apply&gt;&lt;not/&gt;&lt;apply&gt;&lt;not/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -7667,7 +7874,8 @@
 	&lt;mi&gt;a&lt;/mi&gt;
 	&lt;mo&gt;&amp;#x2261;&lt;/mo&gt;
 	&lt;mrow&gt;&lt;mo&gt;&amp;#xac;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;&amp;#xac;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7716,7 +7924,8 @@
 	&lt;apply&gt;&lt;approx/&gt;
 	&lt;pi/&gt;
 	&lt;cn type="rational"&gt;22&lt;sep/&gt;7&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -7727,7 +7936,8 @@
 	&lt;mi&gt;&amp;#x3c0;&lt;/mi&gt;
 	&lt;mo&gt;&amp;#x2243;&lt;/mo&gt;
 	&lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7775,14 +7985,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;factorof/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;factorof/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7840,14 +8052,16 @@
 	&lt;apply&gt;&lt;eq/&gt;
 	&lt;apply&gt;&lt;int/&gt;&lt;sin/&gt;&lt;/apply&gt;
 	&lt;cos/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;&amp;#x222b;&lt;/mi&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;&amp;#x222b;&lt;/mi&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7863,7 +8077,8 @@
 	&lt;apply&gt;&lt;int/&gt;
 	&lt;interval&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/interval&gt;
 	&lt;cos/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -7872,7 +8087,8 @@
        <pre>
 	&lt;mrow&gt;
 	&lt;msubsup&gt;&lt;mi&gt;&amp;#x222b;&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/msubsup&gt;&lt;mi&gt;cos&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7900,7 +8116,8 @@
 	&lt;lowlimit&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/lowlimit&gt;
 	&lt;uplimit&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/uplimit&gt;
 	&lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -7912,7 +8129,8 @@
 	&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
 	&lt;mi&gt;d&lt;/mi&gt;
 	&lt;mi&gt;x&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -7947,7 +8165,8 @@
 	&lt;apply&gt;&lt;int/&gt;
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;ci&gt;expression-in-x&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       to the expression
 
@@ -7961,7 +8180,8 @@
 	&lt;/bind&gt;
 	&lt;/apply&gt;
 	&lt;ci&gt;x&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       Note that as <i class="var">x</i> is not bound in the original indefinite integral,
@@ -7981,7 +8201,8 @@
 	&lt;apply&gt;&lt;int/&gt;
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;apply&gt;&lt;cos/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       has the Strict Content MathML equivalent
 
@@ -8015,14 +8236,16 @@
 	&lt;apply&gt;&lt;int/&gt;
 	&lt;domainofapplication&gt;&lt;ci&gt;C&lt;/ci&gt;&lt;/domainofapplication&gt;
 	&lt;ci&gt;f&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       is equivalent to the Strict Content MathML:
 
       <div class="example strict-mathml">
        <pre>
-       &lt;apply&gt;&lt;csymbol cd="calculus1"&gt;defint&lt;/csymbol&gt;&lt;ci&gt;C&lt;/ci&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;csymbol cd="calculus1"&gt;defint&lt;/csymbol&gt;&lt;ci&gt;C&lt;/ci&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
       </p>
 
@@ -8049,7 +8272,8 @@
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;domainofapplication&gt;&lt;ci&gt;D&lt;/ci&gt;&lt;/domainofapplication&gt;
 	&lt;ci&gt;expression-in-x&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       to the expression
 
@@ -8061,7 +8285,8 @@
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;ci&gt;expression-in-x&lt;/ci&gt;
 	&lt;/bind&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       </p>
@@ -8084,7 +8309,8 @@
 	&lt;lowlimit&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/lowlimit&gt;
 	&lt;uplimit&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/uplimit&gt;
 	&lt;ci&gt;expression-in-x&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>
@@ -8103,7 +8329,8 @@
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;ci&gt;expression-in-x&lt;/ci&gt;
 	&lt;/bind&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>The <a class="omsymbol" href="interval1#oriented_interval">oriented_interval</a>
@@ -8140,7 +8367,8 @@
 	&lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
 	&lt;apply&gt;&lt;power/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
 	&lt;/apply&gt;
-       &lt;/bind&gt;</pre>
+	&lt;/bind&gt;
+       </pre>
       </div>
 
       <p>Strict Content MathML equivalent</p>
@@ -8168,7 +8396,8 @@
 	&lt;/apply&gt;
 	&lt;/bind&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
      </div>
 
@@ -8220,7 +8449,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;/mo&gt;&lt;/msup&gt;</pre>
+	&lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;/mo&gt;&lt;/msup&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -8239,7 +8469,8 @@
 	&lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/apply&gt;
 	&lt;apply&gt;&lt;cos/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -8253,7 +8484,8 @@
 	&lt;/mfrac&gt;
 	&lt;mo&gt;=&lt;/mo&gt;
 	&lt;mrow&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -8272,7 +8504,8 @@
 	&lt;apply&gt;&lt;diff/&gt;
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;degree&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/degree&gt;&lt;/bvar&gt;
 	&lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -8285,7 +8518,8 @@
 	&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/msup&gt;
 	&lt;/mrow&gt;
 	&lt;mrow&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;
-       &lt;/mfrac&gt;</pre>
+	&lt;/mfrac&gt;
+       </pre>
       </div>
 
      </div>
@@ -8305,7 +8539,8 @@
 	&lt;apply&gt;&lt;diff/&gt;
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;ci&gt;expression-in-x&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       where
       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
@@ -8322,7 +8557,8 @@
 	&lt;/bind&gt;
 	&lt;/apply&gt;
 	&lt;ci&gt;x&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       Note that the differentiated function is applied to the variable
       <i class="var">x</i> making its status as a free variable explicit in strict
@@ -8333,7 +8569,8 @@
 	&lt;apply&gt;&lt;diff/&gt;
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       is
 
@@ -8347,7 +8584,8 @@
 	&lt;/bind&gt;
 	&lt;/apply&gt;
 	&lt;ci&gt;x&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       </p>
      </div>
@@ -8363,7 +8601,8 @@
 	&lt;apply&gt;&lt;diff/&gt;
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;degree&gt;&lt;ci&gt;n&lt;/ci&gt;&lt;/degree&gt;&lt;/bvar&gt;
 	&lt;ci&gt;expression-in-x&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>where
@@ -8382,7 +8621,8 @@
 	&lt;/bind&gt;
 	&lt;/apply&gt;
 	&lt;ci&gt;x&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
      </div>
 
@@ -8396,7 +8636,8 @@
 	&lt;apply&gt;&lt;diff/&gt;
 	&lt;bvar&gt;&lt;degree&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/degree&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Strict Content MathML equivalent</p>
@@ -8412,7 +8653,8 @@
 	&lt;/bind&gt;
 	&lt;/apply&gt;
 	&lt;ci&gt;x&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
      </div>
     </section>
@@ -8463,7 +8705,8 @@
 	&lt;apply&gt;&lt;partialdiff/&gt;
 	&lt;list&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/list&gt;
 	&lt;ci type="function"&gt;f&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -8476,7 +8719,8 @@
 	&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;
 	&lt;/msub&gt;
 	&lt;mi&gt;f&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -8498,7 +8742,8 @@
 	&lt;bvar&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/lambda&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -8516,7 +8761,8 @@
 	&lt;mrow&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;
 	&lt;mrow&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;/mrow&gt;
-       &lt;/mfrac&gt;</pre>
+	&lt;/mfrac&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -8539,7 +8785,8 @@
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;apply&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -8559,7 +8806,8 @@
 	&lt;mrow&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;mrow&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;/mrow&gt;
-       &lt;/mfrac&gt;</pre>
+	&lt;/mfrac&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -8585,7 +8833,8 @@
 	&lt;ci&gt;x&lt;/ci&gt;
 	&lt;ci&gt;y&lt;/ci&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -8603,7 +8852,8 @@
 	&lt;mrow&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/msup&gt;&lt;/mrow&gt;
 	&lt;mrow&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;/mrow&gt;
 	&lt;/mrow&gt;
-       &lt;/mfrac&gt;</pre>
+	&lt;/mfrac&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -8635,7 +8885,8 @@
 	&lt;bvar&gt;&lt;ci&gt;xk&lt;/ci&gt;&lt;degree&gt;&lt;ci&gt;nk&lt;/ci&gt;&lt;/degree&gt;&lt;/bvar&gt;
 	&lt;degree&gt;&lt;ci&gt;total-n1-nk&lt;/ci&gt;&lt;/degree&gt;
 	&lt;ci&gt;expression-in-x1-xk&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       <code class="meta-code">&lt;ci&gt;expression-in-x1-xk&lt;/ci&gt;</code> is an
       arbitrary expression involving the bound variables.</p>
@@ -8656,7 +8907,8 @@
 	&lt;/apply&gt;
 	&lt;ci&gt;x1&lt;/ci&gt;
 	&lt;ci&gt;xk&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>If any of the bound variables do not use a <code class="element">degree</code> qualifier,
@@ -8669,7 +8921,8 @@
        <pre>
 	&lt;apply&gt;&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;
 	&lt;ci&gt;n1&lt;/ci&gt; &lt;ci&gt;nk&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       </p>
      </div>
@@ -8687,7 +8940,8 @@
 	&lt;apply&gt;&lt;sin/&gt;
 	&lt;apply&gt;&lt;times/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       is translated into
 
@@ -8713,7 +8967,8 @@
 	&lt;ci&gt;x&lt;/ci&gt;
 	&lt;ci&gt;y&lt;/ci&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
       </p>
      </div>
@@ -8760,14 +9015,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;divergence/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;divergence/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -8782,14 +9039,16 @@
        <pre>
 	&lt;apply&gt;&lt;divergence/&gt;
 	&lt;ci type="vector"&gt;E&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -8798,7 +9057,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#x22c5;&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#x22c5;&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -8826,7 +9086,8 @@
 	&lt;apply&gt;&lt;plus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/apply&gt;
 	&lt;apply&gt;&lt;plus/&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/vector&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -8855,7 +9116,8 @@
 	&lt;/mtd&gt;&lt;/mtr&gt;
 	&lt;/mtable&gt;
 	&lt;mo&gt;)&lt;/mo&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -8905,7 +9167,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;grad/&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;grad/&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -8914,7 +9177,8 @@
        <pre>
 	&lt;mrow&gt;
 	&lt;mi&gt;grad&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -8926,7 +9190,8 @@
 	&lt;mrow&gt;
 	&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -8950,7 +9215,8 @@
 	&lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;bvar&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;apply&gt;&lt;times/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -8969,7 +9235,8 @@
 	&lt;/mrow&gt;
 	&lt;mo&gt;)&lt;/mo&gt;
 	&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9018,14 +9285,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;curl/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;curl/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;curl&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;curl&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9034,7 +9303,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#xd7;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#xd7;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9089,7 +9359,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;laplacian/&gt;&lt;ci type="vector"&gt;E&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;laplacian/&gt;&lt;ci type="vector"&gt;E&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -9100,7 +9371,8 @@
 	&lt;msup&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
 	&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	&lt;mfenced&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9123,7 +9395,8 @@
 	&lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;bvar&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -9144,7 +9417,8 @@
 	&lt;/mrow&gt;
 	&lt;mo&gt;)&lt;/mo&gt;
 	&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9214,7 +9488,8 @@
        <pre>
 	&lt;set&gt;
 	&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;
-       &lt;/set&gt;</pre>
+	&lt;/set&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -9223,7 +9498,8 @@
        <pre>
 	&lt;mrow&gt;
 	&lt;mo&gt;{&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;}&lt;/mo&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9246,7 +9522,8 @@
 	&lt;apply&gt;&lt;lt/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;5&lt;/cn&gt;&lt;/apply&gt;
 	&lt;/condition&gt;
 	&lt;ci&gt;x&lt;/ci&gt;
-       &lt;/set&gt;</pre>
+	&lt;/set&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -9259,7 +9536,8 @@
 	&lt;mo&gt;|&lt;/mo&gt;
 	&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;
 	&lt;mo&gt;}&lt;/mo&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9278,7 +9556,8 @@
 	&lt;apply&gt;&lt;in/&gt;&lt;ci&gt;S&lt;/ci&gt;&lt;ci type="list"&gt;T&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/condition&gt;
 	&lt;ci&gt;S&lt;/ci&gt;
-       &lt;/set&gt;</pre>
+	&lt;/set&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -9291,7 +9570,8 @@
 	&lt;mo&gt;|&lt;/mo&gt;
 	&lt;mrow&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;mo&gt;}&lt;/mo&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9313,7 +9593,8 @@
 	&lt;/apply&gt;
 	&lt;/condition&gt;
 	&lt;ci&gt;x&lt;/ci&gt;
-       &lt;/set&gt;</pre>
+	&lt;/set&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -9332,7 +9613,8 @@
 	&lt;/mrow&gt;
 	&lt;/mrow&gt;
 	&lt;mo&gt;}&lt;/mo&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9395,7 +9677,8 @@
        <pre>
 	&lt;list&gt;
 	&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;
-       &lt;/list&gt;</pre>
+	&lt;/list&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -9404,7 +9687,8 @@
        <pre>
 	&lt;mrow&gt;
 	&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9430,7 +9714,8 @@
 	&lt;condition&gt;
 	&lt;apply&gt;&lt;lt/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;5&lt;/cn&gt;&lt;/apply&gt;
 	&lt;/condition&gt;
-       &lt;/list&gt;</pre>
+	&lt;/list&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -9443,7 +9728,8 @@
 	&lt;mo&gt;|&lt;/mo&gt;
 	&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;
 	&lt;mo&gt;)&lt;/mo&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9497,14 +9783,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;union/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;union/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x222a;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x222a;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9527,14 +9815,16 @@
 	&lt;ci type="list"&gt;L&lt;/ci&gt;
 	&lt;/domainofapplication&gt;
 	&lt;ci type="set"&gt; S&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x22c3;&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x22c3;&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9592,14 +9882,16 @@
 	&lt;apply&gt;&lt;intersect/&gt;
 	&lt;ci type="set"&gt; A &lt;/ci&gt;
 	&lt;ci type="set"&gt; B &lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2229;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2229;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9616,14 +9908,16 @@
 	&lt;bvar&gt;&lt;ci type="set"&gt;S&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;domainofapplication&gt;&lt;ci type="list"&gt;L&lt;/ci&gt;&lt;/domainofapplication&gt;
 	&lt;ci type="set"&gt; S &lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x22c2;&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x22c2;&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9671,14 +9965,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;in/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci type="set"&gt;A&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;in/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci type="set"&gt;A&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9730,14 +10026,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;notin/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci type="set"&gt;A&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;notin/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci type="set"&gt;A&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2209;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2209;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9791,14 +10089,16 @@
 	&lt;apply&gt;&lt;subset/&gt;
 	&lt;ci type="set"&gt;A&lt;/ci&gt;
 	&lt;ci type="set"&gt;B&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2286;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2286;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9850,14 +10150,16 @@
 	&lt;apply&gt;&lt;prsubset/&gt;
 	&lt;ci type="set"&gt;A&lt;/ci&gt;
 	&lt;ci type="set"&gt;B&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2282;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2282;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9907,14 +10209,16 @@
 	&lt;apply&gt;&lt;notsubset/&gt;
 	&lt;ci type="set"&gt;A&lt;/ci&gt;
 	&lt;ci type="set"&gt;B&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2288;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2288;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -9968,14 +10272,16 @@
 	&lt;apply&gt;&lt;notprsubset/&gt;
 	&lt;ci type="set"&gt;A&lt;/ci&gt;
 	&lt;ci type="set"&gt;B&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2284;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2284;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10029,14 +10335,16 @@
 	&lt;apply&gt;&lt;setdiff/&gt;
 	&lt;ci type="set"&gt;A&lt;/ci&gt;
 	&lt;ci type="set"&gt;B&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2216;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2216;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10090,7 +10398,8 @@
 	&lt;apply&gt;&lt;eq/&gt;
 	&lt;apply&gt;&lt;card/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;/apply&gt;
 	&lt;cn&gt;5&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -10101,7 +10410,8 @@
 	&lt;mrow&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;
 	&lt;mo&gt;=&lt;/mo&gt;
 	&lt;mn&gt;5&lt;/mn&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10158,14 +10468,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;cartesianproduct/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;cartesianproduct/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#xd7;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#xd7;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10246,7 +10558,8 @@
 	&lt;lowlimit&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/lowlimit&gt;
 	&lt;uplimit&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/uplimit&gt;
 	&lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -10260,7 +10573,8 @@
 	&lt;mi&gt;b&lt;/mi&gt;
 	&lt;/munderover&gt;
 	&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10280,7 +10594,8 @@
 	&lt;apply&gt;&lt;in/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci type="set"&gt;B&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/condition&gt;
 	&lt;apply&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -10293,7 +10608,8 @@
 	&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;/munder&gt;
 	&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10312,14 +10628,16 @@
 	&lt;ci type="set"&gt;B&lt;/ci&gt;
 	&lt;/domainofapplication&gt;
 	&lt;ci type="function"&gt;f&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10348,7 +10666,8 @@
 	&lt;lowlimit&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/lowlimit&gt;
 	&lt;uplimit&gt;&lt;cn&gt;100&lt;/cn&gt;&lt;/uplimit&gt;
 	&lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Strict Content MathML equivalent</p>
@@ -10364,7 +10683,8 @@
 	&lt;bvar&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;apply&gt;&lt;csymbol cd="arith1"&gt;power&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/bind&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
      </div>
     </section>
@@ -10437,7 +10757,8 @@
 	&lt;apply&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;
 	&lt;ci&gt;x&lt;/ci&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -10451,7 +10772,8 @@
 	&lt;mi&gt;b&lt;/mi&gt;
 	&lt;/munderover&gt;
 	&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10474,7 +10796,8 @@
 	&lt;/apply&gt;
 	&lt;/condition&gt;
 	&lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -10487,7 +10810,8 @@
 	&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;/munder&gt;
 	&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10517,7 +10841,8 @@
 	&lt;lowlimit&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/lowlimit&gt;
 	&lt;uplimit&gt;&lt;cn&gt;100&lt;/cn&gt;&lt;/uplimit&gt;
 	&lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Strict Content MathML equivalent</p>
@@ -10533,7 +10858,8 @@
 	&lt;bvar&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;apply&gt;&lt;csymbol cd="arith1"&gt;power&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/bind&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
      </div>
     </section>
@@ -10594,7 +10920,8 @@
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;lowlimit&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/lowlimit&gt;
 	&lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -10607,7 +10934,8 @@
 	&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2192;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
 	&lt;/munder&gt;
 	&lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10626,7 +10954,8 @@
 	&lt;apply&gt;&lt;tendsto/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;
 	&lt;/condition&gt;
 	&lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -10639,7 +10968,8 @@
 	&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2192;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
 	&lt;/munder&gt;
 	&lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10658,7 +10988,8 @@
 	&lt;apply&gt;&lt;tendsto type="above"/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/condition&gt;
 	&lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -10671,7 +11002,8 @@
 	&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2192;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;/msup&gt;&lt;/mrow&gt;
 	&lt;/munder&gt;
 	&lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10698,7 +11030,8 @@
 	&lt;apply&gt;&lt;tendsto/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;
 	&lt;/condition&gt;
 	&lt;ci&gt;expression-in-x&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Strict Content MathML equivalent</p>
@@ -10712,7 +11045,8 @@
 	&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
 	&lt;ci&gt;expression-in-x&lt;/ci&gt;
 	&lt;/bind&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>where
@@ -10779,7 +11113,8 @@
 	&lt;apply&gt;&lt;tendsto type="above"/&gt;
 	&lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
 	&lt;apply&gt;&lt;power/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -10790,7 +11125,8 @@
 	&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
 	&lt;mo&gt;&amp;#x2192;&lt;/mo&gt;
 	&lt;msup&gt;&lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;/msup&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10809,7 +11145,8 @@
 	&lt;apply&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
 	&lt;apply&gt;&lt;ci type="function"&gt;g&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/vector&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -10828,7 +11165,8 @@
 	&lt;mtr&gt;&lt;mtd&gt;
 	&lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mfenced&gt;
 	&lt;/mtd&gt;&lt;/mtr&gt;
-       &lt;/mtable&gt;&lt;/mfenced&gt;</pre>
+	&lt;/mtable&gt;&lt;/mfenced&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10864,7 +11202,8 @@
 	&lt;annotation-xml encoding="MathML-Content"&gt;
 	&lt;tendsto/&gt;
 	&lt;/annotation-xml&gt;
-       &lt;/semantics&gt;</pre>
+	&lt;/semantics&gt;
+       </pre>
       </div>
      </div>
     </section>
@@ -10921,14 +11260,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -10946,7 +11287,8 @@
 	&lt;apply&gt;&lt;cos/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
 	&lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -10963,7 +11305,8 @@
 	&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
 	&lt;mo&gt;)&lt;/mo&gt;
 	&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11016,7 +11359,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;arcsin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;arcsin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentations</p>
@@ -11027,7 +11371,8 @@
 	&lt;mi&gt;arcsin&lt;/mi&gt;
 	&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	&lt;mi&gt;x&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11040,7 +11385,8 @@
 	&lt;msup&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;
 	&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	&lt;mi&gt;x&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11093,14 +11439,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;sinh/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;sinh/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;sinh&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;sinh&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
      </div>
@@ -11150,7 +11498,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;arcsinh/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;arcsinh/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentations</p>
@@ -11161,7 +11510,8 @@
 	&lt;mi&gt;arcsinh&lt;/mi&gt;
 	&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	&lt;mi&gt;x&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <div class="example mathml">
@@ -11170,7 +11520,8 @@
 	&lt;msup&gt;&lt;mi&gt;sinh&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;
 	&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	&lt;mi&gt;x&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
      </div>
@@ -11214,14 +11565,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;exp/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;exp/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;msup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/msup&gt;</pre>
+	&lt;msup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/msup&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11266,14 +11619,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;ln/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;ln/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;ln&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;ln&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11331,14 +11686,16 @@
 	&lt;apply&gt;&lt;log/&gt;
 	&lt;logbase&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/logbase&gt;
 	&lt;ci&gt;x&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11351,14 +11708,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;log/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;log/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11409,7 +11768,8 @@
        &lt;cn&gt;10&lt;/cn&gt;
        &lt;ci&gt;y&lt;/ci&gt;
        &lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+       &lt;/apply&gt;
+       </pre>
       </div>
      </div>
     </section>
@@ -11462,7 +11822,8 @@
        <pre>
 	&lt;apply&gt;&lt;mean/&gt;
 	&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;7&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -11474,7 +11835,8 @@
 	&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;
 	&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;
 	&lt;mo&gt;&amp;#x27E9;&lt;/mo&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11487,7 +11849,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;mean/&gt;&lt;ci&gt;X&lt;/ci&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;mean/&gt;&lt;ci&gt;X&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -11496,7 +11859,8 @@
        <pre>
 	&lt;mrow&gt;
 	&lt;mo&gt;&amp;#x27E8;&lt;/mo&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;&amp;#x27E9;&lt;/mo&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11505,7 +11869,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;mover&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;&amp;#xaf;&lt;/mo&gt;&lt;/mover&gt;</pre>
+	&lt;mover&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;&amp;#xaf;&lt;/mo&gt;&lt;/mover&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11569,7 +11934,8 @@
        <pre>
 	&lt;apply&gt;&lt;sdev/&gt;
 	&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -11580,7 +11946,8 @@
 	&lt;mo&gt;&amp;#x3c3;&lt;/mo&gt;
 	&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	&lt;mfenced&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11595,7 +11962,8 @@
        <pre>
 	&lt;apply&gt;&lt;sdev/&gt;
 	&lt;ci type="discrete_random_variable"&gt;X&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -11605,7 +11973,8 @@
 	&lt;mrow&gt;
 	&lt;mo&gt;&amp;#x3c3;&lt;/mo&gt;
 	&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11670,7 +12039,8 @@
        <pre>
 	&lt;apply&gt;&lt;variance/&gt;
 	&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -11684,7 +12054,8 @@
 	&lt;/msup&gt;
 	&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	&lt;mfenced&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11700,7 +12071,8 @@
        <pre>
 	&lt;apply&gt;&lt;variance/&gt;
 	&lt;ci type="discrete_random_variable"&gt; X&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -11777,7 +12149,8 @@
        <pre>
 	&lt;apply&gt;&lt;median/&gt;
 	&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -11788,7 +12161,8 @@
 	&lt;mi&gt;median&lt;/mi&gt;
 	&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	&lt;mfenced&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11849,7 +12223,8 @@
        <pre>
 	&lt;apply&gt;&lt;mode/&gt;
 	&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -11860,7 +12235,8 @@
 	&lt;mi&gt;mode&lt;/mi&gt;
 	&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
 	&lt;mfenced&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfenced&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11931,7 +12307,8 @@
 	&lt;degree&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/degree&gt;
 	&lt;momentabout&gt;&lt;mean/&gt;&lt;/momentabout&gt;
 	&lt;cn&gt;6&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;5&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -11948,7 +12325,8 @@
 	&lt;mo&gt;&amp;#x27E9;&lt;/mo&gt;
 	&lt;/mrow&gt;
 	&lt;mi&gt;mean&lt;/mi&gt;
-       &lt;/msub&gt;</pre>
+	&lt;/msub&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -11965,7 +12343,8 @@
 	&lt;degree&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/degree&gt;
 	&lt;momentabout&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;/momentabout&gt;
 	&lt;ci&gt;X&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -11979,7 +12358,8 @@
 	&lt;mo&gt;&amp;#x27E9;&lt;/mo&gt;
 	&lt;/mrow&gt;
 	&lt;mi&gt;p&lt;/mi&gt;
-       &lt;/msub&gt;</pre>
+	&lt;/msub&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -12007,7 +12387,8 @@
 	&lt;degree&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/degree&gt;
 	&lt;momentabout&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;/momentabout&gt;
 	&lt;ci&gt;X&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Strict Content MathML equivalent</p>
@@ -12018,7 +12399,8 @@
 	&lt;cn&gt;3&lt;/cn&gt;
 	&lt;ci&gt;p&lt;/ci&gt;
 	&lt;ci&gt;X&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
      </div>
     </section>
@@ -12085,7 +12467,8 @@
 	&lt;apply&gt;&lt;plus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
 	&lt;cn&gt;3&lt;/cn&gt;
 	&lt;cn&gt;7&lt;/cn&gt;
-       &lt;/vector&gt;</pre>
+	&lt;/vector&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -12100,7 +12483,8 @@
 	&lt;mtr&gt;&lt;mtd&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;
 	&lt;/mtable&gt;
 	&lt;mo&gt;)&lt;/mo&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -12113,7 +12497,8 @@
 	&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;mn&gt;3&lt;/mn&gt;
 	&lt;mn&gt;7&lt;/mn&gt;
-       &lt;/mfenced&gt;</pre>
+	&lt;/mfenced&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -12197,7 +12582,8 @@
 	&lt;/apply&gt;
 	&lt;/condition&gt;
 	&lt;apply&gt;&lt;power/&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;ci&gt;j&lt;/ci&gt;&lt;/apply&gt;
-       &lt;/matrix&gt;</pre>
+	&lt;/matrix&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -12228,7 +12614,8 @@
 	&lt;/mrow&gt;
 	&lt;/mrow&gt;
 	&lt;mo&gt;]&lt;/mo&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -12322,14 +12709,16 @@
        <pre>
 	&lt;apply&gt;&lt;determinant/&gt;
 	&lt;ci type="matrix"&gt;A&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;det&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;det&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -12378,14 +12767,16 @@
        <pre>
 	&lt;apply&gt;&lt;transpose/&gt;
 	&lt;ci type="matrix"&gt;A&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;msup&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/msup&gt;</pre>
+	&lt;msup&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/msup&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -12454,14 +12845,16 @@
 
       <div class="example mathml">
        <pre>
-       &lt;apply&gt;&lt;selector/&gt;&lt;ci type="vector"&gt;V&lt;/ci&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/apply&gt;</pre>
+	&lt;apply&gt;&lt;selector/&gt;&lt;ci type="vector"&gt;V&lt;/ci&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;msub&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;</pre>
+	&lt;msub&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -12486,7 +12879,8 @@
 	&lt;matrix&gt;
 	&lt;matrixrow&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/matrixrow&gt;
 	&lt;/matrix&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -12511,7 +12905,8 @@
 	&lt;mtable&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;
 	&lt;mo&gt;)&lt;/mo&gt;
 	&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -12569,7 +12964,8 @@
 	&lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;&amp;#x3b8;&lt;/ci&gt;&lt;/apply&gt;
 	&lt;ci type="vector"&gt; N &lt;/ci&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -12588,7 +12984,8 @@
 	&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;
 	&lt;mi&gt;N&lt;/mi&gt;
 	&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -12645,7 +13042,8 @@
 	&lt;ci&gt;b&lt;/ci&gt;
 	&lt;apply&gt;&lt;cos/&gt;&lt;ci&gt;&amp;#x3b8;&lt;/ci&gt;&lt;/apply&gt;
 	&lt;/apply&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -12662,7 +13060,8 @@
 	&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;
 	&lt;mrow&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;&amp;#x3b8;&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -12715,14 +13114,16 @@
 	&lt;apply&gt;&lt;outerproduct/&gt;
 	&lt;ci type="vector"&gt;A&lt;/ci&gt;
 	&lt;ci type="vector"&gt;B&lt;/ci&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2297;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2297;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -12777,14 +13178,16 @@
 	&lt;apply&gt;&lt;in/&gt;
 	&lt;cn type="integer"&gt; 42 &lt;/cn&gt;
 	&lt;integers/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mn&gt;42&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mn&gt;42&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -12832,7 +13235,8 @@
 	&lt;apply&gt;&lt;in/&gt;
 	&lt;cn type="real"&gt; 44.997&lt;/cn&gt;
 	&lt;reals/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -12841,7 +13245,8 @@
        <pre>
 	&lt;mrow&gt;
 	&lt;mn&gt;44.997&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;R&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -12889,7 +13294,8 @@
 	&lt;apply&gt;&lt;in/&gt;
 	&lt;cn type="rational"&gt; 22 &lt;sep/&gt;7&lt;/cn&gt;
 	&lt;rationals/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -12900,7 +13306,8 @@
 	&lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;
 	&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;
 	&lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -12948,7 +13355,8 @@
 	&lt;apply&gt;&lt;in/&gt;
 	&lt;cn type="integer"&gt;1729&lt;/cn&gt;
 	&lt;naturalnumbers/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -12957,7 +13365,8 @@
        <pre>
 	&lt;mrow&gt;
 	&lt;mn&gt;1729&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;N&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -13005,7 +13414,8 @@
 	&lt;apply&gt;&lt;in/&gt;
 	&lt;cn type="complex-cartesian"&gt;17&lt;sep/&gt;29&lt;/cn&gt;
 	&lt;complexes/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -13016,7 +13426,8 @@
 	&lt;mrow&gt;&lt;mn&gt;17&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;29&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;
 	&lt;mi mathvariant="double-struck"&gt;C&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -13064,14 +13475,16 @@
 	&lt;apply&gt;&lt;in/&gt;
 	&lt;cn type="integer"&gt;17&lt;/cn&gt;
 	&lt;primes/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;mn&gt;17&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;P&lt;/mi&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;mn&gt;17&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;P&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -13119,7 +13532,8 @@
 	&lt;apply&gt;&lt;eq/&gt;
 	&lt;apply&gt;&lt;ln/&gt;&lt;exponentiale/&gt;&lt;/apply&gt;
 	&lt;cn&gt;1&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -13130,7 +13544,8 @@
 	&lt;mrow&gt;&lt;mi&gt;ln&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;mo&gt;=&lt;/mo&gt;
 	&lt;mn&gt;1&lt;/mn&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -13180,14 +13595,16 @@
 	&lt;apply&gt;&lt;eq/&gt;
 	&lt;apply&gt;&lt;power/&gt;&lt;imaginaryi/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
 	&lt;cn&gt;-1&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
 
       <div class="example mathml">
        <pre>
-       &lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;/mrow&gt;</pre>
+	&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -13237,7 +13654,8 @@
 	&lt;apply&gt;&lt;eq/&gt;
 	&lt;apply&gt;&lt;divide/&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;
 	&lt;notanumber/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -13248,7 +13666,8 @@
 	&lt;mrow&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
 	&lt;mo&gt;=&lt;/mo&gt;
 	&lt;mi&gt;NaN&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -13299,7 +13718,8 @@
 	&lt;ci type="boolean"&gt;P&lt;/ci&gt;
 	&lt;/apply&gt;
 	&lt;true/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -13310,7 +13730,8 @@
 	&lt;mrow&gt;&lt;mi&gt;true&lt;/mi&gt;&lt;mo&gt;&amp;#x2228;&lt;/mo&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;mo&gt;=&lt;/mo&gt;
 	&lt;mi&gt;true&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -13361,7 +13782,8 @@
 	&lt;ci type="boolean"&gt;P&lt;/ci&gt;
 	&lt;/apply&gt;
 	&lt;false/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -13372,7 +13794,8 @@
 	&lt;mrow&gt;&lt;mi&gt;false&lt;/mi&gt;&lt;mo&gt;&amp;#x2227;&lt;/mo&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/mrow&gt;
 	&lt;mo&gt;=&lt;/mo&gt;
 	&lt;mi&gt;false&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -13422,7 +13845,8 @@
 	&lt;apply&gt;&lt;neq/&gt;
 	&lt;integers/&gt;
 	&lt;emptyset/&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -13431,7 +13855,8 @@
        <pre>
 	&lt;mrow&gt;
 	&lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;mo&gt;&amp;#x2260;&lt;/mo&gt;&lt;mi&gt;&amp;#x2205;&lt;/mi&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -13488,7 +13913,8 @@
 	&lt;apply&gt;&lt;approx/&gt;
 	&lt;pi/&gt;
 	&lt;cn type="rational"&gt;22&lt;sep/&gt;7&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -13499,7 +13925,8 @@
 	&lt;mi&gt;&amp;#x3c0;&lt;/mi&gt;
 	&lt;mo&gt;&amp;#x2243;&lt;/mo&gt;
 	&lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -13547,7 +13974,8 @@
 	&lt;apply&gt;&lt;approx/&gt;
 	&lt;eulergamma/&gt;
 	&lt;cn&gt;0.5772156649&lt;/cn&gt;
-       &lt;/apply&gt;</pre>
+	&lt;/apply&gt;
+       </pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -13556,7 +13984,8 @@
        <pre>
 	&lt;mrow&gt;
 	&lt;mi&gt;&amp;#x3b3;&lt;/mi&gt;&lt;mo&gt;&amp;#x2243;&lt;/mo&gt;&lt;mn&gt;0.5772156649&lt;/mn&gt;
-       &lt;/mrow&gt;</pre>
+	&lt;/mrow&gt;
+       </pre>
       </div>
 
       <blockquote>
@@ -13607,7 +14036,8 @@
 
       <div class="example mathml">
        <pre>
-       &lt;mi&gt;&amp;#x221e;&lt;/mi&gt;</pre>
+	&lt;mi&gt;&amp;#x221e;&lt;/mi&gt;
+       </pre>
       </div>
 
       <blockquote>
