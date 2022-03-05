@@ -35,7 +35,7 @@ section-include = element section {
  attribute data-include-replace{"true"}?
 		  }
 pre-include = element pre {
-attribute class {text}?
+attribute class {text}?,
  attribute  data-include {text},
  attribute  data-oninclude {text}?,
  attribute  data-oninclude-format {"text"|"html"}?,
