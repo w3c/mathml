@@ -8,6 +8,54 @@
       class='remove'>
   </script>
   <script class='remove'>
+    function relaxhl (r,s,u) {
+	var s2=s.replaceAll(/(#[^\n]*)/g,'<span style="color:brown">$1</span>');
+	s2=s2.replaceAll(/([a-z0-9A-Z-]+)(\s*=\s*[^"])/g,'<b>$1</b>$2');
+	s2=s2.replaceAll(/include *"([^"]*)"/g,'<span style="color:green">include</span> "<span style="color:red">$1</span>"');
+	return  s2;
+    }
+    function getsec(n){
+	if(n==null || n.localName=="section" || n.localName=="") {
+	    return n
+	} else {
+	    return getsec(n.parentNode);
+	}
+    }
+    function mmlindex() {
+	dl=document.getElementById("mml_elements");
+	var ellist=document.querySelectorAll("code.element");
+	var ellist2 = [];
+	for(var i=0;i!=ellist.length;i++){
+	    ellist2[ellist2.length]=ellist[i];
+	}
+	var lastel="";
+	ellist2 = ellist2.sort(function(a,b) {return a.textContent.localeCompare(b.textContent);});
+	for(var i=0;i!=ellist2.length;i++){
+	    if(ellist2[i].textContent != lastel){
+		lastel=ellist2[i].textContent;
+		var dt=document.createElement("dt");
+		var dd=document.createElement("dd");
+		var lastsec=""
+		dt.textContent=lastel;
+		dl.appendChild(dt);
+		dl.appendChild(dd);
+	    }
+	    var a=document.createElement("a");
+	    var thissec=getsec(ellist2[i]);
+	    if(thissec != null) {
+		var h=thissec.children[0].children[0];
+		if(h.id!=lastsec){
+		    lastsec=h.id;
+		    a.href="#" + h.id;
+		    a.textContent=h.innerText;
+		    dd.appendChild(a);
+		    dd.appendChild(document.createTextNode(' '));
+		}
+	    }
+	}
+    }
+    </script>
+  <script class='remove'>
    var respecConfig = {
    copyrightStart: 1998,
    specStatus: "ED",
@@ -34,7 +82,8 @@
           }]
 	  }
 	  ],
-   github: "https://github.com/w3c/mathml",
+       github: "https://github.com/w3c/mathml",
+       postProcess: [mmlindex],
    localBiblio: {     
 	      "MathML-Core": {
 		  title: "MathML Core",
@@ -74,14 +123,6 @@
    }
    };
   </script>
-  <script class='remove'>
-    function relaxhl (r,s,u) {
-	var s2=s.replaceAll(/(\n|^)([^'#\n]*)(#[^\n]*)/g,'$1$2<span style="color:brown">$3</span>');
-	s2=s2.replaceAll(/([a-z0-9.A-Z-]+)(\s*=\s*[^"])/g,'<b>$1</b>$2');
-	s2=s2.replaceAll(/include *"([^"]*)"/g,'<span style="color:green">include</span> "<span style="color:red">$1</span>"');
-	return  s2;
-    }
-    </script>
  </head>
  <body>
   <section id='abstract'>
@@ -91,7 +132,7 @@
     for describing mathematical notation and capturing
     both its structure and content. The goal of MathML is to enable
     mathematics to be served, received, and processed on the World Wide
-    Web, just as the [[[HTML]]] has
+    Web, just as [[HTML]] has
     enabled this functionality for text.
    </p>
    <p>
@@ -124,7 +165,7 @@
    <p>MathML was originally specified as an XML application and most of the
    examples in this specification assume that syntax. Other syntaxes are possible most
    notably
-   [[HTML]] specifies the syntax for MathML in HTML. Unless explictly noted,
+   [[HTML5]] specifies the syntax for MathML in HTML. Unless explictly noted,
    the examples in this specification are also valid HTML syntax.
    </p>
   </section>
@@ -354,10 +395,10 @@
    <div class="issue" data-number="268"></div>
    <div class="issue" data-number="122"></div>
    
-   <section data-include="src/parsing-1.html" data-include-replace="true"></section>
+<!--   <section data-include="src/parsing-1.html" data-include-replace="true"></section>-->
   
    <section>
-    <h3 id="parsing_usingrnc">Using the RelaxNG Schema for MathML4</h3>
+    <h3 id="parsing_usingrnc">Using the RelaxNG Schema for Mathml4</h3>
     
     <p>MathML documents should be validated using the RelaxNG Schema for MathML, either in
     the XML encoding (<a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rng">http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rng</a>)
@@ -385,9 +426,9 @@
     </section>
     
     <section>
-     <h4 id="parsing_rnc_strict">The Grammar for Strict Content MathML4</h4>
+     <h4 id="parsing_rnc_strict">The Grammar for Strict Content Mathml4</h4>
      
-     <p>The grammar for Strict Content MathML4 can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc</a>.</p>
+     <p>The grammar for Strict Content Mathml4 can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc</a>.</p>
      
      <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-strict-content.rnc" ></pre>
     </section>
@@ -396,7 +437,7 @@
     <section>
      <h4 id="parsing_rnc_content">The Grammar for Content MathML</h4>
      
-     <p>The grammar for Content MathML4 builds on the grammar for the Strict Content MathML
+     <p>The grammar for Content Mathml4 builds on the grammar for the Strict Content MathML
      subset, and can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4-content.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4-content.rnc</a>.</p>
      
      <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-content.rnc" ></pre>
@@ -406,7 +447,7 @@
     <section>
      <h4 id="parsing_rnc_full">The Grammar for Full MathML</h4>
      
-     <p>The grammar for full MathML4 is simply a merger of the above grammars,
+     <p>The grammar for full Mathml4 is simply a merger of the above grammars,
      and can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc</a>.</p>
      
      <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4.rnc" ></pre>
@@ -415,14 +456,15 @@
 
 
    </section>
-
    
-   <section data-include="src/parsing-2.html" data-include-replace="true"></section>
+ <!--  <section data-include="src/parsing-2.html" data-include-replace="true"></section>-->
+
   </section>
 
   <section data-include="src/media-types.html" data-include-replace="true"></section>
   <section data-include="src/operator-dict.html" data-include-replace="true"></section>
   <section data-include="src/glossary.html" data-include-replace="true"></section>
+  <section data-include="src/mmlindex.html" data-include-replace="true"></section>
   <section data-include="src/contributors.html" data-include-replace="true"></section>
   <section data-include="src/changes.html" data-include-replace="true"></section>
   <section id='conformance'>
