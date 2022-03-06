@@ -229,116 +229,13 @@
    Alternatively, report  an issue at this specification's
    <a href="https://github.com/w3c/mathml">GitHub repository</a>.   </p>
    <p>
-    The basic chapter structure of this document is based on the earlier
-    MathML 2.0 Recommendation <a href="appendixh.html#MathML2">[MathML2]</a>.  That MathML 2.0
-    itself was a revision of the earlier W3C Recommendation MathML 1.01
-    <a href="appendixh.html#MathML1">[MathML1]</a>; MathML 3.0 is a revision of the W3C
-    Recommendation MathML 2.0.  It differs from it in that all previous
-    chapters have been updated, some new
-    elements and attributes added and some
-    deprecated.  
-    Much has been moved to separate documents containing explanatory
-    material, material on characters and entities and on the MathML DOM.
-    The discussion of character entities has led to the document
-    <em>XML Entity Definitions for Characters</em> <a href="appendixg.html#Entities">[Entities]</a>,
-    which is now a W3C Recommendation.  The concern with 
-    use of CSS with MathML has led to the document <em>A MathML for CSS Profile</em> 
-    <a href="appendixh.html#MathMLforCSS">[MathMLforCSS]</a>, which was  a W3C Recommendation 
-    accompanying MathML 3.0.
+     The basic chapter structure of this document is based on the earlier releases,
+     [[MathML3]], [[MathML2]] and [[MathML]].
    </p>
-   <p>
-    The biggest differences from MathML 2.0 (Second Edition) are in Chapters 4 and 5,
-    although there have been
-    smaller improvements throughout the specification.  A more detailed
-   description of changes from the previous Recommendation follows.   </p>
-   <ul>
-    <li>
-     <p>
-      Much of the non-normative explication
-      that formerly was found in Chapters 1 and 2, and many examples from
-      elsewhere in the previous MathML specifications, were removed
-      from the MathML3 specification and planned to be incorporated into a MathML Primer
-      to be prepared as a separate document.  It is expected this will help
-      the use of this formal MathML3 specification as a reference document
-      in implementations, and offer the new user better help in
-      understanding MathML's deployment. The remaining content of Chapters 1
-      and 2 has been edited to reflect the changes elsewhere in the
-      document, and in the rapidly evolving Web environment. Some of the
-      text in them went back to early days of the Web and XML, and its
-      explanations are now commonplace.     </p>
-    </li>
-    <li>
-     <p>
-      Chapter 3, on presentation-oriented markup, adds new material on linebreaking,
-      and on markup for elementary math notations used in many
-      countries (<code>mstack</code>, <code>mlongdiv</code> and other 
-      associated elements). Other changes include revisions to 
-      the <code>mglyph</code>, <code>mpadded</code> and <code>maction</code> 
-      elements and significant unification and cleanup of attribute 
-      values.
-      Earlier work, as recorded in the W3C Note <a href="https://www.w3.org/TR/2006/NOTE-arabic-math-20060131/">Arabic
-      mathematical notation</a>, has allowed clarification of the
-      relationship with bidirectional text and examples
-      with RTL text have been added.     </p>
-    </li>
-    <li>
-     <p>
-      Chapter 4, on content-oriented markup, contains major changes and additions.
-      The  meaning of the actual content remains as before in principle, 
-      but a lot of work has been done on expressing it better. A few new elements have been
-      added.
-     </p>
-    </li>
-    <li>
-     <p>
-      Chapter 5 has been refined as its purpose has been further
-      clarified to deal with the mixing of markup languages.  This chapter deals,
-      in particular, with interrelations of parts of the
-      MathML specification, especially with presentation and content
-      markup.
-     </p>
-    </li>
-    <li>
-     <p>
-      Chapter 6 is a new addition which deals with the issues of interaction
-      of MathML with a host environment.  This chapter deals with interrelations 
-      of  the MathML specification with XML and HTML, but in the context of deployment
-      on the Web.  In particular there is a discussion of the interaction of CSS
-      with MathML.
-     </p>
-    </li>
-    <li>
-     <p>
-      Chapter 7 replaces the previous Chapter 6, and has been rewritten 
-      and reorganized to reflect the new
-      situation in regard to Unicode, and the changed
-      W3C context with regard to named character entities.  The
-      new W3C specification <em>XML Entity Definitions for 
-      Characters</em>, which  incorporates those used for mathematics has
-      become a  a W3C Recommendation, <a href="appendixg.html#Entities">[Entities]</a>.
-     </p>
-    </li>
-    <li>
-     <p> 
-      The Appendices, of which there are eight shown, have been 
-      reworked.  
-      Appendix A now contains the new RelaxNG schema
-      for MathML3 as well as discussion of MathML3 DTD issues.
-      Appendix B addresses media types associated with MathML and
-      implicitly constitutes a request for the registration of three new ones,
-      as is now standard for work from the W3C.
-      Appendix C contains a new simplified and reconsidered Operator Dictionary.
-      Appendices D, E, F, G and H contain similar non-normative material to
-      that in the previous specification, now appropriately updated.
-     </p>
-    </li>
-    <li>
      <p> 
       A fuller discussion of the document's evolution can be found in 
-      <a href="appendixf.html">Appendix&#160;F Changes</a>. 
+      [[[#changes]]]. 
      </p>
-    </li>
-   </ul>
   </section>
   <section data-include="src/introduction.html" data-include-replace="true"></section>
   <section data-include="src/fundamentals.html" data-include-replace="true"></section>
