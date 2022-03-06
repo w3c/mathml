@@ -267,21 +267,21 @@
    
 
     <section>
-     <h4 id="parsing_rnc_pres">The Grammar for MathML Core</h4>
+     <h4 id="parsing_rnc_pres">MathML Core</h4>
      
      <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-core.rnc" ></pre>
 
     </section>
     
     <section>
-     <h4 id="parsing_rnc_pres">The Grammar for Presentation MathML</h4>
+     <h4 id="parsing_rnc_pres">Presentation MathML</h4>
      
      <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-presentation.rnc" ></pre>
 
     </section>
     
     <section>
-     <h4 id="parsing_rnc_strict">The Grammar for Strict Content MathML4</h4>
+     <h4 id="parsing_rnc_strict">Strict Content MathML4</h4>
      
      <p>The grammar for Strict Content MathML4 can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc</a>.</p>
      
@@ -290,7 +290,7 @@
     
     
     <section>
-     <h4 id="parsing_rnc_content">The Grammar for Content MathML</h4>
+     <h4 id="parsing_rnc_content">Content MathML</h4>
      
      <p>The grammar for Content MathML4 builds on the grammar for the Strict Content MathML
      subset, and can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4-content.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4-content.rnc</a>.</p>
@@ -300,12 +300,26 @@
     </section>
 
     <section>
-     <h4 id="parsing_rnc_full">The Grammar for Full MathML</h4>
+     <h4 id="parsing_rnc_full">Full MathML</h4>
      
      <p>The grammar for full MathML4 is simply a merger of the above grammars,
      and can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc</a>.</p>
      
      <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4.rnc" ></pre>
+     
+    </section>
+
+
+    <section>
+     <h4 id="parsing_rnc_legacy">MathML with legacy elements.</h4>
+     
+     <p>Some elements and attributes that were deprecated in MathML3
+     are removed from MathML4.  This schema extends the full MathML4
+     schema, adding these constructs back, allowing validaion ofxising
+     MathML documents. It can be found at <a
+     href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4-legacy.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4-legacy.rnc</a>.</p>
+     
+     <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-legacy.rnc" ></pre>
      
     </section>
 
