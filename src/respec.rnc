@@ -12,7 +12,8 @@ meta = element meta {
 style = element style {text}
 
 script = element script {
-(attribute src {text} | text)
+attribute class {"remove"}?,
+(attribute src {text}, | text)
 }
 
 link = element link {
