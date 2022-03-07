@@ -844,8 +844,7 @@
      encoding of both integers.  The use of <code class="attribute">base</code> with
      <code class="attributevalue">rational</code> numbers is deprecated.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm-strict-cn-sep">Rewrite: cn sep</h6>
+     <div class="strict-mathml-example" id="contm-strict-cn-sep"><dfn>Rewrite: cn sep</dfn>
 
       <p>If there are <code class="element">sep</code> children of the <code class="element">cn</code>,
       then intervening text may be rewritten as <code class="element">cn</code>
@@ -925,8 +924,7 @@
       MathML, and each of the arguments needs to be recursively processed.</p>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_cn-base">Rewrite: cn based_integer</h6>
+     <div class="strict-mathml-example" id="contm_cn-base"><dfn>Rewrite: cn based_integer</dfn>
 
       <p>A <code class="element">cn</code> element with a base attribute other than 10 is rewritten as follows. (A base attribute
       with value 10 is simply removed) .</p>
@@ -955,8 +953,7 @@
 
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_cn_strict_const">Rewrite: cn constant</h6>
+     <div class="strict-mathml-example" id="contm_cn_strict_const"><dfn>Rewrite: cn constant</dfn>
 
       <p>In Strict Content MathML, constants should be represented using
       <code class="element">csymbol</code> elements.  A number of important constants are defined in the
@@ -1018,8 +1015,7 @@
       </table>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_cn_pres">Rewrite: cn presentation mathml</h6>
+     <div class="strict-mathml-example" id="contm_cn_pres"><dfn>Rewrite: cn presentation mathml</dfn>
 
       <p>If the <code class="element">cn</code> contains Presentation MathML markup, then it may
       be rewritten to Strict MathML using variants of the rules above where
@@ -1210,8 +1206,7 @@
 
      </p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_ci_mathmltypes"></h6>
+     <div class="strict-mathml-example" id="contm_ci_mathmltypes">
 
       <div class="example mathml">
        <pre>&lt;ci type="integer"&gt;n&lt;/ci&gt;</pre>
@@ -1253,8 +1248,7 @@
 
      <p><em>Mapping to Strict Content MathML</em></p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_ci_strict_ex">Rewrite: ci type annotation</h6>
+     <div class="strict-mathml-example" id="contm_ci_strict_ex"><dfn>Rewrite: ci type annotation</dfn>
 
       <p>In Strict Content, type attributes are represented via
       semantic attribution. An expression of the form
@@ -1282,8 +1276,7 @@
      general presentation construct (see <a href="#presm_summary"></a>), which is used for
      rendering (see <a href="#contm_rendering"></a>).</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_ci_pres">Rewrite: ci presentation mathml</h6>
+     <div class="strict-mathml-example" id="contm_ci_pres"><dfn>Rewrite: ci presentation mathml</dfn>
 
       <p>A <code class="element">ci</code> expression with non-text content of the form
 
@@ -1314,8 +1307,7 @@
       </p>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_ci_c2"></h6>
+     <div class="strict-mathml-example" id="contm_ci_c2">
 
       <p> The following example encodes an atomic
       symbol that displays visually as <i class="var">C</i><sup>2</sup> and that,
@@ -1517,7 +1509,7 @@
      general presentation construct (see <a href="#presm_summary"></a>), which is used for
      rendering (see <a href="#contm_rendering"></a>). In this case, when
      writing to Strict Content MathML, the csymbol should be treated as a
-     <code class="element">ci</code> element, and rewritten using <a href="#contm_ci_pres"></a>.</p>
+     <code class="element">ci</code> element, and rewritten using <a href="#contm_ci_pres">Rewrite: ci presentation mathml</a>.</p>
 
      <p>External definitions (in OpenMath CDs or elsewhere) may also be specified directly
      for
@@ -1567,8 +1559,7 @@
      <p>In non-Strict usage <code class="element">csymbol</code> allows the use of
      a <code class="attribute">type</code> attribute.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_csymbol_strict_ex">Rewrite: csymbol type annotation</h6>
+     <div class="strict-mathml-example" id="contm_csymbol_strict_ex"><dfn>Rewrite: csymbol type annotation</dfn>
 
       <p>In Strict Content, type attributes are represented via
       semantic attribution. An expression of the form
@@ -2826,8 +2817,7 @@
      arguments of these elements must always be specified
      explicitly.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-set"></h6>
+     <div class="strict-mathml-example" id="contm_strict-set">
 
       <p>Here is an example of container markup with explicitly specified arguments:
 
@@ -2843,8 +2833,7 @@
       </p>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-set-bvar"></h6>
+     <div class="strict-mathml-example" id="contm_strict-set-bvar">
 
       <p>Another example of container markup, where the list of arguments is
       given indirectly as an expression with a bound variable. The container markup
@@ -2899,8 +2888,7 @@
      correspond.  The constructor symbols have an OpenMath role of
      "application", while the lambda symbol has a role of "bind".</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-lambda"></h6>
+     <div class="strict-mathml-example" id="contm_strict-lambda">
 
       <p>This example shows the use of <code class="element">lambda</code> container element and the equivalent use of <code class="element">bind</code> in Strict Content MathML</p>
 
@@ -2954,8 +2942,7 @@
     all cases.  An example for this is the <code class="element">diff</code> element where
     the <code class="element">bvar</code> term is technically not bound at all.</p>
 
-    <div class="example strict-mathml-example">
-     <h6 id="contm_strict-apply-bvar"></h6>
+    <div class="strict-mathml-example" id="contm_strict-apply-bvar">
 
      <p>The following example illustrates the use of <code class="element">apply</code>
      with a binding operator.  In these cases, the corresponding Strict
@@ -2983,8 +2970,7 @@
      </p>
     </div>
 
-    <div class="example strict-mathml-example">
-     <h6 id="contm_strict-apply-bvar-2"></h6>
+    <div class="strict-mathml-example" id="contm_strict-apply-bvar-2">
 
      <p>In this example, the sum operator is not itself a binding
      operator, but bound variables with qualifiers are implicit in the
@@ -3234,8 +3220,7 @@
      expressions are then rewritten as Strict Content markup.
      </p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_limits-strict">Rewrite: interval qualifier</h6>
+     <div class="strict-mathml-example" id="contm_limits-strict"><dfn>Rewrite: interval qualifier</dfn>
 
       <div class="example mathml">
        <pre>
@@ -3285,8 +3270,7 @@
      such as
      <code class="element">and</code> in the condition.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_condition-strict">Rewrite: condition</h6>
+     <div class="strict-mathml-example" id="contm_condition-strict"><dfn>Rewrite: condition</dfn>
 
       <p>To rewrite an expression using the <code class="element">condition</code>
       qualifier as one using <code class="element">domainofapplication</code>,
@@ -3333,8 +3317,7 @@
      been obtained, the final mapping to Strict markup is accomplished
      using the following rules:</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-doa">Rewrite: restriction</h6>
+     <div class="strict-mathml-example" id="contm_strict-doa"><dfn>Rewrite: restriction</dfn>
 
       <p>An application of a function that is qualified by the
       <code class="element">domainofapplication</code> qualifier (expressed by an <code class="element">apply</code> element without
@@ -3376,8 +3359,7 @@
      and uses the lambda symbol to encode the variable bindings.
      Certain classes of operator have alternative rules, as described below.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_dombind-strict">Rewrite: apply bvar domainofapplication</h6>
+     <div class="strict-mathml-example" id="contm_dombind-strict"><dfn>Rewrite: apply bvar domainofapplication</dfn>
 
       <p>A content MathML expression with bound variables and
       <code class="element">domainofapplication</code>
@@ -3519,8 +3501,7 @@
     syntax tables in <a href="#contm_opel"></a>.  This is summarized in
     the following rule.</p>
 
-    <div class="example strict-mathml-example">
-     <h6 id="contm_strict-opel">Rewrite: element</h6>
+    <div class="strict-mathml-example" id="contm_strict-opel"><dfn>Rewrite: element</dfn>
 
      <p>  For example,</p>
 
@@ -3565,7 +3546,7 @@
      <section>
       <h6 id="contm_nary_rewrite">Rewriting to Strict Content MathML</h6>
 
-      <p>If the argument list is given explicitly, the <a class="intref" href="#contm_strict-opel">Rewrite: element</a> rule applies.</p>
+      <p>If the argument list is given explicitly, the <a>Rewrite: element</a> rule applies.</p>
 
       <p>Any use of qualifier elements is expressed in Strict Content
       MathML, via explicitly applying the function to a list of arguments
@@ -3574,8 +3555,7 @@
       <code class="element">domainofapplication</code> qualifier as other qualifiers may be
       rewritten to <code class="element">domainofapplication</code> as described earlier.</p>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_p2s.lifted">Rewrite: n-ary domainofapplication</h6>
+      <div class="strict-mathml-example" id="contm_p2s.lifted"><dfn>Rewrite: n-ary domainofapplication</dfn>
 
        <p>An expression of the following form,
        where <code class="meta-code">&lt;union/&gt;</code> represents any
@@ -3644,12 +3624,11 @@
      <section>
       <h6 id="contm_narysetlist_rewrite">Rewriting to Strict Content MathML</h6>
 
-      <p>If the argument list is given explicitly, the <a class="intref" href="#contm_strict-opel">Rewrite: element</a> rule applies.</p>
+      <p>If the argument list is given explicitly, the <a>Rewrite: element</a> rule applies.</p>
 
       <p>When qualifiers are used to specify the list of arguments, the following rule is used.</p>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_rewrite_setliste">Rewrite: n-ary setlist domainofapplication</h6>
+      <div class="strict-mathml-example" id="contm_rewrite_setliste"><dfn>Rewrite: n-ary setlist domainofapplication</dfn>
 
        <p>An expression of the following form,
        where <code class="meta-code">&lt;set/&gt;</code> is either of the elements <code class="element">set</code> or <code class="element">list</code> and
@@ -3727,8 +3706,7 @@
      <section>
       <h6 id="contm_nary_reln_rewrite">Rewriting to Strict Content MathML</h6>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_rewrite_reln">Rewrite: n-ary relations</h6>
+      <div class="strict-mathml-example" id="contm_rewrite_reln"><dfn>Rewrite: n-ary relations</dfn>
 
        <p>An expression of the form
 
@@ -3756,8 +3734,7 @@
        </p>
       </div>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_rewrite_reln_bvar">Rewrite: n-ary relations bvar</h6>
+      <div class="strict-mathml-example" id="contm_rewrite_reln_bvar"><dfn>Rewrite: n-ary relations bvar</dfn>
 
        <p>An expression of the form
 
@@ -3828,8 +3805,7 @@
      <section>
       <h6 id="contm_nary_unary_rewrite">Rewriting to Strict Content MathML</h6>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_p2s.max">Rewrite: n-ary unary set</h6>
+      <div class="strict-mathml-example" id="contm_p2s.max"><dfn>Rewrite: n-ary unary set</dfn>
 
        <p>When an element,
        <code class="meta-code">&lt;max/&gt;</code>, of class nary-stats or nary-minmax
@@ -3864,12 +3840,11 @@
       <p>Like all MathML n-ary operators, The list of arguments may be
       specified implicitly using qualifier elements. This is expressed in
       Strict Content MathML using the following rule, which is similar to
-      the rule <a href="#contm_p2s.lifted"></a> but differs in that the
+      the rule <a>Rewrite: n-ary domainofapplication</a> but differs in that the
       symbol can be directly applied to the constructed set of arguments and
       it is not necessary to use <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a>.</p>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_unary_nary_doma">Rewrite: n-ary unary domainofapplication</h6>
+      <div class="strict-mathml-example" id="contm_unary_nary_doma"><dfn>Rewrite: n-ary unary domainofapplication</dfn>
 
        <p>An expression of the following form,
        where <code class="meta-code">&lt;max/&gt;</code> represents any
@@ -3916,8 +3891,7 @@
       <a class="omsymbol" href="https://openmath.org/cd/set1#set">set</a> symbol is not used and the symbol is
       applied directly to the argument.</p>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_nary_unary_single">Rewrite: n-ary unary single</h6>
+      <div class="strict-mathml-example" id="contm_nary_unary_single"><dfn>Rewrite: n-ary unary single</dfn>
 
        <p>When an element,
        <code class="meta-code">&lt;max/&gt;</code>, of class nary-stats or nary-minmax
@@ -3944,9 +3918,9 @@
       whether an expression such as max(X) was a trivial application of max
       to a singleton, or whether it should be interpreted as meaning the
       maximum of values of the set X. Applications finding that the rule
-      <a href="#contm_nary_unary_single"></a> can not be applied as the
+      <a>Rewrite: n-ary unary single</a> can not be applied as the
       supplied argument is a scalar may wish to use the rule
-      <a href="#contm_p2s.max"></a> as an error recovery.
+      <a>Rewrite: n-ary unary set</a> as an error recovery.
       As a further complication, in the case of the statistical functions
       the Content Dictionary to use in this case depends on the desired
       interpretation of the argument as a set of explicit data or a random
@@ -3960,7 +3934,7 @@
      binary-set)</h5>
 
      <p>Binary operators take two arguments and simply map to OpenMath
-     symbols via <a class="intref" href="#contm_strict-opel">Rewrite: element</a>
+     symbols via <a>Rewrite: element</a>
      without the need of any special rewrite rules. The binary
      constructor <code class="element">interval</code> is similar but uses constructor syntax
      in which the arguments are children of the element, and the symbol
@@ -3984,7 +3958,7 @@
      unary-veccalc)</h5>
 
      <p>Unary operators take a single argument and map to OpenMath symbols
-     via <a class="intref" href="#contm_strict-opel">Rewrite: element</a> without the need of any special rewrite rules.</p>
+     via <a>Rewrite: element</a> without the need of any special rewrite rules.</p>
 
      <section>
       <h6 id="contm_unary_schema">Schema Patterns</h6>
@@ -4039,8 +4013,7 @@
       if used with <code class="element">apply</code> or qualifiers, the interpretation in
       Strict Content MathML is via the following rule.</p>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_rewrite_quantifier">Rewrite: quantifier</h6>
+      <div class="strict-mathml-example" id="contm_rewrite_quantifier"><dfn>Rewrite: quantifier</dfn>
 
        <p> An expression of following form where
        <code class="meta-code">&lt;exists/&gt;</code> denotes an element of
@@ -4119,8 +4092,7 @@
     namespaces.  Such attributes must be rewritten in alternative form in
     Strict Content Markup.</p>
 
-    <div class="example strict-mathml-example">
-     <h6 id="contm_strict-attributes">Rewrite: attributes</h6>
+    <div class="strict-mathml-example" id="contm_strict-attributes"><dfn>Rewrite: attributes</dfn>
 
      <p> For instance,
 
@@ -4175,7 +4147,7 @@
    However, in most cases, the generic rewrite rules for the
    appropriate operator class is sufficient.  In particular, unless
    otherwise indicated, elements are to be rewritten using the
-   default <a class="intref" href="#contm_strict-opel">Rewrite: element</a>
+   default <a>Rewrite: element</a>
    rule.  Note, however, that all elements in this section must be rewritten in
    some fashion, since they are not allowed in Strict Content markup.</p>
 
@@ -4549,8 +4521,7 @@
 
      <p><em>Mapping to Strict Markup</em></p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_rewrite_lambda">Rewrite: lambda</h6>
+     <div class="strict-mathml-example" id="contm_rewrite_lambda"><dfn>Rewrite: lambda</dfn>
 
       <p>If the <code class="element">lambda</code> element does not contain qualifiers, the
       lambda expression is directly translated into a <code class="element">bind</code>
@@ -4577,8 +4548,7 @@
       </div>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_rewrite_lambda_domofa">Rewrite: lambda domainofapplication</h6>
+     <div class="strict-mathml-example" id="contm_rewrite_lambda_domofa"><dfn>Rewrite: lambda domainofapplication</dfn>
 
       <p>If the <code class="element">lambda</code> element does contain qualifiers, the
       qualifier may be rewritten to <code class="element">domainofapplication</code>
@@ -5194,8 +5164,7 @@
      elements (respectively symbols) are used together, the mapping to
      Strict markup is straightforward:</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_piecewise-example"></h6>
+     <div class="strict-mathml-example" id="contm_piecewise-example">
 
       <p>Content MathML</p>
 
@@ -5718,7 +5687,7 @@
      </div>
 
      <p>In both cases, the translation to Strict Content markup is direct,
-     as described in <a href="#contm_strict-opel"></a>. It is merely a
+     as described in <a>Rewrite: element</a>. It is merely a
      matter of choosing the symbol that reflects the actual usage.</p>
 
     </section>
@@ -6039,8 +6008,7 @@
      symbol is always used with two arguments, with the second indicating
      the degree of the root being extracted.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="arith1.root.ex2"></h6>
+     <div class="strict-mathml-example" id="arith1.root.ex2">
 
       <p>Content MathML</p>
 
@@ -6060,8 +6028,7 @@
       </div>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="arith1.root.ex3"></h6>
+     <div class="strict-mathml-example" id="arith1.root.ex3">
       <p>Content MathML</p>
 
       <div class="example mathml">
@@ -6156,9 +6123,9 @@
      different default renderings.</p>
 
      <p>When the <code class="element">gcd</code> element is applied to an explicit list of arguments, the
-     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/arith1#gcd">gcd</a> symbol, as described in <a href="#contm_strict-opel"></a>.  However, when
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/arith1#gcd">gcd</a> symbol, as described in <a>Rewrite: element</a>.  However, when
      qualifiers are used, the equivalent Strict markup is computed via
-     <a href="#contm_p2s.lifted"></a>.</p>
+     <a>Rewrite: n-ary domainofapplication</a>.</p>
     </section>
 
     <section>
@@ -6223,8 +6190,7 @@
       </blockquote>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_and_bvar_ex"></h6>
+     <div class="strict-mathml-example" id="contm_and_bvar_ex">
 
       <p>Content MathML</p>
 
@@ -6612,12 +6578,11 @@
 
      <p><em>Mapping to Strict Markup</em></p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="quant1.forall.ex2"></h6>
+     <div class="strict-mathml-example" id="quant1.forall.ex2">
 
       <p>When the <code class="element">forall</code> element is used with a <code class="element">condition</code> qualifier the
       strict equivalent is constructed with the help of logical implication by the rule
-      <a href="#contm_rewrite_quantifier"></a>.  Thus
+      <a>Rewrite: quantifier</a>.  Thus
 
       <div class="example mathml">
        <pre>
@@ -7711,8 +7676,7 @@
      <code class="element">geq</code> may be used with more than two arguments, denoting a chain
      of inequalities, as described in <a href="#contm_nary_reln"></a>.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="relation1.geq.ex1"></h6>
+     <div class="strict-mathml-example" id="relation1.geq.ex1">
 
       <p>Content MathML</p>
 
@@ -8151,8 +8115,7 @@
      forward.  When bound variables are present, the following rule
      should be used.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_p2s.int">Rewrite: int</h6>
+     <div class="strict-mathml-example" id="contm_p2s.int"><dfn>Rewrite: int</dfn>
 
       <p>Translate an indefinite integral, where
       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
@@ -8190,8 +8153,7 @@
 
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-int"></h6>
+     <div class="strict-mathml-example" id="contm_strict-int">
 
       <p>For instance, the expression
 
@@ -8224,8 +8186,7 @@
      <p>For a definite integral without bound variables, the
      translation is also straightforward.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-domainofapplication-nobvar"></h6>
+     <div class="strict-mathml-example" id="contm_strict-domainofapplication-nobvar">
 
       <p> For instance, the integral of a differential form <i class="var">f</i> over an arbitrary domain
       <i class="var">C</i> represented as
@@ -8257,8 +8218,7 @@
      <p><span>When bound variables are present,</span> the situation is more complicated in general, and the
      following rule<span>s are</span> used.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_p2s.defint">Rewrite: defint</h6>
+     <div class="strict-mathml-example" id="contm_p2s.defint"><dfn>Rewrite: defint</dfn>
 
       <p>Translate a definite integral, where
       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
@@ -8298,8 +8258,7 @@
      special
      translation rule:</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_p2s.int.LUlimit">Rewrite: defint limits</h6>
+     <div class="strict-mathml-example" id="contm_p2s.int.LUlimit"><dfn>Rewrite: defint limits</dfn>
 
       <div class="example mathml">
        <pre>
@@ -8341,8 +8300,7 @@
       <p>The case for multiple integrands is treated analogously.</p>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-condition"></h6>
+     <div class="strict-mathml-example" id="contm_strict-condition">
 
       <p>Note that use of the <code class="element">condition</code>
       <span>qualifier</span> <span>also
@@ -8528,8 +8486,7 @@
      <p>For the translation to strict Markup it is crucial to realize that in the expression
      case, the variable is actually not bound by the differentiation operator.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_p2s.diff">Rewrite: diff</h6>
+     <div class="strict-mathml-example" id="contm_p2s.diff"><dfn>Rewrite: diff</dfn>
 
       <p>Translate an expression
 
@@ -8592,8 +8549,7 @@
      <p>If the <code class="element">bvar</code> element contains a <code class="element">degree</code> element, use the
      <code>nthdiff</code> symbol.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_p2s.nthdiff">Rewrite: nthdiff</h6>
+     <div class="strict-mathml-example" id="contm_p2s.nthdiff"><dfn>Rewrite: nthdiff</dfn>
 
       <div class="example mathml">
        <pre>
@@ -8625,8 +8581,7 @@
       </div>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_nthdiff_ex"></h6>
+     <div class="strict-mathml-example" id="contm_nthdiff_ex">
 
       <p>For example</p>
 
@@ -8869,8 +8824,7 @@
      translate directly to the two arguments of
      <a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiff">partialdiff</a>.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_p2s.partialdiff">Rewrite: partialdiffdegree</h6>
+     <div class="strict-mathml-example" id="contm_p2s.partialdiff"><dfn>Rewrite: partialdiffdegree</dfn>
 
       <p>If <code class="element">partialdiff</code> is used with an expression and
       <code class="element">bvar</code> qualifiers it is rewritten to
@@ -8926,8 +8880,7 @@
       </p>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_p2s.partialdiff.ex1"></h6>
+     <div class="strict-mathml-example" id="contm_p2s.partialdiff.ex1">
 
       <p>With this rule, the expression
 
@@ -10654,8 +10607,7 @@
      construction to rewrite the expression in the bound variables as a
      function.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-sum"></h6>
+     <div class="strict-mathml-example" id="contm_strict-sum">
       <p>Content MathML</p>
 
       <div class="example mathml">
@@ -10828,8 +10780,7 @@
      construction to rewrite the expression in the bound variables as a
      function.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-product"></h6>
+     <div class="strict-mathml-example" id="contm_strict-product">
 
       <p>Content MathML</p>
 
@@ -11018,8 +10969,7 @@
      element below. The <a class="omsymbol" href="https://openmath.org/cd/limit1#null">null</a> symbol corresponds to the case
      where no <code class="attribute">type</code> attribute is present. We translate</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-limit">Rewrite: limits condition</h6>
+     <div class="strict-mathml-example" id="contm_strict-limit"><dfn>Rewrite: limits condition</dfn>
 
       <div class="example mathml">
        <pre>
@@ -11177,14 +11127,13 @@
 
      <p>The usage of <code class="element">tendsto</code> to qualify a limit is formally
      defined by writing the expression in Strict Content MathML via the
-     rule <a href="#contm_strict-limit"></a>. The meanings of other more
+     rule <a>Rewrite: limits condition</a>. The meanings of other more
      idiomatic uses of <code class="element">tendsto</code> are not formally defined by this
      specification. When rewriting these cases to Strict Content MathML,
      <code class="element">tendsto</code> should be rewritten to an annotated identifier as
      shown below.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict_tendsto">Rewrite: tendsto</h6>
+     <div class="strict-mathml-example" id="contm_strict_tendsto"><dfn>Rewrite: tendsto</dfn>
 
       <div class="example mathml">
        <pre>
@@ -11733,8 +11682,7 @@
      determines the base.  Otherwise, the default base of 10 must be
      explicitly provided in Strict markup.  See the following example.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict_log"></h6>
+     <div class="strict-mathml-example" id="contm_strict_log">
 
       <div class="example mathml">
        <pre>&lt;apply&gt;&lt;plus/&gt;
@@ -11881,9 +11829,9 @@
 
      <p>When the <code class="element">mean</code> element is applied to an explicit list of arguments, the
      translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#mean">mean</a> symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a href="#contm_strict-opel"></a>. When it is applied to a distribution, then the
+     <a>Rewrite: element</a>. When it is applied to a distribution, then the
      <a class="omsymbol" href="https://openmath.org/cd/s_dist1#mean">mean</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
-     dictionary should be used.  In the case with qualifiers use <a href="#contm_p2s.lifted"></a>
+     dictionary should be used.  In the case with qualifiers use <a>Rewrite: n-ary domainofapplication</a>
      with the same caveat.</p>
     </section>
 
@@ -11986,10 +11934,10 @@
      <p>When the <code class="element">sdev</code> element is applied to an explicit list of arguments, the
      translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#sdev">sdev</a>
      symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a href="#contm_strict-opel"></a>. When it is applied to a distribution, then the
+     <a>Rewrite: element</a>. When it is applied to a distribution, then the
      <a class="omsymbol" href="https://openmath.org/cd/s_dist1#sdev">sdev</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
      dictionary should be used. In the case with qualifiers use
-     <a href="#contm_p2s.lifted"></a> with the same caveat.</p>
+     <a>Rewrite: n-ary domainofapplication</a> with the same caveat.</p>
     </section>
 
     <section>
@@ -12096,9 +12044,9 @@
      <p>When the <code class="element">variance</code> element is applied to an explicit list of arguments, the
      translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#variance">variance</a>
      symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a href="#contm_strict-opel"></a>. When it is applied to a distribution, then the
+     <a>Rewrite: element</a>. When it is applied to a distribution, then the
      <a class="omsymbol" href="https://openmath.org/cd/s_dist1#variance">variance</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
-     dictionary should be used. In the case with qualifiers use <a href="#contm_p2s.lifted"></a>
+     dictionary should be used. In the case with qualifiers use <a>Rewrite: n-ary domainofapplication</a>
      with the same caveat.</p>
     </section>
 
@@ -12174,7 +12122,7 @@
      <p>When the <code class="element">median</code> element is applied to an explicit list of arguments, the
      translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#median">median</a>
      symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a href="#contm_strict-opel"></a>.</p>
+     <a>Rewrite: element</a>.</p>
     </section>
 
     <section>
@@ -12248,7 +12196,7 @@
      <p>When the <code class="element">mode</code> element is applied to an explicit list of arguments, the
      translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#mode">mode</a>
      symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a href="#contm_strict-opel"></a>.</p>
+     <a>Rewrite: element</a>.</p>
     </section>
 
     <section>
@@ -12368,8 +12316,7 @@
 
      <p><em>Mapping to Strict Markup</em></p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-moment-degree"></h6>
+     <div class="strict-mathml-example" id="contm_strict-moment-degree">
 
       <p>When rewriting to Strict Markup, the <a class="omsymbol" href="https://openmath.org/cd/s_dist1#moment">moment</a> <span>symbol from the <a class="omcd" href="s_data1">s_data1</a> content
       dictionary</span> is used <span>when the <code class="element">moment</code> element is applied
@@ -14230,22 +14177,22 @@
      <ol>
 
       <li>
-       <p>Rewrite derivatives with rules <a href="#contm_p2s.diff"></a>, <a href="#contm_p2s.nthdiff"></a>,
-       and <a href="#contm_p2s.partialdiff"></a>
+       <p>Rewrite derivatives with rules <a>Rewrite: diff</a>, <a>Rewrite: nthdiff</a>,
+       and <a>Rewrite: partialdiffdegree</a>
        to explicate the binding status of the variables involved.
        </p>
       </li>
 
       <li>
-       <p>Rewrite integrals with the rules <a href="#contm_p2s.int"></a><span>,  <a href="#contm_p2s.defint"></a></span>
-       and <a href="#contm_p2s.int.LUlimit"></a> to disambiguate the status
+       <p>Rewrite integrals with the rules <a>Rewrite: int</a><span>,  <a>Rewrite: defint</a></span>
+       and <a>Rewrite: defint limits</a> to disambiguate the status
        of bound and free variables and of the orientation of the range of integration if
        it is given as a <code class="element">lowlimit</code>/<code class="element">uplimit</code> pair.
        </p>
       </li>
 
       <li>
-       <p>Rewrite limits as described in <a href="#contm_strict_tendsto"></a> and <a href="#contm_strict-limit"></a>.</p>
+       <p>Rewrite limits as described in <a>Rewrite: tendsto</a> and <a>Rewrite: limits condition</a>.</p>
       </li>
 
       <li>
@@ -14277,14 +14224,14 @@
       <li>
        <p><em>Intervals</em>: Rewrite qualifiers given as <code class="element">interval</code> and
        <code class="element">lowlimit</code>/<code class="element">uplimit</code> to intervals of integers via
-       <a href="#contm_limits-strict"></a>.</p>
+       <a>Rewrite: interval qualifier</a>.</p>
       </li>
 
       <li>
        <p><em>Multiple <code class="element">condition</code>s</em>: Rewrite multiple <code class="element">condition</code>
        qualifiers to a single one by taking their conjunction. The resulting compound
        <code class="element">condition</code> is then rewritten to <code class="element">domainofapplication</code> according
-       to rule <a href="#contm_condition-strict"></a>.</p>
+       to rule <a>Rewrite: condition</a>.</p>
       </li>
 
       <li>
@@ -14302,7 +14249,7 @@
 
       <li>
        <p>Rewrite sets and lists by the rule
-       <a href="#contm_rewrite_setliste"></a>.</p>
+       <a>Rewrite: n-ary setlist domainofapplication</a>.</p>
       </li>
 
       <li id="contm_p2s_step_vector">
@@ -14312,8 +14259,8 @@
       </li>
 
       <li>
-       <p>Rewrite lambda expressions by the rules <a href="#contm_rewrite_lambda"></a>
-       and <a href="#contm_rewrite_lambda_domofa"></a></p>
+       <p>Rewrite lambda expressions by the rules <a>Rewrite: lambda</a>
+       and <a>Rewrite: lambda domainofapplication</a></p>
       </li>
 
       <li>
@@ -14331,21 +14278,21 @@
 
       <li>
        <p>Rewrite <code class="element">min</code>, <code class="element">max</code>, <code class="element">mean</code> and similar n-ary/unary operators
-       by the rules <a href="#contm_p2s.max"></a>, <a href="#contm_unary_nary_doma"></a>
-       and <a href="#contm_nary_unary_single"></a>.
+       by the rules <a>Rewrite: n-ary unary set</a>, <a>Rewrite: n-ary unary domainofapplication</a>
+       and <a>Rewrite: n-ary unary single</a>.
        </p>
       </li>
 
       <li>
        <p>Rewrite the quantifiers <code class="element">forall</code> and <code class="element">exists</code> used with <code class="element">domainofapplication</code>
-       to expressions using implication and conjunction by the rule <a href="#contm_rewrite_quantifier"></a>.
+       to expressions using implication and conjunction by the rule <a>Rewrite: quantifier</a>.
        </p>
       </li>
 
       <li>
        <p>Rewrite integrals used with a <code class="element">domainofapplication</code> element (with or without a <code class="element">bvar</code>)
-       according to the rules <a href="#contm_p2s.int"></a><span> and
-       <a href="#contm_p2s.defint"></a></span>.
+       according to the rules <a>Rewrite: int</a><span> and
+       <a>Rewrite: defint</a></span>.
        </p>
       </li>
 
@@ -14366,19 +14313,19 @@
 
       <li>
        <p>into an application of a restricted function via the rule
-       <a href="#contm_strict-doa"></a> if the <code class="element">apply</code> does not contain
+       <a>Rewrite: restriction</a> if the <code class="element">apply</code> does not contain
        a <code class="element">bvar</code> child.</p>
       </li>
 
       <li>
        <p>into an application of the <a class="omsymbol" href="https://openmath.org/cd/fns2#predicate_on_list">predicate_on_list</a> symbol via the rules
-       <a href="#contm_rewrite_reln"></a> and <a href="#contm_rewrite_reln_bvar"></a>
+       <a>Rewrite: n-ary relations</a> and <a>Rewrite: n-ary relations bvar</a>
        if used with a relation.</p>
       </li>
 
       <li>
        <p>into a construction with the <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a> symbol
-       via the general rule <a href="#contm_p2s.lifted"></a> for
+       via the general rule <a>Rewrite: n-ary domainofapplication</a> for
        general n-ary operators.
        </p>
       </li>
@@ -14386,7 +14333,7 @@
       <li>
        <p>into a construction using the <a class="omsymbol" href="https://openmath.org/cd/set1#suchthat">suchthat</a> symbol
        from the <a class="omcd" href="set1">set1</a> content dictionary in an <code class="element">apply</code> with bound
-       variables via the <a href="#contm_dombind-strict"></a> rule.</p>
+       variables via the <a>Rewrite: apply bvar domainofapplication</a> rule.</p>
       </li>
      </ol>
     </li>
@@ -14401,14 +14348,14 @@
        attribute is one of <code class="attributevalue">e-notation</code>, <code class="attributevalue">rational</code>,
        <code class="attributevalue">complex-cartesian</code>, <code class="attributevalue">complex-polar</code>,
        <code class="attributevalue">constant</code> as strict <code class="element">cn</code> via rules
-       <a href="#contm-strict-cn-sep"></a>, <a href="#contm_cn-base"></a>
-       and <a href="#contm_cn_strict_const"></a>.</p>
+       <a>Rewrite: cn sep</a>, <a>Rewrite: cn based_integer</a>
+       and <a>Rewrite: cn constant</a>.</p>
       </li>
 
       <li>
        <p>Rewrite any <code class="element">ci</code>, <code class="element">csymbol</code> or <code class="element">cn</code> containing
        presentation MathML to <code class="element">semantics</code> elements with rules
-       <a href="#contm_cn_pres"></a> and <a href="#contm_ci_pres"></a> and
+       <a>Rewrite: cn presentation mathml</a> and <a>Rewrite: ci presentation mathml</a> and
        the analogous rule for <code class="element">csymbol</code>.</p>
       </li>
      </ol>
@@ -14417,7 +14364,7 @@
     <li>
      <p><em>Rewrite operators</em>: Rewrite any remaining operator defined in <a href="#contm_opel"></a>
      to a <code class="element">csymbol</code> referencing the symbol identified in the syntax table by the rule
-     <a href="#contm_strict-opel"></a>. <span>As noted in the descriptions of each
+     <a>Rewrite: element</a>. <span>As noted in the descriptions of each
      operator element, some require special case rules to determine the proper choice
      of symbol.
      Some cases of particular note are:</span>
@@ -14460,7 +14407,7 @@
        where type information is reflected in the choice of operator symbol.</span> Now rewrite remaining
        <code class="element">ci</code> <span>and <code class="element">csymbol</code></span> elements with a <code class="attribute">type</code> attribute to a
        strict expression with <code class="element">semantics</code> according to rule<span>s</span>
-       <a href="#contm_ci_strict_ex"></a><span> and <a href="#contm_csymbol_strict_ex"></a></span>.  </p>
+       <a>Rewrite: ci type annotation</a><span> and <a>Rewrite: csymbol type annotation</a></span>.  </p>
       </li>
 
       <li>
@@ -14476,7 +14423,7 @@
        <p><em>Rewrite attributes</em>: Rewrite any element with attributes that are
        not allowed in strict markup to a <code class="element">semantics</code> construction with
        the element without these attributes as the first child and the attributes in
-       <code class="element">annotation</code> elements by rule <a href="#contm_strict-attributes"></a>.</p>
+       <code class="element">annotation</code> elements by rule <a>Rewrite: attributes</a>.</p>
       </li>
      </ol>
     </li>
