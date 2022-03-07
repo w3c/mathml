@@ -13,7 +13,7 @@ style = element style {text}
 
 script = element script {
 attribute class {"remove"}?,
-(attribute src {text}, | text)
+(attribute src {text} | text)
 }
 
 link = element link {
