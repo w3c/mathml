@@ -80,7 +80,23 @@
 	s2=s2.replaceAll(/include *"([^"]*)"/g,'<span style="color:green">include</span> "<span style="color:red">$1</span>"');
 	return  s2;
     }
-    </script>
+  </script>
+  <style>
+   table.syntax {
+font-size: 80%;
+background-color: var(--example-bg);
+padding:.2em;
+}
+table.syntax td {
+padding:.2em;
+border: solid thin;
+}
+table.syntax th {
+text-align: left;
+padding:.2em;
+border: solid thin;
+}
+  </style>
  </head>
  <body>
   <section id='abstract'>
