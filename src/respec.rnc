@@ -2,7 +2,7 @@ start = html|section
 
 html = element html {head,body}
 
-head = element head {meta+,title,link*,style*,script*}
+head = element head {meta+,title,link*,script*,style*}
 
 meta = element meta {
  attribute charset {"UTF-8"} |
@@ -266,7 +266,7 @@ attribute data-diff {text}?,
 attribute title {text}?,
 inlinecontent}
 
-span = element dfn {
+dfn = element dfn {
 attribute id {text}?,
 inlinecontent}
 
