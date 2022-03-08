@@ -1,0 +1,433 @@
+start = html|section
+
+html = element html {head,body}
+
+head = element head {meta+,title,link*,style*,script*}
+
+meta = element meta {
+ attribute charset {"UTF-8"} |
+ (attribute http-equiv {text} , attribute content {text})
+ }
+
+style = element style {text}
+
+script = element script {
+attribute class {"remove"}?,
+(attribute src {text} | text)
+}
+
+link = element link {
+attribute rel {"stylesheet"},
+attribute type {"text/css"},
+attribute href {text}
+}
+
+
+title = element title {text}
+
+section = element section {
+	attribute class{"appendix"}?,
+	      (h2|h3|h4|h5|h6|attribute id {text}),divcontent*}
+
+section-include = element section {
+ attribute  data-include {text},
+ attribute  data-oninclude {text}?,
+ attribute  data-oninclude-format {"text"|"html"}?,
+ attribute data-include-replace{"true"}?
+		  }
+pre-include = element pre {
+attribute class {text}?,
+ attribute  data-include {text},
+ attribute  data-oninclude {text}?,
+ attribute  data-oninclude-format {"text"|"html"}?,
+ attribute data-include-replace{"true"}?
+		  }
+			  
+ body = element body {divcontent}
+
+divcontent=((\div|p|blockquote|pre|pre-include|table|ul|ol|dl|inlinecontent|script|section|section-include)*)
+inlinecontentnoa=((text|b|i|em|strong|code|q|sub|sup|hr|br|span|dfn|img|math|svg|button)*)
+inlinecontent=((inlinecontentnoa|a)*)
+
+\div = element \div {
+attribute data-number {xsd:integer}?,
+attribute class {text}?,
+attribute style {text}?, #FIX
+attribute id {text}?,
+attribute tabindex {text}?,
+attribute role {text}?,
+h6?, #FIX				  
+(divcontent|label|input)*
+}
+
+button = element button {
+attribute class {text}?,
+attribute style {text}?,
+attribute id {text}?,
+attribute tabindex {text}?,
+attribute onclick {text}?,
+text}
+
+p = element p {
+attribute class {text}?,
+attribute style {text}?,
+attribute id {text}?,
+(divcontent|label|input)*
+}
+
+blockquote = element blockquote {
+attribute class {text}?,
+attribute style {text}?,
+attribute id {text}?,
+(divcontent|label|input)*
+}
+pre = element pre {
+attribute class {text}?,
+attribute style {text}?,
+attribute id {text}?,
+inlinecontent
+}
+
+
+# should always use tbody, should lose cellpadding,rowsep
+table = element table {
+attribute border {"1"}?, # FIX
+attribute class {text}?,
+attribute style {text}?, # FIX
+attribute id {text}?,
+attribute rowsep {text}?,
+attribute cellpadding {text}?,
+(caption?,colgroup?,thead?,tbody+,tfoot?)
+}
+
+caption = element caption {
+inlinecontent}
+
+colgroup = element colgroup {
+attribute span {text}?,
+col+
+}
+
+col = element col {
+attribute span {text}?,
+attribute class {text}?
+}
+
+thead = element thead {
+tr+
+}
+
+tbody = element tbody {
+attribute class {text}?,
+tr+
+}
+
+tfoot = element thead {
+tr+
+}
+
+# should not allow empty tr
+tr = element tr {
+attribute class {text}?,
+(td|th)*
+}
+
+th = element th {
+attribute id {text}?,
+attribute class {text}?,
+attribute style {text}?,
+attribute colspan {text}?,
+attribute rowspan {text}?,
+inlinecontent
+}
+
+# should lose width= 
+td = element td {
+attribute id {text}?,
+attribute class {text}?,
+attribute style {text}?,
+attribute width {text}?,
+attribute colspan {text}?,
+attribute rowspan {text}?,
+(inlinecontent|\div|p|blockquote|pre|table|ol|ul|dl)*
+}
+
+ul = element ul {
+attribute class {text}?,
+li+
+}
+
+ol= element ol {
+attribute class {text}?,
+li+
+}
+
+li = element li {
+attribute id {text}?,
+attribute class {text}?,
+(inlinecontent|\div|table|ol|ul|p|pre)*
+}
+
+dl= element dl {
+attribute class {text}?,
+(dt|dd)+
+}
+
+
+dt = element dt {
+attribute id {text}?,
+attribute class {text}?,
+attribute data-errortype {text}?,
+inlinecontent
+}
+dd = element dd {
+attribute class {text}?,
+(inlinecontent|\div|table|ul|ol|dl|p|pre)*
+}
+
+	    
+strong = element strong {inlinecontent}
+b = element b {inlinecontent}
+i = element i {
+	   attribute class {text}?,
+inlinecontent}
+em = element em {inlinecontent}
+code = element code {
+attribute data-diff {text}?,
+	   attribute data-namespace {"xhtml"|"openmath"|"mathml-error"|"future-mathml"|"svg"}?,
+	   attribute class {text}?,
+	   inlinecontent}
+sub = element sub {inlinecontent}
+sup = element sup {inlinecontent}
+q = element q {text}
+	    
+hr = element hr {
+attribute class {text}?,
+attribute style {text}?,
+empty}
+
+
+img = element img {
+attribute align {"middle"}?,
+attribute class {text}?,
+attribute style {text}?,
+attribute src {text},
+attribute alt {text},
+empty}
+
+br = element br {
+attribute class {text}?,
+empty}
+
+h1 = element h1 {
+attribute class {text}?,
+attribute id {text}?,
+(text|br)*
+}
+
+h2 = element h2 {
+attribute class {text}?,
+attribute id {text}?,
+inlinecontent
+}
+
+h3 = element h3 {
+attribute class {text}?,
+attribute id {text}?,
+inlinecontent
+}
+
+
+h4 = element h4 {
+attribute class {text}?,
+attribute id {text}?,
+inlinecontent
+}
+
+
+h5 = element h5 {
+attribute class {text}?,
+attribute id {text}?,
+inlinecontent
+}
+
+h6 = element h6 {
+attribute class {text}?,
+attribute id {text}?,
+inlinecontent
+}
+
+span = element span {
+attribute class {text}?,
+attribute style {text}?, #FIX
+attribute id {text}?,
+attribute onclick {text}?,
+attribute data-diff {text}?,
+attribute title {text}?,
+inlinecontent}
+
+span = element dfn {
+attribute id {text}?,
+inlinecontent}
+
+input= element input {
+attribute class {text}?,
+attribute style {text}?,
+attribute id {text}?,
+attribute type {"button"|"radio"|"checkbox"}?,
+attribute value {text}?,
+attribute onclick {text}?,
+attribute checked {"checked"}?,
+attribute autocomplete {"off"}?,
+attribute name {text}?,
+empty}
+
+label= element label {
+attribute class {text}?,
+attribute id {text}?,
+(inlinecontent|input)*}
+
+
+a  = element a {
+attribute class {text}?,
+attribute rel {"disclosure"}?,
+attribute href {text},
+attribute title {text}?,
+attribute onclick {text}?,
+inlinecontentnoa
+}
+
+
+mml-elem=(msup|msub|munder|mover|mfrac|mroot|mtable|munderover|msubsup|mrow|mpadded|menclose|
+      mphantom|mmultiscripts|msqrt|mstyle|mi|mo|mn|ms|mtext|mspace)
+
+# should lose displaystyle
+math = element math {
+attribute display {"block"}?,
+attribute displaystyle {"true"}?,
+mml-elem+}
+
+# lose other
+mrow = element mrow {
+attribute href {text}?,
+attribute other {text}?,
+mml-elem*}
+
+mphantom = element mphantom {
+mml-elem*}
+
+mmultiscripts = element mmultiscripts {
+mml-elem,
+(mml-elem|none),(mml-elem|none),
+mprescripts,
+(mml-elem|none),(mml-elem|none)}
+
+none = element none {empty}
+mprescripts = element mprescripts {empty}
+
+mpadded = element mpadded {
+attribute width {text}?,
+attribute height {text}?,
+attribute depth {text}?,
+attribute voffset {text}?,
+mml-elem*}
+
+menclose= element menclose {
+attribute notation {"bottom"},
+mml-elem*}
+
+msqrt = element msqrt {
+mml-elem*}
+
+mstyle = element mstyle {
+attribute displaystyle {"true"}?,
+attribute mathcolor {text}?,
+attribute scriptlevel {text}?,
+mml-elem*}
+
+# lose frame and other
+mtable = element mtable {
+attribute columnalign {text}?,
+attribute rowspacing {text}?,
+attribute rowlines {text}?,
+attribute columnlines {text}?,
+attribute frame {"solid"}?,
+attribute other {"stack"}?,
+mtr+}
+
+# not sure we should allow empty rows
+mtr =  element mtr {
+attribute columnalign {text}?,
+mtd*}
+
+mtd = element mtd {
+attribute columnalign {text}?,
+mml-elem*}
+
+# should lose separators (currently not allowing mfenced)
+mfenced = element mfenced {
+attribute open {text}?,
+attribute close {text}?,
+attribute separators {""|","}?,
+attribute stretchy {"false"}?,				     
+mml-elem*}
+
+
+msub = element msub {mml-elem,mml-elem}
+msup = element msup {mml-elem,mml-elem}
+mroot = element mroot {mml-elem,mml-elem}
+
+# lose other
+mfrac = element mfrac {
+attribute other {"display"|"small"}?,
+mml-elem,mml-elem}
+
+munder = element munder {mml-elem,mml-elem}
+mover = element mover {mml-elem,mml-elem}
+
+mspace = element mspace {
+(attribute width {text}|attribute linebreak {"newline"})
+}
+
+# lose other
+munderover = element munderover {
+attribute other {"display"}?,
+mml-elem,mml-elem,mml-elem}
+msubsup = element msubsup {mml-elem,mml-elem,mml-elem}
+
+mi = element mi {
+attribute mathvariant {text}?,
+attribute mathcolor {text}?,
+attribute class {text}?,
+attribute href {text}?,
+text}
+
+
+mo = element mo {
+attribute mathvariant {text}?,
+attribute lspace {text}?,
+attribute rspace {text}?,
+attribute minsize {text}?,
+text}
+
+mn = element mn {
+attribute mathvariant {text}?,
+attribute mathcolor {text}?,
+attribute href {text}?,
+text}
+
+mtext = element mtext {
+attribute mathvariant {text}?,
+text}
+
+ms = element ms {
+text}
+
+
+# svg currently allows anything below svg
+
+svg = element svg {
+anysvg*
+}
+
+anysvg = (attribute * {text}*| element (title|path|g|desc|rect|defs|circle|use|text|tspan|polygon|filter|pattern|feComposite|feFlood|symbol|namedview|metadata|flowRoot|flowRegion|flowPara|polyline|line) { anysvg*}|text)

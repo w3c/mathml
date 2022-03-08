@@ -3,8 +3,8 @@
  <head>
   <meta charset='utf-8'/>
   <title>Mathematical Markup Language (MathML) Version 4.0</title>
-  <script 
-      src='https://www.w3.org/Tools/respec/respec-w3c' 
+  <script
+      src='https://www.w3.org/Tools/respec/respec-w3c'
       class='remove'>
   </script>
   <script class='remove'>
@@ -35,7 +35,7 @@
 	  }
 	  ],
    github: "https://github.com/w3c/mathml",
-   localBiblio: {     
+   localBiblio: {
 	      "MathML-Core": {
 		  title: "MathML Core",
 		                    authors: [
@@ -50,7 +50,9 @@
    "AAP-math": {title: "AAP-math"},
    "Poppelier1992": {title: "Poppelier1992"},
    "ISO-12083": {title: "ISO-12083"},
+   "MathML1": {title: "MathML1"},
    "OpenMath2004": {title: "OpenMath2004"},
+   "RELAX-NG": {title: "RELAX-NG"},
    "XMLSchemas": {title: "XMLSchemas"},
    "Namespaces": {title: "Namespaces"},
    "HTML4": {title: "HTML4"},
@@ -77,7 +79,28 @@
 	s2=s2.replaceAll(/include *"([^"]*)"/g,'<span style="color:green">include</span> "<span style="color:red">$1</span>"');
 	return  s2;
     }
-    </script>
+  </script>
+  <style>
+   table.syntax {
+font-size: 80%;
+background-color: var(--example-bg);
+padding:.2em;
+}
+table.syntax td {
+padding:.2em;
+border: solid thin;
+}
+table.syntax th {
+text-align: left;
+padding:.2em;
+border: solid thin;
+}
+div.strict-mathml-example{
+border: solid thin black;
+padding: 0em .5em;
+margin-top:.5em;
+}
+  </style>
  </head>
  <body>
   <section id='abstract'>
@@ -108,7 +131,7 @@
     might be implemented and should interact with browsers. Finally,
     this document addresses the issue of special characters used for
     mathematics, their handling in MathML, their presence in Unicode,
-    and their relation to fonts. 
+    and their relation to fonts.
    </p>
    <p>
     While MathML is human-readable, authors typically will
@@ -167,9 +190,9 @@
     and is part of the
     W3C <a href="https://www.w3.org/Math/Activity">Math Activity</a>.
     The goals of the W3C Math Working Group are discussed in the <a href="https://www.w3.org/Math/Documents/Charter2006.html"> W3C Math WG
-    Charter</a> (revised July 2006).  The authors of this document are 
-    the W3C Math Working Group members.  A list of <a href="appendixe.html">participants in the W3C Math Working Group</a>
-    is available.   </p>
+    Charter</a> (revised July 2006).  The authors of this document are
+    the W3C Math Working Group members.  A list of participants in the W3C Math Working Group
+    is available, [[[#contrib]]].   </p>
    <p>This document has been reviewed by W3C Members, by software
    developers, and by other W3C groups and interested parties, and is
    endorsed by the Director as a W3C Recommendation. It is a stable
@@ -182,22 +205,21 @@
     All reported errata to
     the first edition have been addressed in this addition, and a full change log appears
     in
-    <a href="appendixf.html">Appendix&#160;F Changes</a>. The diff-marked version linked in the frontmatter highlights all changes between
-    the first and second editions. In addition to incorporating errata, the main change
-    in this addition is to recognise that MathML parsing is also specified in [[HTML]] and where necessary to note where HTML and XML usage differ.   </p>
+    [[[#changes]]]. The diff-marked version linked in the frontmatter highlights all changes between
+    the first and second editions. </p>
    <p>
-    The Working Group maintains a comprehensive 
-    <a href="https://www.w3.org/Math/testsuite/">Test Suite</a>.  This 
+    The Working Group maintains a comprehensive
+    <a href="https://www.w3.org/Math/testsuite/">Test Suite</a>.  This
     is publicly available and developers are encouraged to submit their results for display.
-    The <a href="https://www.w3.org/Math/testsuite/results/tests.html">Test Results</a> 
-    are public.  They show at least two interoperable implementations for each 
-    essential test. Further details may be found in the 
+    The <a href="https://www.w3.org/Math/testsuite/results/tests.html">Test Results</a>
+    are public.  They show at least two interoperable implementations for each
+    essential test. Further details may be found in the
     <a href="https://www.w3.org/Math/Documents/mml3-implementation-report.html">Implementation Report</a>.
    </p>
    <p>
     The MathML 2.0 (Second Edition) specification has been a W3C
     Recommendation since 2001.  After its
-    recommendation, a W3C Math Interest Group collected 
+    recommendation, a W3C Math Interest Group collected
     reports of  experience
     with the deployment of MathML and identified issues with MathML that
     might be ameliorated.  The rechartering of a Math Working Group
@@ -207,14 +229,14 @@
     elementary math notations, and a new strict content MathML vocabulary
     with well-defined semantics.  The MathML 3 Specification has also been
     restructured.    </p>
-   <p> This document was produced by a group operating under 
-   the <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</a>. W3C maintains a 
-   <a href="https://www.w3.org/2004/01/pp-impl/35549/status" rel="disclosure">public list of any patent disclosures</a> made in connection with 
-   the deliverables of the group; that page also includes instructions 
-   for disclosing a patent. An individual who has actual knowledge of 
-   a patent which the individual believes contains 
-   <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a> 
-   must disclose the information in accordance with 
+   <p> This document was produced by a group operating under
+   the <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</a>. W3C maintains a
+   <a href="https://www.w3.org/2004/01/pp-impl/35549/status" rel="disclosure">public list of any patent disclosures</a> made in connection with
+   the deliverables of the group; that page also includes instructions
+   for disclosing a patent. An individual who has actual knowledge of
+   a patent which the individual believes contains
+   <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a>
+   must disclose the information in accordance with
    <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the W3C Patent Policy</a>.
    </p>
    <p>Public discussion of MathML and issues of support through the W3C
@@ -225,117 +247,16 @@
    Alternatively, report  an issue at this specification's
    <a href="https://github.com/w3c/mathml">GitHub repository</a>.   </p>
    <p>
-    The basic chapter structure of this document is based on the earlier
-    MathML 2.0 Recommendation [[MathML2]].  That MathML 2.0
-    itself was a revision of the earlier W3C Recommendation MathML 1.01
-    [[MathML-19980407]]; MathML 3.0 is a revision of the W3C
-    Recommendation MathML 2.0.  It differs from it in that all previous
-    chapters have been updated, some new
-    elements and attributes added and some
-    deprecated.  
-    Much has been moved to separate documents containing explanatory
-    material, material on characters and entities and on the MathML DOM.
-    The discussion of character entities has led to the document
-    <em>XML Entity Definitions for Characters</em> <a href="appendixg.html#Entities">[Entities]</a>,
-    which is now a W3C Recommendation.  The concern with 
-    use of CSS with MathML has led to the document <em>A MathML for CSS Profile</em> 
-    <a href="appendixh.html#MathMLforCSS">[MathMLforCSS]</a>, which was  a W3C Recommendation 
-    accompanying MathML 3.0.
+     The basic chapter structure of this document is based on the earlier releases,
+     [[MathML3]], [[MathML2]] and [[MathML]].
    </p>
-   <p>
-    The biggest differences from MathML 2.0 (Second Edition) are in Chapters 4 and 5,
-    although there have been
-    smaller improvements throughout the specification.  A more detailed
-   description of changes from the previous Recommendation follows.   </p>
-   <ul>
-    <li>
      <p>
-      Much of the non-normative explication
-      that formerly was found in Chapters 1 and 2, and many examples from
-      elsewhere in the previous MathML specifications, were removed
-      from the MathML3 specification and planned to be incorporated into a MathML Primer
-      to be prepared as a separate document.  It is expected this will help
-      the use of this formal MathML3 specification as a reference document
-      in implementations, and offer the new user better help in
-      understanding MathML's deployment. The remaining content of Chapters 1
-      and 2 has been edited to reflect the changes elsewhere in the
-      document, and in the rapidly evolving Web environment. Some of the
-      text in them went back to early days of the Web and XML, and its
-      explanations are now commonplace.     </p>
-    </li>
-    <li>
-     <p>
-      Chapter 3, on presentation-oriented markup, adds new material on linebreaking,
-      and on markup for elementary math notations used in many
-      countries (<code>mstack</code>, <code>mlongdiv</code> and other 
-      associated elements). Other changes include revisions to 
-      the <code>mglyph</code>, <code>mpadded</code> and <code>maction</code> 
-      elements and significant unification and cleanup of attribute 
-      values.
-      Earlier work, as recorded in the W3C Note <a href="https://www.w3.org/TR/2006/NOTE-arabic-math-20060131/">Arabic
-      mathematical notation</a>, has allowed clarification of the
-      relationship with bidirectional text and examples
-      with RTL text have been added.     </p>
-    </li>
-    <li>
-     <p>
-      Chapter 4, on content-oriented markup, contains major changes and additions.
-      The  meaning of the actual content remains as before in principle, 
-      but a lot of work has been done on expressing it better. A few new elements have been
-      added.
+      A fuller discussion of the document's evolution can be found in
+      [[[#changes]]].
      </p>
-    </li>
-    <li>
-     <p>
-      Chapter 5 has been refined as its purpose has been further
-      clarified to deal with the mixing of markup languages.  This chapter deals,
-      in particular, with interrelations of parts of the
-      MathML specification, especially with presentation and content
-      markup.
-     </p>
-    </li>
-    <li>
-     <p>
-      Chapter 6 is a new addition which deals with the issues of interaction
-      of MathML with a host environment.  This chapter deals with interrelations 
-      of  the MathML specification with XML and HTML, but in the context of deployment
-      on the Web.  In particular there is a discussion of the interaction of CSS
-      with MathML.
-     </p>
-    </li>
-    <li>
-     <p>
-      Chapter 7 replaces the previous Chapter 6, and has been rewritten 
-      and reorganized to reflect the new
-      situation in regard to Unicode, and the changed
-      W3C context with regard to named character entities.  The
-      new W3C specification <em>XML Entity Definitions for 
-      Characters</em>, which  incorporates those used for mathematics has
-      become a  a W3C Recommendation, <a href="appendixg.html#Entities">[Entities]</a>.
-     </p>
-    </li>
-    <li>
-     <p> 
-      The Appendices, of which there are eight shown, have been 
-      reworked.  
-      Appendix A now contains the new RelaxNG schema
-      for MathML3 as well as discussion of MathML3 DTD issues.
-      Appendix B addresses media types associated with MathML and
-      implicitly constitutes a request for the registration of three new ones,
-      as is now standard for work from the W3C.
-      Appendix C contains a new simplified and reconsidered Operator Dictionary.
-      Appendices D, E, F, G and H contain similar non-normative material to
-      that in the previous specification, now appropriately updated.
-     </p>
-    </li>
-    <li>
-     <p> 
-      A fuller discussion of the document's evolution can be found in 
-      <a href="appendixf.html">Appendix&#160;F Changes</a>. 
-     </p>
-    </li>
-   </ul>
+       <section id="issue-summary"></section>
   </section>
+
   <section data-include="src/introduction.html" data-include-replace="true"></section>
   <section data-include="src/fundamentals.html" data-include-replace="true"></section>
   <section data-include="src/presentation-markup.html" data-include-replace="true"></section>
@@ -349,70 +270,85 @@
    <h2 id="parsing">Parsing MathML</h2>
    <div class="issue" data-number="268"></div>
    <div class="issue" data-number="122"></div>
-   
+   <div class="issue" data-number="178"></div>
+
    <section data-include="src/parsing-1.html" data-include-replace="true"></section>
-  
+
    <section>
-    <h3 id="parsing_usingrnc">Using the RelaxNG Schema for MathML4</h3>
-    
+    <h3 id="parsing_usingrnc">Using the RelaxNG Schema for MathML</h3>
+
     <p>MathML documents should be validated using the RelaxNG Schema for MathML, either in
     the XML encoding (<a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rng">http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rng</a>)
     or in compact notation (<a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc</a>)
     which is also shown below.</p>
-    
+
     <p>In contrast to DTDs there is no in-document method to associate a RelaxNG schema with
     a document.</p>
-    
-  
-   
+
+
+
 
     <section>
-     <h4 id="parsing_rnc_pres">The Grammar for MathML Core</h4>
-     
+     <h4 id="parsing_rnc_core">MathML Core</h4>
+
      <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-core.rnc" ></pre>
 
     </section>
-    
+
     <section>
-     <h4 id="parsing_rnc_pres">The Grammar for Presentation MathML</h4>
-     
+     <h4 id="parsing_rnc_pres">Presentation MathML</h4>
+
      <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-presentation.rnc" ></pre>
 
     </section>
-    
+
     <section>
-     <h4 id="parsing_rnc_strict">The Grammar for Strict Content MathML4</h4>
-     
-     <p>The grammar for Strict Content MathML4 can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc</a>.</p>
-     
+     <h4 id="parsing_rnc_strict">Strict Content MathML</h4>
+
+     <p>The grammar for Strict Content MathML&#160;4 can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc</a>.</p>
+
      <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-strict-content.rnc" ></pre>
     </section>
-    
-    
+
+
     <section>
-     <h4 id="parsing_rnc_content">The Grammar for Content MathML</h4>
-     
-     <p>The grammar for Content MathML4 builds on the grammar for the Strict Content MathML
+     <h4 id="parsing_rnc_content">Content MathML</h4>
+
+     <p>The grammar for Content MathML&#160;4 builds on the grammar for the Strict Content MathML
      subset, and can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4-content.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4-content.rnc</a>.</p>
-     
+
      <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-content.rnc" ></pre>
-     
+
     </section>
 
     <section>
-     <h4 id="parsing_rnc_full">The Grammar for Full MathML</h4>
-     
-     <p>The grammar for full MathML4 is simply a merger of the above grammars,
+     <h4 id="parsing_rnc_full">Full MathML</h4>
+
+     <p>The grammar for full MathML&#160;4 is simply a merger of the above grammars,
      and can be found at <a href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc</a>.</p>
-     
+
      <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4.rnc" ></pre>
-     
+
+    </section>
+
+
+    <section>
+     <h4 id="parsing_rnc_legacy">Legacy MathML</h4>
+
+     <p>Some elements and attributes that were deprecated in MathML&#160;3
+     are removed from MathML&#160;4.  This schema extends the full MathML&#160;4
+     schema, adding these constructs back, allowing validation of existing
+     MathML documents. It can be found at <a
+     href="http://www.w3.org/Math/RelaxNG/mathml4/mathml4-legacy.rnc">http://www.w3.org/Math/RelaxNG/mathml4/mathml4-legacy.rnc</a>.</p>
+
+     <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-legacy.rnc" ></pre>
+
     </section>
 
 
    </section>
 
-   
+
    <section data-include="src/parsing-2.html" data-include-replace="true"></section>
   </section>
 
