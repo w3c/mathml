@@ -844,8 +844,7 @@
      encoding of both integers.  The use of <code class="attribute">base</code> with
      <code class="attributevalue">rational</code> numbers is deprecated.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm-strict-cn-sep">Rewrite: cn sep</h6>
+     <div class="strict-mathml-example" id="contm-strict-cn-sep"><dfn>Rewrite: cn sep</dfn>
 
       <p>If there are <code class="element">sep</code> children of the <code class="element">cn</code>,
       then intervening text may be rewritten as <code class="element">cn</code>
@@ -890,30 +889,30 @@
         <tr>
 
          <td>e-notation</td>
-         <td><a class="omsymbol" href="bigfloat1#bigfloat">bigfloat</a></td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/bigfloat1#bigfloat">bigfloat</a></td>
         </tr>
 
         <tr>
 
          <td>rational</td>
-         <td><a class="omsymbol" href="nums1#rational">rational</a></td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/nums1#rational">rational</a></td>
         </tr>
 
         <tr>
 
          <td>complex-cartesian</td>
-         <td><a class="omsymbol" href="complex1#complex_cartesian">complex_cartesian</a></td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/complex1#complex_cartesian">complex_cartesian</a></td>
         </tr>
 
         <tr>
 
          <td>complex-polar</td>
-         <td><a class="omsymbol" href="complex1#complex_polar">complex_polar</a></td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/complex1#complex_polar">complex_polar</a></td>
         </tr>
        </tbody>
       </table>
 
-      <p>Note: In the case of <a class="omsymbol" href="bigfloat1#bigfloat">bigfloat</a> the symbol
+      <p>Note: In the case of <a class="omsymbol" href="https://openmath.org/cd/bigfloat1#bigfloat">bigfloat</a> the symbol
       takes three arguments, <code>&lt;cn type="integer"&gt;10&lt;/cn&gt;</code> should be inserted as the second argument, denoting the base of the exponent used.</p>
 
       <p>If the <code class="attribute">type</code> attribute has a different value,
@@ -925,8 +924,7 @@
       MathML, and each of the arguments needs to be recursively processed.</p>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_cn-base">Rewrite: cn based_integer</h6>
+     <div class="strict-mathml-example" id="contm_cn-base"><dfn>Rewrite: cn based_integer</dfn>
 
       <p>A <code class="element">cn</code> element with a base attribute other than 10 is rewritten as follows. (A base attribute
       with value 10 is simply removed) .</p>
@@ -950,13 +948,12 @@
       or if there is no type attribute, but the content of the
       element just consists of the characters [a-zA-Z0-9] and white space
       then the symbol used as the head in the resulting application should
-      be <a class="omsymbol" href="nums1#based_integer">based_integer</a> as shown. Otherwise it
-      should be should be <a class="omsymbol" href="nums1#based_float">based_float</a>.</p>
+      be <a class="omsymbol" href="https://openmath.org/cd/nums1#based_integer">based_integer</a> as shown. Otherwise it
+      should be should be <a class="omsymbol" href="https://openmath.org/cd/nums1#based_float">based_float</a>.</p>
 
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_cn_strict_const">Rewrite: cn constant</h6>
+     <div class="strict-mathml-example" id="contm_cn_strict_const"><dfn>Rewrite: cn constant</dfn>
 
       <p>In Strict Content MathML, constants should be represented using
       <code class="element">csymbol</code> elements.  A number of important constants are defined in the
@@ -988,38 +985,37 @@
         <tr>
          <td>U+03C0 (<code>&amp;pi;</code>)</td>
          <td>The usual <i class="var">&#x3c0;</i> of trigonometry: approximately 3.141592653...</td>
-         <td><a class="omsymbol" href="nums1#pi">pi</a></td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/nums1#pi">pi</a></td>
         </tr>
 
         <tr>
          <td>U+2147 (<code>&amp;ExponentialE;</code> or <code>&amp;ee;</code>)</td>
          <td>The base for natural logarithms: approximately 2.718281828...</td>
-         <td><a class="omsymbol" href="nums1#e">e</a></td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/nums1#e">e</a></td>
         </tr>
 
         <tr>
          <td>U+2148 (<code>&amp;ImaginaryI;</code> or <code>&amp;ii;</code>)</td>
          <td>Square root of -1</td>
-         <td><a class="omsymbol" href="nums1#i">i</a></td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/nums1#i">i</a></td>
         </tr>
 
         <tr>
          <td>U+03B3 (<code>&amp;gamma;</code>)</td>
          <td>Euler's constant: approximately 0.5772156649...</td>
-         <td><a class="omsymbol" href="nums1#gamma">gamma</a></td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/nums1#gamma">gamma</a></td>
         </tr>
 
         <tr>
          <td>U+221E (<code>&amp;infin;</code> or <code>&amp;infty;</code>)</td>
          <td>Infinity. Proper interpretation varies with context</td>
-         <td><a class="omsymbol" href="nums1#infinity">infinity</a></td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/nums1#infinity">infinity</a></td>
         </tr>
        </tbody>
       </table>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_cn_pres">Rewrite: cn presentation mathml</h6>
+     <div class="strict-mathml-example" id="contm_cn_pres"><dfn>Rewrite: cn presentation mathml</dfn>
 
       <p>If the <code class="element">cn</code> contains Presentation MathML markup, then it may
       be rewritten to Strict MathML using variants of the rules above where
@@ -1195,23 +1191,22 @@
      <code class="attributevalue">complex-cartesian</code>, <code class="attributevalue">constant</code>, <code class="attributevalue">function</code>,
      <code class="element">vector</code>, <code class="element">list</code>, <code class="element">set</code>, and <code class="element">matrix</code>. These values correspond
      to the symbols
-     <a class="omsymbol" href="mathmltypes#integer_type">integer_type</a>,
-     <a class="omsymbol" href="mathmltypes#rational_type">rational_type</a>,
-     <a class="omsymbol" href="mathmltypes#real_type">real_type</a>,
-     <a class="omsymbol" href="mathmltypes#complex_polar_type">complex_polar_type</a>,
-     <a class="omsymbol" href="mathmltypes#complex_cartesian_type">complex_cartesian_type</a>,
-     <a class="omsymbol" href="mathmltypes#constant_type">constant_type</a>,
-     <a class="omsymbol" href="mathmltypes#fn_type">fn_type</a>,
-     <a class="omsymbol" href="mathmltypes#vector_type">vector_type</a>,
-     <a class="omsymbol" href="mathmltypes#list_type">list_type</a>,
-     <a class="omsymbol" href="mathmltypes#set_type">set_type</a>, and
-     <a class="omsymbol" href="mathmltypes#matrix_type">matrix_type</a> in the
+     <a class="omsymbol" href="https://openmath.org/cd/mathmltypes#integer_type">integer_type</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/mathmltypes#rational_type">rational_type</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/mathmltypes#real_type">real_type</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/mathmltypes#complex_polar_type">complex_polar_type</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/mathmltypes#complex_cartesian_type">complex_cartesian_type</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/mathmltypes#constant_type">constant_type</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/mathmltypes#fn_type">fn_type</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/mathmltypes#vector_type">vector_type</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/mathmltypes#list_type">list_type</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/mathmltypes#set_type">set_type</a>, and
+     <a class="omsymbol" href="https://openmath.org/cd/mathmltypes#matrix_type">matrix_type</a> in the
      <a class="omcd" href="mathmltypes">mathmltypes</a> Content Dictionary: In this sense the following two expressions are considered equivalent:
 
      </p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_ci_mathmltypes"></h6>
+     <div class="strict-mathml-example" id="contm_ci_mathmltypes">
 
       <div class="example mathml">
        <pre>&lt;ci type="integer"&gt;n&lt;/ci&gt;</pre>
@@ -1230,7 +1225,7 @@
 
       <p>Note that <code class="attributevalue">complex</code> should be considered
       an alias for <code class="attributevalue">complex-cartesian</code> and rewritten to the
-      same <a class="omsymbol" href="mathmltypes#complex_cartesian_type">complex_cartesian_type</a>
+      same <a class="omsymbol" href="https://openmath.org/cd/mathmltypes#complex_cartesian_type">complex_cartesian_type</a>
       symbol. It is perhaps a more natural type name for use with
       <code class="element">ci</code> as the distinction <span>between</span> cartesian and polar form really
       <span>only</span> affects the interpretation of <span>literals</span> encoded with <code class="element">cn</code>.</p>
@@ -1253,8 +1248,7 @@
 
      <p><em>Mapping to Strict Content MathML</em></p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_ci_strict_ex">Rewrite: ci type annotation</h6>
+     <div class="strict-mathml-example" id="contm_ci_strict_ex"><dfn>Rewrite: ci type annotation</dfn>
 
       <p>In Strict Content, type attributes are represented via
       semantic attribution. An expression of the form
@@ -1282,8 +1276,7 @@
      general presentation construct (see <a href="#presm_summary"></a>), which is used for
      rendering (see <a href="#contm_rendering"></a>).</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_ci_pres">Rewrite: ci presentation mathml</h6>
+     <div class="strict-mathml-example" id="contm_ci_pres"><dfn>Rewrite: ci presentation mathml</dfn>
 
       <p>A <code class="element">ci</code> expression with non-text content of the form
 
@@ -1314,8 +1307,7 @@
       </p>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_ci_c2"></h6>
+     <div class="strict-mathml-example" id="contm_ci_c2">
 
       <p> The following example encodes an atomic
       symbol that displays visually as <i class="var">C</i><sup>2</sup> and that,
@@ -1517,7 +1509,7 @@
      general presentation construct (see <a href="#presm_summary"></a>), which is used for
      rendering (see <a href="#contm_rendering"></a>). In this case, when
      writing to Strict Content MathML, the csymbol should be treated as a
-     <code class="element">ci</code> element, and rewritten using <a href="#contm_ci_pres"></a>.</p>
+     <code class="element">ci</code> element, and rewritten using <a href="#contm_ci_pres">Rewrite: ci presentation mathml</a>.</p>
 
      <p>External definitions (in OpenMath CDs or elsewhere) may also be specified directly
      for
@@ -1567,8 +1559,7 @@
      <p>In non-Strict usage <code class="element">csymbol</code> allows the use of
      a <code class="attribute">type</code> attribute.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_csymbol_strict_ex">Rewrite: csymbol type annotation</h6>
+     <div class="strict-mathml-example" id="contm_csymbol_strict_ex"><dfn>Rewrite: csymbol type annotation</dfn>
 
       <p>In Strict Content, type attributes are represented via
       semantic attribution. An expression of the form
@@ -2826,8 +2817,7 @@
      arguments of these elements must always be specified
      explicitly.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-set"></h6>
+     <div class="strict-mathml-example" id="contm_strict-set">
 
       <p>Here is an example of container markup with explicitly specified arguments:
 
@@ -2843,8 +2833,7 @@
       </p>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-set-bvar"></h6>
+     <div class="strict-mathml-example" id="contm_strict-set-bvar">
 
       <p>Another example of container markup, where the list of arguments is
       given indirectly as an expression with a bound variable. The container markup
@@ -2885,7 +2874,7 @@
      <h5 id="contm_lambda_container">Container Markup for Binding Constructors</h5>
 
      <p>The <code class="element">lambda</code> element is a container element
-     corresponding to the <a class="omsymbol" href="fns1#lambda">lambda</a> symbol
+     corresponding to the <a class="omsymbol" href="https://openmath.org/cd/fns1#lambda">lambda</a> symbol
      in the <a class="omcd" href="fns1">fns1</a> Content Dictionary.  However, unlike the
      container elements of the preceding section, which purely
      construct mathematical objects from arguments, the <code class="element">lambda</code>
@@ -2899,8 +2888,7 @@
      correspond.  The constructor symbols have an OpenMath role of
      "application", while the lambda symbol has a role of "bind".</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-lambda"></h6>
+     <div class="strict-mathml-example" id="contm_strict-lambda">
 
       <p>This example shows the use of <code class="element">lambda</code> container element and the equivalent use of <code class="element">bind</code> in Strict Content MathML</p>
 
@@ -2954,8 +2942,7 @@
     all cases.  An example for this is the <code class="element">diff</code> element where
     the <code class="element">bvar</code> term is technically not bound at all.</p>
 
-    <div class="example strict-mathml-example">
-     <h6 id="contm_strict-apply-bvar"></h6>
+    <div class="strict-mathml-example" id="contm_strict-apply-bvar">
 
      <p>The following example illustrates the use of <code class="element">apply</code>
      with a binding operator.  In these cases, the corresponding Strict
@@ -2983,8 +2970,7 @@
      </p>
     </div>
 
-    <div class="example strict-mathml-example">
-     <h6 id="contm_strict-apply-bvar-2"></h6>
+    <div class="strict-mathml-example" id="contm_strict-apply-bvar-2">
 
      <p>In this example, the sum operator is not itself a binding
      operator, but bound variables with qualifiers are implicit in the
@@ -3234,8 +3220,7 @@
      expressions are then rewritten as Strict Content markup.
      </p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_limits-strict">Rewrite: interval qualifier</h6>
+     <div class="strict-mathml-example" id="contm_limits-strict"><dfn>Rewrite: interval qualifier</dfn>
 
       <div class="example mathml">
        <pre>
@@ -3265,12 +3250,12 @@
 
       <p>The symbol used in this translation depends on the head of the
       application, denoted by <code class="meta-code">&lt;ci&gt;H&lt;/ci&gt;</code>
-      here. By default <a class="omsymbol" href="interval1#interval">interval</a> should be
+      here. By default <a class="omsymbol" href="https://openmath.org/cd/interval1#interval">interval</a> should be
       used, unless the semantics of the head term can be determined and
       indicate a more specific interval symbols.  In particular, several
       predefined Content MathML element should be used with more specific
-      interval symbols.  If the head is <code class="element">int</code> then <a class="omsymbol" href="interval1#oriented_interval">oriented_interval</a> is used.  When the head term
-      is <code class="element">sum</code> or <code class="element">product</code>, <a class="omsymbol" href="interval1#integer_interval">integer_interval</a> should be used.</p>
+      interval symbols.  If the head is <code class="element">int</code> then <a class="omsymbol" href="https://openmath.org/cd/interval1#oriented_interval">oriented_interval</a> is used.  When the head term
+      is <code class="element">sum</code> or <code class="element">product</code>, <a class="omsymbol" href="https://openmath.org/cd/interval1#integer_interval">integer_interval</a> should be used.</p>
 
       <p>The above technique for replacing <code class="element">lowlimit</code> and <code class="element">uplimit</code> qualifiers
       with a <code class="element">domainofapplication</code> element is also used for replacing the
@@ -3285,8 +3270,7 @@
      such as
      <code class="element">and</code> in the condition.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_condition-strict">Rewrite: condition</h6>
+     <div class="strict-mathml-example" id="contm_condition-strict"><dfn>Rewrite: condition</dfn>
 
       <p>To rewrite an expression using the <code class="element">condition</code>
       qualifier as one using <code class="element">domainofapplication</code>,
@@ -3333,14 +3317,13 @@
      been obtained, the final mapping to Strict markup is accomplished
      using the following rules:</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-doa">Rewrite: restriction</h6>
+     <div class="strict-mathml-example" id="contm_strict-doa"><dfn>Rewrite: restriction</dfn>
 
       <p>An application of a function that is qualified by the
       <code class="element">domainofapplication</code> qualifier (expressed by an <code class="element">apply</code> element without
       bound variables) is converted to an application of a function term constructed with
       the
-      <a class="omsymbol" href="fns1#restriction">restriction</a> symbol.</p>
+      <a class="omsymbol" href="https://openmath.org/cd/fns1#restriction">restriction</a> symbol.</p>
 
       <div class="example mathml">
        <pre>
@@ -3376,8 +3359,7 @@
      and uses the lambda symbol to encode the variable bindings.
      Certain classes of operator have alternative rules, as described below.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_dombind-strict">Rewrite: apply bvar domainofapplication</h6>
+     <div class="strict-mathml-example" id="contm_dombind-strict"><dfn>Rewrite: apply bvar domainofapplication</dfn>
 
       <p>A content MathML expression with bound variables and
       <code class="element">domainofapplication</code>
@@ -3519,8 +3501,7 @@
     syntax tables in <a href="#contm_opel"></a>.  This is summarized in
     the following rule.</p>
 
-    <div class="example strict-mathml-example">
-     <h6 id="contm_strict-opel">Rewrite: element</h6>
+    <div class="strict-mathml-example" id="contm_strict-opel"><dfn>Rewrite: element</dfn>
 
      <p>  For example,</p>
 
@@ -3565,17 +3546,16 @@
      <section>
       <h6 id="contm_nary_rewrite">Rewriting to Strict Content MathML</h6>
 
-      <p>If the argument list is given explicitly, the <a class="intref" href="#contm_strict-opel">Rewrite: element</a> rule applies.</p>
+      <p>If the argument list is given explicitly, the <a>Rewrite: element</a> rule applies.</p>
 
       <p>Any use of qualifier elements is expressed in Strict Content
       MathML, via explicitly applying the function to a list of arguments
-      using the <a class="omsymbol" href="fns2#apply_to_list">apply_to_list</a> symbol as shown
+      using the <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a> symbol as shown
       in the following rule. The rule only considers the
       <code class="element">domainofapplication</code> qualifier as other qualifiers may be
       rewritten to <code class="element">domainofapplication</code> as described earlier.</p>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_p2s.lifted">Rewrite: n-ary domainofapplication</h6>
+      <div class="strict-mathml-example" id="contm_p2s.lifted"><dfn>Rewrite: n-ary domainofapplication</dfn>
 
        <p>An expression of the following form,
        where <code class="meta-code">&lt;union/&gt;</code> represents any
@@ -3630,8 +3610,8 @@
 
      <p>The use of <code class="element">set</code> and <code class="element">list</code> follows the same format
      as other n-ary constructors, however when rewriting to Strict
-     Content MathML a variant of the above rule is used. This is because the <a class="omsymbol" href="set1#map">map</a>
-     symbol implicitly constructs the required set or list, and <a class="omsymbol" href="fns2#apply_to_list">apply_to_list</a> is
+     Content MathML a variant of the above rule is used. This is because the <a class="omsymbol" href="https://openmath.org/cd/set1#map">map</a>
+     symbol implicitly constructs the required set or list, and <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a> is
      not needed in this case.</p>
 
      <section>
@@ -3644,12 +3624,11 @@
      <section>
       <h6 id="contm_narysetlist_rewrite">Rewriting to Strict Content MathML</h6>
 
-      <p>If the argument list is given explicitly, the <a class="intref" href="#contm_strict-opel">Rewrite: element</a> rule applies.</p>
+      <p>If the argument list is given explicitly, the <a>Rewrite: element</a> rule applies.</p>
 
       <p>When qualifiers are used to specify the list of arguments, the following rule is used.</p>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_rewrite_setliste">Rewrite: n-ary setlist domainofapplication</h6>
+      <div class="strict-mathml-example" id="contm_rewrite_setliste"><dfn>Rewrite: n-ary setlist domainofapplication</dfn>
 
        <p>An expression of the following form,
        where <code class="meta-code">&lt;set/&gt;</code> is either of the elements <code class="element">set</code> or <code class="element">list</code> and
@@ -3691,10 +3670,10 @@
       </div>
 
       <p>In the  case of <code class="element">set</code>, the choice of Content
-      Dictionary and symbol depends on the value of <span>the <code class="attribute">type</code> attribute of the arguments. By default the   <a class="omsymbol" href="set1#set">set</a> symbol is used, but if one of the arguments has
-      <code class="attribute">type</code> attribute with value <code class="attributevalue">multiset</code>, the <a class="omsymbol" href="multiset1#multiset">multiset</a> symbol is used.
+      Dictionary and symbol depends on the value of <span>the <code class="attribute">type</code> attribute of the arguments. By default the   <a class="omsymbol" href="https://openmath.org/cd/set1#set">set</a> symbol is used, but if one of the arguments has
+      <code class="attribute">type</code> attribute with value <code class="attributevalue">multiset</code>, the <a class="omsymbol" href="https://openmath.org/cd/multiset1#multiset">multiset</a> symbol is used.
       If there is a <code class="attribute">type</code> attribute with value other than <code class="attributevalue">set</code> or <code class="attributevalue">multiset</code>
-      the <a class="omsymbol" href="set1#set">set</a> symbol should be used, and the arguments should be annotated with their type
+      the <a class="omsymbol" href="https://openmath.org/cd/set1#set">set</a> symbol should be used, and the arguments should be annotated with their type
       by rewriting the <code class="attribute">type</code> attribute using the rule
       <a class="intref" href="#contm_strict-attributes">Rewrite: attributes</a></span>.</p>
 
@@ -3710,9 +3689,9 @@
      <i class="var">d</i>. However unlike the case of the arithmetic operators, the
      underlying symbols used in the Strict Content MathML are classed as
      binary, so it is not possible to use
-     <a class="omsymbol" href="fns2#apply_to_list">apply_to_list</a> as in the previous
+     <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a> as in the previous
      section, but instead a similar function
-     <a class="omsymbol" href="fns2#predicate_on_list">predicate_on_list</a> is used, the
+     <a class="omsymbol" href="https://openmath.org/cd/fns2#predicate_on_list">predicate_on_list</a> is used, the
      semantics of which is essentially to take the conjunction of applying
      the predicate to elements of the domain two at a time.</p>
 
@@ -3727,8 +3706,7 @@
      <section>
       <h6 id="contm_nary_reln_rewrite">Rewriting to Strict Content MathML</h6>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_rewrite_reln">Rewrite: n-ary relations</h6>
+      <div class="strict-mathml-example" id="contm_rewrite_reln"><dfn>Rewrite: n-ary relations</dfn>
 
        <p>An expression of the form
 
@@ -3756,8 +3734,7 @@
        </p>
       </div>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_rewrite_reln_bvar">Rewrite: n-ary relations bvar</h6>
+      <div class="strict-mathml-example" id="contm_rewrite_reln_bvar"><dfn>Rewrite: n-ary relations bvar</dfn>
 
        <p>An expression of the form
 
@@ -3828,8 +3805,7 @@
      <section>
       <h6 id="contm_nary_unary_rewrite">Rewriting to Strict Content MathML</h6>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_p2s.max">Rewrite: n-ary unary set</h6>
+      <div class="strict-mathml-example" id="contm_p2s.max"><dfn>Rewrite: n-ary unary set</dfn>
 
        <p>When an element,
        <code class="meta-code">&lt;max/&gt;</code>, of class nary-stats or nary-minmax
@@ -3864,12 +3840,11 @@
       <p>Like all MathML n-ary operators, The list of arguments may be
       specified implicitly using qualifier elements. This is expressed in
       Strict Content MathML using the following rule, which is similar to
-      the rule <a href="#contm_p2s.lifted"></a> but differs in that the
+      the rule <a>Rewrite: n-ary domainofapplication</a> but differs in that the
       symbol can be directly applied to the constructed set of arguments and
-      it is not necessary to use <a class="omsymbol" href="fns2#apply_to_list">apply_to_list</a>.</p>
+      it is not necessary to use <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a>.</p>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_unary_nary_doma">Rewrite: n-ary unary domainofapplication</h6>
+      <div class="strict-mathml-example" id="contm_unary_nary_doma"><dfn>Rewrite: n-ary unary domainofapplication</dfn>
 
        <p>An expression of the following form,
        where <code class="meta-code">&lt;max/&gt;</code> represents any
@@ -3913,11 +3888,10 @@
       </div>
 
       <p>If the element is applied to a single argument the
-      <a class="omsymbol" href="set1#set">set</a> symbol is not used and the symbol is
+      <a class="omsymbol" href="https://openmath.org/cd/set1#set">set</a> symbol is not used and the symbol is
       applied directly to the argument.</p>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_nary_unary_single">Rewrite: n-ary unary single</h6>
+      <div class="strict-mathml-example" id="contm_nary_unary_single"><dfn>Rewrite: n-ary unary single</dfn>
 
        <p>When an element,
        <code class="meta-code">&lt;max/&gt;</code>, of class nary-stats or nary-minmax
@@ -3944,9 +3918,9 @@
       whether an expression such as max(X) was a trivial application of max
       to a singleton, or whether it should be interpreted as meaning the
       maximum of values of the set X. Applications finding that the rule
-      <a href="#contm_nary_unary_single"></a> can not be applied as the
+      <a>Rewrite: n-ary unary single</a> can not be applied as the
       supplied argument is a scalar may wish to use the rule
-      <a href="#contm_p2s.max"></a> as an error recovery.
+      <a>Rewrite: n-ary unary set</a> as an error recovery.
       As a further complication, in the case of the statistical functions
       the Content Dictionary to use in this case depends on the desired
       interpretation of the argument as a set of explicit data or a random
@@ -3960,7 +3934,7 @@
      binary-set)</h5>
 
      <p>Binary operators take two arguments and simply map to OpenMath
-     symbols via <a class="intref" href="#contm_strict-opel">Rewrite: element</a>
+     symbols via <a>Rewrite: element</a>
      without the need of any special rewrite rules. The binary
      constructor <code class="element">interval</code> is similar but uses constructor syntax
      in which the arguments are children of the element, and the symbol
@@ -3984,7 +3958,7 @@
      unary-veccalc)</h5>
 
      <p>Unary operators take a single argument and map to OpenMath symbols
-     via <a class="intref" href="#contm_strict-opel">Rewrite: element</a> without the need of any special rewrite rules.</p>
+     via <a>Rewrite: element</a> without the need of any special rewrite rules.</p>
 
      <section>
       <h6 id="contm_unary_schema">Schema Patterns</h6>
@@ -4039,8 +4013,7 @@
       if used with <code class="element">apply</code> or qualifiers, the interpretation in
       Strict Content MathML is via the following rule.</p>
 
-      <div class="example strict-mathml-example">
-       <h6 id="contm_rewrite_quantifier">Rewrite: quantifier</h6>
+      <div class="strict-mathml-example" id="contm_rewrite_quantifier"><dfn>Rewrite: quantifier</dfn>
 
        <p> An expression of following form where
        <code class="meta-code">&lt;exists/&gt;</code> denotes an element of
@@ -4076,8 +4049,8 @@
        <code class="meta-code">&lt;csymbol cd="logic1"&gt;and&lt;/csymbol&gt;</code>
        are as specified in the syntax table of the element.
        (The additional symbol being
-       <a class="omsymbol" href="logic1#and">and</a> in the case of <code class="element">exists</code> and
-       <a class="omsymbol" href="logic1#implies">implies</a> in the case of <code class="element">forall</code>.) <span>When no
+       <a class="omsymbol" href="https://openmath.org/cd/logic1#and">and</a> in the case of <code class="element">exists</code> and
+       <a class="omsymbol" href="https://openmath.org/cd/logic1#implies">implies</a> in the case of <code class="element">forall</code>.) <span>When no
        <code class="element">domainofapplication</code> is present, no logical conjunction is necessary, and the translation
        is direct.</span>
        </p>
@@ -4119,8 +4092,7 @@
     namespaces.  Such attributes must be rewritten in alternative form in
     Strict Content Markup.</p>
 
-    <div class="example strict-mathml-example">
-     <h6 id="contm_strict-attributes">Rewrite: attributes</h6>
+    <div class="strict-mathml-example" id="contm_strict-attributes"><dfn>Rewrite: attributes</dfn>
 
      <p> For instance,
 
@@ -4175,7 +4147,7 @@
    However, in most cases, the generic rewrite rules for the
    appropriate operator class is sufficient.  In particular, unless
    otherwise indicated, elements are to be rewritten using the
-   default <a class="intref" href="#contm_strict-opel">Rewrite: element</a>
+   default <a>Rewrite: element</a>
    rule.  Note, however, that all elements in this section must be rewritten in
    some fashion, since they are not allowed in Strict Content markup.</p>
 
@@ -4215,10 +4187,10 @@
 	<th>OM Symbols</th>
 
 	<td>
-	 <a class="omsymbol" href="interval1#interval_cc">interval_cc</a>,
-	 <a class="omsymbol" href="interval1#interval_oc">interval_oc</a>,
-	 <a class="omsymbol" href="interval1#interval_co">interval_co</a>,
-	 <a class="omsymbol" href="interval1#interval_oo">interval_oo</a>
+	 <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_cc">interval_cc</a>,
+	 <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_oc">interval_oc</a>,
+	 <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_co">interval_co</a>,
+	 <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_oo">interval_oo</a>
 	</td>
        </tr>
       </tbody>
@@ -4305,14 +4277,14 @@
      of four symbols from the <a class="omcd" href="interval1">interval1</a> content
      dictionary. If <code class="attribute">closure</code> has the value <code class="attributevalue">open</code> then
      <code class="element">interval</code> corresponds to the
-     <a class="omsymbol" href="interval1#interval_oo">interval_oo</a>.
+     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_oo">interval_oo</a>.
      With the value <code class="attributevalue">closed</code>
      <code class="element">interval</code> corresponds to the symbol
-     <a class="omsymbol" href="interval1#interval_cc">interval_cc</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_cc">interval_cc</a>,
      with value <code class="attributevalue">open-closed</code> to
-     <a class="omsymbol" href="interval1#interval_oc">interval_oc</a>, and with
+     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_oc">interval_oc</a>, and with
      <code class="attributevalue">closed-open</code> to
-     <a class="omsymbol" href="interval1#interval_co">interval_co</a>.</p>
+     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_co">interval_co</a>.</p>
     </section>
 
     <section>
@@ -4339,7 +4311,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="fns1#inverse">inverse</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/fns1#inverse">inverse</a></td>
        </tr>
       </tbody>
      </table>
@@ -4435,7 +4407,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="fns1#lambda">lambda</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/fns1#lambda">lambda</a></td>
        </tr>
       </tbody>
      </table>
@@ -4549,8 +4521,7 @@
 
      <p><em>Mapping to Strict Markup</em></p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_rewrite_lambda">Rewrite: lambda</h6>
+     <div class="strict-mathml-example" id="contm_rewrite_lambda"><dfn>Rewrite: lambda</dfn>
 
       <p>If the <code class="element">lambda</code> element does not contain qualifiers, the
       lambda expression is directly translated into a <code class="element">bind</code>
@@ -4577,15 +4548,14 @@
       </div>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_rewrite_lambda_domofa">Rewrite: lambda domainofapplication</h6>
+     <div class="strict-mathml-example" id="contm_rewrite_lambda_domofa"><dfn>Rewrite: lambda domainofapplication</dfn>
 
       <p>If the <code class="element">lambda</code> element does contain qualifiers, the
       qualifier may be rewritten to <code class="element">domainofapplication</code>
       and then the lambda expression is translated to a
-      function term constructed with <a class="omsymbol" href="fns1#lambda">lambda</a>
+      function term constructed with <a class="omsymbol" href="https://openmath.org/cd/fns1#lambda">lambda</a>
       and restricted to the specified domain using
-      <a class="omsymbol" href="fns1#restriction">restriction</a>.</p>
+      <a class="omsymbol" href="https://openmath.org/cd/fns1#restriction">restriction</a>.</p>
 
       <div class="example mathml">
        <pre>
@@ -4643,7 +4613,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="fns1#left_compose">left_compose</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/fns1#left_compose">left_compose</a></td>
        </tr>
       </tbody>
      </table>
@@ -4755,7 +4725,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="fns1#identity">identity</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/fns1#identity">identity</a></td>
        </tr>
       </tbody>
      </table>
@@ -4829,7 +4799,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="fns1#domain">domain</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/fns1#domain">domain</a></td>
        </tr>
       </tbody>
      </table>
@@ -4892,7 +4862,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="fns1#range">range</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/fns1#range">range</a></td>
        </tr>
       </tbody>
      </table>
@@ -4957,7 +4927,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="fns1#image">image</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/fns1#image">image</a></td>
        </tr>
       </tbody>
      </table>
@@ -5030,7 +5000,7 @@
 
 	   <tr>
 	    <th>OM Symbols</th>
-	    <td><a class="omsymbol" href="piece1#piecewise">piecewise</a></td>
+	    <td><a class="omsymbol" href="https://openmath.org/cd/piece1#piecewise">piecewise</a></td>
 	   </tr>
 	  </tbody>
 	 </table>
@@ -5061,7 +5031,7 @@
 
 	   <tr>
 	    <th>OM Symbols</th>
-	    <td><a class="omsymbol" href="piece1#piece">piece</a></td>
+	    <td><a class="omsymbol" href="https://openmath.org/cd/piece1#piece">piece</a></td>
 	   </tr>
 	  </tbody>
 	 </table>
@@ -5092,7 +5062,7 @@
 
 	   <tr>
 	    <th>OM Symbols</th>
-	    <td><a class="omsymbol" href="piece1#otherwise">otherwise</a></td>
+	    <td><a class="omsymbol" href="https://openmath.org/cd/piece1#otherwise">otherwise</a></td>
 	   </tr>
 	  </tbody>
 	 </table>
@@ -5194,8 +5164,7 @@
      elements (respectively symbols) are used together, the mapping to
      Strict markup is straightforward:</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_piecewise-example"></h6>
+     <div class="strict-mathml-example" id="contm_piecewise-example">
 
       <p>Content MathML</p>
 
@@ -5268,7 +5237,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="integer1#quotient">quotient</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/integer1#quotient">quotient</a></td>
        </tr>
       </tbody>
      </table>
@@ -5330,7 +5299,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="integer1#factorial">factorial</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/integer1#factorial">factorial</a></td>
        </tr>
       </tbody>
      </table>
@@ -5386,7 +5355,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="arith1#divide">divide</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/arith1#divide">divide</a></td>
        </tr>
       </tbody>
      </table>
@@ -5450,7 +5419,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="minmax1#max">max</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/minmax1#max">max</a></td>
        </tr>
       </tbody>
      </table>
@@ -5561,7 +5530,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="minmax1#min">min</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/minmax1#min">min</a></td>
        </tr>
       </tbody>
      </table>
@@ -5658,7 +5627,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="arith1#unary_minus">unary_minus</a>, <a class="omsymbol" href="arith1#minus">minus</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/arith1#unary_minus">unary_minus</a>, <a class="omsymbol" href="https://openmath.org/cd/arith1#minus">minus</a></td>
        </tr>
       </tbody>
      </table>
@@ -5667,7 +5636,7 @@
      (e.g. to represent - <i class="var">x</i>), or as a <em>binary arithmetic operator</em>
      (e.g. to represent <i class="var">x</i>- <i class="var">y</i>).</p>
 
-     <p>If it is used with one argument, <code class="element">minus</code> corresponds to the <a class="omsymbol" href="arith1#unary_minus">unary_minus</a> symbol.</p>
+     <p>If it is used with one argument, <code class="element">minus</code> corresponds to the <a class="omsymbol" href="https://openmath.org/cd/arith1#unary_minus">unary_minus</a> symbol.</p>
 
      <div id="arith1.unary_minus.ex1" class="mathml-example">
       <p>Content MathML</p>
@@ -5692,7 +5661,7 @@
      </div>
 
      <p>If it is used with two arguments, <code class="element">minus</code> corresponds to the
-     <a class="omsymbol" href="arith1#minus">minus</a> symbol</p>
+     <a class="omsymbol" href="https://openmath.org/cd/arith1#minus">minus</a> symbol</p>
 
      <div id="arith1.minus.ex1" class="mathml-example">
 
@@ -5718,7 +5687,7 @@
      </div>
 
      <p>In both cases, the translation to Strict Content markup is direct,
-     as described in <a href="#contm_strict-opel"></a>. It is merely a
+     as described in <a>Rewrite: element</a>. It is merely a
      matter of choosing the symbol that reflects the actual usage.</p>
 
     </section>
@@ -5752,7 +5721,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="arith1#plus">plus</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/arith1#plus">plus</a></td>
        </tr>
       </tbody>
      </table>
@@ -5812,7 +5781,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="arith1#power">power</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/arith1#power">power</a></td>
        </tr>
       </tbody>
      </table>
@@ -5868,7 +5837,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="integer1#remainder">remainder</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/integer1#remainder">remainder</a></td>
        </tr>
       </tbody>
      </table>
@@ -5933,7 +5902,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="arith1#times">times</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/arith1#times">times</a></td>
        </tr>
       </tbody>
      </table>
@@ -5998,7 +5967,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="arith1#root">root</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/arith1#root">root</a></td>
        </tr>
       </tbody>
      </table>
@@ -6035,12 +6004,11 @@
 
      <p><em>Mapping to Strict Content Markup</em></p>
 
-     <p>In Strict Content markup, the <a class="omsymbol" href="arith1#root">root</a>
+     <p>In Strict Content markup, the <a class="omsymbol" href="https://openmath.org/cd/arith1#root">root</a>
      symbol is always used with two arguments, with the second indicating
      the degree of the root being extracted.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="arith1.root.ex2"></h6>
+     <div class="strict-mathml-example" id="arith1.root.ex2">
 
       <p>Content MathML</p>
 
@@ -6060,8 +6028,7 @@
       </div>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="arith1.root.ex3"></h6>
+     <div class="strict-mathml-example" id="arith1.root.ex3">
       <p>Content MathML</p>
 
       <div class="example mathml">
@@ -6115,7 +6082,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="arith1#gcd">gcd</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/arith1#gcd">gcd</a></td>
        </tr>
       </tbody>
      </table>
@@ -6156,9 +6123,9 @@
      different default renderings.</p>
 
      <p>When the <code class="element">gcd</code> element is applied to an explicit list of arguments, the
-     translation to Strict Content markup is direct, using the <a class="omsymbol" href="arith1#gcd">gcd</a> symbol, as described in <a href="#contm_strict-opel"></a>.  However, when
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/arith1#gcd">gcd</a> symbol, as described in <a>Rewrite: element</a>.  However, when
      qualifiers are used, the equivalent Strict markup is computed via
-     <a href="#contm_p2s.lifted"></a>.</p>
+     <a>Rewrite: n-ary domainofapplication</a>.</p>
     </section>
 
     <section>
@@ -6190,7 +6157,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="logic1#and">and</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/logic1#and">and</a></td>
        </tr>
       </tbody>
      </table>
@@ -6223,8 +6190,7 @@
       </blockquote>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_and_bvar_ex"></h6>
+     <div class="strict-mathml-example" id="contm_and_bvar_ex">
 
       <p>Content MathML</p>
 
@@ -6322,7 +6288,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="logic1#or">or</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/logic1#or">or</a></td>
        </tr>
       </tbody>
      </table>
@@ -6383,7 +6349,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="logic1#xor">xor</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/logic1#xor">xor</a></td>
        </tr>
       </tbody>
      </table>
@@ -6440,7 +6406,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="logic1#not">not</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/logic1#not">not</a></td>
        </tr>
       </tbody>
      </table>
@@ -6496,7 +6462,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="logic1#implies">implies</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/logic1#implies">implies</a></td>
        </tr>
       </tbody>
      </table>
@@ -6558,8 +6524,8 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="quant1#forall">forall</a>,
-	<a class="omsymbol" href="logic1#implies">implies</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/quant1#forall">forall</a>,
+	<a class="omsymbol" href="https://openmath.org/cd/logic1#implies">implies</a></td>
        </tr>
       </tbody>
      </table>
@@ -6612,12 +6578,11 @@
 
      <p><em>Mapping to Strict Markup</em></p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="quant1.forall.ex2"></h6>
+     <div class="strict-mathml-example" id="quant1.forall.ex2">
 
       <p>When the <code class="element">forall</code> element is used with a <code class="element">condition</code> qualifier the
       strict equivalent is constructed with the help of logical implication by the rule
-      <a href="#contm_rewrite_quantifier"></a>.  Thus
+      <a>Rewrite: quantifier</a>.  Thus
 
       <div class="example mathml">
        <pre>
@@ -6765,8 +6730,8 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="quant1#exists">exists</a>,
-	<a class="omsymbol" href="logic1#and">and</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/quant1#exists">exists</a>,
+	<a class="omsymbol" href="https://openmath.org/cd/logic1#and">and</a></td>
        </tr>
       </tbody>
      </table>
@@ -6908,7 +6873,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="arith1#abs">abs</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/arith1#abs">abs</a></td>
        </tr>
       </tbody>
      </table>
@@ -6965,7 +6930,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="complex1#conjugate">conjugate</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/complex1#conjugate">conjugate</a></td>
        </tr>
       </tbody>
      </table>
@@ -7035,7 +7000,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="complex1#argument">argument</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/complex1#argument">argument</a></td>
        </tr>
       </tbody>
      </table>
@@ -7109,7 +7074,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="complex1#real">real</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/complex1#real">real</a></td>
        </tr>
       </tbody>
      </table>
@@ -7182,7 +7147,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="complex1#imaginary">imaginary</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/complex1#imaginary">imaginary</a></td>
        </tr>
       </tbody>
      </table>
@@ -7260,7 +7225,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="arith1#lcm">lcm</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/arith1#lcm">lcm</a></td>
        </tr>
       </tbody>
      </table>
@@ -7325,7 +7290,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="rounding1#floor">floor</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/rounding1#floor">floor</a></td>
        </tr>
       </tbody>
      </table>
@@ -7382,7 +7347,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="rounding1#ceiling">ceiling</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/rounding1#ceiling">ceiling</a></td>
        </tr>
       </tbody>
      </table>
@@ -7447,7 +7412,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="relation1#eq">eq</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/relation1#eq">eq</a></td>
        </tr>
       </tbody>
      </table>
@@ -7511,7 +7476,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="relation1#neq">neq</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/relation1#neq">neq</a></td>
        </tr>
       </tbody>
      </table>
@@ -7572,7 +7537,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="relation1#gt">gt</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/relation1#gt">gt</a></td>
        </tr>
       </tbody>
      </table>
@@ -7636,7 +7601,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="relation1#lt">lt</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/relation1#lt">lt</a></td>
        </tr>
       </tbody>
      </table>
@@ -7700,7 +7665,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="relation1#geq">geq</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/relation1#geq">geq</a></td>
        </tr>
       </tbody>
      </table>
@@ -7711,8 +7676,7 @@
      <code class="element">geq</code> may be used with more than two arguments, denoting a chain
      of inequalities, as described in <a href="#contm_nary_reln"></a>.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="relation1.geq.ex1"></h6>
+     <div class="strict-mathml-example" id="relation1.geq.ex1">
 
       <p>Content MathML</p>
 
@@ -7782,7 +7746,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="relation1#leq">leq</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/relation1#leq">leq</a></td>
        </tr>
       </tbody>
      </table>
@@ -7844,7 +7808,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="logic1#equivalent">equivalent</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/logic1#equivalent">equivalent</a></td>
        </tr>
       </tbody>
      </table>
@@ -7907,7 +7871,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="relation1#approx">approx</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/relation1#approx">approx</a></td>
        </tr>
       </tbody>
      </table>
@@ -7969,7 +7933,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="integer1#factorof">factorof</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/integer1#factorof">factorof</a></td>
        </tr>
       </tbody>
      </table>
@@ -8035,7 +7999,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="calculus1#int">int</a> <a class="omsymbol" href="calculus1#defint">defint</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/calculus1#int">int</a> <a class="omsymbol" href="https://openmath.org/cd/calculus1#defint">defint</a></td>
        </tr>
       </tbody>
      </table>
@@ -8141,9 +8105,9 @@
      <p><em>Mapping to Strict Markup</em></p>
 
      <p>As an indefinite integral applied to a function, the <code class="element">int</code> element corresponds to
-     the <a class="omsymbol" href="calculus1#int">int</a> symbol from the <a class="omcd" href="calculus1">calculus1</a> content
+     the <a class="omsymbol" href="https://openmath.org/cd/calculus1#int">int</a> symbol from the <a class="omcd" href="calculus1">calculus1</a> content
      dictionary. As a definite integral applied to a function, the <code class="element">int</code> element
-     corresponds to the <a class="omsymbol" href="calculus1#defint">defint</a> symbol
+     corresponds to the <a class="omsymbol" href="https://openmath.org/cd/calculus1#defint">defint</a> symbol
      from the <a class="omcd" href="calculus1">calculus1</a> content dictionary.</p>
 
      <p>When no bound variables are present, the translation
@@ -8151,8 +8115,7 @@
      forward.  When bound variables are present, the following rule
      should be used.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_p2s.int">Rewrite: int</h6>
+     <div class="strict-mathml-example" id="contm_p2s.int"><dfn>Rewrite: int</dfn>
 
       <p>Translate an indefinite integral, where
       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
@@ -8186,12 +8149,11 @@
       Note that as <i class="var">x</i> is not bound in the original indefinite integral,
       the integrated function is applied to the variable <i class="var">x</i> making it
       an explicit free variable in Strict Content Markup expression, even though
-      it is bound in the subterm used as an argument to <a class="omsymbol" href="calculus1#int">int</a>.</p>
+      it is bound in the subterm used as an argument to <a class="omsymbol" href="https://openmath.org/cd/calculus1#int">int</a>.</p>
 
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-int"></h6>
+     <div class="strict-mathml-example" id="contm_strict-int">
 
       <p>For instance, the expression
 
@@ -8224,8 +8186,7 @@
      <p>For a definite integral without bound variables, the
      translation is also straightforward.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-domainofapplication-nobvar"></h6>
+     <div class="strict-mathml-example" id="contm_strict-domainofapplication-nobvar">
 
       <p> For instance, the integral of a differential form <i class="var">f</i> over an arbitrary domain
       <i class="var">C</i> represented as
@@ -8257,8 +8218,7 @@
      <p><span>When bound variables are present,</span> the situation is more complicated in general, and the
      following rule<span>s are</span> used.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_p2s.defint">Rewrite: defint</h6>
+     <div class="strict-mathml-example" id="contm_p2s.defint"><dfn>Rewrite: defint</dfn>
 
       <p>Translate a definite integral, where
       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
@@ -8298,8 +8258,7 @@
      special
      translation rule:</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_p2s.int.LUlimit">Rewrite: defint limits</h6>
+     <div class="strict-mathml-example" id="contm_p2s.int.LUlimit"><dfn>Rewrite: defint limits</dfn>
 
       <div class="example mathml">
        <pre>
@@ -8332,7 +8291,7 @@
        </pre>
       </div>
 
-      <p>The <a class="omsymbol" href="interval1#oriented_interval">oriented_interval</a>
+      <p>The <a class="omsymbol" href="https://openmath.org/cd/interval1#oriented_interval">oriented_interval</a>
       symbol is also used when translating the <code class="element">interval</code>
       qualifier, when it is used to specify the domain of integration.
       Integration is assumed to proceed from the left endpoint to the
@@ -8341,8 +8300,7 @@
       <p>The case for multiple integrands is treated analogously.</p>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-condition"></h6>
+     <div class="strict-mathml-example" id="contm_strict-condition">
 
       <p>Note that use of the <code class="element">condition</code>
       <span>qualifier</span> <span>also
@@ -8426,7 +8384,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="calculus1#diff">diff</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/calculus1#diff">diff</a></td>
        </tr>
       </tbody>
      </table>
@@ -8528,8 +8486,7 @@
      <p>For the translation to strict Markup it is crucial to realize that in the expression
      case, the variable is actually not bound by the differentiation operator.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_p2s.diff">Rewrite: diff</h6>
+     <div class="strict-mathml-example" id="contm_p2s.diff"><dfn>Rewrite: diff</dfn>
 
       <p>Translate an expression
 
@@ -8592,8 +8549,7 @@
      <p>If the <code class="element">bvar</code> element contains a <code class="element">degree</code> element, use the
      <code>nthdiff</code> symbol.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_p2s.nthdiff">Rewrite: nthdiff</h6>
+     <div class="strict-mathml-example" id="contm_p2s.nthdiff"><dfn>Rewrite: nthdiff</dfn>
 
       <div class="example mathml">
        <pre>
@@ -8625,8 +8581,7 @@
       </div>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_nthdiff_ex"></h6>
+     <div class="strict-mathml-example" id="contm_nthdiff_ex">
 
       <p>For example</p>
 
@@ -8682,7 +8637,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="calculus1#partialdiff">partialdiff</a> <a class="omsymbol" href="calculus1#partialdiffdegree">partialdiffdegree</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiff">partialdiff</a> <a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiffdegree">partialdiffdegree</a></td>
        </tr>
       </tbody>
      </table>
@@ -8863,19 +8818,18 @@
      <p><em>Mapping to Strict Markup</em></p>
 
      <p>When applied to a function, the <code class="element">partialdiff</code> element
-     corresponds to the <a class="omsymbol" href="calculus1#partialdiff">partialdiff</a>
+     corresponds to the <a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiff">partialdiff</a>
      symbol from the <a class="omcd" href="calculus1">calculus1</a> content dictionary. No special
      rules are necessary as the two arguments of <code class="element">partialdiff</code>
      translate directly to the two arguments of
-     <a class="omsymbol" href="calculus1#partialdiff">partialdiff</a>.</p>
+     <a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiff">partialdiff</a>.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_p2s.partialdiff">Rewrite: partialdiffdegree</h6>
+     <div class="strict-mathml-example" id="contm_p2s.partialdiff"><dfn>Rewrite: partialdiffdegree</dfn>
 
       <p>If <code class="element">partialdiff</code> is used with an expression and
       <code class="element">bvar</code> qualifiers it is rewritten to
       Strict Content MathML using the
-      <a class="omsymbol" href="calculus1#partialdiffdegree">partialdiffdegree</a> symbol.
+      <a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiffdegree">partialdiffdegree</a> symbol.
 
       <div class="example mathml">
        <pre>
@@ -8913,7 +8867,7 @@
       <p>If any of the bound variables do not use a <code class="element">degree</code> qualifier,
       <code>&lt;cn&gt;1&lt;/cn&gt;</code> should be used in place of the degree.
       If the original expression did not use the total degree qualifier then
-      the second argument to <a class="omsymbol" href="calculus1#partialdiffdegree">partialdiffdegree</a>
+      the second argument to <a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiffdegree">partialdiffdegree</a>
       should be the sum of the degrees, for example
 
       <div class="example strict-mathml">
@@ -8926,8 +8880,7 @@
       </p>
      </div>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_p2s.partialdiff.ex1"></h6>
+     <div class="strict-mathml-example" id="contm_p2s.partialdiff.ex1">
 
       <p>With this rule, the expression
 
@@ -8998,7 +8951,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="veccalc1#divergence">divergence</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#divergence">divergence</a></td>
        </tr>
       </tbody>
      </table>
@@ -9151,7 +9104,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="veccalc1#grad">grad</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#grad">grad</a></td>
        </tr>
       </tbody>
      </table>
@@ -9269,7 +9222,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="veccalc1#curl">curl</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#curl">curl</a></td>
        </tr>
       </tbody>
      </table>
@@ -9343,7 +9296,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="veccalc1#Laplacian">Laplacian</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#Laplacian">Laplacian</a></td>
        </tr>
       </tbody>
      </table>
@@ -9468,7 +9421,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="set1#set">set</a>, <a class="omsymbol" href="multiset1#multiset">multiset</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/set1#set">set</a>, <a class="omsymbol" href="https://openmath.org/cd/multiset1#multiset">multiset</a></td>
        </tr>
       </tbody>
      </table>
@@ -9658,7 +9611,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="interval1#interval_cc">interval_cc</a>, <a class="omsymbol" href="list1#list">list</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/interval1#interval_cc">interval_cc</a>, <a class="omsymbol" href="https://openmath.org/cd/list1#list">list</a></td>
        </tr>
       </tbody>
      </table>
@@ -9766,7 +9719,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="set1#union">union</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/set1#union">union</a></td>
        </tr>
       </tbody>
      </table>
@@ -9861,7 +9814,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="set1#intersect">intersect</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/set1#intersect">intersect</a></td>
        </tr>
       </tbody>
      </table>
@@ -9950,7 +9903,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="set1#in">in</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/set1#in">in</a></td>
        </tr>
       </tbody>
      </table>
@@ -9982,7 +9935,7 @@
      </div>
 
      <p>When translating to Strict Content Markup, if the <code class="attribute">type</code>
-     has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should
+     has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="https://openmath.org/cd/multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should
      be used instead.</p>
 
     </section>
@@ -10011,7 +9964,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="set1#notin">notin</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/set1#notin">notin</a></td>
        </tr>
       </tbody>
      </table>
@@ -10043,7 +9996,7 @@
      </div>
 
      <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
-     the <a class="omsymbol" href="multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
 
     </section>
 
@@ -10071,7 +10024,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="set1#subset">subset</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/set1#subset">subset</a></td>
        </tr>
       </tbody>
      </table>
@@ -10130,7 +10083,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="set1#prsubset">prsubset</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/set1#prsubset">prsubset</a></td>
        </tr>
       </tbody>
      </table>
@@ -10191,7 +10144,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="set1#notsubset">notsubset</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/set1#notsubset">notsubset</a></td>
        </tr>
       </tbody>
      </table>
@@ -10226,7 +10179,7 @@
      </div>
 
      <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
-     the <a class="omsymbol" href="multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
 
     </section>
 
@@ -10254,7 +10207,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="set1#notprsubset">notprsubset</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/set1#notprsubset">notprsubset</a></td>
        </tr>
       </tbody>
      </table>
@@ -10289,7 +10242,7 @@
      </div>
 
      <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
-     the <a class="omsymbol" href="multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
     </section>
 
     <section>
@@ -10316,7 +10269,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="set1#setdiff">setdiff</a>, <a class="omsymbol" href="multiset1#setdiff">setdiff</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/set1#setdiff">setdiff</a>, <a class="omsymbol" href="https://openmath.org/cd/multiset1#setdiff">setdiff</a></td>
        </tr>
       </tbody>
      </table>
@@ -10352,7 +10305,7 @@
      </div>
 
      <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
-     the <a class="omsymbol" href="multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
     </section>
 
     <section>
@@ -10379,7 +10332,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="set1#size">size</a>, <a class="omsymbol" href="multiset1#size">size</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/set1#size">size</a>, <a class="omsymbol" href="https://openmath.org/cd/multiset1#size">size</a></td>
        </tr>
       </tbody>
      </table>
@@ -10419,7 +10372,7 @@
      </div>
 
      <p>When translating to Strict Content Markup, if the <code class="attribute">type</code>
-     has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="multiset1#size">size</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used
+     has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="https://openmath.org/cd/multiset1#size">size</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used
      instead.</p>
     </section>
 
@@ -10452,7 +10405,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="set1#cartesian_product">cartesian_product</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/set1#cartesian_product">cartesian_product</a></td>
        </tr>
       </tbody>
      </table>
@@ -10519,7 +10472,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="arith1#sum">sum</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/arith1#sum">sum</a></td>
        </tr>
       </tbody>
      </table>
@@ -10654,8 +10607,7 @@
      construction to rewrite the expression in the bound variables as a
      function.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-sum"></h6>
+     <div class="strict-mathml-example" id="contm_strict-sum">
       <p>Content MathML</p>
 
       <div class="example mathml">
@@ -10717,7 +10669,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="arith1#product">product</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/arith1#product">product</a></td>
        </tr>
       </tbody>
      </table>
@@ -10828,8 +10780,7 @@
      construction to rewrite the expression in the bound variables as a
      function.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-product"></h6>
+     <div class="strict-mathml-example" id="contm_strict-product">
 
       <p>Content MathML</p>
 
@@ -10896,11 +10847,11 @@
        <tr>
 	<th>OM Symbols</th>
 	<td>
-	 <a class="omsymbol" href="limit1#limit">limit</a>,
-	 <a class="omsymbol" href="limit1#both_sides">both_sides</a>,
-	 <a class="omsymbol" href="limit1#above">above</a>,
-	 <a class="omsymbol" href="limit1#below">below</a>,
-	 <a class="omsymbol" href="limit1#null">null</a>
+	 <a class="omsymbol" href="https://openmath.org/cd/limit1#limit">limit</a>,
+	 <a class="omsymbol" href="https://openmath.org/cd/limit1#both_sides">both_sides</a>,
+	 <a class="omsymbol" href="https://openmath.org/cd/limit1#above">above</a>,
+	 <a class="omsymbol" href="https://openmath.org/cd/limit1#below">below</a>,
+	 <a class="omsymbol" href="https://openmath.org/cd/limit1#null">null</a>
 	</td>
        </tr>
       </tbody>
@@ -11011,15 +10962,14 @@
      </div>
 
      <p>The direction from which a limiting value is approached is given as an argument
-     <a class="omsymbol" href="limit1#limit">limit</a> in Strict Content MathML, which supplies the
-     direction specifier symbols <a class="omsymbol" href="limit1#both_sides">both_sides</a>, <a class="omsymbol" href="limit1#above">above</a>, and <a class="omsymbol" href="limit1#below">below</a> for this
+     <a class="omsymbol" href="https://openmath.org/cd/limit1#limit">limit</a> in Strict Content MathML, which supplies the
+     direction specifier symbols <a class="omsymbol" href="https://openmath.org/cd/limit1#both_sides">both_sides</a>, <a class="omsymbol" href="https://openmath.org/cd/limit1#above">above</a>, and <a class="omsymbol" href="https://openmath.org/cd/limit1#below">below</a> for this
      purpose. The first correspond to the values <code class="attributevalue">all</code>, <code class="attributevalue">above</code>,
      and <code class="attributevalue">below</code> of the <code class="attribute">type</code> attribute of the <code class="element">tendsto</code>
-     element below. The <a class="omsymbol" href="limit1#null">null</a> symbol corresponds to the case
+     element below. The <a class="omsymbol" href="https://openmath.org/cd/limit1#null">null</a> symbol corresponds to the case
      where no <code class="attribute">type</code> attribute is present. We translate</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-limit">Rewrite: limits condition</h6>
+     <div class="strict-mathml-example" id="contm_strict-limit"><dfn>Rewrite: limits condition</dfn>
 
       <div class="example mathml">
        <pre>
@@ -11051,7 +11001,7 @@
       <p>where
       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
       arbitrary expression involving the bound variable(s), and the choice of
-      symbol, <a class="omsymbol" href="limit1#null">null</a> depends on the
+      symbol, <a class="omsymbol" href="https://openmath.org/cd/limit1#null">null</a> depends on the
       <code class="attribute">type</code> attribute of the <code class="element">tendsto</code> element as
       described above.</p>
 
@@ -11089,7 +11039,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="limit1#limit">limit</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/limit1#limit">limit</a></td>
        </tr>
       </tbody>
      </table>
@@ -11177,14 +11127,13 @@
 
      <p>The usage of <code class="element">tendsto</code> to qualify a limit is formally
      defined by writing the expression in Strict Content MathML via the
-     rule <a href="#contm_strict-limit"></a>. The meanings of other more
+     rule <a>Rewrite: limits condition</a>. The meanings of other more
      idiomatic uses of <code class="element">tendsto</code> are not formally defined by this
      specification. When rewriting these cases to Strict Content MathML,
      <code class="element">tendsto</code> should be rewritten to an annotated identifier as
      shown below.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict_tendsto">Rewrite: tendsto</h6>
+     <div class="strict-mathml-example" id="contm_strict_tendsto"><dfn>Rewrite: tendsto</dfn>
 
       <div class="example mathml">
        <pre>
@@ -11244,7 +11193,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="transc1#sin">sin</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/transc1#sin">sin</a></td>
        </tr>
       </tbody>
      </table>
@@ -11344,7 +11293,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="transc1#arcsin">arcsin</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/transc1#arcsin">arcsin</a></td>
        </tr>
       </tbody>
      </table>
@@ -11425,7 +11374,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="transc1#sinh">sinh</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/transc1#sinh">sinh</a></td>
        </tr>
       </tbody>
      </table>
@@ -11483,7 +11432,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="transc1#arcsinh">arcsinh</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/transc1#arcsinh">arcsinh</a></td>
        </tr>
       </tbody>
      </table>
@@ -11550,7 +11499,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="transc1#exp">exp</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/transc1#exp">exp</a></td>
        </tr>
       </tbody>
      </table>
@@ -11606,7 +11555,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="transc1#ln">ln</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/transc1#ln">ln</a></td>
        </tr>
       </tbody>
      </table>
@@ -11667,7 +11616,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="transc1#log">log</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/transc1#log">log</a></td>
        </tr>
       </tbody>
      </table>
@@ -11727,14 +11676,13 @@
      <p><em>Mapping to Strict Content MathML</em></p>
 
      <p>When mapping <code class="element">log</code> to Strict Content, one uses the
-     <a class="omsymbol" href="transc1#log">log</a> symbol denoting the function
+     <a class="omsymbol" href="https://openmath.org/cd/transc1#log">log</a> symbol denoting the function
      that returns the log of its second argument with respect to the base
      specified by the first argument.  When <code class="element">logbase</code> is present, it
      determines the base.  Otherwise, the default base of 10 must be
      explicitly provided in Strict markup.  See the following example.</p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict_log"></h6>
+     <div class="strict-mathml-example" id="contm_strict_log">
 
       <div class="example mathml">
        <pre>&lt;apply&gt;&lt;plus/&gt;
@@ -11806,7 +11754,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="s_dist1#mean">mean</a>, <a class="omsymbol" href="s_data1#mean">mean</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/s_dist1#mean">mean</a>, <a class="omsymbol" href="https://openmath.org/cd/s_data1#mean">mean</a></td>
        </tr>
       </tbody>
      </table>
@@ -11880,10 +11828,10 @@
      <p><em>Mapping to Strict Markup</em></p>
 
      <p>When the <code class="element">mean</code> element is applied to an explicit list of arguments, the
-     translation to Strict Content markup is direct, using the <a class="omsymbol" href="s_data1#mean">mean</a> symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a href="#contm_strict-opel"></a>. When it is applied to a distribution, then the
-     <a class="omsymbol" href="s_dist1#mean">mean</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
-     dictionary should be used.  In the case with qualifiers use <a href="#contm_p2s.lifted"></a>
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#mean">mean</a> symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
+     <a>Rewrite: element</a>. When it is applied to a distribution, then the
+     <a class="omsymbol" href="https://openmath.org/cd/s_dist1#mean">mean</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
+     dictionary should be used.  In the case with qualifiers use <a>Rewrite: n-ary domainofapplication</a>
      with the same caveat.</p>
     </section>
 
@@ -11916,7 +11864,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="s_dist1#sdev">sdev</a>, <a class="omsymbol" href="s_data1#sdev">sdev</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/s_dist1#sdev">sdev</a>, <a class="omsymbol" href="https://openmath.org/cd/s_data1#sdev">sdev</a></td>
        </tr>
       </tbody>
      </table>
@@ -11984,12 +11932,12 @@
      <p><em>Mapping to Strict Markup</em></p>
 
      <p>When the <code class="element">sdev</code> element is applied to an explicit list of arguments, the
-     translation to Strict Content markup is direct, using the <a class="omsymbol" href="s_data1#sdev">sdev</a>
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#sdev">sdev</a>
      symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a href="#contm_strict-opel"></a>. When it is applied to a distribution, then the
-     <a class="omsymbol" href="s_dist1#sdev">sdev</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
+     <a>Rewrite: element</a>. When it is applied to a distribution, then the
+     <a class="omsymbol" href="https://openmath.org/cd/s_dist1#sdev">sdev</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
      dictionary should be used. In the case with qualifiers use
-     <a href="#contm_p2s.lifted"></a> with the same caveat.</p>
+     <a>Rewrite: n-ary domainofapplication</a> with the same caveat.</p>
     </section>
 
     <section>
@@ -12021,7 +11969,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="s_dist1#variance">variance</a>, <a class="omsymbol" href="s_data1#variance">variance</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/s_dist1#variance">variance</a>, <a class="omsymbol" href="https://openmath.org/cd/s_data1#variance">variance</a></td>
        </tr>
       </tbody>
      </table>
@@ -12094,11 +12042,11 @@
      <p><em>Mapping to Strict Markup</em></p>
 
      <p>When the <code class="element">variance</code> element is applied to an explicit list of arguments, the
-     translation to Strict Content markup is direct, using the <a class="omsymbol" href="s_data1#variance">variance</a>
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#variance">variance</a>
      symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a href="#contm_strict-opel"></a>. When it is applied to a distribution, then the
-     <a class="omsymbol" href="s_dist1#variance">variance</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
-     dictionary should be used. In the case with qualifiers use <a href="#contm_p2s.lifted"></a>
+     <a>Rewrite: element</a>. When it is applied to a distribution, then the
+     <a class="omsymbol" href="https://openmath.org/cd/s_dist1#variance">variance</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
+     dictionary should be used. In the case with qualifiers use <a>Rewrite: n-ary domainofapplication</a>
      with the same caveat.</p>
     </section>
 
@@ -12132,7 +12080,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="s_data1#median">median</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/s_data1#median">median</a></td>
        </tr>
       </tbody>
      </table>
@@ -12172,9 +12120,9 @@
      <p><em>Mapping to Strict Markup</em></p>
 
      <p>When the <code class="element">median</code> element is applied to an explicit list of arguments, the
-     translation to Strict Content markup is direct, using the <a class="omsymbol" href="s_data1#median">median</a>
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#median">median</a>
      symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a href="#contm_strict-opel"></a>.</p>
+     <a>Rewrite: element</a>.</p>
     </section>
 
     <section>
@@ -12207,7 +12155,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="s_data1#mode">mode</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/s_data1#mode">mode</a></td>
        </tr>
       </tbody>
      </table>
@@ -12246,9 +12194,9 @@
      <p><em>Mapping to Strict Markup</em></p>
 
      <p>When the <code class="element">mode</code> element is applied to an explicit list of arguments, the
-     translation to Strict Content markup is direct, using the <a class="omsymbol" href="s_data1#mode">mode</a>
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#mode">mode</a>
      symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a href="#contm_strict-opel"></a>.</p>
+     <a>Rewrite: element</a>.</p>
     </section>
 
     <section>
@@ -12281,8 +12229,8 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="s_data1#moment">moment</a>,
-	<a class="omsymbol" href="s_dist1#moment">moment</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/s_data1#moment">moment</a>,
+	<a class="omsymbol" href="https://openmath.org/cd/s_dist1#moment">moment</a></td>
        </tr>
       </tbody>
      </table>
@@ -12368,14 +12316,13 @@
 
      <p><em>Mapping to Strict Markup</em></p>
 
-     <div class="example strict-mathml-example">
-      <h6 id="contm_strict-moment-degree"></h6>
+     <div class="strict-mathml-example" id="contm_strict-moment-degree">
 
-      <p>When rewriting to Strict Markup, the <a class="omsymbol" href="s_dist1#moment">moment</a> <span>symbol from the <a class="omcd" href="s_data1">s_data1</a> content
+      <p>When rewriting to Strict Markup, the <a class="omsymbol" href="https://openmath.org/cd/s_dist1#moment">moment</a> <span>symbol from the <a class="omcd" href="s_data1">s_data1</a> content
       dictionary</span> is used <span>when the <code class="element">moment</code> element is applied
       to an explicit list of arguments.  When it is applied to a distribution, then the
 
-      <a class="omsymbol" href="s_dist1#moment">moment</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
+      <a class="omsymbol" href="https://openmath.org/cd/s_dist1#moment">moment</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
       dictionary should be used.</span> <span>Both operators take</span>
       the degree as the first argument, the point as the second, <span>followed by</span>
       the data set or random variable <span>respectively</span>.</p>
@@ -12440,7 +12387,7 @@
 	<th>OM Symbol</th>
 
 	<td>
-	 <a class="omsymbol" href="linalg2#vector">vector</a>
+	 <a class="omsymbol" href="https://openmath.org/cd/linalg2#vector">vector</a>
 	</td>
        </tr>
       </tbody>
@@ -12539,7 +12486,7 @@
 	<th>OM Symbol</th>
 
 	<td>
-	 <a class="omsymbol" href="linalg2#matrix">matrix</a>
+	 <a class="omsymbol" href="https://openmath.org/cd/linalg2#matrix">matrix</a>
 	</td>
        </tr>
       </tbody>
@@ -12656,7 +12603,7 @@
 	<th>OM Symbol</th>
 
 	<td>
-	 <a class="omsymbol" href="linalg2#matrixrow">matrixrow</a>
+	 <a class="omsymbol" href="https://openmath.org/cd/linalg2#matrixrow">matrixrow</a>
 	</td>
        </tr>
       </tbody>
@@ -12692,7 +12639,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="linalg1#determinant">determinant</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/linalg1#determinant">determinant</a></td>
        </tr>
       </tbody>
      </table>
@@ -12751,7 +12698,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="linalg1#transpose">transpose</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/linalg1#transpose">transpose</a></td>
        </tr>
       </tbody>
      </table>
@@ -12808,8 +12755,8 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="linalg1#vector_selector">vector_selector</a>,
-	<a class="omsymbol" href="linalg1#matrix_selector">matrix_selector</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/linalg1#vector_selector">vector_selector</a>,
+	<a class="omsymbol" href="https://openmath.org/cd/linalg1#matrix_selector">matrix_selector</a></td>
        </tr>
       </tbody>
      </table>
@@ -12938,7 +12885,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="linalg1#vectorproduct">vectorproduct</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/linalg1#vectorproduct">vectorproduct</a></td>
        </tr>
       </tbody>
      </table>
@@ -13017,7 +12964,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="linalg1#scalarproduct">scalarproduct</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/linalg1#scalarproduct">scalarproduct</a></td>
        </tr>
       </tbody>
      </table>
@@ -13096,7 +13043,7 @@
        <tr>
 	<th>OM Symbols</th>
 
-	<td><a class="omsymbol" href="linalg1#outerproduct">outerproduct</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/linalg1#outerproduct">outerproduct</a></td>
        </tr>
       </tbody>
      </table>
@@ -13162,7 +13109,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="setname1#Z">Z</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/setname1#Z">Z</a></td>
        </tr>
       </tbody>
      </table>
@@ -13219,7 +13166,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="setname1#R">R</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/setname1#R">R</a></td>
        </tr>
       </tbody>
      </table>
@@ -13278,7 +13225,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="setname1#Q">Q</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/setname1#Q">Q</a></td>
        </tr>
       </tbody>
      </table>
@@ -13339,7 +13286,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="setname1#N">N</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/setname1#N">N</a></td>
        </tr>
       </tbody>
      </table>
@@ -13398,7 +13345,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="setname1#C">C</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/setname1#C">C</a></td>
        </tr>
       </tbody>
      </table>
@@ -13459,7 +13406,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="setname1#P">P</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/setname1#P">P</a></td>
        </tr>
       </tbody>
      </table>
@@ -13516,7 +13463,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="nums1#e">e</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/nums1#e">e</a></td>
        </tr>
       </tbody>
      </table>
@@ -13577,7 +13524,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="nums1#i">i</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/nums1#i">i</a></td>
        </tr>
       </tbody>
      </table>
@@ -13636,7 +13583,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="nums1#NaN">NaN</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/nums1#NaN">NaN</a></td>
        </tr>
       </tbody>
      </table>
@@ -13699,7 +13646,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="logic1#true">true</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/logic1#true">true</a></td>
        </tr>
       </tbody>
      </table>
@@ -13763,7 +13710,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="logic1#false">false</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/logic1#false">false</a></td>
        </tr>
       </tbody>
      </table>
@@ -13827,8 +13774,8 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="set1#emptyset">emptyset</a>,
-	<a class="omsymbol" href="multiset1#emptyset">emptyset</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/set1#emptyset">emptyset</a>,
+	<a class="omsymbol" href="https://openmath.org/cd/multiset1#emptyset">emptyset</a></td>
        </tr>
       </tbody>
      </table>
@@ -13865,10 +13812,10 @@
       <p><em>Mapping to Strict Markup</em></p>
 
       <p>In some situations, it may be clear from context that <code class="element">emptyset</code>
-      corresponds to the <a class="omsymbol" href="multiset1#emptyset">emptyset</a>
+      corresponds to the <a class="omsymbol" href="https://openmath.org/cd/multiset1#emptyset">emptyset</a>
       However, as there is no method other than annotation for an author to explicitly indicate
       this,
-      it is always acceptable to translate to the  <a class="omsymbol" href="set1#emptyset">emptyset</a> symbol from the <a class="omcd" href="set1">set1</a> CD.</p>
+      it is always acceptable to translate to the  <a class="omsymbol" href="https://openmath.org/cd/set1#emptyset">emptyset</a> symbol from the <a class="omcd" href="set1">set1</a> CD.</p>
      </div>
     </section>
 
@@ -13896,7 +13843,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="nums1#pi">pi</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/nums1#pi">pi</a></td>
        </tr>
       </tbody>
      </table>
@@ -13958,7 +13905,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="nums1#gamma">gamma</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/nums1#gamma">gamma</a></td>
        </tr>
       </tbody>
      </table>
@@ -14017,7 +13964,7 @@
 
        <tr>
 	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="nums1#infinity">infinity</a></td>
+	<td><a class="omsymbol" href="https://openmath.org/cd/nums1#infinity">infinity</a></td>
        </tr>
       </tbody>
      </table>
@@ -14230,22 +14177,22 @@
      <ol>
 
       <li>
-       <p>Rewrite derivatives with rules <a href="#contm_p2s.diff"></a>, <a href="#contm_p2s.nthdiff"></a>,
-       and <a href="#contm_p2s.partialdiff"></a>
+       <p>Rewrite derivatives with rules <a>Rewrite: diff</a>, <a>Rewrite: nthdiff</a>,
+       and <a>Rewrite: partialdiffdegree</a>
        to explicate the binding status of the variables involved.
        </p>
       </li>
 
       <li>
-       <p>Rewrite integrals with the rules <a href="#contm_p2s.int"></a><span>,  <a href="#contm_p2s.defint"></a></span>
-       and <a href="#contm_p2s.int.LUlimit"></a> to disambiguate the status
+       <p>Rewrite integrals with the rules <a>Rewrite: int</a><span>,  <a>Rewrite: defint</a></span>
+       and <a>Rewrite: defint limits</a> to disambiguate the status
        of bound and free variables and of the orientation of the range of integration if
        it is given as a <code class="element">lowlimit</code>/<code class="element">uplimit</code> pair.
        </p>
       </li>
 
       <li>
-       <p>Rewrite limits as described in <a href="#contm_strict_tendsto"></a> and <a href="#contm_strict-limit"></a>.</p>
+       <p>Rewrite limits as described in <a>Rewrite: tendsto</a> and <a>Rewrite: limits condition</a>.</p>
       </li>
 
       <li>
@@ -14277,14 +14224,14 @@
       <li>
        <p><em>Intervals</em>: Rewrite qualifiers given as <code class="element">interval</code> and
        <code class="element">lowlimit</code>/<code class="element">uplimit</code> to intervals of integers via
-       <a href="#contm_limits-strict"></a>.</p>
+       <a>Rewrite: interval qualifier</a>.</p>
       </li>
 
       <li>
        <p><em>Multiple <code class="element">condition</code>s</em>: Rewrite multiple <code class="element">condition</code>
        qualifiers to a single one by taking their conjunction. The resulting compound
        <code class="element">condition</code> is then rewritten to <code class="element">domainofapplication</code> according
-       to rule <a href="#contm_condition-strict"></a>.</p>
+       to rule <a>Rewrite: condition</a>.</p>
       </li>
 
       <li>
@@ -14302,7 +14249,7 @@
 
       <li>
        <p>Rewrite sets and lists by the rule
-       <a href="#contm_rewrite_setliste"></a>.</p>
+       <a>Rewrite: n-ary setlist domainofapplication</a>.</p>
       </li>
 
       <li id="contm_p2s_step_vector">
@@ -14312,8 +14259,8 @@
       </li>
 
       <li>
-       <p>Rewrite lambda expressions by the rules <a href="#contm_rewrite_lambda"></a>
-       and <a href="#contm_rewrite_lambda_domofa"></a></p>
+       <p>Rewrite lambda expressions by the rules <a>Rewrite: lambda</a>
+       and <a>Rewrite: lambda domainofapplication</a></p>
       </li>
 
       <li>
@@ -14331,21 +14278,21 @@
 
       <li>
        <p>Rewrite <code class="element">min</code>, <code class="element">max</code>, <code class="element">mean</code> and similar n-ary/unary operators
-       by the rules <a href="#contm_p2s.max"></a>, <a href="#contm_unary_nary_doma"></a>
-       and <a href="#contm_nary_unary_single"></a>.
+       by the rules <a>Rewrite: n-ary unary set</a>, <a>Rewrite: n-ary unary domainofapplication</a>
+       and <a>Rewrite: n-ary unary single</a>.
        </p>
       </li>
 
       <li>
        <p>Rewrite the quantifiers <code class="element">forall</code> and <code class="element">exists</code> used with <code class="element">domainofapplication</code>
-       to expressions using implication and conjunction by the rule <a href="#contm_rewrite_quantifier"></a>.
+       to expressions using implication and conjunction by the rule <a>Rewrite: quantifier</a>.
        </p>
       </li>
 
       <li>
        <p>Rewrite integrals used with a <code class="element">domainofapplication</code> element (with or without a <code class="element">bvar</code>)
-       according to the rules <a href="#contm_p2s.int"></a><span> and
-       <a href="#contm_p2s.defint"></a></span>.
+       according to the rules <a>Rewrite: int</a><span> and
+       <a>Rewrite: defint</a></span>.
        </p>
       </li>
 
@@ -14366,27 +14313,27 @@
 
       <li>
        <p>into an application of a restricted function via the rule
-       <a href="#contm_strict-doa"></a> if the <code class="element">apply</code> does not contain
+       <a>Rewrite: restriction</a> if the <code class="element">apply</code> does not contain
        a <code class="element">bvar</code> child.</p>
       </li>
 
       <li>
-       <p>into an application of the <a class="omsymbol" href="fns2#predicate_on_list">predicate_on_list</a> symbol via the rules
-       <a href="#contm_rewrite_reln"></a> and <a href="#contm_rewrite_reln_bvar"></a>
+       <p>into an application of the <a class="omsymbol" href="https://openmath.org/cd/fns2#predicate_on_list">predicate_on_list</a> symbol via the rules
+       <a>Rewrite: n-ary relations</a> and <a>Rewrite: n-ary relations bvar</a>
        if used with a relation.</p>
       </li>
 
       <li>
-       <p>into a construction with the <a class="omsymbol" href="fns2#apply_to_list">apply_to_list</a> symbol
-       via the general rule <a href="#contm_p2s.lifted"></a> for
+       <p>into a construction with the <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a> symbol
+       via the general rule <a>Rewrite: n-ary domainofapplication</a> for
        general n-ary operators.
        </p>
       </li>
 
       <li>
-       <p>into a construction using the <a class="omsymbol" href="set1#suchthat">suchthat</a> symbol
+       <p>into a construction using the <a class="omsymbol" href="https://openmath.org/cd/set1#suchthat">suchthat</a> symbol
        from the <a class="omcd" href="set1">set1</a> content dictionary in an <code class="element">apply</code> with bound
-       variables via the <a href="#contm_dombind-strict"></a> rule.</p>
+       variables via the <a>Rewrite: apply bvar domainofapplication</a> rule.</p>
       </li>
      </ol>
     </li>
@@ -14401,14 +14348,14 @@
        attribute is one of <code class="attributevalue">e-notation</code>, <code class="attributevalue">rational</code>,
        <code class="attributevalue">complex-cartesian</code>, <code class="attributevalue">complex-polar</code>,
        <code class="attributevalue">constant</code> as strict <code class="element">cn</code> via rules
-       <a href="#contm-strict-cn-sep"></a>, <a href="#contm_cn-base"></a>
-       and <a href="#contm_cn_strict_const"></a>.</p>
+       <a>Rewrite: cn sep</a>, <a>Rewrite: cn based_integer</a>
+       and <a>Rewrite: cn constant</a>.</p>
       </li>
 
       <li>
        <p>Rewrite any <code class="element">ci</code>, <code class="element">csymbol</code> or <code class="element">cn</code> containing
        presentation MathML to <code class="element">semantics</code> elements with rules
-       <a href="#contm_cn_pres"></a> and <a href="#contm_ci_pres"></a> and
+       <a>Rewrite: cn presentation mathml</a> and <a>Rewrite: ci presentation mathml</a> and
        the analogous rule for <code class="element">csymbol</code>.</p>
       </li>
      </ol>
@@ -14417,7 +14364,7 @@
     <li>
      <p><em>Rewrite operators</em>: Rewrite any remaining operator defined in <a href="#contm_opel"></a>
      to a <code class="element">csymbol</code> referencing the symbol identified in the syntax table by the rule
-     <a href="#contm_strict-opel"></a>. <span>As noted in the descriptions of each
+     <a>Rewrite: element</a>. <span>As noted in the descriptions of each
      operator element, some require special case rules to determine the proper choice
      of symbol.
      Some cases of particular note are:</span>
@@ -14460,7 +14407,7 @@
        where type information is reflected in the choice of operator symbol.</span> Now rewrite remaining
        <code class="element">ci</code> <span>and <code class="element">csymbol</code></span> elements with a <code class="attribute">type</code> attribute to a
        strict expression with <code class="element">semantics</code> according to rule<span>s</span>
-       <a href="#contm_ci_strict_ex"></a><span> and <a href="#contm_csymbol_strict_ex"></a></span>.  </p>
+       <a>Rewrite: ci type annotation</a><span> and <a>Rewrite: csymbol type annotation</a></span>.  </p>
       </li>
 
       <li>
@@ -14476,7 +14423,7 @@
        <p><em>Rewrite attributes</em>: Rewrite any element with attributes that are
        not allowed in strict markup to a <code class="element">semantics</code> construction with
        the element without these attributes as the first child and the attributes in
-       <code class="element">annotation</code> elements by rule <a href="#contm_strict-attributes"></a>.</p>
+       <code class="element">annotation</code> elements by rule <a>Rewrite: attributes</a>.</p>
       </li>
      </ol>
     </li>

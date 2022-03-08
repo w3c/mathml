@@ -12,6 +12,7 @@ meta = element meta {
 style = element style {text}
 
 script = element script {
+attribute class {"remove"}?,
 (attribute src {text} | text)
 }
 
@@ -45,7 +46,7 @@ attribute class {text}?,
  body = element body {divcontent}
 
 divcontent=((\div|p|blockquote|pre|pre-include|table|ul|ol|dl|inlinecontent|script|section|section-include)*)
-inlinecontentnoa=((text|b|i|em|strong|code|q|sub|sup|hr|br|span|img|math|svg|button)*)
+inlinecontentnoa=((text|b|i|em|strong|code|q|sub|sup|hr|br|span|dfn|img|math|svg|button)*)
 inlinecontent=((inlinecontentnoa|a)*)
 
 \div = element \div {
@@ -263,6 +264,10 @@ attribute id {text}?,
 attribute onclick {text}?,
 attribute data-diff {text}?,
 attribute title {text}?,
+inlinecontent}
+
+dfn = element dfn {
+attribute id {text}?,
 inlinecontent}
 
 input= element input {
