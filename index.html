@@ -105,14 +105,21 @@ table.attributes td.attdesc { background-color:#F5F5FF; padding-left:.2em; paddi
 table.attributes td { padding-left:0.2em; padding-right:0.2em; border: solid thin; }
 table.attributes td.attname { white-space:nowrap; vertical-align:top; font-weight:bold;}
 table.attributes thead {font-weight:bold;}
-
+pre.nonumexample{
+border: .5em;
+padding:.5em;
+border-color:var(--example-border);
+border-left-style: solid;
+//background: var(--example-bg);
+background: #fafafa;
+}
   </style>
  </head>
  <body>
   <section id='abstract'>
    <p>
     This specification defines the Mathematical Markup Language, or
-    <a id="td-mathml"></a> MathML. MathML is a markup language
+    MathML. MathML is a markup language
     for describing mathematical notation and capturing
     both its structure and content. The goal of MathML is to enable
     mathematics to be served, received, and processed on the World Wide
@@ -298,7 +305,7 @@ table.attributes thead {font-weight:bold;}
      <h4 id="parsing_rnc_core">MathML Core</h4>
 
     <p> MathML Core is specifed in the [[mathml-core]] however the Schema is developed alongside the schema for MathML&#160;4 and presented here, it can also be found at <a href="https://www.w3.org/Math/RelaxNG/mathml4/mathml4-core.rnc">https://www.w3.org/Math/RelaxNG/mathml4/mathml4-core.rnc</a>.</p>
-     <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-core.rnc" ></pre>
+     <pre class="nohighlight nonumexample" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-core.rnc" ></pre>
 
     </section>
 
@@ -308,7 +315,7 @@ table.attributes thead {font-weight:bold;}
      <p>The grammar for Presentation MathML&#160;4 builds on the grammar for the MathML
      Core, and can be found at <a href="https://www.w3.org/Math/RelaxNG/mathml4/mathml4-presentation.rnc">https://www.w3.org/Math/RelaxNG/mathml4/mathml4-presentation.rnc</a>.</p>
 
-     <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-presentation.rnc" ></pre>
+     <pre class="nohighlight nonumexample" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-presentation.rnc" ></pre>
 
     </section>
 
@@ -317,7 +324,7 @@ table.attributes thead {font-weight:bold;}
 
      <p>The grammar for Strict Content MathML&#160;4 can be found at <a href="https://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc">https://www.w3.org/Math/RelaxNG/mathml4/mathml4-strict-content.rnc</a>.</p>
 
-     <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-strict-content.rnc" ></pre>
+     <pre class="nohighlight nonumexample" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-strict-content.rnc" ></pre>
     </section>
 
 
@@ -327,7 +334,7 @@ table.attributes thead {font-weight:bold;}
      <p>The grammar for Content MathML&#160;4 builds on the grammar for the Strict Content MathML
      subset, and can be found at <a href="https://www.w3.org/Math/RelaxNG/mathml4/mathml4-content.rnc">https://www.w3.org/Math/RelaxNG/mathml4/mathml4-content.rnc</a>.</p>
 
-     <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-content.rnc" ></pre>
+     <pre class="nohighlight nonumexample" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-content.rnc" ></pre>
 
     </section>
 
@@ -337,7 +344,7 @@ table.attributes thead {font-weight:bold;}
      <p>The grammar for full MathML&#160;4 is simply a merger of the above grammars,
      and can be found at <a href="https://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc">https://www.w3.org/Math/RelaxNG/mathml4/mathml4.rnc</a>.</p>
 
-     <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4.rnc" ></pre>
+     <pre class="nohighlight nonumexample" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4.rnc" ></pre>
 
     </section>
 
@@ -351,7 +358,7 @@ table.attributes thead {font-weight:bold;}
      MathML documents. It can be found at <a
      href="https://www.w3.org/Math/RelaxNG/mathml4/mathml4-legacy.rnc">https://www.w3.org/Math/RelaxNG/mathml4/mathml4-legacy.rnc</a>.</p>
 
-     <pre class="nohighlight" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-legacy.rnc" ></pre>
+     <pre class="nohighlight nonumexample" style="white-space:pre-wrap" data-oninclude="relaxhl" data-include-format='html' data-include="https://raw.githubusercontent.com/mathml-refresh/mathml-schema/main/rnc/mathml4-legacy.rnc" ></pre>
 
     </section>
 
