@@ -36,7 +36,8 @@ section-include = element section {
  attribute data-include-replace{"true"}?
 		  }
 pre-include = element pre {
-attribute class {text}?,
+ attribute class {text}?,
+ attribute style {text}?,
  attribute  data-include {text},
  attribute  data-oninclude {text}?,
  attribute  data-oninclude-format {"text"|"html"}?,
@@ -296,132 +297,6 @@ attribute title {text}?,
 attribute onclick {text}?,
 inlinecontentnoa
 }
-
-
-mml-elem=(msup|msub|munder|mover|mfrac|mroot|mtable|munderover|msubsup|mrow|mpadded|menclose|
-      mphantom|mmultiscripts|msqrt|mstyle|mi|mo|mn|ms|mtext|mspace)
-
-# should lose displaystyle
-math = element math {
-attribute display {"block"}?,
-attribute displaystyle {"true"}?,
-mml-elem+}
-
-# lose other
-mrow = element mrow {
-attribute href {text}?,
-attribute other {text}?,
-mml-elem*}
-
-mphantom = element mphantom {
-mml-elem*}
-
-mmultiscripts = element mmultiscripts {
-mml-elem,
-(mml-elem|none),(mml-elem|none),
-mprescripts,
-(mml-elem|none),(mml-elem|none)}
-
-none = element none {empty}
-mprescripts = element mprescripts {empty}
-
-mpadded = element mpadded {
-attribute width {text}?,
-attribute height {text}?,
-attribute depth {text}?,
-attribute voffset {text}?,
-mml-elem*}
-
-menclose= element menclose {
-attribute notation {"bottom"},
-mml-elem*}
-
-msqrt = element msqrt {
-mml-elem*}
-
-mstyle = element mstyle {
-attribute displaystyle {"true"}?,
-attribute mathcolor {text}?,
-attribute scriptlevel {text}?,
-mml-elem*}
-
-# lose frame and other
-mtable = element mtable {
-attribute columnalign {text}?,
-attribute rowspacing {text}?,
-attribute rowlines {text}?,
-attribute columnlines {text}?,
-attribute frame {"solid"}?,
-attribute other {"stack"}?,
-mtr+}
-
-# not sure we should allow empty rows
-mtr =  element mtr {
-attribute columnalign {text}?,
-mtd*}
-
-mtd = element mtd {
-attribute columnalign {text}?,
-mml-elem*}
-
-# should lose separators (currently not allowing mfenced)
-mfenced = element mfenced {
-attribute open {text}?,
-attribute close {text}?,
-attribute separators {""|","}?,
-attribute stretchy {"false"}?,				     
-mml-elem*}
-
-
-msub = element msub {mml-elem,mml-elem}
-msup = element msup {mml-elem,mml-elem}
-mroot = element mroot {mml-elem,mml-elem}
-
-# lose other
-mfrac = element mfrac {
-attribute other {"display"|"small"}?,
-mml-elem,mml-elem}
-
-munder = element munder {mml-elem,mml-elem}
-mover = element mover {mml-elem,mml-elem}
-
-mspace = element mspace {
-(attribute width {text}|attribute linebreak {"newline"})
-}
-
-# lose other
-munderover = element munderover {
-attribute other {"display"}?,
-mml-elem,mml-elem,mml-elem}
-msubsup = element msubsup {mml-elem,mml-elem,mml-elem}
-
-mi = element mi {
-attribute mathvariant {text}?,
-attribute mathcolor {text}?,
-attribute class {text}?,
-attribute href {text}?,
-text}
-
-
-mo = element mo {
-attribute mathvariant {text}?,
-attribute lspace {text}?,
-attribute rspace {text}?,
-attribute minsize {text}?,
-text}
-
-mn = element mn {
-attribute mathvariant {text}?,
-attribute mathcolor {text}?,
-attribute href {text}?,
-text}
-
-mtext = element mtext {
-attribute mathvariant {text}?,
-text}
-
-ms = element ms {
-text}
 
 
 # svg currently allows anything below svg
