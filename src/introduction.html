@@ -260,33 +260,46 @@
       <h3 id="intro_overview">Overview</h3>
       
       <p>
-         <span>MathML is a markup language for describing mathematics.
-            It is usually expressed in XML syntax, although HTML and other syntaxes are possible.</span>
-         A special aspect of MathML is that there are two main strains of markup:
-         Presentation markup, discussed in <a href="#presm"></a>,
-         is used to display mathematical expressions;
-         and Content markup, discussed in <a href="#contm"></a>,
-         is used to convey mathematical meaning.
-         Content markup is specified in particular detail.   
-         This specification makes use of
-         <span>an XML</span>
-         format called Content Dictionaries
-         This format has been developed by the
-         OpenMath Society, [[OpenMath2004]] with the dictionaries being used by this specification involving joint development
-         by the OpenMath Society and the W3C Math Working Group.
+         <span>MathML is a markup language for describing mathematics.</span>
+         It uses XML syntax when used standalone or within other XML,
+         or HTML syntax when used within HTML documents.
+         Conceptually, MathML consists of two main strains of markup:
+         Presentation markup is used to display mathematical expressions;
+         and Content markup is used to convey mathematical meaning.
+         These two strains, along with other external representions,
+         can be combined using parallel markup.
          </p>
       
-      
-      <p>Fundamentals common to both strains of markup
-         are covered in <a href="#fund"></a>,
-         while the means for combining these strains,
-         as well as external markup, into single MathML objects
-         are discussed in <a href="#mixing"></a>.
+      <p>
+         The specification of MathML is developed in two layers.
+         <span>MathML Core</span> covers (most of) Presentation Markup,
+         with the focus being the display of mathematics in web browsers.
+         <span>MathML Full</span>, this specification, extends <span>MathML Core</span>
+         primarily by defining Content MathML, in <a href="#contm"></a>.
+         It also defines extensions to Presentation MathML, discussed in <a href="#presm"></a>.
+         These extensions consist of additional attributes, elements or
+         enhanced syntax of attributes.
+         These are defined for compatibility with legacy MathML,
+         as well as to cover more complex notations.
+       </p>
+
+      <p>(Rethink as spec evolves)
+         Additionally, the extensions to MathML Core:
+         fundamentals is discussed in <a href="#fund"></a>;
+         parallel markup in <a href="#mixing"></a>.
          How MathML interacts with applications is covered
          in <a href="#world-interactions"></a>.
          Finally, a discussion of special symbols,
          and issues regarding characters, entities and fonts,
-         is given in <a href="#chars"></a>.</p>
+         is given in <a href="#chars"></a>.
+       </p>
+
+      <p>
+         It is intended that valid Core Markup be considered as valid Full Markup as well.
+         It is also intended that an otherwise conforming implementation of MathML Core,
+         which also implements parts or all of the extensions of MathML Full,
+         should continue to be considered a conforming implementation of MathML Core.
+      </p>
       </section>
    
    
