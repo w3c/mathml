@@ -26,7 +26,7 @@ attribute href {text}
 title = element title {text}
 
 section = element section {
-	attribute class{"appendix"}?,
+	attribute class{list {("appendix"|"informative")+}}?,
 	      (h2|h3|h4|h5|h6|attribute id {text}),divcontent*}
 
 section-include = element section {
@@ -47,7 +47,7 @@ pre-include = element pre {
  body = element body {divcontent}
 
 divcontent=((\div|p|blockquote|pre|pre-include|table|ul|ol|dl|inlinecontent|script|section|section-include)*)
-inlinecontentnoa=((text|b|i|em|strong|code|q|sub|sup|hr|br|span|dfn|img|math|svg|button)*)
+inlinecontentnoa=((text|b|i|em|strong|code|q|sub|sup|hr|br|span|dfn|img|svg|button)*)
 inlinecontent=((inlinecontentnoa|a)*)
 
 \div = element \div {
