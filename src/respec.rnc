@@ -26,8 +26,9 @@ attribute href {text}
 title = element title {text}
 
 section = element section {
-	attribute class{list {("appendix"|"informative"|"fold")+}}?,
-	      (h2|h3|h4|h5|h6|attribute id {text}),divcontent*}
+ attribute class {list {("appendix"|"informative"|"fold")+}}?,
+ attribute data-max-toc {xsd:integer}?,
+ (h2|h3|h4|h5|h6|attribute id {text}),divcontent*}
 
 section-include = element section {
  attribute  data-include {text},
