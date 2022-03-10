@@ -54,6 +54,18 @@
 	    }
 	}
     }
+    function foldable() {
+	var sortlist=document.querySelectorAll("section.fold");
+	for(var i=0;i!=sortlist.length;i++){
+	    var d=document.createElement("details");
+	    var h=sortlist[i].children[0];
+	    d.id=h.children[0].id;
+	    sortlist[i].removeChild(h);
+	    d.innerHTML="<summary>"+h.innerText+"</summary>"+sortlist[i].innerHTML;
+	    sortlist[i].parentNode.replaceChild(d,sortlist[i]);
+	}
+    }
+	
     </script>
   <script class='remove'>
    var respecConfig = {
@@ -83,7 +95,7 @@
 	  }
 	  ],
        github: "https://github.com/w3c/mathml",
-       postProcess: [mmlindex],
+       postProcess: [mmlindex,foldable],
    localBiblio: {     
 	      "MathML-Core": {
 		  title: "MathML Core",

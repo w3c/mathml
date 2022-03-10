@@ -26,7 +26,7 @@ attribute href {text}
 title = element title {text}
 
 section = element section {
-	attribute class{list {("appendix"|"informative")+}}?,
+	attribute class{list {("appendix"|"informative"|"fold")+}}?,
 	      (h2|h3|h4|h5|h6|attribute id {text}),divcontent*}
 
 section-include = element section {
@@ -134,6 +134,7 @@ attribute class {text}?,
 }
 
 th = element th {
+attribute abbr {text}?,	 
 attribute id {text}?,
 attribute class {text}?,
 attribute style {text}?,
