@@ -1,31 +1,27 @@
 <section data-max-toc="3">
- <h2 id="mixing">Mixing Markup Languages for Mathematical Expressions</h2>
+ <h2 id="mixing">Semantic Annotations</h2>
  <div class="issue" data-number="281"></div>
  
- <p>MathML markup can be combined with other markup languages, and
- these mixing constructions are realized by the semantic annotation
- elements.  The semantic annotation elements provide an important tool
- for making associations between alternate representations of an
+ <p>Semantic annotation refers to markup added to
+ make associations between alternate representations of an
  expression, and for associating semantic properties and other
- attributions with a MathML expression.  These elements allow
- presentation markup and content markup to be combined in several
- different ways.  One method, known as <em>mixed markup</em>, is to
- intersperse content and presentation elements in what is essentially a
- single tree.  Another method, known as <em>parallel markup</em>,
- is to provide both explicit presentation markup and content markup in
- a pair of markup expressions, combined by a single <code class="element">semantics</code>
- element.
+ attributions with a MathML expression.</p>
+ <p>The most general mechanism provided by MathML is the <code
+ class="element">semantics</code> element. This allows presentation
+ markup and content markup to be combined in several different ways
+ and for MathML to embed markup from other vocabularies such as
+ [[OpenMath2004]] or [[SVG]]. This general mechanism is described
+ below in <a href="mixing_semantic_annotations"></a> but first we describe a new
+ feature added in MathML&#160;4 to faciliate annotating Presentation
+ MathML with the <q>intent</q> or semantic meaning of the term.
  </p>
 
  <section>
   <h3 id="mixing_semantic_annotations">Annotation Framework</h3>
 
   <p>
-   An important concern of MathML is to represent associations between
-   presentation and content markup forms for an expression.  Representing
-   associations between MathML expressions and data of other kinds is
-   also important in many contexts.  For this reason, MathML provides a
-   general framework for annotation.  A MathML expression may be
+   In addition to the <code class="attribute">intent</code> attribute decribed above,
+   MathML provides a more general framework for annotation.  A MathML expression may be
    decorated with a sequence of pairs made up of a symbol that indicates
    the kind of annotation, known as the <em>annotation key</em>, and
    associated data, known as the <em>annotation value</em>.
@@ -47,44 +43,12 @@
     more <code class="element">annotation</code> and/or <code class="element">annotation-xml</code> elements.
    </p>
 
-   <p>
-    <div class="example mathml">
-     <pre>
-       &lt;semantics&gt;
-         &lt;mrow&gt;
-           &lt;mrow&gt;
-             &lt;mi&gt;sin&lt;/mi&gt;
-             &lt;mo&gt;&amp;ApplyFunction;&lt;/mo&gt;
-             &lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mfenced&gt;
-           &lt;/mrow&gt;
-           &lt;mo&gt;+&lt;/mo&gt;
-           &lt;mn&gt;5&lt;/mn&gt;
-         &lt;/mrow&gt;
-         &lt;annotation encoding="application/x-tex"&gt;
-      \sin x + 5
-         &lt;/annotation&gt;
-         &lt;annotation-xml encoding="application/openmath+xml"&gt;
-           &lt;OMA xmlns="http://www.openmath.org/OpenMath"&gt;
-             &lt;OMS cd="arith1" name="plus"/&gt;
-             &lt;OMA&gt;&lt;OMS cd="transc1" name="sin"/&gt;&lt;OMV name="x"/&gt;&lt;/OMA&gt;
-             &lt;OMI&gt;5&lt;/OMI&gt;
-           &lt;/OMA&gt;
-         &lt;/annotation-xml&gt;
-       &lt;/semantics&gt;
-     </pre>
-    </div>
-   </p>
-
-   <p id="html-xml1">Note that this example makes use of the namespace extensibility
-   that is only available in the XML syntax of MathML. If this example is included in
-   an HTML document
-   then it would be considered <em>invalid</em> and the OpenMath elements would be parsed as
-   elements <span data-diff="chg">in</span> the MathML namespace. See <a href="#html_annotation_xml"></a> for details.</p>
-
-   <p>The <code class="element">semantics</code> element is considered to be both a presentation
-   element and a content element, and may be used in either context.
-   All MathML processors should process the <code class="element">semantics</code> element,
-   even if they only process one of these two subsets of MathML.
+   <p>The <code class="element">semantics</code> element is considered
+   to be both a presentation element and a content element, and may be
+   used in either context.  All MathML processors should process the
+   <code class="element">semantics</code> element, even if they only
+   process one of these two subsets of MathML, or
+   [[MathML-Core]].
    </p>
 
   </section>
