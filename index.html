@@ -7,7 +7,7 @@
       src='https://www.w3.org/Tools/respec/respec-w3c'
       class='remove'>
   </script>
-  <script type="text/javascript" src="sorttable.js"></script>
+  <script src="sorttable.js"></script>
   <script class='remove'>
     function relaxhl (r,s,u) {
 	var s2=s.replaceAll(/(#[^\n]*)/g,'\x3cspan style="color:brown">$1\x3c/span>');
@@ -59,10 +59,14 @@
 	var sortlist=document.querySelectorAll("section.fold");
 	for(var i=0;i!=sortlist.length;i++){
 	    var d=document.createElement("details");
-	    var h=sortlist[i].children[0];
+	    var w=sortlist[i].children[0];
+	    var h=w.children[0];
+	    var a=w.children[1];
 	    d.id= sortlist[i].id ;
-	    sortlist[i].removeChild(h);
-	    d.innerHTML="<summary id='" + h.children[0].id + "'>"+h.innerText+"</summary>"+sortlist[i].innerHTML;
+	    sortlist[i].removeChild(w);
+	    d.innerHTML="\x3csummary id='" + h.id + "' class='" + h.nodeName + "'>"+
+            a.outerHTML +" " +
+	    h.innerText+"\x3c/summary>"+sortlist[i].innerHTML;
 	    sortlist[i].parentNode.replaceChild(d,sortlist[i]);
 	}
     }
@@ -150,6 +154,20 @@
 th.mfont, span.mfont{
 	font-family:"STIX Two Math", "Cambria Math", "STIX Math", "Asana Math", "serif";
     }
+summary.H4 {
+font-weight:bold;
+color:var(--heading-text);
+position:relative; left:-1em;
+}
+summary.H4 > a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text);}
+}
+summary.H5 {
+font-style:italic;
+font-weight:normal;
+position:relative; left:-1em;
+}
+summary.H5 > a.self-link::before{content:"§";text-decoration:none;color:#555;}
+}
 table.syntax {
 font-size: 80%;
 background-color: var(--example-bg);
