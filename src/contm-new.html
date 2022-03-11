@@ -14125,7 +14125,7 @@
    <h3 id="contm_p2s">The Strict Content MathML Transformation</h3>
    <div class="issue" data-number="278"></div>
 
-   <p>MathML 3 assigns semantics to content markup by defining a
+   <p>MathML assigns semantics to content markup by defining a
    mapping to Strict Content MathML.  Strict MathML, in turn, is in
    one-to-one correspondence with OpenMath, and the subset of
    OpenMath expressions obtained from content MathML expressions in
@@ -14139,7 +14139,7 @@
    MathML is defined algorithmically. The algorithm is described
    below as a collection of rewrite rules applying to specific
    non-Strict constructions.  The individual rewrite transformations
-   have been described in detail in context above.  The goal of this
+   are described in the following subsections.  The goal of this
    section is to outline the complete algorithm in one place.</p>
 
    <p>The algorithm is a sequence of <span>nine</span> steps.  Each step is
@@ -14429,6 +14429,284 @@
      </ol>
     </li>
    </ol>
+
+   <section>
+    <h4 id="contm_p2s_depr">Rewrite <code class="element">bind</code>, <code class="element">reln</code>, <code class="element">fn</code></h4>
+    <p>Rewrite non-strict <code class="element">bind</code> and elminate deprecated elements.></p>
+    <ol>
+     <li>
+      <p>Change the outer <code class="element">bind</code> tags
+      in binding expressions to <code class="element">apply</code>
+      if they have qualifiers or multiple children. This simplifies
+      the algorithm by allowing the subsequent rules to be applied
+      to non-strict binding expressions without case distinction.
+      Note that the later rules will change the
+      <code class="element">apply</code> elements introduced in
+      this step back to <code class="element">bind</code> elements.</p>
+     </li>
+     <li>
+      <p>Rewrite deprecated <code class="element">reln</code> elements
+      to <code class="element">apply</code>.</p>
+     </li>
+     <li>
+      <p>Replace deprecated <code class="element">fn</code> elements
+      with the child expressions they enclose.</p>
+     </li>
+    </ol>
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_qual">Rewrite idiomatic qualifiers</h4>
+    <p>Apply special case rules for idiomatic uses of qualifiers.</p>
+
+    <section>
+     <h5 id="contm_p2s_deriv">Derivatives</h5>
+     <p>Rewrite derivatives with rules <a>Rewrite: diff</a>, <a>Rewrite: nthdiff</a>,
+     and <a>Rewrite: partialdiffdegree</a>
+     to explicate the binding status of the variables involved.
+     </p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_int">Integrals</h5>
+     <p>Rewrite integrals with the rules <a>Rewrite: int</a><span>,  <a>Rewrite: defint</a></span>
+     and <a>Rewrite: defint limits</a> to disambiguate the status
+     of bound and free variables and of the orientation of the range of integration if
+     it is given as a <code class="element">lowlimit</code>/<code class="element">uplimit</code> pair.
+     </p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_limit">Limits</h5>
+     <p>Rewrite limits as described in <a>Rewrite: tendsto</a> and <a>Rewrite: limits condition</a>.</p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_sump">Sums and Products</h5>
+     <p>Rewrite sums and products as described in
+     <a href="#contm_sum"></a> and <a href="#contm_product"></a>.</p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_root">Roots</h5>
+     <p>Rewrite roots as described in <a href="#contm_root"></a>.</p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_log">Logarithms</h5>
+     <p>Rewrite logarithms as described in <a href="#contm_log"></a>.</p>
+      </li>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_mom">Moments</h5>
+     <p>Rewrite moments as described in <a href="#contm_moment"></a>.</p>
+    </section>
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_2doa">Rewrite to <code class="element">domainofapplication</code></h4>
+    <p>Rewrite Qualifiers to <code class="element">domainofapplication</code></em>.
+    These rules rewrite all <code class="element">apply</code> constructions
+    using <code class="element">bvar</code> and qualifiers to those using only
+    the general <code class="element">domainofapplication</code> qualifier.
+    </p>
+
+    <section>
+     <h5 id="contm_p2s_intv">Intervals</h5>
+     <p>Rewrite qualifiers given as <code class="element">interval</code> and
+     <code class="element">lowlimit</code>/<code class="element">uplimit</code>
+     to intervals of integers via <a>Rewrite: interval qualifier</a>.</p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_conds">Multiple <code class="element">condition</code>s</em></h5>
+     <p>Rewrite multiple <code class="element">condition</code>
+     qualifiers to a single one by taking their conjunction.  The resulting
+     compound <code class="element">condition</code> is then rewritten to
+     <code class="element">domainofapplication</code> according to rule
+     <a>Rewrite: condition</a>.</p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_doas">Multiple <code class="element">domainofapplication</code>s</em></h5>
+     <p>Rewrite multiple <code class="element">domainofapplication</code>
+     qualifiers to a single one by taking the intersection of the specified
+     domains.</p>
+    </section>
+
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_cont">Normalize container markup</h4>
+    <section>
+     <h5 id="contm_p2s_sets">Sets and Lists</h5>
+     <p>Rewrite sets and lists by the rule
+     <a>Rewrite: n-ary setlist domainofapplication</a>.</p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_step">Intervals, vectors, matrices</h5>
+     <p>Rewrite interval, vectors, matrices, and matrix rows as
+     described in <a href="#contm_interval"></a>, <a href="#contm_vector"></a>,
+     <a href="#contm_matrix"></a> and <a href="#contm_matrixrow"></a>.
+     Note any qualifiers will have been rewritten to <code class="element">domainofapplication</code> and will be further rewritten in a later step.</p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_lambda">Lambda expressions</h5>
+     <p>Rewrite lambda expressions by the rules <a>Rewrite: lambda</a>
+     and <a>Rewrite: lambda domainofapplication</a></p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_piece">Piecewise functions</h5>
+     <p>Rewrite piecewise functions as described in <a href="#contm_piecewise"></a>.</p>
+    </section>
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_doaq">Rewrite <code class="element">domainofapplication</code> qualifiers</h4>
+    <p>Apply Special Case Rules for Operators using <code class="element">domainofapplication</code> Qualifiers.
+    This step deals with the special cases for the operators introduced in
+    <a href="#contm_opel"></a>. There are different classes of special cases to be taken into account.</p>
+
+    <section>
+     <h5 id="contm_p2s_minmax">N-ary/unary operators</h5>
+     <p>Rewrite <code class="element">min</code>, <code class="element">max</code>, <code class="element">mean</code> and similar n-ary/unary operators
+     by the rules <a>Rewrite: n-ary unary set</a>, <a>Rewrite: n-ary unary domainofapplication</a>
+     and <a>Rewrite: n-ary unary single</a>.</p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_logic"> <code class="element">forall</code> and <code class="element">exists</code></h5>
+     <p>Rewrite the quantifiers <code class="element">forall</code> and <code class="element">exists</code> used with <code class="element">domainofapplication</code>
+     to expressions using implication and conjunction by the rule <a>Rewrite: quantifier</a>.
+     </p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_defint">Integrals</h5>
+     <p>Rewrite integrals used with a <code class="element">domainofapplication</code> element (with or without a <code class="element">bvar</code>)
+     according to the rules <a>Rewrite: int</a><span> and
+     <a>Rewrite: defint</a></span>.
+     </p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_sums">Sums and products</h5>
+     <p>Rewrite sums and products used with a <code class="element">domainofapplication</code> element
+     (with or without a <code class="element">bvar</code>) as described in
+     <a href="#contm_sum"></a> and <a href="#contm_product"></a>.</p>
+    </section>
+
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_doa">Eliminate <code class="element">domainofapplication</code></h4>
+    <p>At this stage, any
+    <code class="element">apply</code> has at most one <code class="element">domainofapplication</code> child and special cases have been addressed. As
+    <code class="element">domainofapplication</code> is not Strict Content MathML, it is rewritten as one of the following cases.
+    </p>
+
+    <section>
+     <h5 id="contm_p2s_restr">Restricted function</h5>
+     <p>Into an application of a restricted function via the rule
+     <a>Rewrite: restriction</a> if the <code class="element">apply</code> does not contain
+     a <code class="element">bvar</code> child.</p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_pol">Predicate on list</h5>
+     <p>Into an application of the <a class="omsymbol" href="https://openmath.org/cd/fns2#predicate_on_list">predicate_on_list</a> symbol via the rules
+     <a>Rewrite: n-ary relations</a> and <a>Rewrite: n-ary relations bvar</a>
+     if used with a relation.</p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_atl">Apply to list</h5>
+     <p>into a construction with the <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a> symbol
+     via the general rule <a>Rewrite: n-ary domainofapplication</a> for
+     general n-ary operators.
+     </p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_st">Such that</h5>
+     <p>into a construction using the <a class="omsymbol" href="https://openmath.org/cd/set1#suchthat">suchthat</a> symbol
+     from the <a class="omcd" href="set1">set1</a> content dictionary in an <code class="element">apply</code> with bound
+     variables via the <a>Rewrite: apply bvar domainofapplication</a> rule.</p>
+    </section>
+
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_tok">Rewrite token elements</h4>
+    <p>Rewrite non-strict token elements</p>
+
+    <section>
+     <h5 id="contm_p2s_cn">Numbers</h5>
+     <p>Rewrite numbers represented as <code class="element">cn</code> elements where the <code class="attribute">type</code>
+     attribute is one of <code class="attributevalue">e-notation</code>, <code class="attributevalue">rational</code>,
+     <code class="attributevalue">complex-cartesian</code>, <code class="attributevalue">complex-polar</code>,
+     <code class="attributevalue">constant</code> as strict <code class="element">cn</code> via rules
+     <a>Rewrite: cn sep</a>, <a>Rewrite: cn based_integer</a>
+     and <a>Rewrite: cn constant</a>.</p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_ci">Token presentation</h5>
+     <p>Rewrite any <code class="element">ci</code>, <code class="element">csymbol</code> or <code class="element">cn</code> containing
+     presentation MathML to <code class="element">semantics</code> elements with rules
+     <a>Rewrite: cn presentation mathml</a> and <a>Rewrite: ci presentation mathml</a> and
+     the analogous rule for <code class="element">csymbol</code>.</p>
+    </section>
+
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_op">Rewrite operators</h4>
+    <p>Rewrite any remaining operator defined in <a href="#contm_opel"></a>
+    to a <code class="element">csymbol</code> referencing the symbol identified in the syntax table by the rule
+    <a>Rewrite: element</a>. As noted in the descriptions of each
+    operator element, some require special case rules to determine the proper choice
+    of symbol.
+    Some cases of particular note are:
+    </p>
+    <ol>
+
+     <li>
+      <p>The order of the arguments for the
+      <a class="intref" href="#contm_selector"><code class="element">selector</code></a> operator must be
+      rewritten, and the symbol depends on the type of the arguments.</p>
+     </li>
+
+     <li>
+      <p>The choice of symbol for the <a class="intref" href="#contm_minus"><code class="element">minus</code></a>
+      operator depends on the number of the arguments.</p>
+     </li>
+
+     <li>
+      <p>The choice of symbol for some set operators depends on the values of
+      the <code class="attribute">type</code> of the arguments.</p>
+     </li>
+
+     <li>
+      <p>The choice of symbol for some statistical operators depends on the values of
+      the types of the arguments.</p>
+     </li>
+    </ol>
+
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_att">Rewrite attributes</h4>
+    <p>Rewrite any element with attributes that are
+    not allowed in strict markup to a <code class="element">semantics</code> construction with
+    the element without these attributes as the first child and the attributes in
+    <code class="element">annotation</code> elements by rule <a>Rewrite: attributes</a>.</p>
+   </section>
+
   </section>
 
  </section>
