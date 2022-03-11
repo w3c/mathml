@@ -59,14 +59,15 @@
 	for(var i=0;i!=sortlist.length;i++){
 	    var d=document.createElement("details");
 	    var h=sortlist[i].children[0];
-	    d.id=h.children[0].id;
+	    d.id= sortlist[i].id ;
 	    sortlist[i].removeChild(h);
-	    d.innerHTML="<summary>"+h.innerText+"</summary>"+sortlist[i].innerHTML;
+	    d.innerHTML="<summary id='" + h.children[0].id + "'>"+h.innerText+"</summary>"+sortlist[i].innerHTML;
 	    sortlist[i].parentNode.replaceChild(d,sortlist[i]);
 	}
     }
 	
     </script>
+  <script type="text/javascript" src="sorttable.js"></script>
   <script class='remove'>
    var respecConfig = {
    copyrightStart: 1998,
@@ -111,7 +112,8 @@
    "AAP-math": {title: "AAP-math"},
    "Poppelier1992": {title: "Poppelier1992"},
    "ISO-12083": {title: "ISO-12083"},
-   "MathML1": {title: "MathML1"},
+       "MathML1": {title: "MathML1"},
+   "MathML-Core" : {"aliasOf": "mathml-core"},
    "OpenMath2004": {title: "OpenMath2004"},
    "RELAX-NG": {title: "RELAX-NG"},
    "XMLSchemas": {title: "XMLSchemas"},
@@ -142,7 +144,6 @@
 	return  s2;
     }
   </script>
-  <script type="text/javascript" src="sorttable.js"></script>
   <style>
    table.syntax {
 font-size: 80%;
