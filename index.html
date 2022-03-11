@@ -7,6 +7,7 @@
       src='https://www.w3.org/Tools/respec/respec-w3c'
       class='remove'>
   </script>
+  <script type="text/javascript" src="sorttable.js"></script>
   <script class='remove'>
     function relaxhl (r,s,u) {
 	var s2=s.replaceAll(/(#[^\n]*)/g,'\x3cspan style="color:brown">$1\x3c/span>');
@@ -65,9 +66,10 @@
 	    sortlist[i].parentNode.replaceChild(d,sortlist[i]);
 	}
     }
-	
-    </script>
-  <script type="text/javascript" src="sorttable.js"></script>
+    function resortable () {
+        sorttable.makeSortable(document.getElementById('oper-dict-table'));
+      }
+      </script>
   <script class='remove'>
    var respecConfig = {
    copyrightStart: 1998,
@@ -96,7 +98,7 @@
 	  }
 	  ],
        github: "https://github.com/w3c/mathml",
-       postProcess: [mmlindex,foldable],
+       postProcess: [mmlindex,foldable,resortable],
    localBiblio: {     
 	      "MathML-Core": {
 		  title: "MathML Core",
