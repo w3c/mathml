@@ -7,6 +7,7 @@
       src='https://www.w3.org/Tools/respec/respec-w3c'
       class='remove'>
   </script>
+  <script src="sorttable.js"></script>
   <script class='remove'>
     function relaxhl (r,s,u) {
 	var s2=s.replaceAll(/(#[^\n]*)/g,'\x3cspan style="color:brown">$1\x3c/span>');
@@ -58,15 +59,21 @@
 	var sortlist=document.querySelectorAll("section.fold");
 	for(var i=0;i!=sortlist.length;i++){
 	    var d=document.createElement("details");
-	    var h=sortlist[i].children[0];
-	    d.id=h.children[0].id;
-	    sortlist[i].removeChild(h);
-	    d.innerHTML="<summary>"+h.innerText+"</summary>"+sortlist[i].innerHTML;
+	    var w=sortlist[i].children[0];
+	    var h=w.children[0];
+	    var a=w.children[1];
+	    d.id= sortlist[i].id ;
+	    sortlist[i].removeChild(w);
+	    d.innerHTML="\x3csummary id='" + h.id + "' class='" + h.nodeName + "'>"+
+            a.outerHTML +" " +
+	    h.innerText+"\x3c/summary>"+sortlist[i].innerHTML;
 	    sortlist[i].parentNode.replaceChild(d,sortlist[i]);
 	}
     }
-	
-    </script>
+    function resortable () {
+        sorttable.makeSortable(document.getElementById('oper-dict-table'));
+      }
+      </script>
   <script class='remove'>
    var respecConfig = {
    copyrightStart: 1998,
@@ -95,7 +102,7 @@
 	  }
 	  ],
        github: "https://github.com/w3c/mathml",
-       postProcess: [mmlindex,foldable],
+       postProcess: [mmlindex,foldable,resortable],
    localBiblio: {     
 	      "MathML-Core": {
 		  title: "MathML Core",
@@ -111,7 +118,8 @@
    "AAP-math": {title: "AAP-math"},
    "Poppelier1992": {title: "Poppelier1992"},
    "ISO-12083": {title: "ISO-12083"},
-   "MathML1": {title: "MathML1"},
+       "MathML1": {title: "MathML1"},
+   "MathML-Core" : {"aliasOf": "mathml-core"},
    "OpenMath2004": {title: "OpenMath2004"},
    "RELAX-NG": {title: "RELAX-NG"},
    "XMLSchemas": {title: "XMLSchemas"},
@@ -142,9 +150,25 @@
 	return  s2;
     }
   </script>
-  <script type="text/javascript" src="sorttable.js"></script>
   <style>
-   table.syntax {
+th.mfont, span.mfont{
+	font-family:"STIX Two Math", "Cambria Math", "STIX Math", "Asana Math", "serif";
+    }
+summary.H4 {
+font-weight:bold;
+color:var(--heading-text);
+position:relative; left:-1em;
+}
+summary.H4 > a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text);}
+}
+summary.H5 {
+font-style:italic;
+font-weight:normal;
+position:relative; left:-1em;
+}
+summary.H5 > a.self-link::before{content:"§";text-decoration:none;color:#555;}
+}
+table.syntax {
 font-size: 80%;
 background-color: var(--example-bg);
 padding:.2em;
