@@ -1,6 +1,7 @@
 <section data-max-toc="3">
  <h2 id="mixing">Semantic Annotations</h2>
  <div class="issue" data-number="281"></div>
+ <div class="issue" data-number="252"></div>
  
  <p>Semantic annotation refers to markup added to
  make associations between alternate representations of an
@@ -11,10 +12,91 @@
  markup and content markup to be combined in several different ways
  and for MathML to embed markup from other vocabularies such as
  [[OpenMath2004]] or [[SVG]]. This general mechanism is described
- below in <a href="mixing_semantic_annotations"></a> but first we describe a new
+ below in <a href="#mixing_semantic_annotations"></a> but first we describe a new
  feature added in MathML&#160;4 to faciliate annotating Presentation
  MathML with the <q>intent</q> or semantic meaning of the term.
  </p>
+
+ <section>
+  <h3 id="mixing_intent">Semantic Intent for Presentation MathML</h3>
+  <p>As decribed in <a href="#presm"></a> presentation MathML elements
+  (including [[MathML-Core]] allow attributes <code
+  class="attribute">intent</code> and <code
+  class="attribute">arg</code> that as described here allow the
+  <q>intent</q> or semantic meaning of the term to be specified. This
+  annotation is not intented to provide a full mathematical definition
+  of the term but may be used guide Accssibility systems to give audio
+  or braille renderings, see <a href="#accessibility"></a>. It may also
+  be used to guide translations to Content MathML, or computational
+  systems.</p>
+
+  <section>
+   <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
+
+   <pre>
+intent       := emptyintent | nemptyintent
+emptyintent  : = ''
+nemptyintent := literal | selector | intent '(' wildcard ')' | intent '(' nemptyintent [ ',' nemptyintent ]* ')'
+literal      := [letters|digits|_|-]+
+selector     := ( argref | numref ) [ '/' selector ]?
+argref       := '$' NCName
+numref       := '$' [digit]+
+wildcard     := '@'
+   </pre>
+
+   <p>where the grammar components have the following significance:</p>
+
+   <ul>
+    <li>the third form of intent represents some operation applied to arguments.
+    literal: represents a mathematical concept, being a literal keyword (to be looked up in a to-be-specified dictionary), or a phrase to be spoken as-is (possibly translated, as needed) if not present in the dictionary. In the latter case, hyphens and underscores are treated as spaces. The set of literals is intentionally open-ended.</li>
+    <li>selector: selects another node whose intent is used in-place-of or as part-of the composed intent.</li>
+    <li>argref: refers to the intent of another node, being the child of the current node with attribute arg having the given NCName (or possibly any node in the document with the NCName as id).</li>
+    <li>argpath: refers to the intent of a descendant of the current node; for example, a single component such as $2 refers to the 2nd child; multiple components refer to grandchildren or deeper, $1/1 would refer to the first grandchild.</li>
+   </ul>
+
+<p>The key component here is the literal; they are intended to correspond to some mathematical concept or operator, or some application specific quantity or operation; that is it represents some “meaning”. Ultimately, the goal is to translate this virtual content tree into text or speech (in different languages), braille or some other form. The preferred translation may also depend on context and user profile. On the one hand, the most natural translation of a given expression can depend on the operator. It is thus desirable to have a set of common known meaning with translation rules. Thus power(x,2) might be rendered as “the 2nd power of x” or “x squared”, depending on the user and agent.</p>
+
+<p>On the other hand, mathematics encompasses an endless set of concepts, arguing that the set of meanings must be open-ended. We propose that there should be a small set of recommended meaning keywords whose translation can be specialized, while allowing any value for the meaning (an implementation is free to recognize more keywords). In the case where a meaning is not in a dictionary, support for multiple languages may be weak and the application of such a literal would be generic as “the [meaning] of [arg1], [arg2] and [argn] …”. While this result may be less than optimal, it is still functional.</p>
+ </section>
+
+ <section>
+  <h3 id="mixing_msup_notation">Same notation, different meanings</h3>
+
+<p>With this model, the <code class="element">msup</code> examples:
+as a power;
+as a transpose;
+as a derivative; and
+as an embellished symbol would be distinguished as follows:
+
+<pre class="nonumexample">
+&lt;msup intent="power($base,$exp)">
+  &lt;mi arg="base">x&lt;/mi>
+  &lt;mi arg="exp">n&lt;/mi>
+&lt;/msup>
+</pre>
+
+<pre class="nonumexample">
+&lt;msup intent="$op($a)">
+  &lt;mi arg="a">A&lt;/mi>
+  &lt;mi arg="op" intent="transpose">T&lt;/mi>
+&lt;/msup>
+</pre>
+
+<p>(easily adapted to conjugate and adjoint)</p>
+
+<pre class="nonumexample">
+&lt;msup intent="derivative($a)">
+  &lt;mi arg="a">f&lt;/mi>
+  &lt;mi>'&lt;/mi>
+&lt;/msup>
+</pre>
+
+<pre class="nonumexample">
+&lt;msup intent="x-prime">
+  &lt;mi>x&lt;/mi>
+  &lt;mo>'&lt;/mo>
+&lt;/msup>
+</pre>
 
  <section>
   <h3 id="mixing_semantic_annotations">Annotation Framework</h3>
