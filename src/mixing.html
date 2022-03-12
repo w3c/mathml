@@ -34,10 +34,8 @@
    <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
 
    <pre>
-intent       := emptyintent | nemptyintent
-emptyintent  : = ''
-nemptyintent := literal | selector | intent '(' wildcard ')' | intent '(' nemptyintent [ ',' nemptyintent ]* ')'
-literal      := [letters|digits|_|-]+
+intent := literal | selector | intent '(' wildcard ')' | intent '(' intent [ ',' intent ]* ')'
+literal      := [letters|digits|_|-]*
 selector     := ( argref | numref ) [ '/' selector ]?
 argref       := '$' NCName
 numref       := '$' [digit]+
