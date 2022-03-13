@@ -70,9 +70,9 @@
    <div class="example ">
     <pre>
       &lt;body xmlns:m="http://www.w3.org/1998/Math/MathML"&gt;
-     ...
+        ...
         &lt;m:math&gt;&lt;m:mrow&gt;...&lt;/m:mrow&gt;&lt;/m:math&gt;
-     ...
+        ...
       &lt;/body&gt;
     </pre>
    </div>
@@ -90,7 +90,7 @@
    <div class="example mathml-fragment">
     <pre>
       &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
-     ...
+        ...
       &lt;/math&gt;
     </pre>
    </div>
@@ -371,42 +371,15 @@
    <section>
     <h5 id="fund_units">Length Valued Attributes</h5>
 
-    <p>Most presentation elements have attributes that accept values
-    representing lengths to be used for size, spacing or similar properties.
-    The syntax of a length is specified as</p>
+    <p id="type_length">Most presentation elements have attributes that accept values
+    representing lengths to be used for size, spacing or similar
+    properties.  The
+    basic <a id="type_unit" data-cite="CSS-VALUES-3#typedef-length-percentage"><code>&lt;length-percentage&gt;</code></a>
+    syntax is defined in [[CSS-VALUES-3]]. This is the only length
+    syntax that may be used in [[MathML-Core]].  However this
+    specification defines additional syntax for specific attributes as
+    decribed below and in the entry for each affected attribute.</p>
 
-    <table border="1" id="type_length">
-     
-     <thead>
-      
-      <tr>
-       <td>Type</td>
-       <td>Syntax</td>
-      </tr>
-     </thead>
-     
-     <tbody>
-      
-      <tr>
-       <td><em>length</em></td>
-       <td>
-	<a class="intref" href="#type_number"><em>number</em></a>
-	| <a class="intref" href="#type_number"><em>number</em></a>
-	<a class="intref" href="#type_unit"><em>unit</em></a>
-	| <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
-       </td>
-      </tr>
-     </tbody>
-    </table>
-
-    <p>There should be no space between the number and the unit of a length.</p>
-
-    <p>The possible <em>unit</em>s and <em>namedspace</em>s, along with their interpretations, are
-    shown below. Note that although the units and their meanings are taken from
-    CSS, the syntax of lengths is not identical. A few MathML elements
-    have length attributes that accept additional keywords; these are termed pseudo-units
-    and specified
-    in the description of those particular elements; see, for instance, <a href="#presm_mpadded"></a>.</p>
 
     <p>
      A trailing "%" represents a percent of
@@ -427,74 +400,14 @@
     <p>In some cases, the range of acceptable values for a particular attribute may be restricted;
     implementations are free to round up or down to the closest allowable value.</p>
 
-    <p id="type_unit">The possible <em>unit</em>s in MathML are:</p>
 
-    <table border="1">
 
-     <thead>
-
-      <tr>
-       <td>Unit</td>
-       <td>Description</td>
-      </tr>
-     </thead>
-
-     <tbody>
-
-      <tr>
-       <td><code>em</code></td>
-       <td>an em (font-relative unit traditionally used for horizontal lengths)</td>
-      </tr>
-
-      <tr>
-       <td><code>ex</code></td>
-       <td>an ex (font-relative unit traditionally used for vertical lengths)</td>
-      </tr>
-
-      <tr>
-       <td><code>px</code></td>
-       <td>pixels, or size of a  pixel in the current display</td>
-      </tr>
-
-      <tr>
-       <td><code>in</code></td>
-       <td>inches (1 inch = 2.54 centimeters)</td>
-      </tr>
-
-      <tr>
-       <td><code>cm</code></td>
-       <td>centimeters</td>
-      </tr>
-
-      <tr>
-       <td><code>mm</code></td>
-       <td>millimeters</td>
-      </tr>
-
-      <tr>
-       <td><code>pt</code></td>
-       <td>points (1 point = 1/72 inch)</td>
-      </tr>
-
-      <tr>
-       <td><code>pc</code></td>
-       <td>picas (1 pica = 12 points)</td>
-      </tr>
-
-      <tr>
-       <td><code>%</code></td>
-       <td>percentage of the <span data-diff="chg">reference</span> value</td>
-      </tr>
-     </tbody>
-    </table>
-
-    <p>Some additional aspects of units are discussed further
-    below, in <a href="#units_addl_notes"></a>.</p>
 
     <p id="type_namedspace">The following constants, <em>namedspace</em>s,
     may also be used where a length is needed; they are typically used for
     spacing or padding between tokens.
 
+    <div class="note">Mandate these rather than leave as implementation defined?</div>
     Recommended default values for these constants are shown;
     the actual spacing used is implementation specific.
 
@@ -586,19 +499,8 @@
     <section>
      <h6 id="units_addl_notes">Additional notes about units</h6>
 
-     <p>Lengths are only used in MathML for presentation, and presentation
-     will ultimately involve rendering in or on some medium. For visual media,
-     the display context is assumed to have certain properties available to
-     the rendering agent. A <code>px</code> corresponds to a pixel on the display, to
-     the extent that is meaningful. The resolution of the display device
-     will affect the correspondence of pixels to the units
-     <code>in</code>, <code>cm</code>, <code>mm</code>, <code>pt</code> and <code>pc</code>.
-     </p>
 
-     <p>Moreover, the display context will also provide a default for the font size;
-     the parameters of this font determine the initial values used to interpret
-     the units <code>em</code> and <code>ex</code>, and thus indirectly the sizes
-     of namedspaces. Since these units track the display context, and in particular,
+     <p>Since these units track the display context, and in particular,
      the user's preferences for display, the relative units <code>em</code> and <code>ex</code>
      are generally to be preferred over absolute units such as <code>px</code> or <code>cm</code>.
      </p>
@@ -1558,9 +1460,9 @@
    <div class="example ">
     <pre>
       &lt;body xmlns:my="http://www.example.com/MathML/extensions"&gt;
-     ...
+        ...
         &lt;maction actiontype="highlight" my:color="#ff0000"&gt; expression &lt;/maction&gt;
-     ...
+        ...
       &lt;/body&gt;
     </pre>
    </div>

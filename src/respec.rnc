@@ -292,11 +292,13 @@ attribute id {text}?,
 
 
 a  = element a {
+attribute id {text}?
 attribute class {text}?,
 attribute rel {"disclosure"}?,
 attribute href {text},
 attribute title {text}?,
 attribute onclick {text}?,
+attribute data-cite {text},
 inlinecontentnoa
 }
 
