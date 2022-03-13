@@ -1,7 +1,8 @@
 <section data-max-toc="3">
- <h2 id="mixing">Semantic Annotations</h2>
+ <h2 id="mixing">Annotating MathML</h2>
  <div class="issue" data-number="281"></div>
  <div class="issue" data-number="252"></div>
+
  
  <p>Semantic annotation refers to markup added to
  make associations between alternate representations of an
@@ -18,7 +19,7 @@
  </p>
 
  <section>
-  <h3 id="mixing_intent">Semantic Intent for Presentation MathML</h3>
+  <h3 id="mixing_intent">The <code class="attribute">intent</code> atribute</h3>
   <p>As decribed in <a href="#presm"></a> presentation MathML elements
   (including [[MathML-Core]] allow attributes <code
   class="attribute">intent</code> and <code
@@ -102,7 +103,7 @@ as an embellished symbol would be distinguished as follows:</p>
 
  
  <section>
-  <h3 id="mixing_semantic_annotations">Annotation Framework</h3>
+  <h3 id="mixing_semantic_annotations">Annotation Elements</h3>
 
   <p>
    In addition to the <code class="attribute">intent</code> attribute decribed above,
@@ -112,8 +113,6 @@ as an embellished symbol would be distinguished as follows:</p>
    associated data, known as the <em>annotation value</em>.
   </p>
 
-  <section>
-   <h4 id="mixing_annotation_elements">Annotation elements</h4>
 
    <p>
     The <code class="element">semantics</code>, <code class="element">annotation</code>, and
@@ -136,8 +135,7 @@ as an embellished symbol would be distinguished as follows:</p>
    [[MathML-Core]].
    </p>
 
-  </section>
-
+ 
   <section>
    <h4 id="mixing_annotation_keys">Annotation keys</h4>
 
@@ -368,18 +366,8 @@ as an embellished symbol would be distinguished as follows:</p>
 
   </section>
 
- </section>
 
- <section>
-  <h3 id="mixing_semantic_elements">Elements for Semantic Annotations</h3>
-
-  <p>This section explains the semantic mapping elements <code class="element">semantics</code>,
-  <code class="element">annotation</code>, and <code class="element">annotation-xml</code>.  These elements associate
-  alternate representations for a presentation or content expression, or
-  associate semantic or other attributions that may modify the meaning of
-  the annotated expression.</p>
-
-  <section>
+   <section>
    <h4 id="mixing_elements_semantics">The <code class="defn starttag">&lt;semantics&gt;</code> element</h4>
 
    <section>
@@ -571,7 +559,7 @@ as an embellished symbol would be distinguished as follows:</p>
     <p>Taken together, the <code class="attribute">cd</code> and <code class="attribute">name</code> attributes
     specify the annotation key symbol, which identifies the relationship
     between the annotated element and the annotation, as described in
-    <a href="#mixing_annotation_elements"></a>. The <code class="attribute">definitionURL</code>
+    <a href="#mixing_semantic_annotations"></a>. The <code class="attribute">definitionURL</code>
     attribute provides an alternate way to reference the annotation key
     symbol as a single attribute.  If none of these attributes are present,
     the annotation key symbol is the symbol
@@ -697,7 +685,7 @@ as an embellished symbol would be distinguished as follows:</p>
     <p>Taken together, the <code class="attribute">cd</code> and <code class="attribute">name</code> attributes
     specify the annotation key symbol, which identifies the relationship
     between the annotated element and the annotation, as described in
-    <a href="#mixing_annotation_elements"></a>. The <code class="attribute">definitionURL</code>
+    <a href="#mixing_semantic_annotations"></a>. The <code class="attribute">definitionURL</code>
     attribute provides an alternate way to reference the annotation key
     symbol as a single attribute.  If none of these attributes are present,
     the annotation key symbol is the symbol
@@ -882,10 +870,10 @@ as an embellished symbol would be distinguished as follows:</p>
 
   </section>
 
- </section>
+
 
  <section>
-  <h3 id="mixing_markup">Combining Presentation and Content Markup</h3>
+  <h4 id="mixing_markup">Combining Presentation and Content Markup</h4>
 
   <p>
    Presentation markup encodes the <em>notational structure</em> of an expression.
@@ -992,7 +980,7 @@ as an embellished symbol would be distinguished as follows:</p>
  </section>
 
  <section>
-  <h3 id="mixing_parallel">Parallel Markup</h3>
+  <h4 id="mixing_parallel">Parallel Markup</h4>
 
   <p>
    Some applications are able to use <em>both</em> presentation
@@ -1004,7 +992,7 @@ as an embellished symbol would be distinguished as follows:</p>
   </p>
 
   <section>
-   <h4 id="mixing_top_level">Top-level Parallel Markup</h4>
+   <h5 id="mixing_top_level">Top-level Parallel Markup</h5>
 
    <p>
     In many cases, the goal is to provide presentation markup and content
@@ -1044,7 +1032,7 @@ as an embellished symbol would be distinguished as follows:</p>
   </section>
 
   <section>
-   <h4 id="mixing_cr">Parallel Markup via Cross-References</h4>
+   <h5 id="mixing_cr">Parallel Markup via Cross-References</h5>
 
    <p>
     To accommodate applications that must process sub-expressions of large
@@ -1166,6 +1154,7 @@ as an embellished symbol would be distinguished as follows:</p>
 
  </section>
 
+</section>
 </section>
 
 
