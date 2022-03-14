@@ -1109,54 +1109,17 @@
   </section>
 
   <section>
-   <h4>Deprecated Attributes</h4>
+   <h4>Undefined Attributes</h4>
 
-   <p>The following attributes of <code class="element">math</code> are deprecated:</p>
-
-   <table border="1" class="attributes">
-
-    <thead>
-
-     <tr>
-      <td>Name</td>
-      <td>values</td>
-      <td>default</td>
-     </tr>
-    </thead>
-
-    <tbody>
-
-     <tr>
-      <td rowspan="2" class="attname">macros</td>
-      <td><a class="intref" href="#type_uri"><em>URI</em></a> *</td>
-      <td><em>none</em></td>
-     </tr>
-
-     <tr>
-      <td colspan="2" class="attdesc">
-       intended to provide a way of pointing to external macro definition files.
-       Macros are not part of the MathML specification.
-       <span class="coreno">core&#x2716;</span>
-      </td>
-     </tr>
-
-     <tr>
-      <td rowspan="2" class="attname">mode</td>
-      <td>"display" | "inline"</td>
-      <td>inline</td>
-     </tr>
-
-     <tr>
-      <td colspan="2" class="attdesc">
-       specified whether the enclosed MathML expression should be rendered in
-       a display style or an inline style.
-       This attribute is <a class="intref" href="#interf_deprec">deprecated</a> in
-       favor of the <code class="attribute">display</code> attribute.
-       <span class="coreno">core&#x2716;</span>
-      </td>
-     </tr>
-    </tbody>
-   </table>
+   <p> [[MathML1]] defined attributes <code>macros</code> and
+   <code>mode</code> on the <code class="element">math</code>
+   element. <code>macros</code> has never had any defined behavior and
+   <code>mode</code> has been deprecated since [[MathML2]]. This
+   specification assigns no behaviour for these attributes, treating
+   then as invalid.  If needed, for example by a legacy MathML&#160;1
+   application, they may be treated as valid by
+   using the legacy schema provided in [[[#parsing_rnc_legacy]]].
+   </p>
 
   </section>
  </section>
