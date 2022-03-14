@@ -62,7 +62,8 @@
 	    var w=sortlist[i].children[0];
 	    var h=w.children[0];
 	    var a=w.children[1];
-	    d.id= sortlist[i].id ;
+	    d.id= sortlist[i].id;
+	    d.className=h.nodeName;
 	    sortlist[i].removeChild(w);
 	    d.innerHTML="\x3csummary id='" + h.id + "' class='" + h.nodeName + "'>"+
             a.outerHTML +" " +
@@ -166,20 +167,21 @@ div.header-wrapper span.coreno::before, li.tocline span.coreno::before {
     vertical-align: text-top;
     font-size: 70%;
     }
-
 summary.H4 {
 font-weight:bold;
 color:var(--heading-text);
 position:relative; left:-1em;
 }
 summary.H4 > a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text);}
-}
 summary.H5 {
 font-style:italic;
 font-weight:normal;
 position:relative; left:-1em;
 }
 summary.H5 > a.self-link::before{content:"§";text-decoration:none;color:#555;}
+
+details.H4, details.H5 {
+    margin-top:2.5rem;
 }
 table.syntax {
 font-size: 80%;
