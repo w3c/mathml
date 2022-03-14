@@ -40,6 +40,7 @@ pre-include = element pre {
  attribute class {text}?,
  attribute style {text}?,
  attribute  data-include {text},
+ attribute  data-include-format {"text"|"html"},
  attribute  data-oninclude {text}?,
  attribute  data-oninclude-format {"text"|"html"}?,
  attribute data-include-replace{"true"}?
@@ -292,13 +293,13 @@ attribute id {text}?,
 
 
 a  = element a {
-attribute id {text}?
+attribute id {text}?,
 attribute class {text}?,
 attribute rel {"disclosure"}?,
 attribute href {text},
 attribute title {text}?,
 attribute onclick {text}?,
-attribute data-cite {text},
+attribute data-cite {text}?,
 inlinecontentnoa
 }
 
