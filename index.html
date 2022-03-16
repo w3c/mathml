@@ -73,7 +73,18 @@
     }
     function resortable () {
         sorttable.makeSortable(document.getElementById('oper-dict-table'));
-      }
+    }
+    function showcore (){
+	var mmllist=document.querySelectorAll("div.example.mathml");
+	for(var i=0;i!=mmllist.length;i++){
+	    var m=document.createElementNS("http://www.w3.org/1998/Math/MathML","math");;
+	    m.style.backgroundColor='lightgreen';
+	    m.style.padding='.5em';
+	    m.innerHTML=mmllist[i].textContent;
+	    mmllist[i].parentNode.insertBefore(m,mmllist[i].nextSibling);
+	}
+    }
+	
       </script>
   <script class='remove'>
    var respecConfig = {
@@ -103,7 +114,7 @@
 	  }
 	  ],
        github: "https://github.com/w3c/mathml",
-       postProcess: [mmlindex,foldable,resortable],
+       postProcess: [mmlindex,foldable,resortable,showcore],
    localBiblio: {     
 	      "MathML-Core": {
 		  title: "MathML Core",
