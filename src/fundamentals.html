@@ -610,6 +610,7 @@
       <td>Name</td>
       <td>values</td>
       <td>default</td>
+      <td>Core</td>
      </tr>
     </thead>
 
@@ -619,14 +620,14 @@
       <td rowspan="2" class="attname">id</td>
       <td><a class="intref" href="#type_id"><em>id</em></a></td>
       <td><em>none</em></td>
+      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-id"></a></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        Establishes a unique identifier associated with the element
        to support linking, cross-references and parallel markup.
        See <code class="attribute">xref</code> and <a href="#mixing_parallel"></a>.
-       <a class="coreyes" href="https://w3c.github.io/mathml-core/#global-attributes">core&#x2714;</a>
       </td>
      </tr>
 
@@ -634,13 +635,13 @@
       <td rowspan="2" class="attname">xref</td>
       <td><a class="intref" href="#type_idref"><em>idref</em></a></td>
       <td><em>none</em></td>
+      <td><span class="coreno"></span></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        References another element within the document.
        See <code class="attribute">id</code> and <a href="#mixing_parallel"></a>.
-       <a class="coreyes" href="https://w3c.github.io/mathml-core/#global-attributes">core&#x2714;</a>
       </td>
      </tr>
 
@@ -648,14 +649,14 @@
       <td rowspan="2" class="attname">class</td>
       <td><a class="intref" href="#type_string"><em>string</em></a></td>
       <td><em>none</em></td>
+      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-class"></a></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        Associates the element with a set of style classes for use with
        [[CSS21]].
        See <a href="#world-int-style"></a> for discussion of the interaction of MathML and CSS.
-       <a class="coreyes" href="https://w3c.github.io/mathml-core/#global-attributes">core&#x2714;</a>
       </td>
      </tr>
 
@@ -663,15 +664,15 @@
       <td rowspan="2" class="attname">style</td>
       <td><a class="intref" href="#type_string"><em>string</em></a></td>
       <td><em>none</em></td>
+      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-style"></a></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        Associates style information with the element for use with
        [[CSS21]].
        See <a href="#world-int-style"></a> for discussion of the interaction
        of MathML and CSS.
-       <a class="coreyes" href="https://w3c.github.io/mathml-core/#global-attributes">core&#x2714;</a>
       </td>
      </tr>
 
@@ -679,12 +680,12 @@
       <td rowspan="2" class="attname">href</td>
       <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
       <td><em>none</em></td>
+      <td><span class="coreno"></span></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
 	Can be used to establish the element as a hyperlink to the specfied <em>URI</em>.
-	<span class="coreno">core&#x2716;</span>
       </td>
      </tr>
     </tbody>
@@ -713,31 +714,25 @@
    <table border="1" class="attributes">
 
     <thead>
-
      <tr>
-
       <td>Name</td>
-
       <td>values</td>
-
       <td>default</td>
+      <td>Core</td>
      </tr>
     </thead>
 
     <tbody>
 
      <tr>
-
       <td rowspan="2" class="attname">other</td>
-
       <td><a class="intref" href="#type_string"><em>string</em></a></td>
-
       <td><em>none</em></td>
+      <td><span class="coreno"></span></td>
      </tr>
 
      <tr>
-
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        DEPRECATED but in MathML 1.0.
       </td>
      </tr>
@@ -867,6 +862,7 @@
       <td>Name</td>
       <td>values</td>
       <td>default</td>
+      <td>Core</td>
      </tr>
     </thead>
 
@@ -876,10 +872,11 @@
       <td rowspan="2" class="attname">display</td>
       <td>"block" | "inline"</td>
       <td>inline</td>
+      <td><span class="coreno"></span></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        specifies whether the enclosed MathML expression should be rendered
        as a separate vertical block (in display style)
        or inline, aligned with adjacent text.
@@ -899,7 +896,6 @@
        and any immediately following punctuation.
        When the display attribute is missing, a rendering agent is free to initialize
        as appropriate to the context.
-       <a class="coreyes" href="https://w3c.github.io/mathml-core/#the-top-level-math-element">core&#x2714;</a>
       </td>
      </tr>
 
@@ -907,15 +903,15 @@
       <td rowspan="2" class="attname">maxwidth</td>
       <td><a class="intref" href="#type_length"><em>length</em></a></td>
       <td><em>available width</em></td>
+      <td><span class="coreno"></span></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        specifies the maximum width to be used for linebreaking.
        The default is the maximum width available in the surrounding environment.
        If that value cannot be determined, the renderer should assume an infinite rendering
        width.
-       <span class="coreno">core&#x2716;</span>
       </td>
      </tr>
 
@@ -923,13 +919,13 @@
       <td rowspan="2" class="attname">overflow</td>
       <td>"linebreak" | "scroll" | "elide" | "truncate" | "scale"</td>
       <td>linebreak</td>
+      <td><span class="coreno"></span></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        specifies the preferred handing in cases where an expression is too long to
        fit in the allowed width. See the discussion below.
-       <span class="coreno">core&#x2716;</span>
       </td>
      </tr>
 
@@ -937,13 +933,13 @@
       <td rowspan="2" class="attname">altimg</td>
       <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
       <td><em>none</em></td>
+      <td><span class="coreno"></span></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        provides a URI referring to an image to display as a fall-back
        for user agents that do not support embedded MathML.
-       <span class="coreno">core&#x2716;</span>
       </td>
      </tr>
 
@@ -951,14 +947,13 @@
       <td rowspan="2" class="attname">altimg-width</td>
       <td><a class="intref" href="#type_length"><em>length</em></a></td>
       <td><em>width of </em><code class="attribute">altimg</code></td>
-       <span class="coreno">core&#x2716;</span>
+      <td><span class="coreno"></span></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        specifies the width to display <code class="attribute">altimg</code>, scaling the image if necessary;
        See <code class="attribute">altimg-height</code>.
-       <span class="coreno">core&#x2716;</span>
       </td>
      </tr>
 
@@ -966,16 +961,15 @@
       <td rowspan="2" class="attname">altimg-height</td>
       <td><a class="intref" href="#type_length"><em>length</em></a></td>
       <td><em>height of </em><code class="attribute">altimg</code></td>
-       <span class="coreno">core&#x2716;</span>
+      <td><span class="coreno"></span></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        specifies the height to display <code class="attribute">altimg</code>, scaling the image if necessary;
        if only one of the attributes <code class="attribute">altimg-width</code> and <code class="attribute">altimg-height</code>
        are given, the scaling should preserve the image's aspect ratio;
        if neither attribute is given, the image should be shown at its natural size.
-       <span class="coreno">core&#x2716;</span>
       </td>
      </tr>
 
@@ -984,10 +978,11 @@
       <td><a class="intref" href="#type_length"><em>length</em></a>
       | "top" | "middle" | "bottom" </td>
       <td>0ex</td>
+      <td><span class="coreno"></span></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        specifies the vertical alignment of the image with respect to adjacent inline material.
        A positive value of <code class="attribute">altimg-valign</code> shifts the bottom of the image above the
        current baseline, while a negative value lowers it.
@@ -997,7 +992,6 @@
        (not necessarily the baseline). This attribute only has effect
        when <code class="attribute">display</code>=<code class="attributevalue">inline</code>.
        By default, the bottom of the image aligns to the baseline.
-       <span class="coreno">core&#x2716;</span>
       </td>
      </tr>
 
@@ -1005,13 +999,13 @@
       <td rowspan="2" class="attname">alttext</td>
       <td><a class="intref" href="#type_string"><em>string</em></a></td>
       <td><em>none</em></td>
+      <td><span class="coreno"></span></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        provides a textual alternative as a fall-back for user agents
        that do not support embedded MathML or images.
-       <span class="coreno">core&#x2716;</span>
       </td>
      </tr>
 
@@ -1019,10 +1013,11 @@
       <td rowspan="2" class="attname">cdgroup</td>
       <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
       <td><em>none</em></td>
+      <td><span class="coreno"></span></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        specifies a CD group file that acts as a catalogue of CD bases for locating
        OpenMath content dictionaries of <code class="element">csymbol</code>, <code class="element">annotation</code>, and
        <code class="element">annotation-xml</code> elements in this <code class="element">math</code> element; see <a href="#contm_csymbol"></a>. When no <code class="attribute">cdgroup</code> attribute is explicitly specified, the
@@ -1031,7 +1026,6 @@
        information <code>http://www.openmath.org/cd</code> is assumed as the CD base for all
        <code class="element">csymbol</code>, <code class="element">annotation</code>, and <code class="element">annotation-xml</code> elements.  This is the
        CD base for the collection of standard CDs maintained by the OpenMath Society.
-       <span class="coreno">core&#x2716;</span>
       </td>
      </tr>
     </tbody>
@@ -1121,6 +1115,7 @@
       <td>Name</td>
       <td>values</td>
       <td>default</td>
+      <td>Core</td>
      </tr>
     </thead>
 
@@ -1130,13 +1125,13 @@
       <td rowspan="2" class="attname">macros</td>
       <td><a class="intref" href="#type_uri"><em>URI</em></a> *</td>
       <td><em>none</em></td>
+      <td><span class="coreno"></span></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        intended to provide a way of pointing to external macro definition files.
        Macros are not part of the MathML specification.
-       <span class="coreno">core&#x2716;</span>
       </td>
      </tr>
 
@@ -1144,15 +1139,15 @@
       <td rowspan="2" class="attname">mode</td>
       <td>"display" | "inline"</td>
       <td>inline</td>
+      <td><span class="coreno"></span></td>
      </tr>
 
      <tr>
-      <td colspan="2" class="attdesc">
+      <td colspan="3" class="attdesc">
        specified whether the enclosed MathML expression should be rendered in
        a display style or an inline style.
        This attribute is <a class="intref" href="#interf_deprec">deprecated</a> in
        favor of the <code class="attribute">display</code> attribute.
-       <span class="coreno">core&#x2716;</span>
       </td>
      </tr>
     </tbody>
