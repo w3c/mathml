@@ -1,0 +1,314 @@
+ <section  id="conformance"class="appendix">
+ 
+
+  <p>Information nowadays is commonly
+  generated, processed and rendered by
+  software tools. The exponential growth of the Web is fueling the
+  development of advanced systems for automatically searching,
+  categorizing, and interconnecting information.
+  In addition, there are increasing numbers of
+  Web services, some of which offer technically based materials
+  and activities. Thus, although MathML
+  can be written by hand and read by humans,
+  whether machine-aided or just with much concentration,
+  the future of MathML is
+  largely tied to the ability to process it with software tools.</p>
+
+  <p>There are many different kinds of MathML
+  processors: editors for authoring MathML expressions, translators for
+  converting to and from other encodings, validators for checking MathML
+  expressions, computation engines that evaluate, manipulate, or compare
+  MathML expressions, and rendering engines that produce visual, aural,
+  or tactile representations of mathematical notation.  What it
+  means to support MathML varies widely between applications.  For
+  example, the issues that arise with a  validating
+  parser are very different from those for an equation
+  editor.</p>
+
+  <p>This section gives guidelines that describe different types
+  of MathML support and make clear the extent of MathML support in
+  a given application.  Developers, users, and reviewers are encouraged
+  to use these guidelines in characterizing products.  The intention
+  behind these guidelines is to facilitate reuse by
+  and interoperability
+  of MathML applications by accurately setting out their
+  capabilities in quantifiable terms.</p>
+
+  <p>The W3C Math Working Group maintains <a href="http://www.w3.org/Math/iandi/compliance">MathML Compliance
+  Guidelines</a>.  Consult this document for future updates on
+  conformance activities and resources.
+  </p>
+
+  <section>
+   <h4 id="fund_mathmlconf">MathML Conformance</h4>
+
+   <p>A valid MathML expression is an XML construct determined by the MathML
+   RelaxNG Schema together with the additional requirements given in this specification.</p>
+
+   <p>We shall use the phrase &#x201c;a MathML processor&#x201d;
+   to mean any application that
+   can accept or produce a valid MathML
+   expression.  A MathML processor that both accepts and produces valid
+   MathML expressions may be able to &#x201c;round-trip&#x201d; MathML.
+   Perhaps the simplest example of an
+   application that might round-trip a MathML
+   expression would be an editor that writes it to a new file without
+   modifications.</p>
+
+   <p>Three forms of MathML conformance are specified:
+   </p>
+   <ol>
+
+    <li>
+     <p>A MathML-input-conformant processor must
+     accept all valid MathML expressions; it should appropriately translate all
+     MathML expressions into application-specific form allowing native
+     application operations to be performed.</p>
+    </li>
+
+    <li>
+     <p>A MathML-output-conformant processor must
+     generate valid MathML, appropriately representing all
+     application-specific data.</p>
+    </li>
+
+    <li>
+     <p>A MathML-round-trip-conformant processor must
+     preserve MathML equivalence. Two MathML expressions are
+     &#x201c;equivalent&#x201d; if and only if both expressions have the
+     same interpretation (as stated by the MathML
+     Schema and  specification)
+     under any relevant circumstances, by any MathML processor. Equivalence on an
+     element-by-element basis is discussed elsewhere in this document.</p>
+
+    </li>
+   </ol>
+
+   <p>Beyond the above definitions, the MathML specification makes no
+   demands of individual processors.  In order to guide developers, the
+   MathML specification includes advisory material; for example, there
+   are many recommended rendering rules throughout <a href="#presm"></a>.
+   However, in general, developers are given wide latitude to
+   interpret what kind of MathML implementation is meaningful for
+   their own particular application.</p>
+
+   <p>To clarify the difference between conformance and
+   interpretation of what is meaningful, consider some examples:
+   </p>
+   <ol>
+    <li>
+     <p>In order
+     to be MathML-input-conformant, a
+     validating parser needs only to accept expressions, and return
+     &#x201c;true&#x201d; for expressions that are valid MathML. In
+     particular, it need not render or interpret the MathML expressions at
+     all.</p>
+    </li>
+
+    <li>
+     <p>A MathML computer-algebra interface based on content markup
+     might choose to ignore all presentation markup. Provided the interface
+     accepts all valid MathML expressions including those containing
+     presentation markup, it would be technically correct to characterize
+     the application as MathML-input-conformant.</p>
+    </li>
+
+    <li>
+     <p>An equation editor might have an internal data representation
+     that makes it easy to export some equations as MathML but not
+     others. If the editor exports the simple equations as valid MathML,
+     and merely displays an error message to the effect that conversion
+     failed for the others, it is still technically
+   MathML-output-conformant.</p> </li> </ol>
+
+   <section>
+    <h5 id="interf_testsuite">MathML Test Suite and Validator</h5>
+
+    <p>As the previous examples show, to be useful, the concept of MathML
+    conformance frequently involves a judgment about what parts of the
+    language are meaningfully implemented, as opposed to parts that are
+    merely processed in a technically correct way with respect to the
+    definitions of conformance.  This requires some mechanism for giving a
+    quantitative statement about which parts of MathML are meaningfully
+    implemented by a given application.  To this end, the W3C Math Working
+    Group has provided a <a href="http://www.w3.org/Math/testsuite/">test
+    suite</a>.</p>
+
+    <p>The test suite consists of a large number of MathML expressions
+    categorized by markup category and dominant MathML element being
+    tested.  The existence of this test suite makes it possible, for example,
+    to characterize quantitatively the hypothetical computer algebra interface
+    mentioned above by saying that it is a MathML-input-conformant processor
+    which meaningfully implements MathML content markup, including all of
+    the expressions in the content markup section of the test suite.</p>
+
+    <p>Developers who choose not to implement parts of the MathML
+    specification in a meaningful way are encouraged to itemize the parts
+    they leave out by referring to specific categories in the test suite.</p>
+
+    <p>For MathML-output-conformant processors, information about currently
+    available tools to validate MathML is
+    maintained at the <a href="http://www.w3.org/Math/validator/">W3C MathML Validator</a>.
+    Developers of MathML-output-conformant processors are encouraged to verify
+    their output using this
+    validator.</p>
+
+    <p>Customers of MathML applications who wish to verify claims as to which
+    parts of the MathML specification are implemented by an application are
+    encouraged to use the test suites as a part of their decision
+    processes.</p>
+   </section>
+
+   <section>
+    <h5 id="interf_deprec">Deprecated MathML 1.x and MathML 2.x Features</h5>
+
+    <p>MathML 3.0 contains a number of features of earlier MathML
+    which are now deprecated.  The following points define what it means for a
+    feature to be deprecated, and clarify the relation between
+    deprecated features and  current MathML conformance.</p>
+
+    <ol>
+
+     <li>
+      <p>In order to be MathML-output-conformant, authoring tools may not
+      generate MathML markup containing deprecated features.</p>
+     </li>
+
+     <li>
+      <p>In order to be MathML-input-conformant, rendering and reading
+      tools must support deprecated features if they are to be
+      in conformance with MathML 1.x or MathML 2.x.   They do not have to support deprecated
+      features to be considered in conformance with MathML 3.0.  However, all tools
+      are encouraged to support the old forms as much as
+      possible.</p>
+     </li>
+
+     <li>
+      <p>In order to be MathML-round-trip-conformant, a processor need
+      only preserve MathML equivalence on expressions containing no
+      deprecated features.</p>
+     </li>
+    </ol>
+
+   </section>
+
+   <section>
+    <h5 id="interf_extension">MathML
+    Extension Mechanisms and Conformance</h5>
+
+    <p>MathML 3.0 defines three basic extension mechanisms:  the <code class="element">mglyph</code>
+    element provides a way of displaying glyphs for non-Unicode
+    characters, and glyph variants for existing Unicode characters; the
+    <code class="element">maction</code> element uses attributes from other namespaces to obtain
+    implementation-specific parameters; and content markup makes use of
+    the <code class="attribute">definitionURL</code> attribute, as well as
+    Content Dictionaries and the <code class="attribute">cd</code> attribute, to point to external
+    definitions of mathematical semantics.</p>
+
+    <p>These extension mechanisms are important because they provide a way
+    of encoding concepts that are beyond the scope of MathML 3.0 as presently
+    explicitly specified, which
+    allows MathML to be used for exploring new ideas not yet susceptible
+    to standardization.  However, as new ideas take hold, they may become
+    part of future standards.  For example, an emerging character that
+    must be represented by an <code class="element">mglyph</code> element today may be
+    assigned a Unicode code point in the future. At that time,
+    representing the character directly by its Unicode code point would be
+    preferable.  This transition into Unicode has
+    already taken place for hundreds of characters used for mathematics.</p>
+
+    <p>Because the possibility of future obsolescence is inherent in the
+    use of extension mechanisms to facilitate the discussion of new ideas,
+    MathML can reasonably make
+    no conformance requirements concerning the use of
+    extension mechanisms, even when alternative standard markup is
+    available.  For example, using an <code class="element">mglyph</code> element to represent
+    an 'x' is permitted.  However, authors and implementers are
+    strongly encouraged to use standard markup whenever possible.
+    Similarly, maintainers of documents employing MathML 3.0 extension
+    mechanisms are encouraged to monitor relevant standards activity
+    (e.g., Unicode, OpenMath, etc.) and to update documents as more
+    standardized markup becomes available.</p>
+   </section>
+  </section>
+
+  <section>
+   <h4 id="interf_error">Handling of Errors</h4>
+
+   <p>If a MathML-input-conformant application receives
+   input containing one or more elements with an illegal number or type
+   of attributes or child schemata, it should nonetheless attempt to
+   render all the input in an intelligible way, i.e., to render normally
+   those parts of the input that were valid, and to render error messages
+   (rendered as if enclosed in an <a class="intref" href="#presm_merror"><code class="element">merror</code></a> element) in place of
+   invalid expressions.</p>
+
+   <p>MathML-output-conformant applications such as
+   editors and translators may choose to generate <code class="element">merror</code>
+   expressions to signal errors in their input. This is usually
+   preferable to generating valid, but possibly erroneous, MathML.</p>
+  </section>
+
+  <section>
+   <h4 id="interf_unspecified">Attributes for unspecified data</h4>
+
+   <p>The MathML attributes described in the MathML specification are
+   intended to allow for good presentation and content markup. However
+   it is never possible to cover all users' needs for markup. Ideally, the MathML
+   attributes should be an open-ended list so that users can add specific
+   attributes for specific renderers. However, this cannot be done within
+   the confines of a single XML DTD or in a Schema.
+   Although it can be done using extensions of the standard DTD, say,
+   some authors will wish to use non-standard
+   attributes to take advantage of renderer-specific capabilities while
+   remaining strictly in conformance with the standard
+   DTD.</p>
+
+   <p>To allow this, the MathML 1.0 specification [[MathML-19980407]]]
+   allowed the attribute <code class="attribute">other</code> on all elements, for use as a hook to pass
+   on renderer-specific information. In particular, it was intended as a hook for
+   passing information to audio renderers, computer algebra systems, and for pattern
+   matching in future macro/extension mechanisms. The motivation for this approach to
+   the problem was historical, looking to PostScript, for example, where comments are
+   widely used to pass information that is not part of PostScript.</p>
+
+   <p>In the next period of evolution of MathML the
+   development of a general XML namespace mechanism
+   seemed to make the use of the <code class="attribute">other</code>
+   attribute obsolete.  In MathML 2.0, the <code class="attribute">other</code> attribute is
+   <a class="intref" href="#interf_deprec">deprecated</a> in favor of the use of
+   namespace prefixes to identify non-MathML attributes.  The
+   <code class="attribute">other</code> attribute remains deprecated in MathML 3.0.</p>
+
+   <p>For example, in MathML 1.0, it was recommended that if additional information
+   was used in a renderer-specific implementation for the <code class="element">maction</code> element
+   (<a href="#presm_maction"></a>),
+   that information should be passed in using the <code class="attribute">other</code> attribute:</p>
+
+   <div class="example ">
+    <pre>
+      &lt;maction actiontype="highlight" other="color='#ff0000'"&gt; expression &lt;/maction&gt;
+    </pre>
+   </div>
+
+   <p>From MathML 2.0 onwards, a <code class="attribute">color</code>
+   attribute from another namespace would be used:</p>
+
+   <div class="example ">
+    <pre>
+      &lt;body xmlns:my="http://www.example.com/MathML/extensions"&gt;
+        ...
+        &lt;maction actiontype="highlight" my:color="#ff0000"&gt; expression &lt;/maction&gt;
+        ...
+      &lt;/body&gt;
+    </pre>
+   </div>
+
+   <p>Note that the intent of allowing non-standard attributes is
+   <em>not</em> to encourage software developers to use this as a
+   loophole for circumventing the core conventions for MathML markup.
+   Authors and applications should use non-standard attributes
+   judiciously.</p>
+
+  </section>
+ </section>
