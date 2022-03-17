@@ -1,38 +1,119 @@
 <section data-max-toc="3">
- <h2 id="mixing">Mixing Markup Languages for Mathematical Expressions</h2>
+ <h2 id="mixing">Annotating MathML</h2>
  <div class="issue" data-number="281"></div>
+ <div class="issue" data-number="252"></div>
+ <div class="issue" data-number="289"></div>
+
  
- <p>MathML markup can be combined with other markup languages, and
- these mixing constructions are realized by the semantic annotation
- elements.  The semantic annotation elements provide an important tool
- for making associations between alternate representations of an
+ <p>Semantic annotation refers to markup added to
+ make associations between alternate representations of an
  expression, and for associating semantic properties and other
- attributions with a MathML expression.  These elements allow
- presentation markup and content markup to be combined in several
- different ways.  One method, known as <em>mixed markup</em>, is to
- intersperse content and presentation elements in what is essentially a
- single tree.  Another method, known as <em>parallel markup</em>,
- is to provide both explicit presentation markup and content markup in
- a pair of markup expressions, combined by a single <code class="element">semantics</code>
- element.
+ attributions with a MathML expression.</p>
+ <p>The most general mechanism provided by MathML is the <code
+ class="element">semantics</code> element. This allows presentation
+ markup and content markup to be combined in several different ways
+ and for MathML to embed markup from other vocabularies such as
+ [[OpenMath2004]] or [[SVG]]. This general mechanism is described
+ below in <a href="#mixing_semantic_annotations"></a> but first we describe a new
+ feature added in MathML&#160;4 to faciliate annotating Presentation
+ MathML with the <q>intent</q> or semantic meaning of the term.
  </p>
 
  <section>
-  <h3 id="mixing_semantic_annotations">Annotation Framework</h3>
+  <h3 id="mixing_intent">The <code class="attribute">intent</code> attribute</h3>
+  <p>As decribed in <a href="#presm"></a> presentation MathML elements
+  (including [[MathML-Core]] allow attributes <code
+  class="attribute">intent</code> and <code
+  class="attribute">arg</code> that as described here allow the
+  <q>intent</q> or semantic meaning of the term to be specified. This
+  annotation is not intented to provide a full mathematical definition
+  of the term but may be used guide Accessibility systems to give audio
+  or braille renderings, see <a href="#accessibility"></a>. It may also
+  be used to guide translations to Content MathML, or computational
+  systems.</p>
+
+  <section>
+   <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
+
+   <pre>
+intent := literal | selector | intent '(' wildcard ')' | intent '(' intent [ ',' intent ]* ')'
+literal      := [letters|digits|_|-]*
+selector     := ( argref | numref ) [ '/' selector ]?
+argref       := '$' NCName
+numref       := '$' [digit]+
+wildcard     := '@'
+   </pre>
+
+   <p>where the grammar components have the following significance:</p>
+
+   <ul>
+    <li>the third form of intent represents some operation applied to arguments.
+    literal: represents a mathematical concept, being a literal keyword (to be looked up in a to-be-specified dictionary), or a phrase to be spoken as-is (possibly translated, as needed) if not present in the dictionary. In the latter case, hyphens and underscores are treated as spaces. The set of literals is intentionally open-ended.</li>
+    <li>selector: selects another node whose intent is used in-place-of or as part-of the composed intent.</li>
+    <li>argref: refers to the intent of another node, being the child of the current node with attribute arg having the given NCName (or possibly any node in the document with the NCName as id).</li>
+    <li>argpath: refers to the intent of a descendant of the current node; for example, a single component such as $2 refers to the 2nd child; multiple components refer to grandchildren or deeper, $1/1 would refer to the first grandchild.</li>
+   </ul>
+
+<p>The key component here is the literal; they are intended to correspond to some mathematical concept or operator, or some application specific quantity or operation; that is it represents some “meaning”. Ultimately, the goal is to translate this virtual content tree into text or speech (in different languages), braille or some other form. The preferred translation may also depend on context and user profile. On the one hand, the most natural translation of a given expression can depend on the operator. It is thus desirable to have a set of common known meaning with translation rules. Thus power(x,2) might be rendered as “the 2nd power of x” or “x squared”, depending on the user and agent.</p>
+
+<p>On the other hand, mathematics encompasses an endless set of concepts, arguing that the set of meanings must be open-ended. We propose that there should be a small set of recommended meaning keywords whose translation can be specialized, while allowing any value for the meaning (an implementation is free to recognize more keywords). In the case where a meaning is not in a dictionary, support for multiple languages may be weak and the application of such a literal would be generic as “the [meaning] of [arg1], [arg2] and [argn] …”. While this result may be less than optimal, it is still functional.</p>
+  </section>
+
+ 
+ <section>
+  <h3 id="mixing_msup_notation">Same notation, different meanings</h3>
+
+<p>With this model, the <code class="element">msup</code> examples:
+as a power;
+as a transpose;
+as a derivative; and
+as an embellished symbol would be distinguished as follows:</p>
+
+<pre class="nonumexample">
+&lt;msup intent="power($base,$exp)">
+  &lt;mi arg="base">x&lt;/mi>
+  &lt;mi arg="exp">n&lt;/mi>
+&lt;/msup>
+</pre>
+
+<pre class="nonumexample">
+&lt;msup intent="$op($a)">
+  &lt;mi arg="a">A&lt;/mi>
+  &lt;mi arg="op" intent="transpose">T&lt;/mi>
+&lt;/msup>
+</pre>
+
+<p>(easily adapted to conjugate and adjoint)</p>
+
+<pre class="nonumexample">
+&lt;msup intent="derivative($a)">
+  &lt;mi arg="a">f&lt;/mi>
+  &lt;mi>'&lt;/mi>
+&lt;/msup>
+</pre>
+
+<pre class="nonumexample">
+&lt;msup intent="x-prime">
+  &lt;mi>x&lt;/mi>
+  &lt;mo>'&lt;/mo>
+&lt;/msup>
+</pre>
+
+ </section>
+ </section>
+
+ 
+ <section>
+  <h3 id="mixing_semantic_annotations">Annotation Elements</h3>
 
   <p>
-   An important concern of MathML is to represent associations between
-   presentation and content markup forms for an expression.  Representing
-   associations between MathML expressions and data of other kinds is
-   also important in many contexts.  For this reason, MathML provides a
-   general framework for annotation.  A MathML expression may be
+   In addition to the <code class="attribute">intent</code> attribute decribed above,
+   MathML provides a more general framework for annotation.  A MathML expression may be
    decorated with a sequence of pairs made up of a symbol that indicates
    the kind of annotation, known as the <em>annotation key</em>, and
    associated data, known as the <em>annotation value</em>.
   </p>
 
-  <section>
-   <h4 id="mixing_annotation_elements">Annotation elements</h4>
 
    <p>
     The <code class="element">semantics</code>, <code class="element">annotation</code>, and
@@ -47,48 +128,15 @@
     more <code class="element">annotation</code> and/or <code class="element">annotation-xml</code> elements.
    </p>
 
-   <p>
-    <div class="example mathml">
-     <pre>
-       &lt;semantics&gt;
-         &lt;mrow&gt;
-           &lt;mrow&gt;
-             &lt;mi&gt;sin&lt;/mi&gt;
-             &lt;mo&gt;&amp;ApplyFunction;&lt;/mo&gt;
-             &lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mfenced&gt;
-           &lt;/mrow&gt;
-           &lt;mo&gt;+&lt;/mo&gt;
-           &lt;mn&gt;5&lt;/mn&gt;
-         &lt;/mrow&gt;
-         &lt;annotation encoding="application/x-tex"&gt;
-      \sin x + 5
-         &lt;/annotation&gt;
-         &lt;annotation-xml encoding="application/openmath+xml"&gt;
-           &lt;OMA xmlns="http://www.openmath.org/OpenMath"&gt;
-             &lt;OMS cd="arith1" name="plus"/&gt;
-             &lt;OMA&gt;&lt;OMS cd="transc1" name="sin"/&gt;&lt;OMV name="x"/&gt;&lt;/OMA&gt;
-             &lt;OMI&gt;5&lt;/OMI&gt;
-           &lt;/OMA&gt;
-         &lt;/annotation-xml&gt;
-       &lt;/semantics&gt;
-     </pre>
-    </div>
+   <p>The <code class="element">semantics</code> element is considered
+   to be both a presentation element and a content element, and may be
+   used in either context.  All MathML processors should process the
+   <code class="element">semantics</code> element, even if they only
+   process one of these two subsets of MathML, or
+   [[MathML-Core]].
    </p>
 
-   <p id="html-xml1">Note that this example makes use of the namespace extensibility
-   that is only available in the XML syntax of MathML. If this example is included in
-   an HTML document
-   then it would be considered <em>invalid</em> and the OpenMath elements would be parsed as
-   elements <span data-diff="chg">in</span> the MathML namespace. See <a href="#html_annotation_xml"></a> for details.</p>
-
-   <p>The <code class="element">semantics</code> element is considered to be both a presentation
-   element and a content element, and may be used in either context.
-   All MathML processors should process the <code class="element">semantics</code> element,
-   even if they only process one of these two subsets of MathML.
-   </p>
-
-  </section>
-
+ 
   <section>
    <h4 id="mixing_annotation_keys">Annotation keys</h4>
 
@@ -112,30 +160,21 @@
    metadata that are useful in a specific context, but do not alter either
    the semantics or the presentation of the expression.</p>
 
-   <p>In MathML 3, annotation keys are defined as symbols in <a class="intref" href="#contm_cds">Content Dictionaries</a>, and are specified using
-   <span data-diff="del">of </span>the <code class="attribute">cd</code> and <code class="attribute">name</code> attributes on the
-   <code class="element">annotation</code> and <code class="element">annotation-xml</code> elements.  For backward
-   compatibility with MathML 2, an annotation key may also be referenced
+   <p>Annotation keys may be defined as a symbol in a <a class="intref" href="#contm_cds">Content Dictionary</a>, and are specified using
+   the <code class="attribute">cd</code> and <code class="attribute">name</code> attributes on the
+   <code class="element">annotation</code> and <code class="element">annotation-xml</code> elements.
+   Alternatively, an annotation key may also be referenced
    using the <code class="attribute">definitionURL</code> attribute as an alternative to the
-   <code class="attribute">cd</code> and <code class="attribute">name</code> attributes.  Further details on
-   referencing symbols in Content Dictionaries are discussed in <a href="#contm_csymbol"></a>.  The symbol definition in a Content Dictionary
-   for an annotation key may have a <code class="attribute">role</code> property.  Two
-   particular roles are relevant for annotations:  a role of
-   <code class="attributevalue">attribution</code> identifies a generic annotation that can
-   be ignored without altering the meaning of the annotated term, and a
-   role of <code class="attributevalue">semantic-attribution</code> indicates that the annotation
-   is a semantic annotation, that is, the annotation cannot be ignored
-   without potentially altering the meaning of the expression.
+   <code class="attribute">cd</code> and <code class="attribute">name</code> attributes.
    </p>
 
-   <p>MathML 3 provides two predefined annotation keys for the most common
+   <p>MathML provides two predefined annotation keys for the most common
    kinds of annotations: <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a> and <a class="omsymbol" href="mathmlkeys#contentequiv">contentequiv</a> defined in the <a class="omcd" href="mathmlkeys">mathmlkeys</a> content
    dictionary. The <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a> annotation key specifies that the
    annotation value provides an alternate representation for an
    expression in some other markup language, and the <a class="omsymbol" href="mathmlkeys#contentequiv">contentequiv</a> annotation key specifies that
    the annotation value provides a semantically equivalent alternative
-   for the annotated expression.  Further details about the use of
-   these keys is given in the sections below.</p>
+   for the annotated expression.</p>
 
    <p>The default annotation key is <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a> when no annotation key is
    explicitly specified on an <code class="element">annotation</code> or
@@ -156,16 +195,7 @@
    a MathML expression.  The use of the other values is more specific, as
    discussed in following sections.</p>
 
-   <p>While the predefined <a class="omsymbol" href="mathmlkeys#alternate-representation">alternate-representation</a> and <a class="omsymbol" href="mathmlkeys#contentequiv">contentequiv</a> keys cover many common use cases, user
-   communities are encouraged to define and standardize additional
-   content dictionaries as necessary.  Annotation keys in user-defined,
-   public Content Dictionaries are preferred over private encoding
-   attribute value conventions, since content dictionaries are more
-   expressive, more open and more maintainable than private encoding
-   values.  However, for backward compatibility with MathML 2, the
-   encoding attribute may also be used.
-   </p>
-  </section>
+   </section>
 
   <section>
    <h4 id="mixing_alternate_representations">Alternate representations</h4>
@@ -219,15 +249,9 @@
              &lt;mn&gt;5&lt;/mn&gt;
            &lt;/mrow&gt;
          &lt;/annotation-xml&gt;
-         &lt;annotation encoding="application/x-maple"&gt;
-      sin(x) + 5
-         &lt;/annotation&gt;
-         &lt;annotation encoding="application/vnd.wolfram.mathematica"&gt;
-      Sin[x] + 5
-         &lt;/annotation&gt;
-         &lt;annotation encoding="application/x-tex"&gt;
-      \sin x + 5
-         &lt;/annotation&gt;
+         &lt;annotation encoding="application/x-maple"&gt;sin(x) + 5&lt;/annotation&gt;
+         &lt;annotation encoding="application/vnd.wolfram.mathematica"&gt;Sin[x] + 5&lt;/annotation&gt;
+         &lt;annotation encoding="application/x-tex"&gt;\sin x + 5&lt;/annotation&gt;
          &lt;annotation-xml encoding="application/openmath+xml"&gt;
            &lt;OMA xmlns="http://www.openmath.org/OpenMath"&gt;
              &lt;OMA&gt;
@@ -265,9 +289,7 @@
    MathML 2, this type of annotation was represented with the equivalent
    <code>MathML-Content</code> value for the <code class="attribute">encoding</code> attribute,
    so processors are urged to support this usage for backward compatibility.
-   A content MathML annotation, whether in MathML 2 or 3, may be used for
-   other purposes as well, such as for other kinds of semantic assertions.
-   Consequently, in MathML 3, the
+   The
    <a class="omsymbol" href="mathmlkeys#contentequiv">contentequiv</a> annotation key should
    be used to make an explicit assertion that the annotation provides a
    definitive content markup equivalent for an expression.</p>
@@ -345,18 +367,8 @@
 
   </section>
 
- </section>
 
- <section>
-  <h3 id="mixing_semantic_elements">Elements for Semantic Annotations</h3>
-
-  <p>This section explains the semantic mapping elements <code class="element">semantics</code>,
-  <code class="element">annotation</code>, and <code class="element">annotation-xml</code>.  These elements associate
-  alternate representations for a presentation or content expression, or
-  associate semantic or other attributions that may modify the meaning of
-  the annotated expression.</p>
-
-  <section>
+   <section>
    <h4 id="mixing_elements_semantics">The <code class="defn starttag">&lt;semantics&gt;</code> element</h4>
 
    <section>
@@ -403,9 +415,7 @@
               &lt;cn&gt;5&lt;/cn&gt;
             &lt;/apply&gt;
           &lt;/annotation-xml&gt;
-          &lt;annotation encoding="application/x-tex"&gt;
-       \sin x + 5
-          &lt;/annotation&gt;
+          &lt;annotation encoding="application/x-tex"&gt;\sin x + 5&lt;/annotation&gt;
         &lt;/semantics&gt;
       </pre>
      </div>
@@ -550,7 +560,7 @@
     <p>Taken together, the <code class="attribute">cd</code> and <code class="attribute">name</code> attributes
     specify the annotation key symbol, which identifies the relationship
     between the annotated element and the annotation, as described in
-    <a href="#mixing_annotation_elements"></a>. The <code class="attribute">definitionURL</code>
+    <a href="#mixing_semantic_annotations"></a>. The <code class="attribute">definitionURL</code>
     attribute provides an alternate way to reference the annotation key
     symbol as a single attribute.  If none of these attributes are present,
     the annotation key symbol is the symbol
@@ -676,7 +686,7 @@
     <p>Taken together, the <code class="attribute">cd</code> and <code class="attribute">name</code> attributes
     specify the annotation key symbol, which identifies the relationship
     between the annotated element and the annotation, as described in
-    <a href="#mixing_annotation_elements"></a>. The <code class="attribute">definitionURL</code>
+    <a href="#mixing_semantic_annotations"></a>. The <code class="attribute">definitionURL</code>
     attribute provides an alternate way to reference the annotation key
     symbol as a single attribute.  If none of these attributes are present,
     the annotation key symbol is the symbol
@@ -861,10 +871,10 @@
 
   </section>
 
- </section>
+
 
  <section>
-  <h3 id="mixing_markup">Combining Presentation and Content Markup</h3>
+  <h4 id="mixing_markup">Combining Presentation and Content Markup</h4>
 
   <p>
    Presentation markup encodes the <em>notational structure</em> of an expression.
@@ -920,7 +930,6 @@
     <dd>
      <p>The same rendering rules that apply
        to the token elements <code class="element">ci</code> and <code class="element">cn</code> should be used for the <code class="element">csymbol</code> element.</p>
-      <div class="issue" data-number="276"></div>
     </dd>
 
     <dt>Presentation markup within the <code class="element">semantics</code> element.</dt>
@@ -972,7 +981,7 @@
  </section>
 
  <section>
-  <h3 id="mixing_parallel">Parallel Markup</h3>
+  <h4 id="mixing_parallel">Parallel Markup</h4>
 
   <p>
    Some applications are able to use <em>both</em> presentation
@@ -984,7 +993,7 @@
   </p>
 
   <section>
-   <h4 id="mixing_top_level">Top-level Parallel Markup</h4>
+   <h5 id="mixing_top_level">Top-level Parallel Markup</h5>
 
    <p>
     In many cases, the goal is to provide presentation markup and content
@@ -1024,7 +1033,7 @@
   </section>
 
   <section>
-   <h4 id="mixing_cr">Parallel Markup via Cross-References</h4>
+   <h5 id="mixing_cr">Parallel Markup via Cross-References</h5>
 
    <p>
     To accommodate applications that must process sub-expressions of large
@@ -1131,70 +1140,11 @@
    </p>
 
    <p>
-    Parallel markup with cross-references may be used in any XML-encoded branch
-    of the semantic annotations, as shown by the following example where
-    the Boolean expression of the previous section is
-    annotated with OpenMath markup that includes cross-references:
-
-    <div class="example mathml">
-     <pre>
-       &lt;semantics&gt;
-         &lt;mrow id="EE"&gt;
-           &lt;mrow id="EE.1"&gt;
-             &lt;mo id="EE.1.1"&gt;(&lt;/mo&gt;
-             &lt;mi id="EE.1.2"&gt;a&lt;/mi&gt;
-             &lt;mo id="EE.1.3"&gt;+&lt;/mo&gt;
-             &lt;mi id="EE.1.4"&gt;b&lt;/mi&gt;
-             &lt;mo id="EE.1.5"&gt;)&lt;/mo&gt;
-           &lt;/mrow&gt;
-           &lt;mo id="EE.2"&gt;&amp;InvisibleTimes;&lt;/mo&gt;
-           &lt;mrow id="EE.3"&gt;
-             &lt;mo id="EE.3.1"&gt;(&lt;/mo&gt;
-             &lt;mi id="EE.3.2"&gt;c&lt;/mi&gt;
-             &lt;mo id="EE.3.3"&gt;+&lt;/mo&gt;
-             &lt;mi id="EE.3.4"&gt;d&lt;/mi&gt;
-             &lt;mo id="EE.3.5"&gt;)&lt;/mo&gt;
-           &lt;/mrow&gt;
-         &lt;/mrow&gt;
-
-         &lt;annotation-xml encoding="MathML-Content"&gt;
-           &lt;apply xref="EE"&gt;
-             &lt;and xref="EE.2"/&gt;
-             &lt;apply xref="EE.1"&gt;
-               &lt;xor xref="EE.1.3"/&gt;&lt;ci xref="EE.1.2"&gt;a&lt;/ci&gt;&lt;ci xref="EE.1.4"&gt;b&lt;/ci&gt;
-             &lt;/apply&gt;
-             &lt;apply xref="EE.3"&gt;
-               &lt;xor xref="EE.3.3"/&gt;&lt;ci xref="EE.3.2"&gt;c&lt;/ci&gt;&lt;ci xref="EE.3.4"&gt;d&lt;/ci&gt;
-             &lt;/apply&gt;
-           &lt;/apply&gt;
-         &lt;/annotation-xml&gt;
-
-         &lt;annotation-xml encoding="application/openmath+xml"&gt;
-           &lt;om:OMA xmlns:om="http://www.openmath.org/OpenMath" href="EE"&gt;
-             &lt;om:OMS name="and" cd="logic1" href="EE.2"/&gt;
-
-             &lt;om:OMA href="EE.1"&gt;
-               &lt;om:OMS name="xor" cd="logic1" href="EE.1.3"/&gt;
-               &lt;om:OMV name="a" href="EE.1.2"/&gt;
-               &lt;om:OMV name="b" href="EE.1.4"/&gt;
-             &lt;/om:OMA&gt;
-
-             &lt;om:OMA href="EE.3"&gt;
-               &lt;om:OMS name="xor" cd="logic1" href="EE.3.3"/&gt;
-               &lt;om:OMV name="c" href="EE.3.2"/&gt;
-               &lt;om:OMV name="d" href="EE.3.4"/&gt;
-             &lt;/om:OMA&gt;
-           &lt;/om:OMA&gt;
-         &lt;/annotation-xml&gt;
-       &lt;/semantics&gt;
-     </pre>
-    </div>
-    Here <code class="element" data-namespace="openmath">OMA</code>, <code class="element" data-namespace="openmath">OMS</code>
-    and <code class="element" data-namespace="openmath">OMV</code> are elements defined in the OpenMath
-    standard for representing application, symbol, and variable, respectively.
-    The references from the OpenMath annotation are given by the
-    <code class="attribute">href</code> attributes.
-    <span id="html-xml3">As noted above, the use of namespaces other than MathML, SVG
+    Parallel markup with cross-references may be used in any 
+    of the semantic annotations within <code class="element">annottation-xml</code>
+    For example cross referencing between a presentation MathML rendering and an OpenMath annotation.
+   </p>
+    <p><span id="html-xml3">As noted above, the use of namespaces other than MathML, SVG
     or HTML within <code class="element">annotation-xml</code> is not considered valid in the HTML syntax.
     Use of colons and namespace-prefixed element names should be avoided
     as the HTML parser will generate nodes with <em>local</em> name <code>om:OMA</code>
@@ -1206,3 +1156,6 @@
  </section>
 
 </section>
+</section>
+
+
