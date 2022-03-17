@@ -44,6 +44,7 @@
 	    var a=document.createElement("a");
 	    var thissec=getsec(ellist2[i]);
 	    if(thissec != null) {
+	    if(h != null) {
 		var h=thissec.children[0].children[0];
 		if(h.id!=lastsec){
 		    lastsec=h.id;
@@ -51,6 +52,7 @@
 		    a.textContent=h.innerText;
 		    dd.appendChild(a);
 		    dd.appendChild(document.createTextNode(' '));
+		    }
 		}
 	    }
 	}
@@ -264,97 +266,53 @@ background: #fafafa;
    </p>
   </section>
   <section id='sotd'>
-   <p><strong>This document is an editors' copy that has no official standing. (Date: 2020-10-01)</strong></p>
    <p><em> This section describes the status of this document at the time
    of its publication. Other documents may supersede this document. A
    list of current W3C publications and the latest revision of this
    technical report can be found in the <a href="https://www.w3.org/TR/">W3C technical reports index</a> at
    https://www.w3.org/TR/.</em>   </p>
    <p>
-    <em>This document is currently mostly a copy of the MathML 3 spec. It exists as a starting point for a MathML 4 spec.</em>
    </p>
-   <p>         For MathML 4, the <a href="https://www.w3.org/community/mathml4/">MathML refresh community group</a> plans to split the current MathML 3 spec into three separate documents:</p>
+   <p> For MathML 4, the Math Working Group plans to split the MathML 3 specification into three separate documents:</p>
    <ul>
     <li><a href="https://w3c.github.io/mathml-core">MathML Core (Normative)</a>,</li>
     <li><a href="https://w3c.github.io/mathml">MathML Full (Normative)</a>,</li>
     <li><a href="https://mathml-refresh.github.io/notes-on-mathml">Notes on MathML (non-normative)</a>.</li>
    </ul>
-   <p>MathML core is a distillation of the commonly used parts of MathML, rewritten to align with current W3C standards such as HTML and CSS. The full MathML spec maintains (mostly) backward compatibility with MathML 3. Examples of elements in MathML core include the elements for fractions, roots, scripts, limits, rows, and token elements (identifiers, numbers, operators, etc). Problematic, harder to implement, and less commonly used MathML features will make use of polyfills (likely via in part using Shadow DOM) to implement these features. Examples of features left out of MathML core but part of full MathML are <code>mfenced</code>, <code>menclose</code>, the elementary math elements, and linebreaking. Some features such as linebreaking will likely be part of a MathML Core Level 2 recommendation in the future.
+   <p>MathML core is a distillation of the parts of MathML commonly
+   implemened in web platform browsers, rewritten to align with
+   current W3C standards such as HTML and CSS. The full MathML spec
+   maintains (mostly) backward compatibility with MathML 3. Examples
+   of elements in MathML core include the elements for fractions,
+   roots, scripts, limits, rows, and token elements (identifiers,
+   numbers, operators, etc). Problematic, harder to implement, and
+   less commonly used MathML features will make use of polyfills
+   (likely via in part using Shadow DOM) to implement these
+   features. Examples of features left out of MathML core but part of
+   full MathML are <code>mfenced</code>, <code>menclose</code>, the
+   elementary math elements, and linebreaking. Some features such as
+   linebreaking will likely be part of a MathML Core Level 2
+   recommendation in the future.
    </p>
-   <p> MathML 3 is a very lengthy spec. We expect the Full MathML 4 document to be considerably shorter because we intend to pull most of the informative sections into a notes document. Additionally, much of chapter on presentation MathML concerns layout, and the full spec will reference MathML Core for details on layout.
+   <p> We expect the Full MathML 4 document to be considerably shorter than [[MathML3]] because we intend to pull most of the informative sections into a notes document. Additionally, much of chapter on presentation MathML concerns layout, and the full spec will reference [[MathML-Core]] for details on layout.
    </p>
    <p>
-    The changes to the MathML 3 spec have yet to be made. However, many changes are a result of the above decision to split the spec into three parts. Hence we expect MathML Full to alter the MathML 3 spec in the following ways:
+    We expect the final draft of this document to differ from the
+    MathML 3 spec in the following ways:
    </p>
    <ul>
     <li>Chapter 1 is mostly informative information. It will likely be shortened or eliminated, with the existing content potentially moved to a notes document.</li>
-    <li>Chapter 2 discusses the syntax and grammar of MathML along with the <code>math</code> element. It will likely have a similar structure to that of MathML 3. The committee is discussing adding some semantic disambiguation to presentation MathML, and a new "subject" attribute (name not finalized) might be added to give some context to the math.</li>
+    <li>Chapter 2 discusses the syntax and grammar of MathML along
+    with the <code>math</code> element. It will likely have a similar
+    structure to that of MathML 3, however with closer alignment to
+    CSS syntax where possible..</li>
     <li>Chapter 3 covers presentation MathML. This chapter will likely be significantly smaller. Much of the content will point to MathML core for a description of the layout and attributes allowed. There will be a general discussion of the relationship between MathML Full's presentation element and MathML Core's rules: MathML Full is meant to be used in situations outside of the web also, so we need to allow for none CSS-based rendering. The chapter will still include material about appropriate markup (what should be an mi, mo, mn, ...) along with a description of those elements not in MathML core. It will also likely include an "intent" attribute to help disambiguate meaning when the meaning of the presentation is not the default meaning in the context of the optional subject area.</li>
-    <li>Chapter 4 is about Content MathML. At this time, there are no plans to revise Content MathML and the chapter will likely be relatively unchanged.</li>
-    <li>Chapter 5 discusses mixing presentation and content markup to give meaning to presentation MathML or to give a presentation to content MathML. This is somewhat complicated and rarely used. It is informative and will move to the notes document. The MathML refresh CG feels the "subject" and "intent" attributes will likely replace this method. Those will be discussed in chapter 3. Hence, this chapter will be eliminated from the MathML Full spec.</li>
+    <li>Chapter 4 is about Content MathML. At this time, there are no plans to revise Content MathML and the chapter will likely be relatively in content but may be edited to have a simpler structure.</li>
+    <li>Chapter 5 is being completely re-written to describe annotating MathML using the new <code class="attribute">intent</code> attribute as well as the <code class="element">semantics</code> elemnt availble in previous versions of MathML.</li>
     <li>Chapters 6 and 7 contain very useful informative information on interacting with HTML, XML, etc., along with usage suggestions and warnings about specific characters. Because these are informative, these two chapters will be removed from the MathML Full spec and move to the notes.</li>
-    <li>The MathML 3 spec has several appendices. No decisions on how they will be handled in the MathML 4 spec have been made yet.</li>
+    <li>The appendices will be re-written as needed. In particular a new MathML4 schema is being produced, and is presented in <a href="#parsing"></a>.</li>
    </ul>
-   <hr/>
-   <p>
-    <em>The remainder of this document has not been updated to MathML 4.</em>
-   </p>
-   <hr/>
-   <p>
-    This document was produced by the <a href="https://www.w3.org/Math/">W3C Math Working Group</a> as
-    a <a href="https://www.w3.org/Consortium/Process/tr#RecsW3C">Recommendation</a>
-    and is part of the
-    W3C <a href="https://www.w3.org/Math/Activity">Math Activity</a>.
-    The goals of the W3C Math Working Group are discussed in the <a href="https://www.w3.org/Math/Documents/Charter2006.html"> W3C Math WG
-    Charter</a> (revised July 2006).  The authors of this document are
-    the W3C Math Working Group members.  A list of participants in the W3C Math Working Group
-    is available, [[[#contrib]]].   </p>
-   <p>This document has been reviewed by W3C Members, by software
-   developers, and by other W3C groups and interested parties, and is
-   endorsed by the Director as a W3C Recommendation. It is a stable
-   document and may be used as reference material or cited from another
-   document. W3C's role in making the Recommendation is to draw attention
-   to the specification and to promote its widespread deployment. This
-   enhances the functionality and interoperability of the Web.
-   </p>
-   <p>
-    All reported errata to
-    the first edition have been addressed in this addition, and a full change log appears
-    in
-    [[[#changes]]]. The diff-marked version linked in the frontmatter highlights all changes between
-    the first and second editions. </p>
-   <p>
-    The Working Group maintains a comprehensive
-    <a href="https://www.w3.org/Math/testsuite/">Test Suite</a>.  This
-    is publicly available and developers are encouraged to submit their results for display.
-    The <a href="https://www.w3.org/Math/testsuite/results/tests.html">Test Results</a>
-    are public.  They show at least two interoperable implementations for each
-    essential test. Further details may be found in the
-    <a href="https://www.w3.org/Math/Documents/mml3-implementation-report.html">Implementation Report</a>.
-   </p>
-   <p>
-    The MathML 2.0 (Second Edition) specification has been a W3C
-    Recommendation since 2001.  After its
-    recommendation, a W3C Math Interest Group collected
-    reports of  experience
-    with the deployment of MathML and identified issues with MathML that
-    might be ameliorated.  The rechartering of a Math Working Group
-    did not signal any change in the overall design of MathML.
-    The major additions in MathML 3 are support for
-    bidirectional layout, better linebreaking and explicit positioning,
-    elementary math notations, and a new strict content MathML vocabulary
-    with well-defined semantics.  The MathML 3 Specification has also been
-    restructured.    </p>
-   <p> This document was produced by a group operating under
-   the <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</a>. W3C maintains a
-   <a href="https://www.w3.org/2004/01/pp-impl/35549/status" rel="disclosure">public list of any patent disclosures</a> made in connection with
-   the deliverables of the group; that page also includes instructions
-   for disclosing a patent. An individual who has actual knowledge of
-   a patent which the individual believes contains
-   <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a>
-   must disclose the information in accordance with
-   <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the W3C Patent Policy</a>.
-   </p>
+
    <p>Public discussion of MathML and issues of support through the W3C
    for mathematics on the Web takes place on <a href="mailto:www-math@w3.org"> the public mailing list of the Math Working
    Group</a> (<a href="https://lists.w3.org/Archives/Public/www-math/">list archives</a>).
@@ -370,6 +328,7 @@ background: #fafafa;
       A fuller discussion of the document's evolution can be found in
       [[[#changes]]].
      </p>
+     <hr/>
        <section id="issue-summary"></section>
   </section>
 
