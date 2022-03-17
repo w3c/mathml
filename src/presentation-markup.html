@@ -2388,7 +2388,7 @@
 
    <section>
     <h6 id="presm_mo_dict_attrs">Dictionary-based attributes</h6>
-
+    <div class="issue" data-number="294"></div>
     <table border="1" id="presm_table-mo" class="attributes">
 
      <thead>
@@ -2504,7 +2504,7 @@
       <tr>
        <td colspan="3" class="attdesc">
 	Specifies whether the operator should be kept symmetric around the math
-	<a class="intref" href="#dt-axis">axis</a> when stretchy.
+	<a>axis</a> when stretchy.
 	Note this property only applies to vertically stretched symbols.
 	See <a href="#presm_op_stretch"></a>.
        </td>
@@ -3465,12 +3465,12 @@
 
    <p>The <code class="attribute">symmetric</code> attribute governs whether the
    height and
-   depth above and below the <a class="termref" href="#dt-axis">axis</a> of the
+   depth above and below the <a>axis</a> of the
    character are forced to be equal
    (by forcing both height and depth to become the maximum of the two).
    An example of a situation where one might set
    <code class="attribute">symmetric</code>=<code class="attributevalue">false</code>
-   arises with parentheses around a matrix not aligned on the <a class="termref" href="#dt-axis">axis</a>, which
+   arises with parentheses around a matrix not aligned on the <a>axis</a>, which
    frequently occurs when multiplying non-square matrices. In this case, one
    wants the parentheses to stretch to cover the matrix, whereas stretching
    the parentheses symmetrically would cause them to protrude beyond one edge
@@ -5421,8 +5421,6 @@ section on &lt;mo&gt;,
  <section>
   <h5>Meanings of <span>size and position</span> attributes</h5>
 
-  <p>See <a href="#glossary"></a> for definitions of some of the typesetting
-  terms used here.</p>
 
   <p>The content of an <code class="element">mpadded</code> element defines a fragment of mathematical
   notation, such as a character, fraction, or expression, that can be regarded as
@@ -7348,8 +7346,8 @@ section on &lt;mo&gt;,
       <td colspan="3" class="attdesc">
        specifies the vertical alignment of the table with respect to its environment.
        <code class="attributevalue">axis</code> means to align the vertical center of the table on
-       the environment's <a class="termref" href="#dt-axis">axis</a>.
-       (The <a class="termref" href="#dt-axis">axis</a> of an equation is an alignment line used by typesetters.
+       the environment's <dfn>axis</dfn>.
+       (The <a>axis</a> of an equation is an alignment line used by typesetters.
        It is the line on which a minus sign typically lies.)
        <code class="attributevalue">center</code> and <code class="attributevalue">baseline</code> both mean to align the center of the table
        on the environment's baseline.
