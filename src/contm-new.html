@@ -4515,8 +4515,6 @@
      (e.g. to represent - <i class="var">x</i>), or as a <em>binary arithmetic operator</em>
      (e.g. to represent <i class="var">x</i>- <i class="var">y</i>).</p>
 
-     <p>If it is used with one argument, <code class="element">minus</code> corresponds to the <a class="omsymbol" href="https://openmath.org/cd/arith1#unary_minus">unary_minus</a> symbol.</p>
-
      <div id="arith1.unary_minus.ex1" class="mathml-example">
       <p>Content MathML</p>
 
@@ -4538,9 +4536,6 @@
        <p><img src="image/arith1-unary_minus-ex1.gif" alt="{\unicode{8722}{3}}"></img></p>
       </blockquote>
      </div>
-
-     <p>If it is used with two arguments, <code class="element">minus</code> corresponds to the
-     <a class="omsymbol" href="https://openmath.org/cd/arith1#minus">minus</a> symbol</p>
 
      <div id="arith1.minus.ex1" class="mathml-example">
 
@@ -4564,11 +4559,6 @@
        <p><img src="image/arith1-minus-ex1.gif" alt="{x\unicode{8722}y}"></img></p>
       </blockquote>
      </div>
-
-     <p>In both cases, the translation to Strict Content markup is direct,
-     as described in <a>Rewrite: element</a>. It is merely a
-     matter of choosing the symbol that reflects the actual usage.</p>
-
     </section>
 
     <section>
@@ -4916,11 +4906,11 @@
       </tbody>
      </table>
 
-     <p>The <code class="element">gcd</code> element represents the n-ary operator which returns
-     the greatest common divisor of its arguments. Its
-     arguments may be explicitly specified in the enclosing
-     <code class="element">apply</code> element, or specified by rule as described in
-     <a href="#contm_nary"></a>.</p>
+     <p>The <code class="element">gcd</code> element represents the n-ary
+     operator which returns the greatest common divisor of its arguments.
+     Its arguments may be explicitly specified in the enclosing
+     <code class="element">apply</code> element, or specified by rule
+     as described in <a href="#contm_nary"></a>.</p>
 
      <div id="arith1.gcd.ex1" class="mathml-example">
       <p>Content MathML</p>
@@ -4950,11 +4940,6 @@
 
      <p>This default rendering is English-language locale specific: other locales may have
      different default renderings.</p>
-
-     <p>When the <code class="element">gcd</code> element is applied to an explicit list of arguments, the
-     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/arith1#gcd">gcd</a> symbol, as described in <a>Rewrite: element</a>.  However, when
-     qualifiers are used, the equivalent Strict markup is computed via
-     <a>Rewrite: n-ary domainofapplication</a>.</p>
     </section>
 
     <section>
@@ -5145,6 +5130,73 @@
 
       <blockquote>
        <p><img src="image/logic1-or-ex1.gif" alt="{a\unicode{8744}b}"></img></p>
+      </blockquote>
+     </div>
+
+     <div class="strict-mathml-example" id="contm_or_bvar_ex">
+
+      <p>Content MathML</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;or/&gt;
+           &lt;bvar&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;lowlimit&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/lowlimit&gt;
+           &lt;uplimit&gt;&lt;ci&gt;n&lt;/ci&gt;&lt;/uplimit&gt;
+           &lt;apply&gt;&lt;gt/&gt;&lt;apply&gt;&lt;selector/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/apply&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Strict Content MathML</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="fns2"&gt;apply_to_list&lt;/csymbol&gt;
+           &lt;csymbol cd="logic1"&gt;or&lt;/csymbol&gt;
+           &lt;apply&gt;&lt;csymbol cd="list1"&gt;map&lt;/csymbol&gt;
+             &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+               &lt;bvar&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;apply&gt;&lt;csymbol cd="relation1"&gt;gt&lt;/csymbol&gt;
+                 &lt;apply&gt;&lt;csymbol cd="linalg1"&gt;vector_selector&lt;/csymbol&gt;
+                   &lt;ci&gt;i&lt;/ci&gt;
+                   &lt;ci&gt;a&lt;/ci&gt;
+                 &lt;/apply&gt;
+                 &lt;cn&gt;0&lt;/cn&gt;
+               &lt;/apply&gt;
+             &lt;/bind&gt;
+             &lt;apply&gt;&lt;csymbol cd="interval1"&gt;integer_interval&lt;/csymbol&gt;
+               &lt;cn type="integer"&gt;0&lt;/cn&gt;
+               &lt;ci&gt;n&lt;/ci&gt;
+             &lt;/apply&gt;
+           &lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Sample Presentation</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;mrow&gt;
+           &lt;munderover&gt;
+             &lt;mo&gt;&amp;#x22C0;&lt;/mo&gt;
+             &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
+             &lt;mi&gt;n&lt;/mi&gt;
+           &lt;/munderover&gt;
+           &lt;mrow&gt;
+             &lt;mo&gt;(&lt;/mo&gt;
+             &lt;msub&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;
+             &lt;mo&gt;&amp;gt;&lt;/mo&gt;
+             &lt;mn&gt;0&lt;/mn&gt;
+             &lt;mo&gt;)&lt;/mo&gt;
+           &lt;/mrow&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+
+      <blockquote>
+       <p><img src="image/contm_or_bvar_ex.gif" alt="{\munderover\bigvee{i=0}{n}{\left(a\sb{i} \gt 0 \right)}}"></img></p>
       </blockquote>
      </div>
     </section>
@@ -5402,130 +5454,6 @@
 
       <blockquote>
        <p><img src="image/quant1-forall-ex1.gif" alt="{\unicode{8704}x.{\left({{x\unicode{8722}x}={0}}\right)}}"></img></p>
-      </blockquote>
-     </div>
-
-     <p><em>Mapping to Strict Markup</em></p>
-
-     <div class="strict-mathml-example" id="quant1.forall.ex2">
-
-      <p>When the <code class="element">forall</code> element is used with a <code class="element">condition</code> qualifier the
-      strict equivalent is constructed with the help of logical implication by the rule
-      <a>Rewrite: quantifier</a>.  Thus
-
-      <div class="example mathml">
-       <pre>
-         &lt;bind&gt;&lt;forall/&gt;
-           &lt;bvar&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;/bvar&gt;
-           &lt;bvar&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;/bvar&gt;
-           &lt;condition&gt;
-             &lt;apply&gt;&lt;and/&gt;
-               &lt;apply&gt;&lt;in/&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;rationals/&gt;&lt;/apply&gt;
-               &lt;apply&gt;&lt;in/&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;rationals/&gt;&lt;/apply&gt;
-               &lt;apply&gt;&lt;lt/&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;/apply&gt;
-             &lt;/apply&gt;
-           &lt;/condition&gt;
-           &lt;apply&gt;&lt;lt/&gt;
-             &lt;ci&gt;p&lt;/ci&gt;
-             &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
-           &lt;/apply&gt;
-         &lt;/bind&gt;
-       </pre>
-      </div>
-      translates to
-
-      <div class="example strict-mathml">
-       <pre>
-         &lt;bind&gt;&lt;csymbol cd="quant1"&gt;forall&lt;/csymbol&gt;
-           &lt;bvar&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;/bvar&gt;
-           &lt;bvar&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;/bvar&gt;
-           &lt;apply&gt;&lt;csymbol cd="logic1"&gt;implies&lt;/csymbol&gt;
-             &lt;apply&gt;&lt;csymbol cd="logic1"&gt;and&lt;/csymbol&gt;
-               &lt;apply&gt;&lt;csymbol cd="set1"&gt;in&lt;/csymbol&gt;
-                 &lt;ci&gt;p&lt;/ci&gt;
-                 &lt;csymbol cd="setname1"&gt;Q&lt;/csymbol&gt;
-               &lt;/apply&gt;
-               &lt;apply&gt;&lt;csymbol cd="set1"&gt;in&lt;/csymbol&gt;
-                 &lt;ci&gt;q&lt;/ci&gt;
-                 &lt;csymbol cd="setname1"&gt;Q&lt;/csymbol&gt;
-               &lt;/apply&gt;
-               &lt;apply&gt;&lt;csymbol cd="relation1"&gt;lt&lt;/csymbol&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;/apply&gt;
-             &lt;/apply&gt;
-             &lt;apply&gt;&lt;csymbol cd="relation1"&gt;lt&lt;/csymbol&gt;
-               &lt;ci&gt;p&lt;/ci&gt;
-               &lt;apply&gt;&lt;csymbol cd="arith1"&gt;power&lt;/csymbol&gt;
-                 &lt;ci&gt;q&lt;/ci&gt;
-                 &lt;cn&gt;2&lt;/cn&gt;
-               &lt;/apply&gt;
-             &lt;/apply&gt;
-           &lt;/apply&gt;
-         &lt;/bind&gt;
-       </pre>
-      </div>
-      </p>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml">
-       <pre>
-         &lt;mrow&gt;
-           &lt;mo&gt;&amp;#x2200;&lt;/mo&gt;
-           &lt;mrow&gt;
-             &lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;&lt;/mrow&gt;
-             &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
-             &lt;mrow&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;&lt;/mrow&gt;
-             &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
-             &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-           &lt;/mrow&gt;
-           &lt;mo&gt;.&lt;/mo&gt;
-           &lt;mfenced&gt;
-             &lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;
-           &lt;/mfenced&gt;
-         &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/quant1-forall-ex2.gif" alt="{\unicode{8704}{{p\unicode{8712}{\midoublestruck{Q}}}\unicode{8743}{q\unicode{8712}{\midoublestruck{Q}}}\unicode{8743}{\left.\middle(p\lt q\middle)\right.}}.{\left({p\lt\msup{q}{{2}}}\right)}}"></img></p>
-      </blockquote>
-
-      <div class="example mathml">
-       <pre>
-         &lt;mrow&gt;
-           &lt;mo&gt;&amp;#x2200;&lt;/mo&gt;
-           &lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;/mrow&gt;
-           &lt;mo&gt;.&lt;/mo&gt;
-           &lt;mfenced&gt;
-             &lt;mrow&gt;
-               &lt;mrow&gt;
-                 &lt;mo&gt;(&lt;/mo&gt;
-                 &lt;mrow&gt;
-                   &lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;
-                 &lt;/mrow&gt;
-                 &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
-                 &lt;mrow&gt;
-                   &lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;
-                 &lt;/mrow&gt;
-                 &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
-                 &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-                 &lt;mo&gt;)&lt;/mo&gt;
-               &lt;/mrow&gt;
-               &lt;mo&gt;&amp;#x21d2;&lt;/mo&gt;
-               &lt;mrow&gt;
-                 &lt;mo&gt;(&lt;/mo&gt;
-                 &lt;mi&gt;p&lt;/mi&gt;
-                 &lt;mo&gt;&amp;lt;&lt;/mo&gt;
-                 &lt;msup&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
-                 &lt;mo&gt;)&lt;/mo&gt;
-               &lt;/mrow&gt;
-             &lt;/mrow&gt;
-           &lt;/mfenced&gt;
-         &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/quant1-forall-ex2-2.gif" alt="{ \unicode{8704} {p,q} . {\left({ {\left. \middle( {p\unicode{8712}{\midoublestruck{Q}}} \unicode{8743} {q\unicode{8712}{\midoublestruck{Q}}} \unicode{8743} {\left.\middle(p\lt q\middle)\right.} \middle) \right.} \unicode{8658} {\left. \middle( p \lt \msup{q}{{2}} \middle) \right.} }\right)} }"></img></p>
       </blockquote>
      </div>
     </section>
@@ -6059,11 +5987,11 @@
       </tbody>
      </table>
 
-     <p>The <code class="element">lcm</code> element represents the n-ary operator used to
-     construct an expression which represents the least common multiple
-     of its arguments. If no argument is provided, the lcm is 1. If one
-     argument is provided, the lcm is that argument. The least common
-     multiple of <i class="var">x</i> and 1 is <i class="var">x</i>.</p>
+     <p>The <code class="element">lcm</code> element represents the n-ary
+     operator which returns the greatest common divisor of its arguments.
+     Its arguments may be explicitly specified in the enclosing
+     <code class="element">apply</code> element, or specified by rule
+     as described in <a href="#contm_nary"></a>.</p>
 
      <div id="arith1.lcm.ex1" class="mathml-example">
       <p>Content MathML</p>
@@ -6586,12 +6514,26 @@
      <code class="element">leq</code> may be used with more than two arguments, denoting a chain
      of inequalities, as described in <a href="#contm_nary_reln"></a>.</p>
 
-     <div id="relation1.leq.ex1" class="mathml-example">
+     <div class="strict-mathml-example" id="relation1.leq.ex1">
+
       <p>Content MathML</p>
 
       <div class="example mathml">
        <pre>
          &lt;apply&gt;&lt;leq/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Strict Content MathML</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="fns2"&gt;predicate_on_list&lt;/csymbol&gt;
+           &lt;csymbol cd="reln1"&gt;leq&lt;/csymbol&gt;
+           &lt;apply&gt;&lt;csymbol cd="list1"&gt;list&lt;/csymbol&gt;
+             &lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;
+           &lt;/apply&gt;
+         &lt;/apply&gt;
        </pre>
       </div>
 
@@ -8266,10 +8208,6 @@
       </blockquote>
      </div>
 
-     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code>
-     has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="https://openmath.org/cd/multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should
-     be used instead.</p>
-
     </section>
 
     <section>
@@ -8326,9 +8264,6 @@
        <p><img src="image/set1-notin-ex1.gif" alt="{a\unicode{8713}A}"></img></p>
       </blockquote>
      </div>
-
-     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
-     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
 
     </section>
 
@@ -8510,9 +8445,6 @@
       </blockquote>
      </div>
 
-     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
-     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
-
     </section>
 
     <section>
@@ -8572,9 +8504,6 @@
        <p><img src="image/set1-notprsubset-ex1.gif" alt="{A\unicode{8836}B}"></img></p>
       </blockquote>
      </div>
-
-     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
-     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
     </section>
 
     <section>
@@ -8635,9 +8564,6 @@
        <p><img src="image/set1-setdiff-ex1.gif" alt="{A\unicode{8726}B}"></img></p>
       </blockquote>
      </div>
-
-     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
-     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
     </section>
 
     <section>
@@ -8702,10 +8628,6 @@
        <p><img src="image/set1-size-ex1.gif" alt="{{\left.\middle|A\middle|\right.}={5}}"></img></p>
       </blockquote>
      </div>
-
-     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code>
-     has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="https://openmath.org/cd/multiset1#size">size</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used
-     instead.</p>
     </section>
 
     <section>
@@ -9957,14 +9879,6 @@
       </blockquote>
      </div>
 
-     <p><em>Mapping to Strict Markup</em></p>
-
-     <p>When the <code class="element">mean</code> element is applied to an explicit list of arguments, the
-     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#mean">mean</a> symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a>Rewrite: element</a>. When it is applied to a distribution, then the
-     <a class="omsymbol" href="https://openmath.org/cd/s_dist1#mean">mean</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
-     dictionary should be used.  In the case with qualifiers use <a>Rewrite: n-ary domainofapplication</a>
-     with the same caveat.</p>
     </section>
 
     <section>
@@ -10060,16 +9974,6 @@
        <p><img src="image/s_dist1-sdev-ex1.gif" alt="{\unicode{963}\unicode{8289}{\left(X\right)}}"></img></p>
       </blockquote>
      </div>
-
-     <p><em>Mapping to Strict Markup</em></p>
-
-     <p>When the <code class="element">sdev</code> element is applied to an explicit list of arguments, the
-     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#sdev">sdev</a>
-     symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a>Rewrite: element</a>. When it is applied to a distribution, then the
-     <a class="omsymbol" href="https://openmath.org/cd/s_dist1#sdev">sdev</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
-     dictionary should be used. In the case with qualifiers use
-     <a>Rewrite: n-ary domainofapplication</a> with the same caveat.</p>
     </section>
 
     <section>
@@ -10170,16 +10074,6 @@
        <p><img src="image/s_dist1-variance-ex1.gif" alt="\msup{\unicode{963}}{2}\unicode{8289}\left(X\right)"></img></p>
       </blockquote>
      </div>
-
-     <p><em>Mapping to Strict Markup</em></p>
-
-     <p>When the <code class="element">variance</code> element is applied to an explicit list of arguments, the
-     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#variance">variance</a>
-     symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a>Rewrite: element</a>. When it is applied to a distribution, then the
-     <a class="omsymbol" href="https://openmath.org/cd/s_dist1#variance">variance</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
-     dictionary should be used. In the case with qualifiers use <a>Rewrite: n-ary domainofapplication</a>
-     with the same caveat.</p>
     </section>
 
     <section>
@@ -10248,13 +10142,6 @@
        <p><img src="image/s_data1-median-ex1.gif" alt="{\mathop{{\minormal{median}}}{\left({3},{4},{2},{2}\right)}}"></img></p>
       </blockquote>
      </div>
-
-     <p><em>Mapping to Strict Markup</em></p>
-
-     <p>When the <code class="element">median</code> element is applied to an explicit list of arguments, the
-     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#median">median</a>
-     symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a>Rewrite: element</a>.</p>
     </section>
 
     <section>
@@ -10322,13 +10209,6 @@
        <p><img src="image/s_data1-mode-ex1.gif" alt="{\mathop{{\minormal{mode}}}{\left({3},{4},{2},{2}\right)}}"></img></p>
       </blockquote>
      </div>
-
-     <p><em>Mapping to Strict Markup</em></p>
-
-     <p>When the <code class="element">mode</code> element is applied to an explicit list of arguments, the
-     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#mode">mode</a>
-     symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
-     <a>Rewrite: element</a>.</p>
     </section>
 
     <section>
@@ -11904,14 +11784,6 @@
       <blockquote>
        <p><img src="image/set1-emptyset-ex1.gif" alt="{{\midoublestruck{Z}}\unicode{8800}\unicode{8709}}"></img></p>
       </blockquote>
-
-      <p><em>Mapping to Strict Markup</em></p>
-
-      <p>In some situations, it may be clear from context that <code class="element">emptyset</code>
-      corresponds to the <a class="omsymbol" href="https://openmath.org/cd/multiset1#emptyset">emptyset</a>
-      However, as there is no method other than annotation for an author to explicitly indicate
-      this,
-      it is always acceptable to translate to the  <a class="omsymbol" href="https://openmath.org/cd/set1#emptyset">emptyset</a> symbol from the <a class="omcd" href="set1">set1</a> CD.</p>
      </div>
     </section>
 
@@ -13870,7 +13742,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_logic"> <code class="element">forall</code> and <code class="element">exists</code></h5>
+     <h5 id="contm_p2s_quant">Quantifiers</h5>
      <p>Rewrite the quantifiers <code class="element">forall</code> and <code class="element">exists</code> used with <code class="element">domainofapplication</code>
      to expressions using implication and conjunction by the rule <a>Rewrite: quantifier</a>.
      </p>
@@ -13922,6 +13794,128 @@
        is direct.</span>
        </p>
       </div>
+
+     <div class="strict-mathml-example" id="quant1.forall.ex2">
+
+      <p>When the <code class="element">forall</code> element is used with a <code class="element">condition</code> qualifier the
+      strict equivalent is constructed with the help of logical implication by the rule
+      <a>Rewrite: quantifier</a>.  Thus
+
+      <div class="example mathml">
+       <pre>
+         &lt;bind&gt;&lt;forall/&gt;
+           &lt;bvar&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;bvar&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;condition&gt;
+             &lt;apply&gt;&lt;and/&gt;
+               &lt;apply&gt;&lt;in/&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;rationals/&gt;&lt;/apply&gt;
+               &lt;apply&gt;&lt;in/&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;rationals/&gt;&lt;/apply&gt;
+               &lt;apply&gt;&lt;lt/&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;/apply&gt;
+             &lt;/apply&gt;
+           &lt;/condition&gt;
+           &lt;apply&gt;&lt;lt/&gt;
+             &lt;ci&gt;p&lt;/ci&gt;
+             &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
+           &lt;/apply&gt;
+         &lt;/bind&gt;
+       </pre>
+      </div>
+      translates to
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;bind&gt;&lt;csymbol cd="quant1"&gt;forall&lt;/csymbol&gt;
+           &lt;bvar&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;bvar&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;apply&gt;&lt;csymbol cd="logic1"&gt;implies&lt;/csymbol&gt;
+             &lt;apply&gt;&lt;csymbol cd="logic1"&gt;and&lt;/csymbol&gt;
+               &lt;apply&gt;&lt;csymbol cd="set1"&gt;in&lt;/csymbol&gt;
+                 &lt;ci&gt;p&lt;/ci&gt;
+                 &lt;csymbol cd="setname1"&gt;Q&lt;/csymbol&gt;
+               &lt;/apply&gt;
+               &lt;apply&gt;&lt;csymbol cd="set1"&gt;in&lt;/csymbol&gt;
+                 &lt;ci&gt;q&lt;/ci&gt;
+                 &lt;csymbol cd="setname1"&gt;Q&lt;/csymbol&gt;
+               &lt;/apply&gt;
+               &lt;apply&gt;&lt;csymbol cd="relation1"&gt;lt&lt;/csymbol&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;/apply&gt;
+             &lt;/apply&gt;
+             &lt;apply&gt;&lt;csymbol cd="relation1"&gt;lt&lt;/csymbol&gt;
+               &lt;ci&gt;p&lt;/ci&gt;
+               &lt;apply&gt;&lt;csymbol cd="arith1"&gt;power&lt;/csymbol&gt;
+                 &lt;ci&gt;q&lt;/ci&gt;
+                 &lt;cn&gt;2&lt;/cn&gt;
+               &lt;/apply&gt;
+             &lt;/apply&gt;
+           &lt;/apply&gt;
+         &lt;/bind&gt;
+       </pre>
+      </div>
+      </p>
+
+      <p>Sample Presentation</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;mrow&gt;
+           &lt;mo&gt;&amp;#x2200;&lt;/mo&gt;
+           &lt;mrow&gt;
+             &lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
+             &lt;mrow&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
+             &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+           &lt;/mrow&gt;
+           &lt;mo&gt;.&lt;/mo&gt;
+           &lt;mfenced&gt;
+             &lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;
+           &lt;/mfenced&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+
+      <blockquote>
+       <p><img src="image/quant1-forall-ex2.gif" alt="{\unicode{8704}{{p\unicode{8712}{\midoublestruck{Q}}}\unicode{8743}{q\unicode{8712}{\midoublestruck{Q}}}\unicode{8743}{\left.\middle(p\lt q\middle)\right.}}.{\left({p\lt\msup{q}{{2}}}\right)}}"></img></p>
+      </blockquote>
+
+      <div class="example mathml">
+       <pre>
+         &lt;mrow&gt;
+           &lt;mo&gt;&amp;#x2200;&lt;/mo&gt;
+           &lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;/mrow&gt;
+           &lt;mo&gt;.&lt;/mo&gt;
+           &lt;mfenced&gt;
+             &lt;mrow&gt;
+               &lt;mrow&gt;
+                 &lt;mo&gt;(&lt;/mo&gt;
+                 &lt;mrow&gt;
+                   &lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;
+                 &lt;/mrow&gt;
+                 &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
+                 &lt;mrow&gt;
+                   &lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;
+                 &lt;/mrow&gt;
+                 &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
+                 &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+                 &lt;mo&gt;)&lt;/mo&gt;
+               &lt;/mrow&gt;
+               &lt;mo&gt;&amp;#x21d2;&lt;/mo&gt;
+               &lt;mrow&gt;
+                 &lt;mo&gt;(&lt;/mo&gt;
+                 &lt;mi&gt;p&lt;/mi&gt;
+                 &lt;mo&gt;&amp;lt;&lt;/mo&gt;
+                 &lt;msup&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+                 &lt;mo&gt;)&lt;/mo&gt;
+               &lt;/mrow&gt;
+             &lt;/mrow&gt;
+           &lt;/mfenced&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+
+      <blockquote>
+       <p><img src="image/quant1-forall-ex2-2.gif" alt="{ \unicode{8704} {p,q} . {\left({ {\left. \middle( {p\unicode{8712}{\midoublestruck{Q}}} \unicode{8743} {q\unicode{8712}{\midoublestruck{Q}}} \unicode{8743} {\left.\middle(p\lt q\middle)\right.} \middle) \right.} \unicode{8658} {\left. \middle( p \lt \msup{q}{{2}} \middle) \right.} }\right)} }"></img></p>
+      </blockquote>
+     </div>
 
     </section>
 
@@ -14083,7 +14077,7 @@
 
     <section>
      <h5 id="contm_p2s_atl">Apply to list</h5>
-     <p>into a construction with the <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a> symbol
+     <p>Into a construction with the <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a> symbol
      via the general rule <a>Rewrite: n-ary domainofapplication</a> for
      general n-ary operators.
      </p>
@@ -14091,7 +14085,7 @@
       <p>If the argument list is given explicitly, the <a>Rewrite: element</a> rule applies.</p>
 
       <p>Any use of qualifier elements is expressed in Strict Content
-      MathML, via explicitly applying the function to a list of arguments
+      MathML via explicitly applying the function to a list of arguments
       using the <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a> symbol as shown
       in the following rule. The rule only considers the
       <code class="element">domainofapplication</code> qualifier as other qualifiers may be
@@ -14149,7 +14143,7 @@
 
     <section>
      <h5 id="contm_p2s_st">Such that</h5>
-     <p>into a construction using the <a class="omsymbol" href="https://openmath.org/cd/set1#suchthat">suchthat</a> symbol
+     <p>Into a construction using the <a class="omsymbol" href="https://openmath.org/cd/set1#suchthat">suchthat</a> symbol
      from the <a class="omcd" href="set1">set1</a> content dictionary in an <code class="element">apply</code> with bound
      variables via the <a>Rewrite: apply bvar domainofapplication</a> rule.</p>
 
@@ -14565,7 +14559,106 @@
       <p>The choice of symbol for some statistical operators depends on the values of
       the types of the arguments.</p>
      </li>
+
+     <li>
+      <p>The choice of symbol for the <code class="element">emptyset</code> element depends on context.</p>
+     </li>
     </ol>
+
+    <section>
+    <h5 id="contm_p2s_minus">Rewrite the <code class="element">minus</code> operator</h5>
+    <p>The <code class="element">minus</code> element can be used as a <em>unary arithmetic operator</em>
+    (e.g. to represent - <i class="var">x</i>), or as a <em>binary arithmetic operator</em>
+    (e.g. to represent <i class="var">x</i>- <i class="var">y</i>).</p>
+
+    <p>If it is used with one argument, <code class="element">minus</code> corresponds to the <a class="omsymbol" href="https://openmath.org/cd/arith1#unary_minus">unary_minus</a> symbol.</p>
+
+    <p>If it is used with two arguments, <code class="element">minus</code> corresponds to the
+    <a class="omsymbol" href="https://openmath.org/cd/arith1#minus">minus</a> symbol</p>
+
+    <p>In both cases, the translation to Strict Content markup is direct,
+    as described in <a>Rewrite: element</a>. It is merely a
+    matter of choosing the symbol that reflects the actual usage.</p>
+    </section>
+
+    <section>
+    <h5 id="contm_p2s_setops">Rewrite the set operators</h5>
+
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code>
+     has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="https://openmath.org/cd/multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should
+     be used instead.</p>
+
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#notin">notin</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#subset">subset</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#prsubset">prsubset</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+k
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#notsubset">notsubset</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#notprsubset">notprsubset</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#setdiff">setdiff</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code>
+     has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="https://openmath.org/cd/multiset1#size">size</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used
+     instead.</p>
+    </section>
+
+    <section>
+    <h5 id="contm_p2s_statops">Rewrite the statistical operators</h5>
+
+     <p>When the <code class="element">mean</code> element is applied to an explicit list of arguments, the
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#mean">mean</a> symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
+     <a>Rewrite: element</a>. When it is applied to a distribution, then the
+     <a class="omsymbol" href="https://openmath.org/cd/s_dist1#mean">mean</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
+     dictionary should be used.  In the case with qualifiers use <a>Rewrite: n-ary domainofapplication</a>
+     with the same caveat.</p>
+
+     <p>When the <code class="element">sdev</code> element is applied to an explicit list of arguments, the
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#sdev">sdev</a>
+     symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
+     <a>Rewrite: element</a>. When it is applied to a distribution, then the
+     <a class="omsymbol" href="https://openmath.org/cd/s_dist1#sdev">sdev</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
+     dictionary should be used. In the case with qualifiers use
+     <a>Rewrite: n-ary domainofapplication</a> with the same caveat.</p>
+
+     <p>When the <code class="element">variance</code> element is applied to an explicit list of arguments, the
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#variance">variance</a>
+     symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
+     <a>Rewrite: element</a>. When it is applied to a distribution, then the
+     <a class="omsymbol" href="https://openmath.org/cd/s_dist1#variance">variance</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
+     dictionary should be used. In the case with qualifiers use <a>Rewrite: n-ary domainofapplication</a>
+     with the same caveat.</p>
+
+     <p>When the <code class="element">median</code> element is applied to an explicit list of arguments, the
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#median">median</a>
+     symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
+     <a>Rewrite: element</a>.</p>
+
+     <p>When the <code class="element">mode</code> element is applied to an explicit list of arguments, the
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#mode">mode</a>
+     symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
+     <a>Rewrite: element</a>.</p>
+
+    </section>
+
+    <section>
+    <h5 id="contm_p2s_emptyset">Rewrite the <code class="element">emptyset</code> operator</h5>
+
+      <p>In some situations, it may be clear from context that <code class="element">emptyset</code>
+      corresponds to the <a class="omsymbol" href="https://openmath.org/cd/multiset1#emptyset">emptyset</a> symbol from the <a class="omcd" href="multiset1">multiset1</a> content dictionary.
+      However, as there is no method other than annotation for an author to explicitly indicate
+      this,
+      it is always acceptable to translate to the <a class="omsymbol" href="https://openmath.org/cd/set1#emptyset">emptyset</a> symbol from the <a class="omcd" href="set1">set1</a> content dictionary.</p>
+
+    </section>
 
    </section>
 
