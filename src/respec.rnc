@@ -173,8 +173,9 @@ attribute class {text}?,
 }
 
 dl= element dl {
+attribute id {text}?,
 attribute class {text}?,
-(dt|dd)+
+(dt|dd)*
 }
 
 

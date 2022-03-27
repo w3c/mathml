@@ -10,68 +10,68 @@
   <script src="sorttable.js"></script>
   <script class='remove'>
     function relaxhl (r,s,u) {
-	var s2=s.replaceAll(/(#[^\n]*)/g,'\x3cspan style="color:brown">$1\x3c/span>');
-	s2=s2.replaceAll(/([a-z0-9A-Z-]+)(\s*=\s*[^"])/g,'\x3cb>$1\x3c/b>$2');
-	s2=s2.replaceAll(/include *"([^"]*)"/g,'\x3cspan style="color:green">include\x3c/span> "\x3cspan style="color:red">$1\x3c/span>"');
-	return  s2;
+        var s2=s.replaceAll(/(#[^\n]*)/g,'\x3cspan style="color:brown">$1\x3c/span>');
+        s2=s2.replaceAll(/([a-z0-9A-Z-]+)(\s*=\s*[^"])/g,'\x3cb>$1\x3c/b>$2');
+        s2=s2.replaceAll(/include *"([^"]*)"/g,'\x3cspan style="color:green">include\x3c/span> "\x3cspan style="color:red">$1\x3c/span>"');
+        return  s2;
     }
     function getsec(n){
-	if(n==null || n.localName=="section" || n.localName=="") {
-	    return n
-	} else {
-	    return getsec(n.parentNode);
-	}
+        if(n==null || n.localName=="section" || n.localName=="") {
+            return n
+        } else {
+            return getsec(n.parentNode);
+        }
     }
     function mmlindex() {
-	dl=document.getElementById("mml_elements");
-	var ellist=document.querySelectorAll("code.element");
-	var ellist2 = [];
-	for(var i=0;i!=ellist.length;i++){
-	    ellist2[ellist2.length]=ellist[i];
-	}
-	var lastel="";
-	ellist2 = ellist2.sort(function(a,b) {return a.textContent.localeCompare(b.textContent);});
-	for(var i=0;i!=ellist2.length;i++){
-	    if(ellist2[i].textContent != lastel){
-		lastel=ellist2[i].textContent;
-		var dt=document.createElement("dt");
-		var dd=document.createElement("dd");
-		var lastsec=""
-		dt.textContent=lastel;
-		dl.appendChild(dt);
-		dl.appendChild(dd);
-	    }
-	    var a=document.createElement("a");
-	    var thissec=getsec(ellist2[i]);
-	    if(thissec != null) {
-		var h=thissec.children[0].children[0];
-	    if(h != null) {
-		if(h.id!=lastsec){
-		    lastsec=h.id;
-		    a.href="#" + h.id;
-		    a.textContent=h.innerText;
-		    dd.appendChild(a);
-		    dd.appendChild(document.createTextNode(' '));
-		    }
-		}
-	    }
-	}
+        dl=document.getElementById("mml_elements");
+        var ellist=document.querySelectorAll("code.element");
+        var ellist2 = [];
+        for(var i=0;i!=ellist.length;i++){
+            ellist2[ellist2.length]=ellist[i];
+        }
+        var lastel="";
+        ellist2 = ellist2.sort(function(a,b) {return a.textContent.localeCompare(b.textContent);});
+        for(var i=0;i!=ellist2.length;i++){
+            if(ellist2[i].textContent != lastel){
+                lastel=ellist2[i].textContent;
+                var dt=document.createElement("dt");
+                var dd=document.createElement("dd");
+                var lastsec=""
+                dt.textContent=lastel;
+                dl.appendChild(dt);
+                dl.appendChild(dd);
+            }
+            var a=document.createElement("a");
+            var thissec=getsec(ellist2[i]);
+            if(thissec != null) {
+                var h=thissec.children[0].children[0];
+            if(h != null) {
+                if(h.id!=lastsec){
+                    lastsec=h.id;
+                    a.href="#" + h.id;
+                    a.textContent=h.innerText;
+                    dd.appendChild(a);
+                    dd.appendChild(document.createTextNode(' '));
+                    }
+                }
+            }
+        }
     }
     function foldable() {
-	var sortlist=document.querySelectorAll("section.fold");
-	for(var i=0;i!=sortlist.length;i++){
-	    var d=document.createElement("details");
-	    var w=sortlist[i].children[0];
-	    var h=w.children[0];
-	    var a=w.children[1];
-	    d.id= sortlist[i].id;
-	    d.className=h.nodeName;
-	    sortlist[i].removeChild(w);
-	    d.innerHTML="\x3csummary id='" + h.id + "' class='" + h.nodeName + "'>"+
+        var sortlist=document.querySelectorAll("section.fold");
+        for(var i=0;i!=sortlist.length;i++){
+            var d=document.createElement("details");
+            var w=sortlist[i].children[0];
+            var h=w.children[0];
+            var a=w.children[1];
+            d.id= sortlist[i].id;
+            d.className=h.nodeName;
+            sortlist[i].removeChild(w);
+            d.innerHTML="\x3csummary id='" + h.id + "' class='" + h.nodeName + "'>"+
             a.outerHTML +" " +
-	    h.innerText+"\x3c/summary>"+sortlist[i].innerHTML;
-	    sortlist[i].parentNode.replaceChild(d,sortlist[i]);
-	}
+            h.innerText+"\x3c/summary>"+sortlist[i].innerHTML;
+            sortlist[i].parentNode.replaceChild(d,sortlist[i]);
+        }
     }
     function resortable () {
         sorttable.makeSortable(document.getElementById('oper-dict-table'));
@@ -79,83 +79,69 @@
       </script>
   <script class='remove'>
    var respecConfig = {
-   copyrightStart: 1998,
-   specStatus: "ED",
-   group: "math",
-   editors: [{
-   name: "David Carlisle",
-   company: "NAG",
-   url: "https://github.com/davidcarlisle",
-   }],
-   formerEditors: [{
-   name: "Patrick Ion"
-   }, {
-   name: "Robert Miner (deceased)"
-   }],        edDraftURI: "https://github.com/w3c/mathml",
-   shortName: "MathML4",
-   maxTocLevel: 4,
-   otherLinks: [
-    {
+     copyrightStart: 1998,
+     specStatus:     "ED",
+     group:          "math",
+     editors:        [{
+                       name:    "David Carlisle",
+                       company: "NAG",
+                       url: "https://github.com/davidcarlisle",
+                     }],
+     formerEditors: [{name: "Patrick Ion"}, {name: "Robert Miner (deceased)"}],
+     edDraftURI:    "https://github.com/w3c/mathml",
+     shortName:     "MathML4",
+     maxTocLevel:   4,
+     otherLinks:    [{
       key: "Latest MathML Recommendation",
-      data: [
-        {
-          value: "https://www.w3.org/TR/MathML/",
-          href: "https://www.w3.org/TR/MathML/",
-          }]
-	  }
-	  ],
-       github: "https://github.com/w3c/mathml",
-       postProcess: [mmlindex,foldable,resortable],
-   localBiblio: {     
-	      "MathML-Core": {
-		  title: "MathML Core",
-		                    authors: [
-                      "Frédéric Wang, et al."
-                  ],
-                  status: "ED",
-                  href: "https://w3c.github.io/mathml-core/"
-	      },
-   "Pierce1961": {title: "Pierce1961"},
-   "Cajori1928": {title: "Cajori1928"},
-   "Knuth1986": {title: "Knuth1986"},
-   "AAP-math": {title: "AAP-math"},
-   "Poppelier1992": {title: "Poppelier1992"},
-   "ISO-12083": {title: "ISO-12083"},
-       "MathML1": {title: "MathML1"},
-   "MathML-Core" : {"aliasOf": "mathml-core"},
-   "OpenMath2004": {title: "OpenMath2004"},
-   "RELAX-NG": {title: "RELAX-NG"},
-   "XMLSchemas": {title: "XMLSchemas"},
-   "Namespaces": {title: "Namespaces"},
-   "HTML4": {title: "HTML4"},
-   "MathMLforCSS": {title: "MathMLforCSS"},
-   "Chaundy1954": {title: "Chaundy1954"},
-   "IEEE754": {title: "IEEE754"},
-   "XMLSchemaDatatypes": {title: "XMLSchemaDatatypes"},
-   "MathMLTypes": {title: "MathMLTypes"},
-   "rdf": {title: "rdf"},
-   "OMDoc1.2": {title: "OMDoc1.2"},
-   "Abramowitz1977": {title: "Abramowitz1977"},
-   "XHTML": {title: "XHTML"},
-   "SVG1.1": {title: "SVG1.1"},
-   "XHTML-MathML-SVG": {title: "XHTML-MathML-SVG"},
-   "RelaxNGBook": {title: "RelaxNGBook"},
-   "Modularization": {title: "Modularization"},
-   "Normal": {title: "Normal"}
+      data: [{
+              value: "https://www.w3.org/TR/MathML/",
+              href: "https://www.w3.org/TR/MathML/",
+            }]
+                    }],
+     github:        "https://github.com/w3c/mathml",
+     postProcess:   [mmlindex,foldable,resortable],
+     localBiblio: {     
+  "MathML1":           {"aliasOf": "MathML-19980407"},
+  "MathML-Core":       {"aliasOf": "mathml-core"},
+  "Entities":          {"aliasOf": "xml-entity-names"},
+  "rdf":               {"aliasOf": "rdf-concepts"},
+  "XHTML":             {"aliasOf": "XHTML10"},
+  "Modularization":    {"aliasOf": "XHTML-MODULARIZATION11"},
+  "Namespaces":        {"aliasOf": "xml-names"},
+  "XMLSchemas":        {"aliasOf": "xmlschema-1"},
+  "XMLSchemaDatatypes":{"aliasOf": "xmlschema-2"},
+  "XHTML-MathML-SVG":  {"aliasOf": "XHTMLplusMathMLplusSVG"},
+  "SVG1.1":            {"aliasOf": "SVG11"},       
+
+  "OpenMath": {"title":    "The OpenMath Standard",
+               "publisher":"The OpenMath Society",
+               "authors":  ["S. Buswell", "O. Caprotti", "D. P. Carlisle",
+                            "M. C. Dewar", "M. Gaëtano", "M. Kohlhase",
+                            "J. H. Davenport", "P. D. F. Ion", "T. Wiesing"],
+               "date":     "July 2019",
+               "href":     "https://openmath.org/standard/om20-2019-07-01/omstd20.html"
+              },
+
+  "Cajori1928":     {"title": "Cajori1928"},
+  "MathMLforCSS":   {"title": "MathMLforCSS"},
+  "Chaundy1954":    {"title": "Chaundy1954"},
+  "IEEE754":        {"title": "IEEE754"},
+  "OMDoc1.2":       {"title": "OMDoc1.2"},
+  "Abramowitz1977": {"title": "Abramowitz1977"}
    }
    };
   </script>
   <script class='remove'>
     function relaxhl (r,s,u) {
-	var s2=s.replaceAll(/(\n|^)([^'#\n]*)(#[^\n]*)/g,'$1$2\x3cspan style="color:brown">$3\x3c/span>');
-	s2=s2.replaceAll(/([a-z0-9.A-Z-]+)(\s*=\s*[^"])/g,'\x3cb>$1\x3c/b>$2');
-	s2=s2.replaceAll(/include *"([^"]*)"/g,'\x3cspan style="color:green">include\x3c/span> "\x3cspan style="color:red">$1\x3c/span>"');
-	return  s2;
+        var s2=s.replaceAll(/(\n|^)([^'#\n]*)(#[^\n]*)/g,'$1$2\x3cspan style="color:brown">$3\x3c/span>');
+        s2=s2.replaceAll(/([a-z0-9.A-Z-]+)(\s*=\s*[^"])/g,'\x3cb>$1\x3c/b>$2');
+        s2=s2.replaceAll(/include *"([^"]*)"/g,'\x3cspan style="color:green">include\x3c/span> "\x3cspan style="color:red">$1\x3c/span>"');
+        return  s2;
     }
   </script>
   <style>
 th.mfont, span.mfont{
-	font-family:"STIX Two Math", "Cambria Math", "STIX Math", "Asana Math", "serif";
+        font-family:"STIX Two Math", "Cambria Math", "STIX Math", "Asana Math", "serif";
 }
 th.uname {font-size:70%;}
 a.coreyes::before, li span.formerLink::before {
@@ -223,116 +209,11 @@ background: #fafafa;
  </head>
  <body>
   <section id='abstract'>
-   <p>
-    This specification defines the Mathematical Markup Language, or
-    MathML. MathML is a markup language
-    for describing mathematical notation and capturing
-    both its structure and content. The goal of MathML is to enable
-    mathematics to be served, received, and processed on the World Wide
-    Web, just as [[HTML]] has
-    enabled this functionality for text.
-   </p>
-   <p>
-    This specification of the markup language MathML is intended
-    primarily for a readership consisting of those who will be
-    developing or implementing renderers or editors using it, or
-    software that will communicate using MathML as a protocol for input
-    or output. It is <em>not</em> a User's Guide but rather a
-    reference document.
-   </p>
-   <p>
-    MathML can be used to encode both mathematical notation and
-    mathematical content. About thirty-eight of the MathML tags describe
-    abstract notational structures, while another about one hundred and
-    seventy provide a way of unambiguously specifying the intended
-    meaning of an expression. Additional chapters discuss how the MathML
-    content and presentation elements interact, and how MathML renderers
-    might be implemented and should interact with browsers. Finally,
-    this document addresses the issue of special characters used for
-    mathematics, their handling in MathML, their presence in Unicode,
-    and their relation to fonts.
-   </p>
-   <p>
-    While MathML is human-readable, authors typically will
-    use equation editors, conversion
-    programs, and other specialized software tools to generate
-    MathML. Several versions of such MathML tools exist,
-    both freely available software and commercial
-    products, and more are under development.   </p>
-   <p>MathML was originally specified as an XML application and most of the
-   examples in this specification assume that syntax. Other syntaxes are possible most
-   notably
-   [[HTML5]] specifies the syntax for MathML in HTML. Unless explictly noted,
-   the examples in this specification are also valid HTML syntax.
-   </p>
+    <div data-include="src/abstract.html" data-include-replace="true"></div>
   </section>
   <section id='sotd'>
-   <p><em> This section describes the status of this document at the time
-   of its publication. Other documents may supersede this document. A
-   list of current W3C publications and the latest revision of this
-   technical report can be found in the <a href="https://www.w3.org/TR/">W3C technical reports index</a> at
-   https://www.w3.org/TR/.</em>   </p>
-   <p>
-   </p>
-   <p> For MathML 4, the Math Working Group plans to split the MathML 3 specification into three separate documents:</p>
-   <ul>
-    <li><a href="https://w3c.github.io/mathml-core">MathML Core (Normative)</a>,</li>
-    <li><a href="https://w3c.github.io/mathml">MathML Full (Normative)</a>,</li>
-    <li><a href="https://mathml-refresh.github.io/notes-on-mathml">Notes on MathML (non-normative)</a>.</li>
-   </ul>
-   <p>MathML core is a distillation of the parts of MathML commonly
-   implemened in web platform browsers, rewritten to align with
-   current W3C standards such as HTML and CSS. The full MathML spec
-   maintains (mostly) backward compatibility with MathML 3. Examples
-   of elements in MathML core include the elements for fractions,
-   roots, scripts, limits, rows, and token elements (identifiers,
-   numbers, operators, etc). Problematic, harder to implement, and
-   less commonly used MathML features will make use of polyfills
-   (likely via in part using Shadow DOM) to implement these
-   features. Examples of features left out of MathML core but part of
-   full MathML are <code>mfenced</code>, <code>menclose</code>, the
-   elementary math elements, and linebreaking. Some features such as
-   linebreaking will likely be part of a MathML Core Level 2
-   recommendation in the future.
-   </p>
-   <p> We expect the Full MathML 4 document to be considerably shorter than [[MathML3]] because we intend to pull most of the informative sections into a notes document. Additionally, much of chapter on presentation MathML concerns layout, and the full spec will reference [[MathML-Core]] for details on layout.
-   </p>
-   <p>
-    We expect the final draft of this document to differ from the
-    MathML 3 spec in the following ways:
-   </p>
-   <ul>
-    <li>Chapter 1 is mostly informative information. It will likely be shortened or eliminated, with the existing content potentially moved to a notes document.</li>
-    <li>Chapter 2 discusses the syntax and grammar of MathML along
-    with the <code>math</code> element. It will likely have a similar
-    structure to that of MathML 3, however with closer alignment to
-    CSS syntax where possible..</li>
-    <li>Chapter 3 covers presentation MathML. This chapter will likely be significantly smaller. Much of the content will point to MathML core for a description of the layout and attributes allowed. There will be a general discussion of the relationship between MathML Full's presentation element and MathML Core's rules: MathML Full is meant to be used in situations outside of the web also, so we need to allow for none CSS-based rendering. The chapter will still include material about appropriate markup (what should be an mi, mo, mn, ...) along with a description of those elements not in MathML core. It will also likely include an "intent" attribute to help disambiguate meaning when the meaning of the presentation is not the default meaning in the context of the optional subject area.</li>
-    <li>Chapter 4 is about Content MathML. At this time, there are no plans to revise Content MathML and the chapter will likely be relatively in content but may be edited to have a simpler structure.</li>
-    <li>Chapter 5 is being completely re-written to describe annotating MathML using the new <code class="attribute">intent</code> attribute as well as the <code class="element">semantics</code> elemnt availble in previous versions of MathML.</li>
-    <li>Chapters 6 and 7 contain very useful informative information on interacting with HTML, XML, etc., along with usage suggestions and warnings about specific characters. Because these are informative, these two chapters will be removed from the MathML Full spec and move to the notes.</li>
-    <li>The appendices will be re-written as needed. In particular a new MathML4 schema is being produced, and is presented in <a href="#parsing"></a>.</li>
-   </ul>
-
-   <p>Public discussion of MathML and issues of support through the W3C
-   for mathematics on the Web takes place on <a href="mailto:www-math@w3.org"> the public mailing list of the Math Working
-   Group</a> (<a href="https://lists.w3.org/Archives/Public/www-math/">list archives</a>).
-   To subscribe send an email to <a href="mailto:www-math-request@w3.org">www-math-request@w3.org</a>
-   with the word <code>subscribe</code> in the subject line.
-   Alternatively, report  an issue at this specification's
-   <a href="https://github.com/w3c/mathml">GitHub repository</a>.   </p>
-   <p>
-     The basic chapter structure of this document is based on the earlier releases,
-     [[MathML3]], [[MathML2]] and [[MathML]].
-   </p>
-     <p>
-      A fuller discussion of the document's evolution can be found in
-      [[[#changes]]].
-     </p>
-     <hr/>
-       <section id="issue-summary"></section>
+    <div data-include="src/sotd.html" data-include-replace="true"></div>
   </section>
-
   <section data-include="src/introduction.html" data-include-replace="true"></section>
   <section data-include="src/fundamentals.html" data-include-replace="true"></section>
   <section data-include="src/presentation-markup.html" data-include-replace="true"></section>
@@ -344,7 +225,7 @@ background: #fafafa;
   <!-- respec doesn't support recusive inclusion currently-->
   <section class="appendix">
    <h2 id="parsing">Parsing MathML</h2>
-   <div class="issue" data-number="268"></div>
+<!--   <div class="issue" data-number="268"></div> -->
    <div class="issue" data-number="122"></div>
    <div class="issue" data-number="178"></div>
 
@@ -429,6 +310,7 @@ background: #fafafa;
    </section>
 
    <section data-include="src/parsing-2.html" data-include-replace="true"></section>
+   <section data-include="src/parsing-3.html" data-include-replace="true"></section>
   </section>
 
   <section data-include="src/media-types.html" data-include-replace="true"></section>
