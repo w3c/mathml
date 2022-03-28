@@ -1,11 +1,11 @@
 <section data-max-toc="3">
  <h2 id="mixing">Annotating MathML</h2>
- <div class="issue" data-number="281"></div>
+<!-- <div class="issue" data-number="281"></div>-->
  <div class="issue" data-number="252"></div>
  <div class="issue" data-number="289"></div>
 
  
- <p>Semantic annotation refers to markup added to
+ <p>Annotation refers to markup added to
  make associations between alternate representations of an
  expression, and for associating semantic properties and other
  attributions with a MathML expression.</p>
@@ -15,53 +15,78 @@
  and for MathML to embed markup from other vocabularies such as
  [[OpenMath]] or [[SVG]]. This general mechanism is described
  below in <a href="#mixing_semantic_annotations"></a> but first we describe a new
- feature added in MathML&#160;4 to faciliate annotating Presentation
- MathML with the <q>intent</q> or semantic meaning of the term.
+ feature added in MathML&#160;4 to facilitate annotating Presentation
+ MathML with the <q>intent</q> or (intended meaning) of the term.
  </p>
 
  <section>
   <h3 id="mixing_intent">The <code class="attribute">intent</code> attribute</h3>
-  <p>As decribed in <a href="#presm"></a> presentation MathML elements
+  <p>As decribed in <a href="#presm"></a> presentation <span class="ednote">Content?</span>
+  MathML elements
   (including [[MathML-Core]] allow attributes <code
   class="attribute">intent</code> and <code
   class="attribute">arg</code> that as described here allow the
-  <q>intent</q> or semantic meaning of the term to be specified. This
+  <dfn><q>intent</q></dfn> of the term to be specified. This
   annotation is not intented to provide a full mathematical definition
-  of the term but may be used guide Accessibility systems to give audio
+  of the term but may be used guide accessibility systems to give audio
   or braille renderings, see <a href="#accessibility"></a>. It may also
   be used to guide translations to Content MathML, or computational
   systems.</p>
+
+  <p>The <code class="attribute">intent</code> attribute encodes a
+  simple functional syntax representing  the intended meaning. A
+  formal grammar is given below, but a typical example would be
+  <code>intent="power($base,$exponent)"</code>. The parts consist:
+  of</p>
+  <ul>
+  <li><em>references</em> prefixed with <code>$</code>. A numeric
+  reference such as <code>$3/$1</code> references the [=intent=] of
+  the first child of the 3rd child of the element. An argumnt
+  reference such as <code>$name</code> refereces a descendent element
+  that has an attriute <code>arg="name"</code>. unlike <code class="attribute">id</code>
+  attributes, <code class="attribute">arg</code> do not have to be
+  unique within a document, when searching for a matching element the
+  search should only consider descendns and not consider descendents
+  of any element that has an <code class="attribute">intent</code> or
+  <code class="attribute">arg</code> attribute.</li>
+  <li><em>literal numbers</em> such as <code>2.5</code> denote
+  themselves. <span class="ednote">0.25e1?</span></li>
+  <li><em>literal identifiers</em> Non numeric literals reference
+  terms in the intent dictionary, currently located at <a
+  href="https://docs.google.com/spreadsheets/d/1EsWou1K5nxBdLPvQapdoA9h-s8lg_qjn8fJH64g9izQ/edit#gid=1358098730">Google
+  Sheets</a>. Note the list of [=intent=] identifiers is
+  <em>Open</em>: level 1 is a curated list maintained by the Math Working
+  Group and should be implemented by any implemenation of MathML
+  intent, so that suitable audio renderings of the level 1 terms will
+  be generated. Terms in other levels may be contributed; the
+  dictionary may give speech hints, but a system may also fall back on
+  reading the identifier name as given.</li>
+  <li><em>the wildcard</em>, <code>*</code> denotes all the children
+  <span class="ednote">just mi and mn children?</span> of the element so
+  that <code>intent="somefunction(*)"</code> is equivalent to
+  <code>intent="somefunction($1,$2, ...)"</code></li>
+  </ul>
+
+<p>The key component here is the literal; they are intended to correspond to some mathematical concept or operator, or some application specific quantity or operation; that is it represents some “meaning”. Ultimately, the goal is to translate this virtual content tree into text or speech (in different languages), braille or some other form. The preferred translation may also depend on context and user profile. On the one hand, the most natural translation of a given expression can depend on the operator. It is thus desirable to have a set of common known meaning with translation rules. Thus power(x,2) might be rendered as “the 2nd power of x” or “x squared”, depending on the user and agent.</p>
 
   <section>
    <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
 
    <pre>
-intent := literal | selector | intent '(' wildcard ')' | intent '(' intent [ ',' intent ]* ')'
-literal      := [letters|digits|_|-]*
-selector     := ( argref | numref ) [ '/' selector ]?
-argref       := '$' NCName
-numref       := '$' [digit]+
-wildcard     := '@'
+intent   := literal | selector | intent '(' wildcard ')' | intent '(' intent [ ',' intent ]* ')'
+literal  := ( letters | digits | '.' | '_' | '-' )*
+selector := argref | numref
+argref   := '$' NCName
+numref   := '$' [digit]+ ( '/' numref )?
+wildcard := '*'
    </pre>
 
-   <p>where the grammar components have the following significance:</p>
-
-   <ul>
-    <li>the third form of intent represents some operation applied to arguments.
-    literal: represents a mathematical concept, being a literal keyword (to be looked up in a to-be-specified dictionary), or a phrase to be spoken as-is (possibly translated, as needed) if not present in the dictionary. In the latter case, hyphens and underscores are treated as spaces. The set of literals is intentionally open-ended.</li>
-    <li>selector: selects another node whose intent is used in-place-of or as part-of the composed intent.</li>
-    <li>argref: refers to the intent of another node, being the child of the current node with attribute arg having the given NCName (or possibly any node in the document with the NCName as id).</li>
-    <li>argpath: refers to the intent of a descendant of the current node; for example, a single component such as $2 refers to the 2nd child; multiple components refer to grandchildren or deeper, $1/1 would refer to the first grandchild.</li>
-   </ul>
-
-<p>The key component here is the literal; they are intended to correspond to some mathematical concept or operator, or some application specific quantity or operation; that is it represents some “meaning”. Ultimately, the goal is to translate this virtual content tree into text or speech (in different languages), braille or some other form. The preferred translation may also depend on context and user profile. On the one hand, the most natural translation of a given expression can depend on the operator. It is thus desirable to have a set of common known meaning with translation rules. Thus power(x,2) might be rendered as “the 2nd power of x” or “x squared”, depending on the user and agent.</p>
-
-<p>On the other hand, mathematics encompasses an endless set of concepts, arguing that the set of meanings must be open-ended. We propose that there should be a small set of recommended meaning keywords whose translation can be specialized, while allowing any value for the meaning (an implementation is free to recognize more keywords). In the case where a meaning is not in a dictionary, support for multiple languages may be weak and the application of such a literal would be generic as “the [meaning] of [arg1], [arg2] and [argn] …”. While this result may be less than optimal, it is still functional.</p>
   </section>
+
 
  
  <section>
-  <h3 id="mixing_msup_notation">Same notation, different meanings</h3>
+  <h3 id="mixing_intent_examplesn">Intent Examples</h3>
 
 <p>With this model, the <code class="element">msup</code> examples:
 as a power;
@@ -99,9 +124,9 @@ as an embellished symbol would be distinguished as follows:</p>
 &lt;/msup>
 </pre>
 
+ 
  </section>
  </section>
-
  
  <section>
   <h3 id="mixing_semantic_annotations">Annotation Elements</h3>
@@ -1153,7 +1178,6 @@ as an embellished symbol would be distinguished as follows:</p>
 
   </section>
 
- </section>
 
 </section>
 </section>
