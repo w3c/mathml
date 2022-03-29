@@ -61,13 +61,16 @@
   be generated. Terms in other levels may be contributed; the
   dictionary may give speech hints, but a system may also fall back on
   reading the identifier name as given.</li>
-  <li><em>the wildcard</em>, <code>*</code> denotes all the children
-  <span class="ednote">just mi and mn children?</span> of the element so
+  <li><em>the wildcard</em>, <code>*</code> denotes all the child
+  elements that are not an [=embellished operator=].
+  So
   that <code>intent="somefunction(*)"</code> is equivalent to
-  <code>intent="somefunction($1,$2, ...)"</code></li>
+  <code>intent="somefunction($arg1,$arg2, ...)"</code> where
+  <code class="attribute">arg</code> attributes are added to all the
+  non-operator children.</li>
   </ul>
 
-<p>The key component here is the literal. A literals is intended to
+<p>The key component here is the literal. A literal is intended to
 correspond to some mathematical concept or operator, or some
 application specific quantity or operation; that is it represents some
 “meaning”. Ultimately, the goal is to translate this virtual content
@@ -1189,6 +1192,7 @@ as an embellished symbol would be distinguished as follows:</p>
   </section>
 
 
+</section>
 </section>
 </section>
 
