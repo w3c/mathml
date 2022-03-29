@@ -14,7 +14,7 @@
  markup and content markup to be combined in several different ways
  and for MathML to embed markup from other vocabularies such as
  [[OpenMath]] or [[SVG]]. This general mechanism is described
- below in <a href="#mixing_semantic_annotations"></a> but first we describe a new
+ below in <a href="#mixing_annotation_elements"></a> but first we describe a new
  feature added in MathML&#160;4 to facilitate annotating Presentation
  MathML with the <q>intent</q> or (intended meaning) of the term.
  </p>
@@ -46,9 +46,9 @@
   that has an attriute <code>arg="name"</code>. unlike <code class="attribute">id</code>
   attributes, <code class="attribute">arg</code> do not have to be
   unique within a document, when searching for a matching element the
-  search should only consider descendns and not consider descendents
-  of any element that has an <code class="attribute">intent</code> or
-  <code class="attribute">arg</code> attribute.</li>
+  search should only consider descendants, while stopping early at any
+  nodes that have a set <code class="attribute">intent</code> or
+  <code class="attribute">arg</code> attributes, without descending into them.</li>
   <li><em>literal numbers</em> such as <code>2.5</code> denote
   themselves. <span class="ednote">0.25e1?</span></li>
   <li><em>literal identifiers</em> Non numeric literals reference
@@ -129,7 +129,7 @@ as an embellished symbol would be distinguished as follows:</p>
  </section>
  
  <section>
-  <h3 id="mixing_semantic_annotations">Annotation Elements</h3>
+  <h3 id="mixing_annotation_elements">Annotation Elements</h3>
 
   <p>
    In addition to the <code class="attribute">intent</code> attribute decribed above,
@@ -585,7 +585,7 @@ as an embellished symbol would be distinguished as follows:</p>
     <p>Taken together, the <code class="attribute">cd</code> and <code class="attribute">name</code> attributes
     specify the annotation key symbol, which identifies the relationship
     between the annotated element and the annotation, as described in
-    <a href="#mixing_semantic_annotations"></a>. The <code class="attribute">definitionURL</code>
+    <a href="#mixing_annotation_elements"></a>. The <code class="attribute">definitionURL</code>
     attribute provides an alternate way to reference the annotation key
     symbol as a single attribute.  If none of these attributes are present,
     the annotation key symbol is the symbol
@@ -711,7 +711,7 @@ as an embellished symbol would be distinguished as follows:</p>
     <p>Taken together, the <code class="attribute">cd</code> and <code class="attribute">name</code> attributes
     specify the annotation key symbol, which identifies the relationship
     between the annotated element and the annotation, as described in
-    <a href="#mixing_semantic_annotations"></a>. The <code class="attribute">definitionURL</code>
+    <a href="#mixing_annotation_elements"></a>. The <code class="attribute">definitionURL</code>
     attribute provides an alternate way to reference the annotation key
     symbol as a single attribute.  If none of these attributes are present,
     the annotation key symbol is the symbol
