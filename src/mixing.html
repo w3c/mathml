@@ -36,19 +36,19 @@
   <p>The <code class="attribute">intent</code> attribute encodes a
   simple functional syntax representing  the intended meaning. A
   formal grammar is given below, but a typical example would be
-  <code>intent="power($base,$exponent)"</code>. The parts consist:
-  of</p>
+  <code>intent="power($base,$exponent)"</code>. The parts consist
+  of:</p>
   <ul>
   <li><em>references</em> prefixed with <code>$</code>. A numeric
   reference such as <code>$3/$1</code> references the [=intent=] of
-  the first child of the 3rd child of the element. An argumnt
-  reference such as <code>$name</code> refereces a descendent element
-  that has an attriute <code>arg="name"</code>. unlike <code class="attribute">id</code>
+  the first child of the 3rd child of the element. An argument
+  reference such as <code>$name</code> references a descendent element
+  that has an attribute <code>arg="name"</code>. Unlike <code class="attribute">id</code>
   attributes, <code class="attribute">arg</code> do not have to be
-  unique within a document, when searching for a matching element the
+  unique within a document. When searching for a matching element the
   search should only consider descendants, while stopping early at any
-  nodes that have a set <code class="attribute">intent</code> or
-  <code class="attribute">arg</code> attributes, without descending into them.</li>
+  elements that have a set <code class="attribute">intent</code> or
+  <code class="attribute">arg</code> attribute, without descending into them.</li>
   <li><em>literal numbers</em> such as <code>2.5</code> denote
   themselves. <span class="ednote">0.25e1?</span></li>
   <li><em>literal identifiers</em> Non numeric literals reference
@@ -67,7 +67,17 @@
   <code>intent="somefunction($1,$2, ...)"</code></li>
   </ul>
 
-<p>The key component here is the literal; they are intended to correspond to some mathematical concept or operator, or some application specific quantity or operation; that is it represents some “meaning”. Ultimately, the goal is to translate this virtual content tree into text or speech (in different languages), braille or some other form. The preferred translation may also depend on context and user profile. On the one hand, the most natural translation of a given expression can depend on the operator. It is thus desirable to have a set of common known meaning with translation rules. Thus power(x,2) might be rendered as “the 2nd power of x” or “x squared”, depending on the user and agent.</p>
+<p>The key component here is the literal. A literals is intended to
+correspond to some mathematical concept or operator, or some
+application specific quantity or operation; that is it represents some
+“meaning”. Ultimately, the goal is to translate this virtual content
+tree into text or speech (in different languages), braille or some
+other form. The preferred translation may also depend on context and
+user profile. On the one hand, the most natural translation of a given
+expression can depend on the operator. It is thus desirable to have a
+set of common known meaning with translation rules. Thus power(x,2)
+might be rendered as “the 2nd power of x” or “x squared”, depending on
+the user and agent.</p>
 
   <section>
    <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
