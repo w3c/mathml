@@ -85,6 +85,12 @@ the user and agent.</p>
   <section>
    <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
 
+   <div class="ednote">
+     This grammar distills various suggestions but the Working Group has not yet agreed a final version.
+
+     The basic idea of a functional syntax and argref are likely to stay but details around
+     paths and wildcards and exact characters allowed in identifiers all subject to discussion.
+   </div>
    <pre>
 intent   := literal | selector | intent '(' wildcard ')' | intent '(' intent [ ',' intent ]* ')'
 literal  := ( letters | digits | '.' | '_' | '-' )*
