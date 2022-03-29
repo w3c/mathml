@@ -1,8 +1,8 @@
 <section data-max-toc="3">
  <h2 id="mixing">Annotating MathML</h2>
 <!-- <div class="issue" data-number="281"></div>-->
- <div class="issue" data-number="252"></div>
- <div class="issue" data-number="289"></div>
+<!-- <div class="issue" data-number="252"></div>-->
+<!-- <div class="issue" data-number="289"></div>-->
 
  
  <p>Annotation refers to markup added to
@@ -21,7 +21,7 @@
 
  <section>
   <h3 id="mixing_intent">The <code class="attribute">intent</code> attribute</h3>
-  <p>As decribed in <a href="#presm"></a> presentation <span class="ednote">Content?</span>
+  <p>As decribed in <a href="#presm"></a> presentation <span class="ednote">Content? See <a href="https://github.com/w3c/mathml/issues/289">Issu 289</a>.</span>
   MathML elements
   (including [[MathML-Core]] allow attributes <code
   class="attribute">intent</code> and <code
@@ -86,10 +86,12 @@ the user and agent.</p>
    <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
 
    <div class="ednote">
-     This grammar distills various suggestions but the Working Group has not yet agreed a final version.
+     <p>This grammar distills various suggestions but the Working Group has not yet agreed a final version.</p>
 
-     The basic idea of a functional syntax and argref are likely to stay but details around
-     paths and wildcards and exact characters allowed in identifiers all subject to discussion.
+     <p>The basic idea of a functional syntax and argref are likely to stay but details around
+     paths and wildcards and exact characters allowed in identifiers all subject to discussion.</p>
+
+     <p>See <a href="https://github.com/w3c/mathml/issues/252">Issue 252</a></p>
    </div>
    <pre>
 intent   := literal | selector | intent '(' wildcard ')' | intent '(' intent [ ',' intent ]* ')'
