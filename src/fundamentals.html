@@ -206,12 +206,12 @@
       </tr>
 
       <tr>
-       <td><dfn><em>length</em></dfn></td>
+       <td id="type_length"><dfn><em>length</em></dfn></td>
        <td>a length, as explained below, <a href="#fund_units"></a></td>
       </tr>
        
       <tr>
-       <td><dfn><em>namedlength</em></dfn></td>
+       <td id="type_namedspace"><dfn><em>namedspace</em></dfn></td>
        <td>a named length, as explained below, <a href="#fund_units"></a></td>
       </tr>
 
@@ -367,49 +367,63 @@
 
 
     <p>
-     The available units are extended with a set of [=named-lengths=]
-     that name multiples of 1/18&#x2009;em as described below.
-     In addition, the attributes on <code class="element">mpadded</code> allow three extra named lengths, <code>height</code>, <code>depth</code> and <code>width</code> denoting the original dimensions of the content.
+     The available values are extended with a set of [=named-lengths=]
+     that name multiples of 1/18&#x2009;em as described below.  In
+     addition, the attributes on <code class="element">mpadded</code>
+     allow three <dfn>psuedo-units</dfn>, <code>height</code>,
+     <code>depth</code> and <code>width</code> denoting the original
+     dimensions of the content.
     </p>
-    <p>MathML also allows lengths to be specifed as
-     a number without a unit. This  is intepreted as a multiple of the
-     reference value.
-     This form is primarily for backward compatibility and should be avoided,
-     preferring explicit units (or <code>%</code> values) for clarity.
+    <p>MathML&#160;3 also allowed a deprecated usage with lengths specifed as
+     a number without a unit. This  was intepreted as a multiple of the
+     reference value. This form is considered invalid in MathML&#160;4.
     </p>
 
-    <p><dfn>named-lengths</dfn> that may be used as units in
-    [=length=] expressions, and their value:
+    <p><dfn>named-lengths</dfn> that may be used as the value of a
+    [=length=] expressions, and their value:</p>
 
-       <span style="white-space:nowrap"><code class="attributevalue">veryverythinmathspace</code> =
-       1/18&#x2009;em</span>,
-       <span style="white-space:nowrap"><code class="attributevalue">verythinmathspace</code> =
-       2/18&#x2009;em</span>,
-       <span style="white-space:nowrap"><code class="attributevalue">thinmathspace</code> =
-       3/18&#x2009;em</span>,
-       <span style="white-space:nowrap"><code class="attributevalue">mediummathspace</code> =
-       4/18&#x2009;em</span>,
-       <span style="white-space:nowrap"><code class="attributevalue">thickmathspace</code> =
-       5/18&#x2009;em</span>,
-       <span style="white-space:nowrap"><code class="attributevalue">verythickmathspace</code> =
-       6/18&#x2009;em</span>,
-       <span style="white-space:nowrap"><code class="attributevalue">veryverythickmathspace</code> =
-       7/18&#x2009;em</span>,
-       <span style="white-space:nowrap"><code class="attributevalue">negativeveryverythinmathspace</code> =
-       &#x2212;1/18&#x2009;em</span>,
-       <span style="white-space:nowrap"><code class="attributevalue">negativeverythinmathspace</code> =
-       &#x2212;2/18&#x2009;em</span>,
-       <span style="white-space:nowrap"><code class="attributevalue">negativethinmathspace</code> =
-       &#x2212;3/18&#x2009;em</span>,
-       <span style="white-space:nowrap"><code class="attributevalue">negativemediummathspace</code> =
-       &#x2212;4/18&#x2009;em</span>,
-       <span style="white-space:nowrap"><code class="attributevalue">negativethickmathspace</code> =
-       &#x2212;5/18&#x2009;em</span>,
-       <span style="white-space:nowrap"><code class="attributevalue">negativeverythickmathspace</code> =
-       &#x2212;6/18&#x2009;em</span>,
-       <span style="white-space:nowrap"><code class="attributevalue">negativeveryverythickmathspace</code> =
-       &#x2212;7/18&#x2009;em</span>.
-    </p>
+      <table border="1">
+       <thead>
+	<tr><th>Positive space</th><th>Negative space</th><th>Value</th></tr>
+	</thead>
+	<tbody>
+	 <tr>
+	  <td style="white-space:nowrap"><code class="attributevalue">veryverythinmathspace</code></td>
+	  <td style="white-space:nowrap"><code class="attributevalue">negativeveryverythinmathspace</code></td>
+	  <td>±1/18&#x2009;em</td>
+	 </tr>
+	 <tr>
+	  <td style="white-space:nowrap"><code class="attributevalue">verythinmathspace</code></td>
+	  <td style="white-space:nowrap"><code class="attributevalue">negativeverythinmathspace</code></td>
+	  <td>±2/18&#x2009;em</td>
+	 </tr>
+	 <tr>
+	  <td style="white-space:nowrap"><code class="attributevalue">thinmathspace</code></td>
+	  <td style="white-space:nowrap"><code class="attributevalue">negativethinmathspace</code></td>
+	  <td>±3/18&#x2009;em</td>
+	 </tr>
+	 <tr>
+	  <td style="white-space:nowrap"><code class="attributevalue">mediummathspace</code></td>
+	  <td style="white-space:nowrap"><code class="attributevalue">negativemediummathspace</code></td>
+	  <td>±4/18&#x2009;em</td>
+	 </tr>
+	 <tr>
+	  <td style="white-space:nowrap"><code class="attributevalue">thickmathspace</code></td>
+	  <td style="white-space:nowrap"><code class="attributevalue">negativethickmathspace</code></td>
+	  <td>±5/18&#x2009;em</td>
+	 </tr>
+	 <tr>
+	  <td style="white-space:nowrap"><code class="attributevalue">verythickmathspace</code></td>
+	  <td style="white-space:nowrap"><code class="attributevalue">negativeverythickmathspace</code></td>
+	  <td>±6/18&#x2009;em</td>
+	 </tr>
+	 <tr>
+	  <td style="white-space:nowrap"><code class="attributevalue">veryverythickmathspace</code></td>
+	  <td style="white-space:nowrap"><code class="attributevalue">negativeveryverythickmathspace</code></td>
+	  <td>±7/18&#x2009;em</td>
+	 </tr>
+	</tbody>
+      </table>
 
     <section>
      <h6 id="units_addl_notes">Additional notes about units</h6>
