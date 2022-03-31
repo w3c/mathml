@@ -19,7 +19,7 @@
    and how they may be contained within each other,
    as well as additional syntactic rules for the values of attributes.
    These rules are defined by this specification,
-   and formalized by a RelaxNG schema  [[RELAXNG-SCHEMA]]] in <a href="#parsing"></a>.
+   and formalized by a RelaxNG schema  [[RELAXNG-SCHEMA]] in <a href="#parsing"></a>.
    Derived schema in other formats, DTD (Document Type Definition)
    and  XML Schema [[XMLSchemas]] are also provided.
    </p>
@@ -42,11 +42,11 @@
    <p>An XML namespace [[Namespaces]] is a collection of names identified by a URI.
    The URI for the MathML namespace is:</p>
 
-   <div class="example ">
+
     <pre>
      http://www.w3.org/1998/Math/MathML
     </pre>
-   </div>
+
 
    <p>To declare a namespace when using the XML serialisation of MathML,
    one uses an <code class="attribute">xmlns</code>
@@ -145,7 +145,7 @@
     used for most attributes in the present document.</p>
 
 
-    <table border="1" id="fund_table-attval">
+    <table id="fund_table-attval" class="data">
 
      <thead>
 
@@ -157,50 +157,41 @@
 
      <tbody>
 
+
       <tr>
-       <td id="type_digit"><em>decimal-digit</em></td>
-       <td>a decimal digit from the range U+0030 to U+0039</td>
+       <td id="type_unsigned-integer"><dfn><em>unsigned-integer</em></dfn></td>
+       <td>As defined in [[MathML-Core]], an <a data-cite="CSS-VALUES-3#integer-value"><code>integer</code></a>, whose first character is neither
+              U+002D HYPHEN-MINUS character (-) nor
+              U+002B PLUS SIGN (+).</td>
       </tr>
 
       <tr>
-       <td id="type_hexdigit"><em>hexadecimal-digit</em></td>
-       <td>a hexadecimal (base 16) digit from the ranges U+0030 to U+0039, U+0041 to
-       U+0046 and  U+0061 to U+0066</td>
+       <td id="type_positive-integer"><dfn><em>positive-integer</em></dfn></td>
+       <td>An [=unsigned-integer=] not consisting solely of "0"s (U+0030), representing a positive integer</td>
       </tr>
 
       <tr>
-       <td id="type_unsigned-integer"><em>unsigned-integer</em></td>
-       <td>a string of <a class="intref" href="#type_digit"><em>decimal-digit</em></a>s,
-       representing a non-negative integer</td>
-      </tr>
-
-      <tr>
-       <td id="type_positive-integer"><em>positive-integer</em></td>
-       <td>a string of <a class="intref" href="#type_digit"><em>decimal-digit</em></a>s,
-       but not consisting solely of "0"s (U+0030), representing a positive integer</td>
-      </tr>
-
-      <tr>
-       <td id="type_integer"><em>integer</em></td>
-       <td>an optional "-"  (U+002D), followed by a string of
-       <a class="intref" href="#type_digit"><em>decimal digit</em></a>s,
+       <td id="type_integer"><dfn><em>integer</em></dfn></td>
+       <td>an optional "-"  (U+002D), followed by an [=unsigned-integer=],
        and representing an integer
        </td>
       </tr>
 
       <tr>
-       <td id="type_unsigned-number"><em>unsigned-number</em></td>
+       <td id="type_unsigned-number"><dfn><em>unsigned-number</em></dfn></td>
        <td>
-        a string of <a class="intref" href="#type_digit"><em>decimal digit</em></a>s
-        with up to one decimal point (U+002E),
-        representing a non-negative terminating decimal number
+         value as defined in
+              [[CSS-VALUES-3]] <a data-cite="CSS-VALUES-3#number"><code>number</code></a>, whose first character is neither
+              U+002D HYPHEN-MINUS character (-) nor
+              U+002B PLUS SIGN (+),
+              representing a non-negative terminating decimal number
        (a type of rational number)</td>
       </tr>
 
       <tr>
        <td id="type_number"><em>number</em></td>
        <td>
-        an optional prefix of "-" (U+002D), followed by an unsigned number,
+        an optional prefix of "-" (U+002D), followed by an [=unsigned number=],
        representing a terminating decimal number (a type of rational number)</td>
       </tr>
 
@@ -215,23 +206,18 @@
       </tr>
 
       <tr>
-       <td><em>length</em></td>
+       <td id="type_length"><dfn><em>length</em></dfn></td>
        <td>a length, as explained below, <a href="#fund_units"></a></td>
       </tr>
-
+       
       <tr>
-       <td><em>unit</em></td>
-       <td>a unit, typically used as part of a length, as explained below, <a href="#fund_units"></a></td>
-      </tr>
-
-      <tr>
-       <td><dfn><em>namedlength</em></dfn></td>
+       <td id="type_namedspace"><dfn><em>namedspace</em></dfn></td>
        <td>a named length, as explained below, <a href="#fund_units"></a></td>
       </tr>
 
       <tr>
        <td id="type_color"><em>color</em></td>
-       <td>a color, using the sytax specified by [[css-color-3]]</td>
+       <td>a color, using the syntax specified by [[css-color-3]]</td>
       </tr>
 
       <tr>
@@ -285,7 +271,7 @@
      The combining operators are shown in order of precedence from highest
     to lowest:</p>
 
-    <table id="fund_table_notn" border="1">
+    <table id="fund_table_notn" class="data">
 
      <thead>
 
@@ -303,12 +289,12 @@
       </tr>
 
       <tr>
-       <td><em>f</em><code>?</code></td>
+       <td><em>f</em> ?</td>
        <td>an optional instance of <em>f</em></td>
       </tr>
 
       <tr>
-       <td><em>f</em> <code>*</code></td>
+       <td><em>f</em> *</td>
        <td>zero or more instances of <em>f</em>, with
        separating whitespace characters</td>
       </tr>
@@ -371,139 +357,77 @@
    <section>
     <h5 id="fund_units">Length Valued Attributes</h5>
 
-    <p id="type_length">Most presentation elements have attributes that accept values
+    <p>Most presentation elements have attributes that accept values
     representing lengths to be used for size, spacing or similar
     properties.  The
     basic <a id="type_unit" data-cite="CSS-VALUES-3#typedef-length-percentage"><code>&lt;length-percentage&gt;</code></a>
     syntax is defined in [[CSS-VALUES-3]]. This is the only length
     syntax that may be used in [[MathML-Core]].  However this
-    specification defines additional syntax for specific attributes as
-    decribed below and in the entry for each affected attribute.</p>
+    specification defines additional syntax.</p>
 
 
     <p>
-     A trailing "%" represents a percent of
-     a reference value; unless otherwise stated,
-     the reference value is
-     the default value.
-     The default value, or how it is obtained,
-     is listed in the table of attributes for each element
-     along with the reference value when
-     it differs from the default.
-     (See also <a href="#fund_defaults"></a>.)
-     A number without a unit is intepreted as a multiple of the
-     reference value.
-     This form is primarily for backward compatibility and should be avoided,
-     prefering explicit units for clarity.
+     The available values are extended with a set of [=named-lengths=]
+     that name multiples of 1/18&#x2009;em as described below.  In
+     addition, the attributes on <code class="element">mpadded</code>
+     allow three <dfn>psuedo-units</dfn>, <code>height</code>,
+     <code>depth</code> and <code>width</code> denoting the original
+     dimensions of the content.
+    </p>
+    <p>MathML&#160;3 also allowed a deprecated usage with lengths specifed as
+     a number without a unit. This  was intepreted as a multiple of the
+     reference value. This form is considered invalid in MathML&#160;4.
     </p>
 
-    <p>In some cases, the range of acceptable values for a particular attribute may be restricted;
-    implementations are free to round up or down to the closest allowable value.</p>
+    <p>The <dfn>named-lengths</dfn> that may be used as the value of a
+    [=length=] expressions, and their value:</p>
 
-
-
-
-    <p id="type_namedspace">The following constants, <em>namedspace</em>s,
-    may also be used where a length is needed; they are typically used for
-    spacing or padding between tokens.
-
-    <div class="note">Mandate these rather than leave as implementation defined?</div>
-    Recommended default values for these constants are shown;
-    the actual spacing used is implementation specific.
-
-    <table border="1">
-
-     <thead>
-
-      <tr>
-       <td><em>namedspace</em></td>
-       <td>Recommended default</td>
-      </tr>
-     </thead>
-
-     <tbody>
-
-      <tr>
-       <td><code class="attributevalue">veryverythinmathspace</code></td>
-       <td>1/18<code>em</code></td>
-      </tr>
-
-      <tr>
-       <td><code class="attributevalue">verythinmathspace</code></td>
-       <td>2/18<code>em</code></td>
-      </tr>
-
-      <tr>
-       <td><code class="attributevalue">thinmathspace</code></td>
-       <td>3/18<code>em</code></td>
-      </tr>
-
-      <tr>
-       <td><code class="attributevalue">mediummathspace</code></td>
-       <td>4/18<code>em</code></td>
-      </tr>
-
-      <tr>
-       <td><code class="attributevalue">thickmathspace</code></td>
-       <td>5/18<code>em</code></td>
-      </tr>
-
-      <tr>
-       <td><code class="attributevalue">verythickmathspace</code></td>
-       <td>6/18<code>em</code></td>
-      </tr>
-
-      <tr>
-       <td><code class="attributevalue">veryverythickmathspace</code></td>
-       <td>7/18<code>em</code></td>
-      </tr>
-
-      <tr>
-       <td><code class="attributevalue">negativeveryverythinmathspace</code></td>
-       <td>-1/18<code>em</code></td>
-      </tr>
-
-      <tr>
-       <td><code class="attributevalue">negativeverythinmathspace</code></td>
-       <td>-2/18<code>em</code></td>
-      </tr>
-
-      <tr>
-       <td><code class="attributevalue">negativethinmathspace</code></td>
-       <td>-3/18<code>em</code></td>
-      </tr>
-
-      <tr>
-       <td><code class="attributevalue">negativemediummathspace</code></td>
-       <td>-4/18<code>em</code></td>
-      </tr>
-
-      <tr>
-       <td><code class="attributevalue">negativethickmathspace</code></td>
-       <td>-5/18<code>em</code></td>
-      </tr>
-
-      <tr>
-       <td><code class="attributevalue">negativeverythickmathspace</code></td>
-       <td>-6/18<code>em</code></td>
-      </tr>
-
-      <tr>
-       <td><code class="attributevalue">negativeveryverythickmathspace</code></td>
-       <td>-7/18<code>em</code></td>
-      </tr>
-     </tbody>
-    </table>
-    </p>
+      <table class="data">
+       <thead>
+	<tr><th>Positive space</th><th>Negative space</th><th>Value</th></tr>
+	</thead>
+	<tbody>
+	 <tr>
+	  <td style="white-space:nowrap"><code class="attributevalue">veryverythinmathspace</code></td>
+	  <td style="white-space:nowrap"><code class="attributevalue">negativeveryverythinmathspace</code></td>
+	  <td>±1/18&#x2009;em</td>
+	 </tr>
+	 <tr>
+	  <td style="white-space:nowrap"><code class="attributevalue">verythinmathspace</code></td>
+	  <td style="white-space:nowrap"><code class="attributevalue">negativeverythinmathspace</code></td>
+	  <td>±2/18&#x2009;em</td>
+	 </tr>
+	 <tr>
+	  <td style="white-space:nowrap"><code class="attributevalue">thinmathspace</code></td>
+	  <td style="white-space:nowrap"><code class="attributevalue">negativethinmathspace</code></td>
+	  <td>±3/18&#x2009;em</td>
+	 </tr>
+	 <tr>
+	  <td style="white-space:nowrap"><code class="attributevalue">mediummathspace</code></td>
+	  <td style="white-space:nowrap"><code class="attributevalue">negativemediummathspace</code></td>
+	  <td>±4/18&#x2009;em</td>
+	 </tr>
+	 <tr>
+	  <td style="white-space:nowrap"><code class="attributevalue">thickmathspace</code></td>
+	  <td style="white-space:nowrap"><code class="attributevalue">negativethickmathspace</code></td>
+	  <td>±5/18&#x2009;em</td>
+	 </tr>
+	 <tr>
+	  <td style="white-space:nowrap"><code class="attributevalue">verythickmathspace</code></td>
+	  <td style="white-space:nowrap"><code class="attributevalue">negativeverythickmathspace</code></td>
+	  <td>±6/18&#x2009;em</td>
+	 </tr>
+	 <tr>
+	  <td style="white-space:nowrap"><code class="attributevalue">veryverythickmathspace</code></td>
+	  <td style="white-space:nowrap"><code class="attributevalue">negativeveryverythickmathspace</code></td>
+	  <td>±7/18&#x2009;em</td>
+	 </tr>
+	</tbody>
+      </table>
 
     <section>
      <h6 id="units_addl_notes">Additional notes about units</h6>
 
-
-     <p>Since these units track the display context, and in particular,
-     the user's preferences for display, the relative units <code>em</code> and <code>ex</code>
-     are generally to be preferred over absolute units such as <code>px</code> or <code>cm</code>.
-     </p>
 
      <p>Two additional aspects of relative units must be clarified, however.
      First, some elements such as <a href="#presm_scrlim"></a> or <code class="element">mfrac</code>,
@@ -519,8 +443,6 @@
      and <code class="attribute">scriptlevel</code>, must be processed before
      evaluating other length valued attributes.
      </p>
-
-     <p>If, and how, lengths might affect non-visual media is implementation specific.</p>
 
     </section>
    </section>
