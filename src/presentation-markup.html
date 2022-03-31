@@ -2180,7 +2180,7 @@
       <tr>
        <td colspan="3" class="attdesc">
 	Specifies whether the operator should be kept symmetric around the math
-	<a class="intref" href="#dt-axis">axis</a> when stretchy.
+	[=axis=] when stretchy.
 	Note this property only applies to vertically stretched symbols.
 	See <a href="#presm_op_stretch"></a>.
        </td>
@@ -3145,12 +3145,12 @@
 
    <p>The <code class="attribute">symmetric</code> attribute governs whether the
    height and
-   depth above and below the <a class="termref" href="#dt-axis">axis</a> of the
+   depth above and below the [=axis=] of the
    character are forced to be equal
    (by forcing both height and depth to become the maximum of the two).
    An example of a situation where one might set
    <code class="attribute">symmetric</code>=<code class="attributevalue">false</code>
-   arises with parentheses around a matrix not aligned on the <a class="termref" href="#dt-axis">axis</a>, which
+   arises with parentheses around a matrix not aligned on the [=axis=], which
    frequently occurs when multiplying non-square matrices. In this case, one
    wants the parentheses to stretch to cover the matrix, whereas stretching
    the parentheses symmetrically would cause them to protrude beyond one edge
@@ -3231,7 +3231,7 @@
     <li>
      <p>If a stretchy operator is a direct sub-expression of an <code class="element">mrow</code> element, or is the sole direct sub-expression of an
      <code class="element">mtd</code> element in some row of a table, then it should
-     stretch to cover the height and depth (above and below the <span>axis</span>) of the <em>non</em>-stretchy direct sub-expressions in the
+     stretch to cover the height and depth (above and below the [=axis=]) of the <em>non</em>-stretchy direct sub-expressions in the
      <code class="element">mrow</code> element or table row, unless stretching is
      constrained by <code class="attribute">minsize</code> or <code class="attribute">maxsize</code> attributes.</p>
     </li>
@@ -7028,8 +7028,8 @@ section on &lt;mo&gt;,
       <td colspan="3" class="attdesc">
        specifies the vertical alignment of the table with respect to its environment.
        <code class="attributevalue">axis</code> means to align the vertical center of the table on
-       the environment's <a class="termref" href="#dt-axis">axis</a>.
-       (The <a class="termref" href="#dt-axis">axis</a> of an equation is an alignment line used by typesetters.
+       the environment's [=axis=].
+       (The <dfn>axis</dfn> of an equation is an alignment line used by typesetters.
        It is the line on which a minus sign typically lies.)
        <code class="attributevalue">center</code> and <code class="attributevalue">baseline</code> both mean to align the center of the table
        on the environment's baseline.
