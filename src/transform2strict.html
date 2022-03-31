@@ -1,0 +1,2704 @@
+
+  <section>
+   <h3 id="contm_p2s">The Strict Content MathML Transformation</h3>
+   <div class="issue" data-number="307"></div>
+
+   <p>MathML assigns semantics to content markup by defining a
+   mapping to Strict Content MathML.  Strict MathML, in turn, is in
+   one-to-one correspondence with OpenMath, and the subset of
+   OpenMath expressions obtained from content MathML expressions in
+   this fashion all have well-defined semantics via the standard
+   OpenMath Content Dictionary set.  Consequently, the mapping of
+   arbitrary content MathML expressions to equivalent Strict Content
+   MathML plays a key role in underpinning the meaning of content
+   MathML.</p>
+
+   <p>The mapping of arbitrary content MathML into Strict content
+   MathML is defined algorithmically. The algorithm is described
+   below as a collection of rewrite rules applying to specific
+   non-Strict constructions.  The individual rewrite transformations
+   are described in the following subsections.  The goal of this
+   section is to outline the complete algorithm in one place.</p>
+
+   <p>The algorithm is a sequence of <span>nine</span> steps.  Each step is
+   applied repeatedly to rewrite the input until no further
+   application is possible. Note that in many programming languages,
+   such as XSLT, the natural implementation is as a recursive
+   algorithm, rather than the multi-pass implementation suggested by
+   the description below. The translation to XSL is straightforward
+   and produces the same eventual Strict Content MathML.  However,
+   because the overall structure of the multi-pass algorithm is
+   clearer, that is the formulation given here.</p>
+
+   <p>To transform an arbitrary content MathML expression into
+   Strict Content MathML, apply each of the following rules in turn
+   to the input expression until all instances of the target
+   constructs have been eliminated:</p>
+
+   <ol>
+
+    <li>
+     <p><em>Rewrite non-strict <code class="element">bind</code> and elminate deprecated elements</em>:
+     Change the outer <code class="element">bind</code> tags
+     in binding expressions to <code class="element">apply</code> if they have qualifiers or multiple
+     children. This simplifies the algorithm by allowing the subsequent rules to be applied
+     to non-strict binding expressions without case distinction. Note
+     that the <span>later</span>
+     rules will change the <code class="element">apply</code> elements introduced in this step back to
+     <code class="element">bind</code> elements. <span>Also in this step, deprecated <code class="element">reln</code>
+     elements are rewritten to <code class="element">apply</code>, and <code class="element">fn</code> elements are replaced by
+     the child expressions they enclose.</span></p>
+    </li>
+
+    <li>
+     <p><em>Apply special case rules for idiomatic uses of qualifiers</em>:
+     </p>
+     <ol>
+
+      <li>
+       <p>Rewrite derivatives with rules <a>Rewrite: diff</a>, <a>Rewrite: nthdiff</a>,
+       and <a>Rewrite: partialdiffdegree</a>
+       to explicate the binding status of the variables involved.
+       </p>
+      </li>
+
+      <li>
+       <p>Rewrite integrals with the rules <a>Rewrite: int</a><span>,  <a>Rewrite: defint</a></span>
+       and <a>Rewrite: defint limits</a> to disambiguate the status
+       of bound and free variables and of the orientation of the range of integration if
+       it is given as a <code class="element">lowlimit</code>/<code class="element">uplimit</code> pair.
+       </p>
+      </li>
+
+      <li>
+       <p>Rewrite limits as described in <a>Rewrite: tendsto</a> and <a>Rewrite: limits condition</a>.</p>
+      </li>
+
+      <li>
+       <p>Rewrite sums and products as described in
+       <a href="#contm_sum"></a> and <a href="#contm_product"></a>.</p>
+      </li>
+
+      <li>
+       <p>Rewrite roots as described in <a href="#contm_root"></a>.</p>
+      </li>
+
+      <li>
+       <p>Rewrite logarithms as described in <a href="#contm_log"></a>.</p>
+      </li>
+
+      <li>
+       <p>Rewrite moments as described in <a href="#contm_moment"></a>.</p>
+      </li>
+     </ol>
+    </li>
+
+    <li>
+     <p><em>Rewrite Qualifiers to <code class="element">domainofapplication</code></em>:
+     These rules rewrite all <code class="element">apply</code> constructions using <code class="element">bvar</code> and
+     qualifiers to those using only the general <code class="element">domainofapplication</code> qualifier.
+     </p>
+     <ol>
+
+      <li>
+       <p><em>Intervals</em>: Rewrite qualifiers given as <code class="element">interval</code> and
+       <code class="element">lowlimit</code>/<code class="element">uplimit</code> to intervals of integers via
+       <a>Rewrite: interval qualifier</a>.</p>
+      </li>
+
+      <li>
+       <p><em>Multiple <code class="element">condition</code>s</em>: Rewrite multiple <code class="element">condition</code>
+       qualifiers to a single one by taking their conjunction. The resulting compound
+       <code class="element">condition</code> is then rewritten to <code class="element">domainofapplication</code> according
+       to rule <a>Rewrite: condition</a>.</p>
+      </li>
+
+      <li>
+       <p><em>Multiple <code class="element">domainofapplication</code>s</em>: Rewrite multiple
+       <code class="element">domainofapplication</code> qualifiers to a single one by taking the
+       intersection of the specified domains.</p>
+      </li>
+     </ol>
+    </li>
+
+    <li>
+     <p><em>Normalize Container Markup</em>:
+     </p>
+     <ol>
+
+      <li>
+       <p>Rewrite sets and lists by the rule
+       <a>Rewrite: n-ary setlist domainofapplication</a>.</p>
+      </li>
+
+      <li id="contm_p2s_step_vector">
+       <p>Rewrite interval, vectors, matrices, and matrix rows
+       as described in <a href="#contm_interval"></a>, <a href="#contm_vector"></a>,
+       <a href="#contm_matrix"></a> and <a href="#contm_matrixrow"></a>. <span>Note any qualifiers will have been rewritten to <code class="element">domainofapplication</code> and will be further rewritten in Step 6.</span></p>
+      </li>
+
+      <li>
+       <p>Rewrite lambda expressions by the rules <a>Rewrite: lambda</a>
+       and <a>Rewrite: lambda domainofapplication</a></p>
+      </li>
+
+      <li>
+       <p>Rewrite piecewise functions as described in <a href="#contm_piecewise"></a>.</p>
+      </li>
+     </ol>
+    </li>
+
+    <li>
+     <p><em>Apply Special Case Rules for Operators using <code class="element">domainofapplication</code> Qualifiers</em>:
+     This step deals with the special cases for the operators introduced in
+     <a href="#contm_opel"></a>. There are different classes of special cases to be taken into account:
+     </p>
+     <ol>
+
+      <li>
+       <p>Rewrite <code class="element">min</code>, <code class="element">max</code>, <code class="element">mean</code> and similar n-ary/unary operators
+       by the rules <a>Rewrite: n-ary unary set</a>, <a>Rewrite: n-ary unary domainofapplication</a>
+       and <a>Rewrite: n-ary unary single</a>.
+       </p>
+      </li>
+
+      <li>
+       <p>Rewrite the quantifiers <code class="element">forall</code> and <code class="element">exists</code> used with <code class="element">domainofapplication</code>
+       to expressions using implication and conjunction by the rule <a>Rewrite: quantifier</a>.
+       </p>
+      </li>
+
+      <li>
+       <p>Rewrite integrals used with a <code class="element">domainofapplication</code> element (with or without a <code class="element">bvar</code>)
+       according to the rules <a>Rewrite: int</a><span> and
+       <a>Rewrite: defint</a></span>.
+       </p>
+      </li>
+
+      <li>
+       <p>Rewrite sums and products used with a <code class="element">domainofapplication</code> element
+       (with or without a <code class="element">bvar</code>) as described in
+       <a href="#contm_sum"></a> and <a href="#contm_product"></a>.</p>
+      </li>
+     </ol>
+    </li>
+
+    <li>
+     <p><em>Eliminate <code class="element">domainofapplication</code></em>: At this stage, any
+     <code class="element">apply</code> has at most one <code class="element">domainofapplication</code> child and special cases have been addressed. As
+     <code class="element">domainofapplication</code> is not Strict Content MathML, it is rewritten
+     </p>
+     <ol>
+
+      <li>
+       <p>into an application of a restricted function via the rule
+       <a>Rewrite: restriction</a> if the <code class="element">apply</code> does not contain
+       a <code class="element">bvar</code> child.</p>
+      </li>
+
+      <li>
+       <p>into an application of the <a class="omsymbol" href="https://openmath.org/cd/fns2#predicate_on_list">predicate_on_list</a> symbol via the rules
+       <a>Rewrite: n-ary relations</a> and <a>Rewrite: n-ary relations bvar</a>
+       if used with a relation.</p>
+      </li>
+
+      <li>
+       <p>into a construction with the <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a> symbol
+       via the general rule <a>Rewrite: n-ary domainofapplication</a> for
+       general n-ary operators.
+       </p>
+      </li>
+
+      <li>
+       <p>into a construction using the <a class="omsymbol" href="https://openmath.org/cd/set1#suchthat">suchthat</a> symbol
+       from the <a class="omcd" href="set1">set1</a> content dictionary in an <code class="element">apply</code> with bound
+       variables via the <a>Rewrite: apply bvar domainofapplication</a> rule.</p>
+      </li>
+     </ol>
+    </li>
+
+    <li>
+     <p><em>Rewrite non-strict token elements</em>:
+     </p>
+     <ol>
+
+      <li>
+       <p>Rewrite numbers represented as <code class="element">cn</code> elements where the <code class="attribute">type</code>
+       attribute is one of <code class="attributevalue">e-notation</code>, <code class="attributevalue">rational</code>,
+       <code class="attributevalue">complex-cartesian</code>, <code class="attributevalue">complex-polar</code>,
+       <code class="attributevalue">constant</code> as strict <code class="element">cn</code> via rules
+       <a>Rewrite: cn sep</a>, <a>Rewrite: cn based_integer</a>
+       and <a>Rewrite: cn constant</a>.</p>
+      </li>
+
+      <li>
+       <p>Rewrite any <code class="element">ci</code>, <code class="element">csymbol</code> or <code class="element">cn</code> containing
+       presentation MathML to <code class="element">semantics</code> elements with rules
+       <a>Rewrite: cn presentation mathml</a> and <a>Rewrite: ci presentation mathml</a> and
+       the analogous rule for <code class="element">csymbol</code>.</p>
+      </li>
+     </ol>
+    </li>
+
+    <li>
+     <p><em>Rewrite operators</em>: Rewrite any remaining operator defined in <a href="#contm_opel"></a>
+     to a <code class="element">csymbol</code> referencing the symbol identified in the syntax table by the rule
+     <a>Rewrite: element</a>. <span>As noted in the descriptions of each
+     operator element, some require special case rules to determine the proper choice
+     of symbol.
+     Some cases of particular note are:</span>
+     </p>
+     <ol>
+
+      <li>
+       <p>The order of the arguments for the
+       <a class="intref" href="#contm_selector"><code class="element">selector</code></a> operator must be
+       rewritten, and the symbol depends on the type of the arguments.</p>
+      </li>
+
+      <li>
+       <p>The choice of symbol for the <a class="intref" href="#contm_minus"><code class="element">minus</code></a>
+       operator depends on the number of the arguments.</p>
+      </li>
+
+      <li>
+       <p>The choice of symbol for some set operators depends on the values of
+       the <code class="attribute">type</code> of the arguments.</p>
+      </li>
+
+      <li>
+       <p>The choice of symbol for some statistical operators depends on the values of
+       the types of the arguments.</p>
+      </li>
+     </ol>
+    </li>
+
+    <li>
+     <p><em>Rewrite non-strict attributes</em>:
+     </p>
+     <ol>
+
+      <li>
+       <p><em>Rewrite the <code class="attribute">type</code> attribute</em>:
+       <span>At this point, all elements
+       that accept the <code class="attribute">type</code>, other than <code class="element">ci</code> and <code class="element">csymbol</code>, should have been
+       rewritten into Strict Content Markup equivalents without <code class="attribute">type</code> attributes,
+       where type information is reflected in the choice of operator symbol.</span> Now rewrite remaining
+       <code class="element">ci</code> <span>and <code class="element">csymbol</code></span> elements with a <code class="attribute">type</code> attribute to a
+       strict expression with <code class="element">semantics</code> according to rule<span>s</span>
+       <a>Rewrite: ci type annotation</a><span> and <a>Rewrite: csymbol type annotation</a></span>.  </p>
+      </li>
+
+      <li>
+       <p><em>Rewrite <code class="attribute">definitionURL</code> and <code class="attribute">encoding</code> attributes</em>:
+       If the <code class="attribute">definitionURL</code> and <code class="attribute">encoding</code> attributes on a
+       <code class="element">csymbol</code> element can be interpreted as a reference to a
+       content dictionary (see <a href="#contm_csymbol_extended"></a> for details), then
+       rewrite to reference the content dictionary by the <code class="attribute">cd</code> attribute instead.
+       </p>
+      </li>
+
+      <li>
+       <p><em>Rewrite attributes</em>: Rewrite any element with attributes that are
+       not allowed in strict markup to a <code class="element">semantics</code> construction with
+       the element without these attributes as the first child and the attributes in
+       <code class="element">annotation</code> elements by rule <a>Rewrite: attributes</a>.</p>
+      </li>
+     </ol>
+    </li>
+   </ol>
+
+   <section>
+    <h4 id="contm_p2s_depr">Rewrite <code class="element">bind</code>, <code class="element">reln</code>, <code class="element">fn</code></h4>
+    <p>Rewrite non-strict <code class="element">bind</code> and elminate deprecated elements.</p>
+
+    <section>
+    <h5 id="contm_p2s_bind">Non-strict <code class="element">bind</code></h5>
+
+    <p>As described in <a href="#contm_binding"></a>, the strict form
+    for the <code class="element">bind</code> element does not allow qualifiers,
+    and only allows one non-<code class="element">bvar</code> child element.</p>
+
+    <p>Replace the <code class="element">bind</code> tag in each binding
+    expression with <code class="element">apply</code> if it has qualifiers
+    or multiple non-<code class="element">bvar</code> child elements.</p>
+
+    <p>This step allows subsequent rules that modify non-strict binding
+    expressions using <code class="element">apply</code> to be used for
+    non-strict binding expressions using <code class="element">bind</code>
+    without the need for a separate case.</p>
+
+    <p>Later rules will change these non-strict binding expressions
+    using <code class="element">apply</code> back to strict binding
+    expressions using <code class="element">bind</code> elements.</p>
+    </section>
+
+    <section>
+    <h5 id="contm_p2s_reln">Deprecated <code class="element">reln</code></h5>
+    <p>As described in <a href="#contm_reln"></a>,
+    replace deprecated <code class="element">reln</code> elements
+    with <code class="element">apply</code>.</p>
+    </section>
+
+    <section>
+    <h5 id="contm_p2s_fn">Deprecated <code class="element">fn</code></h5>
+    <p>As described in <a href="#contm_fn"></a>,
+    replace deprecated <code class="element">fn</code> elements
+    with the child expressions they enclose.</p>
+    </section>
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_qual">Rewrite idiomatic qualifiers</h4>
+    <p>Apply special case rules for idiomatic uses of qualifiers.</p>
+
+    <section>
+     <h5 id="contm_p2s_deriv">Derivatives</h5>
+     <p>Rewrite derivatives using the rules <a>Rewrite: diff</a>,
+     <a>Rewrite: nthdiff</a>, and <a>Rewrite: partialdiffdegree</a>
+     to make the binding status of the variables explicit.
+     </p>
+
+     <p>For a differentiation operator it is crucial to realize that in the
+     expression case, the variable is actually not bound by the differentiation
+     operator.</p>
+
+     <div class="strict-mathml-example" id="contm_p2s.diff"><dfn>Rewrite: diff</dfn>
+
+      <p>Translate an expression
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;diff/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;ci&gt;expression-in-x&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      where
+      <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
+      expression in the variable <i class="var">x</i> to the expression
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;
+           &lt;apply&gt;&lt;csymbol cd="calculus1"&gt;diff&lt;/csymbol&gt;
+             &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+               &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;ci&gt;E&lt;/ci&gt;
+             &lt;/bind&gt;
+           &lt;/apply&gt;
+           &lt;ci&gt;x&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      Note that the differentiated function is applied to the variable
+      <i class="var">x</i> making its status as a free variable explicit
+      in strict markup. Thus the strict equivalent of
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;diff/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      is
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;
+           &lt;apply&gt;&lt;csymbol cd="calculus1"&gt;diff&lt;/csymbol&gt;
+             &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+               &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;apply&gt;&lt;csymbol cd="transc1"&gt;sin&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+             &lt;/bind&gt;
+           &lt;/apply&gt;
+           &lt;ci&gt;x&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      </p>
+     </div>
+
+     <p>If the <code class="element">bvar</code> element contains a
+     <code class="element">degree</code> element, use the
+     <code>nthdiff</code> symbol.</p>
+
+     <div class="strict-mathml-example" id="contm_p2s.nthdiff"><dfn>Rewrite: nthdiff</dfn>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;diff/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;degree&gt;&lt;ci&gt;n&lt;/ci&gt;&lt;/degree&gt;&lt;/bvar&gt;
+           &lt;ci&gt;expression-in-x&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>where
+      <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
+      is an expression in the variable <i class="var">x</i>
+      is translated to the expression</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;
+           &lt;apply&gt;&lt;csymbol cd="calculus1"&gt;nthdiff&lt;/csymbol&gt;
+             &lt;ci&gt;n&lt;/ci&gt;
+             &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+               &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;ci&gt;expression-in-x&lt;/ci&gt;
+             &lt;/bind&gt;
+           &lt;/apply&gt;
+           &lt;ci&gt;x&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+     </div>
+
+     <div class="strict-mathml-example" id="contm_nthdiff_ex">
+
+      <p>For example</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;diff/&gt;
+           &lt;bvar&gt;&lt;degree&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/degree&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Strict Content MathML equivalent</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;
+           &lt;apply&gt;&lt;csymbol cd="calculus1"&gt;nthdiff&lt;/csymbol&gt;
+             &lt;cn&gt;2&lt;/cn&gt;
+             &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+               &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;apply&gt;&lt;csymbol cd="transc1"&gt;sin&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+             &lt;/bind&gt;
+           &lt;/apply&gt;
+           &lt;ci&gt;x&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+     </div>
+
+     <p>When applied to a function, the <code class="element">partialdiff</code>
+     element corresponds to the <a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiff">partialdiff</a>
+     symbol from the <a class="omcd" href="calculus1">calculus1</a> content
+     dictionary.  No special rules are necessary as the two arguments of
+     <code class="element">partialdiff</code> translate directly to the two
+     arguments of
+     <a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiff">partialdiff</a>.</p>
+
+     <div class="strict-mathml-example" id="contm_p2s.partialdiff"><dfn>Rewrite: partialdiffdegree</dfn>
+
+      <p>If <code class="element">partialdiff</code> is used with an expression
+      and <code class="element">bvar</code> qualifiers it is rewritten to
+      Strict Content MathML using the
+      <a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiffdegree">partialdiffdegree</a> symbol.</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;partialdiff/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x1&lt;/ci&gt;&lt;degree&gt;&lt;ci&gt;n1&lt;/ci&gt;&lt;/degree&gt;&lt;/bvar&gt;
+           &lt;bvar&gt;&lt;ci&gt;xk&lt;/ci&gt;&lt;degree&gt;&lt;ci&gt;nk&lt;/ci&gt;&lt;/degree&gt;&lt;/bvar&gt;
+           &lt;degree&gt;&lt;ci&gt;total-n1-nk&lt;/ci&gt;&lt;/degree&gt;
+           &lt;ci&gt;expression-in-x1-xk&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>where <code class="meta-code">&lt;ci&gt;expression-in-x1-xk&lt;/ci&gt;</code> is an
+      arbitrary expression involving the bound variables.</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;
+           &lt;apply&gt;&lt;csymbol cd="calculus1"&gt;partialdiffdegree&lt;/csymbol&gt;
+             &lt;apply&gt;&lt;csymbol cd="list1"&gt;list&lt;/csymbol&gt;
+               &lt;ci&gt;n1&lt;/ci&gt; &lt;ci&gt;nk&lt;/ci&gt;
+             &lt;/apply&gt;
+             &lt;ci&gt;total-n1-nk&lt;/ci&gt;
+             &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+               &lt;bvar&gt;&lt;ci&gt;x1&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;bvar&gt;&lt;ci&gt;xk&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;ci&gt;expression-in-x1-xk&lt;/ci&gt;
+             &lt;/bind&gt;
+           &lt;/apply&gt;
+           &lt;ci&gt;x1&lt;/ci&gt;
+           &lt;ci&gt;xk&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>If any of the bound variables do not use a <code class="element">degree</code> qualifier,
+      <code>&lt;cn&gt;1&lt;/cn&gt;</code> should be used in place of the degree.
+      If the original expression did not use the total degree qualifier then
+      the second argument to <a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiffdegree">partialdiffdegree</a>
+      should be the sum of the degrees.  For example
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;
+           &lt;ci&gt;n1&lt;/ci&gt; &lt;ci&gt;nk&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      </p>
+     </div>
+
+     <div class="strict-mathml-example" id="contm_p2s.partialdiff.ex1">
+
+      <p>With this rule, the expression
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;partialdiff/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;degree&gt;&lt;ci&gt;n&lt;/ci&gt;&lt;/degree&gt;&lt;/bvar&gt;
+           &lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;degree&gt;&lt;ci&gt;m&lt;/ci&gt;&lt;/degree&gt;&lt;/bvar&gt;
+           &lt;apply&gt;&lt;sin/&gt;
+             &lt;apply&gt;&lt;times/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
+           &lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      is translated into
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;
+           &lt;apply&gt;&lt;csymbol cd="calculus1"&gt;partialdiffdegree&lt;/csymbol&gt;
+             &lt;apply&gt;&lt;csymbol cd="list1"&gt;list&lt;/csymbol&gt;
+               &lt;ci&gt;n&lt;/ci&gt;&lt;ci&gt;m&lt;/ci&gt;
+             &lt;/apply&gt;
+             &lt;apply&gt;&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;
+               &lt;ci&gt;n&lt;/ci&gt;&lt;ci&gt;m&lt;/ci&gt;
+             &lt;/apply&gt;
+             &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+               &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;apply&gt;&lt;csymbol cd="transc1"&gt;sin&lt;/csymbol&gt;
+                 &lt;apply&gt;&lt;csymbol cd="arith1"&gt;times&lt;/csymbol&gt;
+                   &lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;
+                 &lt;/apply&gt;
+               &lt;/apply&gt;
+             &lt;/bind&gt;
+             &lt;ci&gt;x&lt;/ci&gt;
+             &lt;ci&gt;y&lt;/ci&gt;
+           &lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      </p>
+     </div>
+
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_int">Integrals</h5>
+     <p>Rewrite integrals using the rules <a>Rewrite: int</a><span>,
+     <a>Rewrite: defint</a></span> and <a>Rewrite: defint limits</a>
+     to disambiguate the status of bound and free variables and of the
+     orientation of the range of integration if it is given as a
+     <code class="element">lowlimit</code>/<code class="element">uplimit</code>
+     pair.</p>
+
+     <p>As an indefinite integral applied to a function, the
+     <code class="element">int</code> element corresponds to the
+     <a class="omsymbol" href="https://openmath.org/cd/calculus1#int">int</a>
+     symbol from the <a class="omcd" href="calculus1">calculus1</a> content
+     dictionary.  As a definite integral applied to a function, the
+     <code class="element">int</code> element corresponds to the
+     <a class="omsymbol" href="https://openmath.org/cd/calculus1#defint">defint</a>
+     symbol from the <a class="omcd" href="calculus1">calculus1</a> content
+     dictionary.</p>
+
+     <p>When no bound variables are present, the translation
+     of an indefinite integral to Strict Content Markup is straight
+     forward.  When bound variables are present, the following rule
+     should be used.</p>
+
+     <div class="strict-mathml-example" id="contm_p2s.int"><dfn>Rewrite: int</dfn>
+
+      <p>Translate an indefinite integral, where
+      <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
+      arbitrary expression involving the bound variable(s)
+      <code class="meta-code">&lt;ci&gt;x&lt;/ci&gt;</code>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;int/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;ci&gt;expression-in-x&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      to the expression
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;
+           &lt;apply&gt;&lt;csymbol cd="calculus1"&gt;int&lt;/csymbol&gt;
+             &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+               &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;ci&gt;expression-in-x&lt;/ci&gt;
+             &lt;/bind&gt;
+           &lt;/apply&gt;
+           &lt;ci&gt;x&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      Note that as <i class="var">x</i> is not bound in the original indefinite
+      integral, the integrated function is applied to the variable
+      <i class="var">x</i> making it an explicit free variable in
+      Strict Content Markup expression, even though it is bound in the subterm
+      used as an argument to <a class="omsymbol" href="https://openmath.org/cd/calculus1#int">int</a>.</p>
+
+     </div>
+
+     <div class="strict-mathml-example" id="contm_strict-int">
+
+      <p>For instance, the expression
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;int/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;apply&gt;&lt;cos/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      has the Strict Content MathML equivalent
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;
+           &lt;apply&gt;&lt;csymbol cd="calculus1"&gt;int&lt;/csymbol&gt;
+             &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+               &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;apply&gt;&lt;cos/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+             &lt;/bind&gt;
+           &lt;/apply&gt;
+           &lt;ci&gt;x&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      </p>
+     </div>
+
+     <p>For a definite integral without bound variables, the
+     translation is also straightforward.</p>
+
+     <div class="strict-mathml-example" id="contm_strict-domainofapplication-nobvar">
+
+      <p>For instance, the integral of a differential form <i class="var">f</i> over an arbitrary domain
+      <i class="var">C</i> represented as
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;int/&gt;
+           &lt;domainofapplication&gt;&lt;ci&gt;C&lt;/ci&gt;&lt;/domainofapplication&gt;
+           &lt;ci&gt;f&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      is equivalent to the Strict Content MathML:
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="calculus1"&gt;defint&lt;/csymbol&gt;&lt;ci&gt;C&lt;/ci&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      </p>
+
+      <p>Note, however, the additional remarks on the translations of other
+      kinds of qualifiers that may be used to specify a domain of integration
+      in the rules for definite integrals following.</p>
+     </div>
+
+     <p>When bound variables are present, the situation is more complicated
+     in general, and the following rules are used.</p>
+
+     <div class="strict-mathml-example" id="contm_p2s.defint"><dfn>Rewrite: defint</dfn>
+
+      <p>Translate a definite integral, where
+      <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
+      arbitrary expression involving the bound variable(s)
+      <code class="meta-code">&lt;ci&gt;x&lt;/ci&gt;</code>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;int/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;domainofapplication&gt;&lt;ci&gt;D&lt;/ci&gt;&lt;/domainofapplication&gt;
+           &lt;ci&gt;expression-in-x&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      to the expression
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="calculus1"&gt;defint&lt;/csymbol&gt;
+           &lt;ci&gt;D&lt;/ci&gt;
+           &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+             &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+             &lt;ci&gt;expression-in-x&lt;/ci&gt;
+           &lt;/bind&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      </p>
+     </div>
+
+     <p>But the definite integral with an <code class="element">lowlimit</code>/<code class="element">uplimit</code> pair carries the
+     strong intuition that the range of integration is oriented, and thus
+     swapping lower and upper limits will change the sign of the result.
+     To accommodate this, use the following special translation rule:</p>
+
+     <div class="strict-mathml-example" id="contm_p2s.int.LUlimit"><dfn>Rewrite: defint limits</dfn>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;int/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;lowlimit&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/lowlimit&gt;
+           &lt;uplimit&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/uplimit&gt;
+           &lt;ci&gt;expression-in-x&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>
+       where
+       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code>
+       is an expression in the variable <i class="var">x</i>
+       is translated to to the expression:</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="calculus1"&gt;defint&lt;/csymbol&gt;
+           &lt;apply&gt;&lt;csymbol cd="interval1"&gt;oriented_interval&lt;/csymbol&gt;
+             &lt;ci&gt;a&lt;/ci&gt; &lt;ci&gt;b&lt;/ci&gt;
+           &lt;/apply&gt;
+           &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+             &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+             &lt;ci&gt;expression-in-x&lt;/ci&gt;
+           &lt;/bind&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>The <a class="omsymbol" href="https://openmath.org/cd/interval1#oriented_interval">oriented_interval</a>
+      symbol is also used when translating the <code class="element">interval</code>
+      qualifier, when it is used to specify the domain of integration.
+      Integration is assumed to proceed from the left endpoint to the
+      right endpoint.</p>
+
+      <p>The case for multiple integrands is treated analogously.</p>
+     </div>
+
+     <div class="strict-mathml-example" id="contm_strict-condition">
+
+      <p>Note that use of the <code class="element">condition</code>
+      <span>qualifier</span> <span>also
+      requires special treatment.  In particular, it</span> extends to multivariate domains by
+      using extra bound variables and a domain corresponding to a cartesian product as in:</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;bind&gt;&lt;int/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;condition&gt;
+             &lt;apply&gt;&lt;and/&gt;
+               &lt;apply&gt;&lt;leq/&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+               &lt;apply&gt;&lt;leq/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/apply&gt;
+               &lt;apply&gt;&lt;leq/&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
+               &lt;apply&gt;&lt;leq/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/apply&gt;
+             &lt;/apply&gt;
+           &lt;/condition&gt;
+           &lt;apply&gt;&lt;times/&gt;
+             &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
+             &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
+           &lt;/apply&gt;
+         &lt;/bind&gt;
+       </pre>
+      </div>
+
+      <p>Strict Content MathML equivalent</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="calculus1"&gt;defint&lt;/csymbol&gt;
+           &lt;apply&gt;&lt;csymbol cd="set1"&gt;suchthat&lt;/csymbol&gt;
+             &lt;apply&gt;&lt;csymbol cd="set1"&gt;cartesianproduct&lt;/csymbol&gt;
+               &lt;csymbol cd="setname1"&gt;R&lt;/csymbol&gt;
+               &lt;csymbol cd="setname1"&gt;R&lt;/csymbol&gt;
+             &lt;/apply&gt;
+             &lt;apply&gt;&lt;csymbol cd="logic1"&gt;and&lt;/csymbol&gt;
+               &lt;apply&gt;&lt;csymbol cd="arith1"&gt;leq&lt;/csymbol&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+               &lt;apply&gt;&lt;csymbol cd="arith1"&gt;leq&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/apply&gt;
+               &lt;apply&gt;&lt;csymbol cd="arith1"&gt;leq&lt;/csymbol&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
+               &lt;apply&gt;&lt;csymbol cd="arith1"&gt;leq&lt;/csymbol&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/apply&gt;
+             &lt;/apply&gt;
+             &lt;bind&gt;&lt;csymbol cd="fns11"&gt;lambda&lt;/csymbol&gt;
+               &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;apply&gt;&lt;csymbol cd="arith1"&gt;times&lt;/csymbol&gt;
+                 &lt;apply&gt;&lt;csymbol cd="arith1"&gt;power&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
+                 &lt;apply&gt;&lt;csymbol cd="arith1"&gt;power&lt;/csymbol&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
+               &lt;/apply&gt;
+             &lt;/bind&gt;
+           &lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+     </div>
+
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_limit">Limits</h5>
+     <p>Rewrite limits using the rules <a>Rewrite: tendsto</a> and
+     <a>Rewrite: limits condition</a>.</p>
+
+     <p>The usage of <code class="element">tendsto</code> to qualify a limit
+     is formally defined by writing the expression in Strict Content MathML
+     via the rule <a>Rewrite: limits condition</a>. The meanings of other more
+     idiomatic uses of <code class="element">tendsto</code> are not formally
+     defined by this specification.  When rewriting these cases to Strict
+     Content MathML, <code class="element">tendsto</code> should be rewritten
+     to an annotated identifier as shown below.</p>
+
+     <div class="strict-mathml-example" id="contm_strict_tendsto"><dfn>Rewrite: tendsto</dfn>
+
+      <div class="example mathml">
+       <pre>
+         &lt;tendsto/&gt;
+       </pre>
+      </div>
+
+      <p>Strict Content MathML equivalent</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;semantics&gt;
+           &lt;ci&gt;tendsto&lt;/ci&gt;
+           &lt;annotation-xml encoding="MathML-Content"&gt;
+             &lt;tendsto/&gt;
+           &lt;/annotation-xml&gt;
+         &lt;/semantics&gt;
+       </pre>
+      </div>
+     </div>
+
+     <div class="strict-mathml-example" id="contm_strict-limit"><dfn>Rewrite: limits condition</dfn>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;limit/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;condition&gt;
+             &lt;apply&gt;&lt;tendsto/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;
+           &lt;/condition&gt;
+           &lt;ci&gt;expression-in-x&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Strict Content MathML equivalent</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="limit1"&gt;limit&lt;/csymbol&gt;
+           &lt;cn&gt;0&lt;/cn&gt;
+           &lt;csymbol cd="limit1"&gt;null&lt;/csymbol&gt;
+           &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+             &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+             &lt;ci&gt;expression-in-x&lt;/ci&gt;
+           &lt;/bind&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>where
+      <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
+      arbitrary expression involving the bound variable(s), and the choice of
+      symbol, <a class="omsymbol" href="https://openmath.org/cd/limit1#null">null</a>, depends on the
+      <code class="attribute">type</code> attribute of the
+      <code class="element">tendsto</code> element as described
+      in <a href="#contm_limit"></a>.</p>
+
+     </div>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_sump">Sums and Products</h5>
+     <p>Rewrite sums and products as described in
+     <a href="#contm_sum"></a> and <a href="#contm_product"></a>.</p>
+
+     <p>When no explicit bound variables are used, no special rules are
+     required to rewrite sums as Strict Content beyond the generic rules
+     for rewriting expressions using qualifiers.  However, when bound
+     variables are used, it is necessary to introduce a <code class="element">lambda</code>
+     construction to rewrite the expression in the bound variables as a
+     function.</p>
+
+     <div class="strict-mathml-example" id="contm_strict-sum">
+      <p>Content MathML</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;sum/&gt;
+           &lt;bvar&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;lowlimit&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/lowlimit&gt;
+           &lt;uplimit&gt;&lt;cn&gt;100&lt;/cn&gt;&lt;/uplimit&gt;
+           &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Strict Content MathML equivalent</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="arith1"&gt;sum&lt;/csymbol&gt;
+           &lt;apply&gt;&lt;csymbol cd="interval1"&gt;integer_interval&lt;/csymbol&gt;
+             &lt;cn&gt;0&lt;/cn&gt;
+             &lt;cn&gt;100&lt;/cn&gt;
+           &lt;/apply&gt;
+           &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+             &lt;bvar&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/bvar&gt;
+             &lt;apply&gt;&lt;csymbol cd="arith1"&gt;power&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/apply&gt;
+           &lt;/bind&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+     </div>
+
+     <p>When no explicit bound variables are used, no special rules are
+     required to rewrite products as Strict Content beyond the generic rules
+     for rewriting expressions using qualifiers.  However, when bound
+     variables are used, it is necessary to introduce a <code class="element">lambda</code>
+     construction to rewrite the expression in the bound variables as a
+     function.</p>
+
+     <div class="strict-mathml-example" id="contm_strict-product">
+
+      <p>Content MathML</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;product/&gt;
+           &lt;bvar&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;lowlimit&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/lowlimit&gt;
+           &lt;uplimit&gt;&lt;cn&gt;100&lt;/cn&gt;&lt;/uplimit&gt;
+           &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Strict Content MathML equivalent</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="arith1"&gt;product&lt;/csymbol&gt;
+           &lt;apply&gt;&lt;csymbol cd="interval1"&gt;integer_interval&lt;/csymbol&gt;
+             &lt;cn&gt;0&lt;/cn&gt;
+             &lt;cn&gt;100&lt;/cn&gt;
+           &lt;/apply&gt;
+           &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+             &lt;bvar&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/bvar&gt;
+             &lt;apply&gt;&lt;csymbol cd="arith1"&gt;power&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/apply&gt;
+           &lt;/bind&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+     </div>
+
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_root">Roots</h5>
+     <p>Rewrite roots as described in <a href="#contm_root"></a>.</p>
+
+     <p>In Strict Content markup, the <a class="omsymbol" href="https://openmath.org/cd/arith1#root">root</a>
+     symbol is always used with two arguments, with the second indicating
+     the degree of the root being extracted.</p>
+
+     <div class="strict-mathml-example" id="arith1.root.ex2">
+
+      <p>Content MathML</p>
+
+      <div class="example mathml">
+       <pre>&lt;apply&gt;&lt;root/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;</pre>
+      </div>
+
+      <p>Strict Content MathML equivalent</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="arith1"&gt;root&lt;/csymbol&gt;
+           &lt;ci&gt;x&lt;/ci&gt;
+           &lt;cn type="integer"&gt;2&lt;/cn&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+     </div>
+
+     <div class="strict-mathml-example" id="arith1.root.ex3">
+      <p>Content MathML</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;root/&gt;
+           &lt;degree&gt;&lt;ci type="integer"&gt;n&lt;/ci&gt;&lt;/degree&gt;
+           &lt;ci&gt;a&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Strict Content MathML equivalent</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="arith1"&gt;root&lt;/csymbol&gt;
+           &lt;ci&gt;a&lt;/ci&gt;
+           &lt;cn type="integer"&gt;n&lt;/cn&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+     </div>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_log">Logarithms</h5>
+     <p>Rewrite logarithms as described in <a href="#contm_log"></a>.</p>
+
+     <p>When mapping <code class="element">log</code> to Strict Content, one uses the
+     <a class="omsymbol" href="https://openmath.org/cd/transc1#log">log</a> symbol denoting the function
+     that returns the log of its second argument with respect to the base
+     specified by the first argument.  When <code class="element">logbase</code> is present, it
+     determines the base.  Otherwise, the default base of 10 must be
+     explicitly provided in Strict markup.  See the following example.</p>
+
+     <div class="strict-mathml-example" id="contm_strict_log">
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;plus/&gt;
+           &lt;apply&gt;
+             &lt;log/&gt;
+             &lt;logbase&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/logbase&gt;
+             &lt;ci&gt;x&lt;/ci&gt;
+           &lt;/apply&gt;
+           &lt;apply&gt;
+             &lt;log/&gt;
+             &lt;ci&gt;y&lt;/ci&gt;
+           &lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Strict Content MathML equivalent:</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;
+           &lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;
+           &lt;apply&gt;
+             &lt;csymbol cd="transc1"&gt;log&lt;/csymbol&gt;
+             &lt;cn&gt;2&lt;/cn&gt;
+             &lt;ci&gt;x&lt;/ci&gt;
+           &lt;/apply&gt;
+           &lt;apply&gt;
+             &lt;csymbol cd="transc1"&gt;log&lt;/csymbol&gt;
+             &lt;cn&gt;10&lt;/cn&gt;
+             &lt;ci&gt;y&lt;/ci&gt;
+           &lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+     </div>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_mom">Moments</h5>
+     <p>Rewrite moments as described in <a href="#contm_moment"></a>.</p>
+
+     <div class="strict-mathml-example" id="contm_strict-moment-degree">
+
+      <p>When rewriting to Strict Markup, the <a class="omsymbol" href="https://openmath.org/cd/s_dist1#moment">moment</a> <span>symbol from the <a class="omcd" href="s_data1">s_data1</a> content
+      dictionary</span> is used <span>when the <code class="element">moment</code> element is applied
+      to an explicit list of arguments.  When it is applied to a distribution, then the
+
+      <a class="omsymbol" href="https://openmath.org/cd/s_dist1#moment">moment</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
+      dictionary should be used.</span> <span>Both operators take</span>
+      the degree as the first argument, the point as the second, <span>followed by</span>
+      the data set or random variable <span>respectively</span>.</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;moment/&gt;
+           &lt;degree&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/degree&gt;
+           &lt;momentabout&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;/momentabout&gt;
+           &lt;ci&gt;X&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Strict Content MathML equivalent</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="s_dist1"&gt;moment&lt;/csymbol&gt;
+           &lt;cn&gt;3&lt;/cn&gt;
+           &lt;ci&gt;p&lt;/ci&gt;
+           &lt;ci&gt;X&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+     </div>
+    </section>
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_2doa">Rewrite to <code class="element">domainofapplication</code></h4>
+    <p>Rewrite Qualifiers to <code class="element">domainofapplication</code></em>.
+    These rules rewrite all <code class="element">apply</code> constructions
+    using <code class="element">bvar</code> and qualifiers to those using only
+    the general <code class="element">domainofapplication</code> qualifier.
+    </p>
+
+    <section>
+     <h5 id="contm_p2s_intv">Intervals</h5>
+     <p>Rewrite qualifiers given as <code class="element">interval</code> and
+     <code class="element">lowlimit</code>/<code class="element">uplimit</code>
+     to intervals of integers via <a>Rewrite: interval qualifier</a>.</p>
+
+     <div class="strict-mathml-example" id="contm_limits-strict"><dfn>Rewrite: interval qualifier</dfn>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;ci&gt;H&lt;/ci&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;lowlimit&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/lowlimit&gt;
+           &lt;uplimit&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/uplimit&gt;
+           &lt;ci&gt;C&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;ci&gt;H&lt;/ci&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;domainofapplication&gt;
+             &lt;apply&gt;&lt;csymbol cd="interval1"&gt;interval&lt;/csymbol&gt;
+               &lt;ci&gt;a&lt;/ci&gt;
+               &lt;ci&gt;b&lt;/ci&gt;
+             &lt;/apply&gt;
+           &lt;/domainofapplication&gt;
+           &lt;ci&gt;C&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>The symbol used in this translation depends on the head of the
+      application, denoted by <code class="meta-code">&lt;ci&gt;H&lt;/ci&gt;</code>
+      here. By default <a class="omsymbol" href="https://openmath.org/cd/interval1#interval">interval</a> should be
+      used, unless the semantics of the head term can be determined and
+      indicate a more specific interval symbols.  In particular, several
+      predefined Content MathML element should be used with more specific
+      interval symbols.  If the head is <code class="element">int</code> then <a class="omsymbol" href="https://openmath.org/cd/interval1#oriented_interval">oriented_interval</a> is used.  When the head term
+      is <code class="element">sum</code> or <code class="element">product</code>, <a class="omsymbol" href="https://openmath.org/cd/interval1#integer_interval">integer_interval</a> should be used.</p>
+
+      <p>The above technique for replacing <code class="element">lowlimit</code> and <code class="element">uplimit</code> qualifiers
+      with a <code class="element">domainofapplication</code> element is also used for replacing the
+      <code class="element">interval</code> qualifier. </p>
+     </div>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_conds">Multiple <code class="element">condition</code>s</em></h5>
+     <p>Rewrite multiple <code class="element">condition</code>
+     qualifiers to a single one by taking their conjunction.  The resulting
+     compound <code class="element">condition</code> is then rewritten to
+     <code class="element">domainofapplication</code> according to rule
+     <a>Rewrite: condition</a>.</p>
+
+     <p>The <code class="element">condition</code> qualifier restricts a bound variable by specifying a
+     Boolean-valued expression on a larger domain, specifying whether a given value is
+     in the
+     restricted domain. The <code class="element">condition</code> element contains a single child that represents
+     the truth condition. Compound conditions are formed by applying Boolean operators
+     such as
+     <code class="element">and</code> in the condition.</p>
+
+     <div class="strict-mathml-example" id="contm_condition-strict"><dfn>Rewrite: condition</dfn>
+
+      <p>To rewrite an expression using the <code class="element">condition</code>
+      qualifier as one using <code class="element">domainofapplication</code>,
+
+      <div class="example mathml-fragment">
+       <pre>
+         &lt;bvar&gt;&lt;ci&gt;x1&lt;/ci&gt;&lt;/bvar&gt;
+         &lt;bvar&gt;&lt;ci&gt;xn&lt;/ci&gt;&lt;/bvar&gt;
+         &lt;condition&gt;&lt;ci&gt;P&lt;/ci&gt;&lt;/condition&gt;
+       </pre>
+      </div>
+
+      is rewritten to
+
+      <div class="example mathml-fragment">
+       <pre>
+         &lt;bvar&gt;&lt;ci&gt;x1&lt;/ci&gt;&lt;/bvar&gt;
+         &lt;bvar&gt;&lt;ci&gt;xn&lt;/ci&gt;&lt;/bvar&gt;
+         &lt;domainofapplication&gt;
+           &lt;apply&gt;&lt;csymbol cd="set1"&gt;suchthat&lt;/csymbol&gt;
+             &lt;ci&gt;R&lt;/ci&gt;
+             &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+               &lt;bvar&gt;&lt;ci&gt;x1&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;bvar&gt;&lt;ci&gt;xn&lt;/ci&gt;&lt;/bvar&gt;
+               &lt;ci&gt;P&lt;/ci&gt;
+             &lt;/bind&gt;
+           &lt;/apply&gt;
+         &lt;/domainofapplication&gt;
+       </pre>
+      </div>
+      If the <code class="element">apply</code> has a <code class="element">domainofapplication</code> (perhaps originally expressed as
+      <code class="element">interval</code> or an <code class="element">uplimit</code>/<code class="element">lowlimit</code> pair) then that is used for
+      <code class="meta-code">&lt;ci&gt;R&lt;/ci&gt;</code>. Otherwise <code class="meta-code">&lt;ci&gt;R&lt;/ci&gt;</code> is a set determined by the <code class="attribute">type</code> attribute
+      of the bound variable as specified in <a href="#contm_ci_extended"></a>, if that is
+      present. If the type is unspecified, the translation introduces an unspecified domain
+      via
+      content identifier <code>&lt;ci&gt;R&lt;/ci&gt;</code>.</p>
+     </div>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_doas">Multiple <code class="element">domainofapplication</code>s</em></h5>
+     <p>Rewrite multiple <code class="element">domainofapplication</code>
+     qualifiers to a single one by taking the intersection of the specified
+     domains.</p>
+    </section>
+
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_cont">Normalize container markup</h4>
+    <section>
+     <h5 id="contm_p2s_sets">Sets and Lists</h5>
+     <p>Rewrite sets and lists by the rule
+     <a>Rewrite: n-ary setlist domainofapplication</a>.</p>
+
+     <p>The use of <code class="element">set</code> and <code class="element">list</code> follows the same format
+     as other n-ary constructors, however when rewriting to Strict
+     Content MathML a variant of the usual rule is used, since the <a class="omsymbol" href="https://openmath.org/cd/set1#map">map</a>
+     symbol implicitly constructs the required set or list, and <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a> is
+     not needed in this case.</p>
+
+      <p>The elements representing these n-ary operators are
+      specified in the schema pattern <code class="parsing_ref">nary-setlist-constructor.class</code>.</p>
+
+      <p>If the argument list is given explicitly, the <a>Rewrite: element</a> rule applies.</p>
+
+      <p>When qualifiers are used to specify the list of arguments, the following rule is used.</p>
+
+      <div class="strict-mathml-example" id="contm_rewrite_setliste"><dfn>Rewrite: n-ary setlist domainofapplication</dfn>
+
+       <p>An expression of the following form,
+       where <code class="meta-code">&lt;set/&gt;</code> is either of the elements <code class="element">set</code> or <code class="element">list</code> and
+       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code>
+       is an arbitrary expression involving the bound variable(s)
+
+       <div class="example mathml">
+	<pre>
+   &lt;set&gt;
+     &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+     &lt;domainofapplication&gt;&lt;ci&gt;D&lt;/ci&gt;&lt;/domainofapplication&gt;
+     &lt;ci&gt;expression-in-x&lt;/ci&gt;
+   &lt;/set&gt;
+	</pre>
+       </div>
+       is rewritten to
+
+       <div class="example strict-mathml">
+	<pre>
+   &lt;apply&gt;&lt;csymbol cd="set1"&gt;map&lt;/csymbol&gt;
+     &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+       &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+       &lt;ci&gt;expression-in-x&lt;/ci&gt;
+     &lt;/bind&gt;
+     &lt;ci&gt;D&lt;/ci&gt;
+   &lt;/apply&gt;
+	</pre>
+       </div>
+       </p>
+
+       <p>Note that
+       when <code class="meta-code">&lt;ci&gt;D&lt;/ci&gt;</code> is already a set
+       or list of the appropriate type for the container element, and the lambda function
+       created
+       from <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is
+       the identity, the entire container element should be rewritten
+       directly as <code class="meta-code">&lt;ci&gt;D&lt;/ci&gt;</code>.</p>
+
+      </div>
+
+      <p>In the  case of <code class="element">set</code>, the choice of Content
+      Dictionary and symbol depends on the value of <span>the <code class="attribute">type</code> attribute of the arguments. By default the   <a class="omsymbol" href="https://openmath.org/cd/set1#set">set</a> symbol is used, but if one of the arguments has
+      <code class="attribute">type</code> attribute with value <code class="attributevalue">multiset</code>, the <a class="omsymbol" href="https://openmath.org/cd/multiset1#multiset">multiset</a> symbol is used.
+      If there is a <code class="attribute">type</code> attribute with value other than <code class="attributevalue">set</code> or <code class="attributevalue">multiset</code>
+      the <a class="omsymbol" href="https://openmath.org/cd/set1#set">set</a> symbol should be used, and the arguments should be annotated with their type
+      by rewriting the <code class="attribute">type</code> attribute using the rule
+      <a class="intref" href="#contm_strict-attributes">Rewrite: attributes</a></span>.</p>
+
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_step">Intervals, vectors, matrices</h5>
+     <p>Rewrite interval, vectors, matrices, and matrix rows as
+     described in <a href="#contm_interval"></a>, <a href="#contm_vector"></a>,
+     <a href="#contm_matrix"></a> and <a href="#contm_matrixrow"></a>.
+     Note any qualifiers will have been rewritten to <code class="element">domainofapplication</code> and will be further rewritten in a later step.</p>
+
+     <p>In Strict markup, the <code class="element">interval</code> element corresponds to one
+     of four symbols from the <a class="omcd" href="interval1">interval1</a> content
+     dictionary. If <code class="attribute">closure</code> has the value <code class="attributevalue">open</code> then
+     <code class="element">interval</code> corresponds to the
+     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_oo">interval_oo</a>.
+     With the value <code class="attributevalue">closed</code>
+     <code class="element">interval</code> corresponds to the symbol
+     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_cc">interval_cc</a>,
+     with value <code class="attributevalue">open-closed</code> to
+     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_oc">interval_oc</a>, and with
+     <code class="attributevalue">closed-open</code> to
+     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_co">interval_co</a>.</p>
+
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_lambda">Lambda expressions</h5>
+     <p>Rewrite lambda expressions by the rules <a>Rewrite: lambda</a>
+     and <a>Rewrite: lambda domainofapplication</a></p>
+
+     <div class="strict-mathml-example" id="contm_rewrite_lambda"><dfn>Rewrite: lambda</dfn>
+
+      <p>If the <code class="element">lambda</code> element does not contain qualifiers, the
+      lambda expression is directly translated into a <code class="element">bind</code>
+      expression.</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;lambda&gt;
+           &lt;bvar&gt;&lt;ci&gt;x1&lt;/ci&gt;&lt;/bvar&gt;&lt;bvar&gt;&lt;ci&gt;xn&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;ci&gt;expression-in-x1-xn&lt;/ci&gt;
+         &lt;/lambda&gt;
+       </pre>
+      </div>
+
+      <p>rewrites to the Strict Content MathML</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+           &lt;bvar&gt;&lt;ci&gt;x1&lt;/ci&gt;&lt;/bvar&gt;&lt;bvar&gt;&lt;ci&gt;xn&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;ci&gt;expression-in-x1-xn&lt;/ci&gt;
+         &lt;/bind&gt;
+       </pre>
+      </div>
+     </div>
+
+     <div class="strict-mathml-example" id="contm_rewrite_lambda_domofa"><dfn>Rewrite: lambda domainofapplication</dfn>
+
+      <p>If the <code class="element">lambda</code> element does contain qualifiers, the
+      qualifier may be rewritten to <code class="element">domainofapplication</code>
+      and then the lambda expression is translated to a
+      function term constructed with <a class="omsymbol" href="https://openmath.org/cd/fns1#lambda">lambda</a>
+      and restricted to the specified domain using
+      <a class="omsymbol" href="https://openmath.org/cd/fns1#restriction">restriction</a>.</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;lambda&gt;
+           &lt;bvar&gt;&lt;ci&gt;x1&lt;/ci&gt;&lt;/bvar&gt;&lt;bvar&gt;&lt;ci&gt;xn&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;domainofapplication&gt;&lt;ci&gt;D&lt;/ci&gt;&lt;/domainofapplication&gt;
+           &lt;ci&gt;expression-in-x1-xn&lt;/ci&gt;
+         &lt;/lambda&gt;
+       </pre>
+      </div>
+
+      <p>rewrites to the Strict Content MathML</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="fns1"&gt;restriction&lt;/csymbol&gt;
+           &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+             &lt;bvar&gt;&lt;ci&gt;x1&lt;/ci&gt;&lt;/bvar&gt;&lt;bvar&gt;&lt;ci&gt;xn&lt;/ci&gt;&lt;/bvar&gt;
+             &lt;ci&gt;expression-in-x1-xn&lt;/ci&gt;
+           &lt;/bind&gt;
+           &lt;ci&gt;D&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+     </div>
+
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_piece">Piecewise functions</h5>
+     <p>Rewrite piecewise functions as described in <a href="#contm_piecewise"></a>.</p>
+
+     <p>In Strict Content MathML, the container elements
+     <code class="element">piecewise</code>, <code class="element">piece</code> and <code class="element">otherwise</code> are mapped
+     to applications of the constructor symbols of the same names in the
+     <a class="omcd" href="piece1">piece1</a> CD.  Apart from the fact that these three
+     elements (respectively symbols) are used together, the mapping to
+     Strict markup is straightforward:</p>
+
+     <div class="strict-mathml-example" id="contm_piecewise-example">
+
+      <p>Content MathML</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;piecewise&gt;
+           &lt;piece&gt;
+             &lt;cn&gt;0&lt;/cn&gt;
+             &lt;apply&gt;&lt;lt/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;
+           &lt;/piece&gt;
+           &lt;piece&gt;
+             &lt;cn&gt;1&lt;/cn&gt;
+             &lt;apply&gt;&lt;gt/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/apply&gt;
+           &lt;/piece&gt;
+           &lt;otherwise&gt;
+             &lt;ci&gt;x&lt;/ci&gt;
+           &lt;/otherwise&gt;
+         &lt;/piecewise&gt;
+       </pre>
+      </div>
+
+      <p>Strict Content MathML equivalent</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="piece1"&gt;piecewise&lt;/csymbol&gt;
+           &lt;apply&gt;&lt;csymbol cd="piece1"&gt;piece&lt;/csymbol&gt;
+             &lt;cn&gt;0&lt;/cn&gt;
+             &lt;apply&gt;&lt;csymbol cd="relation1"&gt;lt&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;
+           &lt;/apply&gt;
+           &lt;apply&gt;&lt;csymbol cd="piece1"&gt;piece&lt;/csymbol&gt;
+             &lt;cn&gt;1&lt;/cn&gt;
+             &lt;apply&gt;&lt;csymbol cd="relation1"&gt;gt&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/apply&gt;
+           &lt;/apply&gt;
+           &lt;apply&gt;&lt;csymbol cd="piece1"&gt;otherwise&lt;/csymbol&gt;
+             &lt;ci&gt;x&lt;/ci&gt;
+           &lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+     </div>
+
+    </section>
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_doaq">Rewrite <code class="element">domainofapplication</code> qualifiers</h4>
+    <p>Apply Special Case Rules for Operators using <code class="element">domainofapplication</code> Qualifiers.
+    This step deals with the special cases for the operators introduced in
+    <a href="#contm_opel"></a>. There are different classes of special cases to be taken into account.</p>
+
+    <section>
+     <h5 id="contm_p2s_minmax">N-ary/unary operators</h5>
+     <p>Rewrite <code class="element">min</code>, <code class="element">max</code>, <code class="element">mean</code> and similar n-ary/unary operators
+     by the rules <a>Rewrite: n-ary unary set</a>, <a>Rewrite: n-ary unary domainofapplication</a>
+     and <a>Rewrite: n-ary unary single</a>.</p>
+
+      <div class="strict-mathml-example" id="contm_p2s.max"><dfn>Rewrite: n-ary unary set</dfn>
+
+       <p>When an element,
+       <code class="meta-code">&lt;max/&gt;</code>, of class nary-stats or nary-minmax
+       is applied to an explicit
+       list of  0 or 2 or more arguments,
+       <code class="meta-code">&lt;ci&gt;a1&lt;/ci&gt;&lt;ci&gt;a2&lt;/ci&gt;&lt;ci&gt;an&lt;/ci&gt;</code> </p>
+
+       <div class="example mathml">
+	<pre>
+   &lt;apply&gt;&lt;max/&gt;&lt;ci&gt;a1&lt;/ci&gt;&lt;ci&gt;a2&lt;/ci&gt;&lt;ci&gt;an&lt;/ci&gt;&lt;/apply&gt;
+	</pre>
+       </div>
+
+       <p>It is is translated to the unary application of the symbol
+       <code class="meta-code">&lt;csymbol cd="minmax1" name="max"/&gt;</code>
+       as specified in the syntax table for the element to the set of
+       arguments, constructed using the
+       <code>&lt;csymbol cd="set1" name="set"/&gt;</code>
+       symbol.</p>
+
+       <div class="example strict-mathml">
+	<pre>
+   &lt;apply&gt;&lt;csymbol cd="minmax1"&gt;max&lt;/csymbol&gt;
+     &lt;apply&gt;&lt;csymbol cd="set1"&gt;set&lt;/csymbol&gt;
+       &lt;ci&gt;a1&lt;/ci&gt;&lt;ci&gt;a2&lt;/ci&gt;&lt;ci&gt;an&lt;/ci&gt;
+     &lt;/apply&gt;
+   &lt;/apply&gt;
+	</pre>
+       </div>
+      </div>
+
+      <p>Like all MathML n-ary operators, The list of arguments may be
+      specified implicitly using qualifier elements. This is expressed in
+      Strict Content MathML using the following rule, which is similar to
+      the rule <a>Rewrite: n-ary domainofapplication</a> but differs in that the
+      symbol can be directly applied to the constructed set of arguments and
+      it is not necessary to use <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a>.</p>
+
+      <div class="strict-mathml-example" id="contm_unary_nary_doma"><dfn>Rewrite: n-ary unary domainofapplication</dfn>
+
+       <p>An expression of the following form,
+       where <code class="meta-code">&lt;max/&gt;</code> represents any
+       element of the relevant class and
+       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code>
+       is an arbitrary expression involving the bound variable(s)
+
+       <div class="example mathml">
+	<pre>
+   &lt;apply&gt;&lt;max/&gt;
+     &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+     &lt;domainofapplication&gt;&lt;ci&gt;D&lt;/ci&gt;&lt;/domainofapplication&gt;
+     &lt;ci&gt;expression-in-x&lt;/ci&gt;
+   &lt;/apply&gt;
+	</pre>
+       </div>
+       is rewritten to
+
+       <div class="example strict-mathml">
+	<pre>
+   &lt;apply&gt;&lt;csymbol cd="minmax1"&gt;max&lt;/csymbol&gt;
+     &lt;apply&gt;&lt;csymbol cd="set1"&gt;map&lt;/csymbol&gt;
+       &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+         &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+         &lt;ci&gt;expression-in-x&lt;/ci&gt;
+       &lt;/bind&gt;
+       &lt;ci&gt;D&lt;/ci&gt;
+     &lt;/apply&gt;
+   &lt;/apply&gt;
+	</pre>
+       </div>
+       </p>
+
+       <p>Note that
+       when <code class="meta-code">&lt;ci&gt;D&lt;/ci&gt;</code> is already a set
+       and the lambda function created from <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is
+       the identity, the <code class="element">domainofapplication</code> term should should be
+       rewritten directly
+       as <code class="meta-code">&lt;ci&gt;D&lt;/ci&gt;</code>.</p>
+
+      </div>
+
+      <p>If the element is applied to a single argument the
+      <a class="omsymbol" href="https://openmath.org/cd/set1#set">set</a> symbol is not used and the symbol is
+      applied directly to the argument.</p>
+
+      <div class="strict-mathml-example" id="contm_nary_unary_single"><dfn>Rewrite: n-ary unary single</dfn>
+
+       <p>When an element,
+       <code class="meta-code">&lt;max/&gt;</code>, of class nary-stats or nary-minmax
+       is applied to a single argument,</p>
+
+       <div class="example mathml">
+	<pre>
+   &lt;apply&gt;&lt;max/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
+	</pre>
+       </div>
+
+       <p>It is is translated to the unary application of the symbol
+       in the syntax table for the element.</p>
+
+       <div class="example strict-mathml">
+	<pre>
+   &lt;apply&gt;&lt;csymbol cd="minmax1"&gt;max&lt;/csymbol&gt; &lt;ci&gt;a&lt;/ci&gt; &lt;/apply&gt;
+	</pre>
+       </div>
+      </div>
+
+      <p>Note: Earlier versions of MathML were not explicit about the correct
+      interpretation of elements in this class, and left it undefined as to
+      whether an expression such as max(X) was a trivial application of max
+      to a singleton, or whether it should be interpreted as meaning the
+      maximum of values of the set X. Applications finding that the rule
+      <a>Rewrite: n-ary unary single</a> can not be applied as the
+      supplied argument is a scalar may wish to use the rule
+      <a>Rewrite: n-ary unary set</a> as an error recovery.
+      As a further complication, in the case of the statistical functions
+      the Content Dictionary to use in this case depends on the desired
+      interpretation of the argument as a set of explicit data or a random
+      variable representing a distribution. </p>
+
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_quant">Quantifiers</h5>
+     <p>Rewrite the quantifiers <code class="element">forall</code> and <code class="element">exists</code> used with <code class="element">domainofapplication</code>
+     to expressions using implication and conjunction by the rule <a>Rewrite: quantifier</a>.
+     </p>
+
+      <p>If used with <code class="element">bind</code> and no qualifiers,
+      then the interpretation in Strict Content MathML is simple. In general
+      if used with <code class="element">apply</code> or qualifiers, the interpretation in
+      Strict Content MathML is via the following rule.</p>
+
+      <div class="strict-mathml-example" id="contm_rewrite_quantifier"><dfn>Rewrite: quantifier</dfn>
+
+       <p> An expression of following form where
+       <code class="meta-code">&lt;exists/&gt;</code> denotes an element of
+       class <code>quantifier</code> and
+       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code>
+       is an arbitrary expression involving the bound variable(s)
+
+       <div class="example mathml">
+	<pre>
+   &lt;apply&gt;&lt;exists/&gt;
+     &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+     &lt;domainofapplication&gt;&lt;ci&gt;D&lt;/ci&gt;&lt;/domainofapplication&gt;
+     &lt;ci&gt;expression-in-x&lt;/ci&gt;
+   &lt;/apply&gt;
+	</pre>
+       </div>
+       is rewritten to an expression
+
+       <div class="example strict-mathml">
+	<pre>
+   &lt;bind&gt;&lt;csymbol cd="quant1"&gt;exists&lt;/csymbol&gt;
+     &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+     &lt;apply&gt;&lt;csymbol cd="logic1"&gt;and&lt;/csymbol&gt;
+       &lt;apply&gt;&lt;csymbol cd="set1"&gt;in&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;D&lt;/ci&gt;&lt;/apply&gt;
+       &lt;ci&gt;expression-in-x&lt;/ci&gt;
+     &lt;/apply&gt;
+   &lt;/bind&gt;
+	</pre>
+       </div>
+       where the symbols
+       <code class="meta-code">&lt;csymbol cd="quant1"&gt;exists&lt;/csymbol&gt;</code>
+       and
+       <code class="meta-code">&lt;csymbol cd="logic1"&gt;and&lt;/csymbol&gt;</code>
+       are as specified in the syntax table of the element.
+       (The additional symbol being
+       <a class="omsymbol" href="https://openmath.org/cd/logic1#and">and</a> in the case of <code class="element">exists</code> and
+       <a class="omsymbol" href="https://openmath.org/cd/logic1#implies">implies</a> in the case of <code class="element">forall</code>.) <span>When no
+       <code class="element">domainofapplication</code> is present, no logical conjunction is necessary, and the translation
+       is direct.</span>
+       </p>
+      </div>
+
+     <div class="strict-mathml-example" id="quant1.forall.ex2">
+
+      <p>When the <code class="element">forall</code> element is used with a <code class="element">condition</code> qualifier the
+      strict equivalent is constructed with the help of logical implication by the rule
+      <a>Rewrite: quantifier</a>.  Thus
+
+      <div class="example mathml">
+       <pre>
+         &lt;bind&gt;&lt;forall/&gt;
+           &lt;bvar&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;bvar&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;condition&gt;
+             &lt;apply&gt;&lt;and/&gt;
+               &lt;apply&gt;&lt;in/&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;rationals/&gt;&lt;/apply&gt;
+               &lt;apply&gt;&lt;in/&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;rationals/&gt;&lt;/apply&gt;
+               &lt;apply&gt;&lt;lt/&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;/apply&gt;
+             &lt;/apply&gt;
+           &lt;/condition&gt;
+           &lt;apply&gt;&lt;lt/&gt;
+             &lt;ci&gt;p&lt;/ci&gt;
+             &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
+           &lt;/apply&gt;
+         &lt;/bind&gt;
+       </pre>
+      </div>
+      translates to
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;bind&gt;&lt;csymbol cd="quant1"&gt;forall&lt;/csymbol&gt;
+           &lt;bvar&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;bvar&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;apply&gt;&lt;csymbol cd="logic1"&gt;implies&lt;/csymbol&gt;
+             &lt;apply&gt;&lt;csymbol cd="logic1"&gt;and&lt;/csymbol&gt;
+               &lt;apply&gt;&lt;csymbol cd="set1"&gt;in&lt;/csymbol&gt;
+                 &lt;ci&gt;p&lt;/ci&gt;
+                 &lt;csymbol cd="setname1"&gt;Q&lt;/csymbol&gt;
+               &lt;/apply&gt;
+               &lt;apply&gt;&lt;csymbol cd="set1"&gt;in&lt;/csymbol&gt;
+                 &lt;ci&gt;q&lt;/ci&gt;
+                 &lt;csymbol cd="setname1"&gt;Q&lt;/csymbol&gt;
+               &lt;/apply&gt;
+               &lt;apply&gt;&lt;csymbol cd="relation1"&gt;lt&lt;/csymbol&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;ci&gt;q&lt;/ci&gt;&lt;/apply&gt;
+             &lt;/apply&gt;
+             &lt;apply&gt;&lt;csymbol cd="relation1"&gt;lt&lt;/csymbol&gt;
+               &lt;ci&gt;p&lt;/ci&gt;
+               &lt;apply&gt;&lt;csymbol cd="arith1"&gt;power&lt;/csymbol&gt;
+                 &lt;ci&gt;q&lt;/ci&gt;
+                 &lt;cn&gt;2&lt;/cn&gt;
+               &lt;/apply&gt;
+             &lt;/apply&gt;
+           &lt;/apply&gt;
+         &lt;/bind&gt;
+       </pre>
+      </div>
+      </p>
+
+      <p>Sample Presentation</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;mrow&gt;
+           &lt;mo&gt;&amp;#x2200;&lt;/mo&gt;
+           &lt;mrow&gt;
+             &lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
+             &lt;mrow&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
+             &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+           &lt;/mrow&gt;
+           &lt;mo&gt;.&lt;/mo&gt;
+           &lt;mfenced&gt;
+             &lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;
+           &lt;/mfenced&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+
+      <blockquote>
+       <p><img src="image/quant1-forall-ex2.gif" alt="{\unicode{8704}{{p\unicode{8712}{\midoublestruck{Q}}}\unicode{8743}{q\unicode{8712}{\midoublestruck{Q}}}\unicode{8743}{\left.\middle(p\lt q\middle)\right.}}.{\left({p\lt\msup{q}{{2}}}\right)}}"></img></p>
+      </blockquote>
+
+      <div class="example mathml">
+       <pre>
+         &lt;mrow&gt;
+           &lt;mo&gt;&amp;#x2200;&lt;/mo&gt;
+           &lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;/mrow&gt;
+           &lt;mo&gt;.&lt;/mo&gt;
+           &lt;mfenced&gt;
+             &lt;mrow&gt;
+               &lt;mrow&gt;
+                 &lt;mo&gt;(&lt;/mo&gt;
+                 &lt;mrow&gt;
+                   &lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;
+                 &lt;/mrow&gt;
+                 &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
+                 &lt;mrow&gt;
+                   &lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;
+                 &lt;/mrow&gt;
+                 &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
+                 &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+                 &lt;mo&gt;)&lt;/mo&gt;
+               &lt;/mrow&gt;
+               &lt;mo&gt;&amp;#x21d2;&lt;/mo&gt;
+               &lt;mrow&gt;
+                 &lt;mo&gt;(&lt;/mo&gt;
+                 &lt;mi&gt;p&lt;/mi&gt;
+                 &lt;mo&gt;&amp;lt;&lt;/mo&gt;
+                 &lt;msup&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+                 &lt;mo&gt;)&lt;/mo&gt;
+               &lt;/mrow&gt;
+             &lt;/mrow&gt;
+           &lt;/mfenced&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+
+      <blockquote>
+       <p><img src="image/quant1-forall-ex2-2.gif" alt="{ \unicode{8704} {p,q} . {\left({ {\left. \middle( {p\unicode{8712}{\midoublestruck{Q}}} \unicode{8743} {q\unicode{8712}{\midoublestruck{Q}}} \unicode{8743} {\left.\middle(p\lt q\middle)\right.} \middle) \right.} \unicode{8658} {\left. \middle( p \lt \msup{q}{{2}} \middle) \right.} }\right)} }"></img></p>
+      </blockquote>
+     </div>
+
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_defint">Integrals</h5>
+     <p>Rewrite integrals used with a <code class="element">domainofapplication</code> element (with or without a <code class="element">bvar</code>)
+     according to the rules <a>Rewrite: int</a><span> and
+     <a>Rewrite: defint</a></span>.  See <a href="#contm_p2s_int"></a>.
+     </p>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_sums">Sums and products</h5>
+     <p>Rewrite sums and products used with a <code class="element">domainofapplication</code> element
+     (with or without a <code class="element">bvar</code>) as described in
+     <a href="#contm_sum"></a> and <a href="#contm_product"></a>.
+     See <a href="#contm_p2s_sump"></a>.</p>
+    </section>
+
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_doa">Eliminate <code class="element">domainofapplication</code></h4>
+    <p>At this stage, any
+    <code class="element">apply</code> has at most one <code class="element">domainofapplication</code> child and special cases have been addressed. As
+    <code class="element">domainofapplication</code> is not Strict Content MathML, it is rewritten as one of the following cases.
+    </p>
+
+    <p>By applying the rules above, expressions using the
+    <code class="element">interval</code>,
+    <code class="element">condition</code>,
+    <code class="element">uplimit</code> and
+    <code class="element">lowlimit</code> can be rewritten using only
+    <code class="element">domainofapplication</code>. Once a
+    <code class="element">domainofapplication</code> has
+    been obtained, the final mapping to Strict markup is accomplished
+    using the following rules:</p>
+
+    <section>
+     <h5 id="contm_p2s_restr">Restricted function</h5>
+     <p>Into an application of a restricted function via the rule
+     <a>Rewrite: restriction</a> if the <code class="element">apply</code> does not contain
+     a <code class="element">bvar</code> child.</p>
+
+     <div class="strict-mathml-example" id="contm_strict-doa"><dfn>Rewrite: restriction</dfn>
+
+      <p>An application of a function that is qualified by the
+      <code class="element">domainofapplication</code> qualifier (expressed by an <code class="element">apply</code> element without
+      bound variables) is converted to an application of a function term constructed with
+      the
+      <a class="omsymbol" href="https://openmath.org/cd/fns1#restriction">restriction</a> symbol.</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;ci&gt;F&lt;/ci&gt;
+           &lt;domainofapplication&gt;
+             &lt;ci&gt;C&lt;/ci&gt;
+           &lt;/domainofapplication&gt;
+           &lt;ci&gt;a1&lt;/ci&gt;
+           &lt;ci&gt;an&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>may be written as:</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;
+           &lt;apply&gt;&lt;csymbol cd="fns1"&gt;restriction&lt;/csymbol&gt;
+             &lt;ci&gt;F&lt;/ci&gt;
+             &lt;ci&gt;C&lt;/ci&gt;
+           &lt;/apply&gt;
+           &lt;ci&gt;a1&lt;/ci&gt;
+           &lt;ci&gt;an&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+     </div>
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_pol">Predicate on list</h5>
+     <p>Into an application of the <a class="omsymbol" href="https://openmath.org/cd/fns2#predicate_on_list">predicate_on_list</a> symbol via the rules
+     <a>Rewrite: n-ary relations</a> and <a>Rewrite: n-ary relations bvar</a>
+     if used with a relation.</p>
+
+      <div class="strict-mathml-example" id="contm_rewrite_reln"><dfn>Rewrite: n-ary relations</dfn>
+
+       <p>An expression of the form
+
+       <div class="example mathml">
+	<pre>
+   &lt;apply&gt;&lt;lt/&gt;
+     &lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;&lt;ci&gt;d&lt;/ci&gt;
+   &lt;/apply&gt;
+	</pre>
+       </div>
+
+       rewrites to Strict Content MathML
+
+       <div class="example mathml">
+	<pre>
+   &lt;apply&gt;&lt;csymbol cd="fns2"&gt;predicate_on_list&lt;/csymbol&gt;
+     &lt;csymbol cd="reln1"&gt;lt&lt;/csymbol&gt;
+     &lt;apply&gt;&lt;csymbol cd="list1"&gt;list&lt;/csymbol&gt;
+       &lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;&lt;ci&gt;d&lt;/ci&gt;
+     &lt;/apply&gt;
+   &lt;/apply&gt;
+	
+	</pre>
+       </div>
+       </p>
+      </div>
+
+      <div class="strict-mathml-example" id="contm_rewrite_reln_bvar"><dfn>Rewrite: n-ary relations bvar</dfn>
+
+       <p>An expression of the form
+
+       <div class="example mathml">
+	<pre>
+   &lt;apply&gt;&lt;lt/&gt;
+     &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+     &lt;domainofapplication&gt;&lt;ci&gt;R&lt;/ci&gt;&lt;/domainofapplication&gt;
+     &lt;ci&gt;expression-in-x&lt;/ci&gt;
+   &lt;/apply&gt;
+	</pre>
+       </div>
+
+       where
+       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code>
+       is an arbitrary expression involving the bound variable, rewrites to the Strict Content
+       MathML
+
+       <div class="example mathml">
+	<pre>
+   &lt;apply&gt;&lt;csymbol cd="fns2"&gt;predicate_on_list&lt;/csymbol&gt;
+     &lt;csymbol cd="reln1"&gt;lt&lt;/csymbol&gt;
+     &lt;apply&gt;&lt;csymbol cd="list1"&gt;map&lt;/csymbol&gt;
+       &lt;ci&gt;R&lt;/ci&gt;
+       &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+         &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+         &lt;ci&gt;expression-in-x&lt;/ci&gt;
+       &lt;/bind&gt;
+     &lt;/apply&gt;
+   &lt;/apply&gt;
+	</pre>
+       </div>
+       </p>
+      </div>
+
+      <p>The above rules apply to all symbols in classes <code>nary-reln.class</code>
+      and <code>nary-set-reln.class</code>. In the latter case the choice of Content
+      Dictionary to use depends on the <code class="attribute">type</code> attribute on the
+      symbol, defaulting to <a class="omcd" href="set1">set1</a>, but <a class="omcd" href="multiset1">multiset1</a>
+      should be used if <code class="attribute">type</code>=<code class="attributevalue">multiset</code>.</p>
+
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_atl">Apply to list</h5>
+     <p>Into a construction with the <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a> symbol
+     via the general rule <a>Rewrite: n-ary domainofapplication</a> for
+     general n-ary operators.
+     </p>
+
+      <p>If the argument list is given explicitly, the <a>Rewrite: element</a> rule applies.</p>
+
+      <p>Any use of qualifier elements is expressed in Strict Content
+      MathML via explicitly applying the function to a list of arguments
+      using the <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a> symbol as shown
+      in the following rule. The rule only considers the
+      <code class="element">domainofapplication</code> qualifier as other qualifiers may be
+      rewritten to <code class="element">domainofapplication</code> as described earlier.</p>
+
+      <div class="strict-mathml-example" id="contm_p2s.lifted"><dfn>Rewrite: n-ary domainofapplication</dfn>
+
+       <p>An expression of the following form,
+       where <code class="meta-code">&lt;union/&gt;</code> represents any
+       element of the relevant class and
+       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code>
+       is an arbitrary expression involving the bound variable(s)
+
+       <div class="example mathml">
+	<pre>
+   &lt;apply&gt;&lt;union/&gt;
+     &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+     &lt;domainofapplication&gt;&lt;ci&gt;D&lt;/ci&gt;&lt;/domainofapplication&gt;
+     &lt;ci&gt;expression-in-x&lt;/ci&gt;
+   &lt;/apply&gt;
+	</pre>
+       </div>
+       is rewritten to
+
+       <div class="example strict-mathml">
+	<pre>
+   &lt;apply&gt;&lt;csymbol cd="fns2"&gt;apply_to_list&lt;/csymbol&gt;
+     &lt;csymbol cd="set1"&gt;union&lt;/csymbol&gt;
+     &lt;apply&gt;&lt;csymbol cd="list1"&gt;map&lt;/csymbol&gt;
+       &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+         &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+         &lt;ci&gt;expression-in-x&lt;/ci&gt;
+       &lt;/bind&gt;
+       &lt;ci&gt;D&lt;/ci&gt;
+     &lt;/apply&gt;
+   &lt;/apply&gt;
+	</pre>
+       </div>
+       </p>
+      </div>
+
+      <p>The above rule applies to all symbols in the listed classes.
+      In the case of <code>nary-set.class</code> the choice of Content
+      Dictionary to use depends on the <code class="attribute">type</code> attribute on the
+      <span>arguments</span>, defaulting to <a class="omcd" href="set1">set1</a>, but <a class="omcd" href="multiset1">multiset1</a>
+      should be used if <code class="attribute">type</code>=<code class="attributevalue">multiset</code>.</p>
+
+      <p>Note that the members of the <code>nary-constructor.class</code>, such
+      as <code class="element">vector</code>, use <em>constructor</em> syntax where the arguments and
+      qualifiers are given as children of the element rather than as
+      children of a containing <code class="element">apply</code>.  In this case, the above rules apply
+      with the analogous syntactic modifications.</p>
+
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_st">Such that</h5>
+     <p>Into a construction using the <a class="omsymbol" href="https://openmath.org/cd/set1#suchthat">suchthat</a> symbol
+     from the <a class="omcd" href="set1">set1</a> content dictionary in an <code class="element">apply</code> with bound
+     variables via the <a>Rewrite: apply bvar domainofapplication</a> rule.</p>
+
+     <p>In general, an application involving bound variables and (possibly)
+     <code class="element">domainofapplication</code> is rewritten using the following rule,
+     which makes the domain the first positional argument of the application,
+     and uses the lambda symbol to encode the variable bindings.
+     Certain classes of operator have alternative rules, as described below.</p>
+
+     <div class="strict-mathml-example" id="contm_dombind-strict"><dfn>Rewrite: apply bvar domainofapplication</dfn>
+
+      <p>A content MathML expression with bound variables and
+      <code class="element">domainofapplication</code>
+
+      <div class="example mathml-fragment">
+       <pre>
+         &lt;apply&gt;&lt;ci&gt;H&lt;/ci&gt;
+           &lt;bvar&gt;&lt;ci&gt;v1&lt;/ci&gt;&lt;/bvar&gt;
+	...
+           &lt;bvar&gt;&lt;ci&gt;vn&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;domainofapplication&gt;&lt;ci&gt;D&lt;/ci&gt;&lt;/domainofapplication&gt;
+           &lt;ci&gt;A1&lt;/ci&gt;
+	...
+           &lt;ci&gt;Am&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      is rewritten to
+
+      <div class="example mathml-fragment">
+       <pre>
+         &lt;apply&gt;&lt;ci&gt;H&lt;/ci&gt;
+           &lt;ci&gt;D&lt;/ci&gt;
+           &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+             &lt;bvar&gt;&lt;ci&gt;v1&lt;/ci&gt;&lt;/bvar&gt;
+	...
+             &lt;bvar&gt;&lt;ci&gt;vn&lt;/ci&gt;&lt;/bvar&gt;
+             &lt;ci&gt;A1&lt;/ci&gt;
+           &lt;/bind&gt;
+	...
+           &lt;bind&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
+             &lt;bvar&gt;&lt;ci&gt;v1&lt;/ci&gt;&lt;/bvar&gt;
+	...
+             &lt;bvar&gt;&lt;ci&gt;vn&lt;/ci&gt;&lt;/bvar&gt;
+             &lt;ci&gt;Am&lt;/ci&gt;
+           &lt;/bind&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      If there is no <code class="element">domainofapplication</code> qualifier the <code class="meta-code">&lt;ci&gt;D&lt;/ci&gt;</code> child is
+      omitted.</p>
+     </div>
+    </section>
+
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_tok">Rewrite token elements</h4>
+    <p>Rewrite non-strict token elements</p>
+
+    <section>
+     <h5 id="contm_p2s_cn">Numbers</h5>
+     <p>Rewrite numbers represented as <code class="element">cn</code> elements where the <code class="attribute">type</code>
+     attribute is one of <code class="attributevalue">e-notation</code>, <code class="attributevalue">rational</code>,
+     <code class="attributevalue">complex-cartesian</code>, <code class="attributevalue">complex-polar</code>,
+     <code class="attributevalue">constant</code> as strict <code class="element">cn</code> via rules
+     <a>Rewrite: cn sep</a>, <a>Rewrite: cn based_integer</a>
+     and <a>Rewrite: cn constant</a>.</p>
+
+     <div class="strict-mathml-example" id="contm-strict-cn-sep"><dfn>Rewrite: cn sep</dfn>
+
+      <p>If there are <code class="element">sep</code> children of the <code class="element">cn</code>,
+      then intervening text may be rewritten as <code class="element">cn</code>
+      elements.  If the <code class="element">cn</code> element containing <code class="element">sep</code>
+      also has a <code class="attribute">base</code> attribute, this is copied to each
+      of the <code class="element">cn</code> arguments of the resulting symbol, as
+      shown below.</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;cn type="rational" base="b"&gt;n&lt;sep/&gt;d&lt;/cn&gt;
+       </pre>
+      </div>
+
+      <p> is rewritten to</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="nums1"&gt;rational&lt;/csymbol&gt;
+           &lt;cn type="integer" base="b"&gt;n&lt;/cn&gt;
+           &lt;cn type="integer" base="b"&gt;d&lt;/cn&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>The symbol used in the result depends on the <code class="attribute">type</code> attribute according to the following table:</p>
+
+      <table id="contm_table-cntype" border="1">
+
+       <thead>
+
+        <tr>
+
+         <td>type attribute</td>
+
+         <td>OpenMath Symbol</td>
+        </tr>
+       </thead>
+
+       <tbody>
+
+        <tr>
+
+         <td>e-notation</td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/bigfloat1#bigfloat">bigfloat</a></td>
+        </tr>
+
+        <tr>
+
+         <td>rational</td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/nums1#rational">rational</a></td>
+        </tr>
+
+        <tr>
+
+         <td>complex-cartesian</td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/complex1#complex_cartesian">complex_cartesian</a></td>
+        </tr>
+
+        <tr>
+
+         <td>complex-polar</td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/complex1#complex_polar">complex_polar</a></td>
+        </tr>
+       </tbody>
+      </table>
+
+      <p>Note: In the case of <a class="omsymbol" href="https://openmath.org/cd/bigfloat1#bigfloat">bigfloat</a> the symbol
+      takes three arguments, <code>&lt;cn type="integer"&gt;10&lt;/cn&gt;</code> should be inserted as the second argument, denoting the base of the exponent used.</p>
+
+      <p>If the <code class="attribute">type</code> attribute has a different value,
+      or if there is more than one <code class="emptytag">&lt;sep/&gt;</code> element,
+      then the intervening expressions are converted as above,
+      but a system-dependent choice of symbol for the head of the application must be used.</p>
+
+      <p>If a base attribute has been used then the resulting expression is not Strict Content
+      MathML, and each of the arguments needs to be recursively processed.</p>
+     </div>
+
+     <div class="strict-mathml-example" id="contm_cn-base"><dfn>Rewrite: cn based_integer</dfn>
+
+      <p>A <code class="element">cn</code> element with a base attribute other than 10 is rewritten as follows. (A base attribute
+      with value 10 is simply removed) .</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;cn type="integer" base="16"&gt;FF60&lt;/cn&gt;
+       </pre>
+      </div>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="nums1"&gt;based_integer&lt;/csymbol&gt;
+           &lt;cn type="integer"&gt;16&lt;/cn&gt;
+           &lt;cs&gt;FF60&lt;/cs&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>If the original element specified type <code class="attributevalue">integer</code>
+      or if there is no type attribute, but the content of the
+      element just consists of the characters [a-zA-Z0-9] and white space
+      then the symbol used as the head in the resulting application should
+      be <a class="omsymbol" href="https://openmath.org/cd/nums1#based_integer">based_integer</a> as shown. Otherwise it
+      should be should be <a class="omsymbol" href="https://openmath.org/cd/nums1#based_float">based_float</a>.</p>
+     </div>
+     <div class="strict-mathml-example" id="contm_cn_strict_const"><dfn>Rewrite: cn constant</dfn>
+
+      <p>In Strict Content MathML, constants should be represented using
+      <code class="element">csymbol</code> elements.  A number of important constants are defined in the
+      <a class="omcd" href="nums1">nums1</a> content dictionary. An expression of the form
+
+      <div class="example mathml">
+       <pre>&lt;cn type="constant"&gt;c&lt;/cn&gt;</pre>
+      </div>
+      has the Strict Content MathML equivalent
+
+      <div class="example strict-mathml">
+       <pre>&lt;csymbol cd="nums1"&gt;c2&lt;/csymbol&gt;</pre>
+      </div>
+      where <code class="meta-code">c2</code>  corresponds to <code class="meta-code">c</code> as specified in the following table.</p>
+
+      <table id="contm_table-pragnum" border="1">
+
+       <thead>
+
+        <tr>
+         <td>Content</td>
+         <td>Description</td>
+         <td>OpenMath Symbol</td>
+        </tr>
+       </thead>
+
+       <tbody>
+
+        <tr>
+         <td>U+03C0 (<code>&amp;pi;</code>)</td>
+         <td>The usual <i class="var">&#x3c0;</i> of trigonometry: approximately 3.141592653...</td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/nums1#pi">pi</a></td>
+        </tr>
+
+        <tr>
+         <td>U+2147 (<code>&amp;ExponentialE;</code> or <code>&amp;ee;</code>)</td>
+         <td>The base for natural logarithms: approximately 2.718281828...</td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/nums1#e">e</a></td>
+        </tr>
+
+        <tr>
+         <td>U+2148 (<code>&amp;ImaginaryI;</code> or <code>&amp;ii;</code>)</td>
+         <td>Square root of -1</td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/nums1#i">i</a></td>
+        </tr>
+
+        <tr>
+         <td>U+03B3 (<code>&amp;gamma;</code>)</td>
+         <td>Euler's constant: approximately 0.5772156649...</td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/nums1#gamma">gamma</a></td>
+        </tr>
+
+        <tr>
+         <td>U+221E (<code>&amp;infin;</code> or <code>&amp;infty;</code>)</td>
+         <td>Infinity. Proper interpretation varies with context</td>
+         <td><a class="omsymbol" href="https://openmath.org/cd/nums1#infinity">infinity</a></td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+
+    </section>
+
+    <section>
+     <h5 id="contm_p2s_ci">Token presentation</h5>
+     <p>Rewrite any <code class="element">ci</code>, <code class="element">csymbol</code> or <code class="element">cn</code> containing
+     presentation MathML to <code class="element">semantics</code> elements with rules
+     <a>Rewrite: cn presentation mathml</a> and <a>Rewrite: ci presentation mathml</a> and
+     the analogous rule for <code class="element">csymbol</code>.</p>
+
+     <div class="strict-mathml-example" id="contm_cn_pres"><dfn>Rewrite: cn presentation mathml</dfn>
+
+      <p>If the <code class="element">cn</code> contains Presentation MathML markup, then it may
+      be rewritten to Strict MathML using variants of the rules above where
+      the arguments of the constructor are <code class="element">ci</code> elements annotated
+      with the supplied Presentation MathML.</p>
+
+      <p>A <code class="element">cn</code> expression with non-text content of the form
+
+      <div class="example mathml">
+       <pre>
+         &lt;cn type="rational"&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;sep/&gt;&lt;mi&gt;Q&lt;/mi&gt;&lt;/cn&gt;
+       </pre>
+      </div>
+      is transformed to Strict Content MathML by rewriting it to
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="nums1"&gt;rational&lt;/csymbol&gt;
+           &lt;semantics&gt;
+             &lt;ci&gt;p&lt;/ci&gt;
+             &lt;annotation-xml encoding="MathML-Presentation"&gt;
+               &lt;mi&gt;P&lt;/mi&gt;
+             &lt;/annotation-xml&gt;
+           &lt;/semantics&gt;
+           &lt;semantics&gt;
+             &lt;ci&gt;q&lt;/ci&gt;
+             &lt;annotation-xml encoding="MathML-Presentation"&gt;
+               &lt;mi&gt;Q&lt;/mi&gt;
+             &lt;/annotation-xml&gt;
+           &lt;/semantics&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      Where the identifier names, p and q, (which have to be a text string) should be
+      determined from the presentation MathML content, in a system defined way, perhaps
+      as
+      in the above example by taking the character data of the element ignoring any element
+      markup.  Systems doing such rewriting should ensure that constructs using the same
+      Presentation MathML content are rewritten to <code class="element">semantics</code> elements using the
+      same <code class="element">ci</code>, and that conversely constructs that use different MathML should be
+      rewritten to different identifier names (even if the Presentation MathML has  the
+      same character data).
+      </p>
+
+      <p>A related special case arises when a <code class="element">cn</code> element
+      contains character data not permitted in Strict Content MathML
+      usage, e.g. non-digit, alphabetic characters.  Conceptually, this is
+      analogous to a <code class="element">cn</code> element containing a presentation
+      markup <code class="element">mtext</code> element, and could be rewritten accordingly.
+      However, since the resulting annotation would contain no additional
+      rendering information, such instances should be rewritten directly
+      as <code class="element">ci</code> elements, rather than as a <code class="element">semantics</code>
+      construct.</p>
+
+     </div>
+
+     <p>The <code class="element">ci</code> element can contain
+     <code class="element">mglyph</code> elements to refer to characters not currently available in Unicode, or a
+     general presentation construct (see <a href="#presm_summary"></a>), which is used for
+     rendering (see <a href="#contm_rendering"></a>).</p>
+
+     <div class="strict-mathml-example" id="contm_ci_pres"><dfn>Rewrite: ci presentation mathml</dfn>
+
+      <p>A <code class="element">ci</code> expression with non-text content of the form
+
+      <div class="example mathml">
+       <pre>&lt;ci&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/ci&gt;</pre>
+      </div>
+      is transformed to Strict Content MathML by rewriting it to
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;semantics&gt;
+           &lt;ci&gt;p&lt;/ci&gt;
+           &lt;annotation-xml encoding="MathML-Presentation"&gt;
+             &lt;mi&gt;P&lt;/mi&gt;
+           &lt;/annotation-xml&gt;
+         &lt;/semantics&gt;
+       </pre>
+      </div>
+      Where the identifier name, p, (which has to be a text string) should be
+      determined from the presentation MathML content, in a system defined way, perhaps
+      as
+      in the above example by taking the character data of the element ignoring any element
+      markup.  Systems doing such rewriting should ensure that constructs using the same
+      Presentation MathML content are rewritten to <code class="element">semantics</code> elements using the
+      same <code class="element">ci</code>, and that conversely constructs that use different MathML should be
+      rewritten to different identifier names (even if the Presentation MathML has  the
+      same character data).
+      </p>
+     </div>
+
+     <div class="strict-mathml-example" id="contm_ci_c2">
+
+      <p> The following example encodes an atomic
+      symbol that displays visually as <i class="var">C</i><sup>2</sup> and that,
+      for purposes of content, is treated as a single symbol</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;ci&gt;
+           &lt;msup&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+         &lt;/ci&gt;
+       </pre>
+      </div>
+
+      <p>The Strict Content MathML equivalent is</p>
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;semantics&gt;
+           &lt;ci&gt;C2&lt;/ci&gt;
+           &lt;annotation-xml encoding="MathML-Presentation"&gt;
+             &lt;msup&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+           &lt;/annotation-xml&gt;
+         &lt;/semantics&gt;
+       </pre>
+      </div>
+
+      <p>Sample Presentation</p>
+
+      <div class="example mathml">
+       <pre>
+         &lt;msup&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+       </pre>
+      </div>
+
+      <blockquote>
+       <p><img src="image/contm_ci_c2.gif" alt="{\msup{C}{{2}}}"></img></p>
+      </blockquote>
+     </div>
+
+    </section>
+
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_op">Rewrite operators</h4>
+    <p>Rewrite any remaining operator defined in <a href="#contm_opel"></a>
+    to a <code class="element">csymbol</code> referencing the symbol identified in the syntax table by the rule
+    <a>Rewrite: element</a>. As noted in the descriptions of each
+    operator element, some require special case rules to determine the proper choice
+    of symbol.
+    Some cases of particular note are:
+    </p>
+    <ol>
+
+     <li>
+      <p>The order of the arguments for the
+      <a class="intref" href="#contm_selector"><code class="element">selector</code></a> operator must be
+      rewritten, and the symbol depends on the type of the arguments.</p>
+     </li>
+
+     <li>
+      <p>The choice of symbol for the <a class="intref" href="#contm_minus"><code class="element">minus</code></a>
+      operator depends on the number of the arguments.</p>
+     </li>
+
+     <li>
+      <p>The choice of symbol for some set operators depends on the values of
+      the <code class="attribute">type</code> of the arguments.</p>
+     </li>
+
+     <li>
+      <p>The choice of symbol for some statistical operators depends on the values of
+      the types of the arguments.</p>
+     </li>
+
+     <li>
+      <p>The choice of symbol for the <code class="element">emptyset</code> element depends on context.</p>
+     </li>
+    </ol>
+
+    <section>
+    <h5 id="contm_p2s_minus">Rewrite the <code class="element">minus</code> operator</h5>
+    <p>The <code class="element">minus</code> element can be used as a <em>unary arithmetic operator</em>
+    (e.g. to represent - <i class="var">x</i>), or as a <em>binary arithmetic operator</em>
+    (e.g. to represent <i class="var">x</i>- <i class="var">y</i>).</p>
+
+    <p>If it is used with one argument, <code class="element">minus</code> corresponds to the <a class="omsymbol" href="https://openmath.org/cd/arith1#unary_minus">unary_minus</a> symbol.</p>
+
+    <p>If it is used with two arguments, <code class="element">minus</code> corresponds to the
+    <a class="omsymbol" href="https://openmath.org/cd/arith1#minus">minus</a> symbol</p>
+
+    <p>In both cases, the translation to Strict Content markup is direct,
+    as described in <a>Rewrite: element</a>. It is merely a
+    matter of choosing the symbol that reflects the actual usage.</p>
+    </section>
+
+    <section>
+    <h5 id="contm_p2s_setops">Rewrite the set operators</h5>
+
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code>
+     has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="https://openmath.org/cd/multiset1#in">in</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should
+     be used instead.</p>
+
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#notin">notin</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#subset">subset</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#prsubset">prsubset</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+k
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#notsubset">notsubset</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#notprsubset">notprsubset</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code> has value <code class="attributevalue">multiset</code>, then
+     the <a class="omsymbol" href="https://openmath.org/cd/multiset1#setdiff">setdiff</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used instead.</p>
+
+     <p>When translating to Strict Content Markup, if the <code class="attribute">type</code>
+     has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="https://openmath.org/cd/multiset1#size">size</a> symbol from <a class="omcd" href="multiset1">multiset1</a> should be used
+     instead.</p>
+    </section>
+
+    <section>
+    <h5 id="contm_p2s_statops">Rewrite the statistical operators</h5>
+
+     <p>When the <code class="element">mean</code> element is applied to an explicit list of arguments, the
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#mean">mean</a> symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
+     <a>Rewrite: element</a>. When it is applied to a distribution, then the
+     <a class="omsymbol" href="https://openmath.org/cd/s_dist1#mean">mean</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
+     dictionary should be used.  In the case with qualifiers use <a>Rewrite: n-ary domainofapplication</a>
+     with the same caveat.</p>
+
+     <p>When the <code class="element">sdev</code> element is applied to an explicit list of arguments, the
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#sdev">sdev</a>
+     symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
+     <a>Rewrite: element</a>. When it is applied to a distribution, then the
+     <a class="omsymbol" href="https://openmath.org/cd/s_dist1#sdev">sdev</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
+     dictionary should be used. In the case with qualifiers use
+     <a>Rewrite: n-ary domainofapplication</a> with the same caveat.</p>
+
+     <p>When the <code class="element">variance</code> element is applied to an explicit list of arguments, the
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#variance">variance</a>
+     symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
+     <a>Rewrite: element</a>. When it is applied to a distribution, then the
+     <a class="omsymbol" href="https://openmath.org/cd/s_dist1#variance">variance</a> symbol from the <a class="omcd" href="s_dist1">s_dist1</a> content
+     dictionary should be used. In the case with qualifiers use <a>Rewrite: n-ary domainofapplication</a>
+     with the same caveat.</p>
+
+     <p>When the <code class="element">median</code> element is applied to an explicit list of arguments, the
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#median">median</a>
+     symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
+     <a>Rewrite: element</a>.</p>
+
+     <p>When the <code class="element">mode</code> element is applied to an explicit list of arguments, the
+     translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#mode">mode</a>
+     symbol from the <a class="omcd" href="s_data1">s_data1</a> content dictionary, as described in
+     <a>Rewrite: element</a>.</p>
+
+    </section>
+
+    <section>
+    <h5 id="contm_p2s_emptyset">Rewrite the <code class="element">emptyset</code> operator</h5>
+
+      <p>In some situations, it may be clear from context that <code class="element">emptyset</code>
+      corresponds to the <a class="omsymbol" href="https://openmath.org/cd/multiset1#emptyset">emptyset</a> symbol from the <a class="omcd" href="multiset1">multiset1</a> content dictionary.
+      However, as there is no method other than annotation for an author to explicitly indicate
+      this,
+      it is always acceptable to translate to the <a class="omsymbol" href="https://openmath.org/cd/set1#emptyset">emptyset</a> symbol from the <a class="omcd" href="set1">set1</a> content dictionary.</p>
+
+    </section>
+
+   </section>
+
+   <section>
+    <h4 id="contm_p2s_att">Rewrite attributes</h4>
+
+    <section>
+    <h5 id="contm_p2s_att_type">Rewrite the <code class="attribute">type</code> attribute</h5>
+     <p>
+     At this point, all elements
+     that accept the <code class="attribute">type</code>, other than <code class="element">ci</code> and <code class="element">csymbol</code>, should have been
+     rewritten into Strict Content Markup equivalents without <code class="attribute">type</code> attributes,
+     where type information is reflected in the choice of operator symbol. Now rewrite remaining
+     <code class="element">ci</code> and <code class="element">csymbol</code> elements with a <code class="attribute">type</code> attribute to a
+     strict expression with <code class="element">semantics</code> according to rules
+     <a>Rewrite: ci type annotation</a><span> and <a>Rewrite: csymbol type annotation</a></span>.</p>
+
+     <div class="strict-mathml-example" id="contm_ci_strict_ex"><dfn>Rewrite: ci type annotation</dfn>
+
+      <p>In Strict Content, type attributes are represented via
+      semantic attribution. An expression of the form
+
+      <div class="example mathml">
+       <pre>&lt;ci type="T"&gt;n&lt;/ci&gt;</pre>
+      </div>
+      is rewritten to
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;semantics&gt;
+           &lt;ci&gt;n&lt;/ci&gt;
+           &lt;annotation-xml cd="mathmltypes" name="type" encoding="MathML-Content"&gt;
+             &lt;ci&gt;T&lt;/ci&gt;
+           &lt;/annotation-xml&gt;
+         &lt;/semantics&gt;
+       </pre>
+      </div>
+      </p>
+     </div>
+
+     <p>In non-Strict usage <code class="element">csymbol</code> allows the use of
+     a <code class="attribute">type</code> attribute.</p>
+
+     <div class="strict-mathml-example" id="contm_csymbol_strict_ex"><dfn>Rewrite: csymbol type annotation</dfn>
+
+      <p>In Strict Content, type attributes are represented via
+      semantic attribution. An expression of the form
+
+      <div class="example mathml">
+       <pre>&lt;csymbol type="T"&gt;symbolname&lt;/csymbol&gt;</pre>
+      </div>
+      is rewritten to
+
+      <div class="example strict-mathml">
+       <pre>
+         &lt;semantics&gt;
+           &lt;csymbol&gt;symbolname&lt;/csymbol&gt;
+           &lt;annotation-xml cd="mathmltypes" name="type" encoding="MathML-Content"&gt;
+             &lt;ci&gt;T&lt;/ci&gt;
+           &lt;/annotation-xml&gt;
+         &lt;/semantics&gt;
+       </pre>
+      </div>
+      </p>
+     </div>
+
+    </section>
+
+    <section>
+    <h5 id="contm_p2s_att_defn">Rewrite <code class="attribute">definitionURL</code> and <code class="attribute">encoding</code> attributes</h5>
+    <p>
+    If the <code class="attribute">definitionURL</code> and <code class="attribute">encoding</code> attributes on a
+    <code class="element">csymbol</code> element can be interpreted as a reference to a
+    content dictionary (see <a href="#contm_csymbol_extended"></a> for details), then
+    rewrite to reference the content dictionary by the <code class="attribute">cd</code> attribute instead.
+    </p>
+    </section>
+
+    <section>
+    <h5 id="contm_p2s_att_att">Rewrite attributes</h5>
+    <p>Rewrite any element with attributes that are
+    not allowed in strict markup to a <code class="element">semantics</code> construction with
+    the element without these attributes as the first child and the attributes in
+    <code class="element">annotation</code> elements by rule <a>Rewrite: attributes</a>.</p>
+
+    <p>A number of content MathML elements such as <code class="element">cn</code> and
+    <code class="element">interval</code> allow attributes to specialize the semantics of the
+    objects they represent.  For these cases, special rewrite rules are
+    given on a case-by-case basis in <a href="#contm_opel"></a>. However,
+    content MathML elements also accept <a class="intref" href="#fund_globatt">attributes shared all MathML elements</a>, and
+    depending on the context, may also contain attributes from other XML
+    namespaces.  Such attributes must be rewritten in alternative form in
+    Strict Content Markup.</p>
+
+    <div class="strict-mathml-example" id="contm_strict-attributes"><dfn>Rewrite: attributes</dfn>
+
+     <p> For instance,
+
+     <div class="example mathml">
+      <pre>
+        &lt;ci class="foo" xmlns:other="http://example.com" other:att="bla"&gt;x&lt;/ci&gt;
+      </pre>
+     </div>
+     is rewritten to
+
+     <div class="example strict-mathml">
+      <pre>
+        &lt;semantics&gt;
+          &lt;ci&gt;x&lt;/ci&gt;
+          &lt;annotation cd="mathmlattr"
+       name="class" encoding="text/plain"&gt;foo&lt;/annotation&gt;
+            &lt;annotation-xml cd="mathmlattr" name="foreign" encoding="MathML-Content"&gt;
+              &lt;apply&gt;&lt;csymbol cd="mathmlattr"&gt;foreign_attribute&lt;/csymbol&gt;
+                &lt;cs&gt;http://example.com&lt;/cs&gt;
+                &lt;cs&gt;other&lt;/cs&gt;
+                &lt;cs&gt;att&lt;/cs&gt;
+                &lt;cs&gt;bla&lt;/cs&gt;
+              &lt;/apply&gt;
+            &lt;/annotation-xml&gt;
+          &lt;/semantics&gt;
+      </pre>
+     </div>
+
+     For MathML attributes not allowed in Strict Content MathML the content
+     dictionary <a class="omcd" href="mathmlattr">mathmlattr</a> is referenced, which provides
+     symbols for all attributes allowed on content MathML
+     elements.</p>
+    </div>
+
+    </section>
+   </section>
+
+  </section>
