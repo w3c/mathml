@@ -9,33 +9,27 @@
 
   <p>This chapter specifies the <span>&#x201c;presentation&#x201d;</span> elements of
   MathML, which can be used to describe the layout structure of mathematical
-  notation.</p>
+  notation.
+  </p><p>
+  Most of Presentation Markup is included in [[Mathml-Core]].
+  That specification should be consulted to for the precise details of displaying the elements and attributes
+  that are part of core when displayed in web browsers.
+  Outside of web browsers, MathML presentation elements only suggest (i.e. do not require)
+    specific ways of rendering in order to allow for medium-dependent
+    rendering and for individual preferences of style.
+    Non browser-based renderers are free to use their own layout rules as long as the
+    renderings are intelligible.</p>
+  <p>The names used for presentation elements are suggestive of their visual layout.
+    However, mathematical notation has a long history of being reused as new concepts are developed.
+    Because of this, an element such as <code class="element">mfrac</code> maybe not actually be a fraction and the
+    <code class="attribute">intent</code> attribute should be used to provide information for auditory renderings.
+  </p><p>
+  This chapter describes all of the presentation elements and attributes of MathML along with examples that might clarify usage.
+  </p>
+
 
   <section>
-   <h4>What Presentation Elements Represent</h4>
-   <div class="issue" data-number="265"></div>
-
-   <p>Presentation elements correspond to the <span>&#x201c;constructors&#x201d;</span>
-   of traditional mathematical notation &#x2014;  that is, to the basic
-   kinds of symbols and expression-building structures out of which any
-   particular piece of traditional mathematical notation is built.
-   Because of the importance of traditional visual notation, the
-   descriptions of the notational constructs the elements represent are
-   usually given here in visual terms.  However, the elements are
-   medium-independent in the sense that they have been designed to
-   contain enough information for good spoken renderings as well.  Some
-   attributes of these elements may make sense only for visual media, but
-   most attributes can be treated in an analogous way in audio as well
-   (for example, by a correspondence between time duration and horizontal
-   extent).</p>
-
-   <p>MathML presentation elements only suggest (i.e. do not require)
-   specific ways of rendering in order to allow for medium-dependent
-   rendering and for individual preferences of style.  This specification
-   describes suggested visual rendering rules in some detail, but a
-   particular MathML renderer is free to use its own rules as long as its
-   renderings are intelligible.</p>
-
+   <h4>Presentation MathML Structure</h4>
    <p>The presentation elements are meant to express the syntactic
    structure of mathematical notation in much the same way as titles, sections,
    and paragraphs capture the higher-level syntactic structure of a
@@ -66,6 +60,10 @@
    known ahead of time to the document author. It also greatly eases automatic
    interpretation of the represented mathematical structures.</p>
 
+   <p class="note">This paragraph is wordy and maybe belongs in the informative section except that it
+     contains "should" information which makes it normative.
+   </p>
+
    <p>Certain characters are used
    to name identifiers or operators that in traditional notation render the
    same as other symbols or usually rendered invisibly.  For example, the entities
@@ -95,88 +93,37 @@
   <section>
    <h4>Terminology Used In This Chapter</h4>
 
-   <p>It is strongly recommended that, before reading the present
-   chapter, one read <a href="#fund_syntax"></a> on MathML syntax and
-   grammar, which contains important information on MathML notations and
-   conventions.  In particular, in this chapter it is assumed that the
-   reader has an understanding of basic XML terminology described in
-   <a href="#fund_xmlsyntax"></a>, and the attribute value notations and
-   conventions described in <a href="#fund_attval"></a>.</p>
-
-   <p>The remainder of this section introduces MathML-specific
-   terminology and conventions used in this chapter.</p>
-
-   <section>
-    <h5>Types of presentation elements</h5>
-
     <p>The presentation elements are divided into two classes.
     <a class="intref" href="#presm_tokel"><em>Token elements</em></a>
     represent individual symbols, names, numbers, labels, etc.
     <em>Layout schemata</em> build expressions out of parts and can have
-    only elements as content (except for whitespace, which they ignore).
+    only elements as content.
     These are subdivided into
     <a class="intref" href="#presm_genlayout">General Layout</a>,
     <a class="intref" href="#presm_scrlim">Script and Limit</a>,
     <a class="intref" href="#presm_tabmat">Tabular Math</a> and
     <a class="intref" href="#presm_elementary">Elementary Math</a> schemata.
-    There
-    are also a few empty elements used only in conjunction with certain layout
-    schemata.</p>
+    There are also a few empty elements used only in conjunction with certain layout schemata.</p>
 
     <p>All individual <span>&#x201c;symbols&#x201d;</span> in a mathematical expression should be
-    represented by MathML token elements. The primary MathML token element
+    represented by MathML token elements (e.g., <code>&lt;mn&gt;24&lt;/mn&gt;</code>). The primary MathML token element
     types are identifiers (e.g. variables or function names), numbers, and
     operators (including fences, such as parentheses, and separators, such
     as commas). There are also token elements used to represent text or
     whitespace that has more aesthetic than mathematical significance
     and other elements representing <span>&#x201c;string literals&#x201d;</span> for compatibility with
-    computer algebra systems. Note that although a token element
-    represents a single meaningful <span>&#x201c;symbol&#x201d;</span> (name, number, label,
-    mathematical symbol, etc.), such symbols may be comprised of more than
-    one character.  For example <code>sin</code> and <code>24</code> are
-    represented by the single tokens <code>&lt;mi&gt;sin&lt;/mi&gt;</code>
-    and <code>&lt;mn&gt;24&lt;/mn&gt;</code> respectively.</p>
+    computer algebra systems.</p>
 
-    <p>In traditional mathematical notation, expressions are recursively
-    constructed out of smaller expressions, and ultimately out of single
-    symbols, with the parts grouped and positioned using one of a small
-    set of notational structures, which can be thought of as <span>&#x201c;expression
-    constructors&#x201d;</span>. In MathML, expressions are constructed in the same way,
-    with the layout schemata playing the role of the expression
-    constructors. The layout schemata specify the way in which
-    sub-expressions are built into larger expressions. The terminology
-    derives from the fact that each layout schema corresponds to a
-    different way of <span>&#x201c;laying out&#x201d;</span> its sub-expressions to form a larger
-    expression in traditional mathematical typesetting.</p>
-   </section>
-
-   <section>
-    <h5>Terminology for other classes of elements and their relationships</h5>
-
-    <p>The terminology used in this chapter for special classes of elements, and for
-    relationships between elements, is as follows: The <em>presentation elements</em> are
-    the MathML elements defined in this chapter.
-    These elements are listed in <a href="#presm_summary"></a>.
-    The <em>content elements</em> are the MathML elements defined
-    in <a href="#contm"></a>.</p>
-
-    <p>A MathML <em>expression</em> is a single instance of any of the
-    presentation elements with the exception of the empty elements
-    <code class="element">none</code> or <code class="element">mprescripts</code>,
-    or is a single instance of any of the content elements which are allowed as
-    content of presentation elements (described in <a href="#mixing_cminpm"></a>).
-    A <em>sub-expression</em> of an expression
-    <i class="var">E</i> is any MathML expression that is part of the content of
-    <i class="var">E</i>, whether <em>directly</em> or <em>indirectly</em>,
-    i.e. whether it is a <span>&#x201c;child&#x201d;</span> of <i class="var">E</i> or not.</p>
-
-    <p>Since layout schemata attach special meaning to the number and/or
-    positions of their children, a child of a layout schema is also called
+    <p>The layout schemata specify the way in which
+    sub-expressions are built into larger expressions such as fraction and scripted expressions.
+    Layout schemata attach special meaning to the number and/or
+    positions of their children.
+    A child of a layout schema is also called
     an <em>argument</em> of that element.  As a consequence of the
     above definitions, the content of a layout schema consists exactly of
     a sequence of zero or more elements that are its
-    arguments. </p>
-   </section>
+    arguments.
+  </p>
   </section>
 
   <section>
@@ -213,25 +160,6 @@
     </p>
 
     <p>For example,
-
-    <div class="example mathml-fragment">
-     <pre>
-       &lt;mtd&gt;
-       &lt;/mtd&gt;
-     </pre>
-    </div>
-    is treated as if it were
-
-    <div class="example mathml-fragment">
-     <pre>
-       &lt;mtd&gt;
-         &lt;mrow&gt;
-         &lt;/mrow&gt;
-       &lt;/mtd&gt;
-     </pre>
-    </div>
-    and
-
     <div class="example mathml">
      <pre>
        &lt;msqrt&gt;
@@ -503,6 +431,8 @@
   and the overall directionality represented by Layout Schemata.
   These two facets are discussed below.</p>
 
+  <p class="note">Probably need to add a little discussion of vertical languages here (and their current lack of support)</p>
+
   <section>
    <h5 id="presm_bidi_math">Overall Directionality of Mathematics Formulas</h5>
 
@@ -545,7 +475,7 @@
    is displayed straightforwardly in the given direction.
    When a mixture of directions is involved used, such as RTL Arabic
    and LTR numbers, the Unicode bidirectional algorithm [[Bidi]]
-   is applied.  This algorithm specifies how runs of characters
+   should be applied.  This algorithm specifies how runs of characters
    with the same direction are processed and how the runs are (re)ordered.
    The base, or initial, direction is given by the overall directionality
    described above (<a href="#presm_bidi_math"></a>) and affects
@@ -578,10 +508,10 @@
    it is important to apply such shaping if possible.  Glyph shaping,
    like directionality, applies to each token element's contents individually.</p>
 
-   <p>Please note that for the transfinite cardinals represented
+   <p>Note that for the transfinite cardinals represented
    by Hebrew characters, the code points U+2135-U+2138 (ALEF SYMBOL,
-   BET SYMBOL, GIMEL SYMBOL, DALET SYMBOL) should be used.
-   These are strong left-to-right.</p>
+   BET SYMBOL, GIMEL SYMBOL, DALET SYMBOL) should be used be used in MathML, not the alphabetic look-alike code points.
+   These code points are strong left-to-right.</p>
   </section>
 
  </section>
@@ -708,14 +638,14 @@
     and the display engine determines that there is not enough space available to
     display the entire formula.  The available width must therefore be known
     to the renderer. Like font properties, one is assumed to be inherited from the environment
-    in
-    which the MathML element lives. If no width can be determined, an
+    in which the MathML element lives. If no width can be determined, an
     infinite width should be assumed. Inside of a <code class="element">mtable</code>,
     each column has some width. This width may be specified as an attribute
     or determined by the contents. This width should be used as the
     line wrapping width for linebreaking, and each entry in an <code class="element">mtable</code>
    is linewrapped as needed. </p>
 
+   <div class="issue" data-number="304">(mspace's @linebreak)</div>
    <p>Forced linebreaks are specified by using
    <code class="attribute">linebreak</code>=<code class="attributevalue">newline</code>
    on a <code class="element">mo</code> or <code class="element">mspace</code> element.
@@ -772,210 +702,8 @@
 
   </section>
 
-  <section>
-   <h5 id="presm_lbalgorithm">Automatic Linebreaking Algorithm (Informative)</h5>
-
-   <p>One method of linebreaking that works reasonably well is sometimes referred
-   to as a "best-fit" algorithm. It works by computing a "penalty" for
-   each potential break point on a line. The break point with the smallest
-   penalty is chosen and the algorithm then works on the next line. Three
-   useful factors in a penalty calculation are:
-   </p>
-   <ol>
-
-    <li>
-     <p>How much of the line width (after subtracting of the indent) is unused?
-     The more unused, the higher the penalty. </p>
-    </li>
-
-    <li>
-     <p>How deeply nested is the breakpoint in the expression tree? The expression
-     tree's depth is roughly similar to the nesting depth of <code class="element">mrow</code>s.
-     The more deeply nested the break point, the higher the penalty. </p>
-    </li>
-
-    <li>
-     <p>Does a linebreak here make layout of the next line difficult?
-     If the next line is not the last line and if the indentingstyle uses
-     information about the linebreak point to determine how much to indent,
-     then the amount of room left for linebreaking on the next line must be considered;
-     i.e., linebreaks that leave very little room to draw the next line
-     result in a higher penalty.</p>
-    </li>
-
-    <li>
-     <p>Whether <code class="attributevalue">linebreak</code> has been specified:
-     <code class="attributevalue">nobreak</code> effectively sets the penalty to infinity,
-     <code class="attributevalue">badbreak</code> increases the penalty
-     <code class="attributevalue">goodbreak</code> decreases the penalty,
-     and <code class="attributevalue">newline</code> effectively sets the penalty to 0.</p>
-    </li>
-   </ol>
-
-   <p>This algorithm takes time proportional to the number of token elements times the number
-   of lines.</p>
-  </section>
-
-  <section>
-   <h5 id="presm_inline_lbalgorithm">Linebreaking Algorithm for Inline Expressions (Informative)</h5>
-
-   <p>
-    A common method for breaking inline expressions that are too long for the
-    space remaining on the current line is to pick an appropriate break point
-    for the expression and place the expression up to that point on the current line
-    and place the remainder of the expression on the following line.
-    This can be done by:
-   </p>
-   <ol>
-
-    <li>
-     <p>Querying the text processing engine for the
-     minimum and maximum amount of space available on the current line. </p>
-    </li>
-
-    <li>
-     <p>Using a variation of the automatic linebreaking algorithm
-     given <a class="intref" href="#presm_lbalgorithm">above</a>),
-     and/or using hints provided by <a class="intref" href="#presm_lbattrs">linebreak attributes</a>
-     on <code class="element">mo</code> or <code class="element">mspace</code> elements, to choose a line break.
-     The goal is that the first part of the formula fits "comfortably" on the current line
-     while breaking at a point that results in keeping related
-     parts of an expression on the same line. </p>
-    </li>
-
-    <li>
-     <p>The remainder of the formula begins on the next line,
-     positioned both vertically and horizontally according
-     to the paragraph flow;
-     MathML's <a class="intref" href="#presm_lbindent_attrs">indentation attributes</a>
-     are ignored in this algorithm.</p>
-    </li>
-
-    <li>
-     <p>If the remainder does not fit on a line,
-     steps 1 - 3 are repeated for the second and subsequent lines.
-     Unlike the for the first line,
-     some part of the expression must be placed these lines so that the algorithm terminates.</p>
-    </li>
-   </ol>
-
-  </section>
-
  </section>
 
- <section>
-  <h4 id="presm_warnfinetuning">Warning about fine-tuning of presentation</h4>
-
-  <p>Some use-cases require precise control of the math layout and presentation.
-  Several MathML elements and attributes expressly support such fine-tuning of the
-  rendering.  However, MathML rendering agents exhibit wide variability in their
-  presentation of the the same MathML expression due to difference in platforms,
-  font availability, and requirements particular to the agent itself
-  (see <a href="#presm_intro"></a>).
-  The overuse of explicit rendering control may yield a &#x2018;perfect&#x2019; layout on one platform,
-  but give much worse presentation on others.
-  The following sections clarify the kinds of problems that can occur.</p>
-
-  <section>
-   <h5 id="presm_warntweaking">Warning: non-portability of <span>&#x201c;tweaking&#x201d;</span></h5>
-
-   <p>For particular expressions, authors may be tempted to use the
-   <a class="intref" href="#presm_mpadded"><code class="element">mpadded</code></a>,
-   <a class="intref" href="#presm_mspace"><code class="element">mspace</code></a>,
-   <a class="intref" href="#presm_mphantom"><code class="element">mphantom</code></a>, and
-   <a class="intref" href="#presm_mtext"><code class="element">mtext</code></a> elements to improve
-   (<span>&#x201c;tweak&#x201d;</span>) the spacing generated by a specific renderer.</p>
-
-   <p>Without explicit spacing rules, various MathML renders may use different spacing
-   algorithms.  Consequently, different MathML renderers may position symbols in different
-
-   locations relative to each other.  Say that renderer B, for example, provides improved
-
-   spacing for a particular expression over renderer A.  Authors are strongly warned
-   that
-   <span>&#x201c;tweaking&#x201d;</span> the layout for renderer A may produce very poor results in renderer B,
-   very likely worse than without any explicit adjustment at all.</p>
-
-   <p>Even when a specific choice of renderer can be assumed, its spacing
-   rules may be improved in successive versions, so that the effect of
-   tweaking in a given MathML document may grow worse with time. Also,
-   when style sheet mechanisms are extended to MathML, even one version
-   of a renderer may use different spacing rules for users with different
-   style sheets.</p>
-
-   <p>Therefore, it is suggested that MathML markup never use
-   <code class="element">mpadded</code> or <code class="element">mspace</code> elements
-   to tweak the rendering of specific expressions, unless the MathML is
-   generated solely to be viewed using one specific version of one MathML
-   renderer, using one specific style sheet (if style sheets are
-   available in that renderer).</p>
-
-   <p>In cases where the temptation to improve spacing proves too strong,
-   careful use of <code class="element">mpadded</code>,
-   <code class="element">mphantom</code>, or the alignment elements (<a href="#presm_malign"></a>) may give more portable results than the
-   direct insertion of extra space using <code class="element">mspace</code> or
-   <code class="element">mtext</code>. Advice given to the implementers of MathML
-   renderers might be still more productive, in the long run.</p>
-  </section>
-
-  <section>
-   <h5 id="presm_warnspacing">Warning: spacing should not be used to convey meaning</h5>
-
-   <p>MathML elements that permit <span>&#x201c;negative spacing&#x201d;</span>, namely
-   <code class="element">mspace</code>, <code class="element">mpadded</code>, and
-   <code class="element">mo</code>, could in theory be used to simulate new
-   notations or <span>&#x201c;overstruck&#x201d;</span> characters by the visual overlap of the
-   renderings of more than one MathML sub-expression.</p>
-
-   <p>This practice is <em>strongly discouraged in all situations</em>,
-   for the following reasons:
-   </p>
-   <ul>
-
-    <li>
-     <p>it will give different results in different MathML renderers
-     (so the warning about <span>&#x201c;tweaking&#x201d;</span> applies)<span>, especially
-     if attempts are made to render glyphs outside the bounding box of
-     the MathML expression</span>;
-     </p>
-    </li>
-
-    <li>
-     <p>it is likely to appear much worse than a more standard construct
-     supported by good renderers;</p>
-    </li>
-
-    <li>
-     <p>such expressions are almost certain to be uninterpretable
-     by audio renderers, computer algebra systems,
-     text searches for standard symbols,
-     or other processors of MathML input.</p>
-    </li>
-
-   </ul>
-
-   <p>More generally, any construct that uses spacing to convey
-   mathematical meaning, rather than simply as an aid to viewing
-   expression structure, is discouraged. That is, the constructs that
-   are discouraged are those that would be interpreted differently by a
-   human viewer of rendered MathML if all explicit spacing was
-   removed.</p>
-
-   <p>Consider using the <a class="intref" href="#presm_mglyph"><code class="element">mglyph</code></a> element
-   for cases such as this.  If such spacing constructs are used in spite of this warning,
-   they should
-   be enclosed in a <code class="element">semantics</code> element that also
-   provides an additional MathML expression that can be interpreted in a
-   standard way. See <a href="#mixing_annotation_elements"></a> for further discussion.
-   </p>
-
-   <p>The above warning also applies to most uses of rendering
-   attributes to alter the meaning conveyed by an expression, with the
-   exception of attributes on <code class="element">mi</code> (such as <code class="attribute">mathvariant</code>)
-   used to distinguish one variable from another.</p>
-  </section>
-
- </section>
 
  <section>
   <h4 id="presm_summary">Summary of Presentation Elements</h4>
@@ -1266,7 +994,7 @@
      <td rowspan="2" class="attname">mathbackground</td>
      <td><a class="intref" href="#type_color"><em>color</em></a> | "transparent"</td>
      <td>transparent</td>
-     <td><span class="coreno"></span></td>
+     <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-mathbackground"></a></td>
     </tr>
 
     <tr>
@@ -1285,13 +1013,13 @@
   expressions, but are for use in highlighting or drawing attention
   to the affected subexpressions.  For example, a red "x" is not assumed
   to be semantically different than a black "x", in contrast to
-  variables with different <code class="attribute">mathvariant</code> (See <a href="#presm_commatt"></a>).</p>
+  variables with different <code class="attribute">mathvariant</code> values (See <a href="#presm_commatt"></a>).</p>
 
   <p>Since MathML expressions are often embedded in a textual data
   format such as <span>HTML</span>,
   the MathML renderer should inherit the
   foreground color used in the context in which the MathML appears.
-  Note, however, that MathML  doesn't specify the mechanism by which
+  Note, however, that MathML (in contrast to [[Mathml-Core]]) doesn't specify the mechanism by which
   style information is inherited from the rendering environment.
   <span>See <a href="#presm_commatt"></a> for more details.</span>
   </p>
@@ -1300,11 +1028,10 @@
   precise extent of the region whose background is affected by the
   <code class="attribute">mathbackground</code> attribute,
   except that, when the content does not have
-  negative dimensions and its drawing region is not overlapped by other
-  drawing due to surrounding negative spacing, this region should lie
-  behind all the drawing done to render the content, but should not lie behind any of
-  the
-  drawing done to render surrounding expressions. The effect of overlap
+  negative dimensions and its drawing region should not overlap with other
+  drawing due to surrounding negative spacing, should lie
+  behind all the drawing done to render the content, and should not lie behind any of
+  the drawing done to render surrounding expressions. The effect of overlap
   of drawing regions caused by negative spacing on the extent of the
   region affected by the <code class="attribute">mathbackground</code> attribute is not
   defined by these rules.</p>
@@ -1322,17 +1049,6 @@
  various categories and properties of token elements figure prominently in
  MathML markup.  By contrast, in textual data, individual words rarely
  need to be marked up or styled specially.</p>
-
- <p>Frequently, tokens consist of a single character denoting a
- mathematical symbol.  Other cases, e.g. function names, involve
- multi-character tokens.  Further, because traditional mathematical
- notation makes wide use of symbols distinguished by their
- typographical properties (e.g. a Fraktur 'g' for a Lie algebra, or a
- bold 'x' for a vector), care must be taken to insure that styling
- mechanisms respect typographical properties which carry meaning.
- Consequently, characters, tokens, and typographical properties of
- symbols are closely related to one another in MathML.
- </p>
 
  <p>Token elements represent
  identifiers (<a class="intref" href="#presm_mi"><code class="element">mi</code></a>),
@@ -1366,13 +1082,10 @@
 
   <p><span>Characters</span>
   can be either represented directly as Unicode character data, or indirectly via numeric
-  or
-  character entity references.  See <a href="#chars"></a> for a
-  discussion of the advantages and disadvantages of numeric
-  character references versus
-  entity references, and [[xml-entity-names]] for a full list of the entity names available.
-  Also, see <a href="#chars_anomalous"></a> for a discussion of the
-  appropriate character content to choose for certain applications.</p>
+  or character entity references.
+  Unicode contains a number of look-alike characters.
+  See [[MathML-Notes]] for a discussion of which characters are appropriate to use in which circumstance.
+  </p>
 
   <p>Token elements (other than <code class="element">mspace</code>) should
   be rendered as their content, if any, (i.e. in the visual case, as a
@@ -1386,48 +1099,10 @@
   also be respected (see <a href="#presm_bidi_token"></a>).
   </p>
 
-  <section>
-   <h5 id="presm_symbolchars">Alphanumeric symbol characters</h5>
-
-   <p>A large class of mathematical symbols are single letter identifiers
-   typically used as variable names in formulas.  Different font variants
-   of a letter are treated as separate symbols.  For example, a Fraktur
-   'g' might denote a Lie algebra, while a Roman 'g' denotes the
-   corresponding Lie group.  These letter-like symbols are traditionally
-   typeset differently than the same characters appearing in text, using
-   different spacing and ligature conventions.  These characters must
-   also be treated specially by style mechanisms, since arbitrary style
-   transformations can change meaning in an expression.</p>
-
-   <p>For these reasons, <span>Unicode contains</span>
-   more than nine hundred Math Alphanumeric Symbol characters
-   corresponding to letter-like symbols.  These characters are in the
-   Secondary Multilingual Plane (SMP).  See [[xml-entity-names]] for
-   more information.  As valid Unicode data, these characters are
-   permitted in MathML <span>and,</span> as tools and fonts for them become widely
-   available, we anticipate they will be the predominant way of denoting
-   letter-like symbols.</p>
-
-   <p><span>MathML also provides an alternative encoding
-   for these characters</span> using only Basic Multilingual Plane
-   (BMP) characters together with markup.  MathML defines a
-   correspondence between token elements with certain combinations of BMP
-   character data and the <code class="attribute">mathvariant</code> attribute and tokens
-   containing SMP Math Alphanumeric Symbol characters.  Processing
-   applications that accept SMP characters are required to treat the
-   corresponding BMP and attribute combinations identically.  <span>This is particularly important for applications that
-   support searching and/or equality testing.</span></p>
-
-   <p>The <code class="attribute">mathvariant</code> attribute is described in more detail in
-   <a href="#presm_commatt"></a>,
-   and a complete technical description of the corresponding characters is given in
-   <a href="#chars_BMP-SMP"></a>.</p>
-
-  </section>
 
   <section>
    <h5 id="presm_mglyph"><span>Using images to represent
-   symbols</span> <code class="defn emptytag">&lt;mglyph/&gt;</code></h5>
+   symbols</span> <code class="defn emptytag">&lt;mglyph/&gt;</code><span class="coreno"></span></h5>
 
    <section>
     <h6>Description</h6>
@@ -1564,7 +1239,7 @@
 
    </section>
 
-   <section>
+   <section class="fold">
     <h6>Example</h6>
 
     <p>The following example illustrates how a researcher might use
@@ -1689,7 +1364,7 @@
       "initial" | "tailed" | "looped" | "stretched"
      </td>
      <td>normal (<em>except on</em> <code class="starttag">&lt;mi&gt;</code>)</td>
-     <td><span class="coreno"></span></td>
+     <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-mathvariant"></a></td>
     </tr>
 
     <tr>
@@ -1703,7 +1378,7 @@
      <td rowspan="2" class="attname">mathsize</td>
      <td>"small" | "normal" | "big" | <a class="intref" href="#type_length"><em>length</em></a></td>
      <td><em>inherited</em></td>
-     <td><span class="coreno"></span></td>
+     <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-mathsize"></a></td>
     </tr>
 
     <tr>
@@ -1720,7 +1395,7 @@
      <td rowspan="2" class="attname">dir</td>
      <td>"ltr" | "rtl"</td>
      <td><em>inherited</em></td>
-     <td><span class="coreno"></span></td>
+     <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-dir"></a></td>
     </tr>
 
     <tr>
@@ -1835,6 +1510,7 @@
   in some of their children; see the discussion in <a href="#presm_scriptlevel"></a>.</p>
 
   <section>
+    <div class="issue" data-number="303"></div>
    <h5 id="presm_deprecatt">Deprecated style attributes on token elements <span class="coreno"></span></h5>
 
    <p>The MathML 1.01 style attributes listed below
@@ -2061,7 +1737,7 @@
       "initial" | "tailed" | "looped" | "stretched"
       </td>
       <td><em>(depends on content; described below)</em></td>
-      <td><span class="coreno"></span></td>
+      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-mathvariant"></a></td>
      </tr>
 
      <tr>
@@ -2082,13 +1758,13 @@
 
    <p>Note that for purposes of determining equivalences of Math
    Alphanumeric Symbol
-   characters (See <a href="#chars_BMP-SMP"></a> and <a href="#presm_symbolchars"></a>)
+   characters (See <a href="#chars_BMP-SMP"></a>)
    the value of the <code class="attribute">mathvariant</code> attribute should be resolved first,
    including the special defaulting behavior described above.
    </p>
   </section>
 
-  <section>
+  <section class="fold">
    <h5 id="presm_mi_examples">Examples</h5>
 
    <div class="example mathml">
@@ -2214,7 +1890,7 @@
    <p><code class="element">mn</code> elements accept the attributes listed in <a href="#presm_commatt"></a>.</p>
   </section>
 
-  <section>
+  <section class="fold">
    <h5 id="presm_mn_examples">Examples</h5>
 
    <div class="example mathml">
@@ -2407,7 +2083,7 @@
        <td rowspan="2" class="attname">form</td>
        <td>"prefix" | "infix" | "postfix"</td>
        <td><em>set by position of operator in an</em> <code class="element">mrow</code></td>
-       <td><span class="coreno"></span></td>
+       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-form"></a></td>
       </tr>
 
       <tr>
@@ -2424,7 +2100,7 @@
        <td rowspan="2" class="attname">fence</td>
        <td>"true" | "false"</td>
        <td><em>set by dictionary</em> (false)</td>
-       <td><span class="coreno"></span></td>
+       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-fence"></a></td>
       </tr>
 
       <tr>
@@ -2454,7 +2130,7 @@
        <td rowspan="2" class="attname">lspace</td>
        <td><a class="intref" href="#type_length"><em>length</em></a></td>
        <td><em>set by dictionary</em> (thickmathspace)</td>
-       <td><span class="coreno"></span></td>
+       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-lspace"></a></td>
       </tr>
 
       <tr>
@@ -2469,7 +2145,7 @@
        <td rowspan="2" class="attname">rspace</td>
        <td><a class="intref" href="#type_length"><em>length</em></a></td>
        <td><em>set by dictionary</em> (thickmathspace)</td>
-       <td><span class="coreno"></span></td>
+       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-rspace"></a></td>
       </tr>
 
       <tr>
@@ -2484,7 +2160,7 @@
        <td rowspan="2" class="attname">stretchy</td>
        <td>"true" | "false"</td>
        <td><em>set by dictionary</em> (false)</td>
-       <td><span class="coreno"></span></td>
+       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-stretchy"></a></td>
       </tr>
 
       <tr>
@@ -2498,13 +2174,13 @@
        <td rowspan="2" class="attname">symmetric</td>
        <td>"true" | "false"</td>
        <td><em>set by dictionary</em> (false)</td>
-       <td><span class="coreno"></span></td>
+       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-symmetric"></a></td>
       </tr>
 
       <tr>
        <td colspan="3" class="attdesc">
 	Specifies whether the operator should be kept symmetric around the math
-	<a>axis</a> when stretchy.
+	[=axis=] when stretchy.
 	Note this property only applies to vertically stretched symbols.
 	See <a href="#presm_op_stretch"></a>.
        </td>
@@ -2514,7 +2190,7 @@
        <td rowspan="2" class="attname">maxsize</td>
        <td> <a class="intref" href="#type_length"><em>length</em></a> | "infinity"</td>
        <td><em>set by dictionary</em> (infinity)</td>
-       <td><span class="coreno"></span></td>
+       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-maxsize"></a></td>
       </tr>
 
       <tr>
@@ -2530,7 +2206,7 @@
        <td rowspan="2" class="attname">minsize</td>
        <td> <a class="intref" href="#type_length"><em>length</em></a></td>
        <td><em>set by dictionary</em> <span>(100%)</span></td>
-       <td><span class="coreno"></span></td>
+       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-minsize"></a></td>
       </tr>
 
       <tr>
@@ -2546,7 +2222,7 @@
        <td rowspan="2" class="attname">largeop</td>
        <td>"true" | "false"</td>
        <td><em>set by dictionary</em> (false)</td>
-       <td><span class="coreno"></span></td>
+       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-largeop"></a></td>
       </tr>
 
       <tr>
@@ -2565,7 +2241,7 @@
        <td rowspan="2" class="attname">movablelimits</td>
        <td>"true" | "false"</td>
        <td><em>set by dictionary</em> (false)</td>
-       <td><span class="coreno"></span></td>
+       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-moveablelimits"></a></td>
       </tr>
 
       <tr>
@@ -2593,6 +2269,9 @@
 	see <a class="intref" href="#presm_munder"><code class="element">munder</code></a>,
 	<a class="intref" href="#presm_mover"><code class="element">mover</code></a>
 	and <a class="intref" href="#presm_munderover"><code class="element">munderover</code></a>.
+  <br>
+  Note: for compatibility with MathML Core, use <code class="attribute">accent</code>=<code class="attributevalue">true</code> on
+    the enclosing <code class="element">mover</code> and <code class="element">munderover</code> in place of this attribute.
        </td>
       </tr>
      </tbody>
@@ -2919,7 +2598,7 @@
    </section>
   </section>
 
-  <section>
+  <section class="fold">
    <h5>Examples with ordinary operators</h5>
 
    <div class="example mathml">
@@ -2964,7 +2643,7 @@
 
   </section>
 
-  <section>
+  <section class="fold">
    <h5>Examples with fences and separators</h5>
 
    <p>Note that the <code class="element">mo</code> elements in these examples
@@ -3083,7 +2762,8 @@
     </tbody>
    </table>
    </p>
-
+   <section class="fold">
+   <h6>Examples</h6>
    <p>The MathML representations of the examples in the above table are:
 
    <div class="example mathml">
@@ -3146,7 +2826,7 @@
     </pre>
    </div>
    </p>
-
+  </section>
    <p>The reasons for using specific <code class="element">mo</code> elements for
    invisible operators include:
    </p>
@@ -3465,12 +3145,12 @@
 
    <p>The <code class="attribute">symmetric</code> attribute governs whether the
    height and
-   depth above and below the <a>axis</a> of the
+   depth above and below the [=axis=] of the
    character are forced to be equal
    (by forcing both height and depth to become the maximum of the two).
    An example of a situation where one might set
    <code class="attribute">symmetric</code>=<code class="attributevalue">false</code>
-   arises with parentheses around a matrix not aligned on the <a>axis</a>, which
+   arises with parentheses around a matrix not aligned on the [=axis=], which
    frequently occurs when multiplying non-square matrices. In this case, one
    wants the parentheses to stretch to cover the matrix, whereas stretching
    the parentheses symmetrically would cause them to protrude beyond one edge
@@ -3511,7 +3191,7 @@
    refer to the context of the embellished operator as a whole, not just
    to the <code class="element">mo</code> element itself.</p>
 
-   <section>
+   <section class="fold">
     <h6>Example of stretchy attributes</h6>
 
     <p>This shows one way to set the maximum size of a parenthesis so that
@@ -3551,7 +3231,7 @@
     <li>
      <p>If a stretchy operator is a direct sub-expression of an <code class="element">mrow</code> element, or is the sole direct sub-expression of an
      <code class="element">mtd</code> element in some row of a table, then it should
-     stretch to cover the height and depth (above and below the <span>axis</span>) of the <em>non</em>-stretchy direct sub-expressions in the
+     stretch to cover the height and depth (above and below the [=axis=]) of the <em>non</em>-stretchy direct sub-expressions in the
      <code class="element">mrow</code> element or table row, unless stretching is
      constrained by <code class="attribute">minsize</code> or <code class="attribute">maxsize</code> attributes.</p>
     </li>
@@ -3725,7 +3405,7 @@ stretched sizes being only approximately the same.</p>
 </section>
 </section>
 
-<section>
+<section class="fold">
 <h5 id="presm_mo_linebreaks">Examples of Linebreaking</h5>
 
 <p>The following example demonstrates forced linebreaks and forced alignment:</p>
@@ -3814,10 +3494,10 @@ characters).</p>
 
 <p>See also the warnings about the legal grouping of <span>&#x201c;space-like elements&#x201d;</span>
 in <a href="#presm_mspace"></a>, and about the use of
-such elements for <span>&#x201c;tweaking&#x201d;</span> in <a href="#presm_warnfinetuning"></a>.</p>
+such elements for <span>&#x201c;tweaking&#x201d;</span> in [[MathML-Notes]].</p>
 </section>
 
-<section>
+<section class="fold">
 <h5>Examples</h5>
 
 <div class="example mathml">
@@ -3917,7 +3597,7 @@ or more attribute values explicitly specified.
 
 <p>Note the warning about the legal grouping of <span>&#x201c;space-like
 elements&#x201d;</span> given below, and the warning about the use of such
-elements for <span>&#x201c;tweaking&#x201d;</span> in <a href="#presm_warnfinetuning"></a>.
+elements for <span>&#x201c;tweaking&#x201d;</span> in [[MathML-Notes]]</a>.
 See also the other elements that can render as
 whitespace, namely <code class="element">mtext</code>, <code class="element">mphantom</code>, and
 <code class="element">maligngroup</code>.</p> </section>
@@ -3952,7 +3632,7 @@ attributes (see <a href="#fund_units"></a>).
 <td rowspan="2" class="attname">width</td>
 <td><a class="intref" href="#type_length"><em>length</em></a></td>
 <td>0em</td>
-<td><span class="coreno"></span></td>
+<td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-width"></a></td>
 </tr>
 
 <tr>
@@ -3965,7 +3645,7 @@ attributes (see <a href="#fund_units"></a>).
 <td rowspan="2" class="attname">height</td>
 <td><a class="intref" href="#type_length"><em>length</em></a></td>
 <td>0ex</td>
-<td><span class="coreno"></span></td>
+<td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-height"></a></td>
 </tr>
 
 <tr>
@@ -3978,7 +3658,7 @@ attributes (see <a href="#fund_units"></a>).
  <td rowspan="2" class="attname">depth</td>
 <td><a class="intref" href="#type_length"><em>length</em></a></td>
 <td>0ex</td>
-<td><span class="coreno"></span></td>
+<td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-depth"></a></td>
 </tr>
 
 <tr>
@@ -4024,7 +3704,7 @@ listed in
 
 </section>
 
-<section>
+<section class="fold">
 <h5>Examples</h5>
 
 <div class="example mathml-fragment">
@@ -4139,7 +3819,7 @@ the correct expression would be:
 </p>
 
 <p>See also the warning about <span>&#x201c;tweaking&#x201d;</span> in
-<a href="#presm_warnfinetuning"></a>.</p>
+  [[MathML-Notes]].</p>
 </section>
 </section>
 
@@ -4315,7 +3995,7 @@ on other elements (See <a href="#presm_linebreaking"></a>).
 <td rowspan="2" class="attname">dir</td>
 <td>"ltr" | "rtl"</td>
 <td><em>inherited</em></td>
-<td><span class="coreno"></span></td>
+<td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-dir"></a></td>
 </tr>
 
 <tr>
@@ -4372,7 +4052,7 @@ definitions of embellished operator and space-like element and the
 rules for determining the default value of the <code class="attribute">form</code>
 attribute of an <code class="element">mo</code> element;
 see <a href="#presm_mo"></a> and <a href="#presm_mspace"></a>. See also the discussion of equivalence of MathML
-expressions in <a href="#conformance"></a>.</p>
+expressions in <a href="#fund_mathmlconf"></a>.</p>
 </section>
 
 <section>
@@ -4413,7 +4093,7 @@ in <a href="#presm_mo"></a>.)</p>
 </section>
 </section>
 
-<section>
+<section class="fold">
 <h5>Examples</h5>
 
 <p>As an example, 2<i class="var">x</i>+<i class="var">y</i>-<i class="var">z</i>
@@ -4509,7 +4189,7 @@ The fraction line, if any, should be drawn using the color specified by <code cl
 <td rowspan="2" class="attname">linethickness</td>
 <td> <a class="intref" href="#type_length"><em>length</em></a> | "thin" | "medium" | "thick"</td>
 <td>medium</td>
-<td><span class="coreno"></span></td>
+<td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-linethickness"></a></td>
 </tr>
 
 <tr>
@@ -4519,6 +4199,8 @@ The default value is <code class="attributevalue">medium</code>,
 <code class="attributevalue">thin</code> is thinner, but visible,
 <code class="attributevalue">thick</code> is thicker;
 the exact thickness of these is left up to the rendering agent.
+<br>
+Note: MathML Core does only allows <a href="https://w3c.github.io/mathml-core/#dfn-length-percentage">length-percentage</a> values.
 </td>
 </tr>
 
@@ -4589,8 +4271,6 @@ These cases are shown below:
 </p>
 
 </section>
-
-<div class="note">FOLDING1</div>
 
 <section class="fold">
 <h5>Examples</h5>
@@ -4678,8 +4358,8 @@ These cases are shown below:
 </section>
 
 <section>
- <h4 id="presm_mroot">Radicals <code class="defn starttag">&lt;msqrt&gt;</code> <span class="coreyes"></span>,
-<code class="defn starttag">&lt;mroot&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-msqrt"></a></h4>
+ <h4 id="presm_mroot">Radicals <code class="defn starttag">&lt;msqrt&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-msqrt"></a>,
+<code class="defn starttag">&lt;mroot&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-mroot"></a></h4>
 
 <section>
 <h5>Description</h5>
@@ -4882,7 +4562,7 @@ part of its rendering environment:
 <td rowspan="2" class="attname">scriptlevel</td>
 <td>( "+" | "-" )? <a class="intref" href="#type_unsigned-integer"><em>unsigned-integer</em></a></td>
 <td><em>inherited</em></td>
-<td><span class="coreno"></span></td>
+<td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-scriptlevel"></a></td>
 </tr>
 
 <tr>
@@ -4900,7 +4580,7 @@ part of its rendering environment:
  <td rowspan="2" class="attname">displaystyle</td>
 <td>"true" | "false"</td>
 <td><em>inherited</em></td>
-<td><span class="coreno"></span></td>
+<td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-displaystyle"></a></td>
 </tr>
 
 <tr>
@@ -5058,7 +4738,6 @@ on the <code class="element">mstyle</code> element, but are expected to have no 
 </section>
 </section>
 
-<div class="note">FOLDING2</div>
 <section class="fold">
 <h5>Examples</h5>
 
@@ -5145,7 +4824,7 @@ section on &lt;mo&gt;,
 
  </section>
 
- <section>
+ <section class="fold">
   <h5>Example</h5>
 
   <p>If a MathML syntax-checking preprocessor
@@ -5198,7 +4877,7 @@ section on &lt;mo&gt;,
   used to make more general adjustments <span>of </span>size and positioning, and some
   combinations, e.g. negative padding, can cause the content of
   <code class="element">mpadded</code> to overlap the rendering of neighboring content.  See
-  <a href="#presm_warnfinetuning"></a> for warnings about several
+  [[MathML-Notes]] for warnings about several
   potential pitfalls of this effect.</p>
 
   <p>The <code class="element">mpadded</code> element accepts
@@ -5240,7 +4919,7 @@ section on &lt;mo&gt;,
      | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
      )?</td>
      <td><em>same as content</em></td>
-     <td><span class="coreno"></span></td>
+     <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-height"></a></td>
     </tr>
 
     <tr>
@@ -5260,7 +4939,7 @@ section on &lt;mo&gt;,
      | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
      )?</td>
      <td><em>same as content</em></td>
-     <td><span class="coreno"></span></td>
+     <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-depth"></a></td>
     </tr>
 
     <tr>
@@ -5280,7 +4959,7 @@ section on &lt;mo&gt;,
      | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
      )?</td>
      <td><em>same as content</em></td>
-     <td><span class="coreno"></span></td>
+     <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-width"></a></td>
     </tr>
 
     <tr>
@@ -5300,7 +4979,7 @@ section on &lt;mo&gt;,
      | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
      )?</td>
      <td>0em</td>
-     <td><span class="coreno"></span></td>
+     <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-lspace"></a></td>
     </tr>
 
     <tr>
@@ -5320,7 +4999,7 @@ section on &lt;mo&gt;,
      | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
      )?</td>
      <td>0em</td>
-     <td><span class="coreno"></span></td>
+     <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-voffset"></a></td>
     </tr>
 
     <tr>
@@ -5332,6 +5011,9 @@ section on &lt;mo&gt;,
 
    </tbody>
   </table>
+
+  <p>Note: while [[Mathml-Core]] supports the above attributes, it only allows the value to be a valid
+  <a href="https://w3c.github.io/mathml-core/#dfn-length-percentage">length-percentage</a>.</p>
 
   <p>The <em>pseudo-unit</em> syntax symbol is described below.
   <span>Also, <code class="attribute">height</code>, <code class="attribute">depth</code> and
@@ -5644,7 +5326,7 @@ section on &lt;mo&gt;,
 
  </section>
 
- <section>
+ <section class="fold">
   <h5>Examples</h5>
 
   <p>There is one situation where the preceding rules for rendering an
@@ -6003,7 +5685,7 @@ section on &lt;mo&gt;,
   render inappropriately.</p>
  </section>
 
- <section>
+ <section class="fold">
   <h5>Examples</h5>
 
   <p>(<i class="var">a</i>+<i class="var">b</i>)
@@ -6241,7 +5923,7 @@ section on &lt;mo&gt;,
 
  </section>
 
- <section>
+ <section class="fold">
   <h5>Examples</h5>
 
   <p>An example of using multiple attributes is
@@ -6580,7 +6262,7 @@ section on &lt;mo&gt;,
 
   </section>
 
-  <section>
+  <section class="fold">
    <h5>Examples</h5>
 
    <p>The <code class="element">msubsup</code> is most commonly used for adding
@@ -6675,7 +6357,7 @@ section on &lt;mo&gt;,
       <td rowspan="2" class="attname">accentunder</td>
       <td>"true" | "false"</td>
       <td><em>automatic</em></td>
-      <td><span class="coreno"></span></td>
+      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-accentunder"></a></td>
      </tr>
 
      <tr>
@@ -6723,7 +6405,7 @@ section on &lt;mo&gt;,
 
   </section>
 
-  <section>
+  <section class="fold">
    <h5>Examples</h5>
 
    <p>The MathML representation for the example shown above is:
@@ -6812,7 +6494,7 @@ section on &lt;mo&gt;,
        <td rowspan="2" class="attname">accent</td>
        <td>"true" | "false"</td>
        <td><em>automatic</em></td>
-       <td><span class="coreno"></span></td>
+       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-accent"></a></td>
       </tr>
 
       <tr>
@@ -6863,7 +6545,7 @@ section on &lt;mo&gt;,
 
   </section>
 
-  <section>
+  <section class="fold">
    <h5>Examples</h5>
 
    <p>The MathML representation for the examples shown above is:
@@ -6969,7 +6651,7 @@ section on &lt;mo&gt;,
       <td rowspan="2" class="attname">accent</td>
       <td>"true" | "false"</td>
       <td><em>automatic</em></td>
-      <td><span class="coreno"></span></td>
+      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-accent"></a></td>
      </tr>
 
      <tr>
@@ -7039,7 +6721,7 @@ section on &lt;mo&gt;,
 
   </section>
 
-  <section>
+  <section class="fold">
    <h5>Examples</h5>
 
    <p>The MathML representation for the example shown above with the first
@@ -7153,7 +6835,7 @@ section on &lt;mo&gt;,
    </p>
   </section>
 
-  <section>
+  <section class="fold">
    <h5>Examples</h5>
 
    <p><span data-diff="chg">Examples</span> of the use of <code class="element">mmultiscripts</code> are:</p>
@@ -7346,8 +7028,8 @@ section on &lt;mo&gt;,
       <td colspan="3" class="attdesc">
        specifies the vertical alignment of the table with respect to its environment.
        <code class="attributevalue">axis</code> means to align the vertical center of the table on
-       the environment's <dfn>axis</dfn>.
-       (The <a>axis</a> of an equation is an alignment line used by typesetters.
+       the environment's [=axis=].
+       (The <dfn>axis</dfn> of an equation is an alignment line used by typesetters.
        It is the line on which a minus sign typically lies.)
        <code class="attributevalue">center</code> and <code class="attributevalue">baseline</code> both mean to align the center of the table
        on the environment's baseline.
@@ -7682,7 +7364,7 @@ section on &lt;mo&gt;,
 
   </section>
 
-  <section>
+  <section class="fold">
    <h5>Examples</h5>
 
    <p>A 3 by 3 identity matrix could be represented as follows:
@@ -7917,7 +7599,7 @@ section on &lt;mo&gt;,
 
   </section>
 
-  <section>
+  <section class="fold">
    <h5>Example</h5>
 
    <div class="example mathml">
@@ -8003,7 +7685,7 @@ section on &lt;mo&gt;,
       <td rowspan="2" class="attname">rowspan</td>
       <td><a class="intref" href="#type_positive-integer"><em>positive-integer</em></a></td>
       <td>1</td>
-      <td><span class="coreno"></span></td>
+      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-rowspan"></a></td>
      </tr>
 
      <tr>
@@ -8018,7 +7700,7 @@ section on &lt;mo&gt;,
       <td rowspan="2" class="attname">columnspan</td>
       <td><a class="intref" href="#type_positive-integer"><em>positive-integer</em></a></td>
       <td>1</td>
-      <td><span class="coreno"></span></td>
+      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-columnspan"></a></td>
      </tr>
 
      <tr>
@@ -8713,7 +8395,7 @@ left left decimalpoint}&#x201d;</span>, which provides a single braced list of
 aligned.</p>
 </section>
 
-<section>
+<section class="fold">
 <h5>MathML representation of an alignment example</h5>
 
 <p>The above rules are sufficient to explain the MathML representation
@@ -9743,7 +9425,7 @@ The line should be drawn using the color specified by <code class="attribute">ma
 </section>
 </section>
 
-<section>
+<section class="fold">
 <h4 id="presm_elemmath_examples">Elementary Math Examples</h4>
 
 <section>
