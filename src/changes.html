@@ -6,70 +6,121 @@
 
   <ul>
 
-   <li>
-    <p>Changes to the Frontmatter</p>
+   <li>Changes to the Frontmatter
     <ul>
 
      <li>
-      <p>Changes to the references to match new W3C specification rules,
-      and to use the new W3C CSS formatting style, most notably affecting the table of contents
-      styling.</p>
+      Changes to the references to match new W3C specification rules,
+      and to use the new W3C CSS formatting style, most notably
+      affecting the table of contents styling.
      </li>
 
      <li>
-      <p>Update the <a href="#sotd"></a>, in particular using <code>https</code> and referencing the GitHub Issues page as required for current
-      W3C publications.</p>
+      Update the <a href="#sotd"></a>, in particular
+      using <code>https</code> and referencing the GitHub Issues page
+      as required for current W3C publications.
      </li>
     </ul>
    </li>
 
-   <li>
-
-    <p>Changes to <a href="#fund"></a></p>
+   <li>Changes to <a href="#fund"></a>
 
     <ul>
 
      <li>
-      <p>Clarify the description of <code>%</code> in <a href="#fund_units"></a></p>
+      Modified the definition of MathML color and length valued attributes to be
+      explicitly based on the syntax used in [[MathML-Core]] which in
+      turn uses definitions provided by CSS3.
      </li>
     </ul>
    </li>
 
-   <li>
-
-    <p>Changes to <a href="#presm"></a></p>
+   <li>Changes to <a href="#presm"></a>
 
     <ul>
 
-     <li>
-      <p>Separate the the examples in <a href="#presm_mi_examples"></a> and <a href="#presm_mn_examples"></a> to improve their appearance when rendered.</p>
+     <li>Separate the examples
+     in <a href="#presm_mi_examples"></a>
+     and <a href="#presm_mn_examples"></a> to improve their appearance
+     when rendered.
      </li>
 
-     <li>
-      <p>Clarify that negative numbers should be marked up with an explicit <code class="element">mo</code> operator in <a href="#presm_not_single_mn"></a>.</p>
+     <li>Clarify that negative numbers should be marked up with an
+     explicit <code class="element">mo</code> operator
+     in <a href="#presm_not_single_mn"></a>.
      </li>
 
-     <li>
-      <p>Correct the long division notation names in <a href="#presm_mlongdiv_attrs"></a>.</p>
+     <li>Correct the long division notation names
+     in <a href="#presm_mlongdiv_attrs"></a>.
      </li>
 
-     <li>
-      <p>Clarify that the horizontal alignment of scripts in <a href="#presm_mmultiscripts"></a> is towards the base, and add a new example.</p>
+     <li>Clarify that the horizontal alignment of scripts
+     in <a href="#presm_mmultiscripts"></a> is towards the base, and
+     add a new example.
      </li>
     </ul>
    </li>
 
-   <li>
-
-    <p>Changes to <a href="#contm"></a></p>
+   <li>Changes to <a href="#contm"></a>
 
     <ul>
 
-     <li>
-      <p>Correct examples in <a href="#contm_share"></a>, <a href="#contm_acyclicity"></a>, <a href="#contm_share_binding"></a>,  <a href="#contm_rendering_share"></a>  to use <code class="attribute">src</code> (to match the normative schema) not <code class="attribute">href</code>. The previous examples were also valid, as <code class="attribute">href</code> is a common presentational attribute allowed on all elements.</p>
+     <li>Correct examples
+     in <a href="#contm_share"></a>, <a href="#contm_acyclicity"></a>, <a href="#contm_share_binding"></a>, <a href="#contm_rendering_share"></a>
+     to use <code class="attribute">src</code> (to match the normative
+     schema) not <code class="attribute">href</code>. The previous
+     examples were also valid, as <code class="attribute">href</code>
+     is a common presentational attribute allowed on all elements.
      </li>
     </ul>
    </li>
+
+
+   <li>Changes to <a href="#mixing"></a>
+
+       <ul>
+
+	<li>Renamed Chapter from <q>Mixing Markup Languages for Mathematical Expressions</q></li>
+
+	<li>Introduced new section [[[#mixing_intent]]] describing the
+	<code class="attribute">intent</code> attribute.</li>
+
+	<li>The existing text on using the <code
+	class="element">&lt;semanics&gt;</code> element to mix
+	Presentation and Content MathML is maintained in the second
+	section, although reduced with some non normative text and
+	examples moved to [[MathML-Notes]].</li>
+       </ul>
+
+       
+   </li>
+
+
+   <li>Changes to <a href="#parsing"></a>
+
+   <ul>
+    <li>The schema was updated to match MathML4</li>
+    <li>The schema was refactored with a new `mathml4-core` schema
+    matching [[MathML-Core]] being used as the basis for
+    `mathml4-presentation`, and a new `mathml4-legacy` schema that can
+    be used to validate an existing corpus of documents matching [[MathML3]].</li>
+   </ul>
+
+   </li>
+
+
+   <li>Changes to <a href="#oper-dict"></a>
+
+   <ul>
+    <li>The spacing values and priorities of the elements were reviewed and adjused.</li>
+    <li>A new <q>compact</q> presentation is provided as well as the
+    tabular presentation used previously.</li>
+   </ul>
+
+   </li>
+
+
+   
   </ul>
  </section>
 </section>
