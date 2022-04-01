@@ -1,7 +1,6 @@
 
   <section>
    <h3 id="contm_p2s">The Strict Content MathML Transformation</h3>
-   <div class="issue" data-number="307"></div>
 
    <p>MathML assigns semantics to content markup by defining a
    mapping to Strict Content MathML.  Strict MathML, in turn, is in
@@ -45,9 +44,7 @@
      to non-strict binding expressions without case distinction. Note
      that the <span>later</span>
      rules will change the <code class="element">apply</code> elements introduced in this step back to
-     <code class="element">bind</code> elements. <span>Also in this step, deprecated <code class="element">reln</code>
-     elements are rewritten to <code class="element">apply</code>, and <code class="element">fn</code> elements are replaced by
-     the child expressions they enclose.</span></p>
+     <code class="element">bind</code> elements.</p>
     </li>
 
     <li>
@@ -309,12 +306,7 @@
    </ol>
 
    <section>
-    <h4 id="contm_p2s_depr">Rewrite <code class="element">bind</code>, <code class="element">reln</code>, <code class="element">fn</code></h4>
-    <p>Rewrite non-strict <code class="element">bind</code> and elminate deprecated elements.</p>
-
-    <section>
-    <h5 id="contm_p2s_bind">Non-strict <code class="element">bind</code></h5>
-
+    <h4 id="contm_p2s_bind">Rewrite non-strict <code class="element">bind</code></h4>
     <p>As described in <a href="#contm_binding"></a>, the strict form
     for the <code class="element">bind</code> element does not allow qualifiers,
     and only allows one non-<code class="element">bvar</code> child element.</p>
@@ -331,21 +323,6 @@
     <p>Later rules will change these non-strict binding expressions
     using <code class="element">apply</code> back to strict binding
     expressions using <code class="element">bind</code> elements.</p>
-    </section>
-
-    <section>
-    <h5 id="contm_p2s_reln">Deprecated <code class="element">reln</code></h5>
-    <p>As described in <a href="#contm_reln"></a>,
-    replace deprecated <code class="element">reln</code> elements
-    with <code class="element">apply</code>.</p>
-    </section>
-
-    <section>
-    <h5 id="contm_p2s_fn">Deprecated <code class="element">fn</code></h5>
-    <p>As described in <a href="#contm_fn"></a>,
-    replace deprecated <code class="element">fn</code> elements
-    with the child expressions they enclose.</p>
-    </section>
    </section>
 
    <section>
