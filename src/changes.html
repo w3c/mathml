@@ -32,6 +32,14 @@
       explicitly based on the syntax used in [[MathML-Core]] which in
       turn uses definitions provided by CSS3.
      </li>
+     <li>Remove the <code class="attribute">mode</code> and <code
+     class="attribute">macros</code> attributes from <code
+     class="element">&lt;math&gt;</code>. These have been deprecated
+     since MathML&#160;2. <code class="attribute">macros</code> had no
+     defined behaviour, and <code class="attribute">mode</code> can be
+     replaced by suitable use of <code class="attribute">display</code>.
+     The `mathml4-legacy` schema makes these valid if needed for legacy applications.</li>
+  
     </ul>
    </li>
 
