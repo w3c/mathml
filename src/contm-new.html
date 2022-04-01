@@ -3237,7 +3237,7 @@
 
       <div class="example mathml">
        <pre>
-         &lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
+         &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
@@ -3247,7 +3247,7 @@
 
       <div class="example mathml">
        <pre>
-         &lt;mfenced open="[" close="]"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
+         &lt;mrow&gt;&lt;mo&gt;[&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;]&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
@@ -3257,7 +3257,7 @@
 
       <div class="example mathml">
        <pre>
-         &lt;mfenced open="(" close="]"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
+         &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;]&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
@@ -3267,7 +3267,7 @@
 
       <div class="example mathml">
        <pre>
-         &lt;mfenced open="[" close=")"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
+         &lt;mrow&gt;&lt;mo&gt;[&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
@@ -3357,7 +3357,7 @@
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/msup&gt;
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-           &lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mfenced&gt;
+           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -3474,13 +3474,15 @@
            &lt;mi&gt;&amp;#x3bb;&lt;/mi&gt;
            &lt;mi&gt;x&lt;/mi&gt;
            &lt;mo&gt;.&lt;/mo&gt;
-           &lt;mfenced&gt;
+           &lt;mrow&gt;
+	    &lt;mo&gt;(&lt;/mo&gt;
              &lt;mrow&gt;
                &lt;mi&gt;sin&lt;/mi&gt;
                &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
                &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
-           &lt;/mfenced&gt;
+	     &lt;mo&gt;)&lt;/mo&gt;
+           &lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -3609,13 +3611,15 @@
            &lt;mrow&gt;
              &lt;mi&gt;f&lt;/mi&gt;
              &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-             &lt;mfenced&gt;
+             &lt;mrow&gt;
+	      &lt;mo&gt;(&lt;/mo&gt;
                &lt;mrow&gt;
                  &lt;mi&gt;g&lt;/mi&gt;
                  &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
                  &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
                &lt;/mrow&gt;
-             &lt;/mfenced&gt;
+	       &lt;mo&gt;)&lt;/mo&gt;
+             &lt;/mrow&gt;
            &lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
@@ -3751,7 +3755,7 @@
       <div class="example mathml">
        <pre>
          &lt;mrow&gt;
-           &lt;mrow&gt;&lt;mi&gt;domain&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;domain&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
            &lt;mo&gt;=&lt;/mo&gt;
            &lt;mi mathvariant="double-struck"&gt;R&lt;/mi&gt;
          &lt;/mrow&gt;
@@ -3816,7 +3820,7 @@
       <div class="example mathml">
        <pre>
          &lt;mrow&gt;
-           &lt;mrow&gt;&lt;mi&gt;codomain&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;codomain&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
            &lt;mo&gt;=&lt;/mo&gt;
            &lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;
          &lt;/mrow&gt;
@@ -3880,9 +3884,9 @@
       <div class="example mathml">
        <pre>
          &lt;mrow&gt;
-           &lt;mrow&gt;&lt;mi&gt;image&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;image&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
            &lt;mo&gt;=&lt;/mo&gt;
-           &lt;mfenced open="[" close="]"&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
+           &lt;mrow&gt;&lt;mo&gt;[&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;]&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -4361,7 +4365,7 @@
              &lt;mrow&gt;
                &lt;msup&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
                &lt;mo&gt;&amp;#x2208;&lt;/mo&gt;
-               &lt;mfenced open="[" close="]"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
+               &lt;mrow&gt;&lt;mo&gt;[&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;]&lt;/mo&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
              &lt;mo&gt;}&lt;/mo&gt;
            &lt;/mrow&gt;
@@ -4923,7 +4927,7 @@
          &lt;mrow&gt;
            &lt;mi&gt;gcd&lt;/mi&gt;
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-           &lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/mfenced&gt;
+           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -5436,13 +5440,15 @@
            &lt;mo&gt;&amp;#x2200;&lt;/mo&gt;
            &lt;mi&gt;x&lt;/mi&gt;
            &lt;mo&gt;.&lt;/mo&gt;
-           &lt;mfenced&gt;
+           &lt;mrow&gt;
+	    &lt;mo&gt;(&lt;/mo&gt;
              &lt;mrow&gt;
                &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
                &lt;mo&gt;=&lt;/mo&gt;
                &lt;mn&gt;0&lt;/mn&gt;
              &lt;/mrow&gt;
-           &lt;/mfenced&gt;
+	     &lt;mo&gt;)&lt;/mo&gt;
+           &lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -5518,13 +5524,15 @@
            &lt;mo&gt;&amp;#x2203;&lt;/mo&gt;
            &lt;mi&gt;x&lt;/mi&gt;
            &lt;mo&gt;.&lt;/mo&gt;
-           &lt;mfenced&gt;
+           &lt;mrow&gt;
+	    &lt;mo&gt;(&lt;/mo&gt;
              &lt;mrow&gt;
                &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
                &lt;mo&gt;=&lt;/mo&gt;
                &lt;mn&gt;0&lt;/mn&gt;
              &lt;/mrow&gt;
-           &lt;/mfenced&gt;
+	     &lt;mo&gt;)&lt;/mo&gt;
+           &lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -5785,13 +5793,15 @@
          &lt;mrow&gt;
            &lt;mi&gt;arg&lt;/mi&gt;
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-           &lt;mfenced&gt;
+           &lt;mrow&gt;
+	    &lt;mo&gt;(&lt;/mo&gt;
              &lt;mrow&gt;
                &lt;mi&gt;x&lt;/mi&gt;
                &lt;mo&gt;+&lt;/mo&gt;
                &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
-           &lt;/mfenced&gt;
+	     &lt;mo&gt;)&lt;/mo&gt;
+	   &lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -6004,7 +6014,7 @@
          &lt;mrow&gt;
            &lt;mi&gt;lcm&lt;/mi&gt;
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-           &lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/mfenced&gt;
+           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -7132,7 +7142,7 @@
              &lt;mrow&gt;
                &lt;mi&gt;f&lt;/mi&gt;
                &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-               &lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mfenced&gt;
+               &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
            &lt;/mrow&gt;
            &lt;mrow&gt;
@@ -7397,7 +7407,7 @@
       <div class="example mathml">
        <pre>
          &lt;mrow&gt;
-           &lt;mi&gt;grad&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;
+           &lt;mi&gt;grad&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -7410,7 +7420,7 @@
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-           &lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;
+           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -7449,7 +7459,7 @@
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
            &lt;mrow&gt;
              &lt;mo&gt;(&lt;/mo&gt;
-             &lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/mfenced&gt;
+             &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
              &lt;mo&gt;&amp;#x21a6;&lt;/mo&gt;
              &lt;mrow&gt;
                &lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;
@@ -7514,7 +7524,7 @@
 
       <div class="example mathml">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;curl&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;curl&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
@@ -7591,7 +7601,7 @@
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-           &lt;mfenced&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mfenced&gt;
+           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -7629,12 +7639,12 @@
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
            &lt;mrow&gt;
              &lt;mo&gt;(&lt;/mo&gt;
-             &lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/mfenced&gt;
+             &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
              &lt;mo&gt;&amp;#x21a6;&lt;/mo&gt;
              &lt;mrow&gt;
                &lt;mi&gt;f&lt;/mi&gt;
                &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-               &lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mfenced&gt;
+               &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
              &lt;mo&gt;)&lt;/mo&gt;
            &lt;/mrow&gt;
@@ -9933,7 +9943,7 @@
          &lt;mrow&gt;
            &lt;mo&gt;&amp;#x3c3;&lt;/mo&gt;
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-           &lt;mfenced&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfenced&gt;
+           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -10031,7 +10041,7 @@
              &lt;mn&gt;2&lt;/mn&gt;
            &lt;/msup&gt;
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-           &lt;mfenced&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfenced&gt;
+           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -10128,7 +10138,7 @@
          &lt;mrow&gt;
            &lt;mi&gt;median&lt;/mi&gt;
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-           &lt;mfenced&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfenced&gt;
+           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
