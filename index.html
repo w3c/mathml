@@ -81,6 +81,7 @@
 	for(var i=0;i!=mmllist.length;i++){
 	    var m=document.createElementNS("http://www.w3.org/1998/Math/MathML","math");;
 	    m.setAttribute("display","block");
+	    m.setAttribute("class","removeOnSave");
 	    m.style.border='solid thick lightgreen';
 	    m.style.padding='1em';
 	    m.innerHTML=mmllist[i].textContent;
