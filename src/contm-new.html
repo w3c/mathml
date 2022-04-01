@@ -75,8 +75,7 @@
    doing so are given.  In <a href="#contm_opel"></a>, elements are
    introduced for many common function, operators and constants. This
    section contains many examples, including equivalent Strict Content
-   expressions.  In <a href="#contm_deprecated"></a>, elements from
-   MathML 1 and 2 whose use is now discouraged are listed.
+   expressions.
    Finally, <a href="#contm_p2s"></a> summarizes the algorithm for
    translating arbitrary Content Markup into Strict Content Markup.  It
    collects together in sequence all the rewrite rules introduced
@@ -2431,11 +2430,7 @@
     elements), piecewise functions (three elements) and lambda
     functions.  There are corresponding constructor symbols in Strict
     markup for each of these, with the exception of lambda functions,
-    which correspond to binding symbols in Strict markup. Note that in
-    MathML 2, the term "container markup" was also taken to include
-    token elements, and the deprecated <code class="element">declare</code>, <code class="element">fn</code>
-    and <code class="element">reln</code> elements, but MathML 3 limits usage of the term
-    to the above constructs.</p>
+    which correspond to binding symbols in Strict markup.</p>
 
     <p>The rewrite rules for obtaining equivalent Strict Content
     markup from container markup depend on the <a class="intref" href="#contm_opclasses">operator class</a> of the particular
@@ -11959,132 +11954,6 @@
       </blockquote>
      </div>
     </section>
-   </section>
-
-  </section>
-
-  <section>
-   <h3 id="contm_deprecated">Deprecated Content Elements</h3>
-
-   <section>
-    <h4 id="contm_declare">Declare <code class="defn starttag">&lt;declare&gt;</code></h4>
-
-    <table class="syntax data">
-
-     <tbody>
-
-      <tr>
-
-       <th>Attributes</th>
-
-       <td><code class="parsing_ref">CommonAtt</code>,
-       <code class="parsing_ref">type</code>,
-       <code class="parsing_ref">scope</code>,
-       <code class="parsing_ref">occurrence</code>,
-       <code class="parsing_ref">definitionURL</code>,
-       <code class="parsing_ref">encoding</code></td>
-      </tr>
-
-      <tr>
-
-       <th><code class="attribute">type</code> Attribute</th>
-
-       <td>defines the MathML element type of the identifier declared.</td>
-      </tr>
-
-      <tr>
-
-       <th><code class="attribute">scope</code> Attribute</th>
-
-       <td>defines the scope of application of the declaration.</td>
-      </tr>
-
-      <tr>
-
-       <th><code class="attribute">nargs</code> Attribute</th>
-
-       <td>number of arguments for function declarations.</td>
-      </tr>
-
-      <tr>
-
-       <th><code class="attribute">occurrence</code> Attribute values</th>
-
-       <td><code class="attributevalue">prefix</code> | <code class="attributevalue">infix</code> |
-       <code class="attributevalue">function-model</code></td>
-      </tr>
-
-      <tr>
-
-       <th><code class="attribute">definitionURL</code> Attribute</th>
-
-       <td>URI pointing to detailed semantics of the function.</td>
-      </tr>
-
-      <tr>
-
-       <th><code class="attribute">encoding</code> Attribute</th>
-
-       <td>syntax of the detailed semantics of the function.</td>
-      </tr>
-
-      <tr>
-
-       <th>Content</th>
-
-       <td><code class="parsing_ref">ContExp</code>,
-       <code class="parsing_ref">ContExp</code>?</td>
-      </tr>
-     </tbody>
-    </table>
-
-    <p>MathML2 provided the <code class="element">declare</code> element to bind properties like
-    types to symbols and variables and to define abbreviations for structure sharing.
-    This
-    element is deprecated in MathML 3. Structure sharing can obtained via the <code class="element">share</code>
-    element (see <a href="#contm_sharing"></a> for details).
-    </p>
-   </section>
-
-   <section>
-    <h4 id="contm_reln">Relation <code class="defn starttag">&lt;reln&gt;</code></h4>
-
-    <table class="syntax data">
-
-     <tbody>
-
-      <tr>
-
-       <th>Content</th>
-
-       <td><code class="parsing_ref">ContExp</code>*</td>
-      </tr>
-     </tbody>
-    </table>
-
-    <p>MathML 1 provided the <code class="element">reln</code> element to construct an equation or relation.
-    This usage was deprecated in MathML 2.0 in favor of the more generally usable <code class="element">apply</code>.</p>
-   </section>
-
-   <section>
-    <h4 id="contm_fn">Function <code class="defn starttag">&lt;fn&gt;</code></h4>
-
-    <table class="syntax data">
-
-     <tbody>
-
-      <tr>
-
-       <th>Content</th>
-
-       <td><code class="parsing_ref">ContExp</code></td>
-      </tr>
-     </tbody>
-    </table>
-
-    <p>MathML 1 provided the <code class="element">fn</code> element to extend the collection of known mathematical
-    functions. This usage was deprecated in MathML 2.0 in favor of the more generally
-    applicable <code class="element">csymbol</code>.</p>
    </section>
 
   </section>
