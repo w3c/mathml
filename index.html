@@ -80,8 +80,9 @@
 	var mmllist=document.querySelectorAll("div.example.mathml");
 	for(var i=0;i!=mmllist.length;i++){
 	    var m=document.createElementNS("http://www.w3.org/1998/Math/MathML","math");;
-	    m.style.backgroundColor='lightgreen';
-	    m.style.padding='.5em';
+	    m.setAttribute("display","block");
+	    m.style.border='solid thick lightgreen';
+	    m.style.padding='1em';
 	    m.innerHTML=mmllist[i].textContent;
 	    mmllist[i].parentNode.insertBefore(m,mmllist[i].nextSibling);
 	}
