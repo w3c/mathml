@@ -81,9 +81,7 @@
 	for(var i=0;i!=mmllist.length;i++){
 	    var m=document.createElementNS("http://www.w3.org/1998/Math/MathML","math");;
 	    m.setAttribute("display","block");
-	    m.setAttribute("class","removeOnSave");
-	    m.style.border='solid thick lightgreen';
-	    m.style.padding='1em';
+	    m.setAttribute("class","inlinemath removeOnSave");
 	    m.innerHTML=mmllist[i].textContent;
 	    mmllist[i].parentNode.insertBefore(m,mmllist[i].nextSibling);
 	}
@@ -105,17 +103,15 @@
      shortName:     "MathML4",
      maxTocLevel:   4,
      otherLinks:    [{
-      key: "Latest MathML Recommendation",
-      data: [
-        {
-          value: "https://www.w3.org/TR/MathML/",
-          href: "https://www.w3.org/TR/MathML/",
-          }]
-          }
-          ],
-   github: "https://github.com/w3c/mathml",
-   postProcess: [mmlindex,foldable,resortable,showcore],
-   localBiblio: {     
+     key: "Latest MathML Recommendation",
+     data: [{
+             value: "https://www.w3.org/TR/MathML/",
+             href: "https://www.w3.org/TR/MathML/",
+           }]
+                   }],
+  github:        "https://github.com/w3c/mathml",
+       postProcess:   [mmlindex,foldable,resortable,showcore],
+  localBiblio: {
   "MathML1":           {"aliasOf": "MathML-19980407"},
   "MathML-Core":       {"aliasOf": "mathml-core"},
   "Entities":          {"aliasOf": "xml-entity-names"},
@@ -228,6 +224,13 @@ border-color:var(--example-border);
 border-left-style: solid;
 //background: var(--example-bg);
 background: #fafafa;
+}
+math.inlinemath {
+    border-width: .5em;
+    border-left-style: solid;
+    border-color: lightgreen;
+    background-color: #F7FFF6;
+    padding:1em;
 }
 #references :target{background:white;animation:none;}
   </style>
