@@ -1309,7 +1309,7 @@
       <tr>
        <td colspan="2" class="attdesc">
         Specified a position of the desired glyph within the font named
-        by the <code class="attribute">fontfamily</code> attribute (see <a href="#presm_deprecatt"></a>).
+        by the <code class="attribute">fontfamily</code> attribute.
        </td>
       </tr>
      </tbody>
@@ -1324,6 +1324,7 @@
     to make clear that <code class="element">mglyph</code> is <em>not</em> a token element, and since
     these attributes have no effect in any case, these attributes have been deprecated.
     </p>
+        <div class="issue" data-number="303"></div>
    </section>
   </section>
 
@@ -1509,126 +1510,6 @@
   Note that many MathML elements automatically change the font size
   in some of their children; see the discussion in <a href="#presm_scriptlevel"></a>.</p>
 
-  <section>
-    <div class="issue" data-number="303"></div>
-   <h5 id="presm_deprecatt">Deprecated style attributes on token elements <span class="coreno"></span></h5>
-
-   <p>The MathML 1.01 style attributes listed below
-   are <a class="intref" href="#interf_deprec">deprecated</a> in MathML 2 and 3.
-   These attributes were aligned to CSS <span>but,</span> in rendering environments that support CSS,
-   it is preferable to use CSS directly to control the rendering properties
-   corresponding to these attributes, rather than the attributes themselves.
-   However as explained above, direct manipulation of these
-   rendering properties by whatever means should usually be avoided.
-   As a general rule, whenever there is a conflict between these
-   deprecated attributes and the corresponding attributes (<a href="#presm_commatt"></a>),
-   the former attributes should be ignored.</p>
-
-   <p>The deprecated attributes are:
-
-   <table class="attributes data">
-
-    <thead>
-
-     <tr>
-      <td>Name</td>
-      <td>values</td>
-      <td>default</td>
-      <td>Core</td>
-     </tr>
-    </thead>
-
-    <tbody>
-
-     <tr>
-      <td rowspan="2" class="attname">fontfamily</td>
-      <td><a class="intref" href="#type_string"><em>string</em></a></td>
-      <td><em>inherited</em></td>
-      <td><span class="coreno"></span></td>
-     </tr>
-
-     <tr>
-      <td colspan="3" class="attdesc">
-       Should be the name of a font that may be available to a MathML renderer,
-       or a CSS font specification; See  <a href="#world-int-style"></a>
-       and CSS [[CSS21]] for more information.
-       Deprecated in favor of <code class="attribute">mathvariant</code>.
-      </td>
-     </tr>
-
-     <tr>
-      <td rowspan="2" class="attname">fontweight</td>
-      <td>"normal" | "bold"</td>
-      <td><em>inherited</em></td>
-      <td><span class="coreno"></span></td>
-     </tr>
-
-     <tr>
-      <td colspan="3" class="attdesc">
-       Specified the font weight for the token.
-       Deprecated in favor of <code class="attribute">mathvariant</code>.
-      </td>
-     </tr>
-
-     <tr>
-      <td rowspan="2" class="attname">fontstyle</td>
-      <td>"normal" | "italic"</td>
-      <td>normal (<em>except on</em> <code class="starttag">&lt;mi&gt;</code>)</td>
-      <td><span class="coreno"></span></td>
-     </tr>
-
-     <tr>
-      <td colspan="3" class="attdesc">
-       Specified the font style to use for the token.
-       Deprecated in favor of <code class="attribute">mathvariant</code>.
-      </td>
-     </tr>
-
-     <tr>
-      <td rowspan="2" class="attname">fontsize</td>
-      <td><a class="intref" href="#type_length"><em>length</em></a></td>
-      <td><em>inherited</em></td>
-      <td><span class="coreno"></span></td>
-     </tr>
-
-     <tr>
-      <td colspan="3" class="attdesc">
-       Specified the size for the token.
-       Deprecated in favor of <code class="attribute">mathsize</code>.
-      </td>
-     </tr>
-
-     <tr>
-      <td rowspan="2" class="attname">color</td>
-      <td><a class="intref" href="#type_color"><em>color</em></a></td>
-      <td><em>inherited</em></td>
-      <td><span class="coreno"></span></td>
-     </tr>
-
-     <tr>
-      <td colspan="3" class="attdesc">
-       Specified the color for the token.
-       Deprecated in favor of <code class="attribute">mathcolor</code>.
-      </td>
-     </tr>
-
-     <tr>
-      <td rowspan="2" class="attname">background</td>
-      <td><a class="intref" href="#type_color"><em>color</em></a> | "transparent"</td>
-      <td>transparent</td>
-      <td><span class="coreno"></span></td>
-     </tr>
-
-     <tr>
-      <td colspan="3" class="attdesc">
-       Specified the background color to be used to fill in the bounding box
-       of the element and its children. Deprecated in favor of <code class="attribute">mathbackground</code>.
-      </td>
-     </tr>
-    </tbody>
-   </table>
-   </p>
-  </section>
 
   <section>
    <h5 id="presm_html_insertion">Embedding HTML in MathML</h5>
