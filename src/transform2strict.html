@@ -342,7 +342,7 @@
 
      <div class="strict-mathml-example" id="contm_p2s.diff"><dfn>Rewrite: diff</dfn>
 
-      <p>Translate an expression
+      <p>Translate an expression</p>
 
       <div class="example mathml mml4c">
        <pre>
@@ -352,9 +352,9 @@
          &lt;/apply&gt;
        </pre>
       </div>
-      where
+      <p>where
       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
-      expression in the variable <i class="var">x</i> to the expression
+      expression in the variable <i class="var">x</i> to the expression</p>
 
       <div class="example strict-mathml">
        <pre>
@@ -369,9 +369,9 @@
          &lt;/apply&gt;
        </pre>
       </div>
-      Note that the differentiated function is applied to the variable
+      <p>Note that the differentiated function is applied to the variable
       <i class="var">x</i> making its status as a free variable explicit
-      in strict markup. Thus the strict equivalent of
+      in strict markup. Thus the strict equivalent of</p>
 
       <div class="example mathml mml4c">
        <pre>
@@ -381,7 +381,7 @@
          &lt;/apply&gt;
        </pre>
       </div>
-      is
+      <p>is</p>
 
       <div class="example strict-mathml">
        <pre>
@@ -396,7 +396,7 @@
          &lt;/apply&gt;
        </pre>
       </div>
-      </p>
+
      </div>
 
      <p>If the <code class="element">bvar</code> element contains a
@@ -519,7 +519,7 @@
       <code>&lt;cn&gt;1&lt;/cn&gt;</code> should be used in place of the degree.
       If the original expression did not use the total degree qualifier then
       the second argument to <a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiffdegree">partialdiffdegree</a>
-      should be the sum of the degrees.  For example
+      should be the sum of the degrees.  For example</p>
 
       <div class="example strict-mathml">
        <pre>
@@ -528,12 +528,12 @@
          &lt;/apply&gt;
        </pre>
       </div>
-      </p>
+
      </div>
 
      <div class="strict-mathml-example" id="contm_p2s.partialdiff.ex1">
 
-      <p>With this rule, the expression
+      <p>With this rule, the expression</p>
 
       <div class="example mathml mml4c">
        <pre>
@@ -547,7 +547,7 @@
        </pre>
       </div>
 
-      is translated into
+      <p>is translated into</p>
 
       <div class="example strict-mathml">
        <pre>
@@ -574,7 +574,7 @@
          &lt;/apply&gt;
        </pre>
       </div>
-      </p>
+
      </div>
 
     </section>
@@ -608,7 +608,7 @@
       <p>Translate an indefinite integral, where
       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
       arbitrary expression involving the bound variable(s)
-      <code class="meta-code">&lt;ci&gt;x&lt;/ci&gt;</code>
+      <code class="meta-code">&lt;ci&gt;x&lt;/ci&gt;</code></p>
 
       <div class="example mathml mml4c">
        <pre>
@@ -619,7 +619,7 @@
        </pre>
       </div>
 
-      to the expression
+      <p>to the expression</p>
 
       <div class="example strict-mathml">
        <pre>
@@ -635,7 +635,7 @@
        </pre>
       </div>
 
-      Note that as <i class="var">x</i> is not bound in the original indefinite
+      <p>Note that as <i class="var">x</i> is not bound in the original indefinite
       integral, the integrated function is applied to the variable
       <i class="var">x</i> making it an explicit free variable in
       Strict Content Markup expression, even though it is bound in the subterm
@@ -645,7 +645,7 @@
 
      <div class="strict-mathml-example" id="contm_strict-int">
 
-      <p>For instance, the expression
+      <p>For instance, the expression</p>
 
       <div class="example mathml mml4c">
        <pre>
@@ -670,7 +670,7 @@
          &lt;/apply&gt;
        </pre>
       </div>
-      </p>
+
      </div>
 
      <p>For a definite integral without bound variables, the
@@ -679,7 +679,7 @@
      <div class="strict-mathml-example" id="contm_strict-domainofapplication-nobvar">
 
       <p>For instance, the integral of a differential form <i class="var">f</i> over an arbitrary domain
-      <i class="var">C</i> represented as
+      <i class="var">C</i> represented as</p>
 
       <div class="example mathml mml4c">
        <pre>
@@ -690,14 +690,14 @@
        </pre>
       </div>
 
-      is equivalent to the Strict Content MathML:
+      <p>is equivalent to the Strict Content MathML:</p>
 
       <div class="example strict-mathml">
        <pre>
          &lt;apply&gt;&lt;csymbol cd="calculus1"&gt;defint&lt;/csymbol&gt;&lt;ci&gt;C&lt;/ci&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;/apply&gt;
        </pre>
       </div>
-      </p>
+ 
 
       <p>Note, however, the additional remarks on the translations of other
       kinds of qualifiers that may be used to specify a domain of integration
@@ -712,7 +712,7 @@
       <p>Translate a definite integral, where
       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
       arbitrary expression involving the bound variable(s)
-      <code class="meta-code">&lt;ci&gt;x&lt;/ci&gt;</code>
+      <code class="meta-code">&lt;ci&gt;x&lt;/ci&gt;</code></p>
 
       <div class="example mathml mml4c">
        <pre>
@@ -723,7 +723,7 @@
          &lt;/apply&gt;
        </pre>
       </div>
-      to the expression
+      <p>to the expression</p>
 
       <div class="example strict-mathml">
        <pre>
@@ -737,7 +737,7 @@
        </pre>
       </div>
 
-      </p>
+ 
      </div>
 
      <p>But the definite integral with an <code class="element">lowlimit</code>/<code class="element">uplimit</code> pair carries the
@@ -1228,7 +1228,7 @@
      <div class="strict-mathml-example" id="contm_condition-strict"><dfn>Rewrite: condition</dfn>
 
       <p>To rewrite an expression using the <code class="element">condition</code>
-      qualifier as one using <code class="element">domainofapplication</code>,
+      qualifier as one using <code class="element">domainofapplication</code>,</p>
 
       <div class="example mathml-fragment">
        <pre>
@@ -1238,7 +1238,7 @@
        </pre>
       </div>
 
-      is rewritten to
+      <p>is rewritten to</p>
 
       <div class="example mathml-fragment">
        <pre>
@@ -1256,7 +1256,7 @@
          &lt;/domainofapplication&gt;
        </pre>
       </div>
-      If the <code class="element">apply</code> has a <code class="element">domainofapplication</code> (perhaps originally expressed as
+      <p>If the <code class="element">apply</code> has a <code class="element">domainofapplication</code> (perhaps originally expressed as
       <code class="element">interval</code> or an <code class="element">uplimit</code>/<code class="element">lowlimit</code> pair) then that is used for
       <code class="meta-code">&lt;ci&gt;R&lt;/ci&gt;</code>. Otherwise <code class="meta-code">&lt;ci&gt;R&lt;/ci&gt;</code> is a set determined by the <code class="attribute">type</code> attribute
       of the bound variable as specified in <a href="#contm_ci_extended"></a>, if that is
@@ -1300,7 +1300,7 @@
        <p>An expression of the following form,
        where <code class="meta-code">&lt;set/&gt;</code> is either of the elements <code class="element">set</code> or <code class="element">list</code> and
        <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code>
-       is an arbitrary expression involving the bound variable(s)
+       is an arbitrary expression involving the bound variable(s)</p>
 
        <div class="example mathml mml4c">
 	<pre>
@@ -1311,7 +1311,7 @@
    &lt;/set&gt;
 	</pre>
        </div>
-       is rewritten to
+       <p>is rewritten to</p>
 
        <div class="example strict-mathml">
 	<pre>
@@ -1324,7 +1324,7 @@
    &lt;/apply&gt;
 	</pre>
        </div>
-       </p>
+
 
        <p>Note that
        when <code class="meta-code">&lt;ci&gt;D&lt;/ci&gt;</code> is already a set
@@ -1550,7 +1550,7 @@
        where <code class="meta-code">&lt;max/&gt;</code> represents any
        element of the relevant class and
        <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code>
-       is an arbitrary expression involving the bound variable(s)
+       is an arbitrary expression involving the bound variable(s)</p>
 
        <div class="example mathml mml4c">
 	<pre>
@@ -1561,7 +1561,7 @@
    &lt;/apply&gt;
 	</pre>
        </div>
-       is rewritten to
+       <p>is rewritten to</p>
 
        <div class="example strict-mathml">
 	<pre>
@@ -1576,7 +1576,6 @@
    &lt;/apply&gt;
 	</pre>
        </div>
-       </p>
 
        <p>Note that
        when <code class="meta-code">&lt;ci&gt;D&lt;/ci&gt;</code> is already a set
@@ -1645,7 +1644,7 @@
        <code class="meta-code">&lt;exists/&gt;</code> denotes an element of
        class <code>quantifier</code> and
        <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code>
-       is an arbitrary expression involving the bound variable(s)
+       is an arbitrary expression involving the bound variable(s)</p>
 
        <div class="example mathml mml4c">
 	<pre>
@@ -1656,7 +1655,7 @@
    &lt;/apply&gt;
 	</pre>
        </div>
-       is rewritten to an expression
+       <p>is rewritten to an expression</p>
 
        <div class="example strict-mathml">
 	<pre>
@@ -1669,7 +1668,7 @@
    &lt;/bind&gt;
 	</pre>
        </div>
-       where the symbols
+       <p>where the symbols
        <code class="meta-code">&lt;csymbol cd="quant1"&gt;exists&lt;/csymbol&gt;</code>
        and
        <code class="meta-code">&lt;csymbol cd="logic1"&gt;and&lt;/csymbol&gt;</code>
@@ -1686,7 +1685,7 @@
 
       <p>When the <code class="element">forall</code> element is used with a <code class="element">condition</code> qualifier the
       strict equivalent is constructed with the help of logical implication by the rule
-      <a>Rewrite: quantifier</a>.  Thus
+      <a>Rewrite: quantifier</a>.  Thus</p>
 
       <div class="example mathml mml4c">
        <pre>
@@ -1707,7 +1706,7 @@
          &lt;/bind&gt;
        </pre>
       </div>
-      translates to
+      <p>translates to</p>
 
       <div class="example strict-mathml">
        <pre>
@@ -1737,7 +1736,7 @@
          &lt;/bind&gt;
        </pre>
       </div>
-      </p>
+
 
       <p>Sample Presentation</p>
 
@@ -1892,7 +1891,7 @@
 
       <div class="strict-mathml-example" id="contm_rewrite_reln"><dfn>Rewrite: n-ary relations</dfn>
 
-       <p>An expression of the form
+       <p>An expression of the form</p>
 
        <div class="example mathml mml4c">
 	<pre>
@@ -1902,7 +1901,7 @@
 	</pre>
        </div>
 
-       rewrites to Strict Content MathML
+       <p>rewrites to Strict Content MathML</p>
 
        <div class="example mathml mml4c">
 	<pre>
@@ -1915,12 +1914,12 @@
 	
 	</pre>
        </div>
-       </p>
+
       </div>
 
       <div class="strict-mathml-example" id="contm_rewrite_reln_bvar"><dfn>Rewrite: n-ary relations bvar</dfn>
 
-       <p>An expression of the form
+       <p>An expression of the form</p>
 
        <div class="example mathml mml4c">
 	<pre>
@@ -1932,10 +1931,10 @@
 	</pre>
        </div>
 
-       where
+       <p>where
        <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code>
        is an arbitrary expression involving the bound variable, rewrites to the Strict Content
-       MathML
+       MathML</p>
 
        <div class="example mathml mml4c">
 	<pre>
@@ -1951,7 +1950,7 @@
    &lt;/apply&gt;
 	</pre>
        </div>
-       </p>
+
       </div>
 
       <p>The above rules apply to all symbols in classes <code>nary-reln.class</code>
@@ -1984,7 +1983,7 @@
        where <code class="meta-code">&lt;union/&gt;</code> represents any
        element of the relevant class and
        <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code>
-       is an arbitrary expression involving the bound variable(s)
+       is an arbitrary expression involving the bound variable(s)</p>
 
        <div class="example mathml mml4c">
 	<pre>
@@ -1995,7 +1994,7 @@
    &lt;/apply&gt;
 	</pre>
        </div>
-       is rewritten to
+       <p>is rewritten to</p>
 
        <div class="example strict-mathml">
 	<pre>
@@ -2011,7 +2010,7 @@
    &lt;/apply&gt;
 	</pre>
        </div>
-       </p>
+
       </div>
 
       <p>The above rule applies to all symbols in the listed classes.
@@ -2043,7 +2042,7 @@
      <div class="strict-mathml-example" id="contm_dombind-strict"><dfn>Rewrite: apply bvar domainofapplication</dfn>
 
       <p>A content MathML expression with bound variables and
-      <code class="element">domainofapplication</code>
+      <code class="element">domainofapplication</code></p>
 
       <div class="example mathml-fragment">
        <pre>
@@ -2058,7 +2057,7 @@
          &lt;/apply&gt;
        </pre>
       </div>
-      is rewritten to
+      <p>is rewritten to</p>
 
       <div class="example mathml-fragment">
        <pre>
@@ -2080,7 +2079,7 @@
          &lt;/apply&gt;
        </pre>
       </div>
-      If there is no <code class="element">domainofapplication</code> qualifier the <code class="meta-code">&lt;ci&gt;D&lt;/ci&gt;</code> child is
+      <p>If there is no <code class="element">domainofapplication</code> qualifier the <code class="meta-code">&lt;ci&gt;D&lt;/ci&gt;</code> child is
       omitted.</p>
      </div>
     </section>
@@ -2211,17 +2210,17 @@
 
       <p>In Strict Content MathML, constants should be represented using
       <code class="element">csymbol</code> elements.  A number of important constants are defined in the
-      <a class="omcd" href="nums1">nums1</a> content dictionary. An expression of the form
+      <a class="omcd" href="nums1">nums1</a> content dictionary. An expression of the form</p>
 
       <div class="example mathml mml4c">
        <pre>&lt;cn type="constant"&gt;c&lt;/cn&gt;</pre>
       </div>
-      has the Strict Content MathML equivalent
+      <p>has the Strict Content MathML equivalent</p>
 
       <div class="example strict-mathml">
        <pre>&lt;csymbol cd="nums1"&gt;c2&lt;/csymbol&gt;</pre>
       </div>
-      where <code class="meta-code">c2</code>  corresponds to <code class="meta-code">c</code> as specified in the following table.</p>
+      <p>where <code class="meta-code">c2</code>  corresponds to <code class="meta-code">c</code> as specified in the following table.</p>
 
       <table id="contm_table-pragnum" border="1">
 
@@ -2285,14 +2284,14 @@
       the arguments of the constructor are <code class="element">ci</code> elements annotated
       with the supplied Presentation MathML.</p>
 
-      <p>A <code class="element">cn</code> expression with non-text content of the form
+      <p>A <code class="element">cn</code> expression with non-text content of the form</p>
 
       <div class="example mathml mml4c">
        <pre>
          &lt;cn type="rational"&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;sep/&gt;&lt;mi&gt;Q&lt;/mi&gt;&lt;/cn&gt;
        </pre>
       </div>
-      is transformed to Strict Content MathML by rewriting it to
+      <p>is transformed to Strict Content MathML by rewriting it to</p>
 
       <div class="example strict-mathml">
        <pre>
@@ -2312,7 +2311,7 @@
          &lt;/apply&gt;
        </pre>
       </div>
-      Where the identifier names, p and q, (which have to be a text string) should be
+      <p>Where the identifier names, p and q, (which have to be a text string) should be
       determined from the presentation MathML content, in a system defined way, perhaps
       as
       in the above example by taking the character data of the element ignoring any element
@@ -2342,12 +2341,12 @@
 
      <div class="strict-mathml-example" id="contm_ci_pres"><dfn>Rewrite: ci presentation mathml</dfn>
 
-      <p>A <code class="element">ci</code> expression with non-text content of the form
+      <p>A <code class="element">ci</code> expression with non-text content of the form</p>
 
       <div class="example mathml mml4c">
        <pre>&lt;ci&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/ci&gt;</pre>
       </div>
-      is transformed to Strict Content MathML by rewriting it to
+      <p>is transformed to Strict Content MathML by rewriting it to</p>
 
       <div class="example strict-mathml">
        <pre>
@@ -2359,7 +2358,7 @@
          &lt;/semantics&gt;
        </pre>
       </div>
-      Where the identifier name, p, (which has to be a text string) should be
+      <p>Where the identifier name, p, (which has to be a text string) should be
       determined from the presentation MathML content, in a system defined way, perhaps
       as
       in the above example by taking the character data of the element ignoring any element
@@ -2566,12 +2565,12 @@ k
      <div class="strict-mathml-example" id="contm_ci_strict_ex"><dfn>Rewrite: ci type annotation</dfn>
 
       <p>In Strict Content, type attributes are represented via
-      semantic attribution. An expression of the form
+      semantic attribution. An expression of the form</p>
 
       <div class="example mathml mml4c">
        <pre>&lt;ci type="T"&gt;n&lt;/ci&gt;</pre>
       </div>
-      is rewritten to
+      <p>is rewritten to</p>
 
       <div class="example strict-mathml">
        <pre>
@@ -2583,7 +2582,7 @@ k
          &lt;/semantics&gt;
        </pre>
       </div>
-      </p>
+
      </div>
 
      <p>In non-Strict usage <code class="element">csymbol</code> allows the use of
@@ -2592,12 +2591,12 @@ k
      <div class="strict-mathml-example" id="contm_csymbol_strict_ex"><dfn>Rewrite: csymbol type annotation</dfn>
 
       <p>In Strict Content, type attributes are represented via
-      semantic attribution. An expression of the form
+      semantic attribution. An expression of the form</p>
 
       <div class="example mathml mml4c">
        <pre>&lt;csymbol type="T"&gt;symbolname&lt;/csymbol&gt;</pre>
       </div>
-      is rewritten to
+      <p>is rewritten to</p>
 
       <div class="example strict-mathml">
        <pre>
@@ -2609,7 +2608,6 @@ k
          &lt;/semantics&gt;
        </pre>
       </div>
-      </p>
      </div>
 
     </section>
@@ -2642,14 +2640,14 @@ k
 
     <div class="strict-mathml-example" id="contm_strict-attributes"><dfn>Rewrite: attributes</dfn>
 
-     <p> For instance,
+     <p> For instance,</p>
 
      <div class="example mathml mml4c">
       <pre>
         &lt;ci class="foo" xmlns:other="http://example.com" other:att="bla"&gt;x&lt;/ci&gt;
       </pre>
      </div>
-     is rewritten to
+     <p>is rewritten to</p>
 
      <div class="example strict-mathml">
       <pre>
@@ -2669,7 +2667,7 @@ k
       </pre>
      </div>
 
-     For MathML attributes not allowed in Strict Content MathML the content
+     <p>For MathML attributes not allowed in Strict Content MathML the content
      dictionary <a class="omcd" href="mathmlattr">mathmlattr</a> is referenced, which provides
      symbols for all attributes allowed on content MathML
      elements.</p>
