@@ -646,7 +646,7 @@
     <p>A similar content management system is web-based and delivers MathML
     representations of mathematical expressions. The system is able to produce
     MathML-Presentation, MathML-Content, TeX and pictures in TIFF format.
-    In web-pages being browsed, it could produce a MathML fragment such as the following:
+    In web-pages being browsed, it could produce a MathML fragment such as the following:</p>
 
     <div class="example mathml-fragment">
      <pre>
@@ -660,7 +660,7 @@
        &lt;/math&gt;
      </pre>
     </div>
-    </p>
+
 
     <p>A web-browser on the Windows platform that receives such a fragment and tries to export
     it as part of
@@ -864,7 +864,7 @@
 
   <p>Extending the schema in this way is easily achieved using the Relax NG schema described
   in <a href="#parsing"></a>, it may be as simple as including the MathML schema whilst overriding the content
-  model of <code class="element">mtext</code>:
+  model of <code class="element">mtext</code>:</p>
 
   <div class="example ">
    <pre>
@@ -876,7 +876,7 @@
     }
    </pre>
   </div>
-  The definition given here would allow any well formed XML that is not in the MathML
+  <p>The definition given here would allow any well formed XML that is not in the MathML
   namespace as a child of <code class="element">mtext</code>. In practice this may be too lax. For example, an XHTML+MathML Schema may just want
   to allow inline XHTML elements as additional children of <code class="element">mtext</code>. This may be achieved by replacing <code>anyElement</code> by a suitable production from the <span>schema</span> for the host document type<span>, see <a href="#interf_xhtml"></a></span>.</p>
 
@@ -1069,7 +1069,7 @@
 
    <p>The list of presentation markup elements that do not ordinarily
    have a visual rendering, and thus should not be used as linking
-   elements, is given in the table below.
+   elements, is given in the table below.</p>
 
    <table id="table-nolink">
 
@@ -1093,7 +1093,6 @@
      </tr>
     </tbody>
    </table>
-   </p>
 
    <p>For compound document formats that support linking mechanisms, the
    <code class="attribute">id</code> attribute should
@@ -1134,7 +1133,7 @@
    for the W3C graphics activity.)</p>
 
    <p>One mechanism for embedding additional graphical content is via the
-   <code class="element">semantics</code> element, as in the following example:
+   <code class="element">semantics</code> element, as in the following example:</p>
 
    <div class="example ">
      <pre>
@@ -1160,7 +1159,7 @@
       &lt;/semantics&gt;
      </pre>
    </div>
-   Here, the <code class="element">annotation-xml</code> elements are used to indicate alternative
+   <p>Here, the <code class="element">annotation-xml</code> elements are used to indicate alternative
    representations of the MathML-Content depiction of the
    intersection of two sets.
    The first one is in the <span>&#x201c;Scalable Vector
