@@ -4,7 +4,7 @@
 <!-- <div class="issue" data-number="252"></div>-->
 <!-- <div class="issue" data-number="289"></div>-->
 
- 
+
  <p>Annotation refers to markup added to
  make associations between alternate representations of an
  expression, and for associating semantic properties and other
@@ -105,7 +105,7 @@ wildcard := '*'
   </section>
 
 
- 
+
  <section>
   <h3 id="mixing_intent_examplesn">Intent Examples</h3>
 
@@ -145,10 +145,10 @@ as an embellished symbol would be distinguished as follows:</p>
 &lt;/msup>
 </pre>
 
- 
+
  </section>
  </section>
- 
+
  <section>
   <h3 id="mixing_annotation_elements">Annotation Elements</h3>
 
@@ -182,7 +182,7 @@ as an embellished symbol would be distinguished as follows:</p>
    [[MathML-Core]].
    </p>
 
- 
+
   <section>
    <h4 id="mixing_annotation_keys">Annotation keys</h4>
 
@@ -275,8 +275,7 @@ as an embellished symbol would be distinguished as follows:</p>
    to each of the annotations.
    </p>
 
-   <p>
-    <div class="example mathml mml4c">
+    <div class="example mathml mmlcore">
      <pre>
        &lt;semantics&gt;
          &lt;apply&gt;
@@ -310,7 +309,7 @@ as an embellished symbol would be distinguished as follows:</p>
        &lt;/semantics&gt;
      </pre>
     </div>
-   </p>
+
 
    <p id="html-xml2">Note that this example makes use of the namespace extensibility
    that is only available in the XML syntax of MathML. If this example is included in
@@ -344,7 +343,7 @@ as an embellished symbol would be distinguished as follows:</p>
    is annotated with a <code>MathML-Content</code> annotation clarifying
    its precise meaning.</p>
 
-   <p>
+
     <div class="example mathml mml4p">
      <pre>
        &lt;semantics&gt;
@@ -365,7 +364,7 @@ as an embellished symbol would be distinguished as follows:</p>
        &lt;/semantics&gt;
      </pre>
     </div>
-   </p>
+
   </section>
 
   <section>
@@ -389,7 +388,7 @@ as an embellished symbol would be distinguished as follows:</p>
    the annotation.  This type of annotation is known as an <em>annotation
    reference</em>.</p>
 
-   <p>
+
     <div class="example mathml-fragment">
      <pre>
        &lt;semantics&gt;
@@ -399,7 +398,7 @@ as an embellished symbol would be distinguished as follows:</p>
            &lt;/semantics&gt;
      </pre>
     </div>
-   </p>
+
 
    <p>Processing agents that anticipate that consumers of exported markup may
    not be able to retrieve the external entity referenced by such annotations
@@ -440,8 +439,7 @@ as an embellished symbol would be distinguished as follows:</p>
     rendering of its first child.  A renderer may use the information contained
     in the annotations to customize its rendering of the annotated element.</p>
 
-    <p>
-     <div class="example mathml mml4p">
+     <div class="example mathml mmlcore">
       <pre>
         &lt;semantics&gt;
           &lt;mrow&gt;
@@ -464,7 +462,7 @@ as an embellished symbol would be distinguished as follows:</p>
         &lt;/semantics&gt;
       </pre>
      </div>
-    </p>
+ 
    </section>
 
 
@@ -575,13 +573,13 @@ as an embellished symbol would be distinguished as follows:</p>
     <p>The <code class="attribute">src</code> attribute provides a mechanism to attach external
     entities as annotations on MathML expressions.</p>
 
-    <p>
+
      <div class="example mathml-fragment">
       <pre>
         &lt;annotation encoding="image/png" src="333/formula56.png"/&gt;
       </pre>
      </div>
-    </p>
+
 
     <p>The <code class="element">annotation</code> element is a semantic mapping element that may
     only be used as a child of the <code class="element">semantics</code> element.  While there is
@@ -704,7 +702,7 @@ as an embellished symbol would be distinguished as follows:</p>
     attribute provides a mechanism to attach external XML entities as
     annotations on MathML expressions.</p>
 
-    <p>
+
      <div class="example mathml-fragment">
       <pre>
         &lt;annotation-xml cd="mathmlkeys" name="contentequiv" encoding="MathML-Content"&gt;
@@ -724,14 +722,14 @@ as an embellished symbol would be distinguished as follows:</p>
         &lt;/annotation-xml&gt;
       </pre>
      </div>
-    </p>
+ 
 
     <p>When <span>the MathML is being parsed as XML and </span>
     the annotation value is represented in an XML dialect other than MathML, the
     namespace for the XML markup for the annotation should be identified by means of namespace
     attributes and/or namespace prefixes on the annotation value.  For instance:</p>
 
-    <p>
+
      <div class="example mathml-fragment">
       <pre>
         &lt;annotation-xml encoding="application/xhtml+xml"&gt;
@@ -744,7 +742,7 @@ as an embellished symbol would be distinguished as follows:</p>
         &lt;/annotation-xml&gt;
       </pre>
      </div>
-    </p>
+
 
     <p>The <code class="element">annotation-xml</code> element is a semantic mapping element that may only be used
     as a child of the <code class="element">semantics</code> element.  While there is no default rendering for the
@@ -787,7 +785,7 @@ as an embellished symbol would be distinguished as follows:</p>
     </ul>
 
     <p>These issues mean that the following example is valid whether parsed by an XML or
-    HTML parser:
+    HTML parser:</p>
 
     <div class="example mathml-fragment">
      <pre>
@@ -804,8 +802,8 @@ as an embellished symbol would be distinguished as follows:</p>
      </pre>
     </div>
 
-    However the if the <code class="attribute">encoding</code> attribute is omitted then the expression
-    is only valid if parsed as XML:
+   <p> However the if the <code class="attribute">encoding</code> attribute is omitted then the expression
+    is only valid if parsed as XML:</p>
 
     <div class="example mathml-error">
      <pre>
@@ -821,11 +819,11 @@ as an embellished symbol would be distinguished as follows:</p>
        &lt;/math&gt;
      </pre>
     </div>
-    </p>
+ 
 
     <p>If the above is parsed by an HTML parser it produces a result equivalent to the following
     invalid input, where the <code class="element" data-namespace="xhtml">span</code> element has caused all MathML elements to be prematurely closed. The remaining MathML
-    elements following the <code class="element">span</code> are no longer contained within <code class="starttag">&lt;math&gt;</code> so will be parsed as unknown HTML elements and render incorrectly.
+    elements following the <code class="element">span</code> are no longer contained within <code class="starttag">&lt;math&gt;</code> so will be parsed as unknown HTML elements and render incorrectly.</p>
 
     <div class="example mathml-error">
      <pre>
@@ -841,7 +839,7 @@ as an embellished symbol would be distinguished as follows:</p>
        &lt;mi xmlns="http://www.w3.org/1999/xhtml"&gt;b&lt;/mi&gt;
      </pre>
     </div>
-    </p>
+    
 
     <p>Note here that the HTML <code class="element" data-namespace="xhtml">span</code> element has
     caused all open MathML elements to be prematurely closed, resulting in
@@ -1004,8 +1002,9 @@ as an embellished symbol would be distinguished as follows:</p>
    <p>
     The following example encodes the Boolean arithmetic expression
     (<i class="var">a</i>+<i class="var">b</i>)(<i class="var">c</i>+<i class="var">d</i>) in this way.
+   </p>
 
-    <div class="example mathml mml4p">
+    <div class="example mathml mmlcore">
      <pre>
        &lt;semantics&gt;
          &lt;mrow&gt;
@@ -1027,7 +1026,7 @@ as an embellished symbol would be distinguished as follows:</p>
     <code class="element">annotation-xml</code> element.  An equivalent form could be given
     that annotates the content markup as the first child element, with
     the presentation markup as part of the <code class="element">annotation-xml</code> element.
-   </p>
+
 
   </section>
 
@@ -1051,8 +1050,9 @@ as an embellished symbol would be distinguished as follows:</p>
     The following example demonstrates cross-references for the
     Boolean arithmetic expression
     (<i class="var">a</i>+<i class="var">b</i>)(<i class="var">c</i>+<i class="var">d</i>).
-
-    <div class="example mathml mml4p">
+   </p>
+   
+    <div class="example mathml mmlcore">
      <pre>
        &lt;semantics&gt;
          &lt;mrow id="E"&gt;
@@ -1087,7 +1087,7 @@ as an embellished symbol would be distinguished as follows:</p>
        &lt;/semantics&gt;
      </pre>
     </div>
-   </p>
+
 
    <p>
     An <code class="attribute">id</code> attribute and associated <code class="attribute">xref</code> attributes
