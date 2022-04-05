@@ -1488,7 +1488,7 @@
   </section>
 
  <section>
-  <h4 id="presm_mi" data-coreref="dfn-mi">Identifier <code class="defn starttag">&lt;mi&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-mi"></a></h4>
+  <h4 id="presm_mi">Identifier <code class="defn starttag">&lt;mi&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-mi"></a></h4>
 
  <section>
    <h5>Description</h5>
@@ -2083,7 +2083,7 @@
 	see <a class="intref" href="#presm_munder"><code class="element">munder</code></a>,
 	<a class="intref" href="#presm_mover"><code class="element">mover</code></a>
 	and <a class="intref" href="#presm_munderover"><code class="element">munderover</code></a>.
-  <br>
+  <br/>
   Note: for compatibility with MathML Core, use <code class="attribute">accent</code>=<code class="attributevalue">true</code> on
     the enclosing <code class="element">mover</code> and <code class="element">munderover</code> in place of this attribute.
        </td>
@@ -3411,7 +3411,7 @@ or more attribute values explicitly specified.
 
 <p>Note the warning about the legal grouping of <span>&#x201c;space-like
 elements&#x201d;</span> given below, and the warning about the use of such
-elements for <span>&#x201c;tweaking&#x201d;</span> in [[MathML-Notes]]</a>.
+elements for <span>&#x201c;tweaking&#x201d;</span> in [[MathML-Notes]].
 See also the other elements that can render as
 whitespace, namely <code class="element">mtext</code>, <code class="element">mphantom</code>, and
 <code class="element">maligngroup</code>.</p> </section>
@@ -3728,6 +3728,8 @@ the content should be encoded as described in that section.</p>
 
 </section>
 
+</section>
+
 <section>
  <h3 id="presm_genlayout">General Layout Schemata</h3>
 
@@ -4010,8 +4012,8 @@ The default value is <code class="attributevalue">medium</code>,
 <code class="attributevalue">thin</code> is thinner, but visible,
 <code class="attributevalue">thick</code> is thicker;
 the exact thickness of these is left up to the rendering agent.
-<br>
-Note: MathML Core does only allows <a href="https://w3c.github.io/mathml-core/#dfn-length-percentage">length-percentage</a> values.
+<br/>
+Note: MathML Core does only allow <a href="https://w3c.github.io/mathml-core/#dfn-length-percentage">length-percentage</a> values.
 </td>
 </tr>
 
@@ -7491,7 +7493,7 @@ section on &lt;mo&gt;,
 
      <tr>
       <td rowspan="2" class="attname">rowspan</td>
-      <td><a class="intref" href="#type_positive-integer"><em>positive-integer</em></a></td>
+      <td><em>[^positive-integer^]</em></td>
       <td>1</td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-rowspan"></a></td>
      </tr>
@@ -7506,7 +7508,7 @@ section on &lt;mo&gt;,
 
      <tr>
       <td rowspan="2" class="attname">columnspan</td>
-      <td><a class="intref" href="#type_positive-integer"><em>positive-integer</em></a></td>
+      <td><em>[^positive-integer^]</em></td>
       <td>1</td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-columnspan"></a></td>
      </tr>
@@ -9784,7 +9786,7 @@ error; the appropriate rendering in that case is as described in
 </tr>
 <tr>
 <td rowspan="2" class="attname">selection</td>
-<td><a class="intref" href="#type_positive-integer"><em>positive-integer</em></a></td>
+<td><em>[^positive-integer^]</em></td>
 <td>1</td>
 <td><span class="coreno"></span></td>
 </tr>
@@ -9923,3 +9925,4 @@ MathML processors should use this value for the presentation.</p>
 <code class="element">semantics</code> and <code class="element">annotation-xml</code> elements.</p>
 </section>
 </section>
+
