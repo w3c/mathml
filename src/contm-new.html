@@ -591,7 +591,7 @@
 
        <div id="contm_cn_hexdouble_ex" class="mathml-example">
 
-        <div class="example mathml">
+        <div class="example mathml mml4c">
          <pre>
            &lt;cn type="hexdouble"&gt;7F800000&lt;/cn&gt;
 	 </pre>
@@ -599,7 +599,7 @@
 
         <p>Sample Presentation</p>
 
-        <div class="example mathml">
+        <div class="example mathml mml4c">
          <pre>
            &lt;mn&gt;0x7F800000&lt;/mn&gt;
 	 </pre>
@@ -646,13 +646,13 @@
 
        <div id="cn_base_ex" class="mathml-example">
 
-        <div class="example mathml">
+        <div class="example mathml mml4c">
          <pre>&lt;cn base="16"&gt;7FE0&lt;/cn&gt;</pre>
         </div>
 
         <p>Sample Presentation</p>
 
-        <div class="example mathml">
+        <div class="example mathml mmlcore">
          <pre>
            &lt;msub&gt;&lt;mn&gt;7FE0&lt;/mn&gt;&lt;mn&gt;16&lt;/mn&gt;&lt;/msub&gt;
 	 </pre>
@@ -667,7 +667,7 @@
         When <code class="attribute">base</code> &gt; 36, some integers cannot be represented using
         numbers and letters alone. For example, while
 
-        <div class="example mathml">
+        <div class="example mathml mml4c">
          <pre>&lt;cn base="1000"&gt;10F&lt;/cn&gt;</pre>
         </div>
         arguably represents the number written in base 10 as 1,000,015, the number
@@ -712,13 +712,13 @@
 
        <div id="cn_rational_ex" class="mathml-example">
 
-        <div class="example mathml">
+        <div class="example mathml mml4c">
          <pre>&lt;cn type="rational"&gt;22&lt;sep/&gt;7&lt;/cn&gt;</pre>
         </div>
 
         <p>Sample Presentation</p>
 
-        <div class="example mathml">
+        <div class="example mathml mmlcore">
          <pre>
            &lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;
 	 </pre>
@@ -740,7 +740,7 @@
 
        <div id="cn_cc_ex" class="mathml-example">
 
-        <div class="example mathml">
+        <div class="example mathml mml4c">
          <pre>
            &lt;cn type="complex-cartesian"&gt; 12.3 &lt;sep/&gt; 5 &lt;/cn&gt;
 	 </pre>
@@ -748,7 +748,7 @@
 
         <p>Sample Presentation</p>
 
-        <div class="example mathml">
+        <div class="example mathml mmlcore">
          <pre>
            &lt;mrow&gt;
              &lt;mn&gt;12.3&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;i&lt;/mi&gt;
@@ -772,7 +772,7 @@
 
        <div id="cn_cp_ex" class="mathml-example">
 
-        <div class="example mathml">
+        <div class="example mathml mml4c">
          <pre>
            &lt;cn type="complex-polar"&gt; 2 &lt;sep/&gt; 3.1415 &lt;/cn&gt;
 	 </pre>
@@ -780,7 +780,7 @@
 
         <p>Sample Presentation</p>
 
-        <div class="example mathml">
+        <div class="example mathml mmlcore">
          <pre>
            &lt;mrow&gt;
              &lt;mn&gt;2&lt;/mn&gt;
@@ -797,7 +797,7 @@
          <p><img src="image/cn_cp_ex.gif" alt="{ {2} \unicode{8290} {\msup{e}{{i\unicode{8290}{\mn{3.1415}}}}} }"></img></p>
         </blockquote>
 
-        <div class="example mathml">
+        <div class="example mathml mmlcore">
          <pre>
            &lt;mrow&gt;
              &lt;mi&gt;Polar&lt;/mi&gt;
@@ -977,7 +977,7 @@
 
      <div class="strict-mathml-example" id="contm_ci_mathmltypes">
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>&lt;ci type="integer"&gt;n&lt;/ci&gt;</pre>
       </div>
 
@@ -1029,7 +1029,7 @@
      <p>The <code class="attribute">type</code> attribute can be interpreted to
      provide rendering information. For example in
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>&lt;ci type="vector"&gt;V&lt;/ci&gt;</pre>
      </div>
      a renderer could display a bold V for the vector.</p>
@@ -1295,7 +1295,7 @@
 
      <p>Content MathML</p>
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;set&gt;
           &lt;cs&gt;A&lt;/cs&gt;&lt;cs&gt;B&lt;/cs&gt;&lt;cs&gt;  &lt;/cs&gt;
@@ -1305,7 +1305,7 @@
 
      <p>Sample Presentation</p>
 
-     <div class="example mathml">
+     <div class="example mathml mmlcore">
       <pre>
         &lt;mrow&gt;
           &lt;mo&gt;{&lt;/mo&gt;
@@ -1393,7 +1393,7 @@
 
      <p>For example, (<i class="var">x</i> + <i class="var">y</i>) might be encoded as
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>&lt;apply&gt;&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;</pre>
      </div>
 
@@ -1413,7 +1413,7 @@
      <p>An <code class="element">apply</code> may in principle have any number of operands. For example,
      (<i class="var">x</i> + <i class="var">y</i> + <i class="var">z</i>) can be encoded as
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;apply&gt;&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;
           &lt;ci&gt;x&lt;/ci&gt;
@@ -1429,7 +1429,7 @@
      occurrences of <code class="element">apply</code>. For example, <i class="var">a</i> <i class="var">x</i> + <i class="var">b</i>
      would be encoded as
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;apply&gt;&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;
           &lt;apply&gt;&lt;csymbol cd="arith1"&gt;times&lt;/csymbol&gt;
@@ -1454,7 +1454,7 @@
      rendering such as (<i class="var">F</i>+<i class="var">G</i>)(<i class="var">x</i>)
      might be a product, as in
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;apply&gt;&lt;csymbol cd="arith1"&gt;times&lt;/csymbol&gt;
           &lt;apply&gt;&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;
@@ -1469,13 +1469,13 @@
      or it might indicate the application of the function <i class="var">F</i> + <i class="var">G</i> to
      the argument <i class="var">x</i>. This is indicated by constructing the sum
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>&lt;apply&gt;&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;&lt;ci&gt;F&lt;/ci&gt;&lt;ci&gt;G&lt;/ci&gt;&lt;/apply&gt;</pre>
      </div>
 
      and applying it to the argument <i class="var">x</i> as in
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;apply&gt;
           &lt;apply&gt;&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;
@@ -1521,7 +1521,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;
            &lt;ci&gt;a1&lt;/ci&gt;
@@ -1534,7 +1534,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;F&lt;/mi&gt;
@@ -1570,7 +1570,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;ci&gt;op&lt;/ci&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -1582,7 +1582,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;munder&gt;
@@ -1748,7 +1748,7 @@
      element in the <code class="element">bvar</code> element and referring to it using the <code class="attribute">xref</code>
      attribute on all other instances.  An example of this approach is
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;bind&gt;&lt;csymbol cd="quant1"&gt;forall&lt;/csymbol&gt;
           &lt;bvar&gt;&lt;ci id="var-x"&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -1778,7 +1778,7 @@
 
      <p>The following example encodes forall <i class="var">x</i>. <i class="var">x</i>+<i class="var">y</i>=<i class="var">y</i>+<i class="var">x</i>.</p>
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;bind&gt;&lt;csymbol cd="quant1"&gt;forall&lt;/csymbol&gt;
           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -1837,7 +1837,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;bind&gt;&lt;ci&gt;b&lt;/ci&gt;
            &lt;bvar&gt;&lt;ci&gt;x1&lt;/ci&gt;&lt;/bvar&gt;
@@ -1850,7 +1850,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;B&lt;/mi&gt;
@@ -1949,7 +1949,7 @@
 
 	<td>
 
-	 <div class="example mathml">
+	 <div class="example mathml mml4c">
 	  <pre>
      &lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;
        &lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;
@@ -1979,7 +1979,7 @@
 
 	<td>
 
-	 <div class="example mathml">
+	 <div class="example mathml mml4c">
 	  <pre>
      &lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;
        &lt;apply id="t1"&gt;&lt;ci&gt;f&lt;/ci&gt;
@@ -2074,7 +2074,7 @@
      allows a phenomenon called <em>variable capture</em> to
      occur. Consider an example:
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;bind id="outer"&gt;&lt;csymbol cd="fns1"&gt;lambda&lt;/csymbol&gt;
           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -2211,7 +2211,7 @@
     containing a <code>DivisionByZero</code> symbol, as in the following
     expression:
 
-    <div class="example mathml">
+    <div class="example mathml mml4c">
      <pre>
        &lt;cerror&gt;
          &lt;csymbol cd="aritherror"&gt;DivisionByZero&lt;/csymbol&gt;
@@ -2224,7 +2224,7 @@
     erroneous sub-expression.  Thus a <code class="element">cerror</code> will often be a sub-expression of
     a bigger one, e.g.
 
-    <div class="example mathml">
+    <div class="example mathml mml4c">
      <pre>
        &lt;apply&gt;&lt;csymbol cd="relation1"&gt;eq&lt;/csymbol&gt;
          &lt;cerror&gt;
@@ -2247,7 +2247,7 @@
 
     <div id="contm_cerror_ex" class="mathml-example">
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;cerror&gt;
           &lt;csymbol cd="aritherror"&gt;DivisionByZero&lt;/csymbol&gt;
@@ -2258,7 +2258,7 @@
 
      <p>Sample Presentation</p>
 
-     <div class="example mathml">
+     <div class="example mathml mmlcore">
       <pre>
         &lt;merror&gt;
           &lt;mtext&gt;DivisionByZero:&amp;#160;&lt;/mtext&gt;
@@ -2277,7 +2277,7 @@
     provide an alternative representation of the error context.  For
     example:
 
-    <div class="example mathml">
+    <div class="example mathml mml4c">
      <pre>
        &lt;cerror&gt;
          &lt;csymbol cd="error"&gt;Illegal bound variable&lt;/csymbol&gt;
@@ -2457,7 +2457,7 @@
 
       <p>Here is an example of container markup with explicitly specified arguments:
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>&lt;set&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;&lt;/set&gt;</pre>
       </div>
 
@@ -2475,7 +2475,7 @@
       given indirectly as an expression with a bound variable. The container markup
       for the set of even integers is:
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;set&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -2528,7 +2528,7 @@
 
       <p>This example shows the use of <code class="element">lambda</code> container element and the equivalent use of <code class="element">bind</code> in Strict Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>&lt;lambda&gt;&lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/lambda&gt;</pre>
       </div>
 
@@ -2585,7 +2585,7 @@
      equivalent merely replaces the <code class="element">apply</code> element with a
      <code class="element">bind</code> element:
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;apply&gt;&lt;forall/&gt;
           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -2615,7 +2615,7 @@
      convert the summand into a lambda expression, and recast the
      qualifiers as an argument expression:
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;apply&gt;&lt;sum/&gt;
           &lt;bvar&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/bvar&gt;
@@ -2742,7 +2742,7 @@
      function <i class="var">f</i> over
      <i class="var">C</i> in this way:
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;apply&gt;&lt;int/&gt;
           &lt;domainofapplication&gt;
@@ -2758,7 +2758,7 @@
      encoding, and the integrand is a function. Alternatively, the
      <code class="element">interval</code> qualifier could be used with an explicit bound variable:
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;apply&gt;&lt;int/&gt;
           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -2772,7 +2772,7 @@
      <p>The pair <code class="element">lowlimit</code> and <code class="element">uplimit</code> can also be used.
      This is perhaps the most "standard" representation of this integral:
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;apply&gt;&lt;int/&gt;
           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -2787,7 +2787,7 @@
      <p>Finally, here is the same integral, represented using
      a <code class="element">condition</code> on the bound variable:
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;apply&gt;&lt;int/&gt;
           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -2813,7 +2813,7 @@
      may use an extra bound variable and a domain of application
      corresponding to a cartesian product:
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;apply&gt;&lt;int/&gt;
           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -2893,7 +2893,7 @@
      being taken. Here is an example of a second derivative using the <code class="element">degree</code>
      qualifier:</p>
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;apply&gt;&lt;diff/&gt;
           &lt;bvar&gt;
@@ -2946,7 +2946,7 @@
 
      <p>For example,</p>
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>&lt;plus/&gt;</pre>
      </div>
 
@@ -3209,25 +3209,25 @@
      <div id="interval1.interval.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;interval closure="open"&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;
        </pre>
       </div>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;interval closure="closed"&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;
        </pre>
       </div>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;interval closure="open-closed"&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;
        </pre>
       </div>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;interval closure="closed-open"&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/interval&gt;
        </pre>
@@ -3235,7 +3235,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mfenced&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
        </pre>
@@ -3245,7 +3245,7 @@
        <p><img src="image/interval1-interval_oo-ex1.gif" alt="{\left(x,{1}\right)}"></img></p>
       </blockquote>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mfenced open="[" close="]"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
        </pre>
@@ -3255,7 +3255,7 @@
        <p><img src="image/interval1-interval_cc-ex1.gif" alt="{\left[{0},{1}\right]}"></img></p>
       </blockquote>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mfenced open="(" close="]"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
        </pre>
@@ -3265,7 +3265,7 @@
        <p><img src="image/interval1-interval_oc-ex1.gif" alt="{\left({0},{1}\right]}"></img></p>
       </blockquote>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mfenced open="[" close=")"&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfenced&gt;
        </pre>
@@ -3316,7 +3316,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;inverse/&gt;
            &lt;ci&gt; f &lt;/ci&gt;
@@ -3326,7 +3326,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/msup&gt;
        </pre>
@@ -3341,7 +3341,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;
            &lt;apply&gt;&lt;inverse/&gt;&lt;ci type="matrix"&gt;A&lt;/ci&gt;&lt;/apply&gt;
@@ -3352,7 +3352,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/msup&gt;
@@ -3420,7 +3420,7 @@
      following <code class="element">lambda</code> construct represents a function on
      the integers.
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;lambda&gt;
           &lt;bvar&gt;&lt;ci&gt; x &lt;/ci&gt;&lt;/bvar&gt;
@@ -3438,7 +3438,7 @@
      its existing functional arguments, as in this example, which is
      a variant representation for the function above.
 
-     <div class="example mathml">
+     <div class="example mathml mml4c">
       <pre>
         &lt;lambda&gt;
           &lt;domainofapplication&gt;&lt;integers/&gt;&lt;/domainofapplication&gt;
@@ -3455,7 +3455,7 @@
      <div id="fns1.lambda.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;lambda&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -3468,7 +3468,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;&amp;#x3bb;&lt;/mi&gt;
@@ -3489,7 +3489,7 @@
        <p><img src="image/fns1-lambda-ex2.gif" alt="{\unicode{955}x.{\left({\mathop{{\minormal{sin}}}{\left.\middle(x+{1}\middle)\right.}}\right)}}"></img></p>
       </blockquote>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;x&lt;/mi&gt;
@@ -3558,7 +3558,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;compose/&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;ci&gt;g&lt;/ci&gt;&lt;ci&gt;h&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -3566,7 +3566,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2218;&lt;/mo&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;&amp;#x2218;&lt;/mo&gt;&lt;mi&gt;h&lt;/mi&gt;
@@ -3583,7 +3583,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;
@@ -3597,7 +3597,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;
@@ -3665,7 +3665,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;compose/&gt;
@@ -3681,7 +3681,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;
@@ -3737,7 +3737,7 @@
      <div id="fns1.domain.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;domain/&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;/apply&gt;
@@ -3748,7 +3748,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;&lt;mi&gt;domain&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
@@ -3802,7 +3802,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;codomain/&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;/apply&gt;
@@ -3813,7 +3813,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;&lt;mi&gt;codomain&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
@@ -3866,7 +3866,7 @@
      <div id="fns1.image.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;image/&gt;&lt;sin/&gt;&lt;/apply&gt;
@@ -3877,7 +3877,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;&lt;mi&gt;image&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
@@ -4030,7 +4030,7 @@
      <div id="piece1.piecewise.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;piecewise&gt;
            &lt;piece&gt;
@@ -4051,7 +4051,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;{&lt;/mo&gt;
@@ -4129,7 +4129,7 @@
      <div id="integer1.quotient.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;quotient/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -4137,7 +4137,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mo&gt;&amp;#x230a;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;&amp;#x230b;&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
@@ -4185,7 +4185,7 @@
      <div id="integer1.factorial.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;factorial/&gt;&lt;ci&gt;n&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -4193,7 +4193,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;!&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
@@ -4240,7 +4240,7 @@
      <div id="arith1.divide.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;divide/&gt;
            &lt;ci&gt;a&lt;/ci&gt;
@@ -4251,7 +4251,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -4308,7 +4308,7 @@
      <div id="minmax1.max.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;max/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;5&lt;/cn&gt;&lt;/apply&gt;
        </pre>
@@ -4316,7 +4316,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;max&lt;/mi&gt;
@@ -4335,7 +4335,7 @@
      <div id="minmax1.big_max.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;max/&gt;
            &lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/bvar&gt;
@@ -4352,7 +4352,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;max&lt;/mi&gt;
@@ -4419,7 +4419,7 @@
      <div id="minmax1.min.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;min/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -4427,7 +4427,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;min&lt;/mi&gt;
@@ -4444,7 +4444,7 @@
      <div id="minmax1.big_min.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;min/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -4458,7 +4458,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;min&lt;/mi&gt;
@@ -4513,7 +4513,7 @@
      <div id="arith1.unary_minus.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;minus/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
        </pre>
@@ -4521,7 +4521,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;
        </pre>
@@ -4536,7 +4536,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;minus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -4544,7 +4544,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -4600,7 +4600,7 @@
      <div id="arith1.plus.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;plus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -4608,7 +4608,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -4657,7 +4657,7 @@
      <div id="arith1.power.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
        </pre>
@@ -4665,7 +4665,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
        </pre>
@@ -4717,7 +4717,7 @@
      <div id="arith1.remainder.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;rem/&gt;&lt;ci&gt; a &lt;/ci&gt;&lt;ci&gt; b &lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -4725,7 +4725,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;mod&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -4781,7 +4781,7 @@
      <div id="arith1.times.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;times/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -4789,7 +4789,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -4846,7 +4846,7 @@
      <div id="arith1.root.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;root/&gt;
            &lt;degree&gt;&lt;ci type="integer"&gt;n&lt;/ci&gt;&lt;/degree&gt;
@@ -4857,7 +4857,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>&lt;mroot&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mroot&gt;</pre>
       </div>
 
@@ -4910,7 +4910,7 @@
      <div id="arith1.gcd.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;gcd/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -4918,7 +4918,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;gcd&lt;/mi&gt;
@@ -4980,7 +4980,7 @@
      <div id="logic1.and.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;and/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -4988,7 +4988,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2227;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -5003,7 +5003,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;and/&gt;
            &lt;bvar&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/bvar&gt;
@@ -5042,7 +5042,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;munderover&gt;
@@ -5109,7 +5109,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;or/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -5117,7 +5117,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2228;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -5132,7 +5132,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;or/&gt;
            &lt;bvar&gt;&lt;ci&gt;i&lt;/ci&gt;&lt;/bvar&gt;
@@ -5171,7 +5171,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;munderover&gt;
@@ -5237,7 +5237,7 @@
      <div id="logic1.xor.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;xor/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -5245,7 +5245,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;xor&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -5294,7 +5294,7 @@
      <div id="logic1.not.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;not/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -5302,7 +5302,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mo&gt;&amp;#xac;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -5351,7 +5351,7 @@
      <div id="logic1.implies.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;implies/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -5359,7 +5359,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x21d2;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -5416,7 +5416,7 @@
      <div id="quant1.forall.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;bind&gt;&lt;forall/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -5430,7 +5430,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;&amp;#x2200;&lt;/mo&gt;
@@ -5498,7 +5498,7 @@
      <div id="quant1.exists.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;bind&gt;&lt;exists/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -5512,7 +5512,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;&amp;#x2203;&lt;/mo&gt;
@@ -5538,7 +5538,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;exists/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -5575,7 +5575,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;&amp;#x2203;&lt;/mo&gt;
@@ -5638,7 +5638,7 @@
      <div id="arith1.abs.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;abs/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -5646,7 +5646,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
@@ -5696,7 +5696,7 @@
      <div id="complex1.conjugate.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;conjugate/&gt;
            &lt;apply&gt;&lt;plus/&gt;
@@ -5709,7 +5709,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mover&gt;
            &lt;mrow&gt;
@@ -5767,7 +5767,7 @@
      <div id="complex1.argument.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;arg/&gt;
            &lt;apply&gt;&lt;plus/&gt;
@@ -5780,7 +5780,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;arg&lt;/mi&gt;
@@ -5840,7 +5840,7 @@
      <div id="complex1.real.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;real/&gt;
            &lt;apply&gt;&lt;plus/&gt;
@@ -5853,7 +5853,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;&amp;#x211b;&lt;/mo&gt;
@@ -5913,7 +5913,7 @@
      <div id="complex1.imaginary.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;imaginary/&gt;
            &lt;apply&gt;&lt;plus/&gt;
@@ -5926,7 +5926,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;&amp;#x2111;&lt;/mo&gt;
@@ -5991,7 +5991,7 @@
      <div id="arith1.lcm.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;lcm/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -5999,7 +5999,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;lcm&lt;/mi&gt;
@@ -6055,7 +6055,7 @@
      <div id="rounding1.floor.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;floor/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -6063,7 +6063,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mo&gt;&amp;#x230a;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x230b;&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
@@ -6111,7 +6111,7 @@
      <div id="rounding1.ceiling.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;ceiling/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -6119,7 +6119,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mo&gt;&amp;#x2308;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2309;&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
@@ -6176,7 +6176,7 @@
      <div id="relation1.eq.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;cn type="rational"&gt;2&lt;sep/&gt;4&lt;/cn&gt;
@@ -6187,7 +6187,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
@@ -6240,7 +6240,7 @@
      <div id="relation1.neq.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;neq/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;
        </pre>
@@ -6248,7 +6248,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;#x2260;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
        </pre>
@@ -6303,7 +6303,7 @@
      <div id="relation1.gt.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;gt/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
        </pre>
@@ -6311,7 +6311,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;gt;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;
        </pre>
@@ -6368,7 +6368,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;lt/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;
        </pre>
@@ -6376,7 +6376,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
        </pre>
@@ -6432,7 +6432,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;geq/&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
        </pre>
@@ -6453,7 +6453,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;&amp;#x2265;&lt;/mo&gt;
@@ -6513,7 +6513,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;leq/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;
        </pre>
@@ -6534,7 +6534,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;
@@ -6586,7 +6586,7 @@
      <div id="logic1.equivalent1.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;equivalent/&gt;
            &lt;ci&gt;a&lt;/ci&gt;
@@ -6597,7 +6597,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;a&lt;/mi&gt;
@@ -6648,7 +6648,7 @@
      <div id="relation1.approx.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;approx/&gt;
            &lt;pi/&gt;
@@ -6659,7 +6659,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;&amp;#x3c0;&lt;/mi&gt;
@@ -6712,7 +6712,7 @@
      <div id="integer1.factorof.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;factorof/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -6720,7 +6720,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -6776,7 +6776,7 @@
      <div id="calculus1.int.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;int/&gt;&lt;sin/&gt;&lt;/apply&gt;
@@ -6787,7 +6787,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;&amp;#x222b;&lt;/mi&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -6801,7 +6801,7 @@
      <div id="calculus1.defint.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;int/&gt;
            &lt;interval&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/interval&gt;
@@ -6812,7 +6812,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;msubsup&gt;&lt;mi&gt;&amp;#x222b;&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/msubsup&gt;&lt;mi&gt;cos&lt;/mi&gt;
@@ -6838,7 +6838,7 @@
       domain of integration (here a <code class="element">lowlimit</code>/<code class="element">uplimit</code> pair). This is perhaps
       the most "standard" representation of this integral:</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;int/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -6851,7 +6851,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;msubsup&gt;&lt;mi&gt;&amp;#x222b;&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msubsup&gt;
@@ -6908,13 +6908,13 @@
      <div id="calculus1.diff.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>&lt;apply&gt;&lt;diff/&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;/apply&gt;</pre>
       </div>
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;/mo&gt;&lt;/msup&gt;
        </pre>
@@ -6928,7 +6928,7 @@
      <div id="calculus1.diff.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;diff/&gt;
@@ -6942,7 +6942,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mfrac&gt;
@@ -6966,7 +6966,7 @@
      <div id="calculus1.diff.ex3" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;diff/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;degree&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/degree&gt;&lt;/bvar&gt;
@@ -6977,7 +6977,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mfrac&gt;
            &lt;mrow&gt;
@@ -7033,7 +7033,7 @@
      <div id="calculus1.partialdiff.ex3" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;partialdiff/&gt;
            &lt;list&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/list&gt;
@@ -7044,7 +7044,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;msub&gt;
@@ -7065,7 +7065,7 @@
 
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;partialdiff/&gt;
            &lt;list&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/list&gt;
@@ -7081,7 +7081,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mfrac&gt;
            &lt;mrow&gt;
@@ -7112,7 +7112,7 @@
      <div id="calculus1.partialdiff.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;partialdiff/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -7124,7 +7124,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mfrac&gt;
            &lt;mrow&gt;
@@ -7156,7 +7156,7 @@
      <div id="calculus1.partialdiff.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;partialdiff/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;degree&gt;&lt;ci&gt;m&lt;/ci&gt;&lt;/degree&gt;&lt;/bvar&gt;
@@ -7172,7 +7172,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mfrac&gt;
            &lt;mrow&gt;
@@ -7234,7 +7234,7 @@
      <div id="veccalc1.divergence.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;divergence/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -7242,7 +7242,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
        </pre>
@@ -7256,7 +7256,7 @@
      <div id="veccalc1.divergence.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;divergence/&gt;
            &lt;ci type="vector"&gt;E&lt;/ci&gt;
@@ -7266,7 +7266,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
        </pre>
@@ -7276,7 +7276,7 @@
        <p><img src="image/veccalc1-divergence-ex2.gif" alt="{\mathop{{\minormal{div}}}{\left(E\right)}}"></img></p>
       </blockquote>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#x22c5;&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -7296,7 +7296,7 @@
      <div id="veccalc1.divergence.ex3" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;divergence/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -7313,7 +7313,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;div&lt;/mi&gt;
@@ -7386,7 +7386,7 @@
      <div id="veccalc1.gradient.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;grad/&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -7394,7 +7394,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;grad&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mfenced&gt;
@@ -7406,7 +7406,7 @@
        <p><img src="image/veccalc1-gradient-ex1.gif" alt="{\mathop{{\minormal{grad}}}{\left(f\right)}}"></img></p>
       </blockquote>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
@@ -7429,7 +7429,7 @@
      <div id="veccalc1.gradient.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;grad/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -7442,7 +7442,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;grad&lt;/mi&gt;
@@ -7504,7 +7504,7 @@
      <div id="veccalc1.curl.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;curl/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -7512,7 +7512,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;curl&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mfenced&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;
        </pre>
@@ -7522,7 +7522,7 @@
        <p><img src="image/veccalc1-curl-ex1.gif" alt="{\mathop{{\minormal{curl}}}{\left(a\right)}}"></img></p>
       </blockquote>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#xd7;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -7578,7 +7578,7 @@
      <div id="veccalc1.laplacian.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;laplacian/&gt;&lt;ci type="vector"&gt;E&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -7586,7 +7586,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
@@ -7609,7 +7609,7 @@
      <div id="veccalc1.laplacian.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;laplacian/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -7622,7 +7622,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
@@ -7705,7 +7705,7 @@
      <div id="set1.set.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;set&gt;
            &lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;
@@ -7715,7 +7715,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;{&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;}&lt;/mo&gt;
@@ -7735,7 +7735,7 @@
      <div id="set1.suchthat.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;set&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -7749,7 +7749,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;{&lt;/mo&gt;
@@ -7769,7 +7769,7 @@
      <div id="set1.suchthat.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;set&gt;
            &lt;bvar&gt;&lt;ci type="set"&gt;S&lt;/ci&gt;&lt;/bvar&gt;
@@ -7783,7 +7783,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;{&lt;/mo&gt;
@@ -7803,7 +7803,7 @@
      <div id="set1.suchthat.ex3" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;set&gt;
            &lt;bvar&gt;&lt;ci&gt; x &lt;/ci&gt;&lt;/bvar&gt;
@@ -7820,7 +7820,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;{&lt;/mo&gt;
@@ -7894,7 +7894,7 @@
      <div id="list1.list.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;list&gt;
            &lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;
@@ -7904,7 +7904,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;
@@ -7928,7 +7928,7 @@
      <div id="list1.suchthat.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;list order="numeric"&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -7941,7 +7941,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;(&lt;/mo&gt;
@@ -8002,7 +8002,7 @@
      <div id="set1.union.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;union/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -8010,7 +8010,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x222a;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -8028,7 +8028,7 @@
      <div id="set1.big_union.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;union/&gt;
            &lt;bvar&gt;&lt;ci type="set"&gt;S&lt;/ci&gt;&lt;/bvar&gt;
@@ -8042,7 +8042,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x22c3;&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -8098,7 +8098,7 @@
      <div id="set1.intersect.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;intersect/&gt;
            &lt;ci type="set"&gt; A &lt;/ci&gt;
@@ -8109,7 +8109,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2229;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -8123,7 +8123,7 @@
      <div id="set1.big_intersect.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;intersect/&gt;
            &lt;bvar&gt;&lt;ci type="set"&gt;S&lt;/ci&gt;&lt;/bvar&gt;
@@ -8135,7 +8135,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x22c2;&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -8184,7 +8184,7 @@
      <div id="set1.in.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;in/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci type="set"&gt;A&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -8192,7 +8192,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -8241,7 +8241,7 @@
      <div id="set1.notin.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;notin/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci type="set"&gt;A&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -8249,7 +8249,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2209;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -8298,7 +8298,7 @@
      <div id="set1.subset.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;subset/&gt;
            &lt;ci type="set"&gt;A&lt;/ci&gt;
@@ -8309,7 +8309,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2286;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -8359,7 +8359,7 @@
      <div id="set1.prsubset.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;prsubset/&gt;
            &lt;ci type="set"&gt;A&lt;/ci&gt;
@@ -8370,7 +8370,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2282;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -8418,7 +8418,7 @@
      <div id="set1.notsubset.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;notsubset/&gt;
            &lt;ci type="set"&gt;A&lt;/ci&gt;
@@ -8429,7 +8429,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2288;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -8478,7 +8478,7 @@
      <div id="set1.notprsubset.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;notprsubset/&gt;
            &lt;ci type="set"&gt;A&lt;/ci&gt;
@@ -8489,7 +8489,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2284;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -8538,7 +8538,7 @@
      <div id="set1.setdiff.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;setdiff/&gt;
            &lt;ci type="set"&gt;A&lt;/ci&gt;
@@ -8549,7 +8549,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2216;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -8598,7 +8598,7 @@
      <div id="set1.size.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;card/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;/apply&gt;
@@ -8609,7 +8609,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;
@@ -8667,7 +8667,7 @@
      <div id="set1.cartesianproduct.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;cartesianproduct/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -8675,7 +8675,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#xd7;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -8752,7 +8752,7 @@
      <div id="arith1.sum.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;sum/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -8765,7 +8765,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;munderover&gt;
@@ -8787,7 +8787,7 @@
      <div id="arith1.sum.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;sum/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -8801,7 +8801,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;munder&gt;
@@ -8822,7 +8822,7 @@
      <div id="arith1.sum.ex3" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;sum/&gt;
            &lt;domainofapplication&gt;
@@ -8835,7 +8835,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -8907,7 +8907,7 @@
      <div id="arith1.product.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;product/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -8922,7 +8922,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;munderover&gt;
@@ -8944,7 +8944,7 @@
      <div id="arith1.product.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;product/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -8961,7 +8961,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;munder&gt;
@@ -9030,7 +9030,7 @@
      <div id="limit1.limit.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;limit/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -9042,7 +9042,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;munder&gt;
@@ -9062,7 +9062,7 @@
      <div id="limit1.limit.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;limit/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -9076,7 +9076,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;munder&gt;
@@ -9096,7 +9096,7 @@
      <div id="limit1.limit.ex3" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;limit/&gt;
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
@@ -9110,7 +9110,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;munder&gt;
@@ -9185,7 +9185,7 @@
      <div id="limit1.tendsto.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;tendsto type="above"/&gt;
            &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
@@ -9196,7 +9196,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
@@ -9214,7 +9214,7 @@
      <div id="limit1.tendsto.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;tendsto/&gt;
            &lt;vector&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/vector&gt;
@@ -9228,7 +9228,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mfenced&gt;&lt;mtable&gt;
            &lt;mtr&gt;&lt;mtd&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mtd&gt;&lt;/mtr&gt;
@@ -9302,7 +9302,7 @@
      <div id="transc1.sin.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -9310,7 +9310,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -9324,7 +9324,7 @@
      <div id="transc1.sin.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;sin/&gt;
            &lt;apply&gt;&lt;plus/&gt;
@@ -9337,7 +9337,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;sin&lt;/mi&gt;
@@ -9401,7 +9401,7 @@
      <div id="transc1.arcsin.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;arcsin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -9409,7 +9409,7 @@
 
       <p>Sample Presentations</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;arcsin&lt;/mi&gt;
@@ -9423,7 +9423,7 @@
        <p><img src="image/transc1-arcsin-ex1.gif" alt="{\mathop{{\minormal{arcsin}}}x}"></img></p>
       </blockquote>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;
@@ -9481,7 +9481,7 @@
      <div id="transc1.sinh.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;sinh/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -9489,7 +9489,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;sinh&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -9540,7 +9540,7 @@
      <div id="transc1.arcsinh.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;arcsinh/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -9548,7 +9548,7 @@
 
       <p>Sample Presentations</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;arcsinh&lt;/mi&gt;
@@ -9558,7 +9558,7 @@
        </pre>
       </div>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mi&gt;sinh&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;
@@ -9607,7 +9607,7 @@
      <div id="transc1.exp.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;exp/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -9615,7 +9615,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;msup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/msup&gt;
        </pre>
@@ -9661,7 +9661,7 @@
      <div id="transc1.ln.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;ln/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -9669,7 +9669,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;ln&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -9725,7 +9725,7 @@
      <div id="transc1.log.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;log/&gt;
            &lt;logbase&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/logbase&gt;
@@ -9736,7 +9736,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -9750,7 +9750,7 @@
      <div id="transc1.log.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;log/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -9758,7 +9758,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -9814,7 +9814,7 @@
      <div id="s_data1.mean.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;mean/&gt;
            &lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;7&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;
@@ -9824,7 +9824,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;&amp;#x27E8;&lt;/mo&gt;
@@ -9843,7 +9843,7 @@
      <div id="s_dist1.mean.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;mean/&gt;&lt;ci&gt;X&lt;/ci&gt;&lt;/apply&gt;
        </pre>
@@ -9851,7 +9851,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;&amp;#x27E8;&lt;/mo&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;&amp;#x27E9;&lt;/mo&gt;
@@ -9863,7 +9863,7 @@
        <p><img src="image/s_dist1-mean-ex1.gif" alt="{\unicode{9001}X\unicode{9002}}"></img></p>
       </blockquote>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mover&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;&amp;#xaf;&lt;/mo&gt;&lt;/mover&gt;
        </pre>
@@ -9918,7 +9918,7 @@
      <div id="s_data1.sdev.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;sdev/&gt;
            &lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;
@@ -9928,7 +9928,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;&amp;#x3c3;&lt;/mo&gt;
@@ -9946,7 +9946,7 @@
      <div id="s_dist1.sdev.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;sdev/&gt;
            &lt;ci type="discrete_random_variable"&gt;X&lt;/ci&gt;
@@ -9956,7 +9956,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;&amp;#x3c3;&lt;/mo&gt;
@@ -10013,7 +10013,7 @@
      <div id="s_data1.variance.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;variance/&gt;
            &lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;
@@ -10023,7 +10023,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;msup&gt;
@@ -10045,7 +10045,7 @@
      <div id="s_dist1.variance.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;variance/&gt;
            &lt;ci type="discrete_random_variable"&gt; X&lt;/ci&gt;
@@ -10055,7 +10055,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mo&gt;&amp;#x3c3;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
@@ -10113,7 +10113,7 @@
      <div id="s_data1.median.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;median/&gt;
            &lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;
@@ -10123,7 +10123,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;median&lt;/mi&gt;
@@ -10180,7 +10180,7 @@
      <div id="s_data1.mode.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;mode/&gt;
            &lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;
@@ -10190,7 +10190,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;mode&lt;/mi&gt;
@@ -10255,7 +10255,7 @@
      <div id="s_data1.moment.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;moment/&gt;
            &lt;degree&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/degree&gt;
@@ -10267,7 +10267,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;msub&gt;
            &lt;mrow&gt;
@@ -10291,7 +10291,7 @@
      <div id="s_dist1.moment.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;moment/&gt;
            &lt;degree&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/degree&gt;
@@ -10303,7 +10303,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;msub&gt;
            &lt;mrow&gt;
@@ -10378,7 +10378,7 @@
      <div id="linalg2.vector.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;vector&gt;
            &lt;apply&gt;&lt;plus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
@@ -10390,7 +10390,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;(&lt;/mo&gt;
@@ -10408,7 +10408,7 @@
        <p><img src="image/linalg2-vector-ex1.gif" alt="{\left.\middle({\begin{matrix}{x+y}\\{3}\\{7}\end{matrix}}\middle)\right.}"></img></p>
       </blockquote>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mfenced&gt;
            &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
@@ -10481,7 +10481,7 @@
      <div id="linalg6.matrix.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;matrix&gt;
            &lt;bvar&gt;&lt;ci type="integer"&gt;i&lt;/ci&gt;&lt;/bvar&gt;
@@ -10505,7 +10505,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;[&lt;/mo&gt;
@@ -10622,7 +10622,7 @@
      <div id="linalg1.determinant.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;determinant/&gt;
            &lt;ci type="matrix"&gt;A&lt;/ci&gt;
@@ -10632,7 +10632,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;det&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -10680,7 +10680,7 @@
      <div id="linalg1.transpose.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;transpose/&gt;
            &lt;ci type="matrix"&gt;A&lt;/ci&gt;
@@ -10690,7 +10690,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;msup&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/msup&gt;
        </pre>
@@ -10760,7 +10760,7 @@
      <div id="linalg1.vector_selector.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;selector/&gt;&lt;ci type="vector"&gt;V&lt;/ci&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/apply&gt;
        </pre>
@@ -10768,7 +10768,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;msub&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;
        </pre>
@@ -10783,7 +10783,7 @@
      <div id="linalg1.matrix_selector.ex2" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;selector/&gt;
@@ -10802,7 +10802,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;msub&gt;
@@ -10868,7 +10868,7 @@
      <div id="linalg1.vectorproduct.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;vectorproduct/&gt;
@@ -10887,7 +10887,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#xd7;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
@@ -10947,7 +10947,7 @@
      <div id="linalg1.scalarproduct.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;scalarproduct/&gt;
@@ -10965,7 +10965,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;.&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
@@ -11026,7 +11026,7 @@
      <div id="linalg1.outerproduct.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;outerproduct/&gt;
            &lt;ci type="vector"&gt;A&lt;/ci&gt;
@@ -11037,7 +11037,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2297;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -11090,7 +11090,7 @@
      <div id="setname1.integers.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;in/&gt;
            &lt;cn type="integer"&gt; 42 &lt;/cn&gt;
@@ -11101,7 +11101,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mn&gt;42&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -11147,7 +11147,7 @@
      <div id="setname1.reals.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;in/&gt;
            &lt;cn type="real"&gt; 44.997&lt;/cn&gt;
@@ -11158,7 +11158,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mn&gt;44.997&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;R&lt;/mi&gt;
@@ -11206,7 +11206,7 @@
      <div id="setname1.rationals.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;in/&gt;
            &lt;cn type="rational"&gt; 22 &lt;sep/&gt;7&lt;/cn&gt;
@@ -11217,7 +11217,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;
@@ -11267,7 +11267,7 @@
      <div id="setname1.naturalnumbers.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;in/&gt;
            &lt;cn type="integer"&gt;1729&lt;/cn&gt;
@@ -11278,7 +11278,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mn&gt;1729&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;N&lt;/mi&gt;
@@ -11326,7 +11326,7 @@
      <div id="setname1.complexes.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;in/&gt;
            &lt;cn type="complex-cartesian"&gt;17&lt;sep/&gt;29&lt;/cn&gt;
@@ -11337,7 +11337,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;&lt;mn&gt;17&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;29&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;
@@ -11387,7 +11387,7 @@
      <div id="setname1.primes.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;in/&gt;
            &lt;cn type="integer"&gt;17&lt;/cn&gt;
@@ -11398,7 +11398,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mn&gt;17&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;P&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
@@ -11444,7 +11444,7 @@
      <div id="nums1.exponentiale.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;ln/&gt;&lt;exponentiale/&gt;&lt;/apply&gt;
@@ -11455,7 +11455,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;&lt;mi&gt;ln&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;/mrow&gt;
@@ -11507,7 +11507,7 @@
      <div id="nums1.imaginaryi.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;power/&gt;&lt;imaginaryi/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
@@ -11518,7 +11518,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;/mrow&gt;
        </pre>
@@ -11566,7 +11566,7 @@
      <div id="nums1.notanumber.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;divide/&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;
@@ -11577,7 +11577,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
@@ -11627,7 +11627,7 @@
      <div id="logic1.true.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;or/&gt;
@@ -11641,7 +11641,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;&lt;mi&gt;true&lt;/mi&gt;&lt;mo&gt;&amp;#x2228;&lt;/mo&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/mrow&gt;
@@ -11691,7 +11691,7 @@
      <div id="logic1.false.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
            &lt;apply&gt;&lt;and/&gt;
@@ -11705,7 +11705,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;&lt;mi&gt;false&lt;/mi&gt;&lt;mo&gt;&amp;#x2227;&lt;/mo&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/mrow&gt;
@@ -11757,7 +11757,7 @@
      <div id="set1.emptyset.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;neq/&gt;
            &lt;integers/&gt;
@@ -11768,7 +11768,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;mo&gt;&amp;#x2260;&lt;/mo&gt;&lt;mi&gt;&amp;#x2205;&lt;/mi&gt;
@@ -11817,7 +11817,7 @@
      <div id="nums1.pi.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;approx/&gt;
            &lt;pi/&gt;
@@ -11828,7 +11828,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;&amp;#x3c0;&lt;/mi&gt;
@@ -11878,7 +11878,7 @@
      <div id="nums1.eulergamma.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;approx/&gt;
            &lt;eulergamma/&gt;
@@ -11889,7 +11889,7 @@
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;&amp;#x3b3;&lt;/mi&gt;&lt;mo&gt;&amp;#x2243;&lt;/mo&gt;&lt;mn&gt;0.5772156649&lt;/mn&gt;
@@ -11937,13 +11937,13 @@
      <div id="nums1.infinity.ex1" class="mathml-example">
       <p>Content MathML</p>
 
-      <div class="example mathml">
+      <div class="example mathml mml4c">
        <pre>&lt;infinity/&gt;</pre>
       </div>
 
       <p>Sample Presentation</p>
 
-      <div class="example mathml">
+      <div class="example mathml mmlcore">
        <pre>
          &lt;mi&gt;&amp;#x221e;&lt;/mi&gt;
        </pre>

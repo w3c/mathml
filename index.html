@@ -75,7 +75,20 @@
     }
     function resortable () {
         sorttable.makeSortable(document.getElementById('oper-dict-table'));
-      }
+    }
+    function showcore (){
+	var mmllist=document.querySelectorAll("div.example.mathml");
+	for(var i=0;i!=mmllist.length;i++){
+	    var m=document.createElementNS("http://www.w3.org/1998/Math/MathML","math");;
+	    m.setAttribute("display","block");
+	    m.setAttribute("class",
+			   mmllist[i].getAttribute("class").replace("example mathml","") +
+			   " inlinemath removeOnSave qqq");
+	    m.innerHTML=mmllist[i].textContent;
+	    mmllist[i].parentNode.insertBefore(m,mmllist[i].nextSibling);
+	}
+    }
+	
       </script>
   <script class='remove'>
    var respecConfig = {
@@ -92,15 +105,15 @@
      shortName:     "MathML4",
      maxTocLevel:   4,
      otherLinks:    [{
-      key: "Latest MathML Recommendation",
-      data: [{
-              value: "https://www.w3.org/TR/MathML/",
-              href: "https://www.w3.org/TR/MathML/",
-            }]
-                    }],
-     github:        "https://github.com/w3c/mathml",
-     postProcess:   [mmlindex,foldable,resortable],
-     localBiblio: {     
+     key: "Latest MathML Recommendation",
+     data: [{
+             value: "https://www.w3.org/TR/MathML/",
+             href: "https://www.w3.org/TR/MathML/",
+           }]
+                   }],
+  github:        "https://github.com/w3c/mathml",
+       postProcess:   [mmlindex,foldable,resortable,showcore],
+  localBiblio: {
   "MathML1":           {"aliasOf": "MathML-19980407"},
   "MathML-Core":       {"aliasOf": "mathml-core"},
   "Entities":          {"aliasOf": "xml-entity-names"},
@@ -214,6 +227,22 @@ border-left-style: solid;
 //background: var(--example-bg);
 background: #fafafa;
 }
+math.inlinemath {
+    border-width: .5em;
+    border-left-style: solid;
+    border-color: lightgreen;
+    background-color: #F7FFF6;
+    padding:1em;
+}
+math.inlinemath.mml4p {
+    border-right-style: solid;
+    border-right-width: thin;
+}
+math.inlinemath.mml4c {
+    border-right-style: double;
+    border-right-width: thick;
+}
+    
 #references :target{background:white;animation:none;}
   </style>
  </head>

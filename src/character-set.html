@@ -34,7 +34,7 @@
    Thus, an identifier for a variable that uses Fraktur characters could
    be marked up as
 
-   <div class="example mathml">
+   <div class="example mathml mmlcore">
     <pre>
      &lt;mi&gt;&amp;#x1D504;&lt;!--BLACK-LETTER CAPITAL A--&gt;&lt;/mi&gt;
     </pre>
@@ -42,7 +42,7 @@
    An alternative, equivalent markup for this example is to use the
    common upper-case A, modified by using the <code class="attribute">mathvariant</code> attribute:
 
-   <div class="example mathml">
+   <div class="example mathml mmlcore">
     <pre>
      &lt;mi mathvariant="fraktur"&gt;A&lt;/mi&gt;
     </pre>
@@ -211,7 +211,7 @@
     counterparts, there are a number of other keyboard character
     substitutions that are sometime used.  For example some may expect
 
-    <div class="example mathml">
+    <div class="example mathml mmlcore">
      <pre>&lt;mo&gt;''&lt;/mo&gt;</pre>
      </div> to be treated as
      U+2033 [DOUBLE PRIME], and analogous substitutions could perhaps be made for U+2034
@@ -244,13 +244,13 @@
    with a base expression using explicit script markup in MathML.  For
    example, the preferred encoding of <span>&#x201c;x prime&#x201d;</span> is
 
-   <div class="example mathml">
+   <div class="example mathml mmlcore">
     <pre>&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msup&gt;</pre>
    </div>
 
    and not
 
-   <div class="example mathml">
+   <div class="example mathml mmlcore">
     <pre>&lt;mi&gt;x'&lt;/mi&gt;</pre>
    </div>
 
@@ -264,13 +264,13 @@
    subscripting of x' would be rendered stacked under the prime. This is
    easily accomplished with script markup, for example:
 
-   <div class="example mathml">
+   <div class="example mathml mmlcore">
     <pre>&lt;mrow&gt;&lt;msubsup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msubsup&gt;&lt;/mrow&gt;</pre>
    </div>
 
    By contrast,
 
-   <div class="example mathml">
+   <div class="example mathml mmlcore">
     <pre>&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;x'&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;</pre>
    </div>
    will render with staggered scripts.</p>
@@ -285,7 +285,7 @@
    juxtaposition of characters is that it generally better reflects the
    intended mathematical structure. For example,
 
-   <div class="example mathml">
+   <div class="example mathml mmlcore">
     <pre>
     &lt;msup&gt;
       &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
@@ -300,12 +300,12 @@
    so one cannot rule out the possibility of valid MathML markup
    containing constructions such as
 
-   <div class="example mathml">
+   <div class="example mathml mmlcore">
     <pre>&lt;mrow&gt;&lt;mi&gt;x'&lt;/mi&gt;&lt;/mrow&gt;</pre>
    </div>
    and
 
-   <div class="example mathml">
+   <div class="example mathml mmlcore">
     <pre>&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;'&lt;/mo&gt;&lt;/mrow&gt;</pre>
    </div>
 
@@ -315,7 +315,7 @@
    Authoring and validation tools are encouraged to generate the
    recommended script markup:
 
-   <div class="example mathml">
+   <div class="example mathml mmlcore">
     <pre>&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msup&gt;&lt;/mrow&gt;</pre>
    </div>
    </p>
