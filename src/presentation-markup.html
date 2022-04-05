@@ -1743,8 +1743,10 @@
    <p>Many mathematical numbers should be represented using presentation
    elements other than <code class="element">mn</code> alone; this includes
    complex numbers, <span data-diff="add">negative numbers, </span>ratios of numbers shown as fractions, and
-   names of numeric constants. Examples of MathML representations of
-   such numbers include:
+   names of numeric constants.
+   </p>
+   <section class="fold">
+    <h6 id="presm_mn_complex_examples">Examples of complex representations of numbers</h6>
 
    <div class="example mathml">
     <pre>
@@ -1777,6 +1779,7 @@
    </div>
    </p>
   </section>
+ </section>
  </section>
 
  <section>
@@ -2640,53 +2643,8 @@
     </pre>
    </div>
    </p>
+  
   </section>
-   <p>The reasons for using specific <code class="element">mo</code> elements for
-   invisible operators include:
-   </p>
-   <ul>
-
-    <li>
-     <p>such operators should often have specific effects on visual
-     rendering (particularly spacing and linebreaking rules) that are not
-     the same as either the lack of any operator, or spacing represented by
-     <code class="element">mspace</code> or <code class="element">mtext</code>
-     elements;</p>
-    </li>
-
-    <li>
-     <p>these operators should often have specific audio renderings
-     different than that of the lack of any operator;</p>
-    </li>
-
-    <li>
-     <p>automatic semantic interpretation of MathML presentation elements
-     is made easier by the explicit specification of such operators.</p>
-    </li>
-   </ul>
-
-   <p>For example, an audio renderer might render <i class="var">f</i>(<i class="var">x</i>)
-   (represented as in the above examples) by speaking <span>&#x201c;f of x&#x201d;</span>, but use
-   the word <span>&#x201c;times&#x201d;</span> in its rendering of <i class="var">x</i><i class="var">y</i>.
-   Although its rendering must still be different depending on the structure
-   of neighboring elements (sometimes leaving out <span>&#x201c;of&#x201d;</span> or
-   <span>&#x201c;times&#x201d;</span> entirely), its task is made much easier by the use of
-   a different <code class="element">mo</code> element for each invisible
-   operator.</p>
-  </section>
-
-  <section>
-   <h5>Names for other special operators</h5>
-
-   <p>MathML also includes <code class="entity">DifferentialD</code> (U+2146) for use
-   in an <code class="element">mo</code> element representing the differential
-   operator symbol usually denoted by <span>&#x201c;d&#x201d;</span>.  The reasons for
-   explicitly using this special character are similar to those for using
-   the special characters for invisible operators described in the
-   preceding section.  </p>
-
-  </section>
-
   <section>
    <h5>Detailed rendering rules for <code class="starttag">&lt;mo&gt;</code> elements</h5>
 
@@ -2699,7 +2657,10 @@
    suggestions rather than requirements.  Furthermore, no attempt is made
    to specify the rendering completely; rather, enough information is
    given to make the intended effect of the various rendering attributes
-   as clear as possible.</p>
+   as clear as possible.
+   Detailed layout rules for brower implmentations for operators are given in
+   <a href="https://w3c.github.io/mathml-core/#operator-fence-separator-or-accent-mo>MathML Core</a>.
+  </p>
 
    <section>
     <h6 id="presm_opdict">The operator dictionary</h6>
