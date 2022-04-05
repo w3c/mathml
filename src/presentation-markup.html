@@ -4483,10 +4483,10 @@ the <code class="element">mstyle</code> start tag:
 <section>
  <h6>Deprecated Attributes</h6>
 
-<p>MathML2 allowed the binding of <a class="intref" href="#type_namedspace"><em>namedspaces</em></a>
+<p>MathML2 allowed the binding of <em>[^namedspaces^]</em>
 to new values.
 It appears that this capability was never implemented, and is now deprecated;
-<a class="intref" href="#type_namedspace"><em>namedspaces</em></a> are now considered constants.
+<em>[^namedspaces^]</em> are now considered constants.
 For backwards compatibility, the following attributes are accepted
 on the <code class="element">mstyle</code> element, but are expected to have no effect.
 </p>
@@ -4725,11 +4725,11 @@ section on &lt;mo&gt;,
     <tr>
      <td rowspan="2" class="attname">height</td>
      <td>( "+" | "-" )?
-     <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
+     <em>[^unsigned-number^]</em>
      ( ("%"  <em>[^pseudo-unit^]</em>?)
      | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
-     | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
+     | <em>[^namedspace^]</em>
      )?</td>
      <td><em>same as content</em></td>
      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-height"></a></td>
@@ -4745,11 +4745,11 @@ section on &lt;mo&gt;,
     <tr>
      <td rowspan="2" class="attname">depth</td>
      <td>( "+" | "-" )?
-     <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
+     <em>[^unsigned-number^]</em>
      (("%"  <em>[^pseudo-unit^]</em>?)
      | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
-     | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
+     | <em>[^namedspace^]</em>
      )?</td>
      <td><em>same as content</em></td>
      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-depth"></a></td>
@@ -4765,11 +4765,11 @@ section on &lt;mo&gt;,
     <tr>
      <td rowspan="2" class="attname">width</td>
      <td>( "+" | "-" )?
-     <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
+     <em>[^unsigned-number^]</em>
      ( ("%" <em>[^pseudo-unit^]</em>?)
      | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
-     | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
+     | <em>[^namedspace^]</em>
      )?</td>
      <td><em>same as content</em></td>
      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-width"></a></td>
@@ -4785,11 +4785,11 @@ section on &lt;mo&gt;,
     <tr>
      <td rowspan="2" class="attname">lspace</td>
      <td>( "+" | "-" )?
-     <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
+     <em>[^unsigned-number^]</em>
      ( ("%" <em>[^pseudo-unit^]</em>?)
      | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
-     | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
+     | <em>[^namedspace^]</em>
      )?</td>
      <td>0em</td>
      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-lspace"></a></td>
@@ -4805,11 +4805,11 @@ section on &lt;mo&gt;,
     <tr>
      <td rowspan="2" class="attname">voffset</td>
      <td>( "+" | "-" )?
-     <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
+     <em>[^unsigned-number^]</em>
      ( ("%" <em>[^pseudo-unit^]</em>?)
      | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
-     | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
+     | <em>[^namedspace^]</em>
      )?</td>
      <td>0em</td>
      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-voffset"></a></td>
@@ -4861,7 +4861,7 @@ section on &lt;mo&gt;,
   attributes <code class="attribute">lspace</code> and <code class="attribute">voffset</code>.</p>
 
   <p>Length values (excluding any sign) can be specified in several formats.
-  Each format begins with an <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>,
+  Each format begins with an <em>[^unsigned-number^]</em>,
   which may be followed by
   a <code>%</code> sign (effectively scaling the number)
   and an optional <em>[^pseudo-unit^]</em>,
@@ -4876,7 +4876,7 @@ section on &lt;mo&gt;,
   is the product of the number (possibly including the <code>%</code>)
   and the following <em>[^pseudo-unit^]</em>,
   <a class="intref" href="#type_unit"><em>unit</em></a>,
-  <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
+  <em>[^namedspace^]</em>
   or the default value for the attribute if no such unit or space is given.</p>
 
   <p>Some examples of attribute formats using [^pseudo-unit^]s (explicit or
