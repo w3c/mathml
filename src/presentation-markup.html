@@ -4724,8 +4724,8 @@ section on &lt;mo&gt;,
      <td rowspan="2" class="attname">height</td>
      <td>( "+" | "-" )?
      <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
-     ( ("%"  <em>pseudo-unit</em>?)
-     | <em>pseudo-unit</em>
+     ( ("%"  <em>[^pseudo-unit^]</em>?)
+     | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
      | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
      )?</td>
@@ -4744,8 +4744,8 @@ section on &lt;mo&gt;,
      <td rowspan="2" class="attname">depth</td>
      <td>( "+" | "-" )?
      <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
-     (("%"  <em>pseudo-unit</em>?)
-     | <em>pseudo-unit</em>
+     (("%"  <em>[^pseudo-unit^]</em>?)
+     | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
      | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
      )?</td>
@@ -4764,8 +4764,8 @@ section on &lt;mo&gt;,
      <td rowspan="2" class="attname">width</td>
      <td>( "+" | "-" )?
      <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
-     ( ("%" <em>pseudo-unit</em>?)
-     | <em>pseudo-unit</em>
+     ( ("%" <em>[^pseudo-unit^]</em>?)
+     | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
      | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
      )?</td>
@@ -4784,8 +4784,8 @@ section on &lt;mo&gt;,
      <td rowspan="2" class="attname">lspace</td>
      <td>( "+" | "-" )?
      <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
-     ( ("%" <em>pseudo-unit</em>?)
-     | <em>pseudo-unit</em>
+     ( ("%" <em>[^pseudo-unit^]</em>?)
+     | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
      | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
      )?</td>
@@ -4804,8 +4804,8 @@ section on &lt;mo&gt;,
      <td rowspan="2" class="attname">voffset</td>
      <td>( "+" | "-" )?
      <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
-     ( ("%" <em>pseudo-unit</em>?)
-     | <em>pseudo-unit</em>
+     ( ("%" <em>[^pseudo-unit^]</em>?)
+     | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
      | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
      )?</td>
@@ -4826,7 +4826,7 @@ section on &lt;mo&gt;,
   <p>Note: while [[Mathml-Core]] supports the above attributes, it only allows the value to be a valid
   <a href="https://w3c.github.io/mathml-core/#dfn-length-percentage">length-percentage</a>.</p>
 
-  <p>The <em>pseudo-unit</em> syntax symbol is described below.
+  <p>The <em>[^pseudo-unit^]</em> syntax symbol is described below.
   <span>Also, <code class="attribute">height</code>, <code class="attribute">depth</code> and
   <code class="attribute">width</code> attributes are
   referred to as size attributes, while <code class="attribute">lspace</code> and <code class="attribute">voffset</code> attributes
@@ -4841,7 +4841,7 @@ section on &lt;mo&gt;,
   or specified relative to the child content's corresponding dimension.  Values may
   be given as
   multiples or percentages of any of the
-  dimensions of the normal rendering of the child content using so-called pseudo-units,
+  dimensions of the normal rendering of the child content using so-called [^pseudo-unit^]s,
   or they can be set directly using standard units <a href="#fund_units"></a>.</p>
 
   <p>If the value of a size attribute begins with a <code>+</code> or <code>-</code> sign,
@@ -4862,22 +4862,22 @@ section on &lt;mo&gt;,
   Each format begins with an <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>,
   which may be followed by
   a <code>%</code> sign (effectively scaling the number)
-  and an optional <em>pseudo-unit</em>,
-  by a <em>pseudo-unit</em> alone,
+  and an optional <em>[^pseudo-unit^]</em>,
+  by a <em>[^pseudo-unit^]</em> alone,
   or by a <a class="intref" href="#type_unit"><em>unit</em></a> (excepting <code>%</code>).
-  The possible <em>pseudo-units</em> are the keywords <code>height</code>,
+  The possible <em>[^pseudo-unit^]s</em> are the keywords <code>height</code>,
   <code>depth</code>, and <code>width</code>.  They represent the length of the same-named dimension of the
   <code class="element">mpadded</code> element's child content.
   </p>
 
   <p>For any of these length formats, the resulting length
   is the product of the number (possibly including the <code>%</code>)
-  and the following <em>pseudo-unit</em>,
+  and the following <em>[^pseudo-unit^]</em>,
   <a class="intref" href="#type_unit"><em>unit</em></a>,
   <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
   or the default value for the attribute if no such unit or space is given.</p>
 
-  <p>Some examples of attribute formats using pseudo-units (explicit or
+  <p>Some examples of attribute formats using [^pseudo-unit^]s (explicit or
   default) are as follows: <code>depth="100%height"</code> and
   <code>depth="1.0height"</code> both set the depth of the
   <code class="element">mpadded</code> element to the height of its content.
