@@ -1039,6 +1039,7 @@
 
 </section>
 
+
 <section>
  <h3 id="presm_tokel">Token Elements</h3>
 
@@ -1234,11 +1235,6 @@
      </tbody>
     </table>
 
-    <p>Note that the <code class="attribute">src</code> and <code class="attribute">alt</code> attributes are <em>required</em> for correct usage in MathML 3, however this is not enforced by the schema due to
-    the <a class="intref" href="#presm_mglyph_deprecated">deprecated usage described below</a>.</p>
-
-   </section>
-
    <section class="fold">
     <h6>Example</h6>
 
@@ -1265,67 +1261,7 @@
 
    </section>
 
-   <section>
-    <h6 id="presm_mglyph_deprecated">Deprecated Attributes</h6>
 
-    <p>Originally, <code class="element">mglyph</code> was designed to provide access to non-standard
-    fonts. Since this functionality was seldom implemented, nor were downloadable
-    web fonts widely available, this use of <code class="element">mglyph</code> has been deprecated.
-    For reference, the following attributes were previously defined:
-
-    <table class="attributes data">
-
-     <thead>
-
-      <tr>
-       <td>Name</td>
-       <td>values</td>
-       <td>Core</td>
-      </tr>
-     </thead>
-
-     <tbody>
-
-      <tr>
-       <td rowspan="2" class="attname">fontfamily</td>
-       <td><a class="intref" href="#type_string"><em>string</em></a></td>
-       <td><span class="coreno"></span></td>
-      </tr>
-
-      <tr>
-       <td colspan="2" class="attdesc">
-        the name of a font that may be available to a MathML renderer,
-        or a CSS font specification; See  <a href="#world-int-style"></a>
-        and CSS [[CSS21]] for more information.
-       </td>
-      </tr>
-
-      <tr>
-       <td rowspan="2" class="attname">index</td>
-       <td><a class="intref" href="#type_integer"><em>integer</em></a></td>
-       <td><span class="coreno"></span></td>
-      </tr>
-
-      <tr>
-       <td colspan="2" class="attdesc">
-        Specified a position of the desired glyph within the font named
-        by the <code class="attribute">fontfamily</code> attribute.
-       </td>
-      </tr>
-     </tbody>
-    </table>
-    In MathML 1 and 2, both were required attributes; they are now optional
-    and should be ignored unless the <code class="attribute">src</code> attribute is missing.
-    </p>
-
-    <p>Additionally, in MathML 2, <code class="element">mglyph</code> accepted the attributes described in
-    <a href="#presm_commatt"></a>
-    (<code class="attribute">mathvariant</code> and <code class="attribute">mathsize</code>, along with the attributes deprecated there);
-    to make clear that <code class="element">mglyph</code> is <em>not</em> a token element, and since
-    these attributes have no effect in any case, these attributes have been deprecated.
-    </p>
-        <div class="issue" data-number="303"></div>
-   </section>
   </section>
 
  </section>
@@ -1501,7 +1437,6 @@
   text, which is not specified by any MathML attributes.)
   Note, however, that MathML  doesn't specify the mechanism by which
   style information is inherited from the rendering environment.
-
   </p>
 
   <p>If the requested <code class="attribute">mathsize</code> of the current font is not available, the
@@ -1555,7 +1490,7 @@
   </section>
 
  <section>
-  <h4 id="presm_mi" data-coreref="dfn-mi">Identifier <code class="defn starttag">&lt;mi&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-mi"></a></h4>
+  <h4 id="presm_mi">Identifier <code class="defn starttag">&lt;mi&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-mi"></a></h4>
 
  <section>
    <h5>Description</h5>
@@ -1810,8 +1745,10 @@
    <p>Many mathematical numbers should be represented using presentation
    elements other than <code class="element">mn</code> alone; this includes
    complex numbers, <span data-diff="add">negative numbers, </span>ratios of numbers shown as fractions, and
-   names of numeric constants. Examples of MathML representations of
-   such numbers include:
+   names of numeric constants.
+   </p>
+   <section class="fold">
+    <h6 id="presm_mn_complex_examples">Examples of complex representations of numbers</h6>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -1842,8 +1779,9 @@
    <div class="example mathml mmlcore">
     <pre>&lt;mi&gt; &amp;ExponentialE; &lt;/mi&gt;</pre>
    </div>
-   </p>
+
   </section>
+ </section>
  </section>
 
  <section>
@@ -2150,7 +2088,7 @@
 	see <a class="intref" href="#presm_munder"><code class="element">munder</code></a>,
 	<a class="intref" href="#presm_mover"><code class="element">mover</code></a>
 	and <a class="intref" href="#presm_munderover"><code class="element">munderover</code></a>.
-  <br>
+  <br/>
   Note: for compatibility with MathML Core, use <code class="attribute">accent</code>=<code class="attributevalue">true</code> on
     the enclosing <code class="element">mover</code> and <code class="element">munderover</code> in place of this attribute.
        </td>
@@ -2707,53 +2645,8 @@
     </pre>
    </div>
    </p>
+  
   </section>
-   <p>The reasons for using specific <code class="element">mo</code> elements for
-   invisible operators include:
-   </p>
-   <ul>
-
-    <li>
-     <p>such operators should often have specific effects on visual
-     rendering (particularly spacing and linebreaking rules) that are not
-     the same as either the lack of any operator, or spacing represented by
-     <code class="element">mspace</code> or <code class="element">mtext</code>
-     elements;</p>
-    </li>
-
-    <li>
-     <p>these operators should often have specific audio renderings
-     different than that of the lack of any operator;</p>
-    </li>
-
-    <li>
-     <p>automatic semantic interpretation of MathML presentation elements
-     is made easier by the explicit specification of such operators.</p>
-    </li>
-   </ul>
-
-   <p>For example, an audio renderer might render <i class="var">f</i>(<i class="var">x</i>)
-   (represented as in the above examples) by speaking <span>&#x201c;f of x&#x201d;</span>, but use
-   the word <span>&#x201c;times&#x201d;</span> in its rendering of <i class="var">x</i><i class="var">y</i>.
-   Although its rendering must still be different depending on the structure
-   of neighboring elements (sometimes leaving out <span>&#x201c;of&#x201d;</span> or
-   <span>&#x201c;times&#x201d;</span> entirely), its task is made much easier by the use of
-   a different <code class="element">mo</code> element for each invisible
-   operator.</p>
-  </section>
-
-  <section>
-   <h5>Names for other special operators</h5>
-
-   <p>MathML also includes <code class="entity">DifferentialD</code> (U+2146) for use
-   in an <code class="element">mo</code> element representing the differential
-   operator symbol usually denoted by <span>&#x201c;d&#x201d;</span>.  The reasons for
-   explicitly using this special character are similar to those for using
-   the special characters for invisible operators described in the
-   preceding section.  </p>
-
-  </section>
-
   <section>
    <h5>Detailed rendering rules for <code class="starttag">&lt;mo&gt;</code> elements</h5>
 
@@ -2766,7 +2659,10 @@
    suggestions rather than requirements.  Furthermore, no attempt is made
    to specify the rendering completely; rather, enough information is
    given to make the intended effect of the various rendering attributes
-   as clear as possible.</p>
+   as clear as possible.
+   Detailed layout rules for brower implmentations for operators are given in
+   <a href="https://w3c.github.io/mathml-core/#operator-fence-separator-or-accent-mo">MathML Core</a>.
+  </p>
 
    <section>
     <h6 id="presm_opdict">The operator dictionary</h6>
@@ -3478,7 +3374,7 @@ or more attribute values explicitly specified.
 
 <p>Note the warning about the legal grouping of <span>&#x201c;space-like
 elements&#x201d;</span> given below, and the warning about the use of such
-elements for <span>&#x201c;tweaking&#x201d;</span> in [[MathML-Notes]]</a>.
+elements for <span>&#x201c;tweaking&#x201d;</span> in [[MathML-Notes]].
 See also the other elements that can render as
 whitespace, namely <code class="element">mtext</code>, <code class="element">mphantom</code>, and
 <code class="element">maligngroup</code>.</p> </section>
@@ -3575,9 +3471,6 @@ listed in
 </p>
 
 <p>
- The value <code class="attributevalue">indentingnewline</code> was defined in MathML2 for <code class="element">mspace</code>;
- it is now deprecated.  Its meaning is the same as <code class="attribute">newline</code>, which is compatible with its earlier use when no other linebreaking attributes are
- specified.
  Note that <code class="attribute">linebreak</code> values on adjacent <code class="element">mo</code> and <code class="element">mspace</code> elements do
  not interact; a <code class="attributevalue">nobreak</code> on an <code class="element">mspace</code> will
  not, in itself, inhibit a break on an adjacent <code class="element">mo</code> element.
@@ -3794,6 +3687,10 @@ the content should be encoded as described in that section.</p>
 </table>
 
 </section>
+</section>
+
+</section>
+
 </section>
 
 </section>
@@ -4080,8 +3977,8 @@ The default value is <code class="attributevalue">medium</code>,
 <code class="attributevalue">thin</code> is thinner, but visible,
 <code class="attributevalue">thick</code> is thicker;
 the exact thickness of these is left up to the rendering agent.
-<br>
-Note: MathML Core does only allows <a href="https://w3c.github.io/mathml-core/#dfn-length-percentage">length-percentage</a> values.
+<br/>
+Note: MathML Core does only allow <a href="https://w3c.github.io/mathml-core/#dfn-length-percentage">length-percentage</a> values.
 </td>
 </tr>
 
@@ -4551,10 +4448,10 @@ the <code class="element">mstyle</code> start tag:
 <section>
  <h6>Deprecated Attributes</h6>
 
-<p>MathML2 allowed the binding of <a class="intref" href="#type_namedspace"><em>namedspaces</em></a>
+<p>MathML2 allowed the binding of <em>[^namedspaces^]</em>
 to new values.
 It appears that this capability was never implemented, and is now deprecated;
-<a class="intref" href="#type_namedspace"><em>namedspaces</em></a> are now considered constants.
+<em>[^namedspaces^]</em> are now considered constants.
 For backwards compatibility, the following attributes are accepted
 on the <code class="element">mstyle</code> element, but are expected to have no effect.
 </p>
@@ -4793,11 +4690,11 @@ section on &lt;mo&gt;,
     <tr>
      <td rowspan="2" class="attname">height</td>
      <td>( "+" | "-" )?
-     <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
-     ( ("%"  <em>pseudo-unit</em>?)
-     | <em>pseudo-unit</em>
+     <em>[^unsigned-number^]</em>
+     ( ("%"  <em>[^pseudo-unit^]</em>?)
+     | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
-     | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
+     | <em>[^namedspace^]</em>
      )?</td>
      <td><em>same as content</em></td>
      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-height"></a></td>
@@ -4813,11 +4710,11 @@ section on &lt;mo&gt;,
     <tr>
      <td rowspan="2" class="attname">depth</td>
      <td>( "+" | "-" )?
-     <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
-     (("%"  <em>pseudo-unit</em>?)
-     | <em>pseudo-unit</em>
+     <em>[^unsigned-number^]</em>
+     (("%"  <em>[^pseudo-unit^]</em>?)
+     | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
-     | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
+     | <em>[^namedspace^]</em>
      )?</td>
      <td><em>same as content</em></td>
      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-depth"></a></td>
@@ -4833,11 +4730,11 @@ section on &lt;mo&gt;,
     <tr>
      <td rowspan="2" class="attname">width</td>
      <td>( "+" | "-" )?
-     <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
-     ( ("%" <em>pseudo-unit</em>?)
-     | <em>pseudo-unit</em>
+     <em>[^unsigned-number^]</em>
+     ( ("%" <em>[^pseudo-unit^]</em>?)
+     | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
-     | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
+     | <em>[^namedspace^]</em>
      )?</td>
      <td><em>same as content</em></td>
      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-width"></a></td>
@@ -4853,11 +4750,11 @@ section on &lt;mo&gt;,
     <tr>
      <td rowspan="2" class="attname">lspace</td>
      <td>( "+" | "-" )?
-     <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
-     ( ("%" <em>pseudo-unit</em>?)
-     | <em>pseudo-unit</em>
+     <em>[^unsigned-number^]</em>
+     ( ("%" <em>[^pseudo-unit^]</em>?)
+     | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
-     | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
+     | <em>[^namedspace^]</em>
      )?</td>
      <td>0em</td>
      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-lspace"></a></td>
@@ -4873,11 +4770,11 @@ section on &lt;mo&gt;,
     <tr>
      <td rowspan="2" class="attname">voffset</td>
      <td>( "+" | "-" )?
-     <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>
-     ( ("%" <em>pseudo-unit</em>?)
-     | <em>pseudo-unit</em>
+     <em>[^unsigned-number^]</em>
+     ( ("%" <em>[^pseudo-unit^]</em>?)
+     | <em>[^pseudo-unit^]</em>
      | <a class="intref" href="#type_unit"><em>unit</em></a>
-     | <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
+     | <em>[^namedspace^]</em>
      )?</td>
      <td>0em</td>
      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-voffset"></a></td>
@@ -4896,7 +4793,7 @@ section on &lt;mo&gt;,
   <p>Note: while [[Mathml-Core]] supports the above attributes, it only allows the value to be a valid
   <a href="https://w3c.github.io/mathml-core/#dfn-length-percentage">length-percentage</a>.</p>
 
-  <p>The <em>pseudo-unit</em> syntax symbol is described below.
+  <p>The <em>[^pseudo-unit^]</em> syntax symbol is described below.
   <span>Also, <code class="attribute">height</code>, <code class="attribute">depth</code> and
   <code class="attribute">width</code> attributes are
   referred to as size attributes, while <code class="attribute">lspace</code> and <code class="attribute">voffset</code> attributes
@@ -4911,7 +4808,7 @@ section on &lt;mo&gt;,
   or specified relative to the child content's corresponding dimension.  Values may
   be given as
   multiples or percentages of any of the
-  dimensions of the normal rendering of the child content using so-called pseudo-units,
+  dimensions of the normal rendering of the child content using so-called [^pseudo-unit^]s,
   or they can be set directly using standard units <a href="#fund_units"></a>.</p>
 
   <p>If the value of a size attribute begins with a <code>+</code> or <code>-</code> sign,
@@ -4929,25 +4826,25 @@ section on &lt;mo&gt;,
   attributes <code class="attribute">lspace</code> and <code class="attribute">voffset</code>.</p>
 
   <p>Length values (excluding any sign) can be specified in several formats.
-  Each format begins with an <a class="intref" href="#type_unsigned-number"><em>unsigned-number</em></a>,
+  Each format begins with an <em>[^unsigned-number^]</em>,
   which may be followed by
   a <code>%</code> sign (effectively scaling the number)
-  and an optional <em>pseudo-unit</em>,
-  by a <em>pseudo-unit</em> alone,
+  and an optional <em>[^pseudo-unit^]</em>,
+  by a <em>[^pseudo-unit^]</em> alone,
   or by a <a class="intref" href="#type_unit"><em>unit</em></a> (excepting <code>%</code>).
-  The possible <em>pseudo-units</em> are the keywords <code>height</code>,
+  The possible <em>[^pseudo-unit^]s</em> are the keywords <code>height</code>,
   <code>depth</code>, and <code>width</code>.  They represent the length of the same-named dimension of the
   <code class="element">mpadded</code> element's child content.
   </p>
 
   <p>For any of these length formats, the resulting length
   is the product of the number (possibly including the <code>%</code>)
-  and the following <em>pseudo-unit</em>,
+  and the following <em>[^pseudo-unit^]</em>,
   <a class="intref" href="#type_unit"><em>unit</em></a>,
-  <a class="intref" href="#type_namedspace"><em>namedspace</em></a>
+  <em>[^namedspace^]</em>
   or the default value for the attribute if no such unit or space is given.</p>
 
-  <p>Some examples of attribute formats using pseudo-units (explicit or
+  <p>Some examples of attribute formats using [^pseudo-unit^]s (explicit or
   default) are as follows: <code>depth="100%height"</code> and
   <code>depth="1.0height"</code> both set the depth of the
   <code class="element">mpadded</code> element to the height of its content.
@@ -6846,9 +6743,6 @@ section on &lt;mo&gt;,
 
    <p>A matrix or table is specified using the <code class="element">mtable</code> element. Inside of the <code class="element">mtable</code> element, only <code class="element">mtr</code>
    or <code class="element">mlabeledtr</code> elements may appear.
-   (In MathML 1.x, the <code class="element">mtable</code> was allowed to &#x2018;infer&#x2019; <code class="element">mtr</code> elements around its arguments,
-   and the <code class="element">mtr</code> element could infer <code class="element">mtd</code> elements.
-   This behaviour is <a class="intref" href="#interf_deprec">deprecated</a>.)
    </p>
 
    <p>Table rows that have fewer columns than other rows of the same
@@ -7564,7 +7458,7 @@ section on &lt;mo&gt;,
 
      <tr>
       <td rowspan="2" class="attname">rowspan</td>
-      <td><a class="intref" href="#type_positive-integer"><em>positive-integer</em></a></td>
+      <td><em>[^positive-integer^]</em></td>
       <td>1</td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-rowspan"></a></td>
      </tr>
@@ -7579,7 +7473,7 @@ section on &lt;mo&gt;,
 
      <tr>
       <td rowspan="2" class="attname">columnspan</td>
-      <td><a class="intref" href="#type_positive-integer"><em>positive-integer</em></a></td>
+      <td><em>[^positive-integer^]</em></td>
       <td>1</td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-columnspan"></a></td>
      </tr>
@@ -8852,7 +8746,7 @@ below in addition to those specified in <a href="#presm_presatt"></a>.</p>
 
  <tr>
 <td rowspan="2" class="attname">position</td>
-<td><a class="intref" href="#type_integer"><em>integer</em></a></td>
+<td><em>[^integer^]</em></td>
 <td>0</td>
 <td><span class="coreno"></span></td>
 </tr>
@@ -8875,7 +8769,7 @@ below in addition to those specified in <a href="#presm_presatt"></a>.</p>
 
 <tr>
 <td rowspan="2" class="attname">shift</td>
-<td><a class="intref" href="#type_integer"><em>integer</em></a></td>
+<td><em>[^integer^]</em></td>
 <td>0</td>
 <td><span class="coreno"></span></td>
 </tr>
@@ -8949,7 +8843,7 @@ below in addition to those specified in <a href="#presm_presatt"></a>.</p>
 
  <tr>
 <td rowspan="2" class="attname">position</td>
-<td><a class="intref" href="#type_integer"><em>integer</em></a></td>
+<td><em>[^integer^]</em></td>
 <td>0</td>
 <td><span class="coreno"></span></td>
 </tr>
@@ -9038,7 +8932,7 @@ below in addition to those specified in <a href="#presm_presatt"></a>.</p>
 
  <tr>
 <td rowspan="2" class="attname">position</td>
-<td><a class="intref" href="#type_integer"><em>integer</em></a></td>
+<td><em>[^integer^]</em></td>
 <td>0</td>
 <td><span class="coreno"></span></td>
 </tr>
@@ -9222,7 +9116,7 @@ The line should be drawn using the color specified by <code class="attribute">ma
 
  <tr>
 <td rowspan="2" class="attname">position</td>
-<td><a class="intref" href="#type_integer"><em>integer</em></a></td>
+<td><em>[^integer^]</em></td>
 <td>0</td>
 <td><span class="coreno"></span></td>
 </tr>
@@ -9857,7 +9751,7 @@ error; the appropriate rendering in that case is as described in
 </tr>
 <tr>
 <td rowspan="2" class="attname">selection</td>
-<td><a class="intref" href="#type_positive-integer"><em>positive-integer</em></a></td>
+<td><em>[^positive-integer^]</em></td>
 <td>1</td>
 <td><span class="coreno"></span></td>
 </tr>
@@ -9996,3 +9890,4 @@ MathML processors should use this value for the presentation.</p>
 <code class="element">semantics</code> and <code class="element">annotation-xml</code> elements.</p>
 </section>
 </section>
+

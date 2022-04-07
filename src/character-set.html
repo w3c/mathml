@@ -33,6 +33,7 @@
    the Mathematical Fraktur alphabet runs from U+1D504 ("A") to U+1D537 ("z").
    Thus, an identifier for a variable that uses Fraktur characters could
    be marked up as
+  </p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -47,7 +48,7 @@
      &lt;mi mathvariant="fraktur"&gt;A&lt;/mi&gt;
     </pre>
    </div>
-  </p>
+
 
   <p>
    A MathML processor must treat a mathematical alphanumeric character
@@ -84,7 +85,6 @@
   mathematical semantics from text which is visually ambiguous.
   </p>
 
-  <p>
 
    <table id="chars_table-white">
 
@@ -127,7 +127,6 @@
      </tr>
     </tbody>
    </table>
-  </p>
 
  </section>
 
@@ -209,11 +208,12 @@
     <p>While the minus and prime characters are the most common and
     important keyboard characters with more precise mathematical
     counterparts, there are a number of other keyboard character
-    substitutions that are sometime used.  For example some may expect
+    substitutions that are sometime used.  For example some may expect</p>
 
     <div class="example mathml mmlcore">
      <pre>&lt;mo&gt;''&lt;/mo&gt;</pre>
-     </div> to be treated as
+    </div>
+    <p>to be treated as
      U+2033 [DOUBLE PRIME], and analogous substitutions could perhaps be made for U+2034
      [TRIPLE PRIME] and U+2057 [QUADRUPLE PRIME]. Similarly, sometimes U+007C [VERTICAL
 
@@ -242,19 +242,19 @@
    <p>In almost all mathematical contexts, pseudo-script characters should
    be associated
    with a base expression using explicit script markup in MathML.  For
-   example, the preferred encoding of <span>&#x201c;x prime&#x201d;</span> is
+   example, the preferred encoding of <span>&#x201c;x prime&#x201d;</span> is</p>
 
    <div class="example mathml mmlcore">
     <pre>&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msup&gt;</pre>
    </div>
 
-   and not
+   <p>and not</p>
 
    <div class="example mathml mmlcore">
     <pre>&lt;mi&gt;x'&lt;/mi&gt;</pre>
    </div>
 
-   or any other variants not using an explicit script construct. Note, however, that
+   <p>or any other variants not using an explicit script construct. Note, however, that
    within
    text contexts such as <code class="element">mtext</code>, pseudo-scripts may be used in sequence with other character data.</p>
 
@@ -262,18 +262,18 @@
    mathematical contexts.  First, a problem arises with typesetting, when
    pseudo-scripts are used with subscripted identifiers.  Traditionally,
    subscripting of x' would be rendered stacked under the prime. This is
-   easily accomplished with script markup, for example:
+   easily accomplished with script markup, for example:</p>
 
    <div class="example mathml mmlcore">
     <pre>&lt;mrow&gt;&lt;msubsup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msubsup&gt;&lt;/mrow&gt;</pre>
    </div>
 
-   By contrast,
+   <p>By contrast,</p>
 
    <div class="example mathml mmlcore">
     <pre>&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;x'&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;</pre>
    </div>
-   will render with staggered scripts.</p>
+   <p>will render with staggered scripts.</p>
 
    <p>Note this means that a renderer of MathML will have to treat
    pseudo-scripts differently from most other character codes it finds in
@@ -283,7 +283,7 @@
 
    <p>The second reason that explicit script markup is preferrable to
    juxtaposition of characters is that it generally better reflects the
-   intended mathematical structure. For example,
+   intended mathematical structure. For example,</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -292,36 +292,36 @@
       &lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;
     &lt;/msup&gt;</pre>
    </div>
-   accurately reflects that the prime here is operating on an entire
+   <p>accurately reflects that the prime here is operating on an entire
    expression, and does not suggest that the prime is acting on the final right parenthesis.
    </p>
 
    <p>However, the data model for all MathML token elements is Unicode text,
    so one cannot rule out the possibility of valid MathML markup
-   containing constructions such as
+   containing constructions such as</p>
 
    <div class="example mathml mmlcore">
     <pre>&lt;mrow&gt;&lt;mi&gt;x'&lt;/mi&gt;&lt;/mrow&gt;</pre>
    </div>
-   and
+   <p>and</p>
 
    <div class="example mathml mmlcore">
     <pre>&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;'&lt;/mo&gt;&lt;/mrow&gt;</pre>
    </div>
 
-   While the first form may, in some rare situations, legitmately be used
+   <p>While the first form may, in some rare situations, legitmately be used
    to distinguish a multi-character identifer named x' from the
    derivative of a function x, such forms should generally be avoided.
    Authoring and validation tools are encouraged to generate the
-   recommended script markup:
+   recommended script markup:</p>
 
    <div class="example mathml mmlcore">
     <pre>&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;!--PRIME--&gt;&lt;/mo&gt;&lt;/msup&gt;&lt;/mrow&gt;</pre>
    </div>
-   </p>
+
 
    <p>The U+2032 [PRIME] character is perhaps the most common
-   pseudo-script, but there are many others, as listed below:
+   pseudo-script, but there are many others, as listed below:</p>
 
    <table>
 
@@ -465,7 +465,7 @@
      </tr>
     </tbody>
    </table>
-   </p>
+
 
    <p>
     In addition, the characters in the Unicode Superscript and Subscript block
