@@ -36,7 +36,7 @@
    textual document. Because of this, a single row of identifiers and operators
    will often be represented by multiple nested <code class="element">mrow</code> elements rather than
    a single <code class="element">mrow</code>.  For example, <span>&#x201c;<i class="var">x</i> + <i class="var">a</i> /
-   <i class="var">b</i>&#x201d;</span> typically is represented as:
+   <i class="var">b</i>&#x201d;</span> typically is represented as:</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -51,7 +51,6 @@
       &lt;/mrow&gt;
     </pre>
    </div>
-   </p>
 
    <p>Similarly, superscripts are attached to the full expression constituting
    their base rather than to the just preceding character.  This
@@ -159,7 +158,7 @@
     and treat this <code class="element">mrow</code> as the argument.
     </p>
 
-    <p>For example,
+    <p>For example,</p>
     <div class="example mathml mmlcore">
      <pre>
        &lt;msqrt&gt;
@@ -168,7 +167,7 @@
        &lt;/msqrt&gt;
      </pre>
     </div>
-    is treated as if it were
+    <p>is treated as if it were</p>
 
     <div class="example mathml mmlcore">
      <pre>
@@ -180,7 +179,6 @@
        &lt;/msqrt&gt;
      </pre>
     </div>
-    </p>
 
     <p>This feature allows MathML data not to contain (and its authors to
     leave out)  many <code class="element">mrow</code> elements that would otherwise be
@@ -194,7 +192,7 @@
     requirements and the roles of individual arguments when these are
     distinguished.  An argument count of 1* indicates an inferred <code class="element">mrow</code> as described above.
     Although the <code class="element">math</code> element is
-    not a presentation element, it is listed below for completeness.
+    not a presentation element, it is listed below for completeness.</p>
 
     <table id="presm_table-reqarg" class="elements data">
 
@@ -388,7 +386,7 @@
       </tr>
      </tbody>
     </table>
-   </p>
+
   </section>
  </section>
 
@@ -958,7 +956,7 @@
   <h4 id="presm_presatt">Mathematics style attributes common to presentation elements</h4>
 
   <p>In addition to the attributes listed in <a href="#fund_globatt"></a>,
-  all MathML presentation elements accept the following two attributes:
+  all MathML presentation elements accept the following two attributes:</p>
 
   <table class="attributes data">
 
@@ -1006,7 +1004,6 @@
     </tr>
    </tbody>
   </table>
-  </p>
 
   <p>These style attributes are primarily intended for visual media.
   They are not expected to affect the intended semantics of displayed
@@ -1240,7 +1237,7 @@
 
     <p>The following example illustrates how a researcher might use
     the <code class="element">mglyph</code> construct with a set of images to work
-    with braid group notation.
+    with braid group notation.</p>
 
     <div class="example mathml-fragment">
      <pre>
@@ -1253,8 +1250,7 @@
        &lt;/mrow&gt;
      </pre>
     </div>
-    This might render as:
-    </p>
+    <p>This might render as:</p>
     <blockquote>
      <p><img src="image/f3006.gif" alt="\includegraphics{image/braids}"></img></p>
     </blockquote>
@@ -1275,7 +1271,7 @@
   valid on all presentation token elements,
   <span>as well as the <code class="element">math</code> and <code class="element">mstyle</code> elements;
   <code class="attribute">dir</code> is also valid on <code class="element">mrow</code> elements.</span>
-  The attributes are:
+  The attributes are:</p>
 
   <table class="attributes data">
 
@@ -1346,7 +1342,6 @@
     </tr>
    </tbody>
   </table>
-  </p>
 
   <p>The <code class="attribute">mathvariant</code> attribute defines logical classes of token
   elements.  Each class provides a collection of typographically-related
@@ -1528,7 +1523,7 @@
    <h5>Attributes</h5>
 
    <p><code class="element">mi</code> elements accept the attributes listed in
-   <a href="#presm_commatt"></a>, but in one case with a different default value:
+   <a href="#presm_commatt"></a>, but in one case with a different default value:</p>
 
    <table class="attributes data">
 
@@ -1567,7 +1562,6 @@
 
     </tbody>
    </table>
-   </p>
 
    <p>Note that the deprecated <code class="attribute">fontstyle</code> attribute
    defaults in the same way as <code class="attribute">mathvariant</code>, depending on the content.</p>
@@ -1613,7 +1607,7 @@
    <span>&#x201c;sin&#x201d;</span>. Expressions such as <span>&#x201c;sin <i class="var">x</i>&#x201d;</span>
    should be written using the character U+2061
    (which also has the entity names <code class="entity">af</code> and <code class="entity">ApplyFunction</code>) as shown below;
-   see also the discussion of invisible operators in <a href="#presm_mo"></a>.
+   see also the discussion of invisible operators in <a href="#presm_mo"></a>.</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -1624,10 +1618,10 @@
       &lt;/mrow&gt;
     </pre>
    </div>
-   </p>
+
 
    <p>Miscellaneous text that should be treated as a <span>&#x201c;term&#x201d;</span> can also be
-   represented by an <code class="element">mi</code> element, as in:
+   represented by an <code class="element">mi</code> element, as in:</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -1640,7 +1634,6 @@
       &lt;/mrow&gt;
     </pre>
    </div>
-   </p>
 
    <p>When an <code class="element">mi</code> is used in such exceptional
    situations, explicitly setting the <code class="attribute">mathvariant</code> attribute
@@ -1648,7 +1641,7 @@
    renderers.</p>
 
    <p>The names of symbolic constants should be represented as
-   <code class="element">mi</code> elements:
+   <code class="element">mi</code> elements:</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -1657,7 +1650,6 @@
       &lt;mi&gt; &amp;ExponentialE; &lt;/mi&gt;
     </pre>
    </div>
-   </p>
 
   </section>
  </section>
@@ -2366,7 +2358,7 @@
      </tbody>
     </table>
 
-    <p>The legal values of indentalign are:
+    <p>The legal values of indentalign are:</p>
 
     <table id="presm_table-indentalign" class="attvalues data">
      <thead>
@@ -2412,7 +2404,6 @@
       </tr>
      </tbody>
     </table>
-    </p>
 
    </section>
   </section>
@@ -2472,7 +2463,7 @@
    be encoded using the <code class="element">mfenced</code> element described in
    <a href="#presm_mfenced"></a>.</p>
 
-   <p>(<i class="var">a</i>+<i class="var">b</i>)
+   <p>(<i class="var">a</i>+<i class="var">b</i>)</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -2487,9 +2478,8 @@
       &lt;/mrow&gt;
     </pre>
    </div>
-   </p>
 
-   <p>[0,1)
+   <p>[0,1)</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -2504,9 +2494,9 @@
       &lt;/mrow&gt;
     </pre>
    </div>
-   </p>
 
-   <p><i class="var">f</i>(<i class="var">x</i>,<i class="var">y</i>)
+
+   <p><i class="var">f</i>(<i class="var">x</i>,<i class="var">y</i>)</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -2525,7 +2515,7 @@
       &lt;/mrow&gt;
     </pre>
    </div>
-   </p>
+
   </section>
 
   <section>
@@ -2535,7 +2525,7 @@
    mathematical notation should be represented using specific entity
    references within <code class="element">mo</code> elements, rather than simply
    by nothing. The characters used for these <span>&#x201c;invisible
-   operators&#x201d;</span> are:
+   operators&#x201d;</span> are:</p>
 
    <table class="data">
 
@@ -2580,10 +2570,10 @@
      </tr>
     </tbody>
    </table>
-   </p>
+
    <section class="fold">
    <h6>Examples</h6>
-   <p>The MathML representations of the examples in the above table are:
+   <p>The MathML representations of the examples in the above table are:</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -2644,7 +2634,6 @@
       &lt;/mrow&gt;
     </pre>
    </div>
-   </p>
   
   </section>
   <section>
@@ -2829,7 +2818,7 @@
 
     <p>An <code class="element">mfrac</code> is included as an
     <span>&#x201c;embellisher&#x201d;</span> because of the common notation for a
-    differential operator:
+    differential operator:</p>
 
     <div class="example mathml mmlcore">
      <pre>
@@ -2842,7 +2831,6 @@
        &lt;/mfrac&gt;
      </pre>
     </div>
-    </p>
 
     <p>Since the definition of embellished operator affects the use of the
     attributes related to stretching, it is important that it includes
@@ -2942,7 +2930,7 @@
    would typically be set to be stretchy by the operator dictionary) will be
    stretched to the same size as each other, and the same size they would
    have if they were not underlined and overlined, and furthermore will
-   cover the same vertical interval:
+   cover the same vertical interval:</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -2962,7 +2950,6 @@
       &lt;/mrow&gt;
     </pre>
    </div>
-   </p>
 
    <p>Note that this means that the stretching rules given below must
    refer to the context of the embellished operator as a whole, not just
@@ -2973,7 +2960,7 @@
 
     <p>This shows one way to set the maximum size of a parenthesis so that
     it does not grow, even though its default value is
-    <code class="attribute">stretchy</code>=<code class="attributevalue">true</code>.
+    <code class="attribute">stretchy</code>=<code class="attributevalue">true</code>.</p>
 
     <div class="example mathml mmlcore">
      <pre>
@@ -2986,7 +2973,6 @@
        &lt;/mrow&gt;
      </pre>
     </div>
-   </p>
 
    <p>The above should render as
    <img src="image/f3001.gif" alt="(\frac{a}{b})" align="middle"></img>
@@ -3048,6 +3034,7 @@
     <p>
      If <code class="attribute">symmetric</code>=<code class="attributevalue">true</code>, then the computed height
      and depth of the stretchy operator are:
+    </p>
 
      <div class="example algorithm">
       <pre>
@@ -3055,7 +3042,7 @@
        depth =max(maxheight-axis, maxdepth+axis) - axis
       </pre>
      </div>
-     Otherwise the height and depth are:
+     <p>Otherwise the height and depth are:</p>
 
      <div class="example algorithm">
       <pre>
@@ -3063,7 +3050,7 @@
        depth = maxdepth
       </pre>
      </div>
-    </p>
+
    </li>
 
    <li>
@@ -3136,7 +3123,7 @@ ignored.  See <a href="#presm_mtdatts"></a> for details about the <code class="a
 elements to allow arrows to stretch for use in commutative diagrams
 laid out using <code class="element">mtable</code>. The rules for the horizontal
 stretchiness include scripts to make examples such as the following
-work:
+work:</p>
 
 <div class="example mathml mmlcore">
  <pre>
@@ -3150,7 +3137,6 @@ work:
    &lt;/mrow&gt;
 </pre>
 </div>
-</p>
 
 <p>This displays as
 <img src="image/f3003.gif" alt="x \widearrow{\mathrm{maps~to}} y" align="middle"></img>.</p>
@@ -3296,7 +3282,7 @@ For example, the expression 'there exists
 <img src="image/f3004.gif" alt="\delta&gt;0" align="middle"></img>
 such that <i class="var">f</i>(<i class="var">x</i>) &lt;1' is equivalent to
 <img src="image/f3005.gif" alt="\exists \delta&gt;0 \backepsilon f(x)&lt;1" align="middle"></img>
-and could be represented as:
+and could be represented as:</p>
 
 <div class="example mathml mmlcore">
  <pre>
@@ -3326,7 +3312,7 @@ and could be represented as:
    &lt;/mrow&gt;
 </pre>
 </div>
-</p>
+
 
 <p>An example involving an <code class="element">mi</code> element is:
 <i class="var">x</i>+<i class="var">x</i><sup>2</sup>+&#xb7;&#xb7;&#xb7;+<i class="var">x</i><sup><i class="var">n</i></sup>.
@@ -3335,12 +3321,13 @@ sum; (see <a href="#presm_mi"></a>).</p>
 
 <p>On the other hand, expository text within MathML is best
 represented with an <code class="element">mtext</code> element. An example
-of this is:
+of this is:</p>
 <div class="example text">
  <pre> Theorem 1: if <i class="var">x</i> &gt; 1, then
  <i class="var">x</i><sup>2</sup> &gt; <i class="var">x</i>.  
 </pre>
-</div> However, when MathML is
+</div>
+<p>However, when MathML is
 embedded in HTML, or another document markup language, the example is
 probably best rendered with only the two inequalities represented as
 MathML at all, letting the text be part of the surrounding HTML.</p>
@@ -3565,7 +3552,7 @@ or that interpret different argument positions differently.</p>
 should be grouped with a neighboring argument of that element by
 introducing an <code class="element">mrow</code> for that purpose. For example,
 to allow for vertical alignment on the right edge of the base of a
-superscript, the expression
+superscript, the expression</p>
 
 <div class="example mathml-error">
  <pre>
@@ -3576,8 +3563,8 @@ superscript, the expression
    &lt;/msup&gt;
 </pre>
 </div>
-is illegal, because <code class="element">msup</code> must have exactly 2 arguments;
-the correct expression would be:
+<p>is illegal, because <code class="element">msup</code> must have exactly 2 arguments;
+the correct expression would be:</p>
 
 <div class="example mathml mml4p">
  <pre>
@@ -3590,7 +3577,6 @@ the correct expression would be:
    &lt;/msup&gt;
  </pre>
 </div>
-</p>
 
 <p>See also the warning about <span>&#x201c;tweaking&#x201d;</span> in
   [[MathML-Notes]].</p>
@@ -3875,7 +3861,7 @@ in <a href="#presm_mo"></a>.)</p>
 <h5>Examples</h5>
 
 <p>As an example, 2<i class="var">x</i>+<i class="var">y</i>-<i class="var">z</i>
-should be written as:
+should be written as:</p>
 
 <div class="example mathml mmlcore">
  <pre>
@@ -3892,10 +3878,9 @@ should be written as:
    &lt;/mrow&gt;
 </pre>
 </div>
-</p>
 
 <p>The proper encoding of (<i class="var">x</i>, <i class="var">y</i>) furnishes a less obvious
-example of nesting <code class="element">mrow</code>s:
+example of nesting <code class="element">mrow</code>s:</p>
 
 <div class="example mathml mmlcore">
  <pre>
@@ -3910,7 +3895,6 @@ example of nesting <code class="element">mrow</code>s:
    &lt;/mrow&gt;
 </pre>
 </div>
-</p>
 
 <p>In this case, a nested <code class="element">mrow</code> is required inside
 the parentheses, since parentheses and commas, thought of as fence and
@@ -3926,14 +3910,13 @@ separator <span>&#x201c;operators&#x201d;</span>, do not act together on their a
 
 <p>The <code class="element">mfrac</code> element is used for fractions. It can
 also be used to mark up fraction-like objects such as binomial coefficients
-and Legendre symbols. The syntax for <code class="element">mfrac</code> is
+and Legendre symbols. The syntax for <code class="element">mfrac</code> is</p>
 
 <div class="example ">
  <pre>
    &lt;mfrac&gt; <em>numerator</em> <em>denominator</em> &lt;/mfrac&gt;
 </pre>
 </div>
-</p>
 
 <p>The <code class="element">mfrac</code> element sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code>, or if it
 was already false increments <code class="attribute">scriptlevel</code> by 1,
@@ -4053,7 +4036,7 @@ These cases are shown below:
 <section class="fold">
 <h5>Examples</h5>
 
-<p>The examples shown above can be represented in MathML as:
+<p>The examples shown above can be represented in MathML as:</p>
 
     
 <div class="example mathml mmlcore">
@@ -4113,9 +4096,8 @@ These cases are shown below:
 </pre>
 </div>
 
-</p>
 
-<p>A more generic example is:
+<p>A more generic example is:</p>
 
 <div class="example mathml mmlcore">
  <pre>
@@ -4131,7 +4113,7 @@ These cases are shown below:
    &lt;/mfrac&gt;
 </pre>
 </div>
-</p>
+
 </section>
 </section>
 
@@ -4145,7 +4127,7 @@ These cases are shown below:
 <p>These elements construct radicals. The <code class="element">msqrt</code> element is
 used for square roots, while the <code class="element">mroot</code> element is used
 to draw radicals with indices, e.g. a cube root. The syntax for these
-elements is:
+elements is:</p>
 
 <div class="example ">
  <pre>
@@ -4153,7 +4135,6 @@ elements is:
    &lt;mroot&gt; <em>base</em> <em>index</em> &lt;/mroot&gt;
 </pre>
 </div>
-</p>
 
 <p>The <code class="element">mroot</code> element requires exactly 2 arguments.
 However, <code class="element">msqrt</code> accepts a single argument, possibly
@@ -4320,7 +4301,7 @@ accepted by the <code class="element">mstyle</code> element.</p>
 
 <p>Additionally, <code class="element">mstyle</code> can be given the following special
 attributes that are implicitly inherited by every MathML element as
-part of its rendering environment:
+part of its rendering environment:</p>
 
 <table class="attributes data">
 
@@ -4433,7 +4414,6 @@ part of its rendering environment:
 </tr>
 </tbody>
 </table>
-</p>
 
 <p>If <code class="attribute">scriptlevel</code> is changed incrementally by an
 <code class="element">mstyle</code> element that also sets certain other
@@ -4520,7 +4500,7 @@ on the <code class="element">mstyle</code> element, but are expected to have no 
 <h5>Examples</h5>
 
 <p>The example of limiting the stretchiness of a parenthesis shown in the
-section on &lt;mo&gt;,
+section on &lt;mo&gt;,</p>
 
 <div class="example mathml mmlcore">
  <pre>
@@ -4531,9 +4511,8 @@ section on &lt;mo&gt;,
    &lt;/mrow&gt;
 </pre>
 </div>
-</p>
 
-<p>can be rewritten using <code class="element">mstyle</code> as:
+<p>can be rewritten using <code class="element">mstyle</code> as:</p>
 
 <div class="example mathml mmlcore">
  <pre>
@@ -4546,7 +4525,7 @@ section on &lt;mo&gt;,
    &lt;/mstyle&gt;
  </pre>
 </div>
-</p>
+
 </section>
 </section>
 
@@ -4606,7 +4585,7 @@ section on &lt;mo&gt;,
   <h5>Example</h5>
 
   <p>If a MathML syntax-checking preprocessor
-  received the input
+  received the input</p>
 
   <div class="example mathml-error">
    <pre>
@@ -4616,9 +4595,9 @@ section on &lt;mo&gt;,
      &lt;/mfraction&gt;
    </pre>
   </div>
-  which contains the non-MathML element <code class="element" data-namespace="mathml-error">mfraction</code>
+  <p>which contains the non-MathML element <code class="element" data-namespace="mathml-error">mfraction</code>
   (presumably in place of the MathML element <code class="element">mfrac</code>),
-  it might generate the error message
+  it might generate the error message</p>
 
   <div class="example mathml mmlcore">
    <pre>
@@ -4631,7 +4610,6 @@ section on &lt;mo&gt;,
        &lt;/merror&gt;
    </pre>
   </div>
-  </p>
 
   <p>Note that the preprocessor's input is not, in this case, valid MathML,
   but the error message it outputs is valid MathML.</p>
@@ -4855,7 +4833,7 @@ section on &lt;mo&gt;,
 
   <p>The rules given above imply that all of the following attribute
   settings have the same effect, which is to leave the content's
-  dimensions unchanged:
+  dimensions unchanged:</p>
 
   <div class="example ">
    <pre>
@@ -4870,7 +4848,7 @@ section on &lt;mo&gt;,
      &lt;mpadded&gt; ... &lt;/mpadded&gt;
    </pre>
   </div>
-  Note that the examples in the Version 2 of the MathML specification showed
+  <p>Note that the examples in the Version 2 of the MathML specification showed
   spaces within the attribute values, suggesting that this was the intended format.
   Formally, spaces are not allowed within these values, but implementers may
   wish to ignore such spaces to maximize backward compatibility.
@@ -4993,7 +4971,7 @@ section on &lt;mo&gt;,
    <p><img src="image/mpadded-shift.png" alt="illustration of the use of mpadded to shift the position of child content without modifying the bounding box"></img></p>
   </blockquote>
 
-  <p>The corresponding MathML is:
+  <p>The corresponding MathML is:</p>
 
   <div class="example mathml mmlcore">
    <pre>
@@ -5006,7 +4984,6 @@ section on &lt;mo&gt;,
      &lt;/mrow&gt;
    </pre>
   </div>
-  </p>
 
   <p>The next diagram illustrates the use of
   <code class="attribute">width</code>, <code class="attribute">height</code> and <code class="attribute">depth</code>
@@ -5017,7 +4994,7 @@ section on &lt;mo&gt;,
    <p><img src="image/mpadded-resize.png" alt="illustration of the use of mpadded to modifying its bounding box without shifting the relative location of its child content"></img></p>
   </blockquote>
 
-  <p>The corresponding MathML is:
+  <p>The corresponding MathML is:</p>
 
   <div class="example mathml mml4p">
    <pre>
@@ -5030,7 +5007,6 @@ section on &lt;mo&gt;,
      &lt;/mrow&gt;
    </pre>
   </div>
-  </p>
 
   <p>The final diagram illustrates the generic use of <code class="element">mpadded</code> to modify both
   the bounding box and relative position of child content.</p>
@@ -5039,7 +5015,7 @@ section on &lt;mo&gt;,
    <p><img src="image/mpadded-combined.png" alt="illustration of the use of mpadded to modify both the bounding box size and position of child content"></img></p>
   </blockquote>
 
-  <p>The corresponding MathML is:
+  <p>The corresponding MathML is:</p>
 
   <div class="example mathml mml4p">
    <pre>
@@ -5052,7 +5028,7 @@ section on &lt;mo&gt;,
      &lt;/mrow&gt;
    </pre>
   </div>
-  </p>
+
  </section>
 
 </section>
@@ -5120,7 +5096,7 @@ section on &lt;mo&gt;,
 
   <p>In this example, <code class="element">mphantom</code> is used to ensure
   alignment of corresponding parts of the numerator and denominator of a
-  fraction:
+  fraction:</p>
 
   <div class="example mathml mmlcore">
    <pre>
@@ -5144,10 +5120,8 @@ section on &lt;mo&gt;,
      &lt;/mfrac&gt;
    </pre>
   </div>
-  </p>
 
-  <p>This would render as something like
-  </p>
+  <p>This would render as something like</p>
   <blockquote>
    <p><img src="image/mphantom.gif" alt="\frac{x+y+x}{x\phantom{{}+y}+z}"></img></p>
   </blockquote>
@@ -5168,7 +5142,7 @@ section on &lt;mo&gt;,
   <p>Alternatively, this problem could be avoided without any explicit
   attribute settings, by wrapping each of the arguments
   <code>&lt;mo&gt;+&lt;/mo&gt;</code> and <code>&lt;mi&gt;y&lt;/mi&gt;</code> in its
-  own <code class="element">mphantom</code> element, i.e.
+  own <code class="element">mphantom</code> element, i.e.</p>
 
   <div class="example mathml mmlcore">
    <pre>
@@ -5194,7 +5168,7 @@ section on &lt;mo&gt;,
      &lt;/mfrac&gt;
    </pre>
   </div>
-  </p>
+
  </section>
 </section>
 
@@ -5211,17 +5185,16 @@ section on &lt;mo&gt;,
   comma) between the arguments.</p>
 
   <p>For example, <code>&lt;mfenced&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;/mfenced&gt;</code>
-  renders as <span>&#x201c;(<i class="var">x</i>)&#x201d;</span> and is equivalent to
+  renders as <span>&#x201c;(<i class="var">x</i>)&#x201d;</span> and is equivalent to</p>
 
   <div class="example mathml mmlcore">
    <pre>
      &lt;mrow&gt; &lt;mo&gt; ( &lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt; ) &lt;/mo&gt; &lt;/mrow&gt;
    </pre>
   </div>
-  and
-  <code>&lt;mfenced&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mi&gt;y&lt;/mi&gt; &lt;/mfenced&gt;</code>
+  <p>and <code>&lt;mfenced&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mi&gt;y&lt;/mi&gt; &lt;/mfenced&gt;</code>
   renders as <span>&#x201c;(<i class="var">x</i>, <i class="var">y</i>)&#x201d;</span>
-  and is equivalent to
+  and is equivalent to</p>
 
   <div class="example mathml mmlcore">
    <pre>
@@ -5232,7 +5205,6 @@ section on &lt;mo&gt;,
      &lt;/mrow&gt;
    </pre>
   </div>
-  </p>
 
   <p>Individual fences or separators are represented using
   <code class="element">mo</code> elements, as described in <a href="#presm_mo"></a>. Thus, any <code class="element">mfenced</code>
@@ -5325,7 +5297,7 @@ section on &lt;mo&gt;,
   </table>
 
   <p>A generic <code class="element">mfenced</code> element, with all attributes
-  explicit, looks as follows:
+  explicit, looks as follows:</p>
 
   <div class="example ">
    <pre>
@@ -5338,7 +5310,6 @@ section on &lt;mo&gt;,
      &lt;/mfenced&gt;
    </pre>
   </div>
-  </p>
 
   <p>In <span>an</span> RTL directionality context, since the initial text
   direction is RTL, characters in the <code class="attribute">open</code> and <code class="attribute">close</code>
@@ -5347,7 +5318,7 @@ section on &lt;mo&gt;,
   as a parenthesized sequence in both LTR and RTL contexts.</p>
 
   <p>The general <code class="element">mfenced</code> element shown above is
-  equivalent to the following expanded form:
+  equivalent to the following expanded form:</p>
 
   <div class="example ">
    <pre>
@@ -5364,7 +5335,6 @@ section on &lt;mo&gt;,
      &lt;/mrow&gt;
    </pre>
   </div>
-  </p>
 
   <p>Each argument except the last is followed by a separator. The inner
   <code class="element">mrow</code> is added for proper grouping, as described in
@@ -5372,7 +5342,7 @@ section on &lt;mo&gt;,
 
   <p>When there is only one argument, the above form has no separators;
   since <code>&lt;mrow&gt; arg#1 &lt;/mrow&gt;</code> is equivalent to
-  <code>arg#1</code> (as described in <a href="#presm_mrow"></a>), this case is also equivalent to:
+  <code>arg#1</code> (as described in <a href="#presm_mrow"></a>), this case is also equivalent to:</p>
 
   <div class="example ">
    <pre>
@@ -5383,7 +5353,6 @@ section on &lt;mo&gt;,
      &lt;/mrow&gt;
    </pre>
   </div>
-  </p>
 
   <p>If there are too many separator characters, the extra ones are
   ignored. If separator characters are given, but there are too few, the
@@ -5398,7 +5367,7 @@ section on &lt;mo&gt;,
   from inserting separators consisting of <code class="element">mo</code>
   elements with empty content.</p>
 
-  <p>Finally, for the case with no arguments, i.e.
+  <p>Finally, for the case with no arguments, i.e.</p>
 
   <div class="example ">
    <pre>
@@ -5408,8 +5377,8 @@ section on &lt;mo&gt;,
      &lt;/mfenced&gt;
    </pre>
   </div>
-  the equivalent expanded form is defined to include just
-  the fences within an <code class="element">mrow</code>:
+  <p>the equivalent expanded form is defined to include just
+  the fences within an <code class="element">mrow</code>:</p>
 
   <div class="example ">
    <pre>
@@ -5419,7 +5388,6 @@ section on &lt;mo&gt;,
      &lt;/mrow&gt;
    </pre>
   </div>
-  </p>
 
   <p>Note that not all <span>&#x201c;fenced expressions&#x201d;</span> can be encoded by an
   <code class="element">mfenced</code> element. Such exceptional expressions
@@ -5448,7 +5416,7 @@ section on &lt;mo&gt;,
 
   <p>Note that it would be incorrect to use <code class="element">mfenced</code>
   with a separator of, for instance, <span>&#x201c;+&#x201d;</span>, as an abbreviation for an
-  expression using <span>&#x201c;+&#x201d;</span> as an ordinary operator, e.g.
+  expression using <span>&#x201c;+&#x201d;</span> as an ordinary operator, e.g.</p>
 
   <div class="example mathml mmlcore">
    <pre>
@@ -5457,7 +5425,7 @@ section on &lt;mo&gt;,
      &lt;/mrow&gt;
    </pre>
   </div>
-  This is because the <code>+</code> signs would be treated as separators,
+  <p>This is because the <code>+</code> signs would be treated as separators,
   not infix operators. That is, it would render as if they were marked up as
   <code>&lt;mo separator="true"&gt;+&lt;/mo&gt;</code>, which might therefore
   render inappropriately.</p>
@@ -5466,7 +5434,7 @@ section on &lt;mo&gt;,
  <section class="fold">
   <h5>Examples</h5>
 
-  <p>(<i class="var">a</i>+<i class="var">b</i>)
+  <p>(<i class="var">a</i>+<i class="var">b</i>)</p>
 
   <div class="example mathml mml4p">
    <pre>
@@ -5479,14 +5447,13 @@ section on &lt;mo&gt;,
      &lt;/mfenced&gt;
    </pre>
   </div>
-  </p>
 
   <p>Note that the above <code class="element">mrow</code> is necessary so that
   the <code class="element">mfenced</code> has just one argument. Without it, this
   would render incorrectly as <span>&#x201c;(<i class="var">a</i>, +,
   <i class="var">b</i>)&#x201d;</span>.</p>
 
-  <p>[0,1)
+  <p>[0,1)</p>
 
   <div class="example mathml mml4p">
    <pre>
@@ -5496,9 +5463,8 @@ section on &lt;mo&gt;,
      &lt;/mfenced&gt;
    </pre>
   </div>
-  </p>
 
-  <p><i class="var">f</i>(<i class="var">x</i>,<i class="var">y</i>)
+  <p><i class="var">f</i>(<i class="var">x</i>,<i class="var">y</i>)</p>
 
   <div class="example mathml mml4p">
    <pre>
@@ -5512,7 +5478,7 @@ section on &lt;mo&gt;,
      &lt;/mrow&gt;
    </pre>
   </div>
-  </p>
+
  </section>
 </section>
 
@@ -5704,7 +5670,7 @@ section on &lt;mo&gt;,
  <section class="fold">
   <h5>Examples</h5>
 
-  <p>An example of using multiple attributes is
+  <p>An example of using multiple attributes is</p>
 
   <div class="example mathml mmlcore">
    <pre>
@@ -5713,16 +5679,14 @@ section on &lt;mo&gt;,
      &lt;/menclose&gt;
    </pre>
   </div>
-  which renders with the box and circle overlapping roughly as
-  </p>
+  <p>which renders with the box and circle overlapping roughly as</p>
   <blockquote>
    <p><img src="image/circlebox.png" alt="[Image of a circle and box around x plus y]"></img></p>
   </blockquote>
-  <p>.
-  </p>
+  <p>.</p>
 
   <p>An example of using <code class="element">menclose</code> for actuarial
-  notation is
+  notation is</p>
 
   <div class="example mathml mmlcore">
    <pre>
@@ -5738,13 +5702,12 @@ section on &lt;mo&gt;,
      &lt;/msub&gt;
    </pre>
   </div>
-  which renders roughly as
-  </p>
+  <p>which renders roughly as</p>
   <blockquote>
    <p><img src="image/actuarial.png" alt="[image of actuarial notation for a angle n at i]"></img></p>
   </blockquote>
 
-  <p>An example of <code class="attributevalue">phasorangle</code>, which is used in circuit analysis, is:
+  <p>An example of <code class="attributevalue">phasorangle</code>, which is used in circuit analysis, is:</p>
 
   <div class="example mathml mmlcore">
    <pre>
@@ -5762,13 +5725,12 @@ section on &lt;mo&gt;,
      &lt;/mrow&gt;
    </pre>
   </div>
-  which renders roughly as
-  </p>
+  <p>which renders roughly as</p>
   <blockquote>
    <p><img src="image/phasorangle.png" alt="[image of phasorangle notation for the angle negative pi over 2]"></img></p>
   </blockquote>
 
-  <p>An example of <code class="attributevalue">madruwb</code> is:
+  <p>An example of <code class="attributevalue">madruwb</code> is:</p>
 
   <div class="example mathml mmlcore">
    <pre>
@@ -5777,8 +5739,7 @@ section on &lt;mo&gt;,
      &lt;/menclose&gt;
    </pre>
   </div>
-  which renders roughly as
-  </p>
+  <p>which renders roughly as</p>
   <blockquote>
    <p><img src="image/madruwb12.png" alt="[Image of 12 factorial in Arabic style]"></img></p>
   </blockquote>
@@ -5827,7 +5788,7 @@ section on &lt;mo&gt;,
  expression in all <span>&#x201c;scripting&#x201d;</span> elements (i.e. the first
  argument expression) should be the entire expression that is being
  scripted, not just the trailing character. For example,
- (<i class="var">x</i>+<i class="var">y</i>)<sup>2</sup> should be written as:
+ (<i class="var">x</i>+<i class="var">y</i>)<sup>2</sup> should be written as:</p>
 
  <div class="example mathml mmlcore">
   <pre>
@@ -5845,7 +5806,6 @@ section on &lt;mo&gt;,
     &lt;/msup&gt;
   </pre>
  </div>
- </p>
 
  <section>
   <h4 id="presm_msub">Subscript <code class="defn starttag">&lt;msub&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/#dfn-msub"></a></h4>
@@ -5853,14 +5813,14 @@ section on &lt;mo&gt;,
   <section>
    <h5>Description</h5>
 
-   <p>The <code class="element">msub</code> element attaches a subscript to a base using the syntax
+   <p>The <code class="element">msub</code> element attaches a subscript to a base using the syntax</p>
 
    <div class="example ">
     <pre>
       &lt;msub&gt; <em>base</em> <em>subscript</em> &lt;/msub&gt;
     </pre>
    </div>
-   It increments <code class="attribute">scriptlevel</code> by 1, and sets <code class="attribute">displaystyle</code> to
+   <p>It increments <code class="attribute">scriptlevel</code> by 1, and sets <code class="attribute">displaystyle</code> to
    <code class="attributevalue">false</code>, within <em>subscript</em>, but leaves both attributes
    unchanged within <em>base</em>. (See <a href="#presm_scriptlevel"></a>.)</p>
   </section>
@@ -5909,14 +5869,14 @@ section on &lt;mo&gt;,
   <section>
    <h5>Description</h5>
 
-   <p>The <code class="element">msup</code> element attaches a superscript to a base using the syntax
+   <p>The <code class="element">msup</code> element attaches a superscript to a base using the syntax</p>
 
    <div class="example ">
     <pre>
       &lt;msup&gt; <em>base</em> <em>superscript</em> &lt;/msup&gt;
     </pre>
    </div>
-   It increments <code class="attribute">scriptlevel</code> by 1, and sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code>, within
+   <p>It increments <code class="attribute">scriptlevel</code> by 1, and sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code>, within
    <em>superscript</em>, but leaves both attributes unchanged within
    <em>base</em>. (See <a href="#presm_scriptlevel"></a>.) </p>
 
@@ -5968,14 +5928,14 @@ section on &lt;mo&gt;,
    <h5>Description</h5>
 
    <p>The <code class="element">msubsup</code> element is used to attach both a subscript and
-   superscript to a base expression.
+   superscript to a base expression.</p>
 
    <div class="example ">
     <pre>
       &lt;msubsup&gt; <em>base</em> <em>subscript</em> <em>superscript</em> &lt;/msubsup&gt;
     </pre>
    </div>
-   It increments <code class="attribute">scriptlevel</code> by 1, and sets <code class="attribute">displaystyle</code> to
+   <p>It increments <code class="attribute">scriptlevel</code> by 1, and sets <code class="attribute">displaystyle</code> to
    <code class="attributevalue">false</code>, within <em>subscript</em> and <em>superscript</em>,
    but leaves both attributes unchanged within <em>base</em>.
    (See <a href="#presm_scriptlevel"></a>.)
@@ -6055,6 +6015,7 @@ section on &lt;mo&gt;,
    </blockquote>
    <p>
     would be represented as
+   </p>
 
     <div class="example mathml mmlcore">
      <pre>
@@ -6078,7 +6039,7 @@ section on &lt;mo&gt;,
        &lt;/mrow&gt;
      </pre>
     </div>
-   </p>
+
   </section>
  </section>
 
@@ -6088,14 +6049,14 @@ section on &lt;mo&gt;,
   <section>
    <h5>Description</h5>
 
-   <p>The <code class="element">munder</code> element attaches an accent or limit placed under a base using the syntax
+   <p>The <code class="element">munder</code> element attaches an accent or limit placed under a base using the syntax</p>
 
    <div class="example ">
     <pre>
       &lt;munder&gt; <em>base</em> <em>underscript</em> &lt;/munder&gt;
     </pre>
    </div>
-   It always sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code> within the underscript,
+   <p>It always sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code> within the underscript,
    but increments <code class="attribute">scriptlevel</code> by 1 only when <code class="attribute">accentunder</code> is <code class="attributevalue">false</code>.
    Within <em>base</em>, it always leaves both attributes unchanged.
    (See <a href="#presm_scriptlevel"></a>.)
@@ -6186,7 +6147,7 @@ section on &lt;mo&gt;,
   <section class="fold">
    <h5>Examples</h5>
 
-   <p>The MathML representation for the example shown above is:
+   <p>The MathML representation for the example shown above is:</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -6215,7 +6176,7 @@ section on &lt;mo&gt;,
       &lt;/mrow&gt;
     </pre>
    </div>
-   </p>
+
   </section>
  </section>
 
@@ -6225,14 +6186,14 @@ section on &lt;mo&gt;,
   <section>
    <h5>Description</h5>
 
-   <p>The <code class="element">mover</code> element attaches an accent or limit placed over a base using the syntax
+   <p>The <code class="element">mover</code> element attaches an accent or limit placed over a base using the syntax</p>
 
    <div class="example ">
     <pre>
       &lt;mover&gt; <em>base</em> <em>overscript</em> &lt;/mover&gt;
     </pre>
    </div>
-   It always sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code> within overscript,
+   <p>It always sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code> within overscript,
    but increments <code class="attribute">scriptlevel</code> by 1 only when <code class="attribute">accent</code> is <code class="attributevalue">false</code>.
    Within <em>base</em>, it always leaves both attributes unchanged.
    (See <a href="#presm_scriptlevel"></a>.)</p>
@@ -6251,8 +6212,6 @@ section on &lt;mo&gt;,
 
    <p><code class="element">mover</code> elements accept the attributes listed
    below in addition to those specified in <a href="#presm_presatt"></a>.</p>
-
-   <p>
 
     <table class="attributes data">
 
@@ -6301,7 +6260,7 @@ section on &lt;mo&gt;,
       </tr>
      </tbody>
     </table>
-   </p>
+
 
    <p>The difference between an accent versus limit is shown here:
    <img src="image/f3018.gif" alt="\hat{x}" align="middle"></img> versus
@@ -6326,7 +6285,7 @@ section on &lt;mo&gt;,
   <section class="fold">
    <h5>Examples</h5>
 
-   <p>The MathML representation for the examples shown above is:
+   <p>The MathML representation for the examples shown above is:</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -6371,7 +6330,7 @@ section on &lt;mo&gt;,
       &lt;/mrow&gt;
     </pre>
    </div>
-   </p>
+
   </section>
  </section>
 
@@ -6382,14 +6341,14 @@ section on &lt;mo&gt;,
   <section>
    <h5>Description</h5>
 
-   <p>The <code class="element">munderover</code> element attaches accents or limits placed both over and under a base using the syntax
+   <p>The <code class="element">munderover</code> element attaches accents or limits placed both over and under a base using the syntax</p>
 
    <div class="example ">
     <pre>
       &lt;munderover&gt; <em>base</em> <em>underscript</em> <em>overscript</em> &lt;/munderover&gt;
     </pre>
    </div>
-   It always sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code>
+   <p>It always sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code>
    within <em>underscript</em> and <em>overscript</em>,
    but increments <code class="attribute">scriptlevel</code> by 1 only when
    <code class="attribute">accentunder</code> or <code class="attribute">accent</code>, respectively, are <code class="attributevalue">false</code>.
@@ -6505,7 +6464,7 @@ section on &lt;mo&gt;,
    <p>The MathML representation for the example shown above with the first
    expression made using separate <code class="element">munder</code> and
    <code class="element">mover</code> elements, and the second one using an
-   <code class="element">munderover</code> element, is:
+   <code class="element">munderover</code> element, is:</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -6526,7 +6485,7 @@ section on &lt;mo&gt;,
       &lt;/mrow&gt;
     </pre>
    </div>
-   </p>
+
   </section>
  </section>
 
@@ -6542,7 +6501,7 @@ section on &lt;mo&gt;,
    <h5>Description</h5>
 
    <p>Presubscripts and tensor notations are represented by a single
-   element, <code class="element">mmultiscripts</code>, using the syntax:
+   element, <code class="element">mmultiscripts</code>, using the syntax:</p>
 
    <div class="example ">
     <pre>
@@ -6553,7 +6512,6 @@ section on &lt;mo&gt;,
       &lt;/mmultiscripts&gt;
     </pre>
    </div>
-   </p>
 
    <p>This element allows the representation of any number of vertically-aligned pairs of
    subscripts
@@ -6618,7 +6576,7 @@ section on &lt;mo&gt;,
 
    <p><span data-diff="chg">Examples</span> of the use of <code class="element">mmultiscripts</code> are:</p>
 
-   <p><sub>0</sub><i class="var">F</i><sub>1</sub>(;<i class="var">a</i>;<i class="var">z</i>).
+   <p><sub>0</sub><i class="var">F</i><sub>1</sub>(;<i class="var">a</i>;<i class="var">z</i>).</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -6645,10 +6603,9 @@ section on &lt;mo&gt;,
       &lt;/mrow&gt;
     </pre>
    </div>
-   </p>
 
    <p><img src="image/tensorindices.png" alt="R_i{}^j{}_k{}_l" align="middle"></img>
-   (where <i class="var">k</i> and <i class="var">l</i> are different indices)
+   (where <i class="var">k</i> and <i class="var">l</i> are different indices)</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -6665,9 +6622,8 @@ section on &lt;mo&gt;,
       &lt;/mmultiscripts&gt;
     </pre>
    </div>
-   </p>
 
-   <p><img src="image/prescriptsalign.png" alt="{}_{123}^{\phantom{00}1}X{}_{123}^{1\phantom{00}}" align="middle"></img>
+  <p><img src="image/prescriptsalign.png" alt="{}_{123}^{\phantom{00}1}X{}_{123}^{1\phantom{00}}" align="middle"></img></p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -6681,7 +6637,6 @@ section on &lt;mo&gt;,
       &lt;/mmultiscripts&gt;
     </pre>
    </div>
-   </p>
 
    <p>An additional example of <code class="element">mmultiscripts</code> shows how the binomial
    coefficient
@@ -7142,7 +7097,7 @@ section on &lt;mo&gt;,
   <section class="fold">
    <h5>Examples</h5>
 
-   <p>A 3 by 3 identity matrix could be represented as follows:
+   <p>A 3 by 3 identity matrix could be represented as follows:</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -7169,7 +7124,6 @@ section on &lt;mo&gt;,
       &lt;/mrow&gt;
     </pre>
    </div>
-   </p>
 
    <p>This might be rendered as:
    </p>
@@ -7323,6 +7277,7 @@ section on &lt;mo&gt;,
     <code class="element">mtable</code> element, attributes of
     <code class="element">mlabeledtr</code> that apply to column elements
     also apply to the label.  For example, in a one column table,
+   </p>
 
     <div class="example mathml-fragment">
      <pre>
@@ -7331,7 +7286,7 @@ section on &lt;mo&gt;,
 
      </pre>
     </div>
-    means that the label and other entries in the row are vertically aligned
+    <p>means that the label and other entries in the row are vertically aligned
     along their top.  To force a particular alignment on the label,
     the appropriate attribute would normally be set on the
     <code class="element">mtd</code> <span>element</span> that surrounds the label content.
@@ -7359,9 +7314,9 @@ section on &lt;mo&gt;,
    incrementing the global equation number.  For cross references, an
    <code class="attribute">id</code> on either the mlabeledtr element or on the first element
    itself could be used as a target of any link.
-   <span>Alternatively, in a CSS context, one could use an empty <code class="element">mtd</code>
+   Alternatively, in a CSS context, one could use an empty <code class="element">mtd</code>
    as the first child of <code class="element">mlabeledtr</code> and use CSS counters and generated content
-   to fill in the equation number using a CSS style such as</span>
+   to fill in the equation number using a CSS style such as</p>
 
    <div class="example ">
     <pre>
@@ -7370,7 +7325,6 @@ section on &lt;mo&gt;,
      mtd.eqnum:before {content: "(" counter(eqnum) ")"}
     </pre>
    </div>
-   </p>
 
   </section>
 
@@ -7403,7 +7357,7 @@ section on &lt;mo&gt;,
     </pre>
    </div>
 
-   <p>This should be rendered as:
+   <p>This should be rendered as:</p>
 
    <table>
 
@@ -7416,7 +7370,7 @@ section on &lt;mo&gt;,
      </tr>
     </tbody>
    </table>
-   </p>
+
   </section>
  </section>
 
@@ -7558,7 +7512,7 @@ section on &lt;mo&gt;,
    <p>The discussion that follows will use the example of a set of
    simultaneous equations that should be rendered with vertical
    alignment of the coefficients and variables of each term, by
-   inserting spacing somewhat like that shown here:
+   inserting spacing somewhat like that shown here:</p>
 
    <div class="example ">
     <pre>
@@ -7566,8 +7520,8 @@ section on &lt;mo&gt;,
      3.1 x -  0.7y = -1.1
     </pre>
    </div>
-   If the example expressions shown above were arranged in a column
-   but not aligned, they would appear as:
+   <p>If the example expressions shown above were arranged in a column
+   but not aligned, they would appear as:</p>
 
    <div class="example ">
     <pre>
@@ -7575,7 +7529,7 @@ section on &lt;mo&gt;,
      3.1x - 0.7y = -1.1
     </pre>
    </div>
-   For audio renderers, it is suggested that the alignment elements
+   <p>For audio renderers, it is suggested that the alignment elements
    produce the analogous behavior of altering the rhythm of pronunciation
    so that it is the same for several sub-expressions in a column, by the
    insertion of the appropriate time delays in place of the extra
@@ -7767,7 +7721,7 @@ section on &lt;mo&gt;,
    above by preceding them with another table row containing an
    <code class="element">mtext</code> element for the heading, and using the
    default <code class="attribute">columnalign</code>="center" for the table, to
-   produce:
+   produce:</p>
 
    <div class="example ">
     <pre>
@@ -7785,7 +7739,7 @@ section on &lt;mo&gt;,
      3.1 x -  0.7y = -1.1
     </pre>
    </div>
-   </p>
+
   </section>
 
   <section>
@@ -8087,7 +8041,7 @@ a single value. Furthermore, an <code class="element">mtr</code> or
 of <code class="attribute">groupalign</code> values, since it spans multiple
 <code class="element">mtable</code> columns, each potentially acting as an
 alignment scope. Such lists of <em>group-alignment</em> values are specified
-using the following syntax rules:
+using the following syntax rules:</p>
 
 <div class="example ">
  <pre>
@@ -8096,7 +8050,6 @@ using the following syntax rules:
   group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
 </pre>
 </div>
-</p>
 
 <p>As described in <a href="#fund_attval"></a>, <code>|</code> separates
 alternatives; <code>+</code> represents optional repetition (i.e. 1 or
@@ -8109,7 +8062,7 @@ value.</p>
 
 <p>The permissible values of the <code class="attribute">groupalign</code> attribute of the
 elements that have this attribute are specified using the above
-syntax definitions as follows:
+syntax definitions as follows:</p>
 
 <table class="data">
 
@@ -8155,7 +8108,6 @@ syntax definitions as follows:
 </tr>
 </tbody>
 </table>
-</p>
 
 <p>In the example near the beginning of this section, the group
 alignment values could be specified on every <code class="element">mtd</code>
@@ -8175,7 +8127,7 @@ aligned.</p>
 
 <p>The above rules are sufficient to explain the MathML representation
 of the example given near the start of this section.
-To repeat the example, the desired rendering is:
+To repeat the example, the desired rendering is:</p>
 
 <div class="example ">
  <pre>
@@ -8183,9 +8135,9 @@ To repeat the example, the desired rendering is:
   3.1 x -  0.7y = -1.1
 </pre>
 </div>
-</p>
 
-<p>One way to represent that in MathML is:
+
+<p>One way to represent that in MathML is:</p>
 
 <div class="example mathml mml4p">
  <pre>
@@ -8253,7 +8205,7 @@ To repeat the example, the desired rendering is:
      &lt;/mtable&gt;
 </pre>
 </div>
-</p>
+
 </section>
 
 <section>
