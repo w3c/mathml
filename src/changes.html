@@ -67,8 +67,31 @@
     in <a href="#presm_mmultiscripts"></a> is towards the base, and
     add a new example.
     </li>
+    <li>The deprecated MathML&#160;1 attributes on token elements: `fontfamily`,
+    `fontweight`, `fontstyle`,` fontsize`, `color` and `background`
+    are removed in favor of <code
+    class="attribute">mathvariant</code>, <code class="attribute">mathsize</code>,
+    <code class="attribute">mathcolor</code> and
+    <code class="attribute">mathbackground.</code>.
+    hese attribues are also no longer valid on <code class="element">mstyle</code>.
+    The `mathml4-legacy` schema makes these valid if needed for legacy applications.
+    </li>
+    <li>All the deprecated font related attributes have been dropped from
+    <code class="element">mglyph</code> which is still reteaind to include images in MathML.
+    </li>
+    <li>The value `indentingnewline` is no longer valid for <code
+    class="element">mspace</code> (it was equivalent  to `newline`).
+    </li>
+    <li>In Mathml&#160; table rows and cells must be explicitly marked
+    wih <code class="element">mtr</code> and <code
+    class="element">mtd</code>. The [[MathML1]] required that an
+    implementation infer the row markup if it was omitted.
+    </li>
+
    </ul>
+
   </section>
+
 
   <section>
    <h4 id="chg_contm">Changes to <a href="#contm"></a></h4>
@@ -158,5 +181,7 @@
    
   </section>
 
+
  </section>
+
 </section>
