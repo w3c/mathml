@@ -50,7 +50,7 @@
 
    <p>To declare a namespace when using the XML serialisation of MathML,
    one uses an <code class="attribute">xmlns</code>
-   attribute, or an attribute with an <code class="attribute">xmlns</code> prefix.
+   attribute, or an attribute with an <code class="attribute">xmlns</code> prefix.</p>
 
    <div class="example ">
     <pre>
@@ -94,7 +94,7 @@
       &lt;/math&gt;
     </pre>
    </div>
-   </p>
+
   </section>
 
   <section>
@@ -681,7 +681,7 @@
    called a blank character).</p>
 
    <p>For example, <code>&lt;mo&gt; ( &lt;/mo&gt;</code> is equivalent to
-   <code>&lt;mo&gt;(&lt;/mo&gt;</code>, and
+   <code>&lt;mo&gt;(&lt;/mo&gt;</code>, and</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -691,7 +691,7 @@
       &lt;/mtext&gt;
     </pre>
    </div>
-   is equivalent to
+   <p>is equivalent to
    <code>&lt;mtext&gt;Theorem 1:&lt;/mtext&gt;</code>
    or
    <code>&lt;mtext&gt;Theorem&amp;#x20;1:&lt;/mtext&gt;</code>.</p>
@@ -701,7 +701,7 @@
    having them ignored, must use <code class="entity">nbsp</code> (U+00A0)
    or other non-marking characters that are not trimmed.
    For example, compare the above use of an <code class="element">mtext</code> element
-   with
+   with</p>
 
    <div class="example mathml mmlcore">
     <pre>
@@ -709,7 +709,7 @@
      &amp;nbsp;Theorem &amp;nbsp;1:
       &lt;/mtext&gt; </pre>
    </div>
-   </p>
+
 
    <p>When the first example is rendered, there is nothing before
    &#x201c;Theorem&#x201d;, one Unicode space character between &#x201c;Theorem&#x201d; and

@@ -75,7 +75,7 @@ p = element p {
 attribute class {text}?,
 attribute style {text}?,
 attribute id {text}?,
-(divcontent|label|input)*
+(inlinecontent|label|input)*
 }
 
 blockquote = element blockquote {
