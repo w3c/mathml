@@ -702,6 +702,55 @@
 
   </section>
 
+  <section class="fold">
+    <h5 id="presm_mo_linebreaks">Examples of Linebreaking</h5>
+    
+    <p>The following example demonstrates forced linebreaks and forced alignment:</p>
+    
+    <div class="example mathml">
+     <pre>
+       &lt;mrow&gt;
+         &lt;mrow&gt;  &lt;mi&gt;f&lt;/mi&gt; &lt;mo&gt;&amp;ApplyFunction;&lt;/mo&gt; &lt;mo&gt;(&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;)&lt;/mo&gt;  &lt;/mrow&gt;
+    
+         &lt;mo id='eq1-equals'&gt;=&lt;/mo&gt;
+         &lt;mrow&gt;
+           &lt;msup&gt;
+             &lt;mrow&gt; &lt;mo&gt;(&lt;/mo&gt; &lt;mrow&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mn&gt;1&lt;/mn&gt; &lt;/mrow&gt; &lt;mo&gt;)&lt;/mo&gt; &lt;/mrow&gt;
+             &lt;mn&gt;4&lt;/mn&gt;
+           &lt;/msup&gt;
+           &lt;mo linebreak='newline' linebreakstyle='before'
+      indentalign='id' indenttarget='eq1-equals'&gt;=&lt;/mo&gt;
+             &lt;mrow&gt;
+               &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;/msup&gt;
+               &lt;mo id='eq1-plus'&gt;+&lt;/mo&gt;
+               &lt;mrow&gt;  &lt;mn&gt;4&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;3&lt;/mn&gt; &lt;/msup&gt;  &lt;/mrow&gt;
+               &lt;mo&gt;+&lt;/mo&gt;
+               &lt;mrow&gt;  &lt;mn&gt;6&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;2&lt;/mn&gt; &lt;/msup&gt;  &lt;/mrow&gt;
+    
+               &lt;mo linebreak='newline' linebreakstyle='before'
+      indentalignlast='id' indenttarget='eq1-plus'&gt;+&lt;/mo&gt;
+                 &lt;mrow&gt;  &lt;mn&gt;4&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt;  &lt;/mrow&gt;
+                 &lt;mo&gt;+&lt;/mo&gt;
+                 &lt;mn&gt;1&lt;/mn&gt;
+               &lt;/mrow&gt;
+             &lt;/mrow&gt;
+           &lt;/mrow&gt;
+    </pre>
+    </div>
+    
+    <p>This displays as </p>
+    
+    <blockquote>
+    <p><img src="image/linebreak-example1.png" alt="example with equal and plus signs aligned"></img></p>
+    </blockquote>
+    
+    <p>Note that because <code class="attribute">indentalignlast</code> defaults to <code class="attributevalue">indentalign</code>,
+    in the above example <code class="attribute">indentalign</code> could have been used in place of
+    <code class="attribute">indentalignlast</code>.  Also, the specifying <code>linebreakstyle='before'</code>
+    is not needed because that is the default value.  </p>
+    </section>
+    
+    
  </section>
 
 
@@ -1566,9 +1615,6 @@
     </tbody>
    </table>
    </p>
-
-   <p>Note that the deprecated <code class="attribute">fontstyle</code> attribute
-   defaults in the same way as <code class="attribute">mathvariant</code>, depending on the content.</p>
 
    <p>Note that for purposes of determining equivalences of Math
    Alphanumeric Symbol
@@ -2654,12 +2700,11 @@
    subsection.</p>
 
    <p>Note that, like all rendering rules in MathML, these rules are
-   suggestions rather than requirements.  Furthermore, no attempt is made
-   to specify the rendering completely; rather, enough information is
-   given to make the intended effect of the various rendering attributes
+   suggestions rather than requirements.  
+   The description below is given to make the intended effect of the various rendering attributes
    as clear as possible.
    Detailed layout rules for brower implmentations for operators are given in
-   <a href="https://w3c.github.io/mathml-core/#operator-fence-separator-or-accent-mo>MathML Core</a>.
+   <a href="https://w3c.github.io/mathml-core/#operator-fence-separator-or-accent-mo">MathML Core</a>.
   </p>
 
    <section>
@@ -2816,53 +2861,6 @@
     embellished operators are chosen so that in all ordinary cases it will
     not be necessary for the author to specify a <code class="attribute">form</code>
     attribute.</p>
-   </section>
-
-   <section>
-    <h6>Rationale for definition of embellished operators</h6>
-
-    <p>The following notes are included as a rationale for certain aspects
-    of the above definitions, but should not be important for most users
-    of MathML.</p>
-
-    <p>An <code class="element">mfrac</code> is included as an
-    <span>&#x201c;embellisher&#x201d;</span> because of the common notation for a
-    differential operator:
-
-    <div class="example mathml">
-     <pre>
-       &lt;mfrac&gt;
-         &lt;mo&gt; &amp;DifferentialD; &lt;/mo&gt;
-         &lt;mrow&gt;
-           &lt;mo&gt; &amp;DifferentialD; &lt;/mo&gt;
-           &lt;mi&gt; x &lt;/mi&gt;
-         &lt;/mrow&gt;
-       &lt;/mfrac&gt;
-     </pre>
-    </div>
-    </p>
-
-    <p>Since the definition of embellished operator affects the use of the
-    attributes related to stretching, it is important that it includes
-    embellished fences as well as ordinary operators; thus it applies to
-    any <code class="element">mo</code> element.</p>
-
-    <p>Note that an <code class="element">mrow</code> containing a single argument
-    is an embellished operator if and only if its argument is an embellished
-    operator. This is because an <code class="element">mrow</code> with a single
-    argument must be equivalent in all respects to that argument alone (as
-    discussed in <a href="#presm_mrow"></a>).
-    This means that an <code class="element">mo</code> element that is the sole argument of an <code class="element">mrow</code>
-    will determine its default <code class="attribute">form</code> attribute based on that
-    <code class="element">mrow</code>'s position in a surrounding, perhaps inferred,
-    <code class="element">mrow</code> (if there is one), rather than based on its own
-    position in the <code class="element">mrow</code> in which it is the sole argument.</p>
-
-    <p>Note that the above definition defines every
-    <code class="element">mo</code> element to be <span>&#x201c;embellished&#x201d;</span> &#x2014; that is,
-    <span>&#x201c;embellished operator&#x201d;</span> can be considered (and implemented in
-    renderers) as a special class of MathML expressions, of which
-    <code class="element">mo</code> is a specific case.</p>
    </section>
 
    <section>
@@ -3149,9 +3147,6 @@ work:
 </pre>
 </div>
 </p>
-
-<p>This displays as
-<img src="image/f3003.gif" alt="x \widearrow{\mathrm{maps~to}} y" align="middle"></img>.</p>
 </section>
 
 <section>
@@ -3179,55 +3174,6 @@ limitations in fonts or font rendering may result in the final,
 stretched sizes being only approximately the same.</p>
 </section>
 </section>
-
-<section class="fold">
-<h5 id="presm_mo_linebreaks">Examples of Linebreaking</h5>
-
-<p>The following example demonstrates forced linebreaks and forced alignment:</p>
-
-<div class="example mathml">
- <pre>
-   &lt;mrow&gt;
-     &lt;mrow&gt;  &lt;mi&gt;f&lt;/mi&gt; &lt;mo&gt;&amp;ApplyFunction;&lt;/mo&gt; &lt;mo&gt;(&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;)&lt;/mo&gt;  &lt;/mrow&gt;
-
-     &lt;mo id='eq1-equals'&gt;=&lt;/mo&gt;
-     &lt;mrow&gt;
-       &lt;msup&gt;
-         &lt;mrow&gt; &lt;mo&gt;(&lt;/mo&gt; &lt;mrow&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mn&gt;1&lt;/mn&gt; &lt;/mrow&gt; &lt;mo&gt;)&lt;/mo&gt; &lt;/mrow&gt;
-         &lt;mn&gt;4&lt;/mn&gt;
-       &lt;/msup&gt;
-       &lt;mo linebreak='newline' linebreakstyle='before'
-  indentalign='id' indenttarget='eq1-equals'&gt;=&lt;/mo&gt;
-         &lt;mrow&gt;
-           &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;/msup&gt;
-           &lt;mo id='eq1-plus'&gt;+&lt;/mo&gt;
-           &lt;mrow&gt;  &lt;mn&gt;4&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;3&lt;/mn&gt; &lt;/msup&gt;  &lt;/mrow&gt;
-           &lt;mo&gt;+&lt;/mo&gt;
-           &lt;mrow&gt;  &lt;mn&gt;6&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;2&lt;/mn&gt; &lt;/msup&gt;  &lt;/mrow&gt;
-
-           &lt;mo linebreak='newline' linebreakstyle='before'
-  indentalignlast='id' indenttarget='eq1-plus'&gt;+&lt;/mo&gt;
-             &lt;mrow&gt;  &lt;mn&gt;4&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt;  &lt;/mrow&gt;
-             &lt;mo&gt;+&lt;/mo&gt;
-             &lt;mn&gt;1&lt;/mn&gt;
-           &lt;/mrow&gt;
-         &lt;/mrow&gt;
-       &lt;/mrow&gt;
-</pre>
-</div>
-
-<p>This displays as </p>
-
-<blockquote>
-<p><img src="image/linebreak-example1.png" alt="example with equal and plus signs aligned"></img></p>
-</blockquote>
-
-<p>Note that because <code class="attribute">indentalignlast</code> defaults to <code class="attributevalue">indentalign</code>,
-in the above example <code class="attribute">indentalign</code> could have been used in place of
-<code class="attribute">indentalignlast</code>.  Also, the specifying <code>linebreakstyle='before'</code>
-is not needed because that is the default value.  </p>
-</section>
-
 </section>
 
 <section>
@@ -3277,82 +3223,14 @@ such elements for <span>&#x201c;tweaking&#x201d;</span> in [[MathML-Notes]].</p>
 
 <div class="example mathml">
  <pre>
-   &lt;mtext&gt; Theorem 1: &lt;/mtext&gt;
-   &lt;mtext&gt; &amp;ThinSpace; &lt;/mtext&gt;
-   &lt;mtext&gt; &amp;ThickSpace;&amp;ThickSpace; &lt;/mtext&gt;
-   &lt;mtext&gt; /* a comment */ &lt;/mtext&gt;
-</pre>
-</div>
-</section>
-
-<section>
-<h5 id="presm_mixtextmath">Mixing text and mathematics</h5>
-
-<p>In some cases, text embedded in mathematics could be more appropriately
-represented using <code class="element">mo</code> or <code class="element">mi</code> elements.
-For example, the expression 'there exists
-<img src="image/f3004.gif" alt="\delta&gt;0" align="middle"></img>
-such that <i class="var">f</i>(<i class="var">x</i>) &lt;1' is equivalent to
-<img src="image/f3005.gif" alt="\exists \delta&gt;0 \backepsilon f(x)&lt;1" align="middle"></img>
-and could be represented as:
-
-<div class="example mathml">
- <pre>
    &lt;mrow&gt;
-     &lt;mo&gt; there exists &lt;/mo&gt;
-     &lt;mrow&gt;
-       &lt;mrow&gt;
-         &lt;mi&gt; &amp;delta; &lt;/mi&gt;
-         &lt;mo&gt; &amp;gt; &lt;/mo&gt;
-         &lt;mn&gt; 0 &lt;/mn&gt;
-       &lt;/mrow&gt;
-       &lt;mo&gt; such that &lt;/mo&gt;
-       &lt;mrow&gt;
-         &lt;mrow&gt;
-           &lt;mi&gt; f &lt;/mi&gt;
-           &lt;mo&gt; &amp;ApplyFunction; &lt;/mo&gt;
-           &lt;mrow&gt;
-             &lt;mo&gt; ( &lt;/mo&gt;
-             &lt;mi&gt; x &lt;/mi&gt;
-             &lt;mo&gt; ) &lt;/mo&gt;
-           &lt;/mrow&gt;
-         &lt;/mrow&gt;
-         &lt;mo&gt; &amp;lt; &lt;/mo&gt;
-         &lt;mn&gt; 1 &lt;/mn&gt;
-       &lt;/mrow&gt;
-     &lt;/mrow&gt;
+     &lt;mtext&gt; Theorem 1: &lt;/mtext&gt;
+     &lt;mtext&gt; &amp;ThinSpace; &lt;/mtext&gt;
+     &lt;mtext&gt; &amp;ThickSpace;&amp;ThickSpace; &lt;/mtext&gt;
+     &lt;mtext&gt; /* a comment */ &lt;/mtext&gt;
    &lt;/mrow&gt;
 </pre>
 </div>
-</p>
-
-<p>An example involving an <code class="element">mi</code> element is:
-<i class="var">x</i>+<i class="var">x</i><sup>2</sup>+&#xb7;&#xb7;&#xb7;+<i class="var">x</i><sup><i class="var">n</i></sup>.
-In this example, ellipsis should be represented using an <code class="element">mi</code> element, since it takes the place of a term in the
-sum; (see <a href="#presm_mi"></a>).</p>
-
-<p>On the other hand, expository text within MathML is best
-represented with an <code class="element">mtext</code> element. An example
-of this is:
-<div class="example text">
- <pre> Theorem 1: if <i class="var">x</i> &gt; 1, then
- <i class="var">x</i><sup>2</sup> &gt; <i class="var">x</i>.  
-</pre>
-</div> However, when MathML is
-embedded in HTML, or another document markup language, the example is
-probably best rendered with only the two inequalities represented as
-MathML at all, letting the text be part of the surrounding HTML.</p>
-
-<p>Another factor to consider in deciding how to mark up text is the
-effect on rendering. Text enclosed in an <code class="element">mo</code>
-element is unlikely to be found in a renderer's operator dictionary,
-so it will be rendered with the format and spacing appropriate for an
-<span>&#x201c;unrecognized operator&#x201d;</span>, which may or may not be better than the
-format and spacing for <span>&#x201c;text&#x201d;</span> obtained by using an
-<code class="element">mtext</code> element. An ellipsis entity in an
-<code class="element">mi</code> element is apt to be spaced more appropriately
-for taking the place of a term within a series than if it appeared in
-an <code class="element">mtext</code> element.</p>
 </section>
 </section>
 
