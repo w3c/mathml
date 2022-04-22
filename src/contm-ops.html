@@ -153,7 +153,7 @@
    <tr>
     <td><a href="#contm_max">max</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/minmax1#max">max</a></td>
-    <td><a class="intref" href="#contm_nary_minmax">nary-minmax</a></td>
+    <td><a class="intref" href="#contm_nary_unary_minmax">nary-minmax</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -162,7 +162,7 @@
    <tr>
     <td><a href="#contm_min">min</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/minmax1#min">min</a></td>
-    <td><a class="intref" href="#contm_nary_minmax">nary-minmax</a></td>
+    <td><a class="intref" href="#contm_nary_unary_minmax">nary-minmax</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -461,7 +461,7 @@
    <tr>
     <td><a href="#contm_divergence">divergence</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#divergence">divergence</a></td>
-    <td><a class="intref" href="#contm_unary">unary-veccalc</a></td>
+    <td><a class="intref" href="#contm_unary_veccalc">unary-veccalc</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -469,7 +469,7 @@
    <tr>
     <td><a href="#contm_grad">grad</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#grad">grad</a></td>
-    <td><a class="intref" href="#contm_unary">unary-veccalc</a></td>
+    <td><a class="intref" href="#contm_unary_veccalc">unary-veccalc</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -477,7 +477,7 @@
    <tr>
     <td><a href="#contm_curl">curl</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#curl">curl</a></td>
-    <td><a class="intref" href="#contm_unary">unary-veccalc</a></td>
+    <td><a class="intref" href="#contm_unary_veccalc">unary-veccalc</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -485,7 +485,7 @@
    <tr>
     <td><a href="#contm_laplacian">laplacian</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#Laplacian">Laplacian</a></td>
-    <td><a class="intref" href="#contm_unary">unary-veccalc</a></td>
+    <td><a class="intref" href="#contm_unary_veccalc">unary-veccalc</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -511,7 +511,7 @@
    <tr>
     <td><a href="#contm_union">union</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/set1#union">union</a></td>
-    <td><a class="intref" href="#contm_nary">nary-set</a></td>
+    <td><a class="intref" href="#contm_nary_set">nary-set</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -520,7 +520,7 @@
    <tr>
     <td><a href="#contm_intersect">intersect</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/set1#intersect">intersect</a></td>
-    <td><a class="intref" href="#contm_nary">nary-set</a></td>
+    <td><a class="intref" href="#contm_nary_set">nary-set</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -529,7 +529,7 @@
    <tr>
     <td><a href="#contm_in">in</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/set1#in">in</a></td>
-    <td><a class="intref" href="#contm_binary">binary-set</a></td>
+    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -537,7 +537,7 @@
    <tr>
     <td><a href="#contm_notin">notin</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/set1#notin">notin</a></td>
-    <td><a class="intref" href="#contm_binary">binary-set</a></td>
+    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -561,7 +561,7 @@
    <tr>
     <td><a href="#contm_notsubset">notsubset</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/set1#notsubset">notsubset</a></td>
-    <td><a class="intref" href="#contm_binary">binary-set</a></td>
+    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -569,7 +569,7 @@
    <tr>
     <td><a href="#contm_notprsubset">notprsubset</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/set1#notprsubset">notprsubset</a></td>
-    <td><a class="intref" href="#contm_binary">binary-set</a></td>
+    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -577,7 +577,7 @@
    <tr>
     <td><a href="#contm_setdiff">setdiff</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/set1#setdiff">setdiff</a>, <a class="omsymbol" href="https://openmath.org/cd/multiset1#setdiff">setdiff</a></td>
-    <td><a class="intref" href="#contm_binary">binary-set</a></td>
+    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -585,7 +585,7 @@
    <tr>
     <td><a href="#contm_card">card</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/set1#size">size</a>, <a class="omsymbol" href="https://openmath.org/cd/multiset1#size">size</a></td>
-    <td><a class="intref" href="#contm_unary">unary-set</a></td>
+    <td><a class="intref" href="#contm_unary_set">unary-set</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -593,7 +593,7 @@
    <tr>
     <td><a href="#contm_cartesianproduct">cartesianproduct</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/set1#cartesian_product">cartesian_product</a></td>
-    <td><a class="intref" href="#contm_nary">nary-set</a></td>
+    <td><a class="intref" href="#contm_nary_set">nary-set</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -863,7 +863,7 @@
    <tr>
     <td><a href="#contm_mean">mean</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/s_dist1#mean">mean</a>, <a class="omsymbol" href="https://openmath.org/cd/s_data1#mean">mean</a></td>
-    <td><a class="intref" href="#contm_nary_unary">nary-stats</a></td>
+    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -872,7 +872,7 @@
    <tr>
     <td><a href="#contm_sdev">sdev</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/s_dist1#sdev">sdev</a>, <a class="omsymbol" href="https://openmath.org/cd/s_data1#sdev">sdev</a></td>
-    <td><a class="intref" href="#contm_nary_unary">nary-stats</a></td>
+    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -881,7 +881,7 @@
    <tr>
     <td><a href="#contm_variance">variance</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/s_dist1#variance">variance</a>, <a class="omsymbol" href="https://openmath.org/cd/s_data1#variance">variance</a></td>
-    <td><a class="intref" href="#contm_nary_unary">nary-stats</a></td>
+    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -890,7 +890,7 @@
    <tr>
     <td><a href="#contm_median">median</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/s_data1#median">median</a></td>
-    <td><a class="intref" href="#contm_nary_unary">nary-stats</a></td>
+    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -900,7 +900,7 @@
    <tr>
     <td><a href="#contm_mode">mode</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/s_data1#mode">mode</a></td>
-    <td><a class="intref" href="#contm_nary_unary">nary-stats</a></td>
+    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -957,7 +957,7 @@
    <tr>
     <td><a href="#contm_determinant">determinant</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#determinant">determinant</a></td>
-    <td><a class="intref" href="#contm_unary">unary-linalg</a></td>
+    <td><a class="intref" href="#contm_unary_linalg">unary-linalg</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -965,7 +965,7 @@
    <tr>
     <td><a href="#contm_transpose">transpose</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#transpose">transpose</a></td>
-    <td><a class="intref" href="#contm_unary">unary-linalg</a></td>
+    <td><a class="intref" href="#contm_unary_linalg">unary-linalg</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -982,7 +982,7 @@
    <tr>
     <td><a href="#contm_vectorproduct">vectorproduct</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#vectorproduct">vectorproduct</a></td>
-    <td><a class="intref" href="#contm_binary">binary-linalg</a></td>
+    <td><a class="intref" href="#contm_binary_linalg">binary-linalg</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -990,7 +990,7 @@
    <tr>
     <td><a href="#contm_scalarproduct">scalarproduct</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#scalarproduct">scalarproduct</a></td>
-    <td><a class="intref" href="#contm_binary">binary-linalg</a></td>
+    <td><a class="intref" href="#contm_binary_linalg">binary-linalg</a></td>
     <td></td>
     <td></td>
     <td></td>
@@ -998,7 +998,7 @@
    <tr>
     <td><a href="#contm_outerproduct">outerproduct</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#outerproduct">outerproduct</a></td>
-    <td><a class="intref" href="#contm_binary">binary-linalg</a></td>
+    <td><a class="intref" href="#contm_binary_linalg">binary-linalg</a></td>
     <td></td>
     <td></td>
     <td></td>
