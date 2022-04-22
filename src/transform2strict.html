@@ -77,15 +77,15 @@
       </li>
 
       <li>
-       <p>Rewrite roots as described in <a href="#contm_root"></a>.</p>
+       <p>Rewrite roots as described in <a href="#contm_p2s_root"></a>.</p>
       </li>
 
       <li>
-       <p>Rewrite logarithms as described in <a href="#contm_log"></a>.</p>
+       <p>Rewrite logarithms as described in <a href="#contm_p2s_log"></a>.</p>
       </li>
 
       <li>
-       <p>Rewrite moments as described in <a href="#contm_moment"></a>.</p>
+       <p>Rewrite moments as described in <a href="#contm_p2s_mom"></a>.</p>
       </li>
      </ol>
     </li>
@@ -130,7 +130,7 @@
 
       <li id="contm_p2s_step_vector">
        <p>Rewrite interval, vectors, matrices, and matrix rows
-       as described in <a href="#contm_interval"></a>, <a href="#contm_vector"></a>,
+       as described in <a href="#contm_p2s_intv"></a>, <a href="#contm_vector"></a>,
        <a href="#contm_matrix"></a> and <a href="#contm_matrixrow"></a>. <span>Note any qualifiers will have been rewritten to <code class="element">domainofapplication</code> and will be further rewritten in Step 6.</span></p>
       </li>
 
@@ -148,7 +148,7 @@
     <li>
      <p><em>Apply Special Case Rules for Operators using <code class="element">domainofapplication</code> Qualifiers</em>:
      This step deals with the special cases for the operators introduced in
-     <a href="#contm_opel"></a>. There are different classes of special cases to be taken into account:
+     <a href="#contm_structure_extended"></a>. There are different classes of special cases to be taken into account:
      </p>
      <ol>
 
@@ -238,7 +238,7 @@
     </li>
 
     <li>
-     <p><em>Rewrite operators</em>: Rewrite any remaining operator defined in <a href="#contm_opel"></a>
+     <p><em>Rewrite operators</em>: Rewrite any remaining operator defined in <a href="#contm_structure_extended"></a>
      to a <code class="element">csymbol</code> referencing the symbol identified in the syntax table by the rule
      <a>Rewrite: element</a>. <span>As noted in the descriptions of each
      operator element, some require special case rules to determine the proper choice
@@ -254,8 +254,8 @@
       </li>
 
       <li>
-       <p>The choice of symbol for the <a class="intref" href="#contm_minus"><code class="element">minus</code></a>
-       operator depends on the number of the arguments.</p>
+       <p>The choice of symbol for the <code class="element">minus</code>
+       operator depends on the number of the arguments, <a class="intref" href="#contm_binary_arith"><code class="element">minus</code></a> or <a class="intref" href="#contm_unary_arith"><code class="element">minus</code></a>.</p>
       </li>
 
       <li>
@@ -1010,7 +1010,7 @@
 
     <section>
      <h5 id="contm_p2s_root">Roots</h5>
-     <p>Rewrite roots as described in <a href="#contm_root"></a>.</p>
+     <p>Rewrite roots as described in <a href="#contm_p2s_root"></a>.</p>
 
      <p>In Strict Content markup, the <a class="omsymbol" href="https://openmath.org/cd/arith1#root">root</a>
      symbol is always used with two arguments, with the second indicating
@@ -1349,7 +1349,7 @@
     <section>
      <h5 id="contm_p2s_step">Intervals, vectors, matrices</h5>
      <p>Rewrite interval, vectors, matrices, and matrix rows as
-     described in <a href="#contm_interval"></a>, <a href="#contm_vector"></a>,
+     described in <a href="#contm_p2s_intv"></a>, <a href="#contm_vector"></a>,
      <a href="#contm_matrix"></a> and <a href="#contm_matrixrow"></a>.
      Note any qualifiers will have been rewritten to <code class="element">domainofapplication</code> and will be further rewritten in a later step.</p>
 
@@ -1497,7 +1497,7 @@
     <h4 id="contm_p2s_doaq">Rewrite <code class="element">domainofapplication</code> qualifiers</h4>
     <p>Apply Special Case Rules for Operators using <code class="element">domainofapplication</code> Qualifiers.
     This step deals with the special cases for the operators introduced in
-    <a href="#contm_opel"></a>. There are different classes of special cases to be taken into account.</p>
+    <a href="#contm_structure_extended"></a>. There are different classes of special cases to be taken into account.</p>
 
     <section>
      <h5 id="contm_p2s_minmax">N-ary/unary operators</h5>
@@ -2420,7 +2420,7 @@
 
    <section>
     <h4 id="contm_p2s_op">Rewrite operators</h4>
-    <p>Rewrite any remaining operator defined in <a href="#contm_opel"></a>
+    <p>Rewrite any remaining operator defined in <a href="#contm_structure_extended"></a>
     to a <code class="element">csymbol</code> referencing the symbol identified in the syntax table by the rule
     <a>Rewrite: element</a>. As noted in the descriptions of each
     operator element, some require special case rules to determine the proper choice
@@ -2436,8 +2436,8 @@
      </li>
 
      <li>
-      <p>The choice of symbol for the <a class="intref" href="#contm_minus"><code class="element">minus</code></a>
-      operator depends on the number of the arguments.</p>
+      <p>The choice of symbol for the <code class="element">minus</code>
+       operator depends on the number of the arguments, <a class="intref" href="#contm_binary_arith"><code class="element">minus</code></a> or <a class="intref" href="#contm_unary_arith"><code class="element">minus</code></a>.</p>
      </li>
 
      <li>
@@ -2636,7 +2636,7 @@ k
     <p>A number of content MathML elements such as <code class="element">cn</code> and
     <code class="element">interval</code> allow attributes to specialize the semantics of the
     objects they represent.  For these cases, special rewrite rules are
-    given on a case-by-case basis in <a href="#contm_opel"></a>. However,
+    given on a case-by-case basis in <a href="#contm_structure_extended"></a>. However,
     content MathML elements also accept <a class="intref" href="#fund_globatt">attributes shared all MathML elements</a>, and
     depending on the context, may also contain attributes from other XML
     namespaces.  Such attributes must be rewritten in alternative form in
