@@ -157,7 +157,7 @@
     objects and semantics through the use of extensible Content Dictionaries.  The table
     below
     gives an element-by-element correspondence between the OpenMath XML encoding of OpenMath
-    objects and Strict Content MathML.
+    objects and Strict Content MathML.</p>
 
     <table class="data" id="contm_om_correspondence">
 
@@ -233,7 +233,7 @@
       </tr>
      </tbody>
     </table>
-    </p>
+
 
     <p>In MathML 3, formal semantics Content MathML expressions are
     given by specifying equivalent Strict Content MathML expressions.
@@ -666,11 +666,13 @@
        <p>
         When <code class="attribute">base</code> &gt; 36, some integers cannot be represented using
         numbers and letters alone. For example, while
+       </p>
 
         <div class="example mathml mml4c">
          <pre>&lt;cn base="1000"&gt;10F&lt;/cn&gt;</pre>
         </div>
-        arguably represents the number written in base 10 as 1,000,015, the number
+        <p>
+	arguably represents the number written in base 10 as 1,000,015, the number
         written in base 10 as 1,000,037 cannot be represented using letters and
         numbers alone when <code class="attribute">base</code> is 1000.  Consequently, support
         for additional characters (if any) that may be used for digits when <code class="attribute">base</code> &gt; 36 is application specific.
@@ -934,13 +936,13 @@
     represent <span>&#x201c;mathematical variables&#x201d;</span> which have
     properties, but no fixed value. For example, <i class="var">x</i> and <i class="var">y</i> are variables
     in the expression <span>&#x201c;<i class="var">x</i>+<i class="var">y</i>&#x201d;</span>, and the variable
-    <i class="var">x</i> would be represented as
+    <i class="var">x</i> would be represented as</p>
 
     <div class="example strict-mathml">
      <pre>&lt;ci&gt;x&lt;/ci&gt;</pre>
     </div>
 
-    In MathML, variables are distinguished from symbols, which have fixed, external
+    <p>In MathML, variables are distinguished from symbols, which have fixed, external
     definitions, and are represented by the <a class="intref" href="#contm_csymbol">csymbol</a> element.</p>
 
     <p>After white space normalization the content of a <code class="element">ci</code> element is interpreted as a
@@ -1027,12 +1029,12 @@
      Unicode bidirectional rendering.</p>
 
      <p>The <code class="attribute">type</code> attribute can be interpreted to
-     provide rendering information. For example in
+     provide rendering information. For example in</p>
 
      <div class="example mathml mml4c">
       <pre>&lt;ci type="vector"&gt;V&lt;/ci&gt;</pre>
      </div>
-     a renderer could display a bold V for the vector.</p>
+     <p>a renderer could display a bold V for the vector.</p>
     </section>
    </section>
 
@@ -1184,25 +1186,25 @@
      a <code class="element">csymbol</code> using the <code class="attribute">definitionURL</code> attribute.  When used to reference
      OpenMath symbol definitions, the abstract triple of (symbol name, CD name, CD base)
      is
-     mapped to a fully-qualified URI as follows:
+     mapped to a fully-qualified URI as follows:</p>
 
      <div class="example ">
       <pre><code>URI = </code><i class="var">cdbase</i><code> + '/' + </code><i class="var">cd-name</i><code> + '#' + </code><i class="var">symbol-name</i></pre>
      </div>
 
-     For example,
+     <p>For example,</p>
 
      <div class="example ">
       <pre>(plus, arith1, http://www.openmath.org/cd)</pre>
      </div>
 
-     is mapped to
+     <p>is mapped to</p>
 
      <div class="example ">
       <pre><code>http://www.openmath.org/cd/arith1#plus</code></pre>
      </div>
 
-     The resulting URI is specified as the value of the <code class="attribute">definitionURL</code> attribute.</p>
+     <p>The resulting URI is specified as the value of the <code class="attribute">definitionURL</code> attribute.</p>
 
      <p>This form of reference is useful for backwards compatibility with MathML2 and to
      facilitate the use of Content MathML within URI-based frameworks (such as RDF [[rdf]] in the Semantic Web or OMDoc [[OMDoc1.2]]).  Another benefit is
@@ -1391,27 +1393,27 @@
      speaking, this means a piece of mathematics that could be surrounded by
      parentheses or <span>&#x201c;logical brackets&#x201d;</span> without changing its meaning.</p>
 
-     <p>For example, (<i class="var">x</i> + <i class="var">y</i>) might be encoded as
+     <p>For example, (<i class="var">x</i> + <i class="var">y</i>) might be encoded as</p>
 
      <div class="example mathml mml4c">
       <pre>&lt;apply&gt;&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;</pre>
      </div>
 
-     The opening and closing tags of <code class="element">apply</code> specify exactly the scope of any
+     <p>The opening and closing tags of <code class="element">apply</code> specify exactly the scope of any
      operator or function. The most typical way of using <code class="element">apply</code> is simple and
-     recursive. Symbolically, the content model can be described as:
+     recursive. Symbolically, the content model can be described as:</p>
 
      <div class="example mathml-extension">
       <pre>&lt;apply&gt; <em>op</em> [ <em>a</em> <em>b</em> ...] &lt;/apply&gt;</pre>
      </div>
 
-     where the <em>operands</em> <em>a</em>, <em>b</em>, ... are MathML
+     <p>where the <em>operands</em> <em>a</em>, <em>b</em>, ... are MathML
      expression trees themselves, and <em>op</em> is a MathML expression tree that
      represents an operator or function. Note that <code class="element">apply</code> constructs can be
      nested to arbitrary depth.</p>
 
      <p>An <code class="element">apply</code> may in principle have any number of operands. For example,
-     (<i class="var">x</i> + <i class="var">y</i> + <i class="var">z</i>) can be encoded as
+     (<i class="var">x</i> + <i class="var">y</i> + <i class="var">z</i>) can be encoded as</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -1422,12 +1424,12 @@
         &lt;/apply&gt;
       </pre>
      </div>
-     Note that MathML also allows applications without operands, e.g. to represent functions
+     <p>Note that MathML also allows applications without operands, e.g. to represent functions
      like <code>random()</code>, or  <code>current-date()</code>.</p>
 
      <p>Mathematical expressions involving a mixture of operations result in nested
      occurrences of <code class="element">apply</code>. For example, <i class="var">a</i> <i class="var">x</i> + <i class="var">b</i>
-     would be encoded as
+     would be encoded as</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -1440,7 +1442,7 @@
         &lt;/apply&gt;
       </pre>
      </div>
-     </p>
+
 
      <p>There is no need to introduce parentheses or to resort to
      operator precedence in order to parse expressions correctly. The
@@ -1452,7 +1454,7 @@
      where the same expression may have very different meanings in
      different contexts.  For example, an expression with a visual
      rendering such as (<i class="var">F</i>+<i class="var">G</i>)(<i class="var">x</i>)
-     might be a product, as in
+     might be a product, as in</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -1466,14 +1468,14 @@
       </pre>
      </div>
 
-     or it might indicate the application of the function <i class="var">F</i> + <i class="var">G</i> to
-     the argument <i class="var">x</i>. This is indicated by constructing the sum
+     <p>or it might indicate the application of the function <i class="var">F</i> + <i class="var">G</i> to
+     the argument <i class="var">x</i>. This is indicated by constructing the sum</p>
 
      <div class="example mathml mml4c">
       <pre>&lt;apply&gt;&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;&lt;ci&gt;F&lt;/ci&gt;&lt;ci&gt;G&lt;/ci&gt;&lt;/apply&gt;</pre>
      </div>
 
-     and applying it to the argument <i class="var">x</i> as in
+     <p>and applying it to the argument <i class="var">x</i> as in</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -1487,7 +1489,7 @@
       </pre>
      </div>
 
-     In both cases, the interpretation of the outer <code class="element">apply</code> is
+     <p>In both cases, the interpretation of the outer <code class="element">apply</code> is
      explicit and unambiguous, and does not change regardless of
      where the expression is used.</p>
 
@@ -1746,7 +1748,7 @@
      <p>Bound variables are identified by comparing their names. Such
      identification can be made explicit by placing an <code class="attribute">id</code> on the <code class="element">ci</code>
      element in the <code class="element">bvar</code> element and referring to it using the <code class="attribute">xref</code>
-     attribute on all other instances.  An example of this approach is
+     attribute on all other instances.  An example of this approach is</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -1760,7 +1762,7 @@
       </pre>
      </div>
 
-     This <code class="attribute">id</code> based approach is especially helpful when constructions
+     <p>This <code class="attribute">id</code> based approach is especially helpful when constructions
      involving bound variables are nested.</p>
 
      <p>It is sometimes necessary to associate additional
@@ -1939,7 +1941,7 @@
 
      <p>For instance, the mathematical object <i class="var">f(f(f(a,a),f(a,a)),f(f(a,a),f(a,a)))</i> can
      be encoded as either one of the following representations (and some intermediate versions
-     as well).
+     as well).</p>
 
      <table id="contm_share_table">
 
@@ -1999,7 +2001,7 @@
        </tr>
       </tbody>
      </table>
-     </p>
+ 
     </section>
 
     <section>
@@ -2015,7 +2017,7 @@
 
      <p>The occurrences of the <code class="element">share</code> element must obey the following global
      <em>acyclicity constraint</em>: An element may not dominate itself. For example, the
-     following representation violates this constraint:
+     following representation violates this constraint:</p>
 
      <div class="example error">
       <pre>
@@ -2028,7 +2030,7 @@
         &lt;/apply&gt;
       </pre>
      </div>
-     </p>
+ 
 
      <p>Here, the <code class="element">apply</code> element with <code>id="badid1"</code> dominates its third child,
      which dominates the <code class="element">share</code> element, which dominates its target: the element with
@@ -2043,7 +2045,7 @@
 
      <p>Note that the acyclicity constraints is not restricted to such simple cases, as the
      following
-     example shows:
+     example shows:</p>
 
      <div class="example error">
       <pre>
@@ -2055,7 +2057,7 @@
       </pre>
      </div>
 
-     Here, the <code class="element">apply</code> with <code>id="bar"</code> dominates its third child, the
+     <p>Here, the <code class="element">apply</code> with <code>id="bar"</code> dominates its third child, the
      <code class="element">share</code> with <code data-diff="chg">src="#baz"</code>.  That element dominates its target <code class="element">apply</code>
      (with <code>id="baz"</code>), which in turn dominates its third child, the <code class="element">share</code>
      with <code data-diff="chg">src="#bar"</code>. Finally, the <code class="element">share</code> with
@@ -2072,7 +2074,7 @@
      referencing does not interact with binding in a semantically intuitive way, since
      it
      allows a phenomenon called <em>variable capture</em> to
-     occur. Consider an example:
+     occur. Consider an example:</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -2089,7 +2091,7 @@
       </pre>
      </div>
 
-     This represents a term
+     <p>This represents a term
      <img src="image/lamshare1.gif" alt="\lambda{x}.f(\lambda{x}.g(x),g(x))" align="middle"></img>
      which has two sub-terms of the form
      <img src="image/lamshare2.gif" alt="g(x)" align="middle"></img>,
@@ -2209,7 +2211,7 @@
     <p>As an example, to encode a division by zero error, one might
     employ a hypothetical <code>aritherror</code> Content Dictionary
     containing a <code>DivisionByZero</code> symbol, as in the following
-    expression:
+    expression:</p>
 
     <div class="example mathml mml4c">
      <pre>
@@ -2220,9 +2222,9 @@
      </pre>
     </div>
 
-    Note that error markup generally should enclose only the smallest
+    <p>Note that error markup generally should enclose only the smallest
     erroneous sub-expression.  Thus a <code class="element">cerror</code> will often be a sub-expression of
-    a bigger one, e.g.
+    a bigger one, e.g.</p>
 
     <div class="example mathml mml4c">
      <pre>
@@ -2235,7 +2237,7 @@
        &lt;/apply&gt;
      </pre>
     </div>
-    </p>
+
 
     <p>The default presentation of a <code class="element">cerror</code> element is an
     <code class="element">merror</code> expression whose first child is a presentation of the
@@ -2275,7 +2277,7 @@
     <p>Note that when the context where an error occurs is so nonsensical
     that its default presentation would not be useful, an application may
     provide an alternative representation of the error context.  For
-    example:
+    example:</p>
 
     <div class="example mathml mml4c">
      <pre>
@@ -2285,7 +2287,7 @@
        &lt;/cerror&gt;
      </pre>
     </div>
-    </p>
+
    </section>
 
    <section>
@@ -2455,25 +2457,25 @@
 
      <div class="strict-mathml-example" id="contm_strict-set">
 
-      <p>Here is an example of container markup with explicitly specified arguments:
+      <p>Here is an example of container markup with explicitly specified arguments:</p>
 
       <div class="example mathml mml4c">
        <pre>&lt;set&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;&lt;/set&gt;</pre>
       </div>
 
-      This is equivalent to the following Strict Content MathML expression:
+      <p>This is equivalent to the following Strict Content MathML expression:</p>
 
       <div class="example strict-mathml">
        <pre>&lt;apply&gt;&lt;csymbol cd="set1"&gt;set&lt;/csymbol&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;&lt;/apply&gt;</pre>
       </div>
-      </p>
+
      </div>
 
      <div class="strict-mathml-example" id="contm_strict-set-bvar">
 
       <p>Another example of container markup, where the list of arguments is
       given indirectly as an expression with a bound variable. The container markup
-      for the set of even integers is:
+      for the set of even integers is:</p>
 
       <div class="example mathml mml4c">
        <pre>
@@ -2485,7 +2487,7 @@
        </pre>
       </div>
 
-      This may be written as follows in Strict Content MathML:
+      <p>This may be written as follows in Strict Content MathML:</p>
 
       <div class="example strict-mathml">
        <pre>
@@ -2501,7 +2503,7 @@
          &lt;/apply&gt;
        </pre>
       </div>
-      </p>
+
      </div>
 
     </section>
@@ -2583,7 +2585,7 @@
      <p>The following example illustrates the use of <code class="element">apply</code>
      with a binding operator.  In these cases, the corresponding Strict
      equivalent merely replaces the <code class="element">apply</code> element with a
-     <code class="element">bind</code> element:
+     <code class="element">bind</code> element:</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -2593,7 +2595,7 @@
         &lt;/apply&gt;
       </pre>
      </div>
-     The equivalent Strict expression is:
+     <p>The equivalent Strict expression is:</p>
 
      <div class="example strict-mathml">
       <pre>
@@ -2603,7 +2605,7 @@
         &lt;/bind&gt;
       </pre>
      </div>
-     </p>
+
     </div>
 
     <div class="strict-mathml-example" id="contm_strict-apply-bvar-2">
@@ -2613,7 +2615,7 @@
      standard notation, which is reflected in the non-Strict markup.
      In the equivalent Strict representation, it is necessary to
      convert the summand into a lambda expression, and recast the
-     qualifiers as an argument expression:
+     qualifiers as an argument expression:</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -2625,7 +2627,7 @@
         &lt;/apply&gt;
       </pre>
      </div>
-     The equivalent Strict expression is:
+     <p>The equivalent Strict expression is:</p>
 
      <div class="example strict-mathml">
       <pre>
@@ -2644,7 +2646,7 @@
         &lt;/apply&gt;
       </pre>
      </div>
-     </p>
+
     </div>
    </section>
 
@@ -2740,7 +2742,7 @@
      and <i class="var">f</i>(<i class="var">x</i>) = <i class="var">x</i><sup>2</sup>. Then
      <code class="element">domainofapplication</code> could be used express the integral of a
      function <i class="var">f</i> over
-     <i class="var">C</i> in this way:
+     <i class="var">C</i> in this way:</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -2752,11 +2754,11 @@
         &lt;/apply&gt;
       </pre>
      </div>
-     </p>
+
 
      <p>Note that no explicit bound variable is identified in this
      encoding, and the integrand is a function. Alternatively, the
-     <code class="element">interval</code> qualifier could be used with an explicit bound variable:
+     <code class="element">interval</code> qualifier could be used with an explicit bound variable:</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -2767,10 +2769,10 @@
         &lt;/apply&gt;
       </pre>
      </div>
-     </p>
+
 
      <p>The pair <code class="element">lowlimit</code> and <code class="element">uplimit</code> can also be used.
-     This is perhaps the most "standard" representation of this integral:
+     This is perhaps the most "standard" representation of this integral:</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -2782,10 +2784,10 @@
         &lt;/apply&gt;
       </pre>
      </div>
-     </p>
+
 
      <p>Finally, here is the same integral, represented using
-     a <code class="element">condition</code> on the bound variable:
+     a <code class="element">condition</code> on the bound variable:</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -2802,7 +2804,7 @@
       </pre>
      </div>
 
-     Note the use of the explicit bound variable within the
+     <p>Note the use of the explicit bound variable within the
      <code class="element">condition</code> term. Note also that when a bound
      variable is used, the integrand is an expression in the bound
      variable, not a function.</p>
@@ -2811,7 +2813,7 @@
      together with <code class="element">domainofapplication</code> is quite powerful.  For
      example, to extend the previous example to a multivariate domain, one
      may use an extra bound variable and a domain of application
-     corresponding to a cartesian product:
+     corresponding to a cartesian product:</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -2840,7 +2842,7 @@
         &lt;/apply&gt;
       </pre>
      </div>
-     </p>
+ 
 
      <p>Note that the order of the inner and outer bound variables is significant.</p>
 
@@ -2950,12 +2952,12 @@
       <pre>&lt;plus/&gt;</pre>
      </div>
 
-     <p>is equivalent to the Strict form
+     <p>is equivalent to the Strict form</p>
 
      <div class="example strict-mathml">
       <pre>&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;</pre>
      </div>
-     </p>
+
     </div>
 
     <p>In MathML 2, the <code class="attribute">definitionURL</code> attribute could be
@@ -8158,7 +8160,7 @@
      <p>The <code class="element">domainofapplication</code> child restricts the possible
      values of the arguments of the constructed function. For instance, the
      following <code class="element">lambda</code> construct represents a function on
-     the integers.
+     the integers.</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -8170,13 +8172,13 @@
       </pre>
      </div>
 
-     If a <code class="element">lambda</code> construct does not contain bound variables, then
+     <p>If a <code class="element">lambda</code> construct does not contain bound variables, then
      the <code class="element">lambda</code> construct is superfluous and may be removed,
      unless it also contains a <code class="element">domainofapplication</code> construct.
      In that case, if the last child of the <code class="element">lambda</code> construct is
      itself a function, then the <code class="element">domainofapplication</code> restricts
      its existing functional arguments, as in this example, which is
-     a variant representation for the function above.
+     a variant representation for the function above.</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -8187,7 +8189,7 @@
       </pre>
      </div>
 
-     Otherwise, if the last child of the <code class="element">lambda</code> construct is not a
+     <p>Otherwise, if the last child of the <code class="element">lambda</code> construct is not a
      function, say a number, then the <code class="element">lambda</code> construct will not be
      a function, but the same number, and any <code class="element">domainofapplication</code>
      is ignored.</p>
