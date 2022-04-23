@@ -1,4 +1,4 @@
-<section>
+s<section>
  <h2 id="contm">Content Markup</h2>
  <div class="issue" data-number="273"></div>
  <div class="issue" data-number="284"></div>
@@ -693,7 +693,7 @@
 
        <p>A real number may be presented in scientific notation using this type.  Such
        numbers have two parts (a significand and an exponent)
-       separated by a <code class="emptytag">&lt;sep/&gt;</code> element. The
+       separated by a <a class="intref" href="#contm_sep"><code class="emptytag">&lt;sep/&gt;</code></a> element. The
        first part is a real number, while the
        second part is an integer exponent indicating a power of the base.</p>
 
@@ -710,7 +710,7 @@
 
        <p>A rational number is given as two integers to be used as the numerator and
        denominator of a quotient. The numerator and denominator are
-       separated by <code class="emptytag">&lt;sep/&gt;</code>.</p>
+       separated by <a class="intref" href="#contm_sep"><code class="emptytag">&lt;sep/&gt;</code></a>.</p>
 
        <div id="cn_rational_ex" class="mathml-example">
 
@@ -737,7 +737,7 @@
 
        <p>A complex cartesian number is given as two numbers specifying the real and
        imaginary parts.  The real and imaginary parts are separated
-       by the <code class="emptytag">&lt;sep/&gt;</code> element, and each part has
+       by the <a class="intref" href="#contm_sep"><code class="emptytag">&lt;sep/&gt;</code></a> element, and each part has
        the format of a real number as described above.</p>
 
        <div id="cn_cc_ex" class="mathml-example">
@@ -769,7 +769,7 @@
 
        <p>A complex polar number is given as two numbers specifying
        the magnitude and angle. The magnitude and angle are separated
-       by the <code class="emptytag">&lt;sep/&gt;</code> element, and each part has
+       by the <a class="intref" href="#contm_sep"><code class="emptytag">&lt;sep/&gt;</code></a> element, and each part has
        the format of a real number as described above.</p>
 
        <div id="cn_cp_ex" class="mathml-example">
@@ -2666,7 +2666,7 @@
     any arguments that are present. In all cases, if more than one qualifier is present,
     they appear in the order <code class="element">bvar</code>, <code class="element">lowlimit</code>, <code class="element">uplimit</code>,
     <code class="element">interval</code>, <code class="element">condition</code>, <code class="element">domainofapplication</code>, <code class="element">degree</code>,
-    <code class="element">momentabout</code>, <code class="element">logbase</code>.</p>
+    <a class="intref" href="#contm_momentabout"><code class="element">momentabout</code></a>, <a class="intref" href="#contm_logbase"><code class="element">logbase</code></a>.</p>
 
     <p>The precise function of qualifier elements depends on the
     operator or container that they modify.  The majority of use cases
@@ -2676,7 +2676,7 @@
     <section>
      <h5 id="contm_domainofapplication_qualifier">Uses of
      <dfn id="contm_domainofapplication"><code class="defn starttag">&lt;domainofapplication&gt;</code></dfn>,
-     <dfn id="contm_interval"><code class="defn starttag">&lt;interval&gt;</code></dfn>,
+     <dfn data-dfn-for="qualifier" id="contm_interval"><code class="defn starttag">&lt;interval&gt;</code></dfn>,
      <dfn id="contm_condition"><code class="defn starttag">&lt;condition&gt;</code></dfn>,
      <dfn id="contm_lowlimit"><code class="defn starttag">&lt;lowlimit&gt;</code></dfn> and
      <dfn id="contm_uplimit"><code class="defn starttag">&lt;uplimit&gt;</code></dfn></h5>
@@ -2702,10 +2702,10 @@
       </tbody>
      </table>
 
-     <p>(For the syntax of <code class="element">interval</code> see <a href="#contm_interval"></a>.)</p>
+     <p>(For the syntax of <code class="element">interval</code> see <a href="#contm_interval_sec"></a>.)</p>
 
-     <p>The primary use of <code class="element">domainofapplication</code>, <code class="element">interval</code>,
-     <code class="element">uplimit</code>, <code class="element">lowlimit</code> and <code class="element">condition</code> is to
+     <p>The primary use of <a class="intref" href="#contm_domainofapplication"><code class="element">domainofapplication</code></a>, <a class="intref" href="#contm_interval"><code class="element">interval</code></a>,
+     <a class="intref" href="#contm_uplimit"><code class="element">uplimit</code></a>, <a class="intref" href="#contm_lowlimit"><code class="element">lowlimit</code></a> and <a class="intref" href="#contm_condition"><code class="element">condition</code></a> is to
      restrict the values of a bound variable.  The most general qualifier
      is <code class="element">domainofapplication</code>. It is used to specify a set (perhaps
      with additional structure, such as an ordering or metric) over which
@@ -2872,7 +2872,7 @@
       </tbody>
      </table>
 
-     <p>The <code class="element">degree</code> element is a qualifier used to specify the
+     <p>The <a class="intref" href="#contm_degree"><code class="element">degree</code></a> element is a qualifier used to specify the
      <span>&#x201c;degree&#x201d;</span> or <span>&#x201c;order&#x201d;</span> of an operation.  MathML uses the
      <code class="element">degree</code> element in this way in three contexts: to specify the degree of a
      root, a moment, and in various derivatives. Rather than introduce special elements
@@ -4798,7 +4798,7 @@
      without the need of any special rewrite rules. The binary
      constructor <code class="element">interval</code> is similar but uses constructor syntax
      in which the arguments are children of the element, and the symbol
-     used depends on the type element as described in <a href="#contm_interval"></a> </p>
+     used depends on the type element as described in <a href="#contm_interval_sec"></a> </p>
 
 
      <p>The <code class="element">quotient</code> element represents the integer division
@@ -5041,7 +5041,7 @@
      without the need of any special rewrite rules. The binary
      constructor <code class="element">interval</code> is similar but uses constructor syntax
      in which the arguments are children of the element, and the symbol
-     used depends on the type element as described in <a href="#contm_interval"></a> </p>
+     used depends on the type element as described in <a href="#contm_interval_sec"></a> </p>
 
 
      <p>The <code class="element">implies</code> element represents the logical implication
@@ -5204,7 +5204,7 @@
      without the need of any special rewrite rules. The binary
      constructor <code class="element">interval</code> is similar but uses constructor syntax
      in which the arguments are children of the element, and the symbol
-     used depends on the type element as described in <a href="#contm_interval"></a> </p>
+     used depends on the type element as described in <a href="#contm_interval_sec"></a> </p>
 
 
      <p>The <code class="element">neq</code> element represents the binary inequality
@@ -5413,7 +5413,7 @@
      without the need of any special rewrite rules. The binary
      constructor <code class="element">interval</code> is similar but uses constructor syntax
      in which the arguments are children of the element, and the symbol
-     used depends on the type element as described in <a href="#contm_interval"></a> </p>
+     used depends on the type element as described in <a href="#contm_interval_sec"></a> </p>
 
 
 
@@ -5583,7 +5583,7 @@
      without the need of any special rewrite rules. The binary
      constructor <code class="element">interval</code> is similar but uses constructor syntax
      in which the arguments are children of the element, and the symbol
-     used depends on the type element as described in <a href="#contm_interval"></a> </p>
+     used depends on the type element as described in <a href="#contm_interval_sec"></a> </p>
 
 
 
@@ -6200,7 +6200,7 @@
      <dfn id="contm_codomain"><code class="defn emptytag">&lt;codomain/&gt;</code></dfn>,
      <dfn id="contm_image"><code class="defn emptytag">&lt;image/&gt;</code></dfn>,
      <dfn id="contm_ln"><code class="defn emptytag">&lt;ln/&gt;</code></dfn>,
-     <dfn id="contm_log"><code class="defn emptytag">&lt;log/&gt;</code></dfn><!--,
+     <!--<code class="defn emptytag">&lt;log/&gt;</code>--><!--,
      <dfn id="contm_moment"><code class="defn emptytag">&lt;moment/&gt;</code></dfn>-->
      </h5>
 
@@ -8255,7 +8255,7 @@
     </section>
 
     <section>
-     <h5 id="contm_interval_sec">Interval <dfn id="contm_interval"><code class="defn starttag">&lt;interval&gt;</code></dfn></h5>
+     <h5 id="contm_interval_sec">Interval <dfn data-dfn-for="construcor" id="contm_interval"><code class="defn starttag">&lt;interval&gt;</code></dfn></h5>
 
      <table class="syntax data">
 
@@ -9384,7 +9384,7 @@
       </tbody>
      </table>
 
-     <p>The <code class="element">piecewise</code>, <code class="element">piece</code>, and <code class="element">otherwise</code> elements are used to
+     <p>The <a class="intref" href="#contm_piecewise"><code class="element">piecewise</code></a>,<a class="intref" href="#contm_piece"><code class="element">piece</code></a>, and <a class="intref" href="#contm_otherwise"><code class="element">otherwise</code></a> elements are used to
      represent <span>&#x201c;piecewise&#x201d;</span> function definitions of the form <span>&#x201c;
      <i class="var">H</i>(<i class="var">x</i>) = 0 if <i class="var">x</i> less than 0, <i class="var">H</i>(<i class="var">x</i>) = 1
      otherwise&#x201d;</span>.</p>
