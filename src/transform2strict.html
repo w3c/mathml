@@ -73,7 +73,7 @@
 
       <li>
        <p>Rewrite sums and products as described in
-       <a href="#contm_sum"></a> and <a href="#contm_product"></a>.</p>
+       <a href="#contm_sum_sec"></a> and <a href="#contm_product_sec"></a>.</p>
       </li>
 
       <li>
@@ -130,8 +130,7 @@
 
       <li id="contm_p2s_step_vector">
        <p>Rewrite interval, vectors, matrices, and matrix rows
-       as described in <a href="#contm_p2s_intv"></a>, <a href="#contm_vector"></a>,
-       <a href="#contm_matrix"></a> and <a href="#contm_matrixrow"></a>. <span>Note any qualifiers will have been rewritten to <code class="element">domainofapplication</code> and will be further rewritten in Step 6.</span></p>
+       as described in <a href="#contm_p2s_intv"></a>, <a href="#contm_nary_construct"></a>. <span>Note any qualifiers will have been rewritten to <code class="element">domainofapplication</code> and will be further rewritten in Step 6.</span></p>
       </li>
 
       <li>
@@ -140,7 +139,7 @@
       </li>
 
       <li>
-       <p>Rewrite piecewise functions as described in <a href="#contm_piecewise"></a>.</p>
+       <p>Rewrite piecewise functions as described in <a href="#contm_piecewise_sec"></a>.</p>
       </li>
      </ol>
     </li>
@@ -175,7 +174,7 @@
       <li>
        <p>Rewrite sums and products used with a <code class="element">domainofapplication</code> element
        (with or without a <code class="element">bvar</code>) as described in
-       <a href="#contm_sum"></a> and <a href="#contm_product"></a>.</p>
+       <a href="#contm_sum_sec"></a> and <a href="#contm_product_sec"></a>.</p>
       </li>
      </ol>
     </li>
@@ -917,7 +916,7 @@
       symbol, <a class="omsymbol" href="https://openmath.org/cd/limit1#null">null</a>, depends on the
       <code class="attribute">type</code> attribute of the
       <code class="element">tendsto</code> element as described
-      in <a href="#contm_limit"></a>.</p>
+      in <a href="#contm_limit_sec"></a>.</p>
 
      </div>
     </section>
@@ -925,7 +924,7 @@
     <section>
      <h5 id="contm_p2s_sump">Sums and Products</h5>
      <p>Rewrite sums and products as described in
-     <a href="#contm_sum"></a> and <a href="#contm_product"></a>.</p>
+     <a href="#contm_sum_sec"></a> and <a href="#contm_product_sec"></a>.</p>
 
      <p>When no explicit bound variables are used, no special rules are
      required to rewrite sums as Strict Content beyond the generic rules
@@ -1063,7 +1062,7 @@
 
     <section>
      <h5 id="contm_p2s_log">Logarithms</h5>
-     <p>Rewrite logarithms as described in <a href="#contm_log"></a>.</p>
+     <p>Rewrite logarithms as described in <a href="#contm_log_sec"></a>.</p>
 
      <p>When mapping <code class="element">log</code> to Strict Content, one uses the
      <a class="omsymbol" href="https://openmath.org/cd/transc1#log">log</a> symbol denoting the function
@@ -1114,7 +1113,7 @@
 
     <section>
      <h5 id="contm_p2s_mom">Moments</h5>
-     <p>Rewrite moments as described in <a href="#contm_moment"></a>.</p>
+     <p>Rewrite moments as described in <a href="#contm_moment_sec"></a>.</p>
 
      <div class="strict-mathml-example" id="contm_strict-moment-degree">
 
@@ -1349,8 +1348,7 @@
     <section>
      <h5 id="contm_p2s_step">Intervals, vectors, matrices</h5>
      <p>Rewrite interval, vectors, matrices, and matrix rows as
-     described in <a href="#contm_p2s_intv"></a>, <a href="#contm_vector"></a>,
-     <a href="#contm_matrix"></a> and <a href="#contm_matrixrow"></a>.
+     described in <a href="#contm_p2s_intv"></a>, <a href="#contm_nary_construct"></a>.
      Note any qualifiers will have been rewritten to <code class="element">domainofapplication</code> and will be further rewritten in a later step.</p>
 
      <p>In Strict markup, the <code class="element">interval</code> element corresponds to one
@@ -1438,7 +1436,7 @@
 
     <section>
      <h5 id="contm_p2s_piece">Piecewise functions</h5>
-     <p>Rewrite piecewise functions as described in <a href="#contm_piecewise"></a>.</p>
+     <p>Rewrite piecewise functions as described in <a href="#contm_piecewise_sec"></a>.</p>
 
      <p>In Strict Content MathML, the container elements
      <code class="element">piecewise</code>, <code class="element">piece</code> and <code class="element">otherwise</code> are mapped
@@ -1821,7 +1819,7 @@
      <h5 id="contm_p2s_sums">Sums and products</h5>
      <p>Rewrite sums and products used with a <code class="element">domainofapplication</code> element
      (with or without a <code class="element">bvar</code>) as described in
-     <a href="#contm_sum"></a> and <a href="#contm_product"></a>.
+     <a href="#contm_sum_sec"></a> and <a href="#contm_product_sec"></a>.
      See <a href="#contm_p2s_sump"></a>.</p>
     </section>
 
