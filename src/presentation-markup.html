@@ -2963,20 +2963,21 @@
  
      <div class="example mathml mmlcore">
       <pre>
-        &lt;mrow&gt;
-          &lt;mo maxsize="1<span>00%</span>"&gt; ( &lt;/mo&gt;
-          &lt;mfrac&gt;
-            &lt;mi&gt; a &lt;/mi&gt; &lt;mi&gt; b &lt;/mi&gt;
-          &lt;/mfrac&gt;
-          &lt;mo maxsize="1<span>00%</span>"&gt; ) &lt;/mo&gt;
-        &lt;/mrow&gt;
+       &lt;mrow&gt;
+         &lt;mo maxsize="100%"&gt;(&lt;/mo&gt;
+         &lt;mfrac&gt;
+           &lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+           &lt;msup&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+         &lt;/mfrac&gt;
+         &lt;mo maxsize="100%"&gt;)&lt;/mo&gt;
+       &lt;/mrow&gt;
       </pre>
      </div>
  
     <p>The above should render as
-    <img src="image/f3001.gif" alt="(\frac{a}{b})" align="middle"></img>
+    <img src="image/f3001.png" alt="(\frac{a^2}{b^2})" align="middle"></img>
     as opposed to the default rendering
-    <img src="image/f3002.gif" alt="\left(\frac{a}{b}\right)" align="middle"></img>.</p>
+    <img src="image/f3002.png" alt="\left(\frac{a^2}{b^2}\right)" align="middle"></img>.</p>
  
     <p>Note that each parenthesis is sized independently; if only one of
     them had <code class="attribute">maxsize</code>=<code class="attributevalue">100%</code>, they would render with different
