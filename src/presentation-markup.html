@@ -1498,7 +1498,7 @@
     The recommendation is to embed other formats in MathML by extending the MathML
     schema to allow additional elements to be children of the <code class="element">mtext</code> element or
     other leaf elements as appropriate to the role they serve in the expression
-    (see  <a href="#presm_mixtextmath"></a>).
+    (see  <a href="#presm_mi">, <a href="#presm_mn">, and <a href="#presm_mo"></a>).
     The directionality, font size, and other font attributes should inherit from
     those that would be used for characters of the containing leaf element
     (see <a href="#presm_commatt"></a>).
@@ -1552,8 +1552,7 @@
     variables should be represented using <code class="element">msub</code> or
     <code class="element">msup</code> respectively. Conversely, arbitrary text
     playing the role of a <span>&#x201c;term&#x201d;</span> (such as an ellipsis in a summed series)
-    can be represented using an <code class="element">mi</code> element, as shown
-    in an example in <a href="#presm_mixtextmath"></a>.</p>
+    should be represented using an <code class="element">mi</code> element.</p>
  
     <p>It should be stressed that <code class="element">mi</code> is a
     presentation element, and as such, it only indicates that its content
@@ -6398,7 +6397,7 @@
     and superscripts, attached to one base expression. It supports both
     postscripts  and
     prescripts.
-    Missing scripts can be represented by the empty element
+    Missing scripts must be represented by the empty element
     <code class="element">none</code>.</p>
  
     <p>The prescripts are optional, and when present are given
