@@ -3890,17 +3890,7 @@
  
  <p>Thicker lines (e.g. <code class="attribute">linethickness</code>="thick") might be used with nested fractions;
  a value of "0" renders without the bar such as for  binomial coefficients.
- These cases are shown below:
- </p>
- <blockquote>
-  <p><img src="image/f3007.gif" alt="\binom{a}{b} \quad \genfrac{}{}{1pt}{}{\frac{a}{b}}{\frac{c}{d}}"></img></p>
- </blockquote>
  
- <p>An example illustrating the bevelled form is shown below:
- </p>
- <blockquote>
- <p><img src="image/f3008.gif" alt="\frac{1}{x^3 + \frac{x}{3}} = \raisebox{1ex}{$1$}\!        \left/ \!\raisebox{-1ex}{$x^3+\frac{x}{3}$} \right."></img></p>
- </blockquote>
  <p>
   In a RTL directionality context,  the numerator leads (on the right),
   the denominator follows (on the left) and the diagonal line slants upwards going from
@@ -3915,24 +3905,22 @@
  <section class="fold">
  <h5>Examples</h5>
  
- <p>The examples shown above can be represented in MathML as:</p>
- 
-     
+ <p>Here is an example which makes use of different values of <code class="attribute">linethickness</code>:</p>  
  <div class="example mathml mmlcore">
   <pre>
-    &lt;mrow&gt;
-      &lt;mo&gt; ( &lt;/mo&gt;
-      &lt;mfrac linethickness="0"&gt;
-        &lt;mi&gt; a &lt;/mi&gt;
-        &lt;mi&gt; b &lt;/mi&gt;
-      &lt;/mfrac&gt;
-      &lt;mo&gt; ) &lt;/mo&gt;
-    &lt;/mrow&gt;
-    &lt;mfrac linethickness="2<span>00%</span>"&gt;
-      &lt;mfrac&gt;
-        &lt;mi&gt; a &lt;/mi&gt;
-        &lt;mi&gt; b &lt;/mi&gt;
-      &lt;/mfrac&gt;
+    &lt;mfrac linethickness="thick"&gt;
+      &lt;mrow&gt;
+        &lt;mo&gt; ( &lt;/mo&gt;
+          &lt;mfrac linethickness="0"&gt;
+            &lt;mi&gt; a &lt;/mi&gt;
+            &lt;mi&gt; b &lt;/mi&gt;
+          &lt;/mfrac&gt;
+        &lt;mo&gt; ) &lt;/mo&gt;
+        &lt;mfrac&gt;
+          &lt;mi&gt; a &lt;/mi&gt;
+          &lt;mi&gt; b &lt;/mi&gt;
+        &lt;/mfrac&gt;
+      &lt;/mrow&gt;
       &lt;mfrac&gt;
         &lt;mi&gt; c &lt;/mi&gt;
         &lt;mi&gt; d &lt;/mi&gt;
@@ -3941,7 +3929,8 @@
  </pre>
  </div>
  
- <div class="example mathml mmlcore">
+ <p>This examples illustrates bevelled fractions:</p>
+ <div class="example mathml mml4p">
   <pre>
     &lt;mfrac&gt;
       &lt;mn&gt; 1 &lt;/mn&gt;
@@ -4039,6 +4028,45 @@
  color specified by <code class="attribute">mathcolor</code>.</p>
  
  </section>
+
+ <section class="fold">
+  <h5>Examples</h5>
+  
+  <p>Square roots and cube roots</p>  
+  <div class="example mathml mmlcore">
+   <pre>
+    &lt;mrow&gt;
+      &lt;mrow&gt;
+        &lt;msqrt&gt;
+          &lt;mi&gt;x&lt;/mi&gt;
+        &lt;/msqrt&gt;
+        &lt;mroot&gt;
+          &lt;mi&gt;x&lt;/mi&gt;
+          &lt;mn&gt;3&lt;/mn&gt;
+        &lt;/mroot&gt;
+      &lt;mrow&gt;
+      &lt;mo&gt;=&lt;/mo&gt;
+      &lt;msup&gt;
+        &lt;mi&gt;x&lt;/mi&gt;
+        &lt;mrow&gt;
+          &lt;mrow&gt;
+            &lt;mn&gt;1&lt;/mn&gt;
+            &lt;mo&gt;/&lt;/mo&gt;
+            &lt;mn&gt;2&lt;/mn&gt;
+          &lt;/mrow&gt;
+          &lt;mo&gt;+&lt;/mo&gt;
+          &lt;mrow&gt;
+            &lt;mn&gt;1&lt;/mn&gt;
+            &lt;mo&gt;/&lt;/mo&gt;
+            &lt;mn&gt;3&lt;/mn&gt;
+          &lt;/mrow&gt;
+        &lt;/mrow&gt;
+      &lt;/msup&gt;
+    &lt;/mrow&gt;
+  </pre>
+  </div>  
+  </section>
+  
  </section>
  
  <section>
@@ -9721,5 +9749,4 @@
  <code class="element">semantics</code> and <code class="element">annotation-xml</code> elements.</p>
  </section>
  </section>
- 
  
