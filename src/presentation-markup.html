@@ -7,7 +7,7 @@
   <section>
    <h3 id="presm_intro">Introduction</h3>
  
-   <p>This chapter specifies the <span>&#x201c;presentation&#x201d;</span> elements of
+   <p>This chapter specifies the <q>presentation</q> elements of
    MathML, which can be used to describe the layout structure of mathematical
    notation.
    </p><p>
@@ -35,8 +35,8 @@
     and paragraphs capture the higher-level syntactic structure of a
     textual document. Because of this, a single row of identifiers and operators
     will often be represented by multiple nested <code class="element">mrow</code> elements rather than
-    a single <code class="element">mrow</code>.  For example, <span>&#x201c;<i class="var">x</i> + <i class="var">a</i> /
-    <i class="var">b</i>&#x201d;</span> typically is represented as:</p>
+    a single <code class="element">mrow</code>.  For example, <q><i class="var">x</i> + <i class="var">a</i> /
+    <i class="var">b</i></q> typically is represented as:</p>
  
     <div class="example mathml mmlcore">
      <pre>
@@ -79,12 +79,12 @@
     and may effect the evaluation or meaning of particular expressions.
     Accordingly, authors should use these entities wherever they are applicable.
     For instance, the expression represented visually as
-    <span>&#x201c;<i class="var">f</i>(<i class="var">x</i>)&#x201d;</span> would usually be spoken in English as
-    <span>&#x201c;<i class="var">f</i> of <i class="var">x</i>&#x201d;</span> rather than just
-    <span>&#x201c;<i class="var">f</i> <i class="var">x</i>&#x201d;</span>.  MathML conveys this meaning by using
+    <q><i class="var">f</i>(<i class="var">x</i>)</q> would usually be spoken in English as
+    <q><i class="var">f</i> of <i class="var">x</i></q> rather than just
+    <q><i class="var">f</i> <i class="var">x</i></q>.  MathML conveys this meaning by using
     the <code class="entity">ApplyFunction</code> operator after the
-    <span>&#x201c;<i class="var">f</i>&#x201d;</span>, which, in this case, can be aurally rendered as
-    <span>&#x201c;of&#x201d;</span>.</p>
+    <q><i class="var">f</i></q>, which, in this case, can be aurally rendered as
+    <q>of</q>.</p>
  
     <p>The complete list of MathML entities is described in [[xml-entity-names]].</p>
    </section>
@@ -104,13 +104,13 @@
      <a class="intref" href="#presm_elementary">Elementary Math</a> schemata.
      There are also a few empty elements used only in conjunction with certain layout schemata.</p>
  
-     <p>All individual <span>&#x201c;symbols&#x201d;</span> in a mathematical expression should be
+     <p>All individual <q>symbols</q> in a mathematical expression should be
      represented by MathML token elements (e.g., <code>&lt;mn&gt;24&lt;/mn&gt;</code>). The primary MathML token element
      types are identifiers (e.g. variables or function names), numbers, and
      operators (including fences, such as parentheses, and separators, such
      as commas). There are also token elements used to represent text or
      whitespace that has more aesthetic than mathematical significance
-     and other elements representing <span>&#x201c;string literals&#x201d;</span> for compatibility with
+     and other elements representing <q>string literals</q> for compatibility with
      computer algebra systems.</p>
  
      <p>The layout schemata specify the way in which
@@ -404,8 +404,8 @@
  
    <p>Certain elements, e.g. <code class="element">msup</code>, are able to
    embellish operators that are their first argument. These elements are
-   listed in <a href="#presm_mo"></a>, which precisely defines an <span>&#x201c;embellished
-   operator&#x201d;</span> and explains how this affects the suggested rendering rules
+   listed in <a href="#presm_mo"></a>, which precisely defines an <q>embellished
+   operator</q> and explains how this affects the suggested rendering rules
    for stretchy operators.</p>
  
   </section>
@@ -1473,7 +1473,7 @@
    rendering attributes such as font size, so that the renderings will be
    compatible in style. For this reason, most attribute values affecting
    text rendering are inherited from the rendering environment, as shown
-   in the <span>&#x201c;default&#x201d;</span> column in the table above. (In
+   in the <q>default</q> column in the table above. (In
    cases where the surrounding text and the MathML are being rendered by
    separate software, e.g. a browser and a plug-in, it is also important
    for the rendering environment to provide the MathML renderer with
@@ -1547,11 +1547,11 @@
     with no extra spacing around it (except spacing associated with
     neighboring elements).</p>
  
-    <p>Not all <span>&#x201c;mathematical identifiers&#x201d;</span> are represented by
+    <p>Not all <q>mathematical identifiers</q> are represented by
     <code class="element">mi</code> elements &#x2014; for example, subscripted or primed
     variables should be represented using <code class="element">msub</code> or
     <code class="element">msup</code> respectively. Conversely, arbitrary text
-    playing the role of a <span>&#x201c;term&#x201d;</span> (such as an ellipsis in a summed series)
+    playing the role of a <q>term</q> (such as an ellipsis in a summed series)
     should be represented using an <code class="element">mi</code> element.</p>
  
     <p>It should be stressed that <code class="element">mi</code> is a
@@ -1644,12 +1644,12 @@
  
     <p>An <code class="element">mi</code> element with no content is allowed;
     <code>&lt;mi&gt;&lt;/mi&gt;</code> might, for example, be used by an
-    <span>&#x201c;expression editor&#x201d;</span> to represent a location in a MathML expression
-    which requires a <span>&#x201c;term&#x201d;</span> (according to conventional syntax for
+    <q>expression editor</q> to represent a location in a MathML expression
+    which requires a <q>term</q> (according to conventional syntax for
     mathematics) but does not yet contain one.</p>
  
     <p>Identifiers include function names such as
-    <span>&#x201c;sin&#x201d;</span>. Expressions such as <span>&#x201c;sin <i class="var">x</i>&#x201d;</span>
+    <q>sin</q>. Expressions such as <q>sin <i class="var">x</i></q>
     should be written using the character U+2061
     (which also has the entity names <code class="entity">af</code> and <code class="entity">ApplyFunction</code>) as shown below;
     see also the discussion of invisible operators in <a href="#presm_mo"></a>.</p>
@@ -1665,7 +1665,7 @@
     </div>
  
  
-    <p>Miscellaneous text that should be treated as a <span>&#x201c;term&#x201d;</span> can also be
+    <p>Miscellaneous text that should be treated as a <q>term</q> can also be
     represented by an <code class="element">mi</code> element, as in:</p>
  
     <div class="example mathml mmlcore">
@@ -1705,8 +1705,8 @@
    <section>
     <h5>Description</h5>
  
-    <p>An <code class="element">mn</code> element represents a <span>&#x201c;numeric
-    literal&#x201d;</span> or other data that should be rendered as a numeric
+    <p>An <code class="element">mn</code> element represents a <q>numeric
+    literal</q> or other data that should be rendered as a numeric
     literal. Generally speaking, a numeric literal is a sequence of digits,
     perhaps including a decimal point, representing an unsigned integer or real
     number.
@@ -1716,7 +1716,7 @@
     <code class="element">mn</code> elements are typically rendered in an unslanted font.
     </p>
  
-    <p>The mathematical concept of a <span>&#x201c;number&#x201d;</span> can be quite
+    <p>The mathematical concept of a <q>number</q> can be quite
     subtle and involved, depending on the context. As a consequence, not all
     mathematical numbers should be represented using <code class="element">mn</code>; examples of mathematical numbers that should be
     represented differently are shown below, and include
@@ -1834,11 +1834,11 @@
     complicated, and therefore MathML provides a relatively sophisticated
     mechanism for specifying the rendering behavior of an
     <code class="element">mo</code> element.  As a consequence, in MathML the list
-    of things that should <span>&#x201c;render as an operator&#x201d;</span> includes a number of
+    of things that should <q>render as an operator</q> includes a number of
     notations that are not mathematical operators in the ordinary
     sense. Besides ordinary operators with infix, prefix, or postfix
     forms, these include fence characters such as braces, parentheses, and
-    <span>&#x201c;absolute value&#x201d;</span> bars<span>;</span> separators
+    <q>absolute value</q> bars<span>;</span> separators
     such as comma and semicolon<span>;</span> and
     mathematical accents such as a bar or tilde over a symbol.
     We will use the term "operator" in this chapter to refer to operators in this broad
@@ -1871,18 +1871,18 @@
  
     <p>A key feature of the <code class="element">mo</code> element is that its
     default attribute values are set on a case-by-case basis from an
-    <span>&#x201c;operator dictionary&#x201d;</span> as explained below. In particular, default
+    <q>operator dictionary</q> as explained below. In particular, default
     values for <code class="attribute">fence</code>, <code class="attribute">separator</code> and
     <code class="attribute">accent</code> can usually be found in the operator dictionary
     and therefore need not be specified on each <code class="element">mo</code>
     element.</p>
  
     <p>Note that some mathematical operators are represented not by <code class="element">mo</code> elements alone, but by <code class="element">mo</code>
-    elements <span>&#x201c;embellished&#x201d;</span> with (for example) surrounding
+    elements <q>embellished</q> with (for example) surrounding
     superscripts; this is further described below. Conversely, as presentation
     elements, <code class="element">mo</code> elements can contain arbitrary text,
     even when that text has no standard interpretation as an operator; for an
-    example, see the discussion <span>&#x201c;Mixing text and mathematics&#x201d;</span> in
+    example, see the discussion <q>Mixing text and mathematics</q> in
     <a href="#presm_mtext"></a>. See also <a href="#contm"></a> for
     definitions of MathML content elements that are guaranteed to have the
     semantics of specific mathematical operators.</p>
@@ -1912,7 +1912,7 @@
      <span> from the containing document,</span>
      or from the
      <a href="#presm_opdict"></a>.
-     When a value that is listed as <span>&#x201c;inherited&#x201d;</span> is not explicitly given on an
+     When a value that is listed as <q>inherited</q> is not explicitly given on an
      <code class="element">mo</code>,  <code class="element">mstyle</code> element, <code class="element">math</code> element, or found in the operator
      dictionary for a given <code class="element">mo</code> element, the default value shown in
      parentheses is used.
@@ -2566,11 +2566,11 @@
    <section>
     <h5 id="presm_invisibleops">Invisible operators</h5>
  
-    <p>Certain operators that are <span>&#x201c;invisible&#x201d;</span> in traditional
+    <p>Certain operators that are <q>invisible</q> in traditional
     mathematical notation should be represented using specific entity
     references within <code class="element">mo</code> elements, rather than simply
-    by nothing. The characters used for these <span>&#x201c;invisible
-    operators&#x201d;</span> are:</p>
+    by nothing. The characters used for these <q>invisible
+    operators</q> are:</p>
  
     <table class="data">
  
@@ -2706,7 +2706,7 @@
      attribute values for <code class="element">mo</code> elements with specific
      contents and a specific <code class="attribute">form</code> attribute. Since these
      defaults vary from symbol to symbol, MathML anticipates that renderers
-     will have an <span>&#x201c;operator dictionary&#x201d;</span> of default attributes for
+     will have an <q>operator dictionary</q> of default attributes for
      <code class="element">mo</code> elements (see <a href="#oper-dict"></a>) indexed by each
      <code class="element">mo</code> element's content and <code class="attribute">form</code>
      attribute.  If an <code class="element">mo</code> element is not listed in the
@@ -2714,9 +2714,9 @@
      attributes for <code class="element">mo</code> should be used, since these
      values are typically acceptable for a generic operator.</p>
  
-     <p>Some operators are <span>&#x201c;overloaded&#x201d;</span>, in the sense that they can occur
+     <p>Some operators are <q>overloaded</q>, in the sense that they can occur
      in more than one form (prefix, infix, or postfix), with possibly
-     different rendering properties for each form. For example, <span>&#x201c;+&#x201d;</span> can be
+     different rendering properties for each form. For example, <q>+</q> can be
      either a prefix or an infix operator. Typically, a visual renderer
      would add space around both sides of an infix operator, while only in
      front of a prefix operator. The <code class="attribute">form</code> attribute allows
@@ -2769,7 +2769,7 @@
  
      <p>Opening fences should have  <code class="attribute">form</code><code>="prefix"</code>,
      and closing fences should have <code class="attribute">form</code><code>="postfix"</code>;
-     separators are usually <span>&#x201c;infix&#x201d;</span>, but not always,
+     separators are usually <q>infix</q>, but not always,
      depending on their surroundings. As with ordinary operators,
      these values do not usually need to be specified explicitly.</p>
  
@@ -2786,7 +2786,7 @@
  
      <p>There is one exception to the above rules for choosing an <code class="element">mo</code> element's default <code class="attribute">form</code>
      attribute. An <code class="element">mo</code> element that is
-     <span>&#x201c;embellished&#x201d;</span> by one or more nested subscripts, superscripts,
+     <q>embellished</q> by one or more nested subscripts, superscripts,
      surrounding text or whitespace, or style changes behaves differently. It is
      the embellished operator as a whole (this is defined precisely, below)
      whose position in an <code class="element">mrow</code> is examined by the above
@@ -2794,15 +2794,15 @@
      influencing this surrounding spacing are taken from the <code class="element">mo</code> element at the core (or from that element's
      dictionary entry).</p>
  
-     <p>For example, the <span>&#x201c;+<sub>4</sub>&#x201d;</span> in
+     <p>For example, the <q>+<sub>4</sub></q> in
      <i class="var">a</i>+<sub>4</sub><i class="var">b</i>
      should be considered an infix operator as a whole, due to its position
      in the middle of an <code class="element">mrow</code>, but its rendering
      attributes should be taken from the <code class="element">mo</code> element
-     representing the <span>&#x201c;+&#x201d;</span>, or when those are not specified explicitly,
+     representing the <q>+</q>, or when those are not specified explicitly,
      from the operator dictionary entry for <code>&lt;mo form="infix"&gt; +
      &lt;/mo&gt;</code>.
-     The precise definition of an <span>&#x201c;<dfn>embellished operator</dfn>&#x201d;</span> is:
+     The precise definition of an <q><dfn>embellished operator</dfn></q> is:
      </p>
      <ul>
  
@@ -3182,7 +3182,7 @@
  <code class="element">mo</code>; this is discussed further below.</p>
  
  <p>An <code class="element">mtext</code> element can be used to contain
- <span>&#x201c;renderable whitespace&#x201d;</span>, i.e. invisible characters that are
+ <q>renderable whitespace</q>, i.e. invisible characters that are
  intended to alter the positioning of surrounding elements. In non-graphical
  media, such characters are intended to have an analogous effect, such as
  introducing positive or negative time delays or affecting rhythm in an
@@ -3203,9 +3203,9 @@
  <p><code class="element">mtext</code> elements accept the attributes listed in
  <a href="#presm_commatt"></a>.</p>
  
- <p>See also the warnings about the legal grouping of <span>&#x201c;space-like elements&#x201d;</span>
+ <p>See also the warnings about the legal grouping of <q>space-like elements</q>
  in <a href="#presm_mspace"></a>, and about the use of
- such elements for <span>&#x201c;tweaking&#x201d;</span> in [[MathML-Notes]].</p>
+ such elements for <q>tweaking</q> in [[MathML-Notes]].</p>
  </section>
  
  <section class="fold">
@@ -3238,9 +3238,9 @@
  or more attribute values explicitly specified.
  </p>
  
- <p>Note the warning about the legal grouping of <span>&#x201c;space-like
- elements&#x201d;</span> given below, and the warning about the use of such
- elements for <span>&#x201c;tweaking&#x201d;</span> in [[MathML-Notes]].
+ <p>Note the warning about the legal grouping of <q>space-like
+ elements</q> given below, and the warning about the use of such
+ elements for <q>tweaking</q> in [[MathML-Notes]].
  See also the other elements that can render as
  whitespace, namely <code class="element">mtext</code>, <code class="element">mphantom</code>, and
  <code class="element">maligngroup</code>.</p> </section>
@@ -3371,14 +3371,14 @@
  <section>
  <h5>Definition of space-like elements</h5>
  
- <p>A number of MathML presentation elements are <span>&#x201c;space-like&#x201d;</span> in the
+ <p>A number of MathML presentation elements are <q>space-like</q> in the
  sense that they typically render as whitespace, and do not affect the
  mathematical meaning of the expressions in which they appear. As a
  consequence, these elements often function in somewhat exceptional
  ways in other MathML expressions. For example, space-like elements are
  handled specially in the suggested rendering rules for
  <code class="element">mo</code> given in <a href="#presm_mo"></a>.
- The following MathML elements are defined to be <span>&#x201c;space-like&#x201d;</span>:
+ The following MathML elements are defined to be <q>space-like</q>:
  </p>
  <ul>
  
@@ -3457,7 +3457,7 @@
   </pre>
  </div>
  
- <p>See also the warning about <span>&#x201c;tweaking&#x201d;</span> in
+ <p>See also the warning about <q>tweaking</q> in
    [[MathML-Notes]].</p>
  </section>
  </section>
@@ -3469,17 +3469,17 @@
    <h5>Description</h5>
  
    <p>The <code class="element">ms</code> element is used to represent
-   <span>&#x201c;string literals&#x201d;</span> in expressions meant to be interpreted by
-   computer algebra systems or other systems containing <span>&#x201c;programming
-   languages&#x201d;</span>. By default, string literals are displayed surrounded by
+   <q>string literals</q> in expressions meant to be interpreted by
+   computer algebra systems or other systems containing <q>programming
+   languages</q>. By default, string literals are displayed surrounded by
    double quotes, with no extra spacing added around the string.
    As explained in <a href="#presm_mtext"></a>, ordinary text
    embedded in a mathematical expression should be marked up with <code class="element">mtext</code>,
  or in some cases <code class="element">mo</code> or <code class="element">mi</code>, but never with <code class="element">ms</code>.</p>
  
  <p>Note that the string literals encoded by <code class="element">ms</code> are <span>made up of characters, <code class="element">mglyph</code>s and
- <code class="element">malignmark</code>s</span> rather than <span>&#x201c;ASCII
- strings&#x201d;</span>.  For
+ <code class="element">malignmark</code>s</span> rather than <q>ASCII
+ strings</q>.  For
  example, <code>&lt;ms&gt;&amp;amp;&lt;/ms&gt;</code> represents a string
  literal containing a single character, <code>&amp;</code>, and
  <code>&lt;ms&gt;&amp;amp;amp;&lt;/ms&gt;</code> represents a string literal
@@ -3487,7 +3487,7 @@
  <code>&amp;</code>.</p>
  
  <p>The content of <code class="element">ms</code> elements should be rendered with visible
- <span>&#x201c;escaping&#x201d;</span> of certain characters in the content,
+ <q>escaping</q> of certain characters in the content,
  including at least <span>the left and right quoting
  characters</span>, and preferably whitespace other than individual
  space characters. The intent is for the viewer to see that the
@@ -3565,7 +3565,7 @@
  
   <p>Besides tokens there are several families of MathML presentation
   elements. One family of elements deals with various
-  <span>&#x201c;scripting&#x201d;</span> notations, such as subscript and
+  <q>scripting</q> notations, such as subscript and
   superscript. Another family is concerned with matrices and tables. The
   remainder of the elements, discussed in this section, describe other basic
   notations such as fractions and radicals, or deal with general functions
@@ -3579,8 +3579,8 @@
  <h5>Description</h5>
  
  <p>An <code class="element">mrow</code> element is used to group together any
- number of sub-expressions, usually consisting of one or more <code class="element">mo</code> elements acting as <span>&#x201c;operators&#x201d;</span> on one
- or more other expressions that are their <span>&#x201c;operands&#x201d;</span>.</p>
+ number of sub-expressions, usually consisting of one or more <code class="element">mo</code> elements acting as <q>operators</q> on one
+ or more other expressions that are their <q>operands</q>.</p>
  
  <p>Several elements automatically treat their arguments as if they were
  contained in an <code class="element">mrow</code> element. See the discussion of
@@ -3658,7 +3658,7 @@
  
  <p>Sub-expressions should be grouped by the document author in the same way
  as they are grouped in the mathematical interpretation of the expression;
- that is, according to the underlying <span>&#x201c;syntax tree&#x201d;</span> of the
+ that is, according to the underlying <q>syntax tree</q> of the
  expression. Specifically, operators and their mathematical arguments should
  occur in a single <code class="element">mrow</code>; more than one operator
  should occur directly in one <code class="element">mrow</code> only when they
@@ -3777,7 +3777,7 @@
  
  <p>In this case, a nested <code class="element">mrow</code> is required inside
  the parentheses, since parentheses and commas, thought of as fence and
- separator <span>&#x201c;operators&#x201d;</span>, do not act together on their arguments.</p>
+ separator <q>operators</q>, do not act together on their arguments.</p>
  </section>
  </section>
  
@@ -3834,7 +3834,7 @@
  
  <tr>
   <td colspan="3" class="attdesc">
- Specifies the thickness of the horizontal <span>&#x201c;fraction bar&#x201d;</span>, or <span>&#x201c;rule&#x201d;</span>
+ Specifies the thickness of the horizontal <q>fraction bar</q>, or <q>rule</q>
  The default value is <code class="attributevalue">medium</code>,
  <code class="attributevalue">thin</code> is thinner, but visible,
  <code class="attributevalue">thick</code> is thicker;
@@ -4415,7 +4415,7 @@
    <h5>Description</h5>
  
    <p>The <code class="element">merror</code> element displays its contents as an
-   <span>&#x201c;error message&#x201d;</span>. This might be done, for example, by displaying the
+   <q>error message</q>. This might be done, for example, by displaying the
    contents in red, flashing the contents, or changing the background
    color. The contents can be any expression or expression sequence.</p>
  
@@ -5064,7 +5064,7 @@
    comma) between the arguments.</p>
  
    <p>For example, <code>&lt;mfenced&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;/mfenced&gt;</code>
-   renders as <span>&#x201c;(<i class="var">x</i>)&#x201d;</span> and is equivalent to</p>
+   renders as <q>(<i class="var">x</i>)</q> and is equivalent to</p>
  
    <div class="example mathml mmlcore">
     <pre>
@@ -5072,7 +5072,7 @@
     </pre>
    </div>
    <p>and <code>&lt;mfenced&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mi&gt;y&lt;/mi&gt; &lt;/mfenced&gt;</code>
-   renders as <span>&#x201c;(<i class="var">x</i>, <i class="var">y</i>)&#x201d;</span>
+   renders as <q>(<i class="var">x</i>, <i class="var">y</i>)</q>
    and is equivalent to</p>
  
    <div class="example mathml mmlcore">
@@ -5268,9 +5268,9 @@
     </pre>
    </div>
  
-   <p>Note that not all <span>&#x201c;fenced expressions&#x201d;</span> can be encoded by an
+   <p>Note that not all <q>fenced expressions</q> can be encoded by an
    <code class="element">mfenced</code> element. Such exceptional expressions
-   include those with an <span>&#x201c;embellished&#x201d;</span> separator or fence or one
+   include those with an <q>embellished</q> separator or fence or one
    enclosed in an <code class="element">mstyle</code> element, a missing or extra
    separator or fence, or a separator with multiple content
    characters. In these cases, it is necessary to encode the expression
@@ -5294,8 +5294,8 @@
    <code class="attribute">form</code><code>="infix"</code>.</p>
  
    <p>Note that it would be incorrect to use <code class="element">mfenced</code>
-   with a separator of, for instance, <span>&#x201c;+&#x201d;</span>, as an abbreviation for an
-   expression using <span>&#x201c;+&#x201d;</span> as an ordinary operator, e.g.</p>
+   with a separator of, for instance, <q>+</q>, as an abbreviation for an
+   expression using <q>+</q> as an ordinary operator, e.g.</p>
  
    <div class="example mathml mmlcore">
     <pre>
@@ -5329,8 +5329,8 @@
  
    <p>Note that the above <code class="element">mrow</code> is necessary so that
    the <code class="element">mfenced</code> has just one argument. Without it, this
-   would render incorrectly as <span>&#x201c;(<i class="var">a</i>, +,
-   <i class="var">b</i>)&#x201d;</span>.</p>
+   would render incorrectly as <q>(<i class="var">a</i>, +,
+   <i class="var">b</i>)</q>.</p>
  
    <p>[0,1)</p>
  
@@ -5664,7 +5664,7 @@
  
   <p>Because presentation elements should be used to describe the abstract
   notational structure of expressions, it is important that the base
-  expression in all <span>&#x201c;scripting&#x201d;</span> elements (i.e. the first
+  expression in all <q>scripting</q> elements (i.e. the first
   argument expression) should be the entire expression that is being
   scripted, not just the trailing character. For example,
   (<i class="var">x</i>+<i class="var">y</i>)<sup>2</sup> should be written as:</p>
@@ -5980,7 +5980,7 @@
  
       <tr>
        <td colspan="3" class="attdesc">
-        Specifies whether <em>underscript</em> is drawn as an <span>&#x201c;accent&#x201d;</span> or as a limit.
+        Specifies whether <em>underscript</em> is drawn as an <q>accent</q> or as a limit.
         An accent is drawn the same size as the base (without incrementing <code class="attribute">scriptlevel</code>)
         and is drawn closer to the base.
        </td>
@@ -6115,7 +6115,7 @@
  
        <tr>
         <td colspan="3" class="attdesc">
-   Specifies whether <em>overscript</em> is drawn as an <span>&#x201c;accent&#x201d;</span> or as a limit.
+   Specifies whether <em>overscript</em> is drawn as an <q>accent</q> or as a limit.
    An accent is drawn the same size as the base (without incrementing <code class="attribute">scriptlevel</code>)
    and is drawn closer to the base.
         </td>
@@ -6144,7 +6144,7 @@
     <p>The difference between an accent versus limit is shown here:
     <img src="image/f3018.gif" alt="\hat{x}" align="middle"></img> versus
     <img src="image/f3019.gif" alt="\hat{\strut x}" align="middle"></img>.
-    These differences also apply to <span>&#x201c;mathematical accents&#x201d;</span> such as
+    These differences also apply to <q>mathematical accents</q> such as
     bars <span>or braces</span> over expressions:
     <img src="image/f3020.gif" alt="\overbrace{x+y+z}" align="middle"></img> versus
     <img src="image/f3021.gif" alt="\overbrace{\strut x+y+z}" align="middle"></img>.
@@ -6272,7 +6272,7 @@
  
       <tr>
        <td colspan="3" class="attdesc">
-        Specifies whether <em>overscript</em> is drawn as an <span>&#x201c;accent&#x201d;</span> or as a limit.
+        Specifies whether <em>overscript</em> is drawn as an <q>accent</q> or as a limit.
         An accent is drawn the same size as the base (without incrementing <code class="attribute">scriptlevel</code>)
         and is drawn closer to the base.
        </td>
@@ -6287,7 +6287,7 @@
  
       <tr>
        <td colspan="3" class="attdesc">
-        Specifies whether <em>underscript</em> is drawn as an <span>&#x201c;accent&#x201d;</span> or as a limit.
+        Specifies whether <em>underscript</em> is drawn as an <q>accent</q> or as a limit.
         An accent is drawn the same size as the base (without incrementing <code class="attribute">scriptlevel</code>)
         and is drawn closer to the base.
        </td>
@@ -7416,14 +7416,14 @@
  
     <p>The expressions whose parts are to be aligned (each equation, in the
     example above) must be given as the table elements (i.e. as the <code class="element">mtd</code> elements) of one column of an
-    <code class="element">mtable</code>. To avoid confusion, the term <span>&#x201c;table
-    cell&#x201d;</span> rather than <span>&#x201c;table element&#x201d;</span> will be used in the
+    <code class="element">mtable</code>. To avoid confusion, the term <q>table
+    cell</q> rather than <q>table element</q> will be used in the
     remainder of this section.</p>
  
     <p>All interactions between alignment elements are limited to the
     <code class="element">mtable</code> column they arise in. That is, every
     column of a table specified by an <code class="element">mtable</code> element
-    acts as an <span>&#x201c;alignment scope&#x201d;</span> that contains within it all alignment
+    acts as an <q>alignment scope</q> that contains within it all alignment
     effects arising from its contents. It also excludes any interaction
     between its own alignment elements and the alignment elements inside
     any nested alignment scopes it might contain.</p>
@@ -7559,7 +7559,7 @@
     when the <code class="element">maligngroup</code> element is inserted directly into an
     <code class="element">mrow</code> or into an element that can form an inferred
     <code class="element">mrow</code> from its contents.  See the warning about the legal
-    grouping of <span>&#x201c;space-like elements&#x201d;</span> in <a href="#presm_mspace"></a> <span>for an analogous example
+    grouping of <q>space-like elements</q> in <a href="#presm_mspace"></a> <span>for an analogous example
     involving <code class="element">malignmark</code></span>.</p>
  
     <p>For the table cells that are divided into alignment groups, every
@@ -7645,8 +7645,8 @@
     introduce an <code class="element">mrow</code> to group an
     <code class="element">malignmark</code> element with a neighboring element,
     in order not to alter the argument count of the containing
-    element. (See the warning about the legal grouping of <span>&#x201c;space-like
-    elements&#x201d;</span> in <a href="#presm_mspace"></a>).</p>
+    element. (See the warning about the legal grouping of <q>space-like
+    elements</q> in <a href="#presm_mspace"></a>).</p>
  
     <p>When an <code class="element">malignmark</code> element is provided within an
     alignment group, it can occur in an arbitrarily deeply nested element
@@ -7665,8 +7665,8 @@
     relation as if the <code class="element">mfenced</code> element had been
     replaced by the equivalent expanded form involving <code class="element">mrow</code>. Similarly, an <code class="element">maction</code>
     element should be treated as if it were replaced by its currently selected
-    sub-expression. In all other cases, no relation of <span>&#x201c;to the immediate
-    left or right&#x201d;</span> is defined for two elements X and Y. However, in the
+    sub-expression. In all other cases, no relation of <q>to the immediate
+    left or right</q> is defined for two elements X and Y. However, in the
     case of content elements interspersed in presentation markup, MathML applications
     should attempt to evaluate this relation in a sensible way. For example, if
     a renderer maintains an internal presentation structure for rendering
@@ -7693,7 +7693,7 @@
     be inconvenient to have to remove all
     unnecessary <code class="element">malignmark</code> elements from
     automatically generated data, in certain cases, such as when they are
-    used to specify alignment on <span>&#x201c;decimal points&#x201d;</span> other than the '.'
+    used to specify alignment on <q>decimal points</q> other than the '.'
     character.</p>
    </section>
  
@@ -7736,7 +7736,7 @@
     <p><span>The
     <code class="attribute">edge</code> attribute</span> specifies whether the alignment point will be
     found on the left or right edge of some element or character. The
-    precise location meant by <span>&#x201c;left edge&#x201d;</span> or <span>&#x201c;right edge&#x201d;</span> is discussed
+    precise location meant by <q>left edge</q> or <q>right edge</q> is discussed
     below. If <code class="attribute">edge</code>="right", the alignment point is the right
     edge of the element or character to the immediate left of the
     <code class="element">malignmark</code> element. If <code class="attribute">edge</code>="left",
@@ -7755,7 +7755,7 @@
     element is used; if there is no such element, a zero-width element is
     effectively inserted to carry the alignment point.</p>
  
-    <p>The precise definition of the <span>&#x201c;left edge&#x201d;</span> or <span>&#x201c;right edge&#x201d;</span> of a
+    <p>The precise definition of the <q>left edge</q> or <q>right edge</q> of a
     character or glyph (e.g. whether it should coincide with an edge of
     the character's bounding box) is not specified by MathML, but is at
     the discretion of the renderer; the renderer is allowed to let the
@@ -7765,17 +7765,17 @@
     <p>For proper alignment of columns of numbers (using <code class="attribute">groupalign</code> values of <code class="attributevalue">left</code>, <code class="attributevalue">right</code>, or <code class="attributevalue">decimalpoint</code>), it is
     likely to be desirable for the effective width (i.e. the distance between
     the left and right edges) of decimal digits to be constant, even if their
-    bounding box widths are not constant (e.g. if <span>&#x201c;1&#x201d;</span> is narrower
+    bounding box widths are not constant (e.g. if <q>1</q> is narrower
     than other digits). For other characters, such as letters and operators, it
     may be desirable for the aligned edges to coincide with the bounding
     box.</p>
  
-    <p>The <span>&#x201c;left edge&#x201d;</span> of a MathML element or alignment group
+    <p>The <q>left edge</q> of a MathML element or alignment group
     refers to the left edge of the leftmost glyph drawn to render the element
     or group, except that explicit space represented by <code class="element">mspace</code> or <code class="element">mtext</code> elements
-    should also count as <span>&#x201c;glyphs&#x201d;</span> in this context, as should
+    should also count as <q>glyphs</q> in this context, as should
     glyphs that would be drawn if not for <code class="element">mphantom</code>
-    elements around them. The <span>&#x201c;right edge&#x201d;</span> of an element or
+    elements around them. The <q>right edge</q> of an element or
     alignment group is defined similarly.</p>
    </section>
  
@@ -7825,19 +7825,19 @@
     column of 2 table cells, with 7 alignment groups in each table cell;
     thus there are 7 columns of alignment groups, with 2 groups, one above
     the other, in each column. These columns of alignment groups should be
-    given the 7 <code class="attribute">groupalign</code> values <span>&#x201c;decimalpoint left left
-    decimalpoint left left decimalpoint&#x201d;</span>, in that order. How to specify
+    given the 7 <code class="attribute">groupalign</code> values <q>decimalpoint left left
+    decimalpoint left left decimalpoint</q>, in that order. How to specify
     this list of values for a table cell or table column as a whole, using
     attributes on elements surrounding the
     <code class="element">maligngroup</code> element is described later.</p>
  
-    <p>If <code class="attribute">groupalign</code> is <span>&#x201c;left&#x201d;</span>,
-    <span>&#x201c;right&#x201d;</span>, or <span>&#x201c;center&#x201d;</span>, the alignment point is
+    <p>If <code class="attribute">groupalign</code> is <q>left</q>,
+    <q>right</q>, or <q>center</q>, the alignment point is
     defined to be at the group's left edge, at its right edge, or halfway
-    between these edges, respectively. The meanings of <span>&#x201c;left edge&#x201d;</span>
-    and <span>&#x201c;right edge&#x201d;</span> are as discussed above in relation to <code class="element">malignmark</code>.</p>
+    between these edges, respectively. The meanings of <q>left edge</q>
+    and <q>right edge</q> are as discussed above in relation to <code class="element">malignmark</code>.</p>
  
-    <p>If <code class="attribute">groupalign</code> is <span>&#x201c;decimalpoint&#x201d;</span>,
+    <p>If <code class="attribute">groupalign</code> is <q>decimalpoint</q>,
     the alignment point is the right edge of the character immediately before the
     left-most 'decimal point', i.e. matching the character specified by
     the <code class="attribute">decimalpoint</code> attribute of <code class="element">mstyle</code> (default ".", U+002E)
@@ -7849,7 +7849,7 @@
  <code class="element">mrow</code>s), <code class="element">mstyle</code>,
  <code class="element">mpadded</code>, <code class="element">mphantom</code>, <code class="element">menclose</code>,
  <code class="element">mfenced</code>, or <code class="element">msqrt</code>,
- descending into only the first argument of each <span>&#x201c;scripting&#x201d;</span> element
+ descending into only the first argument of each <q>scripting</q> element
  (<code class="element">msub</code>, <code class="element">msup</code>,
  <code class="element">msubsup</code>, <code class="element">munder</code>,
  <code class="element">mover</code>, <code class="element">munderover</code>,
@@ -7874,8 +7874,8 @@
  content expression into a presentation expression that renders the
  same way before searching for decimal points as described above.</p>
  
- <p>Characters other than <span>&#x201c;.&#x201d;</span> can be used as
- <span>&#x201c;decimal points&#x201d;</span> for alignment by using <code class="element">mstyle</code>;
+ <p>Characters other than <q>.</q> can be used as
+ <q>decimal points</q> for alignment by using <code class="element">mstyle</code>;
  more arbitrary alignment points can chosen by embedding <code class="element">malignmark</code> elements
  within the <code class="element">mn</code> token's content itself.</p>
  
@@ -7896,7 +7896,7 @@
  on the <code class="element">mtable</code> that was used to set up the
  alignment scope as a whole, or from the <code class="element">mtr</code> or
  <code class="element">mtd</code> elements surrounding the alignment group. It
- is inherited via an <span>&#x201c;inheritance path&#x201d;</span> that proceeds from
+ is inherited via an <q>inheritance path</q> that proceeds from
  <code class="element">mtable</code> through successively contained
  <code class="element">mtr</code>, <code class="element">mtd</code>, and
  <code class="element">maligngroup</code> elements. There is exactly one
@@ -7990,13 +7990,13 @@
  
  <p>In the example near the beginning of this section, the group
  alignment values could be specified on every <code class="element">mtd</code>
- element using <code class="attribute">groupalign</code> = <span>&#x201c;decimalpoint left left
- decimalpoint left left decimalpoint&#x201d;</span>, or on every
+ element using <code class="attribute">groupalign</code> = <q>decimalpoint left left
+ decimalpoint left left decimalpoint</q>, or on every
  <code class="element">mtr</code> element using <code class="attribute">groupalign</code> =
- <span>&#x201c;{decimalpoint left left decimalpoint left left decimalpoint}&#x201d;</span>, or
+ <q>{decimalpoint left left decimalpoint left left decimalpoint}</q>, or
  (most conveniently) on the <code class="element">mtable</code> as a whole
- using <code class="attribute">groupalign</code> = <span>&#x201c;{decimalpoint left left decimalpoint
- left left decimalpoint}&#x201d;</span>, which provides a single braced list of
+ using <code class="attribute">groupalign</code> = <q>{decimalpoint left left decimalpoint
+ left left decimalpoint}</q>, which provides a single braced list of
  <a class="intref" href="#type_group-align"><em>group-alignment</em></a> values for the single column of expressions to be
  aligned.</p>
  </section>
@@ -8168,7 +8168,7 @@
  <p>For each alignment group, the horizontal positions of the left
  edge, alignment point, and right edge are noted, allowing the width of
  the group on each side of the alignment point (left and right) to be
- determined. The sum of these two <span>&#x201c;side-widths&#x201d;</span>, i.e. the sum of the
+ determined. The sum of these two <q>side-widths</q>, i.e. the sum of the
  widths to the left and right of the alignment point, will equal the
  width of the alignment group.</p>
  
@@ -9591,7 +9591,7 @@
   <td colspan="3" class="attdesc">
    Specifies which child should be used for viewing. Its value should be between 1 and
    the number of
-   children of the element. The specified child is referred to as the <span>&#x201c;selected sub-expression&#x201d;</span> of the
+   children of the element. The specified child is referred to as the <q>selected sub-expression</q> of the
    <code class="element">maction</code> element. If the value specified is out of range, it is an error. When the
    <code class="attribute">selection</code> attribute is not specified (including for
    action types for which it makes no sense), its default value is 1, so
@@ -9603,7 +9603,7 @@
  
  <p>If a MathML application responds to a user command to copy a MathML sub-expression
  to
- the environment's <span>&#x201c;clipboard&#x201d;</span> (see <a href="#world-int-transfers"></a>), any <code class="element">maction</code> elements present in what is copied should
+ the environment's <q>clipboard</q> (see <a href="#world-int-transfers"></a>), any <code class="element">maction</code> elements present in what is copied should
  be given <code class="attribute">selection</code> values that correspond to their selection
  state in the MathML rendering at the time of the copy command.</p>
  
@@ -9651,7 +9651,7 @@
   <p>The renderer displays the first child.
   When the pointer pauses over the expression for a long
   enough delay time, the renderer displays a rendering of the message in
-  a pop-up <span>&#x201c;tooltip&#x201d;</span> box near the expression. Many systems may limit
+  a pop-up <q>tooltip</q> box near the expression. Many systems may limit
   the popup to be text, so the second child should be an
   <code class="element">mtext</code> element in most circumstances.
   For non-<code class="element">mtext</code> messages,

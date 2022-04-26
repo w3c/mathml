@@ -204,7 +204,7 @@ attribute data-diff {text}?,
 	   inlinecontent}
 sub = element sub {inlinecontent}
 sup = element sup {inlinecontent}
-q = element q {text}
+q = element q {inlinecontent}
 	    
 hr = element hr {
 attribute class {text}?,
