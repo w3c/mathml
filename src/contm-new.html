@@ -1,4 +1,4 @@
-s<section>
+<section>
  <h2 id="contm">Content Markup</h2>
  <div class="issue" data-number="273"></div>
  <div class="issue" data-number="284"></div>
@@ -28,15 +28,15 @@ s<section>
    <p>The difficulties in inferring semantics from a presentation stem
    from the fact that there are many to one mappings from presentation to
    semantics and vice versa. For example the mathematical construct
-   <span>&#x201c;<i class="var">H</i> multiplied by <i class="var">e</i>&#x201d;</span> is often
+   <q><i class="var">H</i> multiplied by <i class="var">e</i></q> is often
    encoded using an explicit operator as in
    <i class="var">H</i>&#xa0;&#xd7;&#xa0;<i class="var">e</i>. In different
    presentational contexts, the multiplication operator might be
-   invisible <span>&#x201c;<i class="var">H</i>&#xa0;<i class="var">e</i>&#x201d;</span>, or rendered
-   as the spoken word <span>&#x201c;times&#x201d;</span>. Generally, many different
+   invisible <q><i class="var">H</i>&#xa0;<i class="var">e</i></q>, or rendered
+   as the spoken word <q>times</q>. Generally, many different
    presentations are possible depending on the context and style
    preferences of the author or reader. Thus, given
-   <span>&#x201c;<i class="var">H</i>&#xa0;<i class="var">e</i>&#x201d;</span> out of context it may be
+   <q><i class="var">H</i>&#xa0;<i class="var">e</i></q> out of context it may be
    impossible to decide if this is the name of a chemical or a
    mathematical product of two variables <i class="var">H</i> and
    <i class="var">e</i>. Mathematical presentation also varies across cultures
@@ -45,7 +45,7 @@ s<section>
    may lose currency, for example the use of musical sharp and flat
    symbols to denote maxima and minima [[Chaundy1954]]. A
    notation in use in 1644 for the multiplication mentioned above was
-   <img src="image/f4001.gif" alt="\blacksquare" align="middle"></img><i class="var">H</i><i class="var">e</i> [[Cajori1928]].</p>
+   <img src="image/f4001.gif" alt="\blacksquare" class="vmiddle"></img><i class="var">H</i><i class="var">e</i> [[Cajori1928]].</p>
 
    <p>By encoding the underlying mathematical structure explicitly,
    without regard to how it is presented aurally or visually, it is
@@ -87,9 +87,9 @@ s<section>
     <p>Content MathML represents mathematical objects as <em>expression trees</em>.  The
     notion of constructing a general expression tree is e.g. that of applying an operator
     to
-    sub-objects. For example, the sum <span>&#x201c;<i class="var">x</i>+<i class="var">y</i>&#x201d;</span> can be
+    sub-objects. For example, the sum <q><i class="var">x</i>+<i class="var">y</i></q> can be
     thought of as an application of the addition operator to two arguments <i class="var">x</i> and
-    <i class="var">y</i>. And the expression <span>&#x201c;cos(&#x3c0;)&#x201d;</span> as the application of the
+    <i class="var">y</i>. And the expression <q>cos(&#x3c0;)</q> as the application of the
     cosine function to the number &#x3c0;.</p>
 
     <p>As a general rule, the terminal nodes in the tree represent basic mathematical
@@ -338,7 +338,7 @@ s<section>
     they are reflected in the design of Content MathML.  For the
     convenience of the reader, these concepts are reviewed here.</p>
 
-    <p>In the expression <span>&#x201c;<i class="var">x</i>+<i class="var">y</i>&#x201d;</span>,
+    <p>In the expression <q><i class="var">x</i>+<i class="var">y</i></q>,
     <i class="var">x</i> is a mathematical variable, meaning an identifier that
     represents a quantity with no fixed value.  It may have other
     properties, such as being an integer, but its value is not a fixed
@@ -377,7 +377,7 @@ s<section>
     <p>In Strict Content markup, the <code class="element">bind</code> element is the only way
     of performing variable binding.  In non-Strict usage, however, markup
     is provided that more closely resembles well-known idiomatic
-    notations, such as the <span>&#x201c;limit&#x201d;</span> notations for sums and
+    notations, such as the <q>limit</q> notations for sums and
     integrals.  These constructs often implicitly bind variables, such as
     the variable of integration, or the index variable in a sum.  MathML
     terms the elements used to represent the auxiliary data such as limits
@@ -549,14 +549,14 @@ s<section>
       <dd>
 
        <p>An integer is represented by an optional sign followed by a string of
-       one or more decimal <span>&#x201c;digits&#x201d;</span>.</p>
+       one or more decimal <q>digits</q>.</p>
       </dd>
 
       <dt>real</dt>
       <dd>
 
        <p>A real number is presented in radix notation. Radix notation consists of an
-       optional sign (<span>&#x201c;+&#x201d;</span> or <span>&#x201c;-&#x201d;</span>) followed by a string of
+       optional sign (<q>+</q> or <q>-</q>) followed by a string of
        digits possibly separated into an integer and a fractional part by a
        decimal point. Some examples are 0.3, 1, and -31.56.</p>
       </dd>
@@ -931,11 +931,11 @@ s<section>
      </tbody>
     </table>
 
-    <p>Content MathML uses the <code class="element">ci</code> element (mnemonic for <span>&#x201c;content
-    identifier&#x201d;</span>) to construct a variable. Content identifiers
-    represent <span>&#x201c;mathematical variables&#x201d;</span> which have
+    <p>Content MathML uses the <code class="element">ci</code> element (mnemonic for <q>content
+    identifier</q>) to construct a variable. Content identifiers
+    represent <q>mathematical variables</q> which have
     properties, but no fixed value. For example, <i class="var">x</i> and <i class="var">y</i> are variables
-    in the expression <span>&#x201c;<i class="var">x</i>+<i class="var">y</i>&#x201d;</span>, and the variable
+    in the expression <q><i class="var">x</i>+<i class="var">y</i></q>, and the variable
     <i class="var">x</i> would be represented as</p>
 
     <div class="example strict-mathml">
@@ -1097,12 +1097,12 @@ s<section>
 
     <p>A <code class="element">csymbol</code> is used to refer to a specific,
     mathematically-defined concept with an external definition. In the
-    expression <span>&#x201c;<i class="var">x</i>+<i class="var">y</i>&#x201d;</span>, the plus sign is
+    expression <q><i class="var">x</i>+<i class="var">y</i></q>, the plus sign is
     a symbol since it has a specific, external definition, namely the addition function.
     MathML 3 calls such an identifier  a
     <em>symbol</em>. Elementary functions and common mathematical
     operators are all examples of symbols. Note that the term
-    <span>&#x201c;symbol&#x201d;</span> is used here in an abstract sense and has no
+    <q>symbol</q> is used here in an abstract sense and has no
     connection with any particular presentation of the construct on screen
     or paper.</p>
 
@@ -1284,7 +1284,7 @@ s<section>
      </tbody>
     </table>
 
-    <p>The <code class="element">cs</code> element encodes <span>&#x201c;string literals&#x201d;</span>
+    <p>The <code class="element">cs</code> element encodes <q>string literals</q>
     which may be used in Content MathML expressions.</p>
 
     <p>The content of cs is text; no
@@ -1391,7 +1391,7 @@ s<section>
      represents the application a function or operator to its arguments. The
      resulting tree corresponds to a complete mathematical expression. Roughly
      speaking, this means a piece of mathematics that could be surrounded by
-     parentheses or <span>&#x201c;logical brackets&#x201d;</span> without changing its meaning.</p>
+     parentheses or <q>logical brackets</q> without changing its meaning.</p>
 
      <p>For example, (<i class="var">x</i> + <i class="var">y</i>) might be encoded as</p>
 
@@ -2038,7 +2038,7 @@ s<section>
      acyclicity constraint, the example is not a valid MathML expression tree. It
      might be argued that such an expression could be given the interpretation of the continued
      fraction
-     <img src="image/contfrac1.gif" alt="  \frac{1}{1 + \frac{1}{1 + \frac{1}{1 + \ldots}}}" align="middle"></img>.
+     <img src="image/contfrac1.gif" alt="  \frac{1}{1 + \frac{1}{1 + \frac{1}{1 + \ldots}}}" class="vmiddle"></img>.
      However, the procedure of building an expression tree by replacing
      <code class="element">share</code> element does not terminate for such an
      expression, and hence such expressions are not allowed by Content MathML.</p>
@@ -2092,9 +2092,9 @@ s<section>
      </div>
 
      <p>This represents a term
-     <img src="image/lamshare1.gif" alt="\lambda{x}.f(\lambda{x}.g(x),g(x))" align="middle"></img>
+     <img src="image/lamshare1.gif" alt="\lambda{x}.f(\lambda{x}.g(x),g(x))" class="vmiddle"></img>
      which has two sub-terms of the form
-     <img src="image/lamshare2.gif" alt="g(x)" align="middle"></img>,
+     <img src="image/lamshare2.gif" alt="g(x)" class="vmiddle"></img>,
      one with <code>id="orig"</code>
      (the one explicitly represented) and one with <code>id="copy"</code>,
      represented by the <code class="element">share</code> element.
@@ -2110,9 +2110,9 @@ s<section>
      errors, and is not recommended.  For instance, using
      &#x3b1;-conversion to rename the inner occurrence of <i class="var">x</i>
      into, say, <i class="var">y</i> leads to the semantically equivalent expression
-     <img src="image/lamshare3.gif" alt="\lambda{x}.f(\lambda{y}.g(y),g(x))" align="middle"></img>.
+     <img src="image/lamshare3.gif" alt="\lambda{x}.f(\lambda{y}.g(y),g(x))" class="vmiddle"></img>.
      However, in this form, it is no longer possible to share the expression
-     <img src="image/lamshare2.gif" alt="g(x)" align="middle"></img>.
+     <img src="image/lamshare2.gif" alt="g(x)" class="vmiddle"></img>.
      Replacing <i class="var">x</i> with <i class="var">y</i> in the inner
      <code class="element">bvar</code> without replacing the <code class="element">share</code> element results in a change
      in semantics.</p>
@@ -2676,7 +2676,7 @@ s<section>
     <section>
      <h5 id="contm_domainofapplication_qualifier">Uses of
      <dfn id="contm_domainofapplication"><code class="defn starttag">&lt;domainofapplication&gt;</code></dfn>,
-     <dfn data-dfn-for="qualifier" id="contm_interval"><code class="defn starttag">&lt;interval&gt;</code></dfn>,
+     <dfn data-dfn-for="qualifier" id="contm_interval_qualifier"><code class="defn starttag">&lt;interval&gt;</code></dfn>,
      <dfn id="contm_condition"><code class="defn starttag">&lt;condition&gt;</code></dfn>,
      <dfn id="contm_lowlimit"><code class="defn starttag">&lt;lowlimit&gt;</code></dfn> and
      <dfn id="contm_uplimit"><code class="defn starttag">&lt;uplimit&gt;</code></dfn></h5>
@@ -2873,7 +2873,7 @@ s<section>
      </table>
 
      <p>The <a class="intref" href="#contm_degree"><code class="element">degree</code></a> element is a qualifier used to specify the
-     <span>&#x201c;degree&#x201d;</span> or <span>&#x201c;order&#x201d;</span> of an operation.  MathML uses the
+     <q>degree</q> or <q>order</q> of an operation.  MathML uses the
      <code class="element">degree</code> element in this way in three contexts: to specify the degree of a
      root, a moment, and in various derivatives. Rather than introduce special elements
      for
@@ -3291,7 +3291,7 @@ s<section>
      the list may be specified implicitly via the use of qualifier
      elements.</p>
 
-          <p>The <code class="element">and</code> element represents the logical <span>&#x201c;and&#x201d;</span> function which is
+          <p>The <code class="element">and</code> element represents the logical <q>and</q> function which is
      an n-ary function taking Boolean arguments and returning a Boolean value. It is true
      if
      all arguments are true, and false otherwise. Its arguments may be explicitly specified
@@ -3681,7 +3681,7 @@ s<section>
 
     
       <section>
-       <h5 id="contm_nary_construct">nary-constructor:
+       <h5 id="contm_nary_construct_matrix">nary-constructor:
        <dfn id="contm_vector"><code class="defn emptytag">&lt;vector/&gt;</code></dfn>,
        <dfn id="contm_matrix"><code class="defn emptytag">&lt;matrix/&gt;</code></dfn>,
        <dfn id="contm_matrixrow"><code class="defn emptytag">&lt;matrixrow/&gt;</code></dfn>
@@ -3839,7 +3839,7 @@ s<section>
 
     
     <section>
-       <h5 id="contm_nary_construct">nary-constructor:
+       <h5 id="contm_nary_construct_set">nary-constructor:
        <dfn id="contm_set"><code class="defn starttag">&lt;set&gt;</code></dfn>,
        <dfn id="contm_list"><code class="defn starttag">&lt;list&gt;</code></dfn>
        </h5>
@@ -4112,7 +4112,7 @@ s<section>
      </table>
 
      <p>MathML allows transitive relations to be used with multiple
-     arguments, to give a natural expression to <span>&#x201c;chains&#x201d;</span> of
+     arguments, to give a natural expression to <q>chains</q> of
      relations such as <i class="var">a</i> &lt; <i class="var">b</i> &lt; <i class="var">c</i> &lt;
      <i class="var">d</i>. However unlike the case of the arithmetic operators, the
      underlying symbols used in the Strict Content MathML are classed as
@@ -4227,7 +4227,7 @@ s<section>
      </table>
 
      <p>MathML allows transitive relations to be used with multiple
-     arguments, to give a natural expression to <span>&#x201c;chains&#x201d;</span> of
+     arguments, to give a natural expression to <q>chains</q> of
      relations such as <i class="var">a</i> &lt; <i class="var">b</i> &lt; <i class="var">c</i> &lt;
      <i class="var">d</i>. However unlike the case of the arithmetic operators, the
      underlying symbols used in the Strict Content MathML are classed as
@@ -4803,8 +4803,8 @@ s<section>
 
      <p>The <code class="element">quotient</code> element represents the integer division
      operator. When the operator is applied to integer arguments
-     <i class="var">a</i> and <i class="var">b</i>, the result is the <span>&#x201c;quotient of
-     <i class="var">a</i> divided by <i class="var">b</i>&#x201d;</span>. That is, the quotient
+     <i class="var">a</i> and <i class="var">b</i>, the result is the <q>quotient of
+     <i class="var">a</i> divided by <i class="var">b</i></q>. That is, the quotient
      of integers <i class="var">a</i> and <i class="var">b</i>, is the integer
      <i class="var">q</i> such that <i class="var">a</i> = <i class="var">b</i> * <i class="var">q</i> +
      <i class="var">r</i>, with |<i class="var">r</i>| less than |<i class="var">b</i>| and
@@ -4973,7 +4973,7 @@ s<section>
 
 
      <p>The <code class="element">root</code> element is used to extract roots. The kind of root to be taken is
-     specified by a <span>&#x201c;degree&#x201d;</span> element, which should be given as the second child of
+     specified by a <q>degree</q> element, which should be given as the second child of
      the <code>apply</code> element enclosing the <code>root</code> element. Thus, square roots
      correspond to the case where <code>degree</code> contains the value 2, cube roots
      correspond to 3, and so on. If no <code>degree</code> is present, a default value of 2 is
@@ -9385,9 +9385,9 @@ s<section>
      </table>
 
      <p>The <a class="intref" href="#contm_piecewise"><code class="element">piecewise</code></a>,<a class="intref" href="#contm_piece"><code class="element">piece</code></a>, and <a class="intref" href="#contm_otherwise"><code class="element">otherwise</code></a> elements are used to
-     represent <span>&#x201c;piecewise&#x201d;</span> function definitions of the form <span>&#x201c;
+     represent <q>piecewise</q> function definitions of the form <q>
      <i class="var">H</i>(<i class="var">x</i>) = 0 if <i class="var">x</i> less than 0, <i class="var">H</i>(<i class="var">x</i>) = 1
-     otherwise&#x201d;</span>.</p>
+     otherwise</q>.</p>
 
      <p>The declaration is constructed using the <code class="element">piecewise</code> element.  This contains
      zero or more <code class="element">piece</code> elements, and optionally one <code class="element">otherwise</code> element. Each
@@ -9401,7 +9401,7 @@ s<section>
      <code class="element">piecewise</code> function when none of the conditions (second child elements of the
      <code class="element">piece</code> elements) is true, i.e. a default value.</p>
 
-     <p>It should be noted that no <span>&#x201c;order of execution&#x201d;</span> is implied by the
+     <p>It should be noted that no <q>order of execution</q> is implied by the
      ordering of the <code class="element">piece</code> child elements within <code class="element">piecewise</code>. It is the
      responsibility of the author to ensure that the subsets of the function domain defined
      by
