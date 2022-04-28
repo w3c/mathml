@@ -3007,6 +3007,13 @@
 
    <section>
     <h4 id="contm_nary">N-ary Operators</h4>
+     <p>Many MathML operators may be used with an arbitrary number of
+     arguments. <span>The corresponding OpenMath symbols for elements in these classes
+     also take an arbitrary number of arguments.</span>
+     In all such cases, either the arguments my be given
+     explicitly as children of the <code class="element">apply</code> or <code class="element">bind</code> element, or
+     the list may be specified implicitly via the use of qualifier
+     elements.</p>
 
 
 
@@ -3048,13 +3055,6 @@
       </tbody>
      </table>
 
-     <p>Many MathML operators may be used with an arbitrary number of
-     arguments. <span>The corresponding OpenMath symbols for elements in these classes
-     also take an arbitrary number of arguments.</span>
-     In all such cases, either the arguments my be given
-     explicitly as children of the <code class="element">apply</code> or <code class="element">bind</code> element, or
-     the list may be specified implicitly via the use of qualifier
-     elements.</p>
 
      
      <p>The <code class="element">plus</code> element represents the addition operator.  Its
@@ -3152,14 +3152,6 @@
        </tr>
       </tbody>
      </table>
-
-     <p>Many MathML operators may be used with an arbitrary number of
-     arguments. <span>The corresponding OpenMath symbols for elements in these classes
-     also take an arbitrary number of arguments.</span>
-     In all such cases, either the arguments my be given
-     explicitly as children of the <code class="element">apply</code> or <code class="element">bind</code> element, or
-     the list may be specified implicitly via the use of qualifier
-     elements.</p>
 
 
      <p>The <code class="element">compose</code> element represents the function
@@ -3286,13 +3278,6 @@
       </tbody>
      </table>
 
-     <p>Many MathML operators may be used with an arbitrary number of
-     arguments. <span>The corresponding OpenMath symbols for elements in these classes
-     also take an arbitrary number of arguments.</span>
-     In all such cases, either the arguments my be given
-     explicitly as children of the <code class="element">apply</code> or <code class="element">bind</code> element, or
-     the list may be specified implicitly via the use of qualifier
-     elements.</p>
 
           <p>The <code class="element">and</code> element represents the logical <q>and</q> function which is
      an n-ary function taking Boolean arguments and returning a Boolean value. It is true
@@ -3430,13 +3415,6 @@
       </tbody>
      </table>
 
-     <p>Many MathML operators may be used with an arbitrary number of
-     arguments. <span>The corresponding OpenMath symbols for elements in these classes
-     also take an arbitrary number of arguments.</span>
-     In all such cases, either the arguments my be given
-     explicitly as children of the <code class="element">apply</code> or <code class="element">bind</code> element, or
-     the list may be specified implicitly via the use of qualifier
-     elements.</p>
 
           <p>The <code class="element">selector</code> element is the operator for indexing into vectors, matrices
      and lists. It accepts one or more arguments. The first argument identifies the vector,
@@ -3577,13 +3555,6 @@
       </tbody>
      </table>
 
-     <p>Many MathML operators may be used with an arbitrary number of
-     arguments. <span>The corresponding OpenMath symbols for elements in these classes
-     also take an arbitrary number of arguments.</span>
-     In all such cases, either the arguments my be given
-     explicitly as children of the <code class="element">apply</code> or <code class="element">bind</code> element, or
-     the list may be specified implicitly via the use of qualifier
-     elements.</p>
 
      <p>The <code class="element">union</code> element is used to denote the n-ary union of sets. It takes sets as arguments,
      and denotes the set that contains all the elements that occur in any
@@ -4762,6 +4733,13 @@
    <section>
     <h4 id="contm_binary">Binary Operators</h4>
 
+     <p>Binary operators take two arguments and simply map to OpenMath
+     symbols via <a>Rewrite: element</a>
+     without the need of any special rewrite rules. The binary
+     constructor <code class="element">interval</code> is similar but uses constructor syntax
+     in which the arguments are children of the element, and the symbol
+     used depends on the type element as described in <a href="#contm_interval_sec"></a> </p>
+    
     <section>
      <h5 id="contm_binary_arith">binary-arith:
      <dfn id="contm_quotient"><code class="defn emptytag">&lt;quotient/&gt;</code></dfn>,
@@ -4801,12 +4779,6 @@
       </tbody>
      </table>
 
-     <p>Binary operators take two arguments and simply map to OpenMath
-     symbols via <a>Rewrite: element</a>
-     without the need of any special rewrite rules. The binary
-     constructor <code class="element">interval</code> is similar but uses constructor syntax
-     in which the arguments are children of the element, and the symbol
-     used depends on the type element as described in <a href="#contm_interval_sec"></a> </p>
 
 
      <p>The <code class="element">quotient</code> element represents the integer division
@@ -5044,12 +5016,7 @@
       </tbody>
      </table>
 
-     <p>Binary operators take two arguments and simply map to OpenMath
-     symbols via <a>Rewrite: element</a>
-     without the need of any special rewrite rules. The binary
-     constructor <code class="element">interval</code> is similar but uses constructor syntax
-     in which the arguments are children of the element, and the symbol
-     used depends on the type element as described in <a href="#contm_interval_sec"></a> </p>
+>
 
 
      <p>The <code class="element">implies</code> element represents the logical implication
@@ -5153,12 +5120,6 @@
       </tbody>
      </table>
 
-     <p>Binary operators take two arguments and simply map to OpenMath
-     symbols via <a>Rewrite: element</a>
-     without the need of any special rewrite rules. The binary
-     constructor <code class="element">interval</code> is similar but uses constructor syntax
-     in which the arguments are children of the element, and the symbol
-     used depends on the type element as described in <a href="#contm_interval_sec"></a> </p>
 
 
      <p>The <code class="element">neq</code> element represents the binary inequality
@@ -5362,13 +5323,6 @@
       </tbody>
      </table>
 
-     <p>Binary operators take two arguments and simply map to OpenMath
-     symbols via <a>Rewrite: element</a>
-     without the need of any special rewrite rules. The binary
-     constructor <code class="element">interval</code> is similar but uses constructor syntax
-     in which the arguments are children of the element, and the symbol
-     used depends on the type element as described in <a href="#contm_interval_sec"></a> </p>
-
 
 
      <p>This element represents the vector product. It takes two three-dimensional vector
@@ -5532,12 +5486,7 @@
       </tbody>
      </table>
 
-     <p>Binary operators take two arguments and simply map to OpenMath
-     symbols via <a>Rewrite: element</a>
-     without the need of any special rewrite rules. The binary
-     constructor <code class="element">interval</code> is similar but uses constructor syntax
-     in which the arguments are children of the element, and the symbol
-     used depends on the type element as described in <a href="#contm_interval_sec"></a> </p>
+>
 
 
 
@@ -5690,6 +5639,9 @@
    <section>
     <h4 id="contm_unary">Unary Operators</h4>
 
+         <p>Unary operators take a single argument and map to OpenMath symbols
+     via <a>Rewrite: element</a> without the need of any special rewrite rules.</p>
+
 
     <section>
      <h6 id="contm_unary_logical">unary-logical:
@@ -5790,8 +5742,6 @@
       </tbody>
      </table>
 
-     <p>Unary operators take a single argument and map to OpenMath symbols
-     via <a>Rewrite: element</a> without the need of any special rewrite rules.</p>
 
 
      <p>This element represents the unary factorial operator on non-negative integers.</p>
@@ -6146,8 +6096,6 @@
       </tbody>
      </table>
 
-     <p>Unary operators take a single argument and map to OpenMath symbols
-     via <a>Rewrite: element</a> without the need of any special rewrite rules.</p>
 
 
      <p>This element is used for the unary function which returns the determinant of its argument,
@@ -6248,8 +6196,6 @@
       </tbody>
      </table>
 
-     <p>Unary operators take a single argument and map to OpenMath symbols
-     via <a>Rewrite: element</a> without the need of any special rewrite rules.</p>
 
 
 
@@ -6520,8 +6466,6 @@
      </table>
 
 
-     <p>Unary operators take a single argument and map to OpenMath symbols
-     via <a>Rewrite: element</a> without the need of any special rewrite rules.</p>
 
 
 
@@ -6615,8 +6559,6 @@
       </tbody>
      </table>
 
-     <p>Unary operators take a single argument and map to OpenMath symbols
-     via <a>Rewrite: element</a> without the need of any special rewrite rules.</p>
 
      <p>These operator elements denote the standard trigonometric functions.  Since their
      standard
@@ -6824,8 +6766,6 @@
       </tbody>
      </table>
 
-     <p>Unary operators take a single argument and map to OpenMath symbols
-     via <a>Rewrite: element</a> without the need of any special rewrite rules.</p>
 
      <p>The <code class="element">divergence</code> element is the vector calculus divergence
      operator, often called div. It represents the divergence function
@@ -7381,6 +7321,11 @@
     <h4 id="contm_unary">Constants</h4>
 
 
+     <p>Constant symbols relate to mathematical constants such as e and true and
+     also to names of sets such as the Real Numbers, and Integers.
+     In Strict Content MathML, they rewrite simply to the corresponding
+     symbol listed in the syntax tables for these elements in <a href="#contm_constant_arith"></a> and <a href="#contm_constant_set"></a>.
+     </p>
 
 
     <section>
@@ -7420,11 +7365,6 @@
       </tbody>
      </table>
 
-     <p>Constant symbols relate to mathematical constants such as e and true and
-     also to names of sets such as the Real Numbers, and Integers.
-     In Strict Content MathML, they rewrite simply to the corresponding
-     symbol listed in the syntax tables for these elements in <a href="#contm_constant_arith"></a> and <a href="#contm_constant_set"></a>.
-     </p>
 
 
      <p>This element represents the base of the natural logarithm, approximately 2.718.</p>
@@ -7711,11 +7651,6 @@
       </tbody>
      </table>
 
-     <p>Constant symbols relate to mathematical constants such as e and true and
-     also to names of sets such as the Real Numbers, and Integers.
-     In Strict Content MathML, they rewrite simply to the corresponding
-     symbol listed in the syntax tables for these elements in <a href="#contm_constant_arith"></a> and <a href="#contm_constant_set"></a>.
-     </p>
 
 
      <p>This element represents the set of integers, positive, negative and zero.</p>
