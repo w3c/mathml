@@ -2995,7 +2995,7 @@
    <code class="attribute">cd</code> attribute on the <code class="element">csymbol</code> will correspond to
    the <code class="attribute">definitionURL</code> value.</p>
 
-
+   </section>
 
 
 
@@ -3004,6 +3004,9 @@
 
 
 
+
+   <section>
+    <h4 id="contm_nary">N-ary Operators</h4>
 
 
 
@@ -4754,6 +4757,11 @@
      
     </section>
 
+   </section>
+
+   <section>
+    <h4 id="contm_binary">Binary Operators</h4>
+
     <section>
      <h5 id="contm_binary_arith">binary-arith:
      <dfn id="contm_quotient"><code class="defn emptytag">&lt;quotient/&gt;</code></dfn>,
@@ -5108,63 +5116,9 @@
 
     </section>
 
-    <section>
-     <h5 id="contm_unary_logical">unary-logical:
-     <dfn id="contm_not"><code class="defn emptytag">&lt;not/&gt;</code></dfn>
-     </h5>
-          <table class="syntax data">
+ 
 
-      <tbody>
 
-       <tr>
-	<th>Class</th>
-	<td><a class="intref" href="#contm_unary_logical">unary-logical</a></td>
-       </tr>
-
-       <tr>
-	<th>Attributes</th>
-	<td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code></td>
-       </tr>
-
-       <tr>
-	<th>Content</th>
-	<td>Empty</td>
-       </tr>
-
-       <tr>
-	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="https://openmath.org/cd/logic1#not">not</a></td>
-       </tr>
-      </tbody>
-     </table>
-
-     <p>The <span><code class="element">not</code></span> element represents the logical not function
-     which takes one Boolean argument, and returns the opposite Boolean
-     value.</p>
-
-     <div id="logic1.not.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;not/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mo&gt;&amp;#xac;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/logic1-not-ex1.gif" alt="{\unicode{172}a}"></img></p>
-      </blockquote>
-     </div>
-
-    </section>
         <section>
 	 <h5 id="contm_binary_reln">binary-reln:
      <dfn id="contm_neq"><code class="defn emptytag">&lt;neq/&gt;</code></dfn>,
@@ -5731,8 +5685,72 @@
 
     </section>
 
+   </section>
+
+   <section>
+    <h4 id="contm_unary">Unary Operators</h4>
+
+
     <section>
-     <h5 id="contm_unary_arith">unary-arith:
+     <h6 id="contm_unary_logical">unary-logical:
+     <dfn id="contm_not"><code class="defn emptytag">&lt;not/&gt;</code></dfn>
+     </h6>
+          <table class="syntax data">
+
+      <tbody>
+
+       <tr>
+	<th>Class</th>
+	<td><a class="intref" href="#contm_unary_logical">unary-logical</a></td>
+       </tr>
+
+       <tr>
+	<th>Attributes</th>
+	<td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code></td>
+       </tr>
+
+       <tr>
+	<th>Content</th>
+	<td>Empty</td>
+       </tr>
+
+       <tr>
+	<th>OM Symbols</th>
+	<td><a class="omsymbol" href="https://openmath.org/cd/logic1#not">not</a></td>
+       </tr>
+      </tbody>
+     </table>
+
+     <p>The <span><code class="element">not</code></span> element represents the logical not function
+     which takes one Boolean argument, and returns the opposite Boolean
+     value.</p>
+
+     <div id="logic1.not.ex1" class="mathml-example">
+      <p>Content MathML</p>
+
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;not/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Sample Presentation</p>
+
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mo&gt;&amp;#xac;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+
+      <blockquote>
+       <p><img src="image/logic1-not-ex1.gif" alt="{\unicode{172}a}"></img></p>
+      </blockquote>
+     </div>
+
+    </section>
+       
+    <section>
+     <h6 id="contm_unary_arith">unary-arith:
      <dfn id="contm_factorial"><code class="defn emptytag">&lt;factorial/&gt;</code></dfn>,
      <dfn data-dfn-for="unary" id="contm_minus_unary"><code class="defn emptytag">&lt;minus/&gt;</code></dfn>,
      <dfn data-dfn-for="unary" id="contm_root_unary"><code class="defn emptytag">&lt;root/&gt;</code></dfn>,
@@ -5744,7 +5762,7 @@
      <dfn id="contm_floor"><code class="defn emptytag">&lt;floor/&gt;</code></dfn>,
      <dfn id="contm_ceiling"><code class="defn emptytag">&lt;ceiling/&gt;</code></dfn>,
      <dfn id="contm_exp"><code class="defn emptytag">&lt;exp/&gt;</code></dfn>
-     </h5>
+     </h6>
 
      <table class="syntax data">
 
@@ -6097,10 +6115,10 @@
     </section>
 
         <section>
-	 <h5 id="contm_unary_linalg">unary-linalg:
+	 <h6 id="contm_unary_linalg">unary-linalg:
      <dfn id="contm_determinant"><code class="defn emptytag">&lt;determinant/&gt;</code></dfn>,
      <dfn id="contm_transpose"><code class="defn emptytag">&lt;transpose/&gt;</code></dfn>
-	 </h5>
+	 </h6>
 
      <table class="syntax data">
 
@@ -6193,7 +6211,7 @@
     </section>
 
     <section>
-     <h5 id="contm_unary_functional">unary-functional:
+     <h6 id="contm_unary_functional">unary-functional:
      <dfn id="contm_inverse"><code class="defn emptytag">&lt;inverse/&gt;</code></dfn>,
      <dfn id="contm_ident"><code class="defn emptytag">&lt;ident/&gt;</code></dfn>,
      <dfn id="contm_domain"><code class="defn emptytag">&lt;domain/&gt;</code></dfn>,
@@ -6202,7 +6220,7 @@
      <dfn id="contm_ln"><code class="defn emptytag">&lt;ln/&gt;</code></dfn>,
      <!--<code class="defn emptytag">&lt;log/&gt;</code>--><!--,
      <dfn id="contm_moment"><code class="defn emptytag">&lt;moment/&gt;</code></dfn>-->
-     </h5>
+     </h6>
 
      <table class="syntax data">
 
@@ -6469,218 +6487,10 @@
 
     </section>
 
-    
-    <section>
-     <h5 id="contm_moment_sec">Moment <dfn id="contm_moment"><code class="defn emptytag">&lt;moment/&gt;</code></dfn>, <dfn id="contm_momentabout"><code class="defn starttag">&lt;momentabout&gt;</code></dfn></h5>
-
-
-     <table class="syntax data">
-
-      <tbody>
-
-       <tr>
-	<th>Class</th>
-	<td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
-       </tr>
-
-       <tr>
-	<th>Attributes</th>
-	<td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code></td>
-       </tr>
-
-       <tr>
-	<th>Content</th>
-	<td>Empty</td>
-       </tr>
-
-       <tr>
-	<th>Qualifiers</th>
-	<td><code class="parsing_ref">degree</code>,
-	<code class="parsing_ref">momentabout</code></td>
-       </tr>
-
-       <tr>
-	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="https://openmath.org/cd/s_data1#moment">moment</a>,
-	<a class="omsymbol" href="https://openmath.org/cd/s_dist1#moment">moment</a></td>
-       </tr>
-      </tbody>
-     </table>
-
-
-     <p>The <code class="element">moment</code> element is used to denote the <i class="var">i</i>th moment of a set of data set or
-     random variable. The <code class="element">moment</code> function accepts the <code class="element">degree</code> and
-     <code class="element">momentabout</code> qualifiers. If present, the <code class="element">degree</code> schema denotes the order of
-     the moment. Otherwise, the moment is assumed to be the first order moment. When used
-     with
-     <code class="element">moment</code>, the <code class="element">degree</code> schema is expected to contain a
-     single child. If present, the <code class="element">momentabout</code> schema denotes the
-     point about which the moment is taken. Otherwise, the moment is
-     assumed to be the moment about zero.</p>
-
-     <div id="s_data1.moment.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;moment/&gt;
-           &lt;degree&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/degree&gt;
-           &lt;momentabout&gt;&lt;mean/&gt;&lt;/momentabout&gt;
-           &lt;cn&gt;6&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;5&lt;/cn&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;msub&gt;
-           &lt;mrow&gt;
-             &lt;mo&gt;&amp;#x27E8;&lt;/mo&gt;
-             &lt;msup&gt;
-               &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-               &lt;mn&gt;3&lt;/mn&gt;
-             &lt;/msup&gt;
-             &lt;mo&gt;&amp;#x27E9;&lt;/mo&gt;
-           &lt;/mrow&gt;
-           &lt;mi&gt;mean&lt;/mi&gt;
-         &lt;/msub&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/s_data1-moment-ex1.gif" alt="\msub{{\unicode{9001}\msup{{\left({6},{4},{2},{2},{5}\right)}}{{3}}\unicode{9002}}}{{\minormal{mean}}}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="s_dist1.moment.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;moment/&gt;
-           &lt;degree&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/degree&gt;
-           &lt;momentabout&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;/momentabout&gt;
-           &lt;ci&gt;X&lt;/ci&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;msub&gt;
-           &lt;mrow&gt;
-             &lt;mo&gt;&amp;#x27E8;&lt;/mo&gt;
-             &lt;msup&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
-             &lt;mo&gt;&amp;#x27E9;&lt;/mo&gt;
-           &lt;/mrow&gt;
-           &lt;mi&gt;p&lt;/mi&gt;
-         &lt;/msub&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/s_dist1-moment-ex1.gif" alt="\msub{{\unicode{9001}\msup{X}{{3}}\unicode{9002}}}{p}"></img></p>
-      </blockquote>
-     </div>
-    </section>
-
         <section>
-     <h5 id="contm_log_sec">Logarithm <dfn id="contm_log"><code class="defn emptytag">&lt;log/&gt;</code></dfn>
-     <span>, <dfn id="contm_logbase"><code class="defn starttag">&lt;logbase&gt;</code></dfn></span>
-     </h5>
-
-     <table class="syntax data">
-
-      <tbody>
-
-       <tr>
-	<th>Class</th>
-	<td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
-       </tr>
-
-       <tr>
-	<th>Attributes</th>
-	<td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code></td>
-       </tr>
-
-       <tr>
-	<th>Content</th>
-	<td>Empty</td>
-       </tr>
-
-       <tr>
-	<th>Qualifiers</th>
-	<td><code class="parsing_ref">logbase</code></td>
-       </tr>
-
-       <tr>
-	<th>OM Symbols</th>
-	<td><a class="omsymbol" href="https://openmath.org/cd/transc1#log">log</a></td>
-       </tr>
-      </tbody>
-     </table>
-
-
-     <p>The <code class="element">log</code> elements represents the logarithm function
-     relative to a given base.  When present, the <code class="element">logbase</code>
-     qualifier specifies the base. Otherwise, the base is assumed to be 10.
-     <code class="element">apply</code>.</p>
-
-     <div id="transc1.log.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;log/&gt;
-           &lt;logbase&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/logbase&gt;
-           &lt;ci&gt;x&lt;/ci&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/transc1-log-ex1.gif" alt="{\msub{{\minormal{log}}}{{3}}\unicode{8289}x}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="transc1.log.ex2" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;log/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/transc1-log-ex2.gif" alt="{\mathop{{\minormal{log}}}x}"></img></p>
-      </blockquote>
-     </div>
-    </section>
-        <section>
-	 <h5 id="contm_unary_set">unary-set:
+	 <h6 id="contm_unary_set">unary-set:
      <dfn id="contm_card"><code class="defn emptytag">&lt;card/&gt;</code></dfn>
-	 </h5>
+	 </h6>
 
 
      <table class="syntax data">
@@ -6752,7 +6562,7 @@
 	</section>
 
 	    <section>
-	     <h5 id="contm_unary_elementary">unary-elementary:
+	     <h6 id="contm_unary_elementary">unary-elementary:
      <dfn id="contm_sin"><code class="defn emptytag">&lt;sin/&gt;</code></dfn>,
      <dfn id="contm_cos"><code class="defn emptytag">&lt;cos/&gt;</code></dfn>,
      <dfn id="contm_tan"><code class="defn emptytag">&lt;tan/&gt;</code></dfn>,
@@ -6777,7 +6587,7 @@
      <dfn id="contm_arcsech"><code class="defn emptytag">&lt;arcsech/&gt;</code></dfn>,
      <dfn id="contm_arcsinh"><code class="defn emptytag">&lt;arcsinh/&gt;</code></dfn>,
      <dfn id="contm_arctanh"><code class="defn emptytag">&lt;arctanh/&gt;</code></dfn>
-	     </h5>
+	     </h6>
 
      <table class="syntax data">
 
@@ -6976,16 +6786,17 @@
      </div>
 
 
-	    </section>
+    </section>
+ 
 
 
 	        <section>
-		 <h5 id="contm_unary_veccalc">unary-veccalc:
+		 <h6 id="contm_unary_veccalc">unary-veccalc:
      <dfn id="contm_divergence"><code class="defn emptytag">&lt;divergence/&gt;</code></dfn>,
      <dfn id="contm_grad"><code class="defn emptytag">&lt;grad/&gt;</code></dfn>,
      <dfn id="contm_curl"><code class="defn emptytag">&lt;curl/&gt;</code></dfn>,
      <dfn id="contm_laplacian"><code class="defn emptytag">&lt;laplacian/&gt;</code></dfn>
-		 </h5>
+		 </h6>
 
      <table class="syntax data">
 
@@ -7353,16 +7164,227 @@
 
     </section>
 
+ <section>
+     <h6 id="contm_moment_sec">Moment <dfn id="contm_moment"><code class="defn emptytag">&lt;moment/&gt;</code></dfn>, <dfn id="contm_momentabout"><code class="defn starttag">&lt;momentabout&gt;</code></dfn></h6>
 
 
+     <table class="syntax data">
+
+      <tbody>
+
+       <tr>
+	<th>Class</th>
+	<td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
+       </tr>
+
+       <tr>
+	<th>Attributes</th>
+	<td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code></td>
+       </tr>
+
+       <tr>
+	<th>Content</th>
+	<td>Empty</td>
+       </tr>
+
+       <tr>
+	<th>Qualifiers</th>
+	<td><code class="parsing_ref">degree</code>,
+	<code class="parsing_ref">momentabout</code></td>
+       </tr>
+
+       <tr>
+	<th>OM Symbols</th>
+	<td><a class="omsymbol" href="https://openmath.org/cd/s_data1#moment">moment</a>,
+	<a class="omsymbol" href="https://openmath.org/cd/s_dist1#moment">moment</a></td>
+       </tr>
+      </tbody>
+     </table>
 
 
+     <p>The <code class="element">moment</code> element is used to denote the <i class="var">i</i>th moment of a set of data set or
+     random variable. The <code class="element">moment</code> function accepts the <code class="element">degree</code> and
+     <code class="element">momentabout</code> qualifiers. If present, the <code class="element">degree</code> schema denotes the order of
+     the moment. Otherwise, the moment is assumed to be the first order moment. When used
+     with
+     <code class="element">moment</code>, the <code class="element">degree</code> schema is expected to contain a
+     single child. If present, the <code class="element">momentabout</code> schema denotes the
+     point about which the moment is taken. Otherwise, the moment is
+     assumed to be the moment about zero.</p>
+
+     <div id="s_data1.moment.ex1" class="mathml-example">
+      <p>Content MathML</p>
+
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;moment/&gt;
+           &lt;degree&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/degree&gt;
+           &lt;momentabout&gt;&lt;mean/&gt;&lt;/momentabout&gt;
+           &lt;cn&gt;6&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;5&lt;/cn&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Sample Presentation</p>
+
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;msub&gt;
+           &lt;mrow&gt;
+             &lt;mo&gt;&amp;#x27E8;&lt;/mo&gt;
+             &lt;msup&gt;
+               &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+               &lt;mn&gt;3&lt;/mn&gt;
+             &lt;/msup&gt;
+             &lt;mo&gt;&amp;#x27E9;&lt;/mo&gt;
+           &lt;/mrow&gt;
+           &lt;mi&gt;mean&lt;/mi&gt;
+         &lt;/msub&gt;
+       </pre>
+      </div>
+
+      <blockquote>
+       <p><img src="image/s_data1-moment-ex1.gif" alt="\msub{{\unicode{9001}\msup{{\left({6},{4},{2},{2},{5}\right)}}{{3}}\unicode{9002}}}{{\minormal{mean}}}"></img></p>
+      </blockquote>
+     </div>
+
+     <div id="s_dist1.moment.ex1" class="mathml-example">
+      <p>Content MathML</p>
+
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;moment/&gt;
+           &lt;degree&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/degree&gt;
+           &lt;momentabout&gt;&lt;ci&gt;p&lt;/ci&gt;&lt;/momentabout&gt;
+           &lt;ci&gt;X&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Sample Presentation</p>
+
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;msub&gt;
+           &lt;mrow&gt;
+             &lt;mo&gt;&amp;#x27E8;&lt;/mo&gt;
+             &lt;msup&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
+             &lt;mo&gt;&amp;#x27E9;&lt;/mo&gt;
+           &lt;/mrow&gt;
+           &lt;mi&gt;p&lt;/mi&gt;
+         &lt;/msub&gt;
+       </pre>
+      </div>
+
+      <blockquote>
+       <p><img src="image/s_dist1-moment-ex1.gif" alt="\msub{{\unicode{9001}\msup{X}{{3}}\unicode{9002}}}{p}"></img></p>
+      </blockquote>
+     </div>
+    </section>
+
+    
+
+        <section>
+     <h6 id="contm_log_sec">Logarithm <dfn id="contm_log"><code class="defn emptytag">&lt;log/&gt;</code></dfn>
+     <span>, <dfn id="contm_logbase"><code class="defn starttag">&lt;logbase&gt;</code></dfn></span>
+     </h6>
+
+     <table class="syntax data">
+
+      <tbody>
+
+       <tr>
+	<th>Class</th>
+	<td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
+       </tr>
+
+       <tr>
+	<th>Attributes</th>
+	<td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code></td>
+       </tr>
+
+       <tr>
+	<th>Content</th>
+	<td>Empty</td>
+       </tr>
+
+       <tr>
+	<th>Qualifiers</th>
+	<td><code class="parsing_ref">logbase</code></td>
+       </tr>
+
+       <tr>
+	<th>OM Symbols</th>
+	<td><a class="omsymbol" href="https://openmath.org/cd/transc1#log">log</a></td>
+       </tr>
+      </tbody>
+     </table>
+
+
+     <p>The <code class="element">log</code> elements represents the logarithm function
+     relative to a given base.  When present, the <code class="element">logbase</code>
+     qualifier specifies the base. Otherwise, the base is assumed to be 10.
+     <code class="element">apply</code>.</p>
+
+     <div id="transc1.log.ex1" class="mathml-example">
+      <p>Content MathML</p>
+
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;log/&gt;
+           &lt;logbase&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/logbase&gt;
+           &lt;ci&gt;x&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Sample Presentation</p>
+
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+
+      <blockquote>
+       <p><img src="image/transc1-log-ex1.gif" alt="{\msub{{\minormal{log}}}{{3}}\unicode{8289}x}"></img></p>
+      </blockquote>
+     </div>
+
+     <div id="transc1.log.ex2" class="mathml-example">
+      <p>Content MathML</p>
+
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;log/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+
+      <p>Sample Presentation</p>
+
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+
+      <blockquote>
+       <p><img src="image/transc1-log-ex2.gif" alt="{\mathop{{\minormal{log}}}x}"></img></p>
+      </blockquote>
+     </div>
+    </section>
+    
+   </section>
+   
+    
+<section>
+    <h4 id="contm_unary">Constants</h4>
 
 
 
 
     <section>
-     <h5 id="contm_constant_arith">constant-arith:
+     <h6 id="contm_constant_arith">constant-arith:
      <dfn id="contm_exponentiale"><code class="defn emptytag">&lt;exponentiale/&gt;</code></dfn>,
      <dfn id="contm_imaginaryi"><code class="defn emptytag">&lt;imaginaryi/&gt;</code></dfn>,
      <dfn id="contm_notanumber"><code class="defn emptytag">&lt;notanumber/&gt;</code></dfn>,
@@ -7371,7 +7393,7 @@
      <dfn id="contm_pi"><code class="defn emptytag">&lt;pi/&gt;</code></dfn>,
      <dfn id="contm_eulergamma"><code class="defn emptytag">&lt;eulergamma/&gt;</code></dfn>,
      <dfn id="contm_infinity"><code class="defn emptytag">&lt;infinity/&gt;</code></dfn>
-     </h5>
+     </h6>
      <table class="syntax data">
 
       <tbody>
@@ -7654,7 +7676,7 @@
 
     
     <section>
-     <h5 id="contm_constant_set">constant-set:
+     <h6 id="contm_constant_set">constant-set:
      <dfn id="contm_integers"><code class="defn emptytag">&lt;integers/&gt;</code></dfn>,
      <dfn id="contm_reals"><code class="defn emptytag">&lt;reals/&gt;</code></dfn>,
      <dfn id="contm_rationals"><code class="defn emptytag">&lt;rationals/&gt;</code></dfn>,
@@ -7662,7 +7684,7 @@
      <dfn id="contm_complexes"><code class="defn emptytag">&lt;complexes/&gt;</code></dfn>,
      <dfn id="contm_primes"><code class="defn emptytag">&lt;primes/&gt;</code></dfn>,
      <dfn id="contm_emptyset"><code class="defn emptytag">&lt;emptyset/&gt;</code></dfn>
-     </h5>
+     </h6>
      <table class="syntax data">
 
       <tbody>
@@ -7904,12 +7926,14 @@
 
 
     </section>
+</section>
+  
 
     <section>
-     <h5 id="contm_quantifier">quantifier:
+     <h6 id="contm_quantifier">quantifier:
      <dfn id="contm_forall"><code class="defn emptytag">&lt;forall/&gt;</code></dfn>,
      <dfn id="contm_exists"><code class="defn emptytag">&lt;exists/&gt;</code></dfn>,
-     </h5>
+     </h6>
      <table class="syntax data">
 
       <tbody>
@@ -8111,7 +8135,7 @@
 
 
     <section>
-     <h5 id="contm_lambda_sec">Lambda <dfn id="contm_lambda"><code class="defn starttag">&lt;lambda&gt;</code></dfn></h5>
+     <h6 id="contm_lambda_sec">Lambda <dfn id="contm_lambda"><code class="defn starttag">&lt;lambda&gt;</code></dfn></h6>
 
      <table class="syntax data">
 
@@ -8255,7 +8279,7 @@
     </section>
 
     <section>
-     <h5 id="contm_interval_sec">Interval <dfn data-dfn-for="constructor" id="contm_interval_constructor"><code class="defn starttag">&lt;interval&gt;</code></dfn></h5>
+     <h6 id="contm_interval_sec">Interval <dfn data-dfn-for="constructor" id="contm_interval_constructor"><code class="defn starttag">&lt;interval&gt;</code></dfn></h6>
 
      <table class="syntax data">
 
@@ -8367,7 +8391,7 @@
 
 
     <section>
-     <h5 id="contm_int_sec">Integral <dfn id="contm_int"><code class="defn emptytag">&lt;int/&gt;</code></dfn></h5>
+     <h6 id="contm_int_sec">Integral <dfn id="contm_int"><code class="defn emptytag">&lt;int/&gt;</code></dfn></h6>
 
      <table class="syntax data">
 
@@ -8502,7 +8526,7 @@
 
 
     <section>
-     <h5 id="contm_diff_sec">Differentiation <dfn id="contm_diff"><code class="defn emptytag">&lt;diff/&gt;</code></dfn></h5>
+     <h6 id="contm_diff_sec">Differentiation <dfn id="contm_diff"><code class="defn emptytag">&lt;diff/&gt;</code></dfn></h6>
 
      <table class="syntax data">
 
@@ -8625,7 +8649,7 @@
 
 
     <section>
-     <h5 id="contm_partialdiff_sec">Partial Differentiation <dfn id="contm_partialdiff"><code class="defn emptytag">&lt;partialdiff/&gt;</code></dfn></h5>
+     <h6 id="contm_partialdiff_sec">Partial Differentiation <dfn id="contm_partialdiff"><code class="defn emptytag">&lt;partialdiff/&gt;</code></dfn></h6>
 
      <table class="syntax data">
 
@@ -8830,7 +8854,7 @@
 
 
     <section>
-     <h5 id="contm_sum_sec">Sum <dfn id="contm_sum"><code class="defn emptytag">&lt;sum/&gt;</code></dfn></h5>
+     <h6 id="contm_sum_sec">Sum <dfn id="contm_sum"><code class="defn emptytag">&lt;sum/&gt;</code></dfn></h6>
 
      <table class="syntax data">
 
@@ -8987,7 +9011,7 @@
 
 
     <section>
-     <h5 id="contm_product_sec">Product <dfn id="contm_product"><code class="defn emptytag">&lt;product/&gt;</code></dfn></h5>
+     <h6 id="contm_product_sec">Product <dfn id="contm_product"><code class="defn emptytag">&lt;product/&gt;</code></dfn></h6>
 
      <table class="syntax data">
 
@@ -9120,7 +9144,7 @@
 
     
     <section>
-     <h5 id="contm_limit_sec">Limits <dfn id="contm_limit"><code class="defn emptytag">&lt;limit/&gt;</code></dfn></h5>
+     <h6 id="contm_limit_sec">Limits <dfn id="contm_limit"><code class="defn emptytag">&lt;limit/&gt;</code></dfn></h6>
 
      <table class="syntax data">
 
@@ -9276,10 +9300,10 @@
     </section>
     
 
-   </section>
+
    
     <section>
-     <h5 id="contm_piecewise_sec">Piecewise declaration <dfn id="contm_piecewise"><code class="defn starttag">&lt;piecewise&gt;</code></dfn>, <dfn id="contm_piece"><code class="defn starttag">&lt;piece&gt;</code></dfn>, <dfn id="contm_otherwise"><code class="defn starttag">&lt;otherwise&gt;</code></dfn></h5>
+     <h6 id="contm_piecewise_sec">Piecewise declaration <dfn id="contm_piecewise"><code class="defn starttag">&lt;piecewise&gt;</code></dfn>, <dfn id="contm_piece"><code class="defn starttag">&lt;piece&gt;</code></dfn>, <dfn id="contm_otherwise"><code class="defn starttag">&lt;otherwise&gt;</code></dfn></h6>
 
      <table>
 
@@ -9468,8 +9492,10 @@
 
     </section>
 
+       </section>
+
     
-  </section>
+ 
 
 
  </section>
