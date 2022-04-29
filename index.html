@@ -10,8 +10,8 @@
   <script src="sorttable.js"></script>
   <script class='remove'>
     function relaxhl (r,s,u) {
-        var s2=s.replaceAll(/(#[^\n]*)/g,'\x3cspan style="color:brown">$1\x3c/span>');
-        s2=s2.replaceAll(/([a-z0-9A-Z-]+)(\s*=\s*[^"])/g,'\x3cb>$1\x3c/b>$2');
+        var s2=s.replaceAll(/(\n|^)([^'#\n]*)(#[^\n]*)/g,'$1$2\x3cspan style="color:brown">$3\x3c/span>');
+        s2=s2.replaceAll(/([a-z0-9A-Z.-]+)(\s*=\s*[^"])/g,'\x3cb id="parsing_$1">$1\x3c/b>$2');
         s2=s2.replaceAll(/include *"([^"]*)"/g,'\x3cspan style="color:green">include\x3c/span> "\x3cspan style="color:red">$1\x3c/span>"');
         return  s2;
     }
@@ -83,7 +83,7 @@
 	    m.setAttribute("display","block");
 	    m.setAttribute("class",
 			   mmllist[i].getAttribute("class").replace("example mathml","") +
-			   " inlinemath removeOnSave qqq");
+			   " inlinemath removeOnSave");
 	    m.innerHTML=mmllist[i].textContent;
 	    mmllist[i].parentNode.insertBefore(m,mmllist[i].nextSibling);
 	}
@@ -150,14 +150,6 @@
   "Abramowitz1977": {"title": "Abramowitz1977"}
    }
    };
-  </script>
-  <script class='remove'>
-    function relaxhl (r,s,u) {
-        var s2=s.replaceAll(/(\n|^)([^'#\n]*)(#[^\n]*)/g,'$1$2\x3cspan style="color:brown">$3\x3c/span>');
-        s2=s2.replaceAll(/([a-z0-9.A-Z-]+)(\s*=\s*[^"])/g,'\x3cb>$1\x3c/b>$2');
-        s2=s2.replaceAll(/include *"([^"]*)"/g,'\x3cspan style="color:green">include\x3c/span> "\x3cspan style="color:red">$1\x3c/span>"');
-        return  s2;
-    }
   </script>
   <style>
 th.mfont, span.mfont{
