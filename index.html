@@ -10,8 +10,8 @@
   <script src="sorttable.js"></script>
   <script class='remove'>
     function relaxhl (r,s,u) {
-        var s2=s.replaceAll(/(#[^\n]*)/g,'\x3cspan style="color:brown">$1\x3c/span>');
-        s2=s2.replaceAll(/([a-z0-9A-Z-]+)(\s*=\s*[^"])/g,'\x3cb>$1\x3c/b>$2');
+        var s2=s.replaceAll(/(\n|^)([^'#\n]*)(#[^\n]*)/g,'$1$2\x3cspan style="color:brown">$3\x3c/span>');
+        s2=s2.replaceAll(/([a-z0-9.A-Z-]+)(\s*=\s*[^"])/g,'\x3cb>$1\x3c/b>$2');
         s2=s2.replaceAll(/include *"([^"]*)"/g,'\x3cspan style="color:green">include\x3c/span> "\x3cspan style="color:red">$1\x3c/span>"');
         return  s2;
     }
@@ -79,13 +79,25 @@
     function showcore (){
 	var mmllist=document.querySelectorAll("div.example.mathml");
 	for(var i=0;i!=mmllist.length;i++){
+	    var mclass=mmllist[i].getAttribute("class");
+	    if(!mclass.includes("mml4c")){
 	    var m=document.createElementNS("http://www.w3.org/1998/Math/MathML","math");;
 	    m.setAttribute("display","block");
 	    m.setAttribute("class",
-			   mmllist[i].getAttribute("class").replace("example mathml","") +
-			   " inlinemath removeOnSave qqq");
+			   mclass.replace("example mathml","") +
+			   " inlinemath");
 	    m.innerHTML=mmllist[i].textContent;
+	    var atext=mmllist[i].textContent;
+	    atext=atext.replace(/^\s*|\s(?=\s)|\s*$/mg, "")
+		    .replace(/\x3cm[ino][^\x3c>]*>/g,' ')
+		    .replace(/\x3c\/m[ino]>/g,'')
+		    .replace(/\x3csemantics.*\x3c\/semantics>/mg,'')
+		    .replace(/\x3c!--[^>]*-->/mg,'')	
+		    .replace(/\x3c([a-z]+)[^\x3c>]*>/g,' start-$1')
+		    .replace(/\x3c\/([a-z]+)>/g,' end-$1');
+		m.setAttribute("alttext",atext);
 	    mmllist[i].parentNode.insertBefore(m,mmllist[i].nextSibling);
+	    }
 	}
     }
 	
@@ -150,14 +162,6 @@
   "Abramowitz1977": {"title": "Abramowitz1977"}
    }
    };
-  </script>
-  <script class='remove'>
-    function relaxhl (r,s,u) {
-        var s2=s.replaceAll(/(\n|^)([^'#\n]*)(#[^\n]*)/g,'$1$2\x3cspan style="color:brown">$3\x3c/span>');
-        s2=s2.replaceAll(/([a-z0-9.A-Z-]+)(\s*=\s*[^"])/g,'\x3cb>$1\x3c/b>$2');
-        s2=s2.replaceAll(/include *"([^"]*)"/g,'\x3cspan style="color:green">include\x3c/span> "\x3cspan style="color:red">$1\x3c/span>"');
-        return  s2;
-    }
   </script>
   <style>
 th.mfont, span.mfont{
@@ -224,7 +228,6 @@ border: .5em;
 padding:.5em;
 border-color:var(--example-border);
 border-left-style: solid;
-//background: var(--example-bg);
 background: #fafafa;
 }
 math.inlinemath {
