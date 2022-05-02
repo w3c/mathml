@@ -87,15 +87,21 @@
 			   mclass.replace("example mathml","") +
 			   " inlinemath");
 	    m.innerHTML=mmllist[i].textContent;
-	    var atext=mmllist[i].textContent;
-	    atext=atext.replace(/^\s*|\s(?=\s)|\s*$/mg, "")
+	    var atext;
+	    var aattrib=mmllist[i].getAttribute("alttext");
+	    if (aattrib)  {
+		atext=aattrib;
+	    } else {
+		atext=mmllist[i].textContent;
+		atext=atext.replace(/^\s*|\s(?=\s)|\s*$/mg, "")
 		    .replace(/\x3cm[ino][^\x3c>]*>/g,' ')
 		    .replace(/\x3c\/m[ino]>/g,'')
 		    .replace(/\x3csemantics.*\x3c\/semantics>/mg,'')
 		    .replace(/\x3c!--[^>]*-->/mg,'')	
 		    .replace(/\x3c([a-z]+)[^\x3c>]*>/g,' start-$1')
 		    .replace(/\x3c\/([a-z]+)>/g,' end-$1');
-		m.setAttribute("alttext",atext);
+	    }
+	    m.setAttribute("alttext",atext);
 	    mmllist[i].parentNode.insertBefore(m,mmllist[i].nextSibling);
 	    }
 	}
