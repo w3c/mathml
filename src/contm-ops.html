@@ -107,118 +107,150 @@
     <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
    </tr>
   </tbody>
-  <tbody>
+  <tbody id="cops_nary_linalg">
    <tr>
-    <td><a href="#contm_interval_constructor">interval</a></td>
-    <td>
-     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_cc">interval_cc</a>,
-     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_oc">interval_oc</a>,
-     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_co">interval_co</a>,
-     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_oo">interval_oo</a>
-    </td>
-    <td><a class="intref" href="#contm_interval_sec">interval</a></td>
-    <td><code class="parsing_ref">closure</code>?</td>
-    <td><code class="attributevalue">open</code> | <code class="attributevalue">closed</code> | <code class="attributevalue">open-closed</code> | <code class="attributevalue">closed-open</code></td>
-    <td><code class="parsing_ref">ContExp</code>,<code class="parsing_ref">ContExp</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_inverse">inverse</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/fns1#inverse">inverse</a></td>
-    <td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
+    <td><a href="#contm_selector">selector</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#vector_selector">vector_selector</a>,
+    <a class="omsymbol" href="https://openmath.org/cd/linalg1#matrix_selector">matrix_selector</a></td>
+    <td><a class="intref" href="#contm_nary_linalg">nary-linalg</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
+  </tbody>
+  <tbody id="cops_nary_set">
    <tr>
-    <td><a href="#contm_lambda">lambda</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/fns1#lambda">lambda</a></td>
-    <td><a class="intref" href="#contm_lambda_container">lambda</a></td>
+    <td><a href="#contm_union">union</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/set1#union">union</a></td>
+    <td><a class="intref" href="#contm_nary_set">nary-set</a></td>
     <td></td>
     <td></td>
-    <td><code class="parsing_ref">BvarQ</code>, <code class="parsing_ref">DomainQ</code>, <code class="parsing_ref">ContExp</code></td>
+    <td></td>
     <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
    </tr>
    <tr>
-    <td><a href="#contm_ident">ident</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/fns1#identity">identity</a></td>
-    <td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
+    <td><a href="#contm_intersect">intersect</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/set1#intersect">intersect</a></td>
+    <td><a class="intref" href="#contm_nary_set">nary-set</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_cartesianproduct">cartesianproduct</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/set1#cartesian_product">cartesian_product</a></td>
+    <td><a class="intref" href="#contm_nary_set">nary-set</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_nary_constructor">
+   <tr>
+    <td><a href="#contm_vector">vector</a></td>
+    <td>
+     <a class="omsymbol" href="https://openmath.org/cd/linalg2#vector">vector</a>
+    </td>
+    <td><a class="intref" href="#contm_nary_construct_matrix">nary-constructor</a></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">ContExp</code>*</td>
+    <td><code class="parsing_ref">BvarQ</code>,
+    <code class="parsing_ref">DomainQ</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_matrix">matrix</a></td>
+    <td>
+     <a class="omsymbol" href="https://openmath.org/cd/linalg2#matrix">matrix</a>
+    </td>
+    <td><a class="intref" href="#contm_nary_construct_matrix">nary-constructor</a></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">ContExp</code>*</td>
+    <td><code class="parsing_ref">BvarQ</code>,
+    <code class="parsing_ref">DomainQ</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_matrixrow">matrixrow</a></td>
+    <td>
+     <a class="omsymbol" href="https://openmath.org/cd/linalg2#matrixrow">matrixrow</a>
+    </td>
+    <td><a class="intref" href="#contm_nary_construct_matrix">nary-constructor</a></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">ContExp</code>*</td>
+    <td><code class="parsing_ref">BvarQ</code>,
+    <code class="parsing_ref">DomainQ</code></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_nary_reln">
+   <tr>
+    <td><a href="#contm_eq">eq</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/relation1#eq">eq</a></td>
+    <td><a class="intref" href="#contm_nary_reln">nary-reln</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_gt">gt</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/relation1#gt">gt</a></td>
+    <td><a class="intref" href="#contm_nary_reln">nary-reln</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_lt">lt</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/relation1#lt">lt</a></td>
+    <td><a class="intref" href="#contm_nary_reln">nary-reln</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_geq">geq</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/relation1#geq">geq</a></td>
+    <td><a class="intref" href="#contm_nary_reln">nary-reln</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_leq">leq</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/relation1#leq">leq</a></td>
+    <td><a class="intref" href="#contm_nary_reln">nary-reln</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_nary_set_reln">
+   <tr>
+    <td><a href="#contm_subset">subset</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/set1#subset">subset</a></td>
+    <td><a class="intref" href="#contm_nary_reln">nary-set-reln</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_domain">domain</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/fns1#domain">domain</a></td>
-    <td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
+    <td><a href="#contm_prsubset">prsubset</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/set1#prsubset">prsubset</a></td>
+    <td><a class="intref" href="#contm_nary_reln">nary-set-reln</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
-   <tr>
-    <td><a href="#contm_codomain">codomain</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/fns1#range">range</a></td>
-    <td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_image">image</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/fns1#image">image</a></td>
-    <td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_piecewise">piecewise</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/piece1#piecewise">piecewise</a></td>
-    <td><a class="intref" href="#contm_container_constructor">Constructor</a></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">piece</code>*,
-    <code class="parsing_ref">otherwise</code>?</td>
-   </tr>
-   <tr>
-    <td><a href="#contm_piecewise">piece</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/piece1#piece">piece</a></td>
-    <td><a class="intref" href="#contm_container_constructor">Constructor</a></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">ContExp</code>,<code class="parsing_ref">ContExp</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_piecewise">otherwise</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/piece1#otherwise">otherwise</a></td>
-    <td><a class="intref" href="#contm_container_constructor">Constructor</a></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">ContExp</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_quotient">quotient</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/integer1#quotient">quotient</a></td>
-    <td><a class="intref" href="#contm_binary_arith">binary-arith</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_factorial">factorial</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/integer1#factorial">factorial</a></td>
-    <td><a class="intref" href="#contm_unary_arith">unary-arith</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_divide">divide</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/arith1#divide">divide</a></td>
-    <td><a class="intref" href="#contm_binary_arith">binary-arith</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
+  </tbody>
+  <tbody id="cops_nary_minmax">
    <tr>
     <td><a href="#contm_max">max</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/minmax1#max">max</a></td>
@@ -236,6 +268,73 @@
     <td></td>
     <td></td>
     <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_nary_stats">
+   <tr>
+    <td><a href="#contm_mean">mean</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/s_dist1#mean">mean</a>, <a class="omsymbol" href="https://openmath.org/cd/s_data1#mean">mean</a></td>
+    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_sdev">sdev</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/s_dist1#sdev">sdev</a>, <a class="omsymbol" href="https://openmath.org/cd/s_data1#sdev">sdev</a></td>
+    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_variance">variance</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/s_dist1#variance">variance</a>, <a class="omsymbol" href="https://openmath.org/cd/s_data1#variance">variance</a></td>
+    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_median">median</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/s_data1#median">median</a></td>
+    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,
+    <code class="parsing_ref">DomainQ</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_mode">mode</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/s_data1#mode">mode</a></td>
+    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,
+    <code class="parsing_ref">DomainQ</code></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_binary_arith">
+   <tr>
+    <td><a href="#contm_quotient">quotient</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/integer1#quotient">quotient</a></td>
+    <td><a class="intref" href="#contm_binary_arith">binary-arith</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_divide">divide</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/arith1#divide">divide</a></td>
+    <td><a class="intref" href="#contm_binary_arith">binary-arith</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
    </tr>
    <tr>
     <td><a href="#contm_minus_unary">minus</a> <a href="#contm_minus_binary">minus</a></td>
@@ -270,14 +369,8 @@
     <td></td>
     <td><code class="parsing_ref">degree</code></td>
    </tr>
-   <tr>
-    <td><a href="#contm_not">not</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/logic1#not">not</a></td>
-    <td><a class="intref" href="#contm_unary_logical">unary-logical</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
+  </tbody>
+  <tbody id="cops_binary_logical">
    <tr>
     <td><a href="#contm_implies">implies</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/logic1#implies">implies</a></td>
@@ -287,24 +380,152 @@
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_forall">forall</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/quant1#forall">forall</a>,
-    <a class="omsymbol" href="https://openmath.org/cd/logic1#implies">implies</a></td>
-    <td><a class="intref" href="#contm_quantifier">quantifier</a></td>
+    <td><a href="#contm_equivalent">equivalent</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/logic1#equivalent">equivalent</a></td>
+    <td><a class="intref" href="#contm_binary_logical">binary-logical</a></td>
     <td></td>
     <td></td>
     <td></td>
     <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
    </tr>
+  </tbody>
+  <tbody id="cops_binary_reln">
    <tr>
-    <td><a href="#contm_exists">exists</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/quant1#exists">exists</a>,
-    <a class="omsymbol" href="https://openmath.org/cd/logic1#and">and</a></td>
-    <td><a class="intref" href="#contm_quantifier">quantifier</a></td>
+    <td><a href="#contm_neq">neq</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/relation1#neq">neq</a></td>
+    <td><a class="intref" href="#contm_binary_reln">binary-reln</a></td>
     <td></td>
     <td></td>
     <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_approx">approx</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/relation1#approx">approx</a></td>
+    <td><a class="intref" href="#contm_binary_reln">binary-reln</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_factorof">factorof</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/integer1#factorof">factorof</a></td>
+    <td><a class="intref" href="#contm_binary_reln">binary-reln</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_tendsto">tendsto</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/limit1#limit">limit</a></td>
+    <td><a class="intref" href="#contm_binary_reln">binary-reln</a></td>
+    <td><code class="parsing_ref">type</code>?</td>
+    <td>string</td>
+    <td></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_binary_linalg">
+   <tr>
+    <td><a href="#contm_vectorproduct">vectorproduct</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#vectorproduct">vectorproduct</a></td>
+    <td><a class="intref" href="#contm_binary_linalg">binary-linalg</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_scalarproduct">scalarproduct</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#scalarproduct">scalarproduct</a></td>
+    <td><a class="intref" href="#contm_binary_linalg">binary-linalg</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_outerproduct">outerproduct</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#outerproduct">outerproduct</a></td>
+    <td><a class="intref" href="#contm_binary_linalg">binary-linalg</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_binary_set">
+   <tr>
+    <td><a href="#contm_in">in</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/set1#in">in</a></td>
+    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_notin">notin</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/set1#notin">notin</a></td>
+    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_notsubset">notsubset</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/set1#notsubset">notsubset</a></td>
+    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_notprsubset">notprsubset</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/set1#notprsubset">notprsubset</a></td>
+    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_setdiff">setdiff</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/set1#setdiff">setdiff</a>, <a class="omsymbol" href="https://openmath.org/cd/multiset1#setdiff">setdiff</a></td>
+    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_unary_logical">
+   <tr>
+    <td><a href="#contm_not">not</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/logic1#not">not</a></td>
+    <td><a class="intref" href="#contm_unary_logical">unary-logical</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_unary_arith">
+   <tr>
+    <td><a href="#contm_factorial">factorial</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/integer1#factorial">factorial</a></td>
+    <td><a class="intref" href="#contm_unary_arith">unary-arith</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_minus_unary">minus</a> <a href="#contm_minus_binary">minus</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/arith1#unary_minus">unary_minus</a>, <a class="omsymbol" href="https://openmath.org/cd/arith1#minus">minus</a></td>
+    <td><a class="intref" href="#contm_unary_arith">unary-arith</a>, <a class="intref" href="#contm_binary_arith">binary-arith</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_root_unary">root</a> <a href="#contm_root_binary">root</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/arith1#root">root</a></td>
+    <td><a class="intref" href="#contm_unary_arith">unary-arith</a>, <a class="intref" href="#contm_binary_arith">binary-arith</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">degree</code></td>
    </tr>
    <tr>
     <td><a href="#contm_abs">abs</a></td>
@@ -363,231 +584,83 @@
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_eq">eq</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/relation1#eq">eq</a></td>
-    <td><a class="intref" href="#contm_nary_reln">nary-reln</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_neq">neq</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/relation1#neq">neq</a></td>
-    <td><a class="intref" href="#contm_binary_reln">binary-reln</a></td>
+    <td><a href="#contm_exp">exp</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/transc1#exp">exp</a></td>
+    <td><a class="intref" href="#contm_unary_arith">unary-arith</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
+  </tbody>
+  <tbody id="cops_unary_linalg">
    <tr>
-    <td><a href="#contm_gt">gt</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/relation1#gt">gt</a></td>
-    <td><a class="intref" href="#contm_nary_reln">nary-reln</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_lt">lt</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/relation1#lt">lt</a></td>
-    <td><a class="intref" href="#contm_nary_reln">nary-reln</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_geq">geq</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/relation1#geq">geq</a></td>
-    <td><a class="intref" href="#contm_nary_reln">nary-reln</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_leq">leq</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/relation1#leq">leq</a></td>
-    <td><a class="intref" href="#contm_nary_reln">nary-reln</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_equivalent">equivalent</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/logic1#equivalent">equivalent</a></td>
-    <td><a class="intref" href="#contm_binary_logical">binary-logical</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_approx">approx</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/relation1#approx">approx</a></td>
-    <td><a class="intref" href="#contm_binary_reln">binary-reln</a></td>
+    <td><a href="#contm_determinant">determinant</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#determinant">determinant</a></td>
+    <td><a class="intref" href="#contm_unary_linalg">unary-linalg</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_factorof">factorof</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/integer1#factorof">factorof</a></td>
-    <td><a class="intref" href="#contm_binary_reln">binary-reln</a></td>
+    <td><a href="#contm_transpose">transpose</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#transpose">transpose</a></td>
+    <td><a class="intref" href="#contm_unary_linalg">unary-linalg</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_unary_functional">
+   <tr>
+    <td><a href="#contm_inverse">inverse</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/fns1#inverse">inverse</a></td>
+    <td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_int">int</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/calculus1#int">int</a> <a class="omsymbol" href="https://openmath.org/cd/calculus1#defint">defint</a></td>
-    <td><a class="intref" href="#contm_int">int</a></td>
+    <td><a href="#contm_ident">ident</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/fns1#identity">identity</a></td>
+    <td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_diff">diff</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/calculus1#diff">diff</a></td>
-    <td><a class="intref" href="#contm_diff">Differential-Operator</a></td>
+    <td><a href="#contm_domain">domain</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/fns1#domain">domain</a></td>
+    <td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_partialdiff">partialdiff</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiff">partialdiff</a> <a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiffdegree">partialdiffdegree</a></td>
-    <td><a class="intref" href="#contm_partialdiff">partialdiff</a></td>
+    <td><a href="#contm_codomain">codomain</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/fns1#range">range</a></td>
+    <td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_divergence">divergence</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#divergence">divergence</a></td>
-    <td><a class="intref" href="#contm_unary_veccalc">unary-veccalc</a></td>
+    <td><a href="#contm_image">image</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/fns1#image">image</a></td>
+    <td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_grad">grad</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#grad">grad</a></td>
-    <td><a class="intref" href="#contm_unary_veccalc">unary-veccalc</a></td>
+    <td><a href="#contm_ln">ln</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/transc1#ln">ln</a></td>
+    <td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
-   <tr>
-    <td><a href="#contm_curl">curl</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#curl">curl</a></td>
-    <td><a class="intref" href="#contm_unary_veccalc">unary-veccalc</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_laplacian">laplacian</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#Laplacian">Laplacian</a></td>
-    <td><a class="intref" href="#contm_unary_veccalc">unary-veccalc</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_set">set</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/set1#set">set</a>, <a class="omsymbol" href="https://openmath.org/cd/multiset1#multiset">multiset</a></td>
-    <td><a class="intref" href="#contm_nary_construct_set">nary-setlist-constructor</a></td>
-    <td><code class="parsing_ref">type</code>?</td>
-    <td><code class="attributevalue">set</code> | <code class="attributevalue">multiset</code> | text </td>
-    <td><code class="parsing_ref">ContExp</code>*</td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_list">list</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/interval1#interval_cc">interval_cc</a>, <a class="omsymbol" href="https://openmath.org/cd/list1#list">list</a></td>
-    <td><a class="intref" href="#contm_nary_construct_set">nary-setlist-constructor</a></td>
-    <td><code class="parsing_ref">order</code></td>
-    <td><code class="attributevalue">numeric</code> | <code class="attributevalue">lexicographic</code></td>
-    <td><code class="parsing_ref">ContExp</code>*</td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_union">union</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/set1#union">union</a></td>
-    <td><a class="intref" href="#contm_nary_set">nary-set</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_intersect">intersect</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/set1#intersect">intersect</a></td>
-    <td><a class="intref" href="#contm_nary_set">nary-set</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_in">in</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/set1#in">in</a></td>
-    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_notin">notin</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/set1#notin">notin</a></td>
-    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_subset">subset</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/set1#subset">subset</a></td>
-    <td><a class="intref" href="#contm_nary_reln">nary-set-reln</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_prsubset">prsubset</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/set1#prsubset">prsubset</a></td>
-    <td><a class="intref" href="#contm_nary_reln">nary-set-reln</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_notsubset">notsubset</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/set1#notsubset">notsubset</a></td>
-    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_notprsubset">notprsubset</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/set1#notprsubset">notprsubset</a></td>
-    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_setdiff">setdiff</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/set1#setdiff">setdiff</a>, <a class="omsymbol" href="https://openmath.org/cd/multiset1#setdiff">setdiff</a></td>
-    <td><a class="intref" href="#contm_binary_set">binary-set</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
+  </tbody>
+  <tbody id="cops_unary_set">
    <tr>
     <td><a href="#contm_card">card</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/set1#size">size</a>, <a class="omsymbol" href="https://openmath.org/cd/multiset1#size">size</a></td>
@@ -596,59 +669,8 @@
     <td></td>
     <td></td>
    </tr>
-   <tr>
-    <td><a href="#contm_cartesianproduct">cartesianproduct</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/set1#cartesian_product">cartesian_product</a></td>
-    <td><a class="intref" href="#contm_nary_set">nary-set</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_sum">sum</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/arith1#sum">sum</a></td>
-    <td><a class="intref" href="#contm_sum">sum</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_product">product</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/arith1#product">product</a></td>
-    <td><a class="intref" href="#contm_product">product</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_limit">limit</a></td>
-    <td>
-     <a class="omsymbol" href="https://openmath.org/cd/limit1#limit">limit</a>,
-     <a class="omsymbol" href="https://openmath.org/cd/limit1#both_sides">both_sides</a>,
-     <a class="omsymbol" href="https://openmath.org/cd/limit1#above">above</a>,
-     <a class="omsymbol" href="https://openmath.org/cd/limit1#below">below</a>,
-     <a class="omsymbol" href="https://openmath.org/cd/limit1#null">null</a>
-    </td>
-    <td><a class="intref" href="#contm_limit">limit</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>
-     <code class="parsing_ref">lowlimit</code>,
-     <code class="parsing_ref">condition</code>
-    </td>
-   </tr>
-   <tr>
-    <td><a href="#contm_tendsto">tendsto</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/limit1#limit">limit</a></td>
-    <td><a class="intref" href="#contm_binary_reln">binary-reln</a></td>
-    <td><code class="parsing_ref">type</code>?</td>
-    <td>string</td>
-    <td></td>
-   </tr>
+  </tbody>
+  <tbody id="cops_unary_elementary">
    <tr>
     <td><a href="#contm_sin">sin</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/transc1#sin">sin</a></td>
@@ -841,78 +863,42 @@
     <td></td>
     <td></td>
    </tr>
+  </tbody>
+  <tbody id="cops_unary_veccalc">
    <tr>
-    <td><a href="#contm_exp">exp</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/transc1#exp">exp</a></td>
-    <td><a class="intref" href="#contm_unary_arith">unary-arith</a></td>
+    <td><a href="#contm_divergence">divergence</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#divergence">divergence</a></td>
+    <td><a class="intref" href="#contm_unary_veccalc">unary-veccalc</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_ln">ln</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/transc1#ln">ln</a></td>
-    <td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
+    <td><a href="#contm_grad">grad</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#grad">grad</a></td>
+    <td><a class="intref" href="#contm_unary_veccalc">unary-veccalc</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_log">log</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/transc1#log">log</a></td>
-    <td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
+    <td><a href="#contm_curl">curl</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#curl">curl</a></td>
+    <td><a class="intref" href="#contm_unary_veccalc">unary-veccalc</a></td>
     <td></td>
     <td></td>
     <td></td>
-    <td><code class="parsing_ref">logbase</code></td>
    </tr>
    <tr>
-    <td><a href="#contm_mean">mean</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/s_dist1#mean">mean</a>, <a class="omsymbol" href="https://openmath.org/cd/s_data1#mean">mean</a></td>
-    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
+    <td><a href="#contm_laplacian">laplacian</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/veccalc1#Laplacian">Laplacian</a></td>
+    <td><a class="intref" href="#contm_unary_veccalc">unary-veccalc</a></td>
     <td></td>
     <td></td>
     <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
    </tr>
-   <tr>
-    <td><a href="#contm_sdev">sdev</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/s_dist1#sdev">sdev</a>, <a class="omsymbol" href="https://openmath.org/cd/s_data1#sdev">sdev</a></td>
-    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_variance">variance</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/s_dist1#variance">variance</a>, <a class="omsymbol" href="https://openmath.org/cd/s_data1#variance">variance</a></td>
-    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_median">median</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/s_data1#median">median</a></td>
-    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,
-    <code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_mode">mode</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/s_data1#mode">mode</a></td>
-    <td><a class="intref" href="#contm_nary_unary_stats">nary-stats</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">BvarQ</code>,
-    <code class="parsing_ref">DomainQ</code></td>
-   </tr>
+  </tbody>
+  <tbody id="cops_unary_moment">
    <tr>
     <td><a href="#contm_moment">moment</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/s_data1#moment">moment</a>,
@@ -924,92 +910,85 @@
     <td><code class="parsing_ref">degree</code>,
     <code class="parsing_ref">momentabout</code></td>
    </tr>
+  </tbody>
+  <tbody id="cops_unary_log">
    <tr>
-    <td><a href="#contm_vector">vector</a></td>
-    <td>
-     <a class="omsymbol" href="https://openmath.org/cd/linalg2#vector">vector</a>
-    </td>
-    <td><a class="intref" href="#contm_nary_construct_matrix">nary-constructor</a></td>
+    <td><a href="#contm_log">log</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/transc1#log">log</a></td>
+    <td><a class="intref" href="#contm_unary_functional">unary-functional</a></td>
     <td></td>
     <td></td>
-    <td><code class="parsing_ref">ContExp</code>*</td>
-    <td><code class="parsing_ref">BvarQ</code>,
-    <code class="parsing_ref">DomainQ</code></td>
+    <td></td>
+    <td><code class="parsing_ref">logbase</code></td>
    </tr>
+  </tbody>
+  <tbody id="cops_constant_arith">
    <tr>
-    <td><a href="#contm_matrix">matrix</a></td>
-    <td>
-     <a class="omsymbol" href="https://openmath.org/cd/linalg2#matrix">matrix</a>
-    </td>
-    <td><a class="intref" href="#contm_nary_construct_matrix">nary-constructor</a></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">ContExp</code>*</td>
-    <td><code class="parsing_ref">BvarQ</code>,
-    <code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_matrixrow">matrixrow</a></td>
-    <td>
-     <a class="omsymbol" href="https://openmath.org/cd/linalg2#matrixrow">matrixrow</a>
-    </td>
-    <td><a class="intref" href="#contm_nary_construct_matrix">nary-constructor</a></td>
-    <td></td>
-    <td></td>
-    <td><code class="parsing_ref">ContExp</code>*</td>
-    <td><code class="parsing_ref">BvarQ</code>,
-    <code class="parsing_ref">DomainQ</code></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_determinant">determinant</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#determinant">determinant</a></td>
-    <td><a class="intref" href="#contm_unary_linalg">unary-linalg</a></td>
+    <td><a href="#contm_exponentiale">exponentiale</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/nums1#e">e</a></td>
+    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_transpose">transpose</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#transpose">transpose</a></td>
-    <td><a class="intref" href="#contm_unary_linalg">unary-linalg</a></td>
+    <td><a href="#contm_imaginaryi">imaginaryi</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/nums1#i">i</a></td>
+    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_selector">selector</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#vector_selector">vector_selector</a>,
-    <a class="omsymbol" href="https://openmath.org/cd/linalg1#matrix_selector">matrix_selector</a></td>
-    <td><a class="intref" href="#contm_nary_linalg">nary-linalg</a></td>
+    <td><a href="#contm_notanumber">notanumber</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/nums1#NaN">NaN</a></td>
+    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_vectorproduct">vectorproduct</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#vectorproduct">vectorproduct</a></td>
-    <td><a class="intref" href="#contm_binary_linalg">binary-linalg</a></td>
+    <td><a href="#contm_true">true</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/logic1#true">true</a></td>
+    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_scalarproduct">scalarproduct</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#scalarproduct">scalarproduct</a></td>
-    <td><a class="intref" href="#contm_binary_linalg">binary-linalg</a></td>
+    <td><a href="#contm_false">false</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/logic1#false">false</a></td>
+    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_outerproduct">outerproduct</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/linalg1#outerproduct">outerproduct</a></td>
-    <td><a class="intref" href="#contm_binary_linalg">binary-linalg</a></td>
+    <td><a href="#contm_pi">pi</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/nums1#pi">pi</a></td>
+    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
     <td></td>
     <td></td>
     <td></td>
-
    </tr>
+   <tr>
+    <td><a href="#contm_eulergamma">eulergamma</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/nums1#gamma">gamma</a></td>
+    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_infinity">infinity</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/nums1#infinity">infinity</a></td>
+    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_constant_set">
    <tr>
     <td><a href="#contm_integers">integers</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/setname1#Z">Z</a></td>
@@ -1059,46 +1038,6 @@
     <td></td>
    </tr>
    <tr>
-    <td><a href="#contm_exponentiale">exponentiale</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/nums1#e">e</a></td>
-    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_imaginaryi">imaginaryi</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/nums1#i">i</a></td>
-    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_notanumber">notanumber</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/nums1#NaN">NaN</a></td>
-    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_true">true</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/logic1#true">true</a></td>
-    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><a href="#contm_false">false</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/logic1#false">false</a></td>
-    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   </tr>
-   <tr>
     <td><a href="#contm_emptyset">emptyset</a></td>
     <td><a class="omsymbol" href="https://openmath.org/cd/set1#emptyset">emptyset</a>,
     <a class="omsymbol" href="https://openmath.org/cd/multiset1#emptyset">emptyset</a></td>
@@ -1107,29 +1046,172 @@
     <td></td>
     <td></td>
    </tr>
+  </tbody>
+  <tbody id="cops_quantifier">
    <tr>
-    <td><a href="#contm_pi">pi</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/nums1#pi">pi</a></td>
-    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
+    <td><a href="#contm_forall">forall</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/quant1#forall">forall</a>,
+    <a class="omsymbol" href="https://openmath.org/cd/logic1#implies">implies</a></td>
+    <td><a class="intref" href="#contm_quantifier">quantifier</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_exists">exists</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/quant1#exists">exists</a>,
+    <a class="omsymbol" href="https://openmath.org/cd/logic1#and">and</a></td>
+    <td><a class="intref" href="#contm_quantifier">quantifier</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_lambda">
+   <tr>
+    <td><a href="#contm_lambda">lambda</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/fns1#lambda">lambda</a></td>
+    <td><a class="intref" href="#contm_lambda_container">lambda</a></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>, <code class="parsing_ref">DomainQ</code>, <code class="parsing_ref">ContExp</code></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_interval">
+   <tr>
+    <td><a href="#contm_interval_constructor">interval</a></td>
+    <td>
+     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_cc">interval_cc</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_oc">interval_oc</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_co">interval_co</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_oo">interval_oo</a>
+    </td>
+    <td><a class="intref" href="#contm_interval_sec">interval</a></td>
+    <td><code class="parsing_ref">closure</code>?</td>
+    <td><code class="attributevalue">open</code> | <code class="attributevalue">closed</code> | <code class="attributevalue">open-closed</code> | <code class="attributevalue">closed-open</code></td>
+    <td><code class="parsing_ref">ContExp</code>,<code class="parsing_ref">ContExp</code></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_int">
+   <tr>
+    <td><a href="#contm_int">int</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/calculus1#int">int</a> <a class="omsymbol" href="https://openmath.org/cd/calculus1#defint">defint</a></td>
+    <td><a class="intref" href="#contm_int">int</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
+  </tbody>
+  <tbody id="cops_diff">
    <tr>
-    <td><a href="#contm_eulergamma">eulergamma</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/nums1#gamma">gamma</a></td>
-    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
+    <td><a href="#contm_diff">diff</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/calculus1#diff">diff</a></td>
+    <td><a class="intref" href="#contm_diff">Differential-Operator</a></td>
     <td></td>
     <td></td>
     <td></td>
    </tr>
+  </tbody>
+  <tbody id="cops_parialdiff">
    <tr>
-    <td><a href="#contm_infinity">infinity</a></td>
-    <td><a class="omsymbol" href="https://openmath.org/cd/nums1#infinity">infinity</a></td>
-    <td><a class="intref" href="#contm_constant_arith">constant-arith</a></td>
+    <td><a href="#contm_partialdiff">partialdiff</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiff">partialdiff</a> <a class="omsymbol" href="https://openmath.org/cd/calculus1#partialdiffdegree">partialdiffdegree</a></td>
+    <td><a class="intref" href="#contm_partialdiff">partialdiff</a></td>
     <td></td>
     <td></td>
     <td></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_sum">
+   <tr>
+    <td><a href="#contm_sum">sum</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/arith1#sum">sum</a></td>
+    <td><a class="intref" href="#contm_sum">sum</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_product">
+   <tr>
+    <td><a href="#contm_product">product</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/arith1#product">product</a></td>
+    <td><a class="intref" href="#contm_product">product</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_limit">
+   <tr>
+    <td><a href="#contm_limit">limit</a></td>
+    <td>
+     <a class="omsymbol" href="https://openmath.org/cd/limit1#limit">limit</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/limit1#both_sides">both_sides</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/limit1#above">above</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/limit1#below">below</a>,
+     <a class="omsymbol" href="https://openmath.org/cd/limit1#null">null</a>
+    </td>
+    <td><a class="intref" href="#contm_limit">limit</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>
+     <code class="parsing_ref">lowlimit</code>,
+     <code class="parsing_ref">condition</code>
+    </td>
+   </tr>
+  </tbody>
+  <tbody id="cops_piecewise">
+    <tr>
+    <td><a href="#contm_piecewise">piecewise</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/piece1#piecewise">piecewise</a></td>
+    <td><a class="intref" href="#contm_container_constructor">Constructor</a></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">piece</code>*,
+    <code class="parsing_ref">otherwise</code>?</td>
+   </tr>
+   <tr>
+    <td><a href="#contm_piecewise">piece</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/piece1#piece">piece</a></td>
+    <td><a class="intref" href="#contm_container_constructor">Constructor</a></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">ContExp</code>,<code class="parsing_ref">ContExp</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_piecewise">otherwise</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/piece1#otherwise">otherwise</a></td>
+    <td><a class="intref" href="#contm_container_constructor">Constructor</a></td>
+    <td></td>
+    <td></td>
+    <td><code class="parsing_ref">ContExp</code></td>
+   </tr>
+  </tbody>
+  <tbody id="cops_rest">
+   <tr>
+    <td><a href="#contm_set">set</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/set1#set">set</a>, <a class="omsymbol" href="https://openmath.org/cd/multiset1#multiset">multiset</a></td>
+    <td><a class="intref" href="#contm_nary_construct_set">nary-setlist-constructor</a></td>
+    <td><code class="parsing_ref">type</code>?</td>
+    <td><code class="attributevalue">set</code> | <code class="attributevalue">multiset</code> | text </td>
+    <td><code class="parsing_ref">ContExp</code>*</td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
+   </tr>
+   <tr>
+    <td><a href="#contm_list">list</a></td>
+    <td><a class="omsymbol" href="https://openmath.org/cd/interval1#interval_cc">interval_cc</a>, <a class="omsymbol" href="https://openmath.org/cd/list1#list">list</a></td>
+    <td><a class="intref" href="#contm_nary_construct_set">nary-setlist-constructor</a></td>
+    <td><code class="parsing_ref">order</code></td>
+    <td><code class="attributevalue">numeric</code> | <code class="attributevalue">lexicographic</code></td>
+    <td><code class="parsing_ref">ContExp</code>*</td>
+    <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
    </tr>
   </tbody>
  </table>
