@@ -121,6 +121,7 @@ tr+
 }
 
 tbody = element tbody {
+attribute id {text}?,
 attribute class {text}?,
 tr+
 }
