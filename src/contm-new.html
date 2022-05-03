@@ -8028,43 +8028,19 @@
     </section>
 </section>
   
-
+<section>
+ <h4>Special Element forms</h4>
     <section>
-     <h6 id="contm_quantifier">quantifier:
+     <h5 id="contm_quantifier">Quantifiers:
      <dfn id="contm_forall"><code class="defn emptytag">&lt;forall/&gt;</code></dfn>,
      <dfn id="contm_exists"><code class="defn emptytag">&lt;exists/&gt;</code></dfn>,
-     </h6>
-     <table class="syntax data">
+     </h5>
 
-      <tbody>
+     <p class="advisement">
+      <a class="intref" href="#cops_quantifier">Operator Syntax</a>,
+      <a class="intref" href="#parsing_quantifier.class">Schema Class</a>
+     </p>
 
-       <tr>
-        <th>Class</th>
-        <td><a class="intref" href="#contm_quantifier">quantifier</a></td>
-       </tr>
-
-       <tr>
-        <th>Attributes</th>
-        <td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code></td>
-       </tr>
-
-       <tr>
-        <th>Content</th>
-        <td>Empty</td>
-       </tr>
-
-       <tr>
-        <th>Qualifiers</th>
-        <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-       </tr>
-
-       <tr>
-        <th>OM Symbols</th>
-        <td><a class="omsymbol" href="https://openmath.org/cd/quant1#forall">forall</a>,
-        <a class="omsymbol" href="https://openmath.org/cd/logic1#implies">implies</a></td>
-       </tr>
-      </tbody>
-     </table>
 
     
      <p>The <code class="element">forall</code> element represents the universal ("for all")
@@ -8235,38 +8211,13 @@
 
 
     <section>
-     <h6 id="contm_lambda_sec">Lambda <dfn id="contm_lambda"><code class="defn starttag">&lt;lambda&gt;</code></dfn></h6>
+     <h5 id="contm_lambda_sec">Lambda <dfn id="contm_lambda"><code class="defn starttag">&lt;lambda&gt;</code></dfn></h5>
 
-     <table class="syntax data">
+     <p class="advisement">
+      <a class="intref" href="#cops_lambda">Operator Syntax</a>,
+      <a class="intref" href="#parsing_lambda.class">Schema Class</a>
+     </p>
 
-      <tbody>
-
-       <tr>
-        <th>Class</th>
-        <td><a class="intref" href="#contm_lambda_container">lambda</a></td>
-       </tr>
-
-       <tr>
-        <th>Attributes</th>
-        <td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code></td>
-       </tr>
-
-       <tr>
-        <th>Content</th>
-        <td><code class="parsing_ref">BvarQ</code>, <code class="parsing_ref">DomainQ</code>, <code class="parsing_ref">ContExp</code></td>
-       </tr>
-
-       <tr>
-        <th>Qualifiers</th>
-        <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-       </tr>
-
-       <tr>
-        <th>OM Symbols</th>
-        <td><a class="omsymbol" href="https://openmath.org/cd/fns1#lambda">lambda</a></td>
-       </tr>
-      </tbody>
-     </table>
 
      <p>The <code class="element">lambda</code> element is used to construct a user-defined
      function from an expression, bound variables, and qualifiers. In a
@@ -8379,39 +8330,11 @@
     </section>
 
     <section>
-     <h6 id="contm_interval_sec">Interval <dfn data-dfn-for="constructor" id="contm_interval_constructor"><code class="defn starttag">&lt;interval&gt;</code></dfn></h6>
-
-     <table class="syntax data">
-
-      <tbody>
-
-       <tr>
-        <th>Class</th>
-        <td><a class="intref" href="#contm_domainofapplication_qualifier">interval</a></td>
-       </tr>
-
-       <tr>
-        <th>Attributes</th>
-        <td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code>,<code class="parsing_ref">closure</code>?</td>
-       </tr>
-
-       <tr>
-        <th>Content</th>
-        <td><code class="parsing_ref">ContExp</code>,<code class="parsing_ref">ContExp</code></td>
-       </tr>
-
-       <tr>
-        <th>OM Symbols</th>
-
-        <td>
-         <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_cc">interval_cc</a>,
-         <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_oc">interval_oc</a>,
-         <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_co">interval_co</a>,
-         <a class="omsymbol" href="https://openmath.org/cd/interval1#interval_oo">interval_oo</a>
-        </td>
-       </tr>
-      </tbody>
-     </table>
+     <h5 id="contm_interval_sec">Interval <dfn data-dfn-for="constructor" id="contm_interval_constructor"><code class="defn starttag">&lt;interval&gt;</code></dfn></h5>
+     <p class="advisement">
+      <a class="intref" href="#cops_interval">Operator Syntax</a>,
+      <a class="intref" href="#parsing_interval.class">Schema Class</a>
+     </p>
 
      <p>The <code class="element">interval</code> element is a container element used to represent simple mathematical intervals of
      the
@@ -8495,47 +8418,12 @@
 
     
     <section>
-     <h6 id="contm_limit_sec">Limits <dfn id="contm_limit"><code class="defn emptytag">&lt;limit/&gt;</code></dfn></h6>
+     <h5 id="contm_limit_sec">Limits <dfn id="contm_limit"><code class="defn emptytag">&lt;limit/&gt;</code></dfn></h5>
 
-     <table class="syntax data">
-
-      <tbody>
-
-       <tr>
-        <th>Class</th>
-        <td><a class="intref" href="#contm_limit">limit</a></td>
-       </tr>
-
-       <tr>
-        <th>Attributes</th>
-        <td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code></td>
-       </tr>
-
-       <tr>
-        <th>Content</th>
-        <td>Empty</td>
-       </tr>
-
-       <tr>
-        <th>Qualifiers</th>
-        <td>
-         <code class="parsing_ref">lowlimit</code>,
-         <code class="parsing_ref">condition</code>
-        </td>
-       </tr>
-
-       <tr>
-        <th>OM Symbols</th>
-        <td>
-         <a class="omsymbol" href="https://openmath.org/cd/limit1#limit">limit</a>,
-         <a class="omsymbol" href="https://openmath.org/cd/limit1#both_sides">both_sides</a>,
-         <a class="omsymbol" href="https://openmath.org/cd/limit1#above">above</a>,
-         <a class="omsymbol" href="https://openmath.org/cd/limit1#below">below</a>,
-         <a class="omsymbol" href="https://openmath.org/cd/limit1#null">null</a>
-        </td>
-       </tr>
-      </tbody>
-     </table>
+          <p class="advisement">
+      <a class="intref" href="#cops_limit">Operator Syntax</a>,
+      <a class="intref" href="#parsing_limit.class">Schema Class</a>
+     </p>
 
      <p>The <code class="element">limit</code> element represents the operation of taking a limit of a
      sequence. The limit point is expressed by specifying a <code class="element">lowlimit</code> and a
@@ -8654,110 +8542,13 @@
 
    
     <section>
-     <h6 id="contm_piecewise_sec">Piecewise declaration <dfn id="contm_piecewise"><code class="defn starttag">&lt;piecewise&gt;</code></dfn>, <dfn id="contm_piece"><code class="defn starttag">&lt;piece&gt;</code></dfn>, <dfn id="contm_otherwise"><code class="defn starttag">&lt;otherwise&gt;</code></dfn></h6>
+     <h5 id="contm_piecewise_sec">Piecewise declaration <dfn id="contm_piecewise"><code class="defn starttag">&lt;piecewise&gt;</code></dfn>, <dfn id="contm_piece"><code class="defn starttag">&lt;piece&gt;</code></dfn>, <dfn id="contm_otherwise"><code class="defn starttag">&lt;otherwise&gt;</code></dfn></h5>
 
-     <table>
+     <p class="advisement">
+      <a class="intref" href="#cops_piecewise">Operator Syntax</a>,
+      <a class="intref" href="#parsing_piecewise">Schema Class</a>
+     </p>
 
-      <tbody>
-
-       <tr>
-
-        <td>
-
-         <table class="syntax data">
-
-          <tbody>
-
-           <tr>
-            <th>Class</th>
-            <td><a class="intref" href="#contm_container_constructor">Constructor</a></td>
-           </tr>
-
-           <tr>
-            <th>Attributes</th>
-            <td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code></td>
-           </tr>
-
-           <tr>
-            <th>Content</th>
-            <td><code class="parsing_ref">piece</code>*
-            <code class="parsing_ref">otherwise</code>?</td>
-           </tr>
-
-           <tr>
-            <th>OM Symbols</th>
-            <td><a class="omsymbol" href="https://openmath.org/cd/piece1#piecewise">piecewise</a></td>
-           </tr>
-          </tbody>
-         </table>
-
-         <em>Syntax Table for <code class="element">piecewise</code></em>
-        </td>
-
-        <td>
-
-         <table class="syntax data">
-
-          <tbody>
-
-           <tr>
-            <th>Class</th>
-            <td><a class="intref" href="#contm_container_constructor">Constructor</a></td>
-           </tr>
-
-           <tr>
-            <th>Attributes</th>
-            <td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code></td>
-           </tr>
-
-           <tr>
-            <th>Content</th>
-            <td><code class="parsing_ref">ContExp</code> <code class="parsing_ref">ContExp</code></td>
-           </tr>
-
-           <tr>
-            <th>OM Symbols</th>
-            <td><a class="omsymbol" href="https://openmath.org/cd/piece1#piece">piece</a></td>
-           </tr>
-          </tbody>
-         </table>
-
-         <em>Syntax Table for <code class="element">piece</code></em>
-        </td>
-
-        <td>
-
-         <table class="syntax data">
-
-          <tbody>
-
-           <tr>
-            <th>Class</th>
-            <td><a class="intref" href="#contm_container_constructor">Constructor</a></td>
-           </tr>
-
-           <tr>
-            <th>Attributes</th>
-            <td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code></td>
-           </tr>
-
-           <tr>
-            <th>Content</th>
-            <td><code class="parsing_ref">ContExp</code></td>
-           </tr>
-
-           <tr>
-            <th>OM Symbols</th>
-            <td><a class="omsymbol" href="https://openmath.org/cd/piece1#otherwise">otherwise</a></td>
-           </tr>
-          </tbody>
-         </table>
-
-         <em>Syntax Table for <code class="element">otherwise</code></em>
-        </td>
-       </tr>
-      </tbody>
-     </table>
 
      <p>The <a class="intref" href="#contm_piecewise"><code class="element">piecewise</code></a>,<a class="intref" href="#contm_piece"><code class="element">piece</code></a>, and <a class="intref" href="#contm_otherwise"><code class="element">otherwise</code></a> elements are used to
      represent <q>piecewise</q> function definitions of the form <q>
@@ -8841,6 +8632,7 @@
       </blockquote>
      </div>
 
+    </section>
     </section>
 
        </section>
