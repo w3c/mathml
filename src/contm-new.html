@@ -3767,12 +3767,16 @@
 
     
       <section>
-       <h5 id="contm_nary_construct_matrix">nary-constructor:
+       <h5 id="contm_nary_construct_matrix">N-ary Matrix Constructors:
        <dfn id="contm_vector"><code class="defn emptytag">&lt;vector/&gt;</code></dfn>,
        <dfn id="contm_matrix"><code class="defn emptytag">&lt;matrix/&gt;</code></dfn>,
        <dfn id="contm_matrixrow"><code class="defn emptytag">&lt;matrixrow/&gt;</code></dfn>
        </h5>
 
+     <p class="advisement">
+      <a class="intref" href="#cops_nary_constructor">Operator Syntax</a>,
+      <a class="intref" href="#parsing_nary-constructor.class">Schema Class</a>
+     </p>
 
      <p>A vector is an ordered n-tuple of values representing an element of an
      n-dimensional vector space.</p>
@@ -3925,11 +3929,15 @@
 
     
     <section>
-       <h5 id="contm_nary_construct_set">nary-constructor:
+       <h5 id="contm_nary_construct_set">N-ary Set  Theoretic Constructors:
        <dfn id="contm_set"><code class="defn starttag">&lt;set&gt;</code></dfn>,
        <dfn id="contm_list"><code class="defn starttag">&lt;list&gt;</code></dfn>
        </h5>
 
+    <p class="advisement">
+      <a class="intref" href="#cops_nary_setlist_constructor">Operator Syntax</a>,
+      <a class="intref" href="#parsing_nary-setlist-constructor.class">Schema Class</a>
+     </p>
 
 
      <p>The <code class="element">set</code> represents a function which constructs
@@ -4158,7 +4166,7 @@
     </section>
     
     <section>
-     <h5 id="contm_nary_reln">nary-reln:
+     <h5 id="contm_nary_reln">N-ary Arithmetic Relations:
        <dfn id="contm_eq"><code class="defn emptytag">&lt;eq/&gt;</code></dfn>,
        <dfn id="contm_gt"><code class="defn emptytag">&lt;gt/&gt;</code></dfn>,
        <dfn id="contm_lt"><code class="defn emptytag">&lt;lt/&gt;</code></dfn>,
@@ -4166,36 +4174,10 @@
        <dfn id="contm_leq"><code class="defn emptytag">&lt;leq/&gt;</code></dfn>
      </h5>
 
-          <table class="syntax data">
-
-      <tbody>
-
-       <tr>
-        <th>Class</th>
-        <td><a class="intref" href="#contm_nary_reln">nary-reln</a></td>
-       </tr>
-
-       <tr>
-        <th>Attributes</th>
-        <td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code></td>
-       </tr>
-
-       <tr>
-        <th>Content</th>
-        <td>Empty</td>
-       </tr>
-
-       <tr>
-        <th>Qualifiers</th>
-        <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-       </tr>
-
-       <tr>
-        <th>OM Symbols</th>
-        <td><a class="omsymbol" href="https://openmath.org/cd/relation1#eq">eq</a></td>
-       </tr>
-      </tbody>
-     </table>
+     <p class="advisement">
+      <a class="intref" href="#cops_nary_reln">Operator Syntax</a>,
+      <a class="intref" href="#parsing_nary-reln.class">Schema Class</a>
+     </p>
 
      <p>MathML allows transitive relations to be used with multiple
      arguments, to give a natural expression to <q>chains</q> of
@@ -4276,41 +4258,16 @@
     </section>
 
        <section>
-        <h5 id="contm_nary_set_reln">nary-set-reln:
+        <h5 id="contm_nary_set_reln">N-ary Set Theoretic Relations:
        <dfn id="contm_subset"><code class="defn emptytag">&lt;subset/&gt;</code></dfn>,
        <dfn id="contm_prsubset"><code class="defn emptytag">&lt;prsubset/&gt;</code></dfn>
         </h5>
 
-          <table class="syntax data">
+     <p class="advisement">
+      <a class="intref" href="#cops_nary_set_reln">Operator Syntax</a>,
+      <a class="intref" href="#parsing_nary-set-reln.class">Schema Class</a>
+     </p>
 
-      <tbody>
-
-       <tr>
-        <th>Class</th>
-        <td><a class="intref" href="#contm_nary_set_reln">nary-set-reln</a></td>
-       </tr>
-
-       <tr>
-        <th>Attributes</th>
-        <td><code class="parsing_ref">CommonAtt</code>, <code class="parsing_ref">DefEncAtt</code></td>
-       </tr>
-
-       <tr>
-        <th>Content</th>
-        <td>Empty</td>
-       </tr>
-
-       <tr>
-        <th>Qualifiers</th>
-        <td><code class="parsing_ref">BvarQ</code>,<code class="parsing_ref">DomainQ</code></td>
-       </tr>
-
-       <tr>
-        <th>OM Symbols</th>
-        <td><a class="omsymbol" href="https://openmath.org/cd/relation1#eq">eq</a></td>
-       </tr>
-      </tbody>
-     </table>
 
      <p>MathML allows transitive relations to be used with multiple
      arguments, to give a natural expression to <q>chains</q> of
