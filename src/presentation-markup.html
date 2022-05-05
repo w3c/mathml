@@ -3889,7 +3889,7 @@
  </table>
  
  <p>Thicker lines (e.g. <code class="attribute">linethickness</code>="thick") might be used with nested fractions;
- a value of "0" renders without the bar such as for  binomial coefficients.
+ a value of "0" renders without the bar such as for  binomial coefficients.</p>
  
  <p>
   In a RTL directionality context,  the numerator leads (on the right),
@@ -4078,9 +4078,9 @@
  <p>The <code class="element">mstyle</code> element is used to make style
  changes that affect the rendering of its
  contents.
- <span>Firstly, as a presentation element, it accepts
+ As a presentation element, it accepts
  the attributes described in <a href="#presm_presatt"></a>.
- Additionally, it</span>
+ Additionally, it
  can be given any attribute
  accepted by any other presentation element, except for the
  attributes described below.
@@ -4172,9 +4172,6 @@
  applies only to the <code class="element">mo</code> element and not to <code class="element">mpadded</code>.
  To be consistent, the <code class="attribute">voffset</code> attribute of the
  <code class="element">mpadded</code> element can not be set on <code class="element">mstyle</code>.
- When the deprecated <code class="attribute">fontfamily</code> attribute is specified on an
- <code class="element">mstyle</code> element, it does not apply to the <code class="element">mglyph</code> element.
- The deprecated <code class="attribute">index</code> attribute cannot be set on <code class="element">mstyle</code>.
  When the <code class="attribute">align</code> attribute is set with <code class="element">mstyle</code>, it
  applies only to the <code class="element">munder</code>, <code class="element">mover</code>, and <code class="element">munderover</code>
  elements, and not to the <code class="element">mtable</code> and <code class="element">mstack</code> elements.
@@ -4187,7 +4184,7 @@
  Thus, the <code class="attribute">mathbackground</code> specifies the color to fill the bounding
  box of the <code class="element">mstyle</code> element itself; it does <em>not</em>
  specify the default background color.
- This is an incompatible change from MathML 2, but we feel it is more useful
+ This is an incompatible change from MathML 2, but it is more useful
  and intuitive.  Since the default for <code class="attribute">mathcolor</code> is inherited,
  this is no change in its behaviour.
  </p>
@@ -4201,7 +4198,8 @@
  attributes of all MathML presentation elements which do not have
  required values.  That is, all attributes which have an explicit
  default value or a default value which is inherited or computed are
- accepted by the <code class="element">mstyle</code> element.</p>
+ accepted by the <code class="element">mstyle</code> element.
+ This group of attributes is <em>not</em> accepted in MathML Core.</p>
  
  <p><code class="element">mstyle</code> elements accept the attributes listed in
  <a href="#presm_presatt"></a>.</p>
@@ -4332,108 +4330,72 @@
  <code class="attribute">scriptsizemultiplier</code>, <code class="attribute">scriptminsize</code>,
  <code class="attribute">scriptlevel</code>, <code class="attribute">mathsize</code>.</p>
  
- <section>
-  <h6>Deprecated Attributes</h6>
- 
- <p>MathML2 allowed the binding of <em>[^namedspaces^]</em>
- to new values.
- It appears that this capability was never implemented, and is now deprecated;
- <em>[^namedspaces^]</em> are now considered constants.
- For backwards compatibility, the following attributes are accepted
- on the <code class="element">mstyle</code> element, but are expected to have no effect.
- </p>
- 
- <table class="attributes data">
- 
-  <thead>
- 
-   <tr>
- <td>Name</td>
- <td>values</td>
- <td>default</td>
- </tr>
- </thead>
- 
- <tbody>
- 
-  <tr>
-   <td class="attname">veryverythinmathspace</td>
- <td><a class="intref" href="#type_length"><em>length</em></a></td>
- <td>0.0555556em</td>
- </tr>
- 
- <tr>
- <td class="attname">verythinmathspace</td>
- <td><a class="intref" href="#type_length"><em>length</em></a></td>
- <td>0.111111em</td>
- </tr>
- 
- <tr>
-  <td class="attname">thinmathspace</td>
- <td><a class="intref" href="#type_length"><em>length</em></a></td>
- <td>0.166667em</td>
- </tr>
- 
- <tr>
- <td class="attname">mediummathspace</td>
- <td><a class="intref" href="#type_length"><em>length</em></a></td>
- <td>0.222222em</td>
- </tr>
- 
- <tr>
-  <td class="attname">thickmathspace</td>
-  <td><a class="intref" href="#type_length"><em>length</em></a></td>
- <td>0.277778em</td>
- </tr>
- 
- <tr>
- <td class="attname">verythickmathspace</td>
- <td><a class="intref" href="#type_length"><em>length</em></a></td>
- <td>0.333333em</td>
- </tr>
- 
- <tr>
- <td class="attname">veryverythickmathspace</td>
- <td><a class="intref" href="#type_length"><em>length</em></a></td>
- <td>0.388889em</td>
- </tr>
- </tbody>
- </table>
- 
- </section>
  </section>
  
  <section class="fold">
  <h5>Examples</h5>
  
- <p>The example of limiting the stretchiness of a parenthesis shown in the
- section on &lt;mo&gt;,</p>
+ <p>In a continued fraction, the nested fractions should not shrink. Instead, they should remain the same size.
+   This can be accomplished by resetting <code class="attribute">displaystyle</code> and
+   <code class="attribute">scriptlevel</code> for the children of each <code class="element">mfrac</code>
+   using <code class="element">mstyle</code> as shown below:
+ </p>
  
  <div class="example mathml mmlcore">
   <pre>
-    &lt;mrow&gt;
-      &lt;mo maxsize="1<span>00%</span>"&gt; ( &lt;/mo&gt;
-      &lt;mfrac&gt; &lt;mi&gt; a &lt;/mi&gt; &lt;mi&gt; b &lt;/mi&gt; &lt;/mfrac&gt;
-      &lt;mo maxsize="1<span>00%</span>"&gt; ) &lt;/mo&gt;
+    &lt;math display='block'&gt;
+    &lt;mrow data-changed='added'&gt;
+      &lt;mi&gt;π&lt;/mi&gt;
+      &lt;mo&gt;=&lt;/mo&gt;
+      &lt;mfrac&gt;
+        &lt;mstyle displaystyle="true" scriptlevel="0"&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;/mstyle&gt;
+        &lt;mstyle displaystyle="true" scriptlevel="0"&gt;
+          &lt;mn&gt;1&lt;/mn&gt;
+          &lt;mo&gt;+&lt;/mo&gt;
+          &lt;mfrac&gt;
+            &lt;mstyle displaystyle="true" scriptlevel="0"&gt;
+              &lt;msup&gt; &lt;mn&gt;1&lt;/mn&gt; &lt;mn&gt;2&lt;/mn&gt;
+            &lt;/mstyle&gt;
+            &lt;mstyle displaystyle="true" scriptlevel="0"&gt;
+              &lt;mn&gt;2&lt;/mn&gt;
+              &lt;mo&gt;+&lt;/mo&gt;
+              &lt;mfrac&gt;
+                &lt;mstyle displaystyle="true" scriptlevel="0"&gt;
+                  &lt;msup&gt; &lt;mn&gt;3&lt;/mn&gt; &lt;mn&gt;2&lt;/mn&gt;
+                &lt;/mstyle&gt;
+                &lt;mstyle displaystyle="true" scriptlevel="0"&gt;
+                  &lt;mn&gt;2&lt;/mn&gt;
+                  &lt;mo&gt;+&lt;/mo&gt;
+                  &lt;mfrac&gt;
+                    &lt;mstyle displaystyle="true" scriptlevel="0"&gt;
+                      &lt;msup&gt; &lt;mn&gt;5&lt;/mn&gt; &lt;mn&gt;2&lt;/mn&gt;
+                    &lt;/mstyle&gt;
+                    &lt;mstyle displaystyle="true" scriptlevel="0"&gt;
+                      &lt;mn&gt;2&lt;/mn&gt;
+                      &lt;mo&gt;+&lt;/mo&gt;
+                      &lt;mfrac&gt;
+                        &lt;mstyle displaystyle="true" scriptlevel="0"&gt;
+                          &lt;msup&gt; &lt;mn&gt;7&lt;/mn&gt; &lt;mn&gt;2&lt;/mn&gt;
+                        &lt;/mstyle&gt;
+                        &lt;mstyle displaystyle="true" scriptlevel="0"&gt;
+                          &lt;mn&gt;2&lt;/mn&gt;
+                          &lt;mo&gt;+&lt;/mo&gt;
+                          &lt;mo&gt;⋱&lt;/mo&gt;
+                        &lt;/mstyle&gt;
+                      &lt;/mfrac&gt;
+                    &lt;/mstyle&gt;
+                  &lt;/mfrac&gt;
+                &lt;/mstyle&gt;
+              &lt;/mfrac&gt;
+            &lt;/mstyle&gt;
+          &lt;/mfrac&gt;
+        &lt;/mstyle&gt;
+      &lt;/mfrac&gt;
     &lt;/mrow&gt;
- </pre>
- </div>
- 
- <p>can be rewritten using <code class="element">mstyle</code> as:</p>
- 
- <div class="example mathml mmlcore">
-  <pre>
-    &lt;mstyle maxsize="1<span>00%</span>"&gt;
-      &lt;mrow&gt;
-        &lt;mo&gt; ( &lt;/mo&gt;
-        &lt;mfrac&gt; &lt;mi&gt; a &lt;/mi&gt; &lt;mi&gt; b &lt;/mi&gt; &lt;/mfrac&gt;
-        &lt;mo&gt; ) &lt;/mo&gt;
-      &lt;/mrow&gt;
-    &lt;/mstyle&gt;
+   &lt;/math&gt;
   </pre>
  </div>
- 
- </section>
+  </section>
  </section>
  
  <section>
@@ -9749,4 +9711,3 @@
  <code class="element">semantics</code> and <code class="element">annotation-xml</code> elements.</p>
  </section>
  </section>
- 
