@@ -1,0 +1,25 @@
+# https://w3c.github.io/spec-prod/#examples
+# Create a file called .github/workflows/auto-publish.yml
+name: CI
+on:
+  push:
+    branches: [main]
+jobs:
+  main:
+    name: Deploy to GitHub pages
+    runs-on: ubuntu-20.04
+    steps:
+     - uses: actions/checkout@v2
+     - run: |
+          git fetch
+          git checkout gh-pages
+          git reset main --hard
+          git push -f
+     - uses: w3c/spec-prod@v2
+       with:
+          GH_PAGES_BRANCH: gh-pages
+          TOOLCHAIN: respec
+          SOURCE: index.html
+          DESTINATION: spec.html
+          VALIDATE_MARKUP: true
+
