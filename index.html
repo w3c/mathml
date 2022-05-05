@@ -11,7 +11,7 @@
   <script class='remove'>
     function relaxhl (r,s,u) {
         var s2=s.replaceAll(/(\n|^)([^'#\n]*)(#[^\n]*)/g,'$1$2\x3cspan style="color:brown">$3\x3c/span>');
-        s2=s2.replaceAll(/([a-z0-9.A-Z-]+)(\s*=\s*[^"])/g,'\x3cb>$1\x3c/b>$2');
+        s2=s2.replaceAll(/([a-z0-9.A-Z-]+)(\s*=\s*[^"])/g,'\x3cb id="parsing_$1">$1\x3c/b>$2');
         s2=s2.replaceAll(/include *"([^"]*)"/g,'\x3cspan style="color:green">include\x3c/span> "\x3cspan style="color:red">$1\x3c/span>"');
         return  s2;
     }
@@ -107,7 +107,7 @@
 	}
     }
 	
-      </script>
+  </script>
   <script class='remove'>
    var respecConfig = {
      copyrightStart: 1998,
@@ -248,10 +248,12 @@ math.inlinemath.mml4p {
     border-right-width: thin;
 }
 math.inlinemath.mml4c {
+    display:none;
     border-right-style: double;
     border-right-width: thick;
 }
-    
+#content-markup blockquote {display:none;}
+
 #references :target{background:white;animation:none;}
   </style>
  </head>
@@ -361,6 +363,7 @@ math.inlinemath.mml4c {
   <section data-include="src/operator-dict.html" data-include-replace="true"></section>
   <section data-include="src/accessibility.html" data-include-replace="true"></section>
   <section data-include="src/conformance.html" data-include-replace="true"></section>
+  <section data-include="src/contm-ops.html" data-include-replace="true"></section>
   <section data-include="src/transform2strict.html" data-include-replace="true"></section>
   <section data-include="src/mmlindex.html" data-include-replace="true"></section>
   <section data-include="src/contributors.html" data-include-replace="true"></section>

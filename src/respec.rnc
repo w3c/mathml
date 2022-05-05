@@ -121,6 +121,7 @@ tr+
 }
 
 tbody = element tbody {
+attribute id {text}?,
 attribute class {text}?,
 tr+
 }
@@ -273,6 +274,7 @@ inlinecontent}
 
 dfn = element dfn {
 attribute id {text}?,
+attribute data-dfn-for {text}?,
 inlinecontent}
 
 input= element input {

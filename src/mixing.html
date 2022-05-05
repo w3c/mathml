@@ -86,7 +86,7 @@ the user and agent.</p>
    <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
 
    <div class="ednote">
-     <p>This grammar distills various suggestions but the Working Group has not yet agreed a final version.</p>
+     <p>These grammar distill various suggestions but the Working Group has not yet agreed a final version.</p>
 
      <p>The basic idea of a functional syntax and argref are likely to stay but details around
      paths and wildcards and exact characters allowed in identifiers all subject to discussion.</p>
@@ -102,6 +102,14 @@ numref   := '$' [digit]+ ( '/' numref )?
 wildcard := '*'
    </pre>
 
+   <p>Alternative with no numeric paths or wildcards</p>
+ <pre class="bnf">
+intent   := number | NCName | argref | function
+function := (NCName | argref) '(' intent [ ',' intent ]* ')'
+number   := '-'? digit+ ('.' digit+)? 
+argref   := '$' NCName
+   </pre>
+
   </section>
 
 
@@ -115,14 +123,14 @@ as a transpose;
 as a derivative; and
 as an embellished symbol would be distinguished as follows:</p>
 
-<pre class="nonumexample">
+<pre class="xml nonumexample">
 &lt;msup intent="power($base,$exp)">
   &lt;mi arg="base">x&lt;/mi>
   &lt;mi arg="exp">n&lt;/mi>
 &lt;/msup>
 </pre>
 
-<pre class="nonumexample">
+<pre class="xml nonumexample">
 &lt;msup intent="$op($a)">
   &lt;mi arg="a">A&lt;/mi>
   &lt;mi arg="op" intent="transpose">T&lt;/mi>
@@ -131,14 +139,14 @@ as an embellished symbol would be distinguished as follows:</p>
 
 <p>(easily adapted to conjugate and adjoint)</p>
 
-<pre class="nonumexample">
+<pre class="xml nonumexample">
 &lt;msup intent="derivative($a)">
   &lt;mi arg="a">f&lt;/mi>
   &lt;mi>'&lt;/mi>
 &lt;/msup>
 </pre>
 
-<pre class="nonumexample">
+<pre class="xml nonumexample">
 &lt;msup intent="x-prime">
   &lt;mi>x&lt;/mi>
   &lt;mo>'&lt;/mo>
