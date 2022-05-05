@@ -86,7 +86,7 @@ the user and agent.</p>
    <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
 
    <div class="ednote">
-     <p>This grammar distills various suggestions but the Working Group has not yet agreed a final version.</p>
+     <p>These grammar distill various suggestions but the Working Group has not yet agreed a final version.</p>
 
      <p>The basic idea of a functional syntax and argref are likely to stay but details around
      paths and wildcards and exact characters allowed in identifiers all subject to discussion.</p>
@@ -100,6 +100,14 @@ selector := argref | numref
 argref   := '$' NCName
 numref   := '$' [digit]+ ( '/' numref )?
 wildcard := '*'
+   </pre>
+
+   <p>Alternative with no numeric paths or wildcards</p>
+ <pre class="bnf">
+intent   := number | NCName | argref | function
+function := (NCName | argref) '(' intent [ ',' intent ]* ')'
+number   := '-'? digit+ ('.' digit+)? 
+argref   := '$' NCName
    </pre>
 
   </section>
@@ -767,7 +775,7 @@ as an embellished symbol would be distinguished as follows:</p>
 
     <p>The details of the HTML parser handling of <code class="element">annotation-xml</code> is specified in [[HTML5]] and summarized in <a href="#interf_html"></a>, however the main differences from the behavior of an XML parser that affect MathML
     annotations are that the HTML parser does not treat <code>xmlns</code> attributes, nor <code>:</code> in element names as special and has built-in rules determining whether the three
-    <span>&#x201c;known&#x201d;</span> namespaces, HTML, SVG or MathML are used.
+    <q>known</q> namespaces, HTML, SVG or MathML are used.
     </p>
     <ul>
 
