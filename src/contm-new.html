@@ -4191,16 +4191,29 @@
      semantics of which is essentially to take the conjunction of applying
      the predicate to elements of the domain two at a time.</p>
 
-     <p>The <code class="element">eq</code> elements represents the equality relation. While equality is a binary relation,
-     <span><code class="element">eq</code></span> may be used with more than two arguments, denoting a chain
-     of equalities, as described in <a href="#contm_nary_reln"></a>.</p>
-
+     <p>
+      The elements
+      <code class="element">eq</code>,
+      <code class="element">gt</code>,
+      <code class="element">lt</code>,
+      <code class="element">geq</code>,
+      <code class="element">leq</code>
+      represent respectively the
+      <q>equality</q>,
+      <q>greater than</q>,
+      <q>less than</q>,
+      <q>greater than or equal to</q> and
+      <q>less than or equal to</q>
+      relations that return true or false depending on the relationship of the first argument to the second.
+     </p>
+ 
      <div id="relation1.eq.ex1" class="mathml-example">
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
        <pre>
-         &lt;apply&gt;&lt;eq/&gt;
+        &lt;apply&gt;&lt;eq/&gt;
+           &lt;ci>x&lt;/ci&gt;
            &lt;cn type="rational"&gt;2&lt;sep/&gt;4&lt;/cn&gt;
            &lt;cn type="rational"&gt;1&lt;sep/&gt;2&lt;/cn&gt;
          &lt;/apply&gt;
@@ -4212,6 +4225,8 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
+           &lt;mi&gt;x&lt;/mi&gt;
+           &lt;mo&gt;=&lt;/mo&gt;
            &lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
            &lt;mo&gt;=&lt;/mo&gt;
            &lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;
@@ -4219,40 +4234,12 @@
        </pre>
       </div>
 
+<!--
       <blockquote>
        <p><img src="image/relation1-eq-ex1.gif" alt="{{{2}/{4}}={{1}/{2}}}"></img></p>
       </blockquote>
+-->
      </div>
-
-         <p>The <code class="element">neq</code> element represents the binary inequality
-     relation, i.e. the relation "not equal to" which returns true unless
-     the two arguments are equal.</p>
-
-          <p>The <code class="element">gt</code> element represents the "greater than" function
-     which returns true if the first argument is greater than the second, and
-     returns false otherwise. While this is a binary relation,
-     <code class="element">gt</code> may be used with more than two arguments, denoting a chain
-     of inequalities, as described in <a href="#contm_nary_reln"></a>.</p>
-
-     
-     <p>The <code class="element">lt</code> element represents the "less than" function
-     which returns true if the first argument is less than the second, and
-     returns false otherwise. While this is a binary relation,
-     <code class="element">lt</code> may be used with more than two arguments, denoting a chain
-     of inequalities, as described in <a href="#contm_nary_reln"></a>.</p>
-
-     
-     <p>The <code class="element">geq</code> element represents the "greater than or equal to" function
-     which returns true if the first argument is greater than or equal to
-     the second, and returns false otherwise. While this is a binary relation,
-     <code class="element">geq</code> may be used with more than two arguments, denoting a chain
-     of inequalities, as described in <a href="#contm_nary_reln"></a>.</p>
-
-     <p>The <code class="element">leq</code> element represents the "less than or equal to" function
-     which returns true if the first argument is less than or equal to
-     the second, and returns false otherwise. While this is a binary relation,
-     <code class="element">leq</code> may be used with more than two arguments, denoting a chain
-     of inequalities, as described in <a href="#contm_nary_reln"></a>.</p>
 
 
     </section>
