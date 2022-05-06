@@ -6329,12 +6329,16 @@
      </p>
 
 
-     <p>These operator elements denote the standard trigonometric functions.  Since their
+     <p>These operator elements denote the standard trigonometric and hyperbolic functions and their inverses.  Since their
      standard
      interpretations are widely known, they are discussed as a group.
      </p>
-
-     <div id="transc1.sin.ex1" class="mathml-example">
+     <p>
+      Differing definitions are in use for the inverse functions,
+      so for maximum interoperability applications evaluating
+     such expressions should follow the definitions in [[Abramowitz1977]].</p>
+     
+     <div id="transc1.elementary.ex1" class="mathml-example">
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -6342,23 +6346,6 @@
          &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/transc1-sin-ex1.gif" alt="{\mathop{{\minormal{sin}}}x}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="transc1.sin.ex2" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;sin/&gt;
@@ -6369,9 +6356,29 @@
          &lt;/apply&gt;
        </pre>
       </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;arcsin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;sinh/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;arcsinh/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
 
       <p>Sample Presentation</p>
 
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -6387,27 +6394,6 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/transc1-sin-ex2.gif" alt="{\mathop{{\minormal{sin}}}{\left.\middle({\mathop{{\minormal{cos}}}x}+\msup{x}{{3}}\middle)\right.}}"></img></p>
-      </blockquote>
-     </div>
-
-          <p>These operator elements denote the inverses of standard trigonometric functions.
-     Differing definitions are in use so for maximum interoperability applications evaluating
-     such expressions should follow the definitions in [[Abramowitz1977]].</p>
-
-     <div id="transc1.arcsin.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;arcsin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentations</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -6415,15 +6401,7 @@
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
            &lt;mi&gt;x&lt;/mi&gt;
          &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/transc1-arcsin-ex1.gif" alt="{\mathop{{\minormal{arcsin}}}x}"></img></p>
-      </blockquote>
-
-      <div class="example mathml mml4c">
-       <pre>
+         &lt;text&gt;&amp;nbsp;&amp;nbsp;or&amp;nbsp;&amp;nbsp;&lt;/text&gt;
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
@@ -6431,49 +6409,11 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/transc1-arcsin-ex2.gif" alt="{\mathop{{\minormal{sin}}^{-1}}x}"></img></p>
-      </blockquote>
-     </div>
-
-      <p>These operator elements denote the standard hyperbolic functions.
-     Since their standard interpretations are widely known, they are discussed as a group.</p>
-
-     <div id="transc1.sinh.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;sinh/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;sinh&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
-
-     </div>
-
-          <p>These operator elements denote the inverses of standard hyperbolic functions.
-     Differing definitions are in use so for maximum interoperability applications evaluating
-     such expressions should follow the definitions in [[Abramowitz1977]].</p>
-
-     <div id="transc1.arcsinh.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;arcsinh/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentations</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -6481,11 +6421,7 @@
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
            &lt;mi&gt;x&lt;/mi&gt;
          &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <div class="example mathml mml4c">
-       <pre>
+         &lt;text&gt;&amp;nbsp;&amp;nbsp;or&amp;nbsp;&amp;nbsp;&lt;/text&gt;
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mi&gt;sinh&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
@@ -6495,6 +6431,36 @@
       </div>
 
      </div>
+<!--
+      <blockquote>
+       <p><img src="image/transc1-sin-ex1.gif" alt="{\mathop{{\minormal{sin}}}x}"></img></p>
+      </blockquote>
+ -->
+
+
+<!--
+      <blockquote>
+       <p><img src="image/transc1-sin-ex2.gif" alt="{\mathop{{\minormal{sin}}}{\left.\middle({\mathop{{\minormal{cos}}}x}+\msup{x}{{3}}\middle)\right.}}"></img></p>
+      </blockquote>
+      -->
+
+
+<!--
+      <blockquote>
+       <p><img src="image/transc1-arcsin-ex1.gif" alt="{\mathop{{\minormal{arcsin}}}x}"></img></p>
+      </blockquote>
+      -->
+      
+<!--
+      <blockquote>
+       <p><img src="image/transc1-arcsin-ex2.gif" alt="{\mathop{{\minormal{sin}}^{-1}}x}"></img></p>
+      </blockquote>
+      -->
+
+
+
+
+
 
 
     </section>
