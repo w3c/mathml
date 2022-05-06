@@ -7495,18 +7495,65 @@
 
 
 
-     <p>This element represents the base of the natural logarithm, approximately 2.718.</p>
+     <p>The elements
+<code class="defn emptytag">&lt;exponentiale/&gt;</code>,
+<code class="defn emptytag">&lt;imaginaryi/&gt;</code>,
+<code class="defn emptytag">&lt;notanumber/&gt;</code>,
+<code class="defn emptytag">&lt;true/&gt;</code>,
+<code class="defn emptytag">&lt;false/&gt;</code>,
+<code class="defn emptytag">&lt;pi/&gt;</code>,
+<code class="defn emptytag">&lt;eulergamma/&gt;</code>,
+<code class="defn emptytag">&lt;infinity/&gt;</code>
+represent respectively:<br/>
+the base of the natural logarithm, approximately 2.718;<br/>
+the square root of -1, commonly written <i>i</i>;<br/>
+not-a-number, i.e. the result of an ill-posed floating point computation. See [[IEEE754]].<br/>
+the Boolean value true;<br/>
+the Boolean value false;<br/>
+pi (<i>&#x03c0;</i>), approximately 3.142, which is the ratio of the circumference of a circle to its diameter;<br/>
+the gamma constant (<i>&#x03b3;</i>), approximately 0.5772;<br/>
+infinity (&#x221e;).</p>
 
-     <div id="nums1.exponentiale.ex1" class="mathml-example">
+<div id="nums1.constants.ex1" class="mathml-example">
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
        <pre>
-         &lt;apply&gt;&lt;eq/&gt;
-           &lt;apply&gt;&lt;ln/&gt;&lt;exponentiale/&gt;&lt;/apply&gt;
-           &lt;cn&gt;1&lt;/cn&gt;
-         &lt;/apply&gt;
+         &lt;apply&gt;&lt;eq/&gt;&lt;apply&gt;&lt;ln/&gt;&lt;exponentiale/&gt;&lt;/apply&gt;&lt;cn&gt;1&lt;/cn&gt;&lt;/apply&gt;
        </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;eq/&gt;&lt;apply&gt;&lt;power/&gt;&lt;imaginaryi/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;&lt;cn&gt;-1&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;eq/&gt;&lt;apply&gt;&lt;divide/&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;&lt;notanumber/&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;eq/&gt;&lt;apply&gt;&lt;or/&gt;&lt;true/&gt;&lt;ci type="boolean"&gt;P&lt;/ci&gt;&lt;/apply&gt;&lt;true/&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;eq/&gt;&lt;apply&gt;&lt;and/&gt;&lt;false/&gt;&lt;ci type="boolean"&gt;P&lt;/ci&gt;&lt;/apply&gt;&lt;false/&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;approx/&gt;&lt;pi/&gt;&lt;cn type="rational"&gt;22&lt;sep/&gt;7&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;approx/&gt;&lt;eulergamma/&gt;&lt;cn&gt;0.5772156649&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>&lt;infinity/&gt;</pre>
       </div>
 
       <p>Sample Presentation</p>
@@ -7520,60 +7567,11 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/nums1-exponentiale-ex1.gif" alt="{{\mathop{{\minormal{ln}}}e}={1}}"></img></p>
-      </blockquote>
-     </div>
-
-     
-
-     <p>This element represents the mathematical constant which is the square root of -1,
-
-     commonly written i</p>
-
-     <div id="nums1.imaginaryi.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;eq/&gt;
-           &lt;apply&gt;&lt;power/&gt;&lt;imaginaryi/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
-           &lt;cn&gt;-1&lt;/cn&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/nums1-imaginaryi-ex1.gif" alt="{\msup{i}{{2}}={\mn{-1}}}"></img></p>
-      </blockquote>
-     </div>
-     <p>This element represents the notion of not-a-number, i.e. the result of an ill-posed
-
-     floating computation. See [[IEEE754]].</p>
-
-     <div id="nums1.notanumber.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;eq/&gt;
-           &lt;apply&gt;&lt;divide/&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;cn&gt;0&lt;/cn&gt;&lt;/apply&gt;
-           &lt;notanumber/&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -7583,31 +7581,6 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/nums1-notanumber-ex1.gif" alt="{{{0}/{0}}={\minormal{NaN}}}"></img></p>
-      </blockquote>
-     </div>
-
-          <p>This element represents the Boolean value true, i.e. the logical constant for truth.</p>
-
-     <div id="logic1.true.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;eq/&gt;
-           &lt;apply&gt;&lt;or/&gt;
-             &lt;true/&gt;
-             &lt;ci type="boolean"&gt;P&lt;/ci&gt;
-           &lt;/apply&gt;
-           &lt;true/&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -7617,31 +7590,6 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/logic1-true-ex1.gif" alt="{{{\minormal{true}}\unicode{8744}P}={\minormal{true}}}"></img></p>
-      </blockquote>
-     </div>
-
-          <p>This element represents the Boolean value false, i.e. the logical constant for falsehood.</p>
-
-     <div id="logic1.false.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;eq/&gt;
-           &lt;apply&gt;&lt;and/&gt;
-             &lt;false/&gt;
-             &lt;ci type="boolean"&gt;P&lt;/ci&gt;
-           &lt;/apply&gt;
-           &lt;false/&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -7651,29 +7599,6 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/logic1-false-ex1.gif" alt="{{{\minormal{false}}\unicode{8743}P}={\minormal{false}}}"></img></p>
-      </blockquote>
-     </div>
-
-     <p>This element represents pi, approximately 3.142, which is the
-     ratio of the circumference of a circle to its diameter.</p>
-
-     <div id="nums1.pi.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;approx/&gt;
-           &lt;pi/&gt;
-           &lt;cn type="rational"&gt;22&lt;sep/&gt;7&lt;/cn&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -7683,27 +7608,6 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/nums1-pi-ex1.gif" alt="{\unicode{960}\unicode{8771}{{22}/{7}}}"></img></p>
-      </blockquote>
-     </div>
-     <p>This element denotes the gamma constant, approximately 0.5772.</p>
-
-     <div id="nums1.eulergamma.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;approx/&gt;
-           &lt;eulergamma/&gt;
-           &lt;cn&gt;0.5772156649&lt;/cn&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -7711,36 +7615,63 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/nums1-eulergamma-ex1.gif" alt="{\unicode{947}\unicode{8771}{0.5772156649}}"></img></p>
-      </blockquote>
-     </div>
-
-     
-     <p>This element represents the notion of infinity.</p>
-
-     <div id="nums1.infinity.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>&lt;infinity/&gt;</pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mi&gt;&amp;#x221e;&lt;/mi&gt;
        </pre>
       </div>
 
+<!--
+      <blockquote>
+       <p><img src="image/nums1-exponentiale-ex1.gif" alt="{{\mathop{{\minormal{ln}}}e}={1}}"></img></p>
+      </blockquote>
+-->
+
+<!--
+      <blockquote>
+       <p><img src="image/nums1-imaginaryi-ex1.gif" alt="{\msup{i}{{2}}={\mn{-1}}}"></img></p>
+      </blockquote>
+-->
+
+<!--
+      <blockquote>
+       <p><img src="image/nums1-notanumber-ex1.gif" alt="{{{0}/{0}}={\minormal{NaN}}}"></img></p>
+      </blockquote>
+-->
+
+
+<!--
+      <blockquote>
+       <p><img src="image/logic1-true-ex1.gif" alt="{{{\minormal{true}}\unicode{8744}P}={\minormal{true}}}"></img></p>
+      </blockquote>
+-->
+
+<!--
+      <blockquote>
+       <p><img src="image/logic1-false-ex1.gif" alt="{{{\minormal{false}}\unicode{8743}P}={\minormal{false}}}"></img></p>
+      </blockquote>
+-->
+<!--
+      <blockquote>
+       <p><img src="image/nums1-pi-ex1.gif" alt="{\unicode{960}\unicode{8771}{{22}/{7}}}"></img></p>
+      </blockquote>
+-->
+
+<!--
+      <blockquote>
+       <p><img src="image/nums1-eulergamma-ex1.gif" alt="{\unicode{947}\unicode{8771}{0.5772156649}}"></img></p>
+      </blockquote>
+-->
+
+<!--
       <blockquote>
        <p><img src="image/nums1-infinity-ex1.gif" alt="\unicode{8734}"></img></p>
       </blockquote>
      </div>
+-->
 
-    </section>
+      </div>
+     </section>
 
     
     <section>
