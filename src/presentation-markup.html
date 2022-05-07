@@ -4638,7 +4638,8 @@
    </table>
  
    <p>Note: while [[Mathml-Core]] supports the above attributes, it only allows the value to be a valid
-   <a href="https://w3c.github.io/mathml-core/#dfn-length-percentage">length-percentage</a>.</p>
+   <a href="https://w3c.github.io/mathml-core/#dfn-length-percentage">length-percentage</a>.
+   Increments with the optional "+" or "-" signs are not supported in MathML-Core nor are pseudo-units.</p>
  
    <p>The <em>[^pseudo-unit^]</em> syntax symbol is described below.
    <span>Also, <code class="attribute">height</code>, <code class="attribute">depth</code> and
@@ -4830,6 +4831,10 @@
    occurs within the <code class="element">mpadded</code> element.  MathML does not define
    how non-default attribute values of an <code class="element">mpadded</code> element interact
    with the linebreaking algorithm.</p>
+   </section>
+
+   <section class="fold">
+   <h5>Examples</h5>
  
    <p>The effects of the size and position attributes are illustrated
    below. The following diagram illustrates the use of <code class="attribute">lspace</code>
