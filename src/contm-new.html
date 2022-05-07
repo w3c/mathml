@@ -2072,9 +2072,9 @@
      </div>
 
      <p>This represents a term
-     <img src="image/lamshare1.gif" alt="\lambda{x}.f(\lambda{x}.g(x),g(x))" class="vmiddle"></img>
+     <i class="var">&#x03bb;</i><i class="var">x</i>.<i class="var">f</i>(<i class="var">&#x03bb;</i><i class="var">x</i>.<i class="var">g</i>(<i class="var">x</i>),<i class="var">g</i>(<i class="var">x</i>))
      which has two sub-terms of the form
-     <img src="image/lamshare2.gif" alt="g(x)" class="vmiddle"></img>,
+     <i class="var">g</i>(<i class="var">x</i>),
      one with <code>id="orig"</code>
      (the one explicitly represented) and one with <code>id="copy"</code>,
      represented by the <code class="element">share</code> element.
@@ -2090,9 +2090,9 @@
      errors, and is not recommended.  For instance, using
      &#x3b1;-conversion to rename the inner occurrence of <i class="var">x</i>
      into, say, <i class="var">y</i> leads to the semantically equivalent expression
-     <img src="image/lamshare3.gif" alt="\lambda{x}.f(\lambda{y}.g(y),g(x))" class="vmiddle"></img>.
+     <i class="var">&#x03bb;</i><i class="var">x</i>.<i class="var">f</i>(<i class="var">&#x03bb;</i><i class="var">y</i>.<i class="var">g</i>(<i class="var">y</i>),<i class="var">g</i>(<i class="var">x</i>)).
      However, in this form, it is no longer possible to share the expression
-     <img src="image/lamshare2.gif" alt="g(x)" class="vmiddle"></img>.
+     <i class="var">g</i>(<i class="var">x</i>).
      Replacing <i class="var">x</i> with <i class="var">y</i> in the inner
      <code class="element">bvar</code> without replacing the <code class="element">share</code> element results in a change
      in semantics.</p>
