@@ -5077,9 +5077,10 @@
  
    <p>Individual fences or separators are represented using
    <code class="element">mo</code> elements, as described in <a href="#presm_mo"></a>. Thus, any <code class="element">mfenced</code>
-   element is completely equivalent to an expanded form described below;
-   either form can be used in MathML, at the convenience of an author or
-   of a MathML-generating program. A MathML renderer is required to
+   element is completely equivalent to an expanded form described below.
+   While <code class="element">mfenced</code> might be more convenient for authors or authoring software, 
+   only the expanded form is supported in [[MathML-core]].
+   A renderer that supports this recommendation is required to
    render either of these forms in exactly the same way.</p>
  
    <p>In general, an <code class="element">mfenced</code> element can contain
@@ -5303,8 +5304,6 @@
   <section class="fold">
    <h5>Examples</h5>
  
-   <p>(<i class="var">a</i>+<i class="var">b</i>)</p>
- 
    <div class="example mathml mml4p">
     <pre>
       &lt;mfenced&gt;
@@ -5322,7 +5321,6 @@
    would render incorrectly as <q>(<i class="var">a</i>, +,
    <i class="var">b</i>)</q>.</p>
  
-   <p>[0,1)</p>
  
    <div class="example mathml mml4p">
     <pre>
@@ -5332,8 +5330,7 @@
       &lt;/mfenced&gt;
     </pre>
    </div>
- 
-   <p><i class="var">f</i>(<i class="var">x</i>,<i class="var">y</i>)</p>
+
  
    <div class="example mathml mml4p">
     <pre>
