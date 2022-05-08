@@ -12,7 +12,7 @@
     function relaxhl (r,s,u) {
         var s2=s.replaceAll(/(\n|^)([^'#\n]*)(#[^\n]*)/g,'$1$2\x3cspan style="color:brown">$3\x3c/span>');
         s2=s2.replaceAll(/([a-z0-9.A-Z-]+)(\s*=\s*[^"])/g,'\x3cb id="parsing_$1">$1\x3c/b>$2');
-	s2=s2.replaceAll(/ id="parsing_(pattern|right|local|m|h|[a-z_]*percentage)"/g,'');
+	s2=s2.replaceAll(/ id="parsing_(pattern|right|local|m|h|[a-z_\-]*percentage)"/g,'');
         s2=s2.replaceAll(/include *"([^"]*)"/g,'\x3cspan style="color:green">include\x3c/span> "\x3cspan style="color:red">$1\x3c/span>"');
         return  s2;
     }
