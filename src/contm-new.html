@@ -7693,17 +7693,46 @@ infinity (&#x221e;).</p>
 
 
 
-     <p>This element represents the set of integers, positive, negative and zero.</p>
+     <p>These elements represent the standard number sets,
+       Integers, Reals, Rationals, Natural Numbers (including zero), Complex Numbers, Prime Numbers,
+       and the Empty Set.</p>
 
-     <div id="setname1.integers.ex1" class="mathml-example">
+     <div id="set-constants.ex1" class="mathml-example">
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
+	<pre>
+         &lt;apply&gt;&lt;in/&gt;&lt;cn type="integer"&gt;42&lt;/cn&gt;&lt;integers/&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
        <pre>
-         &lt;apply&gt;&lt;in/&gt;
-           &lt;cn type="integer"&gt; 42 &lt;/cn&gt;
-           &lt;integers/&gt;
-         &lt;/apply&gt;
+         &lt;apply&gt;&lt;in/&gt;&lt;cn type="real"&gt;44.997&lt;/cn&gt;&lt;reals/&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;in/&gt;&lt;cn type="rational"&gt;22&lt;sep/&gt;7&lt;/cn&gt;&lt;rationals/&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;in/&gt;&lt;cn type="integer"&gt;1729&lt;/cn&gt;&lt;naturalnumbers/&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;in/&gt;&lt;cn type="complex-cartesian"&gt;17&lt;sep/&gt;29&lt;/cn&gt;&lt;complexes/&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;in/&gt;&lt;cn type="integer"&gt;17&lt;/cn&gt;&lt;primes/&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;neq/&gt;&lt;integers/&gt;&lt;emptyset/&gt;&lt;/apply&gt;
        </pre>
       </div>
 
@@ -7714,28 +7743,6 @@ infinity (&#x221e;).</p>
          &lt;mrow&gt;&lt;mn&gt;42&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/setname1-integers-ex1.gif" alt="{{42}\unicode{8712}{\midoublestruck{Z}}}"></img></p>
-      </blockquote>
-     </div>
-
-          <p>This element represents the set of real numbers.</p>
-
-     <div id="setname1.reals.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;in/&gt;
-           &lt;cn type="real"&gt; 44.997&lt;/cn&gt;
-           &lt;reals/&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -7743,29 +7750,6 @@ infinity (&#x221e;).</p>
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/setname1-reals-ex1.gif" alt="{{44.997}\unicode{8712}{\midoublestruck{R}}}"></img></p>
-      </blockquote>
-     </div>
-
-     
-     <p>This element represents the set of rational numbers.</p>
-
-     <div id="setname1.rationals.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;in/&gt;
-           &lt;cn type="rational"&gt; 22 &lt;sep/&gt;7&lt;/cn&gt;
-           &lt;rationals/&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -7775,28 +7759,6 @@ infinity (&#x221e;).</p>
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/setname1-rationals-ex1.gif" alt="{{{22}/{7}}\unicode{8712}{\midoublestruck{Q}}}"></img></p>
-      </blockquote>
-     </div>
-
-          <p>This element represents the set of natural numbers (including zero).</p>
-
-     <div id="setname1.naturalnumbers.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;in/&gt;
-           &lt;cn type="integer"&gt;1729&lt;/cn&gt;
-           &lt;naturalnumbers/&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -7804,28 +7766,6 @@ infinity (&#x221e;).</p>
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/setname1-naturalnumbers-ex1.gif" alt="{{1729}\unicode{8712}{\midoublestruck{N}}}"></img></p>
-      </blockquote>
-     </div>
-
-          <p>This element represents the set of complex numbers.</p>
-
-     <div id="setname1.complexes.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;in/&gt;
-           &lt;cn type="complex-cartesian"&gt;17&lt;sep/&gt;29&lt;/cn&gt;
-           &lt;complexes/&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -7835,57 +7775,11 @@ infinity (&#x221e;).</p>
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/setname1-complexes-ex1.gif" alt="{{{17}+{29}\unicode{8290}i}\unicode{8712}{\midoublestruck{C}}}"></img></p>
-      </blockquote>
-     </div>
-
-          <p>This element represents the set of positive prime numbers.</p>
-
-     <div id="setname1.primes.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;in/&gt;
-           &lt;cn type="integer"&gt;17&lt;/cn&gt;
-           &lt;primes/&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mn&gt;17&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;P&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/setname1-primes-ex1.gif" alt="{{17}\unicode{8712}{\midoublestruck{P}}}"></img></p>
-      </blockquote>
-     </div>
-
-     
-     <p>This element is used to represent the empty set, that is the set which contains no
-     members.</p>
-
-     <div id="set1.emptyset.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;neq/&gt;
-           &lt;integers/&gt;
-           &lt;emptyset/&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -7894,12 +7788,32 @@ infinity (&#x221e;).</p>
        </pre>
       </div>
 
+<!--
+      <blockquote>
+       <p><img src="image/setname1-integers-ex1.gif" alt="{{42}\unicode{8712}{\midoublestruck{Z}}}"></img></p>
+      </blockquote>
+      <blockquote>
+       <p><img src="image/setname1-reals-ex1.gif" alt="{{44.997}\unicode{8712}{\midoublestruck{R}}}"></img></p>
+      </blockquote>
+      <blockquote>
+       <p><img src="image/setname1-rationals-ex1.gif" alt="{{{22}/{7}}\unicode{8712}{\midoublestruck{Q}}}"></img></p>
+      </blockquote>
+      <blockquote>
+       <p><img src="image/setname1-naturalnumbers-ex1.gif" alt="{{1729}\unicode{8712}{\midoublestruck{N}}}"></img></p>
+      </blockquote>
+      <blockquote>
+       <p><img src="image/setname1-complexes-ex1.gif" alt="{{{17}+{29}\unicode{8290}i}\unicode{8712}{\midoublestruck{C}}}"></img></p>
+      </blockquote>
+      <blockquote>
+       <p><img src="image/setname1-primes-ex1.gif" alt="{{17}\unicode{8712}{\midoublestruck{P}}}"></img></p>
+      </blockquote>
       <blockquote>
        <p><img src="image/set1-emptyset-ex1.gif" alt="{{\midoublestruck{Z}}\unicode{8800}\unicode{8709}}"></img></p>
       </blockquote>
+-->
+
+
      </div>
-
-
     </section>
 </section>
   
