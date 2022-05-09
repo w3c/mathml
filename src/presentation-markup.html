@@ -6114,7 +6114,7 @@
      </table>
  
  
-    <p>The difference between an accent versus limit is shown in the <a href="presm_mover_ex">examples</a>:
+    <p>The difference between an accent versus limit is shown in the <a href="#presm_mover_ex">examples</a>:
  
     <p>The default value of <em>accent</em> is false, unless
     <em>overscript</em> is an <code class="element">mo</code> element or an
@@ -6130,9 +6130,9 @@
    </section>
  
    <section class="fold">
-    <h5 id="id="presm_mover-ex"">Examples</h5>
+    <h5 id="presm_mover_ex">Examples</h5>
  
-    <p>Two examples demonstrating how <code class="attribute">accentunder</code> affects rendering:</p>
+    <p>Two examples demonstrating how <code class="attribute">accent</code> affects rendering:</p>
  
     <div class="example mathml mmlcore">
      <pre>
@@ -6283,7 +6283,7 @@
     <p>The <code class="element">munderover</code> element is used <span>instead of separate
     <code class="element">munder</code> and <code class="element">mover</code> elements</span> so that the
     underscript and overscript are vertically spaced equally in relation
-    to the base and so that they follow the slant of the base as shown in the <a href="presm_munderover_ex">example</a>.</p>
+    to the base and so that they follow the slant of the base as shown in the <a href="#presm_munderover_ex">example</a>.</p>
   
     <p>The defaults for <code class="attribute">accent</code> and <code class="attribute">accentunder</code>
     are computed in the same way as for
@@ -6295,35 +6295,30 @@
    <section class="fold">
     <h5 id="presm_munderover_ex">Examples</h5>
  
-    <p>This example shows the subtle difference between nesting <code class="element">munder</code> inside
-      <code class="element">mover</code> and using <code class="element">munderover</code></p>
+    <p>This example shows the difference between nesting <code class="element">munder</code> inside
+      <code class="element">mover</code> and using <code class="element">munderover</code> when
+      <code class="attribute">movablelimits</code>=<code class="attributevalue">true</code>
+      and in <code class="attribute">displaystyle</code> (which renders the same as <code class="element">msubsup</code>).
  
     <div class="example mathml mmlcore">
      <pre>
-       &lt;mrow&gt;
-         &lt;mover&gt;
-           &lt;munder&gt;
-             &lt;mo&gt; &amp;int; &lt;/mo&gt;
-             &lt;mn&gt; 0 &lt;/mn&gt;
-           &lt;/munder&gt;
-           &lt;mi&gt; &amp;infin; &lt;/mi&gt;
-         &lt;/mover&gt;
-         &lt;mtext&gt;&amp;nbsp;versus&amp;nbsp;&lt;/mtext&gt;
-         &lt;munderover&gt;
-           &lt;mo&gt; &amp;int; &lt;/mo&gt;
-           &lt;mn&gt; 0 &lt;/mn&gt;
-           &lt;mi&gt; &amp;infin; &lt;/mi&gt;
-         &lt;/munderover&gt;
-       &lt;/mrow&gt;
-     </pre>
-    </div>
-    <p>The difference in the vertical spacing may be too small to be noticed on a
-      lower resolution display at a normal font size, but is noticeable on a higher
-      resolution device and when using large font sizes.  In
-      addition to the visual differences, attaching both the underscript and
-      overscript to the same base more accurately reflects the semantics of the
-      expression.</p> 
-  
+    &lt;mstyle displaystyle="false"&gt;
+      &lt;mover&gt;
+        &lt;munder&gt;
+          &lt;mo&gt;∑&lt;/mo&gt;
+          &lt;mi&gt;i&lt;/mi&gt;
+        &lt;/munder&gt;
+        &lt;mi&gt;n&lt;/mi&gt;
+      &lt;/mover&gt;
+      &lt;mo&gt;+&lt;/mo&gt;
+      &lt;munderover&gt;
+        &lt;mo&gt;∑&lt;/mo&gt;
+        &lt;mi&gt;i&lt;/mi&gt;
+        &lt;mi&gt;n&lt;/mi&gt;
+      &lt;/munderover&gt;
+    &lt;/mstyle&gt;
+    </pre>
+    </div>  
    </section>
   </section>
  
