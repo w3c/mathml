@@ -482,8 +482,8 @@
 
     <p>Note that, in general, there is no mechanism in MathML to simulate the
     effect of not specifying attributes which are <em>inherited</em> or
-    <em>automatic</em>.  Giving the words &#x201c;inherited&#x201d; or
-    &#x201c;automatic&#x201d; explicitly will not work, and is not generally
+    <em>automatic</em>.  Giving the words <q>inherited</q> or
+    <q>automatic</q> explicitly will not work, and is not generally
     allowed.  Furthermore, the <code class="element">mstyle</code> element (<a href="#presm_mstyle"></a>)
     can even be used to change the default values of presentation attributes
     for its children.</p>
@@ -614,7 +614,7 @@
    </table>
 
    <p>Note that MathML 2 had no direct support for linking, and instead
-   followed the W3C Recommendation &#x201c;XML Linking Language&#x201d;
+   followed the W3C Recommendation <q>XML Linking Language</q>
    [[XLink]] in defining links using the
    <code class="attribute">xlink:href</code> attribute.  This has changed, and MathML 3 now
    uses an <code class="attribute">href</code> attribute.  However, particular compound
@@ -666,7 +666,7 @@
   <section>
    <h4 id="fund_collapse">Collapsing Whitespace in Input</h4>
 
-   <p>In MathML, as in XML, &#x201c;whitespace&#x201d; means simple spaces,
+   <p>In MathML, as in XML, <q>whitespace</q> means simple spaces,
    tabs, newlines, or carriage returns, i.e.,  characters with hexadecimal
    Unicode codes U+0020, U+0009, U+000A, or
    U+000D, respectively; see also the discussion of whitespace in Section 2.3 of
@@ -712,13 +712,13 @@
 
 
    <p>When the first example is rendered, there is nothing before
-   &#x201c;Theorem&#x201d;, one Unicode space character between &#x201c;Theorem&#x201d; and
-   &#x201c;1:&#x201d;, and nothing after &#x201c;1:&#x201d;. In the
+   <q>Theorem</q>, one Unicode space character between <q>Theorem</q> and
+   <q>1:</q>, and nothing after <q>1:</q>. In the
    second example, a single space character is to be rendered before
-   &#x201c;Theorem&#x201d;; two spaces, one a Unicode space character and
+   <q>Theorem</q>; two spaces, one a Unicode space character and
    one a Unicode no-break space character, are to be rendered before
-   &#x201c;1:&#x201d;; and there is nothing after the
-   &#x201c;1:&#x201d;.</p>
+   <q>1:</q>; and there is nothing after the
+   <q>1:</q>.</p>
 
    <p>Note that the value of the <code class="attribute">xml:space</code> attribute is not relevant
    in this situation since XML processors pass whitespace in tokens to a
@@ -992,7 +992,7 @@
       <td>"elide"</td>
       <td>The display is abbreviated by removing enough of it so that
       the remainder fits into the window. For example, a large polynomial
-      might have the first and last terms displayed with &#x201c;+ ... +&#x201d;
+      might have the first and last terms displayed with <q>+ ... +</q>
       between
       them. Advanced renderers may provide a facility to zoom in on elided
       areas.
