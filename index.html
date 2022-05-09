@@ -99,8 +99,14 @@
 		    .replace(/\x3c\/m[ino]>/g,'')
 		    .replace(/\x3csemantics.*\x3c\/semantics>/mg,'')
 		    .replace(/\x3c!--[^>]*-->/mg,'')	
-		    .replace(/\x3c([a-z]+)[^\x3c>]*>/g,' start-$1')
-		    .replace(/\x3c\/([a-z]+)>/g,' end-$1');
+		    .replace(/\x3c([a-z]+)[^\x3c>]*>/g,' start-$1 ')
+		    .replace(/\x3c\/([a-z]+)>/g,' end-$1')
+		    .replace(/ start-(none|input|msline)/g,' $1')
+		    .replace(/\n\s*/g,' ')
+		    .replace(/\s+/g,' ');
+                var s=document.createElement("span");
+		s.innerHTML=atext;
+		atext=s.textContent;
 	    }
 	    m.setAttribute("alttext",atext);
 	    mmllist[i].parentNode.insertBefore(m,mmllist[i].nextSibling);
