@@ -5634,7 +5634,9 @@
  
   <p>MathML also provides an element for attachment of tensor indices.
   Tensor indices are distinct from ordinary subscripts and superscripts in
-  that they must align in vertical columns. Tensor indices can also occur in
+  that they must align in vertical columns.
+  Also, all the upper scripts should be baseline-aligned and all the lower scripts should be baseline-aligned.
+  Tensor indices can also occur in
   prescript positions.  Note that ordinary scripts follow the base (on the right
   in LTR context, but on the left in RTL context); prescripts precede the base
   (on the left (right) in LTR (RTL) context).</p>
@@ -5992,19 +5994,15 @@
     <code class="element">mo</code> element at its core is used as the default
     value.  As with all attributes, an explicitly given value overrides
     the default.</p>
- 
-    <p>Here is an example (accent versus underscript):
-    <img src="image/f3016.gif" alt="\underbrace{x+y+z}"class="vmiddle"></img> versus
-    <img src="image/f3017.gif" alt="\underbrace{\strut x+y+z}"class="vmiddle"></img>.
-    The MathML representation for this example is shown below.</p>
- 
+    <p>[[Mathml-Core]] does not support the <code class="attribute">accent</code> attribute on <a href="#presm_mo"></a>.
+     For compatibility with MathML-core, the <code class="attribute">accentunder</code> should be set on <code class="element">munder</code>.</p>
+  
    </section>
  
    <section class="fold">
     <h5>Examples</h5>
- 
-    <p>The MathML representation for the example shown above is:</p>
- 
+    <p>An example demonstrating how <code class="attribute">accentunder</code> affects rendering:</p>
+  
     <div class="example mathml mmlcore">
      <pre>
        &lt;mrow&gt;
@@ -6118,14 +6116,7 @@
      </table>
  
  
-    <p>The difference between an accent versus limit is shown here:
-    <img src="image/f3018.gif" alt="\hat{x}"class="vmiddle"></img> versus
-    <img src="image/f3019.gif" alt="\hat{\strut x}"class="vmiddle"></img>.
-    These differences also apply to <q>mathematical accents</q> such as
-    bars <span>or braces</span> over expressions:
-    <img src="image/f3020.gif" alt="\overbrace{x+y+z}"class="vmiddle"></img> versus
-    <img src="image/f3021.gif" alt="\overbrace{\strut x+y+z}"class="vmiddle"></img>.
-    The MathML representation for each of these examples is shown below.</p>
+    <p>The difference between an accent versus limit is shown in the <a href="presm_mover_ex">examples</a>:
  
     <p>The default value of <em>accent</em> is false, unless
     <em>overscript</em> is an <code class="element">mo</code> element or an
@@ -6135,13 +6126,15 @@
     of <code class="attribute">accent</code> for <code class="element">mover</code>.  If
     <em>overscript</em> is an embellished operator, the <code class="attribute">accent</code> attribute of the <code class="element">mo</code>
     element at its core is used as the default value.</p>
+    <p>[[Mathml-Core]] does not support the <code class="attribute">accent</code> attribute on <a href="#presm_mo"></a>.
+      For compatibility with MathML-core, the <code class="attribute">accentunder</code> should be set on <code class="element">munder</code>.</p>
  
    </section>
  
    <section class="fold">
-    <h5>Examples</h5>
+    <h5 id="id="presm_mover-ex"">Examples</h5>
  
-    <p>The MathML representation for the examples shown above is:</p>
+    <p>Two examples demonstrating how <code class="attribute">accentunder</code> affects rendering:</p>
  
     <div class="example mathml mmlcore">
      <pre>
@@ -6292,21 +6285,8 @@
     <p>The <code class="element">munderover</code> element is used <span>instead of separate
     <code class="element">munder</code> and <code class="element">mover</code> elements</span> so that the
     underscript and overscript are vertically spaced equally in relation
-    to the base and so that they follow the slant of the base as in the
-    second expression shown below:</p>
- 
-    <p><img src="image/f3022.gif" alt="\int_0^{\!\!\!\infty}"class="vmiddle"></img>
-    versus
-    <img src="image/f3023.gif" alt="\int_0^{\infty}"class="vmiddle"></img>.
-    The MathML representation for this example is shown below.</p>
- 
-    <p>The difference in the vertical spacing is too small to be noticed on a
-    low resolution display at a normal font size, but is noticeable on a higher
-    resolution device such as a printer and when using large font sizes.  In
-    addition to the visual differences, attaching both the underscript and
-    overscript to the same base more accurately reflects the semantics of the
-    expression.</p>
- 
+    to the base and so that they follow the slant of the base as shown in the <a href="presm_munderover_ex">example</a>.</p>
+  
     <p>The defaults for <code class="attribute">accent</code> and <code class="attribute">accentunder</code>
     are computed in the same way as for
     <a class="intref" href="#presm_munder"><code class="element">munder</code></a> and
@@ -6315,12 +6295,10 @@
    </section>
  
    <section class="fold">
-    <h5>Examples</h5>
+    <h5 id="presm_munderover_ex">Examples</h5>
  
-    <p>The MathML representation for the example shown above with the first
-    expression made using separate <code class="element">munder</code> and
-    <code class="element">mover</code> elements, and the second one using an
-    <code class="element">munderover</code> element, is:</p>
+    <p>This example shows the subtle difference between nesting <code class="element">munder</code> inside
+      <code class="element">mover</code> and using <code class="element">munderover</code></p>
  
     <div class="example mathml mmlcore">
      <pre>
@@ -6341,7 +6319,13 @@
        &lt;/mrow&gt;
      </pre>
     </div>
- 
+    <p>The difference in the vertical spacing may be too small to be noticed on a
+      lower resolution display at a normal font size, but is noticeable on a higher
+      resolution device and when using large font sizes.  In
+      addition to the visual differences, attaching both the underscript and
+      overscript to the same base more accurately reflects the semantics of the
+      expression.</p> 
+  
    </section>
   </section>
  
@@ -6362,9 +6346,9 @@
     <div class="example ">
      <pre>
        &lt;mmultiscripts&gt;
-      <em>base</em>
-      (<em>subscript superscript</em>)*
-      [ &lt;mprescripts/&gt; (<em>presubscript presuperscript</em>)* ]
+        <em>base</em>
+        (<em>subscript superscript</em>)*
+        [ &lt;mprescripts/&gt; (<em>presubscript presuperscript</em>)* ]
        &lt;/mmultiscripts&gt;
      </pre>
     </div>
@@ -6372,13 +6356,13 @@
     <p>This element allows the representation of any number of vertically-aligned pairs of
     subscripts
     and superscripts, attached to one base expression. It supports both
-    postscripts  and
-    prescripts.
+    postscripts  and prescripts.
     Missing scripts must be represented by the empty element
-    <code class="element">none</code>.</p>
+    <code class="element">none</code>.
+    All of the upper scripts should be baseline-aligned and all the lower scripts should be baseline-aligned.</p>
  
     <p>The prescripts are optional, and when present are given
-    <em>after</em> the postscripts, because prescripts are relatively
+    <em>after</em> the postscripts. This order was chosen because prescripts are relatively
     rare compared to tensor notation.</p>
  
     <p>The argument sequence consists of the base followed by zero or more
@@ -6430,9 +6414,7 @@
    <section class="fold">
     <h5>Examples</h5>
  
-    <p><span data-diff="chg">Examples</span> of the use of <code class="element">mmultiscripts</code> are:</p>
- 
-    <p><sub>0</sub><i class="var">F</i><sub>1</sub>(;<i class="var">a</i>;<i class="var">z</i>).</p>
+    <p>This example of a hypergeometric function demonstrates the use of pre and post subscripts:</p>
  
     <div class="example mathml mmlcore">
      <pre>
@@ -6460,9 +6442,8 @@
      </pre>
     </div>
  
-    <p><img src="image/tensorindices.png" alt="R_i{}^j{}_k{}_l"class="vmiddle"></img>
-    (where <i class="var">k</i> and <i class="var">l</i> are different indices)</p>
- 
+    <p>This example shows a tensor. In the example, <i class="var">k</i> and <i class="var">l</i> are different indices</p>
+
     <div class="example mathml mmlcore">
      <pre>
        &lt;mmultiscripts&gt;
@@ -6479,7 +6460,7 @@
      </pre>
     </div>
  
-   <p><img src="image/prescriptsalign.png" alt="{}_{123}^{\phantom{00}1}X{}_{123}^{1\phantom{00}}"class="vmiddle"></img></p>
+   <p>This example demonstrates alignment towards the base of the scripts:</img></p>
  
     <div class="example mathml mmlcore">
      <pre>
@@ -6494,19 +6475,9 @@
      </pre>
     </div>
  
-    <p>An additional example of <code class="element">mmultiscripts</code> shows how the binomial
-    coefficient
+    <p>This final example of <code class="element">mmultiscripts</code> shows how the binomial
+    coefficient can be displayed in Arabic style
     </p>
-    <blockquote>
-     <p><img src="image/binom5-12.png" alt="[binomial(5,12) in english style]"></img></p>
-    </blockquote>
-    <p>
-     can be displayed in Arabic style
-    </p>
-    <blockquote>
-     <p><img src="image/arbinom5-12.png" alt="[binomial(5,12) in Arabic style]"></img></p>
-    </blockquote>
- 
     <div class="example mathml mmlcore">
      <pre>
        &lt;mstyle dir="rtl"&gt;
