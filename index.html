@@ -106,7 +106,7 @@
 		    .replace(/\s+/g,' ');
                 var s=document.createElement("span");
 		s.innerHTML=atext;
-		atext=s.textContent;
+		atext="TEST" + s.textContent;
 	    }
 	    m.setAttribute("alttext",atext);
 	    mmllist[i].parentNode.insertBefore(m,mmllist[i].nextSibling);
