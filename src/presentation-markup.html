@@ -447,7 +447,7 @@
     <p>For example, in a RTL layout, sub- and superscripts appear to the left of the base;
     the surd for a root appears at the right, with the bar continuing over
     the base to the left.
-    The layout details for elements whose behaviour depends on directionality
+    The layout details for elements whose behavior depends on directionality
     are given in the discussion of the element.  In those discussions, the
     terms leading and trailing are used to specify a side of an object
     when which side to use depends on the directionality; ie. leading
@@ -457,7 +457,7 @@
  
     <p>
      The overall directionality is usually set on the <code class="element">math</code>, but
-     may also be switched for individual subformula by using the <code class="attribute">dir</code>
+     may also be switched for an individual subexpression by using the <code class="attribute">dir</code>
      attribute on <code class="element">mrow</code> or <code class="element">mstyle</code> elements.
      When not specified, all elements inherit the directionality of their container.
     </p>
@@ -1862,9 +1862,9 @@
     representing a less-than-or-equal-to sign, and the second one as the
     two-character sequence <code>&lt;=</code>.</p>
  
-    <p><span>All o</span>perators, in the general sense used here,
+    <p>All operators, in the general sense used here,
     are subject to essentially the same rendering
-    attributes and rules<span>. S</span>ubtle distinctions in the
+    attributes and rules. Subtle distinctions in the
     rendering of these classes of symbols,
     when they exist, are supported using the Boolean attributes <code class="attribute">fence</code>,
     <code class="attribute">separator</code> and <code class="attribute">accent</code>, which can be used to distinguish these cases.</p>
@@ -2693,7 +2693,7 @@
     suggestions rather than requirements.  
     The description below is given to make the intended effect of the various rendering attributes
     as clear as possible.
-    Detailed layout rules for brower implmentations for operators are given in
+    Detailed layout rules for browser implementations for operators are given in
     <a href="https://w3c.github.io/mathml-core/spec.html#operator-fence-separator-or-accent-mo">MathML Core</a>.
    </p>
  
@@ -4188,7 +4188,7 @@
  specify the default background color.
  This is an incompatible change from MathML 2, but it is more useful
  and intuitive.  Since the default for <code class="attribute">mathcolor</code> is inherited,
- this is no change in its behaviour.
+ this is no change in its behavior.
  </p>
  
  </section>
@@ -5477,7 +5477,7 @@
     The value <code class="attributevalue">northeastarrow</code> is a recommended value to implement because it can be
     used to implement TeX's \cancelto command. If a renderer implements other arrows for
     <code class="attribute">menclose</code>, it is recommended that the arrow names are chosen from the following full set of
-    names for consistancy and standardization among renderers:
+    names for consistency and standardization among renderers:
    </p>
    <ul>
  
@@ -5971,7 +5971,7 @@
       <tr>
        <td colspan="3" class="attdesc">
         Specifies whether the script is aligned left, center, or right under/over the base.
-        <span>As specfied in <a href="#presm_horiz_stretch_rules"></a>,
+        <span>As specified in <a href="#presm_horiz_stretch_rules"></a>,
         the core of underscripts that are embellished operators should stretch to cover the
         base,
         but the alignment is based on the entire underscript.</span>
@@ -6106,7 +6106,7 @@
        <tr>
         <td colspan="3" class="attdesc">
    Specifies whether the script is aligned left, center, or right under/over the base.
-   <span>As specfied in <a href="#presm_horiz_stretch_rules"></a>,
+   <span>As specified in <a href="#presm_horiz_stretch_rules"></a>,
    the core of overscripts that are embellished operators should stretch to cover the
    base,
    but the alignment is based on the entire overscript.</span>
@@ -6278,7 +6278,7 @@
       <tr>
        <td colspan="3" class="attdesc">
         Specifies whether the scripts are aligned left, center, or right under/over the base.
-        <span>As specfied in <a href="#presm_horiz_stretch_rules"></a>,
+        <span>As specified in <a href="#presm_horiz_stretch_rules"></a>,
         the core of underscripts and overscripts that are embellished operators should stretch
         to cover the base,
         but the alignment is based on the entire underscript or overscript.</span>
@@ -8517,7 +8517,7 @@
  </section>
  
  <section>
- <h4 id="presm_msgroup">Group Rows with Similiar Positions <code class="defn starttag">&lt;msgroup&gt;</code> <span class="coreno"></span></h4>
+ <h4 id="presm_msgroup">Group Rows with Similar Positions <code class="defn starttag">&lt;msgroup&gt;</code> <span class="coreno"></span></h4>
  
  <section>
  <h5>Description</h5>
@@ -8619,7 +8619,7 @@
  <p>Note that a row is considered primarily as if it were a number,
  which are always displayed left-to-right,
  and so the directionality used to display the columns is always left-to-right;
- textual bidirectionality within token elements (other than <code class="element">mn</code>) still applies,
+ textual bidirectionally within token elements (other than <code class="element">mn</code>) still applies,
  as does the overall directionality <em>within</em> any children of the <code class="element">msrow</code>
  (which end up treated as single digits);
  see <a href="#presm_bidi"></a>.
@@ -9013,7 +9013,7 @@
  <h5 id="presm_addsub">Addition and Subtraction</h5>
  
  <p>Two-dimensional addition, subtraction, and multiplication typically
- involve numbers, carrries/borrows, lines, and the sign of the
+ involve numbers, carries/borrows, lines, and the sign of the
  operation.</p>
  
  <p>Notice that the <code class="element">msline</code> spans all of the columns and that <code class="element">none</code> is used to make the "+" appear to the left of all of the operands.</p>
