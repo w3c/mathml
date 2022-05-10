@@ -3837,10 +3837,13 @@
  <tr>
   <td colspan="3" class="attdesc">
  Specifies the thickness of the horizontal <q>fraction bar</q>, or <q>rule</q>
- The default value is <code class="attributevalue">medium</code>,
- <code class="attributevalue">thin</code> is thinner, but visible,
- <code class="attributevalue">thick</code> is thicker;
- the exact thickness of these is left up to the rendering agent.
+ The default value is <code class="attributevalue">medium</code>;
+ <code class="attributevalue">thin</code> is thinner, but visible;
+ <code class="attributevalue">thick</code> is thicker.
+ The exact thickness of these is left up to the rendering agent.
+ However, if OpenType Math fonts are available then the renderer should set <code class="attributevalue">medium</code> to
+ the value <code class="attribute">MATH.MathConstants.fractionRuleThickness</code>
+ (the default in <a href="https://www.w3.org/TR/mathml-core/#fractions-mfrac">MathML-Core</a>).
  <br/>
  Note: MathML Core does only allow <a href="https://w3c.github.io/mathml-core/spec.html#dfn-length-percentage">length-percentage</a> values.
  </td>
@@ -4121,7 +4124,7 @@
   <code class="element">mfrac</code>, have default values that are not normally
   inherited. That is, if the <code class="attribute">linethickness</code> attribute
   is not set on the  <code class="element">mfrac</code> element,
-  it will normally use the default value of <code class="attributevalue">1</code>, even if it was
+  it will normally use the default value of <code class="attributevalue">medium</code>, even if it was
   contained in a larger <code class="element">mfrac</code> element that set this
   attribute to a different value. For attributes like this, specifying a
   value with an <code class="element">mstyle</code> element has the effect of
