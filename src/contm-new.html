@@ -3443,13 +3443,17 @@
 
 
 
-          <p>The <code class="element">and</code> element represents the logical <q>and</q> function which is
-     an n-ary function taking Boolean arguments and returning a Boolean value. It is true
-     if
-     all arguments are true, and false otherwise. Its arguments may be explicitly specified
-     in the enclosing <code class="element">apply</code> element, or specified by rule as described in <a href="#contm_nary_logical"></a>.</p>
+          <p>These elements represent
+	  n-ary functions taking Boolean arguments and returning a Boolean value.
+	  The arguments may be explicitly specified
+     in the enclosing <code class="element">apply</code> element, or specified via qualifier elements.</p>
 
-     <div id="logic1.and.ex1" class="mathml-example">
+     <p><code class="element">and</code> is true if all arguments are true, and false otherwise.<br/>
+     <code class="element">or</code> is true if any of the arguments are true, and false otherwise.<br/>
+     <code class="element">xor</code> the logical <q>exclusive or</q> function. It is true if there are an odd number of true arguments or false otherwise.</p>
+     
+      
+     <div id="logic1.and.ex1" class="strict-mathml-example">
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -3457,24 +3461,6 @@
          &lt;apply&gt;&lt;and/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2227;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/logic1-and-ex1.gif" alt="{a\unicode{8743}b}"></img></p>
-      </blockquote>
-     </div>
-
-     <div class="strict-mathml-example" id="contm_and_bvar_ex">
-
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;and/&gt;
@@ -3486,8 +3472,13 @@
        </pre>
       </div>
 
-      <p>Strict Content MathML</p>
+            <p>Strict Content MathML</p>
 
+      <div class="example srict-mathml">
+       <pre>
+         &lt;apply&gt;&lt;csymbol cd="logic1"&gt;and&lt;/csymbol&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
       <div class="example strict-mathml">
        <pre>
          &lt;apply&gt;&lt;csymbol cd="fns2"&gt;apply_to_list&lt;/csymbol&gt;
@@ -3512,8 +3503,15 @@
        </pre>
       </div>
 
+
+      
       <p>Sample Presentation</p>
 
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2227;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -3533,10 +3531,21 @@
        </pre>
       </div>
 
+
+     </div>
+<!--
+      <blockquote>
+       <p><img src="image/logic1-and-ex1.gif" alt="{a\unicode{8743}b}"></img></p>
+      </blockquote>
+-->
+ 
+
+<!--
       <blockquote>
        <p><img src="image/contm_and_bvar_ex.gif" alt="{\munderover\bigwedge{i=0}{n}{\left(a\sb{i} \gt 0 \right)}}"></img></p>
       </blockquote>
-     </div>
+-->
+
 
 
      
