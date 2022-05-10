@@ -3032,11 +3032,11 @@
 
 
      
-     <p>The <code class="element">plus</code> element represents the addition operator.  Its
+     <p>The <code class="element">plus</code> and <code class="element">times</code> elements represent the addition and multiplication operators.  The
      arguments are normally specified explicitly in the enclosing
-     <code class="element">apply</code> element.  As an n-ary commutative operator, it can
+     <code class="element">apply</code> element.  As an n-ary commutative operator, they can
      be used with qualifiers to specify arguments, however,
-     this is discouraged, and the <code class="element">sum</code> operator should be
+     this is discouraged, and the <code class="element">sum</code> or <code class="element">product</code> operators should be
      used to represent such expressions instead.</p>
 
      <div id="arith1.plus.ex1" class="mathml-example">
@@ -3056,10 +3056,17 @@
        </pre>
       </div>
 
+      <!--
       <blockquote>
        <p><img src="image/arith1-plus-ex1.gif" alt="{x+y+z}"></img></p>
       </blockquote>
+      -->
      </div>
+
+     <p>The <code class="element">gcd</code> and <code class="element">lcm</code> elements represent the n-ary operators which returns the greatest common divisor, or least common multiple of their arguments. The arguments may be explicitly specified in the enclosing apply element, or specified by quantifiers.</p>
+     
+     <p>This default renderings are English-language locale specific: other locales may have
+     different default renderings.</p>
 
      <div id="arith1.gcd.ex1" class="mathml-example">
       <p>Content MathML</p>
@@ -3082,13 +3089,13 @@
        </pre>
       </div>
 
+      <!--
       <blockquote>
        <p><img src="image/arith1-gcd-ex1.gif" alt="{\mathop{{\minormal{gcd}}}{\left(a,b,c\right)}}"></img></p>
       </blockquote>
+-->
      </div>
 
-     <p>This default rendering is English-language locale specific: other locales may have
-     different default renderings.</p>
 
     </section>
 
