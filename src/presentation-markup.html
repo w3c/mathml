@@ -2303,11 +2303,13 @@
         <td colspan="3" class="attdesc">
    Specifies an additional indentation offset relative to the position determined
    by <code class="attribute">indentalign</code>.
-   <span>When the value is a percentage value or number without unit,
+   When the value is a percentage value,
    the value is relative to the
    horizontal space that a MathML renderer has available, this is the current target
    width as used for
-   linebreaking as specified in <a href="#presm_linebreaking"></a></span>
+   linebreaking as specified in <a href="#presm_linebreaking"></a>.
+   Note: numbers without units were allowed in MathML 3 and treated similarly to percentage values,
+   but unitless numbers are deprecated in MathML 4.
         </td>
        </tr>
  
@@ -6708,17 +6710,18 @@
       <tr>
        <td colspan="3" class="attdesc">
         specifies the desired width of the entire table and is intended for visual user agents.
-        <span>When the value is a percentage value or number without unit,
+        When the value is a percentage value,
         the value is relative to the
-        horizontal space that a MathML renderer has available
- 
-        <span>, this is the current target width as used for
-        linebreaking as specified in <a href="#presm_linebreaking"></a></span>;
+        horizontal space that a MathML renderer has available,
+        this is the current target width as used for
+        linebreaking as specified in <a href="#presm_linebreaking"></a>;
         this allows the author to specify, for example, a table being full width
-        of the display.</span>
+        of the display.
         When the value is <code class="attributevalue">auto</code>, the MathML
         renderer should calculate the table width from its contents using
         whatever layout algorithm it chooses.
+        Note: numbers without units were allowed in MathML 3 and treated similarly to percentage values,
+        but unitless numbers are deprecated in MathML 4.     
        </td>
       </tr>
  
@@ -6948,11 +6951,6 @@
      </pre>
     </div>
  
-    <p>This might be rendered as:
-    </p>
-    <blockquote>
-     <p><img src="image/f3025.gif" alt="\left(\begin{array}{ccc}1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1\end{array}\right)"></img></p>
-    </blockquote>
     <p>
      Note that the parentheses must be represented explicitly; they are not
      part of the <code class="element">mtable</code> element's rendering. This allows
@@ -7154,7 +7152,7 @@
    <section class="fold">
     <h5>Example</h5>
  
-    <div class="example mathml mmlcore">
+    <div class="example mathml mml4p">
      <pre>
        &lt;mtable&gt;
          &lt;mlabeledtr id='e-is-m-c-square'&gt;
@@ -7179,21 +7177,7 @@
        &lt;/mtable&gt;
      </pre>
     </div>
- 
-    <p>This should be rendered as:</p>
- 
-    <table>
- 
-     <tbody>
- 
-      <tr>
-       <td id="eqnoc1">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</td>
-       <td id="eqnoc2"><i class="var">E</i> = <i class="var">m</i><i class="var">c</i><sup>2</sup></td>
-       <td id="eqnoc3">(2.1)</td>
-      </tr>
-     </tbody>
-    </table>
- 
+  
    </section>
   </section>
  
@@ -7244,7 +7228,7 @@
        <td colspan="3" class="attdesc">
         causes the cell to be treated as if it occupied the number of rows specified.
         The corresponding <code class="element">mtd</code> in the following <code class="attributevalue">rowspan</code>-1 rows must be omitted.
-        The interpretation corresponds with the similar attributes for HTML 4.01 tables.
+        The interpretation corresponds with the similar attributes for HTML tables.
        </td>
       </tr>
  
@@ -7259,7 +7243,7 @@
        <td colspan="3" class="attdesc">
         causes the cell to be treated as if it occupied the number of columns specified.
         The following <code class="attributevalue">rowspan</code>-1 <code class="element">mtd</code>s must be omitted.
-        The interpretation corresponds with the similar attributes for HTML 4.01 tables.
+        The interpretation corresponds with the similar attributes for HTML tables.
        </td>
       </tr>
  
@@ -7949,16 +7933,7 @@
  <h5>MathML representation of an alignment example</h5>
  
  <p>The above rules are sufficient to explain the MathML representation
- of the example given near the start of this section.
- To repeat the example, the desired rendering is:</p>
- 
- <div class="example ">
-  <pre>
-   8.44x + 55  y =  0
-   3.1 x -  0.7y = -1.1
- </pre>
- </div>
- 
+ of the example given near the start of <a href="#presm_malign">this section</a>.
  
  <p>One way to represent that in MathML is:</p>
  
