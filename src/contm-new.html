@@ -8119,7 +8119,17 @@ infinity (&#x221e;).</p>
      sequence. The limit point is expressed by specifying a <code class="element">lowlimit</code> and a
      <code class="element">bvar</code>, or by specifying a <code class="element">condition</code> on one or more bound variables.</p>
 
-     <div id="limit1.limit.ex1" class="mathml-example">
+
+     <p>The direction from which a limiting value is approached is given as an argument
+     <a class="omsymbol" href="https://openmath.org/cd/limit1#limit">limit</a> in Strict Content MathML, which supplies the
+     direction specifier symbols <a class="omsymbol" href="https://openmath.org/cd/limit1#both_sides">both_sides</a>, <a class="omsymbol" href="https://openmath.org/cd/limit1#above">above</a>, and <a class="omsymbol" href="https://openmath.org/cd/limit1#below">below</a> for this
+     purpose. The first correspond to the values <code class="attributevalue">all</code>, <code class="attributevalue">above</code>,
+     and <code class="attributevalue">below</code> of the <code class="attribute">type</code> attribute of the <a class="intref" href="#contm_tendsto"><code class="element">tendsto</code></a>
+     element. The <a class="omsymbol" href="https://openmath.org/cd/limit1#null">null</a> symbol corresponds to the case
+     where no <code class="attribute">type</code> attribute is present.</p>
+
+     <section class="fold">
+      <h6 id="limit1.limit.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -8131,29 +8141,6 @@ infinity (&#x221e;).</p>
          &lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;
-           &lt;munder&gt;
-             &lt;mi&gt;lim&lt;/mi&gt;
-             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2192;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
-           &lt;/munder&gt;
-           &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
-         &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/limit1-limit-ex1.gif" alt="{\munder{{\minormal{lim}}}{{x\unicode{8594}{0}}}{\mathop{{\minormal{sin}}}x}}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="limit1.limit.ex2" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;limit/&gt;
@@ -8165,29 +8152,6 @@ infinity (&#x221e;).</p>
          &lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;
-           &lt;munder&gt;
-             &lt;mi&gt;lim&lt;/mi&gt;
-             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2192;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
-           &lt;/munder&gt;
-           &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
-         &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/limit1-limit-ex2.gif" alt="{\munder{{\minormal{lim}}}{{x\unicode{8594}{0}}}{\mathop{{\minormal{sin}}}x}}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="limit1.limit.ex3" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;limit/&gt;
@@ -8207,6 +8171,28 @@ infinity (&#x221e;).</p>
          &lt;mrow&gt;
            &lt;munder&gt;
              &lt;mi&gt;lim&lt;/mi&gt;
+             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2192;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
+           &lt;/munder&gt;
+           &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;
+           &lt;munder&gt;
+             &lt;mi&gt;lim&lt;/mi&gt;
+             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2192;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
+           &lt;/munder&gt;
+           &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;
+           &lt;munder&gt;
+             &lt;mi&gt;lim&lt;/mi&gt;
              &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2192;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;/msup&gt;&lt;/mrow&gt;
            &lt;/munder&gt;
            &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
@@ -8214,18 +8200,25 @@ infinity (&#x221e;).</p>
        </pre>
       </div>
 
+<!--
+      <blockquote>
+       <p><img src="image/limit1-limit-ex1.gif" alt="{\munder{{\minormal{lim}}}{{x\unicode{8594}{0}}}{\mathop{{\minormal{sin}}}x}}"></img></p>
+      </blockquote>
+-->
+
+<!--
+      <blockquote>
+       <p><img src="image/limit1-limit-ex2.gif" alt="{\munder{{\minormal{lim}}}{{x\unicode{8594}{0}}}{\mathop{{\minormal{sin}}}x}}"></img></p>
+      </blockquote>
+-->
+
+<!--
       <blockquote>
        <p><img src="image/limit1-limit-ex3.gif" alt="{\munder{{\minormal{lim}}}{{x\unicode{8594}\msup{a}{+}}}{\mathop{{\minormal{sin}}}x}}"></img></p>
       </blockquote>
-     </div>
+-->
+     </section>
 
-     <p>The direction from which a limiting value is approached is given as an argument
-     <a class="omsymbol" href="https://openmath.org/cd/limit1#limit">limit</a> in Strict Content MathML, which supplies the
-     direction specifier symbols <a class="omsymbol" href="https://openmath.org/cd/limit1#both_sides">both_sides</a>, <a class="omsymbol" href="https://openmath.org/cd/limit1#above">above</a>, and <a class="omsymbol" href="https://openmath.org/cd/limit1#below">below</a> for this
-     purpose. The first correspond to the values <code class="attributevalue">all</code>, <code class="attributevalue">above</code>,
-     and <code class="attributevalue">below</code> of the <code class="attribute">type</code> attribute of the <code class="element">tendsto</code>
-     element below. The <a class="omsymbol" href="https://openmath.org/cd/limit1#null">null</a> symbol corresponds to the case
-     where no <code class="attribute">type</code> attribute is present.</p>
     </section>
     
 
