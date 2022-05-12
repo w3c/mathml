@@ -4993,7 +4993,13 @@
      evaluates to false if the first argument is true and the second
      argument is false, otherwise it evaluates to true.</p>
 
-     <div id="logic1.implies.ex1" class="mathml-example">
+     
+     <p>The <code class="element">equivalent</code> element represents the relation that
+     asserts two Boolean expressions are logically equivalent,
+     that is have the same Boolean value for any inputs.</p>
+
+     <section class="fold">
+      <h6 id="logic1.binary-logical.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -5001,28 +5007,6 @@
          &lt;apply&gt;&lt;implies/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x21d2;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/logic1-implies-ex1.gif" alt="{A\unicode{8658}B}"></img></p>
-      </blockquote>
-     </div>
-
-     
-     <p>The <code class="element">equivalent</code> element represents the relation that
-     asserts two Boolean expressions are logically equivalent,
-     that is have the same Boolean value for any inputs.</p>
-
-     <div id="logic1.equivalent1.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;equivalent/&gt;
@@ -5036,6 +5020,11 @@
 
       <div class="example mathml mmlcore">
        <pre>
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x21d2;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
          &lt;mrow&gt;
            &lt;mi&gt;a&lt;/mi&gt;
            &lt;mo&gt;&amp;#x2261;&lt;/mo&gt;
@@ -5043,11 +5032,17 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
+<!--
+      <blockquote>
+       <p><img src="image/logic1-implies-ex1.gif" alt="{A\unicode{8658}B}"></img></p>
+      </blockquote>
+-->
+<!--
       <blockquote>
        <p><img src="image/logic1-equivalent1-ex1.gif" alt="{a\unicode{8801}{\unicode{172}{\unicode{172}a}}}"></img></p>
-      </blockquote>
-     </div>
+</blockquote>
+-->
+     </section>
 
 
     </section>
