@@ -6993,7 +6993,8 @@
      <p>The <code class="element">int</code> element is the operator element for a definite or indefinite integral
      over a function or a definite integral over an expression with a bound variable.</p>
 
-     <div id="calculus1.int.ex1" class="mathml-example">
+     <section class="fold">
+      <h6 id="calculus1.int.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -7004,23 +7005,6 @@
          &lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;&amp;#x222b;&lt;/mi&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/calculus1-int-ex1.gif" alt="{{\unicode{8747}{\minormal{sin}}}={\minormal{cos}}}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="calculus1.defint.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;int/&gt;
@@ -7034,29 +7018,42 @@
 
       <div class="example mathml mmlcore">
        <pre>
+         &lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;&amp;#x222b;&lt;/mi&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
          &lt;mrow&gt;
            &lt;msubsup&gt;&lt;mi&gt;&amp;#x222b;&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/msubsup&gt;&lt;mi&gt;cos&lt;/mi&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
 
+      <!--
+      <blockquote>
+       <p><img src="image/calculus1-int-ex1.gif" alt="{{\unicode{8747}{\minormal{sin}}}={\minormal{cos}}}"></img></p>
+      </blockquote>
+-->
+
+<!--
       <blockquote>
        <p><img src="image/calculus1-defint-ex1.gif" alt="{\mosubsup\int{a}{b}{\minormal{cos}}}"></img></p>
       </blockquote>
-
-     </div>
+-->
+     </section>
 
      <p>The <code class="element">int</code> element can also be used with bound variables serving as the
      integration variables.</p>
 
-     <div id="calculus1.defint.ex2" class="mathml-example">
+      <p>Definite integrals are indicated by providing qualifier elements specifying
+      a
+      domain of integration. A <code class="element">lowlimit</code>/<code class="element">uplimit</code> pair
+      is perhaps the most <q>standard</q> representation of a definite integral.</p>
 
+      <section class="fold">
+<h6 id="calculus1.defint.ex2">Example</h6>
       <p>Content MathML</p>
 
-      <p> Here, definite integrals are indicated by providing qualifier elements specifying
-      a
-      domain of integration (here a <code class="element">lowlimit</code>/<code class="element">uplimit</code> pair). This is perhaps
-      the most <q>standard</q> representation of this integral:</p>
 
       <div class="example mathml mml4c">
        <pre>
@@ -7081,12 +7078,12 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
+<!--
       <blockquote>
        <p><img src="image/calculus1-defint-ex2.gif" alt="\mosubsup\int{0}{1} {\msup{x}{2}} d x"></img></p>
       </blockquote>
-
-     </div>
+-->
+     </section>
 
     </section>
 
@@ -7106,29 +7103,13 @@
      can be
      applied to an expression involving a single variable.</p>
 
-     <div id="calculus1.diff.ex2" class="mathml-example">
+     <section class="fold">
+      <h6 id="calculus1.diff.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
        <pre>&lt;apply&gt;&lt;diff/&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;/apply&gt;</pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;/mo&gt;&lt;/msup&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/calculus1-diff-ex2.gif" alt="\msup{f}{\unicode{8242}}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="calculus1.diff.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;eq/&gt;
@@ -7145,6 +7126,11 @@
 
       <div class="example mathml mmlcore">
        <pre>
+         &lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;/mo&gt;&lt;/msup&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
          &lt;mrow&gt;
            &lt;mfrac&gt;
              &lt;mrow&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;/mrow&gt;
@@ -7156,15 +7142,23 @@
        </pre>
       </div>
 
+<!--
+      <blockquote>
+       <p><img src="image/calculus1-diff-ex2.gif" alt="\msup{f}{\unicode{8242}}"></img></p>
+      </blockquote>
+-->
+<!--
       <blockquote>
        <p><img src="image/calculus1-diff-ex1.gif" alt="{ {\frac{{d{\mathop{{\minormal{sin}}}x}}}{{dx}}} = {\mathop{{\minormal{cos}}}x} }"></img></p>
       </blockquote>
-     </div>
+-->
+     </section>
 
      <p>The <code class="element">bvar</code> element may also contain a <code class="element">degree</code> element, which specifies
      the order of the derivative to be taken.</p>
 
-     <div id="calculus1.diff.ex3" class="mathml-example">
+     <section class="fold">
+      <h6 id="calculus1.diff.ex3">Example</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -7190,7 +7184,7 @@
        </pre>
       </div>
 
-     </div>
+     </section>
     </section>
 
 
