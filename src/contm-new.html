@@ -7212,7 +7212,8 @@
      constructing the partial derivatives, and secondly the actual function
      to be partially differentiated.  The indices may be repeated.</p>
 
-     <div id="calculus1.partialdiff.ex3" class="mathml-example">
+     <section class="fold">
+      <h6 id="calculus1.partialdiff.ex3">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -7223,30 +7224,6 @@
          &lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;
-           &lt;msub&gt;
-             &lt;mi&gt;D&lt;/mi&gt;
-             &lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;
-           &lt;/msub&gt;
-           &lt;mi&gt;f&lt;/mi&gt;
-         &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/calculus1-partialdiff-ex3.gif" alt="{\msub{D}{{{1},{1},{3}}}f}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="calculus1.partialdiff.ex3b" class="mathml-example">
-
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;partialdiff/&gt;
@@ -7265,6 +7242,17 @@
 
       <div class="example mathml mmlcore">
        <pre>
+         &lt;mrow&gt;
+           &lt;msub&gt;
+             &lt;mi&gt;D&lt;/mi&gt;
+             &lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;
+           &lt;/msub&gt;
+           &lt;mi&gt;f&lt;/mi&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
          &lt;mfrac&gt;
            &lt;mrow&gt;
              &lt;msup&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
@@ -7279,19 +7267,32 @@
          &lt;/mfrac&gt;
        </pre>
       </div>
-
+     </section>
+<!--
+      <blockquote>
+       <p><img src="image/calculus1-partialdiff-ex3.gif" alt="{\msub{D}{{{1},{1},{3}}}f}"></img></p>
+      </blockquote>
+-->
+<!--
       <blockquote>
        <p><img src="image/calculus1-partialdiff-ex3b.gif" alt="{\frac{{ {\msup{\unicode{8706}}{3}} {f{\left(x,y,z\right)}} }}{{ {\unicode{8706}{\msup{x}{2}}} {\unicode{8706}z} }}}"></img></p>
       </blockquote>
-
-     </div>
+-->
+ 
 
      <p>In the case of algebraic expressions, the bound variables are given by <code class="element">bvar</code>
      elements, which are children of the containing <code class="element">apply</code> element. The <code class="element">bvar</code>
      elements may also contain <code class="element">degree</code> element, which specify the order of the partial
      derivative to be taken in that variable.</p>
 
-     <div id="calculus1.partialdiff.ex2" class="mathml-example">
+
+     <p>Where a total degree of differentiation must be specified, this is
+     indicated by use of a <code class="element">degree</code> element at the top level,
+     i.e. without any associated <code class="element">bvar</code>, as a child of the
+     containing <code class="element">apply</code> element.</p>
+
+     <section class="fold">
+      <h6 id="calculus1.partialdiff.ex2">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -7300,6 +7301,19 @@
            &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
            &lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/bvar&gt;
            &lt;apply&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;partialdiff/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;degree&gt;&lt;ci&gt;m&lt;/ci&gt;&lt;/degree&gt;&lt;/bvar&gt;
+           &lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;degree&gt;&lt;ci&gt;n&lt;/ci&gt;&lt;/degree&gt;&lt;/bvar&gt;
+           &lt;degree&gt;&lt;ci&gt;k&lt;/ci&gt;&lt;/degree&gt;
+           &lt;apply&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;
+             &lt;ci&gt;x&lt;/ci&gt;
+             &lt;ci&gt;y&lt;/ci&gt;
+           &lt;/apply&gt;
          &lt;/apply&gt;
        </pre>
       </div>
@@ -7324,36 +7338,6 @@
          &lt;/mfrac&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/calculus1-partialdiff-ex2.gif" alt="{\frac{{\msup{\unicode{8706}}{{2}}{\mathop{f}{\left(x,y\right)}}}}{{{\unicode{8706}x}{\unicode{8706}y}}}}"></img></p>
-      </blockquote>
-     </div>
-
-     <p>Where a total degree of differentiation must be specified, this is
-     indicated by use of a <code class="element">degree</code> element at the top level,
-     i.e. without any associated <code class="element">bvar</code>, as a child of the
-     containing <code class="element">apply</code> element.</p>
-
-     <div id="calculus1.partialdiff.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;partialdiff/&gt;
-           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;degree&gt;&lt;ci&gt;m&lt;/ci&gt;&lt;/degree&gt;&lt;/bvar&gt;
-           &lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;degree&gt;&lt;ci&gt;n&lt;/ci&gt;&lt;/degree&gt;&lt;/bvar&gt;
-           &lt;degree&gt;&lt;ci&gt;k&lt;/ci&gt;&lt;/degree&gt;
-           &lt;apply&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;
-             &lt;ci&gt;x&lt;/ci&gt;
-             &lt;ci&gt;y&lt;/ci&gt;
-           &lt;/apply&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mfrac&gt;
@@ -7370,11 +7354,20 @@
          &lt;/mfrac&gt;
        </pre>
       </div>
+     </section>
+     <!--
+      <blockquote>
+       <p><img src="image/calculus1-partialdiff-ex2.gif" alt="{\frac{{\msup{\unicode{8706}}{{2}}{\mathop{f}{\left(x,y\right)}}}}{{{\unicode{8706}x}{\unicode{8706}y}}}}"></img></p>
+      </blockquote>
+-->
 
+
+<!--
       <blockquote>
        <p><img src="image/calculus1-partialdiff-ex1.gif" alt="{\frac{{\msup{\unicode{8706}}{k}{\mathop{f}{\left(x,y\right)}}}}{{{\unicode{8706}\msup{x}{m}}{\unicode{8706}\msup{y}{n}}}}}"></img></p>
       </blockquote>
-     </div>
+-->
+
 
     </section>
 </section>
