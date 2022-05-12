@@ -6427,13 +6427,13 @@
  
 
 
-                <section>
-                 <h5 id="contm_unary_veccalc">Unary Vector Calculus Operators:
+    <section>
+     <h5 id="contm_unary_veccalc">Unary Vector Calculus Operators:
      <dfn id="contm_divergence"><code class="defn emptytag">&lt;divergence/&gt;</code></dfn>,
      <dfn id="contm_grad"><code class="defn emptytag">&lt;grad/&gt;</code></dfn>,
      <dfn id="contm_curl"><code class="defn emptytag">&lt;curl/&gt;</code></dfn>,
      <dfn id="contm_laplacian"><code class="defn emptytag">&lt;laplacian/&gt;</code></dfn>
-                 </h5>
+     </h5>
 
      <p class="advisement">
       <a class="intref" href="#cops_unary_veccalc">Operator Syntax</a>,
@@ -6447,12 +6447,50 @@
      functions, intended to represent a vector-valued function, and returns
      the scalar-valued function giving the divergence of the argument.</p>
 
-     <div id="veccalc1.divergence.ex1" class="mathml-example">
+     <p>The <code class="element">grad</code> element is the vector calculus gradient operator, often called
+     grad. It is used to represent the grad function, which takes one
+     argument which should be a scalar-valued function and returns a
+     vector of functions.</p>
+
+     <p>The <code class="element">curl</code> element is used to represent the curl function
+     of vector calculus. It takes one argument which should be a vector
+     of scalar-valued functions, intended to represent a vector-valued
+     function, and returns a vector of functions.</p>
+
+     <p>The <code class="element">laplacian</code> element represents the Laplacian operator of
+     vector calculus.  The Laplacian takes a single argument which is a
+     vector of scalar-valued functions representing a vector-valued
+     function, and returns a vector of functions.</p>
+
+     <section class="fold">
+      <h6  id="veccalc1.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;divergence/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;divergence/&gt;
+           &lt;ci type="vector"&gt;E&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;grad/&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;curl/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;laplacian/&gt;&lt;ci type="vector"&gt;E&lt;/ci&gt;&lt;/apply&gt;
        </pre>
       </div>
 
@@ -6463,53 +6501,69 @@
          &lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/veccalc1-divergence-ex1.gif" alt="{\mathop{{\minormal{div}}}{\left(a\right)}}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="veccalc1.divergence.ex2" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;divergence/&gt;
-           &lt;ci type="vector"&gt;E&lt;/ci&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/veccalc1-divergence-ex2.gif" alt="{\mathop{{\minormal{div}}}{\left(E\right)}}"></img></p>
-      </blockquote>
-
-      <div class="example mathml mmlcore">
-       <pre>
+         &lt;mtext&gt;&#160;or&#160;&lt;/mtext&gt;
          &lt;mrow&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#x22c5;&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;
+           &lt;mi&gt;grad&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+         &lt;/mrow&gt;
+         &lt;mtext&gt;&#160;or&#160;&lt;/mtext&gt;
+         &lt;mrow&gt;
+           &lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mi&gt;curl&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+         &lt;mtext&gt;&#160;or&#160;&lt;/mtext&gt;
+         &lt;mrow&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#xd7;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;
+           &lt;msup&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
 
+
+     </section>
+<!--
+      <blockquote>
+       <p><img src="image/veccalc1-divergence-ex1.gif" alt="{\mathop{{\minormal{div}}}{\left(a\right)}}"></img></p>
+      </blockquote>
+-->
+
+
+<!--
+      <blockquote>
+       <p><img src="image/veccalc1-divergence-ex2.gif" alt="{\mathop{{\minormal{div}}}{\left(E\right)}}"></img></p>
+      </blockquote>
+-->
+<!--
       <blockquote>
        <p><img src="image/veccalc1-divergence-ex2-2.gif" alt="{\unicode{8711}\unicode{8901}E}"></img></p>
       </blockquote>
+-->
 
-     </div>
 
      <p>The functions defining the coordinates may be defined implicitly as expressions defined
      in terms of the coordinate names, in which case the coordinate names must be provided
      as
      bound variables.</p>
 
-     <div id="veccalc1.divergence.ex3" class="mathml-example">
+     <section class="fold">
+      <h6 id="veccalc1.ex2">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -6523,6 +6577,26 @@
              &lt;apply&gt;&lt;plus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/apply&gt;
              &lt;apply&gt;&lt;plus/&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
            &lt;/vector&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;grad/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;bvar&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;apply&gt;&lt;times/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;laplacian/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;bvar&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
          &lt;/apply&gt;
        </pre>
       </div>
@@ -6556,77 +6630,6 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/veccalc1-divergence-ex3.gif" alt="{\left.\mathop{{\minormal{div}}}\middle({\begin{matrix}x\unicode{8614}{x+y}\\y\unicode{8614}{x+z}\\z\unicode{8614}{z+y}\end{matrix}}\middle)\right.}"></img></p>
-      </blockquote>
-
-     </div>
-
-     <p>The <code class="element">grad</code> element is the vector calculus gradient operator, often called
-     grad. It is used to represent the grad function, which takes one
-     argument which should be a scalar-valued function and returns a
-     vector of functions.</p>
-
-     <div id="veccalc1.gradient.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;grad/&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;
-           &lt;mi&gt;grad&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-         &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/veccalc1-gradient-ex1.gif" alt="{\mathop{{\minormal{grad}}}{\left(f\right)}}"></img></p>
-      </blockquote>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;
-           &lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-         &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/veccalc1-gradient-ex1-2.gif" alt="{\unicode{8711}\unicode{8289}{\left(f\right)}}"></img></p>
-      </blockquote>
-
-     </div>
-
-     <p>The functions defining the coordinates may be defined implicitly as expressions
-     defined in terms of the coordinate names, in which case the coordinate names must
-     be
-     provided as bound variables.</p>
-
-     <div id="veccalc1.gradient.ex2" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;grad/&gt;
-           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
-           &lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/bvar&gt;
-           &lt;bvar&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/bvar&gt;
-           &lt;apply&gt;&lt;times/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/apply&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -6644,110 +6647,6 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/veccalc1-gradient-ex2.gif" alt="{\mathop{{\minormal{grad}}}{\left.\middle({\left(x,y,z\right)}\unicode{8614}{x\unicode{8290}y\unicode{8290}z}\middle)\right.}}"></img></p>
-      </blockquote>
-
-     </div>
-
-     
-     <p>The <code class="element">curl</code> element is used to represent the curl function
-     of vector calculus. It takes one argument which should be a vector
-     of scalar-valued functions, intended to represent a vector-valued
-     function, and returns a vector of functions.</p>
-
-     <div id="veccalc1.curl.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;curl/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;curl&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/veccalc1-curl-ex1.gif" alt="{\mathop{{\minormal{curl}}}{\left(a\right)}}"></img></p>
-      </blockquote>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#xd7;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/veccalc1-curl-ex1-2.gif" alt="{\unicode{8711}\unicode{215}a}"></img></p>
-      </blockquote>
-
-     </div>
-
-     <p>The functions defining the coordinates may be defined implicitly as expressions
-     defined in terms of the coordinate names, in which case the coordinate names must
-     be
-     provided as bound variables.</p>
-
-     
-     <p>The <code class="element">laplacian</code> element represents the Laplacian operator of
-     vector calculus.  The Laplacian takes a single argument which is a
-     vector of scalar-valued functions representing a vector-valued
-     function, and returns a vector of functions.</p>
-
-     <div id="veccalc1.laplacian.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;laplacian/&gt;&lt;ci type="vector"&gt;E&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;
-           &lt;msup&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-         &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/veccalc1-laplacian-ex1.gif" alt="{\msup{\unicode{8711}}{{2}}\unicode{8289}{\left(E\right)}}"></img></p>
-      </blockquote>
-     </div>
-
-     <p>The functions defining the coordinates may be defined implicitly as expressions
-     defined in terms of the coordinate names, in which case the coordinate names must
-     be
-     provided as bound variables.</p>
-
-     <div id="veccalc1.laplacian.ex2" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;laplacian/&gt;
-           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
-           &lt;bvar&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/bvar&gt;
-           &lt;bvar&gt;&lt;ci&gt;z&lt;/ci&gt;&lt;/bvar&gt;
-           &lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -6767,18 +6666,61 @@
          &lt;/mrow&gt;
        </pre>
       </div>
+     </section>
+     <!--
+      <blockquote>
+       <p><img src="image/veccalc1-divergence-ex3.gif" alt="{\left.\mathop{{\minormal{div}}}\middle({\begin{matrix}x\unicode{8614}{x+y}\\y\unicode{8614}{x+z}\\z\unicode{8614}{z+y}\end{matrix}}\middle)\right.}"></img></p>
+      </blockquote>
+-->
 
+<!--
+      <blockquote>
+       <p><img src="image/veccalc1-gradient-ex1.gif" alt="{\mathop{{\minormal{grad}}}{\left(f\right)}}"></img></p>
+      </blockquote>
+-->
+<!--
+      <blockquote>
+       <p><img src="image/veccalc1-gradient-ex1-2.gif" alt="{\unicode{8711}\unicode{8289}{\left(f\right)}}"></img></p>
+      </blockquote>
+-->
+
+
+      <!--
+      <blockquote>
+       <p><img src="image/veccalc1-gradient-ex2.gif" alt="{\mathop{{\minormal{grad}}}{\left.\middle({\left(x,y,z\right)}\unicode{8614}{x\unicode{8290}y\unicode{8290}z}\middle)\right.}}"></img></p>
+      </blockquote>
+-->
+
+
+<!--
+      <blockquote>
+       <p><img src="image/veccalc1-curl-ex1.gif" alt="{\mathop{{\minormal{curl}}}{\left(a\right)}}"></img></p>
+  </blockquote>
+-->
+<!--
+      <blockquote>
+       <p><img src="image/veccalc1-curl-ex1-2.gif" alt="{\unicode{8711}\unicode{215}a}"></img></p>
+      </blockquote>
+-->
+
+
+<!--
+      <blockquote>
+       <p><img src="image/veccalc1-laplacian-ex1.gif" alt="{\msup{\unicode{8711}}{{2}}\unicode{8289}{\left(E\right)}}"></img></p>
+      </blockquote>
+-->
+     
+<!--
       <blockquote>
        <p><img src="image/veccalc1-laplacian-ex2.gif" alt="{\msup{\unicode{8711}}{{2}}\unicode{8289}{\left.\middle({\left(x,y,z\right)}\unicode{8614}{\mathop{f}{\left(x,y\right)}}\middle)\right.}}"></img></p>
       </blockquote>
+-->
 
-     </div>
+     </section>
 
 
 
-    </section>
-
- <section>
+     <section>
      <h5 id="contm_moment_sec">Moment <dfn id="contm_moment"><code class="defn emptytag">&lt;moment/&gt;</code></dfn>, <dfn id="contm_momentabout"><code class="defn starttag">&lt;momentabout&gt;</code></dfn></h5>
 
      <p class="advisement">
@@ -8279,10 +8221,6 @@ infinity (&#x221e;).</p>
     </section>
     </section>
 
-       </section>
-
-    
- 
-
-
- </section>
+   </section>
+  </section>
+  
