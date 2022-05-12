@@ -3134,7 +3134,8 @@
      terms of the sum are obtained by evaluating the function at
      each point of the domain specified by qualifiers.</p>
 
-     <div id="arith1.sum.ex1" class="mathml-example">
+     <section class="fold">
+      <h6 id="arith1.sum.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -3144,6 +3145,27 @@
            &lt;lowlimit&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/lowlimit&gt;
            &lt;uplimit&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/uplimit&gt;
            &lt;apply&gt;&lt;ci&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;sum/&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;condition&gt;
+             &lt;apply&gt;&lt;in/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci type="set"&gt;B&lt;/ci&gt;&lt;/apply&gt;
+           &lt;/condition&gt;
+           &lt;apply&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;sum/&gt;
+           &lt;domainofapplication&gt;
+             &lt;ci type="set"&gt;B&lt;/ci&gt;
+           &lt;/domainofapplication&gt;
+           &lt;ci type="function"&gt;f&lt;/ci&gt;
          &lt;/apply&gt;
        </pre>
       </div>
@@ -3162,30 +3184,6 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/arith1-sum-ex1.gif" alt="{\munderover{\unicode{8721}}{{x=a}}{b}{\mathop{f}{\left(x\right)}}}"></img></p>
-      </blockquote>
-
-     </div>
-
-     <div id="arith1.sum.ex2" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;sum/&gt;
-           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
-           &lt;condition&gt;
-             &lt;apply&gt;&lt;in/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci type="set"&gt;B&lt;/ci&gt;&lt;/apply&gt;
-           &lt;/condition&gt;
-           &lt;apply&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -3197,40 +3195,28 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/arith1-sum-ex2.gif" alt="{\munder{\unicode{8721}}{{x\unicode{8712}B}}{\mathop{f}{\left(x\right)}}}"></img></p>
-      </blockquote>
-
-     </div>
-
-     <div id="arith1.sum.ex3" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;sum/&gt;
-           &lt;domainofapplication&gt;
-             &lt;ci type="set"&gt;B&lt;/ci&gt;
-           &lt;/domainofapplication&gt;
-           &lt;ci type="function"&gt;f&lt;/ci&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
-
+     </section>
+<!--
+      <blockquote>
+       <p><img src="image/arith1-sum-ex1.gif" alt="{\munderover{\unicode{8721}}{{x=a}}{b}{\mathop{f}{\left(x\right)}}}"></img></p>
+      </blockquote>
+-->
+<!--
+      <blockquote>
+       <p><img src="image/arith1-sum-ex2.gif" alt="{\munder{\unicode{8721}}{{x\unicode{8712}B}}{\mathop{f}{\left(x\right)}}}"></img></p>
+      </blockquote>
+-->
+<!--
       <blockquote>
        <p><img src="image/arith1-sum-ex3.gif" alt="{\munder{\unicode{8721}}{B}f}"></img></p>
       </blockquote>
-
-     </div>
+-->
+   
     </section>
 
 
