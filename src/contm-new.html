@@ -5936,11 +5936,15 @@
      </p>
 
 
-     <p>This element is used for the unary function which returns the determinant of its argument,
+     <p>The <code class="element">determinant</code> element is used for the unary function which returns the determinant of its argument,  which should be a square matrix.</p>
 
-     which should be a square matrix.</p>
 
-     <div id="linalg1.determinant.ex1" class="mathml-example">
+     
+     <p>The <code class="element">transpose</code> element represents a unary function that signifies the transpose of the
+     given matrix or vector.</p>
+
+     <section class="fold">
+      <h6 id="linalg1.unary.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -5950,28 +5954,6 @@
          &lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;det&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/linalg1-determinant-ex1.gif" alt="{\mathop{{\minormal{det}}}A}"></img></p>
-      </blockquote>
-
-     </div>
-
-     
-     <p>This element represents a unary function that signifies the transpose of the
-     given matrix or vector.</p>
-
-     <div id="linalg1.transpose.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;transpose/&gt;
@@ -5984,15 +5966,26 @@
 
       <div class="example mathml mmlcore">
        <pre>
+         &lt;mrow&gt;&lt;mi&gt;det&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
          &lt;msup&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/msup&gt;
        </pre>
       </div>
 
+<!--
+      <blockquote>
+       <p><img src="image/linalg1-determinant-ex1.gif" alt="{\mathop{{\minormal{det}}}A}"></img></p>
+      </blockquote>
+--> 
+<!--
       <blockquote>
        <p><img src="image/linalg1-transpose-ex1.gif" alt="\msup{A}{T}"></img></p>
       </blockquote>
-     </div>
-
+-->
+     </section>
 
     </section>
 
