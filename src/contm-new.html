@@ -5048,7 +5048,17 @@
      relation, i.e. the relation <q>not equal to</q> which returns true unless
      the two arguments are equal.</p>
 
-     <div id="relation1.neq.ex1" class="mathml-example">
+     <p>The <code class="element">approx</code> element represent the relation that asserts
+     the approximate equality of its arguments.</p>
+
+
+      <p>The <code class="element">factorof</code> element is used to indicate the
+     mathematical relationship that the first argument <q>is a factor of</q>
+     the second. This relationship is true if and only
+     if <i class="var">b</i> mod <i class="var">a</i> = 0.</p>
+
+     <section class="fold">
+      <h6 id="relation1.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -5056,27 +5066,6 @@
          &lt;apply&gt;&lt;neq/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;#x2260;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/relation1-neq-ex1.gif" alt="{{3}\unicode{8800}{4}}"></img></p>
-      </blockquote>
-     </div>
-
-     
-     <p>The <code class="element">approx</code> element represent the relation that asserts
-     the approximate equality of its arguments.</p>
-
-     <div id="relation1.approx.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;approx/&gt;
@@ -5085,32 +5074,6 @@
          &lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;
-           &lt;mi&gt;&amp;#x3c0;&lt;/mi&gt;
-           &lt;mo&gt;&amp;#x2243;&lt;/mo&gt;
-           &lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;
-         &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/relation1-approx-ex1.gif" alt="{\unicode{960}\unicode{8771}{{22}/{7}}}"></img></p>
-      </blockquote>
-     </div>
-
-      <p>The <code class="element">factorof</code> element is used to indicate the
-     mathematical relationship that the first argument <q>is a factor of</q>
-     the second. This relationship is true if and only
-     if <i class="var">b</i> mod <i class="var">a</i> = 0.</p>
-
-     <div id="integer1.factorof.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;factorof/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
@@ -5121,14 +5084,39 @@
 
       <div class="example mathml mmlcore">
        <pre>
+         &lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;#x2260;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;
+           &lt;mi&gt;&amp;#x3c0;&lt;/mi&gt;
+           &lt;mo&gt;&amp;#x2243;&lt;/mo&gt;
+           &lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
          &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
-
+     </section>
+<!--
+      <blockquote>
+       <p><img src="image/relation1-neq-ex1.gif" alt="{{3}\unicode{8800}{4}}"></img></p>
+      </blockquote>
+-->
+<!--
+      <blockquote>
+       <p><img src="image/relation1-approx-ex1.gif" alt="{\unicode{960}\unicode{8771}{{22}/{7}}}"></img></p>
+      </blockquote>
+-->
+<!--
       <blockquote>
        <p><img src="image/integer1-factorof-ex1.gif" alt="{\left.a\middle|b\right.}"></img></p>
       </blockquote>
-     </div>
+      -->
 
      
      <p>The <code class="element">tendsto</code> element is used to express the relation that
@@ -5141,7 +5129,8 @@
      <p>The <code class="element">tendsto</code> element takes the attributes <code class="attribute">type</code> to set the
      direction from which the limiting value is approached.</p>
 
-     <div id="limit1.tendsto.ex1" class="mathml-example">
+     <section class="fold">
+      <h6 id="limit1.tendsto.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -5149,6 +5138,17 @@
          &lt;apply&gt;&lt;tendsto type="above"/&gt;
            &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
            &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;tendsto/&gt;
+           &lt;vector&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/vector&gt;
+           &lt;vector&gt;
+             &lt;apply&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
+             &lt;apply&gt;&lt;ci type="function"&gt;g&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
+           &lt;/vector&gt;
          &lt;/apply&gt;
        </pre>
       </div>
@@ -5164,29 +5164,6 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/limit1-tendsto-ex1.gif" alt="\msup{x}{2}\unicode{8594}\msup{\msup{a}{2}}{+}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="limit1.tendsto.ex2" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;tendsto/&gt;
-           &lt;vector&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/vector&gt;
-           &lt;vector&gt;
-             &lt;apply&gt;&lt;ci type="function"&gt;f&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
-             &lt;apply&gt;&lt;ci type="function"&gt;g&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
-           &lt;/vector&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mtable&gt;
@@ -5204,11 +5181,19 @@
          &lt;/mtable&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
       </div>
+     </section>
 
+      <!--
+      <blockquote>
+       <p><img src="image/limit1-tendsto-ex1.gif" alt="\msup{x}{2}\unicode{8594}\msup{\msup{a}{2}}{+}"></img></p>
+      </blockquote>
+      -->
+<!--
       <blockquote>
        <p><img src="image/limit1-tendsto-ex2.gif" alt="{{\left.\middle({\begin{matrix}x\\y\end{matrix}}\middle)\right.}\unicode{8594}{\left.\middle({\begin{matrix}{\mathop{f}{\left(x,y\right)}}\\{\mathop{g}{\left(x,y\right)}}\end{matrix}}\middle)\right.}}"></img></p>
       </blockquote>
-     </div>
+-->
+
 
         </section>
 
