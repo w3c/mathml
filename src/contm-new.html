@@ -5251,7 +5251,25 @@
      It has two arguments, an element and a set. It is used to denote
      that the element is in the given set.</p>
 
-     <div id="set1.in.ex1" class="mathml-example">
+     <p>The <code class="element">notin</code> represents the negated set inclusion
+     relation. It has two arguments, an element and a set. It is
+     used to denote that the element is not in the given set.</p>
+
+     <p>The <code class="element">notsubset</code> element represents the negated subset
+     relation. It is used to denote that the first argument is not a subset of the
+     second.</p>
+
+     <p>The <code class="element">notprsubset</code> element represents the negated proper
+     subset relation. It is used to denote that the first argument is not
+     a proper subset of the second.</p>
+
+     <p>The <code class="element">setdiff</code> element represents set difference
+     operator. It takes two sets as arguments, and denotes the set that
+     contains all the elements that occur in the first set, but not in
+     the second.</p>
+
+     <section class="fold">
+      <h6 id="set.binary.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -5259,55 +5277,11 @@
          &lt;apply&gt;&lt;in/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci type="set"&gt;A&lt;/ci&gt;&lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/set1-in-ex1.gif" alt="{a\unicode{8712}A}"></img></p>
-      </blockquote>
-     </div>
-
-
-     <p>The <code class="element">notin</code> represents the negated set inclusion
-     relation. It has two arguments, an element and a set. It is
-     used to denote that the element is not in the given set.</p>
-
-     <div id="set1.notin.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;notin/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci type="set"&gt;A&lt;/ci&gt;&lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2209;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/set1-notin-ex1.gif" alt="{a\unicode{8713}A}"></img></p>
-      </blockquote>
-     </div>
-
-
-     <p>The <code class="element">notsubset</code> element represents the negated subset
-     relation. It is used to denote that the first argument is not a subset of the
-     second.</p>
-
-     <div id="set1.notsubset.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;notsubset/&gt;
@@ -5316,28 +5290,6 @@
          &lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2288;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/set1-notsubset-ex1.gif" alt="{A\unicode{8840}B}"></img></p>
-      </blockquote>
-     </div>
-
-     
-     <p>The <code class="element">notprsubset</code> element represents the negated proper
-     subset relation. It is used to denote that the first argument is not
-     a proper subset of the second.</p>
-
-     <div id="set1.notprsubset.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;notprsubset/&gt;
@@ -5346,27 +5298,6 @@
          &lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2284;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/set1-notprsubset-ex1.gif" alt="{A\unicode{8836}B}"></img></p>
-      </blockquote>
-     </div>
-     <p>The <code class="element">setdiff</code> element represents set difference
-     operator. It takes two sets as arguments, and denotes the set that
-     contains all the elements that occur in the first set, but not in
-     the second.</p>
-
-     <div id="set1.setdiff.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;setdiff/&gt;
@@ -5380,15 +5311,32 @@
 
       <div class="example mathml mmlcore">
        <pre>
+         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2209;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2288;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2284;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
          &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2216;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
-      <blockquote>
-       <p><img src="image/set1-setdiff-ex1.gif" alt="{A\unicode{8726}B}"></img></p>
-      </blockquote>
-     </div>
-
+     </section>
+     
     </section>
 
    </section>
