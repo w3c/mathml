@@ -5239,11 +5239,22 @@
      </p>
 
 
-     <p>This element represents the vector product. It takes two three-dimensional vector
-     arguments
-     and represents as value a three-dimensional vector.</p>
+     <p>The <code class="element">vectorproduct</code> element
+     represents the vector product. It takes two three-dimensional
+     vector arguments and represents as value a three-dimensional
+     vector.</p>
 
-     <div id="linalg1.vectorproduct.ex1" class="mathml-example">
+     <p>The <code class="element">scalarproduct</code> element
+     represents the scalar product function. It takes two vector
+     arguments and returns a scalar value.</p>
+
+         
+     <p>The <code class="element">outerproduct</code> element
+     represents the outer product function. It takes two vector
+     arguments and returns as value a matrix.</p>
+
+     <section class="fold">
+      <h6 id="linalg1.binary.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -5259,6 +5270,29 @@
              &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;&amp;#x3b8;&lt;/ci&gt;&lt;/apply&gt;
              &lt;ci type="vector"&gt; N &lt;/ci&gt;
            &lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;eq/&gt;
+           &lt;apply&gt;&lt;scalarproduct/&gt;
+             &lt;ci type="vector"&gt;A&lt;/ci&gt;
+             &lt;ci type="vector"&gt;B&lt;/ci&gt;
+           &lt;/apply&gt;
+           &lt;apply&gt;&lt;times/&gt;
+             &lt;ci&gt;a&lt;/ci&gt;
+             &lt;ci&gt;b&lt;/ci&gt;
+             &lt;apply&gt;&lt;cos/&gt;&lt;ci&gt;&amp;#x3b8;&lt;/ci&gt;&lt;/apply&gt;
+           &lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;outerproduct/&gt;
+           &lt;ci type="vector"&gt;A&lt;/ci&gt;
+           &lt;ci type="vector"&gt;B&lt;/ci&gt;
          &lt;/apply&gt;
        </pre>
       </div>
@@ -5282,37 +5316,6 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/linalg1-vectorproduct-ex1.gif" alt="{{A\unicode{215}B}={a\unicode{8290}b\unicode{8290}{\mathop{{\minormal{sin}}}\unicode{952}}\unicode{8290}N}}"></img></p>
-      </blockquote>
-     </div>
-
-      <p>This element represents the scalar product function. It takes two vector arguments
-
-     and returns a scalar value.</p>
-
-     <div id="linalg1.scalarproduct.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;eq/&gt;
-           &lt;apply&gt;&lt;scalarproduct/&gt;
-             &lt;ci type="vector"&gt;A&lt;/ci&gt;
-             &lt;ci type="vector"&gt;B&lt;/ci&gt;
-           &lt;/apply&gt;
-           &lt;apply&gt;&lt;times/&gt;
-             &lt;ci&gt;a&lt;/ci&gt;
-             &lt;ci&gt;b&lt;/ci&gt;
-             &lt;apply&gt;&lt;cos/&gt;&lt;ci&gt;&amp;#x3b8;&lt;/ci&gt;&lt;/apply&gt;
-           &lt;/apply&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -5328,40 +5331,12 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/linalg1-scalarproduct-ex1.gif" alt="{{A.B}={a\unicode{8290}b\unicode{8290}{\mathop{{\minormal{cos}}}\unicode{952}}}}"></img></p>
-      </blockquote>
-     </div>
-    
-     <p>This element represents the outer product function. It takes two vector arguments
-
-     and returns as value a matrix.</p>
-
-     <div id="linalg1.outerproduct.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;outerproduct/&gt;
-           &lt;ci type="vector"&gt;A&lt;/ci&gt;
-           &lt;ci type="vector"&gt;B&lt;/ci&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2297;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/linalg1-outerproduct-ex1.gif" alt="{A\unicode{8855}B}"></img></p>
-      </blockquote>
-     </div>
+     </section>
 
             </section>
 
