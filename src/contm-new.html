@@ -3662,14 +3662,33 @@
      and denotes the set that contains all the elements that occur in any
      of them.</p>
 
-     <p>Arguments may be explicitly specified.</p>
+     <p>The <code class="element">intersect</code> element is used to denote the n-ary union of sets. It takes sets as arguments,
+     and denotes the set that contains all the elements that occur in all
+     of them.</p>
+ <p>The <code class="element">cartesianproduct</code> element is used to represents the
+ Cartesian product operator.</p>
+ 
+     <p>Arguments may be explicitly specified in the enclosing <code class="element">apply</code> element, or
+     specified using qualifier elements as described in <a href="#contm_nary"></a>.</p>
 
-     <div id="set1.union.ex1" class="mathml-example">
+
+     <section class="fold">
+      <h6 id="set1.union.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;union/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;inersect/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;ci&gt;C&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;cartesianproduct/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;
        </pre>
       </div>
 
@@ -3680,22 +3699,37 @@
          &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x222a;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2229;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mo&gt;&amp;#x2229;&lt;/mo&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#xd7;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+     </section>
 
-      <blockquote>
-       <p><img src="image/set1-union-ex1.gif" alt="{A\unicode{8746}B}"></img></p>
-      </blockquote>
-     </div>
-
-     <p>Arguments may also be specified using qualifier elements as described in
-     <a href="#contm_nary_set"></a>. operator element can be used as a binding
-     operator to construct the union over a collection of sets.</p>
-
-     <div id="set1.big_union.ex1" class="mathml-example">
+ 
+     <section class="fold">
+      <h6 id="set1.big.ex1">Examples (Qualifiers)</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;union/&gt;
+           &lt;bvar&gt;&lt;ci type="set"&gt;S&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;domainofapplication&gt;
+             &lt;ci type="list"&gt;L&lt;/ci&gt;
+           &lt;/domainofapplication&gt;
+           &lt;ci type="set"&gt; S&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;inersect/&gt;
            &lt;bvar&gt;&lt;ci type="set"&gt;S&lt;/ci&gt;&lt;/bvar&gt;
            &lt;domainofapplication&gt;
              &lt;ci type="list"&gt;L&lt;/ci&gt;
@@ -3712,40 +3746,16 @@
          &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x22c3;&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/set1-big_union-ex1.gif" alt="{\munder{\unicode{8899}}{L}S}"></img></p>
-      </blockquote>
-     </div>
-
-     
-     <p>The <code class="element">cartesianproduct</code> element is used to represents the
-     Cartesian product operator. It takes sets as arguments, which may be
-     explicitly specified in the enclosing <code class="element">apply</code> element, or
-     specified using qualifier elements as described in <a href="#contm_nary_set"></a>.</p>
-
-     <div id="set1.cartesianproduct.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;cartesianproduct/&gt;&lt;ci&gt;A&lt;/ci&gt;&lt;ci&gt;B&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#xd7;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x22c2;&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
-      <blockquote>
-       <p><img src="image/set1-cartesianproduct-ex1.gif" alt="{A\unicode{215}B}"></img></p>
-      </blockquote>
-     </div>
+  
+     </section>
 
+  
     </section>
 
 
