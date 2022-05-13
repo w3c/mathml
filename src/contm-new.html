@@ -4307,11 +4307,12 @@
 
 
 
-     <p>The <code class="element">subset</code> element represents the subset relation.  It is used to denote that the
-     first argument is a subset of the second.  As described in <a href="#contm_nary_reln"></a>, it may also be used as an n-ary operator to express
-     that each argument is a subset of its predecessor.</p>
+     <p>The <code class="element">subset</code> and <code class="element">prsubset</code> elements represent respectively the subset and proper subset relations.  They are used to denote that the
+     first argument is a subset or proper subset of the second.  As described above they may also be used as an n-ary operator to express
+     that each argument is a subset or proper subset of its predecessor.</p>
 
-     <div id="set1.subset.ex1" class="mathml-example">
+     <section class="fold">
+      <h6 id="set1.subset.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -4319,6 +4320,15 @@
          &lt;apply&gt;&lt;subset/&gt;
            &lt;ci type="set"&gt;A&lt;/ci&gt;
            &lt;ci type="set"&gt;B&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;prsubset/&gt;
+           &lt;ci type="set"&gt;A&lt;/ci&gt;
+           &lt;ci type="set"&gt;B&lt;/ci&gt;
+           &lt;ci type="set"&gt;C&lt;/ci&gt;
          &lt;/apply&gt;
        </pre>
       </div>
@@ -4330,42 +4340,14 @@
          &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2286;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/set1-subset-ex1.gif" alt="{A\unicode{8838}B}"></img></p>
-      </blockquote>
-     </div>
-
-          <p>The <code class="element">prsubset</code> element represents the proper subset
-     relation, i.e. that the first argument is a proper subset of the
-     second.  As described in <a href="#contm_nary_reln"></a>, it may
-     also be used as an n-ary operator to express that each argument is a
-     proper subset of its predecessor.</p>
-
-     <div id="set1.prsubset.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;prsubset/&gt;
-           &lt;ci type="set"&gt;A&lt;/ci&gt;
-           &lt;ci type="set"&gt;B&lt;/ci&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2282;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&#x2282;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mo&gt;&amp;#x2282;&lt;/mo&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
-      <blockquote>
-       <p><img src="image/set1-prsubset-ex1.gif" alt="{A\unicode{8834}B}"></img></p>
-      </blockquote>
-     </div>
+
+     </section>
 
         </section>
         
