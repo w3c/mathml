@@ -4207,16 +4207,37 @@
       relations that return true or false depending on the relationship of the first argument to the second.
      </p>
  
-     <div id="relation1.eq.ex1" class="mathml-example">
+     <section class="fold">
+      <h6 id="relation1.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
        <pre>
         &lt;apply&gt;&lt;eq/&gt;
-           &lt;ci>x&lt;/ci&gt;
+           &lt;ci&gt;x&lt;/ci&gt;
            &lt;cn type="rational"&gt;2&lt;sep/&gt;4&lt;/cn&gt;
            &lt;cn type="rational"&gt;1&lt;sep/&gt;2&lt;/cn&gt;
          &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+	&lt;apply&gt;&lt;gt/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+	&lt;apply&gt;&lt;lt/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+	&lt;apply&gt;&lt;geq/&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+	&lt;apply&gt;&lt;leq/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;/apply&gt;
        </pre>
       </div>
 
@@ -4233,13 +4254,29 @@
          &lt;/mrow&gt;
        </pre>
       </div>
+      <div class="example mathml mmlcore">
+       <pre>
+	&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;gt;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+	&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+	&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;&amp;#x2265;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&#x2265;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+	&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&#x2264;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
 
-<!--
-      <blockquote>
-       <p><img src="image/relation1-eq-ex1.gif" alt="{{{2}/{4}}={{1}/{2}}}"></img></p>
-      </blockquote>
--->
-     </div>
+ 
+     </section>
 
 
     </section>
