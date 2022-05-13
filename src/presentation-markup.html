@@ -7322,19 +7322,47 @@
     inserting spacing somewhat like that shown here:</p>
  
     <div class="example ">
-     <pre>
-      8.44x + 55  y =  0
-      3.1 x -  0.7y = -1.1
-     </pre>
+     <table style="font-family:math">
+      <tbody>
+        <tr>
+          <td>8.44<em>x</em></td>
+          <td style="padding-left:.22em; padding-right: .22em;">+</td>
+          <td>55<span style="visibility: hidden">.7</span><em>y</em></td>
+          <td style="padding-left:.28em; padding-right: .28;">=</td>
+          <td><span style="visibility: hidden">-</span>0</td>
+        </tr>
+        <tr>
+          <td>3.1<span style="visibility: hidden">4</span><em>x</em></td>
+          <td style="padding-left:.22em; padding-right: .22em;">&#x2212;</td>
+          <td><span style="visibility: hidden">5</span>0.7<em>y</em></td>
+          <td style="padding-left:.28em; padding-right: .28em;">=</td>
+          <td>&#x2212;1.1</td>
+        </tr>
+      </tbody>
+     </table>
     </div>
     <p>If the example expressions shown above were arranged in a column
     but not aligned, they would appear as:</p>
  
     <div class="example ">
-     <pre>
-      8.44x + 55y = 0
-      3.1x - 0.7y = -1.1
-     </pre>
+     <table style="font-family:math">
+      <tbody>
+        <tr>
+          <td>8.44<em>x</em></td>
+          <td style="padding-left:.22em; padding-right: .22em;">+</td>
+          <td>55.7<em>y</em></td>
+          <td style="padding-left:.28em; padding-right: .28em;">=</td>
+          <td><span style="visibility: hidden">&#x2212;</span>0</td>
+        </tr>
+        <tr>
+          <td>3.1<span style="visibility: hidden">4</span><em>x</em></td>
+          <td style="padding-left:.22em; padding-right: .22em;">&#x2212;</td>
+          <td>50.7<em>y</em></td>
+          <td style="padding-left:.28em; padding-right: .28em;">=</td>
+          <td>&#x2212;1.1</td>
+         </tr>
+      </tbody>
+      </table>
     </div>
     <p>For audio renderers, it is suggested that the alignment elements
     produce the analogous behavior of altering the rhythm of pronunciation
@@ -7531,22 +7559,54 @@
     produce:</p>
  
     <div class="example ">
-     <pre>
-      equations with aligned variables
-      8.44x + 55  y =  0
-      3.1 x -  0.7y = -1.1
-     </pre>
+    <table style="font-family:math;">
+      <tbody>
+      <tr><td colspan="7">equations with aligned variables</td></tr>
+      <tr>
+	<td>&#160;&#160;&#160;&#160;&#160;</td>
+        <td>8.44<em>x</em></td>
+        <td style="padding-left:.22em; padding-right: .22em;">+</td>
+        <td>55<span style="visibility: hidden">.7</span><em>y</em></td>
+        <td style="padding-left:.28em; padding-right: .28;">=</td>
+        <td><span style="visibility: hidden">-</span>0</td>
+	<td>&#160;&#160;&#160;&#160;&#160;</td>
+      </tr>
+      <tr>
+	<td></td>
+        <td>3.1<span style="visibility: hidden">4</span><em>x</em></td>
+        <td style="padding-left:.22em; padding-right: .22em;">&#x2212;</td>
+        <td><span style="visibility: hidden">5</span>0.7<em>y</em></td>
+        <td style="padding-left:.28em; padding-right: .28em;">=</td>
+        <td>&#x2212;1.1</td>
+	<td></td>
+      </tr>
+      </tbody>
+    </table>
     </div>
-    or, with a shorter heading,
+    
+    <p>or, with a shorter heading,</p>
  
     <div class="example ">
-     <pre>
-      some equations
-      8.44x + 55  y =  0
-      3.1 x -  0.7y = -1.1
-     </pre>
+     <table style="font-family:math">
+      <tbody>
+        <tr><td colspan="5" style="text-align: center;">some equations</td></tr>
+        <tr>
+          <td>8.44<em>x</em></td>
+          <td style="padding-left:.22em; padding-right: .22em;">+</td>
+          <td>55<span style="visibility: hidden">.7</span><em>y</em></td>
+          <td style="padding-left:.28em; padding-right: .28;">=</td>
+          <td><span style="visibility: hidden">-</span>0</td>
+        </tr>
+        <tr>
+          <td>3.1<span style="visibility: hidden">4</span><em>x</em></td>
+          <td style="padding-left:.22em; padding-right: .22em;">&#x2212;</td>
+          <td><span style="visibility: hidden">5</span>0.7<em>y</em></td>
+          <td style="padding-left:.28em; padding-right: .28em;">=</td>
+          <td>&#x2212;1.1</td>
+        </tr>
+      </tbody>
+     </table>
     </div>
- 
    </section>
  
    <section>
@@ -7939,8 +7999,7 @@
  
  <div class="example mathml mml4p">
   <pre>
-    &lt;mtable groupalign=
-   "{decimalpoint left left decimalpoint left left decimalpoint}"&gt;
+    &lt;mtable groupalign="{decimalpoint left left decimalpoint left left decimalpoint}"&gt;
       &lt;mtr&gt;
         &lt;mtd&gt;
           &lt;mrow&gt;
