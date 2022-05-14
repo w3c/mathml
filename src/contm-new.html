@@ -4700,8 +4700,6 @@
      </p>
 
 
-
-
      <p>The <code class="element">quotient</code> element represents the integer division
      operator. When the operator is applied to integer arguments
      <i class="var">a</i> and <i class="var">b</i>, the result is the <q>quotient of
@@ -4712,58 +4710,8 @@
      <i class="var">a</i> * <i class="var">r</i> positive. In common usage, <i class="var">q</i>
      is called the quotient and <i class="var">r</i> is the remainder. </p>
 
-     <div id="integer1.quotient.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;quotient/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mo&gt;&amp;#x230a;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;&amp;#x230b;&lt;/mo&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/integer1-quotient-ex1.gif" alt="{\unicode{8970}a/b\unicode{8971}}"></img></p>
-      </blockquote>
-     </div>
-
-
      <p>The <code class="element">divide</code> element represents the division operator in a
      number field.</p>
-
-     <div id="arith1.divide.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;divide/&gt;
-           &lt;ci&gt;a&lt;/ci&gt;
-           &lt;ci&gt;b&lt;/ci&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/arith1-divide-ex1.gif" alt="{a/b}"></img></p>
-      </blockquote>
-     </div>
-
-
 
      <p>The <code class="element">minus</code> element can be used as
      a unary arithmetic operator (e.g. to represent &#x2212;<i>x</i>),
@@ -4771,56 +4719,9 @@
      &#x2212; <i>y</i>). So further examples are given in <a
      href="#contm_unary_arith"></a>.</p>
 
-
-     <div id="arith1.minus.ex1" class="mathml-example">
-
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;minus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/arith1-minus-ex1.gif" alt="{x\unicode{8722}y}"></img></p>
-      </blockquote>
-     </div>
-
-
      <p>The <code class="element">power</code> element represents the exponentiation
      operator. The first argument is raised to the power of the second
      argument.</p>
-
-     <div id="arith1.power.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/arith1-power-ex1.gif" alt="\msup{x}{{3}}"></img></p>
-      </blockquote>
-     </div>
 
      <p>The <code class="element">rem</code> element represents the modulus operator, which
      returns the remainder that results from dividing the first argument by
@@ -4830,30 +4731,6 @@
      |<i class="var">r</i>| less than |<i class="var">b</i>| and <i class="var">a</i> *
      <i class="var">r</i> positive.</p>
 
-     <div id="arith1.remainder.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;rem/&gt;&lt;ci&gt; a &lt;/ci&gt;&lt;ci&gt; b &lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;mod&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/arith1-remainder-ex1.gif" alt="{a\mathbin{\mathrm{mod}}b}"></img></p>
-      </blockquote>
-     </div>
-
-
-
      <p>The <code class="element">root</code> element is used to extract roots. The kind of root to be taken is
      specified by a <q>degree</q> element, which should be given as the second child of
      the <code>apply</code> element enclosing the <code>root</code> element. Thus, square roots
@@ -4861,9 +4738,39 @@
      correspond to 3, and so on. If no <code>degree</code> is present, a default value of 2 is
      used.</p>
 
-     <div id="arith1.root.ex1" class="mathml-example">
+     <section class="fold">
+      <h6 id="contm_binary_arith.ex1">Examples</h6>
+      
       <p>Content MathML</p>
 
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;quotient/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;divide/&gt;
+           &lt;ci&gt;a&lt;/ci&gt;
+           &lt;ci&gt;b&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;minus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;power/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;rem/&gt;&lt;ci&gt; a &lt;/ci&gt;&lt;ci&gt; b &lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;root/&gt;
@@ -4876,13 +4783,35 @@
       <p>Sample Presentation</p>
 
       <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mo&gt;&amp;#x230a;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;&amp;#x230b;&lt;/mo&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;mod&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
        <pre>&lt;mroot&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mroot&gt;</pre>
       </div>
 
-      <blockquote>
-       <p><img src="image/arith1-root-ex1.gif" alt="\sqrt[{n}]{a}"></img></p>
-      </blockquote>
-     </div>
+     </section>
 
     </section>
 
