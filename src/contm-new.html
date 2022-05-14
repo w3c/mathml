@@ -4765,31 +4765,12 @@
 
 
 
-     <p>The <code class="element">minus</code> element can be used as a <em>unary arithmetic operator</em>
-     (e.g. to represent - <i class="var">x</i>), or as a <em>binary arithmetic operator</em>
-     (e.g. to represent <i class="var">x</i>- <i class="var">y</i>).</p>
+     <p>The <code class="element">minus</code> element can be used as
+     a unary arithmetic operator (e.g. to represent &#x2212;<i>x</i>),
+     or as a binary arithmetic operator (e.g. to represent <i>x</i>
+     &#x2212; <i>y</i>). So further examples are given in <a
+     href="#contm_unary_arith"></a>.</p>
 
-     <div id="arith1.unary_minus.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;minus/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/arith1-unary_minus-ex1.gif" alt="{\unicode{8722}{3}}"></img></p>
-      </blockquote>
-     </div>
 
      <div id="arith1.minus.ex1" class="mathml-example">
 
@@ -5386,8 +5367,6 @@
     <section>
      <h5 id="contm_unary_arith">Unary Arithmetic Operators:
      <dfn id="contm_factorial"><code class="defn emptytag">&lt;factorial/&gt;</code></dfn>,
-     <dfn data-dfn-for="unary" id="contm_minus_unary"><code class="defn emptytag">&lt;minus/&gt;</code></dfn>,
-     <dfn data-dfn-for="unary" id="contm_root_unary"><code class="defn emptytag">&lt;root/&gt;</code></dfn>,
      <dfn id="contm_abs"><code class="defn emptytag">&lt;abs/&gt;</code></dfn>,
      <dfn id="contm_conjugate"><code class="defn emptytag">&lt;conjugate/&gt;</code></dfn>,
      <dfn id="contm_arg"><code class="defn emptytag">&lt;arg/&gt;</code></dfn>,
@@ -5395,7 +5374,9 @@
      <dfn id="contm_imaginary"><code class="defn emptytag">&lt;imaginary/&gt;</code></dfn>,
      <dfn id="contm_floor"><code class="defn emptytag">&lt;floor/&gt;</code></dfn>,
      <dfn id="contm_ceiling"><code class="defn emptytag">&lt;ceiling/&gt;</code></dfn>,
-     <dfn id="contm_exp"><code class="defn emptytag">&lt;exp/&gt;</code></dfn>
+     <dfn id="contm_exp"><code class="defn emptytag">&lt;exp/&gt;</code></dfn>,
+     <dfn data-dfn-for="unary" id="contm_minus_unary"><code class="defn emptytag">&lt;minus/&gt;</code></dfn>,
+     <dfn data-dfn-for="unary" id="contm_root_unary"><code class="defn emptytag">&lt;root/&gt;</code></dfn>
      </h5>
 
      <p class="advisement">
@@ -5404,11 +5385,63 @@
      </p>
 
 
-     <p>This element represents the unary factorial operator on non-negative integers.</p>
+     <p>The <code class="element">factorial</code> element represents the unary factorial operator on non-negative integers.
+       The factorial of an integer <i class="var">n</i> is given by <i class="var">n</i>! = <i class="var">n</i>&#xd7;(<i class="var">n</i>-1)&#xd7;&#x22ef;&#xd7;1.</p>
 
-     <p>The factorial of an integer <i class="var">n</i> is given by <i class="var">n</i>! = <i class="var">n</i>*(<i class="var">n</i>-1)* ... * 1</p>
+    <!-- unary minus -->
+     <!-- unary root -->
 
-     <div id="integer1.factorial.ex1" class="mathml-example">
+     <p>The <code class="element">abs</code> element represents the absolute value
+     function. The argument should be numerically valued. When the
+     argument is a complex number, the absolute value is often referred
+     to as the modulus.</p>
+     <p>
+      The <code class="element">conjugate</code> element represents the function defined
+      over the complex numbers with returns the complex conjugate of
+      its argument.
+     </p>
+     <p>
+      The <code class="element">arg</code> element represents the unary function which
+      returns the angular argument of a complex number, namely the
+      angle which a straight line drawn from the number to zero makes
+      with the real line (measured anti-clockwise).
+     </p>
+     <p>
+      The <code class="element">real</code> element represents the unary operator used to
+      construct an expression representing the <q>real</q> part of a
+      complex number, that is, the <i class="var">x</i> component in <i class="var">x</i> + i<i class="var">y</i>.
+     </p>
+     <p>
+      The <code class="element">imaginary</code> element represents the unary operator used to
+      construct an expression representing the <q>imaginary</q> part of a
+      complex number, that is, the <i class="var">y</i> component in <i class="var">x</i> + i<i class="var">y</i>.
+     </p>
+     <p>The <code class="element">floor</code> element represents the operation that rounds
+     down (towards negative infinity) to the nearest integer. This
+     function takes one real number as an argument and returns an
+     integer.</p>
+     <p>The <code class="element">ceiling</code> element represents the operation that rounds
+     up (towards positive infinity) to the nearest integer. This function
+     takes one real number as an argument and returns an integer.</p>
+     <p>The <code class="element">exp</code> element represents the exponentiation function
+     associated with the inverse of the ln function. It takes one
+     argument.</p>
+
+     <p>The <code class="element">minus</code> element can be used as
+     a unary arithmetic operator (e.g. to represent &#x2212;<i>x</i>),
+     or as a binary arithmetic operator (e.g. to represent <i>x</i>
+     &#x2212; <i>y</i>). So further examples are given in <a
+     href="#contm_binary_arith"></a>.</p>
+
+     <p>The <code class="element">root</code> element in MathML is
+     treated as a unary element taking an optional <code
+     class="element">degree</code> qualifier, however it represents
+     the binary operation of taking an nth-root, and is described in
+     <a href="#contm_binary_arith"></a>.</p>
+     
+     <section class="fold">
+      <h6 id="integer1.unary.ex1">Examples</h6>
+      
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -5416,60 +5449,12 @@
          &lt;apply&gt;&lt;factorial/&gt;&lt;ci&gt;n&lt;/ci&gt;&lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;!&lt;/mo&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/integer1-factorial-ex1.gif" alt="{n!}"></img></p>
-      </blockquote>
-     </div>
-
-     <!-- unary minus -->
-     <!-- unary root -->
-
-          <p>The <code class="element">abs</code> element represents the absolute value
-     function. The argument should be numerically valued. When the
-     argument is a complex number, the absolute value is often referred
-     to as the modulus.</p>
-
-     <div id="arith1.abs.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
+      <!-- unary root -->
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;abs/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/arith1-abs-ex1.gif" alt="{\left.\middle|x\middle|\right.}"></img></p>
-      </blockquote>
-     </div>
-
-     
-     <p>
-      The <code class="element">conjugate</code> element represents the function defined
-      over the complex numbers with returns the complex conjugate of
-      its argument.
-     </p>
-
-     <div id="complex1.conjugate.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;conjugate/&gt;
@@ -5480,9 +5465,71 @@
          &lt;/apply&gt;
        </pre>
       </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;arg/&gt;
+           &lt;apply&gt;&lt;plus/&gt;
+             &lt;ci&gt; x &lt;/ci&gt;
+             &lt;apply&gt;&lt;times/&gt;&lt;imaginaryi/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
+           &lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;real/&gt;
+           &lt;apply&gt;&lt;plus/&gt;
+             &lt;ci&gt;x&lt;/ci&gt;
+             &lt;apply&gt;&lt;times/&gt;&lt;imaginaryi/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
+           &lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;imaginary/&gt;
+           &lt;apply&gt;&lt;plus/&gt;
+             &lt;ci&gt;x&lt;/ci&gt;
+             &lt;apply&gt;&lt;times/&gt;&lt;imaginaryi/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
+           &lt;/apply&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;floor/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;ceiling/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;exp/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;minus/&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;
+       </pre>
+      </div>
 
       <p>Sample Presentation</p>
 
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;!&lt;/mo&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
+     <!-- unary minus -->
+     <!-- unary root -->
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mover&gt;
@@ -5495,36 +5542,6 @@
          &lt;/mover&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/complex1-conjugate-ex1.gif" alt="{\overline{{x+{{\mn{\unicode{8520}}}\unicode{8290}y}}}}"></img></p>
-      </blockquote>
-     </div>
-
-     
-     <p>
-      The <code class="element">arg</code> element represents the unary function which
-      returns the angular argument of a complex number, namely the
-      angle which a straight line drawn from the number to zero makes
-      with the real line (measured anti-clockwise).
-     </p>
-
-     <div id="complex1.argument.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;arg/&gt;
-           &lt;apply&gt;&lt;plus/&gt;
-             &lt;ci&gt; x &lt;/ci&gt;
-             &lt;apply&gt;&lt;times/&gt;&lt;imaginaryi/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
-           &lt;/apply&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -5542,35 +5559,6 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/complex1-argument-ex1.gif" alt="{\mathop{{\minormal{arg}}}{\left({x+{i\unicode{8290}y}}\right)}}"></img></p>
-      </blockquote>
-     </div>
-
-     
-     <p>
-      The <code class="element">real</code> element represents the unary operator used to
-      construct an expression representing the <q>real</q> part of a
-      complex number, that is, the <i class="var">x</i> component in <i class="var">x</i> + i<i class="var">y</i>.
-     </p>
-
-     <div id="complex1.real.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;real/&gt;
-           &lt;apply&gt;&lt;plus/&gt;
-             &lt;ci&gt;x&lt;/ci&gt;
-             &lt;apply&gt;&lt;times/&gt;&lt;imaginaryi/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
-           &lt;/apply&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -5588,35 +5576,6 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/complex1-real-ex1.gif" alt="{\unicode{8475}\unicode{8289}{\left({x+{i\unicode{8290}y}}\right)}}"></img></p>
-      </blockquote>
-     </div>
-
- 
-     <p>
-      The <code class="element">imaginary</code> element represents the unary operator used to
-      construct an expression representing the <q>imaginary</q> part of a
-      complex number, that is, the <i class="var">y</i> component in <i class="var">x</i> + i<i class="var">y</i>.
-     </p>
-
-     <div id="complex1.imaginary.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;imaginary/&gt;
-           &lt;apply&gt;&lt;plus/&gt;
-             &lt;ci&gt;x&lt;/ci&gt;
-             &lt;apply&gt;&lt;times/&gt;&lt;imaginaryi/&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
-           &lt;/apply&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -5634,92 +5593,28 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/complex1-imaginary-ex1.gif" alt="{\unicode{8465}\unicode{8289}{\left({x+{i\unicode{8290}y}}\right)}}"></img></p>
-      </blockquote>
-     </div>
-
-     
-     <p>The <code class="element">floor</code> element represents the operation that rounds
-     down (towards negative infinity) to the nearest integer. This
-     function takes one real number as an argument and returns an
-     integer.</p>
-
-     <div id="rounding1.floor.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;floor/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mo&gt;&amp;#x230a;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x230b;&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/rounding1-floor-ex1.gif" alt="{\unicode{8970}a\unicode{8971}}"></img></p>
-      </blockquote>
-     </div>
-
-     <p>The <code class="element">ceiling</code> element represents the operation that rounds
-     up (towards positive infinity) to the nearest integer. This function
-     takes one real number as an argument and returns an integer.</p>
-
-     <div id="rounding1.ceiling.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;ceiling/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;&lt;mo&gt;&amp;#x2308;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2309;&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/rounding1-ceiling-ex1.gif" alt="{\unicode{8968}a\unicode{8969}}"></img></p>
-      </blockquote>
-     </div>
-
-     
-     <p>The <code class="element">exp</code> element represents the exponentiation function
-     associated with the inverse of the ln function. It takes one
-     argument.</p>
-
-     <div id="transc1.exp.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;exp/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;msup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/msup&gt;
        </pre>
       </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;
+       </pre>
+      </div>
 
-      <blockquote>
-       <p><img src="image/transc1-exp-ex1.gif" alt="\msup{e}{x}"></img></p>
-      </blockquote>
-     </div>
+     </section>
 
      
     </section>
