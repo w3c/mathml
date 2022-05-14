@@ -4297,7 +4297,15 @@
      elements as described in <a href="#contm_nary_unary_minmax"></a>.  Note that when applied to infinite sets of arguments, no
      minimal argument may exist.</p>
 
-     <div id="minmax1.min.ex1" class="mathml-example">
+     <p>The <code class="element">max</code> element denotes the maximum function, which
+     returns the largest of the arguments to which it is applied.  Its
+     arguments may be explicitly specified in the enclosing
+     <code class="element">apply</code> element, or specified using qualifier elements
+     as described in <a href="#contm_nary_unary_minmax"></a>.  Note that when applied to
+     infinite sets of arguments, no maximal argument may exist.</p>
+
+     <section class="fold">
+      <h6 id="minmax1.ex1">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -4305,26 +4313,11 @@
          &lt;apply&gt;&lt;min/&gt;&lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
+      <div class="example mathml mml4c">
        <pre>
-         &lt;mrow&gt;
-           &lt;mi&gt;min&lt;/mi&gt;
-           &lt;mrow&gt;&lt;mo&gt;{&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;}&lt;/mo&gt;&lt;/mrow&gt;
-         &lt;/mrow&gt;
+         &lt;apply&gt;&lt;max/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;5&lt;/cn&gt;&lt;/apply&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/minmax1-min-ex1.gif" alt="{{\minormal{min}}{\left.\middle\{a,b\middle\}\right.}}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="minmax1.big_min.ex2" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;min/&gt;
@@ -4336,63 +4329,6 @@
          &lt;/apply&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;
-           &lt;mi&gt;min&lt;/mi&gt;
-           &lt;mrow&gt;&lt;mo&gt;{&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;|&lt;/mo&gt;
-             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2209;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
-             &lt;mo&gt;}&lt;/mo&gt;
-           &lt;/mrow&gt;
-         &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/minmax1-big_min-ex2.gif" alt="{{\minormal{min}}{\left.\middle\{x^2\middle|{x\unicode{8713}B}\middle\}\right.}}"></img></p>
-      </blockquote>
-     </div>
-
-          <p>The <code class="element">max</code> element denotes the maximum function, which
-     returns the largest of the arguments to which it is applied.  Its
-     arguments may be explicitly specified in the enclosing
-     <code class="element">apply</code> element, or specified using qualifier elements
-     as described in <a href="#contm_nary_unary_minmax"></a>.  Note that when applied to
-     infinite sets of arguments, no maximal argument may exist.</p>
-
-     <div id="minmax1.max.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;max/&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;5&lt;/cn&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;
-           &lt;mi&gt;max&lt;/mi&gt;
-           &lt;mrow&gt;
-             &lt;mo&gt;{&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;}&lt;/mo&gt;
-           &lt;/mrow&gt;
-         &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/minmax1-max-ex1.gif" alt="{{\minormal{max}}{\left.\middle\{{2},{3},{5}\middle\}\right.}}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="minmax1.big_max.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;max/&gt;
@@ -4413,6 +4349,35 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
+           &lt;mi&gt;min&lt;/mi&gt;
+           &lt;mrow&gt;&lt;mo&gt;{&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;}&lt;/mo&gt;&lt;/mrow&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;
+           &lt;mi&gt;max&lt;/mi&gt;
+           &lt;mrow&gt;
+             &lt;mo&gt;{&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;}&lt;/mo&gt;
+           &lt;/mrow&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;
+           &lt;mi&gt;min&lt;/mi&gt;
+           &lt;mrow&gt;&lt;mo&gt;{&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;|&lt;/mo&gt;
+             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2209;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mo&gt;}&lt;/mo&gt;
+           &lt;/mrow&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;
            &lt;mi&gt;max&lt;/mi&gt;
            &lt;mrow&gt;
              &lt;mo&gt;{&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;
@@ -4427,10 +4392,7 @@
        </pre>
       </div>
 
-      <blockquote>
-       <p><img src="image/minmax1-big_max-ex1.gif" alt="{{\minormal{max}}{\left.\middle\{y^3\middle|{y\unicode{8712}{\left[{0},{1}\right]}}\middle\}\right.}}"></img></p>
-      </blockquote>
-     </div>
+     </section>
 
 
     </section>
