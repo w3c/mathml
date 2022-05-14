@@ -3854,14 +3854,23 @@
      </p>
 
 
-     <p>The <code class="element">set</code> represents a function which constructs
+     <p>The <code class="element">set</code> element represents a function which constructs
      mathematical sets from its arguments. It is an n-ary function. The
      members of the set to be constructed may be given explicitly as
      child elements of the constructor, or specified by rule as described
      in <a href="#contm_container_constructor"></a>.  There is no implied ordering to
      the elements of a set.</p>
 
-     <div id="set1.set.ex1" class="mathml-example">
+     
+     
+     <p>The <code class="element">list</code> element represents the n-ary function which
+     constructs a list from its arguments. Lists differ from sets in that
+     there is an explicit order to the elements.
+     The list entries and order may be given explicitly or specified by rule as described
+     in <a href="#contm_container_constructor"></a>.</p>
+
+     <section class="fold">
+      <h6 id="set.ex1">Examples (Explicit elements)</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -3869,6 +3878,13 @@
          &lt;set&gt;
            &lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;
          &lt;/set&gt;
+       </pre>
+      </div>
+     <div class="example mathml mml4c">
+       <pre>
+         &lt;list&gt;
+           &lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;
+         &lt;/list&gt;
        </pre>
       </div>
 
@@ -3881,17 +3897,27 @@
          &lt;/mrow&gt;
        </pre>
       </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;
+           &lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
 
-      <blockquote>
-       <p><img src="image/set1-set-ex1.gif" alt="{\left.\middle\{a,b,c\middle\}\right.}"></img></p>
-      </blockquote>
-     </div>
+     </section>
 
-     <p>In general, a set can be constructed by providing a function and a domain of
-     application.  The elements of the set correspond to the values obtained by evaluating
-     the function at the points of the domain.</p>
+     <p>In general sets and lists can be constructed by providing a function and
+     a domain of application.  The elements correspond to the
+     values obtained by evaluating the function at the points of the
+     domain. When this method is used for lists, the ordering of the list elements
+     may not be clear, so the kind of ordering may be specified by the
+     <code class="attribute">order</code> attribute.  Two orders are supported: lexicographic
+     and numeric.</p>
 
-     <div id="set1.suchthat.ex1" class="mathml-example">
+
+     <section class="fold">
+      <h6 id="set1.suchthat.ex1">Examples (Elements specified by condition)</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -3905,29 +3931,16 @@
          &lt;/set&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
+      <div class="example mathml mml4c">
        <pre>
-         &lt;mrow&gt;
-           &lt;mo&gt;{&lt;/mo&gt;
-           &lt;mi&gt;x&lt;/mi&gt;
-           &lt;mo&gt;|&lt;/mo&gt;
-           &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;
-           &lt;mo&gt;}&lt;/mo&gt;
-         &lt;/mrow&gt;
+         &lt;list order="numeric"&gt;
+           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
+           &lt;condition&gt;
+             &lt;apply&gt;&lt;lt/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;5&lt;/cn&gt;&lt;/apply&gt;
+           &lt;/condition&gt;
+         &lt;/list&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/set1-suchthat-ex1.gif" alt="{\left.\middle\{x\middle|{x\lt{5}}\middle\}\right.}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="set1.suchthat.ex2" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;set&gt;
@@ -3939,29 +3952,6 @@
          &lt;/set&gt;
        </pre>
       </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;
-           &lt;mo&gt;{&lt;/mo&gt;
-           &lt;mi&gt;S&lt;/mi&gt;
-           &lt;mo&gt;|&lt;/mo&gt;
-           &lt;mrow&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/mrow&gt;
-           &lt;mo&gt;}&lt;/mo&gt;
-         &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/set1-suchthat-ex2.gif" alt="{\left.\middle\{S\middle|{S\unicode{8712}T}\middle\}\right.}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="set1.suchthat.ex3" class="mathml-example">
-      <p>Content MathML</p>
-
       <div class="example mathml mml4c">
        <pre>
          &lt;set&gt;
@@ -3985,6 +3975,39 @@
            &lt;mo&gt;{&lt;/mo&gt;
            &lt;mi&gt;x&lt;/mi&gt;
            &lt;mo&gt;|&lt;/mo&gt;
+           &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;
+           &lt;mo&gt;}&lt;/mo&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;
+           &lt;mo&gt;(&lt;/mo&gt;
+           &lt;mi&gt;x&lt;/mi&gt;
+           &lt;mo&gt;|&lt;/mo&gt;
+           &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;
+           &lt;mo&gt;)&lt;/mo&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;
+           &lt;mo&gt;{&lt;/mo&gt;
+           &lt;mi&gt;S&lt;/mi&gt;
+           &lt;mo&gt;|&lt;/mo&gt;
+           &lt;mrow&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/mrow&gt;
+           &lt;mo&gt;}&lt;/mo&gt;
+         &lt;/mrow&gt;
+       </pre>
+      </div>
+      <div class="example mathml mmlcore">
+       <pre>
+         &lt;mrow&gt;
+           &lt;mo&gt;{&lt;/mo&gt;
+           &lt;mi&gt;x&lt;/mi&gt;
+           &lt;mo&gt;|&lt;/mo&gt;
            &lt;mrow&gt;
              &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
              &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
@@ -3997,85 +4020,8 @@
        </pre>
       </div>
 
-      <blockquote>
-       <p><img src="image/set1-suchthat-ex3.gif" alt="{\left.\middle\{x\middle|{{\left.\middle(x\lt{5}\middle)\right.}\unicode{8743}{x\unicode{8712}{\midoublestruck{N}}}}\middle\}\right.}"></img></p>
-      </blockquote>
-     </div>
+     </section>
 
-
-     
-     <p>The <code class="element">list</code> elements represents the n-ary function which
-     constructs a list from its arguments. Lists differ from sets in that
-     there is an explicit order to the elements.</p>
-
-     <p>The list entries and order may be given explicitly.</p>
-
-     <div id="list1.list.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;list&gt;
-           &lt;ci&gt;a&lt;/ci&gt;&lt;ci&gt;b&lt;/ci&gt;&lt;ci&gt;c&lt;/ci&gt;
-         &lt;/list&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;
-           &lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;
-         &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/list1-list-ex1.gif" alt="{\left.\middle(a,b,c\middle)\right.}"></img></p>
-      </blockquote>
-     </div>
-
-     <p>In general a list can be constructed by providing a function and
-     a domain of application.  The elements of the list correspond to the
-     values obtained by evaluating the function at the points of the
-     domain. When this method is used, the ordering of the list elements
-     may not be clear, so the kind of ordering may be specified by the
-     <code class="attribute">order</code> attribute.  Two orders are supported: lexicographic
-     and numeric.</p>
-
-     <div id="list1.suchthat.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;list order="numeric"&gt;
-           &lt;bvar&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/bvar&gt;
-           &lt;condition&gt;
-             &lt;apply&gt;&lt;lt/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;5&lt;/cn&gt;&lt;/apply&gt;
-           &lt;/condition&gt;
-         &lt;/list&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
-      <div class="example mathml mmlcore">
-       <pre>
-         &lt;mrow&gt;
-           &lt;mo&gt;(&lt;/mo&gt;
-           &lt;mi&gt;x&lt;/mi&gt;
-           &lt;mo&gt;|&lt;/mo&gt;
-           &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;
-           &lt;mo&gt;)&lt;/mo&gt;
-         &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/list1-suchthat-ex1.gif" alt="{\left.\middle(x\middle|{x\lt{5}}\middle)\right.}"></img></p>
-      </blockquote>
-     </div>
 
     </section>
     
