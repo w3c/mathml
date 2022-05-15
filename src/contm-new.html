@@ -4428,13 +4428,64 @@
      <p>The <code class="element">mean</code> element represents the function returning arithmetic mean or average of a
      data set or random variable.</p>
 
-     <div id="s_data1.mean.ex1" class="mathml-example">
+     <p>The <code class="element">sdev</code> element is used to denote the standard deviation
+     function for a data set or random variable.  Standard deviation is a
+     statistical measure of dispersion given by the square root of the
+     variance.</p>
+
+     <p>The <code class="element">variance</code> element represents the variance of a data set
+     or random variable. Variance is a statistical measure of dispersion,
+     averaging the squares of the deviations of possible values from their
+     mean.</p>
+     
+     <p>The <code class="element">median</code> element represents an operator returning the
+     median of its arguments. The median is a number separating the lower
+     half of the sample values from the upper half.</p>
+
+     <p>The <code class="element">mode</code> element is used to denote the mode of its arguments. The mode is
+     the value which occurs with the greatest frequency.</p>
+
+     <section class="fold">
+      <h6 id="nary-stats.ex">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
        <pre>
          &lt;apply&gt;&lt;mean/&gt;
            &lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;7&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;mean/&gt;&lt;ci&gt;X&lt;/ci&gt;&lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;sdev/&gt;
+           &lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;sdev/&gt;
+           &lt;ci type="discrete_random_variable"&gt;X&lt;/ci&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;variance/&gt;
+           &lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;
+         &lt;/apply&gt;
+       </pre>
+      </div>
+      <div class="example mathml mml4c">
+       <pre>
+         &lt;apply&gt;&lt;variance/&gt;
+           &lt;ci type="discrete_random_variable"&gt;X&lt;/ci&gt;
          &lt;/apply&gt;
        </pre>
       </div>
@@ -4451,65 +4502,15 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/s_data1-mean-ex1.gif" alt="{\unicode{9001}{3},{4},{3},{7},{4}\unicode{9002}}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="s_dist1.mean.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;mean/&gt;&lt;ci&gt;X&lt;/ci&gt;&lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;&amp;#x27E8;&lt;/mo&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;&amp;#x27E9;&lt;/mo&gt;
          &lt;/mrow&gt;
-       </pre>
-      </div>
-
-      <blockquote>
-       <p><img src="image/s_dist1-mean-ex1.gif" alt="{\unicode{9001}X\unicode{9002}}"></img></p>
-      </blockquote>
-
-      <div class="example mathml mmlcore">
-       <pre>
+         &lt;mtext&gt;&amp;nbsp;or&amp;nbsp;&lt;/mtext&gt;
          &lt;mover&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;&amp;#xaf;&lt;/mo&gt;&lt;/mover&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/s_dist1-mean-ex1-2.gif" alt="{\overline{X}}"></img></p>
-      </blockquote>
-     </div>
-
-
-     <p>The <code class="element">sdev</code> element is used to denote the standard deviation
-     function for a data set or random variable.  Standard deviation is a
-     statistical measure of dispersion given by the square root of the
-     variance.</p>
-
-     <div id="s_data1.sdev.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;sdev/&gt;
-           &lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -4519,57 +4520,14 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/s_data1-sdev-ex1.gif" alt="{\unicode{963}\unicode{8289}{\left({3},{4},{2},{2}\right)}}"></img></p>
-      </blockquote>
-     </div>
-
-     <div id="s_dist1.sdev.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;sdev/&gt;
-           &lt;ci type="discrete_random_variable"&gt;X&lt;/ci&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mo&gt;&amp;#x3c3;&lt;/mo&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/s_dist1-sdev-ex1.gif" alt="{\unicode{963}\unicode{8289}{\left(X\right)}}"></img></p>
-      </blockquote>
-     </div>
-
-     <p>The <code class="element">variance</code> element represents the variance of a data set
-     or random variable. Variance is a statistical measure of dispersion,
-     averaging the squares of the deviations of possible values from their
-     mean.</p>
-
-     <div id="s_data1.variance.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;variance/&gt;
-           &lt;cn&gt;3&lt;/cn&gt;&lt;cn&gt;4&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;&lt;cn&gt;2&lt;/cn&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
@@ -4582,50 +4540,17 @@
          &lt;/mrow&gt;
        </pre>
       </div>
-
-      <blockquote>
-       <p><img src="image/s_data1-variance-ex1.gif" alt="\msup{\unicode{963}}{2}\unicode{8289}\left(3,4,2,2\right)"></img></p>
-      </blockquote>
-
-     </div>
-
-     <div id="s_dist1.variance.ex1" class="mathml-example">
-      <p>Content MathML</p>
-
-      <div class="example mathml mml4c">
-       <pre>
-         &lt;apply&gt;&lt;variance/&gt;
-           &lt;ci type="discrete_random_variable"&gt; X&lt;/ci&gt;
-         &lt;/apply&gt;
-       </pre>
-      </div>
-
-      <p>Sample Presentation</p>
-
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mo&gt;&amp;#x3c3;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
-           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
 
-      <blockquote>
-       <p><img src="image/s_dist1-variance-ex1.gif" alt="\msup{\unicode{963}}{2}\unicode{8289}\left(X\right)"></img></p>
-      </blockquote>
-     </div>
-
-     
-     <p>The <code class="element">median</code> element represents an operator returning the
-     median of its arguments. The median is a number separating the lower
-     half of the sample values from the upper half.</p>
-
-     <p>The <code class="element">mode</code> element is used to denote the mode of its arguments. The mode is
-     the value which occurs with the greatest frequency.</p>
-
-     
+     </section>
     </section>
 
    </section>
