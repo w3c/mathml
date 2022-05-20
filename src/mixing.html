@@ -26,9 +26,9 @@
 
  <section>
   <h3 id="mixing_intent">The <code class="attribute">intent</code> attribute</h3>
-  <p>As decribed in <a href="#presm"></a> presentation <span class="ednote">Content? See <a href="https://github.com/w3c/mathml/issues/289">Issue 289</a>.</span>
+  <p>As decribed in <a href="#presm_presatt_intent"></a>, Presentation
   MathML elements
-  (including [[MathML-Core]] allow attributes <code
+  allow attributes <code
   class="attribute">intent</code> and <code
   class="attribute">arg</code> that as described here allow the
   <dfn><q>intent</q></dfn> of the term to be specified. This
@@ -44,9 +44,7 @@
   <code>intent="power($base,$exponent)"</code>. The parts consist
   of:</p>
   <ul>
-  <li><em>references</em> prefixed with <code>$</code>. A numeric
-  reference such as <code>$3/$1</code> references the [=intent=] of
-  the first child of the 3rd child of the element. An argument
+  <li><em>references</em> prefixed with <code>$</code>. An argument
   reference such as <code>$name</code> references a descendent element
   that has an attribute <code>arg="name"</code>. Unlike <code class="attribute">id</code>
   attributes, <code class="attribute">arg</code> do not have to be
@@ -55,7 +53,7 @@
   elements that have a set <code class="attribute">intent</code> or
   <code class="attribute">arg</code> attribute, without descending into them.</li>
   <li><em>literal numbers</em> such as <code>2.5</code> denote
-  themselves. <span class="ednote">0.25e1?</span></li>
+  themselves.</li>
   <li><em>literal identifiers</em> Non numeric literals reference
   terms in the intent dictionary, currently located at <a
   href="https://docs.google.com/spreadsheets/d/1EsWou1K5nxBdLPvQapdoA9h-s8lg_qjn8fJH64g9izQ/edit#gid=1358098730">Google
@@ -66,13 +64,6 @@
   be generated. Terms in other levels may be contributed; the
   dictionary may give speech hints, but a system may also fall back on
   reading the identifier name as given.</li>
-  <li><em>the wildcard</em>, <code>*</code> denotes all the child
-  elements that are not an [=embellished operator=].
-  So
-  that <code>intent="somefunction(*)"</code> is equivalent to
-  <code>intent="somefunction($arg1,$arg2, ...)"</code> where
-  <code class="attribute">arg</code> attributes are added to all the
-  non-operator children.</li>
   </ul>
 
 <p>The key component here is the literal. A literal is intended to
@@ -90,25 +81,7 @@ the user and agent.</p>
   <section>
    <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
 
-   <div class="ednote">
-     <p>These grammar distill various suggestions but the Working Group has not yet agreed a final version.</p>
-
-     <p>The basic idea of a functional syntax and argref are likely to stay but details around
-     paths and wildcards and exact characters allowed in identifiers all subject to discussion.</p>
-
-     <p>See <a href="https://github.com/w3c/mathml/issues/252">Issue 252</a></p>
-   </div>
-   <pre>
-intent   := literal | selector | intent '(' wildcard ')' | intent '(' intent [ ',' intent ]* ')'
-literal  := ( letters | digits | '.' | '_' | '-' )*
-selector := argref | numref
-argref   := '$' NCName
-numref   := '$' [digit]+ ( '/' numref )?
-wildcard := '*'
-   </pre>
-
-   <p>Alternative with no numeric paths or wildcards</p>
- <pre class="bnf">
+ <pre class="def bnf">
 intent   := number | NCName | argref | function
 function := (NCName | argref) '(' intent [ ',' intent ]* ')'
 number   := '-'? digit+ ('.' digit+)? 

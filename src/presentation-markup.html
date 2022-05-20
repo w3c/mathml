@@ -1002,11 +1002,74 @@
   </section>
  
   <section>
-   <h4 id="presm_presatt">Mathematics style attributes common to presentation elements</h4>
+   <h4 id="presm_presatt">Mathematics attributes common to presentation elements</h4>
  
    <p>In addition to the attributes listed in <a href="#fund_globatt"></a>,
-   all MathML presentation elements accept the following two attributes:</p>
+   all MathML presentation elements accept the following classes of atribute.</p>
+
+   
+  <section>
+   <h5 id="presm_presatt_intent">Intent Attributes</h5>
+   <div class="ednote">Depending on the outcome of <a
+   href="https://github.com/w3c/mathml/issues/289">Issue 289</a> this
+   description may move to chapter 2 Global Attributes.</div>
+   
+   <p>All MathML presentation elements accept <code
+   class="attribute">intent</code> and <code
+   class="attribute">arg</code> attributes to support specifying
+   <q>intent</q>. These are more fully described in
+   [[[#mixing_intent]]].</p>
+   <table class="attributes data">
  
+    <thead>
+ 
+     <tr>
+      <td>Name</td>
+      <td>values</td>
+      <td>default</td>
+      <td>Core</td>
+     </tr>
+    </thead>
+ 
+    <tbody>
+ 
+     <tr>
+      <td rowspan="2" class="attname">intent</td>
+      <td><a class="intref" href="#mixing_intent_grammar"><em>intent expresssion</em></a></td>
+      <td><em>none</em></td>
+      <td><a class="coreyes" href="./#parsing"></a></td>
+     </tr>
+    <tr>
+      <td colspan="3" class="attdesc">Inent...</td>
+    </tr>
+      <tr>
+      <td rowspan="2" class="attname">arg</td>
+      <td><a class="intref" href="#mixing_intent_grammar"><em>name</em></a></td>
+      <td><em>none</em></td>
+      <td><a class="coreyes" href="./#parsing"></a></td>
+     </tr>
+     <tr>
+      <td colspan="3" class="attdesc">Arg...</td>
+     </tr>
+    </tbody>
+      </table>
+
+  </section>
+
+   <section>
+   <h5 id="presm_presatt_core">MathML Core Attributes</h5>
+ 
+   <p>Presentation elements also accept all the <a
+   href="https://w3c.github.io/mathml-core/#global-attributes">Global
+   Attributes</a> specified by [[MathML-Core]].</p>
+ 
+   <p>These attributes include the following two attributes that are primarily intended for visual media.
+   They are not expected to affect the intended semantics of displayed
+   expressions, but are for use in highlighting or drawing attention
+   to the affected subexpressions.  For example, a red "x" is not assumed
+   to be semantically different than a black "x", in contrast to
+   variables with different <code class="attribute">mathvariant</code> values (See <a href="#presm_commatt"></a>).</p>
+
    <table class="attributes data">
  
     <thead>
@@ -1054,12 +1117,6 @@
     </tbody>
    </table>
  
-   <p>These style attributes are primarily intended for visual media.
-   They are not expected to affect the intended semantics of displayed
-   expressions, but are for use in highlighting or drawing attention
-   to the affected subexpressions.  For example, a red "x" is not assumed
-   to be semantically different than a black "x", in contrast to
-   variables with different <code class="attribute">mathvariant</code> values (See <a href="#presm_commatt"></a>).</p>
  
    <p>Since MathML expressions are often embedded in a textual data
    format such as <span>HTML</span>,
@@ -1082,7 +1139,7 @@
    region affected by the <code class="attribute">mathbackground</code> attribute is not
    defined by these rules.</p>
   </section>
- 
+  </section>
  </section>
  
  
@@ -2733,7 +2790,7 @@
      context. If it is not specified, and there is more than one possible
      form in the dictionary for an <code class="element">mo</code> element with
      given content, the renderer should choose which form to use as follows
-     (but see the exception for embellished operators, described later):
+     (but see the exception for [=embellished operators=], described later):
      </p>
      <ul>
  
