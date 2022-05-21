@@ -81,58 +81,193 @@ the user and agent.</p>
   <section>
    <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
 
- <pre class="def bnf">
+   <p>The <code class="attribute">intent</code>, after ignoring white
+   space between tokens, should match the following grammar.</p>
+   
+<pre class="def bnf">
 intent   := number | NCName | argref | function
 function := (NCName | argref) '(' intent [ ',' intent ]* ')'
 number   := '-'? digit+ ('.' digit+)? 
 argref   := '$' NCName
-   </pre>
+</pre>
 
+<p>Here <a href="https://www.w3.org/TR/REC-xml-names/#NT-NCName"><code>NCName</code></a>
+is as defined in  in [[xml-names]], and <code>digit</code> is a character in the range 0–9.</p>
   </section>
 
 
 
  <section>
-  <h3 id="mixing_intent_examplesn">Intent Examples</h3>
+  <h3 id="mixing_intent_examples">Intent Examples</h3>
 
-<p>With this model, the <code class="element">msup</code> examples:
-as a power;
-as a transpose;
-as a derivative; and
-as an embellished symbol would be distinguished as follows:</p>
+  
+ <section>
+  <h4 id="mixing_intent_examples_notation">Ambiguous Notation</h4>
 
-<pre class="xml nonumexample">
+  <p>A primary use for <code class="attribute">intent</code> is to
+  disambiguate cases where the same syntax is used for different meanings,
+  and typically has different readings.</p>
+  
+<p>Superscript, <code class="element">msup</code>, may represent a power, a transpose,
+a derivative or an embellished symbol. These cases would be distinguished as follows:</p>
+
+<div class="example mathml mmlcore">
+<pre>
 &lt;msup intent="power($base,$exp)">
   &lt;mi arg="base">x&lt;/mi>
   &lt;mi arg="exp">n&lt;/mi>
 &lt;/msup>
-</pre>
-
-<pre class="xml nonumexample">
+&lt;mo>&#x2192;&lt;/mo>
 &lt;msup intent="$op($a)">
   &lt;mi arg="a">A&lt;/mi>
   &lt;mi arg="op" intent="transpose">T&lt;/mi>
 &lt;/msup>
-</pre>
-
-<p>(easily adapted to conjugate and adjoint)</p>
-
-<pre class="xml nonumexample">
+&lt;mo>&#x2192;&lt;/mo>
 &lt;msup intent="derivative($a)">
   &lt;mi arg="a">f&lt;/mi>
-  &lt;mi>'&lt;/mi>
+  &lt;mi>&amp;prime;&lt;/mi>
 &lt;/msup>
-</pre>
-
-<pre class="xml nonumexample">
+&lt;mo>&#x2192;&lt;/mo>
 &lt;msup intent="x-prime">
   &lt;mi>x&lt;/mi>
-  &lt;mo>'&lt;/mo>
+  &lt;mo>&amp;prime;&lt;/mo>
 &lt;/msup>
 </pre>
+</div>
 
+<p>Similarly an over bar may represent complex conjugation, or mean (average):</p>
+
+<div class="example mathml mmlcore">
+<pre>
+&lt;mover intent="conjugate($v)"&gt;
+  &lt;mi arg="v"&gt;z&lt;/mi&gt;
+  &lt;mo&gt;&amp;#xaf;&lt;/mo&gt;
+&lt;/mover&gt;
+&lt;mtext>&amp;nbsp;is not&amp;nbsp;&lt;/mtext>
+&lt;mover intent="mean($var)"&gt;
+  &lt;mi arg="var"&gt;X&lt;/mi&gt;
+  &lt;mo&gt;&amp;#xaf;&lt;/mo&gt;
+&lt;/mover&gt;
+</pre>
+</div>
 
  </section>
+
+ <section>
+  <h4 id="mixing_intent_examples_advanced">Advanced or Non-Standard Notation</h4>
+
+  <p>A special case of ambiguous notation is the re-use of standard
+  notation with meaning that may be specific to a subject area or evn
+  individual document,</p>
+  
+<div class="example mathml mmlcore">
+<pre>
+&lt;msub intent="bell-number($index)"&gt;
+  &lt;mi&gt;B&lt;/mi&gt;
+  &lt;mn arg="index"&gt;2&lt;/m&gt;
+&lt;/msub&gt;
+</pre>
+</div>
+
+<p>Here the subscripted B denoting the <em>Bell Number</em> is annotated using
+<code>bell-number</code> intent which is not in the core <q>Level 1</q>
+dictionary but is in the open <q>Level 3</q> dictionary of more advanced or specialist
+topics.</p>
+ 
+ </section>
+
+ 
+ <section>
+  <h4 id="mixing_intent_examples_mtr">Tables</h4>
+<div class="issue"  data-number="337"></div>
+
+<p>Matrices</p>
+<div class="example mathml mmlcore">
+<pre>
+&lt;mtable intent="array">
+  &lt;mtr intent="arrayrow">
+    &lt;mtd>&lt;mn>1&lt;/mn>&lt;/mtd>
+    &lt;mtd>&lt;mn>0&lt;/mn>&lt;/mtd>
+  &lt;/mtr>
+  &lt;mtr intent="arrayrow">
+    &lt;mtd>&lt;mn>0&lt;/mn>&lt;/mtd>
+    &lt;mtd>&lt;mn>1&lt;/mn>&lt;/mtd>
+  &lt;/mtr>
+&lt;/mtable>
+</pre>
+</div>
+
+
+<p>Aligned equations</p>
+<div class="example mathml mmlcore">
+<pre>
+&lt;mtable intent="list">
+  &lt;mtr intent="append">
+    &lt;mtd columnalign="right">
+      &lt;mn>2&lt;/mn>
+      &lt;mo>&#x2062;&lt;/mo>
+      &lt;mi>x&lt;/mi>
+    &lt;/mtd>
+    &lt;mtd columnalign="center">
+      &lt;mo>=&lt;/mo>
+    &lt;/mtd>
+    &lt;mtd columnalign="left">
+      &lt;mn>1&lt;/mn>
+    &lt;/mtd>
+  &lt;/mtr>
+  &lt;mtr intent="append">
+    &lt;mtd columnalign="right">
+      &lt;mi>y&lt;/mi>
+    &lt;/mtd>
+    &lt;mtd columnalign="center">
+      &lt;mo>&gt;&lt;/mo>
+    &lt;/mtd>
+    &lt;mtd columnalign="left">
+      &lt;mi>x&lt;/mi>
+      &lt;mo>-&lt;/mo>
+      &lt;mn>3&lt;/mn>
+    &lt;/mtd>
+  &lt;/mtr>
+&lt;/mtable>
+</pre>
+</div>
+
+<p>Aligned Equations with wrapped expressions</p>
+
+<div class="example mathml mmlcore">
+<pre>
+&lt;mtable intent="list">
+  &lt;mtr intent="append">
+    &lt;mtd columnalign="right">
+      &lt;mi>a&lt;/mi>
+    &lt;/mtd>
+    &lt;mtd columnalign="center">
+      &lt;mo>=&lt;/mo>
+    &lt;/mtd>
+    &lt;mtd columnalign="left">
+      &lt;mi>b&lt;/mi>
+      &lt;mo>+&lt;/mo>
+      &lt;mi>c&lt;/mi>
+      &lt;mo>-&lt;/mo>
+      &lt;mi>d&lt;/mi>
+    &lt;/mtd>
+  &lt;/mtr>
+  &lt;mtr intent="extend">
+    &lt;mtd columnalign="right">&lt;/mtd>
+    &lt;mtd columnalign="center">&lt;/mtd>
+    &lt;mtd columnalign="left">
+      &lt;mo>+&lt;/mo>
+      &lt;mi>e&lt;/mi>
+      &lt;mo>-&lt;/mo>
+      &lt;mi>f&lt;/mi>
+    &lt;/mtd>
+  &lt;/mtr>
+&lt;/mtable>
+</pre>
+</div>
+ </section>
+ </section>
+ 
  </section>
 
  <section>
