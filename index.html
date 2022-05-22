@@ -87,7 +87,7 @@
 	    m.setAttribute("class",
 			   mclass.replace("example mathml","") +
 			   " inlinemath");
-	    m.innerHTML=mmllist[i].textContent;
+	    m.innerHTML=mmllist[i].querySelector("pre").textContent;
 	    var atext;
 	    var aattrib=mmllist[i].getAttribute("alttext");
 	    if (aattrib)  {
