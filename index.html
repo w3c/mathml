@@ -7,6 +7,14 @@
       src='https://www.w3.org/Tools/respec/respec-w3c'
       class='remove'>
   </script>
+  <script type="module" class='removeOnSave'>
+        import { _MathTransforms } from 'https://mathml-refresh.github.io/mathml-polyfills/all-polyfills.js'
+
+        document.head.appendChild ( _MathTransforms.getCSSStyleSheet() );
+        window.transform = function (elementId) {
+            _MathTransforms.transform(elementId);
+        }
+  </script>
   <script src="sorttable.js"></script>
   <script class='remove'>
     function relaxhl (r,s,u) {
@@ -77,6 +85,9 @@
     function resortable () {
         sorttable.makeSortable(document.getElementById('oper-dict-table'));
     }
+    function mmlpolyfill () {
+	document.querySelectorAll("math.mml4p").forEach((div) => transform(div));
+    }
     function showcore (){
 	var mmllist=document.querySelectorAll("div.example.mathml");
 	for(var i=0;i!=mmllist.length;i++){
@@ -137,7 +148,7 @@
            }]
                    }],
   github:        "https://github.com/w3c/mathml",
-       postProcess:   [mmlindex,foldable,resortable,showcore],
+       postProcess:   [mmlindex,foldable,resortable,showcore,mmlpolyfill],
   localBiblio: {
   "MathML1":           {"aliasOf": "MathML-19980407"},
   "MathML-Core":       {"aliasOf": "mathml-core"},
