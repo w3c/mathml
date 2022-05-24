@@ -97,7 +97,8 @@
 	    m.setAttribute("display","block");
 	    m.setAttribute("class",
 			   mclass.replace("example mathml","") +
-			   " inlinemath");
+			   " inlinemath" +
+			   (mclass.includes("mml4p") ? " removeOnSave" : "") );
 	    m.innerHTML=mmllist[i].querySelector("pre").textContent;
 	    var atext;
 	    var aattrib=mmllist[i].getAttribute("alttext");
