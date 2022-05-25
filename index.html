@@ -118,7 +118,7 @@
 		atext=s.textContent;
 	    }
 	    m.setAttribute("alttext",atext);
-            transform(m);		
+            try {transform(m);} catch(e) {}
             mmllist[i].parentNode.insertBefore(m,mmllist[i].nextSibling);
 	    }
 	}
