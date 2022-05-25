@@ -305,7 +305,7 @@ topics.</p>
     container for a expression and its annotations.  The
     <code class="element">annotation</code> element is the container for text
     annotations, and the <code class="element">annotation-xml</code> element is used for
-    <span>structured</span>
+    structured
     annotations. The <code class="element">semantics</code> element contains the expression
     being annotated as its first child, followed by a sequence of zero or
     more <code class="element">annotation</code> and/or <code class="element">annotation-xml</code> elements.
@@ -622,8 +622,7 @@ topics.</p>
     If the annotation contains one of the XML reserved characters
     <code>&amp;</code>, <code>&lt;</code> then these characters must
     be encoded using an entity reference or
-    <span>(in the XML syntax) </span>
-    an XML <code>CDATA</code> section.</p>
+    (in the XML syntax) an XML <code>CDATA</code> section.</p>
 
    </section>
 
@@ -760,62 +759,52 @@ topics.</p>
      <tbody>
 
       <tr>
-
        <td rowspan="2" class="attname">definitionURL</td>
        <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
        <td><em>none</em></td>
       </tr>
 
       <tr>
-
        <td colspan="2" class="attdesc">The location of the annotation key symbol</td>
       </tr>
 
       <tr>
-
        <td rowspan="2" class="attname">encoding</td>
        <td><a class="intref" href="#type_string"><em>string</em></a></td>
        <td><em>none</em></td>
       </tr>
 
       <tr>
-
        <td colspan="2" class="attdesc">The encoding of the semantic information in the annotation</td>
       </tr>
 
       <tr>
-
        <td rowspan="2" class="attname">cd</td>
        <td><a class="intref" href="#type_string"><em>string</em></a></td>
        <td>mathmlkeys</td>
       </tr>
 
       <tr>
-
        <td colspan="2" class="attdesc">The content dictionary that contains the annotation key symbol</td>
       </tr>
 
       <tr>
-
        <td rowspan="2" class="attname">name</td>
        <td><a class="intref" href="#type_string"><em>string</em></a></td>
        <td>alternate-representation</td>
       </tr>
 
       <tr>
-
        <td colspan="2" class="attdesc">The name of the annotation key symbol</td>
       </tr>
 
       <tr>
-
        <td rowspan="2" class="attname">src</td>
        <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
        <td><em>none</em></td>
       </tr>
 
       <tr>
-
        <td colspan="2" class="attdesc">The location of an external source for semantic information</td>
       </tr>
      </tbody>
@@ -865,7 +854,7 @@ topics.</p>
      </div>
 
 
-    <p>When <span>the MathML is being parsed as XML and </span>
+    <p>When the MathML is being parsed as XML and
     the annotation value is represented in an XML dialect other than MathML, the
     namespace for the XML markup for the annotation should be identified by means of namespace
     attributes and/or namespace prefixes on the annotation value.  For instance:</p>
@@ -985,7 +974,8 @@ topics.</p>
     <p>Note here that the HTML <code class="element" data-namespace="xhtml">span</code> element has
     caused all open MathML elements to be prematurely closed, resulting in
     the following MathML elements being treated as unknown HTML elements
-    as they are no longer descendents of <code class="element">math</code>. See <a href="#interf_html"></a> for more details of the parsing of MathML in HTML.
+    as they are no longer descendents of <code class="element">math</code>.
+    See <a href="#interf_html"></a> for more details of the parsing of MathML in HTML.
     </p>
 
     <p>Any use of elements in other vocabularies (such as the OpenMath
@@ -1019,8 +1009,7 @@ topics.</p>
    Content markup encodes the <em>functional structure</em> of an expression.  In certain
    cases, a particular application of MathML may require a combination of both presentation
    and content markup.  This section describes specific constraints that govern the use
-   of
-   presentation markup within content markup, and vice versa.
+   of presentation markup within content markup, and vice versa.
   </p>
 
   <section>
@@ -1029,7 +1018,6 @@ topics.</p>
    <p>
     Presentation markup may be embedded within content markup so long as the
     resulting expression retains an unambiguous function application structure.
-
     Specifically, presentation markup may only appear in content markup
     in three ways:
    </p>
@@ -1047,6 +1035,7 @@ topics.</p>
      <p>within the <code class="element">semantics</code> element</p>
     </li>
    </ol>
+   
    <p>
     Any other presentation markup occurring within content markup is a
     MathML error.  More detailed discussion of these three cases follows:
@@ -1162,11 +1151,13 @@ topics.</p>
        &lt;/semantics&gt;
      </pre>
     </div>
+    <p>
     Note that the above markup annotates the presentation markup as
     the first child element, with the content markup as part of the
     <code class="element">annotation-xml</code> element.  An equivalent form could be given
     that annotates the content markup as the first child element, with
     the presentation markup as part of the <code class="element">annotation-xml</code> element.
+    </p>
 
 
   </section>
@@ -1284,11 +1275,12 @@ topics.</p>
     of the semantic annotations within <code class="element">annotation-xml</code>
     For example cross referencing between a presentation MathML rendering and an OpenMath annotation.
    </p>
-    <p><span id="html-xml3">As noted above, the use of namespaces other than MathML, SVG
+
+    <p id="html-xml3">As noted above, the use of namespaces other than MathML, SVG
     or HTML within <code class="element">annotation-xml</code> is not considered valid in the HTML syntax.
     Use of colons and namespace-prefixed element names should be avoided
     as the HTML parser will generate nodes with <em>local</em> name <code>om:OMA</code>
-    (for example), and such nodes can not be constructed by a namespace-aware XML parser.</span>
+    (for example), and such nodes can not be constructed by a namespace-aware XML parser.
    </p>
 
   </section>
