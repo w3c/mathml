@@ -85,9 +85,7 @@
     function resortable () {
         sorttable.makeSortable(document.getElementById('oper-dict-table'));
     }
-    function mmlpolyfill () {
-	document.querySelectorAll("math.mml4p").forEach((div) => transform(div));
-    }
+
     function showcore (){
 	var mmllist=document.querySelectorAll("div.example.mathml");
 	for(var i=0;i!=mmllist.length;i++){
@@ -120,7 +118,8 @@
 		atext=s.textContent;
 	    }
 	    m.setAttribute("alttext",atext);
-	    mmllist[i].parentNode.insertBefore(m,mmllist[i].nextSibling);
+            transform(m);		
+            mmllist[i].parentNode.insertBefore(m,mmllist[i].nextSibling);
 	    }
 	}
     }
@@ -148,7 +147,7 @@
            }]
                    }],
   github:        "https://github.com/w3c/mathml",
-       postProcess:   [mmlindex,foldable,resortable,showcore,mmlpolyfill],
+       postProcess:   [mmlindex,foldable,resortable,showcore],
   localBiblio: {
   "MathML1":           {"aliasOf": "MathML-19980407"},
   "MathML-Core":       {"aliasOf": "mathml-core"},
