@@ -57,13 +57,31 @@
   <li><em>literal identifiers</em> Non numeric literals reference
   terms in the intent dictionary, currently located at <a
   href="https://docs.google.com/spreadsheets/d/1EsWou1K5nxBdLPvQapdoA9h-s8lg_qjn8fJH64g9izQ/edit#gid=1358098730">Google
-  Sheets</a>. Note the list of [=intent=] identifiers is
-  <em>Open</em>: level 1 is a curated list maintained by the Math Working
-  Group and should be implemented by any implemenation of MathML
-  intent, so that suitable audio renderings of the level 1 terms will
-  be generated. Terms in other levels may be contributed; the
-  dictionary may give speech hints, but a system may also fall back on
-  reading the identifier name as given.</li>
+    Sheets</a>.
+
+
+
+<p>Note that [=intent=] identifiers are maintained in two lists:</p>
+    <ul>
+     <li><dfn id="intent-core">Core</dfn>: This is a list of core
+     concept names maintained by the Math Working Group.
+     An accessibility system reading MathML attributed with [^core^]
+     concepts SHOULD use the speech hints provided by the intent
+     definition.</li>
+     <li><dfn id="intent-core">Open</dfn>: This is an open list of concepts
+     to which contributions are invited.
+     An accessibility system reading MathML attributed with [^open^]
+     concepts MAY use the speech hints provided by the intent
+     definition but a system
+     may also fall back on reading the identifier name as given.</li>
+    </ul>
+    <p>When comparing the literal concept name in the <code
+    class="attribute">intent</code> attribute with entries in the intent
+    lists, the comparison should be ASCII Case Insensitive and also
+    normalize `_` and `.` to `-`. If the speech hints are not being used
+    and the literal concept name is being read then each of  `-`, `_` and `.` should be
+    read as an inter-word space.</p>
+</li>
   </ul>
 
 <p>The key component here is the literal. A literal is intended to
@@ -77,7 +95,7 @@ expression can depend on the operator. It is thus desirable to have a
 set of common known meaning with translation rules. Thus power(x,2)
 might be rendered as “the 2nd power of x” or “x squared”, depending on
 the user and agent.</p>
-
+</li>
   <section>
    <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
 
