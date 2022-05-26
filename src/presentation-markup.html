@@ -9524,30 +9524,12 @@
   (.3333...) are represented using several notations. One common notation
   is to put a horizontal line over the digits that repeat (in Portugal an underline
   is used).
-  Another notation involves putting dots over the digits that repeat. These notations
-  are shown below:
+  Another notation involves putting dots over the digits that repeat.
+  The MathML for these involves using <code class="element">mstack</code>, <code class="element">msrow</code>, and <code class="element">msline</code>
+  in a straightforward manner.
+  These notations are shown below:
  </p>
- 
- <blockquote>
- <img src="image/repeat1.png" alt="0.33333 \overline{3}"/>
- </blockquote>
- 
- <blockquote>
- <img src="image/repeat2.png" alt="0.\overline{142857}"/>
- </blockquote>
- 
- <blockquote>
- <img src="image/repeat3.png" alt="0.\underline{142857}"/>
- </blockquote>
- 
- <blockquote>
- <img src="image/repeat4.png" alt="0.\dot{1}4285\dot{7}"/>
- </blockquote>
- 
- <p>The MathML for these involves using <code class="element">mstack</code>, <code class="element">msrow</code>, and <code class="element">msline</code>
- in a straightforward manner.  The MathML for the preceding examples above is given
- below.</p>
- 
+
  <div class="example mathml mml4p">
   <pre>
     &lt;mstack stackalign="right"&gt;
@@ -9556,6 +9538,9 @@
     &lt;/mstack&gt;
  </pre>
  </div>
+ <blockquote>
+ <img src="image/repeat1.png" alt="0.33333 \overline{3}"/>
+ </blockquote>
  
  <div class="example mathml mml4p">
   <pre>
@@ -9565,7 +9550,10 @@
     &lt;/mstack&gt;
  </pre>
  </div>
- 
+ <blockquote>
+ <img src="image/repeat2.png" alt="0.\overline{142857}"/>
+ </blockquote>
+
  <div class="example mathml mml4p">
   <pre>
     &lt;mstack stackalign="right"&gt;
@@ -9574,6 +9562,9 @@
     &lt;/mstack&gt;
  </pre>
  </div>
+ <blockquote>
+ <img src="image/repeat3.png" alt="0.\underline{142857}"/>
+ </blockquote>
  
  <div class="example mathml mml4p">
   <pre>
@@ -9582,7 +9573,10 @@
       &lt;mn&gt; 0.142857 &lt;/mn&gt;
     &lt;/mstack&gt;
   </pre>
- </div>
+ </div> 
+ <blockquote>
+ <img src="image/repeat4.png" alt="0.\dot{1}4285\dot{7}"/>
+ </blockquote>
  
  </section>
  </section>
