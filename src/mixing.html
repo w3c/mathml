@@ -77,8 +77,11 @@
     </ul>
     <p>When comparing the literal concept name in the <code
     class="attribute">intent</code> attribute with entries in the intent
-    lists, the comparison should be ASCII Case Insensitive and also
-    normalize `_` and `.` to `-`. If the speech hints are not being used
+    lists, the comparison should be
+    <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>
+    and also normalize
+    <q>`_`</q> (U+00F5) and <q>`.`</q>  (U+002E) to <q>`-`</q> (U+002D).
+    If the speech hints are not being used
     and the literal concept name is being read then each of  `-`, `_` and `.` should be
     read as an inter-word space.</p>
 </li>
