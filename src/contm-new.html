@@ -1,168 +1,212 @@
 <section>
  <h2 id="contm">Content Markup</h2>
-<!-- <div class="issue" data-number="273"></div> -->
  <div class="issue" data-number="284"></div>
  <section>
   <h3 id="contm_intro">Introduction</h3>
 
   <section>
-   <h4>The Intent of Content Markup</h4>
+   <h4>The Purpose of Content Markup</h4>
 
-   <p>The intent of Content Markup is to provide an explicit encoding of
-   the <em>underlying mathematical meaning</em> of an expression,
-   rather than any particular rendering for the expression.  Mathematics
-   is distinguished both by its use of rigorous formal logic to define
-   and analyze mathematical concepts, and by the use of a (relatively)
-   formal notational system to represent and communicate those concepts.
-   However, mathematics and its presentation should not be viewed as one
-   and the same thing. Mathematical notation, though more rigorous than
-   natural language, is nonetheless at times ambiguous,
-   context-dependent, and varies from community to community.  In some
-   cases, heuristics may adequately infer mathematical semantics from
-   mathematical notation. But in many others cases, it is preferable to
-   work directly with the underlying, formal, mathematical objects.
-   Content Markup provides a rigorous, extensible semantic framework and
-   a markup language for this purpose.
-   </p>
-
-   <p>The difficulties in inferring semantics from a presentation stem
-   from the fact that there are many to one mappings from presentation to
-   semantics and vice versa. For example the mathematical construct
-   <q><i class="var">H</i> multiplied by <i class="var">e</i></q> is often
-   encoded using an explicit operator as in
-   <i class="var">H</i>&#xa0;&#xd7;&#xa0;<i class="var">e</i>. In different
-   presentational contexts, the multiplication operator might be
-   invisible <q><i class="var">H</i>&#xa0;<i class="var">e</i></q>, or rendered
-   as the spoken word <q>times</q>. Generally, many different
-   presentations are possible depending on the context and style
-   preferences of the author or reader. Thus, given
-   <q><i class="var">H</i>&#xa0;<i class="var">e</i></q> out of context it may be
-   impossible to decide if this is the name of a chemical or a
-   mathematical product of two variables <i class="var">H</i> and
-   <i class="var">e</i>. Mathematical presentation also varies across cultures
-   and geographical regions. For example, many notations for long
-   division are in use in different parts of the world today. Notations
-   may lose currency, for example the use of musical sharp and flat
-   symbols to denote maxima and minima [[?Chaundy1954]]. A
-   notation in use in 1644 for the multiplication mentioned above was
-   <img src="image/f4001.gif" alt="\blacksquare" class="vmiddle"/><i class="var">H</i><i class="var">e</i> [[?Cajori1928]].</p>
+   <p>The purpose of Content Markup is to provide an explicit encoding of
+   the <em>underlying mathematical meaning</em> of an expression, rather
+   than any particular notation for the expression.  Mathematical notation
+   is at times ambiguous, context-dependent, and varies from community to
+   community.  In many cases, it is preferable to work directly with the
+   underlying, formal, mathematical objects.  Content Markup provides a
+   rigorous, extensible semantic framework and a markup language for this
+   purpose.</p>
 
    <p>By encoding the underlying mathematical structure explicitly,
-   without regard to how it is presented aurally or visually, it is
-   possible to interchange information more precisely between systems
-   that semantically process mathematical objects. In the trivial example
-   above, such a system could substitute values for the variables
-   <i class="var">H</i> and <i class="var">e</i> and evaluate the result. Important
-   application areas include computer algebra systems, automatic
-   reasoning system, industrial and scientific applications,
-   multi-lingual translation systems, mathematical search, and
-   interactive textbooks.</p>
+   without regard to how it is presented, it is possible to interchange
+   information more precisely between systems that semantically process
+   mathematical objects.  Important application areas include computer
+   algebra systems, automatic reasoning systems, industrial and scientific
+   applications, multi-lingual translation systems, mathematical search,
+   automated scoring of online assessments, and interactive textbooks.</p>
 
-   <p>The organization of this chapter is as follows.  In <a href="#contm_core"></a>, a core collection of elements comprising Strict
-   Content Markup are described.  Strict Content Markup is sufficient to
-   encode general expression trees in a semantically rigorous way.  It is
-   in one-to-one correspondence with OpenMath element set. OpenMath is a
-   standard for representing formal mathematical objects and semantics
-   through the use of extensible Content Dictionaries.  Strict Content
-   Markup defines a mechanism for associating precise mathematical
-   semantics with expression trees by referencing OpenMath Content
-   Dictionaries. The next two sections introduce markup that is more
-   convenient than Strict markup for some purposes, somewhat less formal
-   and verbose.  In <a href="#contm_structure_extended"></a>, markup is
-   introduced for representing a small number of mathematical idioms,
-   such as limits on integrals, sums and product.  These constructs may
-   all be rewritten as Strict Content Markup expressions, and rules for
-   doing so are given.  In <a href="#contm_structure_extended"></a>, elements are
-   introduced for many common function, operators and constants. This
-   section contains many examples, including equivalent Strict Content
-   expressions.
-   Finally, <a href="#contm_p2s"></a> summarizes the algorithm for
-   translating arbitrary Content Markup into Strict Content Markup.  It
-   collects together in sequence all the rewrite rules introduced
-   throughout the rest of the chapter.</p> </section>
+   <p>This chapter presents <a href="#contm_intro">an overview of basic
+   concepts</a> used to define Content Markup, describes <a href="#contm_core">a
+   core collection of elements</a> that comprise Strict Content Markup, and
+   defines <a href="#contm_structure_extended">a full collection of elements</a>
+   to support common mathematical idioms.  Strict Content Markup encodes general
+   expression trees in a semantically rigorous way, while the full set of
+   Content MathML elements provides backward-compatibility with previous
+   versions of Content Markup.  The correspondence between full Content Markup
+   and Strict Content Markup is defined in <a href="#contm_p2s"></a>, which
+   details an algorithm to translate arbitrary Content Markup into Strict
+   Content Markup.</p>
+
+   </section>
 
    <section>
-    <h4 id="contm_rendering">The Structure and Scope of Content MathML Expressions</h4>
+    <h4 id="contm_expressions">Content Expressions</h4>
 
-    <p>Content MathML represents mathematical objects as <em>expression trees</em>.  The
-    notion of constructing a general expression tree is e.g. that of applying an operator
-    to
-    sub-objects. For example, the sum <q><i class="var">x</i>+<i class="var">y</i></q> can be
-    thought of as an application of the addition operator to two arguments <i class="var">x</i> and
-    <i class="var">y</i>. And the expression <q>cos(&#x3c0;)</q> as the application of the
-    cosine function to the number &#x3c0;.</p>
+    <p>Content MathML represents mathematical objects as <em>expression
+    trees</em>.  In general, an expression tree is constructed by applying
+    an operator to a sequence of sub-expressions.  For example, the sum
+    <q><i class="var">x</i>+<i class="var">y</i></q> can be constructed
+    as the application of the addition operator to two arguments
+    <i class="var">x</i> and <i class="var">y</i>, and the expression
+    <q>cos(&#x3c0;)</q> as the application of the cosine function to the
+    number &#x3c0;.</p>
 
-    <p>As a general rule, the terminal nodes in the tree represent basic mathematical
-    objects such as numbers, variables, arithmetic operations and so on. The internal
-    nodes
-    in the tree represent function application or other mathematical constructions that
-    build up a compound objects. Function application provides the most important example;
-    an internal node might represent the application of a function to several arguments,
-    which are themselves represented by the nodes underneath the internal node.</p>
+    <p>The terminal nodes in an expression tree represent basic mathematical
+    objects such as numbers, variables, arithmetic operations, and so on.
+    The internal nodes in the tree represent function application or other
+    mathematical constructions that build up compound objects.</p>
 
-    <p>The semantics of general mathematical expressions is not a matter of consensus. It
-    would be an enormous job to systematically codify most of mathematics &#x2013; a task
-    that can never be complete. Instead, MathML makes explicit a relatively small number
-    of
-    commonplace mathematical constructs, chosen carefully to be sufficient in a large
-    number
-    of applications. In addition, it provides a mechanism for referring
-    to mathematical concepts outside of the base collection, allowing
-    them to be represented, as well.</p>
+    <p>MathML defines a relatively small number of commonplace mathematical
+    constructs, chosen to be sufficient in a wide range of applications.
+    In addition, it provides a mechanism to refer to concepts outside of
+    the collection it defines, allowing them to be represented as well.</p>
 
-    <p>The base set of content elements is chosen to be adequate for simple coding of most
-    of the formulas used from kindergarten to the end of high school in the United States,
-    and probably beyond through the first two years of college, that is up to A-Level
-    or
-    Baccalaureate level in Europe.</p>
+    <p>The defined set of content elements is designed to be adequate for
+    simple coding of formulas typically used from kindergarten through the
+    first two years of college in the United States, that is, up to A-Level
+    or Baccalaureate level in Europe.</p>
 
-    <p>While the primary role of the MathML content element set is to directly encode the
-    mathematical structure of expressions independent of the notation used to present
-    the
-    objects, rendering issues cannot be ignored. There are different approaches for
-    rendering Content MathML formulae, ranging from native implementations of the
-    MathML elements to declarative notation definitions, to XSLT style
-    sheets. Because rendering requirements for Content MathML vary
-    widely, MathML 3 does not provide a normative specification for
-    rendering.  Instead, typical renderings are suggested by way of examples.</p>
+    <p>The primary role of the MathML content element set is to encode the
+    mathematical structure of an expression independent of the notation used
+    to present it.  However, rendering issues cannot be ignored.  There are
+    many different approaches to render Content MathML formulae, ranging
+    from native implementations of the MathML elements, to declarative notation
+    definitions, to XSLT style sheets.  Because rendering requirements for
+    Content MathML vary widely, MathML does not provide a normative rendering
+    specification.  Instead, typical renderings are suggested by way of
+    examples given using presentation markup.</p>
+   </section>
+
+   <section>
+    <h4 id="contm_concepts">Expression Concepts</h4>
+
+    <p>The basic building blocks of Content MathML expressions are
+    <em>numbers</em>, <em>identifiers</em>, and <em>symbols</em>.
+    These building blocks are combined using function application
+    and binding operators.</p>
+
+    <p>In the expression <q><i class="var">x</i>+2</q>, the numeral <q>2</q>
+    represents a <em>number</em> with a fixed value.  Content MathML uses the
+    <a class="intref" href="#contm_cn"><code class="element">cn</code></a>
+    element to represent numerical quantities.  The <em>identifier</em>
+    <i class="var">x</i> is a mathematical variable, that is, an identifier
+    that represents a quantity with no predetermined value.  Content MathML
+    uses the
+    <a class="intref" href="#contm_ci"><code class="element">ci</code></a>
+    element to represent variable identifiers.</p>
+
+    <p>The plus sign is an identifier that represents a fixed, externally
+    defined object, namely, the addition function.  Such an identifier is
+    called a <em>symbol</em>, to distinguish it from a variable.  Common
+    elementary functions and operators are all symbols in this sense.
+    Content MathML uses the
+    <a class="intref" href="#contm_csymbol"><code class="element">csymbol</code></a>
+    element to represent symbols.</p>
+
+    <p>The fundamental way to combine numbers, variables, and symbols
+    is function application.  Content MathML distinguishes between the
+    function itself (which may be a symbol such as the sine function,
+    a variable such as <i class="var">f</i>, or some other expression)
+    and the result of applying the function to its arguments.  The
+    <a class="intref" href="#contm_apply"><code class="element">apply</code></a>
+    element groups the function with its arguments syntactically, and
+    represents the expression that results from applying the function
+    to its arguments.</p>
+   </section>
+
+   <section>
+    <h4 id="contm_binding">Variable Binding</h4>
+
+    <p>In an expression, variables may be described as <em>bound</em> or
+    <em>free</em> variables.  Bound variables have a special role within
+    the scope of a binding expression, and may be renamed consistently
+    within that scope without changing the meaning of the expression.
+    Free variables are those that are not bound within an expression.
+    Content MathML differentiates between the application of a function
+    to a free variable (e.g. <i class="var">f</i>(<i class="var">x</i>))
+    and an operation that binds a variable within a binding scope.  The
+    <a class="intref" href="#contm_bind"><code class="element">bind</code></a>
+    element is used to delineate the binding scope of a bound variable
+    and to group the binding operator with its bound variables, which
+    are supplied using the
+    <a class="intref" href="#contm_bvar"><code class="element">bvar</code></a>
+    element.</p>
+
+    <p>In Strict Content markup, the only way to perform variable binding
+    is to use the <code class="element">bind</code> element.  In non-Strict
+    Content markup, other markup elements are provided that more closely
+    resemble well-known idiomatic notations, such as <q>limit</q>-style
+    notations for sums and integrals.  These constructs may implicitly
+    bind variables, such as the variable of integration, or the index variable
+    in a sum.  MathML uses the term <em>qualifier element</em> to refer to
+    those elements used to represent the auxiliary data required by these
+    constructs.</p>
+
+    <p>Expressions involving qualifiers follow one of a small number of
+    idiomatic patterns, each of which applies to a class of similar binding
+    operators.  For example, sums and products are in the same class
+    because they use index variables following the same pattern.  The
+    Content MathML operator classes are described in detail in
+    <a href="#contm_opclasses"></a>.
+    </p>
    </section>
 
    <section>
     <h4 id="contm_strict">Strict Content MathML</h4>
 
-    <p>In MathML 3, a subset, or profile, of Content MathML is defined: <em>Strict Content
-    MathML</em>.  This uses a minimal, but sufficient, set of elements to represent the meaning of
-    a
-    mathematical expression in a uniform structure, while the full Content MathML grammar
-    is
-    backward compatible with MathML 2.0, and generally tries to strike a more pragmatic
-    balance between verbosity and formality.</p>
+    <p>Beginning in MathML 3, <em>Strict Content MathML</em> is defined as a
+    minimal subset of Content MathML that is sufficient to represent the meaning
+    of mathematical expressions using a uniform structure.  The full Content
+    MathML element set retains backward compatibility with MathML 2, and strikes
+    a pragmatic balance between verbosity and formality.</p>
 
-    <p>Content MathML provides a large number of predefined functions
-    encoded as empty elements (e.g. <code class="element">sin</code>, <code class="element">log</code>, etc.)
-    and a variety of constructs for forming compound objects
-    (e.g. <code class="element">set</code>, <code class="element">interval</code>, etc.).  By contrast, Strict
-    Content MathML uses a single element (<code class="element">csymbol</code>) with an
-    attribute pointing to an external definition in extensible content
-    dictionaries to represent all functions, and uses only
-    <code class="element">apply</code> and <code class="element">bind</code> for building up compound
-    objects. The token elements such as <code class="element">ci</code> and <code class="element">cn</code> are
-    also considered part of Strict Content MathML, but with a more
-    restricted set of attributes and with content restricted to
-    text.</p>
+    <p>Content MathML provides a considerable number of predefined functions
+    encoded as empty elements (e.g. <code class="element">sin</code>,
+    <code class="element">log</code>, etc.) and a variety of constructs for
+    forming compound objects (e.g. <code class="element">set</code>,
+    <code class="element">interval</code>, etc.).  In contrast, Strict
+    Content MathML represents all known functions using a single element
+    (<code class="element">csymbol</code>) with an attribute that points
+    to its definition in an extensible content dictionary, and uses only
+    <code class="element">apply</code> and <code class="element">bind</code>
+    elements to build up compound expressions.  Token elements such as
+    <code class="element">cn</code> and <code class="element">ci</code> are
+    considered part of Strict Content MathML, but with a more restricted set
+    of attributes and with content restricted to text.</p>
 
-    <p>Strict Content MathML is designed to be compatible with OpenMath (in
-    fact it is an XML encoding of OpenMath Objects in the sense of [[OpenMath]]).
-    OpenMath is a standard for representing formal mathematical
-    objects and semantics through the use of extensible Content Dictionaries.  The table
-    below
-    gives an element-by-element correspondence between the OpenMath XML encoding of OpenMath
-    objects and Strict Content MathML.</p>
+    <p>The formal semantics of Content MathML expressions are given by
+    specifying equivalent Strict Content MathML expressions, which all
+    have formal semantics defined in terms of content dictionaries.
+    The exact correspondence between each non-Strict Content MathML
+    structure and its Strict Content MathML equivalent is described
+    in terms of rewrite rules that are used as part of the transformation
+    algorithm given in <a href="#contm_p2s"></a>.</p>
 
-    <table class="data" id="contm_om_correspondence">
+    <p>The algorithm described in <a href="#contm_p2s"></a> is complete in the
+    sense that it gives every Content MathML expression a specific meaning in
+    terms of a Strict Content MathML expression.  In some cases, it gives a
+    specific strict interpretation to an expression whose meaning was not
+    sufficiently specified in MathML 2.  The goal of this algorithm is to
+    be faithful to natural mathematical intuitions, however, some edge cases
+    may remain where the specific interpretation given by the algorithm may
+    be inconsistent with earlier expectations.</p>
 
+    <p>A conformant MathML processor need not implement this algorithm. The
+    existence of these transformation rules does not imply that a system must
+    treat equivalent expressions identically. In particular, systems may give
+    different presentation renderings for expressions that the transformation
+    rules imply are mathematically equivalent.  In general, Content MathML
+    does not define any expectations for the computational behavior of the
+    expressions it encodes, including, but not limited to, the equivalence
+    of any specific expressions.</p>
+    
+    <p>Strict Content MathML is designed to be compatible with OpenMath,
+    a standard for representing formal mathematical objects and semantics.
+    Strict Content MathML is an XML encoding of OpenMath Objects in the
+    sense of [[OpenMath]].  The following table gives the correspondence
+    between Strict Content MathML elements and their OpenMath equivalents.</p>
+
+    <table id="contm_om_correspondence" class="syntax data">
      <thead>
-
       <tr>
        <td>Strict Content MathML</td>
        <td>OpenMath</td>
@@ -170,7 +214,6 @@
      </thead>
 
      <tbody>
-
       <tr>
        <td><a class="intref" href="#contm_cn"><code class="element">cn</code></a></td>
        <td><code class="element" data-namespace="openmath">OMI</code>, <code class="element" data-namespace="openmath">OMF</code></td>
@@ -234,181 +277,39 @@
      </tbody>
     </table>
 
-
-    <p>In MathML 3, formal semantics Content MathML expressions are
-    given by specifying equivalent Strict Content MathML expressions.
-    Since Strict Content MathML expressions all have carefully-defined
-    semantics given in terms of OpenMath Content Dictionaries, all
-    Content MathML expressions inherit well-defined semantics in this
-    way. To make the correspondence exact, an algorithm is
-    given in terms of transformation rules that are applied to
-    rewrite non-Strict MathML constructs into a strict equivalents. The
-    individual rules are introduced in context throughout the chapter.
-    In <a href="#contm_p2s"></a>, the algorithm as a whole is
-    described.</p>
-
-    <p>As most transformation rules relate to
-    classes of MathML elements that have similar argument structure,
-    they are introduced in <a href="#contm_opclasses"></a> where these
-    classes are defined. Some special case rules for specific elements
-    are given in Section <a href="#contm_structure_extended"></a>. Transformations in
-    <a href="#contm_core"></a> concern non-Strict usages of the core
-    Content MathML elements, those in <a href="#contm_structure_extended"></a> concern the rewriting of some
-    additional structures not directly supported in Strict Content MathML.</p>
-
-    <p>The full algorithm described in<a href="#contm_p2s"></a> is
-    complete in the sense that it gives every Content MathML expression a specific
-    meaning in terms of a Strict Content MathML expression.  This means
-    it has to give specific strict interpretations to some expressions
-    whose meaning was insufficiently specified in MathML2. The intention
-    of this algorithm is to be faithful to mathematical intuitions.
-    However edge cases may remain where the normative interpretation of
-    the algorithm may break earlier intuitions.</p>
-
-    <p>A conformant MathML processor need
-    not implement this transformation. The existence of these
-    transformation rules does not imply that a system must treat
-    equivalent expressions identically. In particular systems may give
-    different presentation renderings for expressions that the
-    transformation rules imply are mathematically equivalent.</p>
-
    </section>
 
    <section>
     <h4 id="contm_cds">Content Dictionaries</h4>
 
-    <p>Due to the nature of mathematics, any method for formalizing
-    the meaning of the mathematical expressions must be
-    extensible. The key to extensibility is the ability to define
-    new functions and other symbols to expand the terrain of
-    mathematical discourse. To do this, two things are required: a
-    mechanism for representing symbols not already defined by
-    Content MathML, and a means of associating a specific
-    mathematical meaning with them in an unambiguous way.  In MathML
-    3, the <code class="element">csymbol</code> element provides the means to represent
-    new symbols, while <em>Content Dictionaries</em> are the way
-    in which mathematical semantics are described.  The association
-    is accomplished via attributes of the <code class="element">csymbol</code> element
-    that point at a definition in a CD. The syntax and usage of
-    these attributes are described in detail in <a href="#contm_csymbol_sec"></a>.</p>
+    <p>Any method to formalize the meaning of mathematical expressions
+    must be extensible, that is, it must provide the ability to define
+    new functions and symbols to expand the domain of discourse.  Content
+    MathML uses the
+    <a class="intref" href="#contm_csymbol"><code class="element">csymbol</code></a>
+    element to represent new symbols, and uses <em>Content Dictionaries</em>
+    to describe their mathematical semantics.  The association between a symbol
+    and its semantic description is accomplished using the attributes of the
+    <code class="element">csymbol</code> element to point to the definition
+    of the symbol in a Content Dictionary.</p>
 
-    <p>Content Dictionaries are structured documents for the
-    definition of mathematical concepts; see the OpenMath standard,
-    [[OpenMath]].
-    To maximize modularity and reuse, a
-    Content Dictionary typically contains a relatively small
-    collection of definitions for closely related concepts.  The
-    OpenMath Society maintains a large set of public Content Dictionaries
-    including the MathML CD group that including contains definitions
-    for all pre-defined symbols in MathML.
-    There is a process for contributing privately
-    developed CDs to the OpenMath Society repository to facilitate
-    discovery and reuse.  MathML 3 does not require CDs be publicly
-    available, though in most situations the goals of semantic
-    markup will be best served by referencing public CDs available
-    to all user agents.</p>
-
-    <p>In the text below, descriptions of semantics for predefined
-    MathML symbols refer to the Content Dictionaries developed by
-    the OpenMath Society in conjunction with the W3C Math Working
-    Group.  It is important to note, however, that this information
-    is informative, and not normative. In general, the precise
-    mathematical semantics of predefined symbols are not not fully
-    specified by the MathML 3 Recommendation, and the only normative
-    statements about symbol semantics are those present in the text
-    of this chapter.  The semantic definitions provided by the
-    OpenMath Content CDs are intended to be sufficient for
-    most applications, and are generally compatible with the
-    semantics specified for analogous constructs in the MathML 2.0
-    Recommendation.  However, in contexts where highly precise
-    semantics are required (e.g. communication between computer
-    algebra systems, within formal systems such as theorem provers,
-    etc.) it is the responsibility of the relevant community of
-    practice to verify, extend or replace definitions provided by
-    OpenMath CDs as appropriate.</p>
-   </section>
-
-   <section>
-    <h4 id="contm_concepts">Content MathML Concepts</h4>
-
-    <p>The basic building blocks of Content MathML expressions are
-    numbers, identifiers and symbols.  These building blocks are combined
-    using function applications and binding operators.  It is important to
-    have a basic understanding of these key mathematical concepts, and how
-    they are reflected in the design of Content MathML.  For the
-    convenience of the reader, these concepts are reviewed here.</p>
-
-    <p>In the expression <q><i class="var">x</i>+<i class="var">y</i></q>,
-    <i class="var">x</i> is a mathematical variable, meaning an identifier that
-    represents a quantity with no fixed value.  It may have other
-    properties, such as being an integer, but its value is not a fixed
-    property.  By contrast, the plus sign is an identifier that represents a
-    fixed and externally defined object, namely the addition function.
-    Such an identifier is termed a <em>symbol</em>, to distinguish it
-    from a variable.  Common elementary functions and operators all have
-    fixed, external definitions, and are hence symbols.  Content MathML
-    uses the <code class="element">ci</code> element to represent variables, and the
-    <code class="element">csymbol</code> to represent symbols.</p>
-
-    <p>The most fundamental way in which symbols and variables are
-    combined is function application.  Content MathML makes a crucial
-    semantic distinction between a function itself (a symbol such as the
-    sine function, or a variable such as <i class="var">f</i>) and the result of
-    applying the function to arguments.  The <a class="intref" href="#contm_apply"><code class="element">apply</code></a> element groups the function
-    with its arguments syntactically, and represents the expression
-    resulting from applying that function to its arguments.</p>
-
-    <p>Mathematically, variables are divided into <em>bound</em> and
-    <em>free</em> variables.  Bound variables are variables that are
-    assigned a special role by a binding operator within a certain scope.
-    For example, the index variable within a summation is a bound
-    variable. They can be characterized as variables with the property
-    that they can be renamed consistently throughout the binding scope
-    without changing the underlying meaning of the expression.  Variables
-    that are not bound are termed free variables.
-    Because the logical distinction between bound and free variables is
-    important for well-defined semantics, Content MathML differentiates
-    between the application of a function to a free variable,
-    e.g. <i class="var">f</i>(<i class="var">x</i>) and the operation of binding a
-    variable within a scope.  The <a class="intref" href="#contm_bind"><code class="element">bind</code></a> element is used the delineate
-    the binding scope, and group the binding operator with its bound
-    variables, which are indicated by the <code class="element">bvar</code> element.</p>
-
-    <p>In Strict Content markup, the <code class="element">bind</code> element is the only way
-    of performing variable binding.  In non-Strict usage, however, markup
-    is provided that more closely resembles well-known idiomatic
-    notations, such as the <q>limit</q> notations for sums and
-    integrals.  These constructs often implicitly bind variables, such as
-    the variable of integration, or the index variable in a sum.  MathML
-    terms the elements used to represent the auxiliary data such as limits
-    required by these constructions <em>qualifier</em> elements.</p>
-
-    <p>Expressions involving qualifiers follow one of a small number of
-    idiomatic patterns, each of which applies to class of similar binding
-    operators.  For example, sums and products are in the same class
-    because they use index variables following the same pattern.  The
-    Content MathML operator classes are described in detail in <a href="#contm_opclasses"></a>.
-    </p>
-
-    <p>Each Content MathML element is described in a section below that
-    begins with a table summarizing the key information about the element.
-    For elements that have different Strict and non-Strict
-    usage, these syntax tables are divided to clearly separate the two cases. The element's
-    content
-    model is given in the <code>Content</code> row, linked to the MathML
-    Schema in <a href="#parsing"></a>.  The <code>Attributes</code>, and
-    <code>Attribute Values</code> rows similarly link to the schema. Where
-    applicable, the <code>Class</code> row specifies the operator class, which
-    indicate how many arguments the operator represented by this element
-    takes, and also in many cases determines the mapping to Strict Content
-    MathML, as described in <a href="#contm_opclasses"></a>.  Finally,
-    the <code>Qualifiers</code> row clarifies whether the operator takes
-    qualifiers and if so, which. <span>Note <code>Class</code>
-    and <code>Qualifiers</code> specify how many siblings may follow
-    the operator element in an <code class="element">apply</code>, or the children of the
-    element for container elements;</span> see <a href="#contm_apply_sec"></a> and <a href="#contm_qualifiers"></a> for
-    details).</p>
-
+    <p>The correspondence between operator elements in Content MathML and
+    symbol definitions in Content Dictionaries is given in
+    <a href="#contm_ops"></a>.  These definitions for predefined
+    MathML operator symbols refer to Content Dictionaries developed by the
+    OpenMath Society [[OpenMath]] in conjunction with the W3C Math Working
+    Group.  It is important to note that this information is informative, not
+    normative.  In general, the precise mathematical semantics of predefined
+    symbols are not fully specified by the MathML Recommendation, and the only
+    normative statements about symbol semantics are those present in the text
+    of this chapter.  The semantic definitions provided by the OpenMath Content
+    Dictionaries are intended to be sufficient for most applications, and are
+    generally compatible with the semantics specified for analogous constructs
+    in this Recommendation.  However, in contexts where highly precise semantics
+    are required (e.g. communication between computer algebra systems, within
+    formal systems such as theorem provers, etc.) it is the responsibility of
+    the relevant community of practice to verify, extend or replace definitions
+    provided by OpenMath Content Dictionaries as appropriate.</p>
    </section>
 
   </section>
@@ -820,7 +721,7 @@
      <code class="element">sep</code> element allowed in Strict Content MathML) <code class="element">mglyph</code>
      elements to refer to characters not currently available in Unicode, or
      a general presentation construct (see <a href="#presm_summary"></a>),
-     which is used for rendering (see <a href="#contm_rendering"></a>).</p>
+     which is used for rendering (see <a href="#contm_expressions"></a>).</p>
 
      <p>If a <code class="attribute">base</code> attribute is present, it specifies the base used for the digit
      encoding of both integers.  The use of <code class="attribute">base</code> with
@@ -1160,7 +1061,7 @@
      <p>In addition to the forms described above, the <code class="element">csymbol</code> and element can contain
      <code class="element">mglyph</code> elements to refer to characters not currently available in Unicode, or a
      general presentation construct (see <a href="#presm_summary"></a>), which is used for
-     rendering (see <a href="#contm_rendering"></a>). In this case, when
+     rendering (see <a href="#contm_expressions"></a>). In this case, when
      writing to Strict Content MathML, the csymbol should be treated as a
      <code class="element">ci</code> element, and rewritten using <a href="#contm_ci_pres">Rewrite: ci presentation mathml</a>.</p>
 
