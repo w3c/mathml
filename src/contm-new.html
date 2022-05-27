@@ -43,9 +43,9 @@
    and geographical regions. For example, many notations for long
    division are in use in different parts of the world today. Notations
    may lose currency, for example the use of musical sharp and flat
-   symbols to denote maxima and minima [[Chaundy1954]]. A
+   symbols to denote maxima and minima [[?Chaundy1954]]. A
    notation in use in 1644 for the multiplication mentioned above was
-   <img src="image/f4001.gif" alt="\blacksquare" class="vmiddle"></img><i class="var">H</i><i class="var">e</i> [[Cajori1928]].</p>
+   <img src="image/f4001.gif" alt="\blacksquare" class="vmiddle"/><i class="var">H</i><i class="var">e</i> [[?Cajori1928]].</p>
 
    <p>By encoding the underlying mathematical structure explicitly,
    without regard to how it is presented aurally or visually, it is
@@ -998,7 +998,7 @@
      inappropriate.  Advanced types require significant structure of their own (for example,
      <i class="var">vector(complex)</i>) and are probably best constructed as mathematical objects and
      then associated with a MathML expression through use of the <code class="element">semantics</code>
-     element. See [[mathml-types]] for more examples.</p>
+     element. See [[?MathML-Types]] for more examples.</p>
 
     </section>
 
@@ -1190,7 +1190,7 @@
      <p>The resulting URI is specified as the value of the <code class="attribute">definitionURL</code> attribute.</p>
 
      <p>This form of reference is useful for backwards compatibility with MathML2 and to
-     facilitate the use of Content MathML within URI-based frameworks (such as RDF [[rdf]] in the Semantic Web or OMDoc [[OMDoc1.2]]).  Another benefit is
+     facilitate the use of Content MathML within URI-based frameworks (such as RDF [[?RDF]] in the Semantic Web or OMDoc [[?OMDoc1.2]]).  Another benefit is
      that the symbol name in the CD does not need to correspond to the content of the
      <code class="element">csymbol</code> element.  However, in general, this method results in much longer MathML
      instances.  Also, in situations where CDs are under development, the use of a CD Group
@@ -2018,7 +2018,7 @@
      acyclicity constraint, the example is not a valid MathML expression tree. It
      might be argued that such an expression could be given the interpretation of the continued
      fraction
-     <img src="image/contfrac1.gif" alt="  \frac{1}{1 + \frac{1}{1 + \frac{1}{1 + \ldots}}}" class="vmiddle"></img>.
+     <img src="image/contfrac1.gif" alt="  \frac{1}{1 + \frac{1}{1 + \frac{1}{1 + \ldots}}}" class="vmiddle"/>.
      However, the procedure of building an expression tree by replacing
      <code class="element">share</code> element does not terminate for such an
      expression, and hence such expressions are not allowed by Content MathML.</p>
@@ -2381,28 +2381,19 @@
     <h4 id="contm_container">Container Markup</h4>
 
     <p>Many mathematical structures are constructed from subparts or
-    parameters. The motivating example is a set. Informally, one
-    thinks of a set as a certain kind of mathematical object that
-    contains a collection of elements. Thus, it is intuitively natural
-    for the markup for a set to contain, in the XML sense, the markup
-    for its constituent elements. The markup may define the set
-    elements explicitly by enumerating them, or implicitly by rule,
-    using qualifier elements. However, in either case, the markup for
-    the elements is contained in the markup for the set, and
-    consequently this style of representation is termed
-    <em>container markup</em> in MathML. By contrast, Strict
-    markup represents an instance of a set as the result of applying a
-    function or <em>constructor symbol</em> to arguments.  In this
-    style of markup, the markup for the set construction is a sibling
-    of the markup for the set elements in an enclosing <code class="element">apply</code>
-    element.</p>
-
-    <p>While the two approaches are formally equivalent, container
-    markup is generally more intuitive for non-expert authors to use, while
-    Strict markup is preferable is contexts where semantic rigor is
-    paramount.  In addition, MathML 2 relied on container markup, and
-    thus container markup is necessary in cases where backward
-    compatibility is required.</p>
+    parameters. For example, a set as a mathematical object that
+    contains a collection of elements, so it is natural for the
+    markup for a set to contain the markup for its constituent
+    elements. The markup for a set may define the set of elements
+    explicitly by enumerating them, or implicitly by rule that uses
+    qualifier elements. In either case, the markup for the elements is
+    contained in the markup for the set, and this style of
+    representation is called <em>container markup</em> in MathML. By
+    contrast, Strict markup represents an instance of a set as the
+    result of applying a function or <em>constructor symbol</em> to
+    arguments.  In this style of markup, the markup for the set
+    construction is a sibling of the markup for the set elements in an
+    enclosing <code class="element">apply</code> element.</p>
 
     <p>MathML provides container markup for the following mathematical
     constructs: sets, lists, intervals, vectors, matrices (two
@@ -2416,21 +2407,19 @@
     operator involved.  For details about a specific container
     element, obtain its operator class (and any applicable special
     case information) by consulting the syntax table and discussion
-    for that element in <a href="#contm_structure_extended"></a>. Then apply the
+    for that element in <a href="#contm_ops_syntax"></a>. Then apply the
     rewrite rules for that specific operator class as described in
-    <a href="#contm_opclasses"></a>.</p>
+    <a href="#contm_p2s"></a>.</p>
 
     <section>
      <h5 id="contm_container_constructor">Container Markup for Constructor Symbols</h5>
 
-     <p>The arguments to container elements corresponding to
-     constructors may either be explicitly given as a sequence of child
-     elements, or they may be specified by a rule using qualifiers. The
-     only exceptions are the <code class="element">piecewise</code>, <code class="element">piece</code>, and
-     <code class="element">otherwise</code> elements used for representing functions with
-     <a class="intref" href="#contm_piecewise">piecewise</a> definitions.  The
-     arguments of these elements must always be specified
-     explicitly.</p>
+     <p>The arguments to container elements that correspond to
+     constructors may be explicitly given as a sequence of child
+     elements, or implicitly given by a rule using qualifiers. The
+     exceptions are the <code class="element">interval</code>, <code class="element">piecewise</code>, <code class="element">piece</code>, and
+     <code class="element">otherwise</code> elements.  The
+     arguments of these elements must be specified explicitly.</p>
 
      <div class="strict-mathml-example" id="contm_strict-set">
 
@@ -3854,20 +3843,9 @@
      </p>
 
 
-     <p>The <code class="element">set</code> element represents a function which constructs
-     mathematical sets from its arguments. It is an n-ary function. The
-     members of the set to be constructed may be given explicitly as
-     child elements of the constructor, or specified by rule as described
-     in <a href="#contm_container_constructor"></a>.  There is no implied ordering to
-     the elements of a set.</p>
+     <p>The <code class="element">set</code> element represents the n-ary function which constructs a mathematical set from its arguments. The <code class="element">set</code> element takes the attribute <code class="attribute">type</code> which may have the values <code class="attributevalue">set</code> and <code class="attributevalue">multiset</code>. The members of the set to be constructed may be given explicitly as child elements of the constructor, or specified by rule as described in <a href="#contm_container_constructor"></a>.  There is no implied ordering to the elements of a set.</p>
 
-     
-     
-     <p>The <code class="element">list</code> element represents the n-ary function which
-     constructs a list from its arguments. Lists differ from sets in that
-     there is an explicit order to the elements.
-     The list entries and order may be given explicitly or specified by rule as described
-     in <a href="#contm_container_constructor"></a>.</p>
+     <p>The <code class="element">list</code> element represents the n-ary function which constructs a list from its arguments. Lists differ from sets in that there is an explicit order to the elements. The <code class="element">list</code> element takes the attribute <code class="attribute">order</code> which may have the values <code class="attributevalue">numeric</code> and <code class="attributevalue">lexicographic</code>. The list entries and order may be given explicitly or specified by rule as described in <a href="#contm_container_constructor"></a>.</p>
 
      <section class="fold">
       <h6 id="set.ex1">Examples (Explicit elements)</h6>
@@ -4736,7 +4714,7 @@
      if <i class="var">b</i> mod <i class="var">a</i> = 0.</p>
 
      <section class="fold">
-      <h6 id="relation1.ex1">Examples</h6>
+      <h6 id="relation1.ex2">Examples</h6>
       <p>Content MathML</p>
 
       <div class="example mathml mml4c">
@@ -4792,8 +4770,8 @@
      mathematical statements such as <q>As x tends to y,</q> and to provide a
      building block to construct more general kinds of limits.</p>
 
-     <p>The <code class="element">tendsto</code> element takes the attributes <code class="attribute">type</code> to set the
-     direction from which the limiting value is approached.</p>
+     <p>The <code class="element">tendsto</code> element takes the attribute <code class="attribute">type</code> to set the
+     direction from which the limiting value is approached. It may have any value, but common values include <code class="attributevalue">above</code> and <code class="attributevalue">below</code>.</p>
 
      <section class="fold">
       <h6 id="limit1.tendsto.ex1">Examples</h6>
@@ -5764,7 +5742,7 @@
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
            &lt;mi&gt;x&lt;/mi&gt;
          &lt;/mrow&gt;
-         &lt;text&gt;&amp;nbsp;&amp;nbsp;or&amp;nbsp;&amp;nbsp;&lt;/text&gt;
+         &lt;mtext&gt;&amp;nbsp;&amp;nbsp;or&amp;nbsp;&amp;nbsp;&lt;/mtext&gt;
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
@@ -5784,7 +5762,7 @@
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
            &lt;mi&gt;x&lt;/mi&gt;
          &lt;/mrow&gt;
-         &lt;text&gt;&amp;nbsp;&amp;nbsp;or&amp;nbsp;&amp;nbsp;&lt;/text&gt;
+         &lt;mtext&gt;&amp;nbsp;&amp;nbsp;or&amp;nbsp;&amp;nbsp;&lt;/mtext&gt;
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mi&gt;sinh&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;
            &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
@@ -6605,7 +6583,7 @@
 represent respectively:<br/>
 the base of the natural logarithm, approximately 2.718;<br/>
 the square root of -1, commonly written <i class="var">i</i>;<br/>
-not-a-number, i.e. the result of an ill-posed floating point computation (see [[IEEE754]]);<br/>
+not-a-number, i.e. the result of an ill-posed floating point computation (see [[?IEEE754]]);<br/>
 the Boolean value true;<br/>
 the Boolean value false;<br/>
 pi (<i class="var">&#x03c0;</i>), approximately 3.142, which is the ratio of the circumference of a circle to its diameter;<br/>
@@ -7143,9 +7121,8 @@ infinity (&#x221e;).</p>
       <a class="intref" href="#parsing_interval.class">Schema Class</a>
      </p>
 
-     <p>The <code class="element">interval</code> element is a container element used to represent simple mathematical intervals of
-     the
-     real number line.  It takes an optional attribute <code class="attribute">closure</code>, with a default value
+     <p>The <code class="element">interval</code> element is a container element used to represent simple mathematical intervals of the
+     real number line.  It takes an optional attribute <code class="attribute">closure</code>, which can take any of the values <code class="attributevalue">open</code>, <code class="attributevalue">closed</code>, <code class="attributevalue">open-closed</code>, or <code class="attributevalue">closed-open</code>, with a default value
      of <code class="attributevalue">closed</code>.</p>
 
      <section class="fold">
@@ -7185,7 +7162,7 @@ infinity (&#x221e;).</p>
       </div>
 
       <blockquote>
-       <p><img src="image/interval1-interval_oo-ex1.gif" alt="{\left(x,{1}\right)}"></img></p>
+       <img src="image/interval1-interval_oo-ex1.gif" alt="{\left(x,{1}\right)}"/>
       </blockquote>
 
       <div class="example mathml mmlcore">
@@ -7195,7 +7172,7 @@ infinity (&#x221e;).</p>
       </div>
 
       <blockquote>
-       <p><img src="image/interval1-interval_cc-ex1.gif" alt="{\left[{0},{1}\right]}"></img></p>
+       <img src="image/interval1-interval_cc-ex1.gif" alt="{\left[{0},{1}\right]}"/>
       </blockquote>
 
       <div class="example mathml mmlcore">
@@ -7205,7 +7182,7 @@ infinity (&#x221e;).</p>
       </div>
 
       <blockquote>
-       <p><img src="image/interval1-interval_oc-ex1.gif" alt="{\left({0},{1}\right]}"></img></p>
+       <img src="image/interval1-interval_oc-ex1.gif" alt="{\left({0},{1}\right]}"/>
       </blockquote>
 
       <div class="example mathml mmlcore">
@@ -7215,7 +7192,7 @@ infinity (&#x221e;).</p>
       </div>
 
       <blockquote>
-       <p><img src="image/interval1-interval_co-ex1.gif" alt="{\left[{0},{1}\right)}"></img></p>
+       <img src="image/interval1-interval_co-ex1.gif" alt="{\left[{0},{1}\right)}"/>
       </blockquote>
      </section>
     </section>

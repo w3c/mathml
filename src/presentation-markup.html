@@ -86,7 +86,7 @@
     <q><i class="var">f</i></q>, which, in this case, can be aurally rendered as
     <q>of</q>.</p>
  
-    <p>The complete list of MathML entities is described in [[xml-entity-names]].</p>
+    <p>The complete list of MathML entities is described in [[Entities]].</p>
    </section>
  
    <section>
@@ -707,39 +707,37 @@
      
      <div class="example mathml mml4p">
       <pre>
+      &lt;mrow&gt;
+       &lt;mrow&gt; &lt;mi&gt;f&lt;/mi&gt; &lt;mo&gt;&amp;ApplyFunction;&lt;/mo&gt; &lt;mo&gt;(&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;)&lt;/mo&gt; &lt;/mrow&gt;
+       &lt;mo id='eq1-equals'&gt;=&lt;/mo&gt;
+       &lt;mrow&gt;
+        &lt;msup&gt;
+         &lt;mrow&gt; &lt;mo&gt;(&lt;/mo&gt; &lt;mrow&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mn&gt;1&lt;/mn&gt; &lt;/mrow&gt; &lt;mo&gt;)&lt;/mo&gt; &lt;/mrow&gt;
+         &lt;mn&gt;4&lt;/mn&gt;
+        &lt;/msup&gt;
+        &lt;mo linebreak='newline' linebreakstyle='before'
+	           indentalign='id' indenttarget='eq1-equals'&gt;=&lt;/mo&gt;
         &lt;mrow&gt;
-          &lt;mrow&gt;  &lt;mi&gt;f&lt;/mi&gt; &lt;mo&gt;&amp;ApplyFunction;&lt;/mo&gt; &lt;mo&gt;(&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;)&lt;/mo&gt;  &lt;/mrow&gt;
-     
-          &lt;mo id='eq1-equals'&gt;=&lt;/mo&gt;
-          &lt;mrow&gt;
-            &lt;msup&gt;
-              &lt;mrow&gt; &lt;mo&gt;(&lt;/mo&gt; &lt;mrow&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mn&gt;1&lt;/mn&gt; &lt;/mrow&gt; &lt;mo&gt;)&lt;/mo&gt; &lt;/mrow&gt;
-              &lt;mn&gt;4&lt;/mn&gt;
-            &lt;/msup&gt;
-            &lt;mo linebreak='newline' linebreakstyle='before'
-       indentalign='id' indenttarget='eq1-equals'&gt;=&lt;/mo&gt;
-              &lt;mrow&gt;
-                &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;/msup&gt;
-                &lt;mo id='eq1-plus'&gt;+&lt;/mo&gt;
-                &lt;mrow&gt;  &lt;mn&gt;4&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;3&lt;/mn&gt; &lt;/msup&gt;  &lt;/mrow&gt;
-                &lt;mo&gt;+&lt;/mo&gt;
-                &lt;mrow&gt;  &lt;mn&gt;6&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;2&lt;/mn&gt; &lt;/msup&gt;  &lt;/mrow&gt;
-     
-                &lt;mo linebreak='newline' linebreakstyle='before'
-       indentalignlast='id' indenttarget='eq1-plus'&gt;+&lt;/mo&gt;
-                  &lt;mrow&gt;  &lt;mn&gt;4&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt;  &lt;/mrow&gt;
-                  &lt;mo&gt;+&lt;/mo&gt;
-                  &lt;mn&gt;1&lt;/mn&gt;
-                &lt;/mrow&gt;
-              &lt;/mrow&gt;
-            &lt;/mrow&gt;
-     </pre>
+         &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;/msup&gt;
+         &lt;mo id='eq1-plus'&gt;+&lt;/mo&gt;
+         &lt;mrow&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;3&lt;/mn&gt; &lt;/msup&gt; &lt;/mrow&gt;
+         &lt;mo&gt;+&lt;/mo&gt;
+         &lt;mrow&gt; &lt;mn&gt;6&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;2&lt;/mn&gt; &lt;/msup&gt; &lt;/mrow&gt;
+         &lt;mo linebreak='newline' linebreakstyle='before'
+	            indentalignlast='id' indenttarget='eq1-plus'&gt;+&lt;/mo&gt;
+         &lt;mrow&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;/mrow&gt;
+         &lt;mo&gt;+&lt;/mo&gt;
+         &lt;mn&gt;1&lt;/mn&gt;
+        &lt;/mrow&gt;
+       &lt;/mrow&gt;
+      &lt;/mrow&gt;
+      </pre>
      </div>
      
      <p>This displays as </p>
      
      <blockquote>
-     <p><img src="image/linebreak-example1.png" alt="example with equal and plus signs aligned"></img></p>
+     <img src="image/linebreak-example1.png" alt="example with equal and plus signs aligned"/>
      </blockquote>
      
      <p>Note that because <code class="attribute">indentalignlast</code> defaults to <code class="attributevalue">indentalign</code>,
@@ -1037,22 +1035,30 @@
       <td rowspan="2" class="attname">intent</td>
       <td><a class="intref" href="#mixing_intent_grammar"><em>intent expresssion</em></a></td>
       <td><em>none</em></td>
-      <td><a class="coreyes" href="./#parsing"></a></td>
+      <td><span class="coreno"></span></td>
      </tr>
-    <tr>
-      <td colspan="3" class="attdesc">Inent...</td>
-    </tr>
-      <tr>
+     <tr>
+      <td colspan="3" class="attdesc">The <code
+      class="attribute">intent</code> attribute is more fully described
+      in <a href="#mixing_intent"></a>. It may be used on presentation
+      elements to give information about the intended meaning of the
+      expression, mainly for guiding audio or braille accessible
+      renderings.</td>
+     </tr>
+     <tr>
       <td rowspan="2" class="attname">arg</td>
       <td><a class="intref" href="#mixing_intent_grammar"><em>name</em></a></td>
       <td><em>none</em></td>
-      <td><a class="coreyes" href="./#parsing"></a></td>
+      <td><span class="coreno"></span></td>
      </tr>
      <tr>
-      <td colspan="3" class="attdesc">Arg...</td>
+      <td colspan="3" class="attdesc">The <code
+      class="attribute">arg</code> attribute is more fully described
+      in <a href="#mixing_intent"></a>. It may be used to name an element to be referenced from an
+      <code class="attribute">intent</code> expression on an ancestor element.</td>
      </tr>
     </tbody>
-      </table>
+   </table>
 
   </section>
 
@@ -1188,7 +1194,7 @@
    can be either represented directly as Unicode character data, or indirectly via numeric
    or character entity references.
    Unicode contains a number of look-alike characters.
-   See [[MathML-Notes]] for a discussion of which characters are appropriate to use in which circumstance.
+   See [[?MathML-Notes]] for a discussion of which characters are appropriate to use in which circumstance.
    </p>
  
    <p>Token elements (other than <code class="element">mspace</code>) should
@@ -1358,7 +1364,7 @@
      </div>
      <p>This might render as:</p>
      <blockquote>
-      <p><img src="image/f3006.gif" alt="\includegraphics{image/braids}"></img></p>
+      <img src="image/f3006.gif" alt="\includegraphics{image/braids}"/>
      </blockquote>
  
     </section>
@@ -1463,7 +1469,7 @@
    predefined selectors for CSS style rules.
    See <a href="#world-int-style"></a> for discussion of the
    interaction of MathML and CSS.
-   Also, see [[MathMLforCSS]] for discussion of rendering MathML by CSS
+   Also, see [[?MathMLforCSS]] for discussion of rendering MathML by CSS
    and a sample CSS style sheet.
    When CSS is not available, it is up to the internal style mechanism of the rendering
    application
@@ -3030,9 +3036,9 @@
      </div>
  
     <p>The above should render as
-    <img src="image/f3001.png" alt="(\frac{a^2}{b^2})" class="vmiddle"></img>
+    <img src="image/f3001.png" alt="(\frac{a^2}{b^2})" class="vmiddle"/>
     as opposed to the default rendering
-    <img src="image/f3002.png" alt="\left(\frac{a^2}{b^2}\right)" class="vmiddle"></img>.</p>
+    <img src="image/f3002.png" alt="\left(\frac{a^2}{b^2}\right)" class="vmiddle"/>.</p>
  
     <p>Note that each parenthesis is sized independently; if only one of
     them had <code class="attribute">maxsize</code>=<code class="attributevalue">100%</code>, they would render with different
@@ -3261,7 +3267,7 @@
  
  <p>See also the warnings about the legal grouping of <q>space-like elements</q>
  in <a href="#presm_mspace"></a>, and about the use of
- such elements for <q>tweaking</q> in [[MathML-Notes]].</p>
+ such elements for <q>tweaking</q> in [[?MathML-Notes]].</p>
  </section>
  
  <section class="fold">
@@ -3296,7 +3302,7 @@
  
  <p>Note the warning about the legal grouping of <q>space-like
  elements</q> given below, and the warning about the use of such
- elements for <q>tweaking</q> in [[MathML-Notes]].
+ elements for <q>tweaking</q> in [[?MathML-Notes]].
  See also the other elements that can render as
  whitespace, namely <code class="element">mtext</code>, <code class="element">mphantom</code>, and
  <code class="element">maligngroup</code>.</p> </section>
@@ -3514,7 +3520,7 @@
  </div>
  
  <p>See also the warning about <q>tweaking</q> in
-   [[MathML-Notes]].</p>
+   [[?MathML-Notes]].</p>
  </section>
  </section>
  
@@ -4024,6 +4030,9 @@
     &lt;/mfrac&gt;
  </pre>
  </div>
+ <blockquote>
+    <img src="image/f3008.gif" alt="\frac{{1}}{{x^3 + \frac{{x}}{{3}}}} = \raisebox{{1ex}}{{$1$}}\!        \left/ \!\raisebox{{-1ex}}{{$x^3+\frac{{x}}{{3}}$}} \right."/>
+ </blockquote>
  
  
  <p>A more generic example is:</p>
@@ -4561,7 +4570,7 @@
    used to make more general adjustments <span>of </span>size and positioning, and some
    combinations, e.g. negative padding, can cause the content of
    <code class="element">mpadded</code> to overlap the rendering of neighboring content.  See
-   [[MathML-Notes]] for warnings about several
+   [[?MathML-Notes]] for warnings about several
    potential pitfalls of this effect.</p>
  
    <p>The <code class="element">mpadded</code> element accepts
@@ -4901,7 +4910,7 @@
    modifying the <code class="element">mpadded</code> bounding box.</p>
  
    <blockquote>
-    <p><img src="image/mpadded-shift.png" alt="illustration of the use of mpadded to shift the position of child content without modifying the bounding box"></img></p>
+    <img src="image/mpadded-shift.png" alt="illustration of the use of mpadded to shift the position of child content without modifying the bounding box"/>
    </blockquote>
  
    <p>The corresponding MathML is:</p>
@@ -4924,7 +4933,7 @@
    of the child content. </p>
  
    <blockquote>
-    <p><img src="image/mpadded-resize.png" alt="illustration of the use of mpadded to modifying its bounding box without shifting the relative location of its child content"></img></p>
+    <img src="image/mpadded-resize.png" alt="illustration of the use of mpadded to modifying its bounding box without shifting the relative location of its child content"/>
    </blockquote>
  
    <p>The corresponding MathML is:</p>
@@ -4945,7 +4954,7 @@
    the bounding box and relative position of child content.</p>
  
    <blockquote>
-    <p><img src="image/mpadded-combined.png" alt="illustration of the use of mpadded to modify both the bounding box size and position of child content"></img></p>
+    <img src="image/mpadded-combined.png" alt="illustration of the use of mpadded to modify both the bounding box size and position of child content"/>
    </blockquote>
  
    <p>The corresponding MathML is:</p>
@@ -5056,13 +5065,13 @@
  
    <p>This would render as something like</p>
    <blockquote>
-    <p><img src="image/mphantom.gif" alt="\frac{x+y+x}{x\phantom{{}+y}+z}"></img></p>
+    <img src="image/mphantom.gif" alt="\frac{x+y+x}{x\phantom{{}+y}+z}"/>
    </blockquote>
    <p>
     rather than as
    </p>
    <blockquote>
-    <p><img src="image/mphantom-bad.gif" alt="\frac{x+y+z}{x+z}"></img></p>
+    <img src="image/mphantom-bad.gif" alt="\frac{x+y+z}{x+z}"/>
    </blockquote>
  
    <p>The explicit attribute setting <code class="attribute">form</code><code>="infix"</code> on the
@@ -5610,7 +5619,10 @@
       &lt;/menclose&gt;
     </pre>
    </div>
- 
+   <blockquote>
+    <img src="image/circlebox.png" alt="[Image of a circle and box around x plus y]"/>
+   </blockquote>
+   
    <p>An example of using <code class="element">menclose</code> for actuarial
    notation is</p>
  
@@ -5628,6 +5640,9 @@
       &lt;/msub&gt;
     </pre>
    </div>
+   <blockquote>
+    <img src="image/actuarial.png" alt="[image of actuarial notation for a angle n at i]"/>
+   </blockquote>
   
  
    <p>An example of <code class="attributevalue">phasorangle</code>, which is used in circuit analysis, is:</p>
@@ -5648,6 +5663,9 @@
       &lt;/mrow&gt;
     </pre>
    </div>
+   <blockquote>
+    <img src="image/phasorangle.png" alt="[image of phasorangle notation for the angle negative pi over 2]"/>
+   </blockquote>
 
    <p>An example of <code class="attributevalue">madruwb</code> is:</p>
  
@@ -5658,6 +5676,9 @@
       &lt;/menclose&gt;
     </pre>
    </div>
+   <blockquote>
+    <img src="image/madruwb12.png" alt="[Image of 12 factorial in Arabic style]"/>
+   </blockquote>
   </section>
  </section>
  </section>
@@ -5857,9 +5878,9 @@
     </p>
  
     <p> Note that both scripts are positioned tight against the base as shown here
-    <img src="image/f3014.gif" alt="x_1^2" class="vmiddle"></img>
+    <img src="image/f3014.gif" alt="x_1^2" class="vmiddle"/>
     versus the staggered positioning of nested scripts as shown here
-    <img src="image/f3013.gif" alt="x_1{}^2" class="vmiddle"></img>;
+    <img src="image/f3013.gif" alt="x_1{}^2" class="vmiddle"/>;
     the latter can be achieved by nesting an <code class="element">msub</code> inside an <code class="element">msup</code>.</p>
    </section>
  
@@ -5926,7 +5947,7 @@
     integral. For example,</p>
  
     <blockquote>
-     <p><img src="image/f3015.gif" alt="\int\nolimits_0^1 \eulere^x \,\diffd x"></img></p>
+     <img src="image/f3015.gif" alt="\int\nolimits_0^1 \eulere^x \,\diffd x"/>
     </blockquote>
     <p>
      would be represented as
@@ -7231,7 +7252,10 @@
        &lt;/mtable&gt;
      </pre>
     </div>
-  
+ <blockquote>
+ <img src="image/emc2.png" alt="mlabeledtr example"/>
+ </blockquote>
+
    </section>
   </section>
  
@@ -7382,7 +7406,7 @@
           <td>8.44<em>x</em></td>
           <td style="padding-left:.22em; padding-right: .22em;">+</td>
           <td>55<span style="visibility: hidden">.7</span><em>y</em></td>
-          <td style="padding-left:.28em; padding-right: .28;">=</td>
+          <td style="padding-left:.28em; padding-right: .28em;">=</td>
           <td><span style="visibility: hidden">-</span>0</td>
         </tr>
         <tr>
@@ -7621,7 +7645,7 @@
         <td>8.44<em>x</em></td>
         <td style="padding-left:.22em; padding-right: .22em;">+</td>
         <td>55<span style="visibility: hidden">.7</span><em>y</em></td>
-        <td style="padding-left:.28em; padding-right: .28;">=</td>
+        <td style="padding-left:.28em; padding-right: .28em;">=</td>
         <td><span style="visibility: hidden">-</span>0</td>
 	<td>&#160;&#160;&#160;&#160;&#160;</td>
       </tr>
@@ -7648,7 +7672,7 @@
           <td>8.44<em>x</em></td>
           <td style="padding-left:.22em; padding-right: .22em;">+</td>
           <td>55<span style="visibility: hidden">.7</span><em>y</em></td>
-          <td style="padding-left:.28em; padding-right: .28;">=</td>
+          <td style="padding-left:.28em; padding-right: .28em;">=</td>
           <td><span style="visibility: hidden">-</span>0</td>
         </tr>
         <tr>
@@ -8081,8 +8105,8 @@
             &lt;mn&gt; 0 &lt;/mn&gt;
           &lt;/mrow&gt;
         &lt;/mtd&gt;
-   <span>  &lt;/mtr&gt;
-        &lt;mtr&gt;</span>
+        &lt;/mtr&gt;
+        &lt;mtr&gt;
           &lt;mtd&gt;
             &lt;mrow&gt;
               &lt;mrow&gt;
@@ -8116,7 +8140,20 @@
       &lt;/mtable&gt;
  </pre>
  </div>
- 
+ <blockquote>
+ <!--
+\documentclass{article}
+\usepackage{amsmath,stix2}
+\begin{document}
+\begin{alignat*}{5}
+  8&.44 &&x + {}&55&  &&y = {}&0&\\
+  3&.1  &&x - {}&0&.7 &&y = {}&- 1&.1 
+\end{alignat*}
+\end{document}
+-->
+ <img src="image/alignat.png" alt="alignat example"/>
+ </blockquote>
+
  </section>
  
  <section>
@@ -8342,7 +8379,7 @@
  <p>A very simple example of two-dimensional addition is shown below:</p>
  
  <blockquote>
- <p><img src="image/em-plus.png" alt="\begin{array}{r}   424 \\   +33 \\   \hline \end{array}"></img></p>
+ <img src="image/em-plus.png" alt="\begin{array}{r}   424 \\   +33 \\   \hline \end{array}"/>
  </blockquote>
  
  <p>The MathML for this is:</p>
@@ -9063,10 +9100,10 @@
  </section>
  </section>
  
- <section class="fold">
+ <section>
  <h4 id="presm_elemmath_examples">Elementary Math Examples</h4>
  
- <section>
+ <section class="fold">
  <h5 id="presm_addsub">Addition and Subtraction</h5>
  
  <p>Two-dimensional addition, subtraction, and multiplication typically
@@ -9076,7 +9113,7 @@
  <p>Notice that the <code class="element">msline</code> spans all of the columns and that <code class="element">none</code> is used to make the "+" appear to the left of all of the operands.</p>
  
  <blockquote>
- <p><img src="image/em-plus-shift.png" alt="\begin{array}{@{}r@{}}    424 \\   +\phantom0 33 \\   \hline \end{array}"></img></p>
+ <img src="image/em-plus-shift.png" alt="\begin{array}{@{}r@{}}    424 \\   +\phantom0 33 \\   \hline \end{array}"/>
  </blockquote>
  
  <p>The MathML for this is:</p>
@@ -9098,7 +9135,7 @@
  it is not necessary to pad any row.</p>
  
  <blockquote>
- <p><img src="image/em-plus-right.png" alt="\begin{array}{l}   123 \\   456+ \\   \hline   579 \end{array}"></img></p>
+ <img src="image/em-plus-right.png" alt="\begin{array}{l}   123 \\   456+ \\   \hline   579 \end{array}"/>
  </blockquote>
  
  <div class="example mathml mml4p">
@@ -9126,12 +9163,12 @@
    <tr>
     <td>
      <blockquote>
- <p><img src="image/em-sub-borrow-above.png" alt=""></img></p>
+ <img src="image/em-sub-borrow-above.png" alt=""/>
  </blockquote>
  </td>
  <td>
   <blockquote>
-   <p><img src="image/em-sub-borrow-aboveleft.png" alt=""></img></p>
+   <img src="image/em-sub-borrow-aboveleft.png" alt=""/>
   </blockquote>
  </td>
  </tr>
@@ -9179,7 +9216,7 @@
  source</a>):</p>
  
  <blockquote>
- <p><img src="image/em-sub-borrow-swedish.png" alt="\begin{array}{r} \underbar{\scriptsize 10}\!\\ 5\llap{$/$}2\\ {}-{}7\\ \hline 45 \end{array}"></img></p>
+ <img src="image/em-sub-borrow-swedish.png" alt="\begin{array}{r} \underbar{\scriptsize 10}\!\\ 5\llap{$/$}2\\ {}-{}7\\ \hline 45 \end{array}"/>
  </blockquote>
  
  <p>There are two things to notice.
@@ -9203,7 +9240,7 @@
  
  </section>
  
- <section>
+ <section class="fold">
  <h5 id="presm_mult">Multiplication</h5>
  
  <p>Below is a simple multiplication example that illustrates the use of <code class="element">msgroup</code> and
@@ -9213,7 +9250,7 @@
  </p>
  
  <blockquote>
- <p><img src="image/em-mult-simple.png" alt=""></img></p>
+ <img src="image/em-mult-simple.png" alt=""/>
  </blockquote>
  
  <div class="example mathml mml4p">
@@ -9240,7 +9277,7 @@
  values. </p>
  
  <blockquote>
- <p><img src="image/em-mult-carries.png" alt="\begin{array}{r}  {}_1 {\hspace{0.05em}}_1\phantom{0} \\  {}_1 {\hspace{0.05em}}_1\phantom{0} \\   1,234 \\   \times 4,321 \\   \hline  {}_1 \phantom{,} {\hspace{0.05em \,}}_1 {\hspace{0.05em}}_1  {\hspace{0.05em}}_1 \phantom{,} {\hspace{0.05em \,}}_1 \phantom{00} \\   1,234 \\   24,68\phantom{0} \\   370,2\phantom{00} \\   4,936\phantom{,000} \\   \hline   5,332,114 \end{array}"></img></p>
+ <img src="image/em-mult-carries.png" alt="\begin{array}{r}  {}_1 {\hspace{0.05em}}_1\phantom{0} \\  {}_1 {\hspace{0.05em}}_1\phantom{0} \\   1,234 \\   \times 4,321 \\   \hline  {}_1 \phantom{,} {\hspace{0.05em \,}}_1 {\hspace{0.05em}}_1  {\hspace{0.05em}}_1 \phantom{,} {\hspace{0.05em \,}}_1 \phantom{00} \\   1,234 \\   24,68\phantom{0} \\   370,2\phantom{00} \\   4,936\phantom{,000} \\   \hline   5,332,114 \end{array}"/>
  </blockquote>
  
  <div class="example mathml mml4p">
@@ -9276,7 +9313,7 @@
  
  </section>
  
- <section>
+ <section class="fold">
  <h5 id="presm_mlongdiv_ex">Long Division</h5>
  
  <p>
@@ -9313,31 +9350,31 @@
    <td>
     
     <blockquote>
- <p><img src="image/em-longdiv-us.png" alt=""></img></p>
+ <img src="image/em-longdiv-us.png" alt=""/>
  </blockquote>
  </td>
  <td>
   
   <blockquote>
- <p><img src="image/em-longdiv-french.png" alt=""></img></p>
+ <img src="image/em-longdiv-french.png" alt=""/>
  </blockquote>
  </td>
  <td>
  
   <blockquote>
- <p><img src="image/em-longdiv-medium-stacked-rightright.png" alt=""></img></p>
+ <img src="image/em-longdiv-medium-stacked-rightright.png" alt=""/>
  </blockquote>
  </td>
  <td>
  
   <blockquote>
- <p><img src="image/em-longdiv-short-stacked-rightright.png" alt=""></img></p>
+ <img src="image/em-longdiv-short-stacked-rightright.png" alt=""/>
  </blockquote>
  </td>
  <td>
  
   <blockquote>
- <p><img src="image/em-longdiv-righttop.png" alt=""></img></p>
+ <img src="image/em-longdiv-righttop.png" alt=""/>
  </blockquote>
  </td>
  </tr>
@@ -9363,31 +9400,31 @@
    <td>
     
     <blockquote>
- <p><img src="image/em-longdiv-leftright.png" alt=""></img></p>
+ <img src="image/em-longdiv-leftright.png" alt=""/>
  </blockquote>
  </td>
  <td>
   
   <blockquote>
- <p><img src="image/em-longdiv-indian.png" alt=""></img></p>
+ <img src="image/em-longdiv-indian.png" alt=""/>
  </blockquote>
  </td>
  <td>
  
   <blockquote>
- <p><img src="image/em-longdiv-colonrightright.png" alt=""></img></p>
+ <img src="image/em-longdiv-colonrightright.png" alt=""/>
  </blockquote>
  </td>
  <td>
  
   <blockquote>
- <p><img src="image/em-longdiv-mirrored-french.png" alt=""></img></p>
+ <img src="image/em-longdiv-mirrored-french.png" alt=""/>
  </blockquote>
  </td>
  <td>
  
   <blockquote>
- <p><img src="image/em-longdiv-arabic-lefttop.png" alt=""></img></p>
+ <img src="image/em-longdiv-arabic-lefttop.png" alt=""/>
  </blockquote>
  </td>
  </tr>
@@ -9479,7 +9516,7 @@
  
  </section>
  
- <section>
+ <section class="fold">
  <h5 id="presm_repeatdec">Repeating decimal</h5>
  
  <p>
@@ -9492,19 +9529,19 @@
  </p>
  
  <blockquote>
- <p><img src="image/repeat1.png" alt="0.33333 \overline{3}"></img></p>
+ <img src="image/repeat1.png" alt="0.33333 \overline{3}"/>
  </blockquote>
  
  <blockquote>
- <p><img src="image/repeat2.png" alt="0.\overline{142857}"></img></p>
+ <img src="image/repeat2.png" alt="0.\overline{142857}"/>
  </blockquote>
  
  <blockquote>
- <p><img src="image/repeat3.png" alt="0.\underline{142857}"></img></p>
+ <img src="image/repeat3.png" alt="0.\underline{142857}"/>
  </blockquote>
  
  <blockquote>
- <p><img src="image/repeat4.png" alt="0.\dot{1}4285\dot{7}"></img></p>
+ <img src="image/repeat4.png" alt="0.\dot{1}4285\dot{7}"/>
  </blockquote>
  
  <p>The MathML for these involves using <code class="element">mstack</code>, <code class="element">msrow</code>, and <code class="element">msline</code>

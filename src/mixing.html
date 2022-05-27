@@ -57,13 +57,34 @@
   <li><em>literal identifiers</em> Non numeric literals reference
   terms in the intent dictionary, currently located at <a
   href="https://docs.google.com/spreadsheets/d/1EsWou1K5nxBdLPvQapdoA9h-s8lg_qjn8fJH64g9izQ/edit#gid=1358098730">Google
-  Sheets</a>. Note the list of [=intent=] identifiers is
-  <em>Open</em>: level 1 is a curated list maintained by the Math Working
-  Group and should be implemented by any implemenation of MathML
-  intent, so that suitable audio renderings of the level 1 terms will
-  be generated. Terms in other levels may be contributed; the
-  dictionary may give speech hints, but a system may also fall back on
-  reading the identifier name as given.</li>
+    Sheets</a>.
+
+
+
+<p>Note that [=intent=] identifiers are maintained in two lists:</p>
+    <ul>
+     <li><dfn id="intent-core">Core</dfn>: This is a list of core
+     concept names maintained by the Math Working Group.
+     An accessibility system reading MathML attributed with [^core^]
+     concepts SHOULD use the speech hints provided by the intent
+     definition.</li>
+     <li><dfn id="intent-open">Open</dfn>: This is an open list of concepts
+     to which contributions are invited.
+     An accessibility system reading MathML attributed with [^open^]
+     concepts MAY use the speech hints provided by the intent
+     definition but a system
+     may also fall back on reading the identifier name as given.</li>
+    </ul>
+    <p>When comparing the literal concept name in the <code
+    class="attribute">intent</code> attribute with entries in the intent
+    lists, the comparison should be
+    <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>
+    and also normalize
+    <q>`_`</q> (U+00F5) and <q>`.`</q>  (U+002E) to <q>`-`</q> (U+002D).
+    If the speech hints are not being used
+    and the literal concept name is being read then each of  `-`, `_` and `.` should be
+    read as an inter-word space.</p>
+</li>
   </ul>
 
 <p>The key component here is the literal. A literal is intended to
@@ -81,58 +102,209 @@ the user and agent.</p>
   <section>
    <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
 
- <pre class="def bnf">
+   <p>The <code class="attribute">intent</code>, after ignoring white
+   space between tokens, should match the following grammar.</p>
+   
+<pre class="def bnf">
 intent   := number | NCName | argref | function
 function := (NCName | argref) '(' intent [ ',' intent ]* ')'
 number   := '-'? digit+ ('.' digit+)? 
 argref   := '$' NCName
-   </pre>
+</pre>
 
+<p>Here <a href="https://www.w3.org/TR/REC-xml-names/#NT-NCName"><code>NCName</code></a>
+is as defined in  in [[xml-names]], and <code>digit</code> is a character in the range 0–9.</p>
   </section>
 
 
 
  <section>
-  <h3 id="mixing_intent_examplesn">Intent Examples</h3>
+  <h3 id="mixing_intent_examples">Intent Examples</h3>
 
-<p>With this model, the <code class="element">msup</code> examples:
-as a power;
-as a transpose;
-as a derivative; and
-as an embellished symbol would be distinguished as follows:</p>
+  
+ <section>
+  <h4 id="mixing_intent_examples_notation">Ambiguous Notation</h4>
 
-<pre class="xml nonumexample">
+  <p>A primary use for <code class="attribute">intent</code> is to
+  disambiguate cases where the same syntax is used for different meanings,
+  and typically has different readings.</p>
+  
+<p>Superscript, <code class="element">msup</code>, may represent a power, a transpose,
+a derivative or an embellished symbol. These cases would be distinguished as follows:</p>
+
+<div class="example mathml mmlcore">
+<pre>
 &lt;msup intent="power($base,$exp)">
   &lt;mi arg="base">x&lt;/mi>
   &lt;mi arg="exp">n&lt;/mi>
 &lt;/msup>
-</pre>
-
-<pre class="xml nonumexample">
+&lt;mo>&#x2192;&lt;/mo>
 &lt;msup intent="$op($a)">
   &lt;mi arg="a">A&lt;/mi>
   &lt;mi arg="op" intent="transpose">T&lt;/mi>
 &lt;/msup>
-</pre>
-
-<p>(easily adapted to conjugate and adjoint)</p>
-
-<pre class="xml nonumexample">
+&lt;mo>&#x2192;&lt;/mo>
 &lt;msup intent="derivative($a)">
   &lt;mi arg="a">f&lt;/mi>
-  &lt;mi>'&lt;/mi>
+  &lt;mi>&amp;prime;&lt;/mi>
 &lt;/msup>
-</pre>
-
-<pre class="xml nonumexample">
+&lt;mo>&#x2192;&lt;/mo>
 &lt;msup intent="x-prime">
   &lt;mi>x&lt;/mi>
-  &lt;mo>'&lt;/mo>
+  &lt;mo>&amp;prime;&lt;/mo>
 &lt;/msup>
 </pre>
+<p>Possible readings with and without <code class="attribute">intent</code></p>
+<blockquote>x to the n-th power, right arrow A transpose right arrow derivative of, f, right arrow literal x′</blockquote>
+<blockquote>x to the n-th power, right arrow A transpose right arrow f prime, right arrow x prime,</blockquote>
+<p class="ednote">mathcat gets transpose even without intent</p>
+</div>
 
+<p>Similarly an over bar may represent complex conjugation, or mean (average):</p>
+
+<div class="example mathml mmlcore">
+<pre>
+&lt;mover intent="conjugate($v)"&gt;
+  &lt;mi arg="v"&gt;z&lt;/mi&gt;
+  &lt;mo&gt;&amp;#xaf;&lt;/mo&gt;
+&lt;/mover&gt;
+&lt;mtext>&amp;nbsp;is not&amp;nbsp;&lt;/mtext>
+&lt;mover intent="mean($var)"&gt;
+  &lt;mi arg="var"&gt;X&lt;/mi&gt;
+  &lt;mo&gt;&amp;#xaf;&lt;/mo&gt;
+&lt;/mover&gt;
+</pre>
+<p>Possible readings with and without <code class="attribute">intent</code></p>
+<blockquote>conjugate of, z  is not  mean of, X</blockquote>
+<blockquote>z with ¯ above  is not  X with ¯ above</blockquote>
+<p class="ednote">This makes bettter example</p>
+</div>
 
  </section>
+
+ <section>
+  <h4 id="mixing_intent_examples_advanced">Advanced or Non-Standard Notation</h4>
+
+  <p>A special case of ambiguous notation is the re-use of standard
+  notation with meaning that may be specific to a subject area or evn
+  individual document,</p>
+  
+<div class="example mathml mmlcore">
+<pre>
+&lt;msub intent="bell-number($index)"&gt;
+  &lt;mi&gt;B&lt;/mi&gt;
+  &lt;mn arg="index"&gt;2&lt;/mn&gt;
+&lt;/msub&gt;
+</pre>
+<p>Possible readings with and without <code class="attribute">intent</code></p>
+<blockquote>bell number of, literal 2</blockquote>
+<blockquote>B sub 2</blockquote>
+
+</div>
+
+<p>Here the subscripted B denoting the <em>Bell Number</em> is annotated using
+<code>bell-number</code> intent which is not in the core <q>Level 1</q>
+dictionary but is in the open <q>Level 3</q> dictionary of more advanced or specialist
+topics.</p>
+ 
+ </section>
+
+ 
+ <section>
+  <h4 id="mixing_intent_examples_mtr">Tables</h4>
+<div class="issue"  data-number="337"></div>
+
+<p>Matrices</p>
+<div class="example mathml mmlcore">
+<pre>
+&lt;mrow intent="matrix">
+  &lt;mo>(&lt;/mo>
+  &lt;mtable>
+    &lt;mtr intent="arrayrow">
+        &lt;mtd>&lt;mn>1&lt;/mn>&lt;/mtd>
+      &lt;mtd>&lt;mn>0&lt;/mn>&lt;/mtd>
+    &lt;/mtr>
+    &lt;mtr intent="arrayrow">
+      &lt;mtd>&lt;mn>0&lt;/mn>&lt;/mtd>
+      &lt;mtd>&lt;mn>1&lt;/mn>&lt;/mtd>
+    &lt;/mtr>
+  &lt;/mtable>
+  &lt;mo>)&lt;/mo>
+&lt;/mrow>
+</pre>
+</div>
+
+
+<p>Aligned equations</p>
+<div class="example mathml mmlcore">
+<pre>
+&lt;mtable intent="list">
+  &lt;mtr intent="append">
+    &lt;mtd columnalign="right">
+      &lt;mn>2&lt;/mn>
+      &lt;mo>&#x2062;&lt;/mo>
+      &lt;mi>x&lt;/mi>
+    &lt;/mtd>
+    &lt;mtd columnalign="center">
+      &lt;mo>=&lt;/mo>
+    &lt;/mtd>
+    &lt;mtd columnalign="left">
+      &lt;mn>1&lt;/mn>
+    &lt;/mtd>
+  &lt;/mtr>
+  &lt;mtr intent="append">
+    &lt;mtd columnalign="right">
+      &lt;mi>y&lt;/mi>
+    &lt;/mtd>
+    &lt;mtd columnalign="center">
+      &lt;mo>&gt;&lt;/mo>
+    &lt;/mtd>
+    &lt;mtd columnalign="left">
+      &lt;mi>x&lt;/mi>
+      &lt;mo>-&lt;/mo>
+      &lt;mn>3&lt;/mn>
+    &lt;/mtd>
+  &lt;/mtr>
+&lt;/mtable>
+</pre>
+</div>
+
+<p>Aligned Equations with wrapped expressions</p>
+
+<div class="example mathml mmlcore">
+<pre>
+&lt;mtable intent="list">
+  &lt;mtr intent="append">
+    &lt;mtd columnalign="right">
+      &lt;mi>a&lt;/mi>
+    &lt;/mtd>
+    &lt;mtd columnalign="center">
+      &lt;mo>=&lt;/mo>
+    &lt;/mtd>
+    &lt;mtd columnalign="left">
+      &lt;mi>b&lt;/mi>
+      &lt;mo>+&lt;/mo>
+      &lt;mi>c&lt;/mi>
+      &lt;mo>-&lt;/mo>
+      &lt;mi>d&lt;/mi>
+    &lt;/mtd>
+  &lt;/mtr>
+  &lt;mtr intent="extend">
+    &lt;mtd columnalign="right">&lt;/mtd>
+    &lt;mtd columnalign="center">&lt;/mtd>
+    &lt;mtd columnalign="left">
+      &lt;mo form="infix">+&lt;/mo>
+      &lt;mi>e&lt;/mi>
+      &lt;mo>-&lt;/mo>
+      &lt;mi>f&lt;/mi>
+    &lt;/mtd>
+  &lt;/mtr>
+&lt;/mtable>
+</pre>
+</div>
+ </section>
+ </section>
+ 
  </section>
 
  <section>
@@ -154,7 +326,7 @@ as an embellished symbol would be distinguished as follows:</p>
     container for a expression and its annotations.  The
     <code class="element">annotation</code> element is the container for text
     annotations, and the <code class="element">annotation-xml</code> element is used for
-    <span>structured</span>
+    structured
     annotations. The <code class="element">semantics</code> element contains the expression
     being annotated as its first child, followed by a sequence of zero or
     more <code class="element">annotation</code> and/or <code class="element">annotation-xml</code> elements.
@@ -302,7 +474,7 @@ as an embellished symbol would be distinguished as follows:</p>
    that is only available in the XML syntax of MathML. If this example is included in
    an HTML document
    then it would be considered <em>invalid</em> and the OpenMath elements would be parsed as
-   elements un the MathML namespace. See <a href="#html_annotation_xml"></a> for details.</p>
+   elements in the MathML namespace. See <a href="#html_annotation_xml"></a> for details.</p>
   </section>
 
   <section>
@@ -331,7 +503,8 @@ as an embellished symbol would be distinguished as follows:</p>
    its precise meaning.</p>
 
 
-    <div class="example mathml mml4p">
+   <!-- mml4c to prevent inlining -->
+   <div class="example mathml mml4c">
      <pre>
        &lt;semantics&gt;
          &lt;mrow&gt;
@@ -383,8 +556,8 @@ as an embellished symbol would be distinguished as follows:</p>
        &lt;semantics&gt;
          &lt;mfrac&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;
          &lt;annotation encoding="image/png" src="333/formula56.png"/&gt;
-           &lt;annotation encoding="application/x-maple" src="333/formula56.ms"/&gt;
-           &lt;/semantics&gt;
+         &lt;annotation encoding="application/x-maple" src="333/formula56.ms"/&gt;
+       &lt;/semantics&gt;
      </pre>
     </div>
 
@@ -470,8 +643,7 @@ as an embellished symbol would be distinguished as follows:</p>
     If the annotation contains one of the XML reserved characters
     <code>&amp;</code>, <code>&lt;</code> then these characters must
     be encoded using an entity reference or
-    <span>(in the XML syntax) </span>
-    an XML <code>CDATA</code> section.</p>
+    (in the XML syntax) an XML <code>CDATA</code> section.</p>
 
    </section>
 
@@ -608,62 +780,52 @@ as an embellished symbol would be distinguished as follows:</p>
      <tbody>
 
       <tr>
-
        <td rowspan="2" class="attname">definitionURL</td>
        <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
        <td><em>none</em></td>
       </tr>
 
       <tr>
-
        <td colspan="2" class="attdesc">The location of the annotation key symbol</td>
       </tr>
 
       <tr>
-
        <td rowspan="2" class="attname">encoding</td>
        <td><a class="intref" href="#type_string"><em>string</em></a></td>
        <td><em>none</em></td>
       </tr>
 
       <tr>
-
        <td colspan="2" class="attdesc">The encoding of the semantic information in the annotation</td>
       </tr>
 
       <tr>
-
        <td rowspan="2" class="attname">cd</td>
        <td><a class="intref" href="#type_string"><em>string</em></a></td>
        <td>mathmlkeys</td>
       </tr>
 
       <tr>
-
        <td colspan="2" class="attdesc">The content dictionary that contains the annotation key symbol</td>
       </tr>
 
       <tr>
-
        <td rowspan="2" class="attname">name</td>
        <td><a class="intref" href="#type_string"><em>string</em></a></td>
        <td>alternate-representation</td>
       </tr>
 
       <tr>
-
        <td colspan="2" class="attdesc">The name of the annotation key symbol</td>
       </tr>
 
       <tr>
-
        <td rowspan="2" class="attname">src</td>
        <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
        <td><em>none</em></td>
       </tr>
 
       <tr>
-
        <td colspan="2" class="attdesc">The location of an external source for semantic information</td>
       </tr>
      </tbody>
@@ -713,7 +875,7 @@ as an embellished symbol would be distinguished as follows:</p>
      </div>
 
 
-    <p>When <span>the MathML is being parsed as XML and </span>
+    <p>When the MathML is being parsed as XML and
     the annotation value is represented in an XML dialect other than MathML, the
     namespace for the XML markup for the annotation should be identified by means of namespace
     attributes and/or namespace prefixes on the annotation value.  For instance:</p>
@@ -752,7 +914,7 @@ as an embellished symbol would be distinguished as follows:</p>
     <code class="element">annotation-xml</code> element, however they would be placed in the <em>MathML</em> namespace. The above examples are not rendered in the HTML version of this specification,
     to ensure that that document is a valid HTML5 document.</p>
 
-    <p>The details of the HTML parser handling of <code class="element">annotation-xml</code> is specified in [[HTML5]] and summarized in <a href="#interf_html"></a>, however the main differences from the behavior of an XML parser that affect MathML
+    <p>The details of the HTML parser handling of <code class="element">annotation-xml</code> is specified in [[HTML]] and summarized in <a href="#interf_html"></a>, however the main differences from the behavior of an XML parser that affect MathML
     annotations are that the HTML parser does not treat <code>xmlns</code> attributes, nor <code>:</code> in element names as special and has built-in rules determining whether the three
     <q>known</q> namespaces, HTML, SVG or MathML are used.
     </p>
@@ -833,7 +995,8 @@ as an embellished symbol would be distinguished as follows:</p>
     <p>Note here that the HTML <code class="element" data-namespace="xhtml">span</code> element has
     caused all open MathML elements to be prematurely closed, resulting in
     the following MathML elements being treated as unknown HTML elements
-    as they are no longer descendents of <code class="element">math</code>. See <a href="#interf_html"></a> for more details of the parsing of MathML in HTML.
+    as they are no longer descendents of <code class="element">math</code>.
+    See <a href="#interf_html"></a> for more details of the parsing of MathML in HTML.
     </p>
 
     <p>Any use of elements in other vocabularies (such as the OpenMath
@@ -867,8 +1030,7 @@ as an embellished symbol would be distinguished as follows:</p>
    Content markup encodes the <em>functional structure</em> of an expression.  In certain
    cases, a particular application of MathML may require a combination of both presentation
    and content markup.  This section describes specific constraints that govern the use
-   of
-   presentation markup within content markup, and vice versa.
+   of presentation markup within content markup, and vice versa.
   </p>
 
   <section>
@@ -877,7 +1039,6 @@ as an embellished symbol would be distinguished as follows:</p>
    <p>
     Presentation markup may be embedded within content markup so long as the
     resulting expression retains an unambiguous function application structure.
-
     Specifically, presentation markup may only appear in content markup
     in three ways:
    </p>
@@ -895,6 +1056,7 @@ as an embellished symbol would be distinguished as follows:</p>
      <p>within the <code class="element">semantics</code> element</p>
     </li>
    </ol>
+   
    <p>
     Any other presentation markup occurring within content markup is a
     MathML error.  More detailed discussion of these three cases follows:
@@ -1010,11 +1172,13 @@ as an embellished symbol would be distinguished as follows:</p>
        &lt;/semantics&gt;
      </pre>
     </div>
+    <p>
     Note that the above markup annotates the presentation markup as
     the first child element, with the content markup as part of the
     <code class="element">annotation-xml</code> element.  An equivalent form could be given
     that annotates the content markup as the first child element, with
     the presentation markup as part of the <code class="element">annotation-xml</code> element.
+    </p>
 
 
   </section>
@@ -1132,11 +1296,12 @@ as an embellished symbol would be distinguished as follows:</p>
     of the semantic annotations within <code class="element">annotation-xml</code>
     For example cross referencing between a presentation MathML rendering and an OpenMath annotation.
    </p>
-    <p><span id="html-xml3">As noted above, the use of namespaces other than MathML, SVG
+
+    <p id="html-xml3">As noted above, the use of namespaces other than MathML, SVG
     or HTML within <code class="element">annotation-xml</code> is not considered valid in the HTML syntax.
     Use of colons and namespace-prefixed element names should be avoided
     as the HTML parser will generate nodes with <em>local</em> name <code>om:OMA</code>
-    (for example), and such nodes can not be constructed by a namespace-aware XML parser.</span>
+    (for example), and such nodes can not be constructed by a namespace-aware XML parser.
    </p>
 
   </section>
