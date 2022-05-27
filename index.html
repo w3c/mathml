@@ -89,7 +89,6 @@
     function pubrulesMML (doc) {
 	doc.querySelectorAll("[intent]").forEach(m =>m.removeAttribute("intent"));
 	doc.querySelectorAll("[arg]").forEach(m =>m.removeAttribute("arg"));
-	doc.querySelectorAll("[accentunder]").forEach(m =>m.removeAttribute("accentunder"));
     }
     
     function showcore (){
@@ -125,7 +124,9 @@
 		atext=s.textContent;
 	    }
 	    m.setAttribute("alttext",atext);
-            try {transform(m);} catch(e) {}
+            if(mclass.includes("mml4p")) {
+		try {transform(m);} catch(e) {};
+	    }
             mmllist[i].parentNode.insertBefore(m,mmllist[i].nextSibling);
 	    }
 	}
