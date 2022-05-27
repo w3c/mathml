@@ -2072,28 +2072,48 @@
      </div>
 
      <p>This represents a term
-     <i class="var">&#x03bb;</i><i class="var">x</i>.<i class="var">f</i>(<i class="var">&#x03bb;</i><i class="var">x</i>.<i class="var">g</i>(<i class="var">x</i>),<i class="var">g</i>(<i class="var">x</i>))
+     <math alttext="λx.f(λx.g(x),g(x))" class="doc">
+      <mi>&#x03bb;</mi><mi>x</mi><mo>.</mo>
+      <mrow><mi>f</mi><mrow><mrow><mo>(</mo>
+      <mrow><mi>&#x03bb;</mi><mi>x</mi><mo>.</mo><mrow><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow>
+      <mo>,</mo>
+      <mrow><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow>
+      <mo>)</mo></mrow>
+      </mrow></mrow>
+     </math>
      which has two sub-terms of the form
-     <i class="var">g</i>(<i class="var">x</i>),
+     <math alttext="g(x)" class="doc">
+      <mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo>
+      </math>,
      one with <code>id="orig"</code>
      (the one explicitly represented) and one with <code>id="copy"</code>,
      represented by the <code class="element">share</code> element.
      In the original, explicitly-represented term,
-     the variable <i class="var">x</i> is bound by the
+     the variable <math alttext="x" class="doc"><mi>x</mi></math> is bound by the
      <em>outer</em> <code class="element">bind</code> element.
-     However, in the copy, the variable <i class="var">x</i> is
+     However, in the copy, the variable <math alttext="x" class="doc"><mi>x</mi></math> is
      bound by the <em>inner</em> <code class="element">bind</code> element.
      One says that the inner <code class="element">bind</code>
-     has captured the variable <i class="var">x</i>.</p>
+     has captured the variable <math alttext="x" class="doc"><mi>x</mi></math>.</p>
 
      <p>Using references that capture variables in this way can easily lead to representation
      errors, and is not recommended.  For instance, using
-     &#x3b1;-conversion to rename the inner occurrence of <i class="var">x</i>
-     into, say, <i class="var">y</i> leads to the semantically equivalent expression
-     <i class="var">&#x03bb;</i><i class="var">x</i>.<i class="var">f</i>(<i class="var">&#x03bb;</i><i class="var">y</i>.<i class="var">g</i>(<i class="var">y</i>),<i class="var">g</i>(<i class="var">x</i>)).
+     &#x3b1;-conversion to rename the inner occurrence of <math alttext="x" class="doc"><mi>x</mi></math>
+     into, say, <math alttext="x" class="doc"><mi>y</mi></math> leads to the semantically equivalent expression
+     <math alttext="λx.f(λx.g(x),g(x))" class="doc">
+      <mi>&#x03bb;</mi><mi>x</mi><mo>.</mo>
+      <mrow><mi>f</mi><mrow><mrow><mo>(</mo>
+      <mrow><mi>&#x03bb;</mi><mi>y</mi><mo>.</mo><mrow><mi>g</mi><mo>(</mo><mi>y</mi><mo>)</mo></mrow></mrow>
+      <mo>,</mo>
+      <mrow><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow>
+      <mo>)</mo></mrow>
+      </mrow></mrow>
+     </math>.
      However, in this form, it is no longer possible to share the expression
-     <i class="var">g</i>(<i class="var">x</i>).
-     Replacing <i class="var">x</i> with <i class="var">y</i> in the inner
+     <math alttext="g(x)" class="doc">
+      <mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo>
+      </math>.
+     Replacing <math alttext="x" class="doc"><mi>x</mi></math> with <math alttext="x" class="doc"><mi>y</mi></math> in the inner
      <code class="element">bvar</code> without replacing the <code class="element">share</code> element results in a change
      in semantics.</p>
     </section>
