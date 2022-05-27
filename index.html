@@ -145,7 +145,7 @@
     document.body.lastElementChild.remove();\
     if (height==0){\
       document.querySelectorAll("math.mmlcore").forEach(m =>m.remove());\
-      document.querySelectorAll("math.doc").forEach(m =>m.outerHTML=m.getAttribute("alttext").replace(/\b([a-z])\b/g,"<i>$1</i>"));\
+      document.querySelectorAll("math.doc").forEach(m =>m.outerHTML=m.getAttribute("alttext").replace(/\\b([a-z])\\b/g,"<i>$1</i>"));\
      }\
     },false);\
 ';
