@@ -136,18 +136,18 @@
   <script class="removeOnSave">
     function addCoreTest (doc) {
 	const s =document.createElement("script");
-	s.textContent='\
-    window.addEventListener("load",function () {\
-    const m = document.createElementNS("http://www.w3.org/1998/Math/MathML", "math");\
-    m.innerHTML = "<msqrt><mi></mi></msqrt>";\
-    document.body.appendChild(m);\
-    const height = m.getBoundingClientRect().height;\
-    document.body.lastElementChild.remove();\
-    if (height==0){\
-      document.querySelectorAll("math.mmlcore").forEach(m =>m.remove());\
-      document.querySelectorAll("math.doc").forEach(m =>m.outerHTML=m.getAttribute("alttext").replace(/\\b([a-z])\\b/g,"<i>$1</i>"));\
-     }\
-    },false);\
+	s.textContent='\n\
+    window.addEventListener("load",function () {\n\
+    const m = document.createElementNS("http://www.w3.org/1998/Math/MathML", "math");\n\
+    m.innerHTML = "<msqrt><mi></mi></msqrt>";\n\
+    document.body.appendChild(m);\n\
+    const height = m.getBoundingClientRect().height;\n\
+    document.body.lastElementChild.remove();\n\
+    if (height==0){\n\
+      document.querySelectorAll("math.mmlcore").forEach(m =>m.remove());\n\
+      document.querySelectorAll("math.doc").forEach(m =>m.outerHTML=m.getAttribute("alttext").replace(/\\b([a-z])\\b/g,"<i>$1</i>"));\n\
+     }\n\
+    },false);\n\
 ';
 	doc.head.appendChild(s);
     }
