@@ -39,14 +39,17 @@
             ellist2[ellist2.length]=ellist[i];
         }
         var lastel="";
-        ellist2 = ellist2.sort(function(a,b) {return a.textContent.localeCompare(b.textContent);});
+        ellist2 = ellist2.sort(function(a,b) {
+	    return a.textContent.replace(/[<\/>]/g,'').localeCompare(b.textContent.replace(/[<\/>]/g,'')
+		);});
         for(var i=0;i!=ellist2.length;i++){
-            if(ellist2[i].textContent != lastel){
-                lastel=ellist2[i].textContent;
+            if(ellist2[i].textContent.replace(/[<\/>]/g,'') != lastel){
+                lastel=ellist2[i].textContent.replace(/[<\/>]/,'');
                 var dt=document.createElement("dt");
                 var dd=document.createElement("dd");
                 var lastsec=""
-                dt.textContent=lastel;
+		var ns=ellist2[i].getAttribute("data-namespace");
+                dt.textContent=lastel + (ns==null ? "" : (" (" + ns + ")"));
                 dl.appendChild(dt);
                 dl.appendChild(dd);
             }
