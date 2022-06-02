@@ -1092,7 +1092,7 @@
  
      <tr>
       <td rowspan="2" class="attname">mathcolor</td>
-      <td><a class="intref" href="#type_color"><em>color</em></a></td>
+      <td><em>[^color^]</a></td>
       <td><em>inherited</em></td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#mathmltree.p4"></a></td>
      </tr>
@@ -1108,7 +1108,7 @@
  
      <tr>
       <td rowspan="2" class="attname">mathbackground</td>
-      <td><a class="intref" href="#type_color"><em>color</em></a> | "transparent"</td>
+      <td><em>[^color^]</em> | "transparent"</td>
       <td>transparent</td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mathbackground"></a></td>
      </tr>
@@ -1267,7 +1267,7 @@
  
        <tr>
         <td rowspan="2" class="attname">src</td>
-        <td><a class="intref" href="#type_uri"><em>URI</em></a></td>
+        <td><em>[^URI^]</em></a></td>
         <td><em>required</em></td>
         <td><span class="coreno"></span></td>
        </tr>
@@ -1327,7 +1327,7 @@
  
        <tr>
         <td rowspan="2" class="attname">alt</td>
-        <td><a class="intref" href="#type_string"><em>string</em></a></td>
+        <td><em>[^string^]</em></td>
         <td><em>required</em></td>
         <td><span class="coreno"></span></td>
        </tr>
@@ -2275,7 +2275,7 @@
  
        <tr>
         <td rowspan="2" class="attname">linebreakmultchar</td>
-        <td><a class="intref" href="#type_string"><em>string</em></a></td>
+        <td><em>[^string^]</em></td>
         <td><em>inherited</em> (&amp;InvisibleTimes;) </td>
         <td><span class="coreno"></span></td>
        </tr>
@@ -2375,14 +2375,14 @@
  
        <tr>
         <td rowspan="2" class="attname">indenttarget</td>
-        <td><a class="intref" href="#type_idref"><em>idref</em></a></td>
+        <td><em>[^idref^]</em></a></td>
         <td><em> inherited (none)</em></td>
         <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
         <td colspan="3" class="attdesc">
-   Specifies the <a class="intref" href="#type_id">id</a> of another element
+   Specifies the [^id^] of another element
    whose horizontal position determines the position of indented lines
    when <code class="attribute">indentalign</code>=<code class="attributevalue">id</code>.
    Note that the identified element may be outside of the current
@@ -2505,7 +2505,7 @@
        <tr>
         <td> id           </td>
         <td> Align the left side of the next line to the left side of the element
-        referenced by the <a class="intref" href="#type_idref"><em>idref</em></a>
+        referenced by the <em>[^idref^]</a>
         (given by <code class="attribute">indenttarget</code>);
         if no such element exists, use <code class="attributevalue">auto</code> as the <code class="attribute">indentalign</code> value</td>
        </tr>
@@ -3585,7 +3585,7 @@
  
   <tr>
  <td rowspan="2" class="attname">lquote</td>
- <td><a class="intref" href="#type_string"><em>string</em></a></td>
+ <td><em>[^string^]</em></td>
  <td><code class="entity">quot</code></td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -3599,7 +3599,7 @@
  
  <tr>
  <td rowspan="2" class="attname">rquote</td>
- <td><a class="intref" href="#type_string"><em>string</em></a></td>
+ <td><em>[^string^]</em></td>
  <td><code class="entity">quot</code></td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -4326,7 +4326,7 @@
  
  <tr>
  <td rowspan="2" class="attname">scriptsizemultiplier</td>
- <td><a class="intref" href="#type_number"><em>number</em></a></td>
+ <td><em>[^number^]</em></a></td>
  <td>0.71</td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -4370,7 +4370,7 @@
  
  <tr>
  <td rowspan="2" class="attname">decimalpoint</td>
- <td><a class="intref" href="#type_character"><em>character</em></a></td>
+ <td><a class="intref" href="#type_character"><em>[^character^]</em></a></td>
  <td>.</td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -5190,7 +5190,7 @@
  
      <tr>
       <td rowspan="2" class="attname">open</td>
-      <td><a class="intref" href="#type_string"><em>string</em></a></td>
+      <td><em>[^string^]</em></td>
       <td>(</td>
       <td><span class="coreno"></span></td>
      </tr>
@@ -5205,7 +5205,7 @@
  
      <tr>
       <td rowspan="2" class="attname">close</td>
-      <td><a class="intref" href="#type_string"><em>string</em></a></td>
+      <td><em>[^string^]</em></td>
       <td>)</td>
       <td><span class="coreno"></span></td>
      </tr>
@@ -5220,7 +5220,7 @@
  
      <tr>
       <td rowspan="2" class="attname">separators</td>
-      <td><a class="intref" href="#type_string"><em>string</em></a></td>
+      <td><em>[^string^]</em></td>
       <td>,</td>
       <td><span class="coreno"></span></td>
      </tr>
@@ -8888,7 +8888,7 @@
  
  <tr>
  <td rowspan="2" class="attname">scriptsizemultiplier</td>
- <td> <a class="intref" href="#type_number"><em>number</em></a></td>
+ <td><em><em>[^number^]</em></td>
  <td><em>inherited (0.6)</em></td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -9630,7 +9630,7 @@
  
    <tr>
     <td rowspan="2" class="attname">actiontype</td>
-    <td><a class="intref" href="#type_string"><em>string</em></a></td>
+    <td><em>[^string^]</em></td>
     <td><em>required</em></td>
     <td><span class="coreno"></span></td>
    </tr>

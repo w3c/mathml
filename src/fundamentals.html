@@ -189,19 +189,19 @@
       </tr>
 
       <tr>
-       <td id="type_number"><em>number</em></td>
+       <td id="type_number"><dfn><em>number</em></dfn></td>
        <td>
         an optional prefix of "-" (U+002D), followed by an <a href="#type_unsigned-number">unsigned number</a>,
        representing a terminating decimal number (a type of rational number)</td>
       </tr>
 
       <tr>
-       <td id="type_character"><em>character</em></td>
+       <td id="type_character"><dfn><em>character</em></dfn></td>
        <td>a single non-whitespace character</td>
       </tr>
 
       <tr>
-       <td id="type_string"><em>string</em></td>
+       <td id="type_string"><dfn><em>string</em></dfn></td>
        <td>an arbitrary, nonempty and finite, string of <em>character</em>s</td>
       </tr>
 
@@ -216,24 +216,24 @@
       </tr>
 
       <tr>
-       <td id="type_color"><em>color</em></td>
+       <td id="type_color"><dfn><em>color</em></dfn></td>
        <td>a color, using the syntax specified by [[CSS-Color-3]]</td>
       </tr>
 
       <tr>
-       <td id="type_id"><em>id</em></td>
+       <td id="type_id"><dfn><em>id</em></dfn></td>
        <td>an identifier, unique within the document;
        must satisfy the NAME syntax of the XML recommendation [[XML]]</td>
       </tr>
 
       <tr>
-       <td id="type_idref"><em>idref</em></td>
+       <td id="type_idref"><dfn><em>idref</em></dfn></td>
        <td>an identifier referring to another element within the document;
        must satisfy the NAME syntax of the XML recommendation [[XML]]</td>
       </tr>
 
       <tr>
-       <td id="type_uri"><em>URI</em></td>
+       <td id="type_uri"><dfn><em>URI</em></dfn></td>
        <td>a Uniform Resource Identifier [[RFC3986]]. Note that the attribute value
        is typed in the schema as anyURI which allows any sequence of XML characters.
        Systems needing to use this string as a URI must encode the bytes of the UTF-8 encoding
@@ -540,7 +540,7 @@
 
      <tr>
       <td rowspan="2" class="attname">id</td>
-      <td><a class="intref" href="#type_id"><em>id</em></a></td>
+      <td><em>[^id^]</em></td>
       <td><em>none</em></td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-id"></a></td>
      </tr>
@@ -555,7 +555,7 @@
 
      <tr>
       <td rowspan="2" class="attname">xref</td>
-      <td><a class="intref" href="#type_idref"><em>idref</em></a></td>
+      <td><em>[^idref^]</em></td>
       <td><em>none</em></td>
       <td><span class="coreno"></span></td>
      </tr>
@@ -569,7 +569,7 @@
 
      <tr>
       <td rowspan="2" class="attname">class</td>
-      <td><a class="intref" href="#type_string"><em>string</em></a></td>
+      <td><em>[^string^]</em></td>
       <td><em>none</em></td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-class"></a></td>
      </tr>
@@ -584,7 +584,7 @@
 
      <tr>
       <td rowspan="2" class="attname">style</td>
-      <td><a class="intref" href="#type_string"><em>string</em></a></td>
+      <td><em>[^string^]</em></td>
       <td><em>none</em></td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-style"></a></td>
      </tr>
@@ -648,7 +648,7 @@
 
      <tr>
       <td rowspan="2" class="attname">other</td>
-      <td><a class="intref" href="#type_string"><em>string</em></a></td>
+      <td><em>[^string^]</em></td>
       <td><em>none</em></td>
       <td><span class="coreno"></span></td>
      </tr>
@@ -919,7 +919,7 @@
 
      <tr>
       <td rowspan="2" class="attname">alttext</td>
-      <td><a class="intref" href="#type_string"><em>string</em></a></td>
+      <td><em>[^string^]</em></td>
       <td><em>none</em></td>
       <td><span class="coreno"></span></td>
      </tr>
