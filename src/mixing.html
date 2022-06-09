@@ -106,9 +106,9 @@ the user and agent.</p>
    space between tokens, should match the following grammar.</p>
    
 <pre class="def bnf">
-intent   := number | NCName | argref | function
-function := (NCName | argref) '(' intent [ ',' intent ]* ')'
-number   := '-'? digit+ ('.' digit+)? 
+intent   := numlit | NCName | argref | funcall
+funcall  := (NCName | argref | funcall) '(' ( intent (',' intent )* )? ')'
+numlit   := '-'? (digit+ '.'? digit* | '.' digit+)
 argref   := '$' NCName
 </pre>
 
