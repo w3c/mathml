@@ -645,7 +645,7 @@
         <div class="example mathml mmlcore">
          <pre>
            &lt;mrow&gt;
-             &lt;mn&gt;12.3&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;i&lt;/mi&gt;
+             &lt;mn&gt;12.3&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;&lt;mi&gt;i&lt;/mi&gt;
            &lt;/mrow&gt;
          </pre>
         </div>
@@ -675,10 +675,10 @@
          <pre>
            &lt;mrow&gt;
              &lt;mn&gt;2&lt;/mn&gt;
-             &lt;mo&gt;&amp;#x2062;&lt;/mo&gt;
+             &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
              &lt;msup&gt;
                &lt;mi&gt;e&lt;/mi&gt;
-               &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mn&gt;3.1415&lt;/mn&gt;&lt;/mrow&gt;
+               &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;&lt;mn&gt;3.1415&lt;/mn&gt;&lt;/mrow&gt;
              &lt;/msup&gt;
            &lt;/mrow&gt;
          </pre>
@@ -689,7 +689,7 @@
          <pre>
            &lt;mrow&gt;
              &lt;mi&gt;Polar&lt;/mi&gt;
-             &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+             &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
              &lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3.1415&lt;/mn&gt;&lt;/mrow&gt;
            &lt;/mrow&gt;
          </pre>
@@ -1421,7 +1421,7 @@
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;F&lt;/mi&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;
              &lt;mo fence="true"&gt;(&lt;/mo&gt;
              &lt;mi&gt;A1&lt;/mi&gt;
@@ -1470,9 +1470,9 @@
          &lt;mrow&gt;
            &lt;munder&gt;
              &lt;mi&gt;Op&lt;/mi&gt;
-             &lt;mrow&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;!--ELEMENT OF--&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mrow&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;&#x2208;&lt;/mo&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;/mrow&gt;
            &lt;/munder&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;!--FUNCTION APPLICATION--&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;
              &lt;mo fence="true"&gt;(&lt;/mo&gt;
              &lt;mi&gt;Expression-in-X&lt;/mi&gt;
@@ -2948,7 +2948,7 @@
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;gcd&lt;/mi&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
@@ -3035,11 +3035,11 @@
        <pre>
          &lt;mrow&gt;
            &lt;munderover&gt;
-             &lt;mo&gt;&amp;#x2211;&lt;/mo&gt;
+             &lt;mo&gt;&#x2211;&lt;/mo&gt;
              &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
              &lt;mi&gt;b&lt;/mi&gt;
            &lt;/munderover&gt;
-           &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -3047,16 +3047,16 @@
        <pre>
          &lt;mrow&gt;
            &lt;munder&gt;
-             &lt;mo&gt;&amp;#x2211;&lt;/mo&gt;
-             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mo&gt;&#x2211;&lt;/mo&gt;
+             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&#x2208;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
            &lt;/munder&gt;
-           &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&#x2211;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
      </section>
@@ -3135,11 +3135,11 @@
        <pre>
          &lt;mrow&gt;
            &lt;munderover&gt;
-             &lt;mo&gt;&amp;#x220f;&lt;/mo&gt;
+             &lt;mo&gt;&#x220f;&lt;/mo&gt;
              &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
              &lt;mi&gt;b&lt;/mi&gt;
            &lt;/munderover&gt;
-           &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -3147,10 +3147,10 @@
        <pre>
          &lt;mrow&gt;
            &lt;munder&gt;
-             &lt;mo&gt;&amp;#x220f;&lt;/mo&gt;
-             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mo&gt;&#x220f;&lt;/mo&gt;
+             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&#x2208;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
            &lt;/munder&gt;
-           &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -3208,7 +3208,7 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2218;&lt;/mo&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;&amp;#x2218;&lt;/mo&gt;&lt;mi&gt;h&lt;/mi&gt;
+           &lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&#x2218;&lt;/mo&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;&#x2218;&lt;/mo&gt;&lt;mi&gt;h&lt;/mi&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -3216,19 +3216,19 @@
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;
-             &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2218;&lt;/mo&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-             &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+             &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&#x2218;&lt;/mo&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+             &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
              &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
            &lt;/mrow&gt;
            &lt;mo&gt;=&lt;/mo&gt;
            &lt;mrow&gt;
              &lt;mi&gt;f&lt;/mi&gt;
-             &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+             &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
              &lt;mrow&gt;
               &lt;mo&gt;(&lt;/mo&gt;
                &lt;mrow&gt;
                  &lt;mi&gt;g&lt;/mi&gt;
-                 &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+                 &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
                  &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
                &lt;/mrow&gt;
                &lt;mo&gt;)&lt;/mo&gt;
@@ -3325,14 +3325,14 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2227;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&#x2227;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;munderover&gt;
-             &lt;mo&gt;&amp;#x22C0;&lt;/mo&gt;
+             &lt;mo&gt;&#x22C0;&lt;/mo&gt;
              &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
              &lt;mi&gt;n&lt;/mi&gt;
            &lt;/munderover&gt;
@@ -3511,17 +3511,17 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x222a;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&#x222a;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2229;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mo&gt;&amp;#x2229;&lt;/mo&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&#x2229;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mo&gt;&#x2229;&lt;/mo&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#xd7;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&#xd7;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
      </section>
@@ -3558,12 +3558,12 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x22c3;&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&#x22c3;&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&amp;#x22c2;&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;munder&gt;&lt;mo&gt;&#x22c2;&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/munder&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
@@ -3712,13 +3712,13 @@
            &lt;mrow&gt;
              &lt;mrow&gt;
                &lt;mi&gt;i&lt;/mi&gt;
-               &lt;mo&gt;&amp;#x2208;&lt;/mo&gt;
+               &lt;mo&gt;&#x2208;&lt;/mo&gt;
                &lt;mrow&gt;&lt;mo&gt;[&lt;/mo&gt;&lt;mi&gt;1&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;5&lt;/mi&gt;&lt;mo&gt;]&lt;/mo&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
-             &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
+             &lt;mo&gt;&#x2227;&lt;/mo&gt;
              &lt;mrow&gt;
                &lt;mi&gt;j&lt;/mi&gt;
-               &lt;mo&gt;&amp;#x2208;&lt;/mo&gt;
+               &lt;mo&gt;&#x2208;&lt;/mo&gt;
                &lt;mrow&gt;&lt;mo&gt;[&lt;/mo&gt;&lt;mi&gt;5&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;9&lt;/mi&gt;&lt;mo&gt;]&lt;/mo&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
            &lt;/mrow&gt;
@@ -3876,7 +3876,7 @@
            &lt;mo&gt;{&lt;/mo&gt;
            &lt;mi&gt;S&lt;/mi&gt;
            &lt;mo&gt;|&lt;/mo&gt;
-           &lt;mrow&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mo&gt;&#x2208;&lt;/mo&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/mrow&gt;
            &lt;mo&gt;}&lt;/mo&gt;
          &lt;/mrow&gt;
        </pre>
@@ -3889,9 +3889,9 @@
            &lt;mo&gt;|&lt;/mo&gt;
            &lt;mrow&gt;
              &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-             &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
+             &lt;mo&gt;&#x2227;&lt;/mo&gt;
              &lt;mrow&gt;
-               &lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;N&lt;/mi&gt;
+               &lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;N&lt;/mi&gt;
              &lt;/mrow&gt;
            &lt;/mrow&gt;
            &lt;mo&gt;}&lt;/mo&gt;
@@ -4005,12 +4005,12 @@
       </div>
       <div class="example mathml mmlcore">
        <pre>
-	&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;&amp;#x2265;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&#x2265;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;
+	&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;&#x2265;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&#x2265;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-	&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&#x2264;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
+	&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&#x2264;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&#x2264;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
@@ -4076,12 +4076,12 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2286;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&#x2286;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&#x2282;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mo&gt;&amp;#x2282;&lt;/mo&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&#x2282;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mo&gt;&#x2282;&lt;/mo&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
@@ -4194,7 +4194,7 @@
          &lt;mrow&gt;
            &lt;mi&gt;min&lt;/mi&gt;
            &lt;mrow&gt;&lt;mo&gt;{&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;|&lt;/mo&gt;
-             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2209;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&#x2209;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
              &lt;mo&gt;}&lt;/mo&gt;
            &lt;/mrow&gt;
          &lt;/mrow&gt;
@@ -4208,7 +4208,7 @@
              &lt;mo&gt;{&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;
              &lt;mrow&gt;
                &lt;msup&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
-               &lt;mo&gt;&amp;#x2208;&lt;/mo&gt;
+               &lt;mo&gt;&#x2208;&lt;/mo&gt;
                &lt;mrow&gt;&lt;mo&gt;[&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;]&lt;/mo&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
              &lt;mo&gt;}&lt;/mo&gt;
@@ -4320,27 +4320,27 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mo&gt;&amp;#x27E8;&lt;/mo&gt;
+           &lt;mo&gt;&#x27E8;&lt;/mo&gt;
            &lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;
            &lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;
-           &lt;mo&gt;&amp;#x27E9;&lt;/mo&gt;
+           &lt;mo&gt;&#x27E9;&lt;/mo&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mo&gt;&amp;#x27E8;&lt;/mo&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;&amp;#x27E9;&lt;/mo&gt;
+           &lt;mo&gt;&#x27E8;&lt;/mo&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;&#x27E9;&lt;/mo&gt;
          &lt;/mrow&gt;
          &lt;mtext&gt;&amp;nbsp;or&amp;nbsp;&lt;/mtext&gt;
-         &lt;mover&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;&amp;#xaf;&lt;/mo&gt;&lt;/mover&gt;
+         &lt;mover&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;&#xaf;&lt;/mo&gt;&lt;/mover&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mo&gt;&amp;#x3c3;&lt;/mo&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&#x3c3;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
@@ -4348,8 +4348,8 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mo&gt;&amp;#x3c3;&lt;/mo&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+           &lt;mo&gt;&#x3c3;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -4357,10 +4357,10 @@
        <pre>
          &lt;mrow&gt;
            &lt;msup&gt;
-             &lt;mo&gt;&amp;#x3c3;&lt;/mo&gt;
+             &lt;mo&gt;&#x3c3;&lt;/mo&gt;
              &lt;mn&gt;2&lt;/mn&gt;
            &lt;/msup&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
@@ -4368,8 +4368,8 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;msup&gt;&lt;mo&gt;&amp;#x3c3;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;msup&gt;&lt;mo&gt;&#x3c3;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
@@ -4490,7 +4490,7 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mo&gt;&amp;#x230a;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;&amp;#x230b;&lt;/mo&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mo&gt;&#x230a;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;&#x230b;&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
@@ -4500,7 +4500,7 @@
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&#x2212;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
@@ -4565,15 +4565,15 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x21d2;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&#x21d2;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;a&lt;/mi&gt;
-           &lt;mo&gt;&amp;#x2261;&lt;/mo&gt;
-           &lt;mrow&gt;&lt;mo&gt;&amp;#xac;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;&amp;#xac;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+           &lt;mo&gt;&#x2261;&lt;/mo&gt;
+           &lt;mrow&gt;&lt;mo&gt;&#xac;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;&#xac;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -4641,14 +4641,14 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;#x2260;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&#x2260;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mi&gt;&amp;#x3c0;&lt;/mi&gt;
-           &lt;mo&gt;&amp;#x2243;&lt;/mo&gt;
+           &lt;mi&gt;&#x3c0;&lt;/mi&gt;
+           &lt;mo&gt;&#x2243;&lt;/mo&gt;
            &lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
@@ -4704,7 +4704,7 @@
        <pre>
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
-           &lt;mo&gt;&amp;#x2192;&lt;/mo&gt;
+           &lt;mo&gt;&#x2192;&lt;/mo&gt;
            &lt;msup&gt;&lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;/msup&gt;
          &lt;/mrow&gt;
        </pre>
@@ -4715,13 +4715,13 @@
            &lt;mtr&gt;&lt;mtd&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mtd&gt;&lt;/mtr&gt;
            &lt;mtr&gt;&lt;mtd&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mtd&gt;&lt;/mtr&gt;
          &lt;/mtable&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-         &lt;mo&gt;&amp;#x2192;&lt;/mo&gt;
+         &lt;mo&gt;&#x2192;&lt;/mo&gt;
          &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mtable&gt;
            &lt;mtr&gt;&lt;mtd&gt;
-             &lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+             &lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
            &lt;/mtd&gt;&lt;/mtr&gt;
            &lt;mtr&gt;&lt;mtd&gt;
-             &lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+             &lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
            &lt;/mtd&gt;&lt;/mtr&gt;
          &lt;/mtable&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
@@ -4775,7 +4775,7 @@
            &lt;apply&gt;&lt;times/&gt;
              &lt;ci&gt;a&lt;/ci&gt;
              &lt;ci&gt;b&lt;/ci&gt;
-             &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;&amp;#x3b8;&lt;/ci&gt;&lt;/apply&gt;
+             &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;&#x3b8;&lt;/ci&gt;&lt;/apply&gt;
              &lt;ci type="vector"&gt; N &lt;/ci&gt;
            &lt;/apply&gt;
          &lt;/apply&gt;
@@ -4791,7 +4791,7 @@
            &lt;apply&gt;&lt;times/&gt;
              &lt;ci&gt;a&lt;/ci&gt;
              &lt;ci&gt;b&lt;/ci&gt;
-             &lt;apply&gt;&lt;cos/&gt;&lt;ci&gt;&amp;#x3b8;&lt;/ci&gt;&lt;/apply&gt;
+             &lt;apply&gt;&lt;cos/&gt;&lt;ci&gt;&#x3b8;&lt;/ci&gt;&lt;/apply&gt;
            &lt;/apply&gt;
          &lt;/apply&gt;
        </pre>
@@ -4810,15 +4810,15 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#xd7;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&#xd7;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
            &lt;mo&gt;=&lt;/mo&gt;
            &lt;mrow&gt;
              &lt;mi&gt;a&lt;/mi&gt;
-             &lt;mo&gt;&amp;#x2062;&lt;/mo&gt;
+             &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
              &lt;mi&gt;b&lt;/mi&gt;
-             &lt;mo&gt;&amp;#x2062;&lt;/mo&gt;
-             &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;&amp;#x3b8;&lt;/mi&gt;&lt;/mrow&gt;
-             &lt;mo&gt;&amp;#x2062;&lt;/mo&gt;
+             &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
+             &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;&#x3b8;&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
              &lt;mi&gt;N&lt;/mi&gt;
            &lt;/mrow&gt;
          &lt;/mrow&gt;
@@ -4831,17 +4831,17 @@
            &lt;mo&gt;=&lt;/mo&gt;
            &lt;mrow&gt;
              &lt;mi&gt;a&lt;/mi&gt;
-             &lt;mo&gt;&amp;#x2062;&lt;/mo&gt;
+             &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
              &lt;mi&gt;b&lt;/mi&gt;
-             &lt;mo&gt;&amp;#x2062;&lt;/mo&gt;
-             &lt;mrow&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;&amp;#x3b8;&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
+             &lt;mrow&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;&#x3b8;&lt;/mi&gt;&lt;/mrow&gt;
            &lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2297;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&#x2297;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
      </section>
@@ -4927,27 +4927,27 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&#x2208;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2209;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&#x2209;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2288;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&#x2288;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2284;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&#x2284;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&amp;#x2216;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;&#x2216;&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
@@ -4991,7 +4991,7 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mo&gt;&amp;#xac;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mo&gt;&#xac;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
@@ -5095,7 +5095,7 @@
          &lt;apply&gt;&lt;conjugate/&gt;
            &lt;apply&gt;&lt;plus/&gt;
              &lt;ci&gt;x&lt;/ci&gt;
-             &lt;apply&gt;&lt;times/&gt;&lt;cn&gt;&amp;#x2148;&lt;/cn&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
+             &lt;apply&gt;&lt;times/&gt;&lt;cn&gt;&#x2148;&lt;/cn&gt;&lt;ci&gt;y&lt;/ci&gt;&lt;/apply&gt;
            &lt;/apply&gt;
          &lt;/apply&gt;
        </pre>
@@ -5171,9 +5171,9 @@
            &lt;mrow&gt;
              &lt;mi&gt;x&lt;/mi&gt;
              &lt;mo&gt;+&lt;/mo&gt;
-             &lt;mrow&gt;&lt;mn&gt;&amp;#x2148;&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mrow&gt;&lt;mn&gt;&#x2148;&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
            &lt;/mrow&gt;
-           &lt;mo&gt;&amp;#xaf;&lt;/mo&gt;
+           &lt;mo&gt;&#xaf;&lt;/mo&gt;
          &lt;/mover&gt;
        </pre>
       </div>
@@ -5181,13 +5181,13 @@
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;arg&lt;/mi&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;
             &lt;mo&gt;(&lt;/mo&gt;
              &lt;mrow&gt;
                &lt;mi&gt;x&lt;/mi&gt;
                &lt;mo&gt;+&lt;/mo&gt;
-               &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
+               &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
              &lt;mo&gt;)&lt;/mo&gt;
            &lt;/mrow&gt;
@@ -5197,14 +5197,14 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mo&gt;&amp;#x211b;&lt;/mo&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&#x211b;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;
             &lt;mo&gt;(&lt;/mo&gt;
              &lt;mrow&gt;
                &lt;mi&gt;x&lt;/mi&gt;
                &lt;mo&gt;+&lt;/mo&gt;
-               &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
+               &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
              &lt;mo&gt;)&lt;/mo&gt;
            &lt;/mrow&gt;
@@ -5214,14 +5214,14 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mo&gt;&amp;#x2111;&lt;/mo&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&#x2111;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;
             &lt;mo&gt;(&lt;/mo&gt;
              &lt;mrow&gt;
                &lt;mi&gt;x&lt;/mi&gt;
                &lt;mo&gt;+&lt;/mo&gt;
-               &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
+               &lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
              &lt;mo&gt;)&lt;/mo&gt;
            &lt;/mrow&gt;
@@ -5230,12 +5230,12 @@
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mo&gt;&amp;#x230a;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x230b;&lt;/mo&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mo&gt;&#x230a;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&#x230b;&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mo&gt;&amp;#x2308;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&amp;#x2309;&lt;/mo&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mo&gt;&#x2308;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&#x2309;&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
@@ -5245,7 +5245,7 @@
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mo&gt;&#x2212;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
@@ -5296,7 +5296,7 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;det&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;det&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
@@ -5431,7 +5431,7 @@
        <pre>
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/msup&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
@@ -5441,7 +5441,7 @@
          &lt;mrow&gt;
            &lt;mrow&gt;
              &lt;mi&gt;f&lt;/mi&gt;
-             &lt;mo&gt;&amp;#x2218;&lt;/mo&gt;
+             &lt;mo&gt;&#x2218;&lt;/mo&gt;
              &lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/msup&gt;
            &lt;/mrow&gt;
            &lt;mo&gt;=&lt;/mo&gt;
@@ -5452,7 +5452,7 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mrow&gt;&lt;mi&gt;domain&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;domain&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
            &lt;mo&gt;=&lt;/mo&gt;
            &lt;mi mathvariant="double-struck"&gt;R&lt;/mi&gt;
          &lt;/mrow&gt;
@@ -5461,7 +5461,7 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mrow&gt;&lt;mi&gt;codomain&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;codomain&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
            &lt;mo&gt;=&lt;/mo&gt;
            &lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;
          &lt;/mrow&gt;
@@ -5470,7 +5470,7 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mrow&gt;&lt;mi&gt;image&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;image&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
            &lt;mo&gt;=&lt;/mo&gt;
            &lt;mrow&gt;&lt;mo&gt;[&lt;/mo&gt;&lt;mn&gt;-1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;]&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
@@ -5478,7 +5478,7 @@
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;ln&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;ln&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
@@ -5618,17 +5618,17 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;sin&lt;/mi&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;
              &lt;mo&gt;(&lt;/mo&gt;
-             &lt;mrow&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mrow&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
              &lt;mo&gt;+&lt;/mo&gt;
              &lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
              &lt;mo&gt;)&lt;/mo&gt;
@@ -5640,33 +5640,33 @@
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;arcsin&lt;/mi&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mi&gt;x&lt;/mi&gt;
          &lt;/mrow&gt;
          &lt;mtext&gt;&amp;nbsp;&amp;nbsp;or&amp;nbsp;&amp;nbsp;&lt;/mtext&gt;
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mi&gt;x&lt;/mi&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;sinh&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;sinh&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;arcsinh&lt;/mi&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mi&gt;x&lt;/mi&gt;
          &lt;/mrow&gt;
          &lt;mtext&gt;&amp;nbsp;&amp;nbsp;or&amp;nbsp;&amp;nbsp;&lt;/mtext&gt;
          &lt;mrow&gt;
            &lt;msup&gt;&lt;mi&gt;sinh&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mi&gt;x&lt;/mi&gt;
          &lt;/mrow&gt;
        </pre>
@@ -5764,39 +5764,39 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;div&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
          &lt;mtext&gt;&#160;or&#160;&lt;/mtext&gt;
-         &lt;mrow&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#x22c5;&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mo&gt;&#x2207;&lt;/mo&gt;&lt;mo&gt;&#x22c5;&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mi&gt;grad&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+           &lt;mi&gt;grad&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
          &lt;mtext&gt;&#160;or&#160;&lt;/mtext&gt;
          &lt;mrow&gt;
-           &lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;curl&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;curl&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
          &lt;mtext&gt;&#160;or&#160;&lt;/mtext&gt;
-         &lt;mrow&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mo&gt;&amp;#xd7;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;       </pre>
+         &lt;mrow&gt;&lt;mo&gt;&#x2207;&lt;/mo&gt;&lt;mo&gt;&#xd7;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;       </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;msup&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;msup&gt;&lt;mo&gt;&#x2207;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
@@ -5861,22 +5861,22 @@
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;div&lt;/mi&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mo&gt;(&lt;/mo&gt;
            &lt;mtable&gt;
              &lt;mtr&gt;&lt;mtd&gt;
                &lt;mi&gt;x&lt;/mi&gt;
-               &lt;mo&gt;&amp;#x21a6;&lt;/mo&gt;
+               &lt;mo&gt;&#x21a6;&lt;/mo&gt;
                &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
              &lt;/mtd&gt;&lt;/mtr&gt;
              &lt;mtr&gt;&lt;mtd&gt;
                &lt;mi&gt;y&lt;/mi&gt;
-               &lt;mo&gt;&amp;#x21a6;&lt;/mo&gt;
+               &lt;mo&gt;&#x21a6;&lt;/mo&gt;
                &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/mrow&gt;
              &lt;/mtd&gt;&lt;/mtr&gt;
              &lt;mtr&gt;&lt;mtd&gt;
                &lt;mi&gt;z&lt;/mi&gt;
-               &lt;mo&gt;&amp;#x21a6;&lt;/mo&gt;
+               &lt;mo&gt;&#x21a6;&lt;/mo&gt;
                &lt;mrow&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
              &lt;/mtd&gt;&lt;/mtr&gt;
            &lt;/mtable&gt;
@@ -5888,13 +5888,13 @@
        <pre>
          &lt;mrow&gt;
            &lt;mi&gt;grad&lt;/mi&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;
              &lt;mo&gt;(&lt;/mo&gt;
              &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-             &lt;mo&gt;&amp;#x21a6;&lt;/mo&gt;
+             &lt;mo&gt;&#x21a6;&lt;/mo&gt;
              &lt;mrow&gt;
-               &lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;
+               &lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;
              &lt;/mrow&gt;
              &lt;mo&gt;)&lt;/mo&gt;
            &lt;/mrow&gt;
@@ -5904,15 +5904,15 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;msup&gt;&lt;mo&gt;&amp;#x2207;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
-           &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+           &lt;msup&gt;&lt;mo&gt;&#x2207;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+           &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;
              &lt;mo&gt;(&lt;/mo&gt;
              &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-             &lt;mo&gt;&amp;#x21a6;&lt;/mo&gt;
+             &lt;mo&gt;&#x21a6;&lt;/mo&gt;
              &lt;mrow&gt;
                &lt;mi&gt;f&lt;/mi&gt;
-               &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+               &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
                &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
              &lt;mo&gt;)&lt;/mo&gt;
@@ -5990,7 +5990,7 @@
        <pre>
          &lt;msub&gt;
            &lt;mrow&gt;
-             &lt;mo&gt;&amp;#x27E8;&lt;/mo&gt;
+             &lt;mo&gt;&#x27E8;&lt;/mo&gt;
              &lt;msup&gt;
                &lt;mrow&gt;
                  &lt;mo&gt;(&lt;/mo&gt;
@@ -6003,7 +6003,7 @@
                &lt;/mrow&gt;
                &lt;mn&gt;3&lt;/mn&gt;
              &lt;/msup&gt;
-             &lt;mo&gt;&amp;#x27E9;&lt;/mo&gt;
+             &lt;mo&gt;&#x27E9;&lt;/mo&gt;
            &lt;/mrow&gt;
            &lt;mi&gt;mean&lt;/mi&gt;
          &lt;/msub&gt;
@@ -6013,9 +6013,9 @@
        <pre>
          &lt;msub&gt;
            &lt;mrow&gt;
-             &lt;mo&gt;&amp;#x27E8;&lt;/mo&gt;
+             &lt;mo&gt;&#x27E8;&lt;/mo&gt;
              &lt;msup&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
-             &lt;mo&gt;&amp;#x27E9;&lt;/mo&gt;
+             &lt;mo&gt;&#x27E9;&lt;/mo&gt;
            &lt;/mrow&gt;
            &lt;mi&gt;p&lt;/mi&gt;
          &lt;/msub&gt;
@@ -6069,12 +6069,12 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
 
@@ -6125,13 +6125,13 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;&amp;#x222b;&lt;/mi&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;&#x222b;&lt;/mi&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;msubsup&gt;&lt;mi&gt;&amp;#x222b;&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/msubsup&gt;&lt;mi&gt;cos&lt;/mi&gt;
+           &lt;msubsup&gt;&lt;mi&gt;&#x222b;&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/msubsup&gt;&lt;mi&gt;cos&lt;/mi&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -6170,7 +6170,7 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;msubsup&gt;&lt;mi&gt;&amp;#x222b;&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msubsup&gt;
+           &lt;msubsup&gt;&lt;mi&gt;&#x222b;&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msubsup&gt;
            &lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
            &lt;mi&gt;d&lt;/mi&gt;
            &lt;mi&gt;x&lt;/mi&gt;
@@ -6221,18 +6221,18 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;/mo&gt;&lt;/msup&gt;
+         &lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&#x2032;&lt;/mo&gt;&lt;/msup&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
            &lt;mfrac&gt;
-             &lt;mrow&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+             &lt;mrow&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;/mrow&gt;
              &lt;mrow&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
            &lt;/mfrac&gt;
            &lt;mo&gt;=&lt;/mo&gt;
-           &lt;mrow&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -6336,16 +6336,16 @@
        <pre>
          &lt;mfrac&gt;
            &lt;mrow&gt;
-             &lt;msup&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
+             &lt;msup&gt;&lt;mo&gt;&#x2202;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
              &lt;mrow&gt;
                &lt;mi&gt;f&lt;/mi&gt;
-               &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+               &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
                &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
            &lt;/mrow&gt;
            &lt;mrow&gt;
-             &lt;mrow&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;
-             &lt;mrow&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mrow&gt;&lt;mo&gt;&#x2202;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;
+             &lt;mrow&gt;&lt;mo&gt;&#x2202;&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/mrow&gt;
            &lt;/mrow&gt;
          &lt;/mfrac&gt;
        </pre>
@@ -6399,16 +6399,16 @@
        <pre>
          &lt;mfrac&gt;
            &lt;mrow&gt;
-             &lt;msup&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+             &lt;msup&gt;&lt;mo&gt;&#x2202;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
              &lt;mrow&gt;
                &lt;mi&gt;f&lt;/mi&gt;
-               &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+               &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
                &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
            &lt;/mrow&gt;
            &lt;mrow&gt;
-             &lt;mrow&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
-             &lt;mrow&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mrow&gt;&lt;mo&gt;&#x2202;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mrow&gt;&lt;mo&gt;&#x2202;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
            &lt;/mrow&gt;
          &lt;/mfrac&gt;
        </pre>
@@ -6417,17 +6417,17 @@
        <pre>
          &lt;mfrac&gt;
            &lt;mrow&gt;
-             &lt;msup&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/msup&gt;
+             &lt;msup&gt;&lt;mo&gt;&#x2202;&lt;/mo&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/msup&gt;
              &lt;mrow&gt;
                &lt;mi&gt;f&lt;/mi&gt;
-               &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+               &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
                &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
            &lt;/mrow&gt;
            &lt;mrow&gt;
-             &lt;mrow&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/msup&gt;
+             &lt;mrow&gt;&lt;mo&gt;&#x2202;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/msup&gt;
              &lt;/mrow&gt;
-             &lt;mrow&gt;&lt;mo&gt;&amp;#x2202;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;/mrow&gt;
+             &lt;mrow&gt;&lt;mo&gt;&#x2202;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;/mrow&gt;
            &lt;/mrow&gt;
          &lt;/mfrac&gt;
        </pre>
@@ -6539,7 +6539,7 @@ infinity (&#x221e;).</p>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mrow&gt;&lt;mi&gt;ln&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;ln&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;/mrow&gt;
            &lt;mo&gt;=&lt;/mo&gt;
            &lt;mn&gt;1&lt;/mn&gt;
          &lt;/mrow&gt;
@@ -6562,7 +6562,7 @@ infinity (&#x221e;).</p>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mrow&gt;&lt;mi&gt;true&lt;/mi&gt;&lt;mo&gt;&amp;#x2228;&lt;/mo&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;true&lt;/mi&gt;&lt;mo&gt;&#x2228;&lt;/mo&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/mrow&gt;
            &lt;mo&gt;=&lt;/mo&gt;
            &lt;mi&gt;true&lt;/mi&gt;
          &lt;/mrow&gt;
@@ -6571,7 +6571,7 @@ infinity (&#x221e;).</p>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mrow&gt;&lt;mi&gt;false&lt;/mi&gt;&lt;mo&gt;&amp;#x2227;&lt;/mo&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;false&lt;/mi&gt;&lt;mo&gt;&#x2227;&lt;/mo&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/mrow&gt;
            &lt;mo&gt;=&lt;/mo&gt;
            &lt;mi&gt;false&lt;/mi&gt;
          &lt;/mrow&gt;
@@ -6580,8 +6580,8 @@ infinity (&#x221e;).</p>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mi&gt;&amp;#x3c0;&lt;/mi&gt;
-           &lt;mo&gt;&amp;#x2243;&lt;/mo&gt;
+           &lt;mi&gt;&#x3c0;&lt;/mi&gt;
+           &lt;mo&gt;&#x2243;&lt;/mo&gt;
            &lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
@@ -6589,13 +6589,13 @@ infinity (&#x221e;).</p>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mi&gt;&amp;#x3b3;&lt;/mi&gt;&lt;mo&gt;&amp;#x2243;&lt;/mo&gt;&lt;mn&gt;0.5772156649&lt;/mn&gt;
+           &lt;mi&gt;&#x3b3;&lt;/mi&gt;&lt;mo&gt;&#x2243;&lt;/mo&gt;&lt;mn&gt;0.5772156649&lt;/mn&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mi&gt;&amp;#x221e;&lt;/mi&gt;
+         &lt;mi&gt;&#x221e;&lt;/mi&gt;
        </pre>
       </div>
 
@@ -6686,13 +6686,13 @@ infinity (&#x221e;).</p>
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mn&gt;42&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mn&gt;42&lt;/mn&gt;&lt;mo&gt;&#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mn&gt;44.997&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;R&lt;/mi&gt;
+           &lt;mn&gt;44.997&lt;/mn&gt;&lt;mo&gt;&#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;R&lt;/mi&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -6700,7 +6700,7 @@ infinity (&#x221e;).</p>
        <pre>
          &lt;mrow&gt;
            &lt;mrow&gt;&lt;mn&gt;22&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;
-           &lt;mo&gt;&amp;#x2208;&lt;/mo&gt;
+           &lt;mo&gt;&#x2208;&lt;/mo&gt;
            &lt;mi mathvariant="double-struck"&gt;Q&lt;/mi&gt;
          &lt;/mrow&gt;
        </pre>
@@ -6708,28 +6708,28 @@ infinity (&#x221e;).</p>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mn&gt;1729&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;N&lt;/mi&gt;
+           &lt;mn&gt;1729&lt;/mn&gt;&lt;mo&gt;&#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;N&lt;/mi&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mrow&gt;&lt;mn&gt;17&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;29&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;/mo&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;
-           &lt;mo&gt;&amp;#x2208;&lt;/mo&gt;
+           &lt;mrow&gt;&lt;mn&gt;17&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;29&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;
+           &lt;mo&gt;&#x2208;&lt;/mo&gt;
            &lt;mi mathvariant="double-struck"&gt;C&lt;/mi&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mn&gt;17&lt;/mn&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;P&lt;/mi&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mn&gt;17&lt;/mn&gt;&lt;mo&gt;&#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;P&lt;/mi&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;mo&gt;&amp;#x2260;&lt;/mo&gt;&lt;mi&gt;&amp;#x2205;&lt;/mi&gt;
+           &lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;mo&gt;&#x2260;&lt;/mo&gt;&lt;mi&gt;&#x2205;&lt;/mi&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -6784,13 +6784,13 @@ infinity (&#x221e;).</p>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mo&gt;&amp;#x2200;&lt;/mo&gt;
+           &lt;mo&gt;&#x2200;&lt;/mo&gt;
            &lt;mi&gt;x&lt;/mi&gt;
            &lt;mo&gt;.&lt;/mo&gt;
            &lt;mrow&gt;
             &lt;mo&gt;(&lt;/mo&gt;
              &lt;mrow&gt;
-               &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+               &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&#x2212;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
                &lt;mo&gt;=&lt;/mo&gt;
                &lt;mn&gt;0&lt;/mn&gt;
              &lt;/mrow&gt;
@@ -6821,13 +6821,13 @@ infinity (&#x221e;).</p>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mo&gt;&amp;#x2203;&lt;/mo&gt;
+           &lt;mo&gt;&#x2203;&lt;/mo&gt;
            &lt;mi&gt;x&lt;/mi&gt;
            &lt;mo&gt;.&lt;/mo&gt;
            &lt;mrow&gt;
             &lt;mo&gt;(&lt;/mo&gt;
              &lt;mrow&gt;
-               &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+               &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
                &lt;mo&gt;=&lt;/mo&gt;
                &lt;mn&gt;0&lt;/mn&gt;
              &lt;/mrow&gt;
@@ -6883,15 +6883,15 @@ infinity (&#x221e;).</p>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mo&gt;&amp;#x2203;&lt;/mo&gt;
+           &lt;mo&gt;&#x2203;&lt;/mo&gt;
            &lt;mi&gt;x&lt;/mi&gt;
            &lt;mo&gt;.&lt;/mo&gt;
            &lt;mrow&gt;
             &lt;mo&gt;(&lt;/mo&gt;
-             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;/mrow&gt;
-             &lt;mo&gt;&amp;#x2227;&lt;/mo&gt;
+             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&#x2208;&lt;/mo&gt;&lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;/mrow&gt;
+             &lt;mo&gt;&#x2227;&lt;/mo&gt;
              &lt;mrow&gt;
-               &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
+               &lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;
                &lt;mo&gt;=&lt;/mo&gt;
                &lt;mn&gt;0&lt;/mn&gt;
              &lt;/mrow&gt;
@@ -6985,14 +6985,14 @@ infinity (&#x221e;).</p>
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mi&gt;&amp;#x3bb;&lt;/mi&gt;
+           &lt;mi&gt;&#x3bb;&lt;/mi&gt;
            &lt;mi&gt;x&lt;/mi&gt;
            &lt;mo&gt;.&lt;/mo&gt;
            &lt;mrow&gt;
             &lt;mo&gt;(&lt;/mo&gt;
              &lt;mrow&gt;
                &lt;mi&gt;sin&lt;/mi&gt;
-               &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+               &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
                &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
              &lt;/mrow&gt;
              &lt;mo&gt;)&lt;/mo&gt;
@@ -7001,10 +7001,10 @@ infinity (&#x221e;).</p>
          &lt;mtext&gt;&amp;nbsp;or&amp;nbsp;&lt;/mtext&gt;
          &lt;mrow&gt;
            &lt;mi&gt;x&lt;/mi&gt;
-           &lt;mo&gt;&amp;#x21a6;&lt;/mo&gt;
+           &lt;mo&gt;&#x21a6;&lt;/mo&gt;
            &lt;mrow&gt;
              &lt;mi&gt;sin&lt;/mi&gt;
-             &lt;mo&gt;&amp;#x2061;&lt;/mo&gt;
+             &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
              &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
            &lt;/mrow&gt;
          &lt;/mrow&gt;
@@ -7167,9 +7167,9 @@ infinity (&#x221e;).</p>
          &lt;mrow&gt;
            &lt;munder&gt;
              &lt;mi&gt;lim&lt;/mi&gt;
-             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2192;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
+             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&#x2192;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
            &lt;/munder&gt;
-           &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -7178,9 +7178,9 @@ infinity (&#x221e;).</p>
          &lt;mrow&gt;
            &lt;munder&gt;
              &lt;mi&gt;lim&lt;/mi&gt;
-             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2192;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
+             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&#x2192;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;
            &lt;/munder&gt;
-           &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -7189,9 +7189,9 @@ infinity (&#x221e;).</p>
          &lt;mrow&gt;
            &lt;munder&gt;
              &lt;mi&gt;lim&lt;/mi&gt;
-             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2192;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;/msup&gt;&lt;/mrow&gt;
+             &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&#x2192;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;/msup&gt;&lt;/mrow&gt;
            &lt;/munder&gt;
-           &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -7275,7 +7275,7 @@ infinity (&#x221e;).</p>
            &lt;mo&gt;{&lt;/mo&gt;
            &lt;mtable&gt;
              &lt;mtr&gt;
-               &lt;mtd&gt;&lt;mrow&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;/mtd&gt;
+               &lt;mtd&gt;&lt;mrow&gt;&lt;mo&gt;&#x2212;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;/mtd&gt;
                &lt;mtd columnalign="left"&gt;&lt;mtext&gt;&amp;#xa0; if &amp;#xa0;&lt;/mtext&gt;&lt;/mtd&gt;
                &lt;mtd&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;/mtd&gt;
              &lt;/mtr&gt;
