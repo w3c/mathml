@@ -708,7 +708,7 @@
      <div class="example mathml mml4p">
       <pre>
       &lt;mrow&gt;
-       &lt;mrow&gt; &lt;mi&gt;f&lt;/mi&gt; &lt;mo&gt;&amp;ApplyFunction;&lt;/mo&gt; &lt;mo&gt;(&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;)&lt;/mo&gt; &lt;/mrow&gt;
+       &lt;mrow&gt; &lt;mi&gt;f&lt;/mi&gt; &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt; &lt;mo&gt;(&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;)&lt;/mo&gt; &lt;/mrow&gt;
        &lt;mo id='eq1-equals'&gt;=&lt;/mo&gt;
        &lt;mrow&gt;
         &lt;msup&gt;
@@ -720,12 +720,12 @@
         &lt;mrow&gt;
          &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;/msup&gt;
          &lt;mo id='eq1-plus'&gt;+&lt;/mo&gt;
-         &lt;mrow&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;3&lt;/mn&gt; &lt;/msup&gt; &lt;/mrow&gt;
+         &lt;mrow&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt; &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;3&lt;/mn&gt; &lt;/msup&gt; &lt;/mrow&gt;
          &lt;mo&gt;+&lt;/mo&gt;
-         &lt;mrow&gt; &lt;mn&gt;6&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;2&lt;/mn&gt; &lt;/msup&gt; &lt;/mrow&gt;
+         &lt;mrow&gt; &lt;mn&gt;6&lt;/mn&gt; &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt; &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;2&lt;/mn&gt; &lt;/msup&gt; &lt;/mrow&gt;
          &lt;mo linebreak='newline' linebreakstyle='before'
 	            indentalignlast='id' indenttarget='eq1-plus'&gt;+&lt;/mo&gt;
-         &lt;mrow&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;/mrow&gt;
+         &lt;mrow&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;/mrow&gt;
          &lt;mo&gt;+&lt;/mo&gt;
          &lt;mn&gt;1&lt;/mn&gt;
         &lt;/mrow&gt;
@@ -1718,7 +1718,7 @@
      <pre>
        &lt;mrow&gt;
          &lt;mi&gt; sin &lt;/mi&gt;
-         &lt;mo&gt; &amp;ApplyFunction; &lt;/mo&gt;
+         &lt;mo&gt; &amp;#x2061;&lt;!--ApplyFunction--&gt; &lt;/mo&gt;
          &lt;mi&gt; x &lt;/mi&gt;
        &lt;/mrow&gt;
      </pre>
@@ -1733,7 +1733,7 @@
        &lt;mrow&gt;
          &lt;mn&gt; 1 &lt;/mn&gt;
          &lt;mo&gt; + &lt;/mo&gt;
-         &lt;mi&gt; &amp;hellip; &lt;/mi&gt;
+         &lt;mi&gt; &#x2026; &lt;/mi&gt;
          &lt;mo&gt; + &lt;/mo&gt;
          &lt;mi&gt; n &lt;/mi&gt;
        &lt;/mrow&gt;
@@ -1750,9 +1750,9 @@
  
     <div class="example mathml mmlcore">
      <pre>
-       &lt;mi&gt; &amp;pi; &lt;/mi&gt;
-       &lt;mi&gt; &amp;ImaginaryI; &lt;/mi&gt;
-       &lt;mi&gt; &amp;ExponentialE; &lt;/mi&gt;
+       &lt;mi&gt; &#x03C0; &lt;/mi&gt;
+       &lt;mi&gt; &#x2148; &lt;/mi&gt;
+       &lt;mi&gt; &#x2147; &lt;/mi&gt;
      </pre>
     </div>
  
@@ -1854,8 +1854,8 @@
          &lt;mo&gt; + &lt;/mo&gt;
          &lt;mrow&gt;
            &lt;mn&gt; 3 &lt;/mn&gt;
-           &lt;mo&gt; &amp;InvisibleTimes; &lt;/mo&gt;
-           &lt;mi&gt; &amp;ImaginaryI; &lt;/mi&gt;
+           &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
+           &lt;mi&gt; &#x2148; &lt;/mi&gt;
          &lt;/mrow&gt;
        &lt;/mrow&gt;
      </pre>
@@ -1870,11 +1870,11 @@
     </div>
  
     <div class="example mathml mmlcore">
-     <pre>&lt;mi&gt; &amp;pi; &lt;/mi&gt;</pre>
+     <pre>&lt;mi&gt; &#x03C0; &lt;/mi&gt;</pre>
     </div>
  
     <div class="example mathml mmlcore">
-     <pre>&lt;mi&gt; &amp;ExponentialE; &lt;/mi&gt;</pre>
+     <pre>&lt;mi&gt; &#x2147; &lt;/mi&gt;</pre>
     </div>
  
    </section>
@@ -1911,12 +1911,12 @@
     Renderers without access to complete fonts for the MathML character
     set may choose  to render an <code class="element">mo</code> element as
     <span>not</span> precisely the characters in its content in some cases. For example,
-    <code>&lt;mo&gt; &amp;le; &lt;/mo&gt;</code> might be rendered as
+    <code>&lt;mo&gt; &#x2264; &lt;/mo&gt;</code> might be rendered as
     <code>&lt;=</code> to a terminal.  However, as a general rule,
     renderers should attempt to render the content of an
     <code class="element">mo</code> element as literally as possible.
     That is,
-    <code>&lt;mo&gt; &amp;le; &lt;/mo&gt;</code> and
+    <code>&lt;mo&gt; &#x2264; &lt;/mo&gt;</code> and
     <code>&lt;mo&gt; &amp;lt;= &lt;/mo&gt;</code> should render differently.
     The first one should render as a single character
     representing a less-than-or-equal-to sign, and the second one as the
@@ -2283,7 +2283,7 @@
        <tr>
         <td colspan="3" class="attdesc">
    Specifies the character used to make an &amp;InvisibleTimes; operator visible at a linebreak.
-   For example, <code class="attribute">linebreakmultchar</code>="&amp;#xB7;"  would make the
+   For example, <code class="attribute">linebreakmultchar="&#xB7;"</code>  would make the
    multiplication visible as a center dot.
         </td>
        </tr>
@@ -2527,7 +2527,7 @@
     </div>
  
     <div class="example mathml mmlcore">
-     <pre>&lt;mo&gt; &amp;le; &lt;/mo&gt; </pre>
+     <pre>&lt;mo&gt; &#x2264; &lt;/mo&gt; </pre>
     </div>
  
     <div class="example mathml mmlcore">
@@ -2539,7 +2539,7 @@
     </div>
  
     <div class="example mathml mmlcore">
-     <pre>&lt;mo&gt; &amp;sum; &lt;/mo&gt; </pre>
+     <pre>&lt;mo&gt; &#x2211; &lt;/mo&gt; </pre>
     </div>
  
     <div class="example mathml mmlcore">
@@ -2551,7 +2551,7 @@
     </div>
  
     <div class="example mathml mmlcore">
-     <pre>&lt;mo&gt; &amp;InvisibleTimes; &lt;/mo&gt; </pre>
+     <pre>&lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt; </pre>
     </div>
  
     <div class="example mathml mmlcore">
@@ -2609,7 +2609,7 @@
      <pre>
        &lt;mrow&gt;
          &lt;mi&gt; f &lt;/mi&gt;
-         &lt;mo&gt; &amp;ApplyFunction; &lt;/mo&gt;
+         &lt;mo&gt; &amp;#x2061;&lt;!--ApplyFunction--&gt; &lt;/mo&gt;
          &lt;mrow&gt;
            &lt;mo&gt; ( &lt;/mo&gt;
            &lt;mrow&gt;
@@ -2686,7 +2686,7 @@
      <pre>
        &lt;mrow&gt;
          &lt;mi&gt; f &lt;/mi&gt;
-         &lt;mo&gt; &amp;ApplyFunction; &lt;/mo&gt;
+         &lt;mo&gt; &amp;#x2061;&lt;!--ApplyFunction--&gt; &lt;/mo&gt;
          &lt;mrow&gt;
            &lt;mo&gt; ( &lt;/mo&gt;
            &lt;mi&gt; x &lt;/mi&gt;
@@ -2700,7 +2700,7 @@
      <pre>
        &lt;mrow&gt;
          &lt;mi&gt; sin &lt;/mi&gt;
-         &lt;mo&gt; &amp;ApplyFunction; &lt;/mo&gt;
+         &lt;mo&gt; &amp;#x2061;&lt;!--ApplyFunction--&gt; &lt;/mo&gt;
          &lt;mi&gt; x &lt;/mi&gt;
        &lt;/mrow&gt;
      </pre>
@@ -2710,7 +2710,7 @@
      <pre>
        &lt;mrow&gt;
          &lt;mi&gt; x &lt;/mi&gt;
-         &lt;mo&gt; &amp;InvisibleTimes; &lt;/mo&gt;
+         &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
          &lt;mi&gt; y &lt;/mi&gt;
        &lt;/mrow&gt;
      </pre>
@@ -2722,7 +2722,7 @@
          &lt;mi&gt; m &lt;/mi&gt;
          &lt;mrow&gt;
            &lt;mn&gt; 1 &lt;/mn&gt;
-           &lt;mo&gt; &amp;InvisibleComma; &lt;/mo&gt;
+           &lt;mo&gt; &amp;#x2063;&lt;!--InvisibleComma--&gt; &lt;/mo&gt;
            &lt;mn&gt; 2 &lt;/mn&gt;
          &lt;/mrow&gt;
        &lt;/msub&gt;
@@ -2997,7 +2997,7 @@
        &lt;mrow&gt;
          &lt;munder&gt;
            &lt;mo&gt; ( &lt;/mo&gt;
-           &lt;mo&gt; &amp;UnderBar; &lt;/mo&gt;
+           &lt;mo&gt; &#x005F; &lt;/mo&gt;
          &lt;/munder&gt;
          &lt;mfrac&gt;
            &lt;mi&gt; a &lt;/mi&gt;
@@ -3005,7 +3005,7 @@
          &lt;/mfrac&gt;
          &lt;mover&gt;
            &lt;mo&gt; ) &lt;/mo&gt;
-           &lt;mo&gt; &amp;OverBar; &lt;/mo&gt;
+           &lt;mo&gt; &#x203E; &lt;/mo&gt;
          &lt;/mover&gt;
        &lt;/mrow&gt;
      </pre>
@@ -3191,7 +3191,7 @@
     &lt;mrow&gt;
       &lt;mi&gt; x &lt;/mi&gt;
       &lt;munder&gt;
-        &lt;mo&gt; &amp;RightArrow; &lt;/mo&gt;
+        &lt;mo&gt; &#x2192; &lt;/mo&gt;
         &lt;mtext&gt; maps to &lt;/mtext&gt;
       &lt;/munder&gt;
       &lt;mi&gt; y &lt;/mi&gt;
@@ -3277,8 +3277,8 @@
   <pre>
     &lt;mrow&gt;
       &lt;mtext&gt; Theorem 1: &lt;/mtext&gt;
-      &lt;mtext&gt; &amp;ThinSpace; &lt;/mtext&gt;
-      &lt;mtext&gt; &amp;ThickSpace;&amp;ThickSpace; &lt;/mtext&gt;
+      &lt;mtext&gt; &amp;#x2009;&lt;!--ThinSpace--&gt; &lt;/mtext&gt;
+      &lt;mtext&gt; &amp;#x205F;&lt;!--ThickSpace--&gt;&amp;#x205F;&lt;!--ThickSpace--&gt; &lt;/mtext&gt;
       &lt;mtext&gt; /* a comment */ &lt;/mtext&gt;
     &lt;/mrow&gt;
  </pre>
@@ -3809,7 +3809,7 @@
     &lt;mrow&gt;
       &lt;mrow&gt;
         &lt;mn&gt; 2 &lt;/mn&gt;
-        &lt;mo&gt; &amp;InvisibleTimes; &lt;/mo&gt;
+        &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
         &lt;mi&gt; x &lt;/mi&gt;
       &lt;/mrow&gt;
       &lt;mo&gt; + &lt;/mo&gt;
@@ -5409,7 +5409,7 @@
     <pre>
       &lt;mrow&gt;
         &lt;mi&gt; f &lt;/mi&gt;
-        &lt;mo&gt; &amp;ApplyFunction; &lt;/mo&gt;
+        &lt;mo&gt; &amp;#x2061;&lt;!--ApplyFunction--&gt; &lt;/mo&gt;
         &lt;mfenced&gt;
           &lt;mi&gt; x &lt;/mi&gt;
           &lt;mi&gt; y &lt;/mi&gt;
@@ -5634,7 +5634,7 @@
           &lt;menclose notation='actuarial'&gt;
             &lt;mi&gt;n&lt;/mi&gt;
           &lt;/menclose&gt;
-          &lt;mo&gt;&amp;ic;&lt;/mo&gt;
+          &lt;mo&gt;&amp;#x2063;&lt;!--InvisibleComma--&gt;&lt;/mo&gt;
           &lt;mi&gt;i&lt;/mi&gt;
         &lt;/mrow&gt;
       &lt;/msub&gt;
@@ -5655,7 +5655,7 @@
           &lt;mrow&gt;
             &lt;mo&gt;&amp;#x2212;&lt;/mo&gt;
             &lt;mfrac&gt;
-              &lt;mi&gt;&amp;pi;&lt;/mi&gt;
+              &lt;mi&gt;&#x03C0;&lt;/mi&gt;
               &lt;mn&gt;2&lt;/mn&gt;
             &lt;/mfrac&gt;
           &lt;/mrow&gt;
@@ -5957,18 +5957,18 @@
       <pre>
         &lt;mrow&gt;
           &lt;msubsup&gt;
-            &lt;mo&gt; &amp;int; &lt;/mo&gt;
+            &lt;mo&gt; &#x222B; &lt;/mo&gt;
             &lt;mn&gt; 0 &lt;/mn&gt;
             &lt;mn&gt; 1 &lt;/mn&gt;
           &lt;/msubsup&gt;
           &lt;mrow&gt;
             &lt;msup&gt;
-              &lt;mi&gt; &amp;ExponentialE; &lt;/mi&gt;
+              &lt;mi&gt; &#x2147; &lt;/mi&gt;
               &lt;mi&gt; x &lt;/mi&gt;
             &lt;/msup&gt;
-            &lt;mo&gt; &amp;InvisibleTimes; &lt;/mo&gt;
+            &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
             &lt;mrow&gt;
-              &lt;mo&gt; &amp;DifferentialD; &lt;/mo&gt;
+              &lt;mo&gt; &#x2146; &lt;/mo&gt;
               &lt;mi&gt; x &lt;/mi&gt;
             &lt;/mrow&gt;
           &lt;/mrow&gt;
@@ -6092,9 +6092,9 @@
              &lt;mo&gt; + &lt;/mo&gt;
              &lt;mi&gt; z &lt;/mi&gt;
            &lt;/mrow&gt;
-           &lt;mo&gt; &amp;UnderBrace; &lt;/mo&gt;
+           &lt;mo&gt; &#x23DF; &lt;/mo&gt;
          &lt;/munder&gt;
-         &lt;mtext&gt;&amp;nbsp;versus&amp;nbsp;&lt;/mtext&gt;
+         &lt;mtext&gt;&amp;#x00A0;&lt;!--nbsp--&gt;versus&amp;#x00A0;&lt;!--nbsp--&gt;&lt;/mtext&gt;
          &lt;munder accentunder="false"&gt;
            &lt;mrow&gt;
              &lt;mi&gt; x &lt;/mi&gt;
@@ -6103,7 +6103,7 @@
              &lt;mo&gt; + &lt;/mo&gt;
              &lt;mi&gt; z &lt;/mi&gt;
            &lt;/mrow&gt;
-           &lt;mo&gt; &amp;UnderBrace; &lt;/mo&gt;
+           &lt;mo&gt; &#x23DF; &lt;/mo&gt;
          &lt;/munder&gt;
        &lt;/mrow&gt;
      </pre>
@@ -6219,12 +6219,12 @@
        &lt;mrow&gt;
          &lt;mover accent="true"&gt;
            &lt;mi&gt; x &lt;/mi&gt;
-           &lt;mo&gt; &amp;Hat; &lt;/mo&gt;
+           &lt;mo&gt; &#x005E; &lt;/mo&gt;
          &lt;/mover&gt;
-         &lt;mtext&gt;&amp;nbsp;versus&amp;nbsp;&lt;/mtext&gt;
+         &lt;mtext&gt;&amp;#x00A0;&lt;!--nbsp--&gt;versus&amp;#x00A0;&lt;!--nbsp--&gt;&lt;/mtext&gt;
          &lt;mover accent="false"&gt;
            &lt;mi&gt; x &lt;/mi&gt;
-           &lt;mo&gt; &amp;Hat; &lt;/mo&gt;
+           &lt;mo&gt; &#x005E; &lt;/mo&gt;
          &lt;/mover&gt;
        &lt;/mrow&gt;
      </pre>
@@ -6241,9 +6241,9 @@
              &lt;mo&gt; + &lt;/mo&gt;
              &lt;mi&gt; z &lt;/mi&gt;
            &lt;/mrow&gt;
-           &lt;mo&gt; &amp;OverBrace; &lt;/mo&gt;
+           &lt;mo&gt; &#x23DE; &lt;/mo&gt;
          &lt;/mover&gt;
-         &lt;mtext&gt;&amp;nbsp;versus&amp;nbsp;&lt;/mtext&gt;
+         &lt;mtext&gt;&amp;#x00A0;&lt;!--nbsp--&gt;versus&amp;#x00A0;&lt;!--nbsp--&gt;&lt;/mtext&gt;
          &lt;mover accent="false"&gt;
            &lt;mrow&gt;
              &lt;mi&gt; x &lt;/mi&gt;
@@ -6252,7 +6252,7 @@
              &lt;mo&gt; + &lt;/mo&gt;
              &lt;mi&gt; z &lt;/mi&gt;
            &lt;/mrow&gt;
-           &lt;mo&gt; &amp;OverBrace; &lt;/mo&gt;
+           &lt;mo&gt; &#x23DE; &lt;/mo&gt;
          &lt;/mover&gt;
        &lt;/mrow&gt;
      </pre>
@@ -6500,7 +6500,7 @@
            &lt;mn&gt; 0 &lt;/mn&gt;
            &lt;none/&gt;
          &lt;/mmultiscripts&gt;
-         &lt;mo&gt; &amp;ApplyFunction; &lt;/mo&gt;
+         &lt;mo&gt; &amp;#x2061;&lt;!--ApplyFunction--&gt; &lt;/mo&gt;
          &lt;mrow&gt;
            &lt;mo&gt; ( &lt;/mo&gt;
            &lt;mrow&gt;
@@ -7240,7 +7240,7 @@
                &lt;mo&gt;=&lt;/mo&gt;
                &lt;mrow&gt;
                  &lt;mi&gt;m&lt;/mi&gt;
-                 &lt;mo&gt;&amp;it;&lt;/mo&gt;
+                 &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
                  &lt;msup&gt;
                    &lt;mi&gt;c&lt;/mi&gt;
                    &lt;mn&gt;2&lt;/mn&gt;
@@ -8085,7 +8085,7 @@
               &lt;mrow&gt;
                 &lt;maligngroup/&gt;
                 &lt;mn&gt; 8.44 &lt;/mn&gt;
-                &lt;mo&gt; &amp;InvisibleTimes; &lt;/mo&gt;
+                &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
                 &lt;maligngroup/&gt;
                 &lt;mi&gt; x &lt;/mi&gt;
               &lt;/mrow&gt;
@@ -8094,7 +8094,7 @@
               &lt;mrow&gt;
                 &lt;maligngroup/&gt;
                 &lt;mn&gt; 55 &lt;/mn&gt;
-                &lt;mo&gt; &amp;InvisibleTimes; &lt;/mo&gt;
+                &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
                 &lt;maligngroup/&gt;
                 &lt;mi&gt; y &lt;/mi&gt;
               &lt;/mrow&gt;
@@ -8113,7 +8113,7 @@
                 &lt;mrow&gt;
                   &lt;maligngroup/&gt;
                   &lt;mn&gt; 3.1 &lt;/mn&gt;
-                  &lt;mo&gt; &amp;InvisibleTimes; &lt;/mo&gt;
+                  &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
                   &lt;maligngroup/&gt;
                   &lt;mi&gt; x &lt;/mi&gt;
                 &lt;/mrow&gt;
@@ -8122,7 +8122,7 @@
                 &lt;mrow&gt;
                   &lt;maligngroup/&gt;
                   &lt;mn&gt; 0.7 &lt;/mn&gt;
-                  &lt;mo&gt; &amp;InvisibleTimes; &lt;/mo&gt;
+                  &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
                   &lt;maligngroup/&gt;
                   &lt;mi&gt; y &lt;/mi&gt;
                 &lt;/mrow&gt;
