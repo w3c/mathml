@@ -9,10 +9,13 @@ meta = element meta {
  (attribute http-equiv {text} , attribute content {text})
  }
 
-style = element style {text}
+style = element style {
+attribute class {"removeOnSave"}?,
+text}
 
 script = element script {
-attribute class {"remove"}?,
+attribute class {"remove"|"removeOnSave"}?,
+attribute type {"module"}?,
 (attribute src {text} | text)
 }
 
