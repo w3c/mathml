@@ -8465,7 +8465,114 @@
  </ol>
  
  </section>
+ <section>
+  <h5>Attributes</h5>
+            
+  <p><code class="element">mstack</code> elements accept the attributes listed
+  below in addition to those specified in <a href="#presm_presatt"></a>.</p>
+            
+  <table class="attributes data">
+   <thead>
+    <tr>
+     <td>Name</td>
+     <td>values</td>
+     <td>default</td>                     
+     <td>Core</td>
+    </tr>
+   </thead>
+   <tbody>
+
+    <tr>
+     <td rowspan="2" class="attname">align</td>                     
+     <td>("top" | "bottom" | "center" | "baseline" | "axis"), <em>rownumber</em>?</td>                     
+     <td>baseline</td>                     
+     <td><span class="coreno"></span></td>
+    </tr>
+
+    <tr>
+     <td colspan="3" class="attdesc">
+      specifies the vertical alignment of the <code class="element">mstack</code> with respect to its environment.
+      The legal values and their meanings are the same as that for <code class="element">mtable</code>'s
+      <a class="intref" href="#presm_mtable_attrs"><code class="attribute">align</code></a> attribute.
+     </td>
+    </tr>
+
+    <tr>
+     <td rowspan="2" class="attname">stackalign</td>
+     <td>"left" | "center" | "right" | "decimalpoint"</td>
+     <td>decimalpoint</td>
+     <td><span class="coreno"></span></td>
+    </tr>
+
+    <tr>
+     <td colspan="3" class="attdesc">
+      specifies which column is used to horizontally align the rows.
+      For <code class="attributevalue">left</code>, rows are aligned flush on the left;
+      similarly for <code class="attributevalue">right</code>, rows are flush on the right;
+      for <code class="attributevalue">center</code>, the middle column (or to the right of the middle, for an even number of columns)
+      is used for alignment.
+      Rows with non-zero <code class="attribute">position</code>, or affected by a <code class="attribute">shift</code>,
+      are treated as if the
+      requisite number of empty columns were added on the appropriate side;
+      see <a href="#presm_msgroup"></a> and <a href="#presm_msrow"></a>.
+      For <code class="attributevalue">decimalpoint</code>, the column used is the left-most column in each
+      row that contains the decimalpoint character specified
+      using the <code class="attribute">decimalpoint</code> attribute of <code class="element">mstyle</code> (default ".").
+      If there is no decimalpoint character in the row, an implied decimal is assumed on
+      the right of the first number in the row;
+      See <a class="intref" href="#presm_mstyle"><code class="attributevalue">decimalpoint</code></a> for a discussion
+      of <code class="attributevalue">decimalpoint</code>.
+     </td>
+    </tr>
+    
+    <tr>
+     <td rowspan="2" class="attname">charalign</td>
+     <td>"left" | "center" | "right" </td>
+     <td>right</td>
+     <td><span class="coreno"></span></td>
+    </tr>
+    
+    <tr>
+     <td colspan="3" class="attdesc">
+      specifies the horizontal alignment of digits within a column.
+      If the content is larger than the column width, then it overflows the opposite side
+      from the alignment.
+      For example, for <code class="attributevalue">right</code>, the content will overflow on the left side; for center,
+      it overflows on both sides.
+      This excess does not participate in the column width calculation, nor does it participate
+      in the overall width of the <code class="element">mstack</code>.
+      In these cases, authors should take care to avoid collisions between column overflows.
+     </td>
+    </tr>
+    
+    <tr>
+     <td rowspan="2" class="attname">charspacing</td>
+     <td><a class="intref" href="#type_length"><em>length</em></a> | "loose" | "medium" | "tight"</td>
+     <td>medium</td>
+     <td><span class="coreno"></span></td>
+    </tr>
+    
+    <tr>
+     <td colspan="3" class="attdesc">
+      specifies the amount of space to put between each column.
+      Larger spacing might be useful if carries are not placed above or are particularly
+      wide.
+      The keywords
+      <code class="attributevalue">loose</code>, <code class="attributevalue">medium</code>, and <code class="attributevalue">tight</code>
+      automatically adjust spacing to when carries or other entries in a column are wide.
+      The three values allow authors to some flexibility in choosing what the layout looks
+      like
+      without having to figure out what values works well.
+      In all cases, the spacing between columns is a fixed amount and does not vary between
+      different columns.
+     </td>
+    </tr>
+
+   </tbody>
+  </table>
+  
  </section>
+</section>
  
  <section>
  <h4 id="presm_mlongdiv">Long Division <code class="defn starttag">&lt;mlongdiv&gt;</code> <span class="coreno"></span></h4>
