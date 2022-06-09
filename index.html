@@ -40,11 +40,11 @@
         }
         var lastel="";
         ellist2 = ellist2.sort(function(a,b) {
-	    return a.textContent.replace(/[<\/>]/g,'').localeCompare(b.textContent.replace(/[<\/>]/g,'')
+	    return a.textContent.replace(/[\x3c\/>]/g,'').localeCompare(b.textContent.replace(/[\x3c\/>]/g,'')
 		);});
         for(var i=0;i!=ellist2.length;i++){
-            if(ellist2[i].textContent.replace(/[<\/>]/g,'') != lastel){
-                lastel=ellist2[i].textContent.replace(/[<\/>]/,'');
+            if(ellist2[i].textContent.replace(/[\x3c\/>]/g,'') != lastel){
+                lastel=ellist2[i].textContent.replace(/[\x3c\/>]/,'');
                 var dt=document.createElement("dt");
                 var dd=document.createElement("dd");
                 var lastsec=""
