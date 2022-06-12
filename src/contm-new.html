@@ -4236,12 +4236,12 @@
     <section>
      <h5 id="contm_nary_unary_stats">N-ary/Unary Statistical Operators:
      <dfn id="contm_mean"><code class="defn emptytag">&lt;mean/&gt;</code></dfn>,
-     <dfn id="contm_sdev"><code class="defn emptytag">&lt;sdev/&gt;</code></dfn>,
-     <dfn id="contm_variance"><code class="defn emptytag">&lt;variance/&gt;</code></dfn>,
      <dfn id="contm_median"><code class="defn emptytag">&lt;median/&gt;</code></dfn>,
-     <dfn id="contm_mode"><code class="defn emptytag">&lt;mode/&gt;</code></dfn>
+     <dfn id="contm_mode"><code class="defn emptytag">&lt;mode/&gt;</code></dfn>,
+     <dfn id="contm_sdev"><code class="defn emptytag">&lt;sdev/&gt;</code></dfn>,
+     <dfn id="contm_variance"><code class="defn emptytag">&lt;variance/&gt;</code></dfn>
      </h5>
-          <p class="advisement">
+     <p class="advisement">
       <a class="intref" href="#cops_nary_stats">Operator Syntax</a>,
       <a class="intref" href="#parsing_nary-stats.class">Schema Class</a>
      </p>
@@ -4262,6 +4262,13 @@
 
      <p>The <code class="element">mean</code> element represents the function returning arithmetic mean or average of a
      data set or random variable.</p>
+     
+     <p>The <code class="element">median</code> element represents an operator returning the
+     median of its arguments. The median is a number separating the lower
+     half of the sample values from the upper half.</p>
+
+     <p>The <code class="element">mode</code> element is used to denote the mode of its arguments. The mode is
+     the value which occurs with the greatest frequency.</p>
 
      <p>The <code class="element">sdev</code> element is used to denote the standard deviation
      function for a data set or random variable.  Standard deviation is a
@@ -4272,13 +4279,6 @@
      or random variable. Variance is a statistical measure of dispersion,
      averaging the squares of the deviations of possible values from their
      mean.</p>
-     
-     <p>The <code class="element">median</code> element represents an operator returning the
-     median of its arguments. The median is a number separating the lower
-     half of the sample values from the upper half.</p>
-
-     <p>The <code class="element">mode</code> element is used to denote the mode of its arguments. The mode is
-     the value which occurs with the greatest frequency.</p>
 
      <section class="fold">
       <h6 id="nary-stats.ex">Examples</h6>
@@ -4351,7 +4351,11 @@
          &lt;mrow&gt;
            &lt;mo&gt;&#x3c3;&lt;/mo&gt;
            &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
-           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;
+             &lt;mo&gt;(&lt;/mo&gt;
+             &lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;
+             &lt;mo&gt;)&lt;/mo&gt;
+           &lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
@@ -4371,7 +4375,11 @@
              &lt;mn&gt;2&lt;/mn&gt;
            &lt;/msup&gt;
            &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
-           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+           &lt;mrow&gt;
+             &lt;mo&gt;(&lt;/mo&gt;
+             &lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;
+             &lt;mo&gt;)&lt;/mo&gt;
+           &lt;/mrow&gt;
          &lt;/mrow&gt;
        </pre>
       </div>
