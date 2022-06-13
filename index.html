@@ -70,6 +70,8 @@
         }
     }
     function foldable() {
+	let params = new URLSearchParams(document.location.search);
+	let opend = params.get("open");
         var sortlist=document.querySelectorAll("section.fold");
         for(var i=0;i!=sortlist.length;i++){
             var d=document.createElement("details");
@@ -78,6 +80,9 @@
             var a=w.children[1];
             d.id= sortlist[i].id;
             d.className=h.nodeName;
+	    if (opend != null){
+		d.open=true;
+	    }
             sortlist[i].removeChild(w);
             d.innerHTML="\x3csummary id='" + h.id + "' class='" + h.nodeName + "'>"+
             a.outerHTML +" " +
