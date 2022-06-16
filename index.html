@@ -141,6 +141,25 @@
     }
 	
   </script>
+  <script class="removeOnSave">
+    function addCoreTest (doc) {
+	const s =document.createElement("script");
+	s.textContent='\n\
+    window.addEventListener("load",function () {\n\
+    const m = document.createElementNS("http://www.w3.org/1998/Math/MathML", "math");\n\
+    m.innerHTML = "<msqrt><mi></mi></msqrt>";\n\
+    document.body.appendChild(m);\n\
+    const height = m.getBoundingClientRect().height;\n\
+    document.body.lastElementChild.remove();\n\
+    if (height==0){\n\
+      document.querySelectorAll("math.mmlcore").forEach(m =>m.remove());\n\
+      document.querySelectorAll("math.doc").forEach(m =>m.outerHTML=m.getAttribute("alttext").replace(/\\b([a-z])\\b/g,"<i>$1</i>"));\n\
+     }\n\
+    },false);\n\
+';
+	doc.head.appendChild(s);
+    }
+</script>
   <script class='remove'>
    var respecConfig = {
      copyrightStart: 1998,
@@ -164,7 +183,7 @@
                    }],
   github:        "https://github.com/w3c/mathml",
        postProcess:   [mmlindex,foldable,resortable,showcore],
-       beforeSave: [ pubrulesMML],
+       beforeSave: [ pubrulesMML,addCoreTest],
   localBiblio: {
   "MathML1":           {"aliasOf": "MathML-19980407"},
   "MathML-Core":       {"aliasOf": "mathml-core"},
