@@ -35,8 +35,8 @@
     and paragraphs capture the higher-level syntactic structure of a
     textual document. Because of this, a single row of identifiers and operators
     will often be represented by multiple nested <code class="element">mrow</code> elements rather than
-    a single <code class="element">mrow</code>.  For example, <q><i class="var">x</i> + <i class="var">a</i> /
-    <i class="var">b</i></q> typically is represented as:</p>
+      a single <code class="element">mrow</code>.  For example,
+      <q><math class="doc" alttext="x+a/b"><mi>x</mi><mo>+</mo><mrow><mi>a</mi><mo>/</mo><mi>b</mi></mrow></math></q> typically is represented as:</p>
  
     <div class="example mathml mmlcore">
      <pre>
@@ -2851,12 +2851,14 @@
      influencing this surrounding spacing are taken from the <code class="element">mo</code> element at the core (or from that element's
      dictionary entry).</p>
  
-     <p>For example, the <q>+<sub>4</sub></q> in
-     <i class="var">a</i>+<sub>4</sub><i class="var">b</i>
+     <p>For example, the <q><math class="doc" alttext="+_4"><msub><mo>+</mo><mn>4</mn></msub></math></q> in
+     <math class="doc" alttext="a +_4 b"><mi>a</mi><msub><mo>+</mo><mn>4</mn></msub><mi>b</mi></math>
      should be considered an infix operator as a whole, due to its position
      in the middle of an <code class="element">mrow</code>, but its rendering
      attributes should be taken from the <code class="element">mo</code> element
-     representing the <q>+</q>, or when those are not specified explicitly,
+     representing the
+     <q><math class="doc" alttext="+"><mo>+</mo></math></q>,
+     or when those are not specified explicitly,
      from the operator dictionary entry for <code>&lt;mo form="infix"&gt; +
      &lt;/mo&gt;</code>.
      The precise definition of an <q><dfn>embellished operator</dfn></q> is:
@@ -5718,7 +5720,11 @@
   expression in all <q>scripting</q> elements (i.e. the first
   argument expression) should be the entire expression that is being
   scripted, not just the trailing character. For example,
-  (<i class="var">x</i>+<i class="var">y</i>)<sup>2</sup> should be written as:</p>
+  <math class="doc" alttext="(x+y)^2">
+  <msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow><mn>2</mn>
+</msup>
+  </math>
+  should be written as:</p>
  
   <div class="example mathml mmlcore">
    <pre>
@@ -5872,9 +5878,9 @@
     </p>
  
     <p> Note that both scripts are positioned tight against the base as shown here
-    <img src="image/x12-subsup.png" alt="x_1^2" class="vmiddle"/>
+    <math class="doc" alttext="x_1^2"><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup></math>
     versus the staggered positioning of nested scripts as shown here
-    <img src="image/x12-sub-sup.png" alt="x_1{}^2" class="vmiddle"/>;
+   <math class="doc" alttext="{x_1}^2"><msup><msub><mi>x</mi><mn>1</mn></msub><mn>2</mn></msup></math>;
     the latter can be achieved by nesting an <code class="element">msub</code> inside an <code class="element">msup</code>.</p>
    </section>
  

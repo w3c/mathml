@@ -317,3 +317,22 @@ anysvg*
 }
 
 anysvg = (attribute * {text}*| element (title|path|g|desc|rect|defs|circle|use|text|tspan|polygon|filter|pattern|feComposite|feFlood|symbol|namedview|metadata|flowRoot|flowRegion|flowPara|polyline|line) { anysvg*}|text)
+
+# restricted inline mathml
+
+mml = (mi|mn|mo|msup|msub|msubsup|mfrac|mrow)
+math = element math {
+	   attribute class {"doc"},
+	   attribute alttext {text},
+	   mml+}
+mi = element mi {text}
+mn = element mn {text}
+mo = element mo {text}
+msub = element msub {mml,mml}
+msup = element msup {mml,mml}
+msubsup = element msubsup {mml,mml,mml}
+mfrac = element mfrac {mml,mml}
+mrow = element mrow {mml*}
+
+inlinecontentnoa |= math
+			  
