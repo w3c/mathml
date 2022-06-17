@@ -1662,7 +1662,8 @@
      else they may contain.  The <code class="attribute">id</code> based-approach
      outlined above may still be used.</p>
 
-     <p>The following example encodes forall <i class="var">x</i>. <i class="var">x</i>+<i class="var">y</i>=<i class="var">y</i>+<i class="var">x</i>.</p>
+     <p>The following example encodes
+       <math class="doc" alttext="&#x2200;x . x+y=y+x"><mo>&#x2200;</mo><mi>x</mi><mo>.</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>=</mo><mi>y</mi><mo>+</mo><mi>x</mi></math>.</p>
 
      <div class="example mathml mml4c">
       <pre>
@@ -1688,22 +1689,39 @@
      This operation, sometimes known as <em>&#x3b1;-conversion</em>,
      preserves the semantics of the expression.</p>
 
-     <p>A bound variable <i class="var">x</i> may be renamed to say
-     <i class="var">y</i> so long as <i class="var">y</i> does not occur free in the body of the binding, or in any annotations of
-     the bound variable, <i class="var">x</i> to be renamed, or later bound variables.</p>
+     <p>A bound variable
+     <math class="doc" alttext="x"><mi>x</mi></math>
+     may be renamed to say
+     <math class="doc" alttext="y"><mi>y</mi></math>
+     so long as
+     <math class="doc" alttext="y"><mi>y</mi></math>
+     does not occur free in the body of the binding, or in any annotations of
+     the bound variable,
+     <math class="doc" alttext="x"><mi>x</mi></math>
+     to be renamed, or later bound variables.</p>
 
-     <p>If a bound variable <i class="var">x</i> is renamed, all free occurrences of
-     <i class="var">x</i> in annotations in its <code class="element">bvar</code> element,
+     <p>If a bound variable
+     <math class="doc" alttext="x"><mi>x</mi></math>
+     is renamed, all free occurrences of
+     <math class="doc" alttext="x"><mi>x</mi></math>
+     in annotations in its <code class="element">bvar</code> element,
      any following <code class="element">bvar</code> children of the <code class="element">bind</code>
      and in the expression in the body of the <code class="element">bind</code> should be renamed.</p>
 
      <p> In the example in the previous section, note how renaming
-     <i class="var">x</i> to <i class="var">z</i> produces the equivalent expression forall
-     <i class="var">z</i>. <i class="var">z</i>+<i class="var">y</i>=<i class="var">y</i>+<i class="var">z</i>,
-     whereas <i class="var">x</i> may not be renamed to <i class="var">y</i>, as
-     <i class="var">y</i> is free in the body of the binding and would be
-     <em>captured</em>, producing the expression forall
-     <i class="var">y</i>. <i class="var">y</i>+<i class="var">y</i>=<i class="var">y</i>+<i class="var">y</i>
+     <math class="doc" alttext="x"><mi>x</mi></math>
+     to
+     <math class="doc" alttext="z"><mi>z</mi></math>
+     produces the equivalent expression
+     <math class="doc" alttext="&#x2200;z . z+y=y+z"><mo>&#x2200;</mo><mi>z</mi><mo>.</mo><mi>z</mi><mo>+</mo><mi>y</mi><mo>=</mo><mi>y</mi><mo>+</mo><mi>z</mi></math>,
+     whereas
+     <math class="doc" alttext="x"><mi>x</mi></math>
+     may not be renamed to
+     <math class="doc" alttext="y"><mi>y</mi></math>, as
+     <math class="doc" alttext="y"><mi>y</mi></math>
+     is free in the body of the binding and would be
+     <em>captured</em>, producing the expression
+     <math class="doc" alttext="&#x2200;y . y+y=y+y"><mo>&#x2200;</mo><mi>y</mi><mo>.</mo><mi>y</mi><mo>+</mo><mi>y</mi><mo>=</mo><mi>y</mi><mo>+</mo><mi>y</mi></math>
      which is not equivalent to the original expression.</p>
 
     </section>
