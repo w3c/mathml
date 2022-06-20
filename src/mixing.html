@@ -103,12 +103,15 @@ the user and agent.</p>
 
    <p>The <code class="attribute">intent</code>, after ignoring white
    space between tokens, should match the following grammar.</p>
-   
+
 <pre class="def bnf">
-intent   := numlit | NCName | argref | funcall
-funcall  := (NCName | argref | funcall) '(' ( intent (',' intent )* )? ')'
-numlit   := '-'? (digit+ '.'? digit* | '.' digit+)
-argref   := '$' NCName
+intent      := name | number | reference | application
+name        := NCName
+number      := '-'? digit+ ( '.' digit+ )?
+reference   := '$' NCName
+application := function '(' arguments? ')'
+function    := name | reference | application
+arguments   := intent ( ',' intent )*
 </pre>
 
 <p>Here <a href="https://www.w3.org/TR/REC-xml-names/#NT-NCName"><code>NCName</code></a>
@@ -120,14 +123,14 @@ is as defined in  in [[xml-names]], and <code>digit</code> is a character in the
  <section>
   <h3 id="mixing_intent_examples">Intent Examples</h3>
 
-  
+
  <section>
   <h4 id="mixing_intent_examples_notation">Ambiguous Notation</h4>
 
   <p>A primary use for <code class="attribute">intent</code> is to
   disambiguate cases where the same syntax is used for different meanings,
   and typically has different readings.</p>
-  
+
 <p>Superscript, <code class="element">msup</code>, may represent a power, a transpose,
 a derivative or an embellished symbol. These cases would be distinguished as follows:</p>
 
@@ -187,7 +190,7 @@ a derivative or an embellished symbol. These cases would be distinguished as fol
   <p>A special case of ambiguous notation is the re-use of standard
   notation with meaning that may be specific to a subject area or even an
   individual document,</p>
-  
+
 <div class="example mathml mmlcore">
 <pre>
 &lt;msub intent="bell-number($index)"&gt;
@@ -205,10 +208,10 @@ a derivative or an embellished symbol. These cases would be distinguished as fol
 <code>bell-number</code> intent which is not in the <q>[^core^]</q>
 dictionary but is in the  <q>[^open^]</q> dictionary of more advanced or specialist
 topics.</p>
- 
+
  </section>
 
- 
+
  <section>
   <h4 id="mixing_intent_examples_mtr">Tables</h4>
 <div class="issue"  data-number="337"></div>
@@ -303,7 +306,7 @@ topics.</p>
 </div>
  </section>
  </section>
- 
+
  </section>
 
  <section>
@@ -1055,7 +1058,7 @@ topics.</p>
      <p>within the <code class="element">semantics</code> element</p>
     </li>
    </ol>
-   
+
    <p>
     Any other presentation markup occurring within content markup is a
     MathML error.  More detailed discussion of these three cases follows:
@@ -1318,5 +1321,3 @@ topics.</p>
 </section>
 </section>
 </section>
-
-
