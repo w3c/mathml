@@ -1017,7 +1017,7 @@
      form required in Strict Content MathML.  The second, using the
      <code class="attribute">definitionURL</code> attribute, is backward compatible with MathML 2, and can be used
      to reference CDs or any other source of definitions that can be
-     identified by a URI.  It is described in the following section</p>
+     identified by a URI.  It is described in the following section.</p>
 
      <p>When referencing OpenMath CDs, the preferred method is to use the <code class="attribute">cd</code>
      attribute as follows. Abstractly, OpenMath symbol definitions are identified by a
@@ -1272,7 +1272,7 @@
      <h5 id="contm_applications_strict">Strict Content MathML</h5>
 
      <p>In MathML, the <code class="element">apply</code> element is used to build an expression tree that
-     represents the application a function or operator to its arguments. The
+     represents the application of a function or operator to its arguments. The
      resulting tree corresponds to a complete mathematical expression. Roughly
      speaking, this means a piece of mathematics that could be surrounded by
      parentheses or <q>logical brackets</q> without changing its meaning.</p>
@@ -1613,7 +1613,7 @@
 
         <td>
          (<code class="parsing_ref">ci</code> | <code class="parsing_ref">semantics-ci</code>), <code class="parsing_ref">degree</code>? |
-         <code class="parsing_ref">degree</code>?, (<code class="parsing_ref">ci</code> | <code class="parsing_ref">semantics-ci</code>
+         <code class="parsing_ref">degree</code>?, (<code class="parsing_ref">ci</code> | <code class="parsing_ref">semantics-ci</code>)
         </td>
        </tr>
       </tbody>
@@ -1659,7 +1659,7 @@
      and the additional information.  Recognition of an instance of
      the bound variable is still based on the actual <code class="element">ci</code>
      elements and not the <code class="element">semantics</code> elements or anything
-     else they may contain.  The <code class="attribute">id</code> based-approach
+     else they may contain.  The <code class="attribute">id</code>-based approach
      outlined above may still be used.</p>
 
      <p>The following example encodes
@@ -1831,7 +1831,7 @@
      </table>
 
      <p>The <code class="element">share</code> element has an <code class="attribute" data-diff="chg">src</code> attribute used to
-     to reference a MathML expression tree. The value of the
+     reference a MathML expression tree. The value of the
      <code class="attribute" data-diff="chg">src</code> attribute is a URI specifying the <code class="attribute">id</code>
      attribute of the root node of the expression tree.  When building a
      MathML expression tree, the <code class="element">share</code> element is equivalent to a copy of the MathML
@@ -1955,7 +1955,7 @@
      <code class="element">share</code> element does not terminate for such an
      expression, and hence such expressions are not allowed by Content MathML.</p>
 
-     <p>Note that the acyclicity constraints is not restricted to such simple cases, as the
+     <p>Note that the acyclicity constraint is not restricted to such simple cases, as the
      following
      example shows:</p>
 
@@ -2068,9 +2068,9 @@
     <code class="element">semantics</code> element to wrap the annotated element and the
     <code class="element">annotation-xml</code> and <code class="element">annotation</code> elements used for representing the
     annotations themselves. The use of the <code class="element">semantics</code>, <code class="element">annotation</code> and
-    <code class="element">annotation-xml</code> is described in detail <a href="#mixing"></a>.</p>
+    <code class="element">annotation-xml</code> is described in detail in <a href="#mixing"></a>.</p>
 
-    <p>The <code class="element">semantics</code> element is be considered part of both
+    <p>The <code class="element">semantics</code> element is considered part of both
     presentation MathML and Content MathML. MathML considers a <code class="element">semantics</code> element
     (strict) Content MathML, if and only if its first child is (strict) Content MathML.</p>
 
@@ -2333,7 +2333,7 @@
     <h4 id="contm_container">Container Markup</h4>
 
     <p>Many mathematical structures are constructed from subparts or
-    parameters. For example, a set as a mathematical object that
+    parameters. For example, a set is a mathematical object that
     contains a collection of elements, so it is natural for the
     markup for a set to contain the markup for its constituent
     elements. The markup for a set may define the set of elements
@@ -2658,7 +2658,7 @@
      <p>To illustrate these ideas, consider the following examples showing alternative
      representations of a definite integral.  Let <i class="var">C</i> denote the interval from 0 to 1,
      and <i class="var">f</i>(<i class="var">x</i>) = <i class="var">x</i><sup>2</sup>. Then
-     <code class="element">domainofapplication</code> could be used express the integral of a
+     <code class="element">domainofapplication</code> could be used to express the integral of a
      function <i class="var">f</i> over
      <i class="var">C</i> in this way:</p>
 
@@ -2881,7 +2881,7 @@
     <p>In MathML 2, the <code class="attribute">definitionURL</code> attribute could be
     used to redefine or modify the meaning of an operator element. When the <code class="attribute">definitionURL</code>
     attribute is present, the value for the <code class="attribute">cd</code> attribute on the <code class="element">csymbol</code> should be
-    determined by the <code class="attribute">definitionURL</code> value if possible. The correspondence between <code class="attribute">cd</code> and <code class="attribute">definitionURL</code> values is described <a href="#contm_csymbol_extended"></a>.</p>
+    determined by the <code class="attribute">definitionURL</code> value if possible. The correspondence between <code class="attribute">cd</code> and <code class="attribute">definitionURL</code> values is described in <a href="#contm_csymbol_extended"></a>.</p>
 
 
 
@@ -2900,7 +2900,7 @@
    beginning with a syntax table, giving the elements <a class="intref" href="#contm_opclasses">operator class</a>.  Special case rules
    for rewriting as Strict Markup are introduced as needed.
    However, in most cases, the generic rewrite rules for the
-   appropriate operator class is sufficient.  In particular, unless
+   appropriate operator class are sufficient.  In particular, unless
    otherwise indicated, elements are to be rewritten using the
    default <a>Rewrite: element</a>
    rule.  Note, however, that all elements in this section must be rewritten in
@@ -2928,7 +2928,7 @@
      <p>Many MathML operators may be used with an arbitrary number of
      arguments. <span>The corresponding OpenMath symbols for elements in these classes
      also take an arbitrary number of arguments.</span>
-     In all such cases, either the arguments my be given
+     In all such cases, either the arguments may be given
      explicitly as children of the <code class="element">apply</code> or <code class="element">bind</code> element, or
      the list may be specified implicitly via the use of qualifier
      elements.</p>
@@ -2978,7 +2978,7 @@
 
      </section>
 
-     <p>The <code class="element">gcd</code> and <code class="element">lcm</code> elements represent the n-ary operators which returns the greatest common divisor, or least common multiple of their arguments. The arguments may be explicitly specified in the enclosing apply element, or specified by quantifiers.</p>
+     <p>The <code class="element">gcd</code> and <code class="element">lcm</code> elements represent the n-ary operators which return the greatest common divisor, or least common multiple of their arguments. The arguments may be explicitly specified in the enclosing apply element, or specified by quantifiers.</p>
      
      <p>This default renderings are English-language locale specific: other locales may have
      different default renderings.</p>
@@ -3316,7 +3316,7 @@
 
      <p><code class="element">and</code> is true if all arguments are true, and false otherwise.<br/>
      <code class="element">or</code> is true if any of the arguments are true, and false otherwise.<br/>
-     <code class="element">xor</code> the logical <q>exclusive or</q> function. It is true if there are an odd number of true arguments or false otherwise.</p>
+     <code class="element">xor</code> is the logical <q>exclusive or</q> function. It is true if there are an odd number of true arguments or false otherwise.</p>
      
       
      <section class="fold">
@@ -3433,7 +3433,7 @@
      row; so the resulting list is of matrix rows given entry by entry.
      That is, for a matrix (<i class="var">a</i><sub>i,j</sub>), where the indices denote row
      and column, respectively, the ordering would be <i class="var">a</i><sub>1,1</sub>,
-     <i class="var">a</i><sub>1,2</sub>, ...  <i class="var">a</i><sub>2,1</sub>, <i class="var">a</i><sub>2,2</sub>
+     <i class="var">a</i><sub>1,2</sub>, ...,  <i class="var">a</i><sub>2,1</sub>, <i class="var">a</i><sub>2,2</sub>,
      ... etc.</p>
 
      <p>When two arguments are given, and the first is a vector or list, the second argument
@@ -3531,7 +3531,7 @@
      <p>The <code class="element">intersect</code> element is used to denote the n-ary union of sets. It takes sets as arguments,
      and denotes the set that contains all the elements that occur in all
      of them.</p>
- <p>The <code class="element">cartesianproduct</code> element is used to represents the
+ <p>The <code class="element">cartesianproduct</code> element is used to represent the
  Cartesian product operator.</p>
  
      <p>Arguments may be explicitly specified in the enclosing <code class="element">apply</code> element, or
@@ -4152,8 +4152,8 @@
       <a class="intref" href="#parsing_nary-minmax.class">Schema Class</a>
      </p>
      
-     <p>The MathML elements, <code class="element">max</code>, <code class="element">min</code> and some statistical
-     elements such as <code class="element">mean</code> may be used  as a n-ary function as in
+     <p>The MathML elements <code class="element">max</code>, <code class="element">min</code> and some statistical
+     elements such as <code class="element">mean</code> may be used  as an n-ary function as in
      the above classes, however a special interpretation is given in the
      case that a single argument is supplied. If a single argument is
      supplied the function is applied to the elements represented by the
@@ -4161,7 +4161,7 @@
 
      <p>The underlying symbol used in Strict Content MathML for these
      elements is <em>Unary</em> and so if the MathML is used with
-     0 or more than 1 arguments, the function is applied to the set
+     0 or more than 1 argument, the function is applied to the set
      constructed from the explicitly supplied arguments according to the
      following rule.</p>
 
@@ -4288,7 +4288,7 @@
      </p>
 
      <p>Some statistical MathML elements, 
-     elements such as <code class="element">mean</code> may be used  as a n-ary function as in
+     elements such as <code class="element">mean</code> may be used  as an n-ary function as in
      the above classes, however a special interpretation is given in the
      case that a single argument is supplied. If a single argument is
      supplied the function is applied to the elements represented by the
@@ -4296,7 +4296,7 @@
 
      <p>The underlying symbol used in Strict Content MathML for these
      elements is <em>Unary</em> and so if the MathML is used with
-     0 or more than 1 arguments, the function is applied to the set
+     0 or more than 1 argument, the function is applied to the set
      constructed from the explicitly supplied arguments according to the
      following rule.</p>
 
@@ -4447,7 +4447,7 @@
      without the need of any special rewrite rules. The binary
      constructor <code class="element">interval</code> is similar but uses constructor syntax
      in which the arguments are children of the element, and the symbol
-     used depends on the type element as described in <a href="#contm_interval_sec"></a> </p>
+     used depends on the type element as described in <a href="#contm_interval_sec"></a>.</p>
     
     <section>
      <h5 id="contm_binary_arith">Binary Arithmetic Operators:
@@ -4469,7 +4469,7 @@
      operator. When the operator is applied to integer arguments
      <i class="var">a</i> and <i class="var">b</i>, the result is the <q>quotient of
      <i class="var">a</i> divided by <i class="var">b</i></q>. That is, the quotient
-     of integers <i class="var">a</i> and <i class="var">b</i>, is the integer
+     of integers <i class="var">a</i> and <i class="var">b</i> is the integer
      <i class="var">q</i> such that <i class="var">a</i> = <i class="var">b</i> * <i class="var">q</i> +
      <i class="var">r</i>, with |<i class="var">r</i>| less than |<i class="var">b</i>| and
      <i class="var">a</i> * <i class="var">r</i> positive. In common usage, <i class="var">q</i>
@@ -4481,7 +4481,7 @@
      <p>The <code class="element">minus</code> element can be used as
      a unary arithmetic operator (e.g. to represent &#x2212;<i class="var">x</i>),
      or as a binary arithmetic operator (e.g. to represent <i class="var">x</i>
-     &#x2212; <i class="var">y</i>). So further examples are given in <a
+     &#x2212; <i class="var">y</i>). Some further examples are given in <a
      href="#contm_unary_arith"></a>.</p>
 
      <p>The <code class="element">power</code> element represents the exponentiation
@@ -4664,7 +4664,7 @@
      relation, i.e. the relation <q>not equal to</q> which returns true unless
      the two arguments are equal.</p>
 
-     <p>The <code class="element">approx</code> element represent the relation that asserts
+     <p>The <code class="element">approx</code> element represents the relation that asserts
      the approximate equality of its arguments.</p>
 
 
@@ -4938,7 +4938,7 @@
      subset relation. It is used to denote that the first argument is not
      a proper subset of the second.</p>
 
-     <p>The <code class="element">setdiff</code> element represents set difference
+     <p>The <code class="element">setdiff</code> element represents the set difference
      operator. It takes two sets as arguments, and denotes the set that
      contains all the elements that occur in the first set, but not in
      the second.</p>
@@ -5091,7 +5091,7 @@
      to as the modulus.</p>
      <p>
       The <code class="element">conjugate</code> element represents the function defined
-      over the complex numbers with returns the complex conjugate of
+      over the complex numbers which returns the complex conjugate of
       its argument.
      </p>
      <p>
@@ -5124,13 +5124,13 @@
      <p>The <code class="element">minus</code> element can be used as
      a unary arithmetic operator (e.g. to represent &#x2212;<i class="var">x</i>),
      or as a binary arithmetic operator (e.g. to represent <i class="var">x</i>
-     &#x2212; <i class="var">y</i>). So further examples are given in <a
+     &#x2212; <i class="var">y</i>). Some further examples are given in <a
      href="#contm_binary_arith"></a>.</p>
 
      <p>The <code class="element">root</code> element in MathML is
      treated as a unary element taking an optional <code
      class="element">degree</code> qualifier, however it represents
-     the binary operation of taking an nth-root, and is described in
+     the binary operation of taking an nth root, and is described in
      <a href="#contm_binary_arith"></a>.</p>
      
      <section class="fold">
@@ -5403,11 +5403,11 @@
      over which the function is defined.</p>
 
      <p>The <code class="element">codomain</code> represents the codomain, or range, of the function
-     to which is is applied.  Note that the codomain is not necessarily
+     to which it is applied.  Note that the codomain is not necessarily
      equal to the image of the function, it is merely required to contain
      the image.</p>
 
-      <p>The <code class="element">image</code> element represent the image of
+      <p>The <code class="element">image</code> element represents the image of
      the function to which it is applied. The image of a function is the
      set of values taken by the function. Every point in the image is
      generated by the function applied to some point of the domain.</p>
@@ -6101,10 +6101,9 @@
       <a class="intref" href="#parsing_unary-functional.class">Schema Class</a>
      </p>
 
-     <p>The <code class="element">log</code> elements represents the logarithm function
+     <p>The <code class="element">log</code> element represents the logarithm function
      relative to a given base.  When present, the <code class="element">logbase</code>
-     qualifier specifies the base. Otherwise, the base is assumed to be 10.
-     <code class="element">apply</code>.</p>
+     qualifier specifies the base. Otherwise, the base is assumed to be 10.</p>
 
      <section class="fold">
       <h6 id="transc1.log.ex1">Examples</h6>
@@ -6416,7 +6415,7 @@
 
      <p>In the case of algebraic expressions, the bound variables are given by <code class="element">bvar</code>
      elements, which are children of the containing <code class="element">apply</code> element. The <code class="element">bvar</code>
-     elements may also contain <code class="element">degree</code> element, which specify the order of the partial
+     elements may also contain <code class="element">degree</code> elements, which specify the order of the partial
      derivative to be taken in that variable.</p>
 
 
@@ -6805,7 +6804,7 @@ infinity (&#x221e;).</p>
     <section>
      <h5 id="contm_quantifier">Quantifiers:
      <dfn id="contm_forall"><code class="defn emptytag">&lt;forall/&gt;</code></dfn>,
-     <dfn id="contm_exists"><code class="defn emptytag">&lt;exists/&gt;</code></dfn>,
+     <dfn id="contm_exists"><code class="defn emptytag">&lt;exists/&gt;</code></dfn>
      </h5>
 
      <p class="advisement">
@@ -7261,9 +7260,8 @@ infinity (&#x221e;).</p>
      </p>
 
 
-     <p>The <a class="intref" href="#contm_piecewise"><code class="element">piecewise</code></a>,<a class="intref" href="#contm_piece"><code class="element">piece</code></a>, and <a class="intref" href="#contm_otherwise"><code class="element">otherwise</code></a> elements are used to
-     represent <q>piecewise</q> function definitions of the form <q>
-     <i class="var">H</i>(<i class="var">x</i>) = 0 if <i class="var">x</i> less than 0, <i class="var">H</i>(<i class="var">x</i>) = 1
+     <p>The <a class="intref" href="#contm_piecewise"><code class="element">piecewise</code></a>, <a class="intref" href="#contm_piece"><code class="element">piece</code></a>, and <a class="intref" href="#contm_otherwise"><code class="element">otherwise</code></a> elements are used to
+     represent <q>piecewise</q> function definitions of the form <q><i class="var">H</i>(<i class="var">x</i>) = 0 if <i class="var">x</i> less than 0, <i class="var">H</i>(<i class="var">x</i>) = 1
      otherwise</q>.</p>
 
      <p>The declaration is constructed using the <code class="element">piecewise</code> element.  This contains
