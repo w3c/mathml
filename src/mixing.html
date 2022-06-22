@@ -105,17 +105,15 @@ the user and agent.</p>
    space between tokens, should match the following grammar.</p>
 
 <pre class="def bnf">
-intent      := name | number | reference | application
+intent      := name | reference | application
 name        := NCName
-number      := '-'? digit+ ( '.' digit+ )?
 reference   := '$' NCName
-application := function '(' arguments? ')'
-function    := name | reference | application
+application := intent '(' arguments? ')'
 arguments   := intent ( ',' intent )*
 </pre>
 
 <p>Here <a href="https://www.w3.org/TR/REC-xml-names/#NT-NCName"><code>NCName</code></a>
-is as defined in  in [[xml-names]], and <code>digit</code> is a character in the range 0–9.</p>
+is as defined in  in [[xml-names]].</p>
   </section>
 
 
