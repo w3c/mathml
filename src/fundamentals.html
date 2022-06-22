@@ -25,7 +25,7 @@
    </p>
 
    <p>MathML's character set consists of any
-   Unicode characters [[Unicode]] allowed by the syntax being used. (See for example [[XML]] or [[HTML]].
+   Unicode characters [[Unicode]] allowed by the syntax being used. (See for example [[XML]] or [[HTML]].)
    The use of Unicode characters for mathematics is
    discussed in <a href="#chars"></a>.</p>
 
@@ -374,13 +374,13 @@
      <code>depth</code> and <code>width</code> denoting the original
      dimensions of the content.
     </p>
-    <p>MathML&#160;3 also allowed a deprecated usage with lengths specifed as
-     a number without a unit. This  was intepreted as a multiple of the
+    <p>MathML&#160;3 also allowed a deprecated usage with lengths specified as
+     a number without a unit. This  was interpreted as a multiple of the
      reference value. This form is considered invalid in MathML&#160;4.
     </p>
 
     <p>The <dfn>named-lengths</dfn> that may be used as the value of a
-    [=length=] expressions, and their value:</p>
+    [=length=] expression, and their value:</p>
 
       <table class="data">
        <thead>
@@ -430,7 +430,7 @@
 
 
      <p>Two additional aspects of relative units must be clarified, however.
-     First, some elements such as <a href="#presm_scrlim"></a> or <code class="element">mfrac</code>,
+     First, some elements such as <a href="#presm_scrlim"></a> or <code class="element">mfrac</code>
      implicitly switch to smaller font sizes for some of their arguments.
      Similarly, <code class="element">mstyle</code> can be used to explicitly change
      the current font size. In such cases, the effective values of
@@ -607,7 +607,7 @@
 
      <tr>
       <td colspan="3" class="attdesc">
-	Can be used to establish the element as a hyperlink to the specfied <em>URI</em>.
+	Can be used to establish the element as a hyperlink to the specified <em>URI</em>.
       </td>
      </tr>
     </tbody>
@@ -627,7 +627,7 @@
    which can be used on most presentation token elements.
    </p>
 
-   <p>The attribute <code class="attribute">other</code>,
+   <p>The attribute <code class="attribute">other</code>
    is <a class="intref" href="#interf_deprec">deprecated</a>
    (<a href="#interf_unspecified"></a>) in favor of the use of
    attributes from other namespaces.
@@ -749,7 +749,7 @@
   it is an error for one <code class="element">math</code> element to contain
   another.  These considerations also apply when sub-expressions are
   passed between applications, such as for cut-and-paste operations;
-  See <a href="#world-int-transfers"></a>.</p>
+  see <a href="#world-int-transfers"></a>.</p>
 
   <p>The <code class="element">math</code> element can contain an arbitrary number
   of child elements. They render by default as if they
@@ -764,7 +764,7 @@
    In particular, it accepts the <code class="attribute">dir</code> attribute for
    setting the overall directionality; the <code class="element">math</code> element is usually
    the most useful place to specify the directionality
-   (See <a href="#presm_bidi"></a> for further discussion).
+   (see <a href="#presm_bidi"></a> for further discussion).
    Note that the <code class="attribute">dir</code> attribute defaults to <code class="attributevalue">ltr</code>
    on the <code class="element">math</code> element (but <em>inherits</em> on all other elements
    which accept the <code class="attribute">dir</code> attribute); this provides for backward
@@ -772,7 +772,7 @@
    Also, it accepts the <code class="attribute">mathbackground</code> attribute in the same sense
    as <code class="element">mstyle</code> and other presentation elements to set the background
    color of the bounding box, rather than specifying a default for the attribute
-   (see <a href="#presm_presatt"></a>)</p>
+   (see <a href="#presm_presatt"></a>).</p>
 
    <p>In addition to those attributes, the <code class="element">math</code> element accepts:</p>
 
@@ -807,7 +807,7 @@
        whereas when <code class="attribute">display</code>=<code class="attributevalue">inline</code>, <code class="attribute">displaystyle</code>
        is initialized to <code class="attributevalue">false</code>;
        in both cases <code class="attribute">scriptlevel</code> is initialized to 0
-       (See <a href="#presm_scriptlevel"></a>).
+       (see <a href="#presm_scriptlevel"></a>).
        Moreover, when the math element is embedded in a larger document,
        a block math element should be treated as a block element as appropriate
        for the document type (typically as a new vertical block),
@@ -875,7 +875,7 @@
      <tr>
       <td colspan="3" class="attdesc">
        specifies the width to display <code class="attribute">altimg</code>, scaling the image if necessary;
-       See <code class="attribute">altimg-height</code>.
+       see <code class="attribute">altimg-height</code>.
       </td>
      </tr>
 
