@@ -12,7 +12,7 @@
    notation.
    </p><p>
    Most of Presentation Markup is included in [[MathML-Core]].
-   That specification should be consulted to for the precise details of displaying the elements and attributes
+   That specification should be consulted for the precise details of displaying the elements and attributes
    that are part of core when displayed in web browsers.
    Outside of web browsers, MathML presentation elements only suggest (i.e. do not require)
      specific ways of rendering in order to allow for medium-dependent
@@ -21,7 +21,7 @@
      renderings are intelligible.</p>
    <p>The names used for presentation elements are suggestive of their visual layout.
      However, mathematical notation has a long history of being reused as new concepts are developed.
-     Because of this, an element such as <code class="element">mfrac</code> maybe not actually be a fraction and the
+     Because of this, an element such as <code class="element">mfrac</code> may not actually be a fraction and the
      <code class="attribute">intent</code> attribute should be used to provide information for auditory renderings.
    </p><p>
    This chapter describes all of the presentation elements and attributes of MathML along with examples that might clarify usage.
@@ -450,7 +450,7 @@
     The layout details for elements whose behavior depends on directionality
     are given in the discussion of the element.  In those discussions, the
     terms leading and trailing are used to specify a side of an object
-    when which side to use depends on the directionality; ie. leading
+    when which side to use depends on the directionality; i.e. leading
     means left in LTR but right in RTL.
     The terms left and right may otherwise be safely assumed to mean left and right.
     </p>
@@ -471,7 +471,7 @@
     and <code class="element">ms</code>) and is determined by the Unicode properties of that text.
     A token element containing exclusively LTR or RTL characters
     is displayed straightforwardly in the given direction.
-    When a mixture of directions is involved used, such as RTL Arabic
+    When a mixture of directions is involved, such as RTL Arabic
     and LTR numbers, the Unicode bidirectional algorithm [[Bidi]]
     should be applied.  This algorithm specifies how runs of characters
     with the same direction are processed and how the runs are (re)ordered.
@@ -502,13 +502,13 @@
  
     <p>Additionally, calligraphic scripts such as Arabic blend, or connect
     sequences of characters together, changing their appearance.
-    As this can have an significant impact on readability, as well as aesthetics,
+    As this can have a significant impact on readability, as well as aesthetics,
     it is important to apply such shaping if possible.  Glyph shaping,
     like directionality, applies to each token element's contents individually.</p>
  
     <p>Note that for the transfinite cardinals represented
     by Hebrew characters, the code points U+2135-U+2138 (ALEF SYMBOL,
-    BET SYMBOL, GIMEL SYMBOL, DALET SYMBOL) should be used be used in MathML, not the alphabetic look-alike code points.
+    BET SYMBOL, GIMEL SYMBOL, DALET SYMBOL) should be used in MathML, not the alphabetic look-alike code points.
     These code points are strong left-to-right.</p>
    </section>
  
@@ -522,7 +522,7 @@
    which should blend into the adjacent text without intruding into
    neighboring lines. For example, in a displayed summation, the limits
    are placed above and below the summation symbol, while when it appears inline
-   the limits would appear in the sub and superscript position.
+   the limits would appear in the sub- and superscript position.
    For similar reasons, sub- and superscripts,
    nested fractions and other constructs typically display in a
    smaller size than the main part of the formula.
@@ -589,7 +589,7 @@
    </p>
  
    <p>Note that direct changes to current font size, whether by
-   CSS or by the <code class="attribute">mathsize</code> attribute (See <a href="#presm_commatt"></a>),
+   CSS or by the <code class="attribute">mathsize</code> attribute (see <a href="#presm_commatt"></a>),
    have no effect on the value of <code class="attribute">scriptlevel</code>.
    </p>
  
@@ -624,7 +624,7 @@
     <span>Renderers may also choose to place automatic linebreaks at other points
     such as between adjacent <code class="element">mi</code> elements or even within a token element
     such as a very long <code class="element">mn</code> element. MathML does not provide a means to
-    specify such linebreaks, but if a render chooses to linebreak at such a point,
+    specify such linebreaks, but if a renderer chooses to linebreak at such a point,
     it should indent the following line according to the
     <a class="intref" href="#presm_lbindent_attrs">indentation attributes</a>
     that are in effect at that point.</span>
@@ -637,7 +637,7 @@
      display the entire formula.  The available width must therefore be known
      to the renderer. Like font properties, one is assumed to be inherited from the environment
      in which the MathML element lives. If no width can be determined, an
-     infinite width should be assumed. Inside of a <code class="element">mtable</code>,
+     infinite width should be assumed. Inside of an <code class="element">mtable</code>,
      each column has some width. This width may be specified as an attribute
      or determined by the contents. This width should be used as the
      line wrapping width for linebreaking, and each entry in an <code class="element">mtable</code>
@@ -646,7 +646,7 @@
     <div class="issue" data-number="304">(mspace's @linebreak)</div>
     <p>Forced linebreaks are specified by using
     <code class="attribute">linebreak</code>=<code class="attributevalue">newline</code>
-    on a <code class="element">mo</code> or <code class="element">mspace</code> element.
+    on an <code class="element">mo</code> or <code class="element">mspace</code> element.
     Both automatic and manual linebreaking can occur within the same formula.
     </p>
  
@@ -850,7 +850,7 @@
  
       <tr>
        <td><a class="intref" href="#presm_menclose"><code class="element">menclose</code></a></td>
-       <td>enclose content with a stretching symbol such as a long division sign.</td>
+       <td>enclose content with a stretching symbol such as a long division sign</td>
       </tr>
      </tbody>
     </table>
@@ -967,7 +967,7 @@
  
       <tr>
        <td><a class="intref" href="#presm_mscarries"><code class="element">mscarries</code></a></td>
-       <td>row in an mstack that whose contents represent carries or borrows</td>
+       <td>row in an mstack whose contents represent carries or borrows</td>
       </tr>
  
       <tr>
@@ -1003,7 +1003,7 @@
    <h4 id="presm_presatt">Mathematics attributes common to presentation elements</h4>
  
    <p>In addition to the attributes listed in <a href="#fund_globatt"></a>,
-   all MathML presentation elements accept the following classes of atribute.</p>
+   all MathML presentation elements accept the following classes of attribute.</p>
 
    
   <section>
@@ -1033,7 +1033,7 @@
  
      <tr>
       <td rowspan="2" class="attname">intent</td>
-      <td><a class="intref" href="#mixing_intent_grammar"><em>intent expresssion</em></a></td>
+      <td><a class="intref" href="#mixing_intent_grammar"><em>intent expression</em></a></td>
       <td><em>none</em></td>
       <td><span class="coreno"></span></td>
      </tr>
@@ -1074,7 +1074,7 @@
    expressions, but are for use in highlighting or drawing attention
    to the affected subexpressions.  For example, a red "x" is not assumed
    to be semantically different than a black "x", in contrast to
-   variables with different <code class="attribute">mathvariant</code> values (See <a href="#presm_commatt"></a>).</p>
+   variables with different <code class="attribute">mathvariant</code> values (see <a href="#presm_commatt"></a>).</p>
 
    <table class="attributes data">
  
@@ -1188,7 +1188,7 @@
    The <a class="intref" href="#presm_mglyph"><code class="element">mglyph</code></a> element is used
    to represent non-standard characters or symbols by images;
    the <code class="element">malignmark</code> element establishes an alignment point for use within
-   table constructs, and is otherwise invisible (See <a href="#presm_malign"></a>).</p>
+   table constructs, and is otherwise invisible (see <a href="#presm_malign"></a>).</p>
  
    <p><span>Characters</span>
    can be either represented directly as Unicode character data, or indirectly via numeric
@@ -1198,7 +1198,7 @@
    </p>
  
    <p>Token elements (other than <code class="element">mspace</code>) should
-   be rendered as their content, if any, (i.e. in the visual case, as a
+   be rendered as their content, if any (i.e. in the visual case, as a
    closely-spaced horizontal row of standard glyphs for the characters
    or images for the <code class="element">mglyph</code>s in their content).
    An <code class="element">mspace</code> element is rendered as a blank space of a width determined by its attributes.
@@ -1474,7 +1474,7 @@
    When CSS is not available, it is up to the internal style mechanism of the rendering
    application
    to visually distinguish the different logical classes.
-   Most MathML renderers will probably want to rely on some degree to additional,
+   Most MathML renderers will probably want to rely on some degree on additional,
    internal style processing algorithms.
    In particular, the <code class="attribute">mathvariant</code> attribute does not follow the CSS inheritance model;
    the default value is <code class="attributevalue">normal</code> (non-slanted)
@@ -1603,7 +1603,7 @@
     arbitrary text that should be rendered as an identifier. Identifiers
     can include variables, function names, and symbolic constants.
     A typical graphical renderer would render an <code class="element">mi</code> element
-    as its content (See <a href="#presm_tokenchars"></a>),
+    as its content (see <a href="#presm_tokenchars"></a>),
     with no extra spacing around it (except spacing associated with
     neighboring elements).</p>
  
@@ -1673,7 +1673,7 @@
  
     <p>Note that for purposes of determining equivalences of Math
     Alphanumeric Symbol
-    characters (See <a href="#chars_BMP-SMP"></a>)
+    characters (see <a href="#chars_BMP-SMP"></a>)
     the value of the <code class="attribute">mathvariant</code> attribute should be resolved first,
     including the special defaulting behavior described above.
     </p>
@@ -1771,7 +1771,7 @@
     perhaps including a decimal point, representing an unsigned integer or real
     number.
     A typical graphical renderer would render an <code class="element">mn</code> element as
-    its content (See <a href="#presm_tokenchars"></a>), with no extra spacing around them
+    its content (see <a href="#presm_tokenchars"></a>), with no extra spacing around them
     (except spacing from neighboring elements such as <code class="element">mo</code>).
     <code class="element">mn</code> elements are typically rendered in an unslanted font.
     </p>
@@ -1883,7 +1883,7 @@
  
   <section>
    <h4 id="presm_mo">Operator, Fence, Separator or Accent
-   <code class="defn starttag">&lt;mo&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mo"></a></h4>
+   <code class="defn starttag">&lt;mo&gt;</code><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mo"></a></h4>
  
    <section>
     <h5>Description</h5>
@@ -1905,7 +1905,7 @@
     sense.</p>
  
     <p>Typical graphical renderers show all <code class="element">mo</code>
-    elements as the content (See <a href="#presm_tokenchars"></a>),
+    elements as the content (see <a href="#presm_tokenchars"></a>),
     with additional spacing around the element determined by its attributes and
     further described below.
     Renderers without access to complete fonts for the MathML character
@@ -1953,7 +1953,7 @@
     Thus, <code class="element">mo</code> accepts attributes to encode the desirability
     of breaking at a particular operator, as well as attributes
     describing the treatment of the operator and indentation in case
-    the a linebreak is made at that operator.</p>
+    a linebreak is made at that operator.</p>
    </section>
  
    <section>
@@ -1970,7 +1970,7 @@
      Most attributes get their default values from an enclosing
      <code class="element">mstyle</code> element, <code class="element">math</code> element,
      <span> from the containing document,</span>
-     or from the
+     or from
      <a href="#presm_opdict"></a>.
      When a value that is listed as <q>inherited</q> is not explicitly given on an
      <code class="element">mo</code>,  <code class="element">mstyle</code> element, <code class="element">math</code> element, or found in the operator
@@ -2053,7 +2053,7 @@
         <td colspan="3" class="attdesc">
    Specifies the leading space appearing before the operator;
    see <a href="#presm_opspacing"></a>.
-   (Note that before is on the right in a RTL context; see <a href="#presm_bidi"></a>).
+   (Note that before is on the right in a RTL context; see <a href="#presm_bidi"></a>.)
         </td>
        </tr>
  
@@ -2068,7 +2068,7 @@
         <td colspan="3" class="attdesc">
    Specifies the trailing space appearing after the operator;
    see <a href="#presm_opspacing"></a>.
-   (Note that after is on the left in a RTL context; see <a href="#presm_bidi"></a>).
+   (Note that after is on the left in a RTL context; see <a href="#presm_bidi"></a>.)
         </td>
        </tr>
  
@@ -2228,7 +2228,7 @@
    the default <code class="attributevalue">auto</code> indicates the renderer should use its default
    linebreaking algorithm to determine whether to break;
    <code class="attributevalue">newline</code> is used to force a linebreak;
-   For automatic linebreaking, <code class="attributevalue">nobreak</code> forbids a break;
+   for automatic linebreaking, <code class="attributevalue">nobreak</code> forbids a break;
    <code class="attributevalue">goodbreak</code> suggests a good position;
    <code class="attributevalue">badbreak</code> suggests a poor position.
         </td>
@@ -2260,13 +2260,13 @@
        <tr>
         <td colspan="3" class="attdesc">
    Specifies whether a linebreak occurs &#x2018;before&#x2019; or &#x2018;after&#x2019; the operator
-   when a linebreaks occur on this operator; or whether the operator is duplicated.
-   <code class="attributevalue">before</code> causes the operator to appears at the beginning of the new line
+   when a linebreak occurs on this operator; or whether the operator is duplicated.
+   <code class="attributevalue">before</code> causes the operator to appear at the beginning of the new line
    (but possibly indented);
    <code class="attributevalue">after</code> causes it to appear at the end of the line before the break.
    <code class="attributevalue">duplicate</code> places the operator at both positions.
    <code class="attributevalue">infixlinebreakstyle</code> uses the value  that has been specified for
-   infix operators; This value (one of <code class="attributevalue">before</code>,
+   infix operators; this value (one of <code class="attributevalue">before</code>,
    <code class="attributevalue">after</code> or <code class="attributevalue">duplicate</code>) can be specified by
    the application or bound by <a class="intref" href="#presm_mstyle"><code class="element">mstyle</code></a>
    (<code class="attributevalue">before</code> corresponds to the most common style of linebreaking).
@@ -2291,8 +2291,8 @@
      </table>
  
      <p>
-      <code class="attribute">linebreak</code> values on adjacent <code class="element">mo</code> and <code class="element">mspace</code>elements do
-      not interact; <code class="attribute">linebreak</code>=<code class="attributevalue">nobreak</code> on a <code class="element">mo</code> does
+      <code class="attribute">linebreak</code> values on adjacent <code class="element">mo</code> and <code class="element">mspace</code> elements do
+      not interact; <code class="attribute">linebreak</code>=<code class="attributevalue">nobreak</code> on an <code class="element">mo</code> does
       not, in itself, inhibit a break on a preceding or following (possibly nested)
       <code class="element">mo</code> or <code class="element">mspace</code> element and does not interact with the <code class="attribute">linebreakstyle</code>
       attribute value of the preceding or following <code class="element">mo</code> element.
@@ -2307,7 +2307,7 @@
      <p>The following attributes affect indentation of the lines making up a formula.
      Primarily these <span>attributes</span> control the positioning of new lines following a linebreak,
      whether automatic or manual. However, <code class="attribute">indentalignfirst</code> and <code class="attribute">indentshiftfirst</code>
-     also control the positioning of single line formula without any linebreaks.
+     also control the positioning of a single line formula without any linebreaks.
      When these attributes appear on <code class="element">mo</code> or <code class="element">mspace</code> they apply if a linebreak occurs
      at that element.
      When they appear on <code class="element">mstyle</code> or <code class="element">math</code> elements, they determine
@@ -2320,7 +2320,7 @@
      <p>Note that since the rendering context, such as <span>the
      available width</span> and current font,
      is not always available to the author of the MathML,
-     a render may ignore the values of these attributes if they result in a line in which
+     a renderer may ignore the values of these attributes if they result in a line in which
      the remaining width is too small to usefully display the expression or if they result
      in a line in
      which the remaining width exceeds the available linewrapping width. </p>
@@ -2422,7 +2422,7 @@
    Specifies the offset to use for the first line of a formula;
    the value <code class="attributevalue">indentshift</code> (the default) means
    to use the same offset as used for the general line.
-   <span>Percentage values and numbers without unit are interpreted as described for <code class="attribute">indentshift</code></span>
+   <span>Percentage values and numbers without unit are interpreted as described for <code class="attribute">indentshift</code>.</span>
         </td>
        </tr>
  
@@ -2459,7 +2459,7 @@
    to indent the same way as used for the general line.
    When there are exactly two lines, the value of this attribute should
    be used for the second line in preference to <code class="attribute">indentshift</code>.
-   <span>Percentage values and numbers without unit are interpreted as described for <code class="attribute">indentshift</code></span>
+   <span>Percentage values and numbers without unit are interpreted as described for <code class="attribute">indentshift</code>.</span>
         </td>
        </tr>
       </tbody>
@@ -2822,7 +2822,7 @@
      </ul>
  
      <p>Note that the <code class="element">mrow</code> discussed above may be <em>inferred</em>;
-     See <a href="#presm_inferredmrow"></a>.</p>
+     see <a href="#presm_inferredmrow"></a>.</p>
  
      <p>Opening fences should have  <code class="attribute">form</code><code>="prefix"</code>,
      and closing fences should have <code class="attribute">form</code><code>="postfix"</code>;
@@ -3284,7 +3284,7 @@
  </section>
  
  <section>
-  <h4 id="presm_mspace">Space <code class="defn emptytag">&lt;mspace/&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mspace"></a></h4>
+  <h4 id="presm_mspace">Space <code class="defn emptytag">&lt;mspace/&gt;</code><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mspace"></a></h4>
  
   <section>
  <h5>Description</h5>
@@ -3589,7 +3589,7 @@
  
  <tr>
   <td colspan="3" class="attdesc">
-   Specifies the opening quote to enclose the content.
+   Specifies the opening quote to enclose the content
    (not necessarily &#x2018;left quote&#x2019; in RTL context).
  </td>
  </tr>
@@ -3603,7 +3603,7 @@
  
  <tr>
   <td colspan="3" class="attdesc">
-   Specifies the closing quote to enclose the content.
+   Specifies the closing quote to enclose the content
    (not necessarily &#x2018;right quote&#x2019; in RTL context).
  </td>
  </tr>
@@ -3666,9 +3666,9 @@
  linebreaking of  expressions (that is, to break excessively long
  expressions into several lines). All such linebreaks take place
  within <code class="element">mrow</code>s, whether they are explicitly marked up
- in the document, or inferred (See <a href="#presm_inferredmrow"></a>),
+ in the document, or inferred (see <a href="#presm_inferredmrow"></a>),
  although the control of linebreaking is effected through attributes
- on other elements (See <a href="#presm_linebreaking"></a>).
+ on other elements (see <a href="#presm_linebreaking"></a>).
  </p>
  
  </section>
@@ -3777,7 +3777,7 @@
  
  <p>When forming a nested <code class="element">mrow</code> (during generation
  of MathML) that includes just one of two successive operators with
- the forms mentioned above (which mean that either operator could in
+ the forms mentioned above (which means that either operator could in
  principle act on the intervening operand or operands), it is necessary
  to decide which operator acts on those operands directly (or would do
  so, if they were present). Ideally, this should be determined from the
@@ -3790,7 +3790,7 @@
  from other formats for displayed mathematics or directly from written
  notation.</p>
  
- <p>(Some of the terminology used in stating the above rule <span>in</span> defined
+ <p>(Some of the terminology used in stating the above rule <span>is</span> defined
  in <a href="#presm_mo"></a>.)</p>
  </section>
  </section>
@@ -3895,7 +3895,7 @@
  
  <tr>
   <td colspan="3" class="attdesc">
- Specifies the thickness of the horizontal <q>fraction bar</q>, or <q>rule</q>
+ Specifies the thickness of the horizontal <q>fraction bar</q>, or <q>rule</q>.
  The default value is <code class="attributevalue">medium</code>;
  <code class="attributevalue">thin</code> is thinner, but visible;
  <code class="attributevalue">thick</code> is thicker.
@@ -3958,7 +3958,7 @@
  <p>
   In a RTL directionality context,  the numerator leads (on the right),
   the denominator follows (on the left) and the diagonal line slants upwards going from
-  right to left<span> (See <a href="#presm_bidi_math"></a> for clarification)</span>.
+  right to left<span> (see <a href="#presm_bidi_math"></a> for clarification)</span>.
   Although this format is an established convention, it is not universally
   followed; for situations where a forward slash is desired in a RTL context,
   alternative markup, such as an <code class="element">mo</code> within an <code class="element">mrow</code> should be used.
@@ -4374,7 +4374,7 @@
  
  <tr>
   <td colspan="3" class="attdesc">
-   specifies the character used to determine the alignment point within
+   Specifies the character used to determine the alignment point within
    <a class="intref" href="#presm_mstack"><code class="element">mstack</code></a>
    and
    <a class="intref" href="#presm_mtable"><code class="element">mtable</code></a> columns
@@ -4703,7 +4703,7 @@
  
    <p>Note: while [[MathML-Core]] supports the above attributes, it only allows the value to be a valid
    <a href="https://w3c.github.io/mathml-core/spec.html#dfn-length-percentage">length-percentage</a>.
-   Increments with the optional "+" or "-" signs are not supported in MathML-Core nor are pseudo-units.</p>
+   Increments with the optional "+" or "-" signs are not supported in MathML Core nor are pseudo-units.</p>
  
    <p>The <em>[^pseudo-unit^]</em> syntax symbol is described below.
    <span>Also, <code class="attribute">height</code>, <code class="attribute">depth</code> and
@@ -4721,7 +4721,7 @@
    be given as
    multiples or percentages of any of the
    dimensions of the normal rendering of the child content using so-called [^pseudo-unit^]s,
-   or they can be set directly using standard units <a href="#fund_units"></a>.</p>
+   or they can be set directly using standard units, see <a href="#fund_units"></a>.</p>
  
    <p>If the value of a size attribute begins with a <code>+</code> or <code>-</code> sign,
    it specifies an <em>increment</em> or <em>decrement</em> to the corresponding
@@ -4880,8 +4880,8 @@
    content above the baseline.  Negative values for the <code class="attribute">voffset</code>
    attribute lower the rendering of the child content below the baseline.
    In either case, the <code class="attribute">voffset</code> attribute may cause overprinting
-   of neighboring content, which should generally be avoided.  Note that t
-   he <code class="attribute">voffset</code> attribute does not affect the <code class="attribute">height</code>
+   of neighboring content, which should generally be avoided.  Note that
+   the <code class="attribute">voffset</code> attribute does not affect the <code class="attribute">height</code>
    or <code class="attribute">depth</code> of the <code class="element">mpadded</code> element, and so the <code class="attribute">voffset</code>
    attribute will also affect the space between the child content and neighboring
    content, and may cause overprinting of the neighboring content, unless the
@@ -5520,7 +5520,7 @@
    <code class="attributevalue">roundedbox</code>, and <code class="attributevalue">circle</code> should
    enclose the contents as indicated by the values.  The amount of
    distance between the box, roundedbox, or circle, and the contents are
-   not specified by MathML, and is left to the renderer.  In practice,
+   not specified by MathML, and left to the renderer.  In practice,
    paddings on each side of 0.4em in the horizontal direction and .5ex in
    the vertical direction seem to work well.</p>
  
@@ -5691,7 +5691,7 @@
   structure of common notation better, MathML provides several more
   specialized scripting elements.</p>
  
-  <p>In addition to sub/superscript elements, MathML has overscript
+  <p>In addition to sub-/superscript elements, MathML has overscript
   and underscript elements that place scripts above and below the base. These
   elements can be used to place limits on large operators, or for placing
   accents and lines above or below the base. The rules for rendering accents
@@ -5940,7 +5940,7 @@
     <h5>Examples</h5>
  
     <p>The <code class="element">msubsup</code> is most commonly used for adding
-    sub/superscript pairs to identifiers as illustrated above. However,
+    sub-/superscript pairs to identifiers as illustrated above. However,
     another important use is placing limits on certain large operators
     whose limits are traditionally displayed in the script positions even
     when rendered in display style. The most common of these is the
@@ -6074,7 +6074,7 @@
     value.  As with all attributes, an explicitly given value overrides
     the default.</p>
     <p>[[MathML-Core]] does not support the <code class="attribute">accent</code> attribute on <a href="#presm_mo"></a>.
-     For compatibility with MathML-core, the <code class="attribute">accentunder</code> should be set on <code class="element">munder</code>.</p>
+     For compatibility with MathML Core, the <code class="attribute">accentunder</code> should be set on <code class="element">munder</code>.</p>
   
    </section>
  
@@ -6206,7 +6206,7 @@
     <em>overscript</em> is an embellished operator, the <code class="attribute">accent</code> attribute of the <code class="element">mo</code>
     element at its core is used as the default value.</p>
     <p>[[MathML-Core]] does not support the <code class="attribute">accent</code> attribute on <a href="#presm_mo"></a>.
-      For compatibility with MathML-core, the <code class="attribute">accentunder</code> should be set on <code class="element">munder</code>.</p>
+      For compatibility with MathML Core, the <code class="attribute">accentunder</code> should be set on <code class="element">munder</code>.</p>
  
    </section>
  
@@ -6446,19 +6446,19 @@
     list of zero or more pairs of vertically-aligned presubscripts and
     presuperscripts that represent all of the prescripts. The pair lists
     for postscripts and prescripts are <span>displayed</span> in the same order as the
-    directional context (ie. left-to-right order in LTR context). If
+    directional context (i.e. left-to-right order in LTR context). If
     no subscript or superscript should be rendered in a given position,
     then the empty element <code class="element">none</code> should be used in
     that position.
-    <span data-diff="add">For each sub and superscript pair,
+    <span data-diff="add">For each sub- and superscript pair,
     horizontal-alignment of the elements in the pair should be
-    towards the the base of the <code class="element">mmultiscripts</code>.
+    towards the base of the <code class="element">mmultiscripts</code>.
     That is, pre-scripts should be right aligned,
     and post-scripts should be left aligned.</span></p>
  
     <p>The base, subscripts, superscripts, the optional separator element
     <code class="element">mprescripts</code>, the presubscripts, and the
-    presuperscripts, are all direct sub-expressions of the
+    presuperscripts are all direct sub-expressions of the
     <code class="element">mmultiscripts</code> element, i.e. they are all at the
     same level of the expression tree. Whether a script argument is a
     subscript or a superscript, or whether it is a presubscript or a
@@ -6695,7 +6695,7 @@
         <code class="attributevalue">center</code> centers the cells;
         <code class="attributevalue">baseline</code> aligns the baselines of the cells;
         <code class="attributevalue">axis</code> aligns the axis of each cells.
-        (See the note below about multiple values).
+        (See the note below about multiple values.)
        </td>
       </tr>
  
@@ -6713,7 +6713,7 @@
         <code class="attributevalue">left</code> aligns the left side of the cells;
         <code class="attributevalue">center</code> centers each cells;
         <code class="attributevalue">right</code> aligns the right side of the cells.
-        (See the note below about multiple values).
+        (See the note below about multiple values.)
        </td>
       </tr>
  
@@ -6772,7 +6772,7 @@
         is, a renderer should try to adjust the width of the column so that it
         covers the specified percentage of the entire table width.
  
-        (See the note below about multiple values).
+        (See the note below about multiple values.)
        </td>
       </tr>
  
@@ -6811,7 +6811,7 @@
       <tr>
        <td colspan="3" class="attdesc">
         specifies how much space to add between rows.
-        (See the note below about multiple values).
+        (See the note below about multiple values.)
        </td>
       </tr>
  
@@ -6825,7 +6825,7 @@
       <tr>
        <td colspan="3" class="attdesc">
         specifies how much space to add between <span>columns</span>.
-        (See the note below about multiple values).
+        (See the note below about multiple values.)
        </td>
       </tr>
  
@@ -6842,7 +6842,7 @@
         <code class="attributevalue">none</code> means no lines;
         <code class="attributevalue">solid</code> means solid lines;
         <code class="attributevalue">dashed</code> means dashed lines (how the dashes are spaced is implementation dependent).
-        (See the note below about multiple values).
+        (See the note below about multiple values.)
        </td>
       </tr>
  
@@ -6859,7 +6859,7 @@
         <code class="attributevalue">none</code> means no lines;
         <code class="attributevalue">solid</code> means solid lines;
         <code class="attributevalue">dashed</code> means dashed lines (how the dashes are spaced is implementation dependent).
-        (See the note below about multiple values).
+        (See the note below about multiple values.)
        </td>
       </tr>
  
@@ -6930,7 +6930,7 @@
  
       <tr>
        <td colspan="3" class="attdesc">
-        specifies the value of <code class="attribute">displaystyle</code> within each cell,
+        specifies the value of <code class="attribute">displaystyle</code> within each cell
         (<code class="attribute">scriptlevel</code> is not changed);
         see <a href="#presm_scriptlevel"></a>.
        </td>
@@ -7194,7 +7194,7 @@
     <h5>Equation Numbering</h5>
  
     <p>One of the important uses of <code class="element">mlabeledtr</code> is
-    for numbered equations.  In a <code class="element">mlabeledtr</code>, the
+    for numbered equations.  In an <code class="element">mlabeledtr</code>, the
     label represents the equation number and the elements in the row are
     the equation being numbered.  The <code class="attribute">side</code> and <code class="attribute">minlabelspacing</code> attributes of <code class="element">mtable</code> determine the placement of the equation
     number.</p>
@@ -7374,8 +7374,8 @@
  
     <p>The <code class="attribute">rowspan</code> and <code class="attribute">columnspan</code> attributes
     can be used around an <code class="element">mtd</code> element that represents
-    the label in a <code class="element">mlabeledtr</code> element.
-    Also, the label of a <code class="element">mlabeledtr</code> element is not
+    the label in an <code class="element">mlabeledtr</code> element.
+    Also, the label of an <code class="element">mlabeledtr</code> element is not
     considered to be part of a previous <code class="attribute">rowspan</code> and
     <code class="attribute">columnspan</code>.
     </p>
@@ -7385,7 +7385,7 @@
  
   <section>
    <h4 id="presm_malign">Alignment Markers
-   <code class="emptytag">&lt;maligngroup/&gt;</code>, <code class="emptytag">&lt;malignmark/&gt;</code> <span class="coreno"></span></h4>
+   <code class="emptytag">&lt;maligngroup/&gt;</code>, <code class="emptytag">&lt;malignmark/&gt;</code><span class="coreno"></span></h4>
  
    <section>
     <h5>Description</h5>
@@ -7974,8 +7974,8 @@
  that surrounds the alignment group and provides an explicit
  setting for this attribute.  <span>For example, if an
  <code class="element">mtable</code> element specifies values for <code class="attribute">groupalign</code> and
- a <code class="element">maligngroup</code> element within the table also specifies an
- explicit <code class="attribute">groupalign</code> value, then then the value from the
+ an <code class="element">maligngroup</code> element within the table also specifies an
+ explicit <code class="attribute">groupalign</code> value, then the value from the
  <code class="element">maligngroup</code> takes priority.</span></p>
  
  <p id="type_group-align">Note, however, that each <code class="element">mtd</code> element needs, in
@@ -8359,17 +8359,17 @@
   Any children of <code class="element">mstack</code>, <code class="element">mlongdiv</code>, and <code class="element">msgroup</code>,
   besides <code class="element">msrow</code>, <code class="element">msgroup</code>, <code class="element">mscarries</code> and <code class="element">msline</code>,
  are treated as if implicitly surrounded by an <code class="element">msrow</code>
- (See <a href="#presm_msrow"></a> for more details about rows).
+ (see <a href="#presm_msrow"></a> for more details about rows).
  </p>
  
  <p>Since the primary use of these stacking constructs is to
  stack rows of numbers aligned on their digits,
  and since numbers are always formatted left-to-right,
  the columns of an mstack are always processed left-to-right;
- the overall directionality in effect (ie. the <code class="attribute">dir</code> attribute)
+ the overall directionality in effect (i.e. the <code class="attribute">dir</code> attribute)
  does not affect to the ordering of display of columns or carries in rows
  and, in particular, does not affect the ordering of any operators within a row
- (See <a href="#presm_bidi"></a>).
+ (see <a href="#presm_bidi"></a>).
  </p>
  
  <p>
@@ -8521,7 +8521,7 @@
       using the <code class="attribute">decimalpoint</code> attribute of <code class="element">mstyle</code> (default ".").
       If there is no decimalpoint character in the row, an implied decimal is assumed on
       the right of the first number in the row;
-      See <a class="intref" href="#presm_mstyle"><code class="attributevalue">decimalpoint</code></a> for a discussion
+      see <a class="intref" href="#presm_mstyle"><code class="attributevalue">decimalpoint</code></a> for a discussion
       of <code class="attributevalue">decimalpoint</code>.
      </td>
     </tr>
@@ -8563,7 +8563,7 @@
       automatically adjust spacing to when carries or other entries in a column are wide.
       The three values allow authors to some flexibility in choosing what the layout looks
       like
-      without having to figure out what values works well.
+      without having to figure out what values work well.
       In all cases, the spacing between columns is a fixed amount and does not vary between
       different columns.
      </td>
@@ -8757,7 +8757,7 @@
  
  <tr>
   <td colspan="3" class="attdesc">
-   specifies the horizontal position of the rows within this group relative
+   specifies the horizontal position of the rows within this group relative to
    the position determined by the containing <code class="element">msgroup</code> (according to its
    <code class="attribute">position</code> and <code class="attribute">shift</code> attributes).
    The resulting position value is relative to the column specified by <code class="attribute">stackalign</code> of the containing <code class="element">mstack</code> or <code class="element">mlongdiv</code>.
@@ -8815,9 +8815,9 @@
  </p>
  
  <p>Note that a row is considered primarily as if it were a number,
- which are always displayed left-to-right,
+ which is always displayed left-to-right,
  and so the directionality used to display the columns is always left-to-right;
- textual bidirectionally within token elements (other than <code class="element">mn</code>) still applies,
+ textual bidirectionality within token elements (other than <code class="element">mn</code>) still applies,
  as does the overall directionality <em>within</em> any children of the <code class="element">msrow</code>
  (which end up treated as single digits);
  see <a href="#presm_bidi"></a>.
@@ -8854,7 +8854,7 @@
  
  <tr>
   <td colspan="3" class="attdesc">
-   specifies the horizontal position of the rows within this group relative
+   specifies the horizontal position of the rows within this group relative to
    the position determined by the containing <code class="element">msgroup</code> (according to its
    <code class="attribute">position</code> and <code class="attribute">shift</code> attributes).
    The resulting position value is relative to the column specified by <code class="attribute">stackalign</code> of the containing <code class="element">mstack</code> or <code class="element">mlongdiv</code>.
@@ -8883,8 +8883,8 @@
  The children are associated with elements in the <em>following</em> row of the <code class="element">mstack</code>.
  It is an error for <code class="element">mscarries</code> to be the last element of an <code class="element">mstack</code> or <code class="element">mlongdiv</code> element. Each child of the <code class="element">mscarries</code> applies to the same column in the following row.
  As these annotations are used to adorn what are treated as
- numbers, the attachment of carries to columns proceeds from left-to-right;
- The overall directionality does not apply to the ordering of the carries,
+ numbers, the attachment of carries to columns proceeds from left to right;
+ the overall directionality does not apply to the ordering of the carries,
  although it may apply to the contents of each carry;
  see <a href="#presm_bidi"></a>.
  </p>
@@ -8943,7 +8943,7 @@
  
  <tr>
   <td colspan="3" class="attdesc">
-   specifies the horizontal position of the rows within this group relative
+   specifies the horizontal position of the rows within this group relative to
    the position determined by the containing <code class="element">msgroup</code> (according to its
    <code class="attribute">position</code> and <code class="attribute">shift</code> attributes).
    The resulting position value is relative to the column specified by <code class="attribute">stackalign</code> of the containing <code class="element">mstack</code> or <code class="element">mlongdiv</code>.
@@ -9090,7 +9090,7 @@
  <section>
  <h5>Description</h5>
  
- <p><code class="element">msline</code> draws a horizontal line inside of a <code class="element">mstack</code> element.
+ <p><code class="element">msline</code> draws a horizontal line inside of an <code class="element">mstack</code> element.
  The position, length, and thickness of the line are specified as attributes.
  If the length is specified, the line is positioned and drawn as if it were a number
  with the given number of digits.</p>
@@ -9127,12 +9127,12 @@
  
  <tr>
   <td colspan="3" class="attdesc">
-   specifies the horizontal position of the rows within this group relative
+   specifies the horizontal position of the rows within this group relative to
    the position determined by the containing <code class="element">msgroup</code> (according to its
    <code class="attribute">position</code> and <code class="attribute">shift</code> attributes).
    The resulting position value is relative to the column specified by <code class="attribute">stackalign</code> of the containing <code class="element">mstack</code> or <code class="element">mlongdiv</code>.
-   Positive values moves towards the tens digit (like multiplying by a power of 10);
-   negative values moves towards the ones digit.
+   Positive values move towards the tens digit (like multiplying by a power of 10);
+   negative values move towards the ones digit.
    The decimal point is counted as a column and should be taken into account for negative
    values.
    Note that since the default line length spans the entire <code class="element">mstack</code>,
@@ -9149,7 +9149,7 @@
  
  <tr>
   <td colspan="3" class="attdesc">
-   Specifies the the number of columns that should be spanned by the line.
+   Specifies the number of columns that should be spanned by the line.
    A value of '0' (the default) means that <em>all</em> columns in
    the row are spanned (in which case <code class="attribute">position</code> and <code class="attribute">stackalign</code> have no effect).
  </td>
@@ -9763,7 +9763,7 @@
  processed by two or more nested maction elements, the innermost
  maction element of each action type should respond to the event.</p>
  
- <p>The meanings of the various <code class="attribute">actiontype</code> values is given below.
+ <p>The meanings of the various <code class="attribute">actiontype</code> values are given below.
  Note that not all renderers support all of the <code class="attribute">actiontype</code> values, and  that the allowed values are open-ended.</p>
  
  <dl>
@@ -9771,7 +9771,7 @@
   <dt>&lt;maction actiontype="toggle" selection="positive-integer" &gt; (first expression) (second
  expression)... &lt;/maction&gt;</dt>
  <dd>
-  <p>The renderer alternately display the
+  <p>The renderer alternately displays the
   selected subexpression, cycling through them when there is a click on the selected
   subexpression.
   Each click increments the <code class="attribute">selection</code> value,
