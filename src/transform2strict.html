@@ -37,7 +37,7 @@
    <ol>
 
     <li>
-     <p><em>Rewrite non-strict <code class="element">bind</code> and elminate deprecated elements</em>:
+     <p><em>Rewrite non-strict <code class="element">bind</code> and eliminate deprecated elements</em>:
      Change the outer <code class="element">bind</code> tags
      in binding expressions to <code class="element">apply</code> if they have qualifiers or multiple
      children. This simplifies the algorithm by allowing the subsequent rules to be applied
@@ -135,7 +135,7 @@
 
       <li>
        <p>Rewrite lambda expressions by the rules <a>Rewrite: lambda</a>
-       and <a>Rewrite: lambda domainofapplication</a></p>
+       and <a>Rewrite: lambda domainofapplication</a>.</p>
       </li>
 
       <li>
@@ -415,7 +415,7 @@
 
       <p>where
       <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is an
-      is an expression in the variable <i class="var">x</i>
+      expression in the variable <i class="var">x</i>
       is translated to the expression</p>
 
       <div class="example strict-mathml">
@@ -739,7 +739,7 @@
  
      </div>
 
-     <p>But the definite integral with an <code class="element">lowlimit</code>/<code class="element">uplimit</code> pair carries the
+     <p>But the definite integral with a <code class="element">lowlimit</code>/<code class="element">uplimit</code> pair carries the
      strong intuition that the range of integration is oriented, and thus
      swapping lower and upper limits will change the sign of the result.
      To accommodate this, use the following special translation rule:</p>
@@ -1197,8 +1197,8 @@
       application, denoted by <code class="meta-code">&lt;ci&gt;H&lt;/ci&gt;</code>
       here. By default <a class="omsymbol" href="https://openmath.org/cd/interval1#interval">interval</a> should be
       used, unless the semantics of the head term can be determined and
-      indicate a more specific interval symbols.  In particular, several
-      predefined Content MathML element should be used with more specific
+      indicate a more specific interval symbol.  In particular, several
+      predefined Content MathML elements should be used with more specific
       interval symbols.  If the head is <code class="element">int</code> then <a class="omsymbol" href="https://openmath.org/cd/interval1#oriented_interval">oriented_interval</a> is used.  When the head term
       is <code class="element">sum</code> or <code class="element">product</code>, <a class="omsymbol" href="https://openmath.org/cd/interval1#integer_interval">integer_interval</a> should be used.</p>
 
@@ -1369,7 +1369,7 @@
     <section>
      <h5 id="contm_p2s_lambda">Lambda expressions</h5>
      <p>Rewrite lambda expressions by the rules <a>Rewrite: lambda</a>
-     and <a>Rewrite: lambda domainofapplication</a></p>
+     and <a>Rewrite: lambda domainofapplication</a>.</p>
 
      <div class="strict-mathml-example" id="contm_rewrite_lambda"><dfn>Rewrite: lambda</dfn>
 
@@ -1517,7 +1517,7 @@
 	</pre>
        </div>
 
-       <p>It is is translated to the unary application of the symbol
+       <p>it is translated to the unary application of the symbol
        <code class="meta-code">&lt;csymbol cd="minmax1" name="max"/&gt;</code>
        as specified in the syntax table for the element to the set of
        arguments, constructed using the
@@ -1535,7 +1535,7 @@
        </div>
       </div>
 
-      <p>Like all MathML n-ary operators, The list of arguments may be
+      <p>Like all MathML n-ary operators, the list of arguments may be
       specified implicitly using qualifier elements. This is expressed in
       Strict Content MathML using the following rule, which is similar to
       the rule <a>Rewrite: n-ary domainofapplication</a> but differs in that the
@@ -1578,7 +1578,7 @@
        <p>Note that
        when <code class="meta-code">&lt;ci&gt;D&lt;/ci&gt;</code> is already a set
        and the lambda function created from <code class="meta-code">&lt;ci&gt;expression-in-x&lt;/ci&gt;</code> is
-       the identity, the <code class="element">domainofapplication</code> term should should be
+       the identity, the <code class="element">domainofapplication</code> term should be
        rewritten directly
        as <code class="meta-code">&lt;ci&gt;D&lt;/ci&gt;</code>.</p>
 
@@ -1600,7 +1600,7 @@
 	</pre>
        </div>
 
-       <p>It is is translated to the unary application of the symbol
+       <p>it is translated to the unary application of the symbol
        in the syntax table for the element.</p>
 
        <div class="example strict-mathml">
@@ -2116,7 +2116,7 @@
      <div class="strict-mathml-example" id="contm_cn-base"><dfn>Rewrite: cn based_integer</dfn>
 
       <p>A <code class="element">cn</code> element with a base attribute other than 10 is rewritten as follows. (A base attribute
-      with value 10 is simply removed) .</p>
+      with value 10 is simply removed.)</p>
 
       <div class="example mathml mml4c">
        <pre>
@@ -2138,7 +2138,7 @@
       element just consists of the characters [a-zA-Z0-9] and white space
       then the symbol used as the head in the resulting application should
       be <a class="omsymbol" href="https://openmath.org/cd/nums1#based_integer">based_integer</a> as shown. Otherwise it
-      should be should be <a class="omsymbol" href="https://openmath.org/cd/nums1#based_float">based_float</a>.</p>
+      should be <a class="omsymbol" href="https://openmath.org/cd/nums1#based_float">based_float</a>.</p>
      </div>
      <div class="strict-mathml-example" id="contm_cn_strict_const"><dfn>Rewrite: cn constant</dfn>
 
@@ -2555,7 +2555,7 @@
     <code class="element">interval</code> allow attributes to specialize the semantics of the
     objects they represent.  For these cases, special rewrite rules are
     given on a case-by-case basis in <a href="#contm_structure_extended"></a>. However,
-    content MathML elements also accept <a class="intref" href="#fund_globatt">attributes shared all MathML elements</a>, and
+    content MathML elements also accept <a class="intref" href="#fund_globatt">attributes shared by all MathML elements</a>, and
     depending on the context, may also contain attributes from other XML
     namespaces.  Such attributes must be rewritten in alternative form in
     Strict Content Markup.</p>
