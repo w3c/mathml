@@ -109,8 +109,7 @@ intent      := name | number | reference | application
 name        := NCName
 number      := '-'? digit+ ( '.' digit+ )?
 reference   := '$' NCName
-application := function '(' arguments? ')'
-function    := name | reference | application
+application := intent '(' arguments? ')'
 arguments   := intent ( ',' intent )*
 </pre>
 
