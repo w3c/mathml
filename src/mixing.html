@@ -31,8 +31,8 @@
   class="attribute">intent</code> and <code
   class="attribute">arg</code> that as described here allow the
   <dfn><q>intent</q></dfn> of the term to be specified. This
-  annotation is not intented to provide a full mathematical definition
-  of the term but may be used guide accessibility systems to give audio
+  annotation is not intended to provide a full mathematical definition
+  of the term but may be used to guide accessibility systems to give audio
   or braille renderings, see <a href="#accessibility"></a>. It may also
   be used to guide translations to Content MathML, or computational
   systems.</p>
@@ -204,7 +204,7 @@ a derivative or an embellished symbol. These cases would be distinguished as fol
 
 </div>
 
-<p>Here the subscripted B denoting the <em>Bell Number</em> is annotated using
+<p>Here the subscripted B denoting the <em>Bell number</em> is annotated using
 <code>bell-number</code> intent which is not in the <q>[^core^]</q>
 dictionary but is in the  <q>[^open^]</q> dictionary of more advanced or specialist
 topics.</p>
@@ -313,7 +313,7 @@ topics.</p>
   <h3 id="mixing_annotation_elements">Annotation Elements</h3>
 
   <p>
-   In addition to the <code class="attribute">intent</code> attribute decribed above,,
+   In addition to the <code class="attribute">intent</code> attribute decribed above,
    MathML provides a more general framework for annotation.  A MathML expression may be
    decorated with a sequence of pairs made up of a symbol that indicates
    the kind of annotation, known as the <em>annotation key</em>, and
@@ -325,7 +325,7 @@ topics.</p>
     The <code class="element">semantics</code>, <code class="element">annotation</code>, and
     <code class="element">annotation-xml</code> elements are used together to represent
     annotations in MathML.  The <code class="element">semantics</code> element provides the
-    container for a expression and its annotations.  The
+    container for an expression and its annotations.  The
     <code class="element">annotation</code> element is the container for text
     annotations, and the <code class="element">annotation-xml</code> element is used for
     structured
@@ -851,7 +851,7 @@ topics.</p>
     In particular, as described above and in <a href="#encoding-names"></a>, MathML specifies
     <code>MathML</code>, <code>MathML-Presentation</code>, and
     <code>MathML-Content</code> as predefined values for the
-    <code class="attribute">encoding</code> attribute.   Finally, The <code class="attribute">src</code>
+    <code class="attribute">encoding</code> attribute.   Finally, the <code class="attribute">src</code>
     attribute provides a mechanism to attach external XML entities as
     annotations on MathML expressions.</p>
 
@@ -930,7 +930,7 @@ topics.</p>
       <p>Otherwise it is parsed as <em>foreign content</em> and parsed in a more XML-like manner (like MathML itself in HTML) in which <code>/&gt;</code> signifies an empty element. Content will be placed in the MathML namespace.</p>
 
       <p>If any recognised HTML element appears in this foreign content annotation the HTML
-      parser will effectively termnate the math expression, closing all open elements until
+      parser will effectively terminate the math expression, closing all open elements until
       the <code class="element">math</code> element is closed, and then process the nested HTML as if it were not inside the
       math context. Any following MathML elements will then not render correctly as they
       are not in a math context, or in the MathML namespace.</p>
@@ -955,7 +955,7 @@ topics.</p>
      </pre>
     </div>
 
-   <p> However the if the <code class="attribute">encoding</code> attribute is omitted then the expression
+   <p> However if the <code class="attribute">encoding</code> attribute is omitted then the expression
     is only valid if parsed as XML:</p>
 
     <div class="example mathml-error">
@@ -997,7 +997,7 @@ topics.</p>
     <p>Note here that the HTML <code class="element" data-namespace="xhtml">span</code> element has
     caused all open MathML elements to be prematurely closed, resulting in
     the following MathML elements being treated as unknown HTML elements
-    as they are no longer descendents of <code class="element">math</code>.
+    as they are no longer descendants of <code class="element">math</code>.
     See <a href="#interf_html"></a> for more details of the parsing of MathML in HTML.
     </p>
 
@@ -1007,12 +1007,12 @@ topics.</p>
     elements but they will be parsed as elements on the
     <em>MathML</em> namespace. Documents SHOULD NOT use namespace
     prefixes and element names containing colon (<code>:</code>) as the
-    element nodes produced by the HTML parser with have local names
+    element nodes produced by the HTML parser have local names
     containing a colon, which can not be constructed by a namespace aware
     XML parser. Rather than use such foreign annotations, when using an HTML parser
     it is better to encode the annotation using the existing
     vocabulary. For example as shown in <a href="#contm"></a> OpenMath
-    may be encoded faithfuly as <em>Strict Content
+    may be encoded faithfully as <em>Strict Content
     MathML</em>. Similarly RDF annotations could be encoded using RDFa
     in <code>text/html</code> annotation or (say) N3 notation in
     <code class="element">annotation</code> rather than using RDF/XML encoding in an
@@ -1304,8 +1304,8 @@ topics.</p>
 
    <p>
     Parallel markup with cross-references may be used in any
-    of the semantic annotations within <code class="element">annotation-xml</code>
-    For example cross referencing between a presentation MathML rendering and an OpenMath annotation.
+    of the semantic annotations within <code class="element">annotation-xml</code>,
+    for example cross referencing between a presentation MathML rendering and an OpenMath annotation.
    </p>
 
     <p id="html-xml3">As noted above, the use of namespaces other than MathML, SVG

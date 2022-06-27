@@ -236,7 +236,7 @@
   receiving application to request the delivery of the data in one of the
   indicated formats.  An HTTP GET transfer, as in [[HTTP11]],
   allows a client to submit a list of acceptable media types; the server
-  then delivers the data using the one of the indicated media types.
+  then delivers the data using one of the indicated media types.
   An HTTP POST transfer, as in [[HTTP11]], allows a client
   to submit data labelled with a media type that is acceptable to the
   server application.</p>
@@ -339,7 +339,7 @@
       deliver the specific flavor if it knows that the recipient supports it.
       For an HTTP GET transfer, for example, the specific transfer types for
       content and presentation markup should only be returned if they are
-      included in the the HTTP <code>Accept</code> header sent by the client.
+      included in the HTTP <code>Accept</code> header sent by the client.
      </p>
     </li>
 
@@ -432,9 +432,9 @@
    <section>
     <h5>Example 1</h5>
 
-    <p>An e-Learning application has a database of quiz questions, some of
+    <p>An e-learning application has a database of quiz questions, some of
     which contain MathML.  The MathML comes from multiple sources, and the
-    e-Learning application merely passes the data on for display, but does
+    e-learning application merely passes the data on for display, but does
     not have sophisticated MathML analysis capabilities.  Consequently,
     the application is not aware whether a given MathML instance is pure
     presentation or pure content markup, nor does it know whether the
@@ -662,9 +662,9 @@
     </div>
 
 
-    <p>A web-browser on the Windows platform that receives such a fragment and tries to export
+    <p>A web browser on the Windows platform that receives such a fragment and tries to export
     it as part of
-    a drag-and-drop action, can offer the following flavors:</p>
+    a drag-and-drop action can offer the following flavors:</p>
 
     <table id="table-flavor-d" class="data">
 
@@ -793,7 +793,7 @@
   <span>it was broken</span> off.</p>
 
   <p>Most document markup languages have some concept of an inline
-  equation, (or graphic, object, etc.) so there is a typically a natural
+  equation (or graphic, object, etc.), so there is typically a natural
   way to incorporate MathML instances into the content
   model.  However, in the other direction, embedding of markup within
   MathML is not so clear cut, since in many MathML elements, the role of
@@ -891,7 +891,7 @@
   important case is where an authoring tool needs to <span>store</span>
   information about its internal state along with a MathML expression, so an author
   can resume editing from a previous state.  For example, placeholders
-  may be used to indicate incomplete parts of an expression, or a
+  may be used to indicate incomplete parts of an expression, or an
   insertion point within an expression may need to be <span>stored</span>.</p>
 
   <p>An application that needs to persist private data within a MathML
@@ -960,7 +960,7 @@
    such as
    <code>\frac{a}{b}</code> rather than explicitly using <code class="starttag">&lt;mfrac&gt;</code> and <code class="starttag">&lt;mi&gt;</code>. If a system parses a specified syntax and produces a tree that may be
    validated against the <a class="intref" href="#parsing">MathML schema</a> then it may be viewed as
-   as a MathML application. Note however that documents using such a system are not valid
+   a MathML application. Note however that documents using such a system are not valid
    MathML.
    Implementations of such a syntax should, if possible, offer a facility to
    output any mathematical expressions as MathML in the XML syntax defined here. Such
@@ -1022,7 +1022,7 @@
 
     <li>
      <p>Unlike the XML parser, the HTML parser is defined to accept <em>any</em> input string
-     and produce a defined result (which may be classified as non-conforming. The extreme
+     and produce a defined result (which may be classified as non-conforming). The extreme
      example
      <code>&lt;math&gt;&lt;/&lt;&gt;&lt;z =5&gt;</code>
      for example would be flagged as a parse error by validators but would return a tree
