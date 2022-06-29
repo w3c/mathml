@@ -9676,21 +9676,29 @@
  
   <section>
    <h4 id="presm_maction">Bind Action to Sub-Expression
-   <code class="defn starttag">&lt;maction&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-maction"></a></h4>
- 
-   <p>To provide a mechanism for binding actions to expressions, MathML
-   provides the <code class="element">maction</code> element. This element accepts any
-   number of sub-expressions as arguments and the type of action that should happen
-   is controlled by the <code class="attribute">actiontype</code> attribute.
-   Only three actions are predefined by MathML, but the list of possible actions is open.
- Additional predefined actions may be added in future versions of MathML.</p>
+
+ <p>
+  The <code class="element">maction</code> element provides a mechanism for binding actions to expressions.
+  This element accepts any
+  number of sub-expressions as arguments and the type of action that should happen
+  is controlled by the <code class="attribute">actiontype</code> attribute.
+  MathML 3 predefined the four actions:
+  <code class="attributevalue">toggle</code>,
+  <code class="attributevalue">statusline</code>, 
+  <code class="attributevalue">statusline</code>, and
+  <code class="attributevalue">input</code>.
+  However, because the ability to implement any action depends very strongly on the platform,
+  MathML 4 no longer predefines what these actions do.
+  Furthermore, in the web environment events connected to javascript to perform actions are a
+  more powerful solution, although <code class="element">maction</code> provides a
+  convenient wrapper element on which to attach an event.
+ </p>
  
  <p>Linking to other elements, either locally within the <code class="element">math</code> element or to some URL,
  is not handled by <code class="element">maction</code>.
  Instead, it is handled by adding a link directly on a MathML element as specified
- in
- <a href="#interf_link"></a>.</p>
- 
+ in <a href="#interf_link"></a>.</p>
+
  <section>
  <h5>Attributes</h5>
  
@@ -9762,66 +9770,6 @@
  <p>When a MathML application receives a mouse event that may be
  processed by two or more nested maction elements, the innermost
  maction element of each action type should respond to the event.</p>
- 
- <p>The meanings of the various <code class="attribute">actiontype</code> values are given below.
- Note that not all renderers support all of the <code class="attribute">actiontype</code> values, and  that the allowed values are open-ended.</p>
- 
- <dl>
- 
-  <dt>&lt;maction actiontype="toggle" selection="positive-integer" &gt; (first expression) (second
- expression)... &lt;/maction&gt;</dt>
- <dd>
-  <p>The renderer alternately displays the
-  selected subexpression, cycling through them when there is a click on the selected
-  subexpression.
-  Each click increments the <code class="attribute">selection</code> value,
-  wrapping back to 1 when it reaches the last child.
-  Typical uses would be for exercises in education, ellipses in long
-  computer algebra output, or to illustrate alternate notations. Note
-  that the expressions may be of significantly different size, so that
-  size negotiation with the browser may be desirable. If size
-  negotiation is not available, scrolling, elision, panning, or some
- other method may be necessary to allow full viewing.</p>
- </dd>
- 
- <dt>&lt;maction actiontype="statusline"&gt; (expression) (message) &lt;/maction&gt;</dt>
- <dd>
-  <p>The renderer displays the first child.
-  When a reader clicks on the expression or
-  moves the pointer over it, the renderer sends a rendering of the
-  message to the browser statusline. Because most browsers in the
-  foreseeable future are likely to be limited to displaying text on their
-  statusline, the second child should be an
-  <code class="element">mtext</code> element in most circumstances.
-  For non-<code class="element">mtext</code> messages, renderers might provide a
-  natural language translation of the markup, but this is not
- required.</p>
- </dd>
- 
- <dt>&lt;maction actiontype="tooltip"&gt; (expression) (message) &lt;/maction&gt;</dt>
- <dd>
-  <p>The renderer displays the first child.
-  When the pointer pauses over the expression for a long
-  enough delay time, the renderer displays a rendering of the message in
-  a pop-up <q>tooltip</q> box near the expression. Many systems may limit
-  the popup to be text, so the second child should be an
-  <code class="element">mtext</code> element in most circumstances.
-  For non-<code class="element">mtext</code> messages,
-  renderers may provide a natural language translation of the markup if
-  full MathML rendering is not practical, but this is not
- required.</p>
- </dd>
- 
- <dt>&lt;maction actiontype="input"&gt; (expression) &lt;/maction&gt;</dt>
- <dd>
-  <p>The renderer displays the expression.
-  For renderers that allow editing, when focus is passed to this element,
-  the <code class="element">maction</code> is replaced by what is entered, pasted, etc.
-  MathML does not restrict what is allowed as input, nor does it require an editor to
-  allow arbitrary input.
- Some renderers/editors may restrict the input to simple (linear) text.</p>
- </dd>
- </dl>
  
  <p>The <code class="attribute">actiontype</code> values are open-ended. If another value is given and it requires additional attributes,
  the attributes must be in a different namespace
