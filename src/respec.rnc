@@ -306,6 +306,8 @@ attribute href {text}?,
 attribute title {text}?,
 attribute onclick {text}?,
 attribute data-cite {text}?,
+attribute data-link-for {text}?,
+attribute data-link-type {"dfn"}?,
 inlinecontentnoa
 }
 
