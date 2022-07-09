@@ -44,8 +44,8 @@
   <div class="example mathml mmlcore">
    <pre>
     &lt;msup intent="power($base,$exp)">
-    &lt;mi arg="base">x&lt;/mi>
-    &lt;mi arg="exp">n&lt;/mi>
+      &lt;mi arg="base">x&lt;/mi>
+      &lt;mi arg="exp">n&lt;/mi>
     &lt;/msup>
    </pre>
   </div>
@@ -219,27 +219,28 @@
     a derivative or an embellished symbol. These cases would be distinguished as follows:</p>
 
     <div class="example mathml mmlcore">
-     <pre>
-      &lt;msup intent="power($base,$exp)">
-      &lt;mi arg="base">x&lt;/mi>
-      &lt;mi arg="exp">n&lt;/mi>
-      &lt;/msup>
-      &lt;mo>&#x2192;&lt;/mo>
-      &lt;msup intent="$op($a)">
-      &lt;mi arg="a">A&lt;/mi>
-      &lt;mi arg="op" intent="transpose">T&lt;/mi>
-      &lt;/msup>
-      &lt;mo>&#x2192;&lt;/mo>
-      &lt;msup intent="derivative($a)">
-      &lt;mi arg="a">f&lt;/mi>
-      &lt;mi>&#x2032;&lt;/mi>
-      &lt;/msup>
-      &lt;mo>&#x2192;&lt;/mo>
-      &lt;msup intent="x-prime">
-      &lt;mi>x&lt;/mi>
-      &lt;mo>&#x2032;&lt;/mo>
-      &lt;/msup>
-     </pre>
+<pre>
+&lt;msup intent="power($base,$exp)">
+  &lt;mi arg="base">x&lt;/mi>
+  &lt;mi arg="exp">n&lt;/mi>
+&lt;/msup>
+&lt;mo>&#x2192;&lt;/mo>
+&lt;msup intent="$op($a)">
+  &lt;mi arg="a">A&lt;/mi>
+  &lt;mi arg="op" intent="transpose">T&lt;/mi>
+&lt;/msup>
+&lt;mo>&#x2192;&lt;/mo>
+&lt;msup intent="derivative($a)">
+  &lt;mi arg="a">f&lt;/mi>
+  &lt;mi>&#x2032;&lt;/mi>
+&lt;/msup>
+&lt;mo>&#x2192;&lt;/mo>
+&lt;msup intent="x-prime">
+  &lt;mi>x&lt;/mi>
+  &lt;mo>&#x2032;&lt;/mo>
+&lt;/msup>
+</pre>
+
      <p>Possible readings with and without <code class="attribute">intent</code></p>
      <blockquote>x to the n-th power&#160;; right arrow A transpose right arrow derivative of&#160; f&#160; right arrow  x prime</blockquote>
      <blockquote>x to the n-th power&#160; right arrow A transpose right arrow f prime&#160; right arrow x prime,</blockquote>
@@ -249,17 +250,17 @@
     <p>Similarly an over bar may represent complex conjugation, or mean (average):</p>
 
     <div class="example mathml mmlcore">
-     <pre>
-      &lt;mover intent="conjugate($v)"&gt;
-      &lt;mi arg="v"&gt;z&lt;/mi&gt;
-      &lt;mo&gt;&amp;#xaf;&lt;/mo&gt;
-      &lt;/mover&gt;
-      &lt;mtext>&amp;#x00A0;&lt;!--nbsp--&gt;is not&amp;#x00A0;&lt;!--nbsp--&gt;&lt;/mtext>
-      &lt;mover intent="mean($var)"&gt;
-      &lt;mi arg="var"&gt;X&lt;/mi&gt;
-      &lt;mo&gt;&amp;#xaf;&lt;/mo&gt;
-      &lt;/mover&gt;
-     </pre>
+<pre>
+&lt;mover intent="conjugate($v)"&gt;
+  &lt;mi arg="v"&gt;z&lt;/mi&gt;
+  &lt;mo&gt;&amp;#xaf;&lt;/mo&gt;
+&lt;/mover&gt;
+&lt;mtext>&amp;#x00A0;&lt;!--nbsp--&gt;is not&amp;#x00A0;&lt;!--nbsp--&gt;&lt;/mtext>
+&lt;mover intent="mean($var)"&gt;
+  &lt;mi arg="var"&gt;X&lt;/mi&gt;
+  &lt;mo&gt;&amp;#xaf;&lt;/mo&gt;
+&lt;/mover&gt;
+</pre>
      <p>Possible readings with and without <code class="attribute">intent</code></p>
      <blockquote>conjugate of&#160; z is not  mean of&#160; X</blockquote>
      <blockquote>z with ¯ above  is not  X with ¯ above</blockquote>
@@ -298,12 +299,12 @@
     individual document,</p>
 
     <div class="example mathml mmlcore">
-     <pre>
-      &lt;msub intent="bell-number($index)"&gt;
-      &lt;mi&gt;B&lt;/mi&gt;
-      &lt;mn arg="index"&gt;2&lt;/mn&gt;
-      &lt;/msub&gt;
-     </pre>
+<pre>
+&lt;msub intent="bell-number($index)"&gt;
+  &lt;mi&gt;B&lt;/mi&gt;
+  &lt;mn arg="index"&gt;2&lt;/mn&gt;
+&lt;/msub&gt;
+</pre>
      <p>Possible readings with and without <code class="attribute">intent</code></p>
      <blockquote>bell number of&#160; 2</blockquote>
      <blockquote>B sub 2</blockquote>
@@ -324,91 +325,91 @@
 
     <p>Matrices</p>
     <div class="example mathml mmlcore">
-     <pre>
-      &lt;mrow intent="matrix">
-      &lt;mo>(&lt;/mo>
-      &lt;mtable>
-      &lt;mtr intent="arrayrow">
+<pre>
+&lt;mrow intent="matrix">
+  &lt;mo>(&lt;/mo>
+  &lt;mtable>
+    &lt;mtr intent="arrayrow">
       &lt;mtd>&lt;mn>1&lt;/mn>&lt;/mtd>
       &lt;mtd>&lt;mn>0&lt;/mn>&lt;/mtd>
-      &lt;/mtr>
-      &lt;mtr intent="arrayrow">
+    &lt;/mtr>
+    &lt;mtr intent="arrayrow">
       &lt;mtd>&lt;mn>0&lt;/mn>&lt;/mtd>
       &lt;mtd>&lt;mn>1&lt;/mn>&lt;/mtd>
-      &lt;/mtr>
-      &lt;/mtable>
-      &lt;mo>)&lt;/mo>
-      &lt;/mrow>
-     </pre>
+    &lt;/mtr>
+  &lt;/mtable>
+  &lt;mo>)&lt;/mo>
+&lt;/mrow>
+</pre>
     </div>
 
 
     <p>Aligned equations</p>
     <div class="example mathml mmlcore">
-     <pre>
-      &lt;mtable intent="list">
-      &lt;mtr intent="append">
-      &lt;mtd columnalign="right">
+<pre>
+&lt;mtable intent="list">
+  &lt;mtr intent="append">
+    &lt;mtd columnalign="right">
       &lt;mn>2&lt;/mn>
       &lt;mo>&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo>
       &lt;mi>x&lt;/mi>
-      &lt;/mtd>
-      &lt;mtd columnalign="center">
+    &lt;/mtd>
+    &lt;mtd columnalign="center">
       &lt;mo>=&lt;/mo>
-      &lt;/mtd>
-      &lt;mtd columnalign="left">
+    &lt;/mtd>
+    &lt;mtd columnalign="left">
       &lt;mn>1&lt;/mn>
-      &lt;/mtd>
-      &lt;/mtr>
-      &lt;mtr intent="append">
-      &lt;mtd columnalign="right">
+    &lt;/mtd>
+  &lt;/mtr>
+  &lt;mtr intent="append">
+    &lt;mtd columnalign="right">
       &lt;mi>y&lt;/mi>
-      &lt;/mtd>
-      &lt;mtd columnalign="center">
+    &lt;/mtd>
+    &lt;mtd columnalign="center">
       &lt;mo>&gt;&lt;/mo>
-      &lt;/mtd>
-      &lt;mtd columnalign="left">
+    &lt;/mtd>
+    &lt;mtd columnalign="left">
       &lt;mi>x&lt;/mi>
       &lt;mo>-&lt;/mo>
       &lt;mn>3&lt;/mn>
-      &lt;/mtd>
-      &lt;/mtr>
-      &lt;/mtable>
-     </pre>
+    &lt;/mtd>
+  &lt;/mtr>
+&lt;/mtable>
+</pre>
     </div>
 
     <p>Aligned Equations with wrapped expressions</p>
 
     <div class="example mathml mmlcore">
-     <pre>
-      &lt;mtable intent="list">
-      &lt;mtr intent="append">
-      &lt;mtd columnalign="right">
+<pre>
+&lt;mtable intent="list">
+  &lt;mtr intent="append">
+    &lt;mtd columnalign="right">
       &lt;mi>a&lt;/mi>
-      &lt;/mtd>
-      &lt;mtd columnalign="center">
+    &lt;/mtd>
+    &lt;mtd columnalign="center">
       &lt;mo>=&lt;/mo>
-      &lt;/mtd>
-      &lt;mtd columnalign="left">
+    &lt;/mtd>
+    &lt;mtd columnalign="left">
       &lt;mi>b&lt;/mi>
       &lt;mo>+&lt;/mo>
       &lt;mi>c&lt;/mi>
       &lt;mo>-&lt;/mo>
       &lt;mi>d&lt;/mi>
-      &lt;/mtd>
-      &lt;/mtr>
-      &lt;mtr intent="extend">
-      &lt;mtd columnalign="right">&lt;/mtd>
-      &lt;mtd columnalign="center">&lt;/mtd>
-      &lt;mtd columnalign="left">
+    &lt;/mtd>
+  &lt;/mtr>
+  &lt;mtr intent="extend">
+    &lt;mtd columnalign="right">&lt;/mtd>
+    &lt;mtd columnalign="center">&lt;/mtd>
+    &lt;mtd columnalign="left">
       &lt;mo form="infix">+&lt;/mo>
       &lt;mi>e&lt;/mi>
       &lt;mo>-&lt;/mo>
       &lt;mi>f&lt;/mi>
-      &lt;/mtd>
-      &lt;/mtr>
-      &lt;/mtable>
-     </pre>
+    &lt;/mtd>
+  &lt;/mtr>
+&lt;/mtable>
+</pre>
     </div>
    </section>
   </section>
@@ -543,38 +544,38 @@
 
    <!-- mml4c to prevent inlining -->
    <div class="example mathml mml4c">
-    <pre>
-     &lt;semantics&gt;
-     &lt;apply&gt;
-     &lt;plus/&gt;
-     &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-     &lt;cn&gt;5&lt;/cn&gt;
-     &lt;/apply&gt;
-     &lt;annotation-xml encoding="MathML-Presentation"&gt;
-     &lt;mrow&gt;
-     &lt;mrow&gt;
-     &lt;mi&gt;sin&lt;/mi&gt;
-     &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
-     &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-     &lt;/mrow&gt;
-     &lt;mo&gt;+&lt;/mo&gt;
-     &lt;mn&gt;5&lt;/mn&gt;
-     &lt;/mrow&gt;
-     &lt;/annotation-xml&gt;
-     &lt;annotation encoding="application/x-maple"&gt;sin(x) + 5&lt;/annotation&gt;
-     &lt;annotation encoding="application/vnd.wolfram.mathematica"&gt;Sin[x] + 5&lt;/annotation&gt;
-     &lt;annotation encoding="application/x-tex"&gt;\sin x + 5&lt;/annotation&gt;
-     &lt;annotation-xml encoding="application/openmath+xml"&gt;
-     &lt;OMA xmlns="http://www.openmath.org/OpenMath"&gt;
-     &lt;OMA&gt;
-     &lt;OMS cd="arith1" name="plus"/&gt;
-     &lt;OMA&gt;&lt;OMS cd="transc1" name="sin"/&gt;&lt;OMV name="x"/&gt;&lt;/OMA&gt;
-     &lt;OMI&gt;5&lt;/OMI&gt;
-     &lt;/OMA&gt;
-     &lt;/OMA&gt;
-     &lt;/annotation-xml&gt;
-     &lt;/semantics&gt;
-    </pre>
+     <pre>
+       &lt;semantics&gt;
+         &lt;apply&gt;
+           &lt;plus/&gt;
+           &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+           &lt;cn&gt;5&lt;/cn&gt;
+         &lt;/apply&gt;
+         &lt;annotation-xml encoding="MathML-Presentation"&gt;
+           &lt;mrow&gt;
+             &lt;mrow&gt;
+               &lt;mi&gt;sin&lt;/mi&gt;
+               &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
+               &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+             &lt;/mrow&gt;
+             &lt;mo&gt;+&lt;/mo&gt;
+             &lt;mn&gt;5&lt;/mn&gt;
+           &lt;/mrow&gt;
+         &lt;/annotation-xml&gt;
+         &lt;annotation encoding="application/x-maple"&gt;sin(x) + 5&lt;/annotation&gt;
+         &lt;annotation encoding="application/vnd.wolfram.mathematica"&gt;Sin[x] + 5&lt;/annotation&gt;
+         &lt;annotation encoding="application/x-tex"&gt;\sin x + 5&lt;/annotation&gt;
+         &lt;annotation-xml encoding="application/openmath+xml"&gt;
+           &lt;OMA xmlns="http://www.openmath.org/OpenMath"&gt;
+             &lt;OMA&gt;
+               &lt;OMS cd="arith1" name="plus"/&gt;
+               &lt;OMA&gt;&lt;OMS cd="transc1" name="sin"/&gt;&lt;OMV name="x"/&gt;&lt;/OMA&gt;
+               &lt;OMI&gt;5&lt;/OMI&gt;
+             &lt;/OMA&gt;
+           &lt;/OMA&gt;
+         &lt;/annotation-xml&gt;
+       &lt;/semantics&gt;
+     </pre>
    </div>
 
 
@@ -613,26 +614,26 @@
 
    <!-- mml4c to prevent inlining -->
    <div class="example mathml mml4c">
-    <pre>
-     &lt;semantics&gt;
-     &lt;mrow&gt;
-     &lt;mrow&gt;
-     &lt;mi&gt;a&lt;/mi&gt;
-     &lt;mrow&gt;
-     &lt;mo&gt;(&lt;/mo&gt;
-     &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;
-     &lt;mo&gt;)&lt;/mo&gt;
-     &lt;/mrow&gt;
-     &lt;/mrow&gt;
-     &lt;/mrow&gt;
-     &lt;annotation-xml cd="mathmlkeys" name="contentequiv" encoding="MathML-Content"&gt;
-     &lt;apply&gt;
-     &lt;ci&gt;a&lt;/ci&gt;
-     &lt;apply&gt;&lt;plus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;5&lt;/cn&gt;&lt;/apply&gt;
-     &lt;/apply&gt;
-     &lt;/annotation-xml&gt;
-     &lt;/semantics&gt;
-    </pre>
+     <pre>
+       &lt;semantics&gt;
+         &lt;mrow&gt;
+           &lt;mrow&gt;
+             &lt;mi&gt;a&lt;/mi&gt;
+             &lt;mrow&gt;
+               &lt;mo&gt;(&lt;/mo&gt;
+               &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;
+               &lt;mo&gt;)&lt;/mo&gt;
+             &lt;/mrow&gt;
+           &lt;/mrow&gt;
+         &lt;/mrow&gt;
+         &lt;annotation-xml cd="mathmlkeys" name="contentequiv" encoding="MathML-Content"&gt;
+           &lt;apply&gt;
+             &lt;ci&gt;a&lt;/ci&gt;
+             &lt;apply&gt;&lt;plus/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;5&lt;/cn&gt;&lt;/apply&gt;
+           &lt;/apply&gt;
+         &lt;/annotation-xml&gt;
+       &lt;/semantics&gt;
+     </pre>
    </div>
 
   </section>
@@ -660,13 +661,13 @@
 
 
    <div class="example mathml-fragment">
-    <pre>
-     &lt;semantics&gt;
-     &lt;mfrac&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;
-     &lt;annotation encoding="image/png" src="333/formula56.png"/&gt;
-     &lt;annotation encoding="application/x-maple" src="333/formula56.ms"/&gt;
-     &lt;/semantics&gt;
-    </pre>
+     <pre>
+       &lt;semantics&gt;
+         &lt;mfrac&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;
+         &lt;annotation encoding="image/png" src="333/formula56.png"/&gt;
+         &lt;annotation encoding="application/x-maple" src="333/formula56.ms"/&gt;
+       &lt;/semantics&gt;
+     </pre>
    </div>
 
 
@@ -710,27 +711,27 @@
     in the annotations to customize its rendering of the annotated element.</p>
 
     <div class="example mathml mmlcore">
-     <pre>
-      &lt;semantics&gt;
-      &lt;mrow&gt;
-      &lt;mrow&gt;
-      &lt;mi&gt;sin&lt;/mi&gt;
-      &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
-      &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-      &lt;/mrow&gt;
-      &lt;mo&gt;+&lt;/mo&gt;
-      &lt;mn&gt;5&lt;/mn&gt;
-      &lt;/mrow&gt;
-      &lt;annotation-xml cd="mathmlkeys" name="contentequiv" encoding="MathML-Content"&gt;
-      &lt;apply&gt;
-      &lt;plus/&gt;
-      &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-      &lt;cn&gt;5&lt;/cn&gt;
-      &lt;/apply&gt;
-      &lt;/annotation-xml&gt;
-      &lt;annotation encoding="application/x-tex"&gt;\sin x + 5&lt;/annotation&gt;
-      &lt;/semantics&gt;
-     </pre>
+      <pre>
+        &lt;semantics&gt;
+          &lt;mrow&gt;
+            &lt;mrow&gt;
+              &lt;mi&gt;sin&lt;/mi&gt;
+              &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
+              &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+            &lt;/mrow&gt;
+            &lt;mo&gt;+&lt;/mo&gt;
+            &lt;mn&gt;5&lt;/mn&gt;
+          &lt;/mrow&gt;
+          &lt;annotation-xml cd="mathmlkeys" name="contentequiv" encoding="MathML-Content"&gt;
+            &lt;apply&gt;
+              &lt;plus/&gt;
+              &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+              &lt;cn&gt;5&lt;/cn&gt;
+            &lt;/apply&gt;
+          &lt;/annotation-xml&gt;
+          &lt;annotation encoding="application/x-tex"&gt;\sin x + 5&lt;/annotation&gt;
+        &lt;/semantics&gt;
+      </pre>
     </div>
 
    </section>
@@ -963,23 +964,23 @@
 
 
     <div class="example mathml-fragment">
-     <pre>
-      &lt;annotation-xml cd="mathmlkeys" name="contentequiv" encoding="MathML-Content"&gt;
-      &lt;apply&gt;
-      &lt;plus/&gt;
-      &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
-      &lt;cn&gt;5&lt;/cn&gt;
-      &lt;/apply&gt;
-      &lt;/annotation-xml&gt;
+      <pre>
+        &lt;annotation-xml cd="mathmlkeys" name="contentequiv" encoding="MathML-Content"&gt;
+          &lt;apply&gt;
+            &lt;plus/&gt;
+            &lt;apply&gt;&lt;sin/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;
+            &lt;cn&gt;5&lt;/cn&gt;
+          &lt;/apply&gt;
+        &lt;/annotation-xml&gt;
 
-      &lt;annotation-xml encoding="application/openmath+xml"&gt;
-      &lt;OMA xmlns="http://www.openmath.org/OpenMath"&gt;
-      &lt;OMS cd="arith1" name="plus"/&gt;
-      &lt;OMA&gt;&lt;OMS cd="transc1" name="sin"/&gt;&lt;OMV name="x"/&gt;&lt;/OMA&gt;
-      &lt;OMI&gt;5&lt;/OMI&gt;
-      &lt;/OMA&gt;
-      &lt;/annotation-xml&gt;
-     </pre>
+        &lt;annotation-xml encoding="application/openmath+xml"&gt;
+          &lt;OMA xmlns="http://www.openmath.org/OpenMath"&gt;
+            &lt;OMS cd="arith1" name="plus"/&gt;
+            &lt;OMA&gt;&lt;OMS cd="transc1" name="sin"/&gt;&lt;OMV name="x"/&gt;&lt;/OMA&gt;
+            &lt;OMI&gt;5&lt;/OMI&gt;
+          &lt;/OMA&gt;
+        &lt;/annotation-xml&gt;
+      </pre>
     </div>
 
 
@@ -990,16 +991,16 @@
 
 
     <div class="example mathml-fragment">
-     <pre>
-      &lt;annotation-xml encoding="application/xhtml+xml"&gt;
-      &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
-      &lt;head&gt;&lt;title&gt;E&lt;/title&gt;&lt;/head&gt;
-      &lt;body&gt;
-      &lt;p&gt;The base of the natural logarithms, approximately 2.71828.&lt;/p&gt;
-      &lt;/body&gt;
-      &lt;/html&gt;
-      &lt;/annotation-xml&gt;
-     </pre>
+      <pre>
+        &lt;annotation-xml encoding="application/xhtml+xml"&gt;
+          &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+            &lt;head&gt;&lt;title&gt;E&lt;/title&gt;&lt;/head&gt;
+            &lt;body&gt;
+              &lt;p&gt;The base of the natural logarithms, approximately 2.71828.&lt;/p&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+        &lt;/annotation-xml&gt;
+      </pre>
     </div>
 
 
@@ -1048,16 +1049,16 @@
 
     <div class="example mathml-fragment">
      <pre>
-      &lt;math&gt;
-      &lt;semantics&gt;
-      &lt;mi&gt;a&lt;/mi&gt;
-      &lt;annotation-xml encoding="text/html"&gt;
-      &lt;span&gt;xxx&lt;/span&gt;
-      &lt;/annotation-xml&gt;
-      &lt;/semantics&gt;
-      &lt;mo&gt;+&lt;/mo&gt;
-      &lt;mi&gt;b&lt;/mi&gt;
-      &lt;/math&gt;
+       &lt;math&gt;
+         &lt;semantics&gt;
+           &lt;mi&gt;a&lt;/mi&gt;
+           &lt;annotation-xml encoding="text/html"&gt;
+             &lt;span&gt;xxx&lt;/span&gt;
+           &lt;/annotation-xml&gt;
+         &lt;/semantics&gt;
+         &lt;mo&gt;+&lt;/mo&gt;
+         &lt;mi&gt;b&lt;/mi&gt;
+       &lt;/math&gt;
      </pre>
     </div>
 
@@ -1066,16 +1067,16 @@
 
     <div class="example mathml-error">
      <pre>
-      &lt;math&gt;
-      &lt;semantics&gt;
-      &lt;mi&gt;a&lt;/mi&gt;
-      &lt;annotation-xml&gt;
-      &lt;span&gt;xxx&lt;/span&gt;
-      &lt;/annotation-xml&gt;
-      &lt;/semantics&gt;
-      &lt;mo&gt;+&lt;/mo&gt;
-      &lt;mi&gt;b&lt;/mi&gt;
-      &lt;/math&gt;
+       &lt;math&gt;
+         &lt;semantics&gt;
+           &lt;mi&gt;a&lt;/mi&gt;
+           &lt;annotation-xml&gt;
+             &lt;span&gt;xxx&lt;/span&gt;
+           &lt;/annotation-xml&gt;
+         &lt;/semantics&gt;
+         &lt;mo&gt;+&lt;/mo&gt;
+         &lt;mi&gt;b&lt;/mi&gt;
+       &lt;/math&gt;
      </pre>
     </div>
 
@@ -1086,16 +1087,16 @@
 
     <div class="example mathml-error">
      <pre>
-      &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
-      &lt;semantics&gt;
-      &lt;mi&gt;a&lt;/mi&gt;
-      &lt;annotation-xml&gt;
-      &lt;/annotation-xml&gt;
-      &lt;/semantics&gt;
-      &lt;/math&gt;
-      &lt;span xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/span&gt;
-      &lt;mo xmlns="http://www.w3.org/1999/xhtml"&gt;+&lt;/mo&gt;
-      &lt;mi xmlns="http://www.w3.org/1999/xhtml"&gt;b&lt;/mi&gt;
+       &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
+         &lt;semantics&gt;
+           &lt;mi&gt;a&lt;/mi&gt;
+           &lt;annotation-xml&gt;
+           &lt;/annotation-xml&gt;
+         &lt;/semantics&gt;
+       &lt;/math&gt;
+       &lt;span xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/span&gt;
+       &lt;mo xmlns="http://www.w3.org/1999/xhtml"&gt;+&lt;/mo&gt;
+       &lt;mi xmlns="http://www.w3.org/1999/xhtml"&gt;b&lt;/mi&gt;
      </pre>
     </div>
 
@@ -1270,19 +1271,19 @@
 
     <div class="example mathml mmlcore">
      <pre>
-      &lt;semantics&gt;
-      &lt;mrow&gt;
-      &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-      &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
-      &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mi&gt;d&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
-      &lt;/mrow&gt;
-      &lt;annotation-xml encoding="MathML-Content"&gt;
-      &lt;apply&gt;&lt;and/&gt;
-      &lt;apply&gt;&lt;xor/&gt;&lt;ci&gt;a&lt;/ci&gt; &lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
-      &lt;apply&gt;&lt;xor/&gt;&lt;ci&gt;c&lt;/ci&gt; &lt;ci&gt;d&lt;/ci&gt;&lt;/apply&gt;
-      &lt;/apply&gt;
-      &lt;/annotation-xml&gt;
-      &lt;/semantics&gt;
+       &lt;semantics&gt;
+         &lt;mrow&gt;
+           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+           &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
+           &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mi&gt;d&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
+         &lt;/mrow&gt;
+         &lt;annotation-xml encoding="MathML-Content"&gt;
+           &lt;apply&gt;&lt;and/&gt;
+             &lt;apply&gt;&lt;xor/&gt;&lt;ci&gt;a&lt;/ci&gt; &lt;ci&gt;b&lt;/ci&gt;&lt;/apply&gt;
+             &lt;apply&gt;&lt;xor/&gt;&lt;ci&gt;c&lt;/ci&gt; &lt;ci&gt;d&lt;/ci&gt;&lt;/apply&gt;
+           &lt;/apply&gt;
+         &lt;/annotation-xml&gt;
+       &lt;/semantics&gt;
      </pre>
     </div>
     <p>
@@ -1324,37 +1325,37 @@
 
     <div class="example mathml mmlcore">
      <pre>
-      &lt;semantics&gt;
-      &lt;mrow id="E"&gt;
-      &lt;mrow id="E.1"&gt;
-      &lt;mo id="E.1.1"&gt;(&lt;/mo&gt;
-      &lt;mi id="E.1.2"&gt;a&lt;/mi&gt;
-      &lt;mo id="E.1.3"&gt;+&lt;/mo&gt;
-      &lt;mi id="E.1.4"&gt;b&lt;/mi&gt;
-      &lt;mo id="E.1.5"&gt;)&lt;/mo&gt;
-      &lt;/mrow&gt;
-      &lt;mo id="E.2"&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
-      &lt;mrow id="E.3"&gt;
-      &lt;mo id="E.3.1"&gt;(&lt;/mo&gt;
-      &lt;mi id="E.3.2"&gt;c&lt;/mi&gt;
-      &lt;mo id="E.3.3"&gt;+&lt;/mo&gt;
-      &lt;mi id="E.3.4"&gt;d&lt;/mi&gt;
-      &lt;mo id="E.3.5"&gt;)&lt;/mo&gt;
-      &lt;/mrow&gt;
-      &lt;/mrow&gt;
+       &lt;semantics&gt;
+         &lt;mrow id="E"&gt;
+           &lt;mrow id="E.1"&gt;
+             &lt;mo id="E.1.1"&gt;(&lt;/mo&gt;
+             &lt;mi id="E.1.2"&gt;a&lt;/mi&gt;
+             &lt;mo id="E.1.3"&gt;+&lt;/mo&gt;
+             &lt;mi id="E.1.4"&gt;b&lt;/mi&gt;
+             &lt;mo id="E.1.5"&gt;)&lt;/mo&gt;
+           &lt;/mrow&gt;
+           &lt;mo id="E.2"&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
+           &lt;mrow id="E.3"&gt;
+             &lt;mo id="E.3.1"&gt;(&lt;/mo&gt;
+             &lt;mi id="E.3.2"&gt;c&lt;/mi&gt;
+             &lt;mo id="E.3.3"&gt;+&lt;/mo&gt;
+             &lt;mi id="E.3.4"&gt;d&lt;/mi&gt;
+             &lt;mo id="E.3.5"&gt;)&lt;/mo&gt;
+           &lt;/mrow&gt;
+         &lt;/mrow&gt;
 
-      &lt;annotation-xml encoding="MathML-Content"&gt;
-      &lt;apply xref="E"&gt;
-      &lt;and xref="E.2"/&gt;
-      &lt;apply xref="E.1"&gt;
-      &lt;xor xref="E.1.3"/&gt;&lt;ci xref="E.1.2"&gt;a&lt;/ci&gt;&lt;ci xref="E.1.4"&gt;b&lt;/ci&gt;
-      &lt;/apply&gt;
-      &lt;apply xref="E.3"&gt;
-      &lt;xor xref="E.3.3"/&gt;&lt;ci xref="E.3.2"&gt;c&lt;/ci&gt;&lt;ci xref="E.3.4"&gt;d&lt;/ci&gt;
-      &lt;/apply&gt;
-      &lt;/apply&gt;
-      &lt;/annotation-xml&gt;
-      &lt;/semantics&gt;
+         &lt;annotation-xml encoding="MathML-Content"&gt;
+           &lt;apply xref="E"&gt;
+             &lt;and xref="E.2"/&gt;
+             &lt;apply xref="E.1"&gt;
+               &lt;xor xref="E.1.3"/&gt;&lt;ci xref="E.1.2"&gt;a&lt;/ci&gt;&lt;ci xref="E.1.4"&gt;b&lt;/ci&gt;
+             &lt;/apply&gt;
+             &lt;apply xref="E.3"&gt;
+               &lt;xor xref="E.3.3"/&gt;&lt;ci xref="E.3.2"&gt;c&lt;/ci&gt;&lt;ci xref="E.3.4"&gt;d&lt;/ci&gt;
+             &lt;/apply&gt;
+           &lt;/apply&gt;
+         &lt;/annotation-xml&gt;
+       &lt;/semantics&gt;
      </pre>
     </div>
 
