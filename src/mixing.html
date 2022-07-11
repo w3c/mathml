@@ -216,40 +216,51 @@
     and typically has different readings.</p>
 
     <p>Superscript, <code class="element">msup</code>, may represent a power, a transpose,
-    a derivative or an embellished symbol. These cases would be distinguished as follows:</p>
+    a derivative or an embellished symbol. These cases would be distinguished as follows, showing possible readings with and without <code class="attribute">intent</code></p>
 
-    <div class="example mathml mmlcore">
+<div class="example mathml mmlcore">
 <pre>
 &lt;msup intent="power($base,$exp)">
   &lt;mi arg="base">x&lt;/mi>
   &lt;mi arg="exp">n&lt;/mi>
 &lt;/msup>
-&lt;mo>&#x2192;&lt;/mo>
+</pre>
+<blockquote>x to the n-th power<br/> x to the n-th power</blockquote>
+</div>
+<div class="example mathml mmlcore">
+<pre>
 &lt;msup intent="$op($a)">
   &lt;mi arg="a">A&lt;/mi>
   &lt;mi arg="op" intent="transpose">T&lt;/mi>
 &lt;/msup>
-&lt;mo>&#x2192;&lt;/mo>
+</pre>
+<blockquote>A transpose<br/> A transpose </blockquote>
+</div>
+<div class="example mathml mmlcore">
+<pre>
 &lt;msup intent="derivative($a)">
   &lt;mi arg="a">f&lt;/mi>
   &lt;mi>&#x2032;&lt;/mi>
 &lt;/msup>
-&lt;mo>&#x2192;&lt;/mo>
+</pre>
+<blockquote>derivative of f<br/> f prime</blockquote>
+</div>
+<div class="example mathml mmlcore">
+<pre>
 &lt;msup intent="x-prime">
   &lt;mi>x&lt;/mi>
   &lt;mo>&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
+<blockquote>x prime<br/> x prime</blockquote>
+</div>
 
-     <p>Possible readings with and without <code class="attribute">intent</code></p>
-     <blockquote>x to the n-th power&#160;; right arrow A transpose right arrow derivative of&#160; f&#160; right arrow  x prime</blockquote>
-     <blockquote>x to the n-th power&#160; right arrow A transpose right arrow f prime&#160; right arrow x prime,</blockquote>
      <p class="ednote">mathcat gets transpose even without intent</p>
-    </div>
 
-    <p>Similarly an over bar may represent complex conjugation, or mean (average):</p>
 
-    <div class="example mathml mmlcore">
+    <p>Similarly an over bar may represent complex conjugation, or mean (average), again with possible readings with and without <code class="attribute">intent</code>:</p>
+
+ <div class="example mathml mmlcore">
 <pre>
 &lt;mover intent="conjugate($v)"&gt;
   &lt;mi arg="v"&gt;z&lt;/mi&gt;
@@ -261,10 +272,9 @@
   &lt;mo&gt;&amp;#xaf;&lt;/mo&gt;
 &lt;/mover&gt;
 </pre>
-     <p>Possible readings with and without <code class="attribute">intent</code></p>
-     <blockquote>conjugate of&#160; z is not  mean of&#160; X</blockquote>
-     <blockquote>z with ¯ above  is not  X with ¯ above</blockquote>
-     <p class="ednote">This makes better example</p>
+    
+     <blockquote>conjugate of z is not  mean of X<br/>
+     z with ¯ above  is not  X with ¯ above</blockquote>
     </div>
 
    </section>
@@ -277,16 +287,16 @@
 
     
      <p>If `$x` and `$y` reference `&lt;mi arg="x">x&lt;/mi>` and `&lt;mi
-     arg="y">y&lt;/mi> respectively, then</p>
+     arg="y">y&lt;/mi>` respectively, then</p>
 
     <ul>
-     <li><code>mydiv($x,$y)</code> would be read as <q>mydiv of x  and y</q></li>
+     <li><code>inner-product($x,$y)</code> would be read as <q>inner product of x  and y</q></li>
 
-     <li><code>mydiv @infix ($x,$y)</code> would be read as <q>x mydiv y</q></li>
+     <li><code>inner-product @infix ($x,$y)</code> would be read as <q>x inner product y</q></li>
 
-     <li><code>mydiv @silent ($x,$y)</code> would be read as <q>x y</q></li>
+     <li><code>list @silent ($x,$y)</code> would be read as <q>x y</q></li>
 
-     <li><code>myfactorial @postfix($x)</code> would be read as <q>x myfactorial</q></li>
+     <li><code>semi-factorial @postfix($x)</code> would be read as <q>x semi factorial</q></li>
 
     </ul>
 
