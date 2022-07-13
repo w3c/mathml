@@ -5424,9 +5424,9 @@
       <td>(<code class="attributevalue">actuarial</code> | <code class="attributevalue">phasorangle</code> | <code class="attributevalue">box</code> | <code class="attributevalue">roundedbox</code> | <code class="attributevalue">circle</code> |
       <code class="attributevalue">left</code> | <code class="attributevalue">right</code> | <code class="attributevalue">top</code> | <code class="attributevalue">bottom</code> |
       <code class="attributevalue">updiagonalstrike</code> | <code class="attributevalue">downdiagonalstrike</code> | <code class="attributevalue">verticalstrike</code> | <code class="attributevalue">horizontalstrike</code> | <code class="attributevalue">northeastarrow</code>
-      | <code class="attributevalue">madruwb</code> | text) +
+      | <code class="attributevalue">madruwb</code> | text ) +
       </td>
-      <td>box</td>
+      <td>do nothing</td>
       <td><span class="coreno"></span></td>
      </tr>
  
@@ -5437,6 +5437,9 @@
        MathML 4 deprecates the use of <code class="attributevalue">longdiv</code> and <code class="attributevalue">radical</code>.
        These notations duplicate functionality provided by <code class="element">mlongdiv</code> and <code class="element">msqrt</code> respectively;
        those elements should be used instead.
+       The default has been changed so that if no <code class="attname">notation</code> is given,
+       or if it is an empty string,
+       then <code class="element">menclose</code> should not draw.
       </td>
      </tr>
     </tbody>
