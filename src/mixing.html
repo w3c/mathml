@@ -137,6 +137,9 @@
      If the speech hints are not being used
      and the literal concept name is being read then each of  `-`, `_` and `.` should be
      read as an inter-word space.</p>
+     <p>Names starting with <q>`-`</q> (U+002D) will never be in the
+     Concept dictionary used by the application, so may be used to
+     ensure aliteral text interpretation.</p>
     </dd>
     <dt><dfn data-dfn-for="intent" id="intent_number">number</dfn></dt>
     <dd>
@@ -330,7 +333,8 @@
     references to the mathematical arguments. It is recommended that
     Names added purely to generate text, and not corresponding to a
     mathematical argument, start with <code>_</code> (U+005F).
-    This does not affect the text generated, but may aid other systems
+    This ensures the name is not in the Concept Dictionary used by the
+    application, so will be taken as literal text. It may also  aid other systems
     in ignoring these terms while interpreting the  <code
     class="attribute">intent</code>.</p>
     
