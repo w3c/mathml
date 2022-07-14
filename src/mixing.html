@@ -1,8 +1,9 @@
 <section>
  <h2 id="mixing">Annotating MathML</h2>
-<!-- <div class="issue" data-number="281"></div>-->
-<!-- <div class="issue" data-number="252"></div>-->
+ <!-- <div class="issue" data-number="281"></div>-->
+ <!-- <div class="issue" data-number="252"></div>-->
 
+ <div class="issue" data-number="398"></div>
  <div class="issue" data-number="289"></div>
  <div class="issue" data-number="257"></div>
  <div class="issue" data-number="255"></div>
@@ -25,11 +26,10 @@
 
  <section>
   <h3 id="mixing_intent">The <code class="attribute">intent</code> attribute</h3>
-  <p>As decribed in <a href="#presm_presatt_intent"></a>, Presentation
-  MathML elements
-  allow attributes <code
+  <p>As described in <a href="#presm_presatt_intent"></a>, Presentation
+  MathML elements allow attributes <code
   class="attribute">intent</code> and <code
-  class="attribute">arg</code> that as described here allow the
+  class="attribute">arg</code> that allow the
   <dfn><q>intent</q></dfn> of the term to be specified. This
   annotation is not intended to provide a full mathematical definition
   of the term but may be used to guide accessibility systems to give audio
@@ -40,63 +40,17 @@
   <p>The <code class="attribute">intent</code> attribute encodes a
   simple functional syntax representing  the intended meaning. A
   formal grammar is given below, but a typical example would be
-  <code>intent="power($base,$exponent)"</code>. The parts consist
-  of:</p>
-  <ul>
-  <li><em>references</em> prefixed with <code>$</code>. An argument
-  reference such as <code>$name</code> references a descendent element
-  that has an attribute <code>arg="name"</code>. Unlike <code class="attribute">id</code>
-  attributes, <code class="attribute">arg</code> do not have to be
-  unique within a document. When searching for a matching element the
-  search should only consider descendants, while stopping early at any
-  elements that have a set <code class="attribute">intent</code> or
-  <code class="attribute">arg</code> attribute, without descending into them.</li>
-  <li><em>literal numbers</em> such as <code>2.5</code> denote
-  themselves.</li>
-  <li><em>literal identifiers</em> Non numeric literals reference
-  terms in the intent dictionary, currently located at <a
-  href="https://docs.google.com/spreadsheets/d/1EsWou1K5nxBdLPvQapdoA9h-s8lg_qjn8fJH64g9izQ/edit#gid=1358098730">Google
-    Sheets</a>.
-
-
-
-<p>Note that [=intent=] identifiers are maintained in two lists:</p>
-    <ul>
-     <li><dfn id="intent-core">Core</dfn>: This is a list of core
-     concept names maintained by the Math Working Group.
-     An accessibility system reading MathML attributed with [^core^]
-     concepts SHOULD use the speech hints provided by the intent
-     definition.</li>
-     <li><dfn id="intent-open">Open</dfn>: This is an open list of concepts
-     to which contributions are invited.
-     An accessibility system reading MathML attributed with [^open^]
-     concepts MAY use the speech hints provided by the intent
-     definition but a system
-     may also fall back on reading the identifier name as given.</li>
-    </ul>
-    <p>When comparing the literal concept name in the <code
-    class="attribute">intent</code> attribute with entries in the intent
-    lists, the comparison should be
-    <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>
-    and also normalize
-    <q>`_`</q> (U+00F5) and <q>`.`</q>  (U+002E) to <q>`-`</q> (U+002D).
-    If the speech hints are not being used
-    and the literal concept name is being read then each of  `-`, `_` and `.` should be
-    read as an inter-word space.</p>
-</li>
-  </ul>
-
-<p>The key component here is the literal. A literal is intended to
-correspond to some mathematical concept or operator, or some
-application specific quantity or operation; that is it represents some
-“meaning”. Ultimately, the goal is to translate this virtual content
-tree into text or speech (in different languages), braille or some
-other form. The preferred translation may also depend on context and
-user profile. On the one hand, the most natural translation of a given
-expression can depend on the operator. It is thus desirable to have a
-set of common known meaning with translation rules. Thus power(x,2)
-might be rendered as “the 2nd power of x” or “x squared”, depending on
-the user and agent.</p>
+  <code>intent="power($base,$exponent)"</code> used in a context such as:</p>
+  
+  <div class="example mathml mmlcore">
+   <pre>
+    &lt;msup intent="power($base,$exp)">
+      &lt;mi arg="base">x&lt;/mi>
+      &lt;mi arg="exp">n&lt;/mi>
+    &lt;/msup>
+   </pre>
+  </div>
+  <p>here clarifying that the superscript here is denoting exponentiation, taking the <i class="var">n</i>-th power of <i class="var">x</i>.</p>
 
   <section>
    <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
@@ -104,35 +58,165 @@ the user and agent.</p>
    <p>The <code class="attribute">intent</code>, after ignoring white
    space between tokens, should match the following grammar.</p>
 
-<pre class="def bnf">
-intent      := name | number | reference | application
-name        := NCName
-number      := '-'? digit+ ( '.' digit+ )?
-reference   := '$' NCName
-application := function '(' arguments? ')'
-function    := name | reference | application
-arguments   := intent ( ',' intent )*
-</pre>
+   <pre class="def bnf">
+    intent             := concept-or-literal | number | reference | application
+    concept-or-literal := NCName
+    number             := '-'? digit+ ( '.' digit+ )?
+    reference          := '$' NCName
+    application        := intent hint? '(' arguments? ')'
+    arguments          := intent ( ',' intent )*
+    hint               := '@' ( 'prefix' | 'infix' | 'postfix' | 'silent' )
+   </pre>
 
-<p>Here <a href="https://www.w3.org/TR/REC-xml-names/#NT-NCName"><code>NCName</code></a>
-is as defined in  in [[xml-names]], and <code>digit</code> is a character in the range 0–9.</p>
+   <p>Here <a href="https://www.w3.org/TR/REC-xml-names/#NT-NCName"><code>NCName</code></a>
+   is as defined in  in [[xml-names]], and <code>digit</code> is a character in the range 0–9.</p>
+
+
+   <p>The parts consist of:</p>
+   <dl>
+    <dt><dfn data-dfn-for="intent" id="intent_concept-or-literal">concept-or-literal</dfn></dt>
+    <dd>Non numeric <a data-link-for="intent" data-link-type="dfn"
+    href="#intent_concept-or-literal">literals</a>
+    should match the <code>NCName</code> production as used for
+    no-namespace element names.
+    They are interpreted in one of two ways.
+    <ul>
+     <li>
+     <p>If the name matches a [=concept=] name in the <em>Intent Concept
+     Dictionary</em> maintained by the application, specific audio or
+     braille renderings may be produced based on the speech hints
+     given in the dictionary.</p>
+   <p>A <dfn>concept</dfn> is intended to
+   correspond to some mathematical, or 
+   application specific function or concept <q>meaning</q>. Ultimately, the goal is to translate this virtual content
+   tree into text or speech (in different languages), braille or some
+   other form. </p>
+   (For example the <code>power</code>
+     function shown above may have a speech hint to say <q>x
+     squared</q> if the exponent is 2, not <q>power of x and 2</q>
+     which would be the generic reading for a 2-argument function. As
+     described below an application may also use any [=hint=] specified
+     after the function name to guide the speech to generate.
+     </li>
+     <li>
+      If the name does not match a Concept Name known to the
+     application,  a default reading is generated by replacing any
+     <code>-</code>, <code>_</code>, <code>.</code> in the name by
+     spaces and then reading the resulting phrase. The use of this
+     phrase may be further adjusted by use of a [=hint=] as described
+     below.
+     </li>
+    </ul>
+    <p>
+     [=Intent=] identifiers are maintained in two lists,
+     currently located at <a
+     href="https://docs.google.com/spreadsheets/d/1EsWou1K5nxBdLPvQapdoA9h-s8lg_qjn8fJH64g9izQ/edit#gid=1358098730">Google Sheets</a>.
+    </p>
+
+     <ul>
+      <li>
+       <dfn id="intent-core">Core</dfn>: This is a list of core
+      concept names maintained by the Math Working Group.
+      An accessibility system reading MathML attributed with [=core=]
+      concepts SHOULD use the speech hints provided by the intent
+      definition.</li>
+      <li><dfn id="intent-open">Open</dfn>: This is an open list of concepts
+      to which contributions are invited.
+      An accessibility system reading MathML attributed with [=open=]
+      concepts MAY use the speech hints provided by the intent
+      definition but a system
+      may also fall back on reading the identifier name as given.
+      </li>
+     </ul>
+     <p>When comparing the literal concept name in the <code
+     class="attribute">intent</code> attribute with entries in the intent
+     lists, the comparison should be
+     <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>
+     and also normalize
+     <q>`_`</q> (U+00F5) and <q>`.`</q>  (U+002E) to <q>`-`</q> (U+002D).
+     If the speech hints are not being used
+     and the literal concept name is being read then each of  `-`, `_` and `.` should be
+     read as an inter-word space.</p>
+    </dd>
+    <dt><dfn data-dfn-for="intent" id="intent_number">number</dfn></dt>
+    <dd>
+     literal <a data-link-for="intent" data-link-type="dfn" href="#intent_number">numbers</a> such as <code>2.5</code> denote
+     themselves.
+    </dd>
+    
+    
+    <dt><dfn data-dfn-for="intent" id="intent_reference">reference</dfn></dt>
+    <dd>
+     <a data-link-for="intent" data-link-type="dfn" href="#intent_reference">references</a> prefixed with <code>$</code>. An argument
+    reference such as <code>$name</code> references a descendent element
+    that has an attribute <code>arg="name"</code>. Unlike <code class="attribute">id</code>
+    attributes, <code class="attribute">arg</code> do not have to be
+    unique within a document. When searching for a matching element the
+    search should only consider descendants, while stopping early at any
+    elements that have a set <code class="attribute">intent</code> or
+    <code class="attribute">arg</code> attribute, without descending
+    into them.
+    </dd>
+
+    <dt><dfn data-dfn-for="intent" id="intent_application">application</dfn></dt>
+    <dd>
+     An <a data-link-for="intent" data-link-type="dfn" href="#intent_application">application</a>
+     denotes a function applied to arguments using
+     a standard prefix notation.  Optionally, between the head of the
+     function and the list of arguments there may be a [=hint=] as
+     described below to influence the style of text reading generated.
+    </dd>
+    
+    <dt><dfn id="intent_hint">hint</dfn></dt>
+    <dd>
+     In a function <a data-link-for="intent" data-link-type="dfn"
+     href="#intent_application">application</a>, if the function is
+     followed by a [=hint=], the reading of the name may be suppressed,
+     or precede or follow the reading of the arguments, or may be
+     repeated between each argument.
+     <ul>
+      <li>
+       In the case the function name is in the Concept dictionary
+      used by the application, the hint MAY be used in determining the
+      speech text generated. For example <code>union</code> is in the
+      Core dictionary with speech hints `$1 union $2` and `union of
+      $1 and $2`. An intent <code>union @prefix ($a,$b)</code> would
+      be a hint that the latter style is preferred.
+      </li>
+      <li>For the default
+     reading when a Concept Dictionary entry is not used, the text
+     generated from the function head SHOULD be read as specified in
+     the hint:
+     <ul>
+      <li><code>f @prefix ($x,$y)</code>: <q>f of x and y</q></li>
+      <li><code>f @infix ($x,y)  </code>: <q>x f y</q></li>
+      <li><code>f @postix ($x)   </code>: <q>x f</q></li>
+      <li><code>f @silent ($x,$y)</code>: <q>x y</q></li>
+     </ul>
+      </li>
+     </ul>
+    </dd>
+   </dl>
+
+
+
   </section>
 
 
 
- <section>
-  <h3 id="mixing_intent_examples">Intent Examples</h3>
+  <section>
+   <h3 id="mixing_intent_examples">Intent Examples</h3>
 
 
- <section>
-  <h4 id="mixing_intent_examples_notation">Ambiguous Notation</h4>
+   <section>
+    <h4 id="mixing_intent_examples_notation">Ambiguous Notation</h4>
 
-  <p>A primary use for <code class="attribute">intent</code> is to
-  disambiguate cases where the same syntax is used for different meanings,
-  and typically has different readings.</p>
+    <p>A primary use for <code class="attribute">intent</code> is to
+    disambiguate cases where the same syntax is used for different meanings,
+    and typically has different readings.</p>
 
-<p>Superscript, <code class="element">msup</code>, may represent a power, a transpose,
-a derivative or an embellished symbol. These cases would be distinguished as follows:</p>
+    <p>Superscript, <code class="element">msup</code>, may represent a power, a transpose,
+    a derivative or an embellished symbol. These cases would be distinguished as follows, showing possible readings with and without <code class="attribute">intent</code></p>
 
 <div class="example mathml mmlcore">
 <pre>
@@ -140,31 +224,43 @@ a derivative or an embellished symbol. These cases would be distinguished as fol
   &lt;mi arg="base">x&lt;/mi>
   &lt;mi arg="exp">n&lt;/mi>
 &lt;/msup>
-&lt;mo>&#x2192;&lt;/mo>
+</pre>
+<blockquote>x to the n-th power<br/> x to the n-th power</blockquote>
+</div>
+<div class="example mathml mmlcore">
+<pre>
 &lt;msup intent="$op($a)">
   &lt;mi arg="a">A&lt;/mi>
   &lt;mi arg="op" intent="transpose">T&lt;/mi>
 &lt;/msup>
-&lt;mo>&#x2192;&lt;/mo>
+</pre>
+<blockquote>A transpose<br/> A transpose </blockquote>
+</div>
+<div class="example mathml mmlcore">
+<pre>
 &lt;msup intent="derivative($a)">
   &lt;mi arg="a">f&lt;/mi>
   &lt;mi>&#x2032;&lt;/mi>
 &lt;/msup>
-&lt;mo>&#x2192;&lt;/mo>
+</pre>
+<blockquote>derivative of f<br/> f prime</blockquote>
+</div>
+<div class="example mathml mmlcore">
+<pre>
 &lt;msup intent="x-prime">
   &lt;mi>x&lt;/mi>
   &lt;mo>&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
-<p>Possible readings with and without <code class="attribute">intent</code></p>
-<blockquote>x to the n-th power&#160;; right arrow A transpose right arrow derivative of&#160; f&#160; right arrow  x prime</blockquote>
-<blockquote>x to the n-th power&#160; right arrow A transpose right arrow f prime&#160; right arrow x prime,</blockquote>
-<p class="ednote">mathcat gets transpose even without intent</p>
+<blockquote>x prime<br/> x prime</blockquote>
 </div>
 
-<p>Similarly an over bar may represent complex conjugation, or mean (average):</p>
+     <p class="ednote">mathcat gets transpose even without intent</p>
 
-<div class="example mathml mmlcore">
+
+    <p>Similarly an over bar may represent complex conjugation, or mean (average), again with possible readings with and without <code class="attribute">intent</code>:</p>
+
+ <div class="example mathml mmlcore">
 <pre>
 &lt;mover intent="conjugate($v)"&gt;
   &lt;mi arg="v"&gt;z&lt;/mi&gt;
@@ -176,48 +272,75 @@ a derivative or an embellished symbol. These cases would be distinguished as fol
   &lt;mo&gt;&amp;#xaf;&lt;/mo&gt;
 &lt;/mover&gt;
 </pre>
-<p>Possible readings with and without <code class="attribute">intent</code></p>
-<blockquote>conjugate of&#160; z is not  mean of&#160; X</blockquote>
-<blockquote>z with ¯ above  is not  X with ¯ above</blockquote>
-<p class="ednote">This makes bettter example</p>
-</div>
+    
+     <blockquote>conjugate of z is not  mean of X<br/>
+     z with ¯ above  is not  X with ¯ above</blockquote>
+    </div>
 
- </section>
+   </section>
 
- <section>
-  <h4 id="mixing_intent_examples_advanced">Advanced or Non-Standard Notation</h4>
+   
+   <section>
+    <h4 id="mixing_intent_examples_hint">Hint examples</h4>
+    <p>Functions may be given a [=hint=] keyword which may be used
+    to adjust the text generated from an intent.</p>
 
-  <p>A special case of ambiguous notation is the re-use of standard
-  notation with meaning that may be specific to a subject area or even an
-  individual document,</p>
+    
+     <p>If `$x` and `$y` reference `&lt;mi arg="x">x&lt;/mi>` and `&lt;mi
+     arg="y">y&lt;/mi>` respectively, then</p>
 
-<div class="example mathml mmlcore">
+    <ul>
+     <li><code>inner-product($x,$y)</code> would be read as <q>inner product of x  and y</q></li>
+
+     <li><code>inner-product @infix ($x,$y)</code> would be read as <q>x inner product y</q></li>
+
+     <li><code>list @silent ($x,$y)</code> would be read as <q>x y</q></li>
+
+     <li><code>semi-factorial @postfix($x)</code> would be read as <q>x semi factorial</q></li>
+
+     <li><code>free-algebra ($r, $x)</code> would be read as <q>free algebra of r and x</q></li>
+     
+     <li><code>free-algebra-construct@silent (free, $r, algebra-on, $x)</code> would be read as <q>free, r algebra on x</q></li>
+
+
+    </ul>
+
+   </section>
+   
+   <section>
+    <h4 id="mixing_intent_examples_advanced">Advanced or Non-Standard Notation</h4>
+
+    <p>A special case of ambiguous notation is the re-use of standard
+    notation with meaning that may be specific to a subject area or even an
+    individual document,</p>
+
+    <div class="example mathml mmlcore">
 <pre>
 &lt;msub intent="bell-number($index)"&gt;
   &lt;mi&gt;B&lt;/mi&gt;
   &lt;mn arg="index"&gt;2&lt;/mn&gt;
 &lt;/msub&gt;
 </pre>
-<p>Possible readings with and without <code class="attribute">intent</code></p>
-<blockquote>bell number of&#160; 2</blockquote>
-<blockquote>B sub 2</blockquote>
+     <p>Possible readings with and without <code class="attribute">intent</code></p>
+     <blockquote>bell number of&#160; 2</blockquote>
+     <blockquote>B sub 2</blockquote>
 
-</div>
+    </div>
 
-<p>Here the subscripted B denoting the <em>Bell number</em> is annotated using
-<code>bell-number</code> intent which is not in the <q>[^core^]</q>
-dictionary but is in the  <q>[^open^]</q> dictionary of more advanced or specialist
-topics.</p>
+    <p>Here the subscripted B denoting the <em>Bell number</em> is annotated using
+    <code>bell-number</code> intent which is not in the <q>[=core=]</q>
+    dictionary but is in the  <q>[=open=]</q> dictionary of more advanced or specialist
+    topics.</p>
 
- </section>
+   </section>
 
 
- <section>
-  <h4 id="mixing_intent_examples_mtr">Tables</h4>
-<div class="issue"  data-number="337"></div>
+   <section>
+    <h4 id="mixing_intent_examples_mtr">Tables</h4>
+    <div class="issue"  data-number="337"></div>
 
-<p>Matrices</p>
-<div class="example mathml mmlcore">
+    <p>Matrices</p>
+    <div class="example mathml mmlcore">
 <pre>
 &lt;mrow intent="matrix">
   &lt;mo>(&lt;/mo>
@@ -234,11 +357,11 @@ topics.</p>
   &lt;mo>)&lt;/mo>
 &lt;/mrow>
 </pre>
-</div>
+    </div>
 
 
-<p>Aligned equations</p>
-<div class="example mathml mmlcore">
+    <p>Aligned equations</p>
+    <div class="example mathml mmlcore">
 <pre>
 &lt;mtable intent="list">
   &lt;mtr intent="append">
@@ -269,11 +392,11 @@ topics.</p>
   &lt;/mtr>
 &lt;/mtable>
 </pre>
-</div>
+    </div>
 
-<p>Aligned Equations with wrapped expressions</p>
+    <p>Aligned Equations with wrapped expressions</p>
 
-<div class="example mathml mmlcore">
+    <div class="example mathml mmlcore">
 <pre>
 &lt;mtable intent="list">
   &lt;mtr intent="append">
@@ -303,9 +426,9 @@ topics.</p>
   &lt;/mtr>
 &lt;/mtable>
 </pre>
-</div>
- </section>
- </section>
+    </div>
+   </section>
+  </section>
 
  </section>
 
@@ -313,7 +436,7 @@ topics.</p>
   <h3 id="mixing_annotation_elements">Annotation Elements</h3>
 
   <p>
-   In addition to the <code class="attribute">intent</code> attribute decribed above,
+   In addition to the <code class="attribute">intent</code> attribute described above,
    MathML provides a more general framework for annotation.  A MathML expression may be
    decorated with a sequence of pairs made up of a symbol that indicates
    the kind of annotation, known as the <em>annotation key</em>, and
@@ -321,26 +444,26 @@ topics.</p>
   </p>
 
 
-   <p>
-    The <code class="element">semantics</code>, <code class="element">annotation</code>, and
-    <code class="element">annotation-xml</code> elements are used together to represent
-    annotations in MathML.  The <code class="element">semantics</code> element provides the
-    container for an expression and its annotations.  The
-    <code class="element">annotation</code> element is the container for text
-    annotations, and the <code class="element">annotation-xml</code> element is used for
-    structured
-    annotations. The <code class="element">semantics</code> element contains the expression
-    being annotated as its first child, followed by a sequence of zero or
-    more <code class="element">annotation</code> and/or <code class="element">annotation-xml</code> elements.
-   </p>
+  <p>
+   The <code class="element">semantics</code>, <code class="element">annotation</code>, and
+   <code class="element">annotation-xml</code> elements are used together to represent
+   annotations in MathML.  The <code class="element">semantics</code> element provides the
+   container for an expression and its annotations.  The
+   <code class="element">annotation</code> element is the container for text
+   annotations, and the <code class="element">annotation-xml</code> element is used for
+   structured
+   annotations. The <code class="element">semantics</code> element contains the expression
+   being annotated as its first child, followed by a sequence of zero or
+   more <code class="element">annotation</code> and/or <code class="element">annotation-xml</code> elements.
+  </p>
 
-   <p>The <code class="element">semantics</code> element is considered
-   to be both a presentation element and a content element, and may be
-   used in either context.  All MathML processors should process the
-   <code class="element">semantics</code> element, even if they only
-   process one of these two subsets of MathML, or
-   [[MathML-Core]].
-   </p>
+  <p>The <code class="element">semantics</code> element is considered
+  to be both a presentation element and a content element, and may be
+  used in either context.  All MathML processors should process the
+  <code class="element">semantics</code> element, even if they only
+  process one of these two subsets of MathML, or
+  [[MathML-Core]].
+  </p>
 
 
   <section>
@@ -401,7 +524,7 @@ topics.</p>
    a MathML expression.  The use of the other values is more specific, as
    discussed in following sections.</p>
 
-   </section>
+  </section>
 
   <section>
    <h4 id="mixing_alternate_representations">Alternate representations</h4>
@@ -435,8 +558,8 @@ topics.</p>
    to each of the annotations.
    </p>
 
-    <!-- mml4c to prevent inlining -->
-    <div class="example mathml mml4c">
+   <!-- mml4c to prevent inlining -->
+   <div class="example mathml mml4c">
      <pre>
        &lt;semantics&gt;
          &lt;apply&gt;
@@ -469,7 +592,7 @@ topics.</p>
          &lt;/annotation-xml&gt;
        &lt;/semantics&gt;
      </pre>
-    </div>
+   </div>
 
 
    <p id="html-xml2">Note that this example makes use of the namespace extensibility
@@ -527,7 +650,7 @@ topics.</p>
          &lt;/annotation-xml&gt;
        &lt;/semantics&gt;
      </pre>
-    </div>
+   </div>
 
   </section>
 
@@ -553,7 +676,7 @@ topics.</p>
    reference</em>.</p>
 
 
-    <div class="example mathml-fragment">
+   <div class="example mathml-fragment">
      <pre>
        &lt;semantics&gt;
          &lt;mfrac&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;
@@ -561,7 +684,7 @@ topics.</p>
          &lt;annotation encoding="application/x-maple" src="333/formula56.ms"/&gt;
        &lt;/semantics&gt;
      </pre>
-    </div>
+   </div>
 
 
    <p>Processing agents that anticipate that consumers of exported markup may
@@ -576,7 +699,7 @@ topics.</p>
   </section>
 
 
-   <section>
+  <section>
    <h4 id="mixing_elements_semantics">The <code class="defn starttag">&lt;semantics&gt;</code> element</h4>
 
    <section>
@@ -603,7 +726,7 @@ topics.</p>
     rendering of its first child.  A renderer may use the information contained
     in the annotations to customize its rendering of the annotated element.</p>
 
-     <div class="example mathml mmlcore">
+    <div class="example mathml mmlcore">
       <pre>
         &lt;semantics&gt;
           &lt;mrow&gt;
@@ -625,7 +748,7 @@ topics.</p>
           &lt;annotation encoding="application/x-tex"&gt;\sin x + 5&lt;/annotation&gt;
         &lt;/semantics&gt;
       </pre>
-     </div>
+    </div>
 
    </section>
 
@@ -677,7 +800,7 @@ topics.</p>
 
       <tr>
        <td rowspan="2" class="attname">encoding</td>
-       <td><em>[^string^]</em></td>
+       <td><em>[=string=]</em></td>
        <td><em>none</em></td>
       </tr>
 
@@ -687,7 +810,7 @@ topics.</p>
 
       <tr>
        <td rowspan="2" class="attname">cd</td>
-       <td><em>[^string^]</em></td>
+       <td><em>[=string=]</em></td>
        <td>mathmlkeys</td>
       </tr>
 
@@ -697,7 +820,7 @@ topics.</p>
 
       <tr>
        <td rowspan="2" class="attname">name</td>
-       <td><em>[^string^]</em></td>
+       <td><em>[=string=]</em></td>
        <td>alternate-representation</td>
       </tr>
 
@@ -737,11 +860,11 @@ topics.</p>
     entities as annotations on MathML expressions.</p>
 
 
-     <div class="example mathml-fragment">
-      <pre>
-        &lt;annotation encoding="image/png" src="333/formula56.png"/&gt;
-      </pre>
-     </div>
+    <div class="example mathml-fragment">
+     <pre>
+      &lt;annotation encoding="image/png" src="333/formula56.png"/&gt;
+     </pre>
+    </div>
 
 
     <p>The <code class="element">annotation</code> element is a semantic mapping element that may
@@ -793,7 +916,7 @@ topics.</p>
 
       <tr>
        <td rowspan="2" class="attname">encoding</td>
-       <td><em>[^string^]</em></td>
+       <td><em>[=string=]</em></td>
        <td><em>none</em></td>
       </tr>
 
@@ -803,7 +926,7 @@ topics.</p>
 
       <tr>
        <td rowspan="2" class="attname">cd</td>
-       <td><em>[^string^]</em></td>
+       <td><em>[=string=]</em></td>
        <td>mathmlkeys</td>
       </tr>
 
@@ -813,7 +936,7 @@ topics.</p>
 
       <tr>
        <td rowspan="2" class="attname">name</td>
-       <td><em>[^string^]</em></td>
+       <td><em>[=string=]</em></td>
        <td>alternate-representation</td>
       </tr>
 
@@ -856,7 +979,7 @@ topics.</p>
     annotations on MathML expressions.</p>
 
 
-     <div class="example mathml-fragment">
+    <div class="example mathml-fragment">
       <pre>
         &lt;annotation-xml cd="mathmlkeys" name="contentequiv" encoding="MathML-Content"&gt;
           &lt;apply&gt;
@@ -874,7 +997,7 @@ topics.</p>
           &lt;/OMA&gt;
         &lt;/annotation-xml&gt;
       </pre>
-     </div>
+    </div>
 
 
     <p>When the MathML is being parsed as XML and
@@ -883,7 +1006,7 @@ topics.</p>
     attributes and/or namespace prefixes on the annotation value.  For instance:</p>
 
 
-     <div class="example mathml-fragment">
+    <div class="example mathml-fragment">
       <pre>
         &lt;annotation-xml encoding="application/xhtml+xml"&gt;
           &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
@@ -894,7 +1017,7 @@ topics.</p>
           &lt;/html&gt;
         &lt;/annotation-xml&gt;
       </pre>
-     </div>
+    </div>
 
 
     <p>The <code class="element">annotation-xml</code> element is a semantic mapping element that may only be used
@@ -955,7 +1078,7 @@ topics.</p>
      </pre>
     </div>
 
-   <p> However if the <code class="attribute">encoding</code> attribute is omitted then the expression
+    <p> However if the <code class="attribute">encoding</code> attribute is omitted then the expression
     is only valid if parsed as XML:</p>
 
     <div class="example mathml-error">
@@ -1024,143 +1147,143 @@ topics.</p>
 
 
 
- <section>
-  <h4 id="mixing_markup">Combining Presentation and Content Markup</h4>
-
-  <p>
-   Presentation markup encodes the <em>notational structure</em> of an expression.
-   Content markup encodes the <em>functional structure</em> of an expression.  In certain
-   cases, a particular application of MathML may require a combination of both presentation
-   and content markup.  This section describes specific constraints that govern the use
-   of presentation markup within content markup, and vice versa.
-  </p>
-
   <section>
-   <h4 id="mixing_pmincm">Presentation Markup in Content Markup</h4>
+   <h4 id="mixing_markup">Combining Presentation and Content Markup</h4>
 
    <p>
-    Presentation markup may be embedded within content markup so long as the
-    resulting expression retains an unambiguous function application structure.
-    Specifically, presentation markup may only appear in content markup
-    in three ways:
+    Presentation markup encodes the <em>notational structure</em> of an expression.
+    Content markup encodes the <em>functional structure</em> of an expression.  In certain
+    cases, a particular application of MathML may require a combination of both presentation
+    and content markup.  This section describes specific constraints that govern the use
+    of presentation markup within content markup, and vice versa.
    </p>
-   <ol>
 
-    <li>
-     <p>within <code class="element">ci</code> and <code class="element">cn</code> token elements</p>
-    </li>
+   <section>
+    <h4 id="mixing_pmincm">Presentation Markup in Content Markup</h4>
 
-    <li>
-     <p>within the <code class="element">csymbol</code> element</p>
-    </li>
+    <p>
+     Presentation markup may be embedded within content markup so long as the
+     resulting expression retains an unambiguous function application structure.
+     Specifically, presentation markup may only appear in content markup
+     in three ways:
+    </p>
+    <ol>
 
-    <li>
-     <p>within the <code class="element">semantics</code> element</p>
-    </li>
-   </ol>
+     <li>
+      <p>within <code class="element">ci</code> and <code class="element">cn</code> token elements</p>
+     </li>
 
-   <p>
-    Any other presentation markup occurring within content markup is a
-    MathML error.  More detailed discussion of these three cases follows:
-   </p>
-   <dl>
+     <li>
+      <p>within the <code class="element">csymbol</code> element</p>
+     </li>
 
-    <dt>Presentation markup within token elements.</dt>
-    <dd>
-     <p>The token elements <code class="element">ci</code> and <code class="element">cn</code> are permitted to
-     contain any sequence of MathML characters (defined in <a href="#chars"></a>)
-     and/or presentation elements.  Contiguous blocks of MathML characters in
-     <code class="element">ci</code> or <code class="element">cn</code> elements are treated as if wrapped in
-     <code class="element">mi</code> or <code class="element">mn</code> elements, as appropriate, and the resulting
-     collection of presentation elements is rendered as if wrapped in an
-     implicit <code class="element">mrow</code> element.</p>
-    </dd>
+     <li>
+      <p>within the <code class="element">semantics</code> element</p>
+     </li>
+    </ol>
 
-    <dt>Presentation markup within the <code class="element">csymbol</code> element.</dt>
-    <dd>
-     <p>The same rendering rules that apply
-       to the token elements <code class="element">ci</code> and <code class="element">cn</code> should be used for the <code class="element">csymbol</code> element.</p>
-    </dd>
+    <p>
+     Any other presentation markup occurring within content markup is a
+     MathML error.  More detailed discussion of these three cases follows:
+    </p>
+    <dl>
 
-    <dt>Presentation markup within the <code class="element">semantics</code> element.</dt>
-    <dd>
-     <p>One of the main purposes of the <code class="element">semantics</code> element is to
-     provide a mechanism for incorporating arbitrary MathML expressions into
-     content markup in a semantically meaningful way.  In particular, any valid
-     presentation expression can be embedded in a content expression by placing
-     it as the first child of a <code class="element">semantics</code> element.  The meaning of this
-     wrapped expression should be indicated by one or more annotation elements
-     also contained in the <code class="element">semantics</code> element.</p>
-    </dd>
-   </dl>
+     <dt>Presentation markup within token elements.</dt>
+     <dd>
+      <p>The token elements <code class="element">ci</code> and <code class="element">cn</code> are permitted to
+      contain any sequence of MathML characters (defined in <a href="#chars"></a>)
+      and/or presentation elements.  Contiguous blocks of MathML characters in
+      <code class="element">ci</code> or <code class="element">cn</code> elements are treated as if wrapped in
+      <code class="element">mi</code> or <code class="element">mn</code> elements, as appropriate, and the resulting
+      collection of presentation elements is rendered as if wrapped in an
+      implicit <code class="element">mrow</code> element.</p>
+     </dd>
+
+     <dt>Presentation markup within the <code class="element">csymbol</code> element.</dt>
+     <dd>
+      <p>The same rendering rules that apply
+      to the token elements <code class="element">ci</code> and <code class="element">cn</code> should be used for the <code class="element">csymbol</code> element.</p>
+     </dd>
+
+     <dt>Presentation markup within the <code class="element">semantics</code> element.</dt>
+     <dd>
+      <p>One of the main purposes of the <code class="element">semantics</code> element is to
+      provide a mechanism for incorporating arbitrary MathML expressions into
+      content markup in a semantically meaningful way.  In particular, any valid
+      presentation expression can be embedded in a content expression by placing
+      it as the first child of a <code class="element">semantics</code> element.  The meaning of this
+      wrapped expression should be indicated by one or more annotation elements
+      also contained in the <code class="element">semantics</code> element.</p>
+     </dd>
+    </dl>
+   </section>
+
+   <section>
+    <h4 id="mixing_cminpm">Content Markup in Presentation Markup</h4>
+
+    <p>
+     Content markup may be embedded within presentation markup so long as the
+     resulting expression has an unambiguous rendering.  That is, it must be
+     possible, in principle, to produce a presentation markup fragment for
+     each content markup fragment that appears in the combined expression.
+     The replacement of each content markup fragment by its corresponding
+     presentation markup should produce a well-formed presentation markup
+     expression.  A presentation engine should then be able to process this
+     presentation expression without reference to the content markup bits
+     included in the original expression.
+    </p>
+
+    <p>
+     In general, this constraint means that each embedded content expression
+     must be well-formed, as a content expression, and must be able to stand
+     alone outside the context of any containing content markup element.  As
+     a result, the following content elements may not appear as an immediate
+     child of a presentation element:
+     <code class="element">annotation</code>, <code class="element">annotation-xml</code>,
+     <code class="element">bvar</code>, <code class="element">condition</code>, <code class="element">degree</code>,
+     <code class="element">logbase</code>, <code class="element">lowlimit</code>, <code class="element">uplimit</code>.
+    </p>
+
+    <p>
+     In addition, within presentation markup, content markup may not appear
+     within presentation token elements.
+    </p>
+
+   </section>
+
   </section>
 
   <section>
-   <h4 id="mixing_cminpm">Content Markup in Presentation Markup</h4>
+   <h4 id="mixing_parallel">Parallel Markup</h4>
 
    <p>
-    Content markup may be embedded within presentation markup so long as the
-    resulting expression has an unambiguous rendering.  That is, it must be
-    possible, in principle, to produce a presentation markup fragment for
-    each content markup fragment that appears in the combined expression.
-    The replacement of each content markup fragment by its corresponding
-    presentation markup should produce a well-formed presentation markup
-    expression.  A presentation engine should then be able to process this
-    presentation expression without reference to the content markup bits
-    included in the original expression.
+    Some applications are able to use <em>both</em> presentation
+    and content information.  <em>Parallel markup</em> is a way to
+    combine two or more markup trees for the same mathematical expression.
+    Parallel markup is achieved with the <code class="element">semantics</code> element.
+    Parallel markup for an expression may appear on its own, or as part
+    of a larger content or presentation tree.
    </p>
 
-   <p>
-    In general, this constraint means that each embedded content expression
-    must be well-formed, as a content expression, and must be able to stand
-    alone outside the context of any containing content markup element.  As
-    a result, the following content elements may not appear as an immediate
-    child of a presentation element:
-    <code class="element">annotation</code>, <code class="element">annotation-xml</code>,
-    <code class="element">bvar</code>, <code class="element">condition</code>, <code class="element">degree</code>,
-    <code class="element">logbase</code>, <code class="element">lowlimit</code>, <code class="element">uplimit</code>.
-   </p>
+   <section>
+    <h5 id="mixing_top_level">Top-level Parallel Markup</h5>
 
-   <p>
-    In addition, within presentation markup, content markup may not appear
-    within presentation token elements.
-   </p>
+    <p>
+     In many cases, the goal is to provide presentation markup and content
+     markup for a mathematical expression as a whole.
+     A single <code class="element">semantics</code> element may be used to pair two markup trees,
+     where one child element provides the presentation markup, and the
+    other child element provides the content markup.</p>
 
-  </section>
-
- </section>
-
- <section>
-  <h4 id="mixing_parallel">Parallel Markup</h4>
-
-  <p>
-   Some applications are able to use <em>both</em> presentation
-   and content information.  <em>Parallel markup</em> is a way to
-   combine two or more markup trees for the same mathematical expression.
-   Parallel markup is achieved with the <code class="element">semantics</code> element.
-   Parallel markup for an expression may appear on its own, or as part
-   of a larger content or presentation tree.
-  </p>
-
-  <section>
-   <h5 id="mixing_top_level">Top-level Parallel Markup</h5>
-
-   <p>
-    In many cases, the goal is to provide presentation markup and content
-    markup for a mathematical expression as a whole.
-    A single <code class="element">semantics</code> element may be used to pair two markup trees,
-    where one child element provides the presentation markup, and the
-   other child element provides the content markup.</p>
-
-   <p>
+    <p>
      The following example encodes the Boolean arithmetic expression
      <math alttext="(a+b)(c+d)" class="doc">
       <mrow><mo>(</mo><mi>a</mi> <mo>+</mo> <mi>b</mi><mo>)</mo></mrow>
       <mo>&#x2062;</mo>
       <mrow><mo>(</mo><mi>c</mi> <mo>+</mo> <mi>d</mi><mo>)</mo></mrow>
      </math>
-    in this way.
-   </p>
+     in this way.
+    </p>
 
     <div class="example mathml mmlcore">
      <pre>
@@ -1180,41 +1303,41 @@ topics.</p>
      </pre>
     </div>
     <p>
-    Note that the above markup annotates the presentation markup as
-    the first child element, with the content markup as part of the
-    <code class="element">annotation-xml</code> element.  An equivalent form could be given
-    that annotates the content markup as the first child element, with
-    the presentation markup as part of the <code class="element">annotation-xml</code> element.
+     Note that the above markup annotates the presentation markup as
+     the first child element, with the content markup as part of the
+     <code class="element">annotation-xml</code> element.  An equivalent form could be given
+     that annotates the content markup as the first child element, with
+     the presentation markup as part of the <code class="element">annotation-xml</code> element.
     </p>
 
 
-  </section>
+   </section>
 
-  <section>
-   <h5 id="mixing_cr">Parallel Markup via Cross-References</h5>
+   <section>
+    <h5 id="mixing_cr">Parallel Markup via Cross-References</h5>
 
-   <p>
-    To accommodate applications that must process sub-expressions of large
-    objects, MathML supports cross-references between the branches of a
-    <code class="element">semantics</code> element to identify corresponding sub-structures.
-    These cross-references are established by the use of the <code class="attribute">id</code>
-    and <code class="attribute">xref</code> attributes within a <code class="element">semantics</code> element.
-    This application of the <code class="attribute">id</code> and <code class="attribute">xref</code> attributes within
-    a <code class="element">semantics</code> element should be viewed as best practice to enable
-    a recipient to select arbitrary sub-expressions in each alternative
-    branch of a <code class="element">semantics</code> element.  The <code class="attribute">id</code> and
-    <code class="attribute">xref</code> attributes may be placed on MathML elements of any type.
-   </p>
+    <p>
+     To accommodate applications that must process sub-expressions of large
+     objects, MathML supports cross-references between the branches of a
+     <code class="element">semantics</code> element to identify corresponding sub-structures.
+     These cross-references are established by the use of the <code class="attribute">id</code>
+     and <code class="attribute">xref</code> attributes within a <code class="element">semantics</code> element.
+     This application of the <code class="attribute">id</code> and <code class="attribute">xref</code> attributes within
+     a <code class="element">semantics</code> element should be viewed as best practice to enable
+     a recipient to select arbitrary sub-expressions in each alternative
+     branch of a <code class="element">semantics</code> element.  The <code class="attribute">id</code> and
+     <code class="attribute">xref</code> attributes may be placed on MathML elements of any type.
+    </p>
 
-   <p>
-    The following example demonstrates cross-references for the
-    Boolean arithmetic expression
+    <p>
+     The following example demonstrates cross-references for the
+     Boolean arithmetic expression
      <math alttext="(a+b)(c+d)" class="doc">
       <mrow><mo>(</mo><mi>a</mi> <mo>+</mo> <mi>b</mi><mo>)</mo></mrow>
       <mo>&#x2062;</mo>
       <mrow><mo>(</mo><mi>c</mi> <mo>+</mo> <mi>d</mi><mo>)</mo></mrow>
-     </math>.
-   </p>
+      </math>.
+    </p>
 
     <div class="example mathml mmlcore">
      <pre>
@@ -1253,71 +1376,71 @@ topics.</p>
     </div>
 
 
-   <p>
-    An <code class="attribute">id</code> attribute and associated <code class="attribute">xref</code> attributes
-    that appear within the same <code class="element">semantics</code> element establish the
-    cross-references between corresponding sub-expressions.
-   </p>
+    <p>
+     An <code class="attribute">id</code> attribute and associated <code class="attribute">xref</code> attributes
+     that appear within the same <code class="element">semantics</code> element establish the
+     cross-references between corresponding sub-expressions.
+    </p>
 
-   <p>
-    For parallel markup, all of the <code class="attribute">id</code> attributes referenced by any <code class="attribute">xref</code>
-    attribute should be in the <em>same</em> branch of an enclosing
-    <code class="element">semantics</code> element.  This constraint guarantees that the
-    cross-references do not create unintentional cycles.  This restriction
-    does <em>not</em> exclude the use of <code class="attribute">id</code> attributes within
-    other branches of the enclosing <code class="element">semantics</code> element.  It does,
-    however, exclude references to these other <code class="attribute">id</code> attributes
-    originating from the same <code class="element">semantics</code> element.
-   </p>
+    <p>
+     For parallel markup, all of the <code class="attribute">id</code> attributes referenced by any <code class="attribute">xref</code>
+     attribute should be in the <em>same</em> branch of an enclosing
+     <code class="element">semantics</code> element.  This constraint guarantees that the
+     cross-references do not create unintentional cycles.  This restriction
+     does <em>not</em> exclude the use of <code class="attribute">id</code> attributes within
+     other branches of the enclosing <code class="element">semantics</code> element.  It does,
+     however, exclude references to these other <code class="attribute">id</code> attributes
+     originating from the same <code class="element">semantics</code> element.
+    </p>
 
-   <p>
-    There is no restriction on which branch of the <code class="element">semantics</code> element
-    may contain the destination <code class="attribute">id</code> attributes.  It is up to the
-    application to determine which branch to use.
-   </p>
+    <p>
+     There is no restriction on which branch of the <code class="element">semantics</code> element
+     may contain the destination <code class="attribute">id</code> attributes.  It is up to the
+     application to determine which branch to use.
+    </p>
 
-   <p>
-    In general, there will not be a one-to-one correspondence between nodes
-    in parallel branches.  For example, a presentation tree may contain elements,
-    such as parentheses, that have no correspondents in the content tree.  It is
-    therefore often useful to put the <code class="attribute">id</code> attributes on the branch with
-    the finest-grained node structure.  Then all of the other branches will have
-    <code class="attribute">xref</code> attributes to some subset of the <code class="attribute">id</code> attributes.
-   </p>
+    <p>
+     In general, there will not be a one-to-one correspondence between nodes
+     in parallel branches.  For example, a presentation tree may contain elements,
+     such as parentheses, that have no correspondents in the content tree.  It is
+     therefore often useful to put the <code class="attribute">id</code> attributes on the branch with
+     the finest-grained node structure.  Then all of the other branches will have
+     <code class="attribute">xref</code> attributes to some subset of the <code class="attribute">id</code> attributes.
+    </p>
 
-   <p>
-    In absence of other criteria, the first branch of the <code class="element">semantics</code>
-    element is a sensible choice to contain the <code class="attribute">id</code> attributes.
-    Applications that add or remove annotations will then not have to re-assign
-    these attributes as the annotations change.
-   </p>
+    <p>
+     In absence of other criteria, the first branch of the <code class="element">semantics</code>
+     element is a sensible choice to contain the <code class="attribute">id</code> attributes.
+     Applications that add or remove annotations will then not have to re-assign
+     these attributes as the annotations change.
+    </p>
 
-   <p>
-    In general, the use of <code class="attribute">id</code> and <code class="attribute">xref</code> attributes allows
-    a full correspondence between sub-expressions to be given in text that is
-    at most a constant factor larger than the original.  The direction of the
-    references should not be taken to imply that sub-expression selection is
-    intended to be permitted only on one child of the <code class="element">semantics</code> element.
-    It is equally feasible to select a subtree in any branch and
-    to recover the corresponding subtrees of the other branches.
-   </p>
+    <p>
+     In general, the use of <code class="attribute">id</code> and <code class="attribute">xref</code> attributes allows
+     a full correspondence between sub-expressions to be given in text that is
+     at most a constant factor larger than the original.  The direction of the
+     references should not be taken to imply that sub-expression selection is
+     intended to be permitted only on one child of the <code class="element">semantics</code> element.
+     It is equally feasible to select a subtree in any branch and
+     to recover the corresponding subtrees of the other branches.
+    </p>
 
-   <p>
-    Parallel markup with cross-references may be used in any
-    of the semantic annotations within <code class="element">annotation-xml</code>,
-    for example cross referencing between a presentation MathML rendering and an OpenMath annotation.
-   </p>
+    <p>
+     Parallel markup with cross-references may be used in any
+     of the semantic annotations within <code class="element">annotation-xml</code>,
+     for example cross referencing between a presentation MathML rendering and an OpenMath annotation.
+    </p>
 
     <p id="html-xml3">As noted above, the use of namespaces other than MathML, SVG
     or HTML within <code class="element">annotation-xml</code> is not considered valid in the HTML syntax.
     Use of colons and namespace-prefixed element names should be avoided
     as the HTML parser will generate nodes with <em>local</em> name <code>om:OMA</code>
     (for example), and such nodes can not be constructed by a namespace-aware XML parser.
-   </p>
+    </p>
+
+   </section>
+
 
   </section>
-
-
-</section>
-</section>
+ </section>
 </section>

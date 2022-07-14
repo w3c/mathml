@@ -1092,7 +1092,7 @@
  
      <tr>
       <td rowspan="2" class="attname">mathcolor</td>
-      <td><em>[^color^]</em></td>
+      <td><em>[=color=]</em></td>
       <td><em>inherited</em></td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mathcolor"></a></td>
      </tr>
@@ -1108,7 +1108,7 @@
  
      <tr>
       <td rowspan="2" class="attname">mathbackground</td>
-      <td><em>[^color^]</em> | "transparent"</td>
+      <td><em>[=color=]</em> | "transparent"</td>
       <td>transparent</td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mathbackground"></a></td>
      </tr>
@@ -1267,7 +1267,7 @@
  
        <tr>
         <td rowspan="2" class="attname">src</td>
-        <td><em>[^URI^]</em></td>
+        <td><em>[=URI=]</em></td>
         <td><em>required</em></td>
         <td><span class="coreno"></span></td>
        </tr>
@@ -1327,7 +1327,7 @@
  
        <tr>
         <td rowspan="2" class="attname">alt</td>
-        <td><em>[^string^]</em></td>
+        <td><em>[=string=]</em></td>
         <td><em>required</em></td>
         <td><span class="coreno"></span></td>
        </tr>
@@ -2276,7 +2276,7 @@
  
        <tr>
         <td rowspan="2" class="attname">linebreakmultchar</td>
-        <td><em>[^string^]</em></td>
+        <td><em>[=string=]</em></td>
         <td><em>inherited</em> (&amp;InvisibleTimes;) </td>
         <td><span class="coreno"></span></td>
        </tr>
@@ -2376,14 +2376,14 @@
  
        <tr>
         <td rowspan="2" class="attname">indenttarget</td>
-        <td><em>[^idref^]</em></td>
+        <td><em>[=idref=]</em></td>
         <td><em> inherited (none)</em></td>
         <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
         <td colspan="3" class="attdesc">
-   Specifies the [^id^] of another element
+   Specifies the [=id=] of another element
    whose horizontal position determines the position of indented lines
    when <code class="attribute">indentalign</code>=<code class="attributevalue">id</code>.
    Note that the identified element may be outside of the current
@@ -2506,7 +2506,7 @@
        <tr>
         <td> id           </td>
         <td> Align the left side of the next line to the left side of the element
-        referenced by the <em>[^idref^]</em>
+        referenced by the <em>[=idref=]</em>
         (given by <code class="attribute">indenttarget</code>);
         if no such element exists, use <code class="attributevalue">auto</code> as the <code class="attribute">indentalign</code> value</td>
        </tr>
@@ -3542,7 +3542,7 @@
  
   <tr>
  <td rowspan="2" class="attname">lquote</td>
- <td><em>[^string^]</em></td>
+ <td><em>[=string=]</em></td>
  <td><code class="entity">quot</code></td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -3556,7 +3556,7 @@
  
  <tr>
  <td rowspan="2" class="attname">rquote</td>
- <td><em>[^string^]</em></td>
+ <td><em>[=string=]</em></td>
  <td><code class="entity">quot</code></td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -4283,7 +4283,7 @@
  
  <tr>
  <td rowspan="2" class="attname">scriptsizemultiplier</td>
- <td><em>[^number^]</em></td>
+ <td><em>[=number=]</em></td>
  <td>0.71</td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -4327,7 +4327,7 @@
  
  <tr>
  <td rowspan="2" class="attname">decimalpoint</td>
- <td><em>[^character^]</em></td>
+ <td><em>[=character=]</em></td>
  <td>.</td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -4561,11 +4561,11 @@
      <tr>
       <td rowspan="2" class="attname">height</td>
       <td>( "+" | "-" )?
-      <em>[^unsigned-number^]</em>
-      ( ("%"  <em>[^pseudo-unit^]</em>?)
-      | <em>[^pseudo-unit^]</em>
+      <em>[=unsigned-number=]</em>
+      ( ("%"  <em>[=pseudo-unit=]</em>?)
+      | <em>[=pseudo-unit=]</em>
       | <a class="intref" href="#type_unit"><em>unit</em></a>
-      | <em>[^namedspace^]</em>
+      | <em>[=namedspace=]</em>
       )?</td>
       <td><em>same as content</em></td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-height"></a></td>
@@ -4581,11 +4581,11 @@
      <tr>
       <td rowspan="2" class="attname">depth</td>
       <td>( "+" | "-" )?
-      <em>[^unsigned-number^]</em>
-      (("%"  <em>[^pseudo-unit^]</em>?)
-      | <em>[^pseudo-unit^]</em>
+      <em>[=unsigned-number=]</em>
+      (("%"  <em>[=pseudo-unit=]</em>?)
+      | <em>[=pseudo-unit=]</em>
       | <a class="intref" href="#type_unit"><em>unit</em></a>
-      | <em>[^namedspace^]</em>
+      | <em>[=namedspace=]</em>
       )?</td>
       <td><em>same as content</em></td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-depth"></a></td>
@@ -4601,11 +4601,11 @@
      <tr>
       <td rowspan="2" class="attname">width</td>
       <td>( "+" | "-" )?
-      <em>[^unsigned-number^]</em>
-      ( ("%" <em>[^pseudo-unit^]</em>?)
-      | <em>[^pseudo-unit^]</em>
+      <em>[=unsigned-number=]</em>
+      ( ("%" <em>[=pseudo-unit=]</em>?)
+      | <em>[=pseudo-unit=]</em>
       | <a class="intref" href="#type_unit"><em>unit</em></a>
-      | <em>[^namedspace^]</em>
+      | <em>[=namedspace=]</em>
       )?</td>
       <td><em>same as content</em></td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-width"></a></td>
@@ -4621,11 +4621,11 @@
      <tr>
       <td rowspan="2" class="attname">lspace</td>
       <td>( "+" | "-" )?
-      <em>[^unsigned-number^]</em>
-      ( ("%" <em>[^pseudo-unit^]</em>?)
-      | <em>[^pseudo-unit^]</em>
+      <em>[=unsigned-number=]</em>
+      ( ("%" <em>[=pseudo-unit=]</em>?)
+      | <em>[=pseudo-unit=]</em>
       | <a class="intref" href="#type_unit"><em>unit</em></a>
-      | <em>[^namedspace^]</em>
+      | <em>[=namedspace=]</em>
       )?</td>
       <td>0em</td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-lspace"></a></td>
@@ -4641,11 +4641,11 @@
      <tr>
       <td rowspan="2" class="attname">voffset</td>
       <td>( "+" | "-" )?
-      <em>[^unsigned-number^]</em>
-      ( ("%" <em>[^pseudo-unit^]</em>?)
-      | <em>[^pseudo-unit^]</em>
+      <em>[=unsigned-number=]</em>
+      ( ("%" <em>[=pseudo-unit=]</em>?)
+      | <em>[=pseudo-unit=]</em>
       | <a class="intref" href="#type_unit"><em>unit</em></a>
-      | <em>[^namedspace^]</em>
+      | <em>[=namedspace=]</em>
       )?</td>
       <td>0em</td>
       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-voffset"></a></td>
@@ -4665,7 +4665,7 @@
    <a href="https://w3c.github.io/mathml-core/spec.html#dfn-length-percentage">length-percentage</a>.
    Increments with the optional "+" or "-" signs are not supported in MathML Core nor are pseudo-units.</p>
  
-   <p>The <em>[^pseudo-unit^]</em> syntax symbol is described below.
+   <p>The <em>[=pseudo-unit=]</em> syntax symbol is described below.
    <span>Also, <code class="attribute">height</code>, <code class="attribute">depth</code> and
    <code class="attribute">width</code> attributes are
    referred to as size attributes, while <code class="attribute">lspace</code> and <code class="attribute">voffset</code> attributes
@@ -4680,7 +4680,7 @@
    or specified relative to the child content's corresponding dimension.  Values may
    be given as
    multiples or percentages of any of the
-   dimensions of the normal rendering of the child content using so-called [^pseudo-unit^]s,
+   dimensions of the normal rendering of the child content using so-called [=pseudo-unit=]s,
    or they can be set directly using standard units, see <a href="#fund_units"></a>.</p>
  
    <p>If the value of a size attribute begins with a <code>+</code> or <code>-</code> sign,
@@ -4698,25 +4698,25 @@
    attributes <code class="attribute">lspace</code> and <code class="attribute">voffset</code>.</p>
  
    <p>Length values (excluding any sign) can be specified in several formats.
-   Each format begins with an <em>[^unsigned-number^]</em>,
+   Each format begins with an <em>[=unsigned-number=]</em>,
    which may be followed by
    a <code>%</code> sign (effectively scaling the number)
-   and an optional <em>[^pseudo-unit^]</em>,
-   by a <em>[^pseudo-unit^]</em> alone,
+   and an optional <em>[=pseudo-unit=]</em>,
+   by a <em>[=pseudo-unit=]</em> alone,
    or by a <a class="intref" href="#type_unit"><em>unit</em></a> (excepting <code>%</code>).
-   The possible <em>[^pseudo-unit^]s</em> are the keywords <code>height</code>,
+   The possible <em>[=pseudo-unit=]s</em> are the keywords <code>height</code>,
    <code>depth</code>, and <code>width</code>.  They represent the length of the same-named dimension of the
    <code class="element">mpadded</code> element's child content.
    </p>
  
    <p>For any of these length formats, the resulting length
    is the product of the number (possibly including the <code>%</code>)
-   and the following <em>[^pseudo-unit^]</em>,
+   and the following <em>[=pseudo-unit=]</em>,
    <a class="intref" href="#type_unit"><em>unit</em></a>,
-   <em>[^namedspace^]</em>
+   <em>[=namedspace=]</em>
    or the default value for the attribute if no such unit or space is given.</p>
  
-   <p>Some examples of attribute formats using [^pseudo-unit^]s (explicit or
+   <p>Some examples of attribute formats using [=pseudo-unit=]s (explicit or
    default) are as follows: <code>depth="100%height"</code> and
    <code>depth="1.0height"</code> both set the depth of the
    <code class="element">mpadded</code> element to the height of its content.
@@ -5146,7 +5146,7 @@
  
      <tr>
       <td rowspan="2" class="attname">open</td>
-      <td><em>[^string^]</em></td>
+      <td><em>[=string=]</em></td>
       <td>(</td>
       <td><span class="coreno"></span></td>
      </tr>
@@ -5161,7 +5161,7 @@
  
      <tr>
       <td rowspan="2" class="attname">close</td>
-      <td><em>[^string^]</em></td>
+      <td><em>[=string=]</em></td>
       <td>)</td>
       <td><span class="coreno"></span></td>
      </tr>
@@ -5176,7 +5176,7 @@
  
      <tr>
       <td rowspan="2" class="attname">separators</td>
-      <td><em>[^string^]</em></td>
+      <td><em>[=string=]</em></td>
       <td>,</td>
       <td><span class="coreno"></span></td>
      </tr>
@@ -7244,7 +7244,7 @@
  
       <tr>
        <td rowspan="2" class="attname">rowspan</td>
-       <td><em>[^positive-integer^]</em></td>
+       <td><em>[=positive-integer=]</em></td>
        <td>1</td>
        <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-rowspan"></a></td>
       </tr>
@@ -7259,7 +7259,7 @@
  
       <tr>
        <td rowspan="2" class="attname">columnspan</td>
-       <td><em>[^positive-integer^]</em></td>
+       <td><em>[=positive-integer=]</em></td>
        <td>1</td>
        <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-columnspan"></a></td>
       </tr>
@@ -8696,7 +8696,7 @@
  
   <tr>
  <td rowspan="2" class="attname">position</td>
- <td><em>[^integer^]</em></td>
+ <td><em>[=integer=]</em></td>
  <td>0</td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -8719,7 +8719,7 @@
  
  <tr>
  <td rowspan="2" class="attname">shift</td>
- <td><em>[^integer^]</em></td>
+ <td><em>[=integer=]</em></td>
  <td>0</td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -8793,7 +8793,7 @@
  
   <tr>
  <td rowspan="2" class="attname">position</td>
- <td><em>[^integer^]</em></td>
+ <td><em>[=integer=]</em></td>
  <td>0</td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -8882,7 +8882,7 @@
  
   <tr>
  <td rowspan="2" class="attname">position</td>
- <td><em>[^integer^]</em></td>
+ <td><em>[=integer=]</em></td>
  <td>0</td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -8938,7 +8938,7 @@
  
  <tr>
  <td rowspan="2" class="attname">scriptsizemultiplier</td>
- <td><em>[^number^]</em></td>
+ <td><em>[=number=]</em></td>
  <td><em>inherited (0.6)</em></td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -9066,7 +9066,7 @@
  
   <tr>
  <td rowspan="2" class="attname">position</td>
- <td><em>[^integer^]</em></td>
+ <td><em>[=integer=]</em></td>
  <td>0</td>
  <td><span class="coreno"></span></td>
  </tr>
@@ -9637,7 +9637,7 @@
   MathML 4 no longer predefines what these actions do.
   Furthermore, in the web environment events connected to javascript to perform actions are a
   more powerful solution, although <code class="element">maction</code> provides a
-  convenient wrapper element on which to attach an event.
+  convenient wrapper element on which to attach such an event.
  </p>
  
  <p>Linking to other elements, either locally within the <code class="element">math</code> element or to some URL,
@@ -9673,7 +9673,7 @@
  
    <tr>
     <td rowspan="2" class="attname">actiontype</td>
-    <td><em>[^string^]</em></td>
+    <td><em>[=string=]</em></td>
     <td><em>required</em></td>
     <td><span class="coreno"></span></td>
    </tr>
@@ -9688,7 +9688,7 @@
  </tr>
  <tr>
  <td rowspan="2" class="attname">selection</td>
- <td><em>[^positive-integer^]</em></td>
+ <td><em>[=positive-integer=]</em></td>
  <td>1</td>
  <td><span class="coreno"></span></td>
  </tr>
