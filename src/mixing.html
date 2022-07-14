@@ -298,13 +298,42 @@
 
      <li><code>semi-factorial @postfix($x)</code> would be read as <q>x semi factorial</q></li>
 
-     <li><code>free-algebra ($r, $x)</code> would be read as <q>free algebra of r and x</q></li>
-     
-     <li><code>free-algebra-construct@silent (free, $r, algebra-on, $x)</code> would be read as <q>free, r algebra on x</q></li>
-
-
     </ul>
 
+    <p>In most cases it is preferable to use an <code
+    class="attribute">intent</code> that accurately reflects the
+    mathematical structure of the expression. This allows the intent
+    to be used while navigating that structure, and also, for concepts
+    known in the Concept dictionary being used by the application, it allows
+    translated, locale-specific text to be generated.</p>
+    <p>However, as the default reading of an unknown name is to read
+    the name, after splitting on <code>._-</code> as described above,
+    it is possible to provide readings that do not match the prefix
+    functional structure. It should be noted that such uses of  <code
+    class="attribute">intent</code> may prevent other uses of the
+    attribute, for example as an aid to inferring the mathematical
+    structure for conversions to Content MathML or computational software
+    systems. The <code>@silent</code> hint may be especially
+    useful for these use cases.
+    </p>
+    <p>For example:</p>
+    
+    <ul>
+     <li><code>free-algebra ($r, $x)</code><br/> would be read as <q>free algebra of r and x</q></li>
+     
+     <li><code>free-algebra-construct@silent (_free, $r, _algebra, _on, $x)</code><br/> would be read as <q>free r algebra on x</q></li>
+
+    </ul>
+    <p>Here using <code>@silent</code> avoids the default prefix
+    reading, and allows additional names to be added to the argument
+    list to generate the specified words interspersed with the
+    references to the mathematical arguments. It is recommended that
+    Names added purely to generate text, and not corresponding to a
+    mathematical argument, start with <code>_</code> (U+005F).
+    This does not affect the text generated, but may aid other systems
+    in ignoring these terms while interpreting the  <code
+    class="attribute">intent</code>.</p>
+    
    </section>
    
    <section>
