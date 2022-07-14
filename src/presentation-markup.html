@@ -1980,7 +1980,6 @@
  
     <section>
      <h6 id="presm_mo_dict_attrs">Dictionary-based attributes</h6>
-     <div class="issue" data-number="294"></div>
      <table id="presm_table-mo" class="attributes data">
  
       <thead>
@@ -2104,8 +2103,8 @@
  
        <tr>
         <td rowspan="2" class="attname">maxsize</td>
-        <td> <a class="intref" href="#type_length"><em>length</em></a> | "infinity"</td>
-        <td><em>set by dictionary</em> (infinity)</td>
+        <td> <a class="intref" href="#type_length"><em>length</em></a></td>
+        <td><em>set by dictionary</em> (unbounded)</td>
         <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-maxsize"></a></td>
        </tr>
  
@@ -2113,8 +2112,10 @@
         <td colspan="3" class="attdesc">
    Specifies the maximum size of the operator when stretchy;
    see <a href="#presm_op_stretch"></a>.
+   If not given, the maximum size is unbounded.
    <span>Unitless or percentage values indicate a multiple
-   of the reference size, being the size of the unstretched glyph.</span>
+   of the reference size, being the size of the unstretched glyph.
+   MathML 4 deprecates "infinity" as possible value as it is the same as not providing a value.</span>
         </td>
        </tr>
  
@@ -3312,15 +3313,13 @@
  but note that <code class="attribute">mathvariant</code> and <code class="attribute">mathcolor</code> have no effect and that
  <code class="attribute">mathsize</code> only affects the interpretation of units in sizing
  attributes (see <a href="#fund_units"></a>).
- <span><code class="element">mspace</code> also accepts the indentation attributes described in <a href="#presm_lbindent_attrs"></a>.</span>
- 
+ <code class="element">mspace</code> also accepts the indentation attributes described in <a href="#presm_lbindent_attrs"></a>.
  </p>
  
  <table class="attributes data">
  
-  <thead>
- 
-   <tr>
+ <thead>
+ <tr>
  <td>Name</td>
  <td>values</td>
  <td>default</td>
@@ -3368,39 +3367,14 @@
    Specifies the desired depth (below the baseline) of the space.
  </td>
  </tr>
- 
- <tr>
- <td rowspan="2" class="attname">linebreak</td>
- <td>"auto" | "newline" | "nobreak" | "goodbreak" | "badbreak"</td>
- <td>auto</td>
- <td><span class="coreno"></span></td>
- </tr>
- 
- <tr>
-  <td colspan="3" class="attdesc">
-   Specifies the desirability of a linebreak at this space.
- <span>This attribute should be ignored if any dimensional attribute is set.</span>
- </td>
- </tr>
+
  </tbody>
  </table>
  
  <p>Linebreaking was originally specified on <code class="element">mspace</code> in MathML2,
- but controlling linebreaking on <a class="intref" href="#presm_mo"><code class="element">mo</code></a>
- is to be preferred <span> starting with MathML 3.
- MathML 3 adds new linebreaking attributes only to <code class="element">mo</code>, not <code class="element">mspace</code>.
- However, because a linebreak can be specified on <code class="element">mspace</code>,
- control over the indentation that follows that break can be specified using the attributes
- listed in
- <a href="#presm_lbindent_attrs"></a></span>.
+ but much greater control over linebreaking and indentation was add to <a class="intref" href="#presm_mo"><code class="element">mo</code></a>
+ in MathML 3. Linebreaking on <code class="element">mspace</code> is deprecated in MathML 4.
  </p>
- 
- <p>
-  Note that <code class="attribute">linebreak</code> values on adjacent <code class="element">mo</code> and <code class="element">mspace</code> elements do
-  not interact; a <code class="attributevalue">nobreak</code> on an <code class="element">mspace</code> will
-  not, in itself, inhibit a break on an adjacent <code class="element">mo</code> element.
- </p>
- 
  </section>
  
  <section class="fold">
@@ -3409,23 +3383,9 @@
  <div class="example mathml-fragment">
   <pre>
     &lt;mspace height="3ex" depth="2ex"/&gt;
- 
-    &lt;mrow&gt;
-      &lt;mi&gt;a&lt;/mi&gt;
-      &lt;mo id="firstop"&gt;+&lt;/mo&gt;
-      &lt;mi&gt;b&lt;/mi&gt;
-      &lt;mspace linebreak="newline" indentalign="id" indenttarget="firstop"/&gt;
-      &lt;mo&gt;+&lt;/mo&gt;
-      &lt;mi&gt;c&lt;/mi&gt;
-    &lt;/mrow&gt;
  </pre>
  </div>
- 
- <p>
-  In the last example, <code class="element">mspace</code> will cause the line to end after the "b" and the following line to be indented so
-  that the "+" that follows will align with the "+" with <code class="attribute">id</code>="firstop".
- </p>
- </section>
+  </section>
  
  <section>
  <h5>Definition of space-like elements</h5>
@@ -5444,10 +5404,7 @@
     renderers are encouraged to render as many of the values listed below as
     possible.
    </p>
- 
-   <div class="issue" data-number="3"></div>
-   <div class="issue" data-number="82"></div>
- 
+  
    <table class="attributes data">
  
     <thead>
@@ -5464,12 +5421,12 @@
  
      <tr>
       <td rowspan="2" class="attname">notation</td>
-      <td>(<code class="attributevalue">longdiv</code> | <code class="attributevalue">actuarial</code> | <code class="attributevalue">phasorangle</code> | <code class="attributevalue">radical</code> | <code class="attributevalue">box</code> | <code class="attributevalue">roundedbox</code> | <code class="attributevalue">circle</code> |
+      <td>(<code class="attributevalue">actuarial</code> | <code class="attributevalue">phasorangle</code> | <code class="attributevalue">box</code> | <code class="attributevalue">roundedbox</code> | <code class="attributevalue">circle</code> |
       <code class="attributevalue">left</code> | <code class="attributevalue">right</code> | <code class="attributevalue">top</code> | <code class="attributevalue">bottom</code> |
       <code class="attributevalue">updiagonalstrike</code> | <code class="attributevalue">downdiagonalstrike</code> | <code class="attributevalue">verticalstrike</code> | <code class="attributevalue">horizontalstrike</code> | <code class="attributevalue">northeastarrow</code>
-      | <code class="attributevalue">madruwb</code> | text) +
+      | <code class="attributevalue">madruwb</code> | text ) +
       </td>
-      <td>longdiv</td>
+      <td>do nothing</td>
       <td><span class="coreno"></span></td>
      </tr>
  
@@ -5477,44 +5434,33 @@
       <td colspan="3" class="attdesc">
        Specifies a space separated list of notations to be used to enclose the children.
        See below for a description of each type of notation.
+       MathML 4 deprecates the use of <code class="attributevalue">longdiv</code> and <code class="attributevalue">radical</code>.
+       These notations duplicate functionality provided by <code class="element">mlongdiv</code> and <code class="element">msqrt</code> respectively;
+       those elements should be used instead.
+       The default has been changed so that if no <code class="attname">notation</code> is given,
+       or if it is an empty string,
+       then <code class="element">menclose</code> should not draw.
       </td>
      </tr>
     </tbody>
    </table>
+
  
    <p>Any number of values can be given for
    <code class="attribute">notation</code> separated by whitespace; all of those given and
    understood by a MathML renderer should be rendered.
    Each should be rendered as if the others were not present; they should not nest one
    inside of the other.  For example,
-   <code class="attribute">notation</code>=<code class="attributevalue">circle box</code> should
+   <code class="attribute">notation</code>="<code class="attributevalue">circle box</code>" should
    result in circle and a box around the contents of <code class="element">menclose</code>; the circle and box may overlap.  This is shown in the first example below.
-   Of the predefined notations, only <span>the following are</span>
+   Of the predefined notations, only <code class="attributevalue">phasorangle</code> is
    affected by the directionality (see <a href="#presm_bidi_math"></a>):
-   </p>
-   <ul>
- 
-    <li>
-     <p> <code class="attributevalue">radical</code> </p>
-    </li>
- 
-    <li>
-     <p> <code class="attributevalue">phasorangle</code> </p>
-    </li>
-   </ul>
- 
-   <p>When <code class="attribute">notation</code> has the value <code class="attributevalue">longdiv</code>,
-   the contents are drawn enclosed by a long division symbol.
-   <span>MathML 3 adds the <code class="element">mlongdiv</code> element
-   (<a href="#presm_mlongdiv"></a>). This element supports notations for long division
-   used in several countries and can be used to create a complete example of
-   long division as shown in <a href="#presm_mlongdiv_ex"></a>. </span>
+   </p> 
+   <p>
    When <code class="attribute">notation</code> is specified as
    <code class="attributevalue">actuarial</code>, the contents are drawn enclosed by an
    actuarial symbol. A similar result can be achieved
-   with the value <code class="attributevalue">top right</code>. The case of
-   <code class="attribute">notation</code>=<code class="attributevalue">radical</code> is equivalent to the
-   <code class="element">msqrt</code> schema.</p>
+   with the value <code class="attributevalue">top right</code>.</p>
  
    <p> The values <code class="attributevalue">box</code>,
    <code class="attributevalue">roundedbox</code>, and <code class="attributevalue">circle</code> should
