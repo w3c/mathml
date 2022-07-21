@@ -379,20 +379,39 @@
 
 
    <section>
-    <h4 id="mixing_intent_examples_mtr">Tables</h4>
-    <div class="issue"  data-number="337"></div>
+     <h4 id="mixing_intent_examples_mtr">Tables</h4>
+     <div class="ednote">
+       <p>The <code class="element">&lt;mtable&gt;</code> element is
+       used in many ways, for denoting matrices, systems of equations,
+       steps in a proof derivation, etc. In addition to these uses it
+       may be used to implement forced line breaking and alignment,
+       especially for systems that do not implement
+       [[[#presm_linebreaking]]], or for conversions from (La)TeX where
+       alignment constructs are used in similar ways.</p>
+       <p>Some examples are given below, and the Working Group plans to
+       propose recommended uses of [=intent=] to address these use
+       cases. This may require some small extensions to the intent
+       grammar or to the terms in the Core Concept dictionary of intent
+       terms. Discussions are taking place in the following two GitHub
+       Issues.</p>
+       
+     </div>
 
-    <p>Matrices</p>
-    <div class="example mathml mmlcore">
+       <div class="issue" data-number="337"></div>
+       <div class="issue" data-number="402"></div>
+
+
+<p>Matrices</p>
+<div class="example mathml mmlcore">
 <pre>
-&lt;mrow intent="matrix">
+&lt;mrow>
   &lt;mo>(&lt;/mo>
   &lt;mtable>
-    &lt;mtr intent="arrayrow">
+    &lt;mtr>
       &lt;mtd>&lt;mn>1&lt;/mn>&lt;/mtd>
       &lt;mtd>&lt;mn>0&lt;/mn>&lt;/mtd>
     &lt;/mtr>
-    &lt;mtr intent="arrayrow">
+    &lt;mtr>
       &lt;mtd>&lt;mn>0&lt;/mn>&lt;/mtd>
       &lt;mtd>&lt;mn>1&lt;/mn>&lt;/mtd>
     &lt;/mtr>
@@ -406,8 +425,8 @@
     <p>Aligned equations</p>
     <div class="example mathml mmlcore">
 <pre>
-&lt;mtable intent="list">
-  &lt;mtr intent="append">
+&lt;mtable>
+  &lt;mtr>
     &lt;mtd columnalign="right">
       &lt;mn>2&lt;/mn>
       &lt;mo>&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo>
@@ -420,7 +439,7 @@
       &lt;mn>1&lt;/mn>
     &lt;/mtd>
   &lt;/mtr>
-  &lt;mtr intent="append">
+  &lt;mtr>
     &lt;mtd columnalign="right">
       &lt;mi>y&lt;/mi>
     &lt;/mtd>
@@ -441,8 +460,8 @@
 
     <div class="example mathml mmlcore">
 <pre>
-&lt;mtable intent="list">
-  &lt;mtr intent="append">
+&lt;mtable>
+  &lt;mtr>
     &lt;mtd columnalign="right">
       &lt;mi>a&lt;/mi>
     &lt;/mtd>
@@ -457,7 +476,7 @@
       &lt;mi>d&lt;/mi>
     &lt;/mtd>
   &lt;/mtr>
-  &lt;mtr intent="extend">
+  &lt;mtr>
     &lt;mtd columnalign="right">&lt;/mtd>
     &lt;mtd columnalign="center">&lt;/mtd>
     &lt;mtd columnalign="left">
