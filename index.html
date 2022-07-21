@@ -84,7 +84,7 @@
 		d.open=true;
 	    }
             sortlist[i].removeChild(w);
-            d.innerHTML="\x3csummary id='" + h.id + "' class='" + h.nodeName + "'>\u200A"+
+            d.innerHTML="\x3csummary id='" + h.id + "' class='" + h.nodeName + "'>\u00A0"+
             a.outerHTML +" " +
             h.innerText+"\x3c/summary>"+sortlist[i].innerHTML;
             sortlist[i].parentNode.replaceChild(d,sortlist[i]);
