@@ -71,20 +71,15 @@
   
   <section>
    <h4 id="acc_ua">User Agents</h4>
-   <p>[This section would include guidance to browser vendors and
-   other user agent developers on what to do with MathML to
-   maximize accessibility.]</p>
-
+   
    <section>
-    <h5 id="acc_at">Accessibility tree</h5> <p>The accessibility tree
-    should contain accessibility-related information for most MathML
-    elements. Browsers should process MathML into the DOM tree's
-    internal representation, which contains objects representing all
-    the markup's elements and attributes. Browsers should ensure the
-    accessibility tree generated from the DOM tree retains this
-    information so that Accessibility APIs can provide a
-    representation that can be understood by assistive
-    technologies.</p> <p>[Need to flesh this out...]</p>
+    <h5 id="acc_at">Accessibility tree</h5> 
+    <p>User agents (e.g., web browsers) should leverage information in the MathML expression tree structure to maximize accessibility. Browsers should process MathML into the DOM tree's internal representation, which contains objects representing all the markup's elements and attributes. In general, user agents will expose accessibility information via a platform accessibility service (e.g., an accessibility API), which is passed on to assistive technology applications via the accessibility tree. The accessibility tree should contain accessibility-related information for most MathML elements. Browsers should ensure the accessibility tree generated from the DOM tree retains this information so that Accessibility APIs can provide a representation that can be understood by assistive technologies. However, in compliance with the W3C User Agent Accessibility Guidelines Success Criterion 4.1.4, "If the user agent accessibility API does not provide sufficient information to one or more platform accessibility services, then Document Object Models (DOM), must be made programmatically available to assistive technologies" [UAAG20].</p>
+ 
+  <p>By ensuring that MathML elements become nodes in the DOM tree, and the resulting accessibility tree, user agents can expose math nodes for keyboard navigation within expressions. This can support important user needs such as the ability to visually highlight elements of an expression and/or speak individual elements as one navigates with arrow keys. This can further support other forms of synchronous navigation, such as individuals using refreshable braille displays along with synthetic speech.</p> 
+
+  <p>While it is common practice for the accessibility tree to ignore most DOM node elements that are primarily used for visual display purposes, it is important to point out that math expressions often use what appears as visual styling to convey information which can be important for some types of assistive technology applications. For example, omitting the <mspace> element from the accessibility tree will impact the ability to generate a valid math braille representation of expressions on a braille display.</p>
+
    </section>
 
 
