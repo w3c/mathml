@@ -75,13 +75,23 @@
         var foldlist=document.querySelectorAll("section.fold");
         for(var i=0;i!=foldlist.length;i++){
 	    var s=foldlist[i];
-            var w=s.children[0];
-            s.removeChild(w);
-            s.innerHTML=
-		w.outerHTML +
-		"<details " + (opend == null ? "":"open ") + "class='h'><summary class='h'></summary>"+
-		s.innerHTML +
-		"</details>";
+	    var w=s.children[0];
+	    var d=document.createElement("details");
+	    d.className="h";
+	    var sy=document.createElement("summary");
+	    sy.className="h";
+	    if (opend != null){
+		d.open=true;
+	    }
+	    var w=s.children[0];
+	    d.appendChild(sy);
+	    var n=w.nextSibling;
+	    while(n){
+		nx=n.nextSibling
+		d.appendChild(n);
+		n=nx;
+	    }
+	    s.appendChild(d);
         }
     }
     function resortable () {
