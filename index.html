@@ -72,22 +72,20 @@
     function foldable() {
 	let params = new URLSearchParams(document.location.search);
 	let opend = params.get("open");
-        var sortlist=document.querySelectorAll("section.fold");
-        for(var i=0;i!=sortlist.length;i++){
+        var foldlist=document.querySelectorAll("section.fold");
+        for(var i=0;i!=foldlist.length;i++){
+	    var s=foldlist[i];
             var d=document.createElement("details");
-            var w=sortlist[i].children[0];
-            var h=w.children[0];
-            var a=w.children[1];
-            d.id= sortlist[i].id;
-            d.className=h.nodeName;
+            var w=s.children[0];
 	    if (opend != null){
 		d.open=true;
 	    }
-            sortlist[i].removeChild(w);
-            d.innerHTML="\x3csummary id='" + h.id + "' class='" + h.nodeName + "'>"+
-            a.outerHTML +" " +
-            h.innerText+"\x3c/summary>"+sortlist[i].innerHTML;
-            sortlist[i].parentNode.replaceChild(d,sortlist[i]);
+            s.removeChild(w);
+            s.innerHTML=
+		w.outerHTML +
+		"<details class='h'><summary class='h'></summary>"+
+		s.innerHTML +
+		"</details>";
         }
     }
     function resortable () {
@@ -266,36 +264,16 @@ span.coreno::before {
     color: darkred;
     vertical-align: text-top;
     font-size: 70%;
-    }
-summary.H4 {
-font-weight:bold;
-color:var(--heading-text);
-position:relative; left:-1em;
-}
-summary.H4 > a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text);}
-summary.H5 {
-font-style:italic;
-font-weight:normal;
-position:relative; left:-2em;
-}
-summary.H5 > a.self-link::before{content:"§";text-decoration:none;color:#555;}
-summary.H6 {
-font-variant: small-caps;
-font-weight:normal;
-position:relative; left:-1.5em;
-}
-summary.H6 > a.self-link::before{content:"§";text-decoration:none;color:#555;}
-
-details.H4, details.H5 {
-    margin-top:2.5rem;
 }
 
-details.H6[open] {
-border: solid thin black;
-padding: 0em .5em .5em .7em;
+summary.h::before {content:"Show Section";font-weight: normal}
+details.h[open] summary.h::before {content:"Hide Section";font-weight: normal}
+details.h[open] {
+border-left: solid thin black;
+padding-left: .7em;
 margin-left: -.7em ;
-margin-top:.5em;
 }
+  
 
 table.syntax {
 font-size: 80%;
