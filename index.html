@@ -75,15 +75,11 @@
         var foldlist=document.querySelectorAll("section.fold");
         for(var i=0;i!=foldlist.length;i++){
 	    var s=foldlist[i];
-            var d=document.createElement("details");
             var w=s.children[0];
-	    if (opend != null){
-		d.open=true;
-	    }
             s.removeChild(w);
             s.innerHTML=
 		w.outerHTML +
-		"<details class='h'><summary class='h'></summary>"+
+		"<details " + (opend == null ? "":"open ") + "class='h'><summary class='h'></summary>"+
 		s.innerHTML +
 		"</details>";
         }
