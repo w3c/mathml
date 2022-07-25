@@ -16,6 +16,20 @@
         }
   </script>
   <script src="sorttable.js"></script>
+  <script>
+    function showhide (n) {
+      if(n.textContent=="Show Section") {
+	  n.textContent="Hide Section";
+//	  n.setAttribute("aria-expanded","true");
+      n.nextElementSibling.style.display="block";
+  } else {
+      n.textContent="Show Section";
+//      n.setAttribute("aria-expanded","false");
+      n.nextElementSibling.style.display="none";
+  }
+      
+    }
+</script>
   <script class='remove'>
     function relaxhl (r,s,u) {
         var s2=s.replaceAll(/(\n|^)([^'#\n]*)(#[^\n]*)/g,'$1$2\x3cspan style="color:brown">$3\x3c/span>');
@@ -76,21 +90,20 @@
         for(var i=0;i!=foldlist.length;i++){
 	    var s=foldlist[i];
 	    var w=s.children[0];
-	    var d=document.createElement("details");
-	    d.className="h";
-	    var sy=document.createElement("summary");
-	    sy.className="h";
-	    if (opend != null){
-		d.open=true;
-	    }
+	    var d=document.createElement("div");
+	    d.className="foldh";
+	    var b=document.createElement("button");
+	    b.className="foldh";
+	    b.textContent="Show Section";
+	    b.setAttribute("onclick", "showhide(this)");
 	    var w=s.children[0];
-	    d.appendChild(sy);
 	    var n=w.nextSibling;
 	    while(n){
 		nx=n.nextSibling
 		d.appendChild(n);
 		n=nx;
 	    }
+	    s.appendChild(b);
 	    s.appendChild(d);
         }
     }
@@ -272,14 +285,15 @@ span.coreno::before {
     font-size: 70%;
 }
 
-summary.h::before {content:"Show Section";font-weight: normal}
-details.h[open] summary.h::before {content:"Hide Section";font-weight: normal}
-details.h {
+.foldh {
 border-left: solid thin black;
 padding-left: .7em;
 margin-left: -.7em ;
 }
-  
+div.foldh {
+display:none;
+}
+
 
 table.syntax {
 font-size: 80%;

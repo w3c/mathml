@@ -3,6 +3,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 <meta charset="UTF-8"/>
 <title>folding test</title>
+<script>
+  function showhide (n,id) {
+      if(n.textContent=="Show Section") {
+	  n.textContent="Hide Section";
+	  n.setAttribute("aria-expanded","true");
+      n.nextElementSibling.style.display="block";
+  } else {
+      n.textContent="Show Section";
+      n.setAttribute("aria-expanded","false");
+      n.nextElementSibling.style.display="none";
+  }
+      
+  }
+</script>
 <style>
  body{margin-left:2em;}
  
@@ -22,6 +36,7 @@ details.H5 {
 }
 
 h5 {
+    font-size:16px;
     font-style:italic;
     font-weight:normal;
 }
@@ -32,7 +47,18 @@ border: solid thin black;
 padding: 0em .5em .5em .7em;
 margin-left: -.7em ;
 }
-  
+
+
+
+.foldh {
+border-left: solid thin black;
+padding-left: .7em;
+margin-left: -.7em ;
+}
+div.foldh {
+display:none;
+}
+
 </style>
 </head>
 <body>
@@ -74,7 +100,7 @@ margin-left: -.7em ;
 
      <p>A paragraph that is always visible 4</p>
 
-   <details id="examples-of-linebreakingc" class="H5"><summary id="presm_mo_linebreaksc" class="H5">&#x200a;<a class="self-link" href="#presm_mo_linebreaksc" zaria-label="Permalink for Section 3.1.7.2c">§</a></span> 3.1.7.2c Examples of Linebreaking (permalink not at start)</summary>
+   <details id="examples-of-linebreakingc" class="H5"><summary id="presm_mo_linebreaksc" class="H5">&#x200a;<a class="self-link" href="#presm_mo_linebreaksc" zaria-label="Permalink for Section 3.1.7.2c">§</a> 3.1.7.2c Examples of Linebreaking (permalink not at start)</summary>
      
      
      <p>The following example also demonstrates forced linebreaks and forced alignment.....</p>
@@ -88,7 +114,7 @@ margin-left: -.7em ;
      <p>A paragraph that is always visible 5</p>
 
      <section>
-   <h5 id="examples-of-linebreakingd"><a class="self-link" href="#presm_mo_linebreaksd" zaria-label="Permalink for Section 3.1.7.2d">§</a></span> 3.1.7.2d Examples of Linebreaking (real h5)</h5>
+   <h5 id="examples-of-linebreakingd"><a class="self-link" href="#presm_mo_linebreaksd" aria-label="Permalink for Section 3.1.7.2d">§</a> 3.1.7.2d Examples of Linebreaking (real h5)</h5>
    <details class="H5b"><summary></summary>
      
      
@@ -102,5 +128,22 @@ margin-left: -.7em ;
 
 
      <p>A paragraph that is always visible 5</p>
+
+
+     <section class="fold">
+   <h5 id="examples-of-linebreakinge"><a class="self-link" href="#presm_mo_linebreakse" aria-label="Permalink for Section 3.1.7.2e">§</a> 3.1.7.2e Examples of Linebreaking (real h5+javascript)</h5>
+   
+       <button id="b-e" onclick="showhide(this)">Show Section</button>
+     <div class="fold">
+     <p>The following example also demonstrates forced linebreaks and forced alignment.....</p>
+     
+     
+   </div>
+   </section>
+
+
+
+
+     <p>A paragraph that is always visible 6</p>
 </body>
 </html>

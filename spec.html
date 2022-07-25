@@ -133,14 +133,25 @@ span.coreno::before {
     font-size: 70%;
 }
 
-summary.h::before {content:"Show Section";font-weight: normal}
-details.h[open] summary.h::before {content:"Hide Section";font-weight: normal}
+summary.h::before {content:"Show ";font-weight: normal}
+details.h[open] summary.h::before {content:"Hide ";font-weight: normal}
 details.h {
 border-left: solid thin black;
 padding-left: .7em;
 margin-left: -.7em ;
 }
-  
+
+button.h {
+border-left: solid thin black;
+padding-left: .7em;
+margin-left: -.7em ;
+}
+div.h {
+display:none;
+border-left: solid thin black;
+padding-left: .7em;
+margin-left: -.7em ;
+}
 
 table.syntax {
 font-size: 80%;
@@ -706,6 +717,19 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED">
 <script>
+  function showhide (n,id) {
+      if(n.textContent=="Show Section") {
+	  n.textContent="Hide Section";
+	//  n.setAttribute("aria-expanded","true");
+      n.nextElementSibling.style.display="block";
+  } else {
+      n.textContent="Show Section";
+      //n.setAttribute("aria-expanded","false");
+      n.nextElementSibling.style.display="none";
+  }
+      
+  }
+  
     window.addEventListener("load",function () {
     const m = document.createElementNS("http://www.w3.org/1998/Math/MathML", "math");
     m.innerHTML = "<msqrt><mi></mi></msqrt>";
@@ -2877,7 +2901,7 @@ Theorem
  
    </section>
  
-   <section class="fold" id="examples-of-linebreaking"><div class="header-wrapper"><h5 id="presm_mo_linebreaks"><bdi class="secno">3.1.7.2 </bdi>Examples of Linebreaking</h5><a class="self-link" href="#presm_mo_linebreaks" aria-label="Permalink for Section 3.1.7.2"></a></div><details class="h"><summary class="h"></summary>
+   <section class="fold" id="examples-of-linebreaking"><div class="header-wrapper"><h5 id="presm_mo_linebreaks"><bdi class="secno">3.1.7.2 </bdi>Examples of Linebreaking</h5><a class="self-link" href="#presm_mo_linebreaks" aria-label="Permalink for Section 3.1.7.2"></a></div><details class="h"><summary class="h">Section</summary>
      
      
      <p>The following example demonstrates forced linebreaks and forced alignment:</p>
@@ -3506,7 +3530,7 @@ Theorem
         <td colspan="3" class="attdesc">
          Provides an alternate name for the glyph.  If the specified image can't be found or
          displayed,
-         the renderer may use this name in a warning message or some unknown glyph notation.
+         !!!! the renderer may use this name in a warning message or some unknown glyph notation.
          The name might also be used by an audio renderer or symbol processing
          system and should be chosen to be descriptive.
         </td>
@@ -3514,7 +3538,9 @@ Theorem
       </tbody>
      </table></div>
  
-    <section class="fold" id="example"><div class="header-wrapper"><h6 id="example-11">Example</h6><a class="self-link" href="#example" aria-label="Permalink for this Section"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="example"><div class="header-wrapper"><h6 id="example-11">Example</h6><a class="self-link" href="#example" aria-label="Permalink for this Section"></a></div>
+       <button id="f1"  aria-expanded="false" aria-controls="sf1" class="h" onclick="showhide(this,'f1')">Show Section</button>
+      <div aria-labelledby="f1" id="sf1" class="h">
      
  
      <p>The following example illustrates how a researcher might use
@@ -3535,7 +3561,8 @@ Theorem
       <img src="image/braids.png" alt="\includegraphics{image/braids}" width="108" height="29">
      </blockquote>
  
-    </details></section>
+    </div>
+</section>
  
  
    </section>
@@ -3863,7 +3890,7 @@ Theorem
     </p>
    </section>
  
-   <section class="fold" id="examples"><div class="header-wrapper"><h6 id="presm_mi_examples"><bdi class="secno">3.2.1.3.3 </bdi>Examples</h6><a class="self-link" href="#presm_mi_examples" aria-label="Permalink for Section 3.2.1.3.3"></a></div><details class="h"><summary class="h"></summary>
+   <section class="fold" id="examples"><div class="header-wrapper"><h6 id="presm_mi_examples"><bdi class="secno">3.2.1.3.3 </bdi>Examples</h6><a class="self-link" href="#presm_mi_examples" aria-label="Permalink for Section 3.2.1.3.3"></a></div><details class="h"><summary class="h">Section</summary>
     
  
     <div class="example mathml mmlcore">
@@ -3995,7 +4022,7 @@ Theorem
     <p><code class="element">mn</code> elements accept the attributes listed in <a href="#presm_commatt" class="sec-ref"><bdi class="secno">3.2.1.2 </bdi>Mathematics style attributes common to token elements</a>.</p>
    </section>
  
-   <section class="fold" id="examples-0"><div class="header-wrapper"><h6 id="presm_mn_examples"><bdi class="secno">3.2.1.4.3 </bdi>Examples</h6><a class="self-link" href="#presm_mn_examples" aria-label="Permalink for Section 3.2.1.4.3"></a></div><details class="h"><summary class="h"></summary>
+   <section class="fold" id="examples-0"><div class="header-wrapper"><h6 id="presm_mn_examples"><bdi class="secno">3.2.1.4.3 </bdi>Examples</h6><a class="self-link" href="#presm_mn_examples" aria-label="Permalink for Section 3.2.1.4.3"></a></div><details class="h"><summary class="h">Section</summary>
     
  
     <div class="example mathml mmlcore">
@@ -4036,7 +4063,7 @@ Theorem
     complex numbers, <span data-diff="add">negative numbers, </span>ratios of numbers shown as fractions, and
     names of numeric constants.
     </p>
-    <section class="fold" id="examples-of-complex-representations-of-numbers"><div class="header-wrapper"><h6 id="presm_mn_complex_examples">Examples of complex representations of numbers</h6><a class="self-link" href="#presm_mn_complex_examples" aria-label="Permalink for this Section"></a></div><details class="h"><summary class="h"></summary>
+    <section class="fold" id="examples-of-complex-representations-of-numbers"><div class="header-wrapper"><h6 id="presm_mn_complex_examples">Examples of complex representations of numbers</h6><a class="self-link" href="#presm_mn_complex_examples" aria-label="Permalink for this Section"></a></div><details class="h"><summary class="h">Section</summary>
      
  
     <div class="example mathml mmlcore">
@@ -4715,7 +4742,7 @@ Theorem
     </section>
    </section>
  
-   <section class="fold" id="examples-with-ordinary-operators"><div class="header-wrapper"><h6 id="x3-2-1-5-3-examples-with-ordinary-operators"><bdi class="secno">3.2.1.5.3 </bdi>Examples with ordinary operators</h6><a class="self-link" href="#examples-with-ordinary-operators" aria-label="Permalink for Section 3.2.1.5.3"></a></div><details class="h"><summary class="h"></summary>
+   <section class="fold" id="examples-with-ordinary-operators"><div class="header-wrapper"><h6 id="x3-2-1-5-3-examples-with-ordinary-operators"><bdi class="secno">3.2.1.5.3 </bdi>Examples with ordinary operators</h6><a class="self-link" href="#examples-with-ordinary-operators" aria-label="Permalink for Section 3.2.1.5.3"></a></div><details class="h"><summary class="h">Section</summary>
     
  
     <div class="example mathml mmlcore">
@@ -4760,7 +4787,7 @@ Theorem
  
    </details></section>
  
-   <section class="fold" id="examples-with-fences-and-separators"><div class="header-wrapper"><h6 id="x3-2-1-5-4-examples-with-fences-and-separators"><bdi class="secno">3.2.1.5.4 </bdi>Examples with fences and separators</h6><a class="self-link" href="#examples-with-fences-and-separators" aria-label="Permalink for Section 3.2.1.5.4"></a></div><details class="h"><summary class="h"></summary>
+   <section class="fold" id="examples-with-fences-and-separators"><div class="header-wrapper"><h6 id="x3-2-1-5-4-examples-with-fences-and-separators"><bdi class="secno">3.2.1.5.4 </bdi>Examples with fences and separators</h6><a class="self-link" href="#examples-with-fences-and-separators" aria-label="Permalink for Section 3.2.1.5.4"></a></div><details class="h"><summary class="h">Section</summary>
     
  
     <p>Note that the <code class="element">mo</code> elements in these examples
@@ -4896,7 +4923,7 @@ Theorem
      </tbody>
     </table></div>
  
-    <section class="fold" id="examples-1"><div class="header-wrapper"><h6 id="examples-53">Examples</h6><a class="self-link" href="#examples-1" aria-label="Permalink for this Section"></a></div><details class="h"><summary class="h"></summary>
+    <section class="fold" id="examples-1"><div class="header-wrapper"><h6 id="examples-53">Examples</h6><a class="self-link" href="#examples-1" aria-label="Permalink for this Section"></a></div><details class="h"><summary class="h">Section</summary>
     
     <p>The MathML representations of the examples in the above table are:</p>
  
@@ -5266,7 +5293,7 @@ Theorem
     refer to the context of the embellished operator as a whole, not just
     to the <code class="element">mo</code> element itself.</p>
  
-    <section class="fold" id="example-of-stretchy-attributes"><div class="header-wrapper"><h6 id="example-of-stretchy-attributes-0">Example of stretchy attributes</h6><a class="self-link" href="#example-of-stretchy-attributes" aria-label="Permalink for this Section"></a></div><details class="h"><summary class="h"></summary>
+    <section class="fold" id="example-of-stretchy-attributes"><div class="header-wrapper"><h6 id="example-of-stretchy-attributes-0">Example of stretchy attributes</h6><a class="self-link" href="#example-of-stretchy-attributes" aria-label="Permalink for this Section"></a></div><details class="h"><summary class="h">Section</summary>
      
  
      <p>This shows one way to set the maximum size of a parenthesis so that
@@ -5527,7 +5554,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
  such elements for <q>tweaking</q> in [<cite><a class="bibref" data-link-type="biblio" href="#bib-mathml-notes" title="Notes on MathML">MathML-Notes</a></cite>].</p>
  </section>
  
- <section class="fold" id="examples-2"><div class="header-wrapper"><h6 id="examples-54">Examples</h6><a class="self-link" href="#examples-2" aria-label="Permalink for this Section"></a></div><details class="h"><summary class="h"></summary>
+ <section class="fold" id="examples-2"><div class="header-wrapper"><h6 id="examples-54">Examples</h6><a class="self-link" href="#examples-2" aria-label="Permalink for this Section"></a></div><details class="h"><summary class="h">Section</summary>
  
  
  <div class="example mathml mmlcore">
@@ -5639,7 +5666,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
  </p>
  </section>
  
- <section class="fold" id="examples-3"><div class="header-wrapper"><h6 id="examples-55">Examples</h6><a class="self-link" href="#examples-3" aria-label="Permalink for this Section"></a></div><details class="h"><summary class="h"></summary>
+ <section class="fold" id="examples-3"><div class="header-wrapper"><h6 id="examples-55">Examples</h6><a class="self-link" href="#examples-3" aria-label="Permalink for this Section"></a></div><details class="h"><summary class="h">Section</summary>
  
  
  <div class="example mathml-fragment">
@@ -6016,7 +6043,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
  </section>
  </section>
  
- <section class="fold" id="examples-4"><div class="header-wrapper"><h5 id="x3-3-1-4-examples"><bdi class="secno">3.3.1.4 </bdi>Examples</h5><a class="self-link" href="#examples-4" aria-label="Permalink for Section 3.3.1.4"></a></div><details class="h"><summary class="h"></summary>
+ <section class="fold" id="examples-4"><div class="header-wrapper"><h5 id="x3-3-1-4-examples"><bdi class="secno">3.3.1.4 </bdi>Examples</h5><a class="self-link" href="#examples-4" aria-label="Permalink for Section 3.3.1.4"></a></div><details class="h"><summary class="h">Section</summary>
  
  
  <p>As an example, 2<i class="var">x</i>+<i class="var">y</i>-<i class="var">z</i>
@@ -6199,7 +6226,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
  
  </section>
  
- <section class="fold" id="examples-5"><div class="header-wrapper"><h5 id="x3-3-2-3-examples"><bdi class="secno">3.3.2.3 </bdi>Examples</h5><a class="self-link" href="#examples-5" aria-label="Permalink for Section 3.3.2.3"></a></div><details class="h"><summary class="h"></summary>
+ <section class="fold" id="examples-5"><div class="header-wrapper"><h5 id="x3-3-2-3-examples"><bdi class="secno">3.3.2.3 </bdi>Examples</h5><a class="self-link" href="#examples-5" aria-label="Permalink for Section 3.3.2.3"></a></div><details class="h"><summary class="h">Section</summary>
  
  
  <p>Here is an example which makes use of different values of <code class="attribute">linethickness</code>:</p>  
@@ -6347,7 +6374,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
  
  </section>
 
- <section class="fold" id="examples-6"><div class="header-wrapper"><h5 id="x3-3-3-3-examples"><bdi class="secno">3.3.3.3 </bdi>Examples</h5><a class="self-link" href="#examples-6" aria-label="Permalink for Section 3.3.3.3"></a></div><details class="h"><summary class="h"></summary>
+ <section class="fold" id="examples-6"><div class="header-wrapper"><h5 id="x3-3-3-3-examples"><bdi class="secno">3.3.3.3 </bdi>Examples</h5><a class="self-link" href="#examples-6" aria-label="Permalink for Section 3.3.3.3"></a></div><details class="h"><summary class="h">Section</summary>
   
   
   <p>Square roots and cube roots</p>  
@@ -6676,7 +6703,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
  
  </section>
  
- <section class="fold" id="examples-7"><div class="header-wrapper"><h5 id="x3-3-4-3-examples"><bdi class="secno">3.3.4.3 </bdi>Examples</h5><a class="self-link" href="#examples-7" aria-label="Permalink for Section 3.3.4.3"></a></div><details class="h"><summary class="h"></summary>
+ <section class="fold" id="examples-7"><div class="header-wrapper"><h5 id="x3-3-4-3-examples"><bdi class="secno">3.3.4.3 </bdi>Examples</h5><a class="self-link" href="#examples-7" aria-label="Permalink for Section 3.3.4.3"></a></div><details class="h"><summary class="h">Section</summary>
  
  
  <p>In a continued fraction, the nested fractions should not shrink. Instead, they should remain the same size.
@@ -6837,7 +6864,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
  
   </section>
  
-  <section class="fold" id="example-0"><div class="header-wrapper"><h5 id="x3-3-5-3-example"><bdi class="secno">3.3.5.3 </bdi>Example</h5><a class="self-link" href="#example-0" aria-label="Permalink for Section 3.3.5.3"></a></div><details class="h"><summary class="h"></summary>
+  <section class="fold" id="example-0"><div class="header-wrapper"><h5 id="x3-3-5-3-example"><bdi class="secno">3.3.5.3 </bdi>Example</h5><a class="self-link" href="#example-0" aria-label="Permalink for Section 3.3.5.3"></a></div><details class="h"><summary class="h">Section</summary>
    
  
    <p>If a MathML syntax-checking preprocessor
@@ -7218,7 +7245,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
    with the linebreaking algorithm.</p>
    </section>
 
-   <section class="fold" id="examples-8"><div class="header-wrapper"><h5 id="x3-3-6-4-examples"><bdi class="secno">3.3.6.4 </bdi>Examples</h5><a class="self-link" href="#examples-8" aria-label="Permalink for Section 3.3.6.4"></a></div><details class="h"><summary class="h"></summary>
+   <section class="fold" id="examples-8"><div class="header-wrapper"><h5 id="x3-3-6-4-examples"><bdi class="secno">3.3.6.4 </bdi>Examples</h5><a class="self-link" href="#examples-8" aria-label="Permalink for Section 3.3.6.4"></a></div><details class="h"><summary class="h">Section</summary>
    
  
    <p>The effects of the size and position attributes are illustrated
@@ -7339,7 +7366,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
  
   </section>
  
-  <section class="fold" id="examples-9"><div class="header-wrapper"><h5 id="x3-3-7-3-examples"><bdi class="secno">3.3.7.3 </bdi>Examples</h5><a class="self-link" href="#examples-9" aria-label="Permalink for Section 3.3.7.3"></a></div><details class="h"><summary class="h"></summary>
+  <section class="fold" id="examples-9"><div class="header-wrapper"><h5 id="x3-3-7-3-examples"><bdi class="secno">3.3.7.3 </bdi>Examples</h5><a class="self-link" href="#examples-9" aria-label="Permalink for Section 3.3.7.3"></a></div><details class="h"><summary class="h">Section</summary>
    
  
    <p>There is one situation where the preceding rules for rendering an
@@ -7719,7 +7746,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
    render inappropriately.</p>
   </section>
  
-  <section class="fold" id="examples-10"><div class="header-wrapper"><h5 id="x3-3-8-3-examples"><bdi class="secno">3.3.8.3 </bdi>Examples</h5><a class="self-link" href="#examples-10" aria-label="Permalink for Section 3.3.8.3"></a></div><details class="h"><summary class="h"></summary>
+  <section class="fold" id="examples-10"><div class="header-wrapper"><h5 id="x3-3-8-3-examples"><bdi class="secno">3.3.8.3 </bdi>Examples</h5><a class="self-link" href="#examples-10" aria-label="Permalink for Section 3.3.8.3"></a></div><details class="h"><summary class="h">Section</summary>
    
  
    <div class="example mathml mml4p">
@@ -7932,7 +7959,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
  
   </section>
  
-  <section class="fold" id="examples-11"><div class="header-wrapper"><h5 id="x3-3-9-3-examples"><bdi class="secno">3.3.9.3 </bdi>Examples</h5><a class="self-link" href="#examples-11" aria-label="Permalink for Section 3.3.9.3"></a></div><details class="h"><summary class="h"></summary>
+  <section class="fold" id="examples-11"><div class="header-wrapper"><h5 id="x3-3-9-3-examples"><bdi class="secno">3.3.9.3 </bdi>Examples</h5><a class="self-link" href="#examples-11" aria-label="Permalink for Section 3.3.9.3"></a></div><details class="h"><summary class="h">Section</summary>
    
  
    <p>An example of using multiple attributes is</p>
@@ -8260,7 +8287,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
  
    </section>
  
-   <section class="fold" id="examples-12"><div class="header-wrapper"><h5 id="x3-4-3-3-examples"><bdi class="secno">3.4.3.3 </bdi>Examples</h5><a class="self-link" href="#examples-12" aria-label="Permalink for Section 3.4.3.3"></a></div><details class="h"><summary class="h"></summary>
+   <section class="fold" id="examples-12"><div class="header-wrapper"><h5 id="x3-4-3-3-examples"><bdi class="secno">3.4.3.3 </bdi>Examples</h5><a class="self-link" href="#examples-12" aria-label="Permalink for Section 3.4.3.3"></a></div><details class="h"><summary class="h">Section</summary>
     
  
     <p>The <code class="element">msubsup</code> is most commonly used for adding
@@ -8417,7 +8444,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
   
    </section>
  
-   <section class="fold" id="examples-13"><div class="header-wrapper"><h5 id="x3-4-4-3-examples"><bdi class="secno">3.4.4.3 </bdi>Examples</h5><a class="self-link" href="#examples-13" aria-label="Permalink for Section 3.4.4.3"></a></div><details class="h"><summary class="h"></summary>
+   <section class="fold" id="examples-13"><div class="header-wrapper"><h5 id="x3-4-4-3-examples"><bdi class="secno">3.4.4.3 </bdi>Examples</h5><a class="self-link" href="#examples-13" aria-label="Permalink for Section 3.4.4.3"></a></div><details class="h"><summary class="h">Section</summary>
     
     <p>An example demonstrating how <code class="attribute">accentunder</code> affects rendering:</p>
   
@@ -8569,7 +8596,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
  
    </section>
  
-   <section class="fold" id="examples-14"><div class="header-wrapper"><h5 id="presm_mover_ex"><bdi class="secno">3.4.5.3 </bdi>Examples</h5><a class="self-link" href="#presm_mover_ex" aria-label="Permalink for Section 3.4.5.3"></a></div><details class="h"><summary class="h"></summary>
+   <section class="fold" id="examples-14"><div class="header-wrapper"><h5 id="presm_mover_ex"><bdi class="secno">3.4.5.3 </bdi>Examples</h5><a class="self-link" href="#presm_mover_ex" aria-label="Permalink for Section 3.4.5.3"></a></div><details class="h"><summary class="h">Section</summary>
     
  
     <p>Two examples demonstrating how <code class="attribute">accent</code> affects rendering:</p>
@@ -8758,7 +8785,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
  
    </section>
  
-   <section class="fold" id="examples-15"><div class="header-wrapper"><h5 id="presm_munderover_ex"><bdi class="secno">3.4.6.3 </bdi>Examples</h5><a class="self-link" href="#presm_munderover_ex" aria-label="Permalink for Section 3.4.6.3"></a></div><details class="h"><summary class="h"></summary>
+   <section class="fold" id="examples-15"><div class="header-wrapper"><h5 id="presm_munderover_ex"><bdi class="secno">3.4.6.3 </bdi>Examples</h5><a class="self-link" href="#presm_munderover_ex" aria-label="Permalink for Section 3.4.6.3"></a></div><details class="h"><summary class="h">Section</summary>
     
  
     <p>This example shows the difference between nesting <code class="element">munder</code> inside
@@ -8880,7 +8907,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
     </p>
    </section>
  
-   <section class="fold" id="examples-16"><div class="header-wrapper"><h5 id="x3-4-7-3-examples"><bdi class="secno">3.4.7.3 </bdi>Examples</h5><a class="self-link" href="#examples-16" aria-label="Permalink for Section 3.4.7.3"></a></div><details class="h"><summary class="h"></summary>
+   <section class="fold" id="examples-16"><div class="header-wrapper"><h5 id="x3-4-7-3-examples"><bdi class="secno">3.4.7.3 </bdi>Examples</h5><a class="self-link" href="#examples-16" aria-label="Permalink for Section 3.4.7.3"></a></div><details class="h"><summary class="h">Section</summary>
     
  
     <p>This example of a hypergeometric function demonstrates the use of pre and post subscripts:</p>
@@ -9428,7 +9455,7 @@ depth =max(maxheight-axis, maxdepth+axis) - axis</code></pre>
  
    </section>
  
-   <section class="fold" id="examples-17"><div class="header-wrapper"><h5 id="x3-5-1-3-examples"><bdi class="secno">3.5.1.3 </bdi>Examples</h5><a class="self-link" href="#examples-17" aria-label="Permalink for Section 3.5.1.3"></a></div><details class="h"><summary class="h"></summary>
+   <section class="fold" id="examples-17"><div class="header-wrapper"><h5 id="x3-5-1-3-examples"><bdi class="secno">3.5.1.3 </bdi>Examples</h5><a class="self-link" href="#examples-17" aria-label="Permalink for Section 3.5.1.3"></a></div><details class="h"><summary class="h">Section</summary>
     
  
     <p>A 3 by 3 identity matrix could be represented as follows:</p>
@@ -9671,7 +9698,7 @@ mtd<span class="hljs-selector-class">.eqnum</span>:before {content: <span class=
  
    </section>
  
-   <section class="fold" id="example-1"><div class="header-wrapper"><h5 id="x3-5-3-4-example"><bdi class="secno">3.5.3.4 </bdi>Example</h5><a class="self-link" href="#example-1" aria-label="Permalink for Section 3.5.3.4"></a></div><details class="h"><summary class="h"></summary>
+   <section class="fold" id="example-1"><div class="header-wrapper"><h5 id="x3-5-3-4-example"><bdi class="secno">3.5.3.4 </bdi>Example</h5><a class="self-link" href="#example-1" aria-label="Permalink for Section 3.5.3.4"></a></div><details class="h"><summary class="h">Section</summary>
     
  
     <div class="example mathml mml4p">
@@ -10512,7 +10539,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
  aligned.</p>
  </section>
  
- <section class="fold" id="mathml-representation-of-an-alignment-example"><div class="header-wrapper"><h5 id="x3-5-5-8-mathml-representation-of-an-alignment-example"><bdi class="secno">3.5.5.8 </bdi>MathML representation of an alignment example</h5><a class="self-link" href="#mathml-representation-of-an-alignment-example" aria-label="Permalink for Section 3.5.5.8"></a></div><details class="h"><summary class="h"></summary>
+ <section class="fold" id="mathml-representation-of-an-alignment-example"><div class="header-wrapper"><h5 id="x3-5-5-8-mathml-representation-of-an-alignment-example"><bdi class="secno">3.5.5.8 </bdi>MathML representation of an alignment example</h5><a class="self-link" href="#mathml-representation-of-an-alignment-example" aria-label="Permalink for Section 3.5.5.8"></a></div><details class="h"><summary class="h">Section</summary>
  
  
  <p>The above rules are sufficient to explain the MathML representation
@@ -11639,7 +11666,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
  <section id="elementary-math-examples"><div class="header-wrapper"><h4 id="presm_elemmath_examples"><bdi class="secno">3.6.8 </bdi>Elementary Math Examples</h4><a class="self-link" href="#presm_elemmath_examples" aria-label="Permalink for Section 3.6.8"></a></div>
  
  
- <section class="fold" id="addition-and-subtraction"><div class="header-wrapper"><h5 id="presm_addsub"><bdi class="secno">3.6.8.1 </bdi>Addition and Subtraction</h5><a class="self-link" href="#presm_addsub" aria-label="Permalink for Section 3.6.8.1"></a></div><details class="h"><summary class="h"></summary>
+ <section class="fold" id="addition-and-subtraction"><div class="header-wrapper"><h5 id="presm_addsub"><bdi class="secno">3.6.8.1 </bdi>Addition and Subtraction</h5><a class="self-link" href="#presm_addsub" aria-label="Permalink for Section 3.6.8.1"></a></div><details class="h"><summary class="h">Section</summary>
  
  
  <p>Two-dimensional addition, subtraction, and multiplication typically
@@ -11744,7 +11771,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
    
  </details></section>
  
- <section class="fold" id="multiplication"><div class="header-wrapper"><h5 id="presm_mult"><bdi class="secno">3.6.8.2 </bdi>Multiplication</h5><a class="self-link" href="#presm_mult" aria-label="Permalink for Section 3.6.8.2"></a></div><details class="h"><summary class="h"></summary>
+ <section class="fold" id="multiplication"><div class="header-wrapper"><h5 id="presm_mult"><bdi class="secno">3.6.8.2 </bdi>Multiplication</h5><a class="self-link" href="#presm_mult" aria-label="Permalink for Section 3.6.8.2"></a></div><details class="h"><summary class="h">Section</summary>
  
  
  <p>Below is a simple multiplication example that illustrates the use of <code class="element">msgroup</code> and
@@ -11814,7 +11841,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
 
  </details></section>
  
- <section class="fold" id="long-division"><div class="header-wrapper"><h5 id="presm_mlongdiv_ex"><bdi class="secno">3.6.8.3 </bdi>Long Division</h5><a class="self-link" href="#presm_mlongdiv_ex" aria-label="Permalink for Section 3.6.8.3"></a></div><details class="h"><summary class="h"></summary>
+ <section class="fold" id="long-division"><div class="header-wrapper"><h5 id="presm_mlongdiv_ex"><bdi class="secno">3.6.8.3 </bdi>Long Division</h5><a class="self-link" href="#presm_mlongdiv_ex" aria-label="Permalink for Section 3.6.8.3"></a></div><details class="h"><summary class="h">Section</summary>
  
  
  <p>
@@ -12019,7 +12046,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
  
  </details></section>
  
- <section class="fold" id="repeating-decimal"><div class="header-wrapper"><h5 id="presm_repeatdec"><bdi class="secno">3.6.8.4 </bdi>Repeating decimal</h5><a class="self-link" href="#presm_repeatdec" aria-label="Permalink for Section 3.6.8.4"></a></div><details class="h"><summary class="h"></summary>
+ <section class="fold" id="repeating-decimal"><div class="header-wrapper"><h5 id="presm_repeatdec"><bdi class="secno">3.6.8.4 </bdi>Repeating decimal</h5><a class="self-link" href="#presm_repeatdec" aria-label="Permalink for Section 3.6.8.4"></a></div><details class="h"><summary class="h">Section</summary>
  
  
  <p>
@@ -15154,7 +15181,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      this is discouraged, and the <code class="element">sum</code> or <code class="element">product</code> operators should be
      used to represent such expressions instead.</p>
 
-     <section class="fold" id="example-2"><div class="header-wrapper"><h6 id="arith1.plus.ex1"><bdi class="secno">4.3.5.1.1 </bdi>Example</h6><a class="self-link" href="#arith1.plus.ex1" aria-label="Permalink for Section 4.3.5.1.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="example-2"><div class="header-wrapper"><h6 id="arith1.plus.ex1"><bdi class="secno">4.3.5.1.1 </bdi>Example</h6><a class="self-link" href="#arith1.plus.ex1" aria-label="Permalink for Section 4.3.5.1.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -15176,7 +15203,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      <p>This default renderings are English-language locale specific: other locales may have
      different default renderings.</p>
 
-     <section class="fold" id="example-3"><div class="header-wrapper"><h6 id="arith1.gcd.ex1"><bdi class="secno">4.3.5.1.2 </bdi>Example</h6><a class="self-link" href="#arith1.gcd.ex1" aria-label="Permalink for Section 4.3.5.1.2"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="example-3"><div class="header-wrapper"><h6 id="arith1.gcd.ex1"><bdi class="secno">4.3.5.1.2 </bdi>Example</h6><a class="self-link" href="#arith1.gcd.ex1" aria-label="Permalink for Section 4.3.5.1.2"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -15237,7 +15264,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      terms of the sum are obtained by evaluating the function at
      each point of the domain specified by qualifiers.</p>
 
-     <section class="fold" id="examples-18"><div class="header-wrapper"><h6 id="arith1.sum.ex1"><bdi class="secno">4.3.5.2.1 </bdi>Examples</h6><a class="self-link" href="#arith1.sum.ex1" aria-label="Permalink for Section 4.3.5.2.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-18"><div class="header-wrapper"><h6 id="arith1.sum.ex1"><bdi class="secno">4.3.5.2.1 </bdi>Examples</h6><a class="self-link" href="#arith1.sum.ex1" aria-label="Permalink for Section 4.3.5.2.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -15343,7 +15370,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      terms of the product are obtained by evaluating the function
      at each point of the domain specified by qualifiers.</p>
 
-     <section class="fold" id="examples-19"><div class="header-wrapper"><h6 id="arith1.product.ex1"><bdi class="secno">4.3.5.3.1 </bdi>Examples</h6><a class="self-link" href="#arith1.product.ex1" aria-label="Permalink for Section 4.3.5.3.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-19"><div class="header-wrapper"><h6 id="arith1.product.ex1"><bdi class="secno">4.3.5.3.1 </bdi>Examples</h6><a class="self-link" href="#arith1.product.ex1" aria-label="Permalink for Section 4.3.5.3.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -15432,7 +15459,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      <span><code class="defn emptytag">&lt;compose/&gt;</code></span></a>.
      </p>
 
-     <section class="fold" id="examples-20"><div class="header-wrapper"><h6 id="fns1.compose.ex1"><bdi class="secno">4.3.5.4.1 </bdi>Examples</h6><a class="self-link" href="#fns1.compose.ex1" aria-label="Permalink for Section 4.3.5.4.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-20"><div class="header-wrapper"><h6 id="fns1.compose.ex1"><bdi class="secno">4.3.5.4.1 </bdi>Examples</h6><a class="self-link" href="#fns1.compose.ex1" aria-label="Permalink for Section 4.3.5.4.1"></a></div><details class="h"><summary class="h">Section</summary>
       
 
       <p>Content MathML</p>
@@ -15533,7 +15560,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      <code class="element">xor</code> is the logical <q>exclusive or</q> function. It is true if there are an odd number of true arguments or false otherwise.</p>
      
       
-     <section class="fold" id="examples-21"><div class="header-wrapper"><h6 id="logic1.and.ex1"><bdi class="secno">4.3.5.5.1 </bdi>Examples</h6><a class="self-link" href="#logic1.and.ex1" aria-label="Permalink for Section 4.3.5.5.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-21"><div class="header-wrapper"><h6 id="logic1.and.ex1"><bdi class="secno">4.3.5.5.1 </bdi>Examples</h6><a class="self-link" href="#logic1.and.ex1" aria-label="Permalink for Section 4.3.5.5.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -15661,7 +15688,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      indices of
      the selected element.</p>
 
-     <section class="fold" id="examples-22"><div class="header-wrapper"><h6 id="linalg1.vector_selector.ex1"><bdi class="secno">4.3.5.6.1 </bdi>Examples</h6><a class="self-link" href="#linalg1.vector_selector.ex1" aria-label="Permalink for Section 4.3.5.6.1"></a></div><details class="h" open=""><summary class="h"></summary>
+     <section class="fold" id="examples-22"><div class="header-wrapper"><h6 id="linalg1.vector_selector.ex1"><bdi class="secno">4.3.5.6.1 </bdi>Examples</h6><a class="self-link" href="#linalg1.vector_selector.ex1" aria-label="Permalink for Section 4.3.5.6.1"></a></div><details class="h" open=""><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -15763,7 +15790,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      specified using qualifier elements as described in <a href="#contm_nary" class="sec-ref"><bdi class="secno">4.3.5 </bdi>N-ary Operators</a>.</p>
 
 
-     <section class="fold" id="examples-23"><div class="header-wrapper"><h6 id="set1.union.ex1"><bdi class="secno">4.3.5.7.1 </bdi>Examples</h6><a class="self-link" href="#set1.union.ex1" aria-label="Permalink for Section 4.3.5.7.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-23"><div class="header-wrapper"><h6 id="set1.union.ex1"><bdi class="secno">4.3.5.7.1 </bdi>Examples</h6><a class="self-link" href="#set1.union.ex1" aria-label="Permalink for Section 4.3.5.7.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -15791,7 +15818,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      </details></section>
 
  
-     <section class="fold" id="examples-qualifiers"><div class="header-wrapper"><h6 id="set1.big.ex1"><bdi class="secno">4.3.5.7.2 </bdi>Examples (Qualifiers)</h6><a class="self-link" href="#set1.big.ex1" aria-label="Permalink for Section 4.3.5.7.2"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-qualifiers"><div class="header-wrapper"><h6 id="set1.big.ex1"><bdi class="secno">4.3.5.7.2 </bdi>Examples (Qualifiers)</h6><a class="self-link" href="#set1.big.ex1" aria-label="Permalink for Section 4.3.5.7.2"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -15860,7 +15887,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      <p>The components of a <code class="element">vector</code> may be given explicitly as
      child elements, or specified by rule as described in <a href="#contm_container_constructor" class="sec-ref"><bdi class="secno">4.3.1.1 </bdi>Container Markup for Constructor Symbols</a>.</p>
 
-     <section class="fold" id="examples-24"><div class="header-wrapper"><h6 id="linalg2.vector.ex1"><bdi class="secno">4.3.5.8.1 </bdi>Examples</h6><a class="self-link" href="#linalg2.vector.ex1" aria-label="Permalink for Section 4.3.5.8.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-24"><div class="header-wrapper"><h6 id="linalg2.vector.ex1"><bdi class="secno">4.3.5.8.1 </bdi>Examples</h6><a class="self-link" href="#linalg2.vector.ex1" aria-label="Permalink for Section 4.3.5.8.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -15935,7 +15962,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
           <p>Matrix rows are not directly rendered by themselves outside of the
      context of a matrix.</p>
 
-     <section class="fold" id="example-4"><div class="header-wrapper"><h6 id="linalg6.matrix.ex1"><bdi class="secno">4.3.5.8.2 </bdi>Example</h6><a class="self-link" href="#linalg6.matrix.ex1" aria-label="Permalink for Section 4.3.5.8.2"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="example-4"><div class="header-wrapper"><h6 id="linalg6.matrix.ex1"><bdi class="secno">4.3.5.8.2 </bdi>Example</h6><a class="self-link" href="#linalg6.matrix.ex1" aria-label="Permalink for Section 4.3.5.8.2"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -16034,7 +16061,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
 
      <p>The <code class="element">list</code> element represents the n-ary function which constructs a list from its arguments. Lists differ from sets in that there is an explicit order to the elements. The <code class="element">list</code> element takes the attribute <code class="attribute">order</code> which may have the values <code class="attributevalue">numeric</code> and <code class="attributevalue">lexicographic</code>. The list entries and order may be given explicitly or specified by rule as described in <a href="#contm_container_constructor" class="sec-ref"><bdi class="secno">4.3.1.1 </bdi>Container Markup for Constructor Symbols</a>.</p>
 
-     <section class="fold" id="examples-explicit-elements"><div class="header-wrapper"><h6 id="set.ex1"><bdi class="secno">4.3.5.9.1 </bdi>Examples (Explicit elements)</h6><a class="self-link" href="#set.ex1" aria-label="Permalink for Section 4.3.5.9.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-explicit-elements"><div class="header-wrapper"><h6 id="set.ex1"><bdi class="secno">4.3.5.9.1 </bdi>Examples (Explicit elements)</h6><a class="self-link" href="#set.ex1" aria-label="Permalink for Section 4.3.5.9.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -16077,7 +16104,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      and numeric.</p>
 
 
-     <section class="fold" id="examples-elements-specified-by-condition"><div class="header-wrapper"><h6 id="set1.suchthat.ex1"><bdi class="secno">4.3.5.9.2 </bdi>Examples (Elements specified by condition)</h6><a class="self-link" href="#set1.suchthat.ex1" aria-label="Permalink for Section 4.3.5.9.2"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-elements-specified-by-condition"><div class="header-wrapper"><h6 id="set1.suchthat.ex1"><bdi class="secno">4.3.5.9.2 </bdi>Examples (Elements specified by condition)</h6><a class="self-link" href="#set1.suchthat.ex1" aria-label="Permalink for Section 4.3.5.9.2"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -16242,7 +16269,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
       relations that return true or false depending on the relationship of the first argument to the second.
      </p>
  
-     <section class="fold" id="examples-25"><div class="header-wrapper"><h6 id="relation1.ex1"><bdi class="secno">4.3.5.10.1 </bdi>Examples</h6><a class="self-link" href="#relation1.ex1" aria-label="Permalink for Section 4.3.5.10.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-25"><div class="header-wrapper"><h6 id="relation1.ex1"><bdi class="secno">4.3.5.10.1 </bdi>Examples</h6><a class="self-link" href="#relation1.ex1" aria-label="Permalink for Section 4.3.5.10.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -16332,7 +16359,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      first argument is a subset or proper subset of the second.  As described above they may also be used as an n-ary operator to express
      that each argument is a subset or proper subset of its predecessor.</p>
 
-     <section class="fold" id="examples-26"><div class="header-wrapper"><h6 id="set1.subset.ex1"><bdi class="secno">4.3.5.11.1 </bdi>Examples</h6><a class="self-link" href="#set1.subset.ex1" aria-label="Permalink for Section 4.3.5.11.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-26"><div class="header-wrapper"><h6 id="set1.subset.ex1"><bdi class="secno">4.3.5.11.1 </bdi>Examples</h6><a class="self-link" href="#set1.subset.ex1" aria-label="Permalink for Section 4.3.5.11.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -16407,7 +16434,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      <span><code class="defn emptytag">&lt;max/&gt;</code></span></a>.  Note that when applied to
      infinite sets of arguments, no maximal argument may exist.</p>
 
-     <section class="fold" id="examples-27"><div class="header-wrapper"><h6 id="minmax1.ex1"><bdi class="secno">4.3.5.12.1 </bdi>Examples</h6><a class="self-link" href="#minmax1.ex1" aria-label="Permalink for Section 4.3.5.12.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-27"><div class="header-wrapper"><h6 id="minmax1.ex1"><bdi class="secno">4.3.5.12.1 </bdi>Examples</h6><a class="self-link" href="#minmax1.ex1" aria-label="Permalink for Section 4.3.5.12.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -16557,7 +16584,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      averaging the squares of the deviations of possible values from their
      mean.</p>
 
-     <section class="fold" id="examples-28"><div class="header-wrapper"><h6 id="nary-stats.ex"><bdi class="secno">4.3.5.13.1 </bdi>Examples</h6><a class="self-link" href="#nary-stats.ex" aria-label="Permalink for Section 4.3.5.13.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-28"><div class="header-wrapper"><h6 id="nary-stats.ex"><bdi class="secno">4.3.5.13.1 </bdi>Examples</h6><a class="self-link" href="#nary-stats.ex" aria-label="Permalink for Section 4.3.5.13.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -16760,7 +16787,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      correspond to 3, and so on. If no <code>degree</code> is present, a default value of 2 is
      used.</p>
 
-     <section class="fold" id="examples-29"><div class="header-wrapper"><h6 id="contm_binary_arith.ex1"><bdi class="secno">4.3.6.1.1 </bdi>Examples</h6><a class="self-link" href="#contm_binary_arith.ex1" aria-label="Permalink for Section 4.3.6.1.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-29"><div class="header-wrapper"><h6 id="contm_binary_arith.ex1"><bdi class="secno">4.3.6.1.1 </bdi>Examples</h6><a class="self-link" href="#contm_binary_arith.ex1" aria-label="Permalink for Section 4.3.6.1.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       
       <p>Content MathML</p>
@@ -16837,7 +16864,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      asserts two Boolean expressions are logically equivalent,
      that is have the same Boolean value for any inputs.</p>
 
-     <section class="fold" id="examples-30"><div class="header-wrapper"><h6 id="logic1.binary-logical.ex1"><bdi class="secno">4.3.6.2.1 </bdi>Examples</h6><a class="self-link" href="#logic1.binary-logical.ex1" aria-label="Permalink for Section 4.3.6.2.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-30"><div class="header-wrapper"><h6 id="logic1.binary-logical.ex1"><bdi class="secno">4.3.6.2.1 </bdi>Examples</h6><a class="self-link" href="#logic1.binary-logical.ex1" aria-label="Permalink for Section 4.3.6.2.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -16904,7 +16931,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      the second. This relationship is true if and only
      if <i class="var">b</i> mod <i class="var">a</i> = 0.</p>
 
-     <section class="fold" id="examples-31"><div class="header-wrapper"><h6 id="relation1.ex2"><bdi class="secno">4.3.6.3.1 </bdi>Examples</h6><a class="self-link" href="#relation1.ex2" aria-label="Permalink for Section 4.3.6.3.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-31"><div class="header-wrapper"><h6 id="relation1.ex2"><bdi class="secno">4.3.6.3.1 </bdi>Examples</h6><a class="self-link" href="#relation1.ex2" aria-label="Permalink for Section 4.3.6.3.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -16956,7 +16983,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      <p>The <code class="element">tendsto</code> element takes the attribute <code class="attribute">type</code> to set the
      direction from which the limiting value is approached. It may have any value, but common values include <code class="attributevalue">above</code> and <code class="attributevalue">below</code>.</p>
 
-     <section class="fold" id="examples-32"><div class="header-wrapper"><h6 id="limit1.tendsto.ex1"><bdi class="secno">4.3.6.3.2 </bdi>Examples</h6><a class="self-link" href="#limit1.tendsto.ex1" aria-label="Permalink for Section 4.3.6.3.2"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-32"><div class="header-wrapper"><h6 id="limit1.tendsto.ex1"><bdi class="secno">4.3.6.3.2 </bdi>Examples</h6><a class="self-link" href="#limit1.tendsto.ex1" aria-label="Permalink for Section 4.3.6.3.2"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -17051,7 +17078,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      represents the outer product function. It takes two vector
      arguments and returns as value a matrix.</p>
 
-     <section class="fold" id="examples-33"><div class="header-wrapper"><h6 id="linalg1.binary.ex1"><bdi class="secno">4.3.6.4.1 </bdi>Examples</h6><a class="self-link" href="#linalg1.binary.ex1" aria-label="Permalink for Section 4.3.6.4.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-33"><div class="header-wrapper"><h6 id="linalg1.binary.ex1"><bdi class="secno">4.3.6.4.1 </bdi>Examples</h6><a class="self-link" href="#linalg1.binary.ex1" aria-label="Permalink for Section 4.3.6.4.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -17184,7 +17211,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      contains all the elements that occur in the first set, but not in
      the second.</p>
 
-     <section class="fold" id="examples-34"><div class="header-wrapper"><h6 id="set.binary.ex1"><bdi class="secno">4.3.6.5.1 </bdi>Examples</h6><a class="self-link" href="#set.binary.ex1" aria-label="Permalink for Section 4.3.6.5.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-34"><div class="header-wrapper"><h6 id="set.binary.ex1"><bdi class="secno">4.3.6.5.1 </bdi>Examples</h6><a class="self-link" href="#set.binary.ex1" aria-label="Permalink for Section 4.3.6.5.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -17257,7 +17284,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      which takes one Boolean argument, and returns the opposite Boolean
      value.</p>
 
-     <section class="fold" id="example-5"><div class="header-wrapper"><h6 id="logic1.not.ex1"><bdi class="secno">4.3.7.1.1 </bdi>Example</h6><a class="self-link" href="#logic1.not.ex1" aria-label="Permalink for Section 4.3.7.1.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="example-5"><div class="header-wrapper"><h6 id="logic1.not.ex1"><bdi class="secno">4.3.7.1.1 </bdi>Example</h6><a class="self-link" href="#logic1.not.ex1" aria-label="Permalink for Section 4.3.7.1.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -17360,7 +17387,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      <span><code class="defn emptytag">&lt;rem/&gt;</code></span>,
      <span><code class="defn emptytag">&lt;root/&gt;</code></span></a>.</p>
      
-     <section class="fold" id="examples-35"><div class="header-wrapper"><h6 id="integer1.unary.ex1"><bdi class="secno">4.3.7.2.1 </bdi>Examples</h6><a class="self-link" href="#integer1.unary.ex1" aria-label="Permalink for Section 4.3.7.2.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-35"><div class="header-wrapper"><h6 id="integer1.unary.ex1"><bdi class="secno">4.3.7.2.1 </bdi>Examples</h6><a class="self-link" href="#integer1.unary.ex1" aria-label="Permalink for Section 4.3.7.2.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       
       <p>Content MathML</p>
@@ -17562,7 +17589,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      <p>The <code class="element">transpose</code> element represents a unary function that signifies the transpose of the
      given matrix or vector.</p>
 
-     <section class="fold" id="examples-36"><div class="header-wrapper"><h6 id="linalg1.unary.ex1"><bdi class="secno">4.3.7.3.1 </bdi>Examples</h6><a class="self-link" href="#linalg1.unary.ex1" aria-label="Permalink for Section 4.3.7.3.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-36"><div class="header-wrapper"><h6 id="linalg1.unary.ex1"><bdi class="secno">4.3.7.3.1 </bdi>Examples</h6><a class="self-link" href="#linalg1.unary.ex1" aria-label="Permalink for Section 4.3.7.3.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -17639,7 +17666,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      arguments, or may appear alone, in which case they represent an
      abstract operator acting on other functions.</p>
 
-     <section class="fold" id="examples-37"><div class="header-wrapper"><h6 id="fns1.ex1"><bdi class="secno">4.3.7.4.1 </bdi>Examples</h6><a class="self-link" href="#fns1.ex1" aria-label="Permalink for Section 4.3.7.4.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-37"><div class="header-wrapper"><h6 id="fns1.ex1"><bdi class="secno">4.3.7.4.1 </bdi>Examples</h6><a class="self-link" href="#fns1.ex1" aria-label="Permalink for Section 4.3.7.4.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       
       <p>Content MathML</p>
@@ -17783,7 +17810,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      number of elements in the set.  The cardinality of a set is a
      non-negative integer, or an infinite cardinal number.</p>
 
-     <section class="fold" id="example-6"><div class="header-wrapper"><h6 id="set1.size.ex1"><bdi class="secno">4.3.7.5.1 </bdi>Example</h6><a class="self-link" href="#set1.size.ex1" aria-label="Permalink for Section 4.3.7.5.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="example-6"><div class="header-wrapper"><h6 id="set1.size.ex1"><bdi class="secno">4.3.7.5.1 </bdi>Example</h6><a class="self-link" href="#set1.size.ex1" aria-label="Permalink for Section 4.3.7.5.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -17855,7 +17882,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
       so for maximum interoperability applications evaluating
      such expressions should follow the definitions in [<cite><a class="bibref" data-link-type="biblio" href="#bib-dlmf" title="NIST Digital Library of Mathematical Functions, Release 1.1.5">DLMF</a></cite>], <a href="https://dlmf.nist.gov/4">Chapter 4: Elementary Functions</a>.</p>
      
-     <section class="fold" id="examples-38"><div class="header-wrapper"><h6 id="transc1.elementary.ex1"><bdi class="secno">4.3.7.6.1 </bdi>Examples</h6><a class="self-link" href="#transc1.elementary.ex1" aria-label="Permalink for Section 4.3.7.6.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-38"><div class="header-wrapper"><h6 id="transc1.elementary.ex1"><bdi class="secno">4.3.7.6.1 </bdi>Examples</h6><a class="self-link" href="#transc1.elementary.ex1" aria-label="Permalink for Section 4.3.7.6.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -18014,7 +18041,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      vector of scalar-valued functions representing a vector-valued
      function, and returns a vector of functions.</p>
 
-     <section class="fold" id="examples-39"><div class="header-wrapper"><h6 id="veccalc1.ex1"><bdi class="secno">4.3.7.7.1 </bdi>Examples</h6><a class="self-link" href="#veccalc1.ex1" aria-label="Permalink for Section 4.3.7.7.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-39"><div class="header-wrapper"><h6 id="veccalc1.ex1"><bdi class="secno">4.3.7.7.1 </bdi>Examples</h6><a class="self-link" href="#veccalc1.ex1" aria-label="Permalink for Section 4.3.7.7.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -18098,7 +18125,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      as
      bound variables.</p>
 
-     <section class="fold" id="examples-40"><div class="header-wrapper"><h6 id="veccalc1.ex2"><bdi class="secno">4.3.7.7.2 </bdi>Examples</h6><a class="self-link" href="#veccalc1.ex2" aria-label="Permalink for Section 4.3.7.7.2"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-40"><div class="header-wrapper"><h6 id="veccalc1.ex2"><bdi class="secno">4.3.7.7.2 </bdi>Examples</h6><a class="self-link" href="#veccalc1.ex2" aria-label="Permalink for Section 4.3.7.7.2"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -18279,7 +18306,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      point about which the moment is taken. Otherwise, the moment is
      assumed to be the moment about zero.</p>
 
-     <section class="fold" id="examples-41"><div class="header-wrapper"><h6 id="s_data1.moment.ex1"><bdi class="secno">4.3.7.8.1 </bdi>Examples</h6><a class="self-link" href="#s_data1.moment.ex1" aria-label="Permalink for Section 4.3.7.8.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-41"><div class="header-wrapper"><h6 id="s_data1.moment.ex1"><bdi class="secno">4.3.7.8.1 </bdi>Examples</h6><a class="self-link" href="#s_data1.moment.ex1" aria-label="Permalink for Section 4.3.7.8.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -18381,7 +18408,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      relative to a given base.  When present, the <code class="element">logbase</code>
      qualifier specifies the base. Otherwise, the base is assumed to be 10.</p>
 
-     <section class="fold" id="examples-42"><div class="header-wrapper"><h6 id="transc1.log.ex1"><bdi class="secno">4.3.7.9.1 </bdi>Examples</h6><a class="self-link" href="#transc1.log.ex1" aria-label="Permalink for Section 4.3.7.9.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-42"><div class="header-wrapper"><h6 id="transc1.log.ex1"><bdi class="secno">4.3.7.9.1 </bdi>Examples</h6><a class="self-link" href="#transc1.log.ex1" aria-label="Permalink for Section 4.3.7.9.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -18426,7 +18453,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      <p>The <code class="element">int</code> element is the operator element for a definite or indefinite integral
      over a function or a definite integral over an expression with a bound variable.</p>
 
-     <section class="fold" id="examples-43"><div class="header-wrapper"><h6 id="calculus1.int.ex1"><bdi class="secno">4.3.8.1.1 </bdi>Examples</h6><a class="self-link" href="#calculus1.int.ex1" aria-label="Permalink for Section 4.3.8.1.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-43"><div class="header-wrapper"><h6 id="calculus1.int.ex1"><bdi class="secno">4.3.8.1.1 </bdi>Examples</h6><a class="self-link" href="#calculus1.int.ex1" aria-label="Permalink for Section 4.3.8.1.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -18469,7 +18496,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
       domain of integration. A <code class="element">lowlimit</code>/<code class="element">uplimit</code> pair
       is perhaps the most <q>standard</q> representation of a definite integral.</p>
 
-      <section class="fold" id="example-7"><div class="header-wrapper"><h6 id="calculus1.defint.ex2"><bdi class="secno">4.3.8.1.2 </bdi>Example</h6><a class="self-link" href="#calculus1.defint.ex2" aria-label="Permalink for Section 4.3.8.1.2"></a></div><details class="h"><summary class="h"></summary>
+      <section class="fold" id="example-7"><div class="header-wrapper"><h6 id="calculus1.defint.ex2"><bdi class="secno">4.3.8.1.2 </bdi>Example</h6><a class="self-link" href="#calculus1.defint.ex2" aria-label="Permalink for Section 4.3.8.1.2"></a></div><details class="h"><summary class="h">Section</summary>
 
       <p>Content MathML</p>
 
@@ -18519,7 +18546,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      can be
      applied to an expression involving a single variable.</p>
 
-     <section class="fold" id="examples-44"><div class="header-wrapper"><h6 id="calculus1.diff.ex1"><bdi class="secno">4.3.8.2.1 </bdi>Examples</h6><a class="self-link" href="#calculus1.diff.ex1" aria-label="Permalink for Section 4.3.8.2.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-44"><div class="header-wrapper"><h6 id="calculus1.diff.ex1"><bdi class="secno">4.3.8.2.1 </bdi>Examples</h6><a class="self-link" href="#calculus1.diff.ex1" aria-label="Permalink for Section 4.3.8.2.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -18566,7 +18593,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      <p>The <code class="element">bvar</code> element may also contain a <code class="element">degree</code> element, which specifies
      the order of the derivative to be taken.</p>
 
-     <section class="fold" id="example-8"><div class="header-wrapper"><h6 id="calculus1.diff.ex3"><bdi class="secno">4.3.8.2.2 </bdi>Example</h6><a class="self-link" href="#calculus1.diff.ex3" aria-label="Permalink for Section 4.3.8.2.2"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="example-8"><div class="header-wrapper"><h6 id="calculus1.diff.ex3"><bdi class="secno">4.3.8.2.2 </bdi>Example</h6><a class="self-link" href="#calculus1.diff.ex3" aria-label="Permalink for Section 4.3.8.2.2"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -18617,7 +18644,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      constructing the partial derivatives, and secondly the actual function
      to be partially differentiated.  The indices may be repeated.</p>
 
-     <section class="fold" id="examples-45"><div class="header-wrapper"><h6 id="calculus1.partialdiff.ex3"><bdi class="secno">4.3.8.3.1 </bdi>Examples</h6><a class="self-link" href="#calculus1.partialdiff.ex3" aria-label="Permalink for Section 4.3.8.3.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-45"><div class="header-wrapper"><h6 id="calculus1.partialdiff.ex3"><bdi class="secno">4.3.8.3.1 </bdi>Examples</h6><a class="self-link" href="#calculus1.partialdiff.ex3" aria-label="Permalink for Section 4.3.8.3.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -18701,7 +18728,7 @@ group-alignment-list-list   = ( <span class="hljs-string">"{"</span> group-align
      i.e. without any associated <code class="element">bvar</code>, as a child of the
      containing <code class="element">apply</code> element.</p>
 
-     <section class="fold" id="examples-46"><div class="header-wrapper"><h6 id="calculus1.partialdiff.ex2"><bdi class="secno">4.3.8.3.2 </bdi>Examples</h6><a class="self-link" href="#calculus1.partialdiff.ex2" aria-label="Permalink for Section 4.3.8.3.2"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-46"><div class="header-wrapper"><h6 id="calculus1.partialdiff.ex2"><bdi class="secno">4.3.8.3.2 </bdi>Examples</h6><a class="self-link" href="#calculus1.partialdiff.ex2" aria-label="Permalink for Section 4.3.8.3.2"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -18845,7 +18872,7 @@ pi (<i class="var">π</i>), approximately 3.142, which is the ratio of the circu
 the gamma constant (<i class="var">γ</i>), approximately 0.5772;<br>
 infinity (∞).</p>
 
-<section class="fold" id="examples-47"><div class="header-wrapper"><h6 id="nums1.constants.ex1"><bdi class="secno">4.3.9.1.1 </bdi>Examples</h6><a class="self-link" href="#nums1.constants.ex1" aria-label="Permalink for Section 4.3.9.1.1"></a></div><details class="h"><summary class="h"></summary>
+<section class="fold" id="examples-47"><div class="header-wrapper"><h6 id="nums1.constants.ex1"><bdi class="secno">4.3.9.1.1 </bdi>Examples</h6><a class="self-link" href="#nums1.constants.ex1" aria-label="Permalink for Section 4.3.9.1.1"></a></div><details class="h"><summary class="h">Section</summary>
  
       <p>Content MathML</p>
 
@@ -18988,7 +19015,7 @@ infinity (∞).</p>
        Integers, Reals, Rationals, Natural Numbers (including zero), Complex Numbers, Prime Numbers,
        and the Empty Set.</p>
 
-       <section class="fold" id="examples-48"><div class="header-wrapper"><h6 id="set-constants.ex1"><bdi class="secno">4.3.9.2.1 </bdi>Examples</h6><a class="self-link" href="#set-constants.ex1" aria-label="Permalink for Section 4.3.9.2.1"></a></div><details class="h" open=""><summary class="h"></summary>
+       <section class="fold" id="examples-48"><div class="header-wrapper"><h6 id="set-constants.ex1"><bdi class="secno">4.3.9.2.1 </bdi>Examples</h6><a class="self-link" href="#set-constants.ex1" aria-label="Permalink for Section 4.3.9.2.1"></a></div><details class="h" open=""><summary class="h">Section</summary>
 	
       <p>Content MathML</p>
 
@@ -19095,7 +19122,7 @@ infinity (∞).</p>
      In addition, <code class="element">condition</code> or other qualifiers may be used to limit the domain
      of the bound variables.</p>
 
-     <section class="fold" id="examples-49"><div class="header-wrapper"><h6 id="quant1.forall.ex1"><bdi class="secno">4.3.10.1.1 </bdi>Examples</h6><a class="self-link" href="#quant1.forall.ex1" aria-label="Permalink for Section 4.3.10.1.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-49"><div class="header-wrapper"><h6 id="quant1.forall.ex1"><bdi class="secno">4.3.10.1.1 </bdi>Examples</h6><a class="self-link" href="#quant1.forall.ex1" aria-label="Permalink for Section 4.3.10.1.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -19320,7 +19347,7 @@ infinity (∞).</p>
      a function, but the same number, and any <code class="element">domainofapplication</code>
      is ignored.</p>
 
-     <section class="fold" id="examples-50"><div class="header-wrapper"><h6 id="fns1.lambda.ex2"><bdi class="secno">4.3.10.2.1 </bdi>Examples</h6><a class="self-link" href="#fns1.lambda.ex2" aria-label="Permalink for Section 4.3.10.2.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-50"><div class="header-wrapper"><h6 id="fns1.lambda.ex2"><bdi class="secno">4.3.10.2.1 </bdi>Examples</h6><a class="self-link" href="#fns1.lambda.ex2" aria-label="Permalink for Section 4.3.10.2.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -19400,7 +19427,7 @@ infinity (∞).</p>
      real number line.  It takes an optional attribute <code class="attribute">closure</code>, which can take any of the values <code class="attributevalue">open</code>, <code class="attributevalue">closed</code>, <code class="attributevalue">open-closed</code>, or <code class="attributevalue">closed-open</code>, with a default value
      of <code class="attributevalue">closed</code>.</p>
 
-     <section class="fold" id="example-9"><div class="header-wrapper"><h6 id="interval1.interval.ex1"><bdi class="secno">4.3.10.3.1 </bdi>Example</h6><a class="self-link" href="#interval1.interval.ex1" aria-label="Permalink for Section 4.3.10.3.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="example-9"><div class="header-wrapper"><h6 id="interval1.interval.ex1"><bdi class="secno">4.3.10.3.1 </bdi>Example</h6><a class="self-link" href="#interval1.interval.ex1" aria-label="Permalink for Section 4.3.10.3.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -19467,7 +19494,7 @@ infinity (∞).</p>
      element. The <a class="omsymbol" href="https://openmath.org/cd/limit1#null">null</a> symbol corresponds to the case
      where no <code class="attribute">type</code> attribute is present.</p>
 
-     <section class="fold" id="examples-51"><div class="header-wrapper"><h6 id="limit1.limit.ex1"><bdi class="secno">4.3.10.4.1 </bdi>Examples</h6><a class="self-link" href="#limit1.limit.ex1" aria-label="Permalink for Section 4.3.10.4.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="examples-51"><div class="header-wrapper"><h6 id="limit1.limit.ex1"><bdi class="secno">4.3.10.4.1 </bdi>Examples</h6><a class="self-link" href="#limit1.limit.ex1" aria-label="Permalink for Section 4.3.10.4.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -19592,7 +19619,7 @@ infinity (∞).</p>
      undefined.</p>
 
 
-     <section class="fold" id="example-10"><div class="header-wrapper"><h6 id="piece1.piecewise.ex1"><bdi class="secno">4.3.10.5.1 </bdi>Example</h6><a class="self-link" href="#piece1.piecewise.ex1" aria-label="Permalink for Section 4.3.10.5.1"></a></div><details class="h"><summary class="h"></summary>
+     <section class="fold" id="example-10"><div class="header-wrapper"><h6 id="piece1.piecewise.ex1"><bdi class="secno">4.3.10.5.1 </bdi>Example</h6><a class="self-link" href="#piece1.piecewise.ex1" aria-label="Permalink for Section 4.3.10.5.1"></a></div><details class="h"><summary class="h">Section</summary>
       
       <p>Content MathML</p>
 
@@ -24863,7 +24890,7 @@ semantics.attributes &amp;= DefEncAtt</pre>
  <section id="operator-dictionary-entries"><div class="header-wrapper"><h3 id="oper-dict_entries-table"><bdi class="secno">B.3 </bdi>Operator dictionary entries</h3><a class="self-link" href="#oper-dict_entries-table" aria-label="Permalink for Appendix B.3"></a></div>
  
 
-      <section class="fold" id="compressed-view"><div class="header-wrapper"><h4 id="compressed"><bdi class="secno">B.3.1 </bdi>Compressed view</h4><a class="self-link" href="#compressed" aria-label="Permalink for Appendix B.3.1"></a></div><details class="h"><summary class="h"></summary>
+      <section class="fold" id="compressed-view"><div class="header-wrapper"><h4 id="compressed"><bdi class="secno">B.3.1 </bdi>Compressed view</h4><a class="self-link" href="#compressed" aria-label="Permalink for Appendix B.3.1"></a></div><details class="h"><summary class="h">Section</summary>
          
          <dl>
             <dt>form:infix lspace:0 rspace:0</dt>
@@ -26858,7 +26885,7 @@ n-ary coproduct">∐</span></dd>
          </dl>
          </details></section>
 
-      <section class="fold" id="sortable-table-view"><div class="header-wrapper"><h4 id="stable"><bdi class="secno">B.3.2 </bdi>Sortable Table View</h4><a class="self-link" href="#stable" aria-label="Permalink for Appendix B.3.2"></a></div><details class="h"><summary class="h"></summary>
+      <section class="fold" id="sortable-table-view"><div class="header-wrapper"><h4 id="stable"><bdi class="secno">B.3.2 </bdi>Sortable Table View</h4><a class="self-link" href="#stable" aria-label="Permalink for Appendix B.3.2"></a></div><details class="h"><summary class="h">Section</summary>
 
          
 
