@@ -72,22 +72,26 @@
     function foldable() {
 	let params = new URLSearchParams(document.location.search);
 	let opend = params.get("open");
-        var sortlist=document.querySelectorAll("section.fold");
-        for(var i=0;i!=sortlist.length;i++){
-            var d=document.createElement("details");
-            var w=sortlist[i].children[0];
-            var h=w.children[0];
-            var a=w.children[1];
-            d.id= sortlist[i].id;
-            d.className=h.nodeName;
+        var foldlist=document.querySelectorAll("section.fold");
+        for(var i=0;i!=foldlist.length;i++){
+	    var s=foldlist[i];
+	    var w=s.children[0];
+	    var d=document.createElement("details");
+	    d.className="h";
+	    var sy=document.createElement("summary");
+	    sy.className="h";
 	    if (opend != null){
 		d.open=true;
 	    }
-            sortlist[i].removeChild(w);
-            d.innerHTML="\x3csummary id='" + h.id + "' class='" + h.nodeName + "'>\u00A0"+
-            a.outerHTML +" " +
-            h.innerText+"\x3c/summary>"+sortlist[i].innerHTML;
-            sortlist[i].parentNode.replaceChild(d,sortlist[i]);
+	    var w=s.children[0];
+	    d.appendChild(sy);
+	    var n=w.nextSibling;
+	    while(n){
+		nx=n.nextSibling
+		d.appendChild(n);
+		n=nx;
+	    }
+	    s.appendChild(d);
         }
     }
     function resortable () {
@@ -266,36 +270,16 @@ span.coreno::before {
     color: darkred;
     vertical-align: text-top;
     font-size: 70%;
-    }
-summary.H4 {
-font-weight:bold;
-color:var(--heading-text);
-position:relative; left:-1em;
-}
-summary.H4 > a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text);}
-summary.H5 {
-font-style:italic;
-font-weight:normal;
-position:relative; left:-2em;
-}
-summary.H5 > a.self-link::before{content:"§";text-decoration:none;color:#555;}
-summary.H6 {
-font-variant: small-caps;
-font-weight:normal;
-position:relative; left:-1.5em;
-}
-summary.H6 > a.self-link::before{content:"§";text-decoration:none;color:#555;}
-
-details.H4, details.H5 {
-    margin-top:2.5rem;
 }
 
-details.H6[open] {
-border: solid thin black;
-padding: 0em .5em .5em .7em;
+summary.h::before {content:"Show Section";font-weight: normal}
+details.h[open] summary.h::before {content:"Hide Section";font-weight: normal}
+details.h {
+border-left: solid thin black;
+padding-left: .7em;
 margin-left: -.7em ;
-margin-top:.5em;
 }
+  
 
 table.syntax {
 font-size: 80%;
