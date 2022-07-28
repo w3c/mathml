@@ -16,6 +16,11 @@
         }
   </script>
   <script src="sorttable.js"></script>
+  <script>
+    function expandAllSections() {
+      document.querySelectorAll("details").forEach(d => d.open="true");
+  }
+  </script>  
   <script class='remove'>
     function relaxhl (r,s,u) {
         var s2=s.replaceAll(/(\n|^)([^'#\n]*)(#[^\n]*)/g,'$1$2\x3cspan style="color:brown">$3\x3c/span>');
