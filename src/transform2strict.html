@@ -2340,11 +2340,48 @@
     <h4 id="contm_p2s_op">Rewrite operators</h4>
     <p>Rewrite any remaining operator defined in <a href="#contm_structure_extended"></a>
     to a <code class="element">csymbol</code> referencing the symbol identified in the syntax table by the rule
-    <a>Rewrite: element</a>. As noted in the descriptions of each
-    operator element, some require special case rules to determine the proper choice
-    of symbol.
-    Some cases of particular note are:
-    </p>
+    <a>Rewrite: element</a>.</p>
+
+    <div class="strict-mathml-example" id="contm_strict-opel"><dfn>Rewrite: element</dfn>
+
+     <p>For example,</p>
+
+     <div class="example mathml mml4c">
+      <pre>&lt;plus/&gt;</pre>
+     </div>
+
+     <p>is equivalent to the Strict form</p>
+
+     <div class="example strict-mathml">
+      <pre>&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;</pre>
+     </div>
+
+    </div>
+
+    <!--
+    <p>In MathML 2, the <code class="attribute">definitionURL</code>
+    attribute could be used to redefine or modify the meaning of an
+    operator element.  When the <code class="attribute">definitionURL</code>
+    attribute is present, the value for the <code class="attribute">cd</code>
+    attribute on the <code class="element">csymbol</code> should be
+    determined by the <code class="attribute">definitionURL</code>
+    value if possible. The correspondence between
+    <code class="attribute">cd</code> and
+    <code class="attribute">definitionURL</code> values is described
+    in <a href="#contm_csymbol_extended"></a>.</p>
+
+    <p>This use of the <code class="attribute">definitionURL</code>
+    attribute is <a class="intref" href="#interf_deprec">deprecated</a>
+    in MathML 3. Instead a <code class="element">csymbol</code> element
+    should be used.  In general, the value of the
+    <code class="attribute">cd</code> attribute on the
+    <code class="element">csymbol</code> will correspond to
+    the <code class="attribute">definitionURL</code> value.</p>
+    -->
+
+    <p>As noted in the descriptions of each operator element, some operators
+    require special case rules to determine the proper choice of symbol.
+    Some cases of particular note are:</p>
     <ol>
 
      <li>

@@ -2841,53 +2841,24 @@
    <section>
     <h4 id="contm_opclasses">Operator Classes</h4>
 
-    <p>The Content MathML elements described in detail in the next section
-    may be broadly separated into <em>classes</em>. The class of each
-    element is shown in the syntax table that introduces the element in
-    <a href="#contm_structure_extended"></a>. The class gives an indication of the
+    <p>The Content MathML elements described in detail in the following
+    sections may be broadly separated into <em>classes</em>. The class
+    of each element is listed in the operator syntax table given in
+    <a href="#contm_ops"></a>. The class gives an indication of the
     general intended mathematical usage of the element, and also
-    determines its usage as determined by the schema.  The class also
-    determines the applicable rewrite rules for mapping to Strict Content
-    MathML.  This section presents the rewrite rules for each of the
+    determines its usage as determined by the schema.  Links to the
+    operator syntax and schema class for each element are provided
+    in the sections that introduce the elements.</p>
+
+    <p>The operator class also determines the applicable rewrite rules
+    for mapping to Strict Content MathML.  These rewrite rules are
+    presented in detail in <a href="#contm_p2s"></a>.  They include
+    use cases applicable to specific operator classes, special-case
+    rewrite rules for individual elements, and a generic rewrite rule
+    <a href="#contm_p2s_op"></a> used by operators from almost all
     operator classes.</p>
-
-    <p>The rules in this section cover the use cases applicable to
-    specific operator classes.  Special-case rewrite rules for individual
-    elements are discussed in the sections below.  However, the most
-    common usage pattern is generic, and is used by operators from almost all
-    operator classes. It consists of applying an operator to an explicit list
-    of arguments using an <code class="element">apply</code> element.  In these cases,
-    rewriting to Strict Content MathML is simply a matter of replacing the
-    empty element with an appropriate <code class="element">csymbol</code>, as listed in the
-    syntax tables in <a href="#contm_structure_extended"></a>.  This is summarized in
-    the following rule.</p>
-
-    <div class="strict-mathml-example" id="contm_strict-opel"><dfn>Rewrite: element</dfn>
-
-     <p>For example,</p>
-
-     <div class="example mathml mml4c">
-      <pre>&lt;plus/&gt;</pre>
-     </div>
-
-     <p>is equivalent to the Strict form</p>
-
-     <div class="example strict-mathml">
-      <pre>&lt;csymbol cd="arith1"&gt;plus&lt;/csymbol&gt;</pre>
-     </div>
-
-    </div>
-
-    <p>In MathML 2, the <code class="attribute">definitionURL</code> attribute could be
-    used to redefine or modify the meaning of an operator element. When the <code class="attribute">definitionURL</code>
-    attribute is present, the value for the <code class="attribute">cd</code> attribute on the <code class="element">csymbol</code> should be
-    determined by the <code class="attribute">definitionURL</code> value if possible. The correspondence between <code class="attribute">cd</code> and <code class="attribute">definitionURL</code> values is described in <a href="#contm_csymbol_extended"></a>.</p>
-
-
-
-
   
-   <p>This section presents elements representing a core set of
+   <p>The following sections present elements representing a core set of
    mathematical operators, functions and constants.  Most are empty
    elements, covering the subject matter of standard mathematics
    curricula up to the level of calculus.  The remaining elements are
@@ -2896,32 +2867,7 @@
    defined in this section are sometimes called <em>operator
    elements</em>.</p>
 
-   <p>Each subsection below discusses a specific operator element,
-   beginning with a syntax table, giving the elements <a class="intref" href="#contm_opclasses">operator class</a>.  Special case rules
-   for rewriting as Strict Markup are introduced as needed.
-   However, in most cases, the generic rewrite rules for the
-   appropriate operator class are sufficient.  In particular, unless
-   otherwise indicated, elements are to be rewritten using the
-   default <a>Rewrite: element</a>
-   rule.  Note, however, that all elements in this section must be rewritten in
-   some fashion, since they are not allowed in Strict Content markup.</p>
-
-   <p>In MathML 2, the <code class="attribute">definitionURL</code> attribute could be
-   used to redefine or modify the meaning of an operator
-   element. This use of the <code class="attribute">definitionURL</code> attribute is <a class="intref" href="#interf_deprec">deprecated</a> in MathML 3. Instead a
-   <code class="element">csymbol</code> element should be used.  In general, the value of
-   <code class="attribute">cd</code> attribute on the <code class="element">csymbol</code> will correspond to
-   the <code class="attribute">definitionURL</code> value.</p>
-
    </section>
-
-
-
-   
-   
-
-
-
 
    <section>
     <h4 id="contm_nary">N-ary Operators</h4>
