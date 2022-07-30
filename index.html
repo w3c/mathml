@@ -18,7 +18,16 @@
   <script src="sorttable.js"></script>
   <script>
     function expandAllSections() {
-      document.querySelectorAll("details").forEach(d => d.open="true");
+	var t = event.srcElement;
+	if(t.textContent=="Expand All Sections") {
+	  t.textContent=" . . .";
+          document.querySelectorAll("details").forEach(d => d.open="true");
+          t.textContent="Collapse All Sections";
+        } else {
+	  t.textContent=" . . .";
+            document.querySelectorAll("details").forEach(d => d.removeAttribute("open"));
+          t.textContent="Expand All Sections";
+        }
   }
   </script>  
   <script class='remove'>
