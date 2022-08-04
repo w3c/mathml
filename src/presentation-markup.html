@@ -7387,10 +7387,18 @@
    <section>
     <h5>Deprecation Notice</h5>
     <p>
-      With one significant exception, <code class="emptytag">&lt;maligngroup/&gt;</code> and <code class="emptytag">&lt;malignmark/&gt;</code> have had minimal adoption
-      and implementation. The one exception only uses the basics of alignment. Because of this, alignment in MathML is significantly
-      simplified to align with the current usage and make future implemntation simplier. In particular, all of the attributes
-      for these elements have been deprecated.
+      With one significant exception, <code class="emptytag">&lt;maligngroup/&gt;</code> and <code class="emptytag">&lt;malignmark/&gt;</code>
+      have had minimal adoption and implementation.
+      The one exception only uses the basics of alignment. Because of this, alignment in MathML is significantly
+      simplified to align with the current usage and make future implemntation simplier. In particular, the following simplifications are made:
+      <ul>
+        <li>the attributes for <code class="emptytag">&lt;maligngroup/&gt;</code> and <code class="emptytag">&lt;malignmark/&gt;</code> have been deprecated</li>
+        <li>The <code class="attribute">groupalign</code> attribute previously allowed on
+          <code class="element">mtable</code>, <code class="element">mtr</code>, and 
+          <code class="element">mtr</code> is deprecated</li>
+        <li><code class="emptytag">&lt;malignmark/&gt;</code> used to be allowed anywhere, including inside of token elements;
+          it is now allowed in only the locations that <code class="emptytag">&lt;maligngroup/&gt;</code> is allowed (see below)</li>
+      </ul>
     </p>
    </section>
    <section>
@@ -7475,13 +7483,15 @@
    </section>
  
    <section>
-    <h5>Specifying alignment groups</h5>
+    <h5 id="presm_specify_align_group">Specifying alignment groups</h5>
     <p>Each part of expression to be aligned should be in an <code class="element">maligngroup</code>.
-       The point of alignment is the <code class="element">maligngroup</code> element unless an <code class="element">malignmark</code> element
-       is between <code class="element">maligngroup</code> elements. In this case, the <code class="element">malignmark</code>
-       is the point of alignment for that group.
+       The point of alignment is the left edge (right edge for RTL) of the element that follows an <code class="element">maligngroup</code> element
+       unless an <code class="element">malignmark</code> element
+       is between <code class="element">maligngroup</code> elements. In that case, the left edge (right edge for RTL) of the element that follows the
+       <code class="element">malignmark</code> is the point of alignment for that group.
+    </p>
 
-    <p>If <code class="element">maligngroup</code> or <code class="element">maligngroup</code> occur outside of an
+    <p>If <code class="element">maligngroup</code> or <code class="element">maligngroup</code> occurs outside of an
         <code class="element">mtable</code>, they are rendered with zero width.
     </p>
     <p>
@@ -7508,13 +7518,14 @@
     alignment group to consist of the end of one
     <code class="element">mrow</code>, all of another one, and the beginning of a
     third one, for example. This can be seen in the MathML markup for the
-    present example, given at the end of this section.</p>
+    example given at the end of this section.</p>
  
     <p>Although alignment groups need <span>not</span>
     coincide with the nested expression structure of layout schemata,
-    there are nonetheless restrictions on where an <code class="element">maligngroup</code>
-    element is allowed within a table cell. The <code class="element">maligngroup</code>
-    element may only be contained within elements <span>(directly or indirectly)</span> of the following types
+    there are nonetheless restrictions on where <code class="element">maligngroup</code>
+    and <code class="element">malignmark</code>
+    elements are allowed within a table cell. These
+    elements may only be contained within elements <span>(directly or indirectly)</span> of the following types
     (which are themselves contained in the table cell):
     </p>
     <ul>
@@ -7569,11 +7580,14 @@
     and makes it easy to identify table cells that are left out of their
     column's alignment process entirely.</p>
  
-    <p>Note that it is not required that the table cells in a column that
+    <p>It is not required that the table cells in a column that
     are divided into alignment groups each contain the same number of
     groups. If they don't, zero-width alignment groups are effectively
     added on the right side<span> (or left side, in a RTL context)</span> of each table cell that has fewer groups than
     other table cells in the same column.</p>
+    <p class="note">Do we want to tighten this so that all rows have the same number of <code class="element">maligngroup</code> elements?
+    </p>
+
    </section>
  
    <section>
@@ -7656,376 +7670,24 @@
     contained inside it) overrides alignment at the start of an <code class="element">maligngroup</code> element.
     </p>
 
-    <p class="note">Should the default alignment be the right edge of the preceeding char or the left edge of the following char?
-    </p>
-
- 
     <p>The <code class="element">malignmark</code> element indicates that the
-    alignment point should occur on the right edge of the preceding
-    element, or the left edge of the following element or character,
-    depending on the <code class="attribute">edge</code> attribute of
-    <code class="element">malignmark</code>. Note that it may be necessary to
-    introduce an <code class="element">mrow</code> to group an
-    <code class="element">malignmark</code> element with a neighboring element,
-    in order not to alter the argument count of the containing
-    element. (See the warning about the legal grouping of <q>space-like
-    elements</q> in <a href="#presm_mspace"></a>).</p>
+    alignment point should occur on the left edge (right edge in a RTL context) of the following element.
+   </p>
  
     <p class="note">Can <code class="element">malignmark</code> elements occur inside of tokens?
     </p>
     <p>When an <code class="element">malignmark</code> element is provided within an
-    alignment group, it can occur in an arbitrarily deeply nested element
-    within the group, as long as it is not within a nested alignment scope.
-    For example, an <code class="element">malignmark</code> can occur in a superscript.
-    It is not subject to the same restrictions on location as <code class="element">maligngroup</code> elements. However, its immediate
-    surroundings need to be such that the element to its immediate right or
-    left (depending on its <code class="attribute">edge</code> attribute) can be
-    unambiguously identified. If no such element is present, renderers should
-    behave as if a zero-width element had been inserted there.</p>
- 
-    <p>For the purposes of alignment, an element X is considered to be to the
-    immediate left of an element Y, and Y to the immediate right of X, whenever
-    X and Y are successive arguments of one (possibly inferred) <code class="element">mrow</code> element,
-    with X coming before Y<span> (in a LTR context; with X coming after Y in a RTL context)</span>. In the case of
-    <code class="element">mfenced</code> elements, MathML applications should evaluate this
-    relation as if the <code class="element">mfenced</code> element had been
-    replaced by the equivalent expanded form involving <code class="element">mrow</code>. Similarly, an <code class="element">maction</code>
-    element should be treated as if it were replaced by its currently selected
-    sub-expression. In all other cases, no relation of <q>to the immediate
-    left or right</q> is defined for two elements X and Y. However, in the
-    case of content elements interspersed in presentation markup, MathML applications
-    should attempt to evaluate this relation in a sensible way. For example, if
-    a renderer maintains an internal presentation structure for rendering
-    content elements, the relation could be evaluated with respect to
-    that. (See <a href="#contm"></a> and <a href="#mixing"></a> for further
-    details about mixing presentation and content markup.)</p>
- 
-    <p>
-     <code class="element">malignmark</code> elements are allowed to occur within
-     the content of token elements, such as <code class="element">mn</code>,
-     <code class="element">mi</code>, or <code class="element">mtext</code>. When this
-     occurs, the character immediately before or after the
-     <code class="element">malignmark</code> element will carry the alignment
-     point; in all other cases, the element to its immediate left or right
-     will carry the alignment point. The rationale for this is that it is
-     sometimes desirable to align on the edges of specific characters
-    within multi-character token elements.</p>
- 
-    <p>If there is more than one <code class="element">malignmark</code> element
+    alignment group, it should only occur within the elements allowed for <code class="element">maligngroup</code>
+    (see <a href="#presm_specify_align_group"></a>).
+    If there is more than one <code class="element">malignmark</code> element
     in an alignment group, all but the first one will be ignored. MathML
     applications may wish to provide a mode in which they will warn about
     this situation, but it is not an error, and should trigger no warnings
     by default. <span>The rationale for this is that</span> it would
     be inconvenient to have to remove all
     unnecessary <code class="element">malignmark</code> elements from
-    automatically generated data, in certain cases, such as when they are
-    used to specify alignment on <q>decimal points</q> other than the '.'
-    character.</p>
-   </section>
- 
-   <section>
-    <h5><code class="defn emptytag">&lt;malignmark/&gt;</code> Attributes</h5>
- 
-    <p><code class="element">malignmark</code> elements accept the attributes listed
-    below in addition to those specified in <a href="#presm_presatt"></a>
-    (however, neither <code class="attribute">mathcolor</code> nor <code class="attribute">mathbackground</code> have any effect).</p>
- 
-    <table class="attributes data">
- 
-     <thead>
- 
-      <tr>
-       <td>Name</td>
-       <td>values</td>
-       <td>default</td>
-       <td>Core</td>
-      </tr>
-     </thead>
- 
-     <tbody>
- 
-      <tr>
-       <td rowspan="2" class="attname">edge</td>
-       <td>"left" | "right"</td>
-       <td>left</td>
-       <td><span class="coreno"></span></td>
-      </tr>
- 
-      <tr>
-       <td colspan="3" class="attdesc">
-        see the discussion below.
-       </td>
-      </tr>
-     </tbody>
-    </table>
- 
-    <p><span>The
-    <code class="attribute">edge</code> attribute</span> specifies whether the alignment point will be
-    found on the left or right edge of some element or character. The
-    precise location meant by <q>left edge</q> or <q>right edge</q> is discussed
-    below. If <code class="attribute">edge</code>="right", the alignment point is the right
-    edge of the element or character to the immediate left of the
-    <code class="element">malignmark</code> element. If <code class="attribute">edge</code>="left",
-    the alignment point is the left edge of the element or character to
-    the immediate right of the <code class="element">malignmark</code>
-    element. Note that the attribute refers to the choice of edge rather
-    than to the direction in which to look for the element whose edge will
-    be used.</p>
- 
-    <p>For <code class="element">malignmark</code> elements that occur within
-    the content of MathML token elements, the preceding or following
-    character in the token element's content is used; if there is no such
-    character, a zero-width character is effectively inserted for the
-    purpose of carrying the alignment point on its edge. For all other
-    <code class="element">malignmark</code> elements, the preceding or following
-    element is used; if there is no such element, a zero-width element is
-    effectively inserted to carry the alignment point.</p>
- 
-    <p>The precise definition of the <q>left edge</q> or <q>right edge</q> of a
-    character or glyph (e.g. whether it should coincide with an edge of
-    the character's bounding box) is not specified by MathML, but is at
-    the discretion of the renderer; the renderer is allowed to let the
-    edge position depend on the character's context as well as on the
-    character itself.</p>
- 
-    <p>For proper alignment of columns of numbers (using <code class="attribute">groupalign</code> values of <code class="attributevalue">left</code>, <code class="attributevalue">right</code>, or <code class="attributevalue">decimalpoint</code>), it is
-    likely to be desirable for the effective width (i.e. the distance between
-    the left and right edges) of decimal digits to be constant, even if their
-    bounding box widths are not constant (e.g. if <q>1</q> is narrower
-    than other digits). For other characters, such as letters and operators, it
-    may be desirable for the aligned edges to coincide with the bounding
-    box.</p>
- 
-    <p>The <q>left edge</q> of a MathML element or alignment group
-    refers to the left edge of the leftmost glyph drawn to render the element
-    or group, except that explicit space represented by <code class="element">mspace</code> or <code class="element">mtext</code> elements
-    should also count as <q>glyphs</q> in this context, as should
-    glyphs that would be drawn if not for <code class="element">mphantom</code>
-    elements around them. The <q>right edge</q> of an element or
-    alignment group is defined similarly.</p>
-   </section>
- 
-   <section>
-    <h5><code class="defn emptytag">&lt;maligngroup/&gt;</code> Attributes</h5>
- 
-    <p><code class="element">maligngroup</code> elements accept the attributes listed
-    below in addition to those specified in <a href="#presm_presatt"></a>
-    (however, neither <code class="attribute">mathcolor</code> nor <code class="attribute">mathbackground</code> have any effect).</p>
- 
-    <table class="attributes data">
- 
-     <thead>
- 
-      <tr>
-       <td>Name</td>
-       <td>values</td>
-       <td>default</td>
-       <td>Core</td>
-      </tr>
-     </thead>
- 
-     <tbody>
- 
-      <tr>
-       <td rowspan="2" class="attname">groupalign</td>
-       <td>"left" | "center" | "right" | "decimalpoint"</td>
-       <td><em>inherited</em></td>
-       <td><span class="coreno"></span></td>
-      </tr>
- 
-      <tr>
-       <td colspan="3" class="attdesc">
-        see the discussion below.
-       </td>
-      </tr>
-     </tbody>
-    </table>
- 
-    <p><code class="element">maligngroup</code> has one attribute,
-    <code class="attribute">groupalign</code>, which is used to determine the position of
-    its group's alignment point when no <code class="element">malignmark</code>
-    element is present. The following discussion assumes that no
-    <code class="element">malignmark</code> element is found within a group.</p>
- 
-    <p>In the example given at the beginning of this section, there is one
-    column of 2 table cells, with 7 alignment groups in each table cell;
-    thus there are 7 columns of alignment groups, with 2 groups, one above
-    the other, in each column. These columns of alignment groups should be
-    given the 7 <code class="attribute">groupalign</code> values <q>decimalpoint left left
-    decimalpoint left left decimalpoint</q>, in that order. How to specify
-    this list of values for a table cell or table column as a whole, using
-    attributes on elements surrounding the
-    <code class="element">maligngroup</code> element is described later.</p>
- 
-    <p>If <code class="attribute">groupalign</code> is <q>left</q>,
-    <q>right</q>, or <q>center</q>, the alignment point is
-    defined to be at the group's left edge, at its right edge, or halfway
-    between these edges, respectively. The meanings of <q>left edge</q>
-    and <q>right edge</q> are as discussed above in relation to <code class="element">malignmark</code>.</p>
- 
-    <p>If <code class="attribute">groupalign</code> is <q>decimalpoint</q>,
-    the alignment point is the right edge of the character immediately before the
-    left-most 'decimal point', i.e. matching the character specified by
-    the <code class="attribute">decimalpoint</code> attribute of <code class="element">mstyle</code> (default ".", U+002E)
-    in the first <code class="element">mn</code> element found along
-    the alignment group's baseline. More precisely, the alignment group is
- scanned recursively, depth-first, for the first <code class="element">mn</code>
- element, descending into all arguments of each element of the types
- <code class="element">mrow</code> (including inferred
- <code class="element">mrow</code>s), <code class="element">mstyle</code>,
- <code class="element">mpadded</code>, <code class="element">mphantom</code>, <code class="element">menclose</code>,
- <code class="element">mfenced</code>, or <code class="element">msqrt</code>,
- descending into only the first argument of each <q>scripting</q> element
- (<code class="element">msub</code>, <code class="element">msup</code>,
- <code class="element">msubsup</code>, <code class="element">munder</code>,
- <code class="element">mover</code>, <code class="element">munderover</code>,
- <code class="element">mmultiscripts</code>) or of each
- <code class="element">mroot</code> or <code class="element">semantics</code> element,
- descending into only the selected sub-expression of each
- <code class="element">maction</code> element, and skipping the content of all
- other elements. The first <code class="element">mn</code> so found always
- contains the alignment point, which is the right edge of the last
- character before the first decimal point in the content of the
- <code class="element">mn</code> element. If there is no decimal point in the
- <code class="element">mn</code> element, the alignment point is the right edge
- of the last character in the content. If the decimal point is the
- first character of the <code class="element">mn</code> element's content, the
- right edge of a zero-width character inserted before the decimal point
- is used. If no <code class="element">mn</code> element is found, the right
- edge of the entire alignment group is used (as for
- <code class="attribute">groupalign</code>="right").</p>
- 
- <p>In order to permit alignment on decimal points in
- <code class="element">cn</code> elements, a MathML application can convert a
- content expression into a presentation expression that renders the
- same way before searching for decimal points as described above.</p>
- 
- <p>Characters other than <q>.</q> can be used as
- <q>decimal points</q> for alignment by using <code class="element">mstyle</code>;
- more arbitrary alignment points can chosen by embedding <code class="element">malignmark</code> elements
- within the <code class="element">mn</code> token's content itself.</p>
- 
- <p>For any of the <code class="attribute">groupalign</code> values, if an explicit
- <code class="element">malignmark</code> element is present anywhere within
- the group, the position it specifies (described earlier) overrides the
- automatic determination of alignment point from the
- <code class="attribute">groupalign</code> value.</p>
- </section>
- 
- <section>
- <h5>Inheritance of <code class="attribute">groupalign</code> values</h5>
- 
- <p>It is not usually necessary to put a <code class="attribute">groupalign</code>
- attribute on every <code class="element">maligngroup</code> element. Since
- this attribute is usually the same for every group in a column of
- alignment groups to be aligned, it can be inherited from an attribute
- on the <code class="element">mtable</code> that was used to set up the
- alignment scope as a whole, or from the <code class="element">mtr</code> or
- <code class="element">mtd</code> elements surrounding the alignment group. It
- is inherited via an <q>inheritance path</q> that proceeds from
- <code class="element">mtable</code> through successively contained
- <code class="element">mtr</code>, <code class="element">mtd</code>, and
- <code class="element">maligngroup</code> elements. There is exactly one
- element of each of these kinds in this path from an
- <code class="element">mtable</code> to any alignment group inside it.  <span>In
- general, t</span>he value of <code class="attribute">groupalign</code> will be
- inherited by any given alignment group from the innermost element
- that surrounds the alignment group and provides an explicit
- setting for this attribute.  <span>For example, if an
- <code class="element">mtable</code> element specifies values for <code class="attribute">groupalign</code> and
- an <code class="element">maligngroup</code> element within the table also specifies an
- explicit <code class="attribute">groupalign</code> value, then the value from the
- <code class="element">maligngroup</code> takes priority.</span></p>
- 
- <p id="type_group-align">Note, however, that each <code class="element">mtd</code> element needs, in
- general, a list of <code class="attribute">groupalign</code> values, one for each
- <code class="element">maligngroup</code> element inside it<span> (from left to right, in an LTR context,
- or from right to left in an RTL context)</span>, rather than just
- a single value. Furthermore, an <code class="element">mtr</code> or
- <code class="element">mtable</code> element needs, in general, a list of lists
- of <code class="attribute">groupalign</code> values, since it spans multiple
- <code class="element">mtable</code> columns, each potentially acting as an
- alignment scope. Such lists of <em>group-alignment</em> values are specified
- using the following syntax rules:</p>
- 
- <div class="example ">
-  <pre>
-   group-alignment             = "left" | "right" | "center" | "decimalpoint"
-   group-alignment-list        = <em>group-alignment</em> +
-   group-alignment-list-list   = ( "{" <em>group-alignment-list</em> "}" ) +
- </pre>
- </div>
- 
- <p>As described in <a href="#fund_attval"></a>, <code>|</code> separates
- alternatives; <code>+</code> represents optional repetition (i.e. 1 or
- more copies of what precedes it), with extra values ignored and the
- last value repeated if necessary to cover additional table columns or
- alignment group columns; <code>'{'</code> and <code>'}'</code>
- represent literal braces; and <code>(</code> and <code>)</code> are
- used for grouping, but do not literally appear in the attribute
- value.</p>
- 
- <p>The permissible values of the <code class="attribute">groupalign</code> attribute of the
- elements that have this attribute are specified using the above
- syntax definitions as follows:</p>
- 
- <table class="data">
- 
-  <thead>
- 
-   <tr>
- <td>Element type</td>
- <td>groupalign attribute syntax</td>
- <td>default value</td>
- </tr>
- </thead>
- 
- <tbody>
- 
-  <tr>
- <td><code class="element">mtable</code></td>
- <td><a class="intref" href="#type_group-align"><em>group-alignment-list-list</em></a></td>
- <td>{left}</td>
- </tr>
- 
- <tr>
- <td><code class="element">mtr</code></td>
- <td><a class="intref" href="#type_group-align"><em>group-alignment-list-list</em></a></td>
- <td><em>inherited from <code class="element">mtable</code> attribute</em></td>
- </tr>
- 
- <tr>
- <td><code class="element">mlabeledtr</code></td>
- <td><a class="intref" href="#type_group-align"><em>group-alignment-list-list</em></a></td>
- <td><em>inherited from <code class="element">mtable</code> attribute</em></td>
- </tr>
- 
- <tr>
- <td><code class="element">mtd</code></td>
- <td><a class="intref" href="#type_group-align"><em>group-alignment-list</em></a></td>
- <td><em>inherited from within <code class="element">mtr</code> attribute</em></td>
- </tr>
- 
- <tr>
- <td><code class="element">maligngroup</code></td>
- <td><a class="intref" href="#type_group-align"><em>group-alignment</em></a></td>
- <td><em>inherited from within <code class="element">mtd</code> attribute</em></td>
- </tr>
- </tbody>
- </table>
- 
- <p>In the example near the beginning of this section, the group
- alignment values could be specified on every <code class="element">mtd</code>
- element using <code class="attribute">groupalign</code> = <q>decimalpoint left left
- decimalpoint left left decimalpoint</q>, or on every
- <code class="element">mtr</code> element using <code class="attribute">groupalign</code> =
- <q>{decimalpoint left left decimalpoint left left decimalpoint}</q>, or
- (most conveniently) on the <code class="element">mtable</code> as a whole
- using <code class="attribute">groupalign</code> = <q>{decimalpoint left left decimalpoint
- left left decimalpoint}</q>, which provides a single braced list of
- <a class="intref" href="#type_group-align"><em>group-alignment</em></a> values for the single column of expressions to be
- aligned.</p>
- </section>
+    automatically generated data.</p>
+  </section>
  
  <section class="fold">
  <h5>MathML representation of an alignment example</h5>
@@ -8117,59 +7779,6 @@
  </section>
  
  <section>
- <h5>Further details of alignment elements</h5>
- 
- <p>The alignment elements <code class="element">maligngroup</code> and
- <code class="element">malignmark</code> can occur outside of alignment
- scopes, where they are ignored. The rationale behind this is that in
- situations in which MathML is generated, or copied from another
- document, without knowing whether it will be placed inside an
- alignment scope, it would be inconvenient for this to be an error.</p>
- 
- <p>An <code class="element">mtable</code> element can be given the attribute <code class="attribute">alignmentscope</code>=<code class="attributevalue">false</code> to cause its
- columns not to act as alignment scopes. In general, this attribute has the
- syntax <code>("true" | "false") +</code>; if its value is a list of Boolean
- values, each Boolean value applies to one column, with the last value
- repeated if necessary to cover additional columns, or with extra values
- ignored. Columns that are not alignment scopes are part of the alignment
- scope surrounding the <code class="element">mtable</code> element, if there is
- one. Use of <code class="attribute">alignmentscope</code>=<code class="attributevalue">false</code> allows nested tables to contain <code class="element">malignmark</code> elements for aligning the inner table in the
- surrounding alignment scope.</p>
- 
- <p>As discussed above, processing of alignment for content elements is
- not well-defined, since MathML does not specify how content elements
- should be rendered. However, many MathML applications are likely to find it
- convenient to internally convert content elements to presentation
- elements that render the same way. Thus, as a general rule, even if a
- renderer does not perform such conversions internally, it is
- recommended that the alignment elements should be processed as if it
- did perform them.</p>
- 
- <p>A particularly important case for renderers to handle gracefully is the
- interaction of alignment elements with the <code class="element">matrix</code>
- content element, since this element may or may not be internally converted
- to an expression containing an <code class="element">mtable</code> element for
- rendering. To partially resolve this ambiguity, it is suggested, but not
- required, that if the <code class="element">matrix</code> element is converted
- to an expression involving an <code class="element">mtable</code> element, that
- the <code class="element">mtable</code> element be given the attribute <code class="attribute">alignmentscope</code>=<code class="attributevalue">false</code>, which will
- make the interaction of the <code class="element">matrix</code> element with the
- alignment elements no different than that of a generic presentation element
- (in particular, it will allow it to contain <code class="element">malignmark</code> elements that operate within the alignment
- scopes created by the columns of an <code class="element">mtable</code> that
- contains the <code class="element">matrix</code> element in one of its table
- cells).</p>
- 
- <p>The effect of alignment elements within table cells that have
- non-default values of the <code class="attribute">columnspan</code> or <code class="attribute">rowspan</code> attributes is not specified, except that such
- use of alignment elements is not an error. Future versions of MathML may
- specify the behavior of alignment elements in such table cells.</p>
- 
- <p>The effect of possible linebreaking of an <code class="element">mtable</code>
- element on the alignment elements is not specified.</p>
- </section>
- 
- <section>
  <h5>A simple alignment algorithm</h5>
  
  <p>A simple algorithm by which a MathML renderer can perform the
@@ -8180,59 +7789,61 @@
  <code class="element">mtable</code> column (alignment scope) can be treated
  independently; the algorithm given here applies to one
  <code class="element">mtable</code> column, and takes into account the
- alignment elements, the <code class="attribute">groupalign</code> attribute described in
- this section, and the <code class="attribute">columnalign</code> attribute described
- under <code class="element">mtable</code> (<a href="#presm_mtable"></a>).</p>
+ alignment elements and the <code class="attribute">columnalign</code> attribute described
+ under <code class="element">mtable</code> (<a href="#presm_mtable"></a>).
+ In an RTL context, switch left and right edges in the algorithm.</p>
+ <p class="note">This algorithm should be verified by an implementation.
+</p>
+
+ <ol>
+  <li>A rendering is computed for the contents of each table cell
+    in the column, using zero width for all
+    <code class="element">maligngroup</code> and <code class="element">malignmark</code>
+    elements. The final rendering will be identical except for horizontal
+    shifts applied to each alignment group and/or table cell.</li>
+  <li>For each alignment group, the horizontal positions of the left
+    edge, alignment point (if specified by <code class="element">malignmark</code>, otherwise the left edge),
+    and right edge are noted, allowing the width of
+    the group on each side of the alignment point (left and right) to be
+    determined. The sum of these two <q>side-widths</q>, i.e. the sum of the
+    widths to the left and right of the alignment point, will equal the
+    width of the alignment group.</li>
+  <li>Each column of alignment groups is
+    scanned. The <i class="var">i</i>th scan covers the <i class="var">i</i>th
+    alignment group in each table cell containing any alignment
+    groups. Table cells with no alignment groups, or with fewer than
+    <i class="var">i</i> alignment groups, are ignored. Each scan computes two
+    maximums over the alignment groups scanned: the maximum width to the
+    left of the alignment point, and the maximum width to the right of the
+    alignment point, of any alignment group scanned.</li>
+  <li>The sum of all the maximum widths computed (two for each column of
+    alignment groups) gives one total width, which will be the width of
+    each table cell containing alignment groups. Call the maximum number
+    of alignment groups in one cell <i class="var">n</i>; each such cell
+    is divided into 2<i class="var">n</i> horizontally adjacent sections, called
+    L(<i class="var">i</i>) and R(<i class="var">i</i>) for <i class="var">i</i> from 1 to
+    <i class="var">n</i>, using the 2<i class="var">n</i> maximum side-widths computed
+    above; for each <i class="var">i</i>, the width of all sections called
+    L(<i class="var">i</i>) is the maximum width of any cell's <i class="var">i</i>th
+    alignment group to the left of its alignment point, and the width of
+    all sections called R(<i class="var">i</i>) is the maximum width of any
+    cell's <i class="var">i</i>th alignment group to the right of its alignment
+    point.</li>
+  <li>Each alignment group is then shifted horizontally as a block
+    to <span>a</span> unique position that places: in the section called L(<i class="var">i</i>) that part
+    of the <i class="var">i</i>th group to the left of its alignment point;
+    in the section called R(<i class="var">i</i>) that part of the <i class="var">i</i>th group
+    to the right of its alignment point. This results in the
+    alignment point of each <i class="var">i</i>th group being on the boundary
+    between adjacent sections L(<i class="var">i</i>) and R(<i class="var">i</i>), so
+    that all alignment points of <i class="var">i</i>th groups have the same
+    horizontal position.</li>
+ </ol>
+  
  
- <p>First, a rendering is computed for the contents of each table cell
- in the column, using zero width for all
- <code class="element">maligngroup</code> and <code class="element">malignmark</code>
- elements. The final rendering will be identical except for horizontal
- shifts applied to each alignment group and/or table cell. The
- positions of alignment points specified by any
- <code class="element">malignmark</code> elements are noted, and the remaining
- alignment points are determined using <code class="attribute">groupalign</code>
- values.</p>
+ <p></p>
  
- <p>For each alignment group, the horizontal positions of the left
- edge, alignment point, and right edge are noted, allowing the width of
- the group on each side of the alignment point (left and right) to be
- determined. The sum of these two <q>side-widths</q>, i.e. the sum of the
- widths to the left and right of the alignment point, will equal the
- width of the alignment group.</p>
- 
- <p>Second, each column of alignment groups is
- scanned. The <i class="var">i</i>th scan covers the <i class="var">i</i>th
- alignment group in each table cell containing any alignment
- groups. Table cells with no alignment groups, or with fewer than
- <i class="var">i</i> alignment groups, are ignored. Each scan computes two
- maximums over the alignment groups scanned: the maximum width to the
- left of the alignment point, and the maximum width to the right of the
- alignment point, of any alignment group scanned.</p>
- 
- <p>The sum of all the maximum widths computed (two for each column of
- alignment groups) gives one total width, which will be the width of
- each table cell containing alignment groups. Call the maximum number
- of alignment groups in one cell <i class="var">n</i>; each such cell
- is divided into 2<i class="var">n</i> horizontally adjacent sections, called
- L(<i class="var">i</i>) and R(<i class="var">i</i>) for <i class="var">i</i> from 1 to
- <i class="var">n</i>, using the 2<i class="var">n</i> maximum side-widths computed
- above; for each <i class="var">i</i>, the width of all sections called
- L(<i class="var">i</i>) is the maximum width of any cell's <i class="var">i</i>th
- alignment group to the left of its alignment point, and the width of
- all sections called R(<i class="var">i</i>) is the maximum width of any
- cell's <i class="var">i</i>th alignment group to the right of its alignment
- point.</p>
- 
- <p>Each alignment group is then shifted horizontally as a block
- to <span>a</span> unique position that places: in the section called L(<i class="var">i</i>) that part
- of the <i class="var">i</i>th group to the left of its alignment point;
- in the section called R(<i class="var">i</i>) that part of the <i class="var">i</i>th group
- to the right of its alignment point. This results in the
- alignment point of each <i class="var">i</i>th group being on the boundary
- between adjacent sections L(<i class="var">i</i>) and R(<i class="var">i</i>), so
- that all alignment points of <i class="var">i</i>th groups have the same
- horizontal position.</p>
+ <p></p>
  
  <p>The widths of the table cells that contain no alignment groups
  were computed as part of the initial rendering, and may be different
