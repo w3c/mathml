@@ -6664,19 +6664,6 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">groupalign</td>
-       <td><a class="intref" href="#type_group-align"><em>group-alignment-list-list</em></a></td>
-       <td>{left}</td>
-       <td><span class="coreno"></span></td>
-      </tr>
- 
-      <tr>
-       <td colspan="3" class="attdesc">
-        This attribute is decprecated in MathML 4.
-       </td>
-      </tr>
- 
-      <tr>
        <td rowspan="2" class="attname">alignmentscope</td>
        <td>("true" | "false") +</td>
        <td>true</td>
@@ -7048,18 +7035,6 @@
        </td>
       </tr>
  
-      <tr>
-       <td rowspan="2" class="attname">groupalign</td>
-       <td><a class="intref" href="#type_group-align"><em>group-alignment-list-list</em></a></td>
-       <td><em>inherited</em></td>
-       <td><span class="coreno"></span></td>
-      </tr>
- 
-      <tr>
-       <td colspan="3" class="attdesc">
-        This attribute is decprecated in MathML 4.
-       </td>
-      </tr>
      </tbody>
     </table>
    </section>
@@ -7300,18 +7275,6 @@
        </td>
       </tr>
  
-      <tr>
-       <td rowspan="2" class="attname">groupalign</td>
-       <td><a class="intref" href="#type_group-align"><em>group-alignment-list</em></a></td>
-       <td><em>inherited</em></td>
-       <td><span class="coreno"></span></td>
-      </tr>
- 
-      <tr>
-       <td colspan="3" class="attdesc">
-        This attribute is decprecated in MathML 4.
-       </td>
-      </tr>
      </tbody>
     </table>
  
@@ -7331,17 +7294,17 @@
    <code class="emptytag">&lt;maligngroup/&gt;</code>, <code class="emptytag">&lt;malignmark/&gt;</code><span class="coreno"></span></h4>
  
    <section>
-    <h5>Deprecation Notice</h5>
+    <h5>Removal Notice</h5>
     <p>
       With one significant exception, <code class="emptytag">&lt;maligngroup/&gt;</code> and <code class="emptytag">&lt;malignmark/&gt;</code>
       have had minimal adoption and implementation.
       The one exception only uses the basics of alignment. Because of this, alignment in MathML is significantly
-      simplified to align with the current usage and make future implemntation simplier. In particular, the following simplifications are made:
+      simplified to align with the current usage and make future implementation simplier. In particular, the following simplifications are made:
       <ul>
-        <li>the attributes for <code class="emptytag">&lt;maligngroup/&gt;</code> and <code class="emptytag">&lt;malignmark/&gt;</code> have been deprecated</li>
+        <li>the attributes for <code class="emptytag">&lt;maligngroup/&gt;</code> and <code class="emptytag">&lt;malignmark/&gt;</code> have been removed.</li>
         <li>The <code class="attribute">groupalign</code> attribute previously allowed on
           <code class="element">mtable</code>, <code class="element">mtr</code>, and 
-          <code class="element">mtr</code> is deprecated</li>
+          <code class="element">mtr</code> is removed</li>
         <li><code class="emptytag">&lt;malignmark/&gt;</code> used to be allowed anywhere, including inside of token elements;
           it is now allowed in only the locations that <code class="emptytag">&lt;maligngroup/&gt;</code> is allowed (see below)</li>
       </ul>
@@ -7431,9 +7394,9 @@
    <section>
     <h5 id="presm_specify_align_group">Specifying alignment groups</h5>
     <p>Each part of expression to be aligned should be in an <code class="element">maligngroup</code>.
-       The point of alignment is the left edge (right edge for RTL) of the element that follows an <code class="element">maligngroup</code> element
+       The point of alignment is the left edge (right edge if for RTL) of the element that follows an <code class="element">maligngroup</code> element
        unless an <code class="element">malignmark</code> element
-       is between <code class="element">maligngroup</code> elements. In that case, the left edge (right edge for RTL) of the element that follows the
+       is between <code class="element">maligngroup</code> elements. In that case, the left edge (right edge if for RTL) of the element that follows the
        <code class="element">malignmark</code> is the point of alignment for that group.
     </p>
 
