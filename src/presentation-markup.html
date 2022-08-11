@@ -1025,20 +1025,18 @@
       <td>Name</td>
       <td>values</td>
       <td>default</td>
-      <td>Core</td>
      </tr>
     </thead>
  
     <tbody>
  
      <tr>
-      <td rowspan="2" class="attname">intent</td>
+      <td rowspan="2" class="attname"><span class="coreno">intent</span></td>
       <td><a class="intref" href="#mixing_intent_grammar"><em>intent expression</em></a></td>
       <td><em>none</em></td>
-      <td><span class="coreno"></span></td>
      </tr>
      <tr>
-      <td colspan="3" class="attdesc">The <code
+      <td colspan="2" class="attdesc">The <code
       class="attribute">intent</code> attribute is more fully described
       in <a href="#mixing_intent"></a>. It may be used on presentation
       elements to give information about the intended meaning of the
@@ -1046,13 +1044,12 @@
       renderings.</td>
      </tr>
      <tr>
-      <td rowspan="2" class="attname">arg</td>
+      <td rowspan="2" class="attname"><span class="coreno">arg</span></td>
       <td><a class="intref" href="#mixing_intent_grammar"><em>name</em></a></td>
       <td><em>none</em></td>
-      <td><span class="coreno"></span></td>
      </tr>
      <tr>
-      <td colspan="3" class="attdesc">The <code
+      <td colspan="2" class="attdesc">The <code
       class="attribute">arg</code> attribute is more fully described
       in <a href="#mixing_intent"></a>. It may be used to name an element to be referenced from an
       <code class="attribute">intent</code> expression on an ancestor element.</td>
@@ -1084,21 +1081,19 @@
       <td>Name</td>
       <td>values</td>
       <td>default</td>
-      <td>Core</td>
      </tr>
     </thead>
  
     <tbody>
  
      <tr>
-      <td rowspan="2" class="attname">mathcolor</td>
+      <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mathcolor">mathcolor</a></td>
       <td><em>[=color=]</em></td>
       <td><em>inherited</em></td>
-      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mathcolor"></a></td>
      </tr>
  
      <tr>
-      <td colspan="3" class="attdesc">
+      <td colspan="2" class="attdesc">
        Specifies the foreground color to use when drawing the components of this element,
        such as the content for token elements or any lines, surds, or other decorations.
        It also establishes the default <code class="attribute">mathcolor</code> used for child elements
@@ -1107,14 +1102,13 @@
      </tr>
  
      <tr>
-      <td rowspan="2" class="attname">mathbackground</td>
+      <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mathbackground">mathbackground</a></td>
       <td><em>[=color=]</em> | "transparent"</td>
       <td>transparent</td>
-      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mathbackground"></a></td>
      </tr>
  
      <tr>
-      <td colspan="3" class="attdesc">
+      <td colspan="2" class="attdesc">
        Specifies the background color to be used to fill in the bounding box
        of the element and its children. The default, "transparent", lets the
        background color, if any, used in the current rendering context to show through.
@@ -1177,7 +1171,7 @@
  
   <section>
    <h4 id="presm_tokenchars">
-   <span>Token Element Content Characters, <code class="emptytag">&lt;mglyph/&gt;</code></span> <span class="coreno"></span></h4>
+   <span>Token Element Content Characters, <span class="coreno"><code class="emptytag">&lt;mglyph/&gt;</code></span></span></h4>
  
    <p>Character data in MathML markup is only allowed to occur as part of
    the content of token elements.  Whitespace between elements is ignored.
@@ -1212,7 +1206,7 @@
  
    <section>
     <h5 id="presm_mglyph"><span>Using images to represent
-    symbols</span> <code class="defn emptytag">&lt;mglyph/&gt;</code><span class="coreno"></span></h5>
+    symbols</span> <span class="coreno"><code class="defn emptytag">&lt;mglyph/&gt;</code></span></h5>
  
     <section>
      <h6>Description</h6>
@@ -1259,48 +1253,44 @@
         <td>Name</td>
         <td>values</td>
         <td>default</td>
-        <td>Core</td>
        </tr>
       </thead>
  
       <tbody>
  
        <tr>
-        <td rowspan="2" class="attname">src</td>
+        <td rowspan="2" class="attname"><span class="coreno">src</span></td>
         <td><em>[=URI=]</em></td>
         <td><em>required</em></td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
          Specifies the location of the image resource;
          it may be a URI relative to the base-URI of the source of the MathML, if any.
         </td>
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">width</td>
+        <td rowspan="2" class="attname"><span class="coreno">width</span></td>
         <td><a class="intref" href="#type_length"><em>length</em></a></td>
         <td><em>from image</em></td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
          Specifies the desired width of the glyph; see <code class="attribute">height</code>.
         </td>
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">height</td>
+        <td rowspan="2" class="attname"><span class="coreno">height</span></td>
         <td><a class="intref" href="#type_length"><em>length</em></a></td>
         <td><em>from image</em></td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
          Specifies the desired height of the glyph.
          If only one of <code class="attribute">width</code> and <code class="attribute">height</code> are given,
          the image should be scaled to preserve the aspect ratio;
@@ -1309,14 +1299,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">valign</td>
+        <td rowspan="2" class="attname"><span class="coreno">valign</span></td>
         <td><a class="intref" href="#type_length"><em>length</em></a> </td>
         <td>0ex</td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
          Specifies the baseline alignment point of the image with respect to the current baseline.
          A positive value shifts the bottom of the image above the current baseline
          while a negative value lowers it.
@@ -1326,14 +1315,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">alt</td>
+        <td rowspan="2" class="attname"><span class="coreno">alt</span></td>
         <td><em>[=string=]</em></td>
         <td><em>required</em></td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
          Provides an alternate name for the glyph.  If the specified image can't be found or
          displayed,
          the renderer may use this name in a warning message or some unknown glyph notation.
@@ -1393,14 +1381,13 @@
       <td>Name</td>
       <td>values</td>
       <td>default</td>
-      <td>Core</td>
      </tr>
     </thead>
  
     <tbody>
  
      <tr>
-      <td rowspan="2" class="attname">mathvariant</td>
+      <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mathvariant">mathvariant</a></td>
       <td>
        "normal" | "bold" | "italic" | "bold-italic" | "double-struck" |
        "bold-fraktur" | "script" | "bold-script" |
@@ -1409,25 +1396,24 @@
        "initial" | "tailed" | "looped" | "stretched"
       </td>
       <td>normal (<em>except on</em> <code class="starttag">&lt;mi&gt;</code>)</td>
-      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mathvariant"></a></td>
      </tr>
  
      <tr>
-      <td colspan="3" class="attdesc">
+      <td colspan="2" class="attdesc">
        Specifies the logical class of the token. Note that this class
        is more than styling, it typically conveys semantic intent; see the discussion below.
       </td>
      </tr>
  
      <tr>
-      <td rowspan="2" class="attname">mathsize</td>
+      <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mathsize">mathsize</a></td>
       <td>"small" | "normal" | "big" | <a class="intref" href="#type_length"><em>length</em></a></td>
       <td><em>inherited</em></td>
-      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mathsize"></a></td>
+      <td>
      </tr>
  
      <tr>
-      <td colspan="3" class="attdesc">
+      <td colspan="2" class="attdesc">
        Specifies the size to display the token content.
        The values <code class="attributevalue">small</code> and <code class="attributevalue">big</code> choose a size
        smaller or larger than the current font size, but leave the exact proportions
@@ -1437,14 +1423,13 @@
      </tr>
  
      <tr>
-      <td rowspan="2" class="attname">dir</td>
+      <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-dir">dir</a></td>
       <td>"ltr" | "rtl"</td>
       <td><em>inherited</em></td>
-      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-dir"></a></td>
      </tr>
  
      <tr>
-      <td colspan="3" class="attdesc">
+      <td colspan="2" class="attdesc">
        specifies the initial directionality for text within the token:
        <code>ltr</code> (Left To Right) or <code>rtl</code> (Right To Left).
        This attribute should only be needed in rare cases involving weak or neutral characters;
@@ -1594,7 +1579,7 @@
    </section>
  
   <section>
-   <h4 id="presm_mi">Identifier <code class="defn starttag">&lt;mi&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mi"></a></h4>
+   <h4 id="presm_mi">Identifier <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mi"><code class="defn starttag">&lt;mi&gt;</code></a></h4>
  
   <section>
     <h5>Description</h5>
@@ -1641,14 +1626,13 @@
        <td>Name</td>
        <td>values</td>
        <td>default</td>
-       <td>Core</td>
       </tr>
      </thead>
  
      <tbody>
  
       <tr>
-       <td rowspan="2" class="attname">mathvariant</td>
+       <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mathvariant">mathvariant</a></td>
        <td>"normal" | "bold" | "italic" | "bold-italic" | "double-struck" |
        "bold-fraktur" | "script" | "bold-script" |
        "fraktur" | "sans-serif" | "bold-sans-serif" | "sans-serif-italic" |
@@ -1656,11 +1640,10 @@
        "initial" | "tailed" | "looped" | "stretched"
        </td>
        <td><em>(depends on content; described below)</em></td>
-       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mathvariant"></a></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
  
         Specifies the logical class of the token.
         The default is <code class="attributevalue">normal</code> (non-slanted) unless the content
@@ -1760,7 +1743,7 @@
   </section>
  
   <section>
-   <h4 id="presm_mn">Number <code class="defn starttag">&lt;mn&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mn"></a></h4>
+   <h4 id="presm_mn">Number <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mn"><code class="defn starttag">&lt;mn&gt;</code></a></h4>
  
    <section>
     <h5>Description</h5>
@@ -1883,7 +1866,7 @@
  
   <section>
    <h4 id="presm_mo">Operator, Fence, Separator or Accent
-   <code class="defn starttag">&lt;mo&gt;</code><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mo"></a></h4>
+   <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mo"><code class="defn starttag">&lt;mo&gt;</code></a></h4>
  
    <section>
     <h5>Description</h5>
@@ -1988,21 +1971,19 @@
         <td>Name</td>
         <td>values</td>
         <td>default</td>
-        <td>Core</td>
        </tr>
       </thead>
  
       <tbody>
  
        <tr>
-        <td rowspan="2" class="attname">form</td>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-form">form</a></td>
         <td>"prefix" | "infix" | "postfix"</td>
         <td><em>set by position of operator in an</em> <code class="element">mrow</code></td>
-        <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-form"></a></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies the role of the operator in the enclosing expression.
    This role and the operator content affect the lookup of the operator in the operator
    dictionary
@@ -2012,14 +1993,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">fence</td>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-fence">fence</a></td>
         <td>"true" | "false"</td>
         <td><em>set by dictionary</em> (false)</td>
-        <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-fence"></a></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies whether the operator represents a &#x2018;fence&#x2019;, such as a parenthesis.
    This attribute generally has no direct effect on the visual rendering,
    but may be useful in specific cases, such as non-visual renderers.
@@ -2027,14 +2007,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">separator</td>
+        <td rowspan="2" class="attname"><span class="coreno">separator</span></td>
         <td>"true" | "false"</td>
         <td><em>set by dictionary</em> (false)</td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies whether the operator represents a &#x2018;separator&#x2019;, or punctuation.
    This attribute generally has no direct effect on the visual rendering,
    but may be useful in specific cases, such as non-visual renderers.
@@ -2042,14 +2021,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">lspace</td>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-lspace">lspace</a></td>
         <td><a class="intref" href="#type_length"><em>length</em></a></td>
         <td><em>set by dictionary</em> (thickmathspace)</td>
-        <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-lspace"></a></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies the leading space appearing before the operator;
    see <a href="#presm_opspacing"></a>.
    (Note that before is on the right in a RTL context; see <a href="#presm_bidi"></a>.)
@@ -2057,14 +2035,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">rspace</td>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-rspace">rspace</a></td>
         <td><a class="intref" href="#type_length"><em>length</em></a></td>
         <td><em>set by dictionary</em> (thickmathspace)</td>
-        <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-rspace"></a></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies the trailing space appearing after the operator;
    see <a href="#presm_opspacing"></a>.
    (Note that after is on the left in a RTL context; see <a href="#presm_bidi"></a>.)
@@ -2072,28 +2049,26 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">stretchy</td>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-stretchy">stretchy</a></td>
         <td>"true" | "false"</td>
         <td><em>set by dictionary</em> (false)</td>
-        <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-stretchy"></a></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies whether the operator should stretch to the size of adjacent material;
    see <a href="#presm_op_stretch"></a>.
         </td>
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">symmetric</td>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-symmetric">symmetric</a></td>
         <td>"true" | "false"</td>
         <td><em>set by dictionary</em> (false)</td>
-        <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-symmetric"></a></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies whether the operator should be kept symmetric around the math
    [=axis=] when stretchy.
    Note this property only applies to vertically stretched symbols.
@@ -2102,14 +2077,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">maxsize</td>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-maxsize">maxsize</a></td>
         <td> <a class="intref" href="#type_length"><em>length</em></a></td>
         <td><em>set by dictionary</em> (unbounded)</td>
-        <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-maxsize"></a></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies the maximum size of the operator when stretchy;
    see <a href="#presm_op_stretch"></a>.
    If not given, the maximum size is unbounded.
@@ -2120,14 +2094,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">minsize</td>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-minsize">minsize</a></td>
         <td> <a class="intref" href="#type_length"><em>length</em></a></td>
         <td><em>set by dictionary</em> <span>(100%)</span></td>
-        <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-minsize"></a></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies the minimum size of the operator when stretchy;
    see <a href="#presm_op_stretch"></a>.
    <span>Unitless or percentage values indicate a multiple
@@ -2136,14 +2109,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">largeop</td>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-largeop">largeop</a></td>
         <td>"true" | "false"</td>
         <td><em>set by dictionary</em> (false)</td>
-        <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-largeop"></a></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies whether the operator is considered a &#x2018;large&#x2019; operator,
    that is, whether it should be drawn larger than normal when
    <code class="attribute">displaystyle</code>=<code class="attributevalue">true</code>
@@ -2155,14 +2127,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">movablelimits</td>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-movablelimits">movablelimits</a></td>
         <td>"true" | "false"</td>
         <td><em>set by dictionary</em> (false)</td>
-        <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-movablelimits"></a></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies whether under- and overscripts attached to
    this operator &#x2018;move&#x2019; to the more compact sub- and superscript positions
    when <code class="attribute">displaystyle</code> is false.
@@ -2173,14 +2144,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">accent</td>
+        <td rowspan="2" class="attname"><span class="coreno">accent</span></td>
         <td>"true" | "false"</td>
         <td><em>set by dictionary</em> (false)</td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies whether this operator should be treated as an accent (diacritical mark)
    when used as an underscript or overscript;
    see <a class="intref" href="#presm_munder"><code class="element">munder</code></a>,
@@ -2210,21 +2180,19 @@
         <td> Name </td>
         <td> values </td>
         <td> default </td>
-        <td>Core</td>
        </tr>
       </thead>
  
       <tbody>
  
        <tr>
-        <td rowspan="2" class="attname">linebreak</td>
+        <td rowspan="2" class="attname"><span class="coreno">linebreak</span></td>
         <td>"auto" | "newline" | "nobreak" | "goodbreak" | "badbreak"</td>
         <td>auto</td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies the desirability of a linebreak occurring at this operator:
    the default <code class="attributevalue">auto</code> indicates the renderer should use its default
    linebreaking algorithm to determine whether to break;
@@ -2236,14 +2204,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">lineleading </td>
+        <td rowspan="2" class="attname"><span class="coreno">lineleading</span></td>
         <td> <a class="intref" href="#type_length"><em>length</em></a> </td>
         <td><em>inherited</em> (100%) </td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies the amount of vertical space to use after a linebreak.
    For tall lines, it is often clearer to use more leading at linebreaks.
    Rendering agents are free to choose an appropriate default.
@@ -2251,15 +2218,14 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">linebreakstyle</td>
+        <td rowspan="2" class="attname"><span class="coreno">linebreakstyle</span></td>
         <td> "before" | "after" | "duplicate"
         | "infixlinebreakstyle"</td>
         <td><em>set by dictionary</em> (before) </td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies whether a linebreak occurs &#x2018;before&#x2019; or &#x2018;after&#x2019; the operator
    when a linebreak occurs on this operator; or whether the operator is duplicated.
    <code class="attributevalue">before</code> causes the operator to appear at the beginning of the new line
@@ -2275,14 +2241,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">linebreakmultchar</td>
+        <td rowspan="2" class="attname"><span class="coreno">linebreakmultchar</span></td>
         <td><em>[=string=]</em></td>
         <td><em>inherited</em> (&amp;InvisibleTimes;) </td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies the character used to make an &amp;InvisibleTimes; operator visible at a linebreak.
    For example, <code class="attribute">linebreakmultchar="&#xB7;"</code>  would make the
    multiplication visible as a center dot.
@@ -2333,35 +2298,32 @@
         <td> Name   </td>
         <td> values </td>
         <td> default </td>
-        <td>Core</td>
        </tr>
       </thead>
  
       <tbody>
  
        <tr>
-        <td rowspan="2" class="attname">indentalign</td>
+        <td rowspan="2" class="attname"><span class="coreno">indentalign</span></td>
         <td>"left" | "center" | "right" | "auto" | "id"</td>
         <td><em>inherited</em> (auto)       </td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies the positioning of lines when linebreaking takes place within an <code class="element">mrow</code>;
    see below for discussion of the attribute values.
         </td>
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">indentshift      </td>
+        <td rowspan="2" class="attname"><span class="coreno">indentshift</span></td>
         <td><a class="intref" href="#type_length"><em>length</em></a></td>
         <td><em>inherited</em> (0) </td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies an additional indentation offset relative to the position determined
    by <code class="attribute">indentalign</code>.
    When the value is a percentage value,
@@ -2375,14 +2337,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">indenttarget</td>
+        <td rowspan="2" class="attname"><span class="coreno">indenttarget</span></td>
         <td><em>[=idref=]</em></td>
         <td><em> inherited (none)</em></td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies the [=id=] of another element
    whose horizontal position determines the position of indented lines
    when <code class="attribute">indentalign</code>=<code class="attributevalue">id</code>.
@@ -2397,14 +2358,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">indentalignfirst  </td>
+        <td rowspan="2" class="attname"><span class="coreno">indentalignfirst</span></td>
         <td>"left" | "center" | "right" | "auto" | "id" | "indentalign"</td>
         <td><em>inherited</em> (indentalign) </td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies the indentation style to use for the first line of a formula;
    the value <code class="attributevalue">indentalign</code> (the default) means
    to indent the same way as used for the general line.
@@ -2412,14 +2372,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">indentshiftfirst </td>
+        <td rowspan="2" class="attname"><span class="coreno">indentshiftfirst</span></td>
         <td><a class="intref" href="#type_length"><em>length</em></a> | "indentshift"  </td>
         <td><em>inherited</em> (indentshift) </td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies the offset to use for the first line of a formula;
    the value <code class="attributevalue">indentshift</code> (the default) means
    to use the same offset as used for the general line.
@@ -2428,14 +2387,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">indentalignlast   </td>
+        <td rowspan="2" class="attname"><span class="coreno">indentalignlast</span></td>
         <td>"left" | "center" | "right" | "auto" | "id" | "indentalign"</td>
         <td><em>inherited</em> (indentalign) </td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies the indentation style to use for the last line when a linebreak
    occurs within a given <code class="element">mrow</code>;
    the value <code class="attributevalue">indentalign</code> (the default) means
@@ -2446,14 +2404,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">indentshiftlast  </td>
+        <td rowspan="2" class="attname"><span class="coreno">indentshiftlast</span></td>
         <td><a class="intref" href="#type_length"><em>length</em></a> | "indentshift" </td>
         <td><em>inherited</em> (indentshift) </td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies the offset to use for the last line when a linebreak
    occurs within a given <code class="element">mrow</code>;
    the value <code class="attributevalue">indentshift</code> (the default) means
@@ -3227,7 +3184,7 @@
  </section>
  
  <section>
-  <h4 id="presm_mtext">Text <code class="defn starttag">&lt;mtext&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mtext"></a></h4>
+  <h4 id="presm_mtext">Text <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mtext"><code class="defn starttag">&lt;mtext&gt;</code></a></h4>
  
   <section>
  <h5>Description</h5>
@@ -3285,7 +3242,7 @@
  </section>
  
  <section>
-  <h4 id="presm_mspace">Space <code class="defn emptytag">&lt;mspace/&gt;</code><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mspace"></a></h4>
+  <h4 id="presm_mspace">Space <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mspace"><code class="defn emptytag">&lt;mspace/&gt;</code></a></h4>
  
   <section>
  <h5>Description</h5>
@@ -3323,47 +3280,43 @@
  <td>Name</td>
  <td>values</td>
  <td>default</td>
- <td>Core</td>
  </tr>
  </thead>
  
  <tbody>
  
   <tr>
- <td rowspan="2" class="attname">width</td>
+ <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mspace-width">width</a></td>
  <td><a class="intref" href="#type_length"><em>length</em></a></td>
  <td>0em</td>
- <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mspace-width"></a></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies the desired width of the space.
  </td>
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">height</td>
+ <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mspace-height">height</a></td>
  <td><a class="intref" href="#type_length"><em>length</em></a></td>
  <td>0ex</td>
- <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mspace-height"></a></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies the desired height (above the baseline) of the space.
   </td>
  </tr>
  
  <tr>
-  <td rowspan="2" class="attname">depth</td>
+  <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mspace-depth">depth</a></td>
  <td><a class="intref" href="#type_length"><em>length</em></a></td>
  <td>0ex</td>
- <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mspace-depth"></a></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies the desired depth (below the baseline) of the space.
  </td>
  </tr>
@@ -3482,7 +3435,7 @@
  </section>
  
  <section>
-  <h4 id="presm_ms">String Literal <code class="defn starttag">&lt;ms&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-ms"></a></h4>
+  <h4 id="presm_ms">String Literal <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-ms"><code class="defn starttag">&lt;ms&gt;</code></a></h4>
  
   <section>
    <h5>Description</h5>
@@ -3534,35 +3487,32 @@
  <td>Name</td>
  <td>values</td>
  <td>default</td>
- <td>Core</td>
  </tr>
  </thead>
  
  <tbody>
  
   <tr>
- <td rowspan="2" class="attname">lquote</td>
+ <td rowspan="2" class="attname"><span class="coreno">lquote</span></td>
  <td><em>[=string=]</em></td>
  <td><code class="entity">quot</code></td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies the opening quote to enclose the content
    (not necessarily &#x2018;left quote&#x2019; in RTL context).
  </td>
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">rquote</td>
+ <td rowspan="2" class="attname"><span class="coreno">rquote</span></td>
  <td><em>[=string=]</em></td>
  <td><code class="entity">quot</code></td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies the closing quote to enclose the content
    (not necessarily &#x2018;right quote&#x2019; in RTL context).
  </td>
@@ -3592,7 +3542,7 @@
  
   <section>
    <h4 id="presm_mrow">Horizontally Group Sub-Expressions
- <code class="defn starttag">&lt;mrow&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mrow"></a></h4>
+ <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mrow"><code class="defn starttag">&lt;mrow&gt;</code></a></h4>
  
  <section>
  <h5>Description</h5>
@@ -3647,21 +3597,19 @@
      <td>Name</td>
  <td>values</td>
  <td>default</td>
- <td>Core</td>
  </tr>
  </thead>
  
  <tbody>
  
   <tr>
- <td rowspan="2" class="attname">dir</td>
+ <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-dir">dir</a></td>
  <td>"ltr" | "rtl"</td>
  <td><em>inherited</em></td>
- <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-dir"></a></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    specifies the overall directionality <code>ltr</code> (Left To Right) or
    <code>rtl</code> (Right To Left) to use to layout the children of the row.
    See <a href="#presm_bidi_math"></a> for further discussion.
@@ -3801,7 +3749,7 @@
  </section>
  
  <section>
- <h4 id="presm_mfrac">Fractions <code class="defn starttag">&lt;mfrac&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mfrac"></a></h4>
+ <h4 id="presm_mfrac">Fractions <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mfrac"><code class="defn starttag">&lt;mfrac&gt;</code></a></h4>
  
  <section>
  <h5>Description</h5>
@@ -3840,21 +3788,19 @@
  <td>Name</td>
  <td>values</td>
  <td>default</td>
- <td>Core</td>
  </tr>
  </thead>
  
  <tbody>
  
   <tr>
- <td rowspan="2" class="attname">linethickness</td>
+ <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-linethickness">linethickness</a></td>
  <td> <a class="intref" href="#type_length"><em>length</em></a> | "thin" | "medium" | "thick"</td>
  <td>medium</td>
- <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-linethickness"></a></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
  Specifies the thickness of the horizontal <q>fraction bar</q>, or <q>rule</q>.
  The default value is <code class="attributevalue">medium</code>;
  <code class="attributevalue">thin</code> is thinner, but visible;
@@ -3869,40 +3815,37 @@
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">numalign</td>
+ <td rowspan="2" class="attname"><span class="coreno">numalign</span></td>
  <td>"left" | "center" | "right"</td>
  <td>center</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies the alignment of the numerator over the fraction.
  </td>
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">denomalign</td>
+ <td rowspan="2" class="attname"><span class="coreno">denomalign</span></td>
  <td>"left" | "center" | "right"</td>
  <td>center</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies the alignment of the denominator under the fraction.
  </td>
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">bevelled</td>
+ <td rowspan="2" class="attname"><span class="coreno">bevelled</span></td>
  <td>"true" | "false"</td>
  <td>false</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies whether the fraction should be displayed in a beveled style
    (the numerator slightly raised, the denominator slightly lowered
    and both separated by a slash), rather than "build up" vertically.
@@ -4013,8 +3956,8 @@
  </section>
  
  <section>
-  <h4 id="presm_mroot">Radicals <a class="coreyes2" href="https://w3c.github.io/mathml-core/spec.html#dfn-msqrt"><code class="defn starttag">&lt;msqrt&gt;</code></a>,
- <a class="coreyes2" href="https://w3c.github.io/mathml-core/spec.html#dfn-mroot"><code class="defn starttag">&lt;mroot&gt;</code></a></h4>
+  <h4 id="presm_mroot">Radicals <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-msqrt"><code class="defn starttag">&lt;msqrt&gt;</code></a>,
+ <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mroot"><code class="defn starttag">&lt;mroot&gt;</code></a></h4>
  
  <section>
  <h5>Description</h5>
@@ -4097,7 +4040,7 @@
  </section>
  
  <section>
-  <h4 id="presm_mstyle">Style Change <code class="defn starttag">&lt;mstyle&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mstyle"></a></h4>
+  <h4 id="presm_mstyle">Style Change <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mstyle"><code class="defn starttag">&lt;mstyle&gt;</code></a></h4>
  
   <section>
  <h5>Description</h5>
@@ -4243,21 +4186,19 @@
  <td>Name</td>
  <td>values</td>
  <td>default</td>
- <td>Core</td>
  </tr>
  </thead>
  
  <tbody>
  
   <tr>
- <td rowspan="2" class="attname">scriptlevel</td>
+ <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-scriptlevel">scriptlevel</a></td>
  <td>( "+" | "-" )? <a class="intref" href="#type_unsigned-integer"><em>unsigned-integer</em></a></td>
  <td><em>inherited</em></td>
- <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-scriptlevel"></a></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Changes the <code class="attribute">scriptlevel</code> in effect for the children.
    When the value is given without a sign, it sets <code class="attribute">scriptlevel</code> to the specified value;
    when a sign is given, it increments ("+") or decrements ("-") the current value.
@@ -4268,28 +4209,26 @@
  </tr>
  
  <tr>
-  <td rowspan="2" class="attname">displaystyle</td>
+  <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-displaystyle">displaystyle</a></td>
  <td>"true" | "false"</td>
  <td><em>inherited</em></td>
- <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-displaystyle"></a></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Changes the <code class="attribute">displaystyle</code> in effect for the children.
    See <a href="#presm_scriptlevel"></a>.
  </td>
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">scriptsizemultiplier</td>
+ <td rowspan="2" class="attname"><span class="coreno">scriptsizemultiplier</span></td>
  <td><em>[=number=]</em></td>
  <td>0.71</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies the multiplier to be used to adjust font size due
    to changes in <code class="attribute">scriptlevel</code>.
    See <a href="#presm_scriptlevel"></a>.
@@ -4297,14 +4236,13 @@
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">scriptminsize</td>
+ <td rowspan="2" class="attname"><span class="coreno">scriptminsize</span></td>
  <td><a class="intref" href="#type_length"><em>length</em></a></td>
  <td>8pt</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies the minimum font size allowed due to changes in <code class="attribute">scriptlevel</code>.
    Note that this does not limit the font size due to changes to <code class="attribute">mathsize</code>.
    See <a href="#presm_scriptlevel"></a>.
@@ -4312,28 +4250,26 @@
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">infixlinebreakstyle</td>
+ <td rowspan="2" class="attname"><span class="coreno">infixlinebreakstyle</span></td>
  <td>"before" | "after" | "duplicate"</td>
  <td>before</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies the default linebreakstyle to use for infix operators;
    see <a href="#presm_lbattrs"></a>
   </td>
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">decimalpoint</td>
+ <td rowspan="2" class="attname"><span class="coreno">decimalpoint</span></td>
  <td><em>[=character=]</em></td>
  <td>.</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies the character used to determine the alignment point within
    <a class="intref" href="#presm_mstack"><code class="element">mstack</code></a>
    and
@@ -4424,7 +4360,7 @@
  </section>
  
  <section>
-  <h4 id="presm_merror">Error Message <code class="defn starttag">&lt;merror&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-merror"></a></h4>
+  <h4 id="presm_merror">Error Message <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-merror"><code class="defn starttag">&lt;merror&gt;</code></a></h4>
  
   <section>
    <h5>Description</h5>
@@ -4511,7 +4447,7 @@
  
  <section>
   <h4 id="presm_mpadded">Adjust Space Around Content
-  <code class="defn starttag">&lt;mpadded&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mpadded"></a></h4>
+  <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mpadded"><code class="defn starttag">&lt;mpadded&gt;</code></a></h4>
  
   <section>
    <h5>Description</h5>
@@ -4552,14 +4488,13 @@
       <td>Name</td>
       <td>values</td>
       <td>default</td>
-      <td>Core</td>
      </tr>
     </thead>
  
     <tbody>
  
      <tr>
-      <td rowspan="2" class="attname">height</td>
+      <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-height">height</a></td>
       <td>( "+" | "-" )?
       <em>[=unsigned-number=]</em>
       ( ("%"  <em>[=pseudo-unit=]</em>?)
@@ -4568,18 +4503,17 @@
       | <em>[=namedspace=]</em>
       )?</td>
       <td><em>same as content</em></td>
-      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-height"></a></td>
      </tr>
  
      <tr>
-      <td colspan="3" class="attdesc">
+      <td colspan="2" class="attdesc">
        Sets or increments the height of the <code class="element">mpadded</code> element.
        See below for discussion.
       </td>
      </tr>
  
      <tr>
-      <td rowspan="2" class="attname">depth</td>
+      <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-depth">depth</a></td>
       <td>( "+" | "-" )?
       <em>[=unsigned-number=]</em>
       (("%"  <em>[=pseudo-unit=]</em>?)
@@ -4588,18 +4522,17 @@
       | <em>[=namedspace=]</em>
       )?</td>
       <td><em>same as content</em></td>
-      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-depth"></a></td>
      </tr>
  
      <tr>
-      <td colspan="3" class="attdesc">
+      <td colspan="2" class="attdesc">
        Sets or increments the depth of the <code class="element">mpadded</code> element.
        See below for discussion.
       </td>
      </tr>
  
      <tr>
-      <td rowspan="2" class="attname">width</td>
+      <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-width">width</a></td>
       <td>( "+" | "-" )?
       <em>[=unsigned-number=]</em>
       ( ("%" <em>[=pseudo-unit=]</em>?)
@@ -4608,18 +4541,17 @@
       | <em>[=namedspace=]</em>
       )?</td>
       <td><em>same as content</em></td>
-      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-width"></a></td>
      </tr>
  
      <tr>
-      <td colspan="3" class="attdesc">
+      <td colspan="2" class="attdesc">
        Sets or increments the width of the <code class="element">mpadded</code> element.
        See below for discussion.
       </td>
      </tr>
  
      <tr>
-      <td rowspan="2" class="attname">lspace</td>
+      <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-lspace">lspace</a></td>
       <td>( "+" | "-" )?
       <em>[=unsigned-number=]</em>
       ( ("%" <em>[=pseudo-unit=]</em>?)
@@ -4628,18 +4560,17 @@
       | <em>[=namedspace=]</em>
       )?</td>
       <td>0em</td>
-      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-lspace"></a></td>
      </tr>
  
      <tr>
-      <td colspan="3" class="attdesc">
+      <td colspan="2" class="attdesc">
        Sets the horizontal position of the child content.
        See below for discussion.
       </td>
      </tr>
  
      <tr>
-      <td rowspan="2" class="attname">voffset</td>
+      <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-voffset">voffset</a></td>
       <td>( "+" | "-" )?
       <em>[=unsigned-number=]</em>
       ( ("%" <em>[=pseudo-unit=]</em>?)
@@ -4648,11 +4579,10 @@
       | <em>[=namedspace=]</em>
       )?</td>
       <td>0em</td>
-      <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-voffset"></a></td>
      </tr>
  
      <tr>
-      <td colspan="3" class="attdesc">
+      <td colspan="w" class="attdesc">
        Sets the vertical position of the child content.
        See below for discussion.
       </td>
@@ -4932,7 +4862,7 @@
  </section>
  
  <section>
-  <h4 id="presm_mphantom">Making Sub-Expressions Invisible <code class="defn starttag">&lt;mphantom&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mphantom"></a></h4>
+  <h4 id="presm_mphantom">Making Sub-Expressions Invisible <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mphantom"><code class="defn starttag">&lt;mphantom&gt;</code></a></h4>
  
   <section>
    <h5>Description</h5>
@@ -5072,7 +5002,7 @@
  
  <section>
   <h4 id="presm_mfenced">Expression Inside Pair of Fences
-  <code class="defn starttag">&lt;mfenced&gt;</code> <span class="coreno"></span></h4>
+  <span class="coreno"><code class="defn starttag">&lt;mfenced&gt;</code></span></h4>
  
   <section>
    <h5>Description</h5>
@@ -5138,21 +5068,19 @@
       <td>Name</td>
       <td>values</td>
       <td>default</td>
-      <td>Core</td>
      </tr>
     </thead>
  
     <tbody>
  
      <tr>
-      <td rowspan="2" class="attname">open</td>
+      <td rowspan="2" class="attname"><span class="coreno">open</span></td>
       <td><em>[=string=]</em></td>
       <td>(</td>
-      <td><span class="coreno"></span></td>
      </tr>
  
      <tr>
-      <td colspan="3" class="attdesc">
+      <td colspan="2" class="attdesc">
        Specifies the opening delimiter.
        Since it is used as the content of an <code class="element">mo</code> element, any whitespace
        will be trimmed and collapsed as described in <a href="#fund_collapse"></a>.
@@ -5160,14 +5088,13 @@
      </tr>
  
      <tr>
-      <td rowspan="2" class="attname">close</td>
+      <td rowspan="2" class="attname"><span class="coreno">close</span></td>
       <td><em>[=string=]</em></td>
       <td>)</td>
-      <td><span class="coreno"></span></td>
      </tr>
  
      <tr>
-      <td colspan="3" class="attdesc">
+      <td colspan="2" class="attdesc">
        Specifies the closing delimiter.
        Since it is used as the content of an <code class="element">mo</code> element, any whitespace
        will be trimmed and collapsed as described in <a href="#fund_collapse"></a>.
@@ -5175,14 +5102,13 @@
      </tr>
  
      <tr>
-      <td rowspan="2" class="attname">separators</td>
+      <td rowspan="2" class="attname"><span class="coreno">separators</span></td>
       <td><em>[=string=]</em></td>
       <td>,</td>
-      <td><span class="coreno"></span></td>
      </tr>
  
      <tr>
-      <td colspan="3" class="attdesc">
+      <td colspan="2" class="attdesc">
        Specifies a sequence of zero or more separator characters, optionally separated by
        whitespace.
        Each pair of arguments is displayed separated by the corresponding separator
@@ -5379,7 +5305,7 @@
  
  <section>
   <h4 id="presm_menclose">Enclose Expression Inside Notation
-  <code class="defn starttag">&lt;menclose&gt;</code> <span class="coreno"></span></h4>
+  <span class="coreno"><code class="defn starttag">&lt;menclose&gt;</code></span></h4>
  
   <section>
    <h5>Description</h5>
@@ -5413,25 +5339,23 @@
       <td>Name</td>
       <td>values</td>
       <td>default</td>
-      <td>Core</td>
      </tr>
     </thead>
  
     <tbody>
  
      <tr>
-      <td rowspan="2" class="attname">notation</td>
+      <td rowspan="2" class="attname"><span class="coreno">notation</span></td>
       <td>(<code class="attributevalue">actuarial</code> | <code class="attributevalue">phasorangle</code> | <code class="attributevalue">box</code> | <code class="attributevalue">roundedbox</code> | <code class="attributevalue">circle</code> |
       <code class="attributevalue">left</code> | <code class="attributevalue">right</code> | <code class="attributevalue">top</code> | <code class="attributevalue">bottom</code> |
       <code class="attributevalue">updiagonalstrike</code> | <code class="attributevalue">downdiagonalstrike</code> | <code class="attributevalue">verticalstrike</code> | <code class="attributevalue">horizontalstrike</code> | <code class="attributevalue">northeastarrow</code>
       | <code class="attributevalue">madruwb</code> | text ) +
       </td>
       <td>do nothing</td>
-      <td><span class="coreno"></span></td>
      </tr>
  
      <tr>
-      <td colspan="3" class="attdesc">
+      <td colspan="2" class="attdesc">
        Specifies a space separated list of notations to be used to enclose the children.
        See below for a description of each type of notation.
        MathML 4 deprecates the use of <code class="attributevalue">longdiv</code> and <code class="attributevalue">radical</code>.
@@ -5690,7 +5614,7 @@
   </div>
  
   <section>
-   <h4 id="presm_msub">Subscript <code class="defn starttag">&lt;msub&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-msub"></a></h4>
+   <h4 id="presm_msub">Subscript <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-msub"><code class="defn starttag">&lt;msub&gt;</code></a></h4>
  
    <section>
     <h5>Description</h5>
@@ -5721,21 +5645,19 @@
        <td>Name</td>
        <td>values</td>
        <td>default</td>
-       <td>Core</td>
       </tr>
      </thead>
  
      <tbody>
  
       <tr>
-       <td rowspan="2" class="attname">subscriptshift</td>
+       <td rowspan="2" class="attname"><span class="coreno">subscriptshift</span></td>
        <td><a class="intref" href="#type_length"><em>length</em></a></td>
        <td><em>automatic</em></td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         Specifies the minimum amount to shift the baseline of <em>subscript</em> down;
         the default is for the rendering agent to use its own positioning rules.
        </td>
@@ -5746,7 +5668,7 @@
   </section>
  
   <section>
-   <h4 id="presm_msup">Superscript <code class="defn starttag">&lt;msup&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-msup"></a></h4>
+   <h4 id="presm_msup">Superscript <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-msup"><code class="defn starttag">&lt;msup&gt;</code></a></h4>
  
    <section>
     <h5>Description</h5>
@@ -5778,21 +5700,19 @@
        <td>Name</td>
        <td>values</td>
        <td>default</td>
-       <td>Core</td>
       </tr>
      </thead>
  
      <tbody>
  
       <tr>
-       <td rowspan="2" class="attname">superscriptshift</td>
+       <td rowspan="2" class="attname"><span class="coreno">superscriptshift</span></td>
        <td><a class="intref" href="#type_length"><em>length</em></a></td>
        <td><em>automatic</em></td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         Specifies the minimum amount to shift the baseline of <em>superscript</em> up;
         the default is for the rendering agent to use its own positioning rules.
        </td>
@@ -5804,7 +5724,7 @@
   </section>
  
   <section>
-   <h4 id="presm_msubsup">Subscript-superscript Pair <code class="defn starttag">&lt;msubsup&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-msubsup"></a></h4>
+   <h4 id="presm_msubsup">Subscript-superscript Pair <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-msubsup"><code class="defn starttag">&lt;msubsup&gt;</code></a></h4>
  
    <section>
     <h5>Description</h5>
@@ -5844,35 +5764,32 @@
        <td>Name</td>
        <td>values</td>
        <td>default</td>
-       <td>Core</td>
       </tr>
      </thead>
  
      <tbody>
  
       <tr>
-       <td rowspan="2" class="attname">subscriptshift</td>
+       <td rowspan="2" class="attname"><span class="coreno">subscriptshift</span></td>
        <td><a class="intref" href="#type_length"><em>length</em></a></td>
        <td><em>automatic</em></td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         Specifies the minimum amount to shift the baseline of <em>subscript</em> down;
         the default is for the rendering agent to use its own positioning rules.
        </td>
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">superscriptshift</td>
+       <td rowspan="2" class="attname"><span class="coreno">superscriptshift</span></td>
        <td><a class="intref" href="#type_length"><em>length</em></a></td>
        <td><em>automatic</em></td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         Specifies the minimum amount to shift the baseline of <em>superscript</em> up;
         the default is for the rendering agent to use its own positioning rules.
        </td>
@@ -5927,7 +5844,7 @@
   </section>
  
   <section>
-   <h4 id="presm_munder">Underscript <code class="defn starttag">&lt;munder&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-munder"></a></h4>
+   <h4 id="presm_munder">Underscript <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-munder"><code class="defn starttag">&lt;munder&gt;</code></a></h4>
  
    <section>
     <h5>Description</h5>
@@ -5969,21 +5886,19 @@
        <td>Name</td>
        <td>values</td>
        <td>default</td>
-       <td>Core</td>
       </tr>
      </thead>
  
      <tbody>
  
       <tr>
-       <td rowspan="2" class="attname">accentunder</td>
+       <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-accentunder">accentunder</a></td>
        <td>"true" | "false"</td>
        <td><em>automatic</em></td>
-       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-accentunder"></a></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         Specifies whether <em>underscript</em> is drawn as an <q>accent</q> or as a limit.
         An accent is drawn the same size as the base (without incrementing <code class="attribute">scriptlevel</code>)
         and is drawn closer to the base.
@@ -5991,14 +5906,13 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">align</td>
+       <td rowspan="2" class="attname"><span class="coreno">align</span></td>
        <td>"left" | "right" | "center"</td>
        <td>center</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         Specifies whether the script is aligned left, center, or right under/over the base.
         <span>As specified in <a href="#presm_horiz_stretch_rules"></a>,
         the core of underscripts that are embellished operators should stretch to cover the
@@ -6060,7 +5974,7 @@
   </section>
  
   <section>
-   <h4 id="presm_mover">Overscript <code class="defn starttag">&lt;mover&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mover"></a></h4>
+   <h4 id="presm_mover">Overscript <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mover"><code class="defn starttag">&lt;mover&gt;</code></a></h4>
  
    <section>
     <h5>Description</h5>
@@ -6100,21 +6014,19 @@
         <td>Name</td>
         <td>values</td>
         <td>default</td>
-        <td>Core</td>
        </tr>
       </thead>
  
       <tbody>
  
        <tr>
-        <td rowspan="2" class="attname">accent</td>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-accent">accent</a></td>
         <td>"true" | "false"</td>
         <td><em>automatic</em></td>
-        <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-accent"></a></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies whether <em>overscript</em> is drawn as an <q>accent</q> or as a limit.
    An accent is drawn the same size as the base (without incrementing <code class="attribute">scriptlevel</code>)
    and is drawn closer to the base.
@@ -6122,14 +6034,13 @@
        </tr>
  
        <tr>
-        <td rowspan="2" class="attname">align</td>
+        <td rowspan="2" class="attname"><span class="coreno">align</span></td>
         <td>"left" | "right" | "center"</td>
         <td>center</td>
-        <td><span class="coreno"></span></td>
        </tr>
  
        <tr>
-        <td colspan="3" class="attdesc">
+        <td colspan="2" class="attdesc">
    Specifies whether the script is aligned left, center, or right under/over the base.
    <span>As specified in <a href="#presm_horiz_stretch_rules"></a>,
    the core of overscripts that are embellished operators should stretch to cover the
@@ -6210,7 +6121,7 @@
  
   <section>
    <h4 id="presm_munderover">Underscript-overscript Pair
-   <code class="defn starttag">&lt;munderover&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-munderover"></a></h4>
+   <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-munderover"><code class="defn starttag">&lt;munderover&gt;</code></a></h4>
  
    <section>
     <h5>Description</h5>
@@ -6252,21 +6163,19 @@
        <td>Name</td>
        <td>values</td>
        <td>default</td>
-       <td>Core</td>
       </tr>
      </thead>
  
      <tbody>
  
       <tr>
-       <td rowspan="2" class="attname">accent</td>
+       <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-accent">accent</a></td>
        <td>"true" | "false"</td>
        <td><em>automatic</em></td>
-       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-accent"></a></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         Specifies whether <em>overscript</em> is drawn as an <q>accent</q> or as a limit.
         An accent is drawn the same size as the base (without incrementing <code class="attribute">scriptlevel</code>)
         and is drawn closer to the base.
@@ -6274,14 +6183,13 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">accentunder</td>
+       <td rowspan="2" class="attname"><span class="coreno">accentunder</span></td>
        <td>"true" | "false"</td>
        <td><em>automatic</em></td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         Specifies whether <em>underscript</em> is drawn as an <q>accent</q> or as a limit.
         An accent is drawn the same size as the base (without incrementing <code class="attribute">scriptlevel</code>)
         and is drawn closer to the base.
@@ -6289,14 +6197,13 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">align</td>
+       <td rowspan="2" class="attname"><span class="coreno">align</span></td>
        <td>"left" | "right" | "center"</td>
        <td>center</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         Specifies whether the scripts are aligned left, center, or right under/over the base.
         <span>As specified in <a href="#presm_horiz_stretch_rules"></a>,
         the core of underscripts and overscripts that are embellished operators should stretch
@@ -6354,7 +6261,7 @@
    <code class="defn starttag">&lt;mmultiscripts&gt;</code><span>,
    <code class="defn emptytag">&lt;mprescripts/&gt;</code>,
    <code class="defn emptytag">&lt;none/&gt;</code></span>
-   <code class="defn starttag">&lt;munder&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#prescripts-and-tensor-indices-mmultiscripts"></a>
+   <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#prescripts-and-tensor-indices-mmultiscripts"><code class="defn starttag">&lt;munder&gt;</code></a>
    </h4>
  
    <section>
@@ -6538,7 +6445,7 @@
  
   <section>
    <h4 id="presm_mtable">Table or Matrix
-   <code class="defn starttag">&lt;mtable&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mtable"></a></h4>
+   <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mtable"><code class="defn starttag">&lt;mtable&gt;</code></a></h4>
  
    <section>
     <h5>Description</h5>
@@ -6588,21 +6495,19 @@
        <td>Name</td>
        <td>values</td>
        <td>default</td>
-       <td>Core</td>
       </tr>
      </thead>
  
      <tbody>
  
       <tr>
-       <td rowspan="2" class="attname">align</td>
+       <td rowspan="2" class="attname"><span class="coreno">align</span></td>
        <td>("top" | "bottom" | "center" | "baseline" | "axis"), <em>rownumber</em>?</td>
        <td>axis</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies the vertical alignment of the table with respect to its environment.
         <code class="attributevalue">axis</code> means to align the vertical center of the table on
         the environment's [=axis=].
@@ -6626,14 +6531,13 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">rowalign</td>
+       <td rowspan="2" class="attname"><span class="coreno">rowalign</span></td>
        <td>("top" | "bottom" | "center" | "baseline" | "axis") +</td>
        <td>baseline</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies the vertical alignment of the cells with respect to other cells within the
         same row:
         <code class="attributevalue">top</code> aligns the tops of each entry across the row;
@@ -6646,14 +6550,13 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">columnalign</td>
+       <td rowspan="2" class="attname"><span class="coreno">columnalign</span></td>
        <td>("left" | "center" | "right") +</td>
        <td>center</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies the horizontal alignment of the cells with respect to other cells within
         the same column:
         <code class="attributevalue">left</code> aligns the left side of the cells;
@@ -6664,28 +6567,26 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">alignmentscope</td>
+       <td rowspan="2" class="attname"><span class="coreno">alignmentscope</span></td>
        <td>("true" | "false") +</td>
        <td>true</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         [this attribute is described with the alignment elements, <code class="element">maligngroup</code> and <code class="element">malignmark</code>,
         in <a href="#presm_malign"></a>.]
        </td>
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">columnwidth</td>
+       <td rowspan="2" class="attname"><span class="coreno">columnwidth</span></td>
        <td>("auto" | <a class="intref" href="#type_length"><em>length</em></a> | "fit") +</td>
        <td>auto</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies how wide a column should be:
         <code class="attributevalue">auto</code> means that the column should be as wide as needed;
         an explicit length means that the column is exactly that wide and the contents of
@@ -6709,14 +6610,13 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">width</td>
+       <td rowspan="2" class="attname"><span class="coreno">width</span></td>
        <td>"auto" | <a class="intref" href="#type_length"><em>length</em></a></td>
        <td>auto</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies the desired width of the entire table and is intended for visual user agents.
         When the value is a percentage value,
         the value is relative to the
@@ -6734,42 +6634,39 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">rowspacing</td>
+       <td rowspan="2" class="attname"><span class="coreno">rowspacing</span></td>
        <td>(<a class="intref" href="#type_length"><em>length</em></a>) +</td>
        <td>1.0ex</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies how much space to add between rows.
         (See the note below about multiple values.)
        </td>
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">columnspacing</td>
+       <td rowspan="2" class="attname"><span class="coreno">columnspacing</span></td>
        <td>(<a class="intref" href="#type_length"><em>length</em></a>) +</td>
        <td>0.8em</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies how much space to add between <span>columns</span>.
         (See the note below about multiple values.)
        </td>
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">rowlines</td>
+       <td rowspan="2" class="attname"><span class="coreno">rowlines</span></td>
        <td>("none" | "solid" | "dashed") +</td>
        <td>none</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies whether and what kind of lines should be added between each row:
         <code class="attributevalue">none</code> means no lines;
         <code class="attributevalue">solid</code> means solid lines;
@@ -6779,14 +6676,13 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">columnlines</td>
+       <td rowspan="2" class="attname"><span class="coreno">columnlines</span></td>
        <td>("none" | "solid" | "dashed") +</td>
        <td>none</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies whether and what kind of lines should be added between each column:
         <code class="attributevalue">none</code> means no lines;
         <code class="attributevalue">solid</code> means solid lines;
@@ -6796,14 +6692,13 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">frame</td>
+       <td rowspan="2" class="attname"><span class="coreno">frame</span></td>
        <td>"none" | "solid" | "dashed"</td>
        <td>none</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies whether and what kind of lines should be drawn around the table.
         <code class="attributevalue">none</code> means no lines;
         <code class="attributevalue">solid</code> means solid lines;
@@ -6812,14 +6707,13 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">framespacing</td>
+       <td rowspan="2" class="attname"><span class="coreno">framespacing</span></td>
        <td><a class="intref" href="#type_length"><em>length</em></a>, <a class="intref" href="#type_length"><em>length</em></a></td>
        <td>0.4em 0.5ex</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies the additional spacing added between the table and frame,
         if <code class="attribute">frame</code> is not <code class="attributevalue">none</code>.
         The first value specifies the spacing on the right and left;
@@ -6828,40 +6722,37 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">equalrows</td>
+       <td rowspan="2" class="attname"><span class="coreno">equalrows</span></td>
        <td>"true" | "false"</td>
        <td>false</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies whether to force all rows to have the same total height.
        </td>
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">equalcolumns</td>
+       <td rowspan="2" class="attname"><span class="coreno">equalcolumns</span></td>
        <td>"true" | "false"</td>
        <td>false</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies whether to force all columns to have the same total width.
        </td>
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">displaystyle</td>
+       <td rowspan="2" class="attname"><span class="coreno">displaystyle</span></td>
        <td>"true" | "false"</td>
        <td>false</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies the value of <code class="attribute">displaystyle</code> within each cell
         (<code class="attribute">scriptlevel</code> is not changed);
         see <a href="#presm_scriptlevel"></a>.
@@ -6869,14 +6760,13 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">side</td>
+       <td rowspan="2" class="attname"><span class="coreno">side</span></td>
        <td>"left" | "right" | "leftoverlap" | "rightoverlap"</td>
        <td>right</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies on what side of the table labels from enclosed <code class="element">mlabeledtr</code> (if any) should be  placed.
         The variants <code class="attributevalue">leftoverlap</code> and <code class="attributevalue">rightoverlap</code>
         are useful when the table fits with the allowed width
@@ -6888,14 +6778,13 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">minlabelspacing</td>
+       <td rowspan="2" class="attname"><span class="coreno">minlabelspacing</span></td>
        <td><a class="intref" href="#type_length"><em>length</em></a></td>
        <td>0.8em</td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies the minimum space allowed between a label and the adjacent cell in the row.
        </td>
       </tr>
@@ -6967,7 +6856,7 @@
   </section>
  
   <section>
-   <h4 id="presm_mtr">Row in Table or Matrix <code class="defn starttag">&lt;mtr&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mtr"></a></h4>
+   <h4 id="presm_mtr">Row in Table or Matrix <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mtr"><code class="defn starttag">&lt;mtr&gt;</code></a></h4>
  
    <section>
     <h5>Description</h5>
@@ -7001,35 +6890,32 @@
        <td>Name</td>
        <td>values</td>
        <td>default</td>
-       <td>Core</td>
       </tr>
      </thead>
  
      <tbody>
  
       <tr>
-       <td rowspan="2" class="attname">rowalign</td>
+       <td rowspan="2" class="attname"><span class="coreno">rowalign</span></td>
        <td>"top" | "bottom" | "center" | "baseline" | "axis"</td>
        <td><em>inherited</em></td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         overrides, for this row, the vertical alignment of cells specified
         by the <a class="intref" href="#presm_mtable_attrs"><code class="attribute">rowalign</code></a> attribute on the <code class="element">mtable</code>.
        </td>
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">columnalign</td>
+       <td rowspan="2" class="attname"><span class="coreno">columnalign</span></td>
        <td>("left" | "center" | "right") +</td>
        <td><em>inherited</em></td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         overrides, for this row, the horizontal alignment of cells specified
         by the <a class="intref" href="#presm_mtable_attrs"><code class="attribute">columnalign</code></a> attribute on the <code class="element">mtable</code>.
        </td>
@@ -7042,7 +6928,7 @@
  
   <section>
    <h4 id="presm_mlabeledtr">Labeled Row in Table or Matrix
-   <code class="defn starttag">&lt;mlabeledtr&gt;</code> <span class="coreno"></span></h4>
+   <span class="coreno"><code class="defn starttag">&lt;mlabeledtr&gt;</code></span></h4>
  
    <section>
     <h5>Description</h5>
@@ -7180,7 +7066,7 @@
   </section>
  
   <section>
-   <h4 id="presm_mtd">Entry in Table or Matrix <code class="defn starttag">&lt;mtd&gt;</code> <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mtd"></a></h4>
+   <h4 id="presm_mtd">Entry in Table or Matrix <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mtd"><code class="defn starttag">&lt;mtd&gt;</code></a></h4>
  
    <section>
     <h5>Description</h5>
@@ -7209,21 +7095,19 @@
        <td>Name</td>
        <td>values</td>
        <td>default</td>
-       <td>Core</td>
       </tr>
      </thead>
  
      <tbody>
  
       <tr>
-       <td rowspan="2" class="attname">rowspan</td>
+       <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-rowspan">rowspan</a></td>
        <td><em>[=positive-integer=]</em></td>
        <td>1</td>
-       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-rowspan"></a></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         causes the cell to be treated as if it occupied the number of rows specified.
         The corresponding <code class="element">mtd</code> in the following <code class="attributevalue">rowspan</code>-1 rows must be omitted.
         The interpretation corresponds with the similar attributes for HTML tables.
@@ -7231,14 +7115,13 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">columnspan</td>
+       <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-columnspan">columnspan</a></td>
        <td><em>[=positive-integer=]</em></td>
        <td>1</td>
-       <td><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-columnspan"></a></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         causes the cell to be treated as if it occupied the number of columns specified.
         The following <code class="attributevalue">rowspan</code>-1 <code class="element">mtd</code>s must be omitted.
         The interpretation corresponds with the similar attributes for HTML tables.
@@ -7246,14 +7129,13 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">rowalign</td>
+       <td rowspan="2" class="attname"><span class="coreno">rowalign</span></td>
        <td>"top" | "bottom" | "center" | "baseline" | "axis"</td>
        <td><em>inherited</em></td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies the vertical alignment of this cell, overriding any value
         specified on the containing <code class="element">mrow</code> and <code class="element">mtable</code>.
         See the <a class="intref" href="#presm_mtable_attrs"><code class="attribute">rowalign</code></a> attribute of <code class="element">mtable</code>.
@@ -7261,14 +7143,13 @@
       </tr>
  
       <tr>
-       <td rowspan="2" class="attname">columnalign</td>
+       <td rowspan="2" class="attname"><span class="coreno">columnalign</span></td>
        <td>"left" | "center" | "right"</td>
        <td><em>inherited</em></td>
-       <td><span class="coreno"></span></td>
       </tr>
  
       <tr>
-       <td colspan="3" class="attdesc">
+       <td colspan="2" class="attdesc">
         specifies the horizontal alignment of this cell, overriding any value
         specified on the containing <code class="element">mrow</code> and <code class="element">mtable</code>.
         See the <a class="intref" href="#presm_mtable_attrs"><code class="attribute">columnalign</code></a> attribute of <code class="element">mtable</code>.
@@ -7291,7 +7172,7 @@
  
   <section>
    <h4 id="presm_malign">Alignment Markers
-   <code class="emptytag">&lt;maligngroup/&gt;</code>, <code class="emptytag">&lt;malignmark/&gt;</code><span class="coreno"></span></h4>
+   <span class="coreno"><code class="emptytag">&lt;maligngroup/&gt;</code>, <code class="emptytag">&lt;malignmark/&gt;</code></span></h4>
  
    <section>
     <h5>Removal Notice</h5>
@@ -7873,7 +7754,7 @@
  <p> Many more examples are given in <a href="#presm_elemmath_examples"></a>.</p>
  
  <section>
- <h4 id="presm_mstack">Stacks of Characters <code class="defn starttag">&lt;mstack&gt;</code> <span class="coreno"></span></h4>
+ <h4 id="presm_mstack">Stacks of Characters <span class="coreno"><code class="defn starttag">&lt;mstack&gt;</code></span></h4>
  
  <section>
  <h5>Description</h5>
@@ -7956,21 +7837,19 @@
     <tr>
      <td>Name</td>
      <td>values</td>
-     <td>default</td>                     
-     <td>Core</td>
+     <td>default</td>
     </tr>
    </thead>
    <tbody>
 
     <tr>
-     <td rowspan="2" class="attname">align</td>                     
+     <td rowspan="2" class="attname"><span class="coreno">align</span></td>                     
      <td>("top" | "bottom" | "center" | "baseline" | "axis"), <em>rownumber</em>?</td>                     
      <td>baseline</td>                     
-     <td><span class="coreno"></span></td>
     </tr>
 
     <tr>
-     <td colspan="3" class="attdesc">
+     <td colspan="2" class="attdesc">
       specifies the vertical alignment of the <code class="element">mstack</code> with respect to its environment.
       The legal values and their meanings are the same as that for <code class="element">mtable</code>'s
       <a class="intref" href="#presm_mtable_attrs"><code class="attribute">align</code></a> attribute.
@@ -7978,14 +7857,13 @@
     </tr>
 
     <tr>
-     <td rowspan="2" class="attname">stackalign</td>
+     <td rowspan="2" class="attname"><span class="coreno">stackalign</span></td>
      <td>"left" | "center" | "right" | "decimalpoint"</td>
      <td>decimalpoint</td>
-     <td><span class="coreno"></span></td>
     </tr>
 
     <tr>
-     <td colspan="3" class="attdesc">
+     <td colspan="2" class="attdesc">
       specifies which column is used to horizontally align the rows.
       For <code class="attributevalue">left</code>, rows are aligned flush on the left;
       similarly for <code class="attributevalue">right</code>, rows are flush on the right;
@@ -8006,14 +7884,13 @@
     </tr>
     
     <tr>
-     <td rowspan="2" class="attname">charalign</td>
+     <td rowspan="2" class="attname"><span class="coreno">charalign</span></td>
      <td>"left" | "center" | "right" </td>
      <td>right</td>
-     <td><span class="coreno"></span></td>
     </tr>
     
     <tr>
-     <td colspan="3" class="attdesc">
+     <td colspan="2" class="attdesc">
       specifies the horizontal alignment of digits within a column.
       If the content is larger than the column width, then it overflows the opposite side
       from the alignment.
@@ -8026,14 +7903,13 @@
     </tr>
     
     <tr>
-     <td rowspan="2" class="attname">charspacing</td>
+     <td rowspan="2" class="attname"><span class="coreno">charspacing</span></td>
      <td><a class="intref" href="#type_length"><em>length</em></a> | "loose" | "medium" | "tight"</td>
      <td>medium</td>
-     <td><span class="coreno"></span></td>
     </tr>
     
     <tr>
-     <td colspan="3" class="attdesc">
+     <td colspan="2" class="attdesc">
       specifies the amount of space to put between each column.
       Larger spacing might be useful if carries are not placed above or are particularly
       wide.
@@ -8055,7 +7931,7 @@
 </section>
  
  <section>
- <h4 id="presm_mlongdiv">Long Division <code class="defn starttag">&lt;mlongdiv&gt;</code> <span class="coreno"></span></h4>
+ <h4 id="presm_mlongdiv">Long Division <span class="coreno"><code class="defn starttag">&lt;mlongdiv&gt;</code></span></h4>
  
  <section>
  <h5>Description</h5>
@@ -8106,7 +7982,6 @@
  <td>Name</td>
  <td>values</td>
  <td>default</td>
- <td>Core</td>
  </tr>
  </thead>
  
@@ -8114,19 +7989,18 @@
   
   <tr>
    
- <td rowspan="2" class="attname">longdivstyle</td>
+ <td rowspan="2" class="attname"><span class="coreno">longdivstyle</span></td>
  <td> "lefttop" | "stackedrightright" | "mediumstackedrightright" | "shortstackedrightright"
  |
  "righttop" | "left/\right" | "left)(right" | ":right=right" | "stackedleftleft" |
  
  "stackedleftlinetop" </td>
  <td>lefttop</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
   
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Controls the style of the long division layout.  The names are meant as a rough
    mnemonic that describes the position of the divisor and result in relation to the
    dividend. 		
@@ -8194,7 +8068,7 @@
  </section>
  
  <section>
- <h4 id="presm_msgroup">Group Rows with Similar Positions <code class="defn starttag">&lt;msgroup&gt;</code> <span class="coreno"></span></h4>
+ <h4 id="presm_msgroup">Group Rows with Similar Positions <span class="coreno"><code class="defn starttag">&lt;msgroup&gt;</code></span></h4>
  
  <section>
  <h5>Description</h5>
@@ -8221,21 +8095,19 @@
  <td>Name</td>
  <td>values</td>
  <td>default</td>
- <td>Core</td>
  </tr>
  </thead>
  
  <tbody>
  
   <tr>
- <td rowspan="2" class="attname">position</td>
+ <td rowspan="2" class="attname"><span class="coreno">position</span></td>
  <td><em>[=integer=]</em></td>
  <td>0</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    specifies the horizontal position of the rows within this group relative to
    the position determined by the containing <code class="element">msgroup</code> (according to its
    <code class="attribute">position</code> and <code class="attribute">shift</code> attributes).
@@ -8251,14 +8123,13 @@
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">shift</td>
+ <td rowspan="2" class="attname"><span class="coreno">shift</span></td>
  <td><em>[=integer=]</em></td>
  <td>0</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    specifies an incremental shift of position for successive children (rows or groups)
    within this group. The value is interpreted as with position, but specifies the
    position of each child (except the first) with respect to the previous child in the
@@ -8271,7 +8142,7 @@
  </section>
  
  <section>
- <h4 id="presm_msrow">Rows in Elementary Math <code class="defn starttag">&lt;msrow&gt;</code> <span class="coreno"></span></h4>
+ <h4 id="presm_msrow">Rows in Elementary Math <span class="coreno"><code class="defn starttag">&lt;msrow&gt;</code></span></h4>
  
  <section>
  <h5>Description</h5>
@@ -8318,21 +8189,19 @@
  <td>Name</td>
  <td>values</td>
  <td>default</td>
- <td>Core</td>
  </tr>
  </thead>
  
  <tbody>
  
   <tr>
- <td rowspan="2" class="attname">position</td>
+ <td rowspan="2" class="attname"><span class="coreno">position</span></td>
  <td><em>[=integer=]</em></td>
  <td>0</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    specifies the horizontal position of the rows within this group relative to
    the position determined by the containing <code class="element">msgroup</code> (according to its
    <code class="attribute">position</code> and <code class="attribute">shift</code> attributes).
@@ -8352,7 +8221,7 @@
  </section>
  
  <section>
- <h4 id="presm_mscarries">Carries, Borrows, and Crossouts <code class="defn starttag">&lt;mscarries&gt;</code> <span class="coreno"></span></h4>
+ <h4 id="presm_mscarries">Carries, Borrows, and Crossouts <span class="coreno"><code class="defn starttag">&lt;mscarries&gt;</code></span></h4>
  
  <section>
  <h5>Description</h5>
@@ -8407,21 +8276,19 @@
  <td>Name</td>
  <td>values</td>
  <td>default</td>
- <td>Core</td>
  </tr>
  </thead>
  
  <tbody>
  
   <tr>
- <td rowspan="2" class="attname">position</td>
+ <td rowspan="2" class="attname"><span class="coreno">position</span></td>
  <td><em>[=integer=]</em></td>
  <td>0</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    specifies the horizontal position of the rows within this group relative to
    the position determined by the containing <code class="element">msgroup</code> (according to its
    <code class="attribute">position</code> and <code class="attribute">shift</code> attributes).
@@ -8434,14 +8301,13 @@
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">location</td>
+ <td rowspan="2" class="attname"><span class="coreno">location</span></td>
  <td>"w" | "nw" | "n" | "ne" | "e" | "se" | "s" | "sw" </td>
  <td>n</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    specifies the location of the carry or borrow relative to the character below it in
    the associated column.
    Compass directions are used for the values; the default is to place the carry above
@@ -8450,15 +8316,14 @@
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">crossout</td>
+ <td rowspan="2" class="attname"><span class="coreno">crossout</span></td>
  <td>("none" | "updiagonalstrike" | "downdiagonalstrike" | "verticalstrike" | "horizontalstrike")*
  </td>
  <td>none</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    specifies how the column content below each carry is "crossed out";
    one or more values may be given and all values are drawn.
    If <code class="attributevalue">none</code> is given with other values, it is ignored.
@@ -8470,14 +8335,13 @@
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">scriptsizemultiplier</td>
+ <td rowspan="2" class="attname"><span class="coreno">scriptsizemultiplier</span></td>
  <td><em>[=number=]</em></td>
  <td><em>inherited (0.6)</em></td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    specifies the factor to change the font size by.
    See <a href="#presm_scriptlevel"></a> for a description of how this works with the <code class="attribute">scriptsize</code> attribute.
  </td>
@@ -8488,7 +8352,7 @@
  </section>
  
  <section>
- <h4 id="presm_mscarry">A Single Carry <code class="defn starttag">&lt;mscarry&gt;</code> <span class="coreno"></span></h4>
+ <h4 id="presm_mscarry">A Single Carry <span class="coreno"><code class="defn starttag">&lt;mscarry&gt;</code></span></h4>
  
  <section>
  <h5>Description</h5>
@@ -8521,21 +8385,19 @@
  <td>Name</td>
  <td>values</td>
  <td>default</td>
- <td>Core</td>
  </tr>
  </thead>
  
  <tbody>
  
   <tr>
- <td rowspan="2" class="attname">location</td>
+ <td rowspan="2" class="attname"><span class="coreno">location</span></td>
  <td>"w" | "nw" | "n" | "ne" | "e" | "se" | "s" | "sw"</td>
  <td><em>inherited</em></td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    specifies the location of the carry or borrow relative to the character in the corresponding
    column in the row below it.
    Compass directions are used for the values.
@@ -8543,15 +8405,14 @@
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">crossout</td>
+ <td rowspan="2" class="attname"><span class="coreno">crossout</span></td>
  <td>("none" | "updiagonalstrike" | "downdiagonalstrike" | "verticalstrike" | "horizontalstrike")*
  </td>
  <td><em>inherited</em></td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    specifies how the column content associated with the carry is "crossed out";
    one or more values may be given and all values are drawn.
    If <code class="attributevalue">none</code> is given with other values, it is essentially ignored.
@@ -8564,7 +8425,7 @@
  </section>
  
  <section>
- <h4 id="presm_msline">Horizontal Line <code class="defn emptytag">&lt;msline/&gt;</code> <span class="coreno"></span></h4>
+ <h4 id="presm_msline">Horizontal Line <span class="coreno"><code class="defn emptytag">&lt;msline/&gt;</code></span></h4>
  
  <section>
  <h5>Description</h5>
@@ -8591,21 +8452,19 @@
  <td>Name</td>
  <td>values</td>
  <td>default</td>
- <td>Core</td>
  </tr>
  </thead>
  
  <tbody>
  
   <tr>
- <td rowspan="2" class="attname">position</td>
+ <td rowspan="2" class="attname"><span class="coreno">position</span></td>
  <td><em>[=integer=]</em></td>
  <td>0</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    specifies the horizontal position of the rows within this group relative to
    the position determined by the containing <code class="element">msgroup</code> (according to its
    <code class="attribute">position</code> and <code class="attribute">shift</code> attributes).
@@ -8620,14 +8479,13 @@
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">length</td>
+ <td rowspan="2" class="attname"><span class="coreno">length</span></td>
  <td><a class="intref" href="#type_unsigned-integer"><em>unsigned-integer</em></a></td>
  <td>0</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies the number of columns that should be spanned by the line.
    A value of '0' (the default) means that <em>all</em> columns in
    the row are spanned (in which case <code class="attribute">position</code> and <code class="attribute">stackalign</code> have no effect).
@@ -8635,42 +8493,39 @@
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">leftoverhang</td>
+ <td rowspan="2" class="attname"><span class="coreno">leftoverhang</span></td>
  <td><a class="intref" href="#type_length"><em>length</em></a></td>
  <td>0</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies an extra amount that the line should overhang on the left of the leftmost
    column spanned by the line.
  </td>
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">rightoverhang</td>
+ <td rowspan="2" class="attname"><span class="coreno">rightoverhang</span></td>
  <td><a class="intref" href="#type_length"><em>length</em></a></td>
  <td>0</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies an extra amount that the line should overhang on the right of the rightmost
    column spanned by the line.
  </td>
  </tr>
  
  <tr>
- <td rowspan="2" class="attname">mslinethickness</td>
+ <td rowspan="2" class="attname"><span class="coreno">mslinethickness</span></td>
  <td><a class="intref" href="#type_length"><em>length</em></a> | "thin" | "medium" | "thick"</td>
  <td>medium</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies how thick the line should be drawn.
    The line should have height=0, and depth=mslinethickness so that the top
    of the <code class="element">msline</code> is on the baseline of the surrounding context (if any).
@@ -9198,21 +9053,19 @@
     <td>Name</td>
     <td>values</td>
     <td>default</td>
-    <td>Core</td>
    </tr>
   </thead>
  
   <tbody>
  
    <tr>
-    <td rowspan="2" class="attname">actiontype</td>
+    <td rowspan="2" class="attname"><span class="coreno">actiontype</span></td>
     <td><em>[=string=]</em></td>
     <td><em>required</em></td>
-    <td><span class="coreno"></span></td>
    </tr>
  
    <tr>
-    <td colspan="3" class="attdesc">
+    <td colspan="2" class="attdesc">
      Specifies what should happen for this element.
      The values allowed are open-ended. Conforming renderers may ignore any value they
      do not handle,
@@ -9220,14 +9073,13 @@
  </td>
  </tr>
  <tr>
- <td rowspan="2" class="attname">selection</td>
+ <td rowspan="2" class="attname"><span class="coreno">selection</span></td>
  <td><em>[=positive-integer=]</em></td>
  <td>1</td>
- <td><span class="coreno"></span></td>
  </tr>
  
  <tr>
-  <td colspan="3" class="attdesc">
+  <td colspan="2" class="attdesc">
    Specifies which child should be used for viewing. Its value should be between 1 and
    the number of
    children of the element. The specified child is referred to as the <q>selected sub-expression</q> of the

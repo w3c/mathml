@@ -273,24 +273,32 @@ th.mfont, span.mfont{
         font-family:"STIX Two Math", "Cambria Math", "STIX Math", "Asana Math", "serif";
 }
 th.uname {font-size:70%;}
-a.coreyes::before, li span.formerLink::before {
-    content: "core";
-    color: darkgreen;
-    vertical-align: text-top;
-    font-size: 70%;
-    }
-a.coreyes2::after, a[href="#presm_mroot"] span.formerLink::after {
+
+span.formerLink::after {
     content: "core";
     color: darkgreen;
     vertical-align: text-top;
     font-size: 70%;
 }
-a[href="#presm_mroot"] span.formerLink::before {content: "";}
-a.coreyes2{
+a.coreyes::after {
+    content: "core";
+    color: darkgreen;
+    vertical-align: super;
+    font-size: 70%;
+}
+a.coreyes{
         text-decoration:none;
 }
-span.coreno::before {
+
+
+span.coreno::after {
     content:"not-core";
+    color: darkred;
+    vertical-align: super;
+    font-size: 70%;
+}
+ol.toc > span.coreno::after {
+    content:"not-core-toc";
     color: darkred;
     vertical-align: text-top;
     font-size: 70%;
