@@ -19,8 +19,8 @@
  <a href="#mixing_annotation_elements"></a> describes the <code class="element">semantics</code> element.
 </p>
 
-<p>MathML has been widely adopted by assistive technologies.
-  However, math notations can be ambiguous which can result in assistive technology guessing at what should be spoken in some cases.
+<p>MathML has been widely adopted by assistive technologies (AT).
+  However, math notations can be ambiguous which can result in AT guessing at what should be spoken in some cases.
   MathML 4 adds a lightweight method for authors to express their intent: the <code class="attribute">intent</code> attribute.
   This attribute is similar to the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label"><code class="attribute">aria-label</code></a> attribute
   with some important distinctions.
@@ -39,15 +39,13 @@
   class="attribute">intent</code> and <code
   class="attribute">arg</code> that allow the
   <dfn><q>intent</q></dfn> of the term to be specified. This
-  annotation is not intended to provide a full mathematical definition
-  of the term but may be used to guide accessibility systems to give audio
-  or braille renderings, see <a href="#accessibility"></a>. It may also
-  be used to guide translations to Content MathML, or computational
-  systems.</p>
+  annotation is not meant to provide a full mathematical definition
+  of the term. It is meant to help AT generate audio and/or braille renderings, see <a href="#accessibility"></a>.
+  It may also be used to guide translations to Content MathML, or computational systems.</p>
 
   <p>The <code class="attribute">intent</code> attribute encodes a
-  simple functional syntax representing  the intended meaning. A
-  formal grammar is given below, but a typical example would be
+  simple functional syntax representing the intended speech.
+  A formal grammar is given below, but a typical example would be
   <code>intent="power($base,$exponent)"</code> used in a context such as:</p>
   
   <div class="example mathml mmlcore">
@@ -58,7 +56,9 @@
     &lt;/msup>
    </pre>
   </div>
-  <p>here clarifying that the superscript here is denoting exponentiation, taking the <i class="var">n</i>-th power of <i class="var">x</i>.</p>
+  <p>The <code class="attribute">intent</code> value of <code>power($base,$exp)</code> make it clear that the author intends the this expression
+    to denoting exponentiation, taking the <i class="var">n</i>-th power of <i class="var">x</i> as opposed to the many other possibilities for what
+    a superscript might mean.</p>
 
   <section>
    <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
@@ -99,12 +99,12 @@
    application specific function or concept <q>meaning</q>. Ultimately, the goal is to translate this virtual content
    tree into text or speech (in different languages), braille or some
    other form. </p>
-   (For example the <code>power</code>
+   <p>For example the <code>power</code>
      function shown above may have a speech hint to say <q>x
      squared</q> if the exponent is 2, not <q>power of x and 2</q>
      which would be the generic reading for a 2-argument function. As
      described below an application may also use any [=hint=] specified
-     after the function name to guide the speech to generate.
+     after the function name to guide the speech to generate.</p>
      </li>
      <li>
       If the name does not match a Concept Name known to the
@@ -115,6 +115,7 @@
      below.
      </li>
     </ul>
+    <div class="issue" data-number="410"></div>
     <p>
      [=Intent=] identifiers are maintained in two lists,
      currently located at <a
@@ -124,18 +125,29 @@
      <ul>
       <li>
        <dfn id="intent-core">Core</dfn>: This is a list of core
-      concept names maintained by the Math Working Group.
-      An accessibility system reading MathML attributed with [=core=]
-      concepts SHOULD use the speech hints provided by the intent
-      definition.</li>
+      concept names curated by the Math Working Group.
+      This list includes common concepts such as <q>divide</q>, <q>power</q>, and <q>greater-than</q>.
+      AT reading MathML attributed with a name in this list SHOULD consider this name to be a hint how the content could be read.
+      However, because common notations have many specialized ways of being spoken
+      (e.g., for division, one might say <q>three quarters</q>, <q>x over three</q>, or <q>3 meters per second</q> depending
+      one the contents of <code>&lt;mfrac intent="divide($num,$denom)&gt;</code>),
+      AT is not constrained to use the name given.
+      Depending upon the reader, AT may add words or sounds to make the speech clearer to the listener.
+      For example, for someone who can not see the a fraction, AT might say <q>fraction x over three end fraction</q> so the listener
+      knows exactly what is part of the fraction.</li>
       <li><dfn id="intent-open">Open</dfn>: This is an open list of concepts
       to which contributions are invited.
-      An accessibility system reading MathML attributed with [=open=]
-      concepts MAY use the speech hints provided by the intent
+      AT reading MathML attributed with a name in this list 
+      MAY use the speech hints provided by the intent
       definition but a system
       may also fall back on reading the identifier name as given.
+      Although authors are encouraged to use a name in this list that matches their intent if one exists,
+      any string that is an <code>NCName</code> is allowed.
       </li>
      </ul>
+     <p>Future versions of the concept list may incorporate names from the <q>open</q> list into the
+      <q>core</q> list if usage indicates that is appropriate.
+     </p>
      <p>When comparing the literal concept name in the <code
      class="attribute">intent</code> attribute with entries in the intent
      lists, the comparison should be
