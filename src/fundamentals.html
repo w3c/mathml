@@ -155,8 +155,8 @@
       </tr>
      </thead>
 
-     <tbody>
-
+     <tbody
+>
 
       <tr>
        <td id="type_unsigned-integer"><dfn><em>unsigned-integer</em></dfn></td>
@@ -607,15 +607,53 @@
     </tbody>
    </table>
 
-   <p>Note that MathML 2 had no direct support for linking, and instead
-   followed the W3C Recommendation <q>XML Linking Language</q>
-   [[?XLink]] in defining links using the
-   <code class="attribute">xlink:href</code> attribute.  This has changed, and MathML 3 now
-   uses an <code class="attribute">href</code> attribute.  However, particular compound
-   document formats may specify the use of XML linking with MathML
-   elements, so user agents that support XML linking should continue to
-   support the use of the <code class="attribute">xlink:href</code> attribute with MathML 3
-   as well.</p>
+   
+   <p id="presm_presatt_intent">All MathML presentation elements accept <code
+   class="attribute">intent</code> and <code
+   class="attribute">arg</code> attributes to support specifying
+   <q>intent</q>. These are more fully described in
+   [[[#mixing_intent]]].</p>
+   <table class="attributes data">
+ 
+    <thead>
+ 
+     <tr>
+      <td>Name</td>
+      <td>values</td>
+      <td>default</td>
+     </tr>
+    </thead>
+ 
+    <tbody>
+ 
+     <tr>
+      <td rowspan="2" class="attname"><a class="coreyes" href="#parsing_rnc_core">intent</a></td>
+      <td><a class="intref" href="#mixing_intent_grammar"><em>intent expression</em></a></td>
+      <td><em>none</em></td>
+     </tr>
+     <tr>
+      <td colspan="2" class="attdesc">The <code
+      class="attribute">intent</code> attribute is more fully described
+      in <a href="#mixing_intent"></a>. It may be used on presentation
+      elements to give information about the intended meaning of the
+      expression, mainly for guiding audio or braille accessible
+      renderings.</td>
+     </tr>
+     <tr>
+      <td rowspan="2" class="attname"><a class="coreyes" href="#parsing_rnc_core">arg</a></td>
+      <td><a class="intref" href="#mixing_intent_grammar"><em>name</em></a></td>
+      <td><em>none</em></td>
+     </tr>
+     <tr>
+      <td colspan="2" class="attdesc">The <code
+      class="attribute">arg</code> attribute is more fully described
+      in <a href="#mixing_intent"></a>. It may be used to name an element to be referenced from an
+      <code class="attribute">intent</code> expression on an ancestor element.</td>
+     </tr>
+    </tbody>
+   </table>
+
+
 
    <p>See also <a href="#presm_commatt"></a> for a list of MathML attributes
    which can be used on most presentation token elements.
@@ -902,7 +940,7 @@
      </tr>
 
      <tr>
-      <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-alttext">alttext</a></td>
+      <td rowspan="2" class="attname"><a class="coreyes" href="#parsing_rnc_core">alttext</a></td>
       <td><em>[=string=]</em></td>
       <td><em>none</em></td>
      </tr>
