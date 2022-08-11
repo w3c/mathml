@@ -15,10 +15,6 @@
   of the mathematics being represented, the notation and semantics
   are not the same.  The semantic symbols and structures are
   subtly distinct from those of the notation.</p>
- </section>
-
- <section>
-  <h3 id="intro_goals">Goals</h3>
 
   <p>Thus, there is a need for a markup language
   which can represent both the traditional displayed notations
@@ -45,42 +41,57 @@
   </p>
 
   <p>
+   This specification is organized as follows:
+   <a href="#fund"></a> discusses Fundamentals common to Presentation and Content markup;
+   <a href="#presm"></a> and <a href="#contm"></a> cover Presentation and Content markup,
+   respectively;
+   <a href="#mixing"></a> discusses how markup may be annotated, particularly for accessibility,
+   as well as how Presentation, Content and other formats may be combined;
+   <a href="#world-interactions"></a> addresses how MathML interacts with applications;
+   Finally, a discussion of special symbols,
+   and issues regarding characters, entities and fonts,
+   is given in <a href="#chars"></a>.
+  </p>
+ </section>
+
+ <section>
+  <h3 id="intro_core">Relation to MathML Core</h3>
+  <p>
    The specification of MathML is developed in two layers.
    <span>MathML Core</span> ([[MathML-Core]]) covers (most of) Presentation Markup,
    with the focus being the precise details of displaying mathematics in web browsers.
    <span>MathML Full</span>, this specification, extends [[[MathML-Core]]]
    primarily by defining Content MathML, in <a href="#contm"></a>.
-   It also defines extensions to Presentation MathML, discussed in <a href="#presm"></a>.
-   These extensions consist of additional attributes, elements or
-   enhanced syntax of attributes.
+   It also defines extensions to Presentation MathML consisting
+   of additional attributes, elements or enhanced syntax of attributes.
    These are defined for compatibility with legacy MathML,
    as well as to cover <a href="#presm_linebreaking"></a>, <a href="#presm_elementary"></a>
    and other aspects not included in level 1 of [[[MathML-Core]]]
-   but may be incorporated into future versions of [[[MathML-Core]]].
+   but which may be incorporated into future versions of [[[MathML-Core]]].
   </p>
   <p>
-      In addition to these two specifications, the Math WG group has developed the non-normative
-      <a href="https://mathml-refresh.github.io/notes-on-mathml">Notes on MathML</a>
-      that contains additional examples and information to help understand best practices when using MathML.
+    This specification covers both <span>MathML Core</span> and its extensions;
+    features common to both are indicated with 
+    <a class="coreyes"  href="https://w3c.github.io/mathml-core/spec.html"></a>,
+    whereas extensions are indicated with <span class="coreno"></span>.
   </p>
-  <p class="note">(Rethink this paragraph as spec evolves)</p>
   <p>
-   Additionally, the extensions to MathML Core:
-   fundamentals is discussed in <a href="#fund"></a>;
-   parallel markup in <a href="#mixing"></a>.
-   How MathML interacts with applications is covered
-   in <a href="#world-interactions"></a>.
-   Finally, a discussion of special symbols,
-   and issues regarding characters, entities and fonts,
-   is given in <a href="#chars"></a>.
-  </p>
-
-  <p>
-   It is intended that valid Core Markup be considered as valid Full Markup as well.
+   It is intended that MathML Full is a proper superset of MathML Core.
+   Moreover, it is intended that any valid Core Markup be considered as valid Full Markup as well.
    It is also intended that an otherwise conforming implementation of MathML Core,
    which also implements parts or all of the extensions of MathML Full,
    should continue to be considered a conforming implementation of MathML Core.
   </p>
- </section>
 
+
+
+ </section>
+ <section>
+  <h3 id="intro_overview">MathML Notes</h3>
+  <p>
+   In addition to these two specifications, the Math WG group has developed the non-normative
+   <a href="https://mathml-refresh.github.io/notes-on-mathml">Notes on MathML</a>
+   that contains additional examples and information to help understand best practices when using MathML.
+  </p>
+  </section>
 </section>
