@@ -1357,7 +1357,6 @@
       <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mathsize">mathsize</a></td>
       <td>"small" | "normal" | "big" | <a class="intref" href="#type_length"><em>length</em></a></td>
       <td><em>inherited</em></td>
-      <td>
      </tr>
  
      <tr>
@@ -7129,6 +7128,7 @@
       have had minimal adoption and implementation.
       The one exception only uses the basics of alignment. Because of this, alignment in MathML is significantly
       simplified to align with the current usage and make future implementation simplier. In particular, the following simplifications are made:
+    </p>
       <ul>
         <li>the attributes for <code class="emptytag">&lt;maligngroup/&gt;</code> and <code class="emptytag">&lt;malignmark/&gt;</code> have been removed.</li>
         <li>The <code class="attribute">groupalign</code> attribute previously allowed on
@@ -7137,7 +7137,6 @@
         <li><code class="emptytag">&lt;malignmark/&gt;</code> used to be allowed anywhere, including inside of token elements;
           it is now allowed in only the locations that <code class="emptytag">&lt;maligngroup/&gt;</code> is allowed (see below)</li>
       </ul>
-    </p>
    </section>
    <section>
     <h5>Description</h5>
@@ -7183,14 +7182,14 @@
           <span  style="padding-left:.22em; padding-right: .22em; display:inline-block">+</span>
           55.7<em>y</em>
           <span style="padding-left:.28em; padding-right: .28em; display:inline-block">=</span>
-         0
+         0</td>
         </tr>
         <tr>
           <td>3.1<em>x</em>
-          <span style="padding-left:.22em; padding-right: .22em; display:inline-block"">&#x2212;</span>
+          <span style="padding-left:.22em; padding-right: .22em; display:inline-block">&#x2212;</span>
           50.7<em>y</em>
-          <span style="padding-left:.28em; padding-right: .28em; display:inline-block"">=</span>
-          &#x2212;1.1
+          <span style="padding-left:.28em; padding-right: .28em; display:inline-block">=</span>
+          &#x2212;1.1</td>
          </tr>
       </tbody>
       </table>
@@ -7329,10 +7328,10 @@
    </section>
  
    <section>
+    <h5>Table cells that are not divided into alignment groups</h5>
     <p class="note">Do we still want to allow rows without <code class="element">maligngroup</code> as described in this section?
     </p>
 
-    <h5>Table cells that are not divided into alignment groups</h5>
  
     <p>Expressions in a column that are to have no alignment groups
     should contain no <code class="element">maligngroup</code>
