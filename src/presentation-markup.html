@@ -186,7 +186,7 @@
     </section>
  
     <section>
-     <h5>Table of argument requirements</h5>
+     <h5 id="presm_reqarg">Table of argument requirements</h5>
  
      <p>For convenience, here is a table of each element's argument count
      requirements and the roles of individual arguments when these are
@@ -611,7 +611,7 @@
    <h4 id="presm_linebreaking">Linebreaking of Expressions</h4>
  
    <section>
-    <h5>Control of Linebreaks</h5>
+    <h5 id="presm_control_linebreaks">Control of Linebreaks</h5>
  
     <p>MathML provides support for both automatic and manual (forced)
     linebreaking of  expressions to break excessively long
@@ -754,7 +754,7 @@
    <h4 id="presm_summary">Summary of Presentation Elements</h4>
  
    <section>
-    <h5>Token Elements</h5>
+    <h5 id="presm_summary_token">Token Elements</h5>
  
     <table class="elements data">
  
@@ -797,7 +797,7 @@
    </section>
  
    <section>
-    <h5>General Layout Schemata</h5>
+    <h5 id="presm_general_layout">General Layout Schemata</h5>
  
     <table class="elements data">
  
@@ -857,7 +857,7 @@
    </section>
  
    <section>
-    <h5>Script and Limit Schemata</h5>
+    <h5 id="presm_script_limit">Script and Limit Schemata</h5>
  
     <table class="elements data">
  
@@ -902,7 +902,7 @@
    </section>
  
    <section>
-    <h5>Tables and Matrices</h5>
+    <h5 id="presm_matrices">Tables and Matrices</h5>
  
     <table class="elements data">
  
@@ -939,7 +939,7 @@
    </section>
  
    <section>
-    <h5>Elementary Math Layout</h5>
+    <h5 id="presm_elem_math_layout">Elementary Math Layout</h5>
  
     <table class="elements data">
  
@@ -984,7 +984,7 @@
    </section>
  
    <section>
-    <h5>Enlivening Expressions</h5>
+    <h5 id="presm_enlivening">Enlivening Expressions</h5>
  
     <table class="elements data">
  
@@ -2421,7 +2421,7 @@
    </section>
  
    <section class="fold">
-    <h5>Examples with ordinary operators</h5>
+    <h5 id="presm_ex_operators">Examples with ordinary operators</h5>
  
     <div class="example mathml mmlcore">
      <pre>&lt;mo&gt; + &lt;/mo&gt;                    </pre>
@@ -2466,7 +2466,7 @@
    </section>
  
    <section class="fold">
-    <h5>Examples with fences and separators</h5>
+    <h5 id="presm_ex_fences">Examples with fences and separators</h5>
  
     <p>Note that the <code class="element">mo</code> elements in these examples
     don't need explicit <code class="attribute">fence</code> or <code class="attribute">separator</code> attributes,
@@ -2644,7 +2644,7 @@
    
    </section>
    <section>
-    <h5>Detailed rendering rules for <code class="starttag">&lt;mo&gt;</code> elements</h5>
+    <h5 id="presm_mo_rendering">Detailed rendering rules for <code class="starttag">&lt;mo&gt;</code> elements</h5>
  
     <p>Typical visual rendering behaviors for <code class="element">mo</code>
     elements are more complex than for the other MathML token elements, so
@@ -3288,7 +3288,7 @@
   </section>
  
  <section>
- <h5>Definition of space-like elements</h5>
+ <h5 id="presm_space_like">Definition of space-like elements</h5>
  
  <p>A number of MathML presentation elements are <q>space-like</q> in the
  sense that they typically render as whitespace, and do not affect the
@@ -3338,7 +3338,7 @@
  </section>
  
  <section>
- <h5>Legal grouping of space-like elements</h5>
+ <h5 id="presm_grouping_space_like">Legal grouping of space-like elements</h5>
  
  <p>Authors who insert space-like elements or
  <code class="element">mphantom</code> elements into an existing MathML
@@ -3568,7 +3568,7 @@
  </section>
  
  <section>
- <h5>Proper grouping of sub-expressions using <code class="starttag">&lt;mrow&gt;</code></h5>
+ <h5 id="presm_grouping_sub_expressions">Proper grouping of sub-expressions using <code class="starttag">&lt;mrow&gt;</code></h5>
  
  <p>Sub-expressions should be grouped by the document author in the same way
  as they are grouped in the mathematical interpretation of the expression;
@@ -4628,7 +4628,7 @@
   </section>
  
   <section>
-   <h5>Meanings of <span>size and position</span> attributes</h5>
+   <h5 id="presm_size_position">Meanings of <span>size and position</span> attributes</h5>
  
  
    <p>The content of an <code class="element">mpadded</code> element defines a fragment of mathematical
@@ -6943,7 +6943,7 @@
    </section>
  
    <section>
-    <h5>Equation Numbering</h5>
+    <h5 id="presm_eqno">Equation Numbering</h5>
  
     <p>One of the important uses of <code class="element">mlabeledtr</code> is
     for numbered equations.  In an <code class="element">mlabeledtr</code>, the
@@ -7122,7 +7122,7 @@
    <span class="coreno"><code class="emptytag">&lt;maligngroup/&gt;</code>, <code class="emptytag">&lt;malignmark/&gt;</code></span></h4>
  
    <section>
-    <h5>Removal Notice</h5>
+    <h5 id="presm_malignmark_notice">Removal Notice</h5>
     <p>
       With one significant exception, <code class="emptytag">&lt;maligngroup/&gt;</code> and <code class="emptytag">&lt;malignmark/&gt;</code>
       have had minimal adoption and implementation.
@@ -7328,7 +7328,7 @@
    </section>
  
    <section>
-    <h5>Table cells that are not divided into alignment groups</h5>
+    <h5 id="presm_no_align_group">Table cells that are not divided into alignment groups</h5>
     <p class="note">Do we still want to allow rows without <code class="element">maligngroup</code> as described in this section?
     </p>
 
@@ -7400,7 +7400,7 @@
    </section>
  
    <section>
-    <h5>Specifying alignment points using <code class="emptytag">&lt;malignmark/&gt;</code></h5>
+    <h5 id="presm_using_malignmark">Specifying alignment points using <code class="emptytag">&lt;malignmark/&gt;</code></h5>
  
     <p>An <code class="element">malignmark</code> element anywhere within the
     alignment group (except within another alignment scope wholly
@@ -7427,7 +7427,7 @@
   </section>
  
  <section class="fold">
- <h5>MathML representation of an alignment example</h5>
+ <h5 id="presm_ex_alignment_1">MathML representation of an alignment example</h5>
  
  <p>The above rules are sufficient to explain the MathML representation
  of the example given near the start of <a href="#presm_malign">this section</a>.</p>
@@ -7516,7 +7516,7 @@
  </section>
  
  <section>
- <h5>A simple alignment algorithm</h5>
+ <h5 id="presm_alignment_algo">A simple alignment algorithm</h5>
  
  <p>A simple algorithm by which a MathML renderer can perform the
  alignment specified in this section is given here. Since the alignment
