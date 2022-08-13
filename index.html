@@ -193,7 +193,10 @@
      edDraftURI:    "https://w3c.github.io/mathml/",
      shortName:     "MathML4",
      canonicalURI: "TR",
-     maxTocLevel:   4,
+       maxTocLevel:   4,
+       lint: {
+	   "required-sections":false
+       },
      otherLinks:    [{
      key: "Latest MathML Recommendation",
      data: [{
@@ -485,8 +488,6 @@ div.issue > *:nth-child(2) {display:block;}
   <section data-include="src/operator-dict.html" data-include-replace="true"></section>
   <section data-include="src/accessibility.html" data-include-replace="true"></section>
   <section data-include="src/conformance.html" data-include-replace="true"></section>
-  <section data-include="src/security.html" data-include-replace="true"></section>
-  <section data-include="src/privacy.html" data-include-replace="true"></section>
   <section data-include="src/contm-ops.html" data-include-replace="true"></section>
   <section data-include="src/transform2strict.html" data-include-replace="true"></section>
   <section data-include="src/mmlindex.html" data-include-replace="true"></section>
