@@ -121,7 +121,7 @@
 	var mmllist=document.querySelectorAll("div.example.mathml");
 	for(var i=0;i!=mmllist.length;i++){
 	    var mclass=mmllist[i].getAttribute("class");
-	    if(!mclass.includes("mml4c")){
+	    if(!mclass.includes("mml4c") && !mclass.includes("mml4-nopfill")){
 	    var m=document.createElementNS("http://www.w3.org/1998/Math/MathML","math");;
 	    m.setAttribute("display","block");
 	    m.setAttribute("class",
