@@ -123,7 +123,7 @@
    <p>This document only recommends (i.e., does not require) specific
    ways of rendering Presentation MathML; this is in order to allow
    for medium-dependent rendering and for implementations not using
-   the Web Platfom, CSS based, layout.</p>
+   the CSS based Web Platform.</p>
 
   </section>
 
@@ -211,8 +211,8 @@
       </tr>
 
       <tr>
-       <td id="type_namedspace"><dfn><em>namedspace</em></dfn></td>
-       <td>a named length, as explained below, <a href="#fund_units"></a></td>
+       <td id="type_namedspace"><b><em>namedspace</em></b></td>
+       <td>a named [=length=], [=namedspace=], as explained in <a href="#fund_units"></a></td>
       </tr>
 
       <tr>
@@ -358,30 +358,12 @@
     <h5 id="fund_units">Length Valued Attributes</h5>
 
     <p>Most presentation elements have attributes that accept values
-    representing lengths to be used for size, spacing or similar
-    properties.  The
-    basic <a id="type_unit" data-cite="CSS-VALUES-3#typedef-length-percentage"><code>&lt;length-percentage&gt;</code></a>
-    syntax is defined in [[CSS-VALUES-3]]. This is the only length
-    syntax that may be used in [[MathML-Core]].  However this
-    specification defines additional syntax.</p>
-
-
-    <p>
-     The available values are extended with a set of [=named-lengths=]
-     that name multiples of 1/18&#x2009;em as described below.  In
-     addition, the attributes on <code class="element">mpadded</code>
-     allow three <dfn>pseudo-units</dfn>, <code>height</code>,
-     <code>depth</code> and <code>width</code> denoting the original
-     dimensions of the content.
-    </p>
-    <p>MathML&#160;3 also allowed a deprecated usage with lengths specified as
-     a number without a unit. This  was interpreted as a multiple of the
-     reference value. This form is considered invalid in MathML&#160;4.
-    </p>
-
-    <p>The <dfn>named-lengths</dfn> that may be used as the value of a
-    [=length=] expression, and their value:</p>
-
+    representing lengths to be used for size, spacing or similar properties.
+    [[MathML-Core]] accepts lengths only in the
+     <a id="type_unit" data-cite="CSS-VALUES-3#typedef-length-percentage"><code>&lt;length-percentage&gt;</code></a>
+     syntax defined in [[CSS-VALUES-3]].
+     MathML Full extends length syntax by accepting also a <dfn>namedspace</dfn>
+     being one of:</p>
       <table class="data">
        <thead>
 	<tr><th>Positive space</th><th>Negative space</th><th>Value</th></tr>
@@ -424,6 +406,16 @@
 	 </tr>
 	</tbody>
       </table>
+
+    <p>In addition, the attributes on <a href="#presm_mpadded">mpadded</a>
+     allow three <dfn>pseudo-units</dfn>, <code>height</code>,
+      <code>depth</code> and <code>width</code> (taking the place of one of the usual CSS units)
+      denoting the original dimensions of the content.
+    </p>
+    <p>MathML&#160;3 also allowed a deprecated usage with lengths specified as
+     a number without a unit. This  was interpreted as a multiple of the
+     reference value. This form is considered invalid in MathML&#160;4.
+    </p>
 
     <section>
      <h6 id="units_addl_notes">Additional notes about units</h6>
