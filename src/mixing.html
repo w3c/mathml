@@ -56,14 +56,14 @@
     &lt;/msup>
    </pre>
   </div>
-  <p>The <code class="attribute">intent</code> value of <code>power($base,$exp)</code> make it clear that the author intends the this expression
-    to denoting exponentiation, taking the <i class="var">n</i>-th power of <i class="var">x</i> as opposed to the many other possibilities for what
+  <p>The <code class="attribute">intent</code> value of <code>power($base,$exp)</code> makes it clear that the author intends that this expression
+    denotes exponentiation as opposed to the many other possibilities for what
     a superscript might mean.</p>
 
   <section>
    <h4 id="mixing_intent_grammar">The Grammar for <code class="attribue">intent</code></h4>
 
-   <p>The <code class="attribute">intent</code>, after ignoring white
+   <p>The value of the <code class="attribute">intent</code> attribute, after ignoring white
    space between tokens, should match the following grammar.</p>
 
    <pre class="def bnf">
@@ -73,7 +73,7 @@
     reference          := '$' NCName
     application        := intent hint? '(' arguments? ')'
     arguments          := intent ( ',' intent )*
-    hint               := '@' ( 'prefix' | 'infix' | 'postfix' | 'silent' )
+    hint               := '@' ( 'prefix' | 'infix' | 'postfix' | 'function' | 'silent' )
    </pre>
 
    <p>Here <a href="https://www.w3.org/TR/REC-xml-names/#NT-NCName"><code>NCName</code></a>
@@ -90,21 +90,32 @@
     They are interpreted in one of two ways.
     <ul>
      <li>
-     <p>If the name matches a [=concept=] name in the <em>Intent Concept
-     Dictionary</em> maintained by the application, specific audio or
+     <p>If the name matches a [=concept=] name in an [=Intent Concept
+     Dictionary=] maintained by the AT, specific audio or
      braille renderings may be produced based on the speech hints
      given in the dictionary.</p>
+     <p>An <dfn>Intent Concept Dictionary</dfn> is a mapping from a [=concept=] name
+      to specific speech or braille for that concept.
+      The mapping may take into account any [=hint=] that follows the name.
+      AT that makes use of <code class="attribute">intent</code>
+      SHOULD be able to produce speech or braille that corresponds to any
+      of the concepts in the [=Core=] table discussed below.
+      AT that makes use of <class="attribute">intent</code>
+      MAY also include concepts in the [=Open=] table discussed below.
+      </p>
+      <p>The Intent Concept Dictionary is somewhat analogous to the <a href=#oper-dict></a> used by
+      MathML renderers in that it provides a set of defaults renderers should be aware of.
+      The <code>hint</code> also has some analogies to the operator dictionary's use of
+      <code class="attribute">form</code>.
+    </p>
    <p>A <dfn>concept</dfn> is intended to
-   correspond to some mathematical, or 
-   application specific function or concept <q>meaning</q>. Ultimately, the goal is to translate this virtual content
-   tree into text or speech (in different languages), braille or some
-   other form. </p>
-   <p>For example the <code>power</code>
-     function shown above may have a speech hint to say <q>x
-     squared</q> if the exponent is 2, not <q>power of x and 2</q>
-     which would be the generic reading for a 2-argument function. As
-     described below an application may also use any [=hint=] specified
-     after the function name to guide the speech to generate.</p>
+    correspond to some mathematical or 
+    application specific function or concept spoken <q>meaning</q>.
+    For many concepts, the words used to speak a concept are very similar to the name 
+    used when referencing a concept.
+    For some very common concepts such as <q>power</q>, there are often multiple ways
+    that it is spoken based on the arguments of the power.
+    For example, if the exponent is 2, then <q>squared</q> is used.</p>
      </li>
      <li>
       If the name does not match a Concept Name known to the
@@ -134,7 +145,9 @@
       AT is not constrained to use the name given.
       Depending upon the reader, AT may add words or sounds to make the speech clearer to the listener.
       For example, for someone who can not see the a fraction, AT might say <q>fraction x over three end fraction</q> so the listener
-      knows exactly what is part of the fraction.</li>
+      knows exactly what is part of the fraction.
+      For someone who can see the content, these extra words can be a distraction.
+      AT should always produce speech that is appropriate to the community they serve.</li>
       <li><dfn id="intent-open">Open</dfn>: This is an open list of concepts
       to which contributions are invited.
       AT reading MathML attributed with a name in this list 
@@ -209,13 +222,18 @@
       <li>For the default
      reading when a Concept Dictionary entry is not used, the text
      generated from the function head SHOULD be read as specified in
-     the hint:
+     the hint.
      <ul>
-      <li><code>f @prefix ($x,$y)</code>: <q>f of x and y</q></li>
-      <li><code>f @infix ($x,y)  </code>: <q>x f y</q></li>
-      <li><code>f @postix ($x)   </code>: <q>x f</q></li>
-      <li><code>f @silent ($x,$y)</code>: <q>x y</q></li>
+      <li><code>f @prefix ($x)      </code>: <q>x f</q></li>
+      <li><code>f @infix ($x,y)     </code>: <q>x f y</q></li>
+      <li><code>f @postix ($x)      </code>: <q>x f</q></li>
+      <li><code>f @function ($x, $y)</code>: <q>f of x and y</q></li>
+      <li><code>f @silent ($x,$y)   </code>: <q>x y</q></li>
      </ul>
+      The words above are examples of what be spoken.
+      AT is free to choose other appropriate audio renderings.
+      For example, <code>f@function($x, $y)</code> could also be spoken as 
+      <q>f of x comma y</q>.
       </li>
      </ul>
     </dd>
@@ -239,7 +257,7 @@
     and typically has different readings.</p>
 
     <p>Superscript, <code class="element">msup</code>, may represent a power, a transpose,
-    a derivative or an embellished symbol. These cases would be distinguished as follows, showing possible readings with and without <code class="attribute">intent</code></p>
+    a derivative or an embellished symbol. These cases would be distinguished as follows, showing possible readings <em>with</em> and <em>without</em> <code class="attribute">intent</code></p>
 
 <div class="example mathml mmlcore">
 <pre>
@@ -248,8 +266,13 @@
   &lt;mi arg="exp">n&lt;/mi>
 &lt;/msup>
 </pre>
-<blockquote>x to the n-th power<br/> x to the n-th power</blockquote>
+<blockquote>x to the n-th power<br/> x superscript n end superscript</blockquote>
 </div>
+<p>An alternative default rendering without intent would be to assume that 
+  <code class="element">msup</code> is always a power, so the second rendering above
+  might also be <q>x to the n-th power</q>. In that case the second renderings below
+  will (incorrectly) speak the examples using <q>raised to the ... power</q>.
+</p>
 <div class="example mathml mmlcore">
 <pre>
 &lt;msup intent="$op($a)">
@@ -257,7 +280,7 @@
   &lt;mi arg="op" intent="transpose">T&lt;/mi>
 &lt;/msup>
 </pre>
-<blockquote>A transpose<br/> A transpose </blockquote>
+<blockquote>A transpose<br/> A superscript T end superscript </blockquote>
 </div>
 <div class="example mathml mmlcore">
 <pre>
@@ -266,7 +289,7 @@
   &lt;mi>&#x2032;&lt;/mi>
 &lt;/msup>
 </pre>
-<blockquote>derivative of f<br/> f prime</blockquote>
+<blockquote>derivative of f<br/> f superscript prime end superscript</blockquote>
 </div>
 <div class="example mathml mmlcore">
 <pre>
@@ -275,11 +298,8 @@
   &lt;mo>&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
-<blockquote>x prime<br/> x prime</blockquote>
+<blockquote>x prime<br/> f superscript prime end superscript</blockquote>
 </div>
-
-     <p class="ednote">mathcat gets transpose even without intent</p>
-
 
     <p>Similarly an over bar may represent complex conjugation, or mean (average), again with possible readings with and without <code class="attribute">intent</code>:</p>
 
@@ -297,7 +317,7 @@
 </pre>
     
      <blockquote>conjugate of z is not  mean of X<br/>
-     z with ¯ above  is not  X with ¯ above</blockquote>
+     z with bar above  is not  X with bar above</blockquote>
     </div>
 
    </section>
@@ -325,16 +345,20 @@
 
     <p>In most cases it is preferable to use an <code
     class="attribute">intent</code> that accurately reflects the
-    mathematical structure of the expression. This allows the intent
+    mathematical structure of the expression by making use of
+    <a data-link-type="dfn" href="#intent_reference">references</a>. This allows the intent
     to be used while navigating that structure, and also, for concepts
     known in the Concept dictionary being used by the application, it allows
     translated, locale-specific text to be generated.</p>
     <p>However, as the default reading of an unknown name is to read
     the name, after splitting on <code>._-</code> as described above,
     it is possible to provide readings that do not match the prefix
-    functional structure. It should be noted that such uses of  <code
-    class="attribute">intent</code> may prevent other uses of the
-    attribute, for example as an aid to inferring the mathematical
+    functional structure. Using a literal <code class="attribute">intent</code>
+    (i.e., an <code class="attribute">intent</code> that starts with <code>_</code> [U+005F])
+    or an <code class="attribute">intent</code> value that is not in [=Core=] or [=Open=]
+    may prevent other uses of the attribute other than speech.
+    For example, it would prevent using <code class="attribute">intent</code>
+    as an aid to inferring the mathematical
     structure for conversions to Content MathML or computational software
     systems. The <code>@silent</code> hint may be especially
     useful for these use cases.
