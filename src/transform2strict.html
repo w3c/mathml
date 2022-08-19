@@ -1,6 +1,6 @@
 
   <section>
-   <h3 id="contm_p2s">The Strict Content MathML Transformation</h3>
+   <h2 id="contm_p2s">The Strict Content MathML Transformation</h2>
 
    <p>MathML assigns semantics to content markup by defining a
    mapping to Strict Content MathML.  Strict MathML, in turn, is in
@@ -305,7 +305,7 @@
    </ol>
 
    <section>
-    <h4 id="contm_p2s_bind">Rewrite non-strict <code class="element">bind</code></h4>
+    <h3 id="contm_p2s_bind">Rewrite non-strict <code class="element">bind</code></h3>
     <p>As described in <a href="#contm_binding"></a>, the strict form
     for the <code class="element">bind</code> element does not allow qualifiers,
     and only allows one non-<code class="element">bvar</code> child element.</p>
@@ -325,11 +325,11 @@
    </section>
 
    <section>
-    <h4 id="contm_p2s_qual">Rewrite idiomatic qualifiers</h4>
+    <h3 id="contm_p2s_qual">Rewrite idiomatic qualifiers</h3>
     <p>Apply special case rules for idiomatic uses of qualifiers.</p>
 
     <section>
-     <h5 id="contm_p2s_deriv">Derivatives</h5>
+     <h4 id="contm_p2s_deriv">Derivatives</h4>
      <p>Rewrite derivatives using the rules <a>Rewrite: diff</a>,
      <a>Rewrite: nthdiff</a>, and <a>Rewrite: partialdiffdegree</a>
      to make the binding status of the variables explicit.
@@ -579,7 +579,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_int">Integrals</h5>
+     <h4 id="contm_p2s_int">Integrals</h4>
      <p>Rewrite integrals using the rules <a>Rewrite: int</a><span>,
      <a>Rewrite: defint</a></span> and <a>Rewrite: defint limits</a>
      to disambiguate the status of bound and free variables and of the
@@ -847,7 +847,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_limit">Limits</h5>
+     <h4 id="contm_p2s_limit">Limits</h4>
      <p>Rewrite limits using the rules <a>Rewrite: tendsto</a> and
      <a>Rewrite: limits condition</a>.</p>
 
@@ -922,7 +922,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_sump">Sums and Products</h5>
+     <h4 id="contm_p2s_sump">Sums and Products</h4>
      <p>Rewrite sums and products as described in
      <a href="#contm_sum_sec"></a> and <a href="#contm_product_sec"></a>.</p>
 
@@ -1008,7 +1008,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_root">Roots</h5>
+     <h4 id="contm_p2s_root">Roots</h4>
      <p>Rewrite roots as described in <a href="#contm_p2s_root"></a>.</p>
 
      <p>In Strict Content markup, the <a class="omsymbol" href="https://openmath.org/cd/arith1#root">root</a>
@@ -1061,7 +1061,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_log">Logarithms</h5>
+     <h4 id="contm_p2s_log">Logarithms</h4>
      <p>Rewrite logarithms as described in <a href="#contm_log_sec"></a>.</p>
 
      <p>When mapping <code class="element">log</code> to Strict Content, one uses the
@@ -1112,7 +1112,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_mom">Moments</h5>
+     <h4 id="contm_p2s_mom">Moments</h4>
      <p>Rewrite moments as described in <a href="#contm_moment_sec"></a>.</p>
 
      <div class="strict-mathml-example" id="contm_strict-moment-degree">
@@ -1152,7 +1152,7 @@
    </section>
 
    <section>
-    <h4 id="contm_p2s_2doa">Rewrite to <code class="element">domainofapplication</code></h4>
+    <h3 id="contm_p2s_2doa">Rewrite to <code class="element">domainofapplication</code></h3>
     <p>Rewrite Qualifiers to <code class="element">domainofapplication</code>.
     These rules rewrite all <code class="element">apply</code> constructions
     using <code class="element">bvar</code> and qualifiers to those using only
@@ -1160,7 +1160,7 @@
     </p>
 
     <section>
-     <h5 id="contm_p2s_intv">Intervals</h5>
+     <h4 id="contm_p2s_intv">Intervals</h4>
      <p>Rewrite qualifiers given as <code class="element">interval</code> and
      <code class="element">lowlimit</code>/<code class="element">uplimit</code>
      to intervals of integers via <a>Rewrite: interval qualifier</a>.</p>
@@ -1209,7 +1209,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_conds">Multiple <code class="element">condition</code>s</h5>
+     <h4 id="contm_p2s_conds">Multiple <code class="element">condition</code>s</h4>
      <p>Rewrite multiple <code class="element">condition</code>
      qualifiers to a single one by taking their conjunction.  The resulting
      compound <code class="element">condition</code> is then rewritten to
@@ -1266,7 +1266,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_doas">Multiple <code class="element">domainofapplication</code>s</h5>
+     <h4 id="contm_p2s_doas">Multiple <code class="element">domainofapplication</code>s</h4>
      <p>Rewrite multiple <code class="element">domainofapplication</code>
      qualifiers to a single one by taking the intersection of the specified
      domains.</p>
@@ -1275,9 +1275,9 @@
    </section>
 
    <section>
-    <h4 id="contm_p2s_cont">Normalize container markup</h4>
+    <h3 id="contm_p2s_cont">Normalize container markup</h3>
     <section>
-     <h5 id="contm_p2s_sets">Sets and Lists</h5>
+     <h4 id="contm_p2s_sets">Sets and Lists</h4>
      <p>Rewrite sets and lists by the rule
      <a>Rewrite: n-ary setlist domainofapplication</a>.</p>
 
@@ -1346,7 +1346,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_step">Intervals, vectors, matrices</h5>
+     <h4 id="contm_p2s_step">Intervals, vectors, matrices</h4>
      <p>Rewrite interval, vectors, matrices, and matrix rows as
      described in <a href="#contm_p2s_intv"></a>, <a href="#contm_nary_construct_matrix"></a>.
      Note any qualifiers will have been rewritten to <code class="element">domainofapplication</code> and will be further rewritten in a later step.</p>
@@ -1367,7 +1367,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_lambda">Lambda expressions</h5>
+     <h4 id="contm_p2s_lambda">Lambda expressions</h4>
      <p>Rewrite lambda expressions by the rules <a>Rewrite: lambda</a>
      and <a>Rewrite: lambda domainofapplication</a>.</p>
 
@@ -1435,7 +1435,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_piece">Piecewise functions</h5>
+     <h4 id="contm_p2s_piece">Piecewise functions</h4>
      <p>Rewrite piecewise functions as described in <a href="#contm_piecewise_sec"></a>.</p>
 
      <p>In Strict Content MathML, the container elements
@@ -1492,13 +1492,13 @@
    </section>
 
    <section>
-    <h4 id="contm_p2s_doaq">Rewrite <code class="element">domainofapplication</code> qualifiers</h4>
+    <h3 id="contm_p2s_doaq">Rewrite <code class="element">domainofapplication</code> qualifiers</h3>
     <p>Apply Special Case Rules for Operators using <code class="element">domainofapplication</code> Qualifiers.
     This step deals with the special cases for the operators introduced in
     <a href="#contm_structure_extended"></a>. There are different classes of special cases to be taken into account.</p>
 
     <section>
-     <h5 id="contm_p2s_minmax">N-ary/unary operators</h5>
+     <h4 id="contm_p2s_minmax">N-ary/unary operators</h4>
      <p>Rewrite <code class="element">min</code>, <code class="element">max</code>, <code class="element">mean</code> and similar n-ary/unary operators
      by the rules <a>Rewrite: n-ary unary set</a>, <a>Rewrite: n-ary unary domainofapplication</a>
      and <a>Rewrite: n-ary unary single</a>.</p>
@@ -1626,7 +1626,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_quant">Quantifiers</h5>
+     <h4 id="contm_p2s_quant">Quantifiers</h4>
      <p>Rewrite the quantifiers <code class="element">forall</code> and <code class="element">exists</code> used with <code class="element">domainofapplication</code>
      to expressions using implication and conjunction by the rule <a>Rewrite: quantifier</a>.
      </p>
@@ -1740,7 +1740,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_defint">Integrals</h5>
+     <h4 id="contm_p2s_defint">Integrals</h4>
      <p>Rewrite integrals used with a <code class="element">domainofapplication</code> element (with or without a <code class="element">bvar</code>)
      according to the rules <a>Rewrite: int</a><span> and
      <a>Rewrite: defint</a></span>.  See <a href="#contm_p2s_int"></a>.
@@ -1748,7 +1748,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_sums">Sums and products</h5>
+     <h4 id="contm_p2s_sums">Sums and products</h4>
      <p>Rewrite sums and products used with a <code class="element">domainofapplication</code> element
      (with or without a <code class="element">bvar</code>) as described in
      <a href="#contm_sum_sec"></a> and <a href="#contm_product_sec"></a>.
@@ -1758,7 +1758,7 @@
    </section>
 
    <section>
-    <h4 id="contm_p2s_doa">Eliminate <code class="element">domainofapplication</code></h4>
+    <h3 id="contm_p2s_doa">Eliminate <code class="element">domainofapplication</code></h3>
     <p>At this stage, any
     <code class="element">apply</code> has at most one <code class="element">domainofapplication</code> child and special cases have been addressed. As
     <code class="element">domainofapplication</code> is not Strict Content MathML, it is rewritten as one of the following cases.
@@ -1775,7 +1775,7 @@
     using the following rules:</p>
 
     <section>
-     <h5 id="contm_p2s_restr">Restricted function</h5>
+     <h4 id="contm_p2s_restr">Restricted function</h4>
      <p>Into an application of a restricted function via the rule
      <a>Rewrite: restriction</a> if the <code class="element">apply</code> does not contain
      a <code class="element">bvar</code> child.</p>
@@ -1818,7 +1818,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_pol">Predicate on list</h5>
+     <h4 id="contm_p2s_pol">Predicate on list</h4>
      <p>Into an application of the <a class="omsymbol" href="https://openmath.org/cd/fns2#predicate_on_list">predicate_on_list</a> symbol via the rules
      <a>Rewrite: n-ary relations</a> and <a>Rewrite: n-ary relations bvar</a>
      if used with a relation.</p>
@@ -1896,7 +1896,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_atl">Apply to list</h5>
+     <h4 id="contm_p2s_atl">Apply to list</h4>
      <p>Into a construction with the <a class="omsymbol" href="https://openmath.org/cd/fns2#apply_to_list">apply_to_list</a> symbol
      via the general rule <a>Rewrite: n-ary domainofapplication</a> for
      general n-ary operators.
@@ -1962,7 +1962,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_st">Such that</h5>
+     <h4 id="contm_p2s_st">Such that</h4>
      <p>Into a construction using the <a class="omsymbol" href="https://openmath.org/cd/set1#suchthat">suchthat</a> symbol
      from the <a class="omcd" href="https://openmath.org/cd/set1">set1</a> content dictionary in an <code class="element">apply</code> with bound
      variables via the <a>Rewrite: apply bvar domainofapplication</a> rule.</p>
@@ -2021,11 +2021,11 @@
    </section>
 
    <section>
-    <h4 id="contm_p2s_tok">Rewrite token elements</h4>
+    <h3 id="contm_p2s_tok">Rewrite token elements</h3>
     <p>Rewrite non-strict token elements</p>
 
     <section>
-     <h5 id="contm_p2s_cn">Numbers</h5>
+     <h4 id="contm_p2s_cn">Numbers</h4>
      <p>Rewrite numbers represented as <code class="element">cn</code> elements where the <code class="attribute">type</code>
      attribute is one of <code class="attributevalue">e-notation</code>, <code class="attributevalue">rational</code>,
      <code class="attributevalue">complex-cartesian</code>, <code class="attributevalue">complex-polar</code>,
@@ -2205,7 +2205,7 @@
     </section>
 
     <section>
-     <h5 id="contm_p2s_ci">Token presentation</h5>
+     <h4 id="contm_p2s_ci">Token presentation</h4>
      <p>Rewrite any <code class="element">ci</code>, <code class="element">csymbol</code> or <code class="element">cn</code> containing
      presentation MathML to <code class="element">semantics</code> elements with rules
      <a>Rewrite: cn presentation mathml</a> and <a>Rewrite: ci presentation mathml</a> and
@@ -2337,7 +2337,7 @@
    </section>
 
    <section>
-    <h4 id="contm_p2s_op">Rewrite operators</h4>
+    <h3 id="contm_p2s_op">Rewrite operators</h3>
     <p>Rewrite any remaining operator defined in <a href="#contm_structure_extended"></a>
     to a <code class="element">csymbol</code> referencing the symbol identified in the syntax table by the rule
     <a>Rewrite: element</a>.</p>
@@ -2411,7 +2411,7 @@
     </ol>
 
     <section>
-    <h5 id="contm_p2s_minus">Rewrite the <code class="element">minus</code> operator</h5>
+    <h4 id="contm_p2s_minus">Rewrite the <code class="element">minus</code> operator</h4>
     <p>The <code class="element">minus</code> element can be used as a <em>unary arithmetic operator</em>
     (e.g. to represent - <i class="var">x</i>), or as a <em>binary arithmetic operator</em>
     (e.g. to represent <i class="var">x</i>- <i class="var">y</i>).</p>
@@ -2427,7 +2427,7 @@
     </section>
 
     <section>
-    <h5 id="contm_p2s_setops">Rewrite the set operators</h5>
+    <h4 id="contm_p2s_setops">Rewrite the set operators</h4>
 
      <p>When translating to Strict Content Markup, if the <code class="attribute">type</code>
      has value <code class="attributevalue">multiset</code>, then the <a class="omsymbol" href="https://openmath.org/cd/multiset1#in">in</a> symbol from <a class="omcd" href="https://openmath.org/cd/multiset1">multiset1</a> should
@@ -2457,7 +2457,7 @@
     </section>
 
     <section>
-    <h5 id="contm_p2s_statops">Rewrite the statistical operators</h5>
+    <h4 id="contm_p2s_statops">Rewrite the statistical operators</h4>
 
      <p>When the <code class="element">mean</code> element is applied to an explicit list of arguments, the
      translation to Strict Content markup is direct, using the <a class="omsymbol" href="https://openmath.org/cd/s_data1#mean">mean</a> symbol from the <a class="omcd" href="https://openmath.org/cd/s_data1">s_data1</a> content dictionary, as described in
@@ -2495,7 +2495,7 @@
     </section>
 
     <section>
-    <h5 id="contm_p2s_emptyset">Rewrite the <code class="element">emptyset</code> operator</h5>
+    <h4 id="contm_p2s_emptyset">Rewrite the <code class="element">emptyset</code> operator</h4>
 
       <p>In some situations, it may be clear from context that <code class="element">emptyset</code>
       corresponds to the <a class="omsymbol" href="https://openmath.org/cd/multiset1#emptyset">emptyset</a> symbol from the <a class="omcd" href="https://openmath.org/cd/multiset1">multiset1</a> content dictionary.
@@ -2508,10 +2508,10 @@
    </section>
 
    <section>
-    <h4 id="contm_p2s_att">Rewrite attributes</h4>
+    <h3 id="contm_p2s_att">Rewrite attributes</h3>
 
     <section>
-    <h5 id="contm_p2s_att_type">Rewrite the <code class="attribute">type</code> attribute</h5>
+    <h4 id="contm_p2s_att_type">Rewrite the <code class="attribute">type</code> attribute</h4>
      <p>
      At this point, all elements
      that accept the <code class="attribute">type</code>, other than <code class="element">ci</code> and <code class="element">csymbol</code>, should have been
@@ -2572,7 +2572,7 @@
     </section>
 
     <section>
-    <h5 id="contm_p2s_att_defn">Rewrite <code class="attribute">definitionURL</code> and <code class="attribute">encoding</code> attributes</h5>
+    <h4 id="contm_p2s_att_defn">Rewrite <code class="attribute">definitionURL</code> and <code class="attribute">encoding</code> attributes</h4>
     <p>
     If the <code class="attribute">definitionURL</code> and <code class="attribute">encoding</code> attributes on a
     <code class="element">csymbol</code> element can be interpreted as a reference to a
@@ -2582,7 +2582,7 @@
     </section>
 
     <section>
-    <h5 id="contm_p2s_att_att">Rewrite attributes</h5>
+    <h4 id="contm_p2s_att_att">Rewrite attributes</h4>
     <p>Rewrite any element with attributes that are
     not allowed in strict markup to a <code class="element">semantics</code> construction with
     the element without these attributes as the first child and the attributes in
