@@ -59,32 +59,39 @@
     known ahead of time to the document author. It also greatly eases automatic
     interpretation of the represented mathematical structures.</p>
  
-    <p class="note">This paragraph is wordy and maybe belongs in the informative section except that it
-      contains "should" information which makes it normative.
-    </p>
- 
     <p>Certain characters are used
     to name identifiers or operators that in traditional notation render the
-    same as other symbols or usually rendered invisibly.  For example, the entities
-    <code class="entity">DifferentialD</code>, <code class="entity">ExponentialE</code>, and
-    <code class="entity">ImaginaryI</code> denote notational symbols semantically distinct from visually
-    identical letters used as simple variables.
-    Likewise, the entities
-    <code class="entity">InvisibleTimes</code>,
+    same as other symbols or are rendered invisibly.  For example, the
+    characters U+2146, U+2147 and U+2148 represent differential <i class="var">d</i>,
+      exponential <i class="var">e</i> and imaginary <i class="var">i</i>, respectively
+    <!--
+    (entities <code class="entity">DifferentialD</code>, <code class="entity">ExponentialE</code>,
+     and <code class="entity">ImaginaryI</code>)
+    -->
+    and are semantically distinct from the same letters used as simple variables.
+    Likewise, the characters U+2061, U+2062, U+2063 and U+2064
+    represent function application, invisible times, invisible comma and invisible plus
+    <!--
+    (the first three have defined entities
     <code class="entity">ApplyFunction</code>,
-    <code class="entity">InvisibleComma</code> <span>and the character U+2064
-    (INVISIBLE PLUS)</span> usually render invisibly but represent significant information.
-    These entities have distinct spoken renderings, may influence visual linebreaking
-    and spacing,
-    and may effect the evaluation or meaning of particular expressions.
-    Accordingly, authors should use these entities wherever they are applicable.
+    <code class="entity">InvisibleTimes</code>,
+    <code class="entity">InvisibleComma</code>)
+    -->.
+    These usually render invisibly but represent significant information
+    that may influence visual spacing and linebreaking,
+    and may have distinct spoken renderings.
+    Accordingly, authors should use these characters (or corresponding entities)
+    wherever applicable.
+    <!--
     For instance, the expression represented visually as
     <q><i class="var">f</i>(<i class="var">x</i>)</q> would usually be spoken in English as
     <q><i class="var">f</i> of <i class="var">x</i></q> rather than just
     <q><i class="var">f</i> <i class="var">x</i></q>.  MathML conveys this meaning by using
-    the <code class="entity">ApplyFunction</code> operator after the
+    the U+2061 operator after the
     <q><i class="var">f</i></q>, which, in this case, can be aurally rendered as
-    <q>of</q>.</p>
+    <q>of</q>.
+   -->
+</p>
  
     <p>The complete list of MathML entities is described in [[Entities]].</p>
    </section>
@@ -105,9 +112,12 @@
      There are also a few empty elements used only in conjunction with certain layout schemata.</p>
  
      <p>All individual <q>symbols</q> in a mathematical expression should be
-     represented by MathML token elements (e.g., <code>&lt;mn&gt;24&lt;/mn&gt;</code>). The primary MathML token element
-     types are identifiers (e.g. variables or function names), numbers, and
-     operators (including fences, such as parentheses, and separators, such
+     represented by MathML token elements (e.g., <code>&lt;mn&gt;24&lt;/mn&gt;</code>).
+     The primary MathML token element
+     types are identifiers (<a class="intref" href="#presm_mi">mi</a>,
+     e.g. variables or function names), numbers (<a class="intref" href="#presm_mn">mn</a>), and
+     operators (<a class="intref" href="#presm_mo">mo</a>,
+       including fences, such as parentheses, and separators, such
      as commas). There are also token elements used to represent text or
      whitespace that has more aesthetic than mathematical significance
      and other elements representing <q>string literals</q> for compatibility with
@@ -1280,7 +1290,9 @@
       </tbody>
      </table>
  
-    <section class="fold">
+   </section>
+
+   <section class="fold">
      <h6>Example</h6>
  
      <p>The following example illustrates how a researcher might use
@@ -1304,10 +1316,7 @@
      </blockquote>
  
     </section>
- 
- 
    </section>
- 
   </section>
  
   <section>
@@ -1641,7 +1650,7 @@
     <p>Identifiers include function names such as
     <q>sin</q>. Expressions such as <q>sin <i class="var">x</i></q>
     should be written using the character U+2061
-    (which also has the entity names <code class="entity">af</code> and <code class="entity">ApplyFunction</code>) as shown below;
+    (entity <code class="entity">af</code> or <code class="entity">ApplyFunction</code>) as shown below;
     see also the discussion of invisible operators in <a href="#presm_mo"></a>.</p>
  
     <div class="example mathml mmlcore">
@@ -2067,8 +2076,8 @@
    that is, whether it should be drawn larger than normal when
    <code class="attribute">displaystyle</code>=<code class="attributevalue">true</code>
    (similar to using T<sub>E</sub>X's <code>\displaystyle</code>).
-   Examples of large operators include <code class="entity">int</code>
-   and <code class="entity">prod</code>.
+   Examples of large operators include U+222B and U+220F
+   (entities <code class="entity">int</code> and <code class="entity">prod</code>).
    See <a href="#presm_scriptlevel"></a> for more discussion.
         </td>
        </tr>
@@ -2085,7 +2094,9 @@
    this operator &#x2018;move&#x2019; to the more compact sub- and superscript positions
    when <code class="attribute">displaystyle</code> is false.
    Examples of operators that typically have <code class="attribute">movablelimits</code>=<code class="attributevalue">true</code>
-   are <code class="entity">sum</code>, <code class="entity">prod</code>, and <code>lim</code>.
+   are U+2211 and U+220F
+   (entitites <code class="entity">sum</code>, <code class="entity">prod</code>),
+   as well as <code>lim</code>.
    See <a href="#presm_scriptlevel"></a> for more discussion.
         </td>
        </tr>
@@ -2534,8 +2545,8 @@
     <h5 id="presm_invisibleops">Invisible operators</h5>
  
     <p>Certain operators that are <q>invisible</q> in traditional
-    mathematical notation should be represented using specific entity
-    references within <code class="element">mo</code> elements, rather than simply
+    mathematical notation should be represented using specific characters (or entity
+    references) within <code class="element">mo</code> elements, rather than simply
     by nothing. The characters used for these <q>invisible
     operators</q> are:</p>
  
@@ -2643,6 +2654,8 @@
     </div>
    
    </section>
+   </section>
+
    <section>
     <h5 id="presm_mo_rendering">Detailed rendering rules for <code class="starttag">&lt;mo&gt;</code> elements</h5>
  
@@ -3141,23 +3154,18 @@
  <code class="element">mtext</code> element is intended to denote commentary
  text.</p>
  
- <p>Note that some text with a clearly defined notational role might be
- more appropriately marked up using <code class="element">mi</code> or
- <code class="element">mo</code>; this is discussed further below.</p>
+ <p>Note that text with a clearly defined notational role might be
+   more appropriately marked up using
+   <a href="presm_mi" class="element">mi</a> or
+   <a href="presm_mo" class="element">mo</a>.</p>
  
- <p>An <code class="element">mtext</code> element can be used to contain
+ <p>An <code class="element">mtext</code> element can also contain
  <q>renderable whitespace</q>, i.e. invisible characters that are
  intended to alter the positioning of surrounding elements. In non-graphical
  media, such characters are intended to have an analogous effect, such as
  introducing positive or negative time delays or affecting rhythm in an
- audio renderer. This is not related to any whitespace in the source MathML
- consisting of blanks, newlines, tabs, or carriage returns; whitespace
- present directly in the source is trimmed and collapsed, as described in
- <a href="#fund_collapse"></a>. Whitespace that is intended to be rendered
- as part of an element's content must be represented by entity references
- or <code class="element">mspace</code> elements
- (unless it consists only of single blanks between non-whitespace
- characters).</p>
+ audio renderer. However, see <a href="#fund_collapse"></a>.
+</p>
  
  </section>
  
@@ -3442,7 +3450,7 @@
   <tr>
  <td rowspan="2" class="attname"><span class="coreno">lquote</span></td>
  <td><em>[=string=]</em></td>
- <td><code class="entity">quot</code></td>
+ <td>U+0022 (entity <code class="entity">quot</code>)</td>
  </tr>
  
  <tr>
@@ -3455,7 +3463,7 @@
  <tr>
  <td rowspan="2" class="attname"><span class="coreno">rquote</span></td>
  <td><em>[=string=]</em></td>
- <td><code class="entity">quot</code></td>
+ <td>U+0022 (entity <code class="entity">quot</code>)</td>
  </tr>
  
  <tr>
@@ -3469,13 +3477,8 @@
  
  </section>
  </section>
- 
  </section>
- 
- </section>
- 
- </section>
- 
+
  <section>
   <h3 id="presm_genlayout">General Layout Schemata</h3>
  
@@ -5814,7 +5817,7 @@
     and <code class="attribute">displaystyle</code>=<code class="attributevalue">false</code>,
     then <em>underscript</em> is drawn in a subscript position.
     In this case, the <code class="attribute">accentunder</code> attribute is ignored.
-    This is often used for limits on symbols such as <code class="entity">sum</code>.
+    This is often used for limits on symbols such as U+2211 (entity <code class="entity">sum</code>).
     </p>
  
    </section>
@@ -5943,7 +5946,7 @@
     and <code class="attribute">displaystyle</code>=<code class="attributevalue">false</code>,
     then <em>overscript</em> is drawn in a superscript position.
     In this case, the <code class="attribute">accent</code> attribute is ignored.
-    This is often used for limits on symbols such as <code class="entity">sum</code>.</p>
+    This is often used for limits on symbols such as  U+2211 (entity <code class="entity">sum</code>).</p>
  
    </section>
  
@@ -6092,7 +6095,7 @@
     and <code class="attribute">displaystyle</code>=<code class="attributevalue">false</code>,
     then <em>underscript</em> and <em>overscript</em> are drawn in a subscript and superscript position,
     respectively. In this case, the <code class="attribute">accentunder</code> and <code class="attribute">accent</code> attributes are ignored.
-    This is often used for limits on symbols such as <code class="entity">sum</code>.</p>
+    This is often used for limits on symbols such as  U+2211 (entity <code class="entity">sum</code>).</p>
  
    </section>
  

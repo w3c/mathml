@@ -720,7 +720,7 @@
 
    <p>Authors wishing to encode white space characters at the start or end of
    the content of a token, or in sequences other than a single space, without
-   having them ignored, must use <code class="entity">nbsp</code> (U+00A0)
+   having them ignored, must use non-breaking space U+00A0 (or <code class="entity">nbsp</code>)
    or other non-marking characters that are not trimmed.
    For example, compare the above use of an <code class="element">mtext</code> element
    with</p>
@@ -731,7 +731,6 @@
      &amp;#x00A0;&lt;!--nbsp--&gt;Theorem &amp;#x00A0;&lt;!--nbsp--&gt;1:
       &lt;/mtext&gt; </pre>
    </div>
-
 
    <p>When the first example is rendered, there is nothing before
    <q>Theorem</q>, one Unicode space character between <q>Theorem</q> and
