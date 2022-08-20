@@ -2630,7 +2630,10 @@
      an operation is to take place. The <code class="element">interval</code> qualifier, and
      the pair <code class="element">lowlimit</code> and <code class="element">uplimit</code> also restrict a bound
      variable to a set in the special case where the set is an
-     interval. The <code class="element">condition</code> qualifier, like
+     interval.
+     Note that <code class="element">interval</code> is only interpreted as a qualifier if it immediately
+     follows <code class="element">bvar</code>.
+     The <code class="element">condition</code> qualifier, like
      <code class="element">domainofapplication</code>, is general, and can be used to restrict
      bound variables to arbitrary sets.  However, unlike the other
      qualifiers, it restricts the bound variable by specifying a
@@ -5680,23 +5683,7 @@
      </section>
 
 
-
-
-
-
-
-      
-
-
-
-
-
-
-
-
     </section>
- 
-
 
     <section>
      <h5 id="contm_unary_veccalc">Unary Vector Calculus Operators:
@@ -7028,7 +7015,11 @@ infinity (&#x221e;).</p>
 
      <p>The <code class="element">interval</code> element is a container element used to represent simple mathematical intervals of the
      real number line.  It takes an optional attribute <code class="attribute">closure</code>, which can take any of the values <code class="attributevalue">open</code>, <code class="attributevalue">closed</code>, <code class="attributevalue">open-closed</code>, or <code class="attributevalue">closed-open</code>, with a default value
-     of <code class="attributevalue">closed</code>.</p>
+       of <code class="attributevalue">closed</code>.</p>
+     <p>As described
+     in <a href="#contm_domainofapplication_qualifier"></a>, <code class="element">interval</code>
+     is interpreted as a qualifier if it immediately
+     follows <code class="element">bvar</code>.</p>
 
      <section class="fold">
       <h6 id="interval1.interval.ex1">Example</h6>
