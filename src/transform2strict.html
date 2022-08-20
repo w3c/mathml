@@ -1204,7 +1204,10 @@
 
       <p>The above technique for replacing <code class="element">lowlimit</code> and <code class="element">uplimit</code> qualifiers
       with a <code class="element">domainofapplication</code> element is also used for replacing the
-      <code class="element">interval</code> qualifier. </p>
+      <code class="element">interval</code> qualifier.
+      Note that <code class="element">interval</code> is only interpreted as a qualifier if it immediately
+      follows <code class="element">bvar</code>. In other contexts <code class="element">interval</code>
+      is interpreted as a constructor, <a href="#contm_p2s_step_interval"></a>.</p>
      </div>
     </section>
 
@@ -1346,7 +1349,7 @@
     </section>
 
     <section>
-     <h4 id="contm_p2s_step">Intervals, vectors, matrices</h4>
+     <h4 id="contm_p2s_step_interval">Intervals, vectors, matrices</h4>
      <p>Rewrite interval, vectors, matrices, and matrix rows as
      described in <a href="#contm_p2s_intv"></a>, <a href="#contm_nary_construct_matrix"></a>.
      Note any qualifiers will have been rewritten to <code class="element">domainofapplication</code> and will be further rewritten in a later step.</p>
