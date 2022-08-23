@@ -6,65 +6,170 @@
 
  <section>
   <h3 id="acc_intro">Introduction</h3>     
-  <p>As an essential element of the Open Web Platform, the W3C MathML
-  specification has the unprecedented potential to enable content
-  authors and developers to incorporate mathematical expressions on the
-  web in such a way that the underlying structural and semantic
-  information can be exposed to other technologies. Enabling this
-  information exposure is foundational for accessibility, as well as
-  providing a path for making digital mathematics content machine
-  readable, searchable and reusable.</p>
 
-  <p>The internationally accepted standards and underpinning principles
-  for creating accessible digital content on the web can be found in the
-  W3C's Web Content Accessibility Guidelines [[WCAG21]]. In extending
-  these principles to digital content containing mathematical
-  information, WCAG provides a useful framework for defining
-  accessibility wherever MathML is used.</p>
+<p>As an essential element of the Open Web Platform, the W3C MathML
+specification has the unprecedented potential to enable content
+authors and developers to incorporate mathematical expressions on the
+web in such a way that the underlying structural and semantic
+information can be exposed to other technologies. Enabling this
+information exposure is foundational for accessibility, as well as
+providing a path for making digital mathematics content machine
+readable, searchable and reusable</p>
 
-  <p>As the current WCAG guidelines provide no direct guidance on how to
-  ensure mathematical content encoded as MathML will be accessible to
-  users with disabilities, this specification defines how to apply these
-  guidelines to digital content containing MathML.</p>
+<p>The internationally accepted standards and underpinning principles
+for creating accessible digital content on the web can be found in the
+W3C's Web Content Accessibility Guidelines [[WCAG21]]. In extending
+these principles to digital content containing mathematical
+information, WCAG provides a useful framework for defining
+accessibility wherever MathML is used.</p>
 
-  <p>A benefit of following these recommendations is that it helps to
-  ensure that digital mathematics content meets the accessibility
-  requirements already widely used around the world for web content. In
-  addition, ensuring that digital mathematics materials are accessible
-  will expand the readership of such content to both readers with and
-  without disabilities.</p>
+<p>As the current WCAG guidelines provide no direct guidance on how to
+ensure mathematical content encoded as MathML will be accessible to
+users with disabilities, this specification defines how to apply these
+guidelines to digital content containing MathML.</p>
 
-  <p>Additional guidance on best practices will be developed over time in 
-  [[?MathML-Notes]]. Placing these in Notes allows them to adapt and evolve 
-  independent of the MathML specification, since accessibility practices often 
-  need more frequent updating. The Notes are also intended for use with past, 
-  present, and future versions of MathML, in addition to considerations for 
-  both the MathML-Core and the full MathML specification. The approach of a 
-  separate document ensures that the evolution of MathML does not lock 
-  accessibility best practices in time, and allows content authors to apply the 
-  most recent accessibility practices.</p>
+<p>A benefit of following these recommendations is that it helps to
+ensure that digital mathematics content meets the accessibility
+requirements already widely used around the world for web content. In
+addition, ensuring that digital mathematics materials are accessible
+will expand the readership of such content to both readers with and
+without disabilities.</p>
+
+<p>Additional guidance on best practices will be developed over time
+in [[?MathML-Notes]]. Placing these in Notes allows them to adapt and
+evolve independent of the MathML specification, since accessibility
+practices often need more frequent updating. The Notes are also
+intended for use with past, present, and future versions of MathML, in
+addition to considerations for both the MathML-Core and the full
+MathML specification. The approach of a separate document ensures that
+the evolution of MathML does not lock accessibility best practices in
+time, and allows content authors to apply the most recent
+accessibility practices.</p>
  </section>
+
  <section>
   <h3 id="acc_benefits">Accessibility benefits of using MathML</h3>
-  
-  <p>Many of the advances of mathematics in the modern world (i.e., since the late Renaissance) were arguably aided by the development of early symbolic notation which continues to be evolved in our present day. While simple literacy text can be used to state underlying mathematical concepts, symbolic notation provides a succinct method of representing abstract mathematical constructs in a portable manner which can be more easily consumed, manipulated and understood by humans and machines. Mathematics notation is itself a language intended for more than just visual rendering, inspection and manipulation, as it is also intended to express the underlying meaning of the author. These characteristics of mathematical notation have in turn a direct connection to mathematics accessibility.</p>
-  <p>Accessibility has been a purposeful consideration from the very beginning of the MathML specification, as alluded to in the 1998 MathML 1.0 specification. This understanding is further reflected in the very first version of the Web Content Accessibility Guidelines (WCAG 1.0, W3C Recommendation 5-May-1999), which mentions the use of MathML as a suggested technique to comply with Checkpoint 3.1, "When an appropriate markup language exists, use markup rather than images to convey information," by including the example technique to "use MathML to mark up mathematical equations..." It is also worth noting, that under the discussion of WCAG 1.0 Guideline 3, "Use markup and style sheets and do so properly," that the editors have included the admonition that "content developers must not sacrifice appropriate markup because a certain browser or assistive technology does not process it correctly." Now some 20 years past the publication of the original WCAG recommendation, we still struggle with the fact that many content developers have been slow to adopt MathML due to those vary reasons. However, with the publication of MathML 4.0, the accessibility community is hopeful of what the future will bring for widespread mathematics accessibility on the web.</p>
 
-  <p>Using MathML in digital content extends the potential to support a wide array of accessibility use cases. We discuss these below.</p>
-  
-  <p>Auditory output. Technological means of providing dynamic text-to-speech output for mathematical expressions precedes the origins of MathML. T.V. Raman's AsTeR (Audio System For Technical Readings) is often seen as groundbreaking work in this area, and his work had an impact on shaping the MathML specification from the beginning [add reference]. AsTeR's audio output not only converted mathematical expressions to natural spoken language, but also applied audio cures such as changes in spoken pitch to help provide an auditory analog of two-dimensional visual structure common in mathematical notation. Other applications have also applied other types of audio cues such as binaural spatialization, earcons, and spearcons to help disambiguate mathematical expressions rendered by synthetic speech. MathML provides the level of robust information about the structure and syntax of mathematical expressions.
-  It is also important to note that the ability to create extensive sets of automated speech rules used by MathML-aware TTS tools provide for virtually infinite portability of math speech to the various human spoken languages (e.g., internationalization), as well as different styles of spoken math (e.g., ClearSpeak, MathSpeak, SimpleSpeak, etc.). In the future, this could provide even more types of speech rules, such as when an educational assessment needs to apply a more restrictive reading so as not to invalidate the testing construct, or when instructional content aimed at early learners needs to adopt the spoken style used in the classroom for young students.</p>   
-  
-  <p>Braille output. The tactile rendering of mathematical expressions in braille is a very important use case. For someone who is blind, interpreting mathematics through auditory rendering alone is a cognitive taxing experience except for the most basic expressions. And for a deafblind user, auditory renderings are completely inaccessible. Several math braille codes are in common use globally, such as the Nemeth braille code, UEB Technical, German braille mathematics code, French braille mathematics code, etc. Dynamic mathematics braille translators such as Liblouis support translation of MathML content on webpages for individuals who access the web via a refreshable braille display [add reference]. Thus, using MathML is essential for providing dynamic braille content for mathematics.</p>
-   
-  <p>Other forms of visual transformation. Synchronized highlighting is a common addition to text-to-speech intended for sighted users. Because MathML provides the ability to parse the underlying tree structure of expressions, individual elements of the expression can be visually highlighted as they are spoken. This enhances the ability of TTS users to stay engaged with the text reading, which can potentially increase comprehension and learning [add citation]. Even for people visually reading without TTS, visual highlighting within expressions as one navigates a web page using caret browsing can be a useful accessibility feature which MathML can potentially support.</p>
-  
-  <p>For individuals who are deaf or hard of hearing but are unable to use braille, mathematical equations rendered in MathML can potentially be turned into visually displayed text. Since research has shown that, especially among school-age children with reading impairments, the ability to understand symbolic notation occurring in mathematical expression is much more difficult than reading literary text, enabling this capability could be a useful access technique for this population [add citation].</p>
-  
-  <p>Another potential accessibility scaffold which MathML could provide for individuals who are deaf or hard of hearing would be the ability to provide input to automated signing avatars. Automated signing avatar technology which generates American Sign Language has already been applied to elementary level mathematics [add citation]. Sign languages vary by county (and sometimes locality) and are not simply "word to sign" translations, as sign language has its own grammar, so being able to access the underlying tree structure of mathematical expressions as can be done with MathML will provide the potential for representing expressions in sign language from a digital document dynamically without having to use static prerecorded videos of human signers.</p>
-  
-  <p>Graphing an equation is a commonly used means of generating a visual output which can aid in comprehending the affects and implications of the underlying mathematical expressions. This is helpful for all people, but can be especially impactful for those with cognitive or learning impairments. Some dynamic graphing utilities (e.g., Desmos and MathTrax) have extended this concept beyond a simple visual line trace, to auditory tracing (e.g., tones which rise and fall in pitch to provide an audio construct of the visual trace) as well as a dynamically generated text description of the visual graph. Using MathML in digital content will provide the potential for developers to apply such automated accessible graphing utilities to their websites.</p> 
-</section>
+<p>Many of the advances of mathematics in the modern world (i.e.,
+since the late Renaissance) were arguably aided by the development of
+early symbolic notation which continues to be evolved in our present
+day. While simple literacy text can be used to state underlying
+mathematical concepts, symbolic notation provides a succinct method of
+representing abstract mathematical constructs in a portable manner
+which can be more easily consumed, manipulated and understood by
+humans and machines. Mathematics notation is itself a language
+intended for more than just visual rendering, inspection and
+manipulation, as it is also intended to express the underlying meaning
+of the author. These characteristics of mathematical notation have in
+turn a direct connection to mathematics accessibility.</p>
+
+<p>Accessibility has been a purposeful consideration from the very
+beginning of the MathML specification, as alluded to in the 1998
+MathML 1.0 specification. This understanding is further reflected in
+the very first version of the Web Content Accessibility Guidelines
+(WCAG 1.0, W3C Recommendation 5-May-1999), which mentions the use of
+MathML as a suggested technique to comply with Checkpoint 3.1, "When
+an appropriate markup language exists, use markup rather than images
+to convey information," by including the example technique to "use
+MathML to mark up mathematical equations..." It is also worth noting,
+that under the discussion of WCAG 1.0 Guideline 3, "Use markup and
+style sheets and do so properly," that the editors have included the
+admonition that "content developers must not sacrifice appropriate
+markup because a certain browser or assistive technology does not
+process it correctly." Now some 20 years after the publication of the
+original WCAG recommendation, we still struggle with the fact that
+many content developers have been slow to adopt MathML due to those
+very reasons. However, with the publication of MathML 4.0, the
+accessibility community is hopeful of what the future will bring for
+widespread mathematics accessibility on the web.</p>
+
+<p>Using MathML in digital content extends the potential to support a
+wide array of accessibility use cases. We discuss these below.</p>
+
+<p>Auditory output. Technological means of providing dynamic
+text-to-speech output for mathematical expressions precedes the
+origins of MathML, and this use case has had an impact on shaping the
+MathML specification from the beginning. Beyond simply generating
+spoken text strings, the use of audio cues such as changes in spoken
+pitch to help provide an auditory analog of two-dimensional visual
+structure has been found useful. Other audio applications have
+included other types of audio cues such as binaural spatialization,
+earcons, and spearcons to help disambiguate mathematical expressions
+rendered by synthetic speech. MathML provides a level of robust
+information about the structure and syntax of mathematical expressions
+to enable these techniques. It is also important to note that the
+ability to create extensive sets of automated speech rules used by
+MathML-aware TTS tools provide for virtually infinite portability of
+math speech to the various human spoken languages (e.g.,
+internationalization), as well as different styles of spoken math
+(e.g., ClearSpeak, MathSpeak, SimpleSpeak, etc.). In the future, this
+could provide even more types of speech rules, such as when an
+educational assessment needs to apply a more restrictive reading so as
+not to invalidate the testing construct, or when instructional content
+aimed at early learners needs to adopt the spoken style used in the
+classroom for young students.</p>
+
+<p>Braille output. The tactile rendering of mathematical expressions
+in braille is a very important use case. For someone who is blind,
+interpreting mathematics through auditory rendering alone is a
+cognitive taxing experience except for the most basic expressions. And
+for a deafblind user, auditory renderings are completely
+inaccessible. Several math braille codes are in common use globally,
+such as the Nemeth braille code, UEB Technical, German braille
+mathematics code, French braille mathematics code, etc. Dynamic
+mathematics braille translators such as Liblouis support translation
+of MathML content on webpages for individuals who access the web via a
+refreshable braille display. Thus, using MathML is essential for
+providing dynamic braille content for mathematics.</p>
+
+<p>Other forms of visual transformation. Synchronized highlighting is
+a common addition to text-to-speech intended for sighted
+users. Because MathML provides the ability to parse the underlying
+tree structure of expressions, individual elements of the expression
+can be visually highlighted as they are spoken. This enhances the
+ability of TTS users to stay engaged with the text reading, which can
+potentially increase comprehension and learning. Even for people
+visually reading without TTS, visual highlighting within expressions
+as one navigates a web page using caret browsing can be a useful
+accessibility feature which MathML can potentially support.</p>
+
+<p>For individuals who are deaf or hard of hearing but are unable to
+use braille, mathematical equations rendered in MathML can potentially
+be turned into visually displayed text. Since research has shown that,
+especially among school-age children with reading impairments, the
+ability to understand symbolic notation occurring in mathematical
+expression is much more difficult than reading literary text, enabling
+this capability could be a useful access technique for this
+population.</p>
+
+<p>Another potential accessibility scaffold which MathML could provide
+for individuals who are deaf or hard of hearing would be the ability
+to provide input to automated signing avatars. Automated signing
+avatar technology which generates American Sign Language has already
+been applied to elementary level mathematics <span class="note">add citation</span>. Sign
+languages vary by county (and sometimes locality) and are not simply
+"word to sign" translations, as sign language has its own grammar, so
+being able to access the underlying tree structure of mathematical
+expressions as can be done with MathML will provide the potential for
+representing expressions in sign language from a digital document
+dynamically without having to use static prerecorded videos of human
+signers.</p>
+
+<p>Graphing an equation is a commonly used means of generating a
+visual output which can aid in comprehending the effects and
+implications of the underlying mathematical expressions. This is
+helpful for all people, but can be especially impactful for those with
+cognitive or learning impairments. Some dynamic graphing utilities
+(e.g., Desmos and MathTrax) have extended this concept beyond a simple
+visual line trace, to auditory tracing (e.g., tones which rise and
+fall in pitch to provide an audio construct of the visual trace) as
+well as a dynamically generated text description of the visual
+graph. Using MathML in digital content will provide the potential for
+developers to apply such automated accessible graphing utilities to
+their websites.</p>
+
+ </section>
+
 
  <section>
   <h3 id="acc_guide">Accessibility Guidance</h3>
@@ -73,337 +178,251 @@
    <h4 id="acc_ua">User Agents</h4>
    
    <section>
-    <h5 id="acc_at">Accessibility tree</h5> 
-    <p>User agents (e.g., web browsers) should leverage information in the MathML expression tree structure to maximize accessibility. Browsers should process MathML into the DOM tree's internal representation, which contains objects representing all the markup's elements and attributes. In general, user agents will expose accessibility information via a platform accessibility service (e.g., an accessibility API), which is passed on to assistive technology applications via the accessibility tree. The accessibility tree should contain accessibility-related information for most MathML elements. Browsers should ensure the accessibility tree generated from the DOM tree retains this information so that Accessibility APIs can provide a representation that can be understood by assistive technologies. However, in compliance with the W3C User Agent Accessibility Guidelines Success Criterion 4.1.4, "If the user agent accessibility API does not provide sufficient information to one or more platform accessibility services, then Document Object Models (DOM), must be made programmatically available to assistive technologies" [UAAG20].</p>
- 
-  <p>By ensuring that MathML elements become nodes in the DOM tree, and the resulting accessibility tree, user agents can expose math nodes for keyboard navigation within expressions. This can support important user needs such as the ability to visually highlight elements of an expression and/or speak individual elements as one navigates with arrow keys. This can further support other forms of synchronous navigation, such as individuals using refreshable braille displays along with synthetic speech.</p> 
+    <h5 id="acc_at">Accessibility tree</h5>
 
-  <p>While it is common practice for the accessibility tree to ignore most DOM node elements that are primarily used for visual display purposes, it is important to point out that math expressions often use what appears as visual styling to convey information which can be important for some types of assistive technology applications. For example, omitting the <code class="element">&lt;mspace&gt;</code> element from the accessibility tree will impact the ability to generate a valid math braille representation of expressions on a braille display.</p>
+<p>User agents (e.g., web browsers) should leverage information in the
+MathML expression tree structure to maximize accessibility. Browsers
+should process MathML into the DOM tree's internal representation,
+which contains objects representing all the markup's elements and
+attributes. In general, user agents will expose accessibility
+information via a platform accessibility service (e.g., an
+accessibility API), which is passed on to assistive technology
+applications via the accessibility tree. The accessibility tree should
+contain accessibility-related information for most MathML
+elements. Browsers should ensure the accessibility tree generated from
+the DOM tree retains this information so that Accessibility APIs can
+provide a representation that can be understood by assistive
+technologies. However, in compliance with the W3C User Agent
+Accessibility Guidelines Success Criterion 4.1.4, "If the user agent
+accessibility API does not provide sufficient information to one or
+more platform accessibility services, then Document Object Models
+(DOM), must be made programmatically available to assistive
+technologies" [UAAG20].</p> <p>By ensuring that most MathML elements
+become nodes in the DOM tree, and the resulting accessibility tree,
+user agents can expose math nodes for keyboard navigation within
+expressions. This can support important user needs such as the ability
+to visually highlight elements of an expression and/or speak
+individual elements as one navigates with arrow keys. This can further
+support other forms of synchronous navigation, such as individuals
+using refreshable braille displays along with synthetic speech.</p>
+<p>While it is common practice for the accessibility tree to ignore
+most DOM node elements that are primarily used for visual display
+purposes, it is important to point out that math expressions often use
+what appears as visual styling to convey information which can be
+important for some types of assistive technology applications. For
+example, omitting the <code class="element">&lt;mspace&gt;</code>
+element from the accessibility tree will impact the ability to
+generate a valid math braille representation of expressions on a
+braille display. Further, when color is expressed in MathML with the
+<code class="attribute">mathcolor</code> and <code
+class="attribute">mathbackground</code> attributes, these elements
+need to be included if they are used to express meaning.</p> <p>The
+<code class="attribute">alttext</code> attribute can be used to
+override standard speech rule processing (e.g., as is often done in
+standardized assessments). However, there are numerous limitations to
+this method. For instance, the entire spoken text of the expression
+must be given in the tag, even if the author is only concerned about
+one small portion. Further, <code class="attribute">alttext</code> is
+limited to plain text, so speech queues such as pausing and pitch
+changes cannot be included for passing on to speech engines. Also, the
+<code class="attribute">alttext</code> attribute has no direct linkage
+to the MathML tree, so there will be no way to handle synchronized
+highlighting of the expression, nor will there be a way for users to
+navigate through an expression.</p>
 
-   </section>
+<p>An early draft of MathML Accessiblity API Mappings 1.0 is
+available. This specification is intended for user agent developers
+responsible for MathML accessibility in their product. The goal of
+this specification is to maximize the accessibility of MathML content
+by ensuring each assistive technology receives MathML content with the
+roles, states, and properties it expects. The placing of ARIA labels
+and <code>aria-labeledby</code> is not appropriate in MathML because this will override
+braille generation.</p>
+</section>
 
+</section>
 
-   <section>
-    <h5 id="acc_aria">ARIA processing </h5>
-    <p>Points to [[[MathML-AAM]]]
-    <q>This specification is intended for user agent developers
-    responsible for MathML accessibility in their product. The goal of
-    this specification is to maximize the accessibility of MathML
-    content by ensuring each assistive technology receives MathML
-    content with the roles, states, and properties it
-    expects.</q></p> <p>[Needs to be fleshed out...]</p>
-   </section>
-
-   
-  </section>
  </section>
+
  
  <section>
-  <h3 id="acc_authors">Content Authors</h3> <p>This section considers
-  how to use WCAG to establish requirements for accessible MathML
-  content on the web, using the same four high-level content
-  principles: that content should be perceivable, operable,
-  understandable, and robust. Therefore, this section defines how to
-  apply the conformance criteria defined in WCAG to address qualities
-  unique to digital content containing MathML.</p> <p>[Need to flesh
-  this out...]</p>
+  <h3 id="acc_authors">Content Authors</h3>
+
+<p>This section considers how to use WCAG to establish requirements
+for accessible MathML content on the web, using the same four
+high-level content principles: that content should be perceivable,
+operable, understandable, and robust. Therefore, this section defines
+how to apply the conformance criteria defined in WCAG to address
+qualities unique to digital content containing MathML.</p>
+
 
   <section>
    <h4 id="acc_over">Overarching guidance</h4>
    <section>
     <h5 id="acc_markup">Always use markup</h5>
 
-    <p>[Stressing
-    the need for using MathML for all math/chemistry content. This
-    precludes simply using QWERTY characters or expression images in
-    HTML (even if alt text is used). Even a single letter variable
-    ideally should be marked up in MathML because it represents a
-    mathematical expression. This way, audio, braille and visual
-    renderings of the variable will be consistent throughout the
-    page.]</p>
+<p>It is important that MathML be used for marking up all mathematics
+and linear chemical equation content. This precludes simply using
+ASCII characters or expression images in HTML (even if alt text is
+used). Even a single letter variable ideally should be marked up in
+MathML because it represents a mathematical expression. This way,
+audio, braille and visual renderings of the variable will be
+consistent throughout the page.</p>
 
-    <p>[Need to flesh this out...]</p>
    </section>
 
    <section>
-    <h5 id="acc_intent">Use Intent framework</h5>
+    <h5 id="acc_intent">Use <code>intent</code> and <code>arg</code> attributes</h5>
 
-    <p>MathML's Intent framework has been developed to reduce
-    notational ambiguity which cannot be reliably resolved by
-    assistive technology.</p>
-    
-    <p>[Need to flesh this out...]</p>
-
-    <section>
-     <h6 id="acc_intent_subject">Subject Area Attribute</h6>
-
-     <p>Used within
-    the intent framework to define when MathML content should be
-    interpreted in the context of a specific subject area, geometry,
-    chemistry, statistics, etc. [Perhaps pull in text from <a
-    href="https://w3c.github.io/mathml-docs/gap-analysis/#subject-area">MathML
-     Accessibility Gap Analysis | mathml-docs (w3c.github.io)</a>]</p>
-     
-    <p>[Need to flesh this out...]</p>
-    </section>
-
-    </section> <section>
-    <h5 id="acc_intent_aria">Relationship to ARIA</h5>
-
-    <p>[Guidance on
-    content authoring use of ARIA tagging on MathML. Will need to
-    harmonize with whatever we are saying about the intent
-    framework.]</p>
-
-    <p>[Needs to fleshed out...]</p>
-
+<p>MathML's <code>intent</code> and <code>arg</code> attributes has
+been developed to reduce notational ambiguity which cannot be reliably
+resolved by assistive technology. This also includes blanks and units,
+which are covered by the Intent attribute.</p>
    </section>
-   <section>
-    <h5 id="acc_intent_ssml">Relationship to SSML</h5>
-    <p>[Guidance on use of SSML on within MathML to enforce particular
-    speech behavior in specific spoken human languages. Need to also
-    consider the interplay of the intent element. Some useful
-    background information on SSML usage within MathML can be read at
-    <a
-    href="https://www.w3.org/wiki/Math_Speech_Annotations#SSML">Math
-    Speech Annotations - W3C Wiki</a> ]</p>
 
-    <p>[Needs to be fleshed
-    out...]</p>
-   </section>
   </section>
-  <section>
-   <h4 id="acc_specific_markup">Specific Markup Guidance</h4>
 
-   <p>This section will be specific guidance organized by MathML
-   element </p>
-   <p>[Needs to be fleshed out...]</p>
+  <section>
+     <h4 id="acc_markup">Specific Markup Guidance</h4>
+   
+
 
    <section>
     <h5 id="acc_invisible">Invisible Operators</h5>
 
-    <p>Common use of
-    mathematical notation employs several <q>invisible operators</q>
-    whose symbols are not displayed but function as if the visible
-    operator were present. These operators should be marked up in
-    MathML to preserve their meaning as well as to prevent possible
-    ambiguity for users of assistive technology.</p>
+<p>Common use of mathematical notation employs several <q>invisible
+operators</q> whose symbols are not displayed but function as if the
+visible operator were present. These operators should be marked up in
+MathML to preserve their meaning as well as to prevent possible
+ambiguity for users of assistive technology.</p>
 
-    <p>Screen readers
-    will not speak anything enclosed in an <code
-    class="element">&lt;mphantom&gt;</code> element; therefore, do not
-    use <code class="element">&lt;mphantom&gt;</code> in combination
-    with an operator to create invisible operators.</p>
+<p>Screen readers will not speak anything enclosed in an <code
+class="element">&lt;mphantom&gt;</code> element; therefore, do not use
+<code class="element">&lt;mphantom&gt;</code> in combination with an
+operator to create invisible operators.</p>
 
-    <p>Implicit Multiplication: The <q>invisible times</q> operator (&amp;#x2062;) 
-    should be used to indicate multiplication whenever the multiplication 
-    operator is used tacitly in traditional notation.</p>
+<p>Implicit Multiplication: The <q>invisible times</q> operator
+(&amp;#x2062;) should be used to indicate multiplication whenever the
+multiplication operator is used tacitly in traditional notation.</p>
 
-    <p>Function Application: The &quot;apply function&quot; operator (&amp;#x2061;) 
-    should be used to indicate function application.</p>
+<p>Function Application: The &quot;apply function&quot; operator
+(&amp;#x2061;) should be used to indicate function application.</p>
+
+
+<p>Invisible Comma: The <q>invisible comma</q> or <q>invisible
+separator</q> operator (&amp;#x2063;) should be used to semantically
+separate arguments or indices when commas are omitted.</p>
     
-    <p>Invisible Comma: The <q>invisible comma</q> or <q>invisible
-    separator</q> operator (&amp;#x2063;) should be used to
-    semantically separate arguments or indices when commas are
-    omitted.</p>
-    
-    <p>Implicit Addition: In mixed fractions the <q>invisible plus</q>
-    character (&amp;#x2064;) should be used as an operator between the
-    whole number and its fraction.</p>
+<p>Implicit Addition: In mixed fractions the <q>invisible plus</q>
+character (&amp;#x2064;) should be used as an operator between the
+whole number and its fraction.</p>
+
 
    </section>
    <section>
     <h5 id="acc_grouping">Proper Grouping of Sub-expressions</h5>
 
-    <p>It is good practice to group sub-expressions as they would be
-    interpreted mathematically. Properly grouping sub-expressions
-    using &lt;mrow&gt; can improve display by affecting spacing,
-    allows for more intelligent linebreaking and indentation, it can
-    simplify semantic interpretation of presentation elements by
-    screen readers and text-to-speech applications. For further
-    details refer to ??? &quot;Proper grouping of sub-expressions
-    using &lt;mrow&gt;&quot; [pointer to wherever that will be in
-    MathML 4 specification]</p>
+<p>It is good practice to group sub-expressions as they would be
+interpreted mathematically. Properly grouping sub-expressions using
+<code class="element">&lt;mrow&gt;</code> can improve display by affecting spacing, allows for more
+intelligent linebreaking and indentation, it can simplify semantic
+interpretation of presentation elements by screen readers and
+text-to-speech applications.</p>
+
    </section>
    <section>
     <h5 id="acc_spacing">Spacing</h5>
 
-    <p>In general, the spacing elements &lt;mspace&gt;,
-    &lt;mphantom&gt;, and &lt;mpadded&gt; should not be used to convey
-    meaning. See ???? <q>Warning: spacing should not be used to convey
-    meaning</q> [pointer to wherever that will be in MathML 4
-    specification]</p>
+<p>In general, the spacing elements <code class="element">&lt;mspace&gt;</code>, <code class="element">&lt;mphantom&gt;</code>,
+and <code class="element">&lt;mpadded&gt;</code> should not be used to convey meaning.</p>
 
-    <p>See <q>Fill-in-the-Blanks</q> [pointer to wherever that will be
-    in MathML 4 specification] for the use of &lt;mspace&gt;,
-    &lt;mphantom&gt;, or &lt;mtext&gt; containing non-breaking spaces
-    (&amp;#xA0;) as spacing elements to indicate blanks to be filled
-    in by the user.</p>
-   </section>
+  </section>
    <section>
     <h5 id="acc_numbers">Numbers</h5>
 
-    <p>All numeric quantities should be enclosed in an &lt;mn&gt;
-    element. Digit group separators, such as commas, periods, or
-    spaces, should also be included as part of the number and should
-    not be treated as operators.</p>
-   </section>
-   <section>
-    <h5 id="acc_var">Multi-letter Variables</h5>
+<p>All numeric quantities should be enclosed in an <code class="element">&lt;mn&gt;</code>
+element. Digit group separators, such as commas, periods, or spaces,
+should also be included as part of the number and should not be
+treated as operators.</p>
 
-    <p>Variables containing more than one letter should be marked up
-    in a single &lt;mi&gt; element.</p>
    </section>
    <section>
     <h5 id="acc_subsup">Superscripts and Subscripts</h5>
 
-    <p>It is important to apply superscripts and subscripts to the
-    appropriate element or sub-expression. It is not correct to apply
-    a superscript or subscript to a closing parenthesis or any other
-    grouping symbol.</p>
+<p>It is important to apply superscripts and subscripts to the
+appropriate element or sub-expression. It is not correct to apply a
+superscript or subscript to a closing parenthesis or any other
+grouping symbol. Important for navigation</p>
+
    </section>
    <section>
     <h5 id="acc_elem">Elementary Math Notation</h5>
 
-    <p>Elementary notations have their own layout elements. For long
-    division and stacked expressions use the proper elements such as
-    &lt;mlongdiv&gt; and &lt;mstack&gt; instead of &lt;mtable&gt;.</p>
+<p>Elementary notations have their own layout elements. For long
+division and stacked expressions use the proper elements such as <code
+class="element">&lt;mlongdiv&gt;</code> and <code
+class="element">&lt;mstack&gt;</code> instead of <code
+class="element">&lt;mtable&gt;</code>.</p>
+
    </section>
    <section>
     <h5 id="acc_fill_in">Fill-in-the-Blanks</h5>
 
-    <p>Blanks in a &quot;fill-in-the-blank&quot; style of question are
-    often visualized by underlined spaces, empty circles, squares, or
-    other symbols. To indicate a blank, set the class attribute of the
-    MathML element that will represent the blank to
-    &quot;MathML-Blank&quot;. Usually, this element will be an
-    &lt;menclose&gt; element that draws a line under, or a box around,
-    some spacing element. Typically, that element will be an
-    &lt;mspace&gt;, &lt;mphantom&gt;, or &lt;mtext&gt; that perhaps
-    contains non-breaking spaces (&amp;#xA0;), or another element as
-    is appropriate.  All of these can be fitted to match the required
-    size.</p>
+<p>Blanks in a <q>fill-in-the-blank</q> style of question are often
+visualized by underlined spaces, empty circles, squares, or other
+symbols. To indicate a blank, use the <code>intent</code> and <code>arg</code> attributes.</p>
 
-    <p>In an interactive electronic environment where the user should
-    fill the blank on the displayed page, Javascript would typically
-    be used to invoke an editor when the blank is clicked on. To
-    facilitate this, an 'id' should be added to the element to
-    identify it for editing and eventual processing.  Additionally, an
-    &quot;onclick&quot; or similar event trigger should be added. The
-    details depend upon the type of interaction desired, along with
-    the specific Javascript being used.</p>
-   </section>
-   <section>
-    <h5  id="acc_units">Units</h5>
+<p>In an interactive electronic environment where the user should fill
+the blank on the displayed page, JavaScript would typically be used to
+invoke an editor when the blank is clicked on. To facilitate this, an
+<code class="attribute">id</code> should be added to the element to identify it for editing and
+eventual processing. Additionally, an <code>onclick</code> or similar event
+trigger should be added. The details depend upon the type of
+interaction desired, along with the specific JavaScript being used.</p>
 
-    <p>Authors should follow the guidelines outlined in <a
-    href="https://www.w3.org/TR/mathml-units/">Units in
-    MathML</a>. [Need to verify these guidelines are still valid]</p>
-
-    <p>This includes using the &quot;invisible times&quot; operator
-    (&amp;#x2062;) to separate a numeral or variable from its
-    unit. Additional space can be added for better visual
-    rendering. The &quot;invisible times&quot; operator is included
-    for semantic correctness (in this case representing the product
-    between a numerical value and a unit of measurement).</p>
-
-    <p>A unit should also be enclosed in an &lt;mi&gt; element with
-    the attribute mathvariant set to &quot;normal&quot; to prevent
-    rendering in italics and the attribute class set to
-    &quot;MathML-Unit&quot; to distinguish the unit from an ordinary
-    identifier.</p>
-   </section>
-   <section>
-    <h5 id="acc_emph">Emphasis</h5> <p>Ensure that mathematical type
-    styles take precedence over any emphasis that would be inherited
-    from the island's surrounding environment. This is accomplished
-    with the mathvariant attribute, which is valid on all token
-    elements and the &lt;mstyle&gt; element. The value of mathvariant
-    for an element will always override the rendering attributes of
-    the HTML formatting surrounding it. More information on this
-    subject can be found in Chapter ??  of the MathML 4
-    specification.</p>
-
-    <p>If an entire math expression is emphasized, apply the emphasis
-    as appropriate to the complete MathML island.</p>
-
-    <p>Note: By default, the &lt;:mi&gt; element's mathvariant
-    attribute will default to &quot;italic&quot; if its content is a
-    single letter.</p>
-   </section>
-   <section>
-    <h5 id="acc_color">Color</h5>
-
-    <p>[May need to include guidance on color being expressed in
-    MathML with the mathcolor and mathbackground attributes, when
-    color is being used to express meaning.]</p>
    </section>
    <section>
     <h5  id="acc_tables_lists">Tables and Lists</h5>
 
-    <p>MathML provides built-in support for tables and equation
-    numbering, which complements HTML functionality with lists and
-    tables. In practice, it is not always clear which structural
-    elements should be used. Ideally, a table (either HTML
-    &lt;table&gt; or MathML &lt;mtable&gt;) should be used when
-    information between aligned rows or columns are semantically
-    related. In other cases, such as ordinary problem numbering or
-    information presented in an ordered sequence, an HTML ordered list
-    &lt;ol&gt; is more appropriate.</p>
+<p>MathML provides built-in support for tables and equation numbering,
+which complements HTML functionality with lists and tables. In
+practice, it is not always clear which structural elements should be
+used. Ideally, a table (either HTML <code class="element">&lt;table&gt;</code> or MathML
+<code class="element">&lt;mtable&gt;</code>) should be used when information between aligned rows
+or columns are semantically related. In other cases, such as ordinary
+problem numbering or information presented in an ordered sequence, an
+HTML ordered list <code class="element">&lt;ol&gt;</code>; is more appropriate.</p>
 
-    <p>Choosing between &lt;table&gt; and &lt;mtable&gt; may require
-    some forethought in how best to meet the usability needs of the
-    intended audience and purpose of the table content. HTML
-    structural elements are advantageous because screanreaders provide
-    more robust table navigation, whereas the user may only
-    &quot;enter&quot; or &quot;exit&quot; an &lt;mtable&gt; in a
-    MathML island. However, the &lt;mtable&gt; element is useful
-    because it can be tweaked easily for visual alignment without
-    creating new table cells, which can improve reading flow for the
-    user. However, &lt;mtable&gt; should still be used for matrices
-    and other table-like math layouts.</p>
+<p>Choosing between <code class="element">&lt;table&gt;</code> and <code class="element">&lt;mtable&gt;</code> may require some
+forethought in how best to meet the usability needs of the intended
+audience and purpose of the table content. HTML structural elements
+are advantageous because screen readers provide more robust table
+navigation, whereas the user may only &quot;enter&quot; or
+&quot;exit&quot; an <code class="element">&lt;mtable&gt;</code> in a MathML island. However, the
+<code class="element">&lt;mtable&gt;</code> element is useful because it can be tweaked easily for
+visual alignment without creating new table cells, which can improve
+reading flow for the user. However, <code class="element">&lt;mtable&gt;</code> should still be
+used for matrices and other table-like math layouts.</p>
+
    </section>
 
    <section>
     <h5 id="acc_natural_lang">Natural-language Mathematics</h5>
 
-    <p>Instructional content for young learners may sometimes use the
-    written form of math symbols. For example, the multiplication sign
-    &#xd7; might be written as <q>times</q> or <q>multiplied
-    by</q>. Because <q>times</q> and <q>multiplied by</q>
-    are ordinary words, speech engines will not have an issue reading
-    them.  However, in some cases, there may be a use-case for
-    including these terms in MathML. For instance, the word
-    <q>times</q> in <q>x = 2 times a</q> could be marked up
-    as an operator by means of &lt;mo&gt;times&lt;/mo&gt;.</p>
+<p>Instructional content for young learners may sometimes use the
+written form of math symbols. For example, the multiplication sign
+&#xd7; might be written as <q>times</q> or <q>multiplied
+by</q>. Because <q>times</q> and <q>multiplied by</q> are ordinary
+words, speech engines will not have an issue reading them.  However,
+in some cases, there may be a use-case for including these terms in
+MathML. For instance, the word <q>times</q> in <q>x = 2 times a</q>
+could be marked up as an operator by means of
+&lt;mo&gt;times&lt;/mo&gt;.</p>
+
+
+</section>
+
    </section>
   </section>
  </section>
 
- <section>
-  <h3 id="acc_todo">To Do</h3>
-
-  <p>Stuff not yet organized but placed below for eventual
-  integration</p>
-
-  <p><code class="attribute">alttext</code> The MathML alttext
-  attribute can be used to override standard speech rule processing
-  (e.g., as is often done in standardized assessments). However, there
-  are numerous limitations to this method. For instance, the entire
-  spoken text of the expression must be given in the tag, even if the
-  author is only concerned about one small portion. Further, alttext
-  is limited to plain text, so speech queues such as pausing and pitch
-  changes cannot be included for passing on to speech engines. Also,
-  the alttext has no direct linkage to the MathML tree, so there will
-  be no way to handle synchronized highlighting of the expression, nor
-  will there be a way for users to navigate through an
-  expression. </p>
-
-  <p>&lt;maction&gt; Use of maction element to provide collapse/expand
-  functionality for long expressions. Can provide enhanced
-  accessibility for users with cognitive disabilities and/or
-  low-vision.</p>
- </section>
-
-
-</section>
