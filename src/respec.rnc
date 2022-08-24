@@ -75,6 +75,7 @@ attribute onclick {text}?,
 text}
 
 p = element p {
+attribute data-number {xsd:integer}?,
 attribute class {text}?,
 attribute style {text}?,
 attribute id {text}?,
