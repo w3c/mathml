@@ -15,35 +15,17 @@
   [[?XHTML]], and in any newer HTML
   when it appears</span>.</p>
 
-  <p>There are three kinds of interface issues that arise in embedding
+  <p>There are two kinds of interface issues that arise in embedding
   MathML in other XML documents. First, MathML markup must be recognized
   as valid embedded XML
   content, and not as an error.  This issue could be seen primarily as a
   question of managing namespaces in XML [[Namespaces]].
   </p>
 
-  <p>Second, in the case of HTML/XHTML, MathML rendering must be
-  integrated with browser software.  Some browsers already implement
-  MathML rendering natively, and one can expect more browsers will do so
-  in the future.  At the same time, other browsers
-  have developed infrastructure to facilitate the rendering of MathML
-  and other embedded XML content by third-party software or other
-  built-in technology.  Examples of this built-in technology are the
-  sophisticated CSS rendering engines now available, and the powerful
-  implementations of JavaScript/ECMAScript that are becoming
-  common. Using these browser-specific mechanisms generally requires
-  additional interface markup of some sort to activate them.  In the
-  case of CSS, there is a special restricted form of MathML3
-  [[?MathMLforCSS]] that is tailored for use with
-  CSS rendering engines that support CSS 2.1 [[CSS21]].
-  This restricted profile of MathML3 does not offer the full
-  expressiveness of MathML3, but it provides a portable simpler form
-  that can be rendered acceptably on the screen by modern CSS engines.
-  </p>
+  
 
-  <p>Third, other tools for generating and processing MathML must be
-  able to communicate.  A number of MathML tools have been or are
-  being developed, including editors, translators, computer algebra
+  <p>Second, tools for generating and processing MathML must be
+  able to reliably communicate.  MathML tools include editors, translators, computer algebra
   systems, and other scientific software.  However, since MathML
   expressions tend to be lengthy, and prone to error when entered by
   hand, special emphasis must be made to ensure that MathML can easily
