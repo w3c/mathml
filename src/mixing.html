@@ -47,7 +47,7 @@
   simple functional syntax representing the intended speech.
   A formal grammar is given below, but a typical example would be
   <code>intent="power($base,$exponent)"</code> used in a context such as:</p>
-  
+
   <div class="example mathml mmlcore">
    <pre>
     &lt;msup intent="power($base,$exp)">
@@ -213,7 +213,7 @@
       AT should always produce speech that is appropriate to the community they serve.</li>
       <li><dfn id="intent-open">Open</dfn>: This is an open list of concepts
       to which contributions are invited.
-      AT reading MathML attributed with a name in this list 
+      AT reading MathML attributed with a name in this list
       MAY use the speech hints provided by the intent
       definition but a system
       may also fall back on reading the identifier name as given.
@@ -254,7 +254,7 @@
 </pre>
 <blockquote>x to the n-th power<br/> x superscript n end superscript</blockquote>
 </div>
-<p>An alternative default rendering without intent would be to assume that 
+<p>An alternative default rendering without intent would be to assume that
   <code class="element">msup</code> is always a power, so the second rendering above
   might also be <q>x to the n-th power</q>. In that case the second renderings below
   will (incorrectly) speak the examples using <q>raised to the ... power</q>.
@@ -298,7 +298,39 @@
 <blockquote>x prime<br/> x superscript prime end superscript</blockquote>
 </div>
 
-    <p>Similarly an over bar may represent complex conjugation, or mean (average), again with possible readings with and without <code class="attribute">intent</code>:</p>
+<p>Language-near intent values can also be annotated compositionally, via the underscore function.</p>
+<div class="example mathml mmlcore">
+<pre>
+&lt;msup intent="_($base,$script)">
+  &lt;mi arg="base">x&lt;/mi>
+  &lt;mo arg="script" intent="_prime">&#x2032;&lt;/mo>
+&lt;/msup>
+</pre>
+<blockquote>x prime</blockquote>
+</div>
+
+<p>Chunking may also be a clear style for cases where fragments are explicitly localized. A cyrillic (Bulgarian) example:</p>
+<div class="example mathml mmlcore">
+<pre>
+&lt;msup intent="_($base,$script)">
+  &lt;mi arg="base" intent="_хикс">x&lt;/mi>
+  &lt;mo arg="script" intent="_прим">&#x2032;&lt;/mo>
+&lt;/msup>
+</pre>
+<blockquote>хикс прим</blockquote>
+</div>
+
+<p>Alternatively, when supported, localization of fragments could be delegated to AT:</p>
+<div class="example mathml mmlcore">
+<pre>
+&lt;msup intent="_($base,$script)">
+  &lt;mi arg="base">x&lt;/mi>
+  &lt;mo arg="script">&#x2032;&lt;/mo>
+&lt;/msup>
+</pre>
+</div>
+
+    <p>An overbar may represent complex conjugation, or mean (average), again with possible readings with and without <code class="attribute">intent</code>:</p>
 
  <div class="example mathml mmlcore">
 <pre>
@@ -312,7 +344,7 @@
   &lt;mo&gt;&amp;#xaf;&lt;/mo&gt;
 &lt;/mover&gt;
 </pre>
-    
+
      <blockquote>conjugate of z is not  mean of X<br/>
      z with bar above  is not  X with bar above</blockquote>
     </div>
@@ -331,7 +363,7 @@
      <blockquote>bell number of 2</blockquote>
     </div>
    </section>
-   
+
    <section>
     <h4 id="mixing_intent_warning">A Warning about [=literal=] and [=hint=]</h4>
     <p>The [=literal=] and [=hint=] features extend the coverage of mathematical concepts
@@ -347,7 +379,7 @@
     <ul>
      <li><code>free-algebra ($r, $x)</code><br/>
      would be read as <q>free algebra of r and x</q></li>
-     
+
      <li><code>free-algebra-construct@silent (_free, $r, _algebra, _on, $x)</code><br/>
       would be read as <q>free r algebra on x</q></li>
 
@@ -361,7 +393,7 @@
      Thus, the last two examples would be discouraged.
     </p>
    </section>
-   
+
    <section>
      <h4 id="mixing_intent_examples_mtr">Tables</h4>
      <div class="ednote">
@@ -378,7 +410,7 @@
        grammar or to the terms in the Core Concept dictionary of intent
        terms. Discussions are taking place in the following two GitHub
        Issues.</p>
-       
+
      </div>
 
        <p class="issue" data-number="337">Issue 337</p>
