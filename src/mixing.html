@@ -298,18 +298,19 @@
 <blockquote>x prime<br/> x superscript prime end superscript</blockquote>
 </div>
 
-<p>Language-near intent values can also be annotated compositionally, via the underscore function.</p>
+<p>Custom accessible descriptions, such as author-preferred variable or operator names, can also be annotated compositionally, via the underscore function.</p>
+<p>The above notation could instead intend the custom name "x-new", which we can mark with a single literal `intent="x-new"`, or as a compound narration of two arguments:</p>
 <div class="example mathml mmlcore">
 <pre>
 &lt;msup intent="_($base,$script)">
   &lt;mi arg="base">x&lt;/mi>
-  &lt;mo arg="script" intent="_prime">&#x2032;&lt;/mo>
+  &lt;mo arg="script" intent="_new">&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
-<blockquote>x prime</blockquote>
+<blockquote>x new<br>x superscript prime end superscript</blockquote>
 </div>
 
-<p>Chunking may also be a clear style for cases where fragments are explicitly localized. A cyrillic (Bulgarian) example:</p>
+<p>Using the underscore function may also add clarity when the fragments of a compound name are explicitly localized. A cyrillic (Bulgarian) example:</p>
 <div class="example mathml mmlcore">
 <pre>
 &lt;msup intent="_($base,$script)">
@@ -317,10 +318,10 @@
   &lt;mo arg="script" intent="_прим">&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
-<blockquote>хикс прим</blockquote>
+<blockquote>хикс прим<br/>x superscript prime end superscript</blockquote>
 </div>
 
-<p>Alternatively, when supported, localization of fragments could be delegated to AT:</p>
+<p>Alternatively, the narration of individual fragments could be fully delegated to AT, while still specifying their grouping:</p>
 <div class="example mathml mmlcore">
 <pre>
 &lt;msup intent="_($base,$script)">
