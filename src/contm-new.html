@@ -596,7 +596,7 @@
        second part is an integer exponent indicating a power of the base.</p>
 
        <p> For example, <code>&lt;cn type="e-notation"&gt;12.3&lt;sep/&gt;5&lt;/cn&gt;</code>
-       represents 12.3 times 10<sup>5</sup>. The default presentation of this example is
+       represents <math class="doc" alttext="12.3 times 10^5"><mn>12.3</mn><mo>&#xD7;</mo><msup><mn>10</mn><mn>5</mn></msup></math>. The default presentation of this example is
        12.3e5. Note that this type is primarily useful for backwards compatibility with
        MathML 2, and in most cases, it is preferable to use the <code class="attributevalue">double</code>
        type, if the number to be represented is in the range of IEEE doubles:</p>
@@ -1950,7 +1950,7 @@
      acyclicity constraint, the example is not a valid MathML expression tree. It
      might be argued that such an expression could be given the interpretation of the continued
      fraction
-     <sup>1</sup>/<sub>(1+<sup>1</sup>/<sub>(1+</sub></sub>&#x2026;&#160;.
+     <math class="doc" alttext="1/(1+1/(1+..."><mn>1</mn><mo>/</mo><mo>(</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo>/</mo><mo>(</mo><mn>1</mn><mo>+</mo><mo>&#x22EF;</mo></math>&#160;.
      However, the procedure of building an expression tree by replacing
      <code class="element">share</code> element does not terminate for such an
      expression, and hence such expressions are not allowed by Content MathML.</p>
@@ -2659,11 +2659,12 @@
      convenient and direct than <code class="element">domainofapplication</code>.</p>
 
      <p>To illustrate these ideas, consider the following examples showing alternative
-     representations of a definite integral.  Let <i class="var">C</i> denote the interval from 0 to 1,
-     and <i class="var">f</i>(<i class="var">x</i>) = <i class="var">x</i><sup>2</sup>. Then
+     representations of a definite integral.  Let <math class="doc" alttext="C"><mi>C</mi></math>
+     denote the interval from 0 to 1,
+     and <math class="doc" alttext="f(x)=x^2"><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo> <mo>=</mo> <msup><mi>x</mi><mn>2</mn></msup></math>. Then
      <code class="element">domainofapplication</code> could be used to express the integral of a
-     function <i class="var">f</i> over
-     <i class="var">C</i> in this way:</p>
+     function <math class="doc" alttext="f"><mi>f</mi></math> over
+     <math class="doc" alttext="C"><mi>C</mi></math> in this way:</p>
 
      <div class="example mathml mml4c">
       <pre>
