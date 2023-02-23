@@ -69,7 +69,7 @@
    <p>The value of the <code class="attribute">intent</code> attribute, should match the following grammar.</p>
 
    <pre class="def bnf">
-intent             := term property* hint? | property+ hint? | application 
+intent             := S ( term property* hint? | property+ hint? | application ) S 
 term               := concept-or-literal | number | reference 
 concept-or-literal := NCName
 number             := '-'? digit+ ( '.' digit+ )?
@@ -244,6 +244,23 @@ S                  := [ \t\n\r]*
      read as an inter-word space.</p>
   </section>
 
+  <section>
+   <h4 id="mixing_intent_self">Intent Self References</h4>
+   <p>The grammar allows the intent to omit the leading <i>term</i>
+   and just consist of a non-empty list of properties. This should be
+   interpreted as specfying properties for the current element. This
+   can be a useful technique, especially for large constructs such as tables as
+   it allows the children to be inferred without needing to be
+   explicitly referenced in the `intent` as would be the case with an
+   <i>applicaton</i>.
+   For example, `&lt;mtable intent=":array">...` might read the table as
+   an array of values, and `&lt;mtable intent=":aligned-equations">...`
+   might read the table in a style more appropriate for a list of
+   equations. In both cases the navigation of the underlying table
+   structure can be supplied by the AT system, as it would for an
+   un-annotated table.</p>
+  </section>
+  
   <section>
    <h4 id="mixing_intent_errors">Intent Error Handling</h4>
    <p>An intent processor may report errors in intent expressions in
