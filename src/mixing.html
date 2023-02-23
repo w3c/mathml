@@ -78,7 +78,7 @@ application        := intent S '(' S arguments? S ')'
 arguments          := intent ( S ',' S intent )*
 property           := S ':' S NCName
 hint               := S '@' S ( 'prefix' | 'infix' | 'postfix' | 'function' | 'silent' )
-S                  : [ \t\n\r]*
+S                  := [ \t\n\r]*
    </pre>
 
    <p>Here <a href="https://www.w3.org/TR/REC-xml-names/#NT-NCName"><code>NCName</code></a>
