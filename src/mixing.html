@@ -290,7 +290,38 @@ S                  := [ \t\n\r]*
    </section>
   </section>
     
-  <section>
+
+   <section>
+    <h4 id="mixing_intent_warning">A Warning about [=literal=] and [=hint=]</h4>
+    <p>The [=literal=] and [=hint=] features extend the coverage of mathematical concepts
+    beyond the predefined dictionaries and allow expression of speech preferences.
+    For example, when `$x` and `$y` reference `&lt;mi arg="x">x&lt;/mi>` and `&lt;mi
+     arg="y">y&lt;/mi>` respectively, then</p>
+    <ul>
+     <li><code>list @silent ($x,$y)</code> would be read as <q>x y</q></li>
+     <li><code>semi-factorial @postfix($x)</code> would be read as <q>x semi factorial</q></li>
+    </ul>
+    <p>These features also allow taking almost complete control of the generated speech.
+    For example, compare:</p>
+    <ul>
+     <li><code>free-algebra ($r, $x)</code><br/>
+     would be read as <q>free algebra of r and x</q></li>
+
+     <li><code>free-algebra-construct@silent (_free, $r, _algebra, _on, $x)</code><br/>
+      would be read as <q>free r algebra on x</q></li>
+
+      <li><code>_(free, _($r,algebra), on, $x)</code><br/>
+      would be read as <q>free r algebra; on x</q></li>
+    </ul>
+    <p>However, since the literals are not in dictionaries,
+     the meaning behind the expressions become more opaque,
+     and thus excessive use of these features will tend to limit the AT's ability
+     to adapt to the needs of the user, as well as limit translation and locale-specific speech.
+     Thus, the last two examples would be discouraged.
+    </p>
+   </section>
+
+   <section>
    <h4 id="mixing_intent_examples">Intent Examples</h4>
 
     <p>A primary use for <code class="attribute">intent</code> is to
@@ -418,40 +449,10 @@ S                  := [ \t\n\r]*
      <p>will still produce the expected reading:</p>
      <blockquote>bell number of 2</blockquote>
     </div>
-   </section>
 
+    
    <section>
-    <h4 id="mixing_intent_warning">A Warning about [=literal=] and [=hint=]</h4>
-    <p>The [=literal=] and [=hint=] features extend the coverage of mathematical concepts
-    beyond the predefined dictionaries and allow expression of speech preferences.
-    For example, when `$x` and `$y` reference `&lt;mi arg="x">x&lt;/mi>` and `&lt;mi
-     arg="y">y&lt;/mi>` respectively, then</p>
-    <ul>
-     <li><code>list @silent ($x,$y)</code> would be read as <q>x y</q></li>
-     <li><code>semi-factorial @postfix($x)</code> would be read as <q>x semi factorial</q></li>
-    </ul>
-    <p>These features also allow taking almost complete control of the generated speech.
-    For example, compare:</p>
-    <ul>
-     <li><code>free-algebra ($r, $x)</code><br/>
-     would be read as <q>free algebra of r and x</q></li>
-
-     <li><code>free-algebra-construct@silent (_free, $r, _algebra, _on, $x)</code><br/>
-      would be read as <q>free r algebra on x</q></li>
-
-      <li><code>_(free, _($r,algebra), on, $x)</code><br/>
-      would be read as <q>free r algebra; on x</q></li>
-    </ul>
-    <p>However, since the literals are not in dictionaries,
-     the meaning behind the expressions become more opaque,
-     and thus excessive use of these features will tend to limit the AT's ability
-     to adapt to the needs of the user, as well as limit translation and locale-specific speech.
-     Thus, the last two examples would be discouraged.
-    </p>
-   </section>
-
-   <section>
-     <h4 id="mixing_intent_examples_mtr">Tables</h4>
+     <h5 id="mixing_intent_examples_mtr">Tables</h5>
      <div class="ednote">
        <p>The <code class="element">&lt;mtable&gt;</code> element is
        used in many ways, for denoting matrices, systems of equations,
@@ -562,6 +563,9 @@ S                  := [ \t\n\r]*
 </pre>
     </div>
    </section>
+   </section>
+
+
 
  </section>
 
