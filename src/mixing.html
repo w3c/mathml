@@ -70,13 +70,16 @@
    space between tokens, should match the following grammar.</p>
 
    <pre class="def bnf">
-    intent             := concept-or-literal | number | reference | application
-    concept-or-literal := NCName
-    number             := '-'? digit+ ( '.' digit+ )?
-    reference          := '$' NCName
-    application        := intent hint? '(' arguments? ')'
-    arguments          := intent ( ',' intent )*
-    hint               := '@' ( 'prefix' | 'infix' | 'postfix' | 'function' | 'silent' )
+intent             := term property* hint? | property+ hint? | application 
+term               := concept-or-literal | number | reference 
+concept-or-literal := NCName
+number             := '-'? digit+ ( '.' digit+ )?
+reference          := '$' NCName
+application        := intent S '(' S arguments? S ')'
+arguments          := intent ( S ',' S intent )*
+property           := S ':' S NCName
+hint               := S '@' S ( 'prefix' | 'infix' | 'postfix' | 'function' | 'silent' )
+S                  : [ \t\n\r]*
    </pre>
 
    <p>Here <a href="https://www.w3.org/TR/REC-xml-names/#NT-NCName"><code>NCName</code></a>
@@ -169,6 +172,13 @@
       </li>
      </ul>
     </dd>
+    <dt><dfn id="intent_hint">property</dfn></dt>
+    <dd>
+     A [=property=] annotates the concept name with additional
+     properties such as `:unit` or `:chemistry` which may be used by
+     the system to adjust the generated speech or Braille in system
+     specifc ways.
+    </dd>
    </dl>
   </section>
 
@@ -235,6 +245,35 @@
      read as an inter-word space.</p>
   </section>
 
+  <section>
+   <h4 id="mixing_intent_errors">Intent Error Handling</h4>
+   <p>An intent processor may report errors in intent expressions in
+   any appropriate way, including returning a message as the
+   generated text, or throwing an exception (error) in whatever form
+   the implementation supports. However in  web platform context it is
+   often not appropriate to report errors to the readers who have no
+   access to correct the source, so intent procesors should offer a
+   mode which recovers from errors as described below.</p>
+   <section>
+    <h5 id="mixing_intent_error_recovery">Intent Error Recovery</h5>
+    <ol>
+     <li>If an <code class="attribute">intent</code>
+     attribute does not match the grammar <a href="#mixing_intent_grammar"></a>,
+     then the processor should act as if the attribute were not
+     present.
+     Typically this will result in a suitable fallback text being
+     generated from the MathML element and its descendents. Note that
+     just the erroneous attribute is ignored, other <code
+     class="attribute">intent</code> attributes in the MathML
+     expression should be used.</li>
+     <li>If a `reference` such as `$x` does not correspond to an <code
+     class="attribute">arg</code> attribute with value `x` on a
+     descendent element, the processor should act as if the reference
+     were replaced by the literal `_dollar_x`.</li>
+    </ol>
+   </section>
+  </section>
+    
   <section>
    <h4 id="mixing_intent_examples">Intent Examples</h4>
 
@@ -307,7 +346,7 @@
   &lt;mo arg="script" intent="_new">&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
-<blockquote>x new<br>x superscript prime end superscript</blockquote>
+<blockquote>x new<br/>x superscript prime end superscript</blockquote>
 </div>
 
 <p>Using the underscore function may also add clarity when the fragments of a compound name are explicitly localized. A cyrillic (Bulgarian) example:</p>
