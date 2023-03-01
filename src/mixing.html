@@ -76,8 +76,8 @@ number             := '-'? digit+ ( '.' digit+ )?
 reference          := '$' NCName
 application        := intent S '(' S arguments? S ')'
 arguments          := intent ( S ',' S intent )*
-property           := S ':' S NCName
-hint               := S '@' S ( 'prefix' | 'infix' | 'postfix' | 'function' | 'silent' )
+property           := S ':' NCName
+hint               := S '@' ( 'prefix' | 'infix' | 'postfix' | 'function' | 'silent' )
 S                  := [ \t\n\r]*
    </pre>
 
