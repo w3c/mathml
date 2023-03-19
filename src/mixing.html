@@ -70,9 +70,10 @@
 
    <pre class="def bnf">
 intent             := S ( term property* | property+ | application ) S 
-term               := concept-or-literal | number | reference 
+term               := concept-or-literal | number | symbol | reference 
 concept-or-literal := NCName
 number             := '-'? \d+ ( '.' \d+ )?
+symbol             := [\pSm]+
 reference          := '$' NCName
 application        := intent '(' arguments? S ')'
 arguments          := intent ( ',' intent )*
@@ -81,7 +82,9 @@ S                  := [ \t\n\r]*
    </pre>
 
    <p>Here <a href="https://www.w3.org/TR/REC-xml-names/#NT-NCName"><code>NCName</code></a>
-   is as defined in  in [[xml-names]], and <code>digit</code> is a character in the range 0–9.</p>
+   is as defined in  in [[xml-names]],
+   <code>\pNd</code> is a character of class Nd (decimal digit),
+   <code>\pSm</code> is a character of class Sm (math symbol).</p>
 
 
    <p>The parts consist of:</p>
@@ -292,7 +295,20 @@ S                  := [ \t\n\r]*
   </section>
     
 
+
    <section>
+    <h4 id="mixing_intent_symbol warning">A Warning about [=symbol=]</h4>
+    <p>The intent grammar includes [=symbol=] which in principle allows non alphabetic intents
+    which is often natural for the default intent on an <code>&lt;mo&gt;</code>,such as<br/>
+    <code>&lt;mo intent="&#x226a;"&gt;&#x226a;&lt;mo/&gt;</code><br/>
+    However be aware that current speech engines may not be able to pronounce such characters
+    and you may wish to always provide a name such as <code>intent="much-less-than"</code>
+    rather than use a symbolic intent, or no intent at all.</p>
+   </section>
+
+    
+
+    <section>
     <h4 id="mixing_intent_warning">A Warning about [=literal=] and [=property=]</h4>
     <p>The [=literal=] and [=property=] features extend the coverage of mathematical concepts
     beyond the predefined dictionaries and allow expression of speech preferences.
