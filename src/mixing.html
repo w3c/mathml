@@ -74,8 +74,8 @@ term               := concept-or-literal | number | reference
 concept-or-literal := NCName
 number             := '-'? \d+ ( '.' \d+ )?
 reference          := '$' NCName
-application        := intent S '(' S arguments? S ')'
-arguments          := intent ( S ',' S intent )*
+application        := intent '(' arguments? S ')'
+arguments          := intent ( ',' intent )*
 property           := S ':' NCName
 S                  := [ \t\n\r]*
    </pre>
