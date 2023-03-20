@@ -72,7 +72,7 @@
 intent             := S ( term property* | property+ | application ) S 
 term               := concept-or-literal | number | symbol | reference 
 concept-or-literal := NCName
-number             := '-'? \d+ ( '.' \d+ )?
+number             := '-'? [\pNd]+ ( '.' [\pNd]+ )?
 symbol             := [\pSm]+
 reference          := '$' NCName
 application        := intent '(' arguments? S ')'
