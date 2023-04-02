@@ -134,7 +134,7 @@ S                  := [ \t\n\r]*
      An <a data-link-for="intent" data-link-type="dfn" href="#intent_application">application</a>
      denotes a function applied to arguments using
      a standard prefix notation.  Optionally, between the head of the
-     function and the list of arguments there may be a [=property=] as
+     function and the list of arguments there may be a [=property=] list as
      described below to influence the style of text reading generated, or to
      provide other information to any consumer of the intent.
     </dd>
@@ -142,13 +142,13 @@ S                  := [ \t\n\r]*
     
     <dt><dfn id="intent_property">property</dfn></dt>
     <dd>
-     A [=property=] annotates the concept name with additional
-     properties such as `:unit` or `:chemistry` which may be used by
+     A [=property=] annotates the concept name with an additional
+     property such as `:unit` or `:chemistry` which may be used by
      the system to adjust the generated speech or Braille in system
      specifc ways.
  
-     <p>The list of properties supported by any system but should include
-     <code>prefix</code>, <code>infix</code>, <code>postfix</code>, <code>function</code> <code>silent</code>.
+     <p>The list of properties supported by any system is open but should include
+     <code>prefix</code>, <code>infix</code>, <code>postfix</code>, <code>function</code> and <code>silent</code>.
      These properties in a function <a data-link-for="intent" data-link-type="dfn"
      href="#intent_application">application</a> request that
      the reading of the name may be suppressed, or the word ordering may be affected.
@@ -175,7 +175,10 @@ S                  := [ \t\n\r]*
       The specific words used above are only examples;
       AT is free to choose other appropriate audio renderings.
       For example, <code>f:function($x, $y)</code> could also be spoken as
-      <q>f of x comma y</q>.
+     <q>f of x comma y</q>.  If none of these properties is used, the
+     <code>function</code> property should be assumed unless the literal is
+     silent (for example <code>_</code>) in which case the <code>silent</code> property
+     should be assumed. See the examples in <a href="#mixing_intent_warning"></a>.
       </li>
      </ul>
     </dd>
