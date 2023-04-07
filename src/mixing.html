@@ -69,13 +69,15 @@
    <p>The value of the <code class="attribute">intent</code> attribute, should match the following grammar.</p>
 
    <pre class="def bnf">
-intent             := S ( term property* | property+ | application ) S 
+intent             := self-property-list | expression
+self-property-list := property+ S    
+expression         := S ( term property* | application ) S 
 term               := concept-or-literal | number | reference 
 concept-or-literal := NCName
 number             := '-'? \d+ ( '.' \d+ )?
 reference          := '$' NCName
-application        := intent '(' arguments? S ')'
-arguments          := intent ( ',' intent )*
+application        := expression '(' arguments? S ')'
+arguments          := expression ( ',' expression )*
 property           := S ':' NCName
 S                  := [ \t\n\r]*
    </pre>
@@ -142,46 +144,25 @@ S                  := [ \t\n\r]*
     
     <dt><dfn id="intent_property">property</dfn></dt>
     <dd>
-     A [=property=] annotates the concept name with an additional
-     property such as `:unit` or `:chemistry` which may be used by
+     A [=property=] annotates the intent with an additional
+     property which may be used by
      the system to adjust the generated speech or Braille in system
-     specifc ways.
+     specifc ways. The property may be directly related to the speech
+     form, such as `:infix` or indirectly affect the style of speech
+     with properties such as `:unit` or `:chemistry` 
  
      <p>The list of properties supported by any system is open but should include
-     <code>prefix</code>, <code>infix</code>, <code>postfix</code>, <code>function</code> and <code>silent</code>.
-     These properties in a function <a data-link-for="intent" data-link-type="dfn"
-     href="#intent_application">application</a> request that
-     the reading of the name may be suppressed, or the word ordering may be affected.
-     Note that the properties <code>prefix</code>, <code>infix</code> and <code>postfix</code>
-     refer to the spoken word order of the name and arguments,
-     and <em>not</em> (necessarily) the order used in the displayed mathematical notation.</p>
-     <ul>
-      <li>
-      In the case of a [=concept=] name, the property MAY be used in choosing the alternatives
-      supported by the AT. For example <code>union</code> is in the
-      Core dictionary with speech patterns "$1 union $2" and "union of $1 and $2".
-      An intent <code>union :prefix ($a,$b)</code> would
-      indicate that the latter style is preferred.
-      </li>
-      <li>For [=literal=] names, the text generated from the function head SHOULD be read
-      as specified in the property.
-     <ul>
-      <li><code>f :prefix ($x)      </code>: <q>f x</q></li>
-      <li><code>f :infix ($x,y)     </code>: <q>x f y</q></li>
-      <li><code>f :postix ($x)      </code>: <q>x f</q></li>
-      <li><code>f :function ($x, $y)</code>: <q>f of x and y</q></li>
-      <li><code>f :silent ($x,$y)   </code>: <q>x y</q></li>
-     </ul>
-      The specific words used above are only examples;
-      AT is free to choose other appropriate audio renderings.
-      For example, <code>f:function($x, $y)</code> could also be spoken as
-     <q>f of x comma y</q>.  If none of these properties is used, the
-     <code>function</code> property should be assumed unless the literal is
-     silent (for example <code>_</code>) in which case the <code>silent</code> property
-     should be assumed. See the examples in <a href="#mixing_intent_warning"></a>.
-      </li>
-     </ul>
+     the core properties listed in <a href="mixing_intent_core_properties"></a>.</p>
     </dd>
+
+    <dt><dfn id="intent_property_list">self-property-list</dfn></dt>
+    <dd>At the top level, an [=intent=] may consist of just a
+    non-empty list of properties. These apply to the current element
+    as described in <a href="#mixing_intent_self"></a>.</dd>
+
+    <!--<dt><dfn id="intent_expression">expression</dfn></dt>-->
+    <dt>expression</dt>
+    <dd>A simple functional syntax using the terms described above.</dd>
    </dl>
   </section>
 
@@ -249,9 +230,94 @@ S                  := [ \t\n\r]*
   </section>
 
   <section>
+   <h4 id="mixing_intent_core_properties">Core Properties</h4>
+   <p>When generating speech a system should use the properties
+   described in this section. Most of these properties only have a
+   defined effect in specific contexts, such as on the head of an
+   <a data-link-for="intent" data-link-type="dfn"
+      href="#intent_application">application</a>
+   or applying to an <code>&lt;mtable&gt;</code>.
+   The use of these properties in other contexts is not an error,
+   but as with any properties, is by default ignored but may hav a
+   system-specific effect.</p>x
+   <dl>
+    <dt id="intent_fixity_hint"><code>prefix</code>,
+    <code>infix</code>, <code>postfix</code>,
+    <code>function</code>, <code>silent</code></dt>
+    <dd>
+     <p>
+     These properties in a function <a data-link-for="intent" data-link-type="dfn"
+     href="#intent_application">application</a> request that
+     the reading of the name may be suppressed, or the word ordering may be affected.
+     Note that the properties <code>prefix</code>, <code>infix</code> and <code>postfix</code>
+     refer to the spoken word order of the name and arguments,
+     and <em>not</em> (necessarily) the order used in the displayed mathematical notation.</p>
+     <ul>
+      <li>
+      In the case of a [=concept=] name, the property MAY be used in choosing the alternatives
+      supported by the AT. For example <code>union</code> is in the
+      Core dictionary with speech patterns "$1 union $2" and "union of $1 and $2".
+      An intent <code>union :prefix ($a,$b)</code> would
+      indicate that the latter style is preferred.
+      </li>
+      <li>For [=literal=] names, the text generated from the function head SHOULD be read
+      as specified in the property.
+     <ul>
+      <li><code>f :prefix ($x)      </code>: <q>f x</q></li>
+      <li><code>f :infix ($x,y)     </code>: <q>x f y</q></li>
+      <li><code>f :postix ($x)      </code>: <q>x f</q></li>
+      <li><code>f :function ($x, $y)</code>: <q>f of x and y</q></li>
+      <li><code>f :silent ($x,$y)   </code>: <q>x y</q></li>
+     </ul>
+      The specific words used above are only examples;
+      AT is free to choose other appropriate audio renderings.
+      For example, <code>f:function($x, $y)</code> could also be spoken as
+     <q>f of x comma y</q>.  If none of these properties is used, the
+     <code>function</code> property should be assumed unless the literal is
+     silent (for example <code>_</code>) in which case the <code>silent</code> property
+     should be assumed. See the examples in <a href="#mixing_intent_warning"></a>.</li>
+     </ul>
+    </dd>
+    <dt id="intent_table_hints"><code>matrix</code>,
+    <code>system-of-equations</code>, <code>lines</code>, <code>continued-equation</code></dt>
+    <dd>
+     <p>These properties may be used on an <code>mtable</code> or on a
+    [=reference=] to an <code>mtable</code>. They affect the way the
+     parts of an alignment are announced.</p>
+     <p>The exact wordings used are system specfic</p>
+     <ul>
+      <li>`matrix`
+     should be read in style suitable for matricies, with typically
+      column numbers being announced.</li>
+      <li>`system-of-equations` should be read in style suitable for
+      displayed equations (and inequations), with typically
+      column numbers not being announced. Each table row would
+      normally be announced as an "equation" but a
+      `continued-equation` property on an <code>mtr</code> indicates
+      that the row continues an equation wrapped from the row
+      above.</li>
+     </ul>
+    </dd>
+    <dt id="intent_script_hints"><code>power</code>,
+    <code>index</code>, <code>evaluate</code></dt>
+    <dd><p>These properties may be used on children of script
+    elements, or on [=references=] to such elements. They indcate how
+    a sub or superscript should be read.</p>
+    <ul>
+    <li><code>&lt;msup>&lt;mi>x&lt;/mi>&lt;mn intent=":index">2&lt;/mn>&lt;/msup></code>
+    <q>x superscipt 2</q> (or perhaps <q>x 2</q> in terse modes), not
+    <q>x squared</q>.</li>
+    <li><code>&lt;msubsup>&lt;mi>x&lt;/mi>&lt;mi intent=":index">i&lt;/mi>&lt;mn intent=":power">2&lt;/mn>&lt;/msup></code>
+    <q>x sub i, squared</q>.</li>
+    </ul>
+   </dd>
+   </dl>
+  </section>
+  
+  <section>
    <h4 id="mixing_intent_self">Intent Self References</h4>
    <p>The grammar allows the intent to omit the leading <i>term</i>
-   and just consist of a non-empty list of properties. This should be
+   and just consist of a non-empty list of properties, [=self-property-list=]. This should be
    interpreted as specfying properties for the current element. This
    can be a useful technique, especially for large constructs such as tables as
    it allows the children to be inferred without needing to be
