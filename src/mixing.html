@@ -33,8 +33,6 @@
  </p>
 
 
- <section>
-  <h3 id="mixing_annotation_elements">Annotation Elements</h3>
 
   <p>
    In addition to the <code class="attribute">intent</code> attribute described above,
@@ -68,7 +66,7 @@
 
 
   <section>
-   <h4 id="mixing_annotation_keys">Annotation keys</h4>
+   <h3 id="mixing_annotation_keys">Annotation keys</h3>
 
    <p>An <em>annotation key</em> specifies the relationship between an
    expression and an annotation. Many kinds of relationships are possible.
@@ -128,7 +126,7 @@
   </section>
 
   <section>
-   <h4 id="mixing_alternate_representations">Alternate representations</h4>
+   <h3 id="mixing_alternate_representations">Alternate representations</h3>
 
    <p>Alternate representation annotations are most often used to
    provide renderings for an expression, or to provide an equivalent
@@ -204,7 +202,7 @@
   </section>
 
   <section>
-   <h4 id="mixing_content_equiv">Content equivalents</h4>
+   <h3 id="mixing_content_equiv">Content equivalents</h3>
 
    <p>Content equivalent annotations provide additional computational
    information about an expression.  Annotations with the
@@ -256,7 +254,7 @@
   </section>
 
   <section>
-   <h4 id="mixing_annotation_references">Annotation references</h4>
+   <h3 id="mixing_annotation_references">Annotation references</h3>
 
    <p>In the usual case, each annotation element includes either character data
    content (in the case of <code class="element">annotation</code>) or XML markup data (in the case
@@ -301,10 +299,10 @@
 
 
   <section>
-   <h4 id="mixing_elements_semantics">The <code class="defn starttag">&lt;semantics&gt;</code> element</h4>
+   <h3 id="mixing_elements_semantics">The <code class="defn starttag">&lt;semantics&gt;</code> element</h3>
 
    <section>
-    <h5 id="mixing_semantics_description">Description</h5>
+    <h4 id="mixing_semantics_description">Description</h4>
 
     <p>The <code class="element">semantics</code> element is the container element that
     associates annotations with a MathML expression.  The
@@ -357,10 +355,10 @@
   </section>
 
   <section>
-   <h4 id="mixing_elements_annotation">The <code class="defn starttag">&lt;annotation&gt;</code> element</h4>
+   <h3 id="mixing_elements_annotation">The <code class="defn starttag">&lt;annotation&gt;</code> element</h3>
 
    <section>
-    <h5 id="mixing_annotation_description">Description</h5>
+    <h4 id="mixing_annotation_description">Description</h4>
 
     <p>The <code class="element">annotation</code> element is the container element for a semantic
     annotation whose representation is parsed character data in a non-XML
@@ -374,7 +372,7 @@
    </section>
 
    <section>
-    <h5 id="mixing_annotation_attributes">Attributes</h5>
+    <h4 id="mixing_annotation_attributes">Attributes</h4>
 
     <table class="data attributes">
 
@@ -478,10 +476,10 @@
   </section>
 
   <section>
-   <h4 id="mixing_elements_annotation_xml">The <code class="defn starttag">&lt;annotation-xml&gt;</code> element</h4>
+   <h3 id="mixing_elements_annotation_xml">The <code class="defn starttag">&lt;annotation-xml&gt;</code> element</h3>
 
    <section>
-    <h5 id="mixing_annotation_xml_description">Description</h5>
+    <h4 id="mixing_annotation_xml_description">Description</h4>
 
     <p>The <code class="element">annotation-xml</code> element is the container element for a
     semantic annotation whose representation is structured markup.  The <code class="element">annotation-xml</code> element should contain the markup
@@ -490,7 +488,7 @@
    </section>
 
    <section>
-    <h5 id="mixing_annotation_xml_attributes">Attributes</h5>
+    <h4 id="mixing_annotation_xml_attributes">Attributes</h4>
 
     <table class="data attributes">
 
@@ -629,7 +627,7 @@
    </section>
 
    <section>
-    <h5 id="html_annotation_xml">Using <code class="element">annotation-xml</code> in HTML documents</h5>
+    <h4 id="html_annotation_xml">Using <code class="element">annotation-xml</code> in HTML documents</h4>
 
     <p>Note that the Namespace extensibility used in the above examples
     may not be available if the MathML is not being treated as an XML document. In particular
@@ -749,7 +747,7 @@
 
 
   <section>
-   <h4 id="mixing_markup">Combining Presentation and Content Markup</h4>
+   <h3 id="mixing_markup">Combining Presentation and Content Markup</h3>
 
    <p>
     Presentation markup encodes the <em>notational structure</em> of an expression.
@@ -760,7 +758,7 @@
    </p>
 
    <section>
-    <h5 id="mixing_pmincm">Presentation Markup in Content Markup</h5>
+    <h4 id="mixing_pmincm">Presentation Markup in Content Markup</h4>
 
     <p>
      Presentation markup may be embedded within content markup so long as the
@@ -820,7 +818,7 @@
    </section>
 
    <section>
-    <h5 id="mixing_cminpm">Content Markup in Presentation Markup</h5>
+    <h4 id="mixing_cminpm">Content Markup in Presentation Markup</h4>
 
     <p>
      Content markup may be embedded within presentation markup so long as the
@@ -855,7 +853,7 @@
   </section>
 
   <section>
-   <h4 id="mixing_parallel">Parallel Markup</h4>
+   <h3 id="mixing_parallel">Parallel Markup</h3>
 
    <p>
     Some applications are able to use <em>both</em> presentation
@@ -867,7 +865,7 @@
    </p>
 
    <section>
-    <h5 id="mixing_top_level">Top-level Parallel Markup</h5>
+    <h4 id="mixing_top_level">Top-level Parallel Markup</h4>
 
     <p>
      In many cases, the goal is to provide presentation markup and content
@@ -915,7 +913,7 @@
    </section>
 
    <section>
-    <h5 id="mixing_cr">Parallel Markup via Cross-References</h5>
+    <h4 id="mixing_cr">Parallel Markup via Cross-References</h4>
 
     <p>
      To accommodate applications that must process sub-expressions of large
@@ -1044,4 +1042,4 @@
 
   </section>
  </section>
-</section>
+
