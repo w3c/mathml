@@ -176,7 +176,7 @@ S                  := [ \t\n\r]*
       The <code>property</code> also has some analogies to the operator dictionary's use of
       <code class="attribute">form</code>.
     </p>
-    <p class="issue" data-number="410">Issue 410</p>
+    <!--<p class="issue" data-number="410">Issue 410</p>-->
     <p>
       [=Intent=] Concept names are maintained in two lists, each maintained in the
       <a href="https://github.com/w3c/mathml-docs">w3c/mathml-docs GitHub repository</a>.
@@ -185,18 +185,31 @@ S                  := [ \t\n\r]*
      <ul>
       <li>
        <dfn id="intent-core">Core</dfn>: This is a <a href="https://w3c.github.io/mathml-docs/intent-core-concepts/">list of core
-      concept names</a> curated by the Math Working Group.
-      This list includes common concepts such as <q>divide</q>, <q>power</q>, and <q>greater-than</q>.
-      AT reading MathML attributed with a name in this list SHOULD consider this name to be a hint how the content could be read.
+	 concept names</a>,
+       initially drawn from K12 STEM education.
+       The entries include common concepts such as <q>divide</q>, <q>power</q>, and <q>greater-than</q>. The list is curated by the Math Working Group based on experience with different AT implementations and following the guidelines set out in [[?Concept-Lists]].
+       This list includes common concepts such as <q>divide</q>, <q>power</q>, and <q>greater-than</q>.
+
+       Some readings benefit from annotating the kind of mathematical object, rather than giving an explicit concept name to be spoken.
+ For such cases, one should use an Intent [=property= instead of an Intent [=concept].
+
+       a concept (or property) in these lists
+      SHOULD consider this concept (or property) to be a hint how the content could be read.
       However, because common notations have many specialized ways of being spoken
-      (e.g., for division, one might say <q>three quarters</q>, <q>x over three</q>, or <q>3 meters per second</q> depending
-      one the contents of <code>&lt;mfrac intent="divide($num,$denom)&gt;</code>),
-      AT is not constrained to use the name given.
+      AT is NOT constrained to use the name given.
+      For example, AT may vocalize <q>three quarters</q>, as <q>three over x</q>
+       (for <code>&lt;mfrac></code>), or <q>three divided by x plus y</q> (for <code>&lt;mo>/&lt;/mo></code>),
+       depending on the contents and carrier element associated with an
+       <code>intent="divide($num,$denom)"</code>.
+       
+      <p>
       Depending upon the reader, AT may add words or sounds to make the speech clearer to the listener.
       For example, for someone who can not see the a fraction, AT might say <q>fraction x over three end fraction</q> so the listener
       knows exactly what is part of the fraction.
       For someone who can see the content, these extra words can be a distraction.
-      AT should always produce speech that is appropriate to the community they serve.</li>
+      AT should always produce speech that is appropriate to the community they serve.
+      </p>
+      </li>
       <li><dfn id="intent-open">Open</dfn>: This is an <a href="https://w3c.github.io/mathml-docs/intent-open-concepts">open list of concepts</a>
       to which contributions are invited.
       AT reading MathML attributed with a name in this list
