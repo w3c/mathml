@@ -199,19 +199,21 @@ S                  := [ \t\n\r]*
        name to be spoken.  For such cases, one should use an Intent
        [=property=] instead of an Intent [=concept=].  The Math
        Working Group maintain a similar list of <a
-       href="https://w3c.github.io/mathml-docs/intent-core-concepts/">list
+       href="https://w3c.github.io/mathml-docs/intent-core-properties/">list
        of core property names</a> as described in the following
        section.</p>
 
        <p>AT reading MathML attributed with a concept (or property)
        in these lists SHOULD consider this concept (or property) to be
-       a hint how the content could be read.  AT MAY use this concept
+       a hint how the content could be read.  AT systems MAY use this concept
        as a hint to improve braille generation.  However, because
        common notations have many specialized ways of being spoken AT
        is NOT constrained to use the name given.  For example, AT may
-       vocalize <q>three quarters</q>, as <q>three over x</q> (for
-       <code>&lt;mfrac></code>), or <q>three divided by x plus y</q>
-       (for <code>&lt;mo>/&lt;/mo></code>), depending on the contents
+       vocalize a fraction marked up with <code>&lt;mfrac></code>
+       as <q>three quarters</q> or <q>three over x</q>
+       or may vocalize an inline fraction marked up as <code>&lt;mo>/&lt;/mo></code>
+       as <q>three divided by x plus y</q>.
+       The choice may depend on the contents
        and carrier element associated with an
        <code>intent="divide($num,$denom)"</code>.</p>
        
