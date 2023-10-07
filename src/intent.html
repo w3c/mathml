@@ -145,7 +145,7 @@ S                  := [ \t\n\r]*
      with properties such as `:unit` or `:chemistry` 
  
      <p>The list of properties supported by any system is open but should include
-     the core properties listed in <a data-link-for="intent" data-link-type="dfn" href="#mixing_intent_core_properties">Core Properties</a>.</p>
+     the core properties as described below.</p>
     </dd>
 
     <dt><dfn id="intent_property_list">self-property-list</dfn></dt>
@@ -251,9 +251,21 @@ S                  := [ \t\n\r]*
   </section>
 
   <section>
-   <h3 id="mixing_intent_core_properties">Core Properties</h3>
-   <p>When generating speech a system should use the properties
-   described in this section. Most of these properties only have a
+    <h3 id="mixing_intent_properties">Properties</h3>
+    <p>As with [=Concepts=], The Working group maintains lists
+      of [=property=] values.
+      <dfn id="intent-core-properties">Core properties</dfn>: This is a
+      <a href="https://w3c.github.io/mathml-docs/intent-core-properties">list core of properties</a>
+      maintained by the Math Working Group
+      and
+      <dfn id="intent-open-properties">Open properties</dfn>: This is an
+      <a href="https://w3c.github.io/mathml-docs/intent-open-properties">open list of properties</a>
+    with contributions welcome from the community.</p>
+
+
+   <p>When generating speech a system should use any properties
+   specified in the <code class="attribute">intent</code> attribute.
+   Most of these properties only have a
    defined effect in specific contexts, such as on the head of an
    <a data-link-for="intent" data-link-type="dfn"
       href="#intent_application">application</a>
@@ -261,6 +273,11 @@ S                  := [ \t\n\r]*
    The use of these properties in other contexts is not an error,
    but as with any properties, is by default ignored but may have a
    system-specific effect.</p>
+
+   <p>Whilst the definitive list of [=Core Properties=] is maintained at
+   Github, we describe the major classes of property affecting speech generation
+   below. Implementors of MathML systems that implement additional properties are encouraged
+   to make a pull request to add them to the list of  [=Open Properties=].</p>
    <dl>
     <dt id="intent_fixity_hint"><code>prefix</code>,
     <code>infix</code>, <code>postfix</code>,
