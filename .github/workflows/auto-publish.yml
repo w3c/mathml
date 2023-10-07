@@ -19,7 +19,7 @@ jobs:
        with:
           GH_PAGES_BRANCH: gh-pages
           TOOLCHAIN: respec
-          SOURCE: index.html
-          DESTINATION: spec.html
+          SOURCE: spec.html
+          DESTINATION: index.html
           VALIDATE_MARKUP: false
 
