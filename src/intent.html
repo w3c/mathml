@@ -145,7 +145,7 @@ S                  := [ \t\n\r]*
      with properties such as `:unit` or `:chemistry` 
  
      <p>The list of properties supported by any system is open but should include
-     the core properties listed in <a data-link-for="intent" data-link-type="dfn" href="#mixing_intent_core_properties">Core Properties</a>.</p>
+     the core properties as described below.</p>
     </dd>
 
     <dt><dfn id="intent_property_list">self-property-list</dfn></dt>
@@ -251,9 +251,21 @@ S                  := [ \t\n\r]*
   </section>
 
   <section>
-   <h3 id="mixing_intent_core_properties">Core Properties</h3>
-   <p>When generating speech a system should use the properties
-   described in this section. Most of these properties only have a
+    <h3 id="mixing_intent_properties">Properties</h3>
+    <p>As with [=Concepts=], The Working group maintains lists
+      of [=property=] values.
+      <dfn id="intent-core-properties">Core properties</dfn>: This is a
+      <a href="https://w3c.github.io/mathml-docs/intent-core-properties">list core of properties</a>
+      maintained by the Math Working Group
+      and
+      <dfn id="intent-open-properties">Open properties</dfn>: This is an
+      <a href="https://w3c.github.io/mathml-docs/intent-open-properties">open list of properties</a>
+    with contributions welcome from the community.</p>
+
+
+   <p>When generating speech a system should use any properties
+   specified in the <code class="attribute">intent</code> attribute.
+   Most of these properties only have a
    defined effect in specific contexts, such as on the head of an
    <a data-link-for="intent" data-link-type="dfn"
       href="#intent_application">application</a>
@@ -261,6 +273,11 @@ S                  := [ \t\n\r]*
    The use of these properties in other contexts is not an error,
    but as with any properties, is by default ignored but may have a
    system-specific effect.</p>
+
+   <p>Whilst the definitive list of [=Core Properties=] is maintained at
+   Github, we describe the major classes of property affecting speech generation
+   below. Implementors of MathML systems that implement additional properties are encouraged
+   to make a pull request to add them to the list of  [=Open Properties=].</p>
    <dl>
     <dt id="intent_fixity_hint"><code>prefix</code>,
     <code>infix</code>, <code>postfix</code>,
@@ -550,7 +567,7 @@ S                  := [ \t\n\r]*
     
    <section>
      <h4 id="mixing_intent_examples_mtr">Tables</h4>
-     <div class="ednote">
+
        <p>The <code class="element">&lt;mtable&gt;</code> element is
        used in many ways, for denoting matrices, systems of equations,
        steps in a proof derivation, etc. In addition to these uses it
@@ -558,25 +575,23 @@ S                  := [ \t\n\r]*
        especially for systems that do not implement
        [[[#presm_linebreaking]]], or for conversions from (La)TeX where
        alignment constructs are used in similar ways.</p>
-       <p>Some examples are given below, and the Working Group plans to
-       propose recommended uses of [=intent=] to address these use
-       cases. This may require some small extensions to the intent
-       grammar or to the terms in the Core Concept dictionary of intent
-       terms. Discussions are taking place in the following two GitHub
-       Issues.</p>
+       <p>As existing AT already implements relatively complex
+       mechanisms to navigate tabular alignments, it is often not
+       desirable to try to force explicit speech forms via <code
+       class="attribute">intent</code> attributes making use of
+       concepts or literal terms, however by use of properties the
+       author can give hints to the speech generation and generate
+       speech suitable for a list of aligned equations rather than say a matrix.
+       Some examples are given below.</p>
 
-     </div>
-
-       <p class="issue" data-number="337">Issue 337</p>
-       <p class="issue" data-number="402">Issue 402</p>
 
 
 <p>Matrices</p>
 <div class="example mathml mmlcore">
 <pre>
-&lt;mrow>
+&lt;mrow intent='$m'>
   &lt;mo>(&lt;/mo>
-  &lt;mtable>
+  &lt;mtable arg='m' intent=':matrix'>
     &lt;mtr>
       &lt;mtd>&lt;mn>1&lt;/mn>&lt;/mtd>
       &lt;mtd>&lt;mn>0&lt;/mn>&lt;/mtd>
@@ -589,13 +604,21 @@ S                  := [ \t\n\r]*
   &lt;mo>)&lt;/mo>
 &lt;/mrow>
 </pre>
+<blockquote>
+The 2 by 2 matrix;<br/>
+column 1; 1;<br/>
+column 2; 0;<br/>
+column 1; 0;<br/>
+column 2; 1;<br/>
+end matrix
+</blockquote>
     </div>
 
 
     <p>Aligned equations</p>
     <div class="example mathml mmlcore">
 <pre>
-&lt;mtable>
+&lt;mtable intent=':equations'>
   &lt;mtr>
     &lt;mtd columnalign="right">
       &lt;mn>2&lt;/mn>
@@ -624,13 +647,18 @@ S                  := [ \t\n\r]*
   &lt;/mtr>
 &lt;/mtable>
 </pre>
+<blockquote>
+2 equations,<br/>
+equation 1; 2 x, is equal to, 1;<br/>
+equation 2; y, is greater than, x minus 3;
+</blockquote>
     </div>
 
     <p>Aligned Equations with wrapped expressions</p>
 
     <div class="example mathml mmlcore">
 <pre>
-&lt;mtable>
+&lt;mtable intent=':equations'>
   &lt;mtr>
     &lt;mtd columnalign="right">
       &lt;mi>a&lt;/mi>
@@ -646,7 +674,7 @@ S                  := [ \t\n\r]*
       &lt;mi>d&lt;/mi>
     &lt;/mtd>
   &lt;/mtr>
-  &lt;mtr>
+  &lt;mtr intent=':continued-equation'>
     &lt;mtd columnalign="right">&lt;/mtd>
     &lt;mtd columnalign="center">&lt;/mtd>
     &lt;mtd columnalign="left">
@@ -658,6 +686,9 @@ S                  := [ \t\n\r]*
   &lt;/mtr>
 &lt;/mtable>
 </pre>
+<blockquote>
+ 1 equation; a, is equal to, b plus c minus d; plus e minus f;
+</blockquote>
     </div>
    </section>
    </section>
