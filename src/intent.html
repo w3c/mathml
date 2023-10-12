@@ -251,7 +251,7 @@ S                  := [ \t\n\r]*
   </section>
 
   <section>
-    <h3 id="mixing_intent_properties">Properties</h3>
+    <h3 id="mixing_intent_properties">Intent Properties</h3>
     <p>As with [=Concepts=], The Working group maintains lists
       of [=property=] values.
       <dfn id="intent-core-properties">Core properties</dfn>: This is a
@@ -316,7 +316,7 @@ S                  := [ \t\n\r]*
      should be assumed. See the examples in <a href="#mixing_intent_warning"></a>.</li>
      </ul>
     </dd>
-    <dt id="intent_table_hints"><code>matrix</code>,
+    <dt id="intent_table_properties"><code>matrix</code>,
     <code>system-of-equations</code>, <code>lines</code>, <code>continued-equation</code></dt>
     <dd>
      <p>These properties may be used on an <code>mtable</code> or on a
@@ -531,9 +531,9 @@ S                  := [ \t\n\r]*
 </pre>
 </div>
 
-    <p>An overbar may represent complex conjugation, or mean (average), again with possible readings with and without <code class="attribute">intent</code>:</p>
+<p>An overbar may represent complex conjugation, or mean (average), again with possible readings with and without <code class="attribute">intent</code>:</p>
 
- <div class="example mathml mmlcore">
+<div class="example mathml mmlcore">
 <pre>
 &lt;mover intent="conjugate($v)"&gt;
   &lt;mi arg="v"&gt;z&lt;/mi&gt;
@@ -546,44 +546,49 @@ S                  := [ \t\n\r]*
 &lt;/mover&gt;
 </pre>
 
-     <blockquote>conjugate of z is not  mean of X<br/>
-     z with bar above  is not  X with bar above</blockquote>
-    </div>
+<blockquote>conjugate of z is not  mean of X<br/>
+z with bar above  is not  X with bar above</blockquote>
+</div>
 
-    <p>The intent mechanism is extensible through the use of [=unknown concept=] names.
-      For example, assuming that the Bell Number is not present in any the dictionaries,
-      the following example</p>
-    <div class="example mathml mmlcore">
+<p>The intent mechanism is extensible through the use of [=unknown concept=] names.
+For example, assuming that the Bell Number is not present in any the dictionaries,
+the following example</p>
+<div class="example mathml mmlcore">
 <pre>
 &lt;msub intent="bell-number($index)"&gt;
   &lt;mi&gt;B&lt;/mi&gt;
   &lt;mn arg="index"&gt;2&lt;/mn&gt;
 &lt;/msub&gt;
 </pre>
-     <p>will still produce the expected reading:</p>
-     <blockquote>bell number of 2</blockquote>
-    </div>
+<p>will still produce the expected reading:</p>
+<blockquote>bell number of 2</blockquote>
+</div>
 
     
-   <section>
-     <h4 id="mixing_intent_examples_mtr">Tables</h4>
-
-       <p>The <code class="element">&lt;mtable&gt;</code> element is
-       used in many ways, for denoting matrices, systems of equations,
-       steps in a proof derivation, etc. In addition to these uses it
-       may be used to implement forced line breaking and alignment,
-       especially for systems that do not implement
-       [[[#presm_linebreaking]]], or for conversions from (La)TeX where
-       alignment constructs are used in similar ways.</p>
-       <p>As existing AT already implements relatively complex
-       mechanisms to navigate tabular alignments, it is often not
-       desirable to try to force explicit speech forms via <code
-       class="attribute">intent</code> attributes making use of
-       concepts or literal terms, however by use of properties the
-       author can give hints to the speech generation and generate
-       speech suitable for a list of aligned equations rather than say a matrix.
-       Some examples are given below.</p>
-
+<section>
+ <h4 id="mixing_intent_examples_mtr">Tables</h4>
+ 
+ <p>The <code class="element">&lt;mtable&gt;</code> element is
+ used in many ways, for denoting matrices, systems of equations,
+ steps in a proof derivation, etc. In addition to these uses it
+ may be used to implement forced line breaking and alignment,
+ especially for systems that do not implement
+ [[[#presm_linebreaking]]], or for conversions from (La)TeX where
+ alignment constructs are used in similar ways.</p>
+ <p>Whenever a kind of tabular construct has an <a href="#intent_table_properties">associated property</a>,
+ it is usually better to use only the property and allow AT to infer
+ how to speak navigate the expression. By use of properties in this way the
+ author can give hints to the speech generation and generate
+ speech suitable for a list of aligned equations rather than say a matrix.</p>
+ 
+ <p>When core properties are insufficient to represent a tabular
+ layout, the use of intent concept names and, if appropriate, also
+ properties from the open list of properties should be used to
+ convey the desired speech and navigation of the tabular
+ layout. Because of the likely complexity of these layouts,
+ testing with AT should be done to verify that users hear the
+ expression as the author intended.</p>
+ 
 
 
 <p>Matrices</p>
