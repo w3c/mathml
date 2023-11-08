@@ -244,10 +244,17 @@ S                  := [ \t\n\r]*
       attribute with entries in an [=Intent Concept Dictionary=], the comparison should be
      <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>
      and also normalize
-     <q>`_`</q> (U+00F5) and <q>`.`</q>  (U+002E) to <q>`-`</q> (U+002D).
-     If the speech hints are not being used
-     and the concept name is being read then each of  `-`, `_` and `.` should be
-     read as an inter-word space.</p>
+     <q>`_`</q> (U+00F5) and <q>`.`</q> (U+002E) to <q>`-`</q>
+     (U+002D).  The use of a concept matches an entry in the
+     dictionary if the concept, arity and fixity property (which may
+     be defaulted as specified in the dictionary) all match.
+     If an entry is found, then as described above, the 
+     AT may use the speech hints to generate suitable text for the
+     <a href="#intent_known_concept">known concept</a>.  
+     If the intent does not match and the dictionary has no entry for the concept
+     with the specified properties and arguments then it is treated as an <a href="#intent_unknown_concept">unknown concept</a>
+     and the concept name should be read as a literal after normalising each of `-`, `_` and `.`
+     to an inter-word space.</p>
   </section>
 
   <section>
