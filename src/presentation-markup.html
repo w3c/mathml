@@ -9,9 +9,9 @@
  
    <p>This chapter specifies the <q>presentation</q> elements of
    MathML, which can be used to describe the layout structure of mathematical
-   notation.
-   </p><p>
-   Most of Presentation Markup is included in [[MathML-Core]].
+     notation.</p>
+
+   <p>Most of Presentation Markup is included in [[MathML-Core]].
    That specification should be consulted for the precise details of displaying the elements and attributes
    that are part of core when displayed in web browsers.
    Outside of web browsers, MathML presentation elements only suggest (i.e. do not require)
@@ -22,9 +22,8 @@
    <p>The names used for presentation elements are suggestive of their visual layout.
      However, mathematical notation has a long history of being reused as new concepts are developed.
      Because of this, an element such as <code class="element">mfrac</code> may not actually be a fraction and the
-     <code class="attribute">intent</code> attribute should be used to provide information for auditory renderings.
-   </p><p>
-   This chapter describes all of the presentation elements and attributes of MathML along with examples that might clarify usage.
+     <code class="attribute">intent</code> attribute should be used to provide information for auditory renderings.</p>
+   <p>This chapter describes all of the presentation elements and attributes of MathML along with examples that might clarify usage.
    </p>
  
  
@@ -1861,17 +1860,11 @@
     representing a less-than-or-equal-to sign, and the second one as the
     two-character sequence <code>&lt;=</code>.</p>
  
-    <p>All operators, in the general sense used here,
-    are subject to essentially the same rendering
-    attributes and rules. Subtle distinctions in the
-    rendering of these classes of symbols,
-    when they exist, are supported using the Boolean attributes <code class="attribute">fence</code>,
-    <code class="attribute">separator</code> and <code class="attribute">accent</code>, which can be used to distinguish these cases.</p>
- 
+
     <p>A key feature of the <code class="element">mo</code> element is that its
     default attribute values are set on a case-by-case basis from an
     <q>operator dictionary</q> as explained below. In particular, default
-    values for <code class="attribute">fence</code>, <code class="attribute">separator</code> and
+    value for <code class="attribute">stretch</code>, <code class="attribute">symmetric</code> and
     <code class="attribute">accent</code> can usually be found in the operator dictionary
     and therefore need not be specified on each <code class="element">mo</code>
     element.</p>
@@ -1945,34 +1938,6 @@
    dictionary
    which affects the spacing and other default properties;
    see <a href="#presm_formdefval"></a>.
-        </td>
-       </tr>
- 
-       <tr>
-        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-fence">fence</a></td>
-        <td>"true" | "false"</td>
-        <td><em>set by dictionary</em> (false)</td>
-       </tr>
- 
-       <tr>
-        <td colspan="2" class="attdesc">
-   Specifies whether the operator represents a &#x2018;fence&#x2019;, such as a parenthesis.
-   This attribute generally has no direct effect on the visual rendering,
-   but may be useful in specific cases, such as non-visual renderers.
-        </td>
-       </tr>
- 
-       <tr>
-        <td rowspan="2" class="attname"><span class="coreno">separator</span></td>
-        <td>"true" | "false"</td>
-        <td><em>set by dictionary</em> (false)</td>
-       </tr>
- 
-       <tr>
-        <td colspan="2" class="attdesc">
-   Specifies whether the operator represents a &#x2018;separator&#x2019;, or punctuation.
-   This attribute generally has no direct effect on the visual rendering,
-   but may be useful in specific cases, such as non-visual renderers.
         </td>
        </tr>
  
@@ -2480,7 +2445,7 @@
     <h5 id="presm_ex_fences">Examples with fences and separators</h5>
  
     <p>Note that the <code class="element">mo</code> elements in these examples
-    don't need explicit <code class="attribute">fence</code> or <code class="attribute">separator</code> attributes,
+    don't need explicit <code class="attribute">stretchy</code> or <code class="attribute">symmetric</code> attributes,
     since these can be found using the
     operator dictionary as described below. Some of these examples could also
     be encoded using the <code class="element">mfenced</code> element described in
