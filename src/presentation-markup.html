@@ -4060,7 +4060,7 @@
  When the <code class="attribute">align</code> attribute is set with <code class="element">mstyle</code>, it
  applies only to the <code class="element">munder</code>, <code class="element">mover</code>, and <code class="element">munderover</code>
  elements, and not to the <code class="element">mtable</code> and <code class="element">mstack</code> elements.
- The required attributes <code class="attribute">src</code> and <code class="attribute">alt</code> on <code class="element">mglyph</code>,
+ The attributes <code class="attribute">src</code> and <code class="attribute">alt</code> on <code class="element">mglyph</code>,
  and <code class="attribute">actiontype</code> on <code class="element">maction</code>, cannot be set on <code class="element">mstyle</code>.
  </p>
  
@@ -8956,7 +8956,8 @@
  below in addition to those specified in <a href="#presm_presatt"></a>.</p>
  
  <p>By default, MathML applications that do not recognize the specified
- <code class="attribute">actiontype</code> should render the selected sub-expression as
+   <code class="attribute">actiontype</code> , or if the <code class="attribute">actiontype</code> attribute
+   is not present, should render the selected sub-expression as
  defined below. If no selected sub-expression exists, it is a MathML
  error; the appropriate rendering in that case is as described in
  <a href="#interf_error"></a>.</p>
@@ -8977,15 +8978,14 @@
    <tr>
     <td rowspan="2" class="attname"><span class="coreno">actiontype</span></td>
     <td><em>[=string=]</em></td>
-    <td><em>required</em></td>
+    <td></td>
    </tr>
  
    <tr>
     <td colspan="2" class="attdesc">
      Specifies what should happen for this element.
      The values allowed are open-ended. Conforming renderers may ignore any value they
-     do not handle,
-     although renderers are encouraged to render the values listed below.
+     do not handle.
  </td>
  </tr>
  <tr>
@@ -9018,25 +9018,19 @@
  processed by two or more nested maction elements, the innermost
  maction element of each action type should respond to the event.</p>
  
- <p>The <code class="attribute">actiontype</code> values are open-ended. If another value is given and it requires additional attributes,
- the attributes must be in a different namespace
- <span> in XML;
- in HTML the attributes must begin with "data-"</span>.
- <span>An XML example</span> is shown below:
- </p>
+ <p>The <code class="attribute">actiontype</code> values are open-ended. If another value is given and it requires additional attributes, which should begin with "data-" or in XML they may be in a different namespace.</p>
  
  <dl>
  
-  <dt>&lt;maction actiontype="highlight" my:color="red" my:background="yellow"&gt; expression
+  <dt>&lt;maction actiontype="highlight" data-color="red" data-background="yellow"&gt; expression
  &lt;/maction&gt;</dt>
  <dd>
   <p>In the example,
-  non-standard attributes from another namespace are being used to pass
-  additional information to renderers that support them,
-  without violating the MathML Schema (see <a href="#interf_unspecified"></a>).
-  The <code class="attribute">my:color</code> attributes
+  non-standard data attributes are being used to pass
+  additional information to renderers that support them.
+  The <code class="attribute">data-color</code> attributes
   might change the color of the characters in the presentation, while the
-  <code class="attribute">my:background</code> attribute might change the color of the background
+  <code class="attribute">data-background</code> attribute might change the color of the background
  behind the characters.</p>
  </dd>
  
