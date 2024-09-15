@@ -6173,10 +6173,8 @@
  
   <section>
    <h4 id="presm_mmultiscripts">Prescripts and Tensor Indices
-   <code class="defn starttag">&lt;mmultiscripts&gt;</code><span>,
-   <code class="defn emptytag">&lt;mprescripts/&gt;</code>,
-   <code class="defn emptytag">&lt;none/&gt;</code></span>
-   <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#prescripts-and-tensor-indices-mmultiscripts"><code class="defn starttag">&lt;munder&gt;</code></a>
+      <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#prescripts-and-tensor-indices-mmultiscripts"><code class="defn starttag">&lt;mmultiscripts&gt;</code></a>,
+      <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#prescripts-and-tensor-indices-mmultiscripts"><code class="defn emptytag">&lt;mprescripts/&gt;</code></a>
    </h4>
  
    <section>
@@ -6199,8 +6197,10 @@
     subscripts
     and superscripts, attached to one base expression. It supports both
     postscripts  and prescripts.
-    Missing scripts must be represented by the empty element
-    <code class="element">none</code>.
+    Missing scripts must be represented by an empty element
+    such as <code class="emptytag">&lt;mrow/&gt;</code>.
+    (The element <code class="defn emptytag">&lt;none/&gt;</code> was used in earlier MathML releases, but was equivalent
+    to an empty <code class="emptytag">&lt;mrow/&gt;</code>).
     All of the upper scripts should be baseline-aligned and all the lower scripts should be baseline-aligned.</p>
  
     <p>The prescripts are optional, and when present are given
@@ -6216,7 +6216,7 @@
     for postscripts and prescripts are <span>displayed</span> in the same order as the
     directional context (i.e. left-to-right order in LTR context). If
     no subscript or superscript should be rendered in a given position,
-    then the empty element <code class="element">none</code> should be used in
+    then an empty element <code class="element emptytag">&lt;mrow/&gt;</code> should be used in
     that position.
     <span data-diff="add">For each sub- and superscript pair,
     horizontal-alignment of the elements in the pair should be
@@ -6264,10 +6264,10 @@
          &lt;mmultiscripts&gt;
            &lt;mi&gt; F &lt;/mi&gt;
            &lt;mn&gt; 1 &lt;/mn&gt;
-           &lt;none/&gt;
+           &lt;mrow/&gt;
            &lt;mprescripts/&gt;
            &lt;mn&gt; 0 &lt;/mn&gt;
-           &lt;none/&gt;
+           &lt;mrow/&gt;
          &lt;/mmultiscripts&gt;
          &lt;mo&gt; &amp;#x2061;&lt;!--ApplyFunction--&gt; &lt;/mo&gt;
          &lt;mrow&gt;
@@ -6291,13 +6291,13 @@
        &lt;mmultiscripts&gt;
          &lt;mi&gt; R &lt;/mi&gt;
          &lt;mi&gt; i &lt;/mi&gt;
-         &lt;none/&gt;
-         &lt;none/&gt;
+         &lt;mrow/&gt;
+         &lt;mrow/&gt;
          &lt;mi&gt; j &lt;/mi&gt;
          &lt;mi&gt; k &lt;/mi&gt;
-         &lt;none/&gt;
+         &lt;mrow/&gt;
          &lt;mi&gt; l &lt;/mi&gt;
-         &lt;none/&gt;
+         &lt;mrow/&gt;
        &lt;/mmultiscripts&gt;
      </pre>
     </div>
@@ -6324,9 +6324,9 @@
      <pre>
        &lt;mstyle dir="rtl"&gt;
          &lt;mmultiscripts&gt;&lt;mo&gt;&amp;#x0644;&lt;/mo&gt;
-           &lt;mn&gt;12&lt;/mn&gt;&lt;none/&gt;
+           &lt;mn&gt;12&lt;/mn&gt;&lt;mrow/&gt;
            &lt;mprescripts/&gt;
-           &lt;none/&gt;&lt;mn&gt;5&lt;/mn&gt;
+           &lt;mrow/&gt;&lt;mn&gt;5&lt;/mn&gt;
          &lt;/mmultiscripts&gt;
        &lt;/mstyle&gt;
      </pre>
@@ -7861,7 +7861,9 @@
  are controlled
  by the <code class="attribute">longdivstyle</code> attribute. </p>
  
- <p>The result or divisor may be an elementary math element or may be <code class="element">none</code>.
+ <p>The result or divisor may be an elementary math element or may be an empty
+    <code class="emptytag">&lt;mrow/&gt;</code> (the specific empty element
+<code class="emptytag">&lt;none/&gt;</code> used in MathML 3 is not used in this specification).
  In particular, if <code class="element">msgroup</code> is used,
  the elements in that group may or may not form their own mstack or be part of the
  dividend's <code class="element">mstack</code>,
@@ -8077,7 +8079,7 @@
  An <code class="element">mstyle</code> is treated as if its children were
  directly the children of the <code class="element">msrow</code>, but with their style affected
  by the attributes of the <code class="element">mstyle</code>.
- The empty element <code class="element">none</code> may be used to create an empty column.
+ The empty element <code class="element emptytag">&lt;mrow/&gt;</code> may be used to create an empty column.
  </p>
  
  <p>Note that a row is considered primarily as if it were a number,
@@ -8154,9 +8156,9 @@
  </p>
  
  <p>
-  Each child of <code class="element">mscarries</code> other than <code class="element">mscarry</code> or <code class="element">none</code> is
+  Each child of <code class="element">mscarries</code> other than <code class="element">mscarry</code> or <code class="element emptytag">&lt;mrow/&gt;</code> is
   treated as if implicitly surrounded by <code class="element">mscarry</code>;
-  the element <code class="element">none</code> is used when no carry for a particular column is needed.
+  the element <code class="element emptytag">&lt;mrow/&gt;</code> is used when no carry for a particular column is needed.
   The <code class="element">mscarries</code> element sets <code class="attribute">displaystyle</code> to <code class="attributevalue">false</code>, and increments <code class="attribute">scriptlevel</code> by 1, so the children are
   typically displayed in a smaller font. (See <a href="#presm_scriptlevel"></a>.)
   It also changes the default value of <code class="attribute">scriptsizemultiplier</code>.
@@ -8281,7 +8283,7 @@
  Although it is usually implied, the element may be used explicitly to override the
  <code class="attribute">location</code> and/or <code class="attribute">crossout</code> attributes of
  the containing <code class="element">mscarries</code>.
- It may also be useful with <code class="element">none</code> as its content in order
+ It may also be useful with <code class="element emptytag">&lt;mrow/&gt;</code> as its content in order
  to display no actual carry, but still enable a <code class="attribute">crossout</code>
  due to the enclosing <code class="element">mscarries</code> to be drawn for the given column.
  </p>
@@ -8466,14 +8468,14 @@
  
  <p> Below is the example shown at the start of the section:
    the digits inside the <code class="element">mn</code> elements each occupy a column as does the "+".
-   <code class="element">none</code> is used to fill in the column under the "4" and make the "+" appear to the left of all of the operands.
+   <code class="element emptytag">&lt;mrow/&gt;</code> is used to fill in the column under the "4" and make the "+" appear to the left of all of the operands.
    Notice that no attributes are given on <code class="element">msline</code> causing it to span all of the columns. </p>
  
  <div class="example mathml mml4p">
   <pre>
     &lt;mstack&gt;
       &lt;mn&gt;424&lt;/mn&gt;
-      &lt;msrow&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;none/&gt; &lt;mn&gt;33&lt;/mn&gt; &lt;/msrow&gt;
+      &lt;msrow&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mrow/&gt; &lt;mn&gt;33&lt;/mn&gt; &lt;/msrow&gt;
       &lt;msline/&gt;
     &lt;/mstack&gt;
  </pre>
@@ -8503,14 +8505,14 @@
   </blockquote>
  
  <p>The following two examples illustrate the use of <code class="element">mscarries</code>,
- <code class="element">mscarry</code> and using <code class="element">none</code> to fill in a column.
+ <code class="element">mscarry</code> and using <code class="element emptytag">&lt;mrow/&gt;</code> to fill in a column.
  The examples also illustrate two different ways of displaying a borrow.</p>
  
  <div class="example mathml mml4p">
   <pre>
     &lt;mstack&gt;
       &lt;mscarries crossout='updiagonalstrike'&gt;
-        &lt;mn&gt;2&lt;/mn&gt;  &lt;mn&gt;12&lt;/mn&gt;  &lt;mscarry crossout='none'&gt; &lt;none/&gt; &lt;/mscarry&gt;
+        &lt;mn&gt;2&lt;/mn&gt;  &lt;mn&gt;12&lt;/mn&gt;  &lt;mscarry crossout='none'&gt; &lt;mrow/&gt; &lt;/mscarry&gt;
       &lt;/mscarries&gt;
       &lt;mn&gt;2,327&lt;/mn&gt;
       &lt;msrow&gt; &lt;mo&gt;-&lt;/mo&gt; &lt;mn&gt; 1,156&lt;/mn&gt; &lt;/msrow&gt;
@@ -8527,10 +8529,10 @@
   <pre>
     &lt;mstack&gt;
       &lt;mscarries location='nw'&gt;
-        &lt;none/&gt;
+        &lt;mrow/&gt;
         &lt;mscarry crossout='updiagonalstrike' location='n'&gt; &lt;mn&gt;2&lt;/mn&gt; &lt;/mscarry&gt;
         &lt;mn&gt;1&lt;/mn&gt;
-        &lt;none/&gt;
+        &lt;mrow/&gt;
       &lt;/mscarries&gt;
       &lt;mn&gt;2,327&lt;/mn&gt;
       &lt;msrow&gt; &lt;mo&gt;-&lt;/mo&gt; &lt;mn&gt; 1,156&lt;/mn&gt; &lt;/msrow&gt;
@@ -8549,14 +8551,14 @@
  amount that is underlined (the example is from a <a href="http://www.fritext.se/matte/grunder/posi2.html">Swedish
  source</a>).
  There are two things to notice:
- an <code class="element">menclose</code> is used in the carry, and <code class="element">none</code> is used for
+ an <code class="element">menclose</code> is used in the carry, and <code class="element emptytag">&lt;mrow/&gt;</code> is used for
  the empty element so that <code class="element">mscarry</code> can be used to create a crossout.</p>
  
  <div class="example mathml mml4p">
   <pre>
     &lt;mstack&gt;
       &lt;mscarries&gt;
-        &lt;mscarry crossout='updiagonalstrike'&gt;&lt;none/&gt;&lt;/mscarry&gt;
+        &lt;mscarry crossout='updiagonalstrike'&gt;&lt;mrow/&gt;&lt;/mscarry&gt;
         &lt;menclose notation='bottom'&gt; &lt;mn&gt;10&lt;/mn&gt; &lt;/menclose&gt;
       &lt;/mscarries&gt;
       &lt;mn&gt;52&lt;/mn&gt;
@@ -8581,7 +8583,7 @@
  The second <code class="element">msgroup</code> could also be removed, but <code class="element">msrow</code> would be needed for last two children.
  They <code class="element">msrow</code> would need to set the
  <code class="attribute">position</code> or <code class="attribute">shift</code> attributes,
- or would add <code class="element">none</code> elements to pad the digits on the right.
+ or would add <code class="element emptytag">&lt;mrow/&gt;</code> elements to pad the digits on the right.
  </p>
  
  <div class="example mathml mml4p">
@@ -8613,19 +8615,19 @@
  <div class="example mathml mml4p">
   <pre>
     &lt;mstack&gt;
-      &lt;mscarries&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;none/&gt;&lt;/mscarries&gt;
-      &lt;mscarries&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;none/&gt;&lt;/mscarries&gt;
+      &lt;mscarries&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow/&gt;&lt;/mscarries&gt;
+      &lt;mscarries&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow/&gt;&lt;/mscarries&gt;
       &lt;mn&gt;1,234&lt;/mn&gt;
       &lt;msrow&gt;&lt;mo&gt;&#xD7;&lt;/mo&gt;&lt;mn&gt;4,321&lt;/mn&gt;&lt;/msrow&gt;
       &lt;msline/&gt;
  
       &lt;mscarries position='2'&gt;
         &lt;mn&gt;1&lt;/mn&gt;
-        &lt;none/&gt;
+        &lt;mrow/&gt;
         &lt;mn&gt;1&lt;/mn&gt;
         &lt;mn&gt;1&lt;/mn&gt;
         &lt;mn&gt;1&lt;/mn&gt;
-        &lt;none/&gt;
+        &lt;mrow/&gt;
         &lt;mn&gt;1&lt;/mn&gt;
       &lt;/mscarries&gt;
       &lt;msgroup shift="1"&gt;
@@ -8908,7 +8910,7 @@
  <div class="example mathml mml4p">
   <pre>
     &lt;mstack stackalign="right"&gt;
-      &lt;msrow&gt; &lt;mo&gt;.&lt;/mo&gt; &lt;none/&gt;&lt;none/&gt;&lt;none/&gt;&lt;none/&gt; &lt;mo&gt;.&lt;/mo&gt; &lt;/msrow&gt;
+      &lt;msrow&gt; &lt;mo&gt;.&lt;/mo&gt; &lt;mrow/&gt;&lt;mrow/&gt;&lt;mrow/&gt;&lt;mrow/&gt; &lt;mo&gt;.&lt;/mo&gt; &lt;/msrow&gt;
       &lt;mn&gt; 0.142857 &lt;/mn&gt;
     &lt;/mstack&gt;
   </pre>
