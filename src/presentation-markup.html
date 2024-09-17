@@ -1164,7 +1164,16 @@
    <section>
     <h5 id="presm_mglyph"><span>Using images to represent
     symbols</span> <span class="coreno"><code class="defn emptytag">&lt;mglyph/&gt;</code></span></h5>
- 
+
+    <div id="notcore-mglyph" class="note" title="mglyph is not in MathML-Core">
+     <p><code class="element">mglyph</code> is not supported in [[MathML-Core]].
+     In a Web Platform Context  it is recommended that the HTML <code class="element">img</code>
+     element is used. This is allowed in token elements when MathML is embedded in (X)HTML.
+     </p>
+     <p>For existing MathML using <code class="element">mglyph</code> a <a href="https://w3c.github.io/mathml-polyfills/">Javascript polyfill</a>
+     is provided for Web documents that implements <code class="element">mglyph</code> using <code class="element">img</code>. </p>
+    </div>
+    
     <section>
      <h6>Description</h6>
  
@@ -7088,7 +7097,18 @@
   <section>
    <h4 id="presm_malign">Alignment Markers
    <span class="coreno"><code class="emptytag">&lt;maligngroup/&gt;</code>, <code class="emptytag">&lt;malignmark/&gt;</code></span></h4>
- 
+
+   
+    <div id="notcore-malign" class="note" title="malignmark and maligngroup are not in MathML-Core">
+     <p><code class="element">malignmark</code> and <code class="element">maligngroup</code> are not supported in [[MathML-Core]].
+     For most purposes it is recommended that alignment is implemented directly using <code class="element">mtable</code>  columns. As noted in the following section these elements may be futher simplified or removed in a future version of MathML.
+     </p>
+     <p>For existing MathML using <code class="element">malignmark</code> a <a href="https://w3c.github.io/mathml-polyfills/">Javascript polyfill</a>
+     is provided. </p>
+    </div>
+    
+
+    
    <section>
     <h5 id="presm_malignmark_notice">Removal Notice</h5>
     <p>
