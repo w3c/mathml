@@ -88,15 +88,18 @@
     implementation infer the row markup if it was omitted.
     </li>
     <li>The use of <code class="element">malignmark</code> has been
-      restricted and simplified, matching the features implemented in
-      existing implementations.
-      The <code class="attribute">groupalign</code> attribute on table
-      elements is no longer supported.</li>
+    restricted and simplified, matching the features implemented in
+    existing implementations.
+    The <code class="attribute">groupalign</code> attribute on table
+    elements is no longer supported.</li>
     <li>The deprecated <code class="element">mo</code> attributes, <code class="attribute">fence</code>
-      and <code class="attribute">separator</code>, have been removed
-      (and are also no longer listed as properties in <a href="#oper-dict"></a>).
-      They are still valid in the <a href="#parsing_rnc_legacy"></a> schema,
-      but invalid in the default schema.
+    and <code class="attribute">separator</code>, have been removed
+    (and are also no longer listed as properties in <a href="#oper-dict"></a>).
+    They are still valid in the <a href="#parsing_rnc_legacy"></a> schema,
+    but invalid in the default schema.</li>
+    <li>The deprecated element <code class="element">none</code> is
+    replaced by an empty <code class="element">mrow</code> throughout,
+    to match [[MathML-Core]].
    </ul>
 
   </section>
