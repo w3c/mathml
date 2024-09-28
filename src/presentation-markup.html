@@ -324,13 +324,7 @@
        <tr>
         <td><a class="intref" href="#presm_mtable"><code class="element">mtable</code></a></td>
         <td>0 or more rows</td>
-        <td>0 or more <code class="element">mtr</code> or <code class="element">mlabeledtr</code> elements</td>
-       </tr>
- 
-       <tr>
-        <td><a class="intref" href="#presm_mlabeledtr"><code class="element">mlabeledtr</code></a></td>
-        <td>1 or more</td>
-        <td>a label and 0 or more <code class="element">mtd</code> elements</td>
+        <td>0 or more <code class="element">mtr</code> elements</td>
        </tr>
  
        <tr>
@@ -920,11 +914,6 @@
       <tr>
        <td><a class="intref" href="#presm_mtable"><code class="element">mtable</code></a></td>
        <td>table or matrix</td>
-      </tr>
- 
-      <tr>
-       <td><a class="intref" href="#presm_mlabeledtr"><code class="element">mlabeledtr</code></a></td>
-       <td>row in a table or matrix with a label or equation number</td>
       </tr>
  
       <tr>
@@ -4060,7 +4049,7 @@
  <code class="element">mglyph</code>, <code class="element">mpadded</code>, or <code class="element">mtable</code>.  Similarly, when
  <code class="attribute">rowalign</code> or <code class="attribute">columnalign</code>
  are specified on an <code class="element">mstyle</code> element, they apply only to the
- <code class="element">mtable</code> element, and not the <code class="element">mtr</code>, <code class="element">mlabeledtr</code>,
+ <code class="element">mtable</code> element, and not the <code class="element">mtr</code>,
  <code class="element">mtd</code>, and <code class="element">maligngroup</code> elements.
  When the <code class="attribute">lspace</code> attribute is set with <code class="element">mstyle</code>, it
  applies only to the <code class="element">mo</code> element and not to <code class="element">mpadded</code>.
@@ -6349,7 +6338,7 @@
  
   <p>Matrices, arrays and other table-like mathematical notation are marked
   up using <code class="element">mtable</code>,
-  <code class="element">mtr</code>, <code class="element">mlabeledtr</code> and
+  <code class="element">mtr</code> and
   <code class="element">mtd</code> elements. These elements are similar to the
   <code class="element" data-namespace="xhtml">table</code>, <code class="element" data-namespace="xhtml">tr</code> and <code class="element" data-namespace="xhtml">td</code> elements of HTML, except that they provide
   specialized attributes for the fine layout control
@@ -6360,13 +6349,7 @@
   For layout and for accessibility reasons, the <code class="element">mstack</code> and <code class="element">mlongdiv</code> elements discussed
   in <a href="#presm_elementary"></a> should be used for elementary math notations.</p>
  
-  <p>In addition to the table elements mentioned above, the <code class="element">mlabeledtr</code> element is used for labeling rows
-  of a table.  This is useful for numbered equations.
-  The first child of <code class="element">mlabeledtr</code> is the label.
-  A label is somewhat special in that it is not considered an expression
-  in the matrix and is not counted when determining the number of columns
-  in that row.</p>
- 
+
   <section>
    <h4 id="presm_mtable">Table or Matrix
    <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mtable"><code class="defn starttag">&lt;mtable&gt;</code></a></h4>
@@ -6374,8 +6357,7 @@
    <section>
     <h5 id="presm_tabmat_desc">Description</h5>
  
-    <p>A matrix or table is specified using the <code class="element">mtable</code> element. Inside of the <code class="element">mtable</code> element, only <code class="element">mtr</code>
-    or <code class="element">mlabeledtr</code> elements may appear.
+    <p>A matrix or table is specified using the <code class="element">mtable</code> element. Inside of the <code class="element">mtable</code> element, only <code class="element">mtr</code> elements may appear.
     </p>
  
     <p>Table rows that have fewer columns than other rows of the same
@@ -6388,9 +6370,8 @@
     attributes may affect
     the number of <code class="element">mtd</code> elements that should be given
     in subsequent <code class="element">mtr</code> elements to cover a given
-    number of columns.
-    Note also that the label in an <code class="element">mlabeledtr</code> element
-    is not considered a column in the table.</p>
+    number of columns.</p>
+
  
     <p>MathML does not specify a table layout algorithm.  In
     particular, it is the responsibility of a MathML renderer to resolve
@@ -6683,35 +6664,6 @@
        </td>
       </tr>
  
-      <tr>
-       <td rowspan="2" class="attname"><span class="coreno">side</span></td>
-       <td>"left" | "right" | "leftoverlap" | "rightoverlap"</td>
-       <td>right</td>
-      </tr>
- 
-      <tr>
-       <td colspan="2" class="attdesc">
-        specifies on what side of the table labels from enclosed <code class="element">mlabeledtr</code> (if any) should be  placed.
-        The variants <code class="attributevalue">leftoverlap</code> and <code class="attributevalue">rightoverlap</code>
-        are useful when the table fits with the allowed width
-        when the labels are omitted, but not when they are included:
-        in such cases, the labels will overlap the row placed above it
-        if the <code class="attribute">rowalign</code> for that row is <code class="attributevalue">top</code>,
-        otherwise it is placed below it.
-       </td>
-      </tr>
- 
-      <tr>
-       <td rowspan="2" class="attname"><span class="coreno">minlabelspacing</span></td>
-       <td><a class="intref" href="#type_length"><em>length</em></a></td>
-       <td>0.8em</td>
-      </tr>
- 
-      <tr>
-       <td colspan="2" class="attdesc">
-        specifies the minimum space allowed between a label and the adjacent cell in the row.
-       </td>
-      </tr>
      </tbody>
     </table>
  
@@ -6730,8 +6682,7 @@
  
     <p>Note that none of the <span>areas</span> occupied by lines
     <code class="attribute">frame</code>, <code class="attribute">rowlines</code> and <code class="attribute">columnlines</code>,
-    nor the spacing  <code class="attribute">framespacing</code>, <code class="attribute">rowspacing</code> or <code class="attribute">columnspacing</code>,
-    nor the label in <code class="element">mlabeledtr</code> are counted as rows or columns.</p>
+    nor the spacing  <code class="attribute">framespacing</code>, <code class="attribute">rowspacing</code> or <code class="attribute">columnspacing</code> are counted as rows or columns.</p>
  
     <p>The <code class="attribute">displaystyle</code> attribute is allowed on the <code class="element">mtable</code>
     element to set the inherited value of the attribute.  If the attribute is
@@ -6848,100 +6799,25 @@
      </tbody>
     </table>
    </section>
-  </section>
- 
-  <section>
-   <h4 id="presm_mlabeledtr">Labeled Row in Table or Matrix
-   <span class="coreno"><code class="defn starttag">&lt;mlabeledtr&gt;</code></span></h4>
- 
-   <section>
-    <h5 id="presm_mlabeledtr_desc">Description</h5>
- 
-    <p>An <code class="element">mlabeledtr</code> element represents one row in
-    a table that has a label on either the left or right side, as
-    determined by the <code class="attribute">side</code> attribute.  The label is
-    the first child of <code class="element">mlabeledtr</code>, and should be enclosed in an <code class="element">mtd</code>.
-    The rest of the children represent the contents of the row and are treated identically
-    to the children of <code class="element">mtr</code>; consequently all of the children
-    must be <code class="element">mtd</code> elements.
-    </p>
- 
-    <p>
-     An <code class="element">mlabeledtr</code> element is only allowed as a
-     direct sub-expression of an <code class="element">mtable</code> element.
-     Each argument of <code class="element">mlabeledtr</code> except for the first
-     argument (the label) is placed in a different column
-    of the table, starting at the leftmost column.</p>
- 
-    <p>Note that the label element is not considered to be a cell in the
-    table row.  In particular, the label element is not taken into
-    consideration in the table layout for purposes of width and alignment
-    calculations.  For example, in the case of an <code class="element">mlabeledtr</code> with a label and a single centered <code class="element">mtd</code> child, the child is first centered in the
-    enclosing <code class="element">mtable</code>, and then the label is
-    placed.  Specifically, the child is <em>not</em> centered in the
-    space that remains in the table after placing the label.</p>
- 
-    <p>While MathML does not specify an algorithm for placing labels,
-    implementers of visual renderers may find the following formatting
-    model useful.  To place a label, an <span>implementor</span> might think in terms
-    of creating a larger table, with an extra column on both ends.  The
-    <code class="attribute">columnwidth</code> attributes of both these border
-    columns would be set to <code class="attributevalue">fit</code> so that they expand
-    to fill whatever space remains after the inner columns have been laid
-    out.  Finally, depending on the values of <code class="attribute">side</code>
-    and <code class="attribute">minlabelspacing</code>, the label is placed
-    in whatever border column is appropriate, possibly shifted down if
-    necessary, and aligned according to <code class="attribute">columnalignment</code>.</p>
-   </section>
- 
-   <section>
-    <h5 id="presm_mlabeledtr_att">Attributes</h5>
- 
-    <p>
-     The attributes for <code class="element">mlabeledtr</code> are the same
-     as for <code class="element">mtr</code>.  Unlike the attributes for the
-     <code class="element">mtable</code> element, attributes of
-     <code class="element">mlabeledtr</code> that apply to column elements
-     also apply to the label.  For example, in a one column table,
-    </p>
- 
-     <div class="example mathml-fragment">
-      <pre>
- 
-        &lt;mlabeledtr rowalign='top'&gt;
- 
-      </pre>
-     </div>
-     <p>means that the label and other entries in the row are vertically aligned
-     along their top.  To force a particular alignment on the label,
-     the appropriate attribute would normally be set on the
-     <code class="element">mtd</code> <span>element</span> that surrounds the label content.
-    </p>
-   </section>
- 
+  
    <section>
     <h5 id="presm_eqno">Equation Numbering</h5>
- 
-    <p>One of the important uses of <code class="element">mlabeledtr</code> is
+
+   
+    <p>Earlier versions of MathML specified an <code class="element">mlabeledtr</code> element
     for numbered equations.  In an <code class="element">mlabeledtr</code>, the
-    label represents the equation number and the elements in the row are
-    the equation being numbered.  The <code class="attribute">side</code> and <code class="attribute">minlabelspacing</code> attributes of <code class="element">mtable</code> determine the placement of the equation
-    number.</p>
+    first  <code class="element">mtd</code> represented the equation number and the remaining elements in the row 
+    the equation being numbered.  The <code class="attribute">side</code> and <code class="attribute">minlabelspacing</code> attributes of <code class="element">mtable</code> determined the placement of the equation
+    number.
+    This element was not widely implemented and is not specified in the current version, it is still valid
+    in the <a href="#parsing_rnc_legacy">Legacy Schema</a>.</p>
  
     <p>In larger documents with many numbered equations, automatic
     numbering becomes important. While automatic equation numbering and
     automatically resolving references to equation numbers is outside the
     scope of MathML, these problems can be addressed by the use of style
-    sheets or other means. The mlabeledtr construction provides support
-    for both of these functions in a way that is intended to facilitate
-    XSLT processing.  The <code class="element">mlabeledtr</code> element can be
-    used to indicate the presence of a numbered equation, and the first
-    child can be changed to the current equation number, along with
-    incrementing the global equation number.  For cross references, an
-    <code class="attribute">id</code> on either the mlabeledtr element or on the first element
-    itself could be used as a target of any link.
-    Alternatively, in a CSS context, one could use an empty <code class="element">mtd</code>
-    as the first child of <code class="element">mlabeledtr</code> and use CSS counters and generated content
+    sheets or other means. Un a CSS context, one could use an empty <code class="element">mtd</code>
+    as the first child of a <code class="element">mtr</code> and use CSS counters and generated content
     to fill in the equation number using a CSS style such as</p>
  
     <div class="example ">
@@ -6954,40 +6830,8 @@
  
    </section>
  
-   <section class="fold">
-    <h5 id="presm_eqno_ex">Example</h5>
- 
-    <div class="example mathml mml4p">
-     <pre>
-       &lt;mtable&gt;
-         &lt;mlabeledtr id='e-is-m-c-square'&gt;
-           &lt;mtd&gt;
-             &lt;mtext&gt; (2.1) &lt;/mtext&gt;
-           &lt;/mtd&gt;
-           &lt;mtd&gt;
-             &lt;mrow&gt;
-               &lt;mi&gt;E&lt;/mi&gt;
-               &lt;mo&gt;=&lt;/mo&gt;
-               &lt;mrow&gt;
-                 &lt;mi&gt;m&lt;/mi&gt;
-                 &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
-                 &lt;msup&gt;
-                   &lt;mi&gt;c&lt;/mi&gt;
-                   &lt;mn&gt;2&lt;/mn&gt;
-                 &lt;/msup&gt;
-               &lt;/mrow&gt;
-             &lt;/mrow&gt;
-           &lt;/mtd&gt;
-         &lt;/mlabeledtr&gt;
-       &lt;/mtable&gt;
-     </pre>
-    </div>
- <blockquote class="mml4p">
- <img src="image/emc2.png" alt="mlabeledtr example"/>
- </blockquote>
-
-   </section>
   </section>
+
  
   <section>
    <h4 id="presm_mtd">Entry in Table or Matrix <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mtd"><code class="defn starttag">&lt;mtd&gt;</code></a></h4>
@@ -6998,7 +6842,7 @@
     <p>An <code class="element">mtd</code> element represents one entry, or cell, in a
     table or matrix. An <code class="element">mtd</code> element is only
     allowed as a direct sub-expression of an <code class="element">mtr</code>
-    or an <code class="element">mlabeledtr</code> element.</p>
+    element.</p>
  
     <p>The <code class="element">mtd</code> element accepts
     a single argument possibly being an inferred <code class="element">mrow</code> of multiple children;
@@ -7083,13 +6927,7 @@
      </tbody>
     </table>
  
-    <p>The <code class="attribute">rowspan</code> and <code class="attribute">columnspan</code> attributes
-    can be used around an <code class="element">mtd</code> element that represents
-    the label in an <code class="element">mlabeledtr</code> element.
-    Also, the label of an <code class="element">mlabeledtr</code> element is not
-    considered to be part of a previous <code class="attribute">rowspan</code> and
-    <code class="attribute">columnspan</code>.
-    </p>
+
  
    </section>
   </section>
