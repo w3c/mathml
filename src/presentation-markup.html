@@ -6806,8 +6806,8 @@
    
     <p>Earlier versions of MathML specified an <code class="element">mlabeledtr</code> element
     for numbered equations.  In an <code class="element">mlabeledtr</code>, the
-    first  <code class="element">mtd</code> represented the equation number and the remaining elements in the row 
-    the equation being numbered.  The <code class="attribute">side</code> and <code class="attribute">minlabelspacing</code> attributes of <code class="element">mtable</code> determined the placement of the equation
+    first  <code class="element">mtd</code> represents the equation number and the remaining elements in the row 
+    the equation being numbered.  The <code class="attribute">side</code> and <code class="attribute">minlabelspacing</code> attributes of <code class="element">mtable</code> determines the placement of the equation
     number.
     This element was not widely implemented and is not specified in the current version, it is still valid
     in the <a href="#parsing_rnc_legacy">Legacy Schema</a>.</p>
@@ -6816,7 +6816,7 @@
     numbering becomes important. While automatic equation numbering and
     automatically resolving references to equation numbers is outside the
     scope of MathML, these problems can be addressed by the use of style
-    sheets or other means. Un a CSS context, one could use an empty <code class="element">mtd</code>
+    sheets or other means. In a CSS context, one could use an empty <code class="element">mtd</code>
     as the first child of a <code class="element">mtr</code> and use CSS counters and generated content
     to fill in the equation number using a CSS style such as</p>
  
