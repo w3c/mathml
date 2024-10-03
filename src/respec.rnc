@@ -62,7 +62,8 @@ attribute style {text}?, #FIX
 attribute id {text}?,
 attribute tabindex {text}?,
 attribute role {text}?,
-h6?, #FIX				  
+h6?, #FIX
+attribute title {text}?,
 (divcontent|label|input)*
 }
 
