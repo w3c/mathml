@@ -162,7 +162,7 @@
    <section>
     <h5 id="interf_deprec">Deprecated MathML 1.x and MathML 2.x Features</h5>
 
-    <p>MathML 3.0 contains a number of features of earlier MathML
+    <p>MathML 4.0 contains a number of features of earlier MathML
     which are now deprecated.  The following points define what it means for a
     feature to be deprecated, and clarify the relation between
     deprecated features and  current MathML conformance.</p>
@@ -178,7 +178,7 @@
       <p>In order to be MathML-input-conformant, rendering and reading
       tools must support deprecated features if they are to be
       in conformance with MathML 1.x or MathML 2.x.   They do not have to support deprecated
-      features to be considered in conformance with MathML 3.0.  However, all tools
+      features to be considered in conformance with MathML 4.0.  However, all tools
       are encouraged to support the old forms as much as
       possible.</p>
      </li>
@@ -196,7 +196,7 @@
     <h5 id="interf_extension">MathML
     Extension Mechanisms and Conformance</h5>
 
-    <p>MathML 3.0 defines three basic extension mechanisms:  the <code class="element">mglyph</code>
+    <p>MathML 4.0 defines three basic extension mechanisms:  the <code class="element">mglyph</code>
     element provides a way of displaying glyphs for non-Unicode
     characters, and glyph variants for existing Unicode characters; the
     <code class="element">maction</code> element uses attributes from other namespaces to obtain
@@ -206,7 +206,7 @@
     definitions of mathematical semantics.</p>
 
     <p>These extension mechanisms are important because they provide a way
-    of encoding concepts that are beyond the scope of MathML 3.0 as presently
+    of encoding concepts that are beyond the scope of MathML 4.0 as presently
     explicitly specified, which
     allows MathML to be used for exploring new ideas not yet susceptible
     to standardization.  However, as new ideas take hold, they may become
@@ -225,7 +225,7 @@
     available.  For example, using an <code class="element">mglyph</code> element to represent
     an 'x' is permitted.  However, authors and implementers are
     strongly encouraged to use standard markup whenever possible.
-    Similarly, maintainers of documents employing MathML 3.0 extension
+    Similarly, maintainers of documents employing MathML 4.0 extension
     mechanisms are encouraged to monitor relevant standards activity
     (e.g., Unicode, OpenMath, etc.) and to update documents as more
     standardized markup becomes available.</p>
@@ -278,7 +278,8 @@
    attribute obsolete.  In MathML 2.0, the <code class="attribute">other</code> attribute is
    <a class="intref" href="#interf_deprec">deprecated</a> in favor of the use of
    namespace prefixes to identify non-MathML attributes.  The
-   <code class="attribute">other</code> attribute remains deprecated in MathML 3.0.</p>
+   <code class="attribute">other</code> attribute has been removed in MathML 4.0. although it
+   is still valid (with no defined behavior) in the mathml4-legacy schema.</p>
 
    <p>For example, in MathML 1.0, it was recommended that if additional information
    was used in a renderer-specific implementation for the <code class="element">maction</code> element
@@ -291,14 +292,14 @@
     </pre>
    </div>
 
-   <p>From MathML 2.0 onwards, a <code class="attribute">color</code>
-   attribute from another namespace would be used:</p>
+   <p>From MathML 4.0 onwards, a <code class="attribute">data-*</code>
+   attribute could be used:</p>
 
    <div class="example ">
     <pre>
-      &lt;body xmlns:my="http://www.example.com/MathML/extensions"&gt;
+      &lt;body&gt;
         ...
-        &lt;maction actiontype="highlight" my:color="#ff0000"&gt; expression &lt;/maction&gt;
+        &lt;maction actiontype="highlight" data-color="#ff0000"&gt; expression &lt;/maction&gt;
         ...
       &lt;/body&gt;
     </pre>
