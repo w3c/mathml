@@ -90,7 +90,7 @@ S                  := [ \t\n\r]*
       A <dfn id="intent_known_concept">known concept</dfn> matches a name
       in an [=Intent Concept Dictionary=] recognized by the AT.
       This may produce specific audio or braille renderings based on the speech hints
-      given in the dictionary.
+      given in the list.
       An <dfn id="intent_unknown_concept">unknown concept</dfn> is a concept not
       currently known to the AT. These will be treated the same as a [=literal=], spoken as-is.
       However, future updates of the AT and [=Intent Concept Dictionary=] may
@@ -162,19 +162,20 @@ S                  := [ \t\n\r]*
   <section>
     <h3 id="mixing_intent_dictionaries">Intent Concept Dictionaries</h3>
      <p>An <dfn>Intent Concept Dictionary</dfn> is a mapping from a [=concept=] name
-      to specific speech or braille for that concept.
+      to speech or braille for that concept.
       The mapping may take into account any [=property=] that follows the name.
       AT that makes use of <code class="attribute">intent</code>
       SHOULD be able to produce speech or braille that corresponds to any
-      of the concepts in the [=Core=] table discussed below.
+      of the concepts in the [=Core=] list discussed below.
       AT that makes use of <code class="attribute">intent</code>
-       MAY also include concepts in the [=Open=] table discussed below,
+       MAY also include concepts in the [=Open=] list discussed below,
        as well as its own built-in dictionaries.
       </p>
       <p>The Intent Concept Dictionary is somewhat analogous to the <a href="#oper-dict"></a> used by
       MathML renderers in that it provides a set of defaults renderers should be aware of.
       The <code>property</code> also has some analogies to the operator dictionary's use of
-      <code class="attribute">form</code>.
+      <code class="attribute">form</code> because a match makes use of fixity properties
+      (<code>prefix</code>, <code>infix</code>, etc.).
     </p>
     <!--<p class="issue" data-number="410">Issue 410</p>-->
     <p>
@@ -207,12 +208,12 @@ S                  := [ \t\n\r]*
        in these lists SHOULD consider this concept (or property) to be
        a hint how the content could be read.  AT systems MAY use this concept
        as a hint to improve braille generation.  However, because
-       common notations have many specialized ways of being spoken AT
+       common notations have many specialized ways of being spoken, AT
        is NOT constrained to use the name given.  For example, AT may
        vocalize a fraction marked up with <code>&lt;mfrac></code>
        as <q>three quarters</q> or <q>three over x</q>
        or may vocalize an inline fraction marked up as <code>&lt;mo>/&lt;/mo></code>
-       as <q>three divided by x plus y</q>.
+       as <q>three divided by x</q>.
        The choice may depend on the contents
        and carrier element associated with an
        <code>intent="divide($num,$denom)"</code>.</p>
@@ -223,11 +224,12 @@ S                  := [ \t\n\r]*
       who can not see the a fraction, AT might say <q>fraction x over
       three end fraction</q> so the listener knows exactly what is
       part of the fraction.  For someone who can see the content,
-      these extra words can be a distraction.  AT should always
+      these extra words might be a distraction.  AT should always
       produce speech that is appropriate to the community they serve.
       </p>
       </li>
-      <li><dfn id="intent-open">Open</dfn>: This is an <a href="https://w3c.github.io/mathml-docs/intent-open-concepts">open list of concepts</a>
+      <li><dfn id="intent-open">Open</dfn>: This is an
+      <a href="https://w3c.github.io/mathml-docs/intent-open-concepts">open list of concepts</a>
       to which contributions are invited.
       AT reading MathML attributed with a name in this list
       MAY use the speech hints provided by the intent
@@ -245,9 +247,18 @@ S                  := [ \t\n\r]*
      <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>
      and also normalize
      <q>`_`</q> (U+00F5) and <q>`.`</q>  (U+002E) to <q>`-`</q> (U+002D).
-     If the speech hints are not being used
-     and the concept name is being read then each of  `-`, `_` and `.` should be
-     read as an inter-word space.</p>
+     An intent matches an entry in a concept list when the normalized name, the fixity property
+     (which may be defaulted in the concept dictionary), and the number of arguments all match.
+     If a match is found, the speech hint in the list
+     should be used be used as a guide for the generation of suitable text
+     for the <a href="#intent_known_concept">known concept</a>.
+     If the intent does not match any entries, then it is treated as
+     Unknown concept names should be read as a literal after normalizing each of `-`, `_` and `.`
+     to an inter-word space.
+    Both <a href="#intent_known_concept">known concepts</a> and
+    <a href="#intent_unknown_concept">unknown concepts</a> should be read in a manner
+    consistent with any given or default fixity properties.
+  </p>
   </section>
 
   <section>
@@ -294,7 +305,7 @@ S                  := [ \t\n\r]*
       <li>
       In the case of a [=known concept=] name, the property MAY be used in choosing the alternatives
       supported by the AT. For example <code>union</code> is in the
-      Core dictionary with speech patterns "$1 union $2" and "union of $1 and $2".
+      Core list with speech patterns "$1 union $2" and "union of $1 and $2".
       An intent <code>union :prefix ($a,$b)</code> would
       indicate that the latter style is preferred.
       </li>
@@ -328,7 +339,7 @@ S                  := [ \t\n\r]*
      should be read in style suitable for matricies, with typically
       column numbers being announced.</li>
       <li>`system-of-equations` should be read in style suitable for
-      displayed equations (and inequations), with typically
+      displayed equations (and inequalities), with typically
       column numbers not being announced. Each table row would
       normally be announced as an "equation" but a
       `continued-equation` property on an <code>mtr</code> indicates
