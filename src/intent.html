@@ -92,7 +92,8 @@ S                  := [ \t\n\r]*
       This may produce specific audio or braille renderings based on the speech hints
       given in the list.
       An <dfn id="intent_unknown_concept">unknown concept</dfn> is a concept not
-      currently known to the AT. These will be treated the same as a [=literal=], spoken as-is.
+      currently known to the AT. These will be treated the same as a [=literal=], spoken as-is
+      after normalizing each of `-`, `_` and `.` to an inter-word space.
       However, future updates of the AT and [=Intent Concept Dictionary=] may
       include additional concepts, at which time those concepts may also receive special treatment.</p>
     </li>
@@ -252,10 +253,9 @@ S                  := [ \t\n\r]*
      If a match is found, the speech hint in the list
      should be used be used as a guide for the generation of suitable text
      for the <a href="#intent_known_concept">known concept</a>.
-     If the intent does not match any entries, then it is treated as
-     Unknown concept names should be read as a literal after normalizing each of `-`, `_` and `.`
-     to an inter-word space.
-    Both <a href="#intent_known_concept">known concepts</a> and
+     Recall that any concept not currently known to the AT is an <a href="#intent_unknown_concept">unknown concept</a> 
+     and treated as a <a href="#intent_literal">literal</a>.
+     Both <a href="#intent_known_concept">known concepts</a> and
     <a href="#intent_unknown_concept">unknown concepts</a> should be read in a manner
     consistent with any given or default fixity properties.
   </p>
