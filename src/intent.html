@@ -86,16 +86,7 @@ S                  := [ \t\n\r]*
       <p>A <dfn id="intent_concept">concept</dfn> corresponds to some mathematical or
       application specific function or concept.
       For many concepts, the words used to speak a concept are very similar to the name
-      used when referencing a concept.
-      A <dfn id="intent_known_concept">known concept</dfn> matches a name
-      in an [=Intent Concept Dictionary=] recognized by the AT.
-      This may produce specific audio or braille renderings based on the speech hints
-      given in the list.
-      An <dfn id="intent_unknown_concept">unknown concept</dfn> is a concept not
-      currently known to the AT. These will be treated the same as a [=literal=], spoken as-is
-      after normalizing each of `-`, `_` and `.` to an inter-word space.
-      However, future updates of the AT and [=Intent Concept Dictionary=] may
-      include additional concepts, at which time those concepts may also receive special treatment.</p>
+      used when referencing a concept.</p>
     </li>
     <li>
       <p>A <dfn id="intent_literal">literal</dfn> is a name starting with <q>`_`</q> (U+00F5).
@@ -152,7 +143,7 @@ S                  := [ \t\n\r]*
     <dt><dfn id="intent_property_list">self-property-list</dfn></dt>
     <dd>At the top level, an [=intent=] may consist of just a
     non-empty list of properties. These apply to the current element
-    as described in <a href="#mixing_intent_self"></a>.</dd>
+    as described in <a href="#using_intent"></a>.</dd>
 
     <!--<dt><dfn id="intent_expression">expression</dfn></dt>-->
     <dt>expression</dt>
@@ -162,14 +153,13 @@ S                  := [ \t\n\r]*
 
   <section>
     <h3 id="mixing_intent_dictionaries">Intent Concept Dictionaries</h3>
-     <p>An <dfn>Intent Concept Dictionary</dfn> is a mapping from a [=concept=] name
-      to speech or braille for that concept.
-      The mapping may take into account any [=property=] that follows the name.
-      AT that makes use of <code class="attribute">intent</code>
-      SHOULD be able to produce speech or braille that corresponds to any
-      of the concepts in the [=Core=] list discussed below.
-      AT that makes use of <code class="attribute">intent</code>
-       MAY also include concepts in the [=Open=] list discussed below,
+    <p>Every AT system that supports <code class="attribute">intent</code> contains,
+      at least implicitly, an <dfn>Intent Concept Dictionary</dfn>
+      which maps [=concept=] names to speech, text or braille for that concept
+      (The details of matching and using concept names is given in [=intent matching using=]).
+      The concept dictionary of such an AT
+      SHOULD contain the concepts in the [=Core=] list discussed below;
+      It MAY also include concepts in the [=Open=] list discussed below,
        as well as its own built-in dictionaries.
       </p>
       <p>The Intent Concept Dictionary is somewhat analogous to the <a href="#oper-dict"></a> used by
@@ -194,40 +184,6 @@ S                  := [ \t\n\r]*
        <q>greater-than</q>. The list is curated by the Math Working
        Group based on experience with different AT implementations and
        following the guidelines set out in [[?Concept-Lists]].
-       
-
-       <p>Some readings benefit from annotating the kind of
-       mathematical object, rather than giving an explicit concept
-       name to be spoken.  For such cases, one should use an Intent
-       [=property=] instead of an Intent [=concept=].  The Math
-       Working Group maintain a similar list of <a
-       href="https://w3c.github.io/mathml-docs/intent-core-properties/">list
-       of core property names</a> as described in the following
-       section.</p>
-
-       <p>AT reading MathML attributed with a concept (or property)
-       in these lists SHOULD consider this concept (or property) to be
-       a hint how the content could be read.  AT systems MAY use this concept
-       as a hint to improve braille generation.  However, because
-       common notations have many specialized ways of being spoken, AT
-       is NOT constrained to use the name given.  For example, AT may
-       vocalize a fraction marked up with <code>&lt;mfrac></code>
-       as <q>three quarters</q> or <q>three over x</q>
-       or may vocalize an inline fraction marked up as <code>&lt;mo>/&lt;/mo></code>
-       as <q>three divided by x</q>.
-       The choice may depend on the contents
-       and carrier element associated with an
-       <code>intent="divide($num,$denom)"</code>.</p>
-       
-      <p>
-      Depending upon the reader, AT may add words or sounds to make
-      the speech clearer to the listener.  For example, for someone
-      who can not see the a fraction, AT might say <q>fraction x over
-      three end fraction</q> so the listener knows exactly what is
-      part of the fraction.  For someone who can see the content,
-      these extra words might be a distraction.  AT should always
-      produce speech that is appropriate to the community they serve.
-      </p>
       </li>
       <li><dfn id="intent-open">Open</dfn>: This is an
       <a href="https://w3c.github.io/mathml-docs/intent-open-concepts">open list of concepts</a>
@@ -243,39 +199,13 @@ S                  := [ \t\n\r]*
      <p>Future versions of the concept list may incorporate names from the <q>open</q> list into the
       <q>core</q> list if usage indicates that is appropriate.
      </p>
-     <p>When comparing a concept name from the <code class="attribute">intent</code>
-      attribute with entries in an [=Intent Concept Dictionary=], the comparison should be
-     <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>
-     and also normalize
-     <q>`_`</q> (U+00F5) and <q>`.`</q>  (U+002E) to <q>`-`</q> (U+002D).
-     An intent matches an entry in a concept list when the normalized name, the fixity property
-     (which may be defaulted in the concept dictionary), and the number of arguments all match.
-     If a match is found, the speech hint in the list
-     should be used be used as a guide for the generation of suitable text
-     for the <a href="#intent_known_concept">known concept</a>.
-     Recall that any concept not currently known to the AT is an <a href="#intent_unknown_concept">unknown concept</a> 
-     and treated as a <a href="#intent_literal">literal</a>.
-     Both <a href="#intent_known_concept">known concepts</a> and
-    <a href="#intent_unknown_concept">unknown concepts</a> should be read in a manner
-    consistent with any given or default fixity properties.
-  </p>
   </section>
 
   <section>
     <h3 id="mixing_intent_properties">Intent Properties</h3>
-    <p>As with [=Concepts=], The Working group maintains lists
-      of [=property=] values.
-      <dfn id="intent-core-properties">Core properties</dfn>: This is a
-      <a href="https://w3c.github.io/mathml-docs/intent-core-properties">list core of properties</a>
-      maintained by the Math Working Group
-      and
-      <dfn id="intent-open-properties">Open properties</dfn>: This is an
-      <a href="https://w3c.github.io/mathml-docs/intent-open-properties">open list of properties</a>
-    with contributions welcome from the community.</p>
 
-
-   <p>When generating speech a system should use any properties
-   specified in the <code class="attribute">intent</code> attribute.
+    <p>Intent [=properties=] act as modifiers of the speech or Braille that
+     otherwise would have been generated by the <code class="attribute">intent</code> attribute.
    Most of these properties only have a
    defined effect in specific contexts, such as on the head of an
    <a data-link-for="intent" data-link-type="dfn"
@@ -285,10 +215,21 @@ S                  := [ \t\n\r]*
    but as with any properties, is by default ignored but may have a
    system-specific effect.</p>
 
+    <p>As with [=Concepts=], The Working group maintains two lists
+      of [=property=] values.</p>
+    <ul>
+      <li><dfn id="intent-core-properties">Core properties</dfn>: This is a
+      <a href="https://w3c.github.io/mathml-docs/intent-core-properties">list core of properties</a>
+      maintained by the Math Working Group</li>
+       <li><dfn id="intent-open-properties">Open properties</dfn>: This is an
+      <a href="https://w3c.github.io/mathml-docs/intent-open-properties">open list of properties</a>
+      with contributions welcome from the community.
+      Implementors of MathML systems that implement additional properties are encouraged
+      to make a pull request to add them to the list of  [=Open Properties=].</li>
+    </ul>
    <p>Whilst the definitive list of [=Core Properties=] is maintained at
    Github, we describe the major classes of property affecting speech generation
-   below. Implementors of MathML systems that implement additional properties are encouraged
-   to make a pull request to add them to the list of  [=Open Properties=].</p>
+   below.</p>
    <dl>
     <dt id="intent_fixity_hint"><code>prefix</code>,
     <code>infix</code>, <code>postfix</code>,
@@ -364,20 +305,71 @@ S                  := [ \t\n\r]*
   </section>
   
   <section>
-   <h3 id="mixing_intent_self">Intent Self References</h3>
-   <p>The grammar allows the intent to omit the leading <i>term</i>
-   and just consist of a non-empty list of properties, [=self-property-list=]. This should be
-   interpreted as specfying properties for the current element. This
-   can be a useful technique, especially for large constructs such as tables as
-   it allows the children to be inferred without needing to be
-   explicitly referenced in the `intent` as would be the case with an
-   <i>applicaton</i>.
-   For example, `&lt;mtable intent=":array">...` might read the table as
-   an array of values, and `&lt;mtable intent=":aligned-equations">...`
-   might read the table in a style more appropriate for a list of
-   equations. In both cases the navigation of the underlying table
-   structure can be supplied by the AT system, as it would for an
-   un-annotated table.</p>
+   <h3 id="intent_matching_using">Using Intent Concepts and Properties</h3>
+   <p>When the <code class="attribute">intent</code> attribute corresponding to a specific node
+     contains a concept component, possibly with properties and arguments,
+     the AT's [=Intent Concept Dictionary=] should be consulted.
+     The concept name should be normalized
+     (<q>`_`</q> (U+00F5) and <q>`.`</q>  (U+002E) to <q>`-`</q> (U+002D)),
+     and compared using <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>
+     match.</p>
+   <p>An concept is considered a <dfn id="intent_known_concept">known concept</dfn> (to the AT)
+     when the normalized name,
+     the fixity property (which may be defaulted in the concept dictionary),
+     and the arity (number of arguments, if any)
+     all match an entry in the AT's concept dictionary.
+     The speech hint in the matching entry
+     can be used be used as a guide for the generation of
+     specific audio, replacement text or braille renderings, as appropriate.
+     However, because common notations have many specialized ways of being spoken, the AT
+     is NOT constrained to use the hint as given.  For example, AT may
+     vocalize a fraction marked up with <code>&lt;mfrac></code>
+     as <q>three quarters</q> or <q>three over x</q>
+     or may vocalize an inline fraction marked up as <code>&lt;mo>/&lt;/mo></code>
+     as <q>three divided by x</q>.
+     The choice may depend on the contents
+     and carrier element associated with an
+     <code>intent="divide($num,$denom)"</code>.
+     Note that properties other than those specifying fixity
+     may also indicate different rendering choices.</p>
+   <p>Otherwise, if the concept name, fixity and arity do not match it is considered to be an
+     <dfn id="intent_unknown_concept">unknown concept</dfn> (to the AT)
+     and will be treated the same as a [=literal=];
+     that is, the name is spoken as-is after normalizing each of `-`, `_` and `.` to an inter-word space.
+     Even for an unknown concept, if a fixity property and arguments were given (or inferred),
+     the speech for the arguments should be composed
+     in a manner consistent with the given fixity property, if possible.</p>
+   <p>Note that future updates of the AT and [=Intent Concept Dictionary=] may
+     include additional concepts, at which time those concepts may also receive special treatment.</p>
+
+   <p><em>NEEDS CLARIFICATION</em>
+     In cases where the intent is missing or does not contain an explicit concept,
+     the AT may be able to infer the relevant concept. fixity and arguments
+     from the structure and content of the MathML.
+     In such cases, it should proceed as above as if the inferred intent had been given explicitly.
+   </p>
+   <p>In cases where the intent contains neither an explicit nor inferrable concept
+     the AT should generally read out the MathML in a literal or structural fashion (examples?).
+     However, any given [=properties=] should be respected if possible,
+     and may be useful to indicate the kind of mathematical object,
+     rather than giving an explicit [=concept=] name to be spoken.
+     This can be a useful technique, especially for large constructs such as tables as
+     it allows the children to be inferred without needing to be
+     explicitly referenced in the `intent` as would be the case with an <i>applicaton</i>.
+     For example, `&lt;mtable intent=":array">...` might read the table as
+     an array of values, whereas `&lt;mtable intent=":aligned-equations">...`
+     might read the table in a style more appropriate for a list of
+     equations. In both cases the navigation of the underlying table
+     structure can be supplied by the AT system, as it would for an
+     un-annotated table.</p>
+
+   <p>In general, depending upon the reader, AT may add words or sounds to make
+     the speech clearer to the listener.  For example, for someone
+     who can not see the a fraction, AT might say <q>fraction x over
+     three end fraction</q> so the listener knows exactly what is
+     part of the fraction.  For someone who can see the content,
+     these extra words might be a distraction.  AT should always
+     produce speech that is appropriate to the community they serve.</p>
   </section>
   
   <section>
