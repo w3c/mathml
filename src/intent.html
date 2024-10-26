@@ -143,7 +143,7 @@ S                  := [ \t\n\r]*
     <dt><dfn id="intent_property_list">self-property-list</dfn></dt>
     <dd>At the top level, an [=intent=] may consist of just a
     non-empty list of properties. These apply to the current element
-    as described in <a href="#using_intent"></a>.</dd>
+    as described in <a href="#intent_using"></a>.</dd>
 
     <!--<dt><dfn id="intent_expression">expression</dfn></dt>-->
     <dt>expression</dt>
@@ -156,7 +156,7 @@ S                  := [ \t\n\r]*
     <p>Every AT system that supports <code class="attribute">intent</code> contains,
       at least implicitly, an <dfn>Intent Concept Dictionary</dfn>
       which maps [=concept=] names to speech, text or braille for that concept
-      (The details of matching and using concept names is given in [=intent matching using=]).
+      (The details of matching and using concept names is given in [=using=]).
       The concept dictionary of such an AT
       SHOULD contain the concepts in the [=Core=] list discussed below;
       It MAY also include concepts in the [=Open=] list discussed below,
@@ -305,7 +305,7 @@ S                  := [ \t\n\r]*
   </section>
   
   <section>
-   <h3 id="intent_matching_using">Using Intent Concepts and Properties</h3>
+   <h3 id="intent_using">Using Intent Concepts and Properties</h3>
    <p>When the <code class="attribute">intent</code> attribute corresponding to a specific node
      contains a concept component, possibly with properties and arguments,
      the AT's [=Intent Concept Dictionary=] should be consulted.
