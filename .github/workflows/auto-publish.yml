@@ -1,7 +1,10 @@
+# Based on
+# https://github.com/w3c/echidna/wiki/How-to-use-Echidna
+# and
 # https://w3c.github.io/spec-prod/#examples
-# Create a file called .github/workflows/auto-publish.yml
 name: CI
 on:
+  pull_request: {}
   push:
     branches: [main]
 jobs:
@@ -9,7 +12,7 @@ jobs:
     name: Deploy to GitHub pages
     runs-on: ubuntu-20.04
     steps:
-     - uses: actions/checkout@v2
+     - uses: actions/checkout@v4
      - run: |
           git fetch
           git checkout gh-pages
@@ -22,4 +25,19 @@ jobs:
           SOURCE: spec.html
           DESTINATION: index.html
           VALIDATE_MARKUP: false
+  publish:
+    name: Build, Validate and Deploy
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: w3c/spec-prod@v2
+        with:
+          TOOLCHAIN: respec
+          SOURCE: spec.html
+          W3C_ECHIDNA_TOKEN: ${{ secrets.ECHIDNA_TOKEN }}
+          W3C_WG_DECISION_URL: hhttps://www.w3.org/mid/CAESRWkCboGW4E4RmntSs7UZWx9UZxmGH=1GNKq1Gg7MyfQcMdA@mail.gmail.com
+          W3C_BUILD_OVERRIDE: |
+            specStatus: WD
+            shortName: mathml4
+
 
