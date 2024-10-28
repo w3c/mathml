@@ -36,7 +36,8 @@ jobs:
           SOURCE: spec.html
           W3C_ECHIDNA_TOKEN: ${{ secrets.ECHIDNA_TOKEN }}
           W3C_WG_DECISION_URL: hhttps://www.w3.org/mid/CAESRWkCboGW4E4RmntSs7UZWx9UZxmGH=1GNKq1Gg7MyfQcMdA@mail.gmail.com
-          W3C_BUILD_OVERRIDE: |
+          ARTIFACT_NAME: 
+          W3C_BUILD_OVERRIDE: spec-prod-result2
             specStatus: WD
             shortName: mathml4
 
