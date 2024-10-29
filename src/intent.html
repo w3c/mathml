@@ -305,7 +305,7 @@ S                  := [ \t\n\r]*
   <section>
    <h3 id="intent_using">Using Intent Concepts and Properties</h3>
    <p>When the <code class="attribute">intent</code> attribute corresponding to a specific node
-     contains a concept component, the AT's [=Intent Concept Dictionary=] should be consulted.
+     contains a concept component, the supported [=Intent Concept Dictionary=] should be consulted.
      The concept name should be normalized
      (<q>`_`</q> (U+00F5) and <q>`.`</q>  (U+002E) to <q>`-`</q> (U+002D)),
      and compared using <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>
@@ -314,8 +314,10 @@ S                  := [ \t\n\r]*
      <a href="#intent_fixity_hint">fixity</a> is determined from an explicit property
      or may default from the concept dictionary. Otherwise, arity is assumed to be 0.</p>
    <p>A concept is considered a <dfn id="intent_supported_concept">supported concept</dfn> (by the AT)
+     when the AT has any internal mapping recognizing that concept.
+     It is additionally considered a <dfn id="intent_matched_concept"></dfn>matched concept</dfn>
      when the normalized name, the fixity property, and the arity
-     all match an entry in the AT's concept dictionary.
+     all match an entry in the Core or Open concept dictionaries.
      The speech hint in the matching entry
      can be used be used as a guide for the generation of
      specific audio, replacement text or braille renderings, as appropriate.
@@ -331,8 +333,10 @@ S                  := [ \t\n\r]*
      <code>intent="divide($num,$denom)"</code>.
      Note that properties other than those specifying fixity
      may also indicate different rendering choices.</p>
-   <p>Otherwise, if the concept name, fixity and arity do not match that is considered to be an
-     <dfn id="intent_unsupported_concept">unsupported concept</dfn> (by the AT)
+   <p>Otherwise, if the concept name, fixity and arity do not match it is considered to be an
+     <dfn id="intent_unmatched_concept">unmatched concept</dfn> (to the dictionary).
+     If no additional mapping is available for that concept name,
+     it is an <dfn id="intent_unsupported_concept">unsupported concept</dfn> (by the AT)
      and will be treated the same as a [=literal=];
      that is, the name is spoken as-is after normalizing each of `-`, `_` and `.` to an inter-word space.
      Even for an unsupported concept, if a fixity property and arguments were given,
