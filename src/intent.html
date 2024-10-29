@@ -154,15 +154,15 @@ S                  := [ \t\n\r]*
   <section>
     <h3 id="mixing_intent_dictionaries">Intent Concept Dictionaries</h3>
     <p>Every AT system that supports <code class="attribute">intent</code> contains,
-      at least implicitly, an <dfn>Intent Concept Dictionary</dfn>
-      which maps [=concept=] names to speech, text or braille for that concept
+      at least implicitly, a list of the concepts that it recognizes
       (The details of matching and using concept names is given in <a href="#intent_using"></a>).
-      The concept dictionary of such an AT
-      SHOULD contain the concepts in the [=Core=] list discussed below;
+      Such an AT SHOULD recognize the concepts in the [=Core=] list discussed below;
       It MAY also include concepts in the [=Open=] list discussed below,
-       as well as its own built-in dictionaries.
-      </p>
-      <p>The Intent Concept Dictionary is somewhat analogous to the <a href="#oper-dict"></a> used by
+       as well as any of its own.
+    </p>
+    <p>An <dfn>Intent Concept Dictionary</dfn>
+      maps [=concept=] names to speech, text or braille for that concept;
+      it is somewhat analogous to the <a href="#oper-dict"></a> used by
       MathML renderers in that it provides a set of defaults renderers should be aware of.
       The <code>property</code> also has some analogies to the operator dictionary's use of
       <code class="attribute">form</code> because a match makes use of fixity properties
@@ -288,19 +288,6 @@ S                  := [ \t\n\r]*
       above.</li>
      </ul>
     </dd>
-    <dt id="intent_script_hints"><code>power</code>,
-    <code>index</code>, <code>evaluate</code></dt>
-    <dd><p>These properties may be used on children of script
-    elements, or on [=references=] to such elements. They indicate how
-    a sub or superscript should be read.</p>
-    <ul>
-    <li><code>&lt;msup>&lt;mi>x&lt;/mi>&lt;mn intent=":index">2&lt;/mn>&lt;/msup></code>
-    <q>x superscipt 2</q> (or perhaps <q>x 2</q> in terse modes), not
-    <q>x squared</q>.</li>
-    <li><code>&lt;msubsup>&lt;mi>x&lt;/mi>&lt;mi intent=":index">i&lt;/mi>&lt;mn intent=":power">2&lt;/mn>&lt;/msup></code>
-    <q>x sub i, squared</q>.</li>
-    </ul>
-   </dd>
    </dl>
   </section>
   
@@ -344,6 +331,7 @@ S                  := [ \t\n\r]*
 
    <p><em>NEEDS CLARIFICATION: </em>
      In cases where the intent is missing or does not contain an explicit concept,
+     or does not contain an explicitly structured intent with concept and arguments,
      the AT may be able to infer the relevant concept. fixity and arguments
      from the structure and content of the MathML.
      In such cases, it should proceed as above as if the inferred intent had been given explicitly.
