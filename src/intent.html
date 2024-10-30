@@ -315,7 +315,7 @@ S                  := [ \t\n\r]*
      or may default from the concept dictionary. Otherwise, arity is assumed to be 0.</p>
    <p>A concept is considered a <dfn id="intent_supported_concept">supported concept</dfn> (by the AT)
      when the AT has any internal mapping recognizing that concept.
-     It is additionally considered a <dfn id="intent_matched_concept"></dfn>matched concept</dfn>
+     It is additionally considered a <dfn id="intent_matched_concept">matched concept</dfn>
      when the normalized name, the fixity property, and the arity
      all match an entry in the Core or Open concept dictionaries.
      The speech hint in the matching entry
@@ -335,7 +335,7 @@ S                  := [ \t\n\r]*
      may also indicate different rendering choices.</p>
    <p>Otherwise, if the concept name, fixity and arity do not match it is considered to be an
      <dfn id="intent_unmatched_concept">unmatched concept</dfn> (to the dictionary).
-     If no additional mapping is available for that concept name,
+     If no additional behavior is available for that concept name,
      it is an <dfn id="intent_unsupported_concept">unsupported concept</dfn> (by the AT)
      and will be treated the same as a [=literal=];
      that is, the name is spoken as-is after normalizing each of `-`, `_` and `.` to an inter-word space.
