@@ -329,13 +329,6 @@ S                  := [ \t\n\r]*
    <p>Note that future updates of the AT and [=Intent Concept Dictionary=] may
      include additional concepts, at which time those concepts may also receive special treatment.</p>
 
-   <p><em>NEEDS CLARIFICATION: </em>
-     In cases where the intent is missing or does not contain an explicit concept,
-     or does not contain an explicitly structured intent with concept and arguments,
-     the AT may be able to infer the relevant concept. fixity and arguments
-     from the structure and content of the MathML.
-     In such cases, it should proceed as above as if the inferred intent had been given explicitly.
-   </p>
    <p>In cases where the intent contains neither an explicit nor inferrable concept
      the AT should generally read out the MathML in a literal or structural fashion (examples?).
      However, any given [=properties=] should be respected if possible,
@@ -360,6 +353,27 @@ S                  := [ \t\n\r]*
      produce speech that is appropriate to the community they serve.</p>
   </section>
   
+  <section>
+   <h3 id="mixing_intent_errors">Intent Inference</h3>
+   <p><em>Not yet spec language: NEEDS CLARIFICATION: </em></p>
+   <p>Some clarification is probably needed concerning cases where the intent
+     is not fully specified, or where it is missing completely.</p>
+   <ul>
+     <li>For example, the shorthand form:
+       <pre>
+         &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo intent="plus"&gt;foo&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+     could be rewritten to be
+       <pre>
+        &lt;mrow intent="plus:infix($x,$y)"&gt;&lt;mi arg="x"&gt;x&lt;/mi&gt;&lt;mo&gt;foo&lt;/mo&gt;&lt;mi arg="y"&gt;y&lt;/mi&gt;&lt;/mrow&gt;
+       </pre>
+     </li>
+    <li>A system may be capable, in certain contexts, of infering that
+      <pre>&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;</pre>
+    actually should be a power. (It could be overridden with an explicit <code>:literal</code>)
+</li>
+  </section>
+
   <section>
    <h3 id="mixing_intent_errors">Intent Error Handling</h3>
    <p>An intent processor may report errors in intent expressions in
