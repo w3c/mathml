@@ -294,16 +294,15 @@ S                  := [ \t\n\r]*
   <section>
    <h3 id="intent_using">Using Intent Concepts and Properties</h3>
    <p>When the <code class="attribute">intent</code> attribute corresponding to a specific node
-     contains a concept component, possibly with properties and arguments,
-     the AT's [=Intent Concept Dictionary=] should be consulted.
+     contains a concept component, the AT's [=Intent Concept Dictionary=] should be consulted.
      The concept name should be normalized
      (<q>`_`</q> (U+00F5) and <q>`.`</q>  (U+002E) to <q>`-`</q> (U+002D)),
      and compared using <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>
-     match.</p>
+     match.  If arguments were given explicitly in the <code class="attribute">intent</code>
+     then their number gives the arity, and the fixity is determined from an explicit property
+     or may default from the concept dictionary. Otherwise, arity is assumed to be 0.</p>
    <p>An concept is considered a <dfn id="intent_known_concept">known concept</dfn> (to the AT)
-     when the normalized name,
-     the fixity property (which may be defaulted in the concept dictionary),
-     and the arity (number of arguments, if any)
+     when the normalized name, the fixity property, and the arity
      all match an entry in the AT's concept dictionary.
      The speech hint in the matching entry
      can be used be used as a guide for the generation of
@@ -323,14 +322,14 @@ S                  := [ \t\n\r]*
      <dfn id="intent_unknown_concept">unknown concept</dfn> (to the AT)
      and will be treated the same as a [=literal=];
      that is, the name is spoken as-is after normalizing each of `-`, `_` and `.` to an inter-word space.
-     Even for an unknown concept, if a fixity property and arguments were given (or inferred),
+     Even for an unknown concept, if a fixity property and arguments were given,
      the speech for the arguments should be composed
      in a manner consistent with the given fixity property, if possible.</p>
    <p>Note that future updates of the AT and [=Intent Concept Dictionary=] may
      include additional concepts, at which time those concepts may also receive special treatment.</p>
 
    <p>In cases where the intent contains neither an explicit nor inferrable concept
-     the AT should generally read out the MathML in a literal or structural fashion (examples?).
+     the AT should generally read out the MathML in a literal or structural fashion.
      However, any given [=properties=] should be respected if possible,
      and may be useful to indicate the kind of mathematical object,
      rather than giving an explicit [=concept=] name to be spoken.
@@ -351,27 +350,6 @@ S                  := [ \t\n\r]*
      part of the fraction.  For someone who can see the content,
      these extra words might be a distraction.  AT should always
      produce speech that is appropriate to the community they serve.</p>
-  </section>
-  
-  <section>
-   <h3 id="mixing_intent_errors">Intent Inference</h3>
-   <p><em>Not yet spec language: NEEDS CLARIFICATION: </em></p>
-   <p>Some clarification is probably needed concerning cases where the intent
-     is not fully specified, or where it is missing completely.</p>
-   <ul>
-     <li>For example, the shorthand form:
-       <pre>
-         &lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo intent="plus"&gt;foo&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-     could be rewritten to be
-       <pre>
-        &lt;mrow intent="plus:infix($x,$y)"&gt;&lt;mi arg="x"&gt;x&lt;/mi&gt;&lt;mo&gt;foo&lt;/mo&gt;&lt;mi arg="y"&gt;y&lt;/mi&gt;&lt;/mrow&gt;
-       </pre>
-     </li>
-    <li>A system may be capable, in certain contexts, of infering that
-      <pre>&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;</pre>
-    actually should be a power. (It could be overridden with an explicit <code>:literal</code>)
-</li>
   </section>
 
   <section>
