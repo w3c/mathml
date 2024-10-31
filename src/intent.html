@@ -301,7 +301,7 @@ S                  := [ \t\n\r]*
      match.  If arguments were given explicitly in the <code class="attribute">intent</code>
      then their number gives the arity, and the fixity is determined from an explicit property
      or may default from the concept dictionary. Otherwise, arity is assumed to be 0.</p>
-   <p>An concept is considered a <dfn id="intent_known_concept">known concept</dfn> (to the AT)
+   <p>A concept is considered a <dfn id="intent_known_concept">known concept</dfn> (to the AT)
      when the normalized name, the fixity property, and the arity
      all match an entry in the AT's concept dictionary.
      The speech hint in the matching entry
@@ -336,8 +336,8 @@ S                  := [ \t\n\r]*
      This can be a useful technique, especially for large constructs such as tables as
      it allows the children to be inferred without needing to be
      explicitly referenced in the `intent` as would be the case with an <i>applicaton</i>.
-     For example, `&lt;mtable intent=":array">...` might read the table as
-     an array of values, whereas `&lt;mtable intent=":aligned-equations">...`
+     For example, `&lt;mtable intent=":matrix">...` might read the table as
+     an array of values, whereas `&lt;mtable intent=":system-of-equations">...`
      might read the table in a style more appropriate for a list of
      equations. In both cases the navigation of the underlying table
      structure can be supplied by the AT system, as it would for an
