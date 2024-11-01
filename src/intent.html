@@ -155,13 +155,13 @@ S                  := [ \t\n\r]*
   <section>
     <h3 id="mixing_intent_dictionaries">Intent Concept Dictionaries</h3>
     <p>Every AT system that supports <code class="attribute">intent</code> contains,
-      at least implicitly, a list of the concepts that it recognizes
-      (The details of matching and using concept names is given in <a href="#intent_using"></a>).
+      at least implicitly, a list of the concepts that it recognizes.
+      The details of matching and using concept names is given in <a href="#intent_using"></a>.
       Such an AT SHOULD recognize the concepts in the [=Core=] list discussed below;
       It MAY also include concepts in the [=Open=] list discussed below,
        as well as any of its own.</p>
     <p>An <dfn>Intent Concept Dictionary</dfn>
-      maps [=concept=] names to speech, text or braille for that concept;
+      is an abstract mapping of [=concept=] names to speech, text or braille for that concept;
       it is somewhat analogous to the <a href="#oper-dict"></a> used by
       MathML renderers in that it provides a set of defaults renderers should be aware of.
       The <code>property</code> also has some analogies to the operator dictionary's use of
@@ -172,6 +172,12 @@ S                  := [ \t\n\r]*
     <p>
       [=Intent=] Concept names are maintained in two lists, each maintained in the
       <a href="https://github.com/w3c/mathml-docs">w3c/mathml-docs GitHub repository</a>.
+      Note that while these concept dictionaries are published as HTML tables (based on yaml data),
+      there is no requirement on how a system implements the mapping from concepts to speech hints.
+      Rather than a fixed list or hash table, it might use XPath matching, regular expressions,
+      appropriately  trained generative AI or any other suitable mechansim.
+      The only requirement si that it should accept the cases listed in the Core concept dictionary
+      and produce acceptable speech hints for those cases.
     </p>
 
      <ul>
@@ -179,7 +185,7 @@ S                  := [ \t\n\r]*
        <dfn id="intent-core">Core</dfn>: This is a <a
        href="https://w3c.github.io/mathml-docs/intent-core-concepts/">list
        of core concept names</a>, initially drawn from concepts used
-       in pre-university STEM education.  The entries include common
+       in K14 STEM education.  The entries include common
        concepts such as <q>divide</q>, <q>power</q>, and
        <q>greater-than</q>. The list is curated by the Math Working
        Group based on experience with different AT implementations and
@@ -196,8 +202,8 @@ S                  := [ \t\n\r]*
       any string that is an <code>NCName</code> is allowed.
       </li>
      </ul>
-     <p>Future versions of the concept list may incorporate names from the <q>open</q> list into the
-      <q>core</q> list if usage indicates that is appropriate.
+    <p>Future versions of the <q>core</q> concept list may incorporate names
+      from the <q>open</q> list if usage indicates that is appropriate.
      </p>
   </section>
 
@@ -227,19 +233,19 @@ S                  := [ \t\n\r]*
       Implementors of MathML systems that implement additional properties are encouraged
       to make a pull request to add them to the list of  [=Open Properties=].</li>
     </ul>
-   <p>Whilst the definitive list of [=Core Properties=] is maintained at
-   Github, we describe the major classes of property affecting speech generation
+   <p>The definitive list of [=Core Properties=] is maintained at
+   Github. Here, we describe the major classes of property affecting speech generation
    below.</p>
    <dl>
-    <dt id="intent_fixity_hint"><code>prefix</code>,
-    <code>infix</code>, <code>postfix</code>,
-    <code>function</code>, <code>silent</code></dt>
+    <dt id="intent_fixity_hint"><code>:prefix</code>,
+    <code>:infix</code>, <code>:postfix</code>,
+    <code>:function</code>, <code>:silent</code></dt>
     <dd>
      <p>
      These properties in a function <a data-link-for="intent" data-link-type="dfn"
      href="#intent_application">application</a> request that
      the reading of the name may be suppressed, or the word ordering may be affected.
-     Note that the properties <code>prefix</code>, <code>infix</code> and <code>postfix</code>
+     Note that the properties <code>:prefix</code>, <code>:infix</code> and <code>:postfix</code>
      refer to the spoken word order of the name and arguments,
      and <em>not</em> (necessarily) the order used in the displayed mathematical notation.</p>
      <ul>
@@ -264,22 +270,27 @@ S                  := [ \t\n\r]*
       For example, <code>f:function($x, $y)</code> could also be spoken as
      <q>f of x comma y</q>.  If none of these properties is used, the
      <code>function</code> property should be assumed unless the literal is
-     silent (for example <code>_</code>) in which case the <code>silent</code> property
+     silent (for example <code>_</code>) in which case the <code>:silent</code> property
      should be assumed. See the examples in <a href="#mixing_intent_warning"></a>.</li>
      </ul>
     </dd>
-    <dt id="intent_table_properties"><code>matrix</code>,
-    <code>system-of-equations</code>, <code>lines</code>, <code>continued-equation</code></dt>
+    <dt id="intent_literal_property"><code>:literal</code></dt>
+    <dd>
+      <p>This property requests that the AT should not infer any semantics
+      and just speak the elements with a literal interpretation, including leaf content (eg <q>|</q> might be spoken as <q>vertical bar</q>).</p>
+    </dd>
+    <dt id="intent_table_properties"><code>:matrix</code>,
+    <code>:system-of-equations</code>, <code>:lines</code>, <code>:continued-equation</code></dt>
     <dd>
      <p>These properties may be used on an <code>mtable</code> or on a
     [=reference=] to an <code>mtable</code>. They affect the way the
      parts of an alignment are announced.</p>
      <p>The exact wordings used are system specfic</p>
      <ul>
-      <li>`matrix`
+      <li><code>:matrix</code>
      should be read in style suitable for matricies, with typically
       column numbers being announced.</li>
-      <li>`system-of-equations` should be read in style suitable for
+      <li><code>:system-of-equations</code> should be read in style suitable for
       displayed equations (and inequalities), with typically
       column numbers not being announced. Each table row would
       normally be announced as an "equation" but a
@@ -299,7 +310,8 @@ S                  := [ \t\n\r]*
      (<q>`_`</q> (U+00F5) and <q>`.`</q>  (U+002E) to <q>`-`</q> (U+002D)),
      and compared using <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>
      match.  If arguments were given explicitly in the <code class="attribute">intent</code>
-     then their number gives the arity, and the fixity is determined from an explicit property
+     then their number gives the arity, and the
+     <a href="#intent_fixity_hint">fixity</a> is determined from an explicit property
      or may default from the concept dictionary. Otherwise, arity is assumed to be 0.</p>
    <p>A concept is considered a <dfn id="intent_known_concept">known concept</dfn> (to the AT)
      when the normalized name, the fixity property, and the arity
@@ -307,6 +319,7 @@ S                  := [ \t\n\r]*
      The speech hint in the matching entry
      can be used be used as a guide for the generation of
      specific audio, replacement text or braille renderings, as appropriate.
+     It can also help clarify argument order.
      However, because common notations have many specialized ways of being spoken, the AT
      is NOT constrained to use the hint as given.  For example, AT may
      vocalize a fraction marked up with <code>&lt;mfrac></code>
@@ -325,11 +338,12 @@ S                  := [ \t\n\r]*
      Even for an unknown concept, if a fixity property and arguments were given,
      the speech for the arguments should be composed
      in a manner consistent with the given fixity property, if possible.</p>
-   <p>Note that future updates of the AT and [=Intent Concept Dictionary=] may
-     include additional concepts, at which time those concepts may also receive special treatment.</p>
+   <p>Note that future updates of the AT and its [=Intent Concept Dictionary=] may
+     add or remove concepts, which means that known and unknown concepts, may change with each update.</p>
 
    <p>In cases where the intent contains neither an explicit nor inferrable concept
-     the AT should generally read out the MathML in a literal or structural fashion.
+     the AT should generally read out the MathML in a literal or structural fashion,
+     as with the <a href="#intent_literal_property"><code>:literal</code></a> property.
      However, any given [=properties=] should be respected if possible,
      and may be useful to indicate the kind of mathematical object,
      rather than giving an explicit [=concept=] name to be spoken.
