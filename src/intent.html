@@ -47,7 +47,7 @@
   </div>
   <p>The <code class="attribute">intent</code> value of <code>power($base,$exp)</code> makes it clear that the author intends that this expression
     denotes exponentiation as opposed to one of many other meanings of superscripts.
-    Since power will be a concept known to the AT, it may choose different
+    Since power will be a concept supported by the AT, it may choose different
     ways of speaking depending on context, arguments or other details.
     For example, the above expression might be spoken as "x to the power n",
     but if "2" were given instead of "n", it may say "x squared".</p>
@@ -250,13 +250,13 @@ S                  := [ \t\n\r]*
      and <em>not</em> (necessarily) the order used in the displayed mathematical notation.</p>
      <ul>
       <li>
-      In the case of a [=known concept=] name, the property MAY be used in choosing the alternatives
+      In the case of a [=supported concept=] name, the property MAY be used in choosing the alternatives
       supported by the AT. For example <code>union</code> is in the
       Core list with speech patterns "$1 union $2" and "union of $1 and $2".
       An intent <code>union :prefix ($a,$b)</code> would
       indicate that the latter style is preferred.
       </li>
-      <li>For [=literal=] or [=unknown concept=] names, the text generated from the function head SHOULD be read
+      <li>For [=literal=] or [=unsupported concept=] names, the text generated from the function head SHOULD be read
       as specified in the property.
      <ul>
       <li><code>f :prefix ($x)      </code>: <q>f x</q></li>
@@ -313,7 +313,7 @@ S                  := [ \t\n\r]*
      then their number gives the arity, and the
      <a href="#intent_fixity_hint">fixity</a> is determined from an explicit property
      or may default from the concept dictionary. Otherwise, arity is assumed to be 0.</p>
-   <p>A concept is considered a <dfn id="intent_known_concept">known concept</dfn> (to the AT)
+   <p>A concept is considered a <dfn id="intent_supported_concept">supported concept</dfn> (by the AT)
      when the normalized name, the fixity property, and the arity
      all match an entry in the AT's concept dictionary.
      The speech hint in the matching entry
@@ -331,15 +331,15 @@ S                  := [ \t\n\r]*
      <code>intent="divide($num,$denom)"</code>.
      Note that properties other than those specifying fixity
      may also indicate different rendering choices.</p>
-   <p>Otherwise, if the concept name, fixity and arity do not match it is considered to be an
-     <dfn id="intent_unknown_concept">unknown concept</dfn> (to the AT)
+   <p>Otherwise, if the concept name, fixity and arity do not match that is considered to be an
+     <dfn id="intent_unsupported_concept">unsupported concept</dfn> (by the AT)
      and will be treated the same as a [=literal=];
      that is, the name is spoken as-is after normalizing each of `-`, `_` and `.` to an inter-word space.
-     Even for an unknown concept, if a fixity property and arguments were given,
+     Even for an unsupported concept, if a fixity property and arguments were given,
      the speech for the arguments should be composed
      in a manner consistent with the given fixity property, if possible.</p>
    <p>Note that future updates of the AT and its [=Intent Concept Dictionary=] may
-     add or remove concepts, which means that known and unknown concepts, may change with each update.</p>
+     add or remove concepts. Hence which concepts are supported may change with each update.</p>
 
    <p>In cases where the intent contains neither an explicit nor inferrable concept
      the AT should generally read out the MathML in a literal or structural fashion,
@@ -423,10 +423,10 @@ S                  := [ \t\n\r]*
      and thus excessive use of these features will tend to limit the AT's ability
      to adapt to the needs of the user, as well as limit translation and locale-specific speech.
      Thus, the last two examples would be discouraged.</p>
-     <p>Conversely, when specific speech not corresponding to a meaningfull concept
+     <p>Conversely, when specific speech not corresponding to a meaningful concept
      is nevertheless required,
      it will be better to use a [=literal=] name (prefixed with <q>`_`</q>)
-     rather than an [=unknown concept=].
+     rather than an [=unsupported concept=].
      This avoids unexpected collisions with future updates to the concept dictionaries.
      Thus, the last example is particularly discouraged.
     </p>
@@ -547,8 +547,8 @@ S                  := [ \t\n\r]*
 z with bar above  is not  X with bar above</blockquote>
 </div>
 
-<p>The intent mechanism is extensible through the use of [=unknown concept=] names.
-For example, assuming that the Bell Number is not present in any the dictionaries,
+<p>The intent mechanism is extensible through the use of [=unsupported concept=] names.
+For example, assuming that the Bell Number is not present in any of the dictionaries,
 the following example</p>
 <div class="example mathml mmlcore">
 <pre>
