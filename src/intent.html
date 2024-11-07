@@ -104,7 +104,7 @@ S                  := [ \t\n\r]*
 
     <dt><dfn id="intent_reference">reference</dfn></dt>
     <dd>
-    An argument [=reference=] such as <code>$name</code> refers to a descendent element
+    An argument [=reference=] such as <code>$name</code> refers to a descendant element
     that has an attribute <code>arg="name"</code>. Unlike <code class="attribute">id</code>
     attributes, <code class="attribute">arg</code> do not have to be
     unique within a document. When searching for a matching element the
@@ -305,7 +305,7 @@ S                  := [ \t\n\r]*
   <section>
    <h3 id="intent_using">Using Intent Concepts and Properties</h3>
    <p>When the <code class="attribute">intent</code> attribute corresponding to a specific node
-     contains a concept component, the AT's [=Intent Concept Dictionary=] should be consulted.
+     contains a concept component, the supported [=Intent Concept Dictionary=] should be consulted.
      The concept name should be normalized
      (<q>`_`</q> (U+00F5) and <q>`.`</q>  (U+002E) to <q>`-`</q> (U+002D)),
      and compared using <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>
@@ -317,7 +317,7 @@ S                  := [ \t\n\r]*
      when the normalized name, the fixity property, and the arity
      all match an entry in the AT's concept dictionary.
      The speech hint in the matching entry
-     can be used be used as a guide for the generation of
+     can be used as a guide for the generation of
      specific audio, replacement text or braille renderings, as appropriate.
      It can also help clarify argument order.
      However, because common notations have many specialized ways of being spoken, the AT
@@ -338,8 +338,8 @@ S                  := [ \t\n\r]*
      Even for an unsupported concept, if a fixity property and arguments were given,
      the speech for the arguments should be composed
      in a manner consistent with the given fixity property, if possible.</p>
-   <p>Note that future updates of the AT and its [=Intent Concept Dictionary=] may
-     add or remove concepts. Hence which concepts are supported may change with each update.</p>
+   <p>Note that future updates of an AT may add or remove concepts in its [=Intent Concept Dictionary=].
+     Hence which concepts are supported may change with each update.</p>
 
    <p>In cases where the intent contains neither an explicit nor inferrable concept
      the AT should generally read out the MathML in a literal or structural fashion,
@@ -355,7 +355,7 @@ S                  := [ \t\n\r]*
      might read the table in a style more appropriate for a list of
      equations. In both cases the navigation of the underlying table
      structure can be supplied by the AT system, as it would for an
-     un-annotated table.</p>
+     unannotated table.</p>
 
    <p>In general, depending upon the reader, AT may add words or sounds to make
      the speech clearer to the listener.  For example, for someone
@@ -383,13 +383,13 @@ S                  := [ \t\n\r]*
      then the processor should act as if the attribute were not
      present.
      Typically this will result in a suitable fallback text being
-     generated from the MathML element and its descendents. Note that
+     generated from the MathML element and its descendants. Note that
      just the erroneous attribute is ignored, other <code
      class="attribute">intent</code> attributes in the MathML
      expression should be used.</li>
      <li>If a `reference` such as `$x` does not correspond to an <code
      class="attribute">arg</code> attribute with value `x` on a
-     descendent element, the processor should act as if the reference
+     descendant element, the processor should act as if the reference
      were replaced by the literal `_dollar_x`.</li>
     </ol>
    </section>
@@ -526,6 +526,7 @@ S                  := [ \t\n\r]*
   &lt;mo arg="script">&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
+<blockquote>x prime<br/>x superscript prime end superscript</blockquote>
 </div>
 
 <p>An overbar may represent complex conjugation, or mean (average), again with possible readings with and without <code class="attribute">intent</code>:</p>
