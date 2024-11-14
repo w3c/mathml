@@ -565,7 +565,34 @@ the following example</p>
 <blockquote>bell number of 2</blockquote>
 </div>
 
-    
+<section>
+  <h4 id="mixing_intent_examples_css">CSS and Style</h4>
+
+  <p>CSS customization of MathML is generally not made available to AT and is ignored
+    in accessible readouts.
+  In cases where authors have meaningful stylistic emphases,
+  or stylized constructs with custom names, using an intent attribute is appropriate.
+  For example, color-coding of subexpressions is often helpful in teaching materials:</p>
+<div class="example mathml mmlcore">
+<pre>
+&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;
+&lt;mrow style="padding:0.1em;background-color:lightyellow;"
+      intent="highlighted-step($step)"&gt;
+  &lt;mfrac arg="step"&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;
+&lt;/mrow&gt;
+&lt;mi&gt;x&lt;/mi&gt;
+&lt;mo&gt;=&lt;/mo&gt;
+&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;
+&lt;mn style="padding:0.1em;background-color:lightgreen;"
+    intent="highlighted-result(3)"&gt;3&lt;/mn&gt;
+&lt;mi&gt;x&lt;/mi&gt;
+</pre>
+<blockquote>one plus highlighted step of six over two end highlighted step x
+  equals one plus highlighted result of three end highlighted result x
+</blockquote>
+</div>
+</section>
+
 <section>
  <h4 id="mixing_intent_examples_mtr">Tables</h4>
  
