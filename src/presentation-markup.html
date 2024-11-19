@@ -4408,13 +4408,7 @@
  
      <tr>
       <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-height">height</a></td>
-      <td>( "+" | "-" )?
-      <em>[=unsigned-number=]</em>
-      ( ("%"  <em>[=pseudo-unit=]</em>?)
-      | <em>[=pseudo-unit=]</em>
-      | <a class="intref" href="#type_unit"><em>unit</em></a>
-      | <em>[=namedspace=]</em>
-      )?</td>
+      <td><a class="intref" href="#type_length"><em>length</em></a></td>
       <td><em>same as content</em></td>
      </tr>
  
@@ -4427,13 +4421,7 @@
  
      <tr>
       <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-depth">depth</a></td>
-      <td>( "+" | "-" )?
-      <em>[=unsigned-number=]</em>
-      (("%"  <em>[=pseudo-unit=]</em>?)
-      | <em>[=pseudo-unit=]</em>
-      | <a class="intref" href="#type_unit"><em>unit</em></a>
-      | <em>[=namedspace=]</em>
-      )?</td>
+      <td><a class="intref" href="#type_length"><em>length</em></a></td>
       <td><em>same as content</em></td>
      </tr>
  
@@ -4446,13 +4434,7 @@
  
      <tr>
       <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-width">width</a></td>
-      <td>( "+" | "-" )?
-      <em>[=unsigned-number=]</em>
-      ( ("%" <em>[=pseudo-unit=]</em>?)
-      | <em>[=pseudo-unit=]</em>
-      | <a class="intref" href="#type_unit"><em>unit</em></a>
-      | <em>[=namedspace=]</em>
-      )?</td>
+      <td><a class="intref" href="#type_length"><em>length</em></a></td>
       <td><em>same as content</em></td>
      </tr>
  
@@ -4465,13 +4447,7 @@
  
      <tr>
       <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-lspace">lspace</a></td>
-      <td>( "+" | "-" )?
-      <em>[=unsigned-number=]</em>
-      ( ("%" <em>[=pseudo-unit=]</em>?)
-      | <em>[=pseudo-unit=]</em>
-      | <a class="intref" href="#type_unit"><em>unit</em></a>
-      | <em>[=namedspace=]</em>
-      )?</td>
+      <td><a class="intref" href="#type_length"><em>length</em></a></td>
       <td>0em</td>
      </tr>
  
@@ -4484,13 +4460,7 @@
  
      <tr>
       <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#attribute-mpadded-voffset">voffset</a></td>
-      <td>( "+" | "-" )?
-      <em>[=unsigned-number=]</em>
-      ( ("%" <em>[=pseudo-unit=]</em>?)
-      | <em>[=pseudo-unit=]</em>
-      | <a class="intref" href="#type_unit"><em>unit</em></a>
-      | <em>[=namedspace=]</em>
-      )?</td>
+      <td><a class="intref" href="#type_length"><em>length</em></a></td>
       <td>0em</td>
      </tr>
  
@@ -4503,16 +4473,23 @@
  
     </tbody>
    </table>
- 
-   <p>Note: while [[MathML-Core]] supports the above attributes, it only allows the value to be a valid
+   <div id="mpadded-lengths" class="note" title="mpadded lengths in MathML 3">
+   
+   <p>While [[MathML-Core]] supports the above attributes, it only allows the value to be a valid
    <a data-cite="CSS-VALUES-3#typedef-length-percentage"><code>&lt;length-percentage&gt;</code></a>.
-   Increments with the optional "+" or "-" signs are not supported in MathML Core nor are pseudo-units.</p>
+   As described in <a class="intref" href="#type_length"><em>length</em></a> MathML 4 extends this syntax to allow
+   [=namedspace=].</p>
+   <p>MathML&#160;3 also allowed additional extensions:</p>
+   <ul>
+    <li>A leading "+" or "-" denoted a relative increment or decrement
+    from the default value. This is not supported however the same
+    fuunctionality is now available in standard CSS <a
+    data-cite="CSS-VALUES-3#typedef-length-percentage"><code>&lt;length-percentage&gt;</code></a>
+    syntax: <code>height="calc(100%+10pt)"</code>.</li>
+    <li>MathML&#160;3 also specified the <em>pseudo-units</em> <code>height</code>, <code>depth</code> and <code>width</code>. These are not supported in MathML&#160;4 however the main use cases are addressed using percentage values, `height="0.5height"` is equivalent to `height="50%`.</li>
+   </ul>
+   </div>
  
-   <p>The <em>[=pseudo-unit=]</em> syntax symbol is described below.
-   <span>Also, <code class="attribute">height</code>, <code class="attribute">depth</code> and
-   <code class="attribute">width</code> attributes are
-   referred to as size attributes, while <code class="attribute">lspace</code> and <code class="attribute">voffset</code> attributes
-   are position attributes.</span></p>
  
    <p>These attributes specify the size of the bounding box of the <code class="element">mpadded</code>
    element relative to the size of the bounding box of its child content, and specify
@@ -4526,70 +4503,15 @@
    dimensions of the normal rendering of the child content using so-called [=pseudo-unit=]s,
    or they can be set directly using standard units, see <a href="#fund_units"></a>.</p>
  
-   <p>If the value of a size attribute begins with a <code>+</code> or <code>-</code> sign,
-   it specifies an <em>increment</em> or <em>decrement</em> to the corresponding
-   dimension by the following length value. Otherwise the corresponding
-   dimension is set directly to the following length value.
-   Note that since a leading minus sign indicates a decrement, the size
-   attributes (<code class="attribute">height</code>, <code class="attribute">depth</code>, <code class="attribute">width</code>)
-   cannot be set directly to negative values.  In addition, specifying a
-   decrement that would produce a net negative value for these attributes
+   <p>The corresponding
+   dimension is set to the following length value.
+   specifying a
+   length that would produce a net negative value for these attributes
    has the same effect as
    setting the attribute to zero.  In other words, the effective
    bounding box of an <code class="element">mpadded</code> element always has non-negative
    dimensions. However, negative values are allowed for the relative positioning
    attributes <code class="attribute">lspace</code> and <code class="attribute">voffset</code>.</p>
- 
-   <p>Length values (excluding any sign) can be specified in several formats.
-   Each format begins with an <em>[=unsigned-number=]</em>,
-   which may be followed by
-   a <code>%</code> sign (effectively scaling the number)
-   and an optional <em>[=pseudo-unit=]</em>,
-   by a <em>[=pseudo-unit=]</em> alone,
-   or by a <a class="intref" href="#type_unit"><em>unit</em></a> (excepting <code>%</code>).
-   The possible <em>[=pseudo-unit=]s</em> are the keywords <code>height</code>,
-   <code>depth</code>, and <code>width</code>.  They represent the length of the same-named dimension of the
-   <code class="element">mpadded</code> element's child content.
-   </p>
- 
-   <p>For any of these length formats, the resulting length
-   is the product of the number (possibly including the <code>%</code>)
-   and the following <em>[=pseudo-unit=]</em>,
-   <a class="intref" href="#type_unit"><em>unit</em></a>,
-   <em>[=namedspace=]</em>
-   or the default value for the attribute if no such unit or space is given.</p>
- 
-   <p>Some examples of attribute formats using [=pseudo-unit=]s (explicit or
-   default) are as follows: <code>depth="100%height"</code> and
-   <code>depth="1.0height"</code> both set the depth of the
-   <code class="element">mpadded</code> element to the height of its content.
-   <code>depth="105%"</code> sets the depth to 1.05 times the content's
-   depth, and either <code>depth="+100%"</code> or
-   <code>depth="200%"</code> sets the depth to twice the content's
-   depth.</p>
- 
-   <p>The rules given above imply that all of the following attribute
-   settings have the same effect, which is to leave the content's
-   dimensions unchanged:</p>
- 
-   <div class="example ">
-    <pre>
-      &lt;mpadded width="+0em"&gt; ... &lt;/mpadded&gt;
-      &lt;mpadded width="+0%"&gt; ... &lt;/mpadded&gt;
-      &lt;mpadded width="-0em"&gt; ... &lt;/mpadded&gt;
-      &lt;mpadded width="-0height"&gt; ... &lt;/mpadded&gt;
-      &lt;mpadded width="100%"&gt; ... &lt;/mpadded&gt;
-      &lt;mpadded width="100%width"&gt; ... &lt;/mpadded&gt;
-      &lt;mpadded width="1width"&gt; ... &lt;/mpadded&gt;
-      &lt;mpadded width="1.0width"&gt; ... &lt;/mpadded&gt;
-      &lt;mpadded&gt; ... &lt;/mpadded&gt;
-    </pre>
-   </div>
-   <p>Note that the examples in the Version 2 of the MathML specification showed
-   spaces within the attribute values, suggesting that this was the intended format.
-   Formally, spaces are not allowed within these values, but implementers may
-   wish to ignore such spaces to maximize backward compatibility.
-   </p>
  
   </section>
  
@@ -4741,7 +4663,7 @@
     <pre>
       &lt;mrow&gt;
         &lt;mi&gt;x&lt;/mi&gt;
-        &lt;mpadded width="+90%width" height="+0.3ex" depth="+0.3ex"&gt;
+        &lt;mpadded width="190%" height="calc(100% +0.3ex)" depth="calc(100% +0.3ex)"&gt;
           &lt;mi&gt;y&lt;/mi&gt;
         &lt;/mpadded&gt;
         &lt;mi&gt;z&lt;/mi&gt;
@@ -4762,7 +4684,7 @@
     <pre>
       &lt;mrow&gt;
         &lt;mi&gt;x&lt;/mi&gt;
-        &lt;mpadded lspace="0.3em" width="+0.6em"&gt;
+        &lt;mpadded lspace="0.3em" width="calc(100% +0.6em)"&gt;
           &lt;mi&gt;y&lt;/mi&gt;
         &lt;/mpadded&gt;
         &lt;mi&gt;z&lt;/mi&gt;

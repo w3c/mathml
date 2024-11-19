@@ -105,10 +105,22 @@
     <li>The deprecated element <code class="element">none</code> is
     replaced by an empty <code class="element">mrow</code> throughout,
     to match [[MathML-Core]].</li>
-    <li>The element <code class="element">mlabeledtr</code> and the associacted attributes
+    <li>The element <code class="element">mlabeledtr</code> and the associated attributes
     <code class="attribute">side</code> and <code class="attribute">minlabelspacing</code>
     are no longer specified. They are removed from the default schema but valid in
     the <a href="#parsing_rnc_legacy">Legacy Schema</a>.</li>
+
+    <li>To align with MathML-Core, the special extended syntax for  <code class="element">mpadded</code> length attributes 
+      <code>( "+" | "-" )?
+      <em>unsigned-number</em>
+      ( ("%" <em>pseudo-unit</em>?)
+      | <em>pseudo-unit</em>
+      | <em>unit</em>
+      | <em>namedspace</em>
+      )?</code> is no longer supported.
+    Most of the functionality is still available using standard CSS
+    length syntax. See <a href="#mpadded-lengths">Note: mpadded
+    lengths</a>.</li>
    </ul>
 
   </section>
