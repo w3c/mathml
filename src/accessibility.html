@@ -424,6 +424,44 @@ could be marked up as an operator by means of
 
 </section>
 
+<section>
+  <h5  id="acc_descriptions">Accessible Descriptions</h5>
+
+<p>It is sometimes beneficial to a reader to have additional, auxiliary information for a given
+   mathematical construct. This is particularly the case in educational materials where
+   newly introduced syntax benefits from repeated reinforcement. Such information is often
+   too verbose for more familiar readers, indeed even to the same person after their first reading.
+   Hence, common AT behavior has been to only vocalize an
+   <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible description</a>
+   on user request, omitting it by default.</p>
+<p>It is appropriate to provide such descriptions using the ARIA 1.3 attribute 
+  <a href="https://www.w3.org/TR/wai-aria-1.3/#aria-description"><code class="attribute">aria-description</code></a>,
+  which allows for a literal string value to annotate its host element.
+  As an example, consider the minimal markup for the circumference formula,
+  with each non-trivial component described.
+</p>
+
+<div class="example mathml mmlcore">
+<pre>
+&lt;mrow aria-description="circumference of a circle"&gt;
+  &lt;mn&gt;2&lt;/mn&gt;
+  &lt;mi aria-description="mathematical constant"&gt;π&lt;/mi&gt;
+  &lt;mi aria-description="radius variable"&gt;r&lt;/mi&gt;
+&lt;/mrow&gt;
+</pre>
+</div>
+
+<p>While <code class="attribute">aria-description</code> has been used on its own for brevity,
+  it is recommended to use it together with an <code class="attribute">intent</code> annotation,
+  as appropriate.
+</p>
+<p> To ensure equal access, when <code class="attribute">aria-description</code>
+  or <code class="attribute">intent</code> are used,
+  useful descriptions should also be made visible on the page.
+  A common affordance to achieve that is interactively displaying
+  a tooltip containing the description.
+</p>
+</section>
    </section>
   </section>
  </section>
