@@ -155,9 +155,14 @@
       </tr>
      </thead>
 
-     <tbody
->
+     <tbody>
 
+      <tr>
+       <td id="type_boolean"><dfn><em>boolean</em></dfn></td>
+       <td>As defined in [[MathML-Core]], a string that is an
+              ASCII case-insensitive match to <code>true</code> or
+              <code>false</code>.</td>
+      </tr>
       <tr>
        <td id="type_unsigned-integer"><dfn><em>unsigned-integer</em></dfn></td>
        <td>As defined in [[MathML-Core]], an <a data-cite="CSS-VALUES-3#integer-value"><code>integer</code></a>, whose first character is neither
@@ -178,6 +183,13 @@
       </tr>
 
       <tr>
+       <td id="type_number"><dfn><em>number</em></dfn></td>
+       <td>
+        an optional prefix of "-" (U+002D), followed by an <a href="#type_unsigned-number">unsigned number</a>,
+       representing a terminating decimal number (a type of rational number)</td>
+      </tr>
+
+      <tr>
        <td id="type_unsigned-number"><dfn><em>unsigned-number</em></dfn></td>
        <td>
          value as defined in
@@ -186,13 +198,6 @@
               U+002B PLUS SIGN (+),
               representing a non-negative terminating decimal number
        (a type of rational number)</td>
-      </tr>
-
-      <tr>
-       <td id="type_number"><dfn><em>number</em></dfn></td>
-       <td>
-        an optional prefix of "-" (U+002D), followed by an <a href="#type_unsigned-number">unsigned number</a>,
-       representing a terminating decimal number (a type of rational number)</td>
       </tr>
 
       <tr>
