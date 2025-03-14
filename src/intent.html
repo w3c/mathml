@@ -221,15 +221,13 @@ S                  := [ \t\n\r]*
    but as with any properties, is by default ignored but may have a
    system-specific effect.</p>
 
-    <p>Similar to the lists of [=Concepts=], The Working Group maintains a list of [=property=] values that should be implemented.</p>
+    <p>Similar to the lists of [=Concepts=], the Working Group maintains a [=Properties list=] of [=property=] values that should be implemented.</p>
     <ul>
-      <li><dfn id="intent-core-properties">Properties list</dfn>: This is the full
+      <li><dfn id="intent-core-properties">Properties list</dfn>: The definitive
       <a href="https://w3c.github.io/mathml-docs/intent-core-properties">list of properties</a>
-      maintained by the Math Working Group</li>
+      maintained by the Math Working Group.</li>
     </ul>
-   <p>The definitive  [=Properties list=] is maintained at
-   GitHub. Here, we describe the major classes of property affecting speech generation
-   below.</p>
+    <p>Here, we describe the major classes of property affecting speech generation.</p>
    <dl>
     <dt id="intent_fixity_hint"><code>:prefix</code>,
     <code>:infix</code>, <code>:postfix</code>,
@@ -274,23 +272,24 @@ S                  := [ \t\n\r]*
       and just speak the elements with a literal interpretation, including leaf content (eg <q>|</q> might be spoken as <q>vertical bar</q>).</p>
     </dd>
     <dt id="intent_table_properties"><code>:matrix</code>,
-    <code>:system-of-equations</code>, <code>:lines</code>, <code>:continued-equation</code></dt>
+    <code>:system-of-equations</code>, <code>:lines</code>, <code>:continued-row</code>, <code>:equation-label</code></dt>
     <dd>
      <p>These properties may be used on an <code>mtable</code> or on a
-    [=reference=] to an <code>mtable</code>. They affect the way the
-     parts of an alignment are announced.</p>
+       [=reference=] to an <code>mtable</code>, `<code>mtr</mtr> and <code>mtd</code>.
+     They affect the way the parts of an alignment are announced.</p>
      <p>The exact wordings used are system specfic</p>
      <ul>
       <li><code>:matrix</code>
-     should be read in style suitable for matricies, with typically
+     should be read in style suitable for matrices, with typically
       column numbers being announced.</li>
       <li><code>:system-of-equations</code> should be read in style suitable for
       displayed equations (and inequalities), with typically
       column numbers not being announced. Each table row would
       normally be announced as an "equation" but a
-      `continued-equation` property on an <code>mtr</code> indicates
+      `continued-row` property on an <code>mtr</code> indicates
       that the row continues an equation wrapped from the row
-      above.</li>
+	above.</li>
+      <li><code>:equation-label</code> may be used on an <code>mtd</code> to mark a cell containing an equation label.</li>
      </ul>
     </dd>
    </dl>
@@ -701,7 +700,7 @@ equation 2; y, is greater than, x minus 3;
       &lt;mi>d&lt;/mi>
     &lt;/mtd>
   &lt;/mtr>
-  &lt;mtr intent=':continued-equation'>
+  &lt;mtr intent=':continued-row'>
     &lt;mtd columnalign="right">&lt;/mtd>
     &lt;mtd columnalign="center">&lt;/mtd>
     &lt;mtd columnalign="left">
