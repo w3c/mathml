@@ -5166,20 +5166,20 @@
 
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;!&lt;/mo&gt;&lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo intent="factorial"&gt;!&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
       </div>
      <!-- unary minus -->
      <!-- unary root -->
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;
+         &lt;mrow intent="absolute-value($x)"&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi arg="x"&gt;x&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mover&gt;
-           &lt;mrow&gt;
+         &lt;mover intent="complex-conjugate($z)"&gt;
+           &lt;mrow arg="z"&gt;
              &lt;mi&gt;x&lt;/mi&gt;
              &lt;mo&gt;+&lt;/mo&gt;
              &lt;mrow&gt;&lt;mn&gt;&#x2148;&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;
@@ -5191,7 +5191,7 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mi&gt;arg&lt;/mi&gt;
+           &lt;mi intent="complex-arg"&gt;arg&lt;/mi&gt;
            &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;
             &lt;mo&gt;(&lt;/mo&gt;
@@ -5208,7 +5208,7 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mo&gt;&#x211b;&lt;/mo&gt;
+           &lt;mo intent="real-part"&gt;&#x211b;&lt;/mo&gt;
            &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;
             &lt;mo&gt;(&lt;/mo&gt;
@@ -5225,7 +5225,7 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mo&gt;&#x2111;&lt;/mo&gt;
+           &lt;mo intent="imaginary-part"&gt;&#x2111;&lt;/mo&gt;
            &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;
            &lt;mrow&gt;
             &lt;mo&gt;(&lt;/mo&gt;
@@ -5241,12 +5241,12 @@
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mo&gt;&#x230a;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&#x230b;&lt;/mo&gt;&lt;/mrow&gt;
+         &lt;mrow intent="floor($x)"&gt;&lt;mo&gt;&#x230a;&lt;/mo&gt;&lt;mi arg="x"&gt;a&lt;/mi&gt;&lt;mo&gt;&#x230b;&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
        <pre>
-         &lt;mrow&gt;&lt;mo&gt;&#x2308;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;&#x2309;&lt;/mo&gt;&lt;/mrow&gt;
+         &lt;mrow intent="ceiling($x)"&gt;&lt;mo&gt;&#x2308;&lt;/mo&gt;&lt;mi arg="x"&gt;a&lt;/mi&gt;&lt;mo&gt;&#x2309;&lt;/mo&gt;&lt;/mrow&gt;
        </pre>
       </div>
       <div class="example mathml mmlcore">
@@ -5536,7 +5536,7 @@
       <div class="example mathml mmlcore">
        <pre>
          &lt;mrow&gt;
-           &lt;mrow&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;
+           &lt;mrow intent="cardinality($x)"&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi arg="x"&gt;A&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;
            &lt;mo&gt;=&lt;/mo&gt;
            &lt;mn&gt;5&lt;/mn&gt;
          &lt;/mrow&gt;
