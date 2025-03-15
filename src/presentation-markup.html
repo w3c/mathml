@@ -546,9 +546,12 @@
    for some or all of their arguments.
    (See the description for each element for the specific rules used.)
    They also may be set explicitly via the <code class="attribute">displaystyle</code> and <code class="attribute">scriptlevel</code>
-   attributes on the <a class="intref" href="#presm_mstyle"><code class="element">mstyle</code></a> element
-   or the <code class="attribute">displaystyle</code> attribute of <a class="intref" href="#presm_mtable"><code class="element">mtable</code></a>.
-   In all other cases, they are inherited from the node's parent.</p>
+   attributes which are allowed on all presentation elements, see <a href="#presm_presatt"></a>.
+   If set explicitly, the setting applies to the current element and will be used as the default
+   for child elements unless set by further application of these rules.
+   Note that if <code class="attribute">scriptlevel</code> if used with a `+` or `-` sign then the effective `scriptlevel` is incremented or decremented by the value.
+   If  <code class="attribute">scriptlevel</code> if used with an unsigned integer, the effective `scriptlevel` is set to that value.
+   In all other cases, the values are inherited from the node's parent.</p>
  
    <p>The <code class="attribute">displaystyle</code> affects the amount of vertical space used to lay out a formula:
    when true, the more spacious layout of displayed equations is used,
@@ -4104,28 +4107,7 @@
  
  <tbody>
  
-  <tr>
- <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-scriptlevel">scriptlevel</a></td>
- <td>( "+" | "-" )? <a class="intref" href="#type_unsigned-integer"><em>unsigned-integer</em></a></td>
- <td><em>inherited</em></td>
- </tr>
  
- <tr>
-  <td colspan="2" class="attdesc">
-   Changes the <code class="attribute">scriptlevel</code> in effect for the children.
-   When the value is given without a sign, it sets <code class="attribute">scriptlevel</code> to the specified value;
-   when a sign is given, it increments ("+") or decrements ("-") the current value.
-   (Note that large decrements can result in negative values of <code class="attribute">scriptlevel</code>,
-   but these values are considered legal.)
-   See <a href="#presm_scriptlevel"></a>.
- </td>
- </tr>
- 
- <tr>
-  <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-displaystyle">displaystyle</a></td>
- <td><em>[=boolean=]</em></td>
- <td><em>inherited</em></td>
- </tr>
  
  <tr>
   <td colspan="2" class="attdesc">
