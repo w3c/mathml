@@ -266,10 +266,12 @@ S                  := [ \t\n\r]*
      should be assumed. See the examples in <a href="#mixing_intent_warning"></a>.</li>
      </ul>
     </dd>
-    <dt id="intent_literal_property"><code>:literal</code></dt>
+    <dt><span id="intent_literal_property"><code>:literal</code></span>, <span id="intent_common_property"><code>:common</code></span>, <span id="intent_legacy_property"><code>:legacy</code></span></dt>
     <dd>
-      <p>This property requests that the AT should not infer any semantics
-      and just speak the elements with a literal interpretation, including leaf content (eg <q>|</q> might be spoken as <q>vertical bar</q>).</p>
+     <p>These properties control the overall style of generated speech.
+     The detailed description in each case is available <a href="https://w3c.github.io/mathml-docs/literal-common-properties">in a separate document</a>.</p>
+     <p><code>:literal</code> requests that the AT should not infer any semantics
+      and just speak the elements with a literal interpretation, including leaf content (eg <q>|</q> might be spoken as <q>vertical bar</q>). <code>:common</code> requests use of a specified set of heuristics do allow intents to be inferred for common notations. <code>:legacy</code> requests system-specific behavior.</p>
     </dd>
     <dt id="intent_table_properties"><code>:matrix</code>,
     <code>:system-of-equations</code>, <code>:lines</code>, <code>:continued-row</code>, <code>:equation-label</code></dt>
