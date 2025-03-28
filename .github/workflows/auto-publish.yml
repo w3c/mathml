@@ -4,7 +4,6 @@
 # https://w3c.github.io/spec-prod/#examples
 name: CI
 on:
-  pull_request: {}
   push:
     branches: [main]
 jobs:
