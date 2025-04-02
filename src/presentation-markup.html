@@ -6876,14 +6876,13 @@
     between its own alignment elements and the alignment elements inside
     any nested alignment scopes it might contain.</p>
  
-    <p>If there is only one alignment point, an alternative is to use linebreaking and indentation attributes
-       on <code class="element">mo</code> elements as described in <a href="#presm_linebreaking"></a>.</p>
- 
+<!-- remove?
     <p>An <code class="element">mtable</code> element can be given the attribute
     <code class="attribute">alignmentscope</code>=<code class="attributevalue">false</code> to cause
     its columns not to act as alignment scopes. This is discussed further at
     the end of this section. Otherwise, the discussion in this section assumes
     that this attribute has its default value of <code class="attributevalue">true</code>.</p>
+-->
    </section>
  
    <section>
@@ -6935,16 +6934,10 @@
     <ul>
  
      <li>
-      <p>an <code class="element">mrow</code> element, including an inferred
+      <p>an <code class="element">mrow</code> or <code class="element">mstyle</code element, including an inferred
       <code class="element">mrow</code> such as the one formed by a multi-child
       <code class="element">mtd</code> element<span>, but excluding <code class="element">mrow</code> which
       contains a change of direction using the <code class="attribute">dir</code> attribute</span>;</p>
-     </li>
- 
-     <li>
-      <p>an <code class="element">mstyle</code> element
-      <span>, but excluding those which change direction
-      using the <code class="attribute">dir</code> attribute</span>;</p>
      </li>
  
      <li>
@@ -6960,9 +6953,6 @@
       selected sub-expression is checked;</p>
      </li>
  
-     <li>
-      <p>a <code class="element">semantics</code> element.</p>
-     </li>
     </ul>
  
     <p>These restrictions are intended to ensure that alignment can be
@@ -6973,7 +6963,7 @@
  
     <p>For the table cells that are divided into alignment groups, every
     element in their content must be part of exactly one alignment group,
-    except <span>for</span> the elements from the above list that contain
+    except for the elements from the above list that contain
     <code class="element">maligngroup</code> elements inside them and the
     <code class="element">maligngroup</code> elements themselves. This means
     that, within any table cell containing alignment groups, the first
@@ -7000,66 +6990,7 @@
     should contain no <code class="element">maligngroup</code>
     elements. Expressions with no alignment groups are aligned using only
     the <code class="attribute">columnalign</code> attribute that applies to the table
-    column as a whole. If such an expression is wider than the
-    column width needed for the table cells containing alignment groups,
-    all the table cells containing alignment groups will be shifted as a
-    unit within the column as described by the <code class="attribute">columnalign</code>
-    attribute for that column. For example, a column heading with no
-    internal alignment could be added to the column of two equations given
-    above by preceding them with another table row containing an
-    <code class="element">mtext</code> element for the heading, and using the
-    default <code class="attribute">columnalign</code>="center" for the table, to
-    produce:</p>
- 
-    <div class="example ">
-    <table style="font-family:math;">
-      <tbody>
-      <tr><td colspan="7">equations with aligned variables</td></tr>
-      <tr>
-	<td>&#160;&#160;&#160;&#160;&#160;</td>
-        <td>8.44<em>x</em></td>
-        <td style="padding-left:.22em; padding-right: .22em;">+</td>
-        <td>55<span style="visibility: hidden">.7</span><em>y</em></td>
-        <td style="padding-left:.28em; padding-right: .28em;">=</td>
-        <td><span style="visibility: hidden">-</span>0</td>
-	<td>&#160;&#160;&#160;&#160;&#160;</td>
-      </tr>
-      <tr>
-	<td></td>
-        <td>3.1<span style="visibility: hidden">4</span><em>x</em></td>
-        <td style="padding-left:.22em; padding-right: .22em;">&#x2212;</td>
-        <td><span style="visibility: hidden">5</span>0.7<em>y</em></td>
-        <td style="padding-left:.28em; padding-right: .28em;">=</td>
-        <td>&#x2212;1.1</td>
-	<td></td>
-      </tr>
-      </tbody>
-    </table>
-    </div>
-    
-    <p>or, with a shorter heading,</p>
- 
-    <div class="example ">
-     <table style="font-family:math">
-      <tbody>
-        <tr><td colspan="5" style="text-align: center;">some equations</td></tr>
-        <tr>
-          <td>8.44<em>x</em></td>
-          <td style="padding-left:.22em; padding-right: .22em;">+</td>
-          <td>55<span style="visibility: hidden">.7</span><em>y</em></td>
-          <td style="padding-left:.28em; padding-right: .28em;">=</td>
-          <td><span style="visibility: hidden">-</span>0</td>
-        </tr>
-        <tr>
-          <td>3.1<span style="visibility: hidden">4</span><em>x</em></td>
-          <td style="padding-left:.22em; padding-right: .22em;">&#x2212;</td>
-          <td><span style="visibility: hidden">5</span>0.7<em>y</em></td>
-          <td style="padding-left:.28em; padding-right: .28em;">=</td>
-          <td>&#x2212;1.1</td>
-        </tr>
-      </tbody>
-     </table>
-    </div>
+    column as a whole.</p>
    </section>
  
    <section>
