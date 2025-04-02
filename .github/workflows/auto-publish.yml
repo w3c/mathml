@@ -27,7 +27,7 @@ jobs:
           VALIDATE_MARKUP: false
   publish:
     name: Build, Validate and Deploy
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: w3c/spec-prod@v2
