@@ -7008,15 +7008,28 @@
     in an alignment group.</p>
   </section>
  
- <section class="fold">
+ 
+ <section>
+ <h5 id="presm_alignment_algo">A simple alignment algorithm</h5>
+
+ <p>Alignments marked wth <code class="element">maligngroup</code>
+ may be converted to an equivalent <code class="element">mtable</code>
+ that does not use <code class="element">maligngroup</code>, but uses
+ additional table columns.
+ A <a href="https://w3c.github.io/mathml-polyfills/">Javascript polyfill</a> is provided
+ to implement such a transformation which may be useful with [[MathML-Core]] implementations.</p>
+
+ <p>??.</p>
+ </section>
+
+  <section class="fold">
  <h5 id="presm_ex_alignment_1">MathML representation of an alignment example</h5>
  
  <p>The above rules are sufficient to explain the MathML representation
- of the example given near the start of <a href="#presm_malign">this section</a>.</p>
+ of the example given below.</p>
  
  <!--<p class="issue" data-number="180">issue 180</p>-->
- <p>One way to represent that in MathML is:</p>
- 
+  
  <div class="example mathml mml4-nopfill">
   <pre>
     &lt;mtable groupalign="{decimalpoint left left decimalpoint left left decimalpoint}"&gt;
@@ -7097,19 +7110,7 @@
  </blockquote>
 
  </section>
- 
- <section>
- <h5 id="presm_alignment_algo">A simple alignment algorithm</h5>
-
- <p>Alignments marked wth <code class="element">maligngroup</code>
- may be converted to an equivalent <code class="element">mtable</code>
- that does not use <code class="element">maligngroup</code>, but uses
- additional table columns.
- A <a href="https://w3c.github.io/mathml-polyfills/">Javascript polyfill</a> is provided
- to implement such a transformation which may be useful with [[MathML-Core]] implementations.</p>
-
- <p>??.</p>
- </section>
+  
  </section>
  
  </section>
