@@ -61,7 +61,7 @@
 intent             := self-property-list | expression
 self-property-list := property+ S    
 expression         := S ( term property* ) S 
-term               := concept-or-literal | number | reference | application
+<dfn id="intent_term">term</dfn>               := concept-or-literal | number | reference | application
 concept-or-literal := NCName
 number             := '-'? \d+ ( '.' \d+ )?
 reference          := '$' NCName
@@ -140,8 +140,7 @@ S                  := [ \t\n\r]*
      the core properties as described below.</p>
     </dd>
 
-<!--    <dt><dfn id="intent_property_list">self-property-list</dfn></dt>-->
-    <dt>self-property-list</dt>
+    <dt><dfn id="intent_property_list">self-property-list</dfn></dt>
     <dd>At the top level, an [=intent=] may consist of just a
     non-empty list of properties. These apply to the current element
     as described in <a href="#intent_using"></a>.</dd>
@@ -370,6 +369,77 @@ S                  := [ \t\n\r]*
      produce speech that is appropriate to the community they serve.</p>
   </section>
 
+  <section>
+   <h3 id="mixing_intent_interpretation">Interpreting intent expressions</h3>
+   <p>The exact effect of intent expressions on constructed speech or braille is system dependent however
+   systems should act in a way consistent with the interpretations decribed in this section.</p>
+   <section>
+    <h4 id="mixing_intent_multiple properties">Multiple properties</h4>
+    <p>If multiple properties appear in a [=self-property-list=] or <a
+    href="#mixing_intent_grammar"><code>term</code></a> then they are
+    evaluated left-to right.  In general all the properties may have
+    an effect but in many cases groups of properties all set the same
+    internal <i>parameter</i> and so their effects are mutually exclusive
+    and the last one will take effect.</p>
+    <p>For example, <code>f:prefix:suffix</code> will act as
+    <code>f:suffix</code> as both properties set the fixity <i>parameter</i>. Similarly
+    <code>:literal:common</code> will act as <code>:common</code> as
+    both properties set the default interpretation <i>parameter</i>.
+    Conversely <code>f:pause-medium:prefix</code> would be the same as
+    <code>f:prefix:pause-medium</code> as both properties would have
+    an effect.</p>
+   </section>
+   <section>
+    <h4 id="mixing_intent_argref">Expanding arg references</h4>
+    <p>When interpreting an intent expression that includes a
+    [=reference=], the reference may be replaced by the <i>effective
+    intent</i> of the referenced element. That is, if the referenced
+    element has an <code>intent</code> attribute with an intent
+    <i>expression</i> then the reference may be replaced by the expression,
+    note that any properties following the reference will be at the
+    end of the combined expression and so take priority over
+    properties on the referenced element. If the referenced element
+    has no <code>intent</code>, or if the <code>intent</code> is a
+    [=self-property-list=] then the effective intent of the element,
+    along with any properties from the <i>property list</i> will be used as
+    the replacement form the reference.
+    The effective intent of an element with no explicit intent
+    expression is system specific but should be compatible with the
+    current
+    default rules for inferring intent (typically <i>common</i> or
+    <i>literal</i>) The value may either be an inferred intent expression
+    or may be a [=literal=] corresponding to the speech term that
+    would be generated for that element.</p>
+   </section>
+   <section>
+    <h4 id="mixing_intent_self_properties">Interpretation of self-properies</h4>
+    <p>Properties that are part of a [=self-property-list=] (i.e., an
+    <i>intent</i> value starting with a colon, <code>:</code>) are known as
+    <dfn>self-properties</dfn>. The effect of any such property is
+    limited to the element (and its descendants) although the precise
+    effect depends on the definition of the property. so for
+    example:</p>
+    <ul>
+    <li>
+    <code>&lt;mrow
+    intent=":pause-medium">&lt;&lt;mi>x&lt;/mi>...&lt;/mrow></code>
+    would inicate there should be a pause in speech before the
+    <code>mrow</code> is procesed  (it would not cause a pause before
+    all descentant elements.
+    </li>
+    <li><code>&lt;mrow
+    intent=":literal">&lt;&lt;mi>x&lt;/mi>...&lt;/mrow></code>
+    would set the <i>parameter</i> corresponding to the default intent inference
+    rules to <code>literal</code> this would cause the intent for this
+    <code>mrow</code> including all its descendants to use the
+    <code>literal</code> rules for inferring intent unless they have
+    an explicit intent or use another [=self-property=] such as
+    <code>:common</code> to over-ride this.</li>
+    </ul>
+   </section>
+    
+
+  </section>
   <section>
    <h3 id="mixing_intent_errors">Intent Error Handling</h3>
    <p>An intent processor may report errors in intent expressions in
