@@ -417,18 +417,18 @@ S                  := [ \t\n\r]*
     <i>intent</i> value starting with a colon, <code>:</code>) are known as
     <dfn>self-properties</dfn>. The effect of any such property is
     limited to the element (and its descendants) although the precise
-    effect depends on the definition of the property. so for
+    effect depends on the definition of the property. So for
     example:</p>
     <ul>
     <li>
     <code>&lt;mrow
-    intent=":pause-medium">&lt;&lt;mi>x&lt;/mi>...&lt;/mrow></code>
+    intent=":pause-medium">&lt;mi>x&lt;/mi>...&lt;/mrow></code>
     would inicate there should be a pause in speech before the
     <code>mrow</code> is procesed  (it would not cause a pause before
     all descentant elements.
     </li>
     <li><code>&lt;mrow
-    intent=":literal">&lt;&lt;mi>x&lt;/mi>...&lt;/mrow></code>
+    intent=":literal">&lt;mi>x&lt;/mi>...&lt;/mrow></code>
     would set the <i>parameter</i> corresponding to the default intent inference
     rules to <code>literal</code> this would cause the intent for this
     <code>mrow</code> including all its descendants to use the
