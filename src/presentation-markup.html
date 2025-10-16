@@ -4849,11 +4849,14 @@
  
    <p>Individual fences or separators are represented using
    <code class="element">mo</code> elements, as described in <a href="#presm_mo"></a>. Thus, any <code class="element">mfenced</code>
-   element is completely equivalent to an expanded form described below.
-   While <code class="element">mfenced</code> might be more convenient for authors or authoring software, 
-   only the expanded form is supported in [[MathML-Core]].
-   A renderer that supports this recommendation is required to
-   render either of these forms in exactly the same way.</p>
+   element is completely equivalent to an expanded form described below.</p>
+
+   <p>A renderer that supports this recommendation is required to
+   render either of these forms in exactly the same way. Note that
+   while <code class="element">mfenced</code> might be more convenient
+   for authors or authoring software, only the expanded form
+   using <code class="element">mrow</code> is supported in
+   [[MathML-Core]].</p>
  
    <p>In general, an <code class="element">mfenced</code> element can contain
    zero or more arguments, and will enclose them between fences in an
