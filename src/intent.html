@@ -371,12 +371,12 @@ S                  := [ \t\n\r]*
 
   <section>
    <h3 id="mixing_intent_interpretation">Interpreting intent expressions</h3>
-   <p>The exact effect of intent expressions on constructed speech or braille is system dependent however
-   systems should act in a way consistent with the interpretations decribed in this section.</p>
+   <p>The exact effect of intent expressions on constructed speech or braille is system dependent.
+    However, systems should act in a way consistent with the interpretations described in this section.</p>
    <section>
     <h4 id="mixing_intent_multiple properties">Multiple properties</h4>
     <p>If multiple properties appear in a [=self-property-list=] or <a
-    href="#mixing_intent_grammar"><code>term</code></a> then they are
+    href="#mixing_intent_grammar"><code>term</code></a>, then they are
     evaluated left-to right.  In general all the properties may have
     an effect but in many cases groups of properties all set the same
     internal <i>parameter</i> and so their effects are mutually exclusive
@@ -423,22 +423,208 @@ S                  := [ \t\n\r]*
     <li>
     <code>&lt;mrow
     intent=":pause-medium">&lt;mi>x&lt;/mi>...&lt;/mrow></code>
-    would inicate there should be a pause in speech before the
+    would inidcate there should be a pause in speech before the
     <code>mrow</code> is procesed  (it would not cause a pause before
-    all descentant elements.
+    all descentant elements).
     </li>
     <li><code>&lt;mrow
     intent=":literal">&lt;mi>x&lt;/mi>...&lt;/mrow></code>
     would set the <i>parameter</i> corresponding to the default intent inference
-    rules to <code>literal</code> this would cause the intent for this
-    <code>mrow</code> including all its descendants to use the
+    rules to <code>literal</code>.  This would cause the intent for this
+    <code>mrow</code>, including all its descendants to use the
     <code>literal</code> rules for inferring intent unless they have
     an explicit intent or use another [=self-property=] such as
     <code>:common</code> to over-ride this.</li>
     </ul>
    </section>
-    
 
+   <section class="fold">
+     <h4 id="mixing_intent_interpreting_examples">Examples</h4>
+
+      <dl>
+       <dt>factorial</dt>
+       <dd>
+<pre>
+&lt;mrow intent="$xf:prefix">
+ &lt;mrow arg="xf" intent="$f:function($x)">
+  &lt;mi arg="x">x&lt;/mi>&lt;mo arg="f" intent="factorial:suffix">!&lt;/mo>
+ &lt;/mrow>
+&lt;/mrow>
+</pre>
+<p>Expanding out all the references leads to</p>
+<pre>
+&lt;mrow intent="factorial:suffix:function:prefix(_x)">
+ &lt;mrow arg="xf" intent="factorial:suffix:function(_x)">
+  &lt;mi arg="x">x&lt;/mi>&lt;mo arg="f" intent="factorial:suffix">!&lt;/mo>
+ &lt;/mrow>
+&lt;/mrow>
+&lt;/mrow>
+</pre>
+<p>The entire expression would be read based on the intent of the first mrow, which is equivalent to <code>factorial:prefix(_x)</code> so read as <q>factorial x</q>.
+</p>
+       </dd>
+<dt>common/literal</dt>
+<dd>
+ <pre>
+&lt;mrow intent=":common">
+ &lt;msup>&lt;mi>x&lt;/mi>&lt;mn>2&lt;/mn>&lt;/msup>
+ &lt;mo>+&lt;/mo>
+ &lt;mrow intent=":literal">
+  &lt;msup>&lt;mi>x&lt;/mi>&lt;mn>2&lt;/mn>&lt;/msup>
+ &lt;/mrow>
+ &lt;mo>+&lt;/mo>
+ &lt;msup>&lt;mi>x&lt;/mi>&lt;mn>2&lt;/mn>&lt;/msup>
+&lt;/mrow>
+&lt;/mrow>
+</pre>
+
+<p>Here the first mrow sets the default rules to common for the scope of that element so the first msup, having no intent is interpreted as power and read as x squared</p>
+
+<p>The second mrow sets the default rules to literal for the scope of that element so the second msup having no intent is read as x superscript 2</p>
+
+<p>The final msup is again in the scope of common so read as x squared</p>
+
+<p>Note that the effect of these :common and :literal properties as setting the default rules for elements with no intent
+are part of the property description there is no separate classification needed of properties. The fact that they set the same
+internal default rule parameter also explains why they are mutually exclusive, just as fixity properties such as :prefix and :suffix set the same "fixity" parameter and so just one can have an effect on any term.</p>
+</dd>
+
+<dt>system-of-equations/matrix</dt>
+<dd>
+<pre>
+&lt;mtable intent=":system-of-equations">
+  &lt;mtr>
+   &lt;mtd>
+    &lt;mo>(&lt;/mo>
+    &lt;mtable intent=":matrix">&lt;mtr>&lt;mtd>&lt;mn>1&lt;/mn>&lt;/mtd>&lt;mtd>&lt;mn>2&lt;/mn>&lt;/mtd>&lt;/mtr>&lt;/mtable>
+    &lt;mo>)&lt;/mo>
+   &lt;/mtd>
+   &lt;mtd>
+    &lt;mo>+&lt;/mo>
+   &lt;/mtd>
+   &lt;mtd>
+    &lt;mo>(&lt;/mo>
+    &lt;mtable intent=":matrix">&lt;mtr>&lt;mtd>&lt;mn>2&lt;/mn>&lt;/mtd>&lt;mtd>&lt;mn>3&lt;/mn>&lt;/mtd>&lt;/mtr>&lt;/mtable>
+    &lt;mo>)&lt;/mo>
+   &lt;/mtd>
+   &lt;mtd>
+    &lt;mo>=&lt;/mo>
+   &lt;/mtd>
+   &lt;mtd>
+    &lt;mo>(&lt;/mo>
+    &lt;mtable intent=":matrix">&lt;mtr>&lt;mtd>&lt;mn>3&lt;/mn>&lt;/mtd>&lt;mtd>&lt;mn>5&lt;/mn>&lt;/mtd>&lt;/mtr>&lt;/mtable>
+    &lt;mo>)&lt;/mo>
+   &lt;/mtd>
+  &lt;/mtr>
+ &lt;/mtable>
+</pre>
+<p>Here the first mtable will be read as a system of equations, (only one unlabelled equation here so probably: one equation:...
+the :system-of-equations property is defined to only affect the current mtable
+the nested mtable are not affected by the outer :system-of-equation property and are read using the :matrix property so the overall reading is</p>
+<pre>
+ 1 line
+ the 1 by 2 row matrix 1 2
+ plus
+ the 1 by 2 row matrix 2 3
+ is equal to
+ the 1 by 2 row matrix 3 5
+</pre>
+</dd>
+<dt>functional head</dt>
+<dd>
+<pre>
+&lt;mrow intent="$op:infix($x,$y)">
+  &lt;mi arg="x">x&lt;/mi>
+  &lt;msup arg="op" intent="converse:postfix(L)">
+    &lt;mi>R&lt;/mi>
+    &lt;mi>T&lt;/mi>
+  &lt;/msup>
+  &lt;mi arg="y">y&lt;/mi>
+&lt;/mrow>
+</pre>
+<p>this would be equivalent to</p>
+<pre>
+&lt;mrow intent="converse:postfix(L):infix(_x,_y)">
+  &lt;mi arg="x">x&lt;/mi>
+  &lt;msup arg="op" intent="converse:postfix(L)">
+    &lt;mi>R&lt;/mi>
+    &lt;mi>T&lt;/mi>
+  &lt;/msup>
+  &lt;mi arg="y">y&lt;/mi>
+&lt;/mrow>
+</pre>
+<p>so read as x L converse y (with :infix applying to L converse). This would match the reading obtained by removing the first intent and simply reading the child elements in order.</p>
+</dd>
+<dt>pause</dt>
+<dd>
+ <pre>
+ &lt;mrow>
+   &lt;mrow>
+     &lt;mi>a&lt;/mi>&lt;mi>b&lt;/mi>
+   &lt;/mrow>
+   &lt;mrow intent=":pause-long">
+     &lt;mi>c&lt;/mi>&lt;mi>d&lt;/mi>
+   &lt;/mrow>
+ &lt;/mrow>
+</pre>
+<p>This reads as a b pause c d</p>
+
+<p>Note that on the self property :pause-long just acts once, it has
+no effect on descendants of the element on which it was applied.</p> 
+</dd>
+<dt>ref to common</dt>
+<dd>
+ <pre>
+ &lt;mrow intent="wibble($a,$b,$c)">
+ &lt;msup arg="a" intent=":common">&lt;mi>x&lt;/mi>&lt;mn>2&lt;/mn>&lt;/msup>
+ &lt;mo>+&lt;/mo>
+  &lt;msup arg="b" intent=":literal">&lt;mi>x&lt;/mi>&lt;mn>2&lt;/mn>&lt;/msup>
+ &lt;mo>+&lt;/mo>
+ &lt;msup arg="c">&lt;mi>x&lt;/mi>&lt;mn>2&lt;/mn>&lt;/msup>
+&lt;/mrow>
+</pre>
+<p>Here the referenced elements have no intent, or intents just
+consisting of self-properties so the effective intent in each case is
+system specific speech string but controlled by the "common" rules in
+the first case, the "literal" rules in the second, and by the "legacy"
+rules in the third, resulting in the following (assuming the legacy
+reading is the same as common here)</p>
+ <pre>
+&lt;mrow intent="wibble(_x_squared,x_superscript_2,_x_squared)">
+ &lt;msup arg="a" intent=":common">&lt;mi>x&lt;/mi>&lt;mn>2&lt;/mn>&lt;/msup>
+ &lt;mo>+&lt;/mo>
+  &lt;msup arg="b" intent=":literal">&lt;mi>x&lt;/mi>&lt;mn>2&lt;/mn>&lt;/msup>
+ &lt;mo>+&lt;/mo>
+ &lt;msup arg="c">&lt;mi>x&lt;/mi>&lt;mn>2&lt;/mn>&lt;/msup>
+&lt;/mrow>
+</pre>
+<p>which would be read as</p>
+
+<p>wibble of x squared comma supercript two comma x squared</p>
+</dd>
+<dt>compound units</dt>
+<dd>
+<pre>
+&lt;mrow intent=":unit">
+  &lt;mi>W&lt;/mi>
+  &lt;mo>/&lt;/mo>
+  &lt;msup>
+    &lt;mi>m&lt;/mi>
+    &lt;mn>2&lt;/mn>
+  &lt;/msup>
+&lt;/mrow>
+</pre>
+<p>there the :unit property sets the default interpretation to be
+"unit style" for the scope of the mrow the exact words used are as
+always system dependent but typically <code>&lt;mi>W&lt;/mi></code>
+will be read as Watts and <code>&lt;mo>/&lt;/mo></code> as per so</p>
+
+<p>Watts per square metre</p>
+</dd>
+  </dl>
+
+   </section>
+    
   </section>
   <section>
    <h3 id="mixing_intent_errors">Intent Error Handling</h3>
