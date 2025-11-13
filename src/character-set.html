@@ -526,6 +526,102 @@
 
   </section>
 
+ <section>
+   <h4 id="accent-characters">Accent Characters</h4>
+
+   <p> There are a large number of look-alike characters that might be used to for
+    accents or diacritical marks above or below a base element.
+    However, fonts have limitations as to which of these can stretch and which have
+    proper positioning when used as accents. This section has recommendations
+    for which characters to use as accents in MathML. It is important to note that
+    only a limited number of fonts support proper mathematical layout.
+    Browsers and likely other software currently require the use of fonts with an OpenType MATH
+    <table id="suggested-accent-chars">
+
+    <thead>
+
+     <tr>
+      <td>Unicode code point</td>
+      <td>Unicode name</td>
+      <td>Example</td>
+     </tr>
+    </thead>
+
+    <tbody>
+     <tr>
+      <td>U+0302</td>
+      <td>Hat (stretches)</td>
+      <td><math></math><mover><mi>xyz</mi><mo>&#x302;</mo></mover><math></math></td>
+     </tr>
+
+     <tr>
+      <td>U+02D8</td>
+      <td>Check</td>
+      <td><math></math><mover><mi>x</mi><mo>&#x2d8;</mo></mover><math></math></td>
+     </tr>
+
+     <tr>
+      <td>U+02D8</td>
+      <td>Breve</td>
+      <td><math></math><mover><mi>x</mi><mo>&#x2d8;</mo></mover><math></math></td>
+     </tr>
+
+     <tr>
+      <td>U+007E</td>
+      <td>Tilde (stretches)</td>
+      <td><math></math><mover><mi>xyz</mi><mo>&#x7E;</mo></mover><math></math></td>
+     </tr>
+
+     <tr>
+      <td>U+00B4</td>
+      <td>Acute</td>
+      <td><math></math><mover><mi>x</mi><mo>&#xB4;</mo></mover><math></math></td>
+     </tr>
+
+     <tr>
+      <td>U+0060</td>
+      <td>Grave</td>
+      <td><math></math><mover><mi>x</mi><mo>&#x60;</mo></mover><math></math></td>
+     </tr>
+
+     <tr>
+      <td>U+002E (.)</td>
+      <td>Dot</td>
+      <td><math></math><mover><mi>x</mi><mo>.</mo></mover><math></math></td>
+     </tr>
+
+     <tr>
+      <td>U+00A8</td>
+      <td>Double dot</td>
+      <td><math></math><mover><mi>x</mi><mo>&#xA8;</mo></mover><math></math></td>
+     </tr>
+
+     <tr>
+      <td>U+2192 or U+27F6</td>
+      <td>Vec (stretches)</td>
+      <td> <mover><mi>xyz</mi><mo>&#x2192;</mo></mover>
+          <mspace width="1ex"/>
+          <mover><mi>xyz</mi><mo>&#x27F6;</mo></mover>
+      </td>
+
+     <tr>
+      <td>U+005F (not well supported)</td>
+      <td>Bar over (stretches)</td>
+      <td> <mover><mi>xyz</mi><mo>_</mo></mover> </td>
+     </tr>
+
+     <tr>
+      <td>U+005F (not well supported)</td>
+      <td>Bar under (stretches)</td>
+      <td> <munder><mi>xyz</mi><mo>_</mo></munder> </td>
+     </tr>
+ 
+    </tbody>
+    <table>
+   </p>
+
+ </section>
+
  </section>
 
 </section>
