@@ -574,8 +574,8 @@
    becoming unreadably small.
    The default <code class="attribute">scriptsizemultiplier</code> is approximately the square root of 1/2
    whereas <code class="attribute">scriptminsize</code> defaults to 8 points;
-   these values may be changed on <code class="element">mstyle</code>; see  <a href="#presm_mstyle"></a>.
-   Note that the <code class="attribute">scriptlevel</code> attribute of <code class="element">mstyle</code> allows arbitrary
+   these values may be changed on any presentation element; see  <a href="#"presm_presatt_core">MathML Core Attributes"></a>.
+   Note that the <code class="attribute">scriptlevel</code> attribute allows arbitrary
    values of <code class="attribute">scriptlevel</code> to be obtained, including negative values which
    result in increased font sizes.
    </p>
@@ -1004,9 +1004,12 @@
    <h4 id="presm_presatt">Mathematics attributes common to presentation elements</h4>
  
    <p>In addition to the attributes listed in <a href="#fund_globatt"></a>,
-   all MathML presentation elements accept the following classes of attribute.</p>
+   all MathML presentation elements accept the following classes of attribute.
+    In MathML 3, these were restricted to be set only on <code class="element">mstyle</code> elements,
+    but to better align with [[MathML-Core]] which removes special treatment of <code class="element">mstyle</code>,
+    they are now allowed on any presentation element.</p>
+   </p>
 
-   
 
    <section>
    <h5 id="presm_presatt_core">MathML Core Attributes</h5>
@@ -1015,12 +1018,14 @@
    href="https://www.w3.org/TR/mathml-core/#global-attributes">Global
    Attributes</a> specified by [[MathML-Core]].</p>
  
-   <p>These attributes include the following two attributes that are primarily intended for visual media.
+   <p>These attributes include the following  attributes that are primarily intended for visual media.
    They are not expected to affect the intended semantics of displayed
-   expressions, but are for use in highlighting or drawing attention
+   expressions. The first two are for use in highlighting or drawing attention
    to the affected subexpressions.  For example, a red "x" is not assumed
    to be semantically different than a black "x", in contrast to
-   variables with different <code class="attribute">mathvariant</code> values (see <a href="#presm_commatt"></a>).</p>
+   variables with different <code class="attribute">mathvariant</code> values (see <a href="#presm_commatt"></a>).
+   The remaining two override some default rules for layout of expressions.
+   See <a href="#presm.scriptlevel">Section&nbsp;3.1.6 Displaystyle and Scriptlevel</a> for more information</p>
 
    <table class="attributes data">
  
@@ -1063,14 +1068,49 @@
        background color, if any, used in the current rendering context to show through.
       </td>
      </tr>
-
-      <tr>
+       <tr>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/#the-displaystyle-and-scriptlevel-attributes">scriptlevel</a></td></td>
+        <td>( "+" | "-" )? <a href="chapter2.html#type.unsigned-integer"><em>unsigned-integer</em></a></td>
+        <td><em>inherited</em></td>
+       </tr>
+       <tr>
         <td colspan="2" class="attdesc">
         Changes the <code class="attribute">displaystyle</code> in effect for the children.
-        See <a href="#presm_scriptlevel"></a>.
+        See <a href="#presm.scriptlevel">Section&nbsp;3.1.6 Displaystyle and Scriptlevel</a>.
       </td>
       </tr>
-      
+      <tr>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/#the-displaystyle-and-scriptlevel-attributes">displaystyle</a></td></td>
+        <td>"true" | "false"</td>
+        <td><em>inherited</em></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="attdesc">
+          Changes the <code>displaystyle</code> in effect for the children.
+          See <a href="#presm.scriptlevel">Section&nbsp;3.1.6 Displaystyle and Scriptlevel</a>.
+        </td>
+      </tr>      
+</tbody>
+</table>
+</section>
+
+  <section>
+   <h5 id="presm_presatt_core">MathML Full-only Attributes</h5>
+ 
+   <p>These attributes can also be set on any MathML Presentation element.
+
+   <table class="attributes data">
+ 
+    <thead>
+ 
+     <tr>
+      <td>Name</td>
+      <td>values</td>
+      <td>default</td>
+     </tr>
+    </thead>
+ 
+    <tbody>
       <tr>
       <td rowspan="2" class="attname"><span class="coreno">scriptsizemultiplier</span></td>
       <td><em>[=number=]</em></td>
@@ -4089,7 +4129,8 @@
   contains directly or indirectly, except for the individual elements on
   which the value is overridden. Unlike in the case of inherited attributes,
   elements that explicitly override this attribute have no effect on this
- attribute's value in their children.</p>
+  attribute's value in their children.
+  Note that setting these attributes are not supported in [[MathML-Core]]</p>
  </li>
  
  <li>
@@ -4097,7 +4138,8 @@
   computed from operator dictionary information, position in the
   enclosing <code class="element">mrow</code>, and other similar data.  For
   these attributes, a value specified by an enclosing <code class="element">mstyle</code> overrides the value that would normally be
- computed.</p>
+  computed.
+  Note that setting these attributes are not supported in [[MathML-Core]]</p>
  </li>
  </ul>
  
@@ -5351,9 +5393,7 @@
   <p>Rendering of scripts is affected by the <code class="attribute">scriptlevel</code> and <code class="attribute">displaystyle</code>
   attributes, which are part of the environment inherited by the rendering
   process of every MathML expression, and are described in <a href="#presm_scriptlevel"></a>.
-  These attributes cannot be given explicitly on a scripting element, but can be
-  specified on the start tag of a surrounding <code class="element">mstyle</code>
-  element if desired.</p>
+  </p>
  
   <p>MathML also provides an element for attachment of tensor indices.
   Tensor indices are distinct from ordinary subscripts and superscripts in
