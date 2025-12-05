@@ -574,8 +574,8 @@
    becoming unreadably small.
    The default <code class="attribute">scriptsizemultiplier</code> is approximately the square root of 1/2
    whereas <code class="attribute">scriptminsize</code> defaults to 8 points;
-   these values may be changed on <code class="element">mstyle</code>; see  <a href="#presm_mstyle"></a>.
-   Note that the <code class="attribute">scriptlevel</code> attribute of <code class="element">mstyle</code> allows arbitrary
+   these values may be changed on any presentation element; see  <a href="#presm_presatt_core">MathML Core Attributes"></a>.
+   Note that the <code class="attribute">scriptlevel</code> attribute allows arbitrary
    values of <code class="attribute">scriptlevel</code> to be obtained, including negative values which
    result in increased font sizes.
    </p>
@@ -714,24 +714,32 @@
      <div class="example mathml mml4p">
       <pre>
       &lt;mrow&gt;
-       &lt;mrow&gt; &lt;mi&gt;f&lt;/mi&gt; &lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt; &lt;mo&gt;(&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;)&lt;/mo&gt; &lt;/mrow&gt;
+       &lt;mrow&gt;
+        &lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;!--ApplyFunction--&gt;&lt;/mo&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;
+       &lt;/mrow&gt;
        &lt;mo id='eq1-equals'&gt;=&lt;/mo&gt;
        &lt;mrow&gt;
         &lt;msup&gt;
-         &lt;mrow&gt; &lt;mo&gt;(&lt;/mo&gt; &lt;mrow&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mn&gt;1&lt;/mn&gt; &lt;/mrow&gt; &lt;mo&gt;)&lt;/mo&gt; &lt;/mrow&gt;
+         &lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;
          &lt;mn&gt;4&lt;/mn&gt;
         &lt;/msup&gt;
         &lt;mo linebreak='newline' linebreakstyle='before'
 	           indentalign='id' indenttarget='eq1-equals'&gt;=&lt;/mo&gt;
         &lt;mrow&gt;
-         &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;/msup&gt;
+         &lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/msup&gt;
          &lt;mo id='eq1-plus'&gt;+&lt;/mo&gt;
-         &lt;mrow&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt; &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;3&lt;/mn&gt; &lt;/msup&gt; &lt;/mrow&gt;
+         &lt;mrow&gt;
+          &lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;
+         &lt;/mrow&gt;
          &lt;mo&gt;+&lt;/mo&gt;
-         &lt;mrow&gt; &lt;mn&gt;6&lt;/mn&gt; &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt; &lt;msup&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;mn&gt;2&lt;/mn&gt; &lt;/msup&gt; &lt;/mrow&gt;
+         &lt;mrow&gt;
+          &lt;mn&gt;6&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+         &lt;/mrow&gt;
          &lt;mo linebreak='newline' linebreakstyle='before'
 	            indentalignlast='id' indenttarget='eq1-plus'&gt;+&lt;/mo&gt;
-         &lt;mrow&gt; &lt;mn&gt;4&lt;/mn&gt; &lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt; &lt;mi&gt;x&lt;/mi&gt; &lt;/mrow&gt;
+         &lt;mrow&gt;
+          &lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;&amp;#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;
+         &lt;/mrow&gt;
          &lt;mo&gt;+&lt;/mo&gt;
          &lt;mn&gt;1&lt;/mn&gt;
         &lt;/mrow&gt;
@@ -1001,12 +1009,14 @@
   </section>
  
   <section>
-   <h4 id="presm_presatt">Mathematics attributes common to presentation elements</h4>
+   <h4 id="presm_presatt">Attributes common to presentation elements</h4>
  
    <p>In addition to the attributes listed in <a href="#fund_globatt"></a>,
-   all MathML presentation elements accept the following classes of attribute.</p>
+   all MathML presentation elements accept the following classes of attribute.
+    In MathML 3, these were restricted to be set only on <code class="element">mstyle</code> elements,
+    but to better align with [[MathML-Core]] which removes special treatment of <code class="element">mstyle</code>,
+    they are now allowed on any presentation element.</p>
 
-   
 
    <section>
    <h5 id="presm_presatt_core">MathML Core Attributes</h5>
@@ -1015,12 +1025,14 @@
    href="https://www.w3.org/TR/mathml-core/#global-attributes">Global
    Attributes</a> specified by [[MathML-Core]].</p>
  
-   <p>These attributes include the following two attributes that are primarily intended for visual media.
+   <p>These attributes include the following  attributes that are primarily intended for visual media.
    They are not expected to affect the intended semantics of displayed
-   expressions, but are for use in highlighting or drawing attention
+   expressions. The first two are for use in highlighting or drawing attention
    to the affected subexpressions.  For example, a red "x" is not assumed
    to be semantically different than a black "x", in contrast to
-   variables with different <code class="attribute">mathvariant</code> values (see <a href="#presm_commatt"></a>).</p>
+   variables with different <code class="attribute">mathvariant</code> values (see <a href="#presm_commatt"></a>).
+   The remaining two override some default rules for layout of expressions.
+   See <a href="#presm_scriptlevel"></a> for more information</p>
 
    <table class="attributes data">
  
@@ -1063,8 +1075,125 @@
        background color, if any, used in the current rendering context to show through.
       </td>
      </tr>
+       <tr>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/#the-displaystyle-and-scriptlevel-attributes">scriptlevel</a></td>
+        <td>( "+" | "-" )? <a href="chapter2.html#type.unsigned-integer"><em>unsigned-integer</em></a></td>
+        <td><em>inherited</em></td>
+       </tr>
+       <tr>
+        <td colspan="2" class="attdesc">
+        Changes the <code class="attribute">displaystyle</code> in effect for the children.
+        See <a href="#presm_scriptlevel"></a>.
+      </td>
+      </tr>
+      <tr>
+        <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/#the-displaystyle-and-scriptlevel-attributes">displaystyle</a></td>
+        <td>"true" | "false"</td>
+        <td><em>inherited</em></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="attdesc">
+          Changes the <code>displaystyle</code> in effect for the children.
+          See <a href="#presm_scriptlevel"></a>.
+        </td>
+      </tr>      
+</tbody>
+</table>
+</section>
+
+  <section>
+   <h5 id="presm_presatt_full">MathML Full-only Attributes</h5>
+ 
+   <p>These attributes can also be set on any MathML Presentation element.</p>
+
+   <table class="attributes data">
+ 
+    <thead>
+ 
+     <tr>
+      <td>Name</td>
+      <td>values</td>
+      <td>default</td>
+     </tr>
+    </thead>
+ 
+    <tbody>
+      <tr>
+      <td rowspan="2" class="attname"><span class="coreno">scriptsizemultiplier</span></td>
+      <td><em>[=number=]</em></td>
+      <td>0.71</td>
+      </tr>
+      
+      <tr>
+        <td colspan="2" class="attdesc">
+        Specifies the multiplier to be used to adjust font size due
+        to changes in <code class="attribute">scriptlevel</code>.
+        See <a href="#presm_scriptlevel"></a>.
+      </td>
+      </tr>
+      
+      <tr>
+      <td rowspan="2" class="attname"><span class="coreno">scriptminsize</span></td>
+      <td><a class="intref" href="#type_length"><em>length</em></a></td>
+      <td>8pt</td>
+      </tr>
+      
+      <tr>
+        <td colspan="2" class="attdesc">
+        Specifies the minimum font size allowed due to changes in <code class="attribute">scriptlevel</code>.
+        Note that this does not limit the font size due to changes to <code class="attribute">mathsize</code>.
+        See <a href="#presm_scriptlevel"></a>.
+        </td>
+      </tr>
+      
+      <tr>
+      <td rowspan="2" class="attname"><span class="coreno">infixlinebreakstyle</span></td>
+      <td>"before" | "after" | "duplicate"</td>
+      <td>before</td>
+      </tr>
+      
+      <tr>
+        <td colspan="2" class="attdesc">
+        Specifies the default linebreakstyle to use for infix operators;
+        see <a href="#presm_lbattrs"></a>
+        </td>
+      </tr>
+      
+      <tr>
+      <td rowspan="2" class="attname"><span class="coreno">decimalpoint</span></td>
+      <td><em>[=character=]</em></td>
+      <td>.</td>
+      </tr>
+      
+      <tr>
+        <td colspan="2" class="attdesc">
+        Specifies the character used to determine the alignment point within
+        <a class="intref" href="#presm_mstack"><code class="element">mstack</code></a>
+        and
+        <a class="intref" href="#presm_mtable"><code class="element">mtable</code></a> columns
+        when the "decimalpoint" value is used to specify the alignment.
+        The default, ".", is the decimal separator used to separate the integral
+        and decimal fractional parts of floating point numbers in many countries.
+        (See <a href="#presm_elementary"></a> and <a href="#presm_malign"></a>).
+      </td>
+      </tr>
     </tbody>
    </table>
+  <section>
+ <h5 id="presm_mstyle_attrs">Attributes</h5>
+ 
+ 
+ <p>If <code class="attribute">scriptlevel</code> is changed incrementally by an
+ element that also sets certain other
+ attributes, the overall effect of the changes may depend on the order
+ in which they are processed. In such cases, the attributes in the
+ following list should be processed in the following order, regardless
+ of the order in which they occur in the XML-format attribute list of
+ the start tag:
+ <code class="attribute">scriptsizemultiplier</code>, <code class="attribute">scriptminsize</code>,
+ <code class="attribute">scriptlevel</code>, <code class="attribute">mathsize</code>.</p>
+ 
+ </section>
  
  
    <p>Since MathML expressions are often embedded in a textual data
@@ -3969,10 +4098,7 @@
  Additionally, it
  can be given any attribute
  accepted by any other presentation element, except for the
- attributes described below.
- <span>Finally,</span>
- the <code class="element">mstyle</code> element can be given certain special
- attributes listed in the next subsection.</p>
+ attributes described below.</p>
  
  <p>The <code class="element">mstyle</code> element accepts a single argument,
  possibly being an inferred <code class="element">mrow</code> of multiple children;
@@ -4014,7 +4140,8 @@
   contains directly or indirectly, except for the individual elements on
   which the value is overridden. Unlike in the case of inherited attributes,
   elements that explicitly override this attribute have no effect on this
- attribute's value in their children.</p>
+  attribute's value in their children.
+  Note that setting these attributes are not supported in [[MathML-Core]]</p>
  </li>
  
  <li>
@@ -4022,7 +4149,8 @@
   computed from operator dictionary information, position in the
   enclosing <code class="element">mrow</code>, and other similar data.  For
   these attributes, a value specified by an enclosing <code class="element">mstyle</code> overrides the value that would normally be
- computed.</p>
+  computed.
+  Note that setting these attributes are not supported in [[MathML-Core]]</p>
  </li>
  </ul>
  
@@ -4070,120 +4198,7 @@
  Thus, the <code class="attribute">mathbackground</code> specifies the color to fill the bounding
  box of the <code class="element">mstyle</code> element itself; it does <em>not</em>
  specify the default background color.
- This is an incompatible change from MathML 2, but it is more useful
- and intuitive.  Since the default for <code class="attribute">mathcolor</code> is inherited,
- this is no change in its behavior.
  </p>
- 
- </section>
- 
- <section>
- <h5 id="presm_mstyle_attrs">Attributes</h5>
- 
- <p>As stated above, <code class="element">mstyle</code> accepts all
- attributes of all MathML presentation elements which do not have
- required values.  That is, all attributes which have an explicit
- default value or a default value which is inherited or computed are
- accepted by the <code class="element">mstyle</code> element.
- This group of attributes is <em>not</em> accepted in MathML Core.</p>
- 
- <p><code class="element">mstyle</code> elements accept the attributes listed in
- <a href="#presm_presatt"></a>.</p>
- 
- <p>Additionally, <code class="element">mstyle</code> can be given the following special
- attributes that are implicitly inherited by every MathML element as
- part of its rendering environment:</p>
- 
- <table class="attributes data">
- 
-  <thead>
- 
-   <tr>
- <td>Name</td>
- <td>values</td>
- <td>default</td>
- </tr>
- </thead>
- 
- <tbody>
- 
- 
- 
- <tr>
-  <td colspan="2" class="attdesc">
-   Changes the <code class="attribute">displaystyle</code> in effect for the children.
-   See <a href="#presm_scriptlevel"></a>.
- </td>
- </tr>
- 
- <tr>
- <td rowspan="2" class="attname"><span class="coreno">scriptsizemultiplier</span></td>
- <td><em>[=number=]</em></td>
- <td>0.71</td>
- </tr>
- 
- <tr>
-  <td colspan="2" class="attdesc">
-   Specifies the multiplier to be used to adjust font size due
-   to changes in <code class="attribute">scriptlevel</code>.
-   See <a href="#presm_scriptlevel"></a>.
- </td>
- </tr>
- 
- <tr>
- <td rowspan="2" class="attname"><span class="coreno">scriptminsize</span></td>
- <td><a class="intref" href="#type_length"><em>length</em></a></td>
- <td>8pt</td>
- </tr>
- 
- <tr>
-  <td colspan="2" class="attdesc">
-   Specifies the minimum font size allowed due to changes in <code class="attribute">scriptlevel</code>.
-   Note that this does not limit the font size due to changes to <code class="attribute">mathsize</code>.
-   See <a href="#presm_scriptlevel"></a>.
-  </td>
- </tr>
- 
- <tr>
- <td rowspan="2" class="attname"><span class="coreno">infixlinebreakstyle</span></td>
- <td>"before" | "after" | "duplicate"</td>
- <td>before</td>
- </tr>
- 
- <tr>
-  <td colspan="2" class="attdesc">
-   Specifies the default linebreakstyle to use for infix operators;
-   see <a href="#presm_lbattrs"></a>
-  </td>
- </tr>
- 
- <tr>
- <td rowspan="2" class="attname"><span class="coreno">decimalcharacter</span></td>
- <td><em>[=character=]</em></td>
- <td>.</td>
- </tr>
- 
- <tr>
-  <td colspan="2" class="attdesc">
-   Specifies the character used to determine the alignment point within
-   <a class="intref" href="#presm_mstack"><code class="element">mstack</code></a>
-   when the "decimalpoint" value is used to specify the alignment.
-   The default, ".", is the decimal separator used to separate the integral
-   and decimal fractional parts of floating point numbers in many countries.
- </td>
- </tr>
- </tbody>
- </table>
- 
- <p>If <code class="attribute">scriptlevel</code> is changed incrementally by an
- <code class="element">mstyle</code> element that also sets certain other
- attributes, the overall effect of the changes may depend on the order
- in which they are processed. In such cases, the attributes in the
- following list should be processed in the following order, regardless
- of the order in which they occur in the XML-format attribute list of
- the <code class="element">mstyle</code> start tag:
- <code class="attribute">scriptsizemultiplier</code>, <code class="attribute">scriptminsize</code>,
- <code class="attribute">scriptlevel</code>, <code class="attribute">mathsize</code>.</p>
  
  </section>
  
@@ -5389,9 +5404,7 @@
   <p>Rendering of scripts is affected by the <code class="attribute">scriptlevel</code> and <code class="attribute">displaystyle</code>
   attributes, which are part of the environment inherited by the rendering
   process of every MathML expression, and are described in <a href="#presm_scriptlevel"></a>.
-  These attributes cannot be given explicitly on a scripting element, but can be
-  specified on the start tag of a surrounding <code class="element">mstyle</code>
-  element if desired.</p>
+  </p>
  
   <p>MathML also provides an element for attachment of tensor indices.
   Tensor indices are distinct from ordinary subscripts and superscripts in
