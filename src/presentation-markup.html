@@ -4158,7 +4158,7 @@
  </tr>
  
  <tr>
- <td rowspan="2" class="attname"><span class="coreno">decimalpoint</span></td>
+ <td rowspan="2" class="attname"><span class="coreno">decimalcharacter</span></td>
  <td><em>[=character=]</em></td>
  <td>.</td>
  </tr>
@@ -4167,12 +4167,9 @@
   <td colspan="2" class="attdesc">
    Specifies the character used to determine the alignment point within
    <a class="intref" href="#presm_mstack"><code class="element">mstack</code></a>
-   and
-   <a class="intref" href="#presm_mtable"><code class="element">mtable</code></a> columns
    when the "decimalpoint" value is used to specify the alignment.
    The default, ".", is the decimal separator used to separate the integral
    and decimal fractional parts of floating point numbers in many countries.
-   (See <a href="#presm_elementary"></a> and <a href="#presm_malign"></a>).
  </td>
  </tr>
  </tbody>
@@ -7556,11 +7553,9 @@
       see <a href="#presm_msgroup"></a> and <a href="#presm_msrow"></a>.
       For <code class="attributevalue">decimalpoint</code>, the column used is the left-most column in each
       row that contains the decimalpoint character specified
-      using the <code class="attribute">decimalpoint</code> attribute of <code class="element">mstyle</code> (default ".").
-      If there is no decimalpoint character in the row, an implied decimal is assumed on
-      the right of the first number in the row;
-      see <a class="intref" href="#presm_mstyle"><code class="attributevalue">decimalpoint</code></a> for a discussion
-      of <code class="attributevalue">decimalpoint</code>.
+      using the <code class="attribute">decimalcharacter</code> attribute of <code class="element">mstyle</code> (default ".").
+      If there is no decimalpoint character in the row, an implied decimalpoint character is assumed on
+      the right of the first number in the row.
      </td>
     </tr>
     
