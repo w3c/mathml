@@ -339,6 +339,9 @@
     a single whitespace character for separating parts of a value.
     Moreover, leading and trailing whitespace in attribute values should be avoided.</p>
 
+    <p>For compatibility with HTML, attributes defined with an enumerated list of string values
+    are to be compared as <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>.</p>
+
     <p>For most numerical attributes, only those in a subset of the
     expressible values are sensible; values outside this subset are not
     errors, unless otherwise specified, but rather are rounded up or down
@@ -368,7 +371,7 @@
      <a id="type_unit" data-cite="CSS-VALUES-3#typedef-length-percentage"><code>&lt;length-percentage&gt;</code></a>
      syntax defined in [[CSS-VALUES-3]].
      MathML Full extends length syntax by accepting also a <dfn>namedspace</dfn>
-     being one of:</p>
+     being an <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a> match to one of:</p>
       <table class="data">
        <thead>
 	<tr><th>Positive space</th><th>Negative space</th><th>Value</th></tr>
@@ -811,6 +814,8 @@
        and any immediately following punctuation.
        When the display attribute is missing, a rendering agent is free to initialize
        as appropriate to the context.
+       <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
       </td>
      </tr>
 
@@ -839,6 +844,8 @@
       <td colspan="2" class="attdesc">
        specifies the preferred handing in cases where an expression is too long to
        fit in the allowed width. See the discussion below.
+       <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
       </td>
      </tr>
 
@@ -901,6 +908,8 @@
        (not necessarily the baseline). This attribute only has effect
        when <code class="attribute">display</code>=<code class="attributevalue">inline</code>.
        By default, the bottom of the image aligns to the baseline.
+       <br>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
       </td>
      </tr>
 
