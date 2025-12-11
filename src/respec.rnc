@@ -279,6 +279,7 @@ inlinecontent}
 
 dfn = element dfn {
 attribute id {text}?,
+attribute class {text}?,
 attribute data-dfn-for {text}?,
 inlinecontent}
 
