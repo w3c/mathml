@@ -3799,6 +3799,23 @@
  <p>In this case, a nested <code class="element">mrow</code> is required inside
  the parentheses, since parentheses and commas, thought of as fence and
  separator <q>operators</q>, do not act together on their arguments.</p>
+
+ <p>Hyperref links that are compatible with MathML Core may be specified by using the
+ <code class="starttag">&lt;a&gt;</code> element rather than
+ <code class="starttag">&lt;mrow&gt;</code>:</p>
+<div class="example mathml mmlcore">
+  <pre>
+    &lt;a href="https://openmath.org/cd/transc1.html#arccsch"&gt;
+      &lt;mi&gt;arccsch&lt;/mi&gt;
+        &lt;mrow&gt;
+          &lt;mo&gt;(&lt;/mo&gt;
+          &lt;mi&gt;z&lt;/mi&gt;
+          &lt;mo&gt;)&lt;/mo&gt;
+        &lt;/mrow&gt;
+      &lt;/a&gt;
+ </pre>
+ </div>
+ 
  </section>
  </section>
  
