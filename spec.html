@@ -132,8 +132,13 @@
             // echidna doesn't allow mathml a
 	    if (mclass.includes("mathmla")) {
 		m.innerHTML=m.innerHTML
-		    .replace(/a href="(.*)"/g,"mrow tabindex=\"0\" style=\"cursor:pointer\" onclick=\"document.location='$1'\"")
+		    .replace(/<a/g,"<mrow")
 		    .replace(/<\/a>/g, "</mrow>");
+		m.tabIndex=0
+		m.addEventListener("click", () => {
+		    // just one example for now.
+		    document.location="https://openmath.org/cd/transc1.html#arccsch";
+		});
 	    }
 	    var atext;
 	    var aattrib=mmllist[i].getAttribute("alttext");
