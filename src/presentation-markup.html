@@ -3587,12 +3587,15 @@
  
   <section>
    <h4 id="presm_mrow">Horizontally Group Sub-Expressions
- <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mrow"><code class="defn starttag">&lt;mrow&gt;</code></a></h4>
+     <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-mrow"><code class="defn starttag">&lt;mrow&gt;</code></a>,
+     <a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-a"><code class="defn starttag">&lt;a&gt;</code></a>
+   </h4>
  
  <section>
  <h5 id="presm_genlayout_desc">Description</h5>
  
- <p>An <code class="element">mrow</code> element is used to group together any
+ <p>An <code class="element">mrow</code> or <code class="element">a</code>
+   element is used to group together any
  number of sub-expressions, usually consisting of one or more <code class="element">mo</code> elements acting as <q>operators</q> on one
  or more other expressions that are their <q>operands</q>.</p>
  
@@ -3625,6 +3628,12 @@
  although the control of linebreaking is effected through attributes
  on other elements (see <a href="#presm_linebreaking"></a>).
  </p>
+
+ <p>In MathML 4 <code class="element">mrow</code> and
+ <code class="element">a</code> have identical behavior, however
+ <code class="element">a</code>has been added for compatibility with MathML
+ Core. MathML Core only supprts the <code class="attname">href</code>
+ attribute on the <code class="element">a</code> element.</p>
  
  </section>
  
