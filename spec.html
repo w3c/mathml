@@ -129,6 +129,16 @@
 			   " inlinemath" +
 			   (mclass.includes("mml4p") ? " removeOnSave" : "") );
 	    m.innerHTML=mmllist[i].querySelector("pre").textContent;
+            // echidna doesn't allow mathml a
+	    if (mclass.includes("mathmla")) {
+		m.innerHTML=m.innerHTML
+		    .replace(/<a/g,"<mrow")
+		    .replace(/<\/a>/g, "</mrow>");
+		m.addEventListener("click", () => {
+		    // just one example for now.
+		    document.location="https://openmath.org/cd/transc1.html#arccsch";
+		});
+	    }
 	    var atext;
 	    var aattrib=mmllist[i].getAttribute("alttext");
 	    if (aattrib)  {
@@ -506,3 +516,4 @@ div.issue > *:nth-child(2) {display:block;}
   
 </body>
 </html>
+

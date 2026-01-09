@@ -464,6 +464,9 @@
      attribute on <code class="element">mrow</code> or <code class="element">mstyle</code> elements.
      When not specified, all elements inherit the directionality of their container.
     </p>
+
+    <br/>Comparisons of <code class="attribute">dir</code> are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
    </section>
  
    <section>
@@ -818,7 +821,10 @@
      <tbody>
  
       <tr>
-       <td><a class="intref" href="#presm_mrow"><code class="element">mrow</code></a></td>
+	<td>
+	  <a class="intref" href="#presm_mrow"><code class="element">mrow</code></a>
+	  and
+	  <a class="intref" href="#presm_mrow"><code class="element">a</code></a></td>
        <td>group any number of sub-expressions horizontally</td>
       </tr>
  
@@ -1095,6 +1101,8 @@
         <td colspan="2" class="attdesc">
           Changes the <code>displaystyle</code> in effect for the children.
           See <a href="#presm_scriptlevel"></a>.
+          <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+          where all matching strings are allowed as values.
         </td>
       </tr>      
 </tbody>
@@ -1155,12 +1163,14 @@
       <tr>
         <td colspan="2" class="attdesc">
         Specifies the default linebreakstyle to use for infix operators;
-        see <a href="#presm_lbattrs"></a>
+        see <a href="#presm_lbattrs"></a>.
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
         </td>
       </tr>
       
       <tr>
-      <td rowspan="2" class="attname"><span class="coreno">decimalpoint</span></td>
+      <td rowspan="2" class="attname"><span class="coreno">decimalcharacter</span></td>
       <td><em>[=character=]</em></td>
       <td>.</td>
       </tr>
@@ -1169,8 +1179,6 @@
         <td colspan="2" class="attdesc">
         Specifies the character used to determine the alignment point within
         <a class="intref" href="#presm_mstack"><code class="element">mstack</code></a>
-        and
-        <a class="intref" href="#presm_mtable"><code class="element">mtable</code></a> columns
         when the "decimalpoint" value is used to specify the alignment.
         The default, ".", is the decimal separator used to separate the integral
         and decimal fractional parts of floating point numbers in many countries.
@@ -1488,6 +1496,8 @@
       <td colspan="2" class="attdesc">
        Specifies the logical class of the token. Note that this class
        is more than styling, it typically conveys semantic intent; see the discussion below.
+       <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
       </td>
      </tr>
  
@@ -1504,6 +1514,8 @@
        smaller or larger than the current font size, but leave the exact proportions
        unspecified; <code class="attributevalue">normal</code> is allowed for completeness, but since
        it is equivalent to <code class="attributevalue">100%</code> or <code class="attributevalue">1em</code>, it has no effect.
+       <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
       </td>
      </tr>
  
@@ -1520,6 +1532,8 @@
        This attribute should only be needed in rare cases involving weak or neutral characters;
        see <a href="#presm_bidi_math"></a> for further discussion.
        <span>It has no effect on <code class="element">mspace</code>.</span>
+       <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
       </td>
      </tr>
     </tbody>
@@ -1733,6 +1747,8 @@
         Specifies the logical class of the token.
         The default is <code class="attributevalue">normal</code> (non-slanted) unless the content
         is a single character, in which case it would be <code class="attributevalue">italic</code>.
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
        </td>
       </tr>
  
@@ -2068,6 +2084,8 @@
    dictionary
    which affects the spacing and other default properties;
    see <a href="#presm_formdefval"></a>.
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
         </td>
        </tr>
  
@@ -2253,6 +2271,8 @@
    for automatic linebreaking, <code class="attributevalue">nobreak</code> forbids a break;
    <code class="attributevalue">goodbreak</code> suggests a good position;
    <code class="attributevalue">badbreak</code> suggests a poor position.
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
         </td>
        </tr>
  
@@ -2290,6 +2310,8 @@
    <code class="attributevalue">after</code> or <code class="attributevalue">duplicate</code>) can be specified by
    the application or bound by <a class="intref" href="#presm_mstyle"><code class="element">mstyle</code></a>
    (<code class="attributevalue">before</code> corresponds to the most common style of linebreaking).
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
         </td>
        </tr>
  
@@ -2366,6 +2388,8 @@
         <td colspan="2" class="attdesc">
    Specifies the positioning of lines when linebreaking takes place within an <code class="element">mrow</code>;
    see below for discussion of the attribute values.
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
         </td>
        </tr>
  
@@ -2421,6 +2445,8 @@
    Specifies the indentation style to use for the first line of a formula;
    the value <code class="attributevalue">indentalign</code> (the default) means
    to indent the same way as used for the general line.
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
         </td>
        </tr>
  
@@ -2434,7 +2460,7 @@
         <td colspan="2" class="attdesc">
    Specifies the offset to use for the first line of a formula;
    the value <code class="attributevalue">indentshift</code> (the default) means
-   to use the same offset as used for the general line.
+   to use the same offset as used for the general line. It is <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>.
    <span>Percentage values and numbers without unit are interpreted as described for <code class="attribute">indentshift</code>.</span>
         </td>
        </tr>
@@ -2453,6 +2479,8 @@
    to indent the same way as used for the general line.
    When there are exactly two lines, the value of this attribute should
    be used for the second line in preference to <code class="attribute">indentalign</code>.
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
         </td>
        </tr>
  
@@ -2467,7 +2495,7 @@
    Specifies the offset to use for the last line when a linebreak
    occurs within a given <code class="element">mrow</code>;
    the value <code class="attributevalue">indentshift</code> (the default) means
-   to indent the same way as used for the general line.
+   to indent the same way as used for the general line. It is <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>.
    When there are exactly two lines, the value of this attribute should
    be used for the second line in preference to <code class="attribute">indentshift</code>.
    <span>Percentage values and numbers without unit are interpreted as described for <code class="attribute">indentshift</code>.</span>
@@ -3632,8 +3660,8 @@
  <p>In MathML 4, <code class="element">mrow</code> and
  <code class="element">a</code> have identical behavior, however
  <code class="element">a</code> has been added for compatibility with MathML
- Core. MathML Core only supports the <code class="attname">href</code>
- attribute on the <code class="element">a</code> element.</p>
+ Core. MathML Core does not support the <code class="attname">href</code>
+ attribute on elements other than <code class="element">a</code>.</p>
  
  </section>
  
@@ -3777,16 +3805,16 @@
  <p>Hyperref links that are compatible with MathML Core may be specified by using the
  <code class="starttag">&lt;a&gt;</code> element rather than
  <code class="starttag">&lt;mrow&gt;</code>:</p>
-<div class="example mathml mmlcore">
+<div class="mathmla example mathml mmlcore">
   <pre>
     &lt;a href="https://openmath.org/cd/transc1.html#arccsch"&gt;
       &lt;mi&gt;arccsch&lt;/mi&gt;
-        &lt;mrow&gt;
-          &lt;mo&gt;(&lt;/mo&gt;
-          &lt;mi&gt;z&lt;/mi&gt;
-          &lt;mo&gt;)&lt;/mo&gt;
-        &lt;/mrow&gt;
-      &lt;/a&gt;
+      &lt;mrow&gt;
+        &lt;mo&gt;(&lt;/mo&gt;
+        &lt;mi&gt;z&lt;/mi&gt;
+        &lt;mo&gt;)&lt;/mo&gt;
+      &lt;/mrow&gt;
+    &lt;/a&gt;
  </pre>
  </div>
  
@@ -3854,6 +3882,8 @@
  However, if OpenType Math fonts are available then the renderer should set <code class="attributevalue">medium</code> to
  the value <code class="attribute">MATH.MathConstants.fractionRuleThickness</code>
  (the default in <a href="https://www.w3.org/TR/mathml-core/#fractions-mfrac">MathML-Core</a>).
+ <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
  <br/>
  Note: MathML Core only allows <a data-cite="CSS-VALUES-3#typedef-length-percentage"><code>&lt;length-percentage&gt;</code></a> values.
  </td>
@@ -3868,6 +3898,8 @@
  <tr>
   <td colspan="2" class="attdesc">
    Specifies the alignment of the numerator over the fraction.
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
  </td>
  </tr>
  
@@ -3880,6 +3912,8 @@
  <tr>
   <td colspan="2" class="attdesc">
    Specifies the alignment of the denominator under the fraction.
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
  </td>
  </tr>
  
@@ -5196,6 +5230,8 @@
        The default has been changed so that if no <code class="attname">notation</code> is given,
        or if it is an empty string,
        then <code class="element">menclose</code> should not draw.
+       <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
       </td>
      </tr>
     </tbody>
@@ -5748,6 +5784,8 @@
         the core of underscripts that are embellished operators should stretch to cover the
         base,
         but the alignment is based on the entire underscript.</span>
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
        </td>
       </tr>
      </tbody>
@@ -5876,6 +5914,8 @@
    the core of overscripts that are embellished operators should stretch to cover the
    base,
    but the alignment is based on the entire overscript.</span>
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
         </td>
        </tr>
       </tbody>
@@ -6039,6 +6079,8 @@
         the core of underscripts and overscripts that are embellished operators should stretch
         to cover the base,
         but the alignment is based on the entire underscript or overscript.</span>
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
        </td>
       </tr>
      </tbody>
@@ -6349,6 +6391,8 @@
         the <code class="attribute">rowalign</code>
         value is <code class="attributevalue">baseline</code> or <code class="attributevalue">axis</code>; MathML does not specify how
         <code class="attributevalue">baseline</code> or <code class="attributevalue">axis</code> alignment should occur for other values of <code class="attribute">rowalign</code>.</span>
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
        </td>
       </tr>
  
@@ -6368,6 +6412,8 @@
         <code class="attributevalue">baseline</code> aligns the baselines of the cells;
         <code class="attributevalue">axis</code> aligns the axis of each cells.
         (See the note below about multiple values.)
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
        </td>
       </tr>
  
@@ -6385,6 +6431,8 @@
         <code class="attributevalue">center</code> centers each cells;
         <code class="attributevalue">right</code> aligns the right side of the cells.
         (See the note below about multiple values.)
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
        </td>
       </tr>
  
@@ -6428,6 +6476,8 @@
         covers the specified percentage of the entire table width.
  
         (See the note below about multiple values.)
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
        </td>
       </tr>
  
@@ -6447,7 +6497,7 @@
         linebreaking as specified in <a href="#presm_linebreaking"></a>;
         this allows the author to specify, for example, a table being full width
         of the display.
-        When the value is <code class="attributevalue">auto</code>, the MathML
+        When the value is an <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a> match of <code class="attributevalue">auto</code>, the MathML
         renderer should calculate the table width from its contents using
         whatever layout algorithm it chooses.
         Note: numbers without units were allowed in MathML 3 and treated similarly to percentage values,
@@ -6494,6 +6544,8 @@
         <code class="attributevalue">solid</code> means solid lines;
         <code class="attributevalue">dashed</code> means dashed lines (how the dashes are spaced is implementation dependent).
         (See the note below about multiple values.)
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
        </td>
       </tr>
  
@@ -6510,6 +6562,8 @@
         <code class="attributevalue">solid</code> means solid lines;
         <code class="attributevalue">dashed</code> means dashed lines (how the dashes are spaced is implementation dependent).
         (See the note below about multiple values.)
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
        </td>
       </tr>
  
@@ -6525,6 +6579,8 @@
         <code class="attributevalue">none</code> means no lines;
         <code class="attributevalue">solid</code> means solid lines;
         <code class="attributevalue">dashed</code> means dashed lines (how the dashes are spaced is implementation dependent).
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
        </td>
       </tr>
  
@@ -6697,6 +6753,8 @@
        <td colspan="2" class="attdesc">
         overrides, for this row, the vertical alignment of cells specified
         by the <a class="intref" href="#presm_mtable_attrs"><code class="attribute">rowalign</code></a> attribute on the <code class="element">mtable</code>.
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
        </td>
       </tr>
  
@@ -6710,6 +6768,8 @@
        <td colspan="2" class="attdesc">
         overrides, for this row, the horizontal alignment of cells specified
         by the <a class="intref" href="#presm_mtable_attrs"><code class="attribute">columnalign</code></a> attribute on the <code class="element">mtable</code>.
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
        </td>
       </tr>
  
@@ -6824,6 +6884,8 @@
         specifies the vertical alignment of this cell, overriding any value
         specified on the containing <code class="element">mrow</code> and <code class="element">mtable</code>.
         See the <a class="intref" href="#presm_mtable_attrs"><code class="attribute">rowalign</code></a> attribute of <code class="element">mtable</code>.
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
        </td>
       </tr>
  
@@ -6838,6 +6900,8 @@
         specifies the horizontal alignment of this cell, overriding any value
         specified on the containing <code class="element">mrow</code> and <code class="element">mtable</code>.
         See the <a class="intref" href="#presm_mtable_attrs"><code class="attribute">columnalign</code></a> attribute of <code class="element">mtable</code>.
+        <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
        </td>
       </tr>
  
@@ -7544,6 +7608,8 @@
       specifies the vertical alignment of the <code class="element">mstack</code> with respect to its environment.
       The legal values and their meanings are the same as that for <code class="element">mtable</code>'s
       <a class="intref" href="#presm_mtable_attrs"><code class="attribute">align</code></a> attribute.
+      <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
      </td>
     </tr>
 
@@ -7566,11 +7632,13 @@
       see <a href="#presm_msgroup"></a> and <a href="#presm_msrow"></a>.
       For <code class="attributevalue">decimalpoint</code>, the column used is the left-most column in each
       row that contains the decimalpoint character specified
-      using the <code class="attribute">decimalpoint</code> attribute of <code class="element">mstyle</code> (default ".").
-      If there is no decimalpoint character in the row, an implied decimal is assumed on
-      the right of the first number in the row;
+      using the <code class="attribute">decimalcharacter</code> attribute of <code class="element">mstyle</code> (default ".").
+      If there is no decimalpoint character in the row, an implied decimalpoint character is assumed on
+      the right of the first number in the row.
       see <a class="intref" href="#presm_mstyle"><code class="attributevalue">decimalpoint</code></a> for a discussion
-      of <code class="attributevalue">decimalpoint</code>.
+      of <code class="attributevalue">decimalpoint</code>.<br/>
+      Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+      where all matching strings are allowed as values.
      </td>
     </tr>
     
@@ -7590,6 +7658,8 @@
       This excess does not participate in the column width calculation, nor does it participate
       in the overall width of the <code class="element">mstack</code>.
       In these cases, authors should take care to avoid collisions between column overflows.
+      <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
      </td>
     </tr>
     
@@ -7612,6 +7682,8 @@
       without having to figure out what values work well.
       In all cases, the spacing between columns is a fixed amount and does not vary between
       different columns.
+      <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
      </td>
     </tr>
 
@@ -7696,7 +7768,9 @@
   <td colspan="2" class="attdesc">
    Controls the style of the long division layout.  The names are meant as a rough
    mnemonic that describes the position of the divisor and result in relation to the
-   dividend. 		
+   dividend.
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
  </td>
  </tr>
  </tbody>
@@ -8006,6 +8080,8 @@
    the associated column.
    Compass directions are used for the values; the default is to place the carry above
    the character.
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
  </td>
  </tr>
  
@@ -8025,6 +8101,8 @@
    The crossout is only applied for columns which have a corresponding
    <code class="element">mscarry</code>.
    The crossouts should be drawn using the color specified by <code class="attribute">mathcolor</code>.
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
  </td>
  </tr>
  
@@ -8095,6 +8173,8 @@
    specifies the location of the carry or borrow relative to the character in the corresponding
    column in the row below it.
    Compass directions are used for the values.
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
  </td>
  </tr>
  
@@ -8111,6 +8191,8 @@
    one or more values may be given and all values are drawn.
    If <code class="attributevalue">none</code> is given with other values, it is essentially ignored.
    The crossout should be drawn using the color specified by <code class="attribute">mathcolor</code>.
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
  </td>
  </tr>
  </tbody>
@@ -8225,6 +8307,8 @@
    of the <code class="element">msline</code> is on the baseline of the surrounding context (if any).
    (See <a href="#presm_mfrac"></a> for discussion of the thickness keywords
    <code class="attributevalue">medium</code>, <code class="attributevalue">thin</code> and <code class="attributevalue">thick</code>.)
+   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
+       where all matching strings are allowed as values.
  </td>
  </tr>
  </tbody>
