@@ -4207,24 +4207,31 @@
  <code class="attribute">mathsize</code>, which can only be set on token elements (or on
  <code class="element">mstyle</code> itself).</p>
  
- <p>MathML specifies that when
- the attributes <code class="attribute">height</code>, <code class="attribute">depth</code> or <code class="attribute">width</code>
- are specified on an <code class="element">mstyle</code> element, they apply only to
- <code class="element">mspace</code> elements, and not to the corresponding attributes of
- <code class="element">mglyph</code>, <code class="element">mpadded</code>, or <code class="element">mtable</code>.  Similarly, when
- <code class="attribute">rowalign</code> or <code class="attribute">columnalign</code>
- are specified on an <code class="element">mstyle</code> element, they apply only to the
- <code class="element">mtable</code> element, and not the <code class="element">mtr</code>,
- <code class="element">mtd</code>, and <code class="element">maligngroup</code> elements.
- When the <code class="attribute">lspace</code> attribute is set with <code class="element">mstyle</code>, it
- applies only to the <code class="element">mo</code> element and not to <code class="element">mpadded</code>.
- To be consistent, the <code class="attribute">voffset</code> attribute of the
- <code class="element">mpadded</code> element can not be set on <code class="element">mstyle</code>.
- When the <code class="attribute">align</code> attribute is set with <code class="element">mstyle</code>, it
- applies only to the <code class="element">munder</code>, <code class="element">mover</code>, and <code class="element">munderover</code>
- elements, and not to the <code class="element">mtable</code> and <code class="element">mstack</code> elements.
- The attributes <code class="attribute">src</code> and <code class="attribute">alt</code> on <code class="element">mglyph</code>,
- and <code class="attribute">actiontype</code> on <code class="element">maction</code>, cannot be set on <code class="element">mstyle</code>.
+ <p>Several MathML elements have the same attribute names as other elements.
+ For those elements, the following rules apply:
+ <ul>
+  <li> when the attributes <code class="attribute">height</code>, <code class="attribute">depth</code> or <code class="attribute">width</code>
+      are specified on an <code class="element">mstyle</code> element, they apply only to
+      <code class="element">mspace</code> elements, and not to the corresponding attributes of
+      <code class="element">mglyph</code>, <code class="element">mpadded</code>, or <code class="element">mtable</code>;
+  </li>
+  <li>when the attributes <code class="attribute">rowalign</code> or <code class="attribute">columnalign</code>
+      are specified on an <code class="element">mstyle</code> element, they apply only to the
+      <code class="element">mtable</code> element, and not the <code class="element">mtr</code> and
+      <code class="element">mtd</code> elements;
+  </li>
+  <li> when the <code class="attribute">lspace</code> attribute is set with <code class="element">mstyle</code>, it
+       applies only to the <code class="element">mo</code> element and not to <code class="element">mpadded</code>.
+       To be consistent, the <code class="attribute">voffset</code> attribute of the
+       <code class="element">mpadded</code> element can not be set on <code class="element">mstyle</code>;
+  </li>
+  <li> when the <code class="attribute">align</code> attribute is set with <code class="element">mstyle</code>, it
+      applies only to the <code class="element">munder</code>, <code class="element">mover</code>, and <code class="element">munderover</code>
+      elements, and not to the <code class="element">mtable</code> and <code class="element">mstack</code> elements.
+  </li>
+ </ul>
+ 
+ Attributes such as <code class="attribute">src</code> which do not have default values be cannot be set on <code class="element">mstyle</code>.
  </p>
  
  <p>As a presentation element, <code class="element">mstyle</code> directly accepts
