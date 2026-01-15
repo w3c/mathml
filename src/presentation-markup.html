@@ -6961,10 +6961,36 @@
     that this attribute has its default value of <code class="attributevalue">true</code>.</p>
 -->
    </section>
+
+   <section>
+        <h5 id="presm_maligngroup_attrs">Attribute of <code>&lt;maligngroup&gt;</code></h5>
+      <p>The <code>&lt;maligngroup&gt;</code> element allows the following attribute</p>
  
+   <table class="attributes data">
+ 
+    <thead>
+ 
+     <tr>
+      <td>Name</td>
+      <td>values</td>
+      <td>default</td>
+     </tr>
+    </thead>
+ 
+    <tbody>
+ 
+     <tr>
+      <td rowspan="2" class="attname">groupalign</td>
+      <td>"left" | "center" | "right" | "decimalpoint" </td>
+      <td> "left"</td>
+     </tr>
+     <tr><td colspan="2"  class="attdesc">Controls the alignment for this group as described below.</td></tr>
+    </tbody>
+   </table>
+
    <section>
     <h5 id="presm_specify_align_group">Specifying alignment groups</h5>
-    <p>Each part of expression to be aligned should be in an <code class="element">maligngroup</code>.
+    <p>Each part of expression to be aligned should be in an alignment group.
        The point of alignment is the left edge (right edge if for RTL) of the element that follows an <code class="element">maligngroup</code> element
        unless an <code class="element">malignmark</code> element
        is between <code class="element">maligngroup</code> elements. In that case, the left edge (right edge if for RTL) of the element that follows the
@@ -6973,13 +6999,6 @@
 
     <p>If <code class="element">maligngroup</code> or <code class="element">maligngroup</code> occurs outside of an
         <code class="element">mtable</code>, they are rendered with zero width.
-    </p>
-    <p>
-    In the example above, each equation would have one
-    <code class="element">maligngroup</code> element before each coefficient,
-    variable, and operator on the left-hand side, one before the
-    <code>=</code> sign, and one before the constant on the right-hand
-    side because these are the parts that should be aligned.
     </p>
 
     <p>In general, a table cell containing <i class="var">n</i>
@@ -7100,7 +7119,18 @@
  A <a href="https://w3c.github.io/mathml-polyfills/">Javascript polyfill</a> is provided
  to implement such a transformation which may be useful with [[MathML-Core]] implementations.</p>
 
- <p>??.</p>
+ <p>The details of the transfomation are implementation
+ specific. although the suppled polyfill provides an explicit
+ example. The basic idea is that extra columns are introduced so that
+ each alignment group is represented by two columns, a first column
+ aligning right towards the alignment point and a second column
+ aligning left (or reversed in an RTL context). the alignment point
+ may be explicitly marked with <code class="element">malignmark</code>
+ or may be implicit at the start or end of the alignment group, or at
+ the first decimal point, as described above. Detailed arrangements
+ for cells that span across alignment scopes such as table headings
+ are not given in detail here, although the polyfill provides one implementation.</p>
+   
  </section>
 
   <section class="fold">
@@ -7113,13 +7143,13 @@
   
  <div class="example mathml mml4-nopfill">
   <pre>
-    &lt;mtable groupalign="{decimalpoint left left decimalpoint left left decimalpoint}"&gt;
+    &lt;mtable&gt;
       &lt;mtr&gt;
         &lt;mtd&gt;
           &lt;mrow&gt;
             &lt;mrow&gt;
               &lt;mrow&gt;
-                &lt;maligngroup/&gt;
+                &lt;maligngroup groupalign="decimalpoint"/&gt;
                 &lt;mn&gt; 8.44 &lt;/mn&gt;
                 &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
                 &lt;maligngroup/&gt;
@@ -7128,7 +7158,7 @@
               &lt;maligngroup/&gt;
               &lt;mo&gt; + &lt;/mo&gt;
               &lt;mrow&gt;
-                &lt;maligngroup/&gt;
+                &lt;maligngroup groupalign="decimalpoint"/&gt;
                 &lt;mn&gt; 55 &lt;/mn&gt;
                 &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
                 &lt;maligngroup/&gt;
@@ -7137,7 +7167,7 @@
             &lt;/mrow&gt;
             &lt;maligngroup/&gt;
             &lt;mo&gt; = &lt;/mo&gt;
-            &lt;maligngroup/&gt;
+            &lt;maligngroup groupalign="decimalpoint"/&gt;
             &lt;mn&gt; 0 &lt;/mn&gt;
           &lt;/mrow&gt;
         &lt;/mtd&gt;
@@ -7147,7 +7177,7 @@
             &lt;mrow&gt;
               &lt;mrow&gt;
                 &lt;mrow&gt;
-                  &lt;maligngroup/&gt;
+                  &lt;maligngroup groupalign="decimalpoint"/&gt;
                   &lt;mn&gt; 3.1 &lt;/mn&gt;
                   &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
                   &lt;maligngroup/&gt;
@@ -7156,7 +7186,7 @@
                 &lt;maligngroup/&gt;
                 &lt;mo&gt; - &lt;/mo&gt;
                 &lt;mrow&gt;
-                  &lt;maligngroup/&gt;
+                  &lt;maligngroup groupalign="decimalpoint"/&gt;
                   &lt;mn&gt; 0.7 &lt;/mn&gt;
                   &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
                   &lt;maligngroup/&gt;
@@ -7165,7 +7195,7 @@
               &lt;/mrow&gt;
               &lt;maligngroup/&gt;
               &lt;mo&gt; = &lt;/mo&gt;
-              &lt;maligngroup/&gt;
+              &lt;maligngroup groupalign="decimalpoint"/&gt;
               &lt;mrow&gt;
                 &lt;mo&gt; - &lt;/mo&gt;
                 &lt;mn&gt; 1.1 &lt;/mn&gt;
