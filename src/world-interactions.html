@@ -1038,9 +1038,8 @@
   <section>
    <h4 id="interf_link">Linking</h4>
 
-   <p>In MathML 3, an element is designated as a link by the presence of
-   the <code class="attribute">href</code> attribute.  MathML has no element that corresponds
-   to the HTML/XHTML anchor element <code class="element" data-namespace="xhtml">a</code>. </p>
+   <p>In MathML, an element is designated as a link by the presence of
+   the <code class="attribute">href</code> attribute.</p>
 
    <p>MathML allows the <code class="attribute">href</code> attribute on all
    elements.
@@ -1076,26 +1075,20 @@
     </tbody>
    </table>
 
+   <p>Note that [[MathML-Core]] does not support the use of
+   <code class="attribute">href</code> attribute on all
+   elements and  a specific element
+   <code class="element">a</code> has been introduced for this purpose.
+   MathML generators aiming for compatibility with MathML-Core may
+   restrict use of the <code class="attribute">href</code> attribute
+   to <code class="element">a</code>  or to make use of the provided 
+   <a href="https://w3c.github.io/mathml-polyfills/">JavaScript polyfill</a>.</p>
+   
    <p>For compound document formats that support linking mechanisms, the
    <code class="attribute">id</code> attribute should
    be used to specify the location for a link into a MathML expression.  The
    <code class="attribute">id</code> attribute is allowed on all MathML elements, and its value
    must be unique within a document, making it ideal for this purpose.</p>
-
-   <p>Note that MathML 2 has no direct support for linking; it refers to
-   the W3C Recommendation "XML Linking Language" [[?XLink]] in
-   defining links in compound document contexts by using an <code class="attribute">xlink:href</code> attribute.
-   As mentioned above, MathML 3 adds an <code class="attribute">href</code>
-   attribute for linking so that <code class="attribute">xlink:href</code> is no longer needed.
-   However, <code class="attribute">xlink:href</code> is still allowed because MathML permits the use of attributes
-   from non-MathML namespaces. It is recommended that new compound document
-   formats use the MathML 3 <code class="attribute">href</code> attribute for linking. When user agents
-   encounter MathML elements with both <code class="attribute">href</code> and <code class="attribute">xlink:href</code> attributes, the
-   <code class="attribute">href</code> attribute should take precedence. To support backward
-   compatibility, user agents that implement XML Linking
-   in compound documents containing MathML 2 should continue to support
-   the use of the <code class="attribute">xlink:href</code> attribute in addition to supporting the <code class="attribute">href</code> attribute.
-   </p>
 
   </section>
 

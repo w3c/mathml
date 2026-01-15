@@ -1299,7 +1299,7 @@
      In a Web Platform Context  it is recommended that the HTML <code class="element">img</code>
      element is used. This is allowed in token elements when MathML is embedded in (X)HTML.
      </p>
-     <p>For existing MathML using <code class="element">mglyph</code> a <a href="https://w3c.github.io/mathml-polyfills/">Javascript polyfill</a>
+     <p>For existing MathML using <code class="element">mglyph</code> a <a href="https://w3c.github.io/mathml-polyfills/">JavaScript polyfill</a>
      is provided for Web documents that implements <code class="element">mglyph</code> using <code class="element">img</code>. </p>
     </div>
     
@@ -3668,39 +3668,11 @@
  <section>
   <h5 id="presm_genlayout_att">Attributes</h5>
  
-  <p><code class="element">mrow</code> elements accept the attribute listed below in addition to
-  those listed in <a href="#presm_presatt"></a>.</p>
- 
-  <table class="attributes data">
- 
-   <thead>
- 
-    <tr>
-     <td>Name</td>
- <td>values</td>
- <td>default</td>
- </tr>
- </thead>
- 
- <tbody>
- 
-  <tr>
- <td rowspan="2" class="attname"><a class="coreyes" href="https://w3c.github.io/mathml-core/spec.html#dfn-dir">dir</a></td>
- <td>"ltr" | "rtl"</td>
- <td><em>inherited</em></td>
- </tr>
- 
- <tr>
-  <td colspan="2" class="attdesc">
-   specifies the overall directionality <code>ltr</code> (Left To Right) or
-   <code>rtl</code> (Right To Left) to use to layout the children of the row.
-   See <a href="#presm_bidi_math"></a> for further discussion.
-   <br/>Comparisons are <a data-cite="INFRA#ascii-case-insensitive">ASCII case-insensitive</a>,
-       where all matching strings are allowed as values.
- </td>
- </tr>
- </tbody>
- </table>
+  <p>The <code class="element">mrow</code> and <code class="element">a</code>
+  elements accept the attributes specified on the
+  <a href="https://html.spec.whatwg.org/#the-a-element">corresponding
+  element in HTML</a> in addition to those listed in <a
+  href="#presm_presatt"></a>.</p>
  
  </section>
  
