@@ -6953,40 +6953,7 @@
     between its own alignment elements and the alignment elements inside
     any nested alignment scopes it might contain.</p>
  
-<!-- remove?
-    <p>An <code class="element">mtable</code> element can be given the attribute
-    <code class="attribute">alignmentscope</code>=<code class="attributevalue">false</code> to cause
-    its columns not to act as alignment scopes. This is discussed further at
-    the end of this section. Otherwise, the discussion in this section assumes
-    that this attribute has its default value of <code class="attributevalue">true</code>.</p>
--->
    </section>
-
-   <section>
-        <h5 id="presm_maligngroup_attrs">Attribute of <code>&lt;maligngroup&gt;</code></h5>
-      <p>The <code>&lt;maligngroup&gt;</code> element allows the following attribute</p>
- 
-   <table class="attributes data">
- 
-    <thead>
- 
-     <tr>
-      <td>Name</td>
-      <td>values</td>
-      <td>default</td>
-     </tr>
-    </thead>
- 
-    <tbody>
- 
-     <tr>
-      <td rowspan="2" class="attname">groupalign</td>
-      <td>"left" | "center" | "right" | "decimalpoint" </td>
-      <td> "left"</td>
-     </tr>
-     <tr><td colspan="2"  class="attdesc">Controls the alignment for this group as described below.</td></tr>
-    </tbody>
-   </table>
 
    <section>
     <h5 id="presm_specify_align_group">Specifying alignment groups</h5>
@@ -7110,7 +7077,7 @@
  
  
  <section>
- <h5 id="presm_alignment_algo">A simple alignment algorithm</h5>
+ <h5 id="presm_alignment_algo">Alignment algorithm</h5>
 
  <p>Alignments marked wth <code class="element">maligngroup</code>
  may be converted to an equivalent <code class="element">mtable</code>
@@ -7120,14 +7087,14 @@
  to implement such a transformation which may be useful with [[MathML-Core]] implementations.</p>
 
  <p>The details of the transfomation are implementation
- specific. although the suppled polyfill provides an explicit
+ specific, although the suppled polyfill provides an explicit
  example. The basic idea is that extra columns are introduced so that
- each alignment group is represented by two columns, a first column
- aligning right towards the alignment point and a second column
- aligning left (or reversed in an RTL context). the alignment point
+ each alignment group is represented by two columns: a first column
+ aligning right towards the alignment point, and a second column
+ aligning left (or reversed in an RTL context). The alignment point
  may be explicitly marked with <code class="element">malignmark</code>
- or may be implicit at the start or end of the alignment group, or at
- the first decimal point, as described above. Detailed arrangements
+ or may be implicit at the startof the alignment group as described above.
+ Explicit rules
  for cells that span across alignment scopes such as table headings
  are not given in detail here, although the polyfill provides one implementation.</p>
    
@@ -7143,67 +7110,57 @@
   
  <div class="example mathml mml4-nopfill">
   <pre>
-    &lt;mtable&gt;
-      &lt;mtr&gt;
-        &lt;mtd&gt;
-          &lt;mrow&gt;
-            &lt;mrow&gt;
-              &lt;mrow&gt;
-                &lt;maligngroup groupalign="decimalpoint"/&gt;
-                &lt;mn&gt; 8.44 &lt;/mn&gt;
-                &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
-                &lt;maligngroup/&gt;
-                &lt;mi&gt; x &lt;/mi&gt;
-              &lt;/mrow&gt;
-              &lt;maligngroup/&gt;
-              &lt;mo&gt; + &lt;/mo&gt;
-              &lt;mrow&gt;
-                &lt;maligngroup groupalign="decimalpoint"/&gt;
-                &lt;mn&gt; 55 &lt;/mn&gt;
-                &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
-                &lt;maligngroup/&gt;
-                &lt;mi&gt; y &lt;/mi&gt;
-              &lt;/mrow&gt;
-            &lt;/mrow&gt;
-            &lt;maligngroup/&gt;
-            &lt;mo&gt; = &lt;/mo&gt;
-            &lt;maligngroup groupalign="decimalpoint"/&gt;
-            &lt;mn&gt; 0 &lt;/mn&gt;
-          &lt;/mrow&gt;
-        &lt;/mtd&gt;
-        &lt;/mtr&gt;
-        &lt;mtr&gt;
-          &lt;mtd&gt;
-            &lt;mrow&gt;
-              &lt;mrow&gt;
-                &lt;mrow&gt;
-                  &lt;maligngroup groupalign="decimalpoint"/&gt;
-                  &lt;mn&gt; 3.1 &lt;/mn&gt;
-                  &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
-                  &lt;maligngroup/&gt;
-                  &lt;mi&gt; x &lt;/mi&gt;
-                &lt;/mrow&gt;
-                &lt;maligngroup/&gt;
-                &lt;mo&gt; - &lt;/mo&gt;
-                &lt;mrow&gt;
-                  &lt;maligngroup groupalign="decimalpoint"/&gt;
-                  &lt;mn&gt; 0.7 &lt;/mn&gt;
-                  &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
-                  &lt;maligngroup/&gt;
-                  &lt;mi&gt; y &lt;/mi&gt;
-                &lt;/mrow&gt;
-              &lt;/mrow&gt;
-              &lt;maligngroup/&gt;
-              &lt;mo&gt; = &lt;/mo&gt;
-              &lt;maligngroup groupalign="decimalpoint"/&gt;
-              &lt;mrow&gt;
-                &lt;mo&gt; - &lt;/mo&gt;
-                &lt;mn&gt; 1.1 &lt;/mn&gt;
-              &lt;/mrow&gt;
-            &lt;/mrow&gt;
-          &lt;/mtd&gt;
-        &lt;/mtr&gt;
-      &lt;/mtable&gt;
+&lt;mtable&gt;
+  &lt;mtr&gt;
+    &lt;mtd&gt;
+      &lt;mrow&gt;
+        &lt;maligngroup/&gt;
+        &lt;mn&gt;8&lt;/mn&gt;
+        &lt;mo&gt;&#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
+        &lt;malignmark/&gt;
+        &lt;mi&gt;x&lt;/mi&gt;
+      &lt;/mrow&gt;
+      &lt;maligngroup/&gt;
+      &lt;mo&gt;+&lt;/mo&gt;
+      &lt;mrow&gt;
+        &lt;maligngroup/&gt;
+        &lt;mn&gt;55&lt;/mn&gt;
+        &lt;mo&gt;&#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
+        &lt;malignmark/&gt;
+        &lt;mi&gt;y&lt;/mi&gt;
+      &lt;/mrow&gt;
+      &lt;maligngroup/&gt;
+      &lt;mo&gt;=&lt;/mo&gt;
+      &lt;mn&gt;0&lt;/mn&gt;
+    &lt;/mtd&gt;
+  &lt;/mtr&gt;
+  &lt;mtr&gt;
+    &lt;mtd&gt;
+        &lt;mrow&gt;
+          &lt;maligngroup/&gt;
+          &lt;mn&gt;3&lt;/mn&gt;
+          &lt;mo&gt;&#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
+          &lt;malignmark/&gt;
+          &lt;mi&gt;x&lt;/mi&gt;
+        &lt;/mrow&gt;
+        &lt;maligngroup/&gt;
+        &lt;mo&gt;-&lt;/mo&gt;
+        &lt;mrow&gt;
+          &lt;maligngroup/&gt;
+          &lt;mn&gt;7&lt;/mn&gt;
+          &lt;mo&gt;&#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
+          &lt;malignmark/&gt;
+          &lt;mi&gt;y&lt;/mi&gt;
+        &lt;/mrow&gt;
+      &lt;maligngroup/&gt;
+      &lt;mo&gt;=&lt;/mo&gt;
+      &lt;mrow&gt;
+        &lt;mo&gt;-&lt;/mo&gt;
+        &lt;mn&gt;1&lt;/mn&gt;
+      &lt;/mrow&gt;
+    &lt;/mtd&gt;
+  &lt;/mtr&gt;
+&lt;/mtable&gt;
  </pre>
  </div>
  <blockquote class="mml4-nopfill">
