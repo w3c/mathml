@@ -486,7 +486,7 @@
     how weakly directional characters are treated and how runs are nested.
     (The <code class="attribute">dir</code> <span>attribute</span> is thus allowed on token elements to specify
     the initial directionality that may be needed in rare cases.)
-    Any <code class="element">mglyph</code> or <code class="element">malignmark</code> elements appearing within
+    Any <code class="element">mglyph</code> elements appearing within
     a token element are effectively <em>neutral</em> and have no effect
     on ordering.</p>
  
@@ -1263,12 +1263,9 @@
    the content of token elements.  Whitespace between elements is ignored.
    With the exception of the empty <a class="intref" href="#presm_mspace"><code class="element">mspace</code></a> element,
    token elements can contain any sequence of zero or more Unicode characters,
-   or <a class="intref" href="#presm_mglyph"><code class="element">mglyph</code></a> or
-   <code class="element">malignmark</code> elements.
+   or <a class="intref" href="#presm_mglyph"><code class="element">mglyph</code></a> elements.
    The <a class="intref" href="#presm_mglyph"><code class="element">mglyph</code></a> element is used
-   to represent non-standard characters or symbols by images;
-   the <code class="element">malignmark</code> element establishes an alignment point for use within
-   table constructs, and is otherwise invisible (see <a href="#presm_malign"></a>).</p>
+   to represent non-standard characters or symbols by images.</p>
  
    <p><span>Characters</span>
    can be either represented directly as Unicode character data, or indirectly via numeric
@@ -3527,9 +3524,7 @@
    embedded in a mathematical expression should be marked up with <code class="element">mtext</code>,
  or in some cases <code class="element">mo</code> or <code class="element">mi</code>, but never with <code class="element">ms</code>.</p>
  
- <p>Note that the string literals encoded by <code class="element">ms</code> are <span>made up of characters, <code class="element">mglyph</code>s and
- <code class="element">malignmark</code>s</span> rather than <q>ASCII
- strings</q>.  For
+ <p>Note that the string literals encoded by <code class="element">ms</code> are made up of characters, <code class="element">mglyph</code>s rather than <q>ASCII strings</q>.  For
  example, <code>&lt;ms&gt;&amp;amp;&lt;/ms&gt;</code> represents a string
  literal containing a single character, <code>&amp;</code>, and
  <code>&lt;ms&gt;&amp;amp;amp;&lt;/ms&gt;</code> represents a string literal
@@ -6927,21 +6922,11 @@
    
     <div id="notcore-malign" class="note" title="malignmark and maligngroup are not in MathML-Core">
      <p><code class="element">malignmark</code> and <code class="element">maligngroup</code> are not supported in [[MathML-Core]].
-     For most purposes it is recommended that alignment is implemented directly using <code class="element">mtable</code>  columns. As noted in the following section these elements may be futher simplified or removed in a future version of MathML.
-     </p>
-     <p>For existing MathML using <code class="element">malignmark</code> a <a href="https://w3c.github.io/mathml-polyfills/">Javascript polyfill</a>
-     is provided.</p>
-    </div>
-    
+     For most purposes it is recommended that alignment is implemented directly using <code class="element">mtable</code>  columns.</p>
+     <p>For existing MathML using <code class="element">malignmark</code> a <a href="https://w3c.github.io/mathml-polyfills/">Javascript polyfill</a> is provided.</p>
 
-    
-   <section>
-    <h5 id="presm_malignmark_notice">Removal Notice</h5>
     <p>
-      With one significant exception, <code class="emptytag">&lt;maligngroup/&gt;</code> and <code class="emptytag">&lt;malignmark/&gt;</code>
-      have had minimal adoption and implementation.
-      The one exception only uses the basics of alignment. Because of this, alignment in MathML is significantly
-      simplified to align with the current usage and make future implementation simplier. In particular, the following simplifications are made:
+      The elements <code class="emptytag">&lt;maligngroup/&gt;</code> and <code class="emptytag">&lt;malignmark/&gt;</code> have been simplified compared to earlier release of MathML:
     </p>
       <ul>
         <li>the attributes for <code class="emptytag">&lt;maligngroup/&gt;</code> and <code class="emptytag">&lt;malignmark/&gt;</code> have been removed.</li>
@@ -6951,66 +6936,18 @@
         <li><code class="emptytag">&lt;malignmark/&gt;</code> used to be allowed anywhere, including inside of token elements;
           it is now allowed in only the locations that <code class="emptytag">&lt;maligngroup/&gt;</code> is allowed (see below)</li>
       </ul>
-   </section>
+   </div>
    <section>
     <h5 id="presm_malign_desc">Description</h5>
  
     <p>Alignment markers are space-like elements (see <a href="#presm_mspace"></a>) that can be used
-    to vertically align specified points within a column of MathML
+    to horizontally align specified points within a column of MathML
     expressions by the automatic insertion of the necessary amount of
     horizontal space between specified sub-expressions.</p>
  
-    <p>The discussion that follows will use the example of a set of
-    simultaneous equations that should be rendered with vertical
-    alignment of the coefficients and variables of each term, by
-    inserting spacing somewhat like that shown here:</p>
- 
-    <div class="example ">
-     <table style="font-family:math">
-      <tbody>
-        <tr>
-          <td>8.44<em>x</em></td>
-          <td style="padding-left:.22em; padding-right: .22em;">+</td>
-          <td>55<span style="visibility: hidden">.7</span><em>y</em></td>
-          <td style="padding-left:.28em; padding-right: .28em;">=</td>
-          <td><span style="visibility: hidden">-</span>0</td>
-        </tr>
-        <tr>
-          <td>3.1<span style="visibility: hidden">4</span><em>x</em></td>
-          <td style="padding-left:.22em; padding-right: .22em;">&#x2212;</td>
-          <td><span style="visibility: hidden">5</span>0.7<em>y</em></td>
-          <td style="padding-left:.28em; padding-right: .28em;">=</td>
-          <td>&#x2212;1.1</td>
-        </tr>
-      </tbody>
-     </table>
-    </div>
-    <p>If the example expressions shown above were arranged in a column
-    but not aligned, they would appear as:</p>
- 
-    <div class="example ">
-     <table style="font-family:math">
-      <tbody>
-        <tr>
-          <td>8.44<em>x</em>
-          <span  style="padding-left:.22em; padding-right: .22em; display:inline-block">+</span>
-          55.7<em>y</em>
-          <span style="padding-left:.28em; padding-right: .28em; display:inline-block">=</span>
-         0</td>
-        </tr>
-        <tr>
-          <td>3.1<em>x</em>
-          <span style="padding-left:.22em; padding-right: .22em; display:inline-block">&#x2212;</span>
-          50.7<em>y</em>
-          <span style="padding-left:.28em; padding-right: .28em; display:inline-block">=</span>
-          &#x2212;1.1</td>
-         </tr>
-      </tbody>
-      </table>
-    </div>
    
     <p>The expressions whose parts are to be aligned (each equation, in the
-    example above) must be given as the table elements (i.e. as the <code class="element">mtd</code> elements) of one column of an
+    example at the end of this section) must be given as the table elements (i.e. as the <code class="element">mtd</code> elements) of one column of an
     <code class="element">mtable</code>. To avoid confusion, the term <q>table
     cell</q> rather than <q>table element</q> will be used in the
     remainder of this section.</p>
@@ -7023,19 +6960,11 @@
     between its own alignment elements and the alignment elements inside
     any nested alignment scopes it might contain.</p>
  
-    <p>If there is only one alignment point, an alternative is to use linebreaking and indentation attributes
-       on <code class="element">mo</code> elements as described in <a href="#presm_linebreaking"></a>.</p>
- 
-    <p>An <code class="element">mtable</code> element can be given the attribute
-    <code class="attribute">alignmentscope</code>=<code class="attributevalue">false</code> to cause
-    its columns not to act as alignment scopes. This is discussed further at
-    the end of this section. Otherwise, the discussion in this section assumes
-    that this attribute has its default value of <code class="attributevalue">true</code>.</p>
    </section>
- 
+
    <section>
     <h5 id="presm_specify_align_group">Specifying alignment groups</h5>
-    <p>Each part of expression to be aligned should be in an <code class="element">maligngroup</code>.
+    <p>Each part of expression to be aligned should be in an alignment group.
        The point of alignment is the left edge (right edge if for RTL) of the element that follows an <code class="element">maligngroup</code> element
        unless an <code class="element">malignmark</code> element
        is between <code class="element">maligngroup</code> elements. In that case, the left edge (right edge if for RTL) of the element that follows the
@@ -7044,13 +6973,6 @@
 
     <p>If <code class="element">maligngroup</code> or <code class="element">maligngroup</code> occurs outside of an
         <code class="element">mtable</code>, they are rendered with zero width.
-    </p>
-    <p>
-    In the example above, each equation would have one
-    <code class="element">maligngroup</code> element before each coefficient,
-    variable, and operator on the left-hand side, one before the
-    <code>=</code> sign, and one before the constant on the right-hand
-    side because these are the parts that should be aligned.
     </p>
 
     <p>In general, a table cell containing <i class="var">n</i>
@@ -7071,7 +6993,7 @@
     third one, for example. This can be seen in the MathML markup for the
     example given at the end of this section.</p>
  
-    <p>Although alignment groups need <span>not</span>
+    <p>Although alignment groups need not
     coincide with the nested expression structure of layout schemata,
     there are nonetheless restrictions on where <code class="element">maligngroup</code>
     and <code class="element">malignmark</code>
@@ -7082,16 +7004,10 @@
     <ul>
  
      <li>
-      <p>an <code class="element">mrow</code> element, including an inferred
+      <p>an <code class="element">mrow</code> or <code class="element">mstyle</code> element, including an inferred
       <code class="element">mrow</code> such as the one formed by a multi-child
       <code class="element">mtd</code> element<span>, but excluding <code class="element">mrow</code> which
       contains a change of direction using the <code class="attribute">dir</code> attribute</span>;</p>
-     </li>
- 
-     <li>
-      <p>an <code class="element">mstyle</code> element
-      <span>, but excluding those which change direction
-      using the <code class="attribute">dir</code> attribute</span>;</p>
      </li>
  
      <li>
@@ -7107,9 +7023,6 @@
       selected sub-expression is checked;</p>
      </li>
  
-     <li>
-      <p>a <code class="element">semantics</code> element.</p>
-     </li>
     </ul>
  
     <p>These restrictions are intended to ensure that alignment can be
@@ -7120,7 +7033,7 @@
  
     <p>For the table cells that are divided into alignment groups, every
     element in their content must be part of exactly one alignment group,
-    except <span>for</span> the elements from the above list that contain
+    except for the elements from the above list that contain
     <code class="element">maligngroup</code> elements inside them and the
     <code class="element">maligngroup</code> elements themselves. This means
     that, within any table cell containing alignment groups, the first
@@ -7136,81 +7049,18 @@
     groups. If they don't, zero-width alignment groups are effectively
     added on the right side<span> (or left side, in a RTL context)</span> of each table cell that has fewer groups than
     other table cells in the same column.</p>
-    <p class="note">Do we want to tighten this so that all rows have the same number of <code class="element">maligngroup</code> elements?
-    </p>
+
 
    </section>
  
    <section>
     <h5 id="presm_no_align_group">Table cells that are not divided into alignment groups</h5>
-    <p class="note">Do we still want to allow rows without <code class="element">maligngroup</code> as described in this section?
-    </p>
-
  
     <p>Expressions in a column that are to have no alignment groups
-    should contain no <code class="element">maligngroup</code>
+    should contain no <code class="element">maligngroup</code> or <code class="element">malignmark</code>
     elements. Expressions with no alignment groups are aligned using only
     the <code class="attribute">columnalign</code> attribute that applies to the table
-    column as a whole. If such an expression is wider than the
-    column width needed for the table cells containing alignment groups,
-    all the table cells containing alignment groups will be shifted as a
-    unit within the column as described by the <code class="attribute">columnalign</code>
-    attribute for that column. For example, a column heading with no
-    internal alignment could be added to the column of two equations given
-    above by preceding them with another table row containing an
-    <code class="element">mtext</code> element for the heading, and using the
-    default <code class="attribute">columnalign</code>="center" for the table, to
-    produce:</p>
- 
-    <div class="example ">
-    <table style="font-family:math;">
-      <tbody>
-      <tr><td colspan="7">equations with aligned variables</td></tr>
-      <tr>
-	<td>&#160;&#160;&#160;&#160;&#160;</td>
-        <td>8.44<em>x</em></td>
-        <td style="padding-left:.22em; padding-right: .22em;">+</td>
-        <td>55<span style="visibility: hidden">.7</span><em>y</em></td>
-        <td style="padding-left:.28em; padding-right: .28em;">=</td>
-        <td><span style="visibility: hidden">-</span>0</td>
-	<td>&#160;&#160;&#160;&#160;&#160;</td>
-      </tr>
-      <tr>
-	<td></td>
-        <td>3.1<span style="visibility: hidden">4</span><em>x</em></td>
-        <td style="padding-left:.22em; padding-right: .22em;">&#x2212;</td>
-        <td><span style="visibility: hidden">5</span>0.7<em>y</em></td>
-        <td style="padding-left:.28em; padding-right: .28em;">=</td>
-        <td>&#x2212;1.1</td>
-	<td></td>
-      </tr>
-      </tbody>
-    </table>
-    </div>
-    
-    <p>or, with a shorter heading,</p>
- 
-    <div class="example ">
-     <table style="font-family:math">
-      <tbody>
-        <tr><td colspan="5" style="text-align: center;">some equations</td></tr>
-        <tr>
-          <td>8.44<em>x</em></td>
-          <td style="padding-left:.22em; padding-right: .22em;">+</td>
-          <td>55<span style="visibility: hidden">.7</span><em>y</em></td>
-          <td style="padding-left:.28em; padding-right: .28em;">=</td>
-          <td><span style="visibility: hidden">-</span>0</td>
-        </tr>
-        <tr>
-          <td>3.1<span style="visibility: hidden">4</span><em>x</em></td>
-          <td style="padding-left:.22em; padding-right: .22em;">&#x2212;</td>
-          <td><span style="visibility: hidden">5</span>0.7<em>y</em></td>
-          <td style="padding-left:.28em; padding-right: .28em;">=</td>
-          <td>&#x2212;1.1</td>
-        </tr>
-      </tbody>
-     </table>
-    </div>
+    column as a whole., or via the use of CSS in systems where that is available.</p>
    </section>
  
    <section>
@@ -7225,93 +7075,99 @@
     alignment point should occur on the left edge (right edge in a RTL context) of the following element.
    </p>
  
-    <p class="note">Can <code class="element">malignmark</code> elements occur inside of tokens?
-    </p>
     <p>When an <code class="element">malignmark</code> element is provided within an
     alignment group, it should only occur within the elements allowed for <code class="element">maligngroup</code>
     (see <a href="#presm_specify_align_group"></a>).
-    If there is more than one <code class="element">malignmark</code> element
-    in an alignment group, all but the first one will be ignored. MathML
-    applications may wish to provide a mode in which they will warn about
-    this situation, but it is not an error, and should trigger no warnings
-    by default. <span>The rationale for this is that</span> it would
-    be inconvenient to have to remove all
-    unnecessary <code class="element">malignmark</code> elements from
-    automatically generated data.</p>
+    If there should be at most one <code class="element">malignmark</code> element
+    in an alignment group.</p>
   </section>
  
- <section class="fold">
+ 
+ <section>
+ <h5 id="presm_alignment_algo">Alignment algorithm</h5>
+
+ <p>Alignments marked wth <code class="element">maligngroup</code>
+ may be converted to an equivalent <code class="element">mtable</code>
+ that does not use <code class="element">maligngroup</code>, but uses
+ additional table columns.
+ A <a href="https://w3c.github.io/mathml-polyfills/">Javascript polyfill</a> is provided
+ to implement such a transformation which may be useful with [[MathML-Core]] implementations.</p>
+
+ <p>The details of the transfomation are implementation
+ specific, although the suppled polyfill provides an explicit
+ example. The basic idea is that extra columns are introduced so that
+ each alignment group is represented by two columns: a first column
+ aligning right towards the alignment point, and a second column
+ aligning left (or reversed in an RTL context). The alignment point
+ may be explicitly marked with <code class="element">malignmark</code>
+ or may be implicit at the startof the alignment group as described above.
+ Explicit rules
+ for cells that span across alignment scopes such as table headings
+ are not given in detail here, although the polyfill provides one implementation.</p>
+   
+ </section>
+
+  <section class="fold">
  <h5 id="presm_ex_alignment_1">MathML representation of an alignment example</h5>
  
  <p>The above rules are sufficient to explain the MathML representation
- of the example given near the start of <a href="#presm_malign">this section</a>.</p>
+ of the example given below.</p>
  
  <!--<p class="issue" data-number="180">issue 180</p>-->
- <p>One way to represent that in MathML is:</p>
- 
+  
  <div class="example mathml mml4-nopfill">
   <pre>
-    &lt;mtable groupalign="{decimalpoint left left decimalpoint left left decimalpoint}"&gt;
-      &lt;mtr&gt;
-        &lt;mtd&gt;
-          &lt;mrow&gt;
-            &lt;mrow&gt;
-              &lt;mrow&gt;
-                &lt;maligngroup/&gt;
-                &lt;mn&gt; 8.44 &lt;/mn&gt;
-                &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
-                &lt;maligngroup/&gt;
-                &lt;mi&gt; x &lt;/mi&gt;
-              &lt;/mrow&gt;
-              &lt;maligngroup/&gt;
-              &lt;mo&gt; + &lt;/mo&gt;
-              &lt;mrow&gt;
-                &lt;maligngroup/&gt;
-                &lt;mn&gt; 55 &lt;/mn&gt;
-                &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
-                &lt;maligngroup/&gt;
-                &lt;mi&gt; y &lt;/mi&gt;
-              &lt;/mrow&gt;
-            &lt;/mrow&gt;
-            &lt;maligngroup/&gt;
-            &lt;mo&gt; = &lt;/mo&gt;
-            &lt;maligngroup/&gt;
-            &lt;mn&gt; 0 &lt;/mn&gt;
-          &lt;/mrow&gt;
-        &lt;/mtd&gt;
-        &lt;/mtr&gt;
-        &lt;mtr&gt;
-          &lt;mtd&gt;
-            &lt;mrow&gt;
-              &lt;mrow&gt;
-                &lt;mrow&gt;
-                  &lt;maligngroup/&gt;
-                  &lt;mn&gt; 3.1 &lt;/mn&gt;
-                  &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
-                  &lt;maligngroup/&gt;
-                  &lt;mi&gt; x &lt;/mi&gt;
-                &lt;/mrow&gt;
-                &lt;maligngroup/&gt;
-                &lt;mo&gt; - &lt;/mo&gt;
-                &lt;mrow&gt;
-                  &lt;maligngroup/&gt;
-                  &lt;mn&gt; 0.7 &lt;/mn&gt;
-                  &lt;mo&gt; &amp;#x2062;&lt;!--InvisibleTimes--&gt; &lt;/mo&gt;
-                  &lt;maligngroup/&gt;
-                  &lt;mi&gt; y &lt;/mi&gt;
-                &lt;/mrow&gt;
-              &lt;/mrow&gt;
-              &lt;maligngroup/&gt;
-              &lt;mo&gt; = &lt;/mo&gt;
-              &lt;maligngroup/&gt;
-              &lt;mrow&gt;
-                &lt;mo&gt; - &lt;/mo&gt;
-                &lt;mn&gt; 1.1 &lt;/mn&gt;
-              &lt;/mrow&gt;
-            &lt;/mrow&gt;
-          &lt;/mtd&gt;
-        &lt;/mtr&gt;
-      &lt;/mtable&gt;
+&lt;mtable&gt;
+  &lt;mtr&gt;
+    &lt;mtd&gt;
+      &lt;mrow&gt;
+        &lt;maligngroup/&gt;
+        &lt;mn&gt;8&lt;/mn&gt;
+        &lt;mo&gt;&#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
+        &lt;malignmark/&gt;
+        &lt;mi&gt;x&lt;/mi&gt;
+      &lt;/mrow&gt;
+      &lt;maligngroup/&gt;
+      &lt;mo&gt;+&lt;/mo&gt;
+      &lt;mrow&gt;
+        &lt;maligngroup/&gt;
+        &lt;mn&gt;55&lt;/mn&gt;
+        &lt;mo&gt;&#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
+        &lt;malignmark/&gt;
+        &lt;mi&gt;y&lt;/mi&gt;
+      &lt;/mrow&gt;
+      &lt;maligngroup/&gt;
+      &lt;mo&gt;=&lt;/mo&gt;
+      &lt;mn&gt;0&lt;/mn&gt;
+    &lt;/mtd&gt;
+  &lt;/mtr&gt;
+  &lt;mtr&gt;
+    &lt;mtd&gt;
+        &lt;mrow&gt;
+          &lt;maligngroup/&gt;
+          &lt;mn&gt;3&lt;/mn&gt;
+          &lt;mo&gt;&#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
+          &lt;malignmark/&gt;
+          &lt;mi&gt;x&lt;/mi&gt;
+        &lt;/mrow&gt;
+        &lt;maligngroup/&gt;
+        &lt;mo&gt;-&lt;/mo&gt;
+        &lt;mrow&gt;
+          &lt;maligngroup/&gt;
+          &lt;mn&gt;7&lt;/mn&gt;
+          &lt;mo&gt;&#x2062;&lt;!--InvisibleTimes--&gt;&lt;/mo&gt;
+          &lt;malignmark/&gt;
+          &lt;mi&gt;y&lt;/mi&gt;
+        &lt;/mrow&gt;
+      &lt;maligngroup/&gt;
+      &lt;mo&gt;=&lt;/mo&gt;
+      &lt;mrow&gt;
+        &lt;mo&gt;-&lt;/mo&gt;
+        &lt;mn&gt;1&lt;/mn&gt;
+      &lt;/mrow&gt;
+    &lt;/mtd&gt;
+  &lt;/mtr&gt;
+&lt;/mtable&gt;
  </pre>
  </div>
  <blockquote class="mml4-nopfill">
@@ -7319,9 +7175,9 @@
 \documentclass{article}
 \usepackage{amsmath,stix2}
 \begin{document}
-\begin{alignat*}{5}
-  8&.44 &&x + {}&55&  &&y = {}&0&\\
-  3&.1  &&x - {}&0&.7 &&y = {}&- 1&.1 
+\begin{alignat*}{6}
+  8&x + {} &55&y &&= 0\\
+  3&x - {} &7&y  &&= - 1 
 \end{alignat*}
 \end{document}
 -->
@@ -7329,94 +7185,7 @@
  </blockquote>
 
  </section>
- 
- <section>
- <h5 id="presm_alignment_algo">A simple alignment algorithm</h5>
- 
- <p>A simple algorithm by which a MathML renderer can perform the
- alignment specified in this section is given here. Since the alignment
- specification is deterministic (except for the definition of the left
- and right edges of a character), any correct MathML alignment
- algorithm will have the same behavior as this one. Each
- <code class="element">mtable</code> column (alignment scope) can be treated
- independently; the algorithm given here applies to one
- <code class="element">mtable</code> column, and takes into account the
- alignment elements and the <code class="attribute">columnalign</code> attribute described
- under <code class="element">mtable</code> (<a href="#presm_mtable"></a>).
- In an RTL context, switch left and right edges in the algorithm.</p>
- <p class="note">This algorithm should be verified by an implementation.
-</p>
-
- <ol>
-  <li>A rendering is computed for the contents of each table cell
-    in the column, using zero width for all
-    <code class="element">maligngroup</code> and <code class="element">malignmark</code>
-    elements. The final rendering will be identical except for horizontal
-    shifts applied to each alignment group and/or table cell.</li>
-  <li>For each alignment group, the horizontal positions of the left
-    edge, alignment point (if specified by <code class="element">malignmark</code>, otherwise the left edge),
-    and right edge are noted, allowing the width of
-    the group on each side of the alignment point (left and right) to be
-    determined. The sum of these two <q>side-widths</q>, i.e. the sum of the
-    widths to the left and right of the alignment point, will equal the
-    width of the alignment group.</li>
-  <li>Each column of alignment groups is
-    scanned. The <i class="var">i</i>th scan covers the <i class="var">i</i>th
-    alignment group in each table cell containing any alignment
-    groups. Table cells with no alignment groups, or with fewer than
-    <i class="var">i</i> alignment groups, are ignored. Each scan computes two
-    maximums over the alignment groups scanned: the maximum width to the
-    left of the alignment point, and the maximum width to the right of the
-    alignment point, of any alignment group scanned.</li>
-  <li>The sum of all the maximum widths computed (two for each column of
-    alignment groups) gives one total width, which will be the width of
-    each table cell containing alignment groups. Call the maximum number
-    of alignment groups in one cell <i class="var">n</i>; each such cell
-    is divided into 2<i class="var">n</i> horizontally adjacent sections, called
-    L(<i class="var">i</i>) and R(<i class="var">i</i>) for <i class="var">i</i> from 1 to
-    <i class="var">n</i>, using the 2<i class="var">n</i> maximum side-widths computed
-    above; for each <i class="var">i</i>, the width of all sections called
-    L(<i class="var">i</i>) is the maximum width of any cell's <i class="var">i</i>th
-    alignment group to the left of its alignment point, and the width of
-    all sections called R(<i class="var">i</i>) is the maximum width of any
-    cell's <i class="var">i</i>th alignment group to the right of its alignment
-    point.</li>
-  <li>Each alignment group is then shifted horizontally as a block
-    to <span>a</span> unique position that places: in the section called L(<i class="var">i</i>) that part
-    of the <i class="var">i</i>th group to the left of its alignment point;
-    in the section called R(<i class="var">i</i>) that part of the <i class="var">i</i>th group
-    to the right of its alignment point. This results in the
-    alignment point of each <i class="var">i</i>th group being on the boundary
-    between adjacent sections L(<i class="var">i</i>) and R(<i class="var">i</i>), so
-    that all alignment points of <i class="var">i</i>th groups have the same
-    horizontal position.</li>
- </ol>
   
- 
- <p></p>
- 
- <p></p>
- 
- <p>The widths of the table cells that contain no alignment groups
- were computed as part of the initial rendering, and may be different
- for each cell, and different from the single width used for cells
- containing alignment groups. The maximum of all the cell widths (for
- both kinds of cells) gives the width of the table column as a
- whole.</p>
- 
- <p>The position of each cell in the column is determined by the
- applicable part of the value of the <code class="attribute">columnalign</code> attribute
- of the innermost surrounding <code class="element">mtable</code>,
- <code class="element">mtr</code>, or <code class="element">mtd</code> element that
- has an explicit value for it, as described in the sections on those
- elements. This may mean that the cells containing alignment groups
- will be shifted within their column, in addition to their alignment
- groups having been shifted within the cells as described above, but
- since each such cell has the same width, it will be shifted the same
- amount within the column, thus maintaining the vertical alignment of
- the alignment points of the corresponding alignment groups in each
- cell.</p>
- </section>
  </section>
  
  </section>
