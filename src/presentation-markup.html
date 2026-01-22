@@ -6934,13 +6934,13 @@
     <h5 id="presm_malign_desc">Description</h5>
  
     <p>Alignment markers are space-like elements (see <a href="#presm_mspace"></a>) that can be used
-    to vertically align specified points within a column of MathML
+    to horizontally align specified points within a column of MathML
     expressions by the automatic insertion of the necessary amount of
     horizontal space between specified sub-expressions.</p>
  
    
     <p>The expressions whose parts are to be aligned (each equation, in the
-    example above) must be given as the table elements (i.e. as the <code class="element">mtd</code> elements) of one column of an
+    example at the end of this section) must be given as the table elements (i.e. as the <code class="element">mtd</code> elements) of one column of an
     <code class="element">mtable</code>. To avoid confusion, the term <q>table
     cell</q> rather than <q>table element</q> will be used in the
     remainder of this section.</p>
@@ -7050,10 +7050,10 @@
     <h5 id="presm_no_align_group">Table cells that are not divided into alignment groups</h5>
  
     <p>Expressions in a column that are to have no alignment groups
-    should contain no <code class="element">maligngroup</code>
+    should contain no <code class="element">maligngroup</code> or <code class="element">malignmark</code>
     elements. Expressions with no alignment groups are aligned using only
     the <code class="attribute">columnalign</code> attribute that applies to the table
-    column as a whole.</p>
+    column as a whole., or via the use of CSS in systems where that is available.</p>
    </section>
  
    <section>
@@ -7168,9 +7168,9 @@
 \documentclass{article}
 \usepackage{amsmath,stix2}
 \begin{document}
-\begin{alignat*}{5}
-  8&.44 &&x + {}&55&  &&y = {}&0&\\
-  3&.1  &&x - {}&0&.7 &&y = {}&- 1&.1 
+\begin{alignat*}{6}
+  8&x + {} &55&y &&= 0\\
+  3&x - {} &7&y  &&= - 1 
 \end{alignat*}
 \end{document}
 -->
