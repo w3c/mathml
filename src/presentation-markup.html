@@ -4505,11 +4505,9 @@
    <p>MathML&#160;3 also allowed additional extensions:</p>
    <ul>
     <li>A leading "+" or "-" denoted a relative increment or decrement
-    from the default value. This is not supported however the same
-    fuunctionality is now available in standard CSS <a
-    data-cite="CSS-VALUES-3#typedef-length-percentage"><code>&lt;length-percentage&gt;</code></a>
-    syntax: <code>height="calc(100%+10pt)"</code>.</li>
-    <li>MathML&#160;3 also specified the <em>pseudo-units</em> <code>height</code>, <code>depth</code> and <code>width</code>. These are not supported in MathML&#160;4 however the main use cases are addressed using percentage values, `height="0.5height"` is equivalent to `height="50%`.</li>
+    from the default value. This is not supported. However the same
+    effects may be obtained by using absolute lengths, or CSS.</li>
+    <li>MathML&#160;3 also specified the <em>pseudo-units</em> <code>height</code>, <code>depth</code> and <code>width</code>. These are not supported in MathML&#160;4.</li>
    </ul>
    </div>
  
@@ -4652,6 +4650,9 @@
    below. The following diagram illustrates the use of <code class="attribute">lspace</code>
    and <code class="attribute">voffset</code> to shift the position of child content without
    modifying the <code class="element">mpadded</code> bounding box.</p>
+
+   <p>In the examples below, the natural size of <i>y</i> is assumed to be <code>1ex</code> high,
+   depth <code>0.45ex</code> and width <code>0.47em</code>.</p>
  
    <blockquote>
     <img src="image/mpadded-shift.png" alt="illustration of the use of mpadded to shift the position of child content without modifying the bounding box"/>
@@ -4672,7 +4673,7 @@
    </div>
  
    <p>The next diagram illustrates the use of
-   <code class="attribute">width</code>, <code class="attribute">height</code> and <code class="attribute">depth</code>
+   <code class="attribute">width</code>, <code class="attribute">height</code> and <code class="attribute">depth</code>f
    to modifying the <code class="element">mpadded</code> bounding box without changing the relative position
    of the child content. </p>
  
@@ -4686,7 +4687,7 @@
     <pre>
       &lt;mrow&gt;
         &lt;mi&gt;x&lt;/mi&gt;
-        &lt;mpadded width="190%" height="calc(100% +0.3ex)" depth="calc(100% +0.3ex)"&gt;
+        &lt;mpadded width="0.9em" height="1.3ex" depth=".75ex"&gt;
           &lt;mi&gt;y&lt;/mi&gt;
         &lt;/mpadded&gt;
         &lt;mi&gt;z&lt;/mi&gt;
@@ -4707,7 +4708,7 @@
     <pre>
       &lt;mrow&gt;
         &lt;mi&gt;x&lt;/mi&gt;
-        &lt;mpadded lspace="0.3em" width="calc(100% +0.6em)"&gt;
+        &lt;mpadded lspace="0.3em" width="1.07em"&gt;
           &lt;mi&gt;y&lt;/mi&gt;
         &lt;/mpadded&gt;
         &lt;mi&gt;z&lt;/mi&gt;
