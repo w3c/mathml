@@ -17,9 +17,9 @@
    Outside of web browsers, MathML presentation elements only suggest (i.e. do not require)
      specific ways of rendering in order to allow for medium-dependent
      rendering and for individual preferences of style.
-     Non browser-based renderers are free to use their own layout rules as long as the
+     Non-browser-based renderers are free to use their own layout rules as long as the
      renderings are intelligible.</p>
-   <p>The names used for presentation elements are suggestive of their visual layout.
+   <p>The names used for presentation elements are indicative of their visual layout.
      However, mathematical notation has a long history of being reused as new concepts are developed.
      Because of this, an element such as <code class="element">mfrac</code> may not actually be a fraction and the
      <code class="attribute">intent</code> attribute should be used to provide information for auditory renderings.</p>
@@ -52,7 +52,7 @@
     </div>
  
     <p>Similarly, superscripts are attached to the full expression constituting
-    their base rather than to the just preceding character.  This
+    their base rather than to the immediately preceding character.  This
     structure permits better-quality rendering of mathematics, especially when
     details of the rendering environment, such as display widths, are not
     known ahead of time to the document author. It also greatly eases automatic
@@ -61,7 +61,7 @@
     <p>Certain characters are used
     to name identifiers or operators that in traditional notation render the
     same as other symbols or are rendered invisibly.  For example, the
-    characters U+2146, U+2147 and U+2148 represent differential <i class="var">d</i>,
+    characters U+2146, U+2147, and U+2148 represent differential <i class="var">d</i>,
       exponential <i class="var">e</i> and imaginary <i class="var">i</i>, respectively
     <!--
     (entities <code class="entity">DifferentialD</code>, <code class="entity">ExponentialE</code>,
@@ -127,8 +127,8 @@
      Layout schemata attach special meaning to the number and/or
      positions of their children.
      A child of a layout schema is also called
-     an <em>argument</em> of that element.  As a consequence of the
-     above definitions, the content of a layout schema consists exactly of
+     an <em>argument</em> of that element.
+     Based on these definitions, the content of a layout schema consists exactly of
      a sequence of zero or more elements that are its
      arguments.
    </p>
@@ -1384,7 +1384,7 @@
        <tr>
         <td colspan="2" class="attdesc">
          Specifies the desired height of the glyph.
-         If only one of <code class="attribute">width</code> and <code class="attribute">height</code> are given,
+         If only one of <code class="attribute">width</code> and <code class="attribute">height</code> is given,
          the image should be scaled to preserve the aspect ratio;
          if neither are given, the image should be displayed at its natural size.
         </td>
@@ -1578,7 +1578,7 @@
    values will be visually distinguished by a given renderer.  For example,
    there is no clear-cut rendering for a "fraktur alpha" or a "bold italic
    Kanji" character, and the <code class="attribute">mathvariant</code> values "initial",
-   "tailed", "looped", and "stretched" are appropriate only for Arabic
+   "tailed", "looped", and "stretched" are intended for Arabic
    characters.</p>
  
    <p>Certain combinations of character data and <code class="attribute">mathvariant</code>
@@ -4218,7 +4218,7 @@
   <li> when the <code class="attribute">lspace</code> attribute is set with <code class="element">mstyle</code>, it
        applies only to the <code class="element">mo</code> element and not to <code class="element">mpadded</code>.
        To be consistent, the <code class="attribute">voffset</code> attribute of the
-       <code class="element">mpadded</code> element can not be set on <code class="element">mstyle</code>;
+       <code class="element">mpadded</code> element cannot be set on <code class="element">mstyle</code>;
   </li>
   <li> when the <code class="attribute">align</code> attribute is set with <code class="element">mstyle</code>, it
       applies only to the <code class="element">munder</code>, <code class="element">mover</code>, and <code class="element">munderover</code>

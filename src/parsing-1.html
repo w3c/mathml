@@ -7,14 +7,14 @@
   <p>Even when using the XML serialization, some normalization of
   the input may be required before applying this schema. Notably,
   following HTML, [[MathML-Core]] allows attributes such as
-  <code>onclick</code> to be specified in any case, eg
+  <code>onclick</code> to be specified without regard to case, e.g.,
   <code>OnClick="..."</code>.
-  It is not practically feasible to specify that attribute names are
-  case insensitive here so only the lowercase names are allowed.
-  Similarly any attribute with name starting with the prefix
+  It is not practically feasible to specify that attribute names are case-insensitive here;
+  therefore, only lowercase names are allowed.
+  Similarly, any attribute with name starting with the prefix
   <code>data-</code> should be considered valid. The schema here only
   allows a fixed attribute, <code>data-other</code>, so input should be
-  normalized to remove data attributes before validating, or the schema
+  normalized to remove `data-*` attributes before validating, or the schema
   should be extended to support the attributes used in a particular
   application.</p>
 
