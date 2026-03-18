@@ -23,15 +23,15 @@
    applied repeatedly to rewrite the input until no further
    application is possible. Note that in many programming languages,
    such as XSLT, the natural implementation is as a recursive
-   algorithm, rather than the multi-pass implementation suggested by
-   the description below. The translation to XSL is straightforward
+   algorithm, rather than the multi-pass approach described below.
+   The translation to XSL is straightforward
    and produces the same eventual Strict Content MathML.  However,
    because the overall structure of the multi-pass algorithm is
    clearer, that is the formulation given here.</p>
 
    <p>To transform an arbitrary content MathML expression into
    Strict Content MathML, apply each of the following rules in turn
-   to the input expression until all instances of the target
+   to the input expression until all target
    constructs have been eliminated:</p>
 
    <ol>
@@ -55,7 +55,7 @@
       <li>
        <p>Rewrite derivatives with rules <a>Rewrite: diff</a>, <a>Rewrite: nthdiff</a>,
        and <a>Rewrite: partialdiffdegree</a>
-       to explicate the binding status of the variables involved.
+       to make the binding status explicit of the variables involved.
        </p>
       </li>
 
@@ -113,7 +113,7 @@
       <li>
        <p><em>Multiple <code class="element">domainofapplication</code>s</em>: Rewrite multiple
        <code class="element">domainofapplication</code> qualifiers to a single one by taking the
-       intersection of the specified domains.</p>
+       intersection of these domains.</p>
       </li>
      </ol>
     </li>
@@ -598,8 +598,8 @@
      dictionary.</p>
 
      <p>When no bound variables are present, the translation
-     of an indefinite integral to Strict Content Markup is straight
-     forward.  When bound variables are present, the following rule
+     of an indefinite integral to Strict Content Markup is straightforward.
+     When bound variables are present, the following rule
      should be used.</p>
 
      <div class="strict-mathml-example" id="contm_p2s.int"><dfn>Rewrite: int</dfn>
@@ -1618,7 +1618,7 @@
       whether an expression such as max(X) was a trivial application of max
       to a singleton, or whether it should be interpreted as meaning the
       maximum of values of the set X. Applications finding that the rule
-      <a>Rewrite: n-ary unary single</a> can not be applied as the
+      <a>Rewrite: n-ary unary single</a> cannot be applied as the
       supplied argument is a scalar may wish to use the rule
       <a>Rewrite: n-ary unary set</a> as an error recovery.
       As a further complication, in the case of the statistical functions
@@ -2248,7 +2248,7 @@
          &lt;/apply&gt;
        </pre>
       </div>
-      <p>Where the identifier names, p and q, (which have to be a text string) should be
+      <p>Where the identifier names, p and q, (which must be a text string) should be
       determined from the presentation MathML content, in a system defined way, perhaps
       as
       in the above example by taking the character data of the element ignoring any element

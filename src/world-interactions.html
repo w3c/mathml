@@ -70,7 +70,7 @@
   <section>
    <h4 id="world_recognizing_mathml_html">Recognizing MathML in HTML</h4>
 
-   <p>HTML does not allow arbitrary namespaces, but has built in knowledge of the MathML
+   <p>HTML does not allow arbitrary namespaces, but has built-in knowledge of the MathML
    namespace.
    The <code class="element">math</code> element and its descendants will be placed in the  <code>http://www.w3.org/1998/Math/MathML</code>
    namespace by the HTML parser, and will appear to applications as if the input had
@@ -181,7 +181,7 @@
    <p>See [[MathML-Media-Types]] for more details about each of these
    encoding names.</p>
 
-   <p>MathML 2 specified the predefined encoding values <code>MathML</code>,
+   <p>The MathML 2 specification defined the predefined encoding values <code>MathML</code>,
    <code>MathML-Content</code>, and <code>MathML-Presentation</code> for the
    <code class="attribute">encoding</code> attribute on the <code class="element">annotation-xml</code> element.
    These values may be used as an alternative to the media type for backward
@@ -243,8 +243,8 @@
    <p>The names listed in <a href="#encoding-names"></a> are the exact
    strings that should be used to identify the transfer flavors that
    correspond to the MathML encodings.  On operating systems that allow
-   such, an application should register their support for these flavor
-   names (e.g. on Windows, a call to RegisterClipboardFormat, or, on the
+   such, an application should register its support for these flavor
+   names (e.g., on Windows, a call to RegisterClipboardFormat, or, on the
    Macintosh platform, declaration of support for the universal type
    identifier in the application descriptor).</p>
 
@@ -258,7 +258,7 @@
 
     <li>
      <p>The instance MAY begin with an XML declaration,
-     e.g. &lt;?xml version="1.0"&gt;</p>
+     e.g., &lt;?xml version="1.0"?&gt;</p>
     </li>
 
     <li>
@@ -282,7 +282,7 @@
     <li>
      <p>The instance SHOULD use numeric character references
      (e.g. &amp;#x03b1;) rather than character entity names
-     (e.g. &amp;alpha;) for greater interoperability.</p>
+     (e.g., &amp;alpha;) for greater interoperability.</p>
     </li>
 
     <li>
@@ -396,7 +396,7 @@
    interoperability between MathML-aware applications that use these
    transfer paradigms, it should be noted that they do not guarantee
    interoperability.  For example, references to external resources
-   (e.g. stylesheets, etc.) in MathML data can cause interoperability
+   (e.g., stylesheets, etc.) in MathML data can cause interoperability
    problems if the consumer of the data is unable to locate them,
    as can happen when cutting and pasting HTML or other data types.
    An application that makes use of references to external resources
@@ -782,7 +782,7 @@
   child elements is defined by position.  For example, the first
   child of an <code class="element">apply</code> must be an operator, and the second child
   of an <code class="element">mfrac</code> is the denominator.  The proper behavior when
-  foreign markup appears in such contexts is problematic. Even when such
+  foreign markup appears in such contexts is problematic; even when such
   behavior can be defined in a particular context, it presents an
   implementation challenge for generic MathML processors.</p>
 
@@ -901,7 +901,7 @@
    <li>
     <p>For authoring tools and other applications that need to
     associate particular actions with presentation MathML subtrees,
-    e.g. to mark an incomplete expression to be filled in by an author,
+    e.g., to mark an incomplete expression to be filled in by an author,
     the <code class="element">maction</code> element may be used, as described in
     <a href="#presm_maction"></a>.</p>
    </li>
@@ -992,7 +992,7 @@
     <li>
      <p>HTML does not support namespaces other than the three built in ones for HTML, MathML
      and SVG, and
-     does not support namespace prefixes. Thus you can not use a prefix form like <code>&lt;mml:math
+     does not support namespace prefixes. Thus you cannot use a prefix form like <code>&lt;mml:math
      xmlns:mml="http://www.w3.org/1998/Math/MathML"&gt;</code> and while you may use  <code>&lt;math
      xmlns="http://www.w3.org/1998/Math/MathML"&gt;</code>, the namespace declaration is essentially ignored
      and the input is treated as <code>&lt;math&gt;</code>. In either case the <code class="element">math</code> element and its

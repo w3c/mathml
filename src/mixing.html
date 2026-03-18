@@ -32,7 +32,7 @@
   </p>
 
   <p>The <code class="element">semantics</code> element is considered
-  to be both a presentation element and a content element, and may be
+  to be both a presentation element and a content element and may be
   used in either context.  All MathML processors should process the
   <code class="element">semantics</code> element, even if they only
   process one of these two subsets of MathML, or
@@ -96,7 +96,7 @@
    <code>MathML-Presentation</code>.  The <code>MathML</code> encoding
    value is used to indicate an <code class="element">annotation-xml</code> element contains
    a MathML expression.  The use of the other values is more specific, as
-   discussed in following sections.</p>
+   discussed in the following sections.</p>
 
   </section>
 
@@ -611,7 +611,7 @@
     invalid
     by an HTML validator. The OpenMath elements would still be parsed as children of the
     <code class="element">annotation-xml</code> element, however they would be placed in the <em>MathML</em> namespace. The above examples are not rendered in the HTML version of this specification,
-    to ensure that that document is a valid HTML5 document.</p>
+    to ensure that document is a valid HTML5 document.</p>
 
     <p>The details of the HTML parser handling of <code class="element">annotation-xml</code> is specified in [[HTML]] and summarized in <a href="#interf_html"></a>, however the main differences from the behavior of an XML parser that affect MathML
     annotations are that the HTML parser does not treat <code>xmlns</code> attributes, nor <code>:</code> in element names as special and has built-in rules determining whether the three
@@ -701,7 +701,7 @@
     <p>Any use of elements in other vocabularies (such as the OpenMath
     examples above) is considered <em>invalid</em> in HTML.  If
     validity is not a strict requirement it is possible to use such
-    elements but they will be parsed as elements on the
+    elements but they will be parsed as elements in the
     <em>MathML</em> namespace. Documents SHOULD NOT use namespace
     prefixes and element names containing colon (<code>:</code>) as the
     element nodes produced by the HTML parser have local names
