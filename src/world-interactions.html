@@ -72,7 +72,7 @@
 
    <p>HTML does not allow arbitrary namespaces, but has built-in knowledge of the MathML
    namespace.
-   The <code class="element">math</code> element and its descendants will be placed in the  <code>http://www.w3.org/1998/Math/MathML</code>
+   The <code class="element">math</code> element and its descendants will be placed in the <code>http://www.w3.org/1998/Math/MathML</code>
    namespace by the HTML parser, and will appear to applications as if the input had
    been XHTML with the namespace declared
    as in the previous section. See <a href="#interf_html"></a> for detailed rules of the HTML parser's handling of MathML.</p>
@@ -933,7 +933,7 @@
   </section>
 
   <section>
-   <h4 id="interf_nonxml">Mixing MathML and  non-XML contexts</h4>
+   <h4 id="interf_nonxml">Mixing MathML and non-XML contexts</h4>
 
    <p>There may be non-XML vocabularies which require markup for mathematical expressions,
    where it makes sense to reference this specification. HTML is an important example
@@ -972,7 +972,7 @@
    HTML parser
    distinguishes parsing from validation; some input, even if it renders correctly, is
    classed as a
-   <em>parse error</em>  which may be reported by validators (but typically is not reported by
+   <em>parse error</em> which may be reported by validators (but typically is not reported by
    rendering systems).</p>
 
    <p> The main differences that affect MathML usage
@@ -993,7 +993,7 @@
      <p>HTML does not support namespaces other than the three built in ones for HTML, MathML
      and SVG, and
      does not support namespace prefixes. Thus you cannot use a prefix form like <code>&lt;mml:math
-     xmlns:mml="http://www.w3.org/1998/Math/MathML"&gt;</code> and while you may use  <code>&lt;math
+     xmlns:mml="http://www.w3.org/1998/Math/MathML"&gt;</code> and while you may use <code>&lt;math
      xmlns="http://www.w3.org/1998/Math/MathML"&gt;</code>, the namespace declaration is essentially ignored
      and the input is treated as <code>&lt;math&gt;</code>. In either case the <code class="element">math</code> element and its
      descendants are placed in the MathML namespace. As noted in <a href="#mixing"></a> the lack of
@@ -1016,7 +1016,7 @@
     <li>
      <p>Unless inside the token elements <code class="starttag">&lt;mtext&gt;</code>, <code class="starttag">&lt;mo&gt;</code>, <code class="starttag">&lt;mn&gt;</code>, <code class="starttag">&lt;mi&gt;</code>,
      <code class="starttag">&lt;ms&gt;</code>, or inside an <code class="starttag">&lt;annotation-xml&gt;</code> with <code class="attribute">encoding</code> attribute
-     <code class="attributevalue">text/html</code> or <code class="attributevalue">annotation/xhtml+xml</code>, the presence of an HTML element
+     <code class="attributevalue">text/html</code> or <code class="attributevalue">application/xhtml+xml</code>, the presence of an HTML element
      will <em>terminate</em> the math expression by closing all open MathML elements, so
      that the HTML element is interpreted as being in the outer HTML context. Any following
      MathML
@@ -1077,11 +1077,11 @@
 
    <p>Note that [[MathML-Core]] does not support the use of
    <code class="attribute">href</code> attribute on all
-   elements and  a specific element
+   elements and a specific element
    <code class="element">a</code> has been introduced for this purpose.
    MathML generators aiming for compatibility with MathML-Core may
    restrict use of the <code class="attribute">href</code> attribute
-   to <code class="element">a</code>  or to make use of the provided 
+   to <code class="element">a</code> or to make use of the provided 
    <a href="https://w3c.github.io/mathml-polyfills/">JavaScript polyfill</a>.</p>
    
    <p>For compound document formats that support linking mechanisms, the
@@ -1143,7 +1143,7 @@
    uses the
    XHTML <code class="element" data-namespace="xhtml">img</code> element embedded as an XHTML fragment.
    In this situation, a MathML processor can use any of these
-   representations for display,  perhaps producing a graphical format
+   representations for display, perhaps producing a graphical format
    such as the image below.</p>
 
    <blockquote>
@@ -1151,7 +1151,7 @@
    </blockquote>
 
    <p>Note that the semantics representation of this example is given
-   in  MathML-Content markup, as the first child of the
+   in MathML-Content markup, as the first child of the
    <code class="element">semantics</code> element.  In this regard, it is the
    representation most analogous to the <code class="attribute">alt</code> attribute of the
    <code class="element" data-namespace="xhtml">img</code> element in XHTML, and would likely be
@@ -1218,7 +1218,7 @@
 
   <p>MathML 3.0 does not specify how a user agent should process style
   information, because there are many non-CSS MathML environments, and
-  because different users agents and renderers have widely varying
+  because different user agents and renderers have widely varying
   degrees of access to CSS information.</p>
 
   <section>
