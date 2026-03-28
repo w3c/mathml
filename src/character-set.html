@@ -526,6 +526,226 @@
 
   </section>
 
+ <section>
+   <h4 id="accent-characters">Accent Characters</h4>
+
+   <p> There are a large number of look-alike characters that might be used to for
+    accents or diacritical marks above or below a base element.
+    However, fonts have limitations as to which of these can stretch and which have
+    proper positioning when used as accents. This section has recommendations
+    for which characters to use as accents in MathML. It is important to note that
+    only a limited number of fonts support proper mathematical layout.
+    Browsers and likely other software currently require the use of fonts with an OpenType MATH table.
+  
+<table>
+  <thead>
+    <tr>
+      <th>Unicode</th>
+      <th>Description</th>
+      <th>Glyph</th>
+      <th>Example</th>
+      <th>Stretchy</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+			<td>U+0060</td>
+			<td>grave</td>
+			<td>&#x0060;</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x0060;</mo></mover></math></td>
+			<td></td>
+			<td>U+0300 looks poor in Chrome</td>
+		</tr>
+    <tr>
+			<td>U+00B4</td>
+			<td>acute</td>
+			<td>&#x00B4;</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x00B4;</mo></mover></math></td>
+			<td></td>
+			<td>U+0301 looks poor in Chrome</td>
+		</tr>
+    <tr>
+			<td>U+0302</td>
+			<td>hat</td>
+			<td>◌̂</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x0302;</mo></mover></math></td>
+			<td><math><mover accent="true"><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo stretchy='true'>&#x0302;</mo></mover></math></td>
+			<td>U+005E doesn't stretch in Chrome</td>
+		</tr>
+    <tr>
+			<td>U+007E</td>
+			<td>tilde</td>
+			<td>&#x007E;</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x007E;</mo></mover></math></td>
+			<td><math><mover accent="true"><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo stretchy='true'>&#x007E;</mo></mover></math></td>
+			 <td>U+0303 doesn't stretch; U+007E doesn't stretch in Chrome</td>
+		</tr>
+    <tr>
+			<td>U+005F</td>
+			<td>lowline (mover)</td>
+			<td>&#x005F;</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x005F;</mo></mover></math></td>
+			<td><math><mover accent="true"><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo stretchy='true'>&#x005F;</mo></mover></math></td>
+			<td>U+00AF (overline) doesn't stretch in Chrome and displays poorly in Safari. U+0304 and U+0305 don't stretch anywhere</td>
+		</tr>
+    <tr>
+			<td>U+005F</td>
+			<td>lowline (munder)</td>
+			<td>&#x005F;</td>
+			<td><math><munder accent="true"><mi>x</mi><mo>&#x005F;</mo></munder></math></td>
+			<td><math><munder accent="true"><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo stretchy='true'>&#x005F;</mo></munder></math></td>
+			<td>U+005F is a little better than U+0332, but Chrome doesn't stretch either for a few fonts and Safari doesn't stretch either for many fonts</td>
+		</tr>
+    <tr>
+			<td>U+02D8</td>
+			<td>breve</td>
+			<td>◌̆</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x02D8;</mo></mover></math></td>
+			 <td></td>
+			 <td>U+02D8 is a little better horizontally positioned than U+0306</td>
+		</tr>
+    <tr>
+			<td>U+02D9</td>
+			<td>dot above</td>
+			<td>&#x02D9;</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x02D9;</mo></mover></math></td>
+			 <td></td>
+			 <td>U+002E is similar; U+0307 displays poorly in Chrome and Safari</td>
+		</tr>
+    <tr>
+			<td>U+00A8</td>
+			<td>double dot</td>
+			<td>◌̈</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x00A8;</mo></mover></math></td>
+			 <td></td>
+			 <td>U+0308 displays poorly in Chrome</td>
+		</tr>
+    <tr>
+			<td>U+20DB</td>
+			<td>triple dots</td>
+			<td>⃛</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x20DB;</mo></mover></math></td>
+			 <td></td>
+			 <td>displays poorly in Chrome</td>
+		</tr>
+    <tr>
+			<td>U+20DC</td>
+			<td>quadruple dots</td>
+			<td>⃜</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x20DC;</mo></mover></math></td>
+			 <td></td>
+			 <td>displays poorly in Chrome</td>
+		</tr>
+    <tr>
+			<td>U+0309</td>
+			<td>hook above</td>
+			<td>◌̉</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x0309;</mo></mover></math></td>
+			 <td></td>
+			 <td>displays poorly in Chrome</td>
+		</tr>
+    <tr>
+			<td>U+02DA</td>
+			<td>ring</td>
+			<td>&#x02DA;</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x02DA;</mo></mover></math></td>
+			 <td></td>
+			 <td>U+030A displays poorly in Chrome</td>
+		</tr>
+    <tr>
+			<td>U+02C7</td>
+			<td>caron</td>
+			<td>&#x02C7;</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x02C7;</mo></mover></math></td>
+			 <td></td>
+			 <td>U+030C displays poorly in Chrome</td>
+		</tr>
+    <tr>
+			<td>U+21BC</td>
+			<td>left harpoon</td>
+			<td>&#x21BC;</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x21BC;</mo></mover></math></td>
+			<td><math><mover accent="true"><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo stretchy='true'>&#x21BC;</mo></mover></math></td>
+			<td>U+20D0 is poorly positioned in Chrome and doesn't stretch in most fonts in Safari. It is better in Firefox and Safari for single characters because U+21BC is a little long. </td>
+		</tr>
+    <tr>
+			<td>U+21C0</td>
+			<td>right harpoon</td>
+			<td>&#x21C0;</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x21C0;</mo></mover></math></td>
+			<td><math><mover accent="true"><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo stretchy='true'>&#x21C0;</mo></mover></math></td>
+			<td>U+20D1 is poorly positioned in Chrome and doesn't stretch in most fonts in Safari. U+20D1 is better in Firefox and Safari for single characters because U+21C0 is a little long. </td>
+		</tr>
+    <tr>
+			<td>U+2192</td>
+			<td>right arrow</td>
+			<td>⃗</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x2192;</mo></mover></math></td>
+			<td><math><mover accent="true"><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo stretchy='true'>&#x2192;</mo></mover></math></td>
+			<td>U+20D7 is poorly positioned in Chrome and doesn't stretch in most fonts in Safari. U+20D7 is better in Firefox and Safari for single characters because U+2192 is a little long. U+27F6 doesn't stretch in Chrome and Safari, and is too long for single characters. </td>
+		</tr>
+    <tr>
+			<td>U+23B4</td>
+			<td>top square bracket</td>
+			<td>&#x23B4;</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x23B4;</mo></mover></math></td>
+			<td><math><mover accent="true"><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo stretchy='true'>&#x23B4;</mo></mover></math></td>
+			 <td></td>
+			 <td></td>
+		</tr>
+    <tr>
+			<td>U+23B5</td>
+			<td>bottom square bracket</td>
+			<td>&#x23B5;</td>
+			<td><math><munder><mi>x</mi><mo>&#x23B5;</mo></munder></math></td>
+			<td><math><munder><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo stretchy='true'>&#x23B5;</mo></munder></math></td>
+			 <td></td>
+			 <td></td>
+		</tr>
+    <tr>
+			<td>U+23DC</td>
+			<td>top parenthesis</td>
+			<td>&#x23DC;</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x23DC;</mo></mover></math></td>
+			<td><math><mover accent="true"><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo stretchy='true'>&#x23DC;</mo></mover></math></td>
+			 <td></td>
+			 <td></td>
+		</tr>
+    <tr>
+			<td>U+23DD</td>
+			<td>bottom parenthesis</td>
+			<td>&#x23DD;</td>
+			<td><math><munder><mi>x</mi><mo>&#x23DD;</mo></munder></math></td>
+			<td><math><munder><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo stretchy='true'>&#x23DD;</mo></munder></math></td>
+			 <td></td>
+			 <td></td>
+		</tr>
+    <tr>
+			<td>U+23DE</td>
+			<td>top curly bracket</td>
+			<td>&#x23DE;</td>
+			<td><math><mover accent="true"><mi>x</mi><mo>&#x23DE;</mo></mover></math></td>
+			<td><math><mover accent="true"><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo stretchy='true'>&#x23DE;</mo></mover></math></td>
+			 <td></td>
+			 <td></td>
+		</tr>
+    <tr>
+			<td>U+23DF</td>
+			<td>bottom curly bracket</td>
+			<td>&#x23DF;</td>
+			<td><math><munder><mi>x</mi><mo>&#x23DF;</mo></munder></math></td>
+			<td><math><munder><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo stretchy='true'>&#x23DF;</mo></munder></math></td>
+			 <td></td>
+			 <td></td>
+		</tr>
+  </tbody>
+</table>
+
+</p>
+
+ </section>
+
  </section>
 
 </section>
