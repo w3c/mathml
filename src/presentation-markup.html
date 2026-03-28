@@ -190,7 +190,7 @@
      </div>
  
      <p>This feature allows MathML data not to contain (and its authors to
-     leave out)  many <code class="element">mrow</code> elements that would otherwise be
+     leave out) many <code class="element">mrow</code> elements that would otherwise be
      necessary.</p>
     </section>
  
@@ -623,7 +623,7 @@
     <h5 id="presm_control_linebreaks">Control of Linebreaks</h5>
  
     <p>MathML provides support for both automatic and manual (forced)
-    linebreaking of  expressions to break excessively long
+    linebreaking of expressions to break excessively long
     expressions into several lines.
     All such linebreaks take place within <code class="element">mrow</code>
     (including inferred <code class="element">mrow</code>; see <a href="#presm_inferredmrow"></a>)
@@ -789,7 +789,7 @@
  
       <tr>
        <td><a class="intref" href="#presm_mo"><code class="element">mo</code></a></td>
-       <td>operator, fence, or  separator</td>
+       <td>operator, fence, or separator</td>
       </tr>
  
       <tr>
@@ -1031,7 +1031,7 @@
    href="https://www.w3.org/TR/mathml-core/#global-attributes">Global
    Attributes</a> specified by [[MathML-Core]].</p>
  
-   <p>These attributes include the following  attributes that are primarily intended for visual media.
+   <p>These attributes include the following attributes that are primarily intended for visual media.
    They are not expected to affect the intended semantics of displayed
    expressions. The first two are for use in highlighting or drawing attention
    to the affected subexpressions.  For example, a red "x" is not assumed
@@ -1293,7 +1293,7 @@
 
     <div id="notcore-mglyph" class="note" title="mglyph is not in MathML-Core">
      <p><code class="element">mglyph</code> is not supported in [[MathML-Core]].
-     In a Web Platform Context  it is recommended that the HTML <code class="element">img</code>
+     In a Web Platform Context it is recommended that the HTML <code class="element">img</code>
      element is used. This is allowed in token elements when MathML is embedded in (X)HTML.
      </p>
      <p>For existing MathML using <code class="element">mglyph</code> a <a href="https://w3c.github.io/mathml-polyfills/">JavaScript polyfill</a>
@@ -1990,7 +1990,7 @@
     with additional spacing around the element determined by its attributes and
     further described below.
     Renderers without access to complete fonts for the MathML character
-    set may choose  to render an <code class="element">mo</code> element as
+    set may choose to render an <code class="element">mo</code> element as
     <span>not</span> precisely the characters in its content in some cases. For example,
     <code>&lt;mo&gt; &#x2264; &lt;/mo&gt;</code> might be rendered as
     <code>&lt;=</code> to a terminal.  However, as a general rule,
@@ -2302,7 +2302,7 @@
    (but possibly indented);
    <code class="attributevalue">after</code> causes it to appear at the end of the line before the break.
    <code class="attributevalue">duplicate</code> places the operator at both positions.
-   <code class="attributevalue">infixlinebreakstyle</code> uses the value  that has been specified for
+   <code class="attributevalue">infixlinebreakstyle</code> uses the value that has been specified for
    infix operators; this value (one of <code class="attributevalue">before</code>,
    <code class="attributevalue">after</code> or <code class="attributevalue">duplicate</code>) can be specified by
    the application or bound by <a class="intref" href="#presm_mstyle"><code class="element">mstyle</code></a>
@@ -3644,7 +3644,7 @@
  they are contained in.</p>
  
  <p>MathML provides support for both automatic and manual
- linebreaking of  expressions (that is, to break excessively long
+ linebreaking of expressions (that is, to break excessively long
  expressions into several lines). All such linebreaks take place
  within <code class="element">mrow</code>s, whether they are explicitly marked up
  in the document, or inferred (see <a href="#presm_inferredmrow"></a>),
@@ -3930,10 +3930,10 @@
  </table>
  
  <p>Thicker lines (e.g. <code class="attribute">linethickness</code>="thick") might be used with nested fractions;
- a value of "0" renders without the bar such as for  binomial coefficients.</p>
+ a value of "0" renders without the bar such as for binomial coefficients.</p>
  
  <p>
-  In a RTL directionality context,  the numerator leads (on the right),
+  In a RTL directionality context, the numerator leads (on the right),
   the denominator follows (on the left) and the diagonal line slants upwards going from
   right to left<span> (see <a href="#presm_bidi_math"></a> for clarification)</span>.
   Although this format is an established convention, it is not universally
@@ -4187,7 +4187,7 @@
  <code class="element">mstyle</code> in any manner affect a <span>descendant</span> element
  in the <code class="element">mstyle</code>'s content only if that attribute is
  not given a value <span>by the descendant element</span>. On any element for
- which the attribute is set explicitly, the value specified  overrides the inherited
+ which the attribute is set explicitly, the value specified overrides the inherited
  value. The only exception to this
  rule is when the <span>attribute</span> value
  is documented as
@@ -6156,7 +6156,7 @@
     <p>This element allows the representation of any number of vertically-aligned pairs of
     subscripts
     and superscripts, attached to one base expression. It supports both
-    postscripts  and prescripts.
+    postscripts and prescripts.
     Missing scripts must be represented by a valid empty element denoting the empty subterm,
     such as <code class="emptytag">&lt;mrow/&gt;</code>.
     (The element <code class="defn emptytag">&lt;none/&gt;</code> was used in earlier MathML releases, but was equivalent
@@ -6865,7 +6865,7 @@
       <tr>
        <td colspan="2" class="attdesc">
         causes the cell to be treated as if it occupied the number of columns specified.
-        The following <code class="attributevalue">rowspan</code>-1 <code class="element">mtd</code>s must be omitted.
+        The following <code class="attributevalue">columnspan</code>-1 <code class="element">mtd</code>s must be omitted.
         The interpretation corresponds with the similar attributes for HTML tables.
        </td>
       </tr>
@@ -6966,7 +6966,7 @@
        <code class="element">malignmark</code> is the point of alignment for that group.
     </p>
 
-    <p>If <code class="element">maligngroup</code> or <code class="element">maligngroup</code> occurs outside of an
+    <p>If <code class="element">maligngroup</code> or <code class="element">malignmark</code> occurs outside of an
         <code class="element">mtable</code>, they are rendered with zero width.
     </p>
 
@@ -7073,7 +7073,7 @@
     <p>When an <code class="element">malignmark</code> element is provided within an
     alignment group, it should only occur within the elements allowed for <code class="element">maligngroup</code>
     (see <a href="#presm_specify_align_group"></a>).
-    If there should be at most one <code class="element">malignmark</code> element
+    There should be at most one <code class="element">malignmark</code> element
     in an alignment group.</p>
   </section>
  
@@ -7081,7 +7081,7 @@
  <section>
  <h5 id="presm_alignment_algo">Alignment algorithm</h5>
 
- <p>Alignments marked wth <code class="element">maligngroup</code>
+ <p>Alignments marked with <code class="element">maligngroup</code>
  may be converted to an equivalent <code class="element">mtable</code>
  that does not use <code class="element">maligngroup</code>, but uses
  additional table columns.
@@ -7562,7 +7562,7 @@
  <p>a notation that is commonly used in France and elsewhere</p>
  </dd>
  
- <dt><code class="attributevalue">mediumrightright</code></dt>
+ <dt><code class="attributevalue">mediumstackedrightright</code></dt>
  <dd>
  <p>a notation that is commonly used in Russia and elsewhere</p>
  </dd>
@@ -8446,7 +8446,7 @@
   For the last example, the only difference from the other examples besides a different
   value for
   <code class="attribute">longdivstyle</code> is that Arabic numerals have been used in place of Latin numerals,
- as shown  below.</p>
+ as shown below.</p>
  
  <div class="example mathml mml4p">
   <pre>
