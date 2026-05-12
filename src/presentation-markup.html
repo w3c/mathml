@@ -1596,10 +1596,18 @@
    The description of each such character in the Unicode standard
    provides an unstyled character to which it would be equivalent
    except for a font change that corresponds to a <code class="attribute">mathvariant</code>
-   value.  A token element that uses the unstyled character in combination
+   value.</p>
+   <p>A token element that uses the unstyled character in combination
    with the corresponding <code class="attribute">mathvariant</code> value is equivalent to a
    token element that uses the mathematical alphanumeric symbol character
-   without the <code class="attribute">mathvariant</code> attribute.  Note that the appearance
+   without the <code class="attribute">mathvariant</code> attribute.
+   Note that <code class="attribute">mathvariant</code> value of
+   <code>script</code> may correspond to either <q>Roundhand</q> or
+   <q>Chancery</q> styles, depending on the font in use. See [[Entities]]
+   <a href="https://www.w3.org/TR/xml-entity-names/script.html">Table of Script Characters</a>.  The specific style may be forced by using the mathematical alphanumeric character followed by a variation selector character.
+   Variation selector U+FE00 may be used to force Chancery/Calligraphic style and variation selector U+FE01 may be used to force Roundhand/Script style.</p>
+
+   <p>The appearance
    of a mathematical alphanumeric symbol character should not be altered
    by surrounding <code class="attribute">mathvariant</code> or other style declarations.</p>
  
