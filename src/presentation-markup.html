@@ -1633,7 +1633,7 @@
    Note that many MathML elements automatically change the font size
    in some of their children; see the discussion in <a href="#presm_scriptlevel"></a>.</p>
  
- 
+  </section>
    <section>
     <h5 id="presm_html_insertion">Embedding HTML in MathML</h5>
  
@@ -1671,7 +1671,36 @@
    &lt;/mtable&gt;
     </pre>
     </div>
-   </section>
+
+
+    <p>Another important example that is already allowed in the MathML-Core
+    schema, as it does not involve any elements outside the MathML namespace,
+    is to embed the <code class="element">math</code> element.</p>
+
+
+    <div class="example mathml mmlcore">
+     <pre>
+&lt;math>
+  &lt;mrow>
+    &lt;mo>{&lt;/mo>
+    &lt;mtable>
+      &lt;mtr>
+	&lt;mtd>&lt;mn>1&lt;/mn>&lt;/mtd>
+	&lt;mtd>&lt;mtext>if &lt;math>&lt;mi>n&lt;/mi>&lt;/math> is prime&lt;/mtext>&lt;/mtd>
+      &lt;/mtr>
+      &lt;mtr>
+	&lt;mtd>&lt;mn>0&lt;/mn>&lt;/mtd>
+	&lt;mtd>&lt;mtext>otherwise&lt;/mtext>&lt;/mtd>
+      &lt;/mtr>
+    &lt;/mtable>
+  &lt;/mrow>
+&lt;/math>
+     </pre>
+    </div>
+    <p>Like <code>svg</code>, <code>math</code> is a <i>phrasing element</i> in HTML and allowed in token elements when embedded in HTML and other embeddings
+    based on MathML-Core.</p>
+
+
    </section>
  
   <section>
@@ -3282,7 +3311,13 @@
  introducing positive or negative time delays or affecting rhythm in an
  audio renderer. However, see <a href="#fund_collapse"></a>.
 </p>
- 
+
+<p>The basic definition of <code class="element">mtext</code>
+allows text content. However, as shown in <a href="#presm_html_insertion"></a>,
+<code class="element">mtext</code> is often used to contain inline
+markup from host languages, or <code class="element">math</code>
+elements, depending on the specific host language being used for
+MathML.</p>
  </section>
  
  <section>
