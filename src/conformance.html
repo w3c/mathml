@@ -316,16 +316,128 @@
 
       <section>
       <h3 id="privacy">Privacy Considerations</h3>
-      <p>Web platform implementations of MathML should implement [[MathML-Core]],
-	and so the <a href="https://www.w3.org/TR/mathml-core/#privacy-considerations">Privacy Considerations</a> specified there apply.</p>
-    </section>
+  <p>Web platform implementations of MathML should implement [[MathML-Core]],
+  and so the <a href="https://www.w3.org/TR/mathml-core/privacy-considerations">Privacy Considerations</a>  specified there apply in addition to the
+  considerations listed below.</p>
+  
+  <section>
+    <h4 id="privacy_intent">intent</h4>
+    <p>Authors must not use <code class="attribute">intent</code> to
+    convey hidden instructions, behavioral probes, tracking tokens, or
+    content that materially differs from the visible mathematical
+    expression. intent should be used only to disambiguate or improve
+    narration/navigation of the same mathematical content.</p>
     
+    <p>User agents should not expose to page script any signal
+    indicating whether, how, or by whom <code
+    class="attribute">intent</code> was consumed by assistive
+    technology.</p>
+
+
+    <p>The <code class="attribute">intent</code> attribute provides an
+    author-supplied semantic layer intended to improve mathematical
+    narration and accessibility. Although <code
+    class="attribute">intent</code> does not directly expose user
+    data, its processing may depend on assistive-technology behavior,
+    locale, speech or braille settings, supported concept
+    dictionaries, fallback behavior, or parsing
+    outcomes. Implementations should ensure that these processing
+    differences are not exposed to page script. In particular, user
+    agents and assistive technologies should not expose generated
+    speech strings, parse errors, supported concept dictionaries,
+    fallback choices, or other AT-specific processing results through
+    DOM APIs, accessibility APIs observable by the page, events,
+    timing, layout, or other page-observable behavior.</p>
+
+    <p>Implementations should use document and element language as the
+    author-controlled input for <code class="attribute">intent</code> interpretation when
+    possible. User-specific locale, speech, braille, or
+    assistive-technology preferences may affect the user’s final
+    accessibility experience, but differences derived from those
+    preferences must not be exposed to page script through generated
+    accessible names, fallback behavior, parsing errors, timing,
+    layout, events, or other observable behavior.</p>
+
+  </section>
+
+  <section>
+    <h4 id="privacy_content_symbols">Content MathML</h4>
+    <p>Content MathML semantic identifiers such as <code
+    class="attribute">definitionURL</code>, <code
+    class="attribute">cd</code>, and <code
+    class="element">csymbol</code> should be treated as opaque
+    identifiers in web contexts. User agents must not automatically
+    fetch, resolve, or dereference them during parsing, rendering, or
+    accessibility processing unless an application explicitly requests
+    such resolution subject to the host environment’s normal fetch and
+    privacy controls.</p>
+  </section>
+</section>
 
       <section>
       <h3 id="security">Security Considerations</h3>
       <p>Web platform implementations of MathML should implement [[MathML-Core]],
-	and so the <a href="https://www.w3.org/TR/mathml-core/#security-considerations">Security Considerations</a> specified there apply.</p>
+	and so the <a href="https://www.w3.org/TR/mathml-core/#security-considerations">Security Considerations</a>  specified there apply in addition to the
+  considerations listed below.</p>
       <p>In some situations, MathML expressions can be parsed as XML. The security considerations of XML parsing apply then as explained in [[?RFC7303]].</p>
+
+  
+
+
+  <section>
+    <h4 id="security_href">href</h4>
+    <p>In web contexts, MathML <code class="attribute">href</code> must not create link,
+    navigation, URL-scheme, referrer, script-execution, download, or
+    target-handling capabilities beyond those allowed by the host
+    environment’s ordinary link model. <code class="attribute">href</code>
+    on non-rendered elements or nested within MathML links should not
+    generate links.</p>
+  </section>
+  
+  <section>
+    <h4 id="security_intent">intent</h4>
+
+    
+    <p>The <code class="attribute">intent</code> attribute is author-controlled
+    input. Implementations may parse it according to the MathML intent
+    grammar, but any author-provided text derived from intent should
+    be treated as data when forwarded to speech, braille,
+    accessibility, or platform services. Such text should not be
+    interpreted as SSML, commands, markup, URLs, scripts, or other
+    control instructions unless explicitly defined and safely
+    constrained.</p>
+
+  </section>
+
+    <section>
+    <h4 id="security_semantics_annotation">annotation</h4>
+
+
+  <p>In web contexts, external annotation references via <code
+  class="element">annotation</code> <code class="attribute">src</code>
+  or <code class="element">annotation-xml</code> <code
+  class="attribute">src</code> must not be fetched automatically
+  during parsing, rendering, accessibility-tree construction, or other
+  passive processing. Any processor that expands or exports external
+  annotation content should treat the reference as an explicit
+  resource load subject to the host environment’s normal fetch, CSP,
+  referrer, credentials, mixed-content, and network-isolation
+  policies.</p>
+
+    </section>
+
+    <section>
+      <h4 id="security_mglyph">mglyph</h4>
+	<p>Web implementations and polyfills must treat <code
+	class="element">mglyph</code> resource loading like ordinary
+	image loading: subject to CSP, referrer policy, mixed-content
+	blocking, credential rules, and canvas tainting where
+	applicable. User agents should not create additional network
+	observability beyond ordinary image loading behavior.</p>
+	
+    </section>
+    </section>
+      
     </section>
     
   
