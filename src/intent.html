@@ -387,8 +387,8 @@ S                  := [ \t\n\r]*
     an effect, but in many cases groups of properties all set the same
     internal <i>parameter</i> and so their effects are mutually exclusive
     and the last one will take effect.</p>
-    <p>For example, <code>f:prefix:suffix</code> will act as
-    <code>f:suffix</code> as both properties set the fixity <i>parameter</i>. Similarly
+    <p>For example, <code>f:prefix:postfix</code> will act as
+    <code>f:postfix</code> as both properties set the fixity <i>parameter</i>. Similarly
     <code>:literal:common</code> will act as <code>:common</code> as
     both properties set the default interpretation <i>parameter</i>.
     Conversely <code>f:pause-medium:prefix</code> would be the same as
@@ -454,15 +454,15 @@ S                  := [ \t\n\r]*
 <pre>
 &lt;mrow intent="$xf:prefix">
  &lt;mrow arg="xf" intent="$f:function($x)">
-  &lt;mi arg="x">x&lt;/mi>&lt;mo arg="f" intent="factorial:suffix">!&lt;/mo>
+  &lt;mi arg="x">x&lt;/mi>&lt;mo arg="f" intent="factorial:postfix">!&lt;/mo>
  &lt;/mrow>
 &lt;/mrow>
 </pre>
 <p>Expanding out all the references leads to</p>
 <pre>
-&lt;mrow intent="factorial:suffix:function:prefix(_x)">
- &lt;mrow arg="xf" intent="factorial:suffix:function(_x)">
-  &lt;mi arg="x">x&lt;/mi>&lt;mo arg="f" intent="factorial:suffix">!&lt;/mo>
+&lt;mrow intent="factorial:postfix:function:prefix(_x)">
+ &lt;mrow arg="xf" intent="factorial:postfix:function(_x)">
+  &lt;mi arg="x">x&lt;/mi>&lt;mo arg="f" intent="factorial:postfix">!&lt;/mo>
  &lt;/mrow>
 &lt;/mrow>
 </pre>
@@ -489,7 +489,7 @@ S                  := [ \t\n\r]*
 
 <p>The final <code>msup</code> is again in the scope of <i>common</i>, so read as <q>x squared</q>.</p>
 
-<p>Note that the effect of <code>:common</code> and <code>:literal</code> — setting the default rules for elements with no explicit intent — is part of each property's definition; no separate classification is needed. The fact that they set the same internal default-rule parameter also explains why they are mutually exclusive, just as fixity properties such as <code>:prefix</code> and <code>:suffix</code> set the same <q>fixity</q> parameter and so only one can have an effect on any given term.</p>
+<p>Note that the effect of <code>:common</code> and <code>:literal</code> — setting the default rules for elements with no explicit intent — is part of each property's definition; no separate classification is needed. The fact that they set the same internal default-rule parameter also explains why they are mutually exclusive, just as fixity properties such as <code>:prefix</code> and <code>:postfix</code> set the same <q>fixity</q> parameter and so only one can have an effect on any given term.</p>
 </dd>
 
 <dt>system-of-equations/matrix</dt>
