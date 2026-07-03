@@ -11,7 +11,7 @@ jobs:
     name: Deploy to GitHub pages
     runs-on: ubuntu-latest
     steps:
-     - uses: actions/checkout@v4
+     - uses: actions/checkout@v5
      - run: |
           git fetch
           git checkout main
@@ -29,7 +29,7 @@ jobs:
     name: Build, Validate and Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: w3c/spec-prod@v2
         with:
           TOOLCHAIN: respec
