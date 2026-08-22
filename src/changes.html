@@ -92,9 +92,8 @@
     class="element">mtd</code>. The [[?MathML1]] required that an
     implementation infer the row markup if it was omitted.
     </li>
-    <li>The use of <code class="element">malignmark</code> has been
-    restricted and simplified, matching the features implemented in
-    existing implementations.
+    <li>The elements <code class="element">malignmark</code> and <code class="element">maligngroup</code> 
+    are no longer defined. They are not in [[MathML-Core]]. A Polyfill has been provided for legacy use.
     The <code class="attribute">groupalign</code> attribute on table
     elements is no longer supported.</li>
     <li>The deprecated <code class="element">mo</code> attributes, <code class="attribute">fence</code>
@@ -120,7 +119,9 @@
       )?</code> is no longer supported.
     Most of the functionality is still available using standard CSS
     length syntax. See <a href="#mpadded-lengths">Note: mpadded
-    lengths</a>.</li>
+	lengths</a>.</li>
+
+
    </ul>
 
   </section>
