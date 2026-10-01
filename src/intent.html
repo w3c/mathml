@@ -375,6 +375,14 @@ S                  := [ \t\n\r]*
      part of the fraction.  For someone who can see the content,
      these extra words might be a distraction.  AT should always
      produce speech that is appropriate to the community they serve.</p>
+
+     <p>The languages supported by AT will depend on the system in use, but where
+     possible, the intent should be interpreted, for both speech and braille, in the
+     language specified by the <code class="attribute">xml:lang</code> attribute on the nearest containing
+     element if such an attribute exists. If <code class="attribute">xml:lang</code> is not used, the default
+     language may be set in a containing document (for example a <code class="attribute">lang</code> attribute
+     on an HTML element that is an ancestor of the <code class="element">&lt;math&gt;</code>) or by a default
+     language option in the AT system being used by the reader.</p>
   </section>
 
   <section>
