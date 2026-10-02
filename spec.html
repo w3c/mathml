@@ -8,7 +8,7 @@
       class='remove'>
   </script>
   <script type="module" class='removeOnSave'>
-        import { _MathTransforms } from 'https://w3c.github.io/mathml-polyfills/all-polyfills.js'
+        import _MathTransforms from 'https://w3c.github.io/mathml-polyfills/all-polyfills.js'
 
         document.head.appendChild ( _MathTransforms.getCSSStyleSheet() );
         window.transform = function (elementId) {
