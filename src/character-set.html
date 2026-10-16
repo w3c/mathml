@@ -526,6 +526,23 @@
 
   </section>
 
+  <section>
+    <h4 id="chars_accents">Accent Characters</h4>
+
+    <p>There are a large number of look-alike characters that might be used to for
+    accents or diacritical marks above or below a base element.
+    However, fonts have limitations as to which of these can stretch and which have
+    proper positioning when used as accents. Appendix B.3 of [[MathML-Core]]
+    lists characters that may be used as accents in MathML.
+    Usually the spacing and non spacing form of the accent should be equivalent in MathML when used in <code class="element">&lt;mo&gt;</code>
+    for example U+005E [CIRCUMFLEX ACCENT]  and U+0302 [COMBINING CIRCUMFLEX ACCENT].
+    Where there are special considerations that mean that one or other is preferred, they will be noted in [[MathML-Core]].</p>
+
+    <p>It is important to note that
+    only a limited number of fonts support proper mathematical layout.
+    Browsers and likely other software currently require the use of fonts with an OpenType MATH table.</p>
+  </section>
+
  </section>
 
 </section>
