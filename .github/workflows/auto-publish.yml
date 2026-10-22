@@ -15,6 +15,7 @@ jobs:
      - run: |
           git fetch
           git checkout main
+          git checkout gh-pages
           git reset main --hard
           git push -f
      - uses: w3c/spec-prod@v2
