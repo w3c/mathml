@@ -11,15 +11,15 @@ jobs:
     name: Deploy to GitHub pages
     runs-on: ubuntu-latest
     steps:
-     - uses: actions/checkout@v5
-     - run: |
+      - uses: actions/checkout@v5
+      - run: |
           git fetch
           git checkout main
           git checkout gh-pages
           git reset main --hard
           git push -f
-     - uses: w3c/spec-prod@v2
-       with:
+      - uses: w3c/spec-prod@v2
+        with:
           GH_PAGES_BRANCH: gh-pages
           TOOLCHAIN: respec
           SOURCE: spec.html
