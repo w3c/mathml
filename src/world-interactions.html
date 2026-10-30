@@ -11,9 +11,7 @@
   some of the interface issues involved in generating and rendering
   MathML. Since MathML exists primarily to encode mathematics in Web
   documents, perhaps the most important interface issues relate to
-  embedding MathML in [[HTML]], <span> and
-  [[?XHTML]], and in any newer HTML
-  when it appears</span>.</p>
+  embedding MathML in [[HTML]].</p>
 
   <p>There are two kinds of interface issues that arise in embedding
   MathML in other XML documents. First, MathML markup must be recognized
@@ -55,9 +53,7 @@
    URI <code>http://www.w3.org/1998/Math/MathML</code>.</p>
 
    <p>The MathML namespace URI is the recommended method to embed MathML
-   within [[?XHTML]] documents.  However, some user-agents may
-   require supplementary information to be available to allow them to invoke
-   specific extensions to process the MathML markup.</p>
+   within [[HTML]] documents using the XML syntax for HTML.</p>
 
    <p>Markup-language specifications that wish to embed MathML may require
    special conditions to recognize MathML markup that are independent of
@@ -910,13 +906,13 @@
   <section>
    <h4 id="interf_xhtml">Mixing MathML and XHTML</h4>
 
-   <p>To fully integrate MathML into XHTML, it should be possible not only to embed MathML
-   in
+   <p>To fully integrate MathML into XHTML (now more formally known as the XML syntax for HTML),
+     it should be possible not only to embed MathML in
    XHTML, but also to embed XHTML in MathML.
-   <span>The schema used for the W3C HTML5 validator extends <code class="element">mtext</code> to allow all
+   <span>The schema provided in <a href="#parsing"></a> allows all
    inline (phrasing) HTML elements (including <code class="element" data-namespace="svg">svg</code>) to be used within the
    content of <code class="element">mtext</code>. See the example in <a href="#presm_html_insertion"></a>. As noted above,
-   MathML fragments using XHTML elements within <code class="element">mtext</code> will not be valid MathML if extracted
+   MathML fragments using HTML elements within <code class="element">mtext</code> will not be valid MathML if extracted
    from the document and used in isolation. Editing tools may offer support for removing
    any HTML
    markup from within <code class="element">mtext</code> and replacing it by a text alternative.</span></p>
@@ -927,9 +923,6 @@
    to mathematical content (tables, mathematics style changes,
    etc.).</p>
 
-   <p>Consult the <a href="http://www.w3.org/Math/">W3C Math Working
-   Group</a> home page for compatibility and implementation suggestions
-   for current browsers and other MathML-aware tools.</p>
   </section>
 
   <section>
@@ -1150,7 +1143,7 @@
    in MathML-Content markup, as the first child of the
    <code class="element">semantics</code> element.  In this regard, it is the
    representation most analogous to the <code class="attribute">alt</code> attribute of the
-   <code class="element" data-namespace="xhtml">img</code> element in XHTML, and would likely be
+   <code class="element" data-namespace="xhtml">img</code> element in HTML, and would likely be
    the best choice for non-visual rendering.</p>
   </section>
 
