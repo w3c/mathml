@@ -718,10 +718,11 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mi arg="exp">n&lt;/mi>
 &lt;/msup>
 </pre>
-<blockquote>de: x hoch n<br/>
+<blockquote>without intent: en: x begin superscript n end superscript<br/>
+    <br/>
+    de: x hoch n<br/>
     en: x to the n-th power<br/>
     fr: x à la puissance n</blockquote>
-
 </div>
 <p>An alternative default rendering without intent would be to assume that
   <code class="element">msup</code> is always a power, so the second rendering above
@@ -735,14 +736,9 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mi arg="op" intent="transpose">T&lt;/mi>
 &lt;/msup>
 </pre>
-<blockquote>
-    ar: المصفوفة A المنقولة<br/>
-    de: groß a transponiert<br/>
-    en: A superscript T end superscript<br/>
-    en: A transposed<br/>
-    pl: macierz A transponowana<br/>
-    vn: a  ma trận chuyển vị<br/>
-    gr: κεφαλαίο a ανάστροφος
+<blockquote>without intent, en: A superscript T end superscript<br/>
+    <br/>
+    en: transpose of A<br/>
 </blockquote>
 </div>
 <p>However, with a property, this example might be read differently.</p>
@@ -753,7 +749,16 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mi arg="op" intent="transpose">T&lt;/mi>
 &lt;/msup>
 </pre>
-<blockquote>A transpose</blockquote>
+<blockquote>
+    without intent, en: A superscript T end superscript<br/>
+    <br/>
+    ar: المصفوفة A المنقولة<br/>
+    en: cap A transposed
+    de: groß a transponiert<br/>
+    pl: macierz A transponowana<br/>
+    vn: a  ma trận chuyển vị<br/>
+    gr: κεφαλαίο a ανάστροφος
+</blockquote>
 </div>
 
 <div class="example mathml mmlcore">
@@ -763,7 +768,9 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mi>&#x2032;&lt;/mi>
 &lt;/msup>
 </pre>
-<blockquote>derivative of f<br/> f superscript prime end superscript</blockquote>
+<blockquote>en: derivative of f<br/>
+    <br/>
+without intent, en: f superscript prime end superscript</blockquote>
 </div>
 <div class="example mathml mmlcore">
 <pre>
@@ -784,7 +791,9 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mo arg="script" intent="_new">&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
-<blockquote>x new<br/>x superscript prime end superscript</blockquote>
+<blockquote>all languages: x new<br/>
+    <br/>
+without intent, en: x superscript prime end superscript</blockquote>
 </div>
 
 <p>Using the underscore function may also add clarity when the fragments of a compound name are explicitly localized. A Cyrillic (Bulgarian) example:</p>
@@ -795,7 +804,9 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mo arg="script" intent="_прим">&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
-<blockquote>хикс прим<br/>x superscript prime end superscript</blockquote>
+<blockquote>all languages: хикс прим<br/>
+<br/>
+without intent: en: x superscript prime end superscript</blockquote>
 </div>
 
 <p>Alternatively, the narration of individual fragments could be fully delegated to AT, while still specifying their grouping:</p>
@@ -806,7 +817,9 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mo arg="script">&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
-<blockquote>x prime<br/>x superscript prime end superscript</blockquote>
+<blockquote>en: x prime<br/>
+    <br/>
+without intent, en: x superscript prime end superscript</blockquote>
 </div>
 
 <p>An overbar may represent complex conjugation, or mean (average), again with possible readings with and without <code class="attribute">intent</code>:</p>
@@ -825,7 +838,8 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
 </pre>
 
 <blockquote>en: conjugate of z is not  mean of X<br/>
-en: z with bar above  is not  X with bar above</blockquote>
+    <br/>
+without intent, en: z with bar above  is not  X with bar above</blockquote>
 </div>
 
 <p>The intent mechanism is extensible through the use of [=unsupported concept=] names.
