@@ -718,7 +718,10 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mi arg="exp">n&lt;/mi>
 &lt;/msup>
 </pre>
-<blockquote>x to the n-th power<br/> x superscript n end superscript</blockquote>
+<blockquote>de: x hoch n<br/>
+    en: x to the n-th power<br/>
+    fr: x à la puissance n</blockquote>
+
 </div>
 <p>An alternative default rendering without intent would be to assume that
   <code class="element">msup</code> is always a power, so the second rendering above
@@ -732,7 +735,15 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mi arg="op" intent="transpose">T&lt;/mi>
 &lt;/msup>
 </pre>
-<blockquote>transpose of A<br/> A superscript T end superscript </blockquote>
+<blockquote>
+    ar: a منقولة مصفوفة<br/>
+    de: groß a transponiert<br/>
+    en: A superscript T end superscript<br/>
+    en: A transposed<br/>
+    pl: wielka a transponowane<br/>
+    vn: a  ma trận chuyển vị<br/>
+    gr: κεφαλαίο a ανάστροφος
+</blockquote>
 </div>
 <p>However, with a property, this example might be read differently.</p>
 <div class="example mathml mmlcore">
@@ -761,7 +772,7 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mo>&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
-<blockquote>x prime<br/> x superscript prime end superscript</blockquote>
+<blockquote>all languages: x prime</blockquote>
 </div>
 
 <p>Custom accessible descriptions, such as author-preferred variable or operator names, can also be annotated compositionally, via the underscore function.</p>
@@ -813,8 +824,8 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
 &lt;/mover&gt;
 </pre>
 
-<blockquote>conjugate of z is not  mean of X<br/>
-z with bar above  is not  X with bar above</blockquote>
+<blockquote>en: conjugate of z is not  mean of X<br/>
+en: z with bar above  is not  X with bar above</blockquote>
 </div>
 
 <p>The intent mechanism is extensible through the use of [=unsupported concept=] names.
@@ -828,8 +839,68 @@ the following example</p>
 &lt;/msub&gt;
 </pre>
 <p>will still produce the expected reading:</p>
-<blockquote>bell number of 2</blockquote>
+<blockquote>en: bell number of 2</blockquote>
 </div>
+
+       <p>MathML intents may lead to the same speech while the notation would be different.
+           (note: Since this sentence is an information about the written style, the above MathML
+           is likely going to generate a speech that is little informative unless the literal property
+           is part of the intents as is done on the math elements)</p>
+       <div class="example mathml mmlcore">
+<pre>
+&lt;math intent=":literal"&gt;
+    &lt;msubsup"&gt;
+        &lt;mi&gt;C&lt;/mi&gt;
+        &lt;mi&gt;k&lt;/mi&gt;
+        &lt;mi&gt;n&lt;/mi&gt;
+    &lt;/msubsup&gt;
+&lt;/math&gt; s'écrit en anglais, généralement, &lt;math intent=":literal"&gt;
+&lt;mrow&gt;
+    &lt;mo&gt;(&lt;/mo&gt;
+    &lt;mtable&gt;
+        &lt;mtr&gt;&lt;mtd&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mtd&gt;&lt;/mtr&gt;
+        &lt;mtr&gt;&lt;mtd&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/mtd&gt;&lt;/mtr&gt;
+    &lt;/mtable&gt;
+    &lt;mo&gt;)&lt;/mo&gt;
+&lt;/mrow&gt;
+&lt;/math&gt;
+</pre>
+           <blockquote>
+               fr: C indice k et exposant n s'écrit, en anglais, généralement parenthèse tableau  à deux entrées verticales n k
+           </blockquote>
+       </div>
+
+       <p>Similarly, the same concepts are written differently in different languages although their intent attributes are the same:</p>
+       <div class="example mathml mmlcore"><pre>
+&lt;h3&gt;Half-open Intervals in Three Languages&lt;/h3&gt;
+&lt;p lang="de"&gt;Auf Deutsch:
+  &lt;math intent="open-closed-interval"&gt;
+    &lt;mo&gt;]&lt;/mo&gt;
+    &lt;mi arg="start"&gt;∞&lt;/mi&gt;
+    &lt;mo&gt;,&lt;/mo&gt;
+    &lt;mn arg="end"&gt;0&lt;/mn&gt;
+    &lt;mo&gt;]&lt;/mo&gt;
+  &lt;/math&gt;
+&lt;/p&gt;
+&lt;p lang="de"&gt;In English:
+&lt;math intent="open-closed-interval"&gt;
+    &lt;mo&gt;(&lt;/mo&gt;
+    &lt;mi arg="start"&gt;∞&lt;/mi&gt;
+    &lt;mo&gt;,&lt;/mo&gt;
+    &lt;mn arg="end"&gt;0&lt;/mn&gt;
+    &lt;mo&gt;]&lt;/mo&gt;
+&lt;/math&gt;
+&lt;/p&gt;
+&lt;p lang="de"&gt;In het Nederlands:
+&lt;math intent="open-closed-interval"&gt;
+    &lt;mo&gt;〈&lt;/mo&gt;
+    &lt;mi arg="start"&gt;∞&lt;/mi&gt;
+    &lt;mo&gt;,&lt;/mo&gt;
+    &lt;mn arg="end"&gt;0&lt;/mn&gt;
+    &lt;mo&gt;]&lt;/mo&gt;
+&lt;/math&gt;
+&lt;/p&gt;
+</pre></div>
 
 <section>
   <h4 id="mixing_intent_examples_css">CSS and Style</h4>
