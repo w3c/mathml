@@ -275,6 +275,7 @@ attribute id {text}?,
 attribute onclick {text}?,
 attribute data-diff {text}?,
 attribute title {text}?,
+attribute dir {text}?,
 inlinecontent}
 
 dfn = element dfn {
