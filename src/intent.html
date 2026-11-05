@@ -718,11 +718,15 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mi arg="exp">n&lt;/mi>
 &lt;/msup>
 </pre>
-<blockquote>x to the n-th power<br/> x superscript n end superscript</blockquote>
+<blockquote><ul><li>without intent: <br/>en: <i>x begin superscript n end superscript</i></li>
+    <li>with intent: <br/>
+        en: <i>x to the n-th power</i></li>
+</ul>
+</blockquote>
 </div>
-<p>An alternative default rendering without intent would be to assume that
-  <code class="element">msup</code> is always a power, so the second rendering above
-  might also be <q>x to the n-th power</q>. In that case the second renderings below
+<p>An alternative default reading without intent would be to assume that
+  <code class="element">msup</code> is always a power, so the second reading above
+  might also be <q>x to the n-th power</q>. In that case the other readings below
   will (incorrectly) speak the examples using <q>raised to the ... power</q>.
 </p>
 <div class="example mathml mmlcore">
@@ -732,9 +736,13 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mi arg="op" intent="transpose">T&lt;/mi>
 &lt;/msup>
 </pre>
-<blockquote>transpose of A<br/> A superscript T end superscript </blockquote>
+<blockquote><ul><li>without intent:<br/>
+    en: <i>A to the T-th power</i>
+    <li>with intent: <br/>
+        en: <i>transpose of A</i></li></ul>
+</blockquote>
 </div>
-<p>However, with a property, this example might be read differently.</p>
+<p>However, with a property, this example might be read differently, in particular in different languages.</p>
 <div class="example mathml mmlcore">
 <pre>
 &lt;msup intent="$op :postfix ($a)">
@@ -742,7 +750,19 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mi arg="op" intent="transpose">T&lt;/mi>
 &lt;/msup>
 </pre>
-<blockquote>A transpose</blockquote>
+<blockquote>
+    <ul>
+        <li>without intent:<br/>
+            en: A begin superscript T end superscript</li>
+        <li>with intent:<br/>
+    ar: <span dir="rtl">حرف كبير المنقول</span> A<br/>
+    de: groß a transponiert<br/>
+    en: cap A transposed<br/>
+    gr: κεφαλαίο a ανάστροφος<br/>
+    pl: macierz A transponowana<br/>
+    vn: a ma trận chuyển vị
+    </ul>
+</blockquote>
 </div>
 
 <div class="example mathml mmlcore">
@@ -752,8 +772,15 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mi>&#x2032;&lt;/mi>
 &lt;/msup>
 </pre>
-<blockquote>derivative of f<br/> f superscript prime end superscript</blockquote>
+<blockquote><ul><li>without intent:<br/>
+    en: <i>f begin superscript prime end superscript</i></li>
+    <li>with intent:<br/>
+        en: <i>derivative of f</i>
+    </li>
+</ul>
+</blockquote>
 </div>
+<!--  Commented out by Paul L, this is not introduced and the reading is the same with and without intent!
 <div class="example mathml mmlcore">
 <pre>
 &lt;msup intent="x-prime">
@@ -761,8 +788,8 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mo>&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
-<blockquote>x prime<br/> x superscript prime end superscript</blockquote>
-</div>
+<blockquote>all languages: x prime</blockquote>
+</div> -->
 
 <p>Custom accessible descriptions, such as author-preferred variable or operator names, can also be annotated compositionally, via the underscore function.</p>
 <p>The above notation could instead intend the custom name "x-new", which we can mark with a single literal `intent="_x-new"`, or as a compound narration of two arguments:</p>
@@ -773,7 +800,18 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mo arg="script" intent="_new">&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
-<blockquote>x new<br/>x superscript prime end superscript</blockquote>
+<blockquote>
+    <ul>
+        <li>without intent:<br/>
+            en: <i>x begin superscript prime end superscript</i><br/>
+            fr: <i>x exposant prime fin de l'exposant</i>
+        </li>
+        <li>with intent:<br/>
+            all languages: <i>x new</i>
+        </li>
+    </ul>
+
+</blockquote>
 </div>
 
 <p>Using the underscore function may also add clarity when the fragments of a compound name are explicitly localized. A Cyrillic (Bulgarian) example:</p>
@@ -784,7 +822,15 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mo arg="script" intent="_прим">&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
-<blockquote>хикс прим<br/>x superscript prime end superscript</blockquote>
+<blockquote>
+    <ul>
+        <li>without intent:<br/>
+            en: <i>x begin superscript prime end superscript</i><br/>
+        </li>
+        <li>with intent:<br/>
+            all languages: <i>хикс прим</i>
+        </li>
+    </ul>
 </div>
 
 <p>Alternatively, the narration of individual fragments could be fully delegated to AT, while still specifying their grouping:</p>
@@ -795,7 +841,14 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
   &lt;mo arg="script">&#x2032;&lt;/mo>
 &lt;/msup>
 </pre>
-<blockquote>x prime<br/>x superscript prime end superscript</blockquote>
+<blockquote><ul><li>without intent:<br/>
+    en: <i>x begin superscript prime end superscript</i></li>
+    <li>with intent:<br/>
+        en: <i>x prime</i>
+    </li>
+</ul>
+    <br/>
+</blockquote>
 </div>
 
 <p>An overbar may represent complex conjugation, or mean (average), again with possible readings with and without <code class="attribute">intent</code>:</p>
@@ -808,13 +861,21 @@ will be read as <q>Watts</q> and <code>&lt;mo>/&lt;/mo></code> as <q>per</q>, gi
 &lt;/mover&gt;
 &lt;mtext>&amp;#x00A0;&lt;!--nbsp--&gt;is not&amp;#x00A0;&lt;!--nbsp--&gt;&lt;/mtext>
 &lt;mover intent="mean($var)"&gt;
-  &lt;mi arg="var"&gt;X&lt;/mi&gt;
+  &lt;mi arg="var"&gt;Z&lt;/mi&gt;
   &lt;mo&gt;&amp;#xaf;&lt;/mo&gt;
 &lt;/mover&gt;
 </pre>
 
-<blockquote>conjugate of z is not  mean of X<br/>
-z with bar above  is not  X with bar above</blockquote>
+<blockquote>
+    <ul>
+        <li>without intent:<br/>
+            en: <i>z with bar above  is not  Z with bar above</i>
+        </li>
+        <li>with intent:<br/>
+            en: <i>conjugate of z is not  mean of Z</i>
+        </li>
+    </ul>
+</blockquote>
 </div>
 
 <p>The intent mechanism is extensible through the use of [=unsupported concept=] names.
@@ -828,8 +889,86 @@ the following example</p>
 &lt;/msub&gt;
 </pre>
 <p>will still produce the expected reading:</p>
-<blockquote>bell number of 2</blockquote>
+<blockquote>
+    <ul>
+        <li>without intent:<br/>
+            en: <i>B begin subscript 2 end subscript</i>
+        </li>
+        <li>with intent:<br/>
+            en: <i>bell number of 2</i></li>
+    </ul>
+</blockquote>
 </div>
+       <p>MathML intents may lead to the same speech while the notation would be different.
+           (note the usage of the <code class="attribute">literal</code> property to provide a notation description in the speech).</p>
+       <div class="example mathml mmlcore">
+<pre>
+&lt;math intent=":literal"&gt;
+    &lt;msubsup intent="binomial-coefficent($power, $term)"&gt;
+        &lt;mi&gt;C&lt;/mi&gt;
+        &lt;mi arg="term"&gt;k&lt;/mi&gt;
+        &lt;mi arg="power"&gt;n&lt;/mi&gt;
+    &lt;/msubsup&gt;
+&lt;/math&gt;
+s'écrit en anglais, généralement,
+&lt;math intent=":literal"&gt;
+    &lt;mrow intent="binomial-coefficent($power, $term)"&gt;
+        &lt;mo&gt;(&lt;/mo&gt;
+        &lt;mtable&gt;
+            &lt;mtr&gt;&lt;mtd arg="power"&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mtd&gt;&lt;/mtr&gt;
+            &lt;mtr&gt;&lt;mtd arg="term"&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/mtd&gt;&lt;/mtr&gt;
+        &lt;/mtable&gt;
+        &lt;mo&gt;)&lt;/mo&gt;
+    &lt;/mrow&gt;
+&lt;/math&gt;
+</pre>
+           <blockquote>
+               <ul>
+                   <li>without the <code class="attribute">:literal</code> property:<br/>
+                       fr: <i>k parmi n s'écrit en anglais, généralement, k parmi n</i></li>
+                   <li>with the <code class="attribute">:literal</code> property or without intent:<br/>
+                       fr: <i>C indice k et exposant n s'écrit en anglais, généralement ouvrir la parenthèse tableau à deux entrées verticales n, k fermer la parenthèse</i>
+                   </li>
+
+               </ul>
+
+           </blockquote>
+       </div>
+
+       <p>Similarly, the same concepts are written differently in different languages
+           although their <code class="attribute">intent</code> and <code class="attribute">arg</code>
+           attributes are the same:</p>
+       <div class="example mathml mmlcore"><pre>
+&lt;h3 lang="en"&gt;Half-open Intervals in Three Languages&lt;/h3&gt;
+&lt;p lang="de"&gt;Auf Deutsch:
+  &lt;math intent="open-closed-interval($start,$arg)"&gt;
+    &lt;mo&gt;]&lt;/mo&gt;
+    &lt;mi arg="start"&gt;∞&lt;/mi&gt;
+    &lt;mo&gt;,&lt;/mo&gt;
+    &lt;mn arg="end"&gt;0&lt;/mn&gt;
+    &lt;mo&gt;]&lt;/mo&gt;
+  &lt;/math&gt;
+&lt;/p&gt;
+&lt;p lang="en"&gt;In English:
+&lt;math intent="open-closed-interval($start,$arg)"&gt;
+    &lt;mo&gt;(&lt;/mo&gt;
+    &lt;mi arg="start"&gt;∞&lt;/mi&gt;
+    &lt;mo&gt;,&lt;/mo&gt;
+    &lt;mn arg="end"&gt;0&lt;/mn&gt;
+    &lt;mo&gt;]&lt;/mo&gt;
+&lt;/math&gt;
+&lt;/p&gt;
+&lt;p lang="nl"&gt;In het Nederlands:
+&lt;math intent="open-closed-interval($start,$arg)"&gt;
+    &lt;mo&gt;〈&lt;/mo&gt;
+    &lt;mi arg="start"&gt;∞&lt;/mi&gt;
+    &lt;mo&gt;,&lt;/mo&gt;
+    &lt;mn arg="end"&gt;0&lt;/mn&gt;
+    &lt;mo&gt;]&lt;/mo&gt;
+&lt;/math&gt;
+&lt;/p&gt;
+</pre></div>
+
 
 <section>
   <h4 id="mixing_intent_examples_css">CSS and Style</h4>
