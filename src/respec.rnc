@@ -80,6 +80,7 @@ attribute data-number {xsd:integer}?,
 attribute class {text}?,
 attribute style {text}?,
 attribute id {text}?,
+attribute lang {text}?,
 (inlinecontent|label|input)*
 }
 
