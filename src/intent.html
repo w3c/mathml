@@ -939,40 +939,65 @@ the following example</p>
        <p>Similarly, the same concepts are written differently in different languages
            although their <code class="attribute">intent</code> and <code class="attribute">arg</code>
        attributes are the same:</p>
-<section>       
-<h4>Half-open Intervals in Three Languages</h4>
-<p lang="de">Auf Deutsch:</p>
+<p>For example half-open intervals in three languages</p>
+
 <div class="example mathml mmlcore"><pre>
-  &lt;mrow intent="open-closed-interval($start,$arg)"&gt;
+&lt;mrow lang="de"&gt;
+  &lt;mtext&gt;Auf Deutsch:&amp;#160;&lt;/mtext>
+  &lt;mrow intent="open-closed-interval($start,$end)"&gt;
     &lt;mo&gt;]&lt;/mo&gt;
-    &lt;mi arg="start"&gt;∞&lt;/mi&gt;
+    &lt;mrow arg="start"&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;∞&lt;/mi&gt;&lt;/mrow&gt;
     &lt;mo&gt;,&lt;/mo&gt;
     &lt;mn arg="end"&gt;0&lt;/mn&gt;
     &lt;mo&gt;]&lt;/mo&gt;
   &lt;/mrow&gt;
+&lt;/mrow&gt;
 </pre>
+
+           <blockquote>
+             <ul>
+	       <li>de: Auf Deutsch:, das Intervall minus unendlich bis 0, einschließlich 0</li>
+	     </ul>
+	   </blockquote>
+           
 </div>
-<p lang="en">In English:</p>
+
 <div class="example mathml mmlcore"><pre>
-&lt;mrow intent="open-closed-interval($start,$arg)"&gt;
+&lt;mrow lang="en"&gt;
+  &lt;mtext&gt;In English:&amp;#160;&lt;/mtext>
+  &lt;mrow intent="open-closed-interval($start,$end)"&gt;
     &lt;mo&gt;(&lt;/mo&gt;
-    &lt;mi arg="start"&gt;∞&lt;/mi&gt;
+    &lt;mrow arg="start"&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;∞&lt;/mi&gt;&lt;/mrow&gt;
     &lt;mo&gt;,&lt;/mo&gt;
     &lt;mn arg="end"&gt;0&lt;/mn&gt;
     &lt;mo&gt;]&lt;/mo&gt;
+  &lt;/mrow&gt;
 &lt;/mrow&gt;
 </pre>
+           <blockquote>
+             <ul>
+	       <li>en: In English:  the interval from inegative nfinity to 0, including 0</li>
+	     </ul>
+	   </blockquote>
 </div>
-<p lang="nl">In het Nederlands:</p>
+
 <div class="example mathml mmlcore"><pre>
-&lt;mrow intent="open-closed-interval($start,$arg)"&gt;
+&lt;mrow lang="nl"&gt;
+  &lt;mtext&gt;In het Nederlands:&amp;#160;&lt;/mtext>
+  &lt;mrow intent="open-closed-interval($start,$end)"&gt;
     &lt;mo&gt;〈&lt;/mo&gt;
-    &lt;mi arg="start"&gt;∞&lt;/mi&gt;
+    &lt;mrow arg="start"&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;∞&lt;/mi&gt;&lt;/mrow&gt;
     &lt;mo&gt;,&lt;/mo&gt;
     &lt;mn arg="end"&gt;0&lt;/mn&gt;
     &lt;mo&gt;]&lt;/mo&gt;
+  &lt;/mrow&gt;
 &lt;/mrow&gt;
 </pre>
+           <blockquote>
+             <ul>
+	       <li>nl: In het Nederlands: het interval van min oneindig tot 0, inclusief 0</li>
+	     </ul>
+	   </blockquote>
 </div>
 </section>
 
