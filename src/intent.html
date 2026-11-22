@@ -1012,6 +1012,8 @@ the following example</p>
 
 <section class="fold">
  <h4 id="mixing_intent_examples_properties">Intent Property Examples</h4>
+
+ <p><b>Tabular layout</b></p>
  
  <p>The <code class="element">&lt;mtable&gt;</code> element is
  used in many ways, for denoting matrices, systems of equations,
@@ -1036,7 +1038,7 @@ the following example</p>
  
 
 
-<p>Matrices</p>
+<p><b>Matrices</b></p>
 <div class="example mathml mmlcore">
 <pre>
 &lt;mrow intent='$m'>
@@ -1065,8 +1067,8 @@ end matrix
     </div>
 
 
-    <p>Aligned equations</p>
-    <div class="example mathml mmlcore">
+<p><b>Aligned equations</b></p>
+<div class="example mathml mmlcore">
 <pre>
 &lt;mtable intent=':system-of-equations'>
   &lt;mtr>
@@ -1102,11 +1104,11 @@ end matrix
 equation 1; 2 x, is equal to, 1;<br/>
 equation 2; y, is greater than, x minus 3;
 </blockquote>
-    </div>
+</div>
 
-    <p>Aligned Equations with wrapped expressions</p>
+<p><b>Aligned Equations with wrapped expressions</b></p>
 
-    <div class="example mathml mmlcore">
+<div class="example mathml mmlcore">
 <pre>
 &lt;mtable intent=':system-of-equations'>
   &lt;mtr>
@@ -1139,7 +1141,30 @@ equation 2; y, is greater than, x minus 3;
 <blockquote>
  1 equation; a, is equal to, b plus c minus d; plus e minus f;
 </blockquote>
-    </div>
+</div>
+
+<p><b>Chemical formulae</b></p>
+<p>Properties may also be used to customise the speech rules for
+different subject areas. Notably, the intent <code>:chemistry</code>
+may influence the default heuristics used to generate speech.
+In the example below the superscript is not explicitly announced as such,
+as is conventional when reading chemistry. (Announcing the Capital
+is also typically a user option that can be chosen, or not by the reader,)</p>
+<div class="example mathml mmlcore">
+<pre>
+&lt;mrow intent=':chemical-formula'>
+  &lt;mmultiscripts>
+    &lt;mi mathvariant='normal' intent=':chemical-element'>H&lt;/mi>
+    &lt;mn>2&lt;/mn>
+    &lt;mrow/>
+  &lt;/mmultiscripts>
+  &lt;mi mathvariant='normal' intent=':chemical-element'>O&lt;/mi>
+&lt;/mrow>
+</pre>
+<blockquote>
+ cap h 2 cap o
+</blockquote>
+</div>
 </section>
 
 <section class="fold">
@@ -1176,7 +1201,5 @@ equation 2; y, is greater than, x minus 3;
 
 
 
-   </section>
-
-
+</section>
 
